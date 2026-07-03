@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHS to reward people who walk 30 minutes a day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>NHS to reward people who walk 30 minutes a day</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 02 Jul 2026 23:13:44 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj6g0rdy40jo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The "marathon a month" scheme, developed with former Olympic medallist Sir Brendan Foster, will launch early next year.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.18" data-end="12.31">
+            <p class="french-block">Le NHS cible la culture « striée » pour faire marcher la nation</p>
+            <span class="english-block">NHS targets "streak" culture to get nation walking</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.31" data-end="20.88">
+            <p class="french-block">Faire ses pas est depuis longtemps lié à une meilleure santé – et pour la première fois, le NHS va commencer à récompenser les gens qui font de l’exercice.</p>
+            <span class="english-block">Getting your steps in has long been linked to better health - and for the first time  the NHS is to start giving people rewards for doing exercise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.88" data-end="29.88">
+            <p class="french-block">Au début de l'année prochaine, le NHS England lancera un défi "marathon par mois", demandant aux gens de marcher environ 30 minutes par jour.</p>
+            <span class="english-block">Early next year, NHS England will launch a "marathon a month" challenge, asking people to walk for around 30 minutes a day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.88" data-end="35.93">
+            <p class="french-block">Ceux qui le font tous les jours parcourront environ 26 miles par mois, soit la distance d'un marathon.</p>
+            <span class="english-block">Those who do it every day will hit roughly 26 miles a month - the distance of a marathon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.93" data-end="42.58">
+            <p class="french-block">Les utilisateurs pourront enregistrer leurs promenades en ligne, via leur téléphone ou leur montre intelligente.</p>
+            <span class="english-block">Users will be able to log their walks online, or through their phone or smartwatch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.58" data-end="51.14">
+            <p class="french-block">Et le NHS affirme que ceux qui relèveront le défi seront alors éligibles à des récompenses, qui pourraient inclure des incitations et des réductions.</p>
+            <span class="english-block">And the NHS says those who complete the challenge will then be eligible for rewards - which could include incentives and discounts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.14" data-end="55.01">
+            <p class="french-block">Lauren Andrew dit qu'elle pense que cela semble être un bon plan.</p>
+            <span class="english-block">Lauren Andrew says she thinks it sounds like a good scheme.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.01" data-end="67.73">
+            <p class="french-block">"Je le ferais. De petits morceaux seraient faciles à intégrer", dit-elle. "Je n'ai pas d'abonnement à une salle de sport ou quoi que ce soit, mais je pourrais aller me promener. C'est gratuit."</p>
+            <span class="english-block">"I'd do it. Small chunks would be easy to fit in," she says. "I don't have a gym membership or any of that but I could go for a walk. That's free."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.73" data-end="77.78">
+            <p class="french-block">Mais lorsqu’il s’agit d’incitations, les réductions ne suffiraient pas. "Si ma marche est convertie en cadeau, comme une boisson ou de la nourriture, alors cela m'aiderait à le faire."</p>
+            <span class="english-block">But when it comes to incentives, discounts wouldn't cut it. "If my walking is converted into a freebie, like a drink or food, then that would help get me to do it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.78" data-end="83.35">
+            <p class="french-block">"Je pourrais aller me promener. C'est gratuit", déclare Lauren Andrew</p>
+            <span class="english-block">"I could go for a walk. That's free," says Lauren Andrew</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.35" data-end="101.62">
+            <p class="french-block">Les moins de 25 ans interrogés par la BBC se sont montrés globalement optimistes quant au projet. L’une d’elles a déclaré que le défi gamifié la pousserait à être plus active. Ne pas vouloir rompre une « séquence » ou une série de journées cohérentes est certainement un facteur de motivation pour elle et ses amis.</p>
+            <span class="english-block">The under‑25s the BBC spoke to were broadly upbeat about the scheme. One said the gamified challenge would push her to be more active. Not wanting to break a "streak", or run of consistent days, is definitely a motivator for her and her friends.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.62" data-end="110.93">
+            <p class="french-block">Un autre, qui parcourt déjà environ un marathon de marche chaque mois, a admis qu'il accepterait volontiers une récompense gratuite pour quelque chose qu'il fait déjà.</p>
+            <span class="english-block">Another, who already clocks up roughly a marathon's worth of walking each month, admitted he'd happily take a free reward for something he's already doing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.93" data-end="122.78">
+            <p class="french-block">En ce qui concerne le financement, le NHS couvre la mise en place initiale, mais le plan plus large est de mobiliser le soutien philanthropique des grandes entreprises au fur et à mesure du déploiement du programme.</p>
+            <span class="english-block">When it comes to funding, the NHS is covering the initial set‑up, but the wider plan is to draw in philanthropic backing from major corporates as the scheme rolls out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.78" data-end="135.31">
+            <p class="french-block">Le projet est développé en partenariat avec l'ancien médaillé olympique Sir Brendan Foster, fondateur de Great North Run, à qui le NHS England a demandé de lancer une campagne pour inciter les gens à marcher.</p>
+            <span class="english-block">The scheme is being developed in partnership with former Olympic medallist Sir Brendan Foster, founder of the Great North Run, who was asked by NHS England to set a campaign to get people walking.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.31" data-end="144.77">
+            <p class="french-block">"Je suis connu pour courir, mais l'ambition ici est bien plus simple. Nous voulons juste que les gens marchent. Simple", dit-il.</p>
+            <span class="english-block">"I'm known for running, but the ambition here is far simpler. We just want people to walk. Simple," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.77" data-end="153.86">
+            <p class="french-block">Cela fait partie du plan de santé décennal pour l’Angleterre. Il a déclaré à la BBC que sa mission était de rendre plus de gens actifs.</p>
+            <span class="english-block">It is part of the 10-year health plan for England. He told the BBC that getting more people active is his mission.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.86" data-end="168.24">
+            <p class="french-block">L'inactivité physique est associée à un décès sur six, selon le NHS England. Une personne est classée comme physiquement inactive si elle pratique moins de 30 minutes d’activité physique équivalente d’intensité modérée par semaine.</p>
+            <span class="english-block">Physical inactivity is associated with one in six deaths, according to NHS England. A person is classified as physically inactive if they do less than 30 minutes of moderate-intensity equivalent physical activity per week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="168.24" data-end="179.28">
+            <p class="french-block">Une enquête de Sport England a montré qu'au cours de l'année précédant novembre 2025, près d'un quart des adultes, soit environ 12 millions de personnes, appartenaient à cette catégorie.</p>
+            <span class="english-block">A survey by Sport England showed that in the year to November 2025 nearly a quarter of adults, or around 12 million people, were in that category.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.28" data-end="185.21">
+            <p class="french-block">Sir Brendan Foster marchant sur une plage de Northumberland avec Hugh Pym de la BBC</p>
+            <span class="english-block">Sir Brendan Foster walking on a Northumberland beach with the BBC's Hugh Pym</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.21" data-end="191.93">
+            <p class="french-block">L'objectif est d'inscrire plus de 100 000 personnes, avec des statistiques quotidiennes enregistrées numériquement.</p>
+            <span class="english-block">The aim is to sign up more than 100,000 people, with daily stats recorded digitally.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.93" data-end="198.31">
+            <p class="french-block">Si l'objectif est atteint, Sir Brendan affirme que cela compterait comme le plus grand marathon de l'histoire.</p>
+            <span class="english-block">If the target is hit, Sir Brendan says it would count as the biggest marathon in history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.31" data-end="207.43">
+            <p class="french-block">Il espère que la culture des séquences, le comportement générateur d'habitudes observé sur Snapchat et Duolingo, aidera les gens à relever le défi.</p>
+            <span class="english-block">He hopes streak culture, the habit forming behaviour as seen on Snapchat and Duolingo, will help people stick with the challenge.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.43" data-end="213.7">
+            <p class="french-block">Les avantages pour la santé et les économies potentielles du NHS seront également importants.</p>
+            <span class="english-block">The health benefits, and potential NHS savings, will also be significant.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.7" data-end="221.88">
+            <p class="french-block">"Si quelqu'un marche 30 minutes cinq fois par semaine, il peut gagner jusqu'à quatre années supplémentaires de vie en bonne santé", dit-il.</p>
+            <span class="english-block">"If someone walks 30 minutes five times a week, they could gain up to four extra years of healthy life," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.88" data-end="239.69">
+            <p class="french-block">Sonia Pombo, responsable de la recherche et de l'impact chez Action on Salt & Sugar, déclare : « Encourager les gens à intégrer une activité physique régulière dans leur vie quotidienne peut favoriser une meilleure santé, et rendre cela simple, réalisable et gratifiant peut aider davantage de personnes à se lancer.</p>
+            <span class="english-block">Sonia Pombo, head of research and impact at Action on Salt & Sugar, says: "Encouraging people to build regular movement into their daily lives can support better health, and making it simple, achievable and rewarding may help more people get started.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.69" data-end="255.58">
+            <p class="french-block">"Mais nous ne pouvons pas compter uniquement sur un changement de comportement individuel. Si le gouvernement souhaite sérieusement améliorer la santé de la nation, en particulier celle des enfants, il doit associer des initiatives comme celle-ci à des mesures de prévention plus strictes."</p>
+            <span class="english-block">"But we cannot rely on individual behaviour change alone. If the government is serious about improving the nation's health, particularly for children, it must pair initiatives like this with stronger prevention measures."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.58" data-end="262.9">
+            <p class="french-block">Tous les détails du système de bons seront publiés dans les mois à venir, ainsi que des informations sur la manière de s'inscrire.</p>
+            <span class="english-block">Full details of the voucher scheme will be released in the coming months, along with information on how to sign up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="262.9" data-end="268.94">
+            <p class="french-block">Vous voulez vous sentir plus heureux au travail ? Faites une promenade de cinq minutes</p>
+            <span class="english-block">Want to feel happier at work? Take a five-minute walk</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.94" data-end="275.45">
+            <p class="french-block">Les ministres veulent que 60 % des enfants se rendent à l’école à pied ou à vélo d’ici 2035</p>
+            <span class="english-block">Ministers want 60% of children walking or cycling to school by 2035</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.45" data-end="281.16">
+            <p class="french-block">Selon une étude, seulement 7 000 pas par jour pourraient réduire les risques pour la santé</p>
+            <span class="english-block">Just 7,000 steps a day could cut health risks, study says</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_7.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

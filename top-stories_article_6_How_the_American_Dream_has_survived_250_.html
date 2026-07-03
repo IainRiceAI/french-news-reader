@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How the American Dream has survived 250 years, but only just</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>How the American Dream has survived 250 years, but only just</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 02 Jul 2026 23:14:29 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cx2vpz2qee5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The American Dream has persisted since the days of the Founding Fathers, but faith in the ideal is fading
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.98" data-end="14.28">
+            <p class="french-block">Comment le rêve américain a survécu à 250 ans, mais de justesse</p>
+            <span class="english-block">How the American Dream has survived 250 years, but only just</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.28" data-end="38.95">
+            <p class="french-block">Il y a seize ans, Abdi Nor Iftin était un réfugié somalien vivant dans l'un des bidonvilles les plus difficiles du Kenya lorsqu'il a découvert qu'il avait gagné à la loterie de sa vie. Sur près de huit millions de candidats en 2013, il faisait partie des 50 000 chanceux qui ont obtenu un visa américain grâce à un programme connu sous le nom de programme de visa pour la diversité que le gouvernement américain avait lancé dans les années 1990.</p>
+            <span class="english-block">Sixteen years ago, Abdi Nor Iftin was a Somali refugee living in one of the roughest slums in Kenya when he found out he had won the lottery of a lifetime. Out of nearly eight million applicants in 2013, he had been one of the lucky 50,000 granted a US visa through a scheme known as the diversity visa scheme that the US government had begun in the 1990s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.95" data-end="62.09">
+            <p class="french-block">Abdi rêvait depuis longtemps de déménager en Amérique. Il était tellement obsédé que ses amis d'enfance l'ont même surnommé « Abdi America » après avoir appris à parler anglais en regardant des films hollywoodiens. "Toute ma vie, j'ai été amoureux de l'Amérique - le meilleur pays du monde, le pays des rêves, la terre des opportunités", a-t-il déclaré à la BBC en 2014.</p>
+            <span class="english-block">Abdi had long dreamt of moving to America. He was so obsessed, his childhood friends even nicknamed him "Abdi America" after he learnt to speak English by watching Hollywood movies. "My whole life I have been in love with America - the best country in the world, the dreamland, the land of opportunity," he told the BBC in 2014.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.09" data-end="85.75">
+            <p class="french-block">Cette année-là, Abdi, aujourd'hui âgé de 41 ans, est arrivé aux États-Unis, s'est installé dans une petite ville du Maine, a trouvé un emploi comme installateur d'isolation et est devenu citoyen américain. Mais désormais, ses espoirs se heurtent à la réalité. Il a perdu son emploi dans une agence de réinstallation de réfugiés cette année, et par conséquent son assurance maladie.</p>
+            <span class="english-block">That year, Abdi, now 41, arrived in the US, settled in a small town in Maine, got a job installing insulation and became a US citizen. But now, his hopes have run up against reality. He lost his job at a refugee resettlement agency this year, and consequently his health insurance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.75" data-end="94.01">
+            <p class="french-block">À la veille du 250e anniversaire des États-Unis, Abdi, comme de nombreux Américains, s'inquiète de l'avenir de son pays.</p>
+            <span class="english-block">On the eve of the United States' 250th birthday, Abdi, like many Americans, is feeing uneasy about the future of his country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.01" data-end="98.66">
+            <p class="french-block">Abdi est venu en Amérique grâce à un programme de visa de diversité</p>
+            <span class="english-block">Abdi came to America on a diversity visa scheme</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.66" data-end="103.85">
+            <p class="french-block">"J'ai l'impression que le rêve américain est vivant, mais pas bien", m'a-t-il dit.</p>
+            <span class="english-block">"I feel like the American Dream is alive, but not well," he told me.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.85" data-end="115.58">
+            <p class="french-block">Pendant ce temps, Luke Mullen, un acteur californien de 24 ans, m'a dit qu'il prévoyait de déménager au Canada en raison du manque d'opportunités cinématographiques à Hollywood, entre autres.</p>
+            <span class="english-block">Meanwhile, Luke Mullen, a 24-year-old actor from California, told me he's planning on moving to Canada because of a lack of film opportunities in Hollywood, of all places.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.58" data-end="123.38">
+            <p class="french-block">"La richesse se consolide dans ce pays et à mesure que cela se produit, les opportunités diminuent", a-t-il déclaré.</p>
+            <span class="english-block">"Wealth is getting consolidated in this country and as that happens, the opportunities are dwindling," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.38" data-end="138.41">
+            <p class="french-block">Les enquêtes les plus récentes menées à l'approche du 250e anniversaire de la fondation de l'Amérique montrent que de nombreux Américains ont le sentiment que le « rêve américain » – la promesse selon laquelle n'importe qui aux États-Unis peut se créer un avenir brillant – s'estompe.</p>
+            <span class="english-block">Survey after survey taken ahead of the 250th anniversary of America's founding shows many Americans feel the "American Dream"- the promise that anyone in the United States can create a bright future for themselves - is fading.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.41" data-end="142.3">
+            <p class="french-block">L’histoire mondiale : le rêve américain d’Abdi</p>
+            <span class="english-block">The Global Story: Abdi’s American Dream</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.3" data-end="148.85">
+            <p class="french-block">Une partie de la série de podcasts historique de The Global Story explorant 250 ans des États-Unis</p>
+            <span class="english-block">One part of The Global Story's landmark podcast series exploring 250 years of the United States</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.85" data-end="167.35">
+            <p class="french-block">Un récent sondage de l'Associated Press-NORC a révélé que seul un tiers du public croit que le rêve américain existe toujours. Le sentiment est le même dans de nombreuses enquêtes. Une étude récente du Pew Research Center montre que la plupart des Américains affirment que les meilleurs jours du pays sont derrière eux.</p>
+            <span class="english-block">A recent poll from the Associated Press-NORC found that only a third of the public believes the American Dream still exists. The sentiment is the same across many surveys. One recent study from the Pew Research Center, shows that most Americans say the country's best days are behind it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.35" data-end="174.98">
+            <p class="french-block">Le 250e anniversaire de l’Amérique survient également à un moment de profonde polarisation et de division partisane.</p>
+            <span class="english-block">America's 250th birthday also comes at a moment of deep polarisation and partisan divide.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.98" data-end="183.91">
+            <p class="french-block">Alors qu’est-ce que cela signifie si le Dream – une marque exportée dans le monde entier dans les domaines du cinéma, de la musique et de la culture pop – semble hors de portée ?</p>
+            <span class="english-block">So what does it mean if the Dream - a brand exported around the world in movies, music and pop culture - feels out of reach?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.91" data-end="210.14">
+            <p class="french-block">Dans les premiers jours qui ont suivi la guerre d’indépendance et jusqu’au 21e siècle, ce qui est devenu connu sous le nom de Rêve a attiré des millions d’immigrants vers cette nouvelle nation brillante, pleine d’espoir, d’optimisme et d’individualisme. Les ouvriers d'usine, les agriculteurs, les chercheurs d'or et les pionniers ont afflué vers les États-Unis avec la conviction qu'ils pourraient créer une nouvelle identité – une « Américaine » – libérée des systèmes de classes de l'Europe.</p>
+            <span class="english-block">In those early days after the Revolutionary War and well into the 21st Century, what became known as the Dream enticed millions of immigrants to this shiny new nation full of hope, optimism and individualism. Factory workers, farmers, gold diggers, frontiersmen flocked to the US with the belief that they could create a new identity - an "American" - unshackled from the class systems of Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.14" data-end="221.4">
+            <p class="french-block">Les historiens vous diront que le Rêve n’a jamais inclus tout le monde – certainement pas les Amérindiens, les esclaves ou même les femmes. Néanmoins, l’idée du rêve américain persiste.</p>
+            <span class="english-block">Historians will tell you that the Dream never included everyone - certainly not Native Americans, slaves, or even women. Nevertheless, the idea of the American Dream persisted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.4" data-end="234.05">
+            <p class="french-block">Le concept du rêve américain remonte à la fondation des États-Unis, mais l’expression n’a été popularisée que plus tard, dans The Epic of America, un livre publié en 1931 pendant la Grande Dépression.</p>
+            <span class="english-block">The concept of the American Dream dates back to the founding of the US, but the phrase wasn't popularised until later, in The Epic of America, a book published in 1931 during the Great Depression.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.05" data-end="248.02">
+            <p class="french-block">L'historien James Truslow Adams y écrivait : « Il ne s'agit pas simplement d'un rêve de voitures automobiles et de salaires élevés, mais d'un rêve d'ordre social dans lequel chaque homme et chaque femme pourront atteindre la pleine stature dont ils sont naturellement capables. »</p>
+            <span class="english-block">In it, the historian James Truslow Adams wrote: "It is not a dream of motor cars and high wages merely, but a dream of social order in which each man and each woman shall be able to attain to the fullest stature of which they are innately capable."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.02" data-end="259.56">
+            <p class="french-block">Au fil des années, le slogan a évolué. De nos jours, on l'associe souvent à l'esprit d'entreprise, à la mobilité sociale et, surtout, aux opportunités économiques.</p>
+            <span class="english-block">Over the years, the slogan has evolved. These days it's often associated with entrepreneurialism, social mobility and, above all, economic opportunity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.56" data-end="264.41">
+            <p class="french-block">Les immigrants ont afflué à Ellis Island aux 19e et 20e siècles</p>
+            <span class="english-block">Immigrants flocked to Ellis Island in the 19th and 20th Centuries</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.41" data-end="282.65">
+            <p class="french-block">"Il a toujours été question de faire mieux dans la vie qu'avant", déclare Cyril Ghosh, auteur de The Politics of the American Dream: Democratic Inclusion in Contemporary American Political Culture. "Pour certaines personnes, le mieux dans la vie est tout simplement de ne pas être persécuté par l'Église anglicane.</p>
+            <span class="english-block">"It has always been about doing better in life than before," says Cyril Ghosh, author of The Politics of the American Dream: Democratic Inclusion in Contemporary American Political Culture. "For some people, the better in life is simply not being persecuted by the Church of England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.65" data-end="294.22">
+            <p class="french-block">"Il ne s'agit pas seulement de matérialisme. Il s'agit de sécurité. Il s'agit de faire mieux qu'une station précédente. C'est ce dont il s'agit depuis toujours."</p>
+            <span class="english-block">"It's not only about materialism. It's about security. It's about doing better than a previous station. That's what it's always been about."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.22" data-end="301.13">
+            <p class="french-block">Abdi avait grandi en Somalie, se cachant dans des abris pour éviter d'être abattu par le groupe militant al-Shabab.</p>
+            <span class="english-block">Abdi had grown up in Somalia, hiding in dugouts to avoid getting shot by the militant group al-Shabab.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="301.13" data-end="314.78">
+            <p class="french-block">"La liberté était une priorité absolue. Vivre le lendemain, respirer le lendemain était un très gros problème, et je le voulais vraiment", a-t-il déclaré, expliquant pourquoi il avait voulu déménager aux États-Unis.</p>
+            <span class="english-block">"Freedom was a huge priority. Living the next day, breathing next day, was a big, big issue, and I really wanted that," he said, explaining why he had wanted to move to the US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.78" data-end="323.02">
+            <p class="french-block">Les chercheurs affirment que les immigrants de première génération, comme Abdi, sont souvent plus optimistes quant au potentiel de l’Amérique.</p>
+            <span class="english-block">Researchers say first-generation immigrants, like Abdi, are often more upbeat about the potential of America.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="323.02" data-end="337.32">
+            <p class="french-block">"Beaucoup viennent de pays moins riches. Et donc ils finiront vraiment par s'en sortir mieux que s'ils n'avaient pas émigré", déclare Elizabeth Suhay, auteur de Debating the American Dream: How Explanations for Inequality Polarize Politics.</p>
+            <span class="english-block">"Many are coming from less wealthy nations. And so they really are going to end up doing better than if they had not emigrated," says Elizabeth Suhay, author of Debating the American Dream: How Explanations for Inequality Polarize Politics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.32" data-end="361.51">
+            <p class="french-block">"Les immigrants, pour la plupart, sont plus susceptibles de dire qu'ils réalisent leur rêve, ou qu'ils l'ont réalisé", a déclaré Mark Hugo Lopez, directeur de la recherche sur la race et l'origine ethnique au Pew Research Center, qui a spécifiquement étudié en profondeur les attitudes des immigrants latinos. Ils ont également tendance à être, a déclaré Lopez, plus optimistes quant aux perspectives de leurs enfants.</p>
+            <span class="english-block">"Immigrants, for the most part, are more likely to say that they are achieving the Dream, or they've achieved it," said Mark Hugo Lopez, director of race and ethnicity research at the Pew Research Center who has specifically looked in-depth at attitudes among Latino immigrants. They also tend to be, Lopez said, more optimistic about the prospects for their children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.51" data-end="369.65">
+            <p class="french-block">Le rêve américain a toujours été un argument de vente pour les immigrants. Cependant, ils sont moins nombreux ces jours-ci.</p>
+            <span class="english-block">The American Dream has always been a sell for immigrants. However, fewer of them are coming these days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.65" data-end="380.98">
+            <p class="french-block">Le président Trump a fait de la lutte contre l’immigration une pierre angulaire de sa présidence, après avoir fait campagne en promettant de mettre en œuvre le plus grand programme d’expulsions massives de l’histoire.</p>
+            <span class="english-block">President Trump has made curbing immigration a cornerstone of his presidency, after campaigning on a promise to carry out the largest mass deportation programme in history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="380.98" data-end="395.38">
+            <p class="french-block">Au cours de son deuxième mandat, Trump a non seulement réprimé le nombre d’immigrants entrant illégalement via la frontière sud, mais il a également bloqué certaines voies légales pour venir aux États-Unis, y compris le programme de visa de diversité utilisé par Abdi.</p>
+            <span class="english-block">During his second term, Trump has not only clamped down on the number of immigrants illegally entering via the southern border, he has blocked some legal pathways to come to the US, including the diversity visa programme that Abdi used.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="395.38" data-end="403.44">
+            <p class="french-block">Mais aujourd’hui, non seulement les États-Unis accueillent moins d’immigrants, mais il semble également qu’un nombre record de personnes pourraient les quitter.</p>
+            <span class="english-block">But today it's not just that the US is welcoming fewer immigrants, it also appears a record number of people may be leaving.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.44" data-end="409.97">
+            <p class="french-block">La répression de l'immigration menée par l'administration actuelle a contribué à réduire le nombre de migrants.</p>
+            <span class="english-block">The current administration's immigration crackdown has helped reduce migration numbers</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="409.97" data-end="421.8">
+            <p class="french-block">Une suggestion est que de nombreux Américains qui ont grandi aux États-Unis ne pensent pas que le pays a tenu sa part du marché : si vous travaillez dur et respectez les règles, vous devriez avoir une vie décente et confortable.</p>
+            <span class="english-block">One suggestion is that many Americans who grew up in the US don't think the country has held up its end of the bargain - that if you work hard and you play by the rules, you should have a decent, comfortable life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="421.8" data-end="442.15">
+            <p class="french-block">L’année dernière, dans un renversement historique, le nombre d’Américains s’installant en Irlande était supérieur au nombre d’Irlandais s’installant aux États-Unis. Le gouvernement américain ne suit pas le nombre d'Américains quittant volontairement le pays, il n'existe donc pas de statistiques officielles, mais les rapports suggèrent que ce n'est pas seulement l'Irlande.</p>
+            <span class="english-block">Last year, in a historic reversal, the number of Americans moving to Ireland was higher than the number of Irish moving into the US. The US government doesn't track the number of Americans voluntarily leaving the country, so there aren't official statistics, but reporting suggests it's not just Ireland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="442.15" data-end="454.08">
+            <p class="french-block">Un nombre record d'Américains demandent la citoyenneté britannique et le Wall Street Journal a rapporté que le nombre d'Américains arrivant vivre et travailler dans presque tous les 27 États membres de l'UE est en augmentation.</p>
+            <span class="english-block">A record number of Americans are applying for UK citizenship, and The Wall Street Journal reported that the number of Americans arriving to live and work in nearly all of the EU's 27 member states is rising.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="454.08" data-end="468.91">
+            <p class="french-block">Pourquoi les gens partent ? Certains évoquent la politique américaine actuelle, d’autres les coûts des soins de santé et le niveau de vie en général. Dans la plupart des cas, cela peut être dû à diverses raisons, dont certaines sont personnelles.</p>
+            <span class="english-block">Why are people leaving? Some point to current US politics, others to healthcare costs and the overall standard of living. In most cases it is likely to be for a variety of reasons, some of them personal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="468.91" data-end="472.97">
+            <p class="french-block">Pour Luke Mullen, il s'agit de perspectives d'emploi.</p>
+            <span class="english-block">For Luke Mullen, it's about job prospects.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="472.97" data-end="497.47">
+            <p class="french-block">L'acteur, qui a joué dans la série Disney Andi Mack lorsqu'il était adolescent et qui s'est désormais davantage impliqué dans l'écriture et la production, affirme qu'il a plus d'opportunités de projets cinématographiques ces jours-ci à Vancouver, au Canada, qu'en Californie du Sud. Vancouver est couverte par de nouveaux crédits d'impôt gouvernementaux pour tenter de l'aider à rivaliser avec Hollywood et à devenir une plaque tournante majeure du cinéma.</p>
+            <span class="english-block">The actor, who starred in the Disney show Andi Mack as a teen and has now become more involved with writing and production, says he has more opportunities for film projects these days in Vancouver, Canada than he does in southern California. Vancouver is covered by new government tax credits to try to help it compete with Hollywood and become a major movie hub.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="497.47" data-end="502.2">
+            <p class="french-block">Comment le déclin de la population révèle les anciennes divisions de l'Allemagne</p>
+            <span class="english-block">How population decline is exposing Germany's old divides</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="502.2" data-end="506.76">
+            <p class="french-block">Dix ans après, l'impact économique du Brexit se précise</p>
+            <span class="english-block">Ten years on, Brexit's economic impact is becoming clearer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="506.76" data-end="512.62">
+            <p class="french-block">La pression sur l'Église d'Angleterre pour qu'elle abandonne son plan de réparations pour l'esclavage</p>
+            <span class="english-block">The pressure on the Church of England to ditch its slavery reparations plan</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="512.62" data-end="536.28">
+            <p class="french-block">Le rêve américain a été vendu dans le monde entier, en partie grâce au cinéma américain et, à bien des égards, Hollywood incarne l’idée de le réaliser en Amérique. Cependant, pour Luke, c'est plus compliqué : il semble qu'il y ait eu plus d'opportunités dans le passé. Ces dernières années, les dépenses des grands studios pour les films et la télévision hollywoodiennes ont stagné, voire diminué.</p>
+            <span class="english-block">The American Dream has been sold around the world, in part, through American cinema and in many ways, Hollywood epitomises the idea of making it in America. However, for Luke it's more complicated - he says it seems there were more opportunities in the past. In the last few years, spending from big studios on Hollywood films and TV has stagnated or dropped.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="536.28" data-end="555.55">
+            <p class="french-block">Il a déclaré : "Je ne peux même pas imaginer grandir dans les années 90 et le boom de la télévision, des comédies romantiques et de tous ces projets, mais surtout en ce moment, nous assistons à un effort total de réduction des coûts pour rendre de plus en plus difficile la réalisation de projets, prendre de moins en moins de risques et embaucher moins de personnes."</p>
+            <span class="english-block">He said: "I can't even imagine growing up in the 90s and the boom of TV and the rom coms and all all those projects, but especially right now we're seeing just a total, total cost-cutting effort to make it harder and harder to get projects made, take less and less risks and hire less people."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="555.55" data-end="561.84">
+            <p class="french-block">Il est récemment devenu citoyen canadien grâce à un changement dans la loi canadienne en décembre dernier.</p>
+            <span class="english-block">He recently became a Canadian citizen thanks to a change in Canadian law last December.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="561.84" data-end="572.76">
+            <p class="french-block">"Mon processus pour devenir citoyen canadien est étroitement lié au fait que je ne peux pas faire fabriquer ici ces choses sur lesquelles je travaille depuis des années et qui me passionnent", m'a-t-il dit.</p>
+            <span class="english-block">"My process in becoming a Canadian citizen is very much tied to the fact that I can't get these things made here that I've been working on for years and [I'm] passionate about," he told me.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="572.76" data-end="579.6">
+            <p class="french-block">Il a donc l'intention de déménager au Canada. Mais il veut être clair, pas pour toujours.</p>
+            <span class="english-block">And so he's intending to move to Canada. Though, he wants to be clear, not forever.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="579.6" data-end="592.49">
+            <p class="french-block">"Je n'abandonnerai jamais l'Amérique. C'est ma maison et je pense que cela vaut la peine de se battre. Il y a tellement de choses que nous devons faire pour améliorer la situation dans ce pays", a-t-il déclaré.</p>
+            <span class="english-block">"I'm never gonna abandon America. This is my home and I think it's worth fighting for still. There's so much that we need to do to make it better in this country," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="592.49" data-end="604.42">
+            <p class="french-block">De nos jours, le consensus parmi les sociologues et les politologues est que la réussite financière est de plus en plus devenue un principe central du Rêve – la conviction que mes enfants ou petits-enfants auront une vie meilleure que moi.</p>
+            <span class="english-block">These days, the consensus among sociologists and political scientists is that financial success has increasingly become a central tenet of the Dream – the belief that my children or grandchildren will have a better life than me.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="604.42" data-end="622.58">
+            <p class="french-block">"En gros, le rêve américain est l'idée selon laquelle si vous travaillez dur, vous devez parvenir à une vie confortable, ce que nous pourrions appeler un style de vie de classe moyenne - une maison, des soins de santé, la possibilité de prendre soin de vos enfants, une voiture, une université", a déclaré Suhay.</p>
+            <span class="english-block">"Roughly speaking, the American Dream is the idea that if you work hard, you ought to achieve a comfortable life, what we might call a middle-class lifestyle - a house, healthcare, the ability to take care of your kids, a car, college," said Suhay.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="622.58" data-end="631.46">
+            <p class="french-block">Les statistiques suggèrent également qu’au cours des 50 dernières années, l’idée selon laquelle chaque génération réussira mieux que la précédente s’est érodée.</p>
+            <span class="english-block">Statistics also suggest that over the last 50 years, the idea that every generation will do better than the one before has been eroded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="631.46" data-end="650.5">
+            <p class="french-block">Une étude menée par Raj Chetty, économiste à l'Université Harvard, a révélé que parmi les enfants nés en 1940, 90 % d'entre eux ont grandi et ont gagné plus que leurs parents. Aujourd’hui, seule la moitié des enfants nés dans les années 1980 sont en passe de réussir économiquement mieux que leurs parents.</p>
+            <span class="english-block">Research by the Harvard University economist Raj Chetty found that among children born in 1940, 90% of them grew up to earn more than their parents. Today, only half of children born in the 1980s are on track to do better than their parents economically.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="650.5" data-end="673.06">
+            <p class="french-block">Cette perception d’abondance économique s’est répandue dans les années 1950 avec le boom de l’après-Seconde Guerre mondiale, peut-être mieux symbolisée par la croissance des maisons unifamiliales ornées de clôtures blanches. Le Rêve est devenu particulièrement populaire dans la rhétorique politique, dit Ghosh, au milieu des années 60 avec le mouvement des droits civiques et des politiques d'immigration plus larges.</p>
+            <span class="english-block">This perception of economic abundance spread in the 1950s with the post-WWII boom, perhaps best symbolised through the growth of single-family homes adorned with white picket fences. The Dream became particularly popular in political rhetoric, Ghosh says, in the mid-60s with the civil rights movement and more expansive immigration policies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="673.06" data-end="688.18">
+            <p class="french-block">"C'est une partie centrale de l'Amérique", a déclaré Suhay. "Presque tout le monde s'accorde à dire qu'il s'agit d'un idéal important. Mais... nous avons d'énormes débats sur la question de savoir si les États-Unis réalisent réellement le rêve américain."</p>
+            <span class="english-block">"It is a core part of America," said Suhay. "Almost everybody agrees that this is an important ideal. But… we have huge debates about whether or not the United States actually delivers the American Dream."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="688.18" data-end="691.58">
+            <p class="french-block">Trump a fait de l'immigration une politique clé</p>
+            <span class="english-block">Trump has made immigration a key policy</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="691.58" data-end="695.21">
+            <p class="french-block">Alors, quand le Rêve a-t-il commencé à s’estomper ?</p>
+            <span class="english-block">So when did the Dream start to fade?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="695.21" data-end="710.14">
+            <p class="french-block">Le rêve a commencé à décliner il y a une cinquantaine d’années, dans les années 1970, avec la mondialisation et la stagnation des salaires, selon Mark Rank, co-auteur de Chasing the American Dream : Understanding What Shapes Our Fortunes.</p>
+            <span class="english-block">The Dream started to decline some 50 years ago, beginning in the 1970s, with globalisation and wage stagnation, according to Mark Rank, co-author of Chasing the American Dream: Understanding What Shapes Our Fortunes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="710.14" data-end="736.32">
+            <p class="french-block">"Il est devenu beaucoup plus difficile de réaliser le rêve américain - cette idée d'un accord économique selon lequel si vous travaillez dur et respectez les règles, vous devriez avoir une vie économique décente et confortable", a-t-il déclaré. "L'idée selon laquelle chaque génération réussit économiquement mieux que la génération précédente est un élément clé du rêve américain. Et cela a été le cas jusque dans les années 1970 environ", dit-il.</p>
+            <span class="english-block">"It's become much harder to attain the American Dream - this idea of an economic bargain that  if you work hard and you play by the rules, you should have a decent, comfortable economic life," he said. "That idea of each generation doing economically better than the past generation is a key component of the American Dream. And that had been the case up until about the 1970s," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="736.32" data-end="745.49">
+            <p class="french-block">Et les experts affirment qu’au cours des années suivantes, le Rêve a commencé à connaître un déclin prolongé à mesure que les inégalités socio-économiques augmentaient.</p>
+            <span class="english-block">And experts say that in the subsequent years, the Dream began to experience a prolonged decline as socioeconomic inequality increased.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="745.49" data-end="758.18">
+            <p class="french-block">Ensuite, disent certains experts, il y a eu un autre point de bascule : la crise financière de 2008 et ses répliques qui ont rendu l’accession à la propriété et la stabilité de l’emploi de plus en plus hors de portée.</p>
+            <span class="english-block">Then, some experts say, there was another tipping point: the financial crisis of 2008 and the aftershocks that meant home ownership and job stability were increasingly out of reach.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="758.18" data-end="769.51">
+            <p class="french-block">Et de nombreux Américains n’ont jamais retrouvé cet optimisme économique. Malgré cela, les salaires américains restent bien plus élevés qu’au Royaume-Uni et dans une grande partie de l’Europe.</p>
+            <span class="english-block">And many Americans never recovered that economic optimism. Despite this, American wages remain much higher than ones in the UK, and across much of Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="769.51" data-end="794.09">
+            <p class="french-block">Quoi qu’il en soit, de larges divisions partisanes persistent quant à savoir si le rêve est réalisable. Les enquêtes montrent que davantage de républicains semblent toujours avoir la foi, tout comme les Américains plus âgés. Les jeunes adultes semblent particulièrement cyniques. Un sondage révèle que seulement un cinquième des adultes âgés de 18 à 29 ans, comme Luke, pensent que le rêve reste une possibilité.</p>
+            <span class="english-block">Irrespective, wide partisan divides persist over whether the Dream is achievable. Surveys show more Republicans still appear to hold the faith, as do older Americans. Young adults seem particularly cynical. One poll found only a fifth of adults aged 18-29, people like Luke, think the Dream remains a possibility.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="794.09" data-end="807.98">
+            <p class="french-block">Cela étant dit, le Rêve n’a jamais été uniquement axé sur la réussite financière. Pour beaucoup, c’est un rêve de liberté et de droits individuels qui remonte aux documents fondateurs de l’Amérique, comme la Déclaration des droits.</p>
+            <span class="english-block">That being said, the Dream has never been entirely about financial success. For many, it's a dream of freedom and individual rights that trace back to America's founding documents, such as the Bill of Rights.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="807.98" data-end="821.35">
+            <p class="french-block">Et dans cette veine, il convient de noter que de nombreux Noirs américains ont longtemps pensé que le Rêve était un mythe construit sur la noble rhétorique des Pères fondateurs qui ne correspondait pas à la réalité de l’esclavage et de la ségrégation américaine.</p>
+            <span class="english-block">And in that vein, it's worth noting that many black Americans have long thought the Dream was a myth built upon lofty rhetoric from the Founding Fathers that didn't mesh with the reality of American slavery and segregation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="821.35" data-end="825.41">
+            <p class="french-block">Les Noirs sont depuis longtemps plus cyniques à l’égard du Rêve</p>
+            <span class="english-block">Black people have long been more cynical about the Dream</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="825.41" data-end="835.34">
+            <p class="french-block">Martin Luther King Jr a décrit l’Amérique comme manifestant une « personnalité schizophrène » bien avant que ne commence la désillusion nationale face au Rêve.</p>
+            <span class="english-block">Martin Luther King Jr described America as manifesting a "schizophrenic personality" long before the nationwide disillusionment with the Dream began.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="835.34" data-end="853.99">
+            <p class="french-block">"Dans un sens réel, l'Amérique est essentiellement un rêve - un rêve qui n'a pas encore été réalisé", a-t-il déclaré dans un discours prononcé en Caroline du Nord en 1960. "L'esclavage et la ségrégation ont été d'étranges paradoxes dans une nation fondée sur le principe selon lequel tous les hommes sont créés égaux."</p>
+            <span class="english-block">"In a real sense America is essentially a dream - a dream yet unfulfilled," he said in a 1960 address in North Carolina. "Slavery and segregation have been strange paradoxes in a nation founded on the principle that all men are created equal."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="853.99" data-end="864.29">
+            <p class="french-block">Reniqua Allen-Lamphere, une écrivaine qui a étudié les attitudes des Noirs à l'égard du Rêve, a décrit le concept comme l'un des « mythes les plus persistants » d'Amérique.</p>
+            <span class="english-block">Reniqua Allen-Lamphere, a writer who's researched black attitudes toward the Dream, described the concept as one of America's "most enduring myths".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="864.29" data-end="884.38">
+            <p class="french-block">"Les Noirs ont leurs propres expériences avec le rêve américain, en partie parce qu'une grande partie de leur expérience consiste à se battre pour la liberté littérale", m'a-t-elle dit. Et pourtant, elle a ajouté : "Le rêve américain fait partie de moi – cet espoir d'un jour meilleur, même si je trouve ça dur. Je trouve ça vraiment dur."</p>
+            <span class="english-block">"Black folks have their own experiences with the American Dream partially because so much of their experience has been fighting for literal freedom," she told me. And, yet she added "the American Dream is a part of me - that hope for a better day, even though I find it hard. I find it really hard."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="884.38" data-end="898.8">
+            <p class="french-block">Une pépite qui m'a marqué en parcourant tous les différents sondages des derniers mois était une enquête menée par le Times qui suggérait, malgré le pessimisme général à l'égard du Rêve en ce moment, "61% des personnes interrogées ont déclaré croire au concept".</p>
+            <span class="english-block">One nugget that stood out to me as I dug through all the various polls of the last several months was a survey conducted by The Times that suggested, despite the overall pessimism about the Dream in this moment, "61% of poll respondents said they believed in the concept".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="898.8" data-end="920.62">
+            <p class="french-block">Brandon Patty, commis et contrôleur de 44 ans dans le comté de St John's, en Floride, et commandant de la Réserve navale, est l'un de ces Américains qui croit passionnément que le Rêve est vivant et fonctionne. "Je suis juste honoré d'en faire partie", m'a-t-il dit. "Même juste par la grâce de Dieu, être né ici et faire partie de l'expérience américaine".</p>
+            <span class="english-block">Brandon Patty, a 44-year-old clerk and comptroller in St John's County, Florida and a Navy Reserve commander, is one such American who believes passionately that the Dream is alive and working. "I'm just honoured to kind of be a part of it," he told me. "Even just by God's grace, being born here, and being a part of American experiment".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="920.62" data-end="934.01">
+            <p class="french-block">"Quand j'entends l'expression 'American Dream', cela signifie pour moi que les opportunités sont illimitées - qu'en Amérique, on peut partir de rien et trouver sa voie... c'est quelque chose qui est intrinsèque en tant qu'Américain à bien des égards."</p>
+            <span class="english-block">"When I hear the phrase 'American Dream', it means to me that the opportunities are limitless - that in America, you can go from nothing and find your way… it's something that is intrinsic as an American in many ways."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="934.01" data-end="943.01">
+            <p class="french-block">Brandon a été le premier de sa famille à obtenir un diplôme universitaire, et le premier de sa génération à obtenir un diplôme d'études secondaires.</p>
+            <span class="english-block">Brandon was the first in his family to graduate from college, the first in his generation to graduate from high school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="943.01" data-end="949.2">
+            <p class="french-block">"J'ai 44 ans maintenant et, franchement, je le vis", a-t-il déclaré à propos du Rêve.</p>
+            <span class="english-block">"I'm 44 now, and, candidly, I'm living it," he said, he said of the Dream.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="949.2" data-end="961.99">
+            <p class="french-block">Gonzalo Schwarz, président et directeur général de l'Archbridge Institute, un groupe de réflexion sur les politiques publiques, convient qu'il est important de se concentrer sur les aspects positifs de la vie en Amérique.</p>
+            <span class="english-block">Gonzalo Schwarz, president and CEO of The Archbridge Institute, a public policy think tank, agrees that it's important to focus on the positives of living in America.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="961.99" data-end="982.15">
+            <p class="french-block">Le propre sondage de l'Archbridge Institute a révélé que des majorités dans divers groupes démographiques conviennent que le rêve américain est bel et bien vivant. L'organisation affirme que cela est dû au fait qu'elle a une méthodologie différente et pose des questions plus directes que la plupart des autres sondages, qui, selon elle, sont de nature plus conceptuelle.</p>
+            <span class="english-block">The Archbridge Institute's own polling found that majorities across various demographic groups agree that the American Dream is alive and well. The organisation says this is because it has a different methodology and asks more direct questions than most other polls, which it says are more conceptual in nature.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="982.15" data-end="1004.38">
+            <p class="french-block">"Si nous nous concentrons uniquement sur les aspects négatifs et sur la part des gens qui croient que le rêve est hors de portée, nous risquons de faire de la disparition du rêve américain une prophétie auto-réalisatrice", dit Schwarz. "Nous devrions prendre du recul, adopter une vision à plus long terme et nous inspirer pour raviver le rêve américain comme une lueur d'espoir pour les 250 prochaines années de l'Amérique."</p>
+            <span class="english-block">"If we focus only on the negative aspects and on the share of people who believe the Dream is out of reach, we risk making the demise of the American Dream a self-fulfilling prophecy," Schwarz says. "We should step back, take a longer-term view, and be inspired to rekindle the American Dream as a beacon of hope for America's next 250 years."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="1004.38" data-end="1008.84">
+            <p class="french-block">De nombreux idéaux de la Révolution américaine perdurent aujourd’hui</p>
+            <span class="english-block">Many of the ideals of the American Revolution live on today</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="1008.84" data-end="1017.19">
+            <p class="french-block">Pour Mark Rank, le sociologue qui a écrit sur ce sujet, le Rêve, même s'il est plus conditionnel qu'auparavant, est toujours vivant.</p>
+            <span class="english-block">For Mark Rank, the sociologist who's written about this, the Dream, even if more conditional than before, is still alive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="1017.19" data-end="1041.12">
+            <p class="french-block">"Si vous dites qu'il n'est plus vivant... Vous avez arraché un élément clé de l'identité américaine", dit-il. "Je pense qu'il y a des questions à ce sujet et qu'il y a une incertitude à ce sujet." Mais selon lui, dans l’esprit de l’optimisme américain, ces questions sont l’occasion de repenser la manière dont les États-Unis peuvent garantir que le Rêve reste accessible à tous au cours des 250 prochaines années.</p>
+            <span class="english-block">"If you say it's no longer alive... You have ripped out a key component of America's identity," he says. "I think there are questions about it, and there is uncertainty about it." But the way he sees it – in the spirit of American optimism, these questions are a chance to rethink how the US can ensure the Dream remains accessible to everyone for the next 250 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="1041.12" data-end="1055.98">
+            <p class="french-block">De retour dans le Maine, Abdi a déclaré que son frère Hassan, qui ne pouvait pas immigrer aux États-Unis en raison de restrictions de visa, était récemment devenu citoyen canadien. "Mon frère dit qu'ils ont de meilleurs soins de santé", me dit-il en riant.</p>
+            <span class="english-block">Back in Maine, Abdi said his brother Hassan, who couldn't immigrate to the US because of visa restrictions, instead recently became a citizen of Canada. "My brother says they have better healthcare," he tells me with a laugh.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="1055.98" data-end="1065.6">
+            <p class="french-block">Malgré les revers, Abdi affirme que s’il devait tout recommencer, il choisirait quand même les États-Unis. "Je suppose que c'est mon premier amour."</p>
+            <span class="english-block">Despite the setbacks, Abdi says if he had to do it all over, he would still choose the US. "I guess it's my first love."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="1065.6" data-end="1072.44">
+            <p class="french-block">Écoutez le reste de la série de podcasts The Global Story sur le 250e anniversaire de l'Amérique ici</p>
+            <span class="english-block">Listen to the rest of The Global Story podcast series on America's 250th anniversary here</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="1072.44" data-end="1076.83">
+            <p class="french-block">Êtes-vous personnellement touché par les problèmes soulevés dans cette histoire ?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_6.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Most massive' Russian attack on Kyiv kills at least 30</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>'Most massive' Russian attack on Kyiv kills at least 30</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 03 Jul 2026 04:41:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c4gyv05gk4do?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The latest barrage deployed the largest number of weapons on the capital and hit locations over a wide area.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.03" data-end="19.78">
+            <p class="french-block">Les forces russes ont lancé dans la nuit une importante attaque de drones et de missiles sur Kiev, tuant au moins 30 personnes, dans ce que le maire de la ville a décrit comme « l'attaque la plus massive » contre la capitale ukrainienne.</p>
+            <span class="english-block">Russian forces have launched a major drone and missile attack on Kyiv overnight, killing at least 30 people, in what the city's mayor described as the "most massive attack" on the Ukrainian capital.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.78" data-end="33.1">
+            <p class="french-block">Quatre-vingt-onze personnes ont été blessées, a déclaré le chef de l'administration militaire de Kiev, Timur Tkachenko. Le maire Vitaly Klitschko a déclaré qu'un poste d'ambulance figurait parmi les endroits touchés.</p>
+            <span class="english-block">Ninety-one people were injured, the head of Kyiv's military administration, Timur Tkachenko, said. Mayor Vitaly Klitschko said an ambulance station was among the places hit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.1" data-end="43.15">
+            <p class="french-block">Bien que les attaques précédentes aient tué davantage de personnes, ce dernier barrage a déployé le plus grand nombre d’armes sur la capitale et a touché des sites sur une vaste zone.</p>
+            <span class="english-block">Although previous attacks have killed more people, this latest barrage deployed the largest number of weapons on the capital and hit locations over a wide area.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.15" data-end="52.7">
+            <p class="french-block">Plusieurs quartiers ont été évacués alors que des frappes ont frappé la ville quelques heures après que le président ukrainien Volodymyr Zelensky a averti que la Russie préparait une attaque.</p>
+            <span class="english-block">Several neighbourhoods were evacuated as strikes hit the city hours after Ukrainian President Volodymyr Zelensky warned Russia was preparing an attack.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.7" data-end="57.19">
+            <p class="french-block">Des vidéos vérifiées montrent des frappes russes à grande échelle sur Kyiv</p>
+            <span class="english-block">Verified videos show large-scale Russian strikes on Kyiv</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.19" data-end="65.57">
+            <p class="french-block">Moscou a déclaré que ses forces avaient frappé ce qu'elle appelait des installations militaires en représailles aux attaques contre les infrastructures civiles russes.</p>
+            <span class="english-block">Moscow said its forces hit what it called military plants in retaliation against attacks on Russian civilian infrastructure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.57" data-end="77.45">
+            <p class="french-block">Le porte-parole du Kremlin, Dmitri Peskov, a déclaré jeudi aux journalistes que la Russie "continuerait à accroître la pression sur le régime de Kiev afin d'atteindre les objectifs que nous nous sommes fixés".</p>
+            <span class="english-block">Kremlin spokesman Dmitry Peskov told reporters on Thursday that Russia would "continue to increase pressure on the Kyiv regime in order to achieve our set goals".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.45" data-end="85.8">
+            <p class="french-block">L'Ukraine a accusé Moscou de cibler des zones civiles et a déclaré qu'il serait erroné d'assimiler les actions de "l'agresseur et d'un pays qui se défend".</p>
+            <span class="english-block">Ukraine accused Moscow of targeting civilian areas and said it would be wrong to equate the actions of the "aggressor and a country defending itself".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.8" data-end="99.98">
+            <p class="french-block">Les autorités du métro de Kiev ont déclaré que 52 500 personnes, dont 4 500 enfants, se sont réfugiées dans les stations de métro pendant la nuit, ce qui, selon elles, est le nombre le plus élevé de ces « dernières années ».</p>
+            <span class="english-block">Kyiv's metro authorities said 52,500 people, including 4,500 children, sheltered in underground stations overnight, which they said was the highest number in "recent years".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.98" data-end="111.86">
+            <p class="french-block">Parmi les endroits touchés par les frappes figurait un immeuble d'habitation de grande hauteur sur la rive gauche de la ville, dans le district de Darnitskyi, au sud-est de Kiev, où deux missiles ont provoqué des dégâts.</p>
+            <span class="english-block">Among the places hit by the strikes was a high-rise block of flats on the city's left bank, in Darnitskyi district in south-east Kyiv, where two missiles caused devastation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.86" data-end="120.46">
+            <p class="french-block">Un missile a laissé un cratère géant à côté d'un jardin d'enfants et les bâtiments tout autour ont été ravagés par le feu, leurs balcons métalliques tordus.</p>
+            <span class="english-block">One missile left a giant crater next to a kindergarten and the buildings all around have been gutted by fire, their metal balconies twisted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.46" data-end="138.02">
+            <p class="french-block">Le deuxième missile a atterri à quelques pas de là et a touché le bout d'un immeuble de neuf étages. Il s'est effondré, glissant de la façade du bâtiment, dans un tas de béton. Un habitant a déclaré à la BBC que plusieurs personnes avaient disparu et qu'elles se réfugiaient peut-être dans le sous-sol.</p>
+            <span class="english-block">The second missile landed a few steps away and hit the end of a nine-storey block of flats. It has collapsed, sliding off the face of the building, into a heap of concrete. One local told the BBC that several people were missing and they may have been sheltering in the basement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.02" data-end="144.26">
+            <p class="french-block">Les secouristes tentaient de fouiller dans les décombres pour les atteindre sous les yeux de leurs proches, en larmes.</p>
+            <span class="english-block">Rescuers were trying to dig through the rubble to reach them as relatives watched, in tears.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.26" data-end="154.08">
+            <p class="french-block">Svitlana, qui habite à côté du bâtiment touché, a déclaré à la BBC qu'elle se cachait dans le couloir pendant le raid aérien et qu'elle avait entendu les explosions.</p>
+            <span class="english-block">Svitlana, who lives next to the building that was hit, told the BBC she was hiding in the corridor during the air raid and heard the explosions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.08" data-end="171.38">
+            <p class="french-block">"Ce n'était pas effrayant", a-t-elle haussé les épaules, "parce que j'ai déjà vécu tout cela auparavant." Elle a ensuite révélé qu'elle avait été grièvement blessée lors d'une autre frappe russe contre une autre ville qui a tué sa mère. Deux ans plus tard, son fils a été tué au combat pour l’Ukraine.</p>
+            <span class="english-block">"It wasn't scary," she shrugged, "because I've been through it all before." She then revealed that she had been badly injured in another Russian strike on another town which killed her mother. Two years later, her son was killed in action fighting for Ukraine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.38" data-end="183.43">
+            <p class="french-block">Oleksiy, le visage couvert de coupures et de sang, a déclaré à la BBC qu'il était sorti pour fumer après avoir entendu le premier missile, puis le deuxième a atterri et il a été touché par des éclats de verre.</p>
+            <span class="english-block">Oleksiy, his face covered in cuts and blood, told the BBC he had stepped outside to smoke after he heard the first missile, then the second one landed and he was hit by flying glass.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.43" data-end="199.49">
+            <p class="french-block">"Il ne s'agit pas de représailles de la part de la Russie contre les frappes ukrainiennes", a-t-il déclaré, rejetant l'explication donnée par Moscou pour sa dernière attaque. "Ils ont commencé cette guerre. C'est une zone résidentielle. Et ils l'ont ciblée."</p>
+            <span class="english-block">"This is not retaliation by Russia for Ukrainian strikes," he said, dismissing Moscow's explanation for its latest attack. "They started this war. This is a residential area. And they targeted it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.49" data-end="204.43">
+            <p class="french-block">Des explosions ont formé un cratère à côté des bâtiments bombardés à Kyiv</p>
+            <span class="english-block">Explosions formed a crater next to bombed-out buildings in Kyiv</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.43" data-end="217.66">
+            <p class="french-block">La Croix-Rouge ukrainienne a déclaré que son entrepôt avait été détruit lors des frappes nocturnes, entraînant une perte de fournitures d'une valeur de plus de 1,3 million de livres sterling (79 millions de hryvnia ukrainienne).</p>
+            <span class="english-block">The Ukrainian Red Cross said that its warehouse had been destroyed in the overnight strikes, with a loss of supplies worth more than £1.3m (79m Ukrainian Hryvnia).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.66" data-end="230.16">
+            <p class="french-block">Dans une déclaration partagée en anglais sur X, l'association caritative a déclaré que la perte d'environ 320 000 articles de secours affecterait les réponses d'urgence et les opérations humanitaires dans toute l'Ukraine.</p>
+            <span class="english-block">In a statement shared on X in English, the charity said that the loss of around 320,000 relief items will affect emergency response and humanitarian operations across Ukraine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.16" data-end="241.51">
+            <p class="french-block">L'attaque contre Kiev a duré plus de 11 heures et s'est déroulée en plusieurs vagues, commençant par une frappe de drone sur le quartier historique de Kiev, déclenchant un incendie dans un hôtel du centre-ville.</p>
+            <span class="english-block">The attack on Kyiv lasted more than 11 hours and came in several waves, starting with a drone strike on Kyiv's historic quarter, setting off a fire in a hotel in the city centre.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.51" data-end="257.09">
+            <p class="french-block">A 01h00 (23h00 GMT mercredi), des dizaines de missiles balistiques et de croisière ont été tirés. Une brève accalmie a précédé une autre douzaine de missiles de croisière à 03h00, suivie d'un essaim de drones qui ont ciblé la capitale jusqu'à l'aube.</p>
+            <span class="english-block">At 01:00 (23:00 GMT on Wednesday), dozens of ballistic and cruise missiles were fired. A brief lull preceded another dozen cruise missiles at 03:00, followed by a swarm of drones which targeted the capital until dawn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="257.09" data-end="274.44">
+            <p class="french-block">Les habitants de Kiev qui ont vécu quatre ans et demi de guerre disent avoir perçu un changement dans la structure des attaques russes contre la capitale au cours des deux derniers mois. Les attaques peuvent désormais se produire moins fréquemment – ​​quoique toujours tous les quelques jours – mais durer plus longtemps et semblent plus puissantes et plus répandues.</p>
+            <span class="english-block">Residents of Kyiv who have lived through four-and-a-half years of war say they have perceived a change in the pattern of Russia's assaults on the capital over the last two months. Attacks may now happen less frequently - albeit still every few days - but last longer, and seem more powerful and widespread.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.44" data-end="280.13">
+            <p class="french-block">Une image partagée par la Croix-Rouge ukrainienne de son entrepôt de Kiev détruit du jour au lendemain</p>
+            <span class="english-block">An image shared by the Ukrainian Red Cross of its Kyiv warehouse destroyed overnight</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.13" data-end="285.05">
+            <p class="french-block">La plus grande ville de Crimée privée d'électricité après les frappes ukrainiennes</p>
+            <span class="english-block">Biggest city in Crimea without power after Ukraine strikes</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.05" data-end="291.22">
+            <p class="french-block">Le renforcement des troupes russes menace une ville considérée comme essentielle à la prise du Donbass ukrainien</p>
+            <span class="english-block">Russian troop build-up threatens city seen as key to seizing Ukraine's Donbas</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.22" data-end="295.97">
+            <p class="french-block">Les frappes russes font 11 morts et incendient la cathédrale historique de Kyiv</p>
+            <span class="english-block">Russian strikes kill 11 and set historic cathedral in Kyiv ablaze</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.97" data-end="304.27">
+            <p class="french-block">Les experts militaires ukrainiens ont décrit le dernier barrage comme l'un des assauts les plus difficiles pour la défense aérienne du pays ces derniers mois.</p>
+            <span class="english-block">Ukrainian military experts described the latest barrage as one of the most challenging assaults for the country's air defences in recent months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.27" data-end="319.3">
+            <p class="french-block">L'expert en aviation Bohdan Dolintsev a déclaré aux médias ukrainiens que la technique russe consistant à utiliser plusieurs types d'armes dans le même laps de temps pour affaiblir les défenses ukrainiennes crée un défi exceptionnellement complexe pour les systèmes de défense aérienne ukrainiens.</p>
+            <span class="english-block">Aviation expert Bohdan Dolintsev told Ukrainian media that Russia's technique of using multiple types of weapons within the same time window to wear down Ukraine's defences creates an exceptionally complex challenge for Ukraine's air defence systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.3" data-end="328.66">
+            <p class="french-block">L'armée de l'air ukrainienne a déclaré que la Russie avait lancé dans la nuit 74 missiles et 496 drones, visant principalement la capitale.</p>
+            <span class="english-block">Ukraine's air force said Russia had launched 74 missiles and 496 drones overnight, mainly targeting the capital.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="328.66" data-end="337.37">
+            <p class="french-block">Alors que la défense aérienne du pays a réussi à repousser la plupart d'entre eux, 25 missiles balistiques et 12 drones ont frappé 33 sites.</p>
+            <span class="english-block">While the country's air defences were able to repel most of these, 25 ballistic missiles and 12 drones struck 33 locations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.37" data-end="350.66">
+            <p class="french-block">À la suite des attaques, l’Ukraine a exhorté ses alliés à envoyer davantage de systèmes de défense aérienne. Zelensky a appelé Washington à accorder à l’Ukraine des licences pour fabriquer des missiles de défense Patriot.</p>
+            <span class="english-block">In the wake of the attacks, Ukraine urged allies to send more air defence systems. Zelensky appealed to Washington to grant Ukraine licences to manufacture Patriot defence missiles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.66" data-end="357.94">
+            <p class="french-block">La Russie a également frappé des bases militaires dans le centre et l'est de l'Ukraine, selon le ministère de la Défense.</p>
+            <span class="english-block">Russia also hit military bases in central and eastern Ukraine, according to the defence ministry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="357.94" data-end="369.91">
+            <p class="french-block">Il a affirmé avoir ciblé les infrastructures de défense et énergétiques ukrainiennes en réponse à ce qu'il a appelé « des attaques terroristes lancées par le régime de Kiev contre des infrastructures civiles » en Russie.</p>
+            <span class="english-block">It claimed to have targeted Ukrainian defence and energy infrastructure in response to what it called "terrorist attacks launched by the Kyiv regime against civilian infrastructure" in Russia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.91" data-end="377.26">
+            <p class="french-block">Kiev a récemment lancé des attaques à longue portée contre des centrales électriques russes, de Moscou jusqu'à la mer Noire.</p>
+            <span class="english-block">Kyiv has recently launched long-range attacks on Russian power stations from Moscow to the Black Sea.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.26" data-end="384.62">
+            <p class="french-block">Les attaques ont conduit le président russe Vladimir Poutine à admettre que son pays était confronté à une pénurie de carburant.</p>
+            <span class="english-block">The attacks led to a rare admission by Russian President Vladimir Putin that his country was facing fuel shortages.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.62" data-end="401.71">
+            <p class="french-block">Le ministre ukrainien des Affaires étrangères Andriy Sybiha a déclaré qu'il serait « immoral » de justifier les frappes russes en disant qu'elles étaient une réponse aux attaques à longue portée de Kiev contre la Russie. "Dans cette guerre, il y a un agresseur et un pays qui se défend", a-t-il déclaré.</p>
+            <span class="english-block">Ukrainian Foreign Minister Andriy Sybiha said it would be "immoral" to justify the Russian strikes by saying they were a response to Kyiv's long-range attacks on Russia. "In this war, there is an aggressor and a country defending itself," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="401.71" data-end="410.23">
+            <p class="french-block">La Russie a lancé son invasion à grande échelle de l’Ukraine en février 2022 et contrôle actuellement environ un cinquième du territoire ukrainien.</p>
+            <span class="english-block">Russia launched its full-scale invasion of Ukraine in February 2022, and currently controls approximately one-fifth of Ukrainian territory.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="410.23" data-end="414.34">
+            <p class="french-block">Reportage supplémentaire : Mariana Matveichuk</p>
+            <span class="english-block">Additional reporting: Mariana Matveichuk</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="414.34" data-end="419.09">
+            <p class="french-block">Les frappes russes font 11 morts et incendient la cathédrale historique de Kyiv</p>
+            <span class="english-block">Russian strikes kill 11 and set historic cathedral in Kyiv ablaze</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="419.09" data-end="424.13">
+            <p class="french-block">Poutine fait un rare aveu des pénuries de carburant causées par les frappes ukrainiennes</p>
+            <span class="english-block">Putin makes rare admission of fuel shortages caused by Ukrainian strikes</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="424.13" data-end="428.59">
+            <p class="french-block">Poutine va-t-il changer de tactique après les attaques de drones ukrainiens ?</p>
+            <span class="english-block">Will Putin change tactics after Ukrainian drone attacks?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="world_article_12.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
