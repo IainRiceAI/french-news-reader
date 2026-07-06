@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbines turning from wind to sustainable products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Turbines turning from wind to sustainable products</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 04 Jul 2026 05:06:44 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cewqzrkvwvqo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Thousands of tonnes of non-recyclable wind turbine blades are coming to the end of their lives.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.91" data-end="18.1">
+            <p class="french-block">Andrew Billingsley de la société Plaswire Ltd de Lurgan a déclaré que la société « empêchait l'incinération des plastiques » en transformant les vieilles pales de parcs éoliens en d'autres produits.</p>
+            <span class="english-block">Andrew Billingsley from Lurgan firm Plaswire Ltd said the company was "preventing the incineration of plastics" by turning old wind farm blades into other products</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.1" data-end="24.65">
+            <p class="french-block">Lorsqu’un héros des énergies renouvelables doit être remplacé, comment conserver ses références écologiques ?</p>
+            <span class="english-block">When a renewable energy hero needs to be replaced, how do you maintain its green credentials?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.65" data-end="33.12">
+            <p class="french-block">C’est le défi auquel est confrontée l’industrie des parcs éoliens, alors que les éoliennes de l’île commencent à atteindre la fin de leur durée de vie utile.</p>
+            <span class="english-block">That is the challenge facing the wind farm industry, as turbines across the island begin to reach the end of their useful life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.12" data-end="41.81">
+            <p class="french-block">Des milliers de tonnes de matériaux de pales d’éoliennes devraient devoir être remplacées d’ici 2030, ce qui soulève la question de savoir quoi en faire.</p>
+            <span class="english-block">Thousands of tonnes of wind turbine blade material are expected to require replacement by 2030, leading to the question of what to do with them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="41.81" data-end="46.32">
+            <p class="french-block">Actuellement, ils sont en grande partie mis en décharge ou incinérés.</p>
+            <span class="english-block">Currently, they largely go to landfill or incineration.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.32" data-end="55.32">
+            <p class="french-block">Le tout premier parc éolien commercial de l'île d'Irlande, celui de Bellacorrick, dans le comté de Mayo, a été mis hors service au début de l'année.</p>
+            <span class="english-block">The first ever commercial wind farm on the island of Ireland - Bellacorrick in County Mayo - was decommissioned at the start of the year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.32" data-end="62.95">
+            <p class="french-block">Aujourd'hui, deux sociétés d'Irlande du Nord travaillent ensemble pour rendre l'élimination de ses lames aussi écologique que possible.</p>
+            <span class="english-block">Now, two Northern Ireland companies are working together to make the disposal of its blades as eco-friendly as possible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.95" data-end="71.5">
+            <p class="french-block">Les lames inutilisées peuvent être transformées en un matériau réutilisable utilisé pour fabriquer des poteaux de clôture et des palettes de transport.</p>
+            <span class="english-block">Disused blades can be be turned into a reusable material that is used to make fence posts and transport pallets</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.5" data-end="78.55">
+            <p class="french-block">Au cours des 15 prochaines années, on estime que plus de 400 éoliennes devront être remplacées en Irlande du Nord.</p>
+            <span class="english-block">Over the next 15 years, it is estimated that more than 400 turbines in Northern Ireland will need to be replaced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.55" data-end="85.25">
+            <p class="french-block">Cela signifie qu’une grande partie des matériaux actuellement non recyclables sont envoyés en décharge ou incinérés.</p>
+            <span class="english-block">That means a lot of currently non-recyclable material heading to landfill or incineration.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.25" data-end="91.2">
+            <p class="french-block">Des scientifiques du monde entier s’efforcent de transformer des lames déclassées en d’autres produits utiles.</p>
+            <span class="english-block">Scientists from around the world have been working on turning decommissioned blades into other useful products.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.2" data-end="100.92">
+            <p class="french-block">Des recherches menées par l'Université Queen's de Belfast (QUB) ont prouvé qu'ils pouvaient être utilisés en toute sécurité pour construire des ponts et d'autres meubles urbains.</p>
+            <span class="english-block">Research by Queen's University Belfast (QUB) proved they could be safely used to build bridges and other street furniture.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.92" data-end="104.45">
+            <p class="french-block">D’autres entreprises envisagent différentes options.</p>
+            <span class="english-block">Other companies are looking at different options.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.45" data-end="115.37">
+            <p class="french-block">Le chantier du site Plaswire Ltd à Lurgan, dans le comté d'Armagh, est couvert de pièces d'éoliennes et d'autres types de matériaux industriels à grande échelle en quête d'une fin alternative.</p>
+            <span class="english-block">The yard at the Plaswire Ltd site in Lurgan, County Armagh, is covered with wind turbine parts and other kinds of large-scale industrial materials looking for an alternative ending.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.37" data-end="120.58">
+            <p class="french-block">Plaswire Ltd recycle les pales de Bellacorrig et des parcs éoliens offshore</p>
+            <span class="english-block">Plaswire Ltd is recycling blades from Bellacorrig and off-shore wind farms</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.58" data-end="133.8">
+            <p class="french-block">Le directeur général de l'entreprise, Andrew Billingsley, a déclaré que trouver un moyen d'éliminer les déchets de lames au-delà de la fin de leur durée de vie utile est un élément essentiel de la création d'une économie verte et circulaire.</p>
+            <span class="english-block">The company's Chief Executive Andrew Billingsley said finding a way to take blade waste beyond the end of its useful life is an essential part of creating a green, circular economy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.8" data-end="138.02">
+            <p class="french-block">"Le problème aujourd'hui est, pourrais-je dire, colossal.</p>
+            <span class="english-block">"The issue today is, I could say, colossal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.02" data-end="144.0">
+            <p class="french-block">"Les lames sont grosses - elles ont été mises en décharge et ont disparu dans les carrières, etc.</p>
+            <span class="english-block">"The blades are big - they have been going to landfill and they've been disappearing into quarries and so forth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.0" data-end="152.93">
+            <p class="french-block">"À l'heure actuelle, environ 125 000 tonnes de pales sont éliminées d'une manière ou d'une autre dans le monde, mais cela est très rarement fait de manière durable."</p>
+            <span class="english-block">"At present, there's somewhere in the region of 125,000 tonnes of blades across the world getting disposed of by one means or another, but very rarely is it done in a sustainable way."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.93" data-end="163.63">
+            <p class="french-block">L'entreprise transforme les lames en un matériau réutilisable et durable qui peut être utilisé comme alternative au bois, pour les poteaux de clôture et les palettes de transport réutilisables.</p>
+            <span class="english-block">The company turns the blades into a long-lasting reusable material that can be used as an alternative to timber, for fence posts and reusable transport pallets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.63" data-end="169.56">
+            <p class="french-block">Billingsley pense qu’il pourrait même être utilisé comme alternative au béton préfabriqué et au bois.</p>
+            <span class="english-block">Billingsley believes it could even be used an alternative to precast concrete and timber.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.56" data-end="176.33">
+            <p class="french-block">"En général, une tonne de plastique vierge nécessite environ trois tonnes de CO2 lors de sa fabrication.</p>
+            <span class="english-block">"Typically, a tonne of virgin plastic needs about three tonnes of CO2 in the manufacturing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.33" data-end="184.7">
+            <p class="french-block">"Nous évitons l'incinération des plastiques, et leur combustion produit entre 2,7 et 2,9 tonnes de CO2 pour chaque tonne brûlée."</p>
+            <span class="english-block">"We're preventing the incineration of plastics, and burning plastics produces between 2.7 and 2.9 tonnes of CO2 for every tonne burned."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.7" data-end="188.57">
+            <p class="french-block">Mais prouver ces qualités écologiques est une autre affaire.</p>
+            <span class="english-block">But proving those green credentials is another matter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.57" data-end="193.78">
+            <p class="french-block">Kieran Kelly est le fondateur de la société Ubloquity, basée à Scarva.</p>
+            <span class="english-block">Kieran Kelly is the founder of the Scarva-based firm Ubloquity</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.78" data-end="199.99">
+            <p class="french-block">Kieran Kelly utilise la technologie pour « parler » aux lames recyclées et à d'autres produits.</p>
+            <span class="english-block">Kieran Kelly uses technology to "talk" to recycled blades and other products.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.99" data-end="207.29">
+            <p class="french-block">L'entreprise qu'il a fondée, ubloquity, attache un code QR ou une technologie de radiofréquence à un produit.</p>
+            <span class="english-block">The company he founded, ubloquity, attaches a QR code or radio frequency technology to a product.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.29" data-end="213.6">
+            <p class="french-block">Il peut ensuite être suivi de la source à la fin tout au long de son parcours tout au long de la chaîne d'approvisionnement.</p>
+            <span class="english-block">It can then be tracked from source to end on its entire journey through the supply chain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.6" data-end="232.25">
+            <p class="french-block">« Tenez votre téléphone près du produit et le produit transmettra et vous racontera l'histoire via un appareil mobile, via votre téléphone ou via un scanner RFID qui vous dira quand il a été fabriqué, qui l'a fabriqué, de quelle chaîne de production il est sorti, d'où il provient et ce qu'il contient dans son produit final », a-t-il déclaré.</p>
+            <span class="english-block">"Hold your phone close to the product and the product will actually transmit and tell you the story through a mobile device, through your phone, or through an RFID scanner that will tell you when it was made, who made it, what production line it came off, where it originated, and what it is in its final product," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.25" data-end="239.3">
+            <p class="french-block">"Et être capable de donner à une marque et à un produit une histoire et une voix sur la scène mondiale est totalement transformationnel."</p>
+            <span class="english-block">"And to be able to give a brand and a product a story and a voice on the global stage is totally transformational."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.3" data-end="244.42">
+            <p class="french-block">Les lames peuvent devenir des poteaux de clôture ayant une durée de vie d'au moins 30 ans.</p>
+            <span class="english-block">Blades can end up as fencing posts that have a life expectancy of at least 30 years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.42" data-end="251.62">
+            <p class="french-block">Une technologie similaire est utilisée dans les contrôles post-Brexit du fret traversant la frontière de la mer d’Irlande.</p>
+            <span class="english-block">Similar technology is used in post-Brexit checks on freight, crossing the Irish Sea border.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="251.62" data-end="261.17">
+            <p class="french-block">Avec les exigences croissantes en matière de traçabilité, Kelly a déclaré qu'il y avait une demande croissante de solutions technologiques aux problèmes de durabilité.</p>
+            <span class="english-block">With growing requirements for traceability, Kelly said there was increasing demand for technological solutions to sustainability problems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.17" data-end="274.44">
+            <p class="french-block">"Il est extrêmement remarquable de s'appuyer sur une industrie héritée pour montrer l'économie circulaire, promouvoir le vert et utiliser le triple accès au marché de l'Irlande du Nord pour une croissance économique positive et créatrice d'emplois.</p>
+            <span class="english-block">"It's extremely remarkable to take a legacy industry to show the circular economy, to promote green and to use Northern Ireland's triple market access for positive economic growth, creating jobs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.44" data-end="289.01">
+            <p class="french-block">"Et être capable d'utiliser la technologie pour transformer fondamentalement un produit très, très statique, de la source jusqu'à l'utilisateur final, est complètement transformationnel et une première du genre pour le secteur, mais aussi pour l'Irlande du Nord."</p>
+            <span class="english-block">"And being able to use technology to transform basically a very, very static product from source all the way through to the end user is completely transformational and a first of its kind for the sector, but also for Northern Ireland."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.01" data-end="292.99">
+            <p class="french-block">Des lames plus grandes signifient une production plus efficace</p>
+            <span class="english-block">Bigger blades mean more efficient production</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.99" data-end="307.22">
+            <p class="french-block">Lorsque Bellacorrick a été ouverte en 1992, il s'agissait d'une installation de pointe, dotée de 21 turbines, fournissant 6,5 mégawatts d'électricité pour répondre aux besoins d'environ 4 500 maisons par an.</p>
+            <span class="english-block">When Bellacorrick was opened in 1992 it was a cutting-edge facility, with 21 turbines, supplying 6.5 megawatts of power to meet the needs of about 4,500 houses per year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="307.22" data-end="311.54">
+            <p class="french-block">On prévoyait un cycle de vie de 25 ans, qu'il a dépassé.</p>
+            <span class="english-block">It was expected to have a life cycle of 25 years, which it has exceeded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="311.54" data-end="316.37">
+            <p class="french-block">Les pales s'étendaient entre 46 et 53 mètres à leur extrémité.</p>
+            <span class="english-block">The blades stretched to between 46 and 53 metres at their tip.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="316.37" data-end="321.55">
+            <p class="french-block">Les pales plus récentes et plus modernes peuvent atteindre une hauteur allant jusqu'à 200 m.</p>
+            <span class="english-block">Newer, more modern blades can reach a height of up to 200m.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.55" data-end="326.62">
+            <p class="french-block">Des pales plus grandes signifient une production plus efficace avec moins de turbines.</p>
+            <span class="english-block">Bigger blades mean more efficient production from fewer turbines.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.62" data-end="331.68">
+            <p class="french-block">Dix-huit très grandes turbines remplaceront les 21 qui fonctionnaient à Bellacorrick.</p>
+            <span class="english-block">Eighteen very large turbines will replace the 21 that operated at Bellacorrick.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.68" data-end="339.14">
+            <p class="french-block">Chaque nouvelle éolienne individuelle est capable de produire plus d’énergie que celle générée par l’ensemble du parc éolien d’origine.</p>
+            <span class="english-block">Each individual new turbine is capable of producing more power than was generated by the entire original wind farm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.14" data-end="351.17">
+            <p class="french-block">Le site sera fusionné avec le parc éolien adjacent d'Oweninny, où 60 turbines produisent déjà 192 mégawatts d'électricité, alimentant jusqu'à 140 000 foyers et entreprises.</p>
+            <span class="english-block">The site will be amalgamated with the adjacent Oweninny wind farm, where 60 turbines already produce 192 megawatts of electricity, powering up to 140,000 homes and businesses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.17" data-end="357.65">
+            <p class="french-block">Une fois l'agrandissement terminé, l'ajout des 18 turbines portera cette capacité à 220 000.</p>
+            <span class="english-block">When the expansion is complete, the addition of the 18 turbines will increase that capacity to 220,000.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_24.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

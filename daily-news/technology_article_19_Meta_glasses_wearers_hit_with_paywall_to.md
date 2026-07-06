@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** While Meta says Conversation Focus should not be used as a hearing aid or medical device, it has championed the accessibility benefits of the feature, external, and of its glasses more widely.
 
-**🇫🇷 FR:** *Bien que Meta affirme que Conversation Focus ne devrait pas être utilisé comme une aide auditive ou un dispositif médical, elle a défendu plus largement les avantages en matière d'accessibilité de la fonctionnalité externe et de ses lunettes.*
+**🇫🇷 FR:** *Bien que Meta affirme que Conversation Focus ne devrait pas être utilisé comme une aide auditive ou un dispositif médical, elle a défendu plus largement les avantages d'accessibilité de la fonctionnalité externe et de ses lunettes.*
 
 ---
 
@@ -198,7 +198,7 @@
 
 **🇬🇧 EN:** Women have complained of being filmed without their knowledge or consent - with some only discovering they have been covertly filmed after seeing videos of themselves online.
 
-**🇫🇷 FR:** *Des femmes se sont plaintes d'avoir été filmées à leur insu et sans leur consentement – ​​certaines n'ayant découvert qu'elles avaient été filmées en secret qu'après avoir vu des vidéos d'elles-mêmes en ligne.*
+**🇫🇷 FR:** *Des femmes se sont plaintes d'avoir été filmées à leur insu ou sans leur consentement - certaines n'ayant découvert qu'elles avaient été filmées en secret qu'après avoir vu des vidéos d'elles-mêmes en ligne.*
 
 ---
 
