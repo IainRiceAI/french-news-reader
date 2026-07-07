@@ -1,218 +1,213 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-07-06 13:36:31  
+Generated on: 2026-07-07 18:56:42  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Uefa says 'integrity of game at stake' after Fifa's decision to overturn US star's red card ban**
-   - **Published:** Mon, 06 Jul 2026 08:36:59 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Uefa_says_integrity_of_game_at_stake_aft.md](top-stories_article_1_Uefa_says_integrity_of_game_at_stake_aft.md)
+1. **Chris Mason: Farage attempts to seize back the agenda after finance row**
+   - **Published:** Tue, 07 Jul 2026 16:34:51 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Chris_Mason_Farage_attempts_to_seize_bac.md](top-stories_article_1_Chris_Mason_Farage_attempts_to_seize_bac.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Buckingham Palace says Prince Harry will not stay there despite his team announcing he would**
-   - **Published:** Mon, 06 Jul 2026 11:31:06 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Buckingham_Palace_says_Prince_Harry_will.md](top-stories_article_2_Buckingham_Palace_says_Prince_Harry_will.md)
+2. **Harry loses High Court privacy case against Daily Mail publisher**
+   - **Published:** Tue, 07 Jul 2026 17:17:57 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Harry_loses_High_Court_privacy_case_agai.md](top-stories_article_2_Harry_loses_High_Court_privacy_case_agai.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Pizza Express held inquiry into Andrew's Woking claim**
-   - **Published:** Mon, 06 Jul 2026 05:01:11 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Pizza_Express_held_inquiry_into_Andrews_.md](top-stories_article_3_Pizza_Express_held_inquiry_into_Andrews_.md)
+3. **Marine Le Pen found guilty, but court clears way for presidential run if she wears tag**
+   - **Published:** Tue, 07 Jul 2026 15:46:05 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Marine_Le_Pen_found_guilty_but_court_cle.md](top-stories_article_3_Marine_Le_Pen_found_guilty_but_court_cle.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Wegovy weight loss pill now available in UK - here's what you need to know**
-   - **Published:** Mon, 06 Jul 2026 11:09:54 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Wegovy_weight_loss_pill_now_available_in.md](top-stories_article_4_Wegovy_weight_loss_pill_now_available_in.md)
+4. **Woman suspected of Monaco bomb attack found dead in Ukraine**
+   - **Published:** Tue, 07 Jul 2026 16:31:04 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Woman_suspected_of_Monaco_bomb_attack_fo.md](top-stories_article_4_Woman_suspected_of_Monaco_bomb_attack_fo.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Watch: Why Australia's PM apologised for 'inappropriate' Kylie comments**
-   - **Published:** Mon, 06 Jul 2026 10:00:08 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Watch_Why_Australias_PM_apologised_for_i.md](top-stories_article_5_Watch_Why_Australias_PM_apologised_for_i.md)
+5. **One million more UK homeowners set  to face higher mortgages**
+   - **Published:** Tue, 07 Jul 2026 15:18:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_One_million_more_UK_homeowners_set__to_f.md](top-stories_article_5_One_million_more_UK_homeowners_set__to_f.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **'I ate ketchup and cheese,' says Venezuelan girl trapped under quake rubble for 32 hours**
-   - **Published:** Mon, 06 Jul 2026 05:04:28 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_I_ate_ketchup_and_cheese_says_Venezuelan.md](top-stories_article_6_I_ate_ketchup_and_cheese_says_Venezuelan.md)
+6. **Watch: Clacton's mixed views on Farage's resignation**
+   - **Published:** Tue, 07 Jul 2026 16:28:50 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Watch_Clactons_mixed_views_on_Farages_re.md](top-stories_article_6_Watch_Clactons_mixed_views_on_Farages_re.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **The dark side of the Brazilian butt lift boom**
-   - **Published:** Sun, 05 Jul 2026 23:30:51 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_The_dark_side_of_the_Brazilian_butt_lift.md](top-stories_article_7_The_dark_side_of_the_Brazilian_butt_lift.md)
+7. **Murder inquiry after mother and children found dead**
+   - **Published:** Tue, 07 Jul 2026 14:20:43 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Murder_inquiry_after_mother_and_children.md](top-stories_article_7_Murder_inquiry_after_mother_and_children.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Farage says he's 'done no wrongdoing' after benefits from ally not declared**
-   - **Published:** Mon, 06 Jul 2026 08:11:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Farage_says_hes_done_no_wrongdoing_after.md](top-stories_article_8_Farage_says_hes_done_no_wrongdoing_after.md)
+8. **Lawyer says detained Gaza doctor was severely beaten in Israeli jail**
+   - **Published:** Tue, 07 Jul 2026 16:10:14 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Lawyer_says_detained_Gaza_doctor_was_sev.md](top-stories_article_8_Lawyer_says_detained_Gaza_doctor_was_sev.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Ukraine warns of interceptor missile shortage as 18 killed in Kyiv region**
-   - **Published:** Mon, 06 Jul 2026 11:42:03 GMT
-   - **Read Parallel Translation:** [world_article_9_Ukraine_warns_of_interceptor_missile_sho.md](world_article_9_Ukraine_warns_of_interceptor_missile_sho.md)
+1. **Marine Le Pen found guilty, but court clears way for presidential run if she wears tag**
+   - **Published:** Tue, 07 Jul 2026 15:46:05 GMT
+   - **Read Parallel Translation:** [world_article_9_Marine_Le_Pen_found_guilty_but_court_cle.md](world_article_9_Marine_Le_Pen_found_guilty_but_court_cle.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **'I ate ketchup and cheese,' says Venezuelan girl trapped under quake rubble for 32 hours**
-   - **Published:** Mon, 06 Jul 2026 05:04:28 GMT
-   - **Read Parallel Translation:** [world_article_10_I_ate_ketchup_and_cheese_says_Venezuelan.md](world_article_10_I_ate_ketchup_and_cheese_says_Venezuelan.md)
+2. **Zelensky presses Nato for air defence systems after intense Russian strikes**
+   - **Published:** Tue, 07 Jul 2026 13:24:52 GMT
+   - **Read Parallel Translation:** [world_article_10_Zelensky_presses_Nato_for_air_defence_sy.md](world_article_10_Zelensky_presses_Nato_for_air_defence_sy.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Australian PM apologises for 'inappropriate' comments about Kylie Minogue**
-   - **Published:** Mon, 06 Jul 2026 01:46:29 GMT
-   - **Read Parallel Translation:** [world_article_11_Australian_PM_apologises_for_inappropria.md](world_article_11_Australian_PM_apologises_for_inappropria.md)
+3. **Woman suspected of Monaco bomb attack found dead in Ukraine**
+   - **Published:** Tue, 07 Jul 2026 16:31:04 GMT
+   - **Read Parallel Translation:** [world_article_11_Woman_suspected_of_Monaco_bomb_attack_fo.md](world_article_11_Woman_suspected_of_Monaco_bomb_attack_fo.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Marine Le Pen appeal verdict: Why this moment matters for France**
-   - **Published:** Sun, 05 Jul 2026 23:31:04 GMT
-   - **Read Parallel Translation:** [world_article_12_Marine_Le_Pen_appeal_verdict_Why_this_mo.md](world_article_12_Marine_Le_Pen_appeal_verdict_Why_this_mo.md)
+4. **Lawyer says detained Gaza doctor was severely beaten in Israeli jail**
+   - **Published:** Tue, 07 Jul 2026 16:10:14 GMT
+   - **Read Parallel Translation:** [world_article_12_Lawyer_says_detained_Gaza_doctor_was_sev.md](world_article_12_Lawyer_says_detained_Gaza_doctor_was_sev.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **ITV sells media and entertainment arm to Sky for £1.6bn**
-   - **Published:** Mon, 06 Jul 2026 10:35:30 GMT
-   - **Read Parallel Translation:** [business_article_13_ITV_sells_media_and_entertainment_arm_to.md](business_article_13_ITV_sells_media_and_entertainment_arm_to.md)
+1. **One million more UK homeowners set  to face higher mortgages**
+   - **Published:** Tue, 07 Jul 2026 15:18:00 GMT
+   - **Read Parallel Translation:** [business_article_13_One_million_more_UK_homeowners_set__to_f.md](business_article_13_One_million_more_UK_homeowners_set__to_f.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Three things you can do to stop EU border checks at the airport costing you**
-   - **Published:** Sun, 05 Jul 2026 23:18:27 GMT
-   - **Read Parallel Translation:** [business_article_14_Three_things_you_can_do_to_stop_EU_borde.md](business_article_14_Three_things_you_can_do_to_stop_EU_borde.md)
+2. **Online gamblers betting more than £1,000 to face new checks**
+   - **Published:** Tue, 07 Jul 2026 14:18:25 GMT
+   - **Read Parallel Translation:** [business_article_14_Online_gamblers_betting_more_than_1000_t.md](business_article_14_Online_gamblers_betting_more_than_1000_t.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Wegovy weight loss pill now available in UK - here's what you need to know**
-   - **Published:** Mon, 06 Jul 2026 11:09:54 GMT
-   - **Read Parallel Translation:** [business_article_15_Wegovy_weight_loss_pill_now_available_in.md](business_article_15_Wegovy_weight_loss_pill_now_available_in.md)
+3. **Banks accused of pushing customers away from basic accounts**
+   - **Published:** Mon, 06 Jul 2026 23:29:34 GMT
+   - **Read Parallel Translation:** [business_article_15_Banks_accused_of_pushing_customers_away_.md](business_article_15_Banks_accused_of_pushing_customers_away_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **Backlash after China bubble tea firm ordered to pay Louis Vuitton $1.5m**
-   - **Published:** Mon, 06 Jul 2026 02:19:25 GMT
-   - **Read Parallel Translation:** [business_article_16_Backlash_after_China_bubble_tea_firm_ord.md](business_article_16_Backlash_after_China_bubble_tea_firm_ord.md)
+4. **Amazon bars breastfeeding boss from business course**
+   - **Published:** Mon, 06 Jul 2026 23:31:21 GMT
+   - **Read Parallel Translation:** [business_article_16_Amazon_bars_breastfeeding_boss_from_busi.md](business_article_16_Amazon_bars_breastfeeding_boss_from_busi.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Parents warned not to publicly share children’s images amid AI abuse risks**
-   - **Published:** Fri, 03 Jul 2026 15:57:42 GMT
-   - **Read Parallel Translation:** [technology_article_17_Parents_warned_not_to_publicly_share_chi.md](technology_article_17_Parents_warned_not_to_publicly_share_chi.md)
+1. **Robots available for rent: But what can they do?**
+   - **Published:** Mon, 06 Jul 2026 23:48:55 GMT
+   - **Read Parallel Translation:** [technology_article_17_Robots_available_for_rent_But_what_can_t.md](technology_article_17_Robots_available_for_rent_But_what_can_t.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **AI is 'not smart' so what's next in artificial intelligence?**
-   - **Published:** Thu, 02 Jul 2026 23:02:09 GMT
-   - **Read Parallel Translation:** [technology_article_18_AI_is_not_smart_so_whats_next_in_artific.md](technology_article_18_AI_is_not_smart_so_whats_next_in_artific.md)
+2. **Microsoft cuts 4,800 jobs and shrinks Xbox in 'significant restructure'**
+   - **Published:** Mon, 06 Jul 2026 15:18:53 GMT
+   - **Read Parallel Translation:** [technology_article_18_Microsoft_cuts_4800_jobs_and_shrinks_Xbo.md](technology_article_18_Microsoft_cuts_4800_jobs_and_shrinks_Xbo.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Meta glasses wearers hit with paywall to use built-in feature**
-   - **Published:** Thu, 02 Jul 2026 13:42:53 GMT
-   - **Read Parallel Translation:** [technology_article_19_Meta_glasses_wearers_hit_with_paywall_to.md](technology_article_19_Meta_glasses_wearers_hit_with_paywall_to.md)
+3. **Parents warned not to publicly share children’s images amid AI abuse risks**
+   - **Published:** Fri, 03 Jul 2026 15:57:42 GMT
+   - **Read Parallel Translation:** [technology_article_19_Parents_warned_not_to_publicly_share_chi.md](technology_article_19_Parents_warned_not_to_publicly_share_chi.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **Google must pay €4.1bn fine for using Android to 'block' rivals**
-   - **Published:** Thu, 02 Jul 2026 09:46:11 GMT
-   - **Read Parallel Translation:** [technology_article_20_Google_must_pay_41bn_fine_for_using_Andr.md](technology_article_20_Google_must_pay_41bn_fine_for_using_Andr.md)
+4. **AI is 'not smart' so what's next in artificial intelligence?**
+   - **Published:** Thu, 02 Jul 2026 23:02:09 GMT
+   - **Read Parallel Translation:** [technology_article_20_AI_is_not_smart_so_whats_next_in_artific.md](technology_article_20_AI_is_not_smart_so_whats_next_in_artific.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Super Typhoon Bavi makes landfall on US Pacific islands with huge wind gusts**
-   - **Published:** Mon, 06 Jul 2026 00:20:20 GMT
-   - **Read Parallel Translation:** [science_article_21_Super_Typhoon_Bavi_makes_landfall_on_US_.md](science_article_21_Super_Typhoon_Bavi_makes_landfall_on_US_.md)
+1. **This 'ambitious' tree planting action plan is a first for NI**
+   - **Published:** Tue, 07 Jul 2026 16:36:05 GMT
+   - **Read Parallel Translation:** [science_article_21_This_ambitious_tree_planting_action_plan.md](science_article_21_This_ambitious_tree_planting_action_plan.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **New heatwave likely to peak at 34C with week-long health alert issued**
-   - **Published:** Sat, 04 Jul 2026 15:28:17 GMT
-   - **Read Parallel Translation:** [science_article_22_New_heatwave_likely_to_peak_at_34C_with_.md](science_article_22_New_heatwave_likely_to_peak_at_34C_with_.md)
-   - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
-
-3. **Scientist dubbed The Bogfather is restoring peatland to fight climate change**
-   - **Published:** Sat, 04 Jul 2026 06:21:35 GMT
-   - **Read Parallel Translation:** [science_article_23_Scientist_dubbed_The_Bogfather_is_restor.md](science_article_23_Scientist_dubbed_The_Bogfather_is_restor.md)
+2. **Super Typhoon Bavi strikes US Pacific islands with pummeling winds**
+   - **Published:** Mon, 06 Jul 2026 16:44:54 GMT
+   - **Read Parallel Translation:** [science_article_23_Super_Typhoon_Bavi_strikes_US_Pacific_is.md](science_article_23_Super_Typhoon_Bavi_strikes_US_Pacific_is.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Turbines turning from wind to sustainable products**
-   - **Published:** Sat, 04 Jul 2026 05:06:44 GMT
-   - **Read Parallel Translation:** [science_article_24_Turbines_turning_from_wind_to_sustainabl.md](science_article_24_Turbines_turning_from_wind_to_sustainabl.md)
+3. **Farmers 'vindicated' after judge's ruling on pylon firm accessing land**
+   - **Published:** Mon, 06 Jul 2026 15:26:56 GMT
+   - **Read Parallel Translation:** [science_article_24_Farmers_vindicated_after_judges_ruling_o.md](science_article_24_Farmers_vindicated_after_judges_ruling_o.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **Wegovy weight loss pill now available in UK - here's what you need to know**
-   - **Published:** Mon, 06 Jul 2026 11:09:54 GMT
-   - **Read Parallel Translation:** [health_article_25_Wegovy_weight_loss_pill_now_available_in.md](health_article_25_Wegovy_weight_loss_pill_now_available_in.md)
+1. **Public to be asked who should pay for social care as part of major review**
+   - **Published:** Tue, 07 Jul 2026 11:05:01 GMT
+   - **Read Parallel Translation:** [health_article_25_Public_to_be_asked_who_should_pay_for_so.md](health_article_25_Public_to_be_asked_who_should_pay_for_so.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **NHS app to use AI to determine which service best for patients**
-   - **Published:** Sun, 05 Jul 2026 11:18:15 GMT
-   - **Read Parallel Translation:** [health_article_26_NHS_app_to_use_AI_to_determine_which_ser.md](health_article_26_NHS_app_to_use_AI_to_determine_which_ser.md)
+2. **Two tests GPs can soon offer to help spot endometriosis**
+   - **Published:** Tue, 07 Jul 2026 09:16:09 GMT
+   - **Read Parallel Translation:** [health_article_26_Two_tests_GPs_can_soon_offer_to_help_spo.md](health_article_26_Two_tests_GPs_can_soon_offer_to_help_spo.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **How to walk 30 minutes a day - your tips**
-   - **Published:** Fri, 03 Jul 2026 21:31:05 GMT
-   - **Read Parallel Translation:** [health_article_27_How_to_walk_30_minutes_a_day_-_your_tips.md](health_article_27_How_to_walk_30_minutes_a_day_-_your_tips.md)
+3. **Women hit fertility tipping point at 49 - even with young donor eggs**
+   - **Published:** Mon, 06 Jul 2026 23:33:47 GMT
+   - **Read Parallel Translation:** [health_article_27_Women_hit_fertility_tipping_point_at_49_.md](health_article_27_Women_hit_fertility_tipping_point_at_49_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **German row over plan for workers to need sick note on first day of illness**
-   - **Published:** Fri, 03 Jul 2026 14:56:30 GMT
-   - **Read Parallel Translation:** [health_article_28_German_row_over_plan_for_workers_to_need.md](health_article_28_German_row_over_plan_for_workers_to_need.md)
+4. **Consultants in England vote in favour of NHS strikes**
+   - **Published:** Mon, 06 Jul 2026 18:27:25 GMT
+   - **Read Parallel Translation:** [health_article_28_Consultants_in_England_vote_in_favour_of.md](health_article_28_Consultants_in_England_vote_in_favour_of.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Farage says he's 'done no wrongdoing' after benefits from ally not declared**
-   - **Published:** Mon, 06 Jul 2026 08:11:29 GMT
-   - **Read Parallel Translation:** [politics_article_29_Farage_says_hes_done_no_wrongdoing_after.md](politics_article_29_Farage_says_hes_done_no_wrongdoing_after.md)
+1. **Chris Mason: Farage attempts to seize back the agenda after finance row**
+   - **Published:** Tue, 07 Jul 2026 16:34:51 GMT
+   - **Read Parallel Translation:** [politics_article_29_Chris_Mason_Farage_attempts_to_seize_bac.md](politics_article_29_Chris_Mason_Farage_attempts_to_seize_bac.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Overseas voters moving to UK could face £100,000 donations cap for year**
-   - **Published:** Mon, 06 Jul 2026 00:51:42 GMT
-   - **Read Parallel Translation:** [politics_article_30_Overseas_voters_moving_to_UK_could_face_.md](politics_article_30_Overseas_voters_moving_to_UK_could_face_.md)
+2. **Next PM needs to wake UK up to threat of war, ex-Nato chief warns**
+   - **Published:** Tue, 07 Jul 2026 14:31:57 GMT
+   - **Read Parallel Translation:** [politics_article_30_Next_PM_needs_to_wake_UK_up_to_threat_of.md](politics_article_30_Next_PM_needs_to_wake_UK_up_to_threat_of.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **'Posh George': Who is aristocrat and convicted criminal at heart of Farage controversy?**
-   - **Published:** Sun, 05 Jul 2026 17:57:46 GMT
-   - **Read Parallel Translation:** [politics_article_31_Posh_George_Who_is_aristocrat_and_convic.md](politics_article_31_Posh_George_Who_is_aristocrat_and_convic.md)
+3. **PM intervened in row over Mexico-England kick-off time**
+   - **Published:** Mon, 06 Jul 2026 21:08:35 GMT
+   - **Read Parallel Translation:** [politics_article_31_PM_intervened_in_row_over_Mexico-England.md](politics_article_31_PM_intervened_in_row_over_Mexico-England.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **UK fighter jets intercept Russian plane over Norwegian Sea**
-   - **Published:** Mon, 06 Jul 2026 11:47:19 GMT
-   - **Read Parallel Translation:** [politics_article_32_UK_fighter_jets_intercept_Russian_plane_.md](politics_article_32_UK_fighter_jets_intercept_Russian_plane_.md)
+4. **Treasury sees defence as a drain not a driver for growth, says Healey**
+   - **Published:** Mon, 06 Jul 2026 17:00:34 GMT
+   - **Read Parallel Translation:** [politics_article_32_Treasury_sees_defence_as_a_drain_not_a_d.md](politics_article_32_Treasury_sees_defence_as_a_drain_not_a_d.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Wolf Alice cover Nirvana at emotional homecoming show**
-   - **Published:** Mon, 06 Jul 2026 10:34:50 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Wolf_Alice_cover_Nirvana_at_emotional_ho.md](entertainment_article_33_Wolf_Alice_cover_Nirvana_at_emotional_ho.md)
+1. **BTS take credit for England football win in first UK show since 2019**
+   - **Published:** Tue, 07 Jul 2026 10:33:28 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_BTS_take_credit_for_England_football_win.md](entertainment_article_33_BTS_take_credit_for_England_football_win.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Harry Styles receives Guinness World Record for longest Wembley Stadium run**
-   - **Published:** Mon, 06 Jul 2026 08:39:41 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Harry_Styles_receives_Guinness_World_Rec.md](entertainment_article_34_Harry_Styles_receives_Guinness_World_Rec.md)
+2. **9.1m watch England's epic win over Mexico**
+   - **Published:** Tue, 07 Jul 2026 11:50:56 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_91m_watch_Englands_epic_win_over_Mexico.md](entertainment_article_34_91m_watch_Englands_epic_win_over_Mexico.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Australian PM apologises for 'inappropriate' comments about Kylie Minogue**
-   - **Published:** Mon, 06 Jul 2026 01:46:29 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Australian_PM_apologises_for_inappropria.md](entertainment_article_35_Australian_PM_apologises_for_inappropria.md)
+3. **Patrice Lawrence named new children's laureate**
+   - **Published:** Tue, 07 Jul 2026 13:38:42 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Patrice_Lawrence_named_new_childrens_lau.md](entertainment_article_35_Patrice_Lawrence_named_new_childrens_lau.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **ITV sells media and entertainment arm to Sky for £1.6bn**
-   - **Published:** Mon, 06 Jul 2026 10:35:30 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_ITV_sells_media_and_entertainment_arm_to.md](entertainment_article_36_ITV_sells_media_and_entertainment_arm_to.md)
+4. **Party Rock Anthem singer Lauren Bennett dies aged 36**
+   - **Published:** Tue, 07 Jul 2026 14:00:32 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Party_Rock_Anthem_singer_Lauren_Bennett_.md](entertainment_article_36_Party_Rock_Anthem_singer_Lauren_Bennett_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
