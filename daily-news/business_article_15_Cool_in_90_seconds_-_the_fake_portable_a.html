@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Cool in 90 seconds' - the fake portable air conditioners sweeping the internet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>'Cool in 90 seconds' - the fake portable air conditioners sweeping the internet</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 10 Jul 2026 01:33:45 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj6g41pzy41o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The ASA says adverts claiming small devices can rapidly cool rooms were too good to be true.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.8" data-end="22.22">
+            <p class="french-block">Alors que le Royaume-Uni se prépare à un autre week-end chaud, des publicités en ligne sont apparues pour des climatiseurs portables prétendant être « conçus par d'anciens ingénieurs de la Nasa » et capables de « refroidir une pièce en 90 secondes ».</p>
+            <span class="english-block">As parts of the UK brace for another hot weekend, online adverts have been appearing for portable air conditioners claiming to be "designed by former Nasa engineers" and able to "cool a room in 90 seconds".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.22" data-end="33.41">
+            <p class="french-block">Les publicités ont été diffusées sur des plateformes telles que Facebook et YouTube, mais l'Autorité des normes de publicité (ASA) a averti que les produits étaient souvent "trop ​​beaux pour être vrais".</p>
+            <span class="english-block">The adverts have emerged on platforms including Facebook and YouTube, but the Advertising Standards Authority (ASA) has now warned the products are often "too good to be true".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.41" data-end="49.54">
+            <p class="french-block">Le YouTubeur Stuart Matthews, qui a acheté plusieurs appareils à tester sur sa chaîne Proper DIY, a déclaré à la BBC que malgré le paiement de 70 £ pour une machine, il s'est avéré qu'il s'agissait « d'un petit et simple ventilateur ne valant que quelques livres ».</p>
+            <span class="english-block">YouTuber Stuart Matthews, who bought several devices to test on his Proper DIY channel, told the BBC that despite paying £70 for one machine, it turned out to be "a small, simple fan worth only a few pounds".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.54" data-end="53.78">
+            <p class="french-block">La BBC a contacté Meta et YouTube pour commentaires.</p>
+            <span class="english-block">The BBC has approached Meta and YouTube for comment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.78" data-end="67.58">
+            <p class="french-block">L'ASA a déclaré à la BBC que certaines des publicités qu'elle avait vues en ligne ces dernières semaines contenaient des affirmations exagérées, notamment qu'un petit appareil pouvait refroidir une maison entière en quelques minutes ou consommait très peu d'électricité.</p>
+            <span class="english-block">The ASA told the BBC that some of the adverts it had seen online in recent weeks made exaggerated claims, including that a small device could cool an entire home within minutes or used very little electricity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.58" data-end="77.23">
+            <p class="french-block">Il a également déclaré que les publicités présentaient fréquemment de faux avis de clients décrivant des chutes de température spectaculaires ou des performances exceptionnelles.</p>
+            <span class="english-block">It also said the adverts frequently featured fake customer reviews describing dramatic temperature drops or exceptional performance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.23" data-end="85.3">
+            <p class="french-block">Les publicités dirigent les acheteurs vers des sites Web vendant les appareils, généralement entre 70 et 120 £.</p>
+            <span class="english-block">The adverts direct shoppers to websites selling the devices, typically for between £70 and £120.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.3" data-end="96.38">
+            <p class="french-block">De nombreuses publicités semblaient également avoir été générées par l'IA, utilisant des visuels tels que des bobines de cuivre et des boîtes métalliques pour donner l'impression que les produits étaient plus sophistiqués.</p>
+            <span class="english-block">Many of the adverts also appeared to be AI-generated, using visuals such as copper coils and metallic boxes to make the products seem more sophisticated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.38" data-end="102.38">
+            <p class="french-block">Une publicité trouvée en ligne par la BBC qui prétendait rafraîchir une pièce en quelques minutes.</p>
+            <span class="english-block">One advert the BBC found online which claimed to cool down a room in minutes</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.38" data-end="111.14">
+            <p class="french-block">L'ASA a déclaré qu'il existe plusieurs façons pour les clients de savoir si une publicité pour un climatiseur portable est susceptible d'être trompeuse.</p>
+            <span class="english-block">The ASA said there were several ways for customers to tell if an advert for a portable air conditioner was likely to be misleading.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.14" data-end="115.46">
+            <p class="french-block">Il a déclaré que les gens devraient être sceptiques quant aux points suivants :</p>
+            <span class="english-block">It said people should be sceptical of the following:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.46" data-end="122.93">
+            <p class="french-block">Des promesses qui semblent trop belles pour être vraies, comme l'affirmation selon laquelle un petit appareil peut refroidir de grandes pièces</p>
+            <span class="english-block">Promises which sound too good to be true, like claims a small device can chill large rooms</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.93" data-end="128.57">
+            <p class="french-block">Des histoires dramatiques sur des « inventions secrètes » ou des « percées industrielles »</p>
+            <span class="english-block">Dramatic backstories about "secret inventions" or "industry breakthroughs"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.57" data-end="133.44">
+            <p class="french-block">Mauvaise grammaire, fautes d'orthographe et image de marque incohérente</p>
+            <span class="english-block">Poor grammar, spelling mistakes and inconsistent branding</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.44" data-end="138.94">
+            <p class="french-block">Avis de clients décrivant des résultats spectaculaires ou lisant comme s'ils étaient trop parfaits</p>
+            <span class="english-block">Customer reviews describing dramatic results or reading as though they're too perfect</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.94" data-end="149.35">
+            <p class="french-block">L'organisme de surveillance a conseillé aux consommateurs qui n'étaient pas sûrs de rechercher le détaillant et de vérifier qu'il fournissait de véritables coordonnées et une adresse professionnelle.</p>
+            <span class="english-block">The watchdog advised consumers who were unsure to research the retailer and check it provided genuine contact details and a business address.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.35" data-end="157.3">
+            <p class="french-block">Les clients devraient également rechercher des avis indépendants plutôt que de se fier uniquement aux témoignages publiés sur le site Web du vendeur.</p>
+            <span class="english-block">Customers should also look for independent reviews rather than relying solely on testimonials on the seller's website.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.3" data-end="164.47">
+            <p class="french-block">Il ajoute que toute personne préoccupée par une annonce de climatiseur peut la signaler via son site Internet, externe.</p>
+            <span class="english-block">It added that anyone concerned about an air conditioner advert could report it via their website, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.47" data-end="170.26">
+            <p class="french-block">Stuart Matthews de la chaîne YouTube Proper DIY n'a pas été impressionné par l'appareil</p>
+            <span class="english-block">Stuart Matthews of the Proper DIY YouTube channel was not impressed with the device</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.26" data-end="175.78">
+            <p class="french-block">Matthews a déclaré avoir acheté plusieurs appareils pour voir s'ils fonctionnaient comme annoncé.</p>
+            <span class="english-block">Matthews said he bought several of the devices to see whether they performed as advertised.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.78" data-end="190.63">
+            <p class="french-block">L'ingénieur civil et créateur de contenu a déclaré qu'au lieu d'acheter quelque chose qui ferait baisser rapidement la température de sa pièce, il avait découvert qu'il avait plutôt acheté des « composants bon marché » fabriqués à partir d'une « science défectueuse ».</p>
+            <span class="english-block">The civil engineer and content creator said rather than buying something that would bring the temperature of his room down quickly, he found he had instead bought some "cheap components" made using "flawed science".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.63" data-end="200.16">
+            <p class="french-block">Une publicité décrivait le produit comme une « unité de climatisation à ingénierie inverse » comportant « une cartouche de refroidissement à liquide comprimé ».</p>
+            <span class="english-block">One advert described the product as a "reverse-engineered aircon unit" featuring "a liquid-compressed cooling cartridge".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.16" data-end="206.59">
+            <p class="french-block">Matthews a déclaré que l'appareil contenait en fait "un tas d'ailettes en carton qui se mouillent lorsque l'eau passe devant elles".</p>
+            <span class="english-block">Matthews said the device actually contained "a load of cardboard fins that get wet as the water blows past them".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.59" data-end="221.71">
+            <p class="french-block">Bien que les "refroidisseurs de marais" - des machines qui refroidissent l'air en évaporant l'eau - fonctionnent raisonnablement bien dans les climats chauds et secs, ils augmentent également l'humidité et sont donc beaucoup moins efficaces dans les endroits humides comme une grande partie du Royaume-Uni.</p>
+            <span class="english-block">While so-called "swamp coolers" - machines that chill air by evaporating water - do work reasonably well in hot, dry climates, they also increase humidity and so are much less effective in humid places like much of the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.71" data-end="230.5">
+            <p class="french-block">Ce ne sont pas non plus des climatiseurs conventionnels, qui fonctionnent en évacuant la chaleur d'une pièce via un tuyau d'évacuation ou une unité externe.</p>
+            <span class="english-block">They are also not conventional air conditioners, which work by removing heat from a room via an exhaust hose or external unit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.5" data-end="237.12">
+            <p class="french-block">"Je compatis vraiment avec les gens qui ont été poussés à acheter certaines de ces ordures", a déclaré Matthews.</p>
+            <span class="english-block">"I really feel for the people that have been sucked into buying some of this rubbish," Matthews said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.12" data-end="250.54">
+            <p class="french-block">"Même si nous continuerons à prendre des mesures là où nous constatons des violations des règles, la nature de certaines des entreprises derrière ces publicités signifie que l'application à elle seule ne suffit pas à mettre fin au problème", a déclaré l'ASA.</p>
+            <span class="english-block">"While we'll continue to take action where we see the rules being broken, the nature of some of the businesses behind these ads means enforcement alone isn't enough to stop the problem," said the ASA.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.54" data-end="259.75">
+            <p class="french-block">Bien que l’organisme de surveillance réglemente les publicités payantes sur les plateformes telles que YouTube et Facebook, il ne peut pas infliger lui-même d’amendes.</p>
+            <span class="english-block">Although the watchdog regulates paid-for adverts on platforms including YouTube and Facebook, it cannot issue fines itself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.75" data-end="264.14">
+            <p class="french-block">Comment puis-je avoir la climatisation dans ma maison et combien ça coûte ?</p>
+            <span class="english-block">How can I get air conditioning in my home and how much does it cost?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.14" data-end="270.53">
+            <p class="french-block">Les grandes technologies doivent faire face aux publicités frauduleuses dans le cadre des propositions de l'Ofcom</p>
+            <span class="english-block">Big tech must deal with scam ads under Ofcom proposals</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.53" data-end="277.1">
+            <p class="french-block">Avez-vous été affecté par la chaleur extrême au Royaume-Uni ? Avez-vous une histoire à partager?</p>
+            <span class="english-block">Have you been affected by the extreme heat in the UK? Do you have a story to share?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="277.1" data-end="283.3">
+            <p class="french-block">Pas de clim ? Voici comment tirer le meilleur parti de votre ventilateur électrique</p>
+            <span class="english-block">No air con? Here's how to get the most out of your electric fan</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="283.3" data-end="288.7">
+            <p class="french-block">Plus ou moins de protéines ? Les aliments pour traverser une canicule</p>
+            <span class="english-block">More protein or less? The foods to get you through a heatwave</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.7" data-end="294.96">
+            <p class="french-block">La publicité pour un masque LED Beauty Pie interdite en raison d'une allégation trompeuse contre les rides</p>
+            <span class="english-block">Beauty Pie LED mask ad banned over misleading anti-wrinkle claim</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_15.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

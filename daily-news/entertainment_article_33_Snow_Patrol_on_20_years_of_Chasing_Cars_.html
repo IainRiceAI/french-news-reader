@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow Patrol on 20 years of Chasing Cars, and their 'non-duet' with Kylie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Snow Patrol on 20 years of Chasing Cars, and their 'non-duet' with Kylie</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 11 Jul 2026 00:12:58 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cwykqqk1y3wo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The band look back on their biggest hit, and explain why their new single with Kylie isn't a duet.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.69" data-end="19.54">
+            <p class="french-block">Gary Lightbody a formé Snow Patrol à l'Université de Dundee en 1994 - appelant initialement le groupe Shrug et Polarbear, avant de se fixer sur leur forme finale.</p>
+            <span class="english-block">Gary Lightbody formed Snow Patrol at the University of Dundee in 1994 - initially calling the band Shrug and Polarbear, before settling on their final form</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.54" data-end="29.78">
+            <p class="french-block">Avez-vous déjà voulu écrire une chanson si énorme qu'elle deviendrait votre régime de retraite ? Voici le secret : faites comme si vous le prépariez pour quelqu'un d'autre.</p>
+            <span class="english-block">Ever wanted to write a song so huge it becomes your pension plan? Here's the secret: pretend you're making it for someone else.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.78" data-end="38.18">
+            <p class="french-block">C'est ce que faisait Gary Lightbody de Snow Patrol en 2005, dans un abri de jardin appartenant à son ami et producteur Jacknife Lee.</p>
+            <span class="english-block">That's what Snow Patrol's Gary Lightbody was doing back in 2005, in a garden shed owned by his friend and producer, Jacknife Lee.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.18" data-end="44.35">
+            <p class="french-block">"Nous avons écrit 10 chansons en quelques heures, autour de quelques bouteilles de vin", se souvient-il.</p>
+            <span class="english-block">"We wrote 10 songs in a couple of hours, over quite a few bottles of wine," he recalls.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="44.35" data-end="56.3">
+            <p class="french-block">"C'était essentiellement une session pour d'autres personnes et parfois, cela enlève la pression parce que vous ne pensez pas à la façon dont vous allez l'enregistrer, ou à ce que cela signifie que cette chanson fasse partie de votre vie."</p>
+            <span class="english-block">"It was essentially a session for other people and sometimes, that takes the pressure off because you're not thinking about how you're going to record it, or what it means to have that song become part of your life."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.3" data-end="67.06">
+            <p class="french-block">Après trois bouteilles, Lightbody est tombé sur une séquence d'accords et des paroles : "Si je m'allongeais ici / Si je m'allongeais ici / Voudrais-tu t'allonger avec moi et simplement respirer dans le monde ?"</p>
+            <span class="english-block">Three bottles in, Lightbody stumbled on a chord sequence and a lyric: "If I lay here / If I just lay here / Would you lie with me and just breathe in the world?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.06" data-end="78.24">
+            <p class="french-block">L’atmosphère a changé. Du coup, la séance n’était réservée à personne d’autre. Ils avaient trouvé quelque chose qui allait changer à jamais la carrière de Snow Patrol.</p>
+            <span class="english-block">The atmosphere shifted. Suddenly, the session wasn't for anyone else. They'd found something that would change Snow Patrol's career forever.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.24" data-end="86.11">
+            <p class="french-block">"C'est la chanson qui nous a fait voyager dans le monde entier", dit Lightbody. "Nous l'avons suivi comme des petits canetons."</p>
+            <span class="english-block">"It's the song that took us to the whole world," Lightbody says. "We just followed it along like little ducklings."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.11" data-end="102.91">
+            <p class="french-block">Cette chanson était Chasing Cars. Vous le savez. Vous pourriez même en avoir marre. Il a été diffusé plus de deux milliards de fois. En 2019, elle a été nommée chanson radiophonique la plus jouée du 21e siècle au Royaume-Uni.</p>
+            <span class="english-block">That song was Chasing Cars. You know it. You might even be sick of it. It's been streamed more than two billion times. In 2019, it was named the UK's most-played radio song of the 21st Century.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.91" data-end="118.15">
+            <p class="french-block">Mais ce n'était pas fini ce premier soir. Les lecteurs aux yeux d’aigle ont peut-être remarqué que les paroles citées ci-dessus ont été subtilement réécrites. Au total, il a fallu des mois de travail pour perfectionner l’arrangement d’une simplicité trompeuse.</p>
+            <span class="english-block">But it wasn't finished that first evening. Eagle-eyed readers may have spotted that the lyrics quoted above received a subtle rewrite. In total, it took months of work to perfect the song's deceptively simple arrangement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.15" data-end="129.79">
+            <p class="french-block">"Nous l'avons même joué en live plusieurs fois sans paroles terminées", explique Lightbody. "J'espère que ces enregistrements ont été détruits. Ces premières paroles étaient mauvaises."</p>
+            <span class="english-block">"We even played it live a few times without finished lyrics," says Lightbody. "I hope those recordings have been destroyed. Those early lyrics were bad."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.79" data-end="141.74">
+            <p class="french-block">Vous pouvez écouter une version embryonnaire sur YouTube, externe, enregistrée à Seattle en 2005. À cette époque, Lightbody se languissait d'une femme qui avait rejeté ses avances.</p>
+            <span class="english-block">You can hear an embryonic version on YouTube, external, recorded in Seattle in 2005. At that point, Lightbody was pining for a woman who'd rejected his advances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.74" data-end="145.51">
+            <p class="french-block">"Tu viens à moi / Avec ces trois mots / 'Pas maintenant'."</p>
+            <span class="english-block">"You come to me  / With these three words /  'Not right now'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.51" data-end="160.42">
+            <p class="french-block">Ce scénario a finalement été remplacé par un scénario plus romantique. Mais l'entendre donne plus de contexte au titre impénétrable de la chanson – emprunté à une phrase que le père de Lightbody avait utilisée à propos de la vie amoureuse malheureuse de son fils.</p>
+            <span class="english-block">That storyline was eventually replaced with a more romantic one. But hearing it gives more context to the song's inscrutable title – borrowed from a phrase Lightbody's father had used about his son's hapless love life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.42" data-end="168.84">
+            <p class="french-block">"Tu es comme un chien qui court après une voiture", avait-il dit. "Tu ne l'attraperas jamais et tu ne saurais pas quoi en faire si tu le faisais."</p>
+            <span class="english-block">"You're like a dog chasing a car," he'd said. "You'll never catch it and you wouldn't know what to do with it if you did."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="168.84" data-end="178.06">
+            <p class="french-block">Dans sa version finale, Chasing Cars est sorti en tant que deuxième single du quatrième album de Snow Patrol, Eyes Open, en juin 2006.</p>
+            <span class="english-block">In its finished version, Chasing Cars was released as the second single from Snow Patrol's fourth album, Eyes Open, in June 2006.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.06" data-end="187.82">
+            <p class="french-block">Succès lent, il a atteint la sixième place du classement des singles, mais a vraiment décollé après avoir été présenté dans la série médicale américaine Grey's Anatomy.</p>
+            <span class="english-block">A slow-burning hit, it peaked at number six in the singles chart, but really took off after being featured on the US medical drama Grey's Anatomy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.82" data-end="197.59">
+            <p class="french-block">C'est désormais la huitième chanson la plus vendue au Royaume-Uni dans les années 2000, en externe, avec un chiffre stupéfiant de 1,2 million d'exemplaires vendus.</p>
+            <span class="english-block">It's now the UK's eighth best-selling song of the 2000s, external, with a staggering 1.2 million copies sold.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.59" data-end="201.41">
+            <p class="french-block">"Les chiffres sont ridicules", déclare Lightbody.</p>
+            <span class="english-block">"The numbers are ridiculous," says Lightbody.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.41" data-end="206.5">
+            <p class="french-block">"Cela n'a aucun sens de dire 'Ce sont les choses que nous avons faites pour réussir'.</p>
+            <span class="english-block">"It doesn't make any sense in any kind of real way where you can go, 'These are the things that we did to become successful'.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.5" data-end="209.14">
+            <p class="french-block">"Tout cela est arrivé par accident."</p>
+            <span class="english-block">"All of it happened by accident."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.14" data-end="221.57">
+            <p class="french-block">L'incarnation 2006 de Snow Patrol (dans le sens des aiguilles d'une montre en partant du coin supérieur gauche) : Jonny Quinn, Tom Simpson, Nathan Connolly, Gary Lightbody et Paul Wilson</p>
+            <span class="english-block">The 2006 incarnation of Snow Patrol (clockwise from top left): Jonny Quinn, Tom Simpson, Nathan Connolly, Gary Lightbody and Paul Wilson</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.57" data-end="236.66">
+            <p class="french-block">Le groupe célébrera le 20e anniversaire de la chanson plus tard cette année avec deux concerts au Royal Albert Hall. Ils joueront Eyes Open dans son intégralité, ainsi que quelques extraits profonds et plus grands succès… et peut-être quelques invités spéciaux.</p>
+            <span class="english-block">The band will celebrate the song's 20th anniversary later this year with two shows at the Royal Albert Hall. They'll play Eyes Open in full, as well as some deep cuts and greatest hits… and maybe some special guests.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="236.66" data-end="247.01">
+            <p class="french-block">Cela intervient après un tournant majeur pour le groupe nord-irlandais. En 2023, le batteur Jonny Quinn et le bassiste Paul Wilson ont tous deux démissionné.</p>
+            <span class="english-block">It comes after a major turning point for the Northern Irish band. In 2023, drummer Jonny Quinn and bassist Paul Wilson both quit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="247.01" data-end="265.39">
+            <p class="french-block">Le trio restant – Lightbody, le guitariste Nathan Connolly et le multi-instrumentiste Jonny McDaid (qui est également le principal collaborateur d'Ed Sheeran) – a tenté d'écrire un nouvel album, mais les sessions ont échoué. Les chansons ne coulaient pas. La confiance du groupe a été ébranlée.</p>
+            <span class="english-block">The remaining trio - Lightbody, guitarist Nathan Connolly and multi-instrumentalist Jonny McDaid (who's also Ed Sheeran's chief collaborator) - tried to write a new album, but the sessions fell apart. The songs weren't flowing. The band's confidence was shot.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.39" data-end="277.73">
+            <p class="french-block">"C'est la première fois que nous devons le faire", déclare Lightbody. "Si vous devez abandonner un album après 30 ans passés dans un groupe, vous pourriez penser : "Autant faire nos valises et rentrer à la maison".</p>
+            <span class="english-block">"It's the first time we ever had to do it," Lightbody says. "If you have to scrap an album after 30 years of being in a band, you might think, 'We might as well pack up and go home'.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="277.73" data-end="289.56">
+            <p class="french-block">"C'était donc une sorte de moment de portes coulissantes, où dans un autre volet du multivers, nous ne sommes plus ensemble. Mais cette version de nous a dit : 'Non, réessayons'."</p>
+            <span class="english-block">"So that was a kind of a sliding doors moment, where in another strand of the multiverse, we're not together anymore. But this version of us went, 'No, let's try again'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.56" data-end="306.91">
+            <p class="french-block">Un catalyseur majeur a été l'embauche du producteur d'Adele et Stormzy, Fraser T Smith, dont l'influence « apaisante » a aidé le groupe à se recentrer. L'album qui en résulte, The Forest is the Path de 2024, a valu à Snow Patrol ses meilleures critiques en 20 ans.</p>
+            <span class="english-block">A major catalyst was hiring Adele and Stormzy's producer Fraser T Smith, whose "calming" influence helped the band refocus. The resulting album, 2024's The Forest is the Path, gained Snow Patrol their best reviews in 20 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="306.91" data-end="321.02">
+            <p class="french-block">"Cela me serre le cœur et me serre", a écrit Neil McCormick du Telegraph, externe. Sur AllMusic, Neil Yeung l'a qualifié de "trésor de la fin de l'ère, externe" plein de "catharsis émotionnelle et d'introspection".</p>
+            <span class="english-block">"It grips my heart and squeezes," wrote the Telegraph's Neil McCormick, external. On AllMusic, Neil Yeung called it "a late-era treasure trove, external" full of "emotional catharsis and introspection".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.02" data-end="332.86">
+            <p class="french-block">Un record d'espace et d'ampleur, il a trouvé Lightbody - un alcoolique en convalescence qui avait quitté Los Angeles pour retourner dans son Bangor natal - pleurant la perte de son père et réévaluant sa vie.</p>
+            <span class="english-block">A record of space and breadth, it found Lightbody - a recovering alcoholic who'd moved from Los Angeles back to his native Bangor - mourning the loss of his father and reassessing his life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="332.86" data-end="339.07">
+            <p class="french-block">"J'ai passé tant d'années à ne pas me comprendre et à ne pas comprendre ce qui se passait dans ma tête", dit-il.</p>
+            <span class="english-block">"I spent so many years not understanding myself and not understanding what was going on in my own head," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.07" data-end="348.29">
+            <p class="french-block">"J'attendais toujours cette tape sur l'épaule pour dire : 'Tu n'es pas censé être ici. Tout ce [succès] était censé être pour quelqu'un d'autre'."</p>
+            <span class="english-block">"I was always waiting for that tap on the shoulder to say, 'You're not supposed to be here. All this [success] was meant to be for somebody else'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="348.29" data-end="356.57">
+            <p class="french-block">Ce sentiment ne disparaît jamais complètement. Mais Lightbody est plus à l'aise dans sa peau depuis qu'il est devenu clean en 2016.</p>
+            <span class="english-block">That feeling never entirely disappears. But Lightbody is more comfortable in his skin since getting clean in 2016.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="356.57" data-end="366.05">
+            <p class="french-block">Il a remplacé l'alcool par des bains d'eau froide et du yoga chaud... Et il vient de réaliser l'ambition de sa vie : enregistrer une chanson avec Kylie Minogue.</p>
+            <span class="english-block">He's replaced alcohol with cold water plunges and hot yoga... And he's just achieved a lifetime ambition: recording a song with Kylie Minogue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.05" data-end="374.23">
+            <p class="french-block">Kylie a rejoint Snow Patrol sur scène à Crystal Palace la semaine dernière, pour présenter leur nouvelle collaboration, These Alarms.</p>
+            <span class="english-block">Kylie joined Snow Patrol on stage in Crystal Palace last week, to premiere their new collaboration, These Alarms</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="374.23" data-end="383.95">
+            <p class="french-block">"Je suis un grand fan depuis que je suis allé au Féile [festival] à Cork en 1995 et que j'ai vu Kylie sur cette affiche avec The Prodigy et Blur", dit-il.</p>
+            <span class="english-block">"I've been a huge fan ever since I went to the Féile [festival] in Cork in '95 and saw Kylie on that bill with the Prodigy and Blur," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="383.95" data-end="389.45">
+            <p class="french-block">"J'avais entendu dire qu'elle cherchait une chanson ou deux, alors je me suis mis à en écrire."</p>
+            <span class="english-block">"I'd heard on the grapevine that she was looking for a song or two, so I set about writing some."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="389.45" data-end="402.05">
+            <p class="french-block">Celle qui a attiré l'attention de Kylie était These Alarms. Sorti la semaine dernière, il trouve Snow Patrol à son meilleur, avec un refrain chantant qui bondit comme un chiot et vous charme jusqu'à la soumission.</p>
+            <span class="english-block">The one that caught Kylie's attention was These Alarms. Released last week, it finds Snow Patrol at their best, with a singalong chorus that bounds over like a puppy and charms you into submission.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="402.05" data-end="412.8">
+            <p class="french-block">Plutôt que d'échanger des lignes, Lightbody et Minogue chantent toute la chanson à l'unisson. Il dit que cela ne devrait pas du tout être considéré comme une chanson de Snow Patrol.</p>
+            <span class="english-block">Rather than trading lines back and forth, Lightbody and Minogue sing the entire song in unison. He says it shouldn't really be considered a Snow Patrol song at all.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="412.8" data-end="418.32">
+            <p class="french-block">"La chanson s'appelait toujours KYLIE - en majuscules - tout au long de l'enregistrement.</p>
+            <span class="english-block">"The song was always called KYLIE – in all capital letters - all the way through the recording.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.32" data-end="425.52">
+            <p class="french-block">"Je ne sais même pas si on peut appeler ça un duo. C'est plutôt comme si nous avions formé un groupe pour celui-ci."</p>
+            <span class="english-block">"I don't even know if you could call it a duet. It's more like we formed a band for this one."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="425.52" data-end="439.18">
+            <p class="french-block">Chanter ensemble a du sens. La chanson parle de connexion. Étant donné l’état du monde, il est tentant de se retirer, admettent les paroles, mais ce dont nous avons réellement besoin, c’est les uns des autres.</p>
+            <span class="english-block">Singing together makes sense. The song is all about connection. Given the state of the world, it's tempting to withdraw, the lyrics admit, but what we really need is each other.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="439.18" data-end="444.38">
+            <p class="french-block">"Le titre Ces alarmes peut signifier beaucoup de choses", explique Lightbody.</p>
+            <span class="english-block">"The title, These Alarms, can mean a lot of things," explains Lightbody.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="444.38" data-end="456.62">
+            <p class="french-block">"Pour moi, ce sont ceux qui me résonnaient dans la tête quand je n'étais pas sobre. J'ai passé toute ma vie à faire des concerts, mais je n'étais pas vraiment 'en concert' [avec d'autres personnes] de manière significative.</p>
+            <span class="english-block">"For me, they're the ones that were ringing in my head when I wasn't sober. I spent my whole life playing concerts, but not really being 'in concert' [with other people] in a meaningful way.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="456.62" data-end="464.69">
+            <p class="french-block">"Je cherchais toujours quelque chose, mais je ne savais pas vraiment ce que c'était... Et puis il s'est avéré que je l'avais depuis le début."</p>
+            <span class="english-block">"I was always searching for something, but I didn't really know what it was... And then it turned out I had it all along."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="464.69" data-end="473.18">
+            <p class="french-block">L'incarnation allégée de 2026 de Snow Patrol (de gauche à droite) : Jonny McDaid, Nathan Connolly et Gary Lightbody</p>
+            <span class="english-block">The trimmed-down, 2026 incarnation of Snow Patrol (L-R):  Jonny McDaid, Nathan Connolly and Gary Lightbody</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="473.18" data-end="480.84">
+            <p class="french-block">La réponse était simplement l'amitié. Et les personnes dont Lightbody avait le plus besoin étaient là sur scène avec lui.</p>
+            <span class="english-block">The answer was simply friendship. And the people Lightbody needed most were there on the stage with him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="480.84" data-end="491.16">
+            <p class="french-block">"L'état naturel des groupes est l'entropie. Tout tombe dans le chaos. Mais c'est assez étonnant, car pour nous, c'est l'inverse qui s'est produit", dit-il.</p>
+            <span class="english-block">"The natural state for bands is entropy. Everything falls to chaos. But it's kind of amazing, because it's happened the other way around for us," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="491.16" data-end="498.58">
+            <p class="french-block">"Nous ne sommes pas Emerson, Lake et Palmer voyageant dans des bus séparés. Nous sommes plus proches que jamais."</p>
+            <span class="english-block">"We're not Emerson, Lake and Palmer travelling in separate buses. We're closer than ever."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="498.58" data-end="502.82">
+            <p class="french-block">Vous pouvez l'entendre dans la musique et le voir lors de leurs concerts.</p>
+            <span class="english-block">You can hear it in the music and see it at their concerts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="502.82" data-end="518.09">
+            <p class="french-block">Après plus de 30 ans, les gens veulent toujours ressentir les sentiments que Snow Patrol leur fait ressentir. Lorsqu'ils ont joué un spectacle en plein air au Pier Head de Liverpool le mois dernier, des milliers de fans qui n'avaient de toute façon pas pu obtenir de billets sont venus.</p>
+            <span class="english-block">After more than 30 years, people still want to feel the feelings that Snow Patrol make them feel. When they played an outdoor show at Liverpool's Pier Head last month, thousands of fans who'd been unable to get tickets turned up anyway.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="518.09" data-end="530.11">
+            <p class="french-block">"Il y avait une enceinte pour les 12 000 personnes qui achetaient des billets – mais à un moment donné, j'ai dit : 'allumez vos lumières', et j'ai regardé dans la rue, et il n'y avait que des lumières tout le long", explique Lightbody.</p>
+            <span class="english-block">"There was an enclosure for the 12,000 people that bought tickets – but at one point, I said, 'put your lights up', and I looked down the street, and it was just lights all the way down," says Lightbody.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="530.11" data-end="543.86">
+            <p class="french-block">"Je pense que c'est la clé de notre musique, d'une manière générale. C'est une invitation. Il n'y a pas de vestes pour ce club, il n'y a pas de codes secrets. C'est comme 'viens et sois avec nous'."</p>
+            <span class="english-block">"I think that's the key to our music, in a general sense. It's an invitation.  There's no jackets for this club, there's no secret codes. It's like, 'just come and be with us'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="543.86" data-end="547.44">
+            <p class="french-block">Gary Lightbody : À la poursuite des rêves</p>
+            <span class="english-block">Gary Lightbody: Chasing Dreams</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="547.44" data-end="551.5">
+            <p class="french-block">Snow Patrol a le cœur brisé alors que deux membres démissionnent</p>
+            <span class="english-block">Snow Patrol 'heartbroken' as two members quit</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="551.5" data-end="554.33">
+            <p class="french-block">Où est passée Snow Patrol pendant sept ans ?</p>
+            <span class="english-block">Where did Snow Patrol go for seven years?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_33.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
