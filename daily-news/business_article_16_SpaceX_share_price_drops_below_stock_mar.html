@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX share price drops below stock market debut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>SpaceX share price drops below stock market debut</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 15 Jul 2026 18:11:57 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/clyl33q0yl0o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Share trading in Elon Musk’s rocket company has been volatile since it went public a month ago.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.06" data-end="12.82">
+            <p class="french-block">Elon Musk est devenu le premier milliardaire au monde lors de l'introduction en bourse de SpaceX</p>
+            <span class="english-block">Elon Musk became the world's first trillionaire when SpaceX floated</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.82" data-end="21.86">
+            <p class="french-block">Le cours de l'action SpaceX est tombé en dessous de son niveau initial en bourse il y a un peu plus d'un mois, chutant fortement par rapport à son sommet post-introduction.</p>
+            <span class="english-block">SpaceX's share price has dropped below its stock market debut just over a month ago, falling sharply from a post-float peak.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.86" data-end="39.14">
+            <p class="french-block">Le prix d'une action unique dans la société de fusées, de satellites et d'intelligence artificielle (IA) d'Elon Musk est tombé à 132,62 dollars (98,24 £) mercredi, en dessous de sa cotation initiale de 135 dollars en juin.</p>
+            <span class="english-block">The price for a single share in Elon Musk's rocket, satellite and artificial intelligence (AI) company fell to $132.62 (£98.24) on Wednesday, below its initial listing of $135 in June.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.14" data-end="51.1">
+            <p class="french-block">L'introduction en bourse (IPO) de SpaceX a fait de Musk le premier milliardaire au monde. Par rapport à son plus haut de la journée, le cours de l'action est désormais en baisse de 41 %.</p>
+            <span class="english-block">SpaceX's initial public offering (IPO) made Musk the world's first trillionaire. Compared to its on-the-day high so far, the stock price is now down 41%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.1" data-end="61.03">
+            <p class="french-block">Si le prix se maintient ou baisse davantage, cela signifiera que ceux qui ont acheté des actions au moment de leur introduction en bourse risqueront de perdre de l’argent sur leur investissement.</p>
+            <span class="english-block">If the price holds, or falls further, it will mean that those who purchased stock around the time of its flotation will stand to lose money on their investment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.03" data-end="67.9">
+            <p class="french-block">Même au milieu de quelques semaines tumultueuses pour les valeurs technologiques, SpaceX a été particulièrement touché.</p>
+            <span class="english-block">Even amid a tumultuous few weeks for tech stocks, SpaceX has taken a particular hit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.9" data-end="78.94">
+            <p class="french-block">Comparé à une baisse de 0,2 % de l'indice plus large du Nasdaq, où les actions de SpaceX sont cotées, le cours de l'action de la société a chuté de plus de 2 % mercredi.</p>
+            <span class="english-block">Compared to a 0.2% fall on the wider Nasdaq index, where SpaceX's shares are listed, the company's stock price fell more than 2% on Wednesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.94" data-end="85.9">
+            <p class="french-block">L’action SpaceX est volatile depuis qu’elle a commencé à être négociée sur le marché boursier public il y a un peu plus d’un mois.</p>
+            <span class="english-block">SpaceX stock has been volatile since it began trading on the public stock market a little over one month ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.9" data-end="94.49">
+            <p class="french-block">Après une première frénésie d’investisseurs qui a vu l’entreprise valorisée plus qu’Amazon et Microsoft, le prix de ses actions a dérivé à la baisse.</p>
+            <span class="english-block">After an initial investor frenzy that saw the company valued at more than Amazon and Microsoft, the price of its shares has drifted downward.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.49" data-end="107.66">
+            <p class="french-block">Initialement, SpaceX était considéré par les investisseurs comme la première chance dont ils disposaient pour investir dans une société d'IA, selon ce que des analystes et des experts des marchés financiers ont récemment déclaré à la BBC :</p>
+            <span class="english-block">Initially, SpaceX was treated by investors as the first chance they had to invest in an AI company, according to what financial market analysts and experts recently told the BBC,</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="107.66" data-end="118.66">
+            <p class="french-block">Plus tôt cette année, SpaceX a acquis xAI, la start-up d'IA de Musk, récemment rebaptisée SpaceXAI, marquant ainsi sa première incursion dans une entreprise axée sur l'IA.</p>
+            <span class="english-block">Earlier this year, SpaceX acquired Musk's AI start-up xAI, recently renamed SpaceXAI, marking it's first foray into an AI-focused business.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.66" data-end="129.19">
+            <p class="french-block">XAI est surtout connu pour le chatbot controversé Grok, mais grâce à cette acquisition, SpaceX loue désormais la capacité du centre de données à d'autres entreprises technologiques.</p>
+            <span class="english-block">XAI is best known for the controversial chatbot Grok, but through that acquisition, SpaceX now leases data centre capacity to other tech companies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.19" data-end="137.52">
+            <p class="french-block">L'activité principale de l'entreprise est la fabrication et le lancement de fusées et de satellites de télécommunications appelés Starlink.</p>
+            <span class="english-block">The company's main business is the manufacture and launch of rockets and telecommunications satellites called Starlink.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="137.52" data-end="150.14">
+            <p class="french-block">Lorsque Starlink a annoncé qu'il réduisait ses prix dans la région de Memphis, dans le Tennessee, en raison des inquiétudes locales concernant un projet massif de centre de données, les actions de SpaceX ont chuté de 8 %.</p>
+            <span class="english-block">When Starlink said it was cutting prices in the Memphis, Tennessee area amid local concerns over a massive data centre project, SpaceX shares fell by 8%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.14" data-end="162.65">
+            <p class="french-block">Steve Sosnick, analyste de marché en chef chez Interactive Brokers, a déclaré à Reuters : "Il n'y a rien eu de tel ces derniers temps pour rappeler aux gens certains des catalyseurs qui ont motivé leur achat de SpaceX."</p>
+            <span class="english-block">Steve Sosnick, chief market analyst at Interactive Brokers, told Reuters: "There hasn't been anything that lately to remind people of some of the catalysts for why they bought SpaceX."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.65" data-end="167.69">
+            <p class="french-block">SpaceX devrait publier en août son premier rapport public sur ses résultats.</p>
+            <span class="english-block">SpaceX is expected to release in August its first public earnings report.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.69" data-end="180.62">
+            <p class="french-block">Sosnick a ajouté : "Le fait qu'une action ait chuté de quelques dollars en dessous de son prix d'introduction en bourse n'est pas en soi une tragédie, mais SpaceX est fortement surveillé et joue un rôle important dans le psychisme des investisseurs."</p>
+            <span class="english-block">Sosnick added: "The fact that a stock has fallen a couple of dollars below its IPO price in itself is not a tragedy, but SpaceX is heavily watched and has an important role in investor psyche."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.62" data-end="185.14">
+            <p class="french-block">SpaceX n'a ​​pas immédiatement répondu à une demande de commentaire.</p>
+            <span class="english-block">SpaceX did not immediately respond to a request for comment.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_16.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
