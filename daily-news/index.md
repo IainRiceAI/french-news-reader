@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-07-16 08:29:54  
+Generated on: 2026-07-17 08:03:18  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **'No regrets' - Tuchel on England's defeat by Argentina**
-   - **Published:** Wed, 15 Jul 2026 22:40:05 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_No_regrets_-_Tuchel_on_Englands_defeat_b.md](top-stories_article_1_No_regrets_-_Tuchel_on_Englands_defeat_b.md)
+1. **Burnham to promise new path for UK when he becomes new Labour leader**
+   - **Published:** Fri, 17 Jul 2026 06:14:30 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Burnham_to_promise_new_path_for_UK_when_.md](top-stories_article_1_Burnham_to_promise_new_path_for_UK_when_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Argentina face action after waving Falklands banner**
-   - **Published:** Wed, 15 Jul 2026 22:49:47 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Argentina_face_action_after_waving_Falkl.md](top-stories_article_2_Argentina_face_action_after_waving_Falkl.md)
+2. **Burnham's 'Manchesterism' got him to No 10 - but will it work for the UK?**
+   - **Published:** Fri, 17 Jul 2026 05:00:08 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Burnhams_Manchesterism_got_him_to_No_10_.md](top-stories_article_2_Burnhams_Manchesterism_got_him_to_No_10_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **British Steel taken into public ownership to protect 'vital' UK supply**
-   - **Published:** Thu, 16 Jul 2026 07:06:16 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_British_Steel_taken_into_public_ownershi.md](top-stories_article_3_British_Steel_taken_into_public_ownershi.md)
+3. **China hits out at British Steel nationalisation**
+   - **Published:** Fri, 17 Jul 2026 05:35:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_China_hits_out_at_British_Steel_national.md](top-stories_article_3_China_hits_out_at_British_Steel_national.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **UK economy returns to growth in May**
-   - **Published:** Thu, 16 Jul 2026 06:50:46 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_UK_economy_returns_to_growth_in_May.md](top-stories_article_4_UK_economy_returns_to_growth_in_May.md)
+4. **US launches new strikes as Iran says civilian infrastructure hit**
+   - **Published:** Fri, 17 Jul 2026 06:21:58 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_US_launches_new_strikes_as_Iran_says_civ.md](top-stories_article_4_US_launches_new_strikes_as_Iran_says_civ.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Starmer on final trip to Ukraine as PM pledges UK's 'cast-iron' support**
-   - **Published:** Thu, 16 Jul 2026 07:05:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Starmer_on_final_trip_to_Ukraine_as_PM_p.md](top-stories_article_5_Starmer_on_final_trip_to_Ukraine_as_PM_p.md)
+5. **Targeted prostate cancer treatment cuts risk of side effects, study suggests**
+   - **Published:** Thu, 16 Jul 2026 23:36:40 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Targeted_prostate_cancer_treatment_cuts_.md](top-stories_article_5_Targeted_prostate_cancer_treatment_cuts_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Singer Jesy Nelson calls plan to test newborns for deadly muscle condition a 'victory'**
-   - **Published:** Thu, 16 Jul 2026 00:20:52 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Singer_Jesy_Nelson_calls_plan_to_test_ne.md](top-stories_article_6_Singer_Jesy_Nelson_calls_plan_to_test_ne.md)
+6. **Trump alleges 'shocking vulnerabilities' in US election security ahead of midterms**
+   - **Published:** Fri, 17 Jul 2026 04:08:27 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Trump_alleges_shocking_vulnerabilities_i.md](top-stories_article_6_Trump_alleges_shocking_vulnerabilities_i.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Can Andy Burnham solve the UK's housing crisis?**
-   - **Published:** Thu, 16 Jul 2026 05:00:04 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Can_Andy_Burnham_solve_the_UKs_housing_c.md](top-stories_article_7_Can_Andy_Burnham_solve_the_UKs_housing_c.md)
+7. **Catfished teen gets £10k after photos used for fake dating profiles**
+   - **Published:** Fri, 17 Jul 2026 05:17:23 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Catfished_teen_gets_10k_after_photos_use.md](top-stories_article_7_Catfished_teen_gets_10k_after_photos_use.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **New monkey species with orange lips found 'hiding' in DR Congo forest**
-   - **Published:** Wed, 15 Jul 2026 23:02:49 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_New_monkey_species_with_orange_lips_foun.md](top-stories_article_8_New_monkey_species_with_orange_lips_foun.md)
+8. **UK heatwave approaches two-week mark**
+   - **Published:** Thu, 16 Jul 2026 23:28:21 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_UK_heatwave_approaches_two-week_mark.md](top-stories_article_8_UK_heatwave_approaches_two-week_mark.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Iran targets military bases as US launches wave of strikes**
-   - **Published:** Thu, 16 Jul 2026 07:06:38 GMT
-   - **Read Parallel Translation:** [world_article_9_Iran_targets_military_bases_as_US_launch.md](world_article_9_Iran_targets_military_bases_as_US_launch.md)
+1. **US launches new strikes as Iran says civilian infrastructure hit**
+   - **Published:** Fri, 17 Jul 2026 06:21:58 GMT
+   - **Read Parallel Translation:** [world_article_9_US_launches_new_strikes_as_Iran_says_civ.md](world_article_9_US_launches_new_strikes_as_Iran_says_civ.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Argentina face action after waving Falklands banner**
-   - **Published:** Wed, 15 Jul 2026 22:49:47 GMT
-   - **Read Parallel Translation:** [world_article_10_Argentina_face_action_after_waving_Falkl.md](world_article_10_Argentina_face_action_after_waving_Falkl.md)
+2. **Trump alleges 'shocking vulnerabilities' in US election security ahead of midterms**
+   - **Published:** Fri, 17 Jul 2026 04:08:27 GMT
+   - **Read Parallel Translation:** [world_article_10_Trump_alleges_shocking_vulnerabilities_i.md](world_article_10_Trump_alleges_shocking_vulnerabilities_i.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Families of 43 victims await verdict in Genoa bridge disaster**
-   - **Published:** Wed, 15 Jul 2026 23:02:37 GMT
-   - **Read Parallel Translation:** [world_article_11_Families_of_43_victims_await_verdict_in_.md](world_article_11_Families_of_43_victims_await_verdict_in_.md)
+3. **More than 500 Rohingya vanished at sea - what happened?**
+   - **Published:** Fri, 17 Jul 2026 03:07:11 GMT
+   - **Read Parallel Translation:** [world_article_11_More_than_500_Rohingya_vanished_at_sea_-.md](world_article_11_More_than_500_Rohingya_vanished_at_sea_-.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **US military to start screening for testosterone deficiency, Hegseth says**
-   - **Published:** Thu, 16 Jul 2026 02:33:40 GMT
-   - **Read Parallel Translation:** [world_article_12_US_military_to_start_screening_for_testo.md](world_article_12_US_military_to_start_screening_for_testo.md)
+4. **Japan relaxes royal succession rules - but ban on female emperors remains**
+   - **Published:** Fri, 17 Jul 2026 05:16:34 GMT
+   - **Read Parallel Translation:** [world_article_12_Japan_relaxes_royal_succession_rules_-_b.md](world_article_12_Japan_relaxes_royal_succession_rules_-_b.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **British Steel taken into public ownership to protect 'vital' UK supply**
-   - **Published:** Thu, 16 Jul 2026 07:06:16 GMT
-   - **Read Parallel Translation:** [business_article_13_British_Steel_taken_into_public_ownershi.md](business_article_13_British_Steel_taken_into_public_ownershi.md)
+1. **Burnham's 'Manchesterism' got him to No 10 - but will it work for the UK?**
+   - **Published:** Fri, 17 Jul 2026 05:00:08 GMT
+   - **Read Parallel Translation:** [business_article_13_Burnhams_Manchesterism_got_him_to_No_10_.md](business_article_13_Burnhams_Manchesterism_got_him_to_No_10_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **UK economy returns to growth in May**
-   - **Published:** Thu, 16 Jul 2026 06:50:46 GMT
-   - **Read Parallel Translation:** [business_article_14_UK_economy_returns_to_growth_in_May.md](business_article_14_UK_economy_returns_to_growth_in_May.md)
+2. **China hits out at British Steel nationalisation**
+   - **Published:** Fri, 17 Jul 2026 05:35:00 GMT
+   - **Read Parallel Translation:** [business_article_14_China_hits_out_at_British_Steel_national.md](business_article_14_China_hits_out_at_British_Steel_national.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Celebrity influencers paid up to £1m to advertise deodorant on Instagram**
-   - **Published:** Thu, 16 Jul 2026 06:40:58 GMT
-   - **Read Parallel Translation:** [business_article_15_Celebrity_influencers_paid_up_to_1m_to_a.md](business_article_15_Celebrity_influencers_paid_up_to_1m_to_a.md)
+3. **The financial winners and losers from the World Cup**
+   - **Published:** Thu, 16 Jul 2026 23:16:14 GMT
+   - **Read Parallel Translation:** [business_article_15_The_financial_winners_and_losers_from_th.md](business_article_15_The_financial_winners_and_losers_from_th.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **SpaceX share price drops below stock market debut**
-   - **Published:** Wed, 15 Jul 2026 18:11:57 GMT
-   - **Read Parallel Translation:** [business_article_16_SpaceX_share_price_drops_below_stock_mar.md](business_article_16_SpaceX_share_price_drops_below_stock_mar.md)
+4. **I wouldn't marry him until he paid off his debt, now I'm in charge of our money**
+   - **Published:** Thu, 16 Jul 2026 23:14:11 GMT
+   - **Read Parallel Translation:** [business_article_16_I_wouldnt_marry_him_until_he_paid_off_hi.md](business_article_16_I_wouldnt_marry_him_until_he_paid_off_hi.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **SpaceX share price drops below stock market debut**
-   - **Published:** Wed, 15 Jul 2026 18:11:57 GMT
-   - **Read Parallel Translation:** [technology_article_17_SpaceX_share_price_drops_below_stock_mar.md](technology_article_17_SpaceX_share_price_drops_below_stock_mar.md)
+1. **Trump Media to sell early access to key social posts**
+   - **Published:** Fri, 17 Jul 2026 06:28:35 GMT
+   - **Read Parallel Translation:** [technology_article_17_Trump_Media_to_sell_early_access_to_key_.md](technology_article_17_Trump_Media_to_sell_early_access_to_key_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Midnight social media curfew proposed for UK teens aged 16 and 17**
-   - **Published:** Wed, 15 Jul 2026 11:24:29 GMT
-   - **Read Parallel Translation:** [technology_article_18_Midnight_social_media_curfew_proposed_fo.md](technology_article_18_Midnight_social_media_curfew_proposed_fo.md)
+2. **TikTok faces Ofcom investigation over child age checks**
+   - **Published:** Thu, 16 Jul 2026 11:08:33 GMT
+   - **Read Parallel Translation:** [technology_article_18_TikTok_faces_Ofcom_investigation_over_ch.md](technology_article_18_TikTok_faces_Ofcom_investigation_over_ch.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **10 years of Pokémon Go and the millions still trying to catch 'em all**
-   - **Published:** Mon, 13 Jul 2026 00:07:00 GMT
-   - **Read Parallel Translation:** [technology_article_19_10_years_of_Pokémon_Go_and_the_millions_.md](technology_article_19_10_years_of_Pokémon_Go_and_the_millions_.md)
+3. **Teen hackers who live streamed cyber-attack on TfL jailed**
+   - **Published:** Thu, 16 Jul 2026 10:52:26 GMT
+   - **Read Parallel Translation:** [technology_article_19_Teen_hackers_who_live_streamed_cyber-att.md](technology_article_19_Teen_hackers_who_live_streamed_cyber-att.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **Meta pulls new AI image feature after days of backlash**
-   - **Published:** Sat, 11 Jul 2026 01:45:59 GMT
-   - **Read Parallel Translation:** [technology_article_20_Meta_pulls_new_AI_image_feature_after_da.md](technology_article_20_Meta_pulls_new_AI_image_feature_after_da.md)
+4. **SpaceX share price drops below stock market debut**
+   - **Published:** Wed, 15 Jul 2026 18:11:57 GMT
+   - **Read Parallel Translation:** [technology_article_20_SpaceX_share_price_drops_below_stock_mar.md](technology_article_20_SpaceX_share_price_drops_below_stock_mar.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Weekend cooldown to mark end of heatwave for some**
-   - **Published:** Thu, 16 Jul 2026 00:31:59 GMT
-   - **Read Parallel Translation:** [science_article_21_Weekend_cooldown_to_mark_end_of_heatwave.md](science_article_21_Weekend_cooldown_to_mark_end_of_heatwave.md)
+1. **UK heatwave approaches two-week mark**
+   - **Published:** Thu, 16 Jul 2026 23:28:21 GMT
+   - **Read Parallel Translation:** [science_article_21_UK_heatwave_approaches_two-week_mark.md](science_article_21_UK_heatwave_approaches_two-week_mark.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **New monkey species with orange lips found 'hiding' in DR Congo forest**
-   - **Published:** Wed, 15 Jul 2026 23:02:49 GMT
-   - **Read Parallel Translation:** [science_article_22_New_monkey_species_with_orange_lips_foun.md](science_article_22_New_monkey_species_with_orange_lips_foun.md)
+2. **At least one dead in Texas floods ravaging same area where campers died**
+   - **Published:** Thu, 16 Jul 2026 22:08:13 GMT
+   - **Read Parallel Translation:** [science_article_22_At_least_one_dead_in_Texas_floods_ravagi.md](science_article_22_At_least_one_dead_in_Texas_floods_ravagi.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Canada wildfires leave train 'encased in flames' as smoke drifts towards US**
-   - **Published:** Wed, 15 Jul 2026 17:44:54 GMT
-   - **Read Parallel Translation:** [science_article_23_Canada_wildfires_leave_train_encased_in_.md](science_article_23_Canada_wildfires_leave_train_encased_in_.md)
+3. **Watch: Flood waters surge in Texas after huge rainstorms**
+   - **Published:** Thu, 16 Jul 2026 16:45:55 GMT
+   - **Read Parallel Translation:** [science_article_23_Watch_Flood_waters_surge_in_Texas_after_.md](science_article_23_Watch_Flood_waters_surge_in_Texas_after_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Scots urged to 'stay vigilant' as wildfire risk very high**
-   - **Published:** Wed, 15 Jul 2026 15:34:38 GMT
-   - **Read Parallel Translation:** [science_article_24_Scots_urged_to_stay_vigilant_as_wildfire.md](science_article_24_Scots_urged_to_stay_vigilant_as_wildfire.md)
+4. **When will it rain again in the UK?**
+   - **Published:** Thu, 16 Jul 2026 16:13:27 GMT
+   - **Read Parallel Translation:** [science_article_24_When_will_it_rain_again_in_the_UK.md](science_article_24_When_will_it_rain_again_in_the_UK.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **NHS manager says trust wanted 4,000 reports 'gone'**
-   - **Published:** Thu, 16 Jul 2026 05:01:01 GMT
-   - **Read Parallel Translation:** [health_article_25_NHS_manager_says_trust_wanted_4000_repor.md](health_article_25_NHS_manager_says_trust_wanted_4000_repor.md)
+1. **Energy drinks to be banned for under-16s in England from April**
+   - **Published:** Thu, 16 Jul 2026 18:57:47 GMT
+   - **Read Parallel Translation:** [health_article_25_Energy_drinks_to_be_banned_for_under-16s.md](health_article_25_Energy_drinks_to_be_banned_for_under-16s.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Jesy Nelson calls plan to test newborns for deadly muscle condition a 'victory'**
-   - **Published:** Thu, 16 Jul 2026 00:20:52 GMT
-   - **Read Parallel Translation:** [health_article_26_Jesy_Nelson_calls_plan_to_test_newborns_.md](health_article_26_Jesy_Nelson_calls_plan_to_test_newborns_.md)
+2. **Teenagers from 15 should be given free MenB vaccine, say UK experts**
+   - **Published:** Thu, 16 Jul 2026 16:36:13 GMT
+   - **Read Parallel Translation:** [health_article_26_Teenagers_from_15_should_be_given_free_M.md](health_article_26_Teenagers_from_15_should_be_given_free_M.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Covid inquiry PPE report - key findings**
-   - **Published:** Tue, 14 Jul 2026 12:45:44 GMT
-   - **Read Parallel Translation:** [health_article_27_Covid_inquiry_PPE_report_-_key_findings.md](health_article_27_Covid_inquiry_PPE_report_-_key_findings.md)
+3. **NHS manager says trust wanted 4,000 reports 'gone'**
+   - **Published:** Thu, 16 Jul 2026 14:52:45 GMT
+   - **Read Parallel Translation:** [health_article_27_NHS_manager_says_trust_wanted_4000_repor.md](health_article_27_NHS_manager_says_trust_wanted_4000_repor.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **UK wasted £10bn on PPE that left NHS staff poorly protected, Covid inquiry finds**
-   - **Published:** Tue, 14 Jul 2026 12:12:53 GMT
-   - **Read Parallel Translation:** [health_article_28_UK_wasted_10bn_on_PPE_that_left_NHS_staf.md](health_article_28_UK_wasted_10bn_on_PPE_that_left_NHS_staf.md)
+4. **Jesy Nelson calls plan to test newborns for life-limiting muscle condition a 'victory'**
+   - **Published:** Thu, 16 Jul 2026 00:20:52 GMT
+   - **Read Parallel Translation:** [health_article_28_Jesy_Nelson_calls_plan_to_test_newborns_.md](health_article_28_Jesy_Nelson_calls_plan_to_test_newborns_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Burnham faces crucial choice for chancellor as battle for No 11 continues**
-   - **Published:** Wed, 15 Jul 2026 17:13:06 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_faces_crucial_choice_for_chancel.md](politics_article_29_Burnham_faces_crucial_choice_for_chancel.md)
+1. **Burnham to promise new path for UK when he becomes new Labour leader**
+   - **Published:** Fri, 17 Jul 2026 06:14:30 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_to_promise_new_path_for_UK_when_.md](politics_article_29_Burnham_to_promise_new_path_for_UK_when_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Starmer on final trip to Ukraine as PM pledges UK's 'cast-iron' support**
-   - **Published:** Thu, 16 Jul 2026 07:05:02 GMT
-   - **Read Parallel Translation:** [politics_article_30_Starmer_on_final_trip_to_Ukraine_as_PM_p.md](politics_article_30_Starmer_on_final_trip_to_Ukraine_as_PM_p.md)
+2. **Sadiq Khan among 26 new peers to enter the Lords**
+   - **Published:** Thu, 16 Jul 2026 17:20:47 GMT
+   - **Read Parallel Translation:** [politics_article_30_Sadiq_Khan_among_26_new_peers_to_enter_t.md](politics_article_30_Sadiq_Khan_among_26_new_peers_to_enter_t.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **British Steel taken into public ownership to protect 'vital' UK supply**
-   - **Published:** Thu, 16 Jul 2026 07:06:16 GMT
-   - **Read Parallel Translation:** [politics_article_31_British_Steel_taken_into_public_ownershi.md](politics_article_31_British_Steel_taken_into_public_ownershi.md)
+3. **Who is the frontrunner to be the UK's next chancellor?**
+   - **Published:** Thu, 16 Jul 2026 10:03:05 GMT
+   - **Read Parallel Translation:** [politics_article_31_Who_is_the_frontrunner_to_be_the_UKs_nex.md](politics_article_31_Who_is_the_frontrunner_to_be_the_UKs_nex.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **UK economy returns to growth in May**
-   - **Published:** Thu, 16 Jul 2026 06:50:46 GMT
-   - **Read Parallel Translation:** [politics_article_32_UK_economy_returns_to_growth_in_May.md](politics_article_32_UK_economy_returns_to_growth_in_May.md)
+4. **Starmer pledges 'unwavering support' for Ukraine on final visit as PM**
+   - **Published:** Thu, 16 Jul 2026 19:50:54 GMT
+   - **Read Parallel Translation:** [politics_article_32_Starmer_pledges_unwavering_support_for_U.md](politics_article_32_Starmer_pledges_unwavering_support_for_U.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **The Odyssey is a 'colossal piece of cinema', critics say in rave reviews**
-   - **Published:** Wed, 15 Jul 2026 17:04:58 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_The_Odyssey_is_a_colossal_piece_of_cinem.md](entertainment_article_33_The_Odyssey_is_a_colossal_piece_of_cinem.md)
+1. **Kit Connor and Joe Locke: 'Making a film like Heartstopper will forever be important'**
+   - **Published:** Thu, 16 Jul 2026 23:52:23 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Kit_Connor_and_Joe_Locke_Making_a_film_l.md](entertainment_article_33_Kit_Connor_and_Joe_Locke_Making_a_film_l.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Actor Sam Neill died from pneumonia, agent confirms**
-   - **Published:** Thu, 16 Jul 2026 04:28:22 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Actor_Sam_Neill_died_from_pneumonia_agen.md](entertainment_article_34_Actor_Sam_Neill_died_from_pneumonia_agen.md)
+2. **Claudia Winkleman quits chat show after one series**
+   - **Published:** Thu, 16 Jul 2026 12:37:32 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Claudia_Winkleman_quits_chat_show_after_.md](entertainment_article_34_Claudia_Winkleman_quits_chat_show_after_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Jesy Nelson calls plan to test newborns for deadly muscle condition a 'victory'**
-   - **Published:** Thu, 16 Jul 2026 00:20:52 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Jesy_Nelson_calls_plan_to_test_newborns_.md](entertainment_article_35_Jesy_Nelson_calls_plan_to_test_newborns_.md)
+3. **Kris Jenner's mother Mary Jo dies aged 91**
+   - **Published:** Thu, 16 Jul 2026 20:24:54 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Kris_Jenners_mother_Mary_Jo_dies_aged_91.md](entertainment_article_35_Kris_Jenners_mother_Mary_Jo_dies_aged_91.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **What if Bluey spoke one of the world's oldest living languages?**
-   - **Published:** Wed, 15 Jul 2026 18:07:05 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_What_if_Bluey_spoke_one_of_the_worlds_ol.md](entertainment_article_36_What_if_Bluey_spoke_one_of_the_worlds_ol.md)
+4. **The Odyssey is a 'colossal piece of cinema', critics say in rave reviews**
+   - **Published:** Wed, 15 Jul 2026 17:04:58 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_The_Odyssey_is_a_colossal_piece_of_cinem.md](entertainment_article_36_The_Odyssey_is_a_colossal_piece_of_cinem.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

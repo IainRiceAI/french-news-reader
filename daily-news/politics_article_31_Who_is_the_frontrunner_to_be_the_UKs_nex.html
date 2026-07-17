@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is the frontrunner to be the UK's next chancellor?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Who is the frontrunner to be the UK's next chancellor?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 16 Jul 2026 10:03:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c36yj4pn7jdo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Andy Burnham will be moving into Downing Street next week, and a question remains over who will be his neighbour in Number 11.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.55" data-end="15.48">
+            <p class="french-block">Andy Burnham déménagera à Downing Street lundi, alors qu'il deviendra le prochain Premier ministre britannique après la démission de Sir Keir Starmer.</p>
+            <span class="english-block">Andy Burnham will be moving in to Downing Street on Monday, as he becomes the next UK prime minister following the resignation of Sir Keir Starmer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.48" data-end="19.61">
+            <p class="french-block">Mais qui vivra à côté au numéro 11 en tant que chancelier ?</p>
+            <span class="english-block">But who will live next door in Number 11 as chancellor?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.61" data-end="28.3">
+            <p class="french-block">Officiellement, l'équipe de Burnham affirme qu'aucune décision n'a été prise et que les annonces concernant la position du cabinet ne seront faites que lundi.</p>
+            <span class="english-block">Officially, Burnham's team says no decision has been taken and cabinet position announcements won't be made until Monday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.3" data-end="37.51">
+            <p class="french-block">Mais cela n’a pas empêché les spéculations sur qui pourrait assumer le rôle principal du Trésor – et les tentatives visant à influencer le choix de Burnham comme chancelier.</p>
+            <span class="english-block">But that hasn't stopped speculation about who may take on the top Treasury role - and attempts at influencing Burnham's choice in chancellor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.51" data-end="54.26">
+            <p class="french-block">Quel qu’il soit, cette personne sera confrontée à de nombreuses difficultés : une dette élevée, une croissance faible, une réforme de la protection sociale, des dépenses de défense et les retombées économiques de la guerre entre les États-Unis, Israël et l’Iran, pour ne citer que quelques problèmes.</p>
+            <span class="english-block">Whoever it is, that person will face quite the in-tray – high debt, low growth, welfare reform, defence spending, and the economic fallout from the US-Israel war with Iran to name a few issues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.26" data-end="59.9">
+            <p class="french-block">Voici les noms de ceux qui seraient en lice pour le poste – et ce qu'ils pourraient signifier pour vos finances.</p>
+            <span class="english-block">Here are the names of those believed to be in the running for the job - and what they could mean for your finances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.9" data-end="65.04">
+            <p class="french-block">On parle de plus en plus de voir l’actuel ministre de l’Intérieur devenir chancelier.</p>
+            <span class="english-block">There has been increasing talk of the current home secretary becoming chancellor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.04" data-end="78.86">
+            <p class="french-block">La BBC a appris qu'il y avait des "discussions en direct" sur la possibilité de placer Mahmood au numéro 11, tandis que le Financial Times, externe, le rapporte comme une certitude sur la base de trois sources proches de Burnham.</p>
+            <span class="english-block">The BBC has been told there are "live discussions" about putting Mahmood in Number 11, while the Financial Times, external is reporting it as a certainty based on three sources close to Burnham.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.86" data-end="91.06">
+            <p class="french-block">Même si elle n'a pas de formation en économie, elle est une ministre de premier plan à la droite du parti travailliste et on peut penser qu'elle pourrait rassurer les marchés financiers et faciliter la transition vers un gouvernement Burnham.</p>
+            <span class="english-block">While she does not have an economics background, she is a senior minister on Labour's right and it may be felt that she could reassure financial markets and smooth the transition to a Burnham government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.06" data-end="105.6">
+            <p class="french-block">Kathleen Brooks, directrice de recherche chez XTB, a déclaré que les marchés étaient déjà soulagés par les informations selon lesquelles Mahmood deviendrait chancelier, avec une livre sterling en hausse d'environ 1% par rapport au dollar américain cette semaine.</p>
+            <span class="english-block">Kathleen Brooks, research director at XTB, said the markets were already rallying in relief to reports that Mahmood would become chancellor, with the pound up about 1% against the US dollar this week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.6" data-end="128.28">
+            <p class="french-block">"Cela nous apprend deux choses sur le gouvernement d'Andy Burnham : premièrement, le marché fait confiance à Mahmood pour adopter une approche sensée en matière de politique économique et s'attaquer aux questions difficiles des dépenses sociales. Deuxièmement, Burnham est disposé à ce que ceux qui se trouvent à la droite du parti travailliste dans son cabinet occupent des postes économiques clés", a déclaré Brooks.</p>
+            <span class="english-block">"It tells us two things about Andy Burnham's government: firstly, the market trusts Mahmood to take a sensible approach to economic policy, and to tackle the hard questions of welfare spending, secondly, Burnham is willing to have those to the right of the Labour party in his cabinet in key economic roles," Brooks said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.28" data-end="138.26">
+            <p class="french-block">Cependant, selon des rapports distincts de la Press Association, Mahmood souhaite rester ministre de l'Intérieur et mener à bien les changements qu'elle a apportés au système d'asile.</p>
+            <span class="english-block">However, according to separate reports from the Press Association, Mahmood is keen to remain as home secretary and see through changes she has brought in to the asylum system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.26" data-end="150.24">
+            <p class="french-block">Fin juin, Ed Miliband était le grand favori des bookmakers pour le poste de numéro deux de la politique britannique, l'ancien chef du parti travailliste étant politiquement plus proche de Burnham que d'autres rivaux.</p>
+            <span class="english-block">In late June, Ed Miliband was the bookmakers' strong favourite for the number two job in British politics, with the former Labour party leader politically closer to Burnham than other rivals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.24" data-end="161.11">
+            <p class="french-block">Toutefois, les avis divergent quant à savoir si l'ancien conseiller au Trésor, Miliband, recevrait le soutien des marchés financiers, dont dépend le gouvernement pour prêter de l'argent.</p>
+            <span class="english-block">However, opinions differ on whether former Treasury adviser Miliband would receive the backing of the financial markets, which the government depends on to lend money.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.11" data-end="173.28">
+            <p class="french-block">Certains voient Miliband comme un risque d'inflation, estimant que sa volonté d'atteindre le zéro net en tant que secrétaire à l'énergie est en partie responsable des prix élevés de l'énergie au Royaume-Uni par rapport à d'autres pays.</p>
+            <span class="english-block">Some see Miliband as an inflation risk, believing his drive for net zero as energy secretary as partly responsible for the UK's high energy prices compared to other countries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.28" data-end="182.74">
+            <p class="french-block">Les analystes affirment que cette réputation, qu'elle soit exacte ou non, pourrait affecter la façon dont les marchés obligataires réagiront à son mandat de chancelier.</p>
+            <span class="english-block">Analysts say that reputation, whether accurate or not, could affect how bond markets react to his time as chancellor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="182.74" data-end="192.77">
+            <p class="french-block">Ces derniers jours, plusieurs députés proches de Burnham - qui n'ont aucun problème avec le secrétaire à l'énergie - estiment que les chances de nommer Miliband ont nettement diminué.</p>
+            <span class="english-block">In recent days, several MPs close to Burnham - who have no issues with the energy secretary - believe the likelihood of appointing Miliband has significantly lessened.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.77" data-end="199.25">
+            <p class="french-block">Mais d'autres proches de Miliband estiment qu'il était à la fois hautement possible et souhaitable qu'il devienne chancelier.</p>
+            <span class="english-block">But others close to Miliband believe it was both highly possible he would become chancellor, and something that was still wanted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.25" data-end="207.77">
+            <p class="french-block">La ministre des Affaires étrangères, Yvette Cooper, pourrait être un choix de compromis surprise et est considérée comme une chancelière potentielle.</p>
+            <span class="english-block">Foreign Secretary Yvette Cooper could be a surprise compromise pick, and is seen as a potential for chancellor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.77" data-end="218.78">
+            <p class="french-block">Elle a des années d’expérience au sein du gouvernement, ayant été secrétaire en chef du Trésor sous Gordon Brown, et se situe politiquement quelque part entre Miliband et McFadden ou Streeting.</p>
+            <span class="english-block">She has years of experience in government, serving as chief secretary to the Treasury under Gordon Brown, and sits somewhere in between Miliband and McFadden or Streeting politically.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.78" data-end="228.91">
+            <p class="french-block">Danni Hewson, responsable de l'analyse financière chez la société de services financiers AJ Bell, la qualifie d'option "à mi-chemin", mais aussi "un peu plus inconnue".</p>
+            <span class="english-block">Danni Hewson, head of financial analysis at financial services firm AJ Bell, calls her a "middle of the road" option but also "a bit more of an unknown".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.91" data-end="244.44">
+            <p class="french-block">Wes Streeting, un ancien candidat à la direction du Parti travailliste, était le premier favori pour le poste de chancelier, avec des suggestions selon lesquelles il pourrait se voir attribuer le poste pour s'être manifesté et avoir soutenu Burnham et renoncé à ses propres ambitions.</p>
+            <span class="english-block">Wes Streeting, a former contender for the Labour leadership, was the early favourite for chancellor, with suggestions that he could be awarded the job for coming out and backing Burnham and withdrawing his own ambitions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.44" data-end="252.67">
+            <p class="french-block">Cependant, l'économiste et collègue Lord Jim O'Neill, qui a fourni des conseils à Burnham, a mis en garde contre cette approche.</p>
+            <span class="english-block">However, economist and cross-bench peer Lord Jim O'Neill, who has been providing advice to Burnham, has warned against this approach.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="252.67" data-end="262.51">
+            <p class="french-block">Lord O'Neill a déclaré à la BBC que le conseil qu'il avait donné à Burnham était de "déterminer quelles sont ses priorités en tant que Premier ministre avant de choisir un chancelier".</p>
+            <span class="english-block">Lord O'Neill told the BBC the advice he has given Burnham is to "figure out what his priorities are as prime minister before he picks a chancellor".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="262.51" data-end="271.32">
+            <p class="french-block">Bien que Burnham puisse apprécier le soutien de Streeting, les politiques des deux hommes diffèrent – ​​Burnham étant apparemment enclin à dépenser plus que Streeting.</p>
+            <span class="english-block">Though Burnham may appreciate Streeting's backing, the pair's politics differ - with Burnham seen to be inclined to spend more than Streeting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.32" data-end="287.18">
+            <p class="french-block">Simon French, économiste en chef du cabinet de conseil Panmure Liberum, estime que le streeting est une "option relativement favorable au marché" en raison de ses propos favorables à la croissance, mais aussi un risque politique car il pourrait un jour vouloir devenir Premier ministre.</p>
+            <span class="english-block">Simon French, chief economist at consultancy Panmure Liberum, says Streeting is a "relatively market-friendly option" because of his pro-growth comments, but also a political risk because he might someday want to be prime minister.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.18" data-end="305.33">
+            <p class="french-block">Bien que considéré comme une option moins probable que Streeting ou Miliband, certains considèrent Pat McFadden comme le choix le plus qualifié, ayant occupé des postes fantômes au Trésor, ayant été ministre des Affaires dans un précédent gouvernement travailliste et étant également l'actuel secrétaire au Travail et aux retraites.</p>
+            <span class="english-block">Though seen as a less likely option than Streeting or Miliband, some view Pat McFadden as the most qualified pick, having held shadow Treasury jobs, been a business minister in a previous Labour government, and also being the current work and pensions secretary.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.33" data-end="315.46">
+            <p class="french-block">C'est son expérience dans ce dernier rôle qui pourrait l'aider à s'attaquer à ce que beaucoup considèrent comme la plus grande tâche de tout futur chancelier : la réforme de la protection sociale.</p>
+            <span class="english-block">It is his experience in the latter role that could help him to tackle what many say will be any future chancellor's biggest task: welfare reform.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.46" data-end="327.55">
+            <p class="french-block">Les Français de Panmure Liberum estiment que les marchés pourraient considérer McFadden comme "la paire de mains la plus sûre" parmi ceux en lice et qu'ils réagiront soit de manière positive, soit de manière neutre s'il était choisi.</p>
+            <span class="english-block">Panmure Liberum's French believes the markets may view McFadden as "the safest pair of hands" out of those in the running and will either react positively or neutrally if he were picked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.55" data-end="335.62">
+            <p class="french-block">Mais si Burnham cherche à rompre définitivement avec le gouvernement précédent, il négligera probablement le loyaliste de Sir Keir.</p>
+            <span class="english-block">But if Burnham is looking for a clean break from the previous government, he will likely overlook the Sir Keir-loyalist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.62" data-end="342.24">
+            <p class="french-block">Il semble de plus en plus improbable que l'actuelle chancelière, Rachel Reeves, conserve son poste.</p>
+            <span class="english-block">It's looking increasingly unlikely that the current Chancellor, Rachel Reeves, will keep her job.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.24" data-end="355.01">
+            <p class="french-block">Un porte-parole de Burnham a déclaré qu'aucune décision n'avait été prise quant à la personne qu'il nommerait, mais des rapports suggèrent que Reeves serait remplacé et se verrait proposer un poste ministériel subalterne ou intermédiaire.</p>
+            <span class="english-block">A spokesperson for Burnham said no decisions had been made about who he would appoint, but reports suggest Reeves would be replaced and offered a junior or mid-level cabinet position.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.01" data-end="367.18">
+            <p class="french-block">Reeves a exhorté le gouvernement dirigé par Burnham à s'en tenir à ce qu'elle fait parce que cela "commence à porter ses fruits". Burnham a déclaré précédemment qu'il s'en tiendrait aux règles budgétaires de Reeves.</p>
+            <span class="english-block">Reeves has urged a Burnham-led government to stick to what she is doing because it is "beginning to bear fruit". Burnham has said previously he would stick to Reeves' fiscal rules.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="367.18" data-end="387.53">
+            <p class="french-block">Elle a défendu sa gestion de l'économie britannique dans une interview à la BBC, dans laquelle elle a soutenu l'ancien maire de Manchester, malgré les informations faisant état de sa potentielle rétrogradation. Elle a choisi de l'accueillir au Parlement lors d'une séance photo avec d'autres députés et a été notamment absente du discours de démission de Sir Keir.</p>
+            <span class="english-block">She defended her handling of the UK economy in an interview with the BBC, in which she backed the former Manchester mayor, despite the reports of her potential demotion. She opted to welcome him to parliament in a photoshoot with other MPs and was notably absent from Sir Keir's resignation speech.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="387.53" data-end="396.1">
+            <p class="french-block">Reeves a déclaré lors de la conférence des chambres de commerce britanniques qu'elle était fière de son bilan jusqu'à présent, mais qu'il y avait "plus à faire".</p>
+            <span class="english-block">Reeves told the British Chambers of Commerce conference she was proud of her record so far but there was "more to do".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.1" data-end="400.39">
+            <p class="french-block">Ensuite, il y a la longue liste de caractères génériques.</p>
+            <span class="english-block">Then there are the longlist of wildcards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="400.39" data-end="411.07">
+            <p class="french-block">L'ancien secrétaire à la Défense, John Healey, qui a démissionné très publiquement parce qu'il ne pensait pas que le gouvernement dépensait suffisamment pour la défense, est une autre option.</p>
+            <span class="english-block">Former defence secretary John Healey, who very publicly quit because he did not believe the government was spending enough on defence, is another option.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="411.07" data-end="418.85">
+            <p class="french-block">Cependant, Paul Johnson affirme que Burnham s'engagerait essentiellement à répondre à cette demande de dépenses s'il le choisissait.</p>
+            <span class="english-block">However, Paul Johnson says Burnham would essentially be committing to meeting that spending demand if he chose him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.85" data-end="425.42">
+            <p class="french-block">"Si j'étais Andy Burnham, je ne voudrais pas m'attacher aussi rapidement à ce pilier", a-t-il déclaré.</p>
+            <span class="english-block">"If I was Andy Burnham, I would not want to tie myself to that particular pillar that quickly," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="425.42" data-end="439.66">
+            <p class="french-block">Les bookmakers et les rapports mentionnent également le secrétaire en chef du Premier ministre Darren Jones, qui s'est déclaré exclu de la course à la direction, et l'ancien directeur général de la Resolution Foundation, Torsten Bell, comme étrangers.</p>
+            <span class="english-block">Bookmakers and reports also mention chief secretary to the prime minister Darren Jones, who ruled himself out of the running for the leadership, and former chief executive of the Resolution Foundation Torsten Bell as outsiders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="439.66" data-end="446.57">
+            <p class="french-block">Même si certains politiciens ont plus de chances d’être embauchés que d’autres, chacun d’entre eux voudra obtenir le poste.</p>
+            <span class="english-block">While some politicians are more likely to be hired than others, each one will want the job.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="446.57" data-end="451.78">
+            <p class="french-block">Comme le dit Lord O'Neill : « Ceux dont les noms sont dans les journaux sont ceux qui se présentent. »</p>
+            <span class="english-block">As Lord O'Neill puts it: "The ones whose names are in the papers are the ones who are putting themselves forward."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="451.78" data-end="458.3">
+            <p class="french-block">Burnham fait face à un choix crucial pour le chancelier alors que la bataille pour le numéro 11 se poursuit</p>
+            <span class="english-block">Burnham faces crucial choice for chancellor as battle for No 11 continues</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="458.3" data-end="461.54">
+            <p class="french-block">Burnham n'exclut pas l'impôt sur la fortune</p>
+            <span class="english-block">Burnham does not rule out wealth tax</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="461.54" data-end="469.25">
+            <p class="french-block">Burnham prêt pour le numéro 10 : les correspondants de la BBC parlent de ce que Trump, Poutine et d'autres penseront de lui</p>
+            <span class="english-block">Burnham set for No 10: BBC correspondents on what Trump, Putin and others will make of him</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_31.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
