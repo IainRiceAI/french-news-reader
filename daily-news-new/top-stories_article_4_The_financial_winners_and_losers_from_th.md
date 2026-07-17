@@ -1,11 +1,11 @@
 # The financial winners and losers from the World Cup
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cgrkek8lrzvo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cgrkek8lrzvo?at_medium=RSS&at_campaign=rss)  
-**Published:** Thu, 16 Jul 2026 23:16:14 GMT  
+**Published:** Fri, 17 Jul 2026 09:40:17 GMT  
 
 ---
 
-> **BBC Summary:** Big bucks are being made from the 2026 tournament off the field, but who is raking in the most?
+> **BBC Summary:** Big bucks are being made from the 2026 tournament off the field, but who is raking in the most, and who is losing out?
 
 ---
 
@@ -35,9 +35,9 @@
 
 ### Section 4
 
-**🇬🇧 EN:** But not everyone is raking in the big bucks with financial winners and losers.
+**🇬🇧 EN:** But not everyone is raking in the big bucks, so while there are some big winners, there are also some financial losers.
 
-**🇫🇷 FR:** *Mais tout le monde ne gagne pas beaucoup d’argent avec des gagnants et des perdants financiers.*
+**🇫🇷 FR:** *Mais tout le monde ne gagne pas beaucoup d’argent, donc s’il y a de grands gagnants, il y a aussi des perdants financiers.*
 
 ---
 
@@ -83,13 +83,21 @@
 
 ### Section 10
 
+**🇬🇧 EN:** This year's tournament expanded from 32 to 48 teams under Fifa president Gianni Infantino
+
+**🇫🇷 FR:** *Le tournoi de cette année est passé de 32 à 48 équipes sous la direction du président de la Fifa, Gianni Infantino.*
+
+---
+
+### Section 11
+
 **🇬🇧 EN:** While fans may have achieved lifelong dreams, financially speaking, this tournament has been tough.
 
 **🇫🇷 FR:** *Même si les supporters ont réalisé les rêves de leur vie, financièrement parlant, ce tournoi a été difficile.*
 
 ---
 
-### Section 11
+### Section 12
 
 **🇬🇧 EN:** The vast sums being forked out to pay for the tickets alone and criticism of Fifa's dynamic pricing strategy, which raises prices when demand is high, have been well-documented.
 
@@ -97,7 +105,7 @@
 
 ---
 
-### Section 12
+### Section 13
 
 **🇬🇧 EN:** Even US President Donald Trump admitted he "wouldn't pay" when asked about the potential $1,000 ticket price for his country's tournament opener against Paraguay.
 
@@ -105,7 +113,7 @@
 
 ---
 
-### Section 13
+### Section 14
 
 **🇬🇧 EN:** Tickets for the final at New Jersey's MetLife Stadium were officially offered at $32,970, while some resale tickets have been listed for more than $2m.
 
@@ -113,15 +121,15 @@
 
 ---
 
-### Section 14
+### Section 15
 
-**🇬🇧 EN:** Fifa president Infantino defended ticket costs, arguing they were in line with other US sporting events.
+**🇬🇧 EN:** Fifa president Gianni Infantino defended ticket costs, arguing they were in line with other US sporting events.
 
-**🇫🇷 FR:** *Le président de la Fifa, Infantino, a défendu le prix des billets, arguant qu'il était conforme à celui d'autres événements sportifs américains.*
+**🇫🇷 FR:** *Le président de la Fifa, Gianni Infantino, a défendu le prix des billets, arguant qu'il était conforme à celui d'autres événements sportifs américains.*
 
 ---
 
-### Section 15
+### Section 16
 
 **🇬🇧 EN:** Away from tickets, fans have also been squeezed through flights, food and accommodation.
 
@@ -129,7 +137,7 @@
 
 ---
 
-### Section 16
+### Section 17
 
 **🇬🇧 EN:** One example that hit the headlines was the hike in New Jersey Transit train tickets. A 30-minute train journey to the MetLife Stadium rose to $150 for the tournament from the usual $12.90 for a return fare. A backlash led to prices being cut, but they still remained higher than normal.
 
@@ -137,39 +145,47 @@
 
 ---
 
-### Section 17
-
-**🇬🇧 EN:** While broadcasters have had to shell out big bucks to televise the tournament, the viewing figures - and sponsors wanting their brands on show - mean they are also likely to make a killing in selling advertising slots.
-
-**🇫🇷 FR:** *Même si les diffuseurs ont dû débourser beaucoup d'argent pour retransmettre le tournoi, les chiffres d'audience - et les sponsors qui souhaitent que leurs marques soient exposées - signifient qu'ils sont également susceptibles de gagner beaucoup d'argent en vendant des emplacements publicitaires.*
-
----
-
 ### Section 18
 
-**🇬🇧 EN:** Fifa brought in hydration breaks for this World Cup - a move Infantino said was "purely a sporting matter" with no additional revenue for the governing body.
+**🇬🇧 EN:** A fan poster alludes to the vast sums forked out for tickets
 
-**🇫🇷 FR:** *La Fifa a introduit des pauses hydratation pour cette Coupe du monde – une décision qui, selon Infantino, était "une question purement sportive" sans aucun revenu supplémentaire pour l'instance dirigeante.*
+**🇫🇷 FR:** *Une affiche de fan fait allusion aux énormes sommes déboursées pour les billets*
 
 ---
 
 ### Section 19
 
-**🇬🇧 EN:** However, the 90 seconds for players to get fluids on board has provided a new commercial opportunity for broadcasters and sponsors wanting to show off their brand, especially in the US, where American sports fans have been long used to games effectively being played around the ad breaks.
+**🇬🇧 EN:** While broadcasters have had to spend a fortune to televise the tournament, the viewing figures - and sponsors wanting their brands on show - mean they are also likely to make a killing in selling advertising slots.
 
-**🇫🇷 FR:** *Cependant, les 90 secondes accordées aux joueurs pour s'hydrater ont fourni une nouvelle opportunité commerciale aux diffuseurs et aux sponsors souhaitant montrer leur marque, en particulier aux États-Unis, où les fans de sport américains sont habitués depuis longtemps à ce que les jeux se déroulent efficacement autour des coupures publicitaires.*
+**🇫🇷 FR:** *Même si les diffuseurs ont dû dépenser une fortune pour retransmettre le tournoi, les chiffres d'audience - et les sponsors qui souhaitent que leurs marques soient exposées - signifient qu'ils sont également susceptibles de gagner beaucoup d'argent en vendant des espaces publicitaires.*
 
 ---
 
 ### Section 20
 
-**🇬🇧 EN:** Fox Sports, who reportedly paid $485m for the US broadcast rights, introduced the hydration intervals as "sponsored by" a brand.
+**🇬🇧 EN:** Fifa brought in the much-talked about hydration breaks for this World Cup - a move Infantino said was "purely a sporting matter" with no additional revenue for the governing body.
 
-**🇫🇷 FR:** *Fox Sports, qui aurait payé 485 millions de dollars pour les droits de diffusion aux États-Unis, a présenté les intervalles d'hydratation comme étant « sponsorisés par » une marque.*
+**🇫🇷 FR:** *La Fifa a introduit les fameuses pauses d'hydratation pour cette Coupe du monde - une décision qui, selon Infantino, était "une question purement sportive" sans aucun revenu supplémentaire pour l'instance dirigeante.*
 
 ---
 
 ### Section 21
+
+**🇬🇧 EN:** However, the three minutes for players to get fluids on board has provided a new commercial opportunity for broadcasters and sponsors.
+
+**🇫🇷 FR:** *Cependant, les trois minutes accordées aux joueurs pour s'hydrater ont fourni une nouvelle opportunité commerciale aux diffuseurs et aux sponsors.*
+
+---
+
+### Section 22
+
+**🇬🇧 EN:** Fox Sports, who reportedly paid $485m for the US broadcast rights, introduced the breaks as "sponsored by" a brand.
+
+**🇫🇷 FR:** *Fox Sports, qui aurait payé 485 millions de dollars pour les droits de diffusion aux États-Unis, a présenté les pauses comme étant « sponsorisées par » une marque.*
+
+---
+
+### Section 23
 
 **🇬🇧 EN:** According to experts, an average 30-second World Cup advertising slot on Fox costs between $200,000 and $300,000. It reached as high as $750,000 during US matches the final stages.
 
@@ -177,15 +193,7 @@
 
 ---
 
-### Section 22
-
-**🇬🇧 EN:** It means hydration break ads could net $250m in the US alone, prompting speculation that they will be here to stay.
-
-**🇫🇷 FR:** *Cela signifie que les publicités sur les pauses hydratation pourraient rapporter 250 millions de dollars rien qu’aux États-Unis, ce qui laisse supposer qu’elles seront là pour rester.*
-
----
-
-### Section 23
+### Section 24
 
 **🇬🇧 EN:** "The hydration breaks are pure advertising inventory. I'd be extremely surprised if they disappear. The expanded format will stay because scale is now Fifa's business model," says Laboure of Deutsche Bank Research.
 
@@ -193,7 +201,7 @@
 
 ---
 
-### Section 24
+### Section 25
 
 **🇬🇧 EN:** Fans in the UK watching games on the BBC or ITV have been shielded from hydration break adverts due to the former not using any advertising and the latter being restricted by regulator rules on the amount of commercials used in a 60-minute period.
 
@@ -201,7 +209,7 @@
 
 ---
 
-### Section 25
+### Section 26
 
 **🇬🇧 EN:** The official sponsors of the World Cup pay eye-watering sums to associate brands with the competition, but no doubt end up benefiting financially, with the likes of Adidas and Coca-Cola plastered everywhere.
 
@@ -209,7 +217,7 @@
 
 ---
 
-### Section 26
+### Section 27
 
 **🇬🇧 EN:** The German sportswear brand has been locked in a battle with its arch-rival Nike, spending some £50m on their "backyard legends" ad featuring Lamine Yamal, Jude Bellingham and Lionel Messi.
 
@@ -217,15 +225,23 @@
 
 ---
 
-### Section 27
+### Section 28
 
-**🇬🇧 EN:** However, some unofficial brands have benefited from Fifa trying to make sure fans see less of them, such as the Levi's logo outside the Levi's stadium in San Francisco being covered up.
+**🇬🇧 EN:** However, some unofficial brands have also benefited from Fifa trying to make sure fans see less of them, such as the Levi's logo outside the Levi's stadium in San Francisco being covered up.
 
-**🇫🇷 FR:** *Cependant, certaines marques non officielles ont bénéficié des efforts de la Fifa pour s'assurer que les fans les voient moins, comme le logo Levi's à l'extérieur du stade Levi's de San Francisco qui a été dissimulé.*
+**🇫🇷 FR:** *Cependant, certaines marques non officielles ont également bénéficié des efforts de la Fifa pour s'assurer que les fans les voient moins, comme le logo Levi's à l'extérieur du stade Levi's de San Francisco qui a été dissimulé.*
 
 ---
 
-### Section 28
+### Section 29
+
+**🇬🇧 EN:** Sir David Beckham was cheering England on during its clash with Norway
+
+**🇫🇷 FR:** *Sir David Beckham encourageait l'Angleterre lors de son affrontement contre la Norvège*
+
+---
+
+### Section 30
 
 **🇬🇧 EN:** Adidas's main ad also features an AI version of Sir David Beckham - who, to be honest, might not have had time to attend filming in person.
 
@@ -233,7 +249,7 @@
 
 ---
 
-### Section 29
+### Section 31
 
 **🇬🇧 EN:** The UK's first billionaire sportsman has been in so many adverts from Home Depot to Bank of America, you could be forgiven for forgetting what brand he is actually representing.
 
@@ -241,7 +257,7 @@
 
 ---
 
-### Section 30
+### Section 32
 
 **🇬🇧 EN:** Despite hanging up his boots more than a decade ago, Beckham continues to be the face of US soccer, with the American club he co-owns, Inter Miami, estimated to be Major League Soccer's most valuable franchise at $1.45bn.
 
@@ -249,7 +265,7 @@
 
 ---
 
-### Section 31
+### Section 33
 
 **🇬🇧 EN:** He may not have managed to win the World Cup on the pitch, but he's arguably won the commercial game off it.
 
@@ -257,7 +273,7 @@
 
 ---
 
-### Section 32
+### Section 34
 
 **🇬🇧 EN:** The 16 host cities across the US, Canada and Mexico have been welcoming an influx of fans and tourists boosting hospitality, hotels and local businesses.
 
@@ -265,7 +281,7 @@
 
 ---
 
-### Section 33
+### Section 35
 
 **🇬🇧 EN:** But while the Scots drank Boston dry and have won the heart of the city and its people, experts say the long-term economic benefits are minimal.
 
@@ -273,7 +289,7 @@
 
 ---
 
-### Section 34
+### Section 36
 
 **🇬🇧 EN:** Fifa estimated some $41bn would be added to the global economy, of which $17bn would boost the US economy alone, with 185,000 jobs created, mostly in hospitality and accommodation.
 
@@ -281,7 +297,7 @@
 
 ---
 
-### Section 35
+### Section 37
 
 **🇬🇧 EN:** But Alexander Budzier, a fellow in management practice at Oxford University and chief executive of project management company Oxford Global Projects, says the long-term economic benefits of hosting such a big sporting event just do not materialise.
 
@@ -289,7 +305,7 @@
 
 ---
 
-### Section 36
+### Section 38
 
 **🇬🇧 EN:** Host cities actually typically see a big drop in visitors, he says, as many seek to avoid the tournament chaos.
 
@@ -297,7 +313,7 @@
 
 ---
 
-### Section 37
+### Section 39
 
 **🇬🇧 EN:** And while there may be a spike in hiring, he argues it is typically only for lower-paid jobs in hospitality. "It creates jobs, but it does not create wealth," he says.
 
@@ -305,7 +321,7 @@
 
 ---
 
-### Section 38
+### Section 40
 
 **🇬🇧 EN:** Official figures show that hiring in US pubs, bars and restaurants ramped up ahead of the tournament in May, but the boom was short-lived.
 
@@ -313,7 +329,7 @@
 
 ---
 
-### Section 39
+### Section 41
 
 **🇬🇧 EN:** The only "worthwhile" economic benefit, Budzier argues, is the regeneration projects that can be done, such as the redevelopment and housing built in Stratford in London following the 2012 Olympic Games.
 
@@ -321,7 +337,7 @@
 
 ---
 
-### Section 40
+### Section 42
 
 **🇬🇧 EN:** But due to much of this World Cup using existing stadia, hotels, training complexes and travel infrastructure, "there won't be any economic benefits from development".
 
@@ -329,7 +345,15 @@
 
 ---
 
-### Section 41
+### Section 43
+
+**🇬🇧 EN:** Members of the Tartan Army in Boston ahead of the Scotland v Morocco match
+
+**🇫🇷 FR:** *Des membres de l'armée tartan à Boston avant le match Ecosse contre Maroc*
+
+---
+
+### Section 44
 
 **🇬🇧 EN:** The expected demand for hotel rooms did not materialise, with industry bodies reporting lower bookings in host cities this year than last.
 
@@ -337,7 +361,7 @@
 
 ---
 
-### Section 42
+### Section 45
 
 **🇬🇧 EN:** The British Columbia Hotel Association says that while final booking figures are yet to be confirmed, June and July were "pacing well behind previous years", despite Vancouver hosting seven of the games in Canada.
 
@@ -345,7 +369,7 @@
 
 ---
 
-### Section 43
+### Section 46
 
 **🇬🇧 EN:** It says tournaments "do not create 40 straight days of sold-out hotels", but rather lead to high-demand around specific dates.
 
@@ -353,7 +377,7 @@
 
 ---
 
-### Section 44
+### Section 47
 
 **🇬🇧 EN:** For American hoteliers, the pre-tournament buzz also did not deliver.
 
@@ -361,7 +385,7 @@
 
 ---
 
-### Section 45
+### Section 48
 
 **🇬🇧 EN:** The American Hotel and Lodging Association (AHLA) accused Fifa of block-booking too many rooms for its own use and creating false demand. Fifa has said it does not recognise the accusation.
 
@@ -369,7 +393,7 @@
 
 ---
 
-### Section 46
+### Section 49
 
 **🇬🇧 EN:** Laboure of Deutsche Bank Research says the same thing happened in France in 1998 when demand did not meet expectations.
 
@@ -377,7 +401,7 @@
 
 ---
 
-### Section 47
+### Section 50
 
 **🇬🇧 EN:** "By April, 80% of US hotel operators said bookings were tracking below their initial forecasts - two-thirds of New York hoteliers reported softer-than-expected bookings, and in Seattle nearly 80% did, with many calling the tournament a 'non-event'," she adds.
 
@@ -385,7 +409,7 @@
 
 ---
 
-### Section 48
+### Section 51
 
 **🇬🇧 EN:** The 2026 World Cup is on track to be the biggest gambling event of all time, with an estimated $50bn placed in bets - around $500m wagered per match, according to financial services firm Macquarie, which has interests in the gambling industry.
 
@@ -393,7 +417,7 @@
 
 ---
 
-### Section 49
+### Section 52
 
 **🇬🇧 EN:** It says this is primarily down to the expansion in teams, meaning there will be more than 100 matches played, up from 64 in 2022.
 
@@ -401,7 +425,7 @@
 
 ---
 
-### Section 50
+### Section 53
 
 **🇬🇧 EN:** Flutter Entertainment, which owns Paddy Power, Betfair and Sky Bet, forecast the amount placed in bets would be double that of the previous tournament because of growth in the US and also Brazil.
 
@@ -409,7 +433,7 @@
 
 ---
 
-### Section 51
+### Section 54
 
 **🇬🇧 EN:** Chad Beynon, an analyst at Macquarie, said in-play betting had taken over from the more traditional pre-match punt.
 
@@ -417,7 +441,7 @@
 
 ---
 
-### Section 52
+### Section 55
 
 **🇬🇧 EN:** "Now it's all about reacting to what you're seeing on the field, adjusting your views. Whereas before it was kind of sit, watch, wait - you had to place your bet before the match," he says.
 
@@ -425,7 +449,7 @@
 
 ---
 
-### Section 53
+### Section 56
 
 **🇬🇧 EN:** Sports betting in the US is still a relatively new industry. Until 2018, betting on sports was only legal in Nevada, the home of Las Vegas, but a Supreme Court ruling paved the way for many states to legalise it.
 
@@ -433,7 +457,7 @@
 
 ---
 
-### Section 54
+### Section 57
 
 **🇬🇧 EN:** However, there are still some states where it remains illegal, including California and Texas. In those areas there has been big engagement in prediction markets - a fast-growing, billion-dollar industry popular with young men - which are not classified as gambling, meaning they can be used to place bets on sport regardless of which state someone is in.
 

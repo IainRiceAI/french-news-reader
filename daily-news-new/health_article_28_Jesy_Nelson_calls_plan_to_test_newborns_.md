@@ -61,7 +61,7 @@
 
 **🇬🇧 EN:** In the most severe cases it is fatal before the age of two.
 
-**🇫🇷 FR:** *Dans les cas les plus graves, elle est mortelle avant l'âge de deux ans.*
+**🇫🇷 FR:** *[Error Translate] In the most severe cases it is fatal before the age of two.*
 
 ---
 

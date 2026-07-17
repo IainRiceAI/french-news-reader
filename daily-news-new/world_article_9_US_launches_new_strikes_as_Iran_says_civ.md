@@ -1,7 +1,7 @@
 # US launches new strikes as Iran says civilian infrastructure hit
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c151gdjwd10o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c151gdjwd10o?at_medium=RSS&at_campaign=rss)  
-**Published:** Fri, 17 Jul 2026 08:10:12 GMT  
+**Published:** Fri, 17 Jul 2026 09:27:39 GMT  
 
 ---
 
@@ -27,17 +27,17 @@
 
 ### Section 3
 
-**🇬🇧 EN:** State media reported that the US had hit civilian infrastructure, including bridges, a train station and an airport. The BBC has verified an attack on one bridge to the west of Bandar Abbas in Hormozgan province.
+**🇬🇧 EN:** State media and provincial authorities reported that the US had hit civilian infrastructure, including bridges, a train station and an airport. BBC Verify has confirmed an attack on one bridge to the west of Bandar Abbas in Hormozgan province.
 
-**🇫🇷 FR:** *Les médias d'État ont rapporté que les États-Unis avaient frappé des infrastructures civiles, notamment des ponts, une gare et un aéroport. La BBC a vérifié une attaque contre un pont à l'ouest de Bandar Abbas, dans la province d'Hormozgan.*
+**🇫🇷 FR:** *Les médias d'État et les autorités provinciales ont rapporté que les États-Unis avaient frappé des infrastructures civiles, notamment des ponts, une gare et un aéroport. BBC Verify a confirmé une attaque contre un pont à l'ouest de Bandar Abbas, dans la province d'Hormozgan.*
 
 ---
 
 ### Section 4
 
-**🇬🇧 EN:** Iran's Revolutionary Guards (IRGC) say they have retaliated by striking US maritime surveillance radar sites in Oman as well as targets in Kuwait and Bahrain. They also claim to have attacked a US special operations command centre in Syria.
+**🇬🇧 EN:** Iran's Revolutionary Guard Corps (IRGC) says it has retaliated by striking US maritime surveillance radar sites in Oman as well as targets in Kuwait and Bahrain. They also claim to have attacked a US special operations command centre in Syria.
 
-**🇫🇷 FR:** *Les Gardiens de la révolution iraniens (CGRI) affirment avoir riposté en frappant des sites radar de surveillance maritime américains à Oman ainsi que des cibles au Koweït et à Bahreïn. Ils affirment également avoir attaqué un centre de commandement des opérations spéciales américaines en Syrie.*
+**🇫🇷 FR:** *Le Corps des Gardiens de la révolution iraniens (CGRI) affirme avoir riposté en frappant des sites radar de surveillance maritime américains à Oman ainsi que des cibles au Koweït et à Bahreïn. Ils affirment également avoir attaqué un centre de commandement des opérations spéciales américaines en Syrie.*
 
 ---
 
@@ -59,13 +59,21 @@
 
 ### Section 7
 
+**🇬🇧 EN:** The IRGC claimed it struck US fighter jets stationed in the Gulf country, according to state TV.
+
+**🇫🇷 FR:** *Le CGRI a affirmé avoir frappé des avions de combat américains stationnés dans ce pays du Golfe, selon la télévision d'État.*
+
+---
+
+### Section 8
+
 **🇬🇧 EN:** Meanwhile in Iraqi Kurdistan, eight people were killed and several injured in the city of Sulaymaniyah in the early morning, according to Kurdish news agency Rudaw and Agence France Press news agency. Kurdish forces blamed the attack on Iran.
 
 **🇫🇷 FR:** *Pendant ce temps, au Kurdistan irakien, huit personnes ont été tuées et plusieurs blessées tôt dans la matinée dans la ville de Sulaymaniyah, selon l'agence de presse kurde Rudaw et l'agence de presse Agence France Presse. Les forces kurdes ont imputé l'attaque à l'Iran.*
 
 ---
 
-### Section 8
+### Section 9
 
 **🇬🇧 EN:** Separately, Kuridsh forces said eight drones were also shot down over the city of Erbil, with no casualties reported.
 
@@ -73,7 +81,7 @@
 
 ---
 
-### Section 9
+### Section 10
 
 **🇬🇧 EN:** As attacks escalate, the Strait of Hormuz - a critical waterway off Iran's coast that Tehran effectively blocked in response to US-Israeli strikes - has remained shut.
 
@@ -81,7 +89,7 @@
 
 ---
 
-### Section 10
+### Section 11
 
 **🇬🇧 EN:** That has impacted the flow of oil from the region and the head of the International Energy Agency, Fatih Birol, says he has concerns about global energy supplies.
 
@@ -89,7 +97,7 @@
 
 ---
 
-### Section 11
+### Section 12
 
 **🇬🇧 EN:** "We should be worried, and I am worried, if the situation does not improve in the next few weeks," Birol said on Thursday night.
 
@@ -97,7 +105,7 @@
 
 ---
 
-### Section 12
+### Section 13
 
 **🇬🇧 EN:** On Friday the Chinese and Pakistani foreign ministers called for the US and Iran to stop fighting and resume negotiations.
 
@@ -105,7 +113,7 @@
 
 ---
 
-### Section 13
+### Section 14
 
 **🇬🇧 EN:** The US launched strikes for the sixth night in a row, as fighting over control of the Strait of Hormuz continues
 
@@ -113,7 +121,7 @@
 
 ---
 
-### Section 14
+### Section 15
 
 **🇬🇧 EN:** The US overnight strikes also hit close to the island of Qeshm as well as in the southern coastal cities of Bandar Abbas and Bushehr - the site of a nuclear power plant.
 
@@ -121,7 +129,7 @@
 
 ---
 
-### Section 15
+### Section 16
 
 **🇬🇧 EN:** Centcom did not mention bridges in its list of the "dozens of Iranian military targets" it hit in the latest round of strikes. It said jets, drones and ships had attacked "coastal surveillance and air defense sites, military logistics infrastructure, and maritime capabilities". The BBC has asked Centcom for comment.
 
@@ -129,7 +137,71 @@
 
 ---
 
-### Section 16
+### Section 17
+
+**🇬🇧 EN:** Iranian state media and local officials said Washington targeted Iranshahr Airport in southeastern Iran, a railway station and six bridges in the Hormozgan province.
+
+**🇫🇷 FR:** *Les médias d'État iraniens et les responsables locaux ont déclaré que Washington avait ciblé l'aéroport d'Iranshahr, dans le sud-est de l'Iran, une gare ferroviaire et six ponts dans la province d'Hormozgan.*
+
+---
+
+### Section 18
+
+**🇬🇧 EN:** Seven people were killed in the strikes, provincial authorities in Hormozgan said.
+
+**🇫🇷 FR:** *Sept personnes ont été tuées dans ces frappes, ont indiqué les autorités provinciales d'Hormozgan.*
+
+---
+
+### Section 19
+
+**🇬🇧 EN:** BBC Persian and Verify have verified footage of damage to one of the bridges, Gariveh Bridge, which connects the southern cities of Bandar Abbas, Bandar Khamir and Lar.
+
+**🇫🇷 FR:** *BBC Persian et Verify ont vérifié des images montrant les dommages causés à l'un des ponts, le pont Gariveh, qui relie les villes du sud de Bandar Abbas, Bandar Khamir et Lar.*
+
+---
+
+### Section 20
+
+**🇬🇧 EN:** Overnight video captured the bridge with a ball of flames on top of it, as cars stopped behind the fire.
+
+**🇫🇷 FR:** *Une vidéo nocturne a capturé le pont avec une boule de flammes au-dessus, alors que les voitures s'arrêtaient derrière le feu.*
+
+---
+
+### Section 21
+
+**🇬🇧 EN:** Morning images show a crumbled stretch of road with rubble around the broken bridge.
+
+**🇫🇷 FR:** *Les images du matin montrent un tronçon de route effondré avec des décombres autour du pont cassé.*
+
+---
+
+### Section 22
+
+**🇬🇧 EN:** A damaged portion of the bridge in the aftermath of the overnight strike in Bandar Khamir, Hormozgan province
+
+**🇫🇷 FR:** *Une partie du pont endommagée à la suite de la grève nocturne à Bandar Khamir, province d'Hormozgan*
+
+---
+
+### Section 23
+
+**🇬🇧 EN:** Iranian outlets reported power cuts in Hormozgan province due to damage to electricity infrastructure caused by the US attacks.
+
+**🇫🇷 FR:** *Les médias iraniens ont signalé des coupures de courant dans la province d'Hormozgan en raison des dommages causés aux infrastructures électriques par les attaques américaines.*
+
+---
+
+### Section 24
+
+**🇬🇧 EN:** There were also multiple strikes in the provinces of Khuzestan, Bushehr, Hormozgan and Sistan-Baluchestan, along Iran's southern coast, according to reports last night from Iranian outlets.
+
+**🇫🇷 FR:** *De multiples frappes ont également eu lieu dans les provinces du Khuzestan, de Bouchehr, d'Hormozgan et du Sistan-Baloutchestan, le long de la côte sud de l'Iran, selon des informations publiées hier soir par des médias iraniens.*
+
+---
+
+### Section 25
 
 **🇬🇧 EN:** Earlier this week, US President Donald Trump threatened to strike Iran's bridges and power plants if the country did not return to talks.
 
@@ -137,7 +209,7 @@
 
 ---
 
-### Section 17
+### Section 26
 
 **🇬🇧 EN:** After Trump said in April that the US would bomb civilian infrastructure in Iran, including bridges and power plants, UN human rights chief Volker Türk said "deliberately attacking civilians and civilian infrastructure is a war crime".
 
@@ -145,23 +217,7 @@
 
 ---
 
-### Section 18
-
-**🇬🇧 EN:** Iranian state media said Washington targeted Iranshahr Airport in southeastern Iran, a railway station in coastal Bandar Khamir as well as five bridges in the port city.
-
-**🇫🇷 FR:** *Les médias d'État iraniens ont déclaré que Washington avait ciblé l'aéroport d'Iranshahr, dans le sud-est de l'Iran, une gare ferroviaire sur la côte de Bandar Khamir ainsi que cinq ponts dans la ville portuaire.*
-
----
-
-### Section 19
-
-**🇬🇧 EN:** Seven people were killed in the strikes, state news agency IRNA reported.
-
-**🇫🇷 FR:** *Sept personnes ont été tuées dans ces frappes, a rapporté l'agence de presse officielle IRNA.*
-
----
-
-### Section 20
+### Section 27
 
 **🇬🇧 EN:** At least 38 people have been killed and more than 400 injured in the country since fighting resumed with the US, Iran's health ministry said.
 
@@ -169,7 +225,7 @@
 
 ---
 
-### Section 21
+### Section 28
 
 **🇬🇧 EN:** Smoke rises after what the US military says is its latest wave of strikes on Iran
 
@@ -177,7 +233,7 @@
 
 ---
 
-### Section 22
+### Section 29
 
 **🇬🇧 EN:** Centcom also said marines had boarded an oil tanker in the Gulf of Oman as part of the renewed US blockade of Iran's ports that began on Tuesday night.
 
@@ -185,7 +241,7 @@
 
 ---
 
-### Section 23
+### Section 30
 
 **🇬🇧 EN:** It added it had "redirected 3 commercial vessels trying to run the blockade".
 
@@ -193,7 +249,7 @@
 
 ---
 
-### Section 24
+### Section 31
 
 **🇬🇧 EN:** On Friday the United Kingdom Maritime Trade Operations reported a tanker had been hit by an unknown projectile on Thursday while sailing near Khasab in Oman. All crew members were reported safe.
 
@@ -201,7 +257,7 @@
 
 ---
 
-### Section 25
+### Section 32
 
 **🇬🇧 EN:** According to Centcom, US forces disabled nine ships and redirected more than 140 under its previous blockade of Iranian ports between 13 April to 18 June.
 
@@ -209,7 +265,7 @@
 
 ---
 
-### Section 26
+### Section 33
 
 **🇬🇧 EN:** As the renewed hostilities further strained the preliminary deal to end the war, White House press secretary Karoline Leavitt said on Thursday that Trump remained open to talks with Iran.
 
@@ -217,7 +273,7 @@
 
 ---
 
-### Section 27
+### Section 34
 
 **🇬🇧 EN:** "The president will hold them accountable when they turn their back on the words that they state to the United States. But he is always open to diplomacy at the very same time," she told reporters.
 
@@ -225,7 +281,7 @@
 
 ---
 
-### Section 28
+### Section 35
 
 **🇬🇧 EN:** She said Iran has expressed it still wants to make a deal with the US, adding: "We're talking to them, but again, the president is not going to allow them to fire on ships in the strait without paying a consequence for that."
 
@@ -233,7 +289,7 @@
 
 ---
 
-### Section 29
+### Section 36
 
 **🇬🇧 EN:** Iran's top negotiator, Mohammad Bagher Ghalibaf, said on Wednesday that Tehran had "no reason" to abide by any agreement that did not benefit the country.
 
@@ -241,7 +297,7 @@
 
 ---
 
-### Section 30
+### Section 37
 
 **🇬🇧 EN:** He added that Iran's national security depended on maintaining what he described as "Iranian arrangements" in the Strait of Hormuz.
 
@@ -249,7 +305,7 @@
 
 ---
 
-### Section 31
+### Section 38
 
 **🇬🇧 EN:** Meanwhile, Trump on Wednesday praised Iran for freeing Dena Karari, a US detainee that he said had been "wrongfully detained" in December 2024.
 
@@ -257,7 +313,7 @@
 
 ---
 
-### Section 32
+### Section 39
 
 **🇬🇧 EN:** "The United States of America appreciates this gesture of Goodwill by Iran!" Trump wrote on Truth Social.
 
@@ -265,7 +321,7 @@
 
 ---
 
-### Section 33
+### Section 40
 
 **🇬🇧 EN:** Karari's attorney Jared Genser said she was on her way back to the US.
 
@@ -273,7 +329,7 @@
 
 ---
 
-### Section 34
+### Section 41
 
 **🇬🇧 EN:** However, Iran's judiciary on Thursday said that no US prisoner had been released or exchanged from its prisons, Iranian state media reported.
 
@@ -281,7 +337,7 @@
 
 ---
 
-### Section 35
+### Section 42
 
 **🇬🇧 EN:** Trump threatens to bomb bridges and power plants unless Iran resumes talks
 
@@ -289,7 +345,7 @@
 
 ---
 
-### Section 36
+### Section 43
 
 **🇬🇧 EN:** Trump retreat over Hormuz tolls suggests he is struggling to end Iran war
 

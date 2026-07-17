@@ -109,7 +109,7 @@
 
 **🇬🇧 EN:** By taking British Steel into public ownership the government now has the power and freedom to decide on the future of the plant, while keeping the blast furnaces going.
 
-**🇫🇷 FR:** *En faisant entrer British Steel dans la propriété publique, le gouvernement a désormais le pouvoir et la liberté de décider de l'avenir de l'usine, tout en maintenant les hauts fourneaux en marche.*
+**🇫🇷 FR:** *En faisant de British Steel une propriété publique, le gouvernement a désormais le pouvoir et la liberté de décider de l'avenir de l'usine, tout en maintenant les hauts fourneaux en marche.*
 
 ---
 

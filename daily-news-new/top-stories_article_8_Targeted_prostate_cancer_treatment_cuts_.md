@@ -267,37 +267,45 @@
 
 ### Section 33
 
-**🇬🇧 EN:** All men diagnosed with prostate cancer as part of the "Transform" screening study will be offered focal therapy, if appropriate, to treat their disease.
-
-**🇫🇷 FR:** *Tous les hommes diagnostiqués avec un cancer de la prostate dans le cadre de l'étude de dépistage « Transform » se verront proposer, le cas échéant, une thérapie focale pour traiter leur maladie.*
-
----
-
-### Section 34
-
-**🇬🇧 EN:** The £60m trial is looking at the best way to introduce targeted prostate cancer screening by combining rapid MRI scans with treatments that cause lower harm, such as focal therapy.
-
-**🇫🇷 FR:** *L'essai de 60 millions de livres sterling étudie la meilleure façon d'introduire le dépistage ciblé du cancer de la prostate en combinant des IRM rapides avec des traitements moins nocifs, tels que la thérapie focale.*
-
----
-
-### Section 35
-
-**🇬🇧 EN:** This latest study, published in the journal European Urology, is another key piece of the jigsaw, which could help lead to a national prostate cancer screening programme in years to come.
-
-**🇫🇷 FR:** *Cette dernière étude, publiée dans la revue European Urology, est un autre élément clé du puzzle, qui pourrait contribuer à mener à un programme national de dépistage du cancer de la prostate dans les années à venir.*
-
----
-
-### Section 36
-
 **🇬🇧 EN:** Prostate cancer is the most common cancer in men in the UK - more than 64,000 are diagnosed each year, and about 12,000 die from the disease.
 
 **🇫🇷 FR:** *Le cancer de la prostate est le cancer le plus répandu chez les hommes au Royaume-Uni : plus de 64 000 personnes sont diagnostiquées chaque année et environ 12 000 en meurent.*
 
 ---
 
+### Section 34
+
+**🇬🇧 EN:** A £60m trial is looking at the best way to introduce targeted prostate cancer screening by combining rapid MRI scans with treatments that cause lower harm, such as focal therapy.
+
+**🇫🇷 FR:** *Un essai de 60 millions de livres sterling étudie la meilleure façon d'introduire le dépistage ciblé du cancer de la prostate en combinant des IRM rapides avec des traitements moins nocifs, tels que la thérapie focale.*
+
+---
+
+### Section 35
+
+**🇬🇧 EN:** All men diagnosed with prostate cancer as part of the"Transform" screening study will be offered focal therapy, if appropriate, to treat their disease.
+
+**🇫🇷 FR:** *Tous les hommes diagnostiqués avec un cancer de la prostate dans le cadre de l'étude de dépistage « Transform » se verront proposer, le cas échéant, une thérapie focale pour traiter leur maladie.*
+
+---
+
+### Section 36
+
+**🇬🇧 EN:** One of the barriers to a national prostate screening programme has been the concern that it will lead to more harm than good because of the side effects of treatment.
+
+**🇫🇷 FR:** *L’un des obstacles à la mise en place d’un programme national de dépistage de la prostate réside dans la crainte qu’il entraîne plus de tort que de bien en raison des effets secondaires du traitement.*
+
+---
+
 ### Section 37
+
+**🇬🇧 EN:** This focal therapy trial, published in the journal European Urology, is another key piece of the jigsaw, which could help lead to a screening programme in years to come.
+
+**🇫🇷 FR:** *Cet essai de thérapie focale, publié dans la revue European Urology, est un autre élément clé du puzzle, qui pourrait contribuer à déboucher sur un programme de dépistage dans les années à venir.*
+
+---
+
+### Section 38
 
 **🇬🇧 EN:** Have you been affected by the issues in this story? Share your experiences
 
@@ -305,7 +313,7 @@
 
 ---
 
-### Section 38
+### Section 39
 
 **🇬🇧 EN:** Jeremy Clarkson in remission from prostate cancer
 
@@ -313,7 +321,7 @@
 
 ---
 
-### Section 39
+### Section 40
 
 **🇬🇧 EN:** Tributes paid to TV presenter Dermot Murnaghan
 
@@ -321,7 +329,7 @@
 
 ---
 
-### Section 40
+### Section 41
 
 **🇬🇧 EN:** Sir Chris Hoy says terminal cancer diagnosis taught him how to live
 

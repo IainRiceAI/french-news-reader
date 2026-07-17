@@ -1,11 +1,11 @@
-# Trump alleges 'shocking vulnerabilities' in US election security ahead of midterms
+# Trump alleges China meddled in 2020 election and questions voting security ahead of midterms
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cx2k9wvv5wyo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cx2k9wvv5wyo?at_medium=RSS&at_campaign=rss)  
-**Published:** Fri, 17 Jul 2026 04:08:27 GMT  
+**Published:** Fri, 17 Jul 2026 09:12:06 GMT  
 
 ---
 
-> **BBC Summary:** The president accuses China of meddling in the 2020 election, directly contradicting past findings from US intelligence.
+> **BBC Summary:** China said Trump's claims were fabricated and US Democrats said he was paving the way to undermine November's elections.
 
 ---
 
@@ -19,9 +19,9 @@
 
 ### Section 2
 
-**🇬🇧 EN:** Trump, who spoke from the White House on Thursday, has repeatedly made unsubstantiated claims about voter fraud and foreign meddling in the 2020 election which he lost to Joe Biden.
+**🇬🇧 EN:** Trump, who spoke from the White House on Thursday, has repeatedly made unsubstantiated claims about voter fraud and foreign meddling in the 2020 election, which he lost to Joe Biden.
 
-**🇫🇷 FR:** *Trump, qui s'exprimait depuis la Maison Blanche jeudi, a fait à plusieurs reprises des allégations non fondées sur la fraude électorale et l'ingérence étrangère lors des élections de 2020 qu'il a perdues face à Joe Biden.*
+**🇫🇷 FR:** *Trump, qui s'exprimait depuis la Maison Blanche jeudi, a fait à plusieurs reprises des allégations non fondées sur la fraude électorale et l'ingérence étrangère lors des élections de 2020, qu'il a perdues face à Joe Biden.*
 
 ---
 
@@ -43,13 +43,29 @@
 
 ### Section 5
 
+**🇬🇧 EN:** In response to his speech, China's foreign ministry strongly denied the allegations of Chinese meddling in the 2020 presidential election, saying they were "entirely fabricated".
+
+**🇫🇷 FR:** *En réponse à son discours, le ministère chinois des Affaires étrangères a fermement nié les allégations d'ingérence chinoise dans l'élection présidentielle de 2020, affirmant qu'elles étaient « entièrement fabriquées ».*
+
+---
+
+### Section 6
+
+**🇬🇧 EN:** Trump's claims are "malicious smears" which have "long been proven to be groundless", foreign ministry spokesman Lin Jian said.
+
+**🇫🇷 FR:** *Les affirmations de Trump sont des « calomnies malveillantes » qui se sont « avérées depuis longtemps sans fondement », a déclaré le porte-parole du ministère des Affaires étrangères, Lin Jian.*
+
+---
+
+### Section 7
+
 **🇬🇧 EN:** Trump spoke in front of several members of his top team as he gave his address, but journalists were unable to put questions to the president.
 
 **🇫🇷 FR:** *Trump s'est exprimé devant plusieurs membres de son équipe dirigeante lors de son discours, mais les journalistes n'ont pas pu poser de questions au président.*
 
 ---
 
-### Section 6
+### Section 8
 
 **🇬🇧 EN:** In his remarks, he accused China of the "illicit acquisition" of 220 million voter files including personal information.
 
@@ -57,7 +73,7 @@
 
 ---
 
-### Section 7
+### Section 9
 
 **🇬🇧 EN:** Trump said voter data in 18 states was "bought, stolen or hacked by China" and accused "those responsible for sounding the alarm" of not disclosing the discovery to government officials or Congress.
 
@@ -65,23 +81,23 @@
 
 ---
 
-### Section 8
-
-**🇬🇧 EN:** Trump did not present evidence that China had used the information it allegedly gathered to alter voting systems or to influence election outcomes.
-
-**🇫🇷 FR:** *Trump n’a pas présenté la preuve que la Chine avait utilisé les informations qu’elle aurait recueillies pour modifier les systèmes électoraux ou influencer les résultats des élections.*
-
----
-
-### Section 9
-
-**🇬🇧 EN:** In response to his speech, the Chinese Embassy in Washington told Reuters that Beijing "has never and will never interfere in the presidential elections". The BBC has approached the Chinese foreign ministry for comment.
-
-**🇫🇷 FR:** *En réponse à son discours, l'ambassade de Chine à Washington a déclaré à Reuters que Pékin "n'a jamais et n'interférera jamais dans les élections présidentielles". La BBC a contacté le ministère chinois des Affaires étrangères pour obtenir ses commentaires.*
-
----
-
 ### Section 10
+
+**🇬🇧 EN:** Trump did not in his speech present any evidence that China had used the information it allegedly gathered to alter voting systems or to influence election outcomes.
+
+**🇫🇷 FR:** *Trump n’a présenté dans son discours aucune preuve que la Chine avait utilisé les informations qu’elle aurait recueillies pour modifier les systèmes électoraux ou pour influencer les résultats des élections.*
+
+---
+
+### Section 11
+
+**🇬🇧 EN:** Hundreds of pages of intelligence documents were released by the White House during Trump's address, many of them heavily redacted. The BBC is in the process of reviewing them.
+
+**🇫🇷 FR:** *Des centaines de pages de documents de renseignement ont été publiées par la Maison Blanche lors du discours de Trump, dont beaucoup ont été fortement expurgées. La BBC est en train de les examiner.*
+
+---
+
+### Section 12
 
 **🇬🇧 EN:** Democrats, meanwhile, accused Trump of attempting to sow doubts about the security of the upcoming November midterms which will decide control of Congress for the remainder of his presidency.
 
@@ -89,7 +105,7 @@
 
 ---
 
-### Section 11
+### Section 13
 
 **🇬🇧 EN:** "Let's be clear - in America, voters choose their leaders, not the other way around," top Senate Democrat Chuck Schumer posted on social media after the speech.
 
@@ -97,7 +113,7 @@
 
 ---
 
-### Section 12
+### Section 14
 
 **🇬🇧 EN:** "Democrats will fight like hell to make sure every American voter can cast their ballot freely, without obstruction or interference from Donald Trump,"  he added.
 
@@ -105,7 +121,7 @@
 
 ---
 
-### Section 13
+### Section 15
 
 **🇬🇧 EN:** The president's comments contradict previous US intelligence assessments. A 2021 report by the US National Intelligence Council said it had "high confidence" that China did not interfere in the 2020 presidential election.
 
@@ -113,7 +129,7 @@
 
 ---
 
-### Section 14
+### Section 16
 
 **🇬🇧 EN:** "We assess that China did not deploy interference efforts and considered but did not deploy influence efforts intended to change the outcome of the US presidential election," the report stated.
 
@@ -121,7 +137,7 @@
 
 ---
 
-### Section 15
+### Section 17
 
 **🇬🇧 EN:** It said this was probably because China "did not view either election outcome as being advantageous enough for China to risk blowback if caught".
 
@@ -129,7 +145,7 @@
 
 ---
 
-### Section 16
+### Section 18
 
 **🇬🇧 EN:** Trump delivered the White House address after the release of a new poll from Washington Post-Ipsos, which indicated his approval rating had dropped to 37% with many voters pessimistic about the cost of living and the ongoing war with Iran.
 
@@ -137,7 +153,7 @@
 
 ---
 
-### Section 17
+### Section 19
 
 **🇬🇧 EN:** Elsewhere in the speech, the president alleged that US voting machines are "extremely exposed" to interference by foreign adversaries, including Russia, China and Iran.
 
@@ -145,7 +161,7 @@
 
 ---
 
-### Section 18
+### Section 20
 
 **🇬🇧 EN:** Shortcomings of US election infrastructure have been well-documented. Some were addressed after the 2016 election which Trump won, after the US intelligence community found that Russia had engaged in a concerted election meddling campaign that included hacking, social media influencing and funding of on-the-ground electioneering activities.
 
@@ -153,7 +169,7 @@
 
 ---
 
-### Section 19
+### Section 21
 
 **🇬🇧 EN:** During the address, Trump also alleged that a state investigation by Michigan law enforcement discovered a voter registration fraud scheme by a Democratic-affiliated group, but was constrained by the FBI from taking action before the statute of limitations expired.
 
@@ -161,7 +177,7 @@
 
 ---
 
-### Section 20
+### Section 22
 
 **🇬🇧 EN:** "It was pay, play and cheat," he said, although he provided no evidence of votes or tabulations being changed or voting machines hacked.
 
@@ -169,7 +185,7 @@
 
 ---
 
-### Section 21
+### Section 23
 
 **🇬🇧 EN:** Separately, Trump said that the Department of Homeland Security had identified 278,000 non-citizens were registered to vote. He did not say whether any of those people had voted or had an impact on any election outcome.
 
@@ -177,7 +193,7 @@
 
 ---
 
-### Section 22
+### Section 24
 
 **🇬🇧 EN:** At the end of his speech, Trump again called for the passing the of the SAVE America Act, which bans most mail voting, requires proof of citizenship for voter registration and photo ID to cast a ballot.
 
@@ -185,7 +201,7 @@
 
 ---
 
-### Section 23
+### Section 25
 
 **🇬🇧 EN:** That legislation has been stalled in the Senate for months.
 
@@ -193,7 +209,7 @@
 
 ---
 
-### Section 24
+### Section 26
 
 **🇬🇧 EN:** What to know about the SAVE America Act
 
@@ -201,15 +217,15 @@
 
 ---
 
-### Section 25
+### Section 27
 
 **🇬🇧 EN:** Trump encouraged Americans to urge their representatives in Congress to support its passage, but unless Republicans are also willing to abandon longstanding Senate procedures such efforts are almost certainly doomed.
 
-**🇫🇷 FR:** *Trump a encouragé les Américains à exhorter leurs représentants au Congrès à soutenir son adoption, mais à moins que les Républicains ne soient également disposés à abandonner les procédures sénatoriales de longue date, de tels efforts seront presque certainement voués à l'échec.*
+**🇫🇷 FR:** *Trump a encouragé les Américains à exhorter leurs représentants au Congrès à soutenir son adoption, mais à moins que les républicains ne soient également disposés à abandonner les procédures sénatoriales de longue date, de tels efforts seront presque certainement voués à l'échec.*
 
 ---
 
-### Section 26
+### Section 28
 
 **🇬🇧 EN:** The speech is likely to do little to quell the concerns of Democrats that Trump is attempting to call into question the security of the upcoming midterms and the 2028 presidential election.
 
@@ -217,7 +233,7 @@
 
 ---
 
-### Section 27
+### Section 29
 
 **🇬🇧 EN:** "The president is scared of your power, and he wants you to believe your vote does not matter," former Vice-President Kamala Harris wrote on X moments before Trump's remarks.
 
@@ -225,7 +241,7 @@
 
 ---
 
-### Section 28
+### Section 30
 
 **🇬🇧 EN:** "He wants you to lose confidence in our electoral system so you stay home this November. He knows how discontent the American people are, and he wants to make sure that you do not vote," she added.
 
@@ -233,7 +249,15 @@
 
 ---
 
-### Section 29
+### Section 31
+
+**🇬🇧 EN:** In his address Trump also attacked media outlets, including ABC, NBC and CNN, who did not run his speech live on TV,  saying they should have their broadcast licences revoked.
+
+**🇫🇷 FR:** *Dans son discours, Trump a également attaqué les médias, notamment ABC, NBC et CNN, qui n'ont pas diffusé son discours en direct à la télévision, affirmant qu'ils devraient voir leurs licences de diffusion révoquées.*
+
+---
+
+### Section 32
 
 **🇬🇧 EN:** Supreme Court allows late-arriving mail-in ballots in defeat for Trump
 
@@ -241,7 +265,7 @@
 
 ---
 
-### Section 30
+### Section 33
 
 **🇬🇧 EN:** One big win and three defeats for Trump in dramatic day at Supreme Court
 
@@ -249,7 +273,7 @@
 
 ---
 
-### Section 31
+### Section 34
 
 **🇬🇧 EN:** Congress passes war powers measure for first time, breaking with Trump over Iran
 

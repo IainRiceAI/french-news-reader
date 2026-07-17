@@ -93,7 +93,7 @@
 
 **🇬🇧 EN:** The nationalisation came after Parliament on Wednesday passed legislation allowing the government to bring the steel industry into public ownership under circumstances where it met a public interest test.
 
-**🇫🇷 FR:** *La nationalisation est intervenue après que le Parlement a adopté mercredi une loi autorisant le gouvernement à rendre l'industrie sidérurgique publique dans des circonstances où elle répond à un critère d'intérêt public.*
+**🇫🇷 FR:** *La nationalisation est intervenue après que le Parlement a adopté mercredi une loi autorisant le gouvernement à rendre l'industrie sidérurgique publique dans des circonstances où elle satisfaisait à un critère d'intérêt public.*
 
 ---
 

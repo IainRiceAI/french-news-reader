@@ -205,7 +205,7 @@
 
 **🇬🇧 EN:** But Burrows said any investigation must also deal with the site's "blatant failure to clean up its toxic algorithms and comply with child safety duties".
 
-**🇫🇷 FR:** *Mais Burrows a déclaré que toute enquête doit également porter sur « l'incapacité flagrante du site à nettoyer ses algorithmes toxiques et à respecter ses obligations en matière de sécurité des enfants ».*
+**🇫🇷 FR:** *Mais Burrows a déclaré que toute enquête doit également porter sur « l'échec flagrant du site à nettoyer ses algorithmes toxiques et à respecter ses obligations en matière de sécurité des enfants ».*
 
 ---
 

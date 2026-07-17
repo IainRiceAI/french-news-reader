@@ -67,7 +67,7 @@
 
 ### Section 8
 
-**🇬🇧 EN:** Starmer won a landslide general election victory two years ago - but he began losing public support within weeks of arriving in Downing Street after a series of polcy mis-steps and U-turns.
+**🇬🇧 EN:** Starmer won a landslide general election victory two years ago - but he began losing public support within weeks of arriving in Downing Street after a series of policy mis-steps and U-turns.
 
 **🇫🇷 FR:** *Starmer a remporté une victoire écrasante aux élections générales il y a deux ans – mais il a commencé à perdre le soutien du public quelques semaines après son arrivée à Downing Street après une série de faux pas politiques et de demi-tours.*
 

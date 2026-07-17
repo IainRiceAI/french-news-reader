@@ -1,6 +1,6 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-07-17 09:49:46  
+Generated on: 2026-07-17 10:52:52  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
@@ -16,24 +16,24 @@ Scraped Feed Mode: `ALL`
    - **Read Parallel Translation:** [top-stories_article_2_China_hits_out_at_British_Steel_national.md](top-stories_article_2_China_hits_out_at_British_Steel_national.md)
 
 3. **US launches new strikes as Iran says civilian infrastructure hit**
-   - **Published:** Fri, 17 Jul 2026 08:10:12 GMT
+   - **Published:** Fri, 17 Jul 2026 09:27:39 GMT
    - **Read Parallel Translation:** [top-stories_article_3_US_launches_new_strikes_as_Iran_says_civ.md](top-stories_article_3_US_launches_new_strikes_as_Iran_says_civ.md)
 
 4. **The financial winners and losers from the World Cup**
-   - **Published:** Thu, 16 Jul 2026 23:16:14 GMT
+   - **Published:** Fri, 17 Jul 2026 09:40:17 GMT
    - **Read Parallel Translation:** [top-stories_article_4_The_financial_winners_and_losers_from_th.md](top-stories_article_4_The_financial_winners_and_losers_from_th.md)
 
-5. **Trump alleges 'shocking vulnerabilities' in US election security ahead of midterms**
-   - **Published:** Fri, 17 Jul 2026 04:08:27 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Trump_alleges_shocking_vulnerabilities_i.md](top-stories_article_5_Trump_alleges_shocking_vulnerabilities_i.md)
+5. **Trump alleges China meddled in 2020 election and questions voting security ahead of midterms**
+   - **Published:** Fri, 17 Jul 2026 09:12:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Trump_alleges_China_meddled_in_2020_elec.md](top-stories_article_5_Trump_alleges_China_meddled_in_2020_elec.md)
 
-6. **Catfished student gets £10k after photos used for fake dating profiles**
+6. **UK heatwave approaches two-week mark**
+   - **Published:** Thu, 16 Jul 2026 23:28:21 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_UK_heatwave_approaches_two-week_mark.md](top-stories_article_6_UK_heatwave_approaches_two-week_mark.md)
+
+7. **Catfished student gets £10k after photos used for fake dating profiles**
    - **Published:** Fri, 17 Jul 2026 05:17:23 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Catfished_student_gets_10k_after_photos_.md](top-stories_article_6_Catfished_student_gets_10k_after_photos_.md)
-
-7. **Man charged with assisting Iran's intelligence service**
-   - **Published:** Fri, 17 Jul 2026 07:55:12 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Man_charged_with_assisting_Irans_intelli.md](top-stories_article_7_Man_charged_with_assisting_Irans_intelli.md)
+   - **Read Parallel Translation:** [top-stories_article_7_Catfished_student_gets_10k_after_photos_.md](top-stories_article_7_Catfished_student_gets_10k_after_photos_.md)
 
 8. **Targeted prostate cancer treatment cuts risk of side effects, study suggests**
    - **Published:** Thu, 16 Jul 2026 23:36:40 GMT
@@ -44,12 +44,12 @@ Scraped Feed Mode: `ALL`
 ### Section: WORLD
 
 1. **US launches new strikes as Iran says civilian infrastructure hit**
-   - **Published:** Fri, 17 Jul 2026 08:10:12 GMT
+   - **Published:** Fri, 17 Jul 2026 09:27:39 GMT
    - **Read Parallel Translation:** [world_article_9_US_launches_new_strikes_as_Iran_says_civ.md](world_article_9_US_launches_new_strikes_as_Iran_says_civ.md)
 
-2. **Trump alleges 'shocking vulnerabilities' in US election security ahead of midterms**
-   - **Published:** Fri, 17 Jul 2026 04:08:27 GMT
-   - **Read Parallel Translation:** [world_article_10_Trump_alleges_shocking_vulnerabilities_i.md](world_article_10_Trump_alleges_shocking_vulnerabilities_i.md)
+2. **Trump alleges China meddled in 2020 election and questions voting security ahead of midterms**
+   - **Published:** Fri, 17 Jul 2026 09:12:06 GMT
+   - **Read Parallel Translation:** [world_article_10_Trump_alleges_China_meddled_in_2020_elec.md](world_article_10_Trump_alleges_China_meddled_in_2020_elec.md)
 
 3. **More than 500 Rohingya vanished at sea - what happened?**
    - **Published:** Fri, 17 Jul 2026 03:07:11 GMT
@@ -72,7 +72,7 @@ Scraped Feed Mode: `ALL`
    - **Read Parallel Translation:** [business_article_14_China_hits_out_at_British_Steel_national.md](business_article_14_China_hits_out_at_British_Steel_national.md)
 
 3. **The financial winners and losers from the World Cup**
-   - **Published:** Thu, 16 Jul 2026 23:16:14 GMT
+   - **Published:** Fri, 17 Jul 2026 09:40:17 GMT
    - **Read Parallel Translation:** [business_article_15_The_financial_winners_and_losers_from_th.md](business_article_15_The_financial_winners_and_losers_from_th.md)
 
 4. **I wouldn't marry him until he paid off his debt, now I'm in charge of our money**
@@ -167,17 +167,17 @@ Scraped Feed Mode: `ALL`
    - **Published:** Thu, 16 Jul 2026 23:52:23 GMT
    - **Read Parallel Translation:** [entertainment_article_33_Kit_Connor_and_Joe_Locke_Making_a_film_l.md](entertainment_article_33_Kit_Connor_and_Joe_Locke_Making_a_film_l.md)
 
-2. **Claudia Winkleman quits chat show after one series**
+2. **New photograph marks Queen's 79th birthday**
+   - **Published:** Fri, 17 Jul 2026 09:32:36 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_New_photograph_marks_Queens_79th_birthda.md](entertainment_article_34_New_photograph_marks_Queens_79th_birthda.md)
+
+3. **Claudia Winkleman quits chat show after one series**
    - **Published:** Thu, 16 Jul 2026 12:37:32 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Claudia_Winkleman_quits_chat_show_after_.md](entertainment_article_34_Claudia_Winkleman_quits_chat_show_after_.md)
+   - **Read Parallel Translation:** [entertainment_article_35_Claudia_Winkleman_quits_chat_show_after_.md](entertainment_article_35_Claudia_Winkleman_quits_chat_show_after_.md)
 
-3. **Kris Jenner's mother Mary Jo dies aged 91**
+4. **Kris Jenner's mother Mary Jo dies aged 91**
    - **Published:** Thu, 16 Jul 2026 20:24:54 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Kris_Jenners_mother_Mary_Jo_dies_aged_91.md](entertainment_article_35_Kris_Jenners_mother_Mary_Jo_dies_aged_91.md)
-
-4. **The Odyssey is a 'colossal piece of cinema', critics say in rave reviews**
-   - **Published:** Wed, 15 Jul 2026 17:04:58 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_The_Odyssey_is_a_colossal_piece_of_cinem.md](entertainment_article_36_The_Odyssey_is_a_colossal_piece_of_cinem.md)
+   - **Read Parallel Translation:** [entertainment_article_36_Kris_Jenners_mother_Mary_Jo_dies_aged_91.md](entertainment_article_36_Kris_Jenners_mother_Mary_Jo_dies_aged_91.md)
 
 ---
 
