@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/clyl3z2xld8o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/clyl3z2xld8o?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 05:00:08 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](politics_article_29.mp3)  
 
 ---
 

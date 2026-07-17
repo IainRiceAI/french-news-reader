@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c07y77exx8eo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c07y77exx8eo?at_medium=RSS&at_campaign=rss)  
 **Published:** Thu, 16 Jul 2026 00:20:52 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](health_article_28.mp3)  
 
 ---
 
@@ -61,7 +62,7 @@
 
 **🇬🇧 EN:** In the most severe cases it is fatal before the age of two.
 
-**🇫🇷 FR:** *[Error Translate] In the most severe cases it is fatal before the age of two.*
+**🇫🇷 FR:** *Dans les cas les plus graves, elle est mortelle avant l'âge de deux ans.*
 
 ---
 

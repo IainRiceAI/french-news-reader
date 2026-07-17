@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c79gw4lj89eo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c79gw4lj89eo?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 07:25:31 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](technology_article_17.mp3)  
 
 ---
 

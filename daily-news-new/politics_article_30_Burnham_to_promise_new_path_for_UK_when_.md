@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c2lq12z1xdlo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c2lq12z1xdlo?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 08:35:55 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](politics_article_30.mp3)  
 
 ---
 
@@ -141,7 +142,7 @@
 
 **🇬🇧 EN:** He will say making the economy work for people across the UK will require a "new path to the one we've been on for the last 40 years".
 
-**🇫🇷 FR:** *[Error Translate] He will say making the economy work for people across the UK will require a "new path to the one we've been on for the last 40 years".*
+**🇫🇷 FR:** *Il dira que pour que l’économie profite aux citoyens du Royaume-Uni, il faudra « emprunter une nouvelle voie par rapport à celle que nous avons suivie au cours des 40 dernières années ».*
 
 ---
 

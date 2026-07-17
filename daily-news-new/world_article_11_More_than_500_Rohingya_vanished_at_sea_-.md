@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cr59n096mrmo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cr59n096mrmo?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 03:07:11 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](world_article_11.mp3)  
 
 ---
 

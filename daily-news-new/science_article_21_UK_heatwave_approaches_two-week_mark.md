@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/weather/articles/ckg4gqlye02o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/weather/articles/ckg4gqlye02o?at_medium=RSS&at_campaign=rss)  
 **Published:** Thu, 16 Jul 2026 23:28:21 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](science_article_21.mp3)  
 
 ---
 

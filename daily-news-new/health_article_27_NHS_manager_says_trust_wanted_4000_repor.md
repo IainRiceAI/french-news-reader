@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c6212klngkko?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c6212klngkko?at_medium=RSS&at_campaign=rss)  
 **Published:** Thu, 16 Jul 2026 14:52:45 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](health_article_27.mp3)  
 
 ---
 
@@ -61,7 +62,7 @@
 
 **🇬🇧 EN:** O'Donnell told the inquiry that, at the end of 2024, he was asked to review thousands of incident reports raised by staff, some dating back to 2021.
 
-**🇫🇷 FR:** *O'Donnell a déclaré à l'enquête qu'à la fin de 2024, on lui avait demandé d'examiner des milliers de rapports d'incidents soulevés par le personnel, certains remontant à 2021.*
+**🇫🇷 FR:** *O'Donnell a déclaré à l'enquête qu'à la fin de 2024, il lui avait été demandé d'examiner des milliers de rapports d'incidents soulevés par le personnel, certains remontant à 2021.*
 
 ---
 

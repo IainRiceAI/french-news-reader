@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cjd4kvxpd3do?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cjd4kvxpd3do?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 08:25:55 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](business_article_14.mp3)  
 
 ---
 
@@ -43,13 +44,21 @@
 
 ### Section 5
 
+**🇬🇧 EN:** Why has British Steel been nationalised?
+
+**🇫🇷 FR:** *Pourquoi British Steel a-t-elle été nationalisée ?*
+
+---
+
+### Section 6
+
 **🇬🇧 EN:** It also called on Britain to "faithfully fulfil" its obligations under the China–UK Bilateral Investment Treaty.
 
 **🇫🇷 FR:** *Il a également appelé la Grande-Bretagne à « remplir fidèlement » ses obligations en vertu du Traité bilatéral d'investissement Chine-Royaume-Uni.*
 
 ---
 
-### Section 6
+### Section 7
 
 **🇬🇧 EN:** "Disregarding Jingye's significant contribution to the UK economy and society, the British side forcibly took control of the company in the name of national security," the ministry said.
 
@@ -57,7 +66,7 @@
 
 ---
 
-### Section 7
+### Section 8
 
 **🇬🇧 EN:** The statement added that Beijing would monitor developments closely and support Chinese firms to protect their rights, but did not specify what protecting Chinese companies' rights might involve.
 
@@ -65,7 +74,7 @@
 
 ---
 
-### Section 8
+### Section 9
 
 **🇬🇧 EN:** The decision to nationalise British Steel threatens to strain the relationship between London and Beijing just as Andy Burnham is set to become the prime minister on Monday.
 
@@ -73,7 +82,7 @@
 
 ---
 
-### Section 9
+### Section 10
 
 **🇬🇧 EN:** The incoming PM will have to weigh his approach to the issue with the economic benefits of ties with the world's second largest economy.
 
@@ -81,7 +90,7 @@
 
 ---
 
-### Section 10
+### Section 11
 
 **🇬🇧 EN:** The China-UK Bilateral Investment Treaty is a legally binding agreement that was signed in 1986. It was designed to promote and protect investments between the two countries.
 
@@ -89,7 +98,7 @@
 
 ---
 
-### Section 11
+### Section 12
 
 **🇬🇧 EN:** The nationalisation came after Parliament on Wednesday passed legislation allowing the government to bring the steel industry into public ownership under circumstances where it met a public interest test.
 
@@ -97,7 +106,7 @@
 
 ---
 
-### Section 12
+### Section 13
 
 **🇬🇧 EN:** Jingye is seeking compensation, having previously said the business was losing £700,000 a day. The BBC has been unable to get a response from Jingye itself to Thursday's announcement.
 
@@ -105,7 +114,7 @@
 
 ---
 
-### Section 13
+### Section 14
 
 **🇬🇧 EN:** By taking British Steel into public ownership the government now has the power and freedom to decide on the future of the plant, while keeping the blast furnaces going.
 
@@ -113,7 +122,7 @@
 
 ---
 
-### Section 14
+### Section 15
 
 **🇬🇧 EN:** It is unlikely the government will want to continue running the business in the long term as it is costing it more than a million pounds a day.
 
@@ -121,7 +130,7 @@
 
 ---
 
-### Section 15
+### Section 16
 
 **🇬🇧 EN:** In March, the National Audit Office said the Scunthorpe steelworks was costing the government about £1.3m a day.
 
@@ -129,7 +138,7 @@
 
 ---
 
-### Section 16
+### Section 17
 
 **🇬🇧 EN:** Business Secretary Peter Kyle told the BBC the government would need to cover the running costs "for the immediate future".
 
@@ -137,7 +146,7 @@
 
 ---
 
-### Section 17
+### Section 18
 
 **🇬🇧 EN:** The steelworks directly employs around 2,700 people in Scunthorpe as well as supporting thousands more jobs in the supply chain.
 
@@ -145,7 +154,7 @@
 
 ---
 
-### Section 18
+### Section 19
 
 **🇬🇧 EN:** The UK imports most of its steel, with major suppliers including the European Union, the US, China and India.
 
@@ -153,7 +162,7 @@
 
 ---
 
-### Section 19
+### Section 20
 
 **🇬🇧 EN:** If the plant stopped producing virgin steel, the UK would become the only member of the G7 group of leading economies without the ability to make it.
 
@@ -161,7 +170,7 @@
 
 ---
 
-### Section 20
+### Section 21
 
 **🇬🇧 EN:** Steel output elsewhere in Britain relies on electric arc furnaces (EAFs), which recycle scrap metal to turn it into new products.
 
@@ -169,7 +178,7 @@
 
 ---
 
-### Section 21
+### Section 22
 
 **🇬🇧 EN:** Although the government's long-term strategy is for all domestically produced steel to come from EAFs, which are cheaper and much less carbon-intensive to run, it does not want to lose production at Scunthorpe yet.
 
@@ -177,7 +186,7 @@
 
 ---
 
-### Section 22
+### Section 23
 
 **🇬🇧 EN:** The plant produces types of steel that are not yet made anywhere else in the country, much of it needed by Network Rail and the building industry.
 
@@ -185,7 +194,7 @@
 
 ---
 
-### Section 23
+### Section 24
 
 **🇬🇧 EN:** The fear had been that losing this output would be disruptive and make the country too reliant on imports. So the decision was made that Scunthorpe should be kept open until alternatives are available.
 
@@ -193,7 +202,7 @@
 
 ---
 
-### Section 24
+### Section 25
 
 **🇬🇧 EN:** British Steel was last under state ownership in 1988 when it was privatised by Prime Minister Margaret Thatcher's government.
 
@@ -201,7 +210,7 @@
 
 ---
 
-### Section 25
+### Section 26
 
 **🇬🇧 EN:** British Steel taken into public ownership to protect 'vital' UK supply
 

@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cjd4kvxpd3do?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cjd4kvxpd3do?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 08:25:55 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](top-stories_article_2.mp3)  
 
 ---
 
@@ -93,7 +94,7 @@
 
 **🇬🇧 EN:** The nationalisation came after Parliament on Wednesday passed legislation allowing the government to bring the steel industry into public ownership under circumstances where it met a public interest test.
 
-**🇫🇷 FR:** *La nationalisation est intervenue après que le Parlement a adopté mercredi une loi autorisant le gouvernement à rendre l'industrie sidérurgique publique dans des circonstances où elle satisfaisait à un critère d'intérêt public.*
+**🇫🇷 FR:** *La nationalisation est intervenue après que le Parlement a adopté mercredi une loi autorisant le gouvernement à rendre l'industrie sidérurgique publique dans des circonstances où elle répond à un critère d'intérêt public.*
 
 ---
 
@@ -109,7 +110,7 @@
 
 **🇬🇧 EN:** By taking British Steel into public ownership the government now has the power and freedom to decide on the future of the plant, while keeping the blast furnaces going.
 
-**🇫🇷 FR:** *En faisant de British Steel une propriété publique, le gouvernement a désormais le pouvoir et la liberté de décider de l'avenir de l'usine, tout en maintenant les hauts fourneaux en marche.*
+**🇫🇷 FR:** *En faisant entrer British Steel dans la propriété publique, le gouvernement a désormais le pouvoir et la liberté de décider de l'avenir de l'usine, tout en maintenant les hauts fourneaux en marche.*
 
 ---
 

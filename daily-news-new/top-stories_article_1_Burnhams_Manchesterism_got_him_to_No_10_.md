@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/clyl3z2xld8o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/clyl3z2xld8o?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 05:00:08 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](top-stories_article_1.mp3)  
 
 ---
 
@@ -157,7 +158,7 @@
 
 **🇬🇧 EN:** At the end of this process, private capital poured in, lining up the cranes and the hard hats. The council offered a flexible interpretation of requirements to build a proportion of "affordable housing", sometimes effectively waived, sometimes met by funding building in cheaper areas of the city.
 
-**🇫🇷 FR:** *À la fin de ce processus, les capitaux privés ont afflué, alignant les grues et les casques de sécurité. Le conseil a proposé une interprétation flexible des exigences visant à construire une certaine proportion de « logements abordables », parfois effectivement renoncées, parfois satisfaites en finançant la construction dans des quartiers moins chers de la ville.*
+**🇫🇷 FR:** *À la fin de ce processus, les capitaux privés ont afflué, alignant les grues et les casques de sécurité. Le conseil a proposé une interprétation flexible des exigences liées à la construction d'une certaine proportion de "logements abordables", parfois effectivement renoncées, parfois satisfaites en finançant la construction dans des quartiers moins chers de la ville.*
 
 ---
 

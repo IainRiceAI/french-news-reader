@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/clyl3z2xld8o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/clyl3z2xld8o?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 05:00:08 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](business_article_13.mp3)  
 
 ---
 
@@ -293,7 +294,7 @@
 
 **🇬🇧 EN:** He relays a story about his time as chief secretary to the Treasury in 2007 when he was told: "No project in the north passed the Green Book, Minister." He told me the same in 2020 when there were murmurings of reform to the formula. Chancellor Rachel Reeves pursued pilot projects to change the approach that could favour local investment.
 
-**🇫🇷 FR:** *Il raconte une histoire sur son mandat de secrétaire en chef du Trésor en 2007, lorsqu'on lui a dit : « Aucun projet dans le Nord n'a passé le Livre vert, Monsieur le Ministre ». Il m’a dit la même chose en 2020, alors qu’on murmurait une réforme de la formule. La chancelière Rachel Reeves a mené des projets pilotes pour modifier l'approche susceptible de favoriser les investissements locaux.*
+**🇫🇷 FR:** *Il raconte une histoire sur son mandat de secrétaire en chef du Trésor en 2007, lorsqu'on lui a dit : « Aucun projet dans le Nord n'a passé le Livre vert, Monsieur le Ministre ». Il m’a dit la même chose en 2020, alors qu’on murmurait une réforme de la formule. La chancelière Rachel Reeves a poursuivi des projets pilotes pour modifier l'approche susceptible de favoriser les investissements locaux.*
 
 ---
 

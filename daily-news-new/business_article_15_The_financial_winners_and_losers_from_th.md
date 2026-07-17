@@ -2,6 +2,7 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cgrkek8lrzvo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cgrkek8lrzvo?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 17 Jul 2026 09:40:17 GMT  
+**Audio Narration:** [🔊 Listen to French Translation](business_article_15.mp3)  
 
 ---
 
