@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'My buyers dropped their offer by £15,000 the day before exchange': Gazundering and how to avoid it</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>'My buyers dropped their offer by £15,000 the day before exchange': Gazundering and how to avoid it</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 18 Jul 2026 01:14:53 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c3d39r338m0o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: It's a small but growing problem in the property market - here's how to protect yourself.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="10.32" data-end="19.58">
+            <p class="french-block">Sarah faisait ses valises avec enthousiasme pour quitter la maison mitoyenne que sa famille était devenue trop grande pour s'installer dans une maison de quatre chambres à la campagne.</p>
+            <span class="english-block">Sarah was excitedly packing up to move out of the terraced house her family had outgrown to a four-bedroom home in the countryside.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.58" data-end="32.76">
+            <p class="french-block">Mais la veille de l'échange des contrats, les acheteurs de sa maison ont renoncé à leur offre convenue de 15 000 £. "C'était horrible, on a le cœur qui tombe dans le ventre", dit Sarah, ce qui n'est pas son vrai nom.</p>
+            <span class="english-block">But the day before exchanging contracts the buyers of her house dropped their agreed offer by £15,000. "It was awful, your heart just drops to your stomach," says Sarah, not her real name.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.76" data-end="43.18">
+            <p class="french-block">Elle avait été victime du gazundering, un problème rare mais croissant sur le marché immobilier en Angleterre et au Pays de Galles, selon la Conveyancing Association, externe.</p>
+            <span class="english-block">She had fallen victim to gazundering, a rare but growing problem in the property market in England and Wales, according to the Conveyancing Association, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.18" data-end="54.74">
+            <p class="french-block">Il appelle à ce que les réformes gouvernementales visant à résoudre ce problème ainsi que d'autres problèmes liés à l'achat et à la vente de logements soient mises en œuvre « sans délai » au lieu de 2029 comme prévu.</p>
+            <span class="english-block">It is calling for government reforms aimed at tackling this and other house buying and selling issues to be brought in "without delay" instead of 2029 as planned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.74" data-end="60.53">
+            <p class="french-block">Pour Sarah, son mari et leurs deux enfants, leur déménagement s'est déroulé sans problème.</p>
+            <span class="english-block">For Sarah, her husband and two children their move had all been going smoothly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.53" data-end="68.06">
+            <p class="french-block">Ils vendaient la terrasse de trois chambres qu'ils avaient rénovée et achetaient la maison individuelle de quatre chambres de ses parents à la campagne.</p>
+            <span class="english-block">They were selling the three-bedroom terrace they'd renovated and buying her parents' four-bedroom detached house in the countryside.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.06" data-end="77.71">
+            <p class="french-block">Mais la veille de l'échange des contrats, Sarah a reçu un appel téléphonique de son agent immobilier « déconcerté » l'informant qu'il avait de mauvaises nouvelles.</p>
+            <span class="english-block">But the day before contracts were exchanged Sarah received a phone call from her "befuddled" estate agent saying he had some bad news.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.71" data-end="86.64">
+            <p class="french-block">Leurs acheteurs ont déclaré qu'ils avaient fait des recherches supplémentaires sur la région et qu'ils offriraient désormais 15 000 £ de moins que le prix convenu.</p>
+            <span class="english-block">Their buyers said they'd done some more research about the area and would now offer £15,000 less than the price they'd agreed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.64" data-end="92.95">
+            <p class="french-block">"Je ne peux même pas commencer à imaginer les conséquences financières [si nous perdons la vente]", dit-elle.</p>
+            <span class="english-block">"I can't even begin to go through the financial consequences [if we lost the sale]," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.95" data-end="100.15">
+            <p class="french-block">S’ils acceptaient l’offre la plus basse, ils perdraient de leur poche, mais s’ils refusaient, il y aurait également des coûts.</p>
+            <span class="english-block">If they accepted the lower offer they would be out of pocket but if they refused there would be costs too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.15" data-end="115.8">
+            <p class="french-block">« Nous avions déjà payé une série de frais juridiques, mais nous aurions dû payer à nouveau si nous avions besoin d'un nouvel acheteur. Nous avions également déjà payé les frais de déménagement et nous aurions dû payer à nouveau si nous annulions la date du déménagement », explique Sarah.</p>
+            <span class="english-block">"We had already paid one set of legal fees but would have had to pay again if we needed a new buyer. We'd also paid the removal fees already and would have to pay again if we cancelled the moving date," says Sarah.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.8" data-end="121.78">
+            <p class="french-block">Le gazundering se produit lorsqu'un acheteur réduit son offre convenue juste avant l'échange des contrats.</p>
+            <span class="english-block">Gazundering is when a buyer lowers their agreed offer just before contracts are exchanged.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.78" data-end="132.43">
+            <p class="french-block">Cela met le vendeur sous pression pour qu'il accepte un prix inférieur ou risque de perdre sa vente et de détruire sa chaîne immobilière, ce qui pourrait entraîner la perte de la maison qu'il souhaite acheter.</p>
+            <span class="english-block">It puts a seller under pressure to accept the lower price or risk losing their sale and collapsing their property chain - potentially losing the house they want to buy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.43" data-end="150.19">
+            <p class="french-block">Cela est possible car en Angleterre, au Pays de Galles et en Irlande du Nord, une offre n’est juridiquement contraignante que lorsque les parties échangent des contrats. Une fois qu'une offre est acceptée, il faut en moyenne 120 jours pour la finaliser. Une vente de maison sur trois échoue avant échange.</p>
+            <span class="english-block">It is possible because in England, Wales and Northern Ireland an offer is not legally binding until parties exchange contracts. Once an offer is accepted it takes an average of 120 days to complete. One in three house sales fall through before exchange.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.19" data-end="162.7">
+            <p class="french-block">Cela coûte aux vendeurs 400 millions de livres sterling et à l'économie dans son ensemble 1,5 milliard de livres sterling chaque année, selon le ministère du Logement, des Communautés et des Gouvernements locaux.</p>
+            <span class="english-block">This costs sellers £400m and the wider economy £1.5bn each year, according to the Ministry for Housing, Communities and Local Government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.7" data-end="172.46">
+            <p class="french-block">Les réformes gouvernementales prévues réduiraient ce délai de quatre semaines et permettraient au premier acheteur moyen d'économiser 650 £, indique-t-il.</p>
+            <span class="english-block">Planned government reforms would cut that time by four weeks and save the average first time buyer £650, it says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.46" data-end="179.33">
+            <p class="french-block">Après avoir parlé à son père et à son mari, Sarah a décidé de remettre sa maison sur le marché le même jour.</p>
+            <span class="english-block">After speaking to her dad and husband Sarah decided to put her house back on the market that same day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.33" data-end="188.83">
+            <p class="french-block">Le lendemain, ses acheteurs "se sont précipités vers le bureau de l'agent immobilier en disant qu'ils étaient heureux de procéder au prix de vente convenu", raconte-t-elle.</p>
+            <span class="english-block">The next day, her buyers "went running into the estate agent's office saying they were happy to proceed with the agreed sale price", she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.83" data-end="199.66">
+            <p class="french-block">"Le gazundering est en fait horrible. Ce n'est pas seulement une affaire commerciale. C'est la maison de mes enfants et le fait que rien n'ait été fait à ce sujet est ridicule."</p>
+            <span class="english-block">"Gazundering is actually awful. It's not just a business deal. It's my children's home and the fact that nothing's been done about it is ridiculous."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.66" data-end="205.99">
+            <p class="french-block">Beth Rudolf de la Conveyancing Association affirme que le gazundering est un problème mineur mais croissant.</p>
+            <span class="english-block">Beth Rudolf from the Conveyancing Association says gazundering is a small but growing problem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.99" data-end="216.1">
+            <p class="french-block">"En fait, ce n'est pas si important, cela n'arrive pas très souvent [mais] cela a commencé à augmenter en raison de l'évolution du marché immobilier qui en a fait un marché d'acheteurs."</p>
+            <span class="english-block">"It's not actually that big, it doesn't happen very often [but] it's started increasing though because of the change in the property market that's made it a buyers' market."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.1" data-end="227.33">
+            <p class="french-block">Il y a plus de maisons sur le marché que de personnes cherchant à acheter, a-t-elle expliqué, ce qui signifie que les vendeurs sont confrontés à une concurrence plus rude, les obligeant à baisser les prix.</p>
+            <span class="english-block">There are more houses on the market than people looking to buy, she explained, which means sellers face stiffer competition, forcing them to lower prices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="227.33" data-end="244.42">
+            <p class="french-block">Le gouvernement a mis en place des plans pour réformer le marché de l'achat et de la vente de logements en Angleterre et au Pays de Galles, qui s'attaqueraient à des problèmes tels que le gazundering, bien qu'à l'heure actuelle, le calendrier de ces réformes externes soit d'ici la fin de l'actuelle législature en 2029.</p>
+            <span class="english-block">The government has put plans in place to reform the house buying and selling market in England and Wales which would tackle issues like gazundering although at the moment the timetable for those reforms, external is by the end of the current parliament in 2029.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.42" data-end="260.57">
+            <p class="french-block">Le ministère du Logement, des Communautés et des Gouvernements locaux a déclaré à la BBC : « Nous mettons fin au gazundering en introduisant des accords juridiquement contraignants qui empêchent les acheteurs de se retirer à la dernière minute sans raison valable, avec des amendes pour ceux qui le font. »</p>
+            <span class="english-block">The Ministry for Housing, Communities and Local Government told the BBC: "We're stopping gazundering by introducing legally binding agreements that prevent buyers from walking away at the last minute without a valid reason, with fines for those who do."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.57" data-end="271.06">
+            <p class="french-block">Soyez clair avec votre agent immobilier sur le fait que vos finances ne permettront aucune renégociation de dernière minute afin qu'il puisse fixer cette limite avec les acheteurs potentiels.</p>
+            <span class="english-block">Be clear with your estate agent that your finances won't allow any last minute re-negotiation so they can set this boundary with prospective buyers</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.06" data-end="292.63">
+            <p class="french-block">Demandez à votre avocat spécialisé en transfert de propriété de rassembler tous les documents et recherches nécessaires au registre foncier, aux autorités locales, au drainage, à l'eau et à l'environnement, ainsi que de remplir les questionnaires d'informations sur la propriété lorsque vous mettez votre propriété sur le marché. Cela donne moins de temps et d'opportunités pour regarder</p>
+            <span class="english-block">Instruct your conveyancing lawyer to gather all the necessary Land Registry, local authority documents and searches, drainage, water and environmental searches as well as completing the property information questionnaires when you put your property on market. This gives less time and opportunity for gazundering</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.63" data-end="308.69">
+            <p class="french-block">Vous pouvez envisager un accord de réservation lorsqu'un acheteur paie des frais pour se réserver le droit d'acheter la propriété pour une période donnée. Le vendeur s'engage à ne vendre à personne d'autre pendant cette période et si l'un ou l'autre se retire, des pénalités financières s'appliqueront.</p>
+            <span class="english-block">You may consider a reservation agreement when a buyer pays a fee to reserve the right to buy the property for a period of time. The seller agrees not to sell to anyone else during that time and if either pull out there are financial penalties</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="308.69" data-end="325.13">
+            <p class="french-block">Une offre conditionnelle contraignante signifie que vous acceptez d’acheter une maison, mais seulement si des règles spécifiques sont d’abord respectées, comme une vente connexe ou un accord hypothécaire. Si ces règles ne respectent pas, vous pouvez annuler la transaction sans pénalité financière.</p>
+            <span class="english-block">A conditional binding offer means you agree to buy a house, but only if specific rules are met first such as a related sale or mortgage deal. If those rules fail, you can cancel the deal without financial penalty</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.13" data-end="329.06">
+            <p class="french-block">Source : Association de transfert de propriété</p>
+            <span class="english-block">Source: The Conveyancing Association</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_13.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

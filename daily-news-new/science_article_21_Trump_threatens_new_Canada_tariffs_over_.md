@@ -1,7 +1,7 @@
 # Trump threatens new Canada tariffs over fires sending 'filthy' air into US cities
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cwyq93j34lgo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cwyq93j34lgo?at_medium=RSS&at_campaign=rss)  
-**Published:** Sat, 18 Jul 2026 01:29:47 GMT  
+**Published:** Sat, 18 Jul 2026 17:29:50 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](science_article_21.mp3)  
 
 ---
@@ -44,9 +44,9 @@
 
 ### Section 5
 
-**🇬🇧 EN:** As of Friday, there were about 888 fires actively burning in Canada, according to the Canadian Wildland Fire Information System, external - with the majority burning out of control.
+**🇬🇧 EN:** As of Saturday, there were about 955 fires actively burning in Canada, according to the Canadian Wildland Fire Information System, external - with the majority burning out of control.
 
-**🇫🇷 FR:** *Vendredi, selon le Système canadien d'information sur les feux de forêt, il y avait environ 888 incendies actifs au Canada, la majorité étant hors de contrôle.*
+**🇫🇷 FR:** *Samedi, selon le Système canadien d'information sur les feux de forêt, il y avait environ 955 incendies actifs au Canada, la majorité étant hors de contrôle.*
 
 ---
 
@@ -140,13 +140,21 @@
 
 ### Section 17
 
+**🇬🇧 EN:** Timelapse shows World Cup final stadium nearly vanish in smoky haze
+
+**🇫🇷 FR:** *Un timelapse montre le stade de la finale de la Coupe du monde presque disparu dans une brume enfumée*
+
+---
+
+### Section 18
+
 **🇬🇧 EN:** According to the Canadian Wildland Fire Information System, nearly 3 million hectares of land in Canada has already been destroyed by the wildfires.
 
 **🇫🇷 FR:** *Selon le Système canadien d'information sur les feux de forêt, près de 3 millions d'hectares de terres au Canada ont déjà été détruits par les incendies de forêt.*
 
 ---
 
-### Section 18
+### Section 19
 
 **🇬🇧 EN:** The impacts have been far-reaching, with a thick blanket of smoke spreading across US states, from Minnesota and Michigan to Pennsylvania, Ohio and New York.
 
@@ -154,7 +162,7 @@
 
 ---
 
-### Section 19
+### Section 20
 
 **🇬🇧 EN:** "Hazardous" air quality alerts have been issued across much of the region, leading to the cancellation of many outdoor events.
 
@@ -162,7 +170,7 @@
 
 ---
 
-### Section 20
+### Section 21
 
 **🇬🇧 EN:** As of Friday, air quality in Detroit was worst in the world, Swiss air quality tracker IQAir said, external, followed by the Midwestern city of Chicago, Washington DC, and New York in seventh place.
 
@@ -170,7 +178,7 @@
 
 ---
 
-### Section 21
+### Section 22
 
 **🇬🇧 EN:** In the open letter addressed to Canadian officials, US lawmakers John James, John Moolenaar, Jack Bergman and Lisa McClain said their "patience has run out".
 
@@ -178,7 +186,7 @@
 
 ---
 
-### Section 22
+### Section 23
 
 **🇬🇧 EN:** "We are done accepting apologies in place of action," they said, warning the US could explore direct involvement in cross-border wildfire protection and firefighting if Canada failed to act.
 
@@ -186,7 +194,7 @@
 
 ---
 
-### Section 23
+### Section 24
 
 **🇬🇧 EN:** "We were told last year that this would be treated with urgency. It was not," they claimed, adding that instead "American lungs are paying the price for Canadian inaction, year after year".
 
@@ -194,7 +202,7 @@
 
 ---
 
-### Section 24
+### Section 25
 
 **🇬🇧 EN:** They said that issues such as "chronic under-investment in forest thinning, fuel reduction, and prescribed burns, along with inadequate enforcement against arson", had not been addressed "adequately enough".
 
@@ -202,7 +210,7 @@
 
 ---
 
-### Section 25
+### Section 26
 
 **🇬🇧 EN:** But scientists BBC Verify have spoken to say the picture is more complicated.
 
@@ -210,7 +218,7 @@
 
 ---
 
-### Section 26
+### Section 27
 
 **🇬🇧 EN:** "Weather doesn't care about international borders," says Dr Patrick James from the University of Toronto.
 
@@ -218,7 +226,7 @@
 
 ---
 
-### Section 27
+### Section 28
 
 **🇬🇧 EN:** Once smoke reaches the atmosphere, it travels wherever the winds take it - and smoke from major US wildfires has also affected Canada in recent years.
 
@@ -226,7 +234,7 @@
 
 ---
 
-### Section 28
+### Section 29
 
 **🇬🇧 EN:** Experts also say many of the current fires are burning in Canada's vast, remote forests, where fires can be difficult to detect or contain before they become too large.
 
@@ -234,7 +242,7 @@
 
 ---
 
-### Section 29
+### Section 30
 
 **🇬🇧 EN:** While better forest management can reduce wildfire risk in some areas, particularly near communities, it cannot prevent fires across an ecosystem of this scale.
 
@@ -242,7 +250,7 @@
 
 ---
 
-### Section 30
+### Section 31
 
 **🇬🇧 EN:** Wildfires are very common in Canada, but the number of outbreaks has rapidly increased in recent weeks. Experts in both the US and Canada agree that this is likely because of sustained hot weather at the end of June across northern Ontario, coupled with a below average rainfall.
 
@@ -250,7 +258,7 @@
 
 ---
 
-### Section 31
+### Section 32
 
 **🇬🇧 EN:** Scientists also say increasingly severe wildfire seasons are being driven in part by climate change, which is creating hotter, drier conditions that allow fires to spread more easily. Some of the fires have also been sparked by lightning.
 
@@ -258,7 +266,7 @@
 
 ---
 
-### Section 32
+### Section 33
 
 **🇬🇧 EN:** "Climate change is a global issue, and it would be inaccurate to suggest that Canada alone caused or could have prevented these wildfires," says Dr Anabela Bonada from the University of Waterloo.
 
@@ -266,39 +274,39 @@
 
 ---
 
-### Section 33
-
-**🇬🇧 EN:** ‘You can taste the smoke’: New Yorkers on air quality as fires burn across Canada
-
-**🇫🇷 FR:** *« Vous pouvez goûter la fumée » : les New-Yorkais parlent de la qualité de l'air alors que les incendies brûlent à travers le Canada*
-
----
-
 ### Section 34
 
-**🇬🇧 EN:** Ontario Premier Ford replied to the lawmakers on Friday, saying that Canada has helped the US battle wildfires in California and respond to hurricanes in North Carolina.
+**🇬🇧 EN:** "You can taste the smoke": New Yorkers on air quality
 
-**🇫🇷 FR:** *Vendredi, le premier ministre de l'Ontario, Ford, a répondu aux législateurs en affirmant que le Canada avait aidé les États-Unis à lutter contre les incendies de forêt en Californie et à répondre aux ouragans en Caroline du Nord.*
+**🇫🇷 FR:** *"Vous pouvez goûter la fumée" : les New-Yorkais parlent de la qualité de l'air*
 
 ---
 
 ### Section 35
 
-**🇬🇧 EN:** "Maybe what you should do rather than complain is send support, send help, because we have done the exact same thing for our American friends," Ford said.
+**🇬🇧 EN:** Ontario Premier Ford has called the rhetoric coming from American politicians "a shame" and "unacceptable", noting that Canada has peviously assisted its southern neighbour in battling wildfires in California and responding to hurricanes in North Carolina.
 
-**🇫🇷 FR:** *"Peut-être que vous devriez faire plutôt que de vous plaindre, c'est d'envoyer du soutien, de l'aide, car nous avons fait exactement la même chose pour nos amis américains", a déclaré Ford.*
+**🇫🇷 FR:** *Le premier ministre de l'Ontario, Ford, a qualifié la rhétorique des politiciens américains de « honteuse » et d'« inacceptable », soulignant que le Canada avait déjà aidé son voisin du sud à lutter contre les incendies de forêt en Californie et à réagir aux ouragans en Caroline du Nord.*
 
 ---
 
 ### Section 36
 
-**🇬🇧 EN:** The premier also said that the US states of Michigan and Massachusetts, which are both led by Democrats, have offered assistance with water bombers, firefighters and rescue operations.
+**🇬🇧 EN:** "That's what neighbors do," Ford said on Saturday. "You don't get on and start threatening and criticising because guess what? One day it's going to be your turn, and we're going to be down there without hesitation to support our neighbours."
+
+**🇫🇷 FR:** *"C'est ce que font les voisins", a déclaré Ford samedi. "Vous ne commencez pas à menacer et à critiquer parce que devinez quoi ? Un jour, ce sera votre tour, et nous serons là-bas sans hésiter pour soutenir nos voisins."*
+
+---
+
+### Section 37
+
+**🇬🇧 EN:** The premier has also said that the US states of Michigan and Massachusetts, which are both led by Democrats, have offered assistance with water bombers, firefighters and rescue operations.
 
 **🇫🇷 FR:** *Le Premier ministre a également déclaré que les États américains du Michigan et du Massachusetts, tous deux dirigés par des démocrates, avaient proposé leur aide en leur fournissant des bombardiers d'eau, des pompiers et des opérations de sauvetage.*
 
 ---
 
-### Section 37
+### Section 38
 
 **🇬🇧 EN:** Responding to the criticism from US lawmakers, Carney said in French during a news conference in Ontario: "Climate change is everyone's responsibility - truly everyone's - including the United States."
 
@@ -306,7 +314,7 @@
 
 ---
 
-### Section 38
+### Section 39
 
 **🇬🇧 EN:** He added that his government was "in close communication" with provinces and local communities.
 
@@ -314,7 +322,7 @@
 
 ---
 
-### Section 39
+### Section 40
 
 **🇬🇧 EN:** Meanwhile, Ford dismissed criticism of his government's handling of the fires, noting that more than 150 fire crews are on the ground battling the blazes, along with over 80 water bombers and helicopters.
 
@@ -322,7 +330,7 @@
 
 ---
 
-### Section 40
+### Section 41
 
 **🇬🇧 EN:** He added that his government has spent more than a billion dollars on wild land fire since 2018, and routinely spends more than its base budget allocated annually for firefighting due to the need.
 
@@ -330,7 +338,7 @@
 
 ---
 
-### Section 41
+### Section 42
 
 **🇬🇧 EN:** "We are throwing every single resource we can," he said.
 
@@ -338,7 +346,7 @@
 
 ---
 
-### Section 42
+### Section 43
 
 **🇬🇧 EN:** America's blame game over Canada's wildfire smoke misses the point, experts say
 
@@ -346,7 +354,7 @@
 
 ---
 
-### Section 43
+### Section 44
 
 **🇬🇧 EN:** Some residents in northern Ontario were forced to evacuate due to the ongoing fires. One First Nations chief reported her community was "burnt to ashes".
 
@@ -354,7 +362,7 @@
 
 ---
 
-### Section 44
+### Section 45
 
 **🇬🇧 EN:** Fires are also burning on the country's west coast, where more than 59 active fires in British Columbia were reported on Friday. The British Columbia Wildfire Service said that 39 of those fires started in the last 24 hours and more than half (31 fires) are out of control, prompting firefighters to use more aggressive means to control them.
 
@@ -362,7 +370,7 @@
 
 ---
 
-### Section 45
+### Section 46
 
 **🇬🇧 EN:** A large cluster of fires affecting northwestern areas of Ontario are responsible for sending thick plumes of smoke and poor air quality across the region and into the US.
 
@@ -370,7 +378,7 @@
 
 ---
 
-### Section 46
+### Section 47
 
 **🇬🇧 EN:** On Thursday, thick haze of smoke blocked views across New York City, including the Empire State Building and the Statue of Liberty. Likewise, national monuments across Washington DC were obstructed by the hazy conditions.
 
@@ -378,7 +386,7 @@
 
 ---
 
-### Section 47
+### Section 48
 
 **🇬🇧 EN:** Officials have stressed for people to stay indoors, some areas even passing out free masks, due to the poor health impacts of inhaling the fumes.
 
@@ -386,7 +394,7 @@
 
 ---
 
-### Section 48
+### Section 49
 
 **🇬🇧 EN:** It's led to outdoor activities being cancelled across the northern parts of the US, from Chicago and Detroit to parts of Pennsylvania and New England. Summertime camps were brought indoors, concerts were rescheduled - and at least one beach was shuttered along a popular lake.
 
@@ -394,7 +402,7 @@
 
 ---
 
-### Section 49
+### Section 50
 
 **🇬🇧 EN:** Poor air quality also affected air travel in some areas where low-visibility conditions at airports caused flight delays.
 
@@ -402,7 +410,7 @@
 
 ---
 
-### Section 50
+### Section 51
 
 **🇬🇧 EN:** The inclement weather has also sparked concerns around Sunday's World Cup final between Argentina and Spain at MetLife Stadium - an open-air venue - in New Jersey, where Trump is due to attend.
 
@@ -410,15 +418,15 @@
 
 ---
 
-### Section 51
+### Section 52
 
-**🇬🇧 EN:** White House officials - including Andrew Giuliani, the head of the White House's World Cup task force - is holding informal meetings with Fifa officials and others monitoring the wildfires, but no larger, formal meeting has so far been planned.
+**🇬🇧 EN:** White House officials - including Andrew Giuliani, the head of the White House's World Cup task force - are holding informal meetings with Fifa officials and others monitoring the wildfires, but no larger, formal meeting has so far been planned.
 
-**🇫🇷 FR:** *Les responsables de la Maison Blanche – dont Andrew Giuliani, chef du groupe de travail de la Maison Blanche pour la Coupe du monde – tiennent des réunions informelles avec des responsables de la Fifa et d'autres personnes surveillant les incendies de forêt, mais aucune réunion formelle plus large n'a été prévue jusqu'à présent.*
+**🇫🇷 FR:** *Les responsables de la Maison Blanche – dont Andrew Giuliani, chef du groupe de travail de la Maison Blanche pour la Coupe du monde – tiennent des réunions informelles avec des responsables de la Fifa et d'autres personnes surveillant les incendies de forêt, mais aucune réunion formelle plus large n'a été prévue pour l'instant.*
 
 ---
 
-### Section 52
+### Section 53
 
 **🇬🇧 EN:** Forecasters believe that rains in the area over the weekend will improve conditions before the two teams take the pitch at 1500e (2000 BST).
 
@@ -426,7 +434,7 @@
 
 ---
 
-### Section 53
+### Section 54
 
 **🇬🇧 EN:** In addition to the hazardous smoke extending across to the US, wildfires in northern Ontario have forced dozens from local First Nations communities to evacuate, with videos showing some fleeing the remote area by boat.
 
@@ -434,7 +442,7 @@
 
 ---
 
-### Section 54
+### Section 55
 
 **🇬🇧 EN:** Members of the Namaygoosisagagun First Nation in the northern part of the province say they are "distraught" after fires tore through the community with very little warning.
 
@@ -442,7 +450,7 @@
 
 ---
 
-### Section 55
+### Section 56
 
 **🇬🇧 EN:** Matthew Hoppe, incident commander for the Namaygoosisagagun First Nation, told the BBC that his community was devastated by the wildfires in northern Ontario.
 
@@ -450,7 +458,7 @@
 
 ---
 
-### Section 56
+### Section 57
 
 **🇬🇧 EN:** Community members had to "self-evacuate" via small boats on Monday afternoon with the fire rapidly approaching, Hoppe said, adding that there were no deaths or direct injuries, he says, but the community has been "completely levelled".
 
@@ -458,7 +466,7 @@
 
 ---
 
-### Section 57
+### Section 58
 
 **🇬🇧 EN:** Namaygoosisagagun First Nation Chief Helen Paavola told local news outlet CityNews in an interview that an aerial flyover showed that her community has been "burnt to ashes".
 
@@ -466,7 +474,7 @@
 
 ---
 
-### Section 58
+### Section 59
 
 **🇬🇧 EN:** Ford said a total of 10 communities have had to evacuate, with many now seeking refuge in southern Ontario cities.
 
@@ -474,7 +482,7 @@
 
 ---
 
-### Section 59
+### Section 60
 
 **🇬🇧 EN:** "It's a miracle that no one lost their lives," the premier said.
 
@@ -482,7 +490,7 @@
 
 ---
 
-### Section 60
+### Section 61
 
 **🇬🇧 EN:** Canada fires prompt US air quality alerts as smoke blankets major cities
 
@@ -490,7 +498,7 @@
 
 ---
 
-### Section 61
+### Section 62
 
 **🇬🇧 EN:** ‘You can taste the smoke’: New Yorkers on air quality as fires burn across Canada
 
@@ -498,7 +506,7 @@
 
 ---
 
-### Section 62
+### Section 63
 
 **🇬🇧 EN:** What to know about the Canadian and US wildfires and their impact
 

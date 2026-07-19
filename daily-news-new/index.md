@@ -1,98 +1,98 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-07-18 07:14:56  
+Generated on: 2026-07-19 06:31:23  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **US strikes hit Iran for seventh consecutive night**
-   - **Published:** Sat, 18 Jul 2026 04:40:11 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_US_strikes_hit_Iran_for_seventh_consecut.md](top-stories_article_1_US_strikes_hit_Iran_for_seventh_consecut.md)
+1. **Andrew Tate and brother arrested in US after more charges laid against them in UK**
+   - **Published:** Sun, 19 Jul 2026 02:17:07 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Andrew_Tate_and_brother_arrested_in_US_a.md](top-stories_article_1_Andrew_Tate_and_brother_arrested_in_US_a.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Burnham finalising cabinet ahead of becoming PM on Monday**
-   - **Published:** Fri, 17 Jul 2026 17:40:32 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Burnham_finalising_cabinet_ahead_of_beco.md](top-stories_article_2_Burnham_finalising_cabinet_ahead_of_beco.md)
+2. **Andy Burnham to scrap digital ID to focus on cost of living in first major policy pledge**
+   - **Published:** Sat, 18 Jul 2026 20:15:26 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Andy_Burnham_to_scrap_digital_ID_to_focu.md](top-stories_article_2_Andy_Burnham_to_scrap_digital_ID_to_focu.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Labour pins hopes on Burnham reboot as he plans policy blitz**
-   - **Published:** Fri, 17 Jul 2026 21:00:09 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Labour_pins_hopes_on_Burnham_reboot_as_h.md](top-stories_article_3_Labour_pins_hopes_on_Burnham_reboot_as_h.md)
+3. **Can Burnham's casual style survive contact with No 10?**
+   - **Published:** Sun, 19 Jul 2026 00:08:17 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Can_Burnhams_casual_style_survive_contac.md](top-stories_article_3_Can_Burnhams_casual_style_survive_contac.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Control, threats, disfiguring surgery: My life inside Jeffrey Epstein's 'cult'**
-   - **Published:** Sat, 18 Jul 2026 05:10:44 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Control_threats_disfiguring_surgery_My_l.md](top-stories_article_4_Control_threats_disfiguring_surgery_My_l.md)
+4. **Two US troops killed and one missing after Iranian attack in Jordan**
+   - **Published:** Sun, 19 Jul 2026 00:18:47 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Two_US_troops_killed_and_one_missing_aft.md](top-stories_article_4_Two_US_troops_killed_and_one_missing_aft.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **White House defends Argentina team over Falklands banner**
-   - **Published:** Fri, 17 Jul 2026 22:12:54 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_White_House_defends_Argentina_team_over_.md](top-stories_article_5_White_House_defends_Argentina_team_over_.md)
+5. **The hidden cost of the night shift and how to sleep it off**
+   - **Published:** Sun, 19 Jul 2026 00:01:55 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_The_hidden_cost_of_the_night_shift_and_h.md](top-stories_article_5_The_hidden_cost_of_the_night_shift_and_h.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Trump threatens new Canada tariffs over fires sending 'filthy' air into US cities**
-   - **Published:** Sat, 18 Jul 2026 01:29:47 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Trump_threatens_new_Canada_tariffs_over_.md](top-stories_article_6_Trump_threatens_new_Canada_tariffs_over_.md)
+6. **New EU border system tripling time at passport control, airport boss says**
+   - **Published:** Sun, 19 Jul 2026 01:47:59 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_New_EU_border_system_tripling_time_at_pa.md](top-stories_article_6_New_EU_border_system_tripling_time_at_pa.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Lauren Laverne diagnosed with blood and bone marrow disorder**
-   - **Published:** Fri, 17 Jul 2026 16:03:31 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Lauren_Laverne_diagnosed_with_blood_and_.md](top-stories_article_7_Lauren_Laverne_diagnosed_with_blood_and_.md)
+7. **How did England players rate during the World Cup?**
+   - **Published:** Sat, 18 Jul 2026 23:31:46 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_How_did_England_players_rate_during_the_.md](top-stories_article_7_How_did_England_players_rate_during_the_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Mother of Henry Nowak killer jailed for removing knife from murder scene**
-   - **Published:** Fri, 17 Jul 2026 17:22:48 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Mother_of_Henry_Nowak_killer_jailed_for_.md](top-stories_article_8_Mother_of_Henry_Nowak_killer_jailed_for_.md)
+8. **Over to you, Messi - Mbappe leads Golden Boot race for the ages**
+   - **Published:** Sat, 18 Jul 2026 23:48:40 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Over_to_you_Messi_-_Mbappe_leads_Golden_.md](top-stories_article_8_Over_to_you_Messi_-_Mbappe_leads_Golden_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Trump threatens new Canada tariffs over fires sending 'filthy' air into US cities**
-   - **Published:** Sat, 18 Jul 2026 01:29:47 GMT
-   - **Read Parallel Translation:** [world_article_9_Trump_threatens_new_Canada_tariffs_over_.md](world_article_9_Trump_threatens_new_Canada_tariffs_over_.md)
+1. **Two US troops killed and one missing after Iranian attack in Jordan**
+   - **Published:** Sun, 19 Jul 2026 00:18:47 GMT
+   - **Read Parallel Translation:** [world_article_9_Two_US_troops_killed_and_one_missing_aft.md](world_article_9_Two_US_troops_killed_and_one_missing_aft.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **US strikes hit Iran for seventh consecutive night**
-   - **Published:** Sat, 18 Jul 2026 04:40:11 GMT
-   - **Read Parallel Translation:** [world_article_10_US_strikes_hit_Iran_for_seventh_consecut.md](world_article_10_US_strikes_hit_Iran_for_seventh_consecut.md)
+2. **Andrew Tate and brother arrested in US after more charges laid against them in UK**
+   - **Published:** Sun, 19 Jul 2026 02:17:07 GMT
+   - **Read Parallel Translation:** [world_article_10_Andrew_Tate_and_brother_arrested_in_US_a.md](world_article_10_Andrew_Tate_and_brother_arrested_in_US_a.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Many Ukrainian soldiers outraged over removal of defence minister, troops tell BBC**
-   - **Published:** Fri, 17 Jul 2026 19:04:09 GMT
-   - **Read Parallel Translation:** [world_article_11_Many_Ukrainian_soldiers_outraged_over_re.md](world_article_11_Many_Ukrainian_soldiers_outraged_over_re.md)
+3. **Russians turn to cash, putting more strain on slowing wartime economy**
+   - **Published:** Sat, 18 Jul 2026 23:59:26 GMT
+   - **Read Parallel Translation:** [world_article_11_Russians_turn_to_cash_putting_more_strai.md](world_article_11_Russians_turn_to_cash_putting_more_strai.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **White House defends Argentina team over Falklands banner**
-   - **Published:** Fri, 17 Jul 2026 22:12:54 GMT
-   - **Read Parallel Translation:** [world_article_12_White_House_defends_Argentina_team_over_.md](world_article_12_White_House_defends_Argentina_team_over_.md)
+4. **Russian online retail warehouses hit by deadly Ukrainian strikes**
+   - **Published:** Sat, 18 Jul 2026 13:06:25 GMT
+   - **Read Parallel Translation:** [world_article_12_Russian_online_retail_warehouses_hit_by_.md](world_article_12_Russian_online_retail_warehouses_hit_by_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Burnham's 'Manchesterism' got him to No 10 - but will it work for the UK?**
-   - **Published:** Fri, 17 Jul 2026 05:00:08 GMT
-   - **Read Parallel Translation:** [business_article_13_Burnhams_Manchesterism_got_him_to_No_10_.md](business_article_13_Burnhams_Manchesterism_got_him_to_No_10_.md)
+1. **'My buyers dropped their offer by £15,000 the day before exchange': Gazundering and how to avoid it**
+   - **Published:** Sat, 18 Jul 2026 01:14:53 GMT
+   - **Read Parallel Translation:** [business_article_13_My_buyers_dropped_their_offer_by_15000_t.md](business_article_13_My_buyers_dropped_their_offer_by_15000_t.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Five headaches Andy Burnham will have to deal with as PM**
-   - **Published:** Fri, 17 Jul 2026 05:59:36 GMT
-   - **Read Parallel Translation:** [business_article_14_Five_headaches_Andy_Burnham_will_have_to.md](business_article_14_Five_headaches_Andy_Burnham_will_have_to.md)
+2. **Burnham's 'Manchesterism' got him to No 10 - but will it work for the UK?**
+   - **Published:** Fri, 17 Jul 2026 05:00:08 GMT
+   - **Read Parallel Translation:** [business_article_14_Burnhams_Manchesterism_got_him_to_No_10_.md](business_article_14_Burnhams_Manchesterism_got_him_to_No_10_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Brewdog founder faces data complaints over efforts to buy back firm**
-   - **Published:** Fri, 17 Jul 2026 16:44:15 GMT
-   - **Read Parallel Translation:** [business_article_15_Brewdog_founder_faces_data_complaints_ov.md](business_article_15_Brewdog_founder_faces_data_complaints_ov.md)
+3. **Five headaches Andy Burnham will have to deal with as PM**
+   - **Published:** Fri, 17 Jul 2026 05:59:36 GMT
+   - **Read Parallel Translation:** [business_article_15_Five_headaches_Andy_Burnham_will_have_to.md](business_article_15_Five_headaches_Andy_Burnham_will_have_to.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **China's Moonshot AI claims Kimi K3 can rival OpenAI and Anthropic**
-   - **Published:** Fri, 17 Jul 2026 16:53:04 GMT
-   - **Read Parallel Translation:** [business_article_16_Chinas_Moonshot_AI_claims_Kimi_K3_can_ri.md](business_article_16_Chinas_Moonshot_AI_claims_Kimi_K3_can_ri.md)
+4. **Brewdog founder faces data complaints over efforts to buy back firm**
+   - **Published:** Fri, 17 Jul 2026 16:44:15 GMT
+   - **Read Parallel Translation:** [business_article_16_Brewdog_founder_faces_data_complaints_ov.md](business_article_16_Brewdog_founder_faces_data_complaints_ov.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
@@ -124,23 +124,23 @@ Scraped Feed Mode: `ALL`
 ### Section: SCIENCE
 
 1. **Trump threatens new Canada tariffs over fires sending 'filthy' air into US cities**
-   - **Published:** Sat, 18 Jul 2026 01:29:47 GMT
+   - **Published:** Sat, 18 Jul 2026 17:29:50 GMT
    - **Read Parallel Translation:** [science_article_21_Trump_threatens_new_Canada_tariffs_over_.md](science_article_21_Trump_threatens_new_Canada_tariffs_over_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Second half of summer to bring chances for rain but heatwave threat persists**
-   - **Published:** Sat, 18 Jul 2026 01:05:29 GMT
-   - **Read Parallel Translation:** [science_article_22_Second_half_of_summer_to_bring_chances_f.md](science_article_22_Second_half_of_summer_to_bring_chances_f.md)
+2. **Toronto, New York and Washington top list of most polluted cities as wildfires burn**
+   - **Published:** Sat, 18 Jul 2026 17:18:47 GMT
+   - **Read Parallel Translation:** [science_article_22_Toronto_New_York_and_Washington_top_list.md](science_article_22_Toronto_New_York_and_Washington_top_list.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Diamonds and 'cab to orbit': The rocket aiming to transform India's space ambitions**
-   - **Published:** Sat, 18 Jul 2026 00:39:18 GMT
-   - **Read Parallel Translation:** [science_article_23_Diamonds_and_cab_to_orbit_The_rocket_aim.md](science_article_23_Diamonds_and_cab_to_orbit_The_rocket_aim.md)
+3. **Diamonds and 'cab to orbit': Rocket aiming to transform India's space ambitions takes off**
+   - **Published:** Sat, 18 Jul 2026 07:05:19 GMT
+   - **Read Parallel Translation:** [science_article_23_Diamonds_and_cab_to_orbit_Rocket_aiming_.md](science_article_23_Diamonds_and_cab_to_orbit_Rocket_aiming_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **What this desert city can teach the world about tackling heat deaths**
-   - **Published:** Fri, 17 Jul 2026 23:56:08 GMT
-   - **Read Parallel Translation:** [science_article_24_What_this_desert_city_can_teach_the_worl.md](science_article_24_What_this_desert_city_can_teach_the_worl.md)
+4. **Second half of summer to bring chances for rain but heatwave threat persists**
+   - **Published:** Sat, 18 Jul 2026 01:05:29 GMT
+   - **Read Parallel Translation:** [science_article_24_Second_half_of_summer_to_bring_chances_f.md](science_article_24_Second_half_of_summer_to_bring_chances_f.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
@@ -171,47 +171,48 @@ Scraped Feed Mode: `ALL`
 
 ### Section: POLITICS
 
-1. **Burnham says he is 'finalising' cabinet ahead of becoming PM on Monday**
-   - **Published:** Fri, 17 Jul 2026 17:40:32 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_says_he_is_finalising_cabinet_ah.md](politics_article_29_Burnham_says_he_is_finalising_cabinet_ah.md)
+1. **Andy Burnham to scrap digital ID to focus on cost of living in first major policy pledge**
+   - **Published:** Sat, 18 Jul 2026 20:15:26 GMT
+   - **Read Parallel Translation:** [politics_article_29_Andy_Burnham_to_scrap_digital_ID_to_focu.md](politics_article_29_Andy_Burnham_to_scrap_digital_ID_to_focu.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Labour pins hopes on Burnham reboot as he plans policy blitz**
-   - **Published:** Fri, 17 Jul 2026 21:00:09 GMT
-   - **Read Parallel Translation:** [politics_article_30_Labour_pins_hopes_on_Burnham_reboot_as_h.md](politics_article_30_Labour_pins_hopes_on_Burnham_reboot_as_h.md)
+2. **Burnham is 'people pleaser' with 'airy fairy' plans, says Kemi Badenoch**
+   - **Published:** Sat, 18 Jul 2026 15:01:33 GMT
+   - **Read Parallel Translation:** [politics_article_30_Burnham_is_people_pleaser_with_airy_fair.md](politics_article_30_Burnham_is_people_pleaser_with_airy_fair.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Clacton by-election attracts 34 candidates**
-   - **Published:** Fri, 17 Jul 2026 21:06:11 GMT
-   - **Read Parallel Translation:** [politics_article_31_Clacton_by-election_attracts_34_candidat.md](politics_article_31_Clacton_by-election_attracts_34_candidat.md)
+3. **Lib Dems urge FA and Uefa to withdraw from Fifa**
+   - **Published:** Sat, 18 Jul 2026 05:02:37 GMT
+   - **Read Parallel Translation:** [politics_article_31_Lib_Dems_urge_FA_and_Uefa_to_withdraw_fr.md](politics_article_31_Lib_Dems_urge_FA_and_Uefa_to_withdraw_fr.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **MP found not guilty of sexually assaulting women**
-   - **Published:** Fri, 17 Jul 2026 16:48:44 GMT
-   - **Read Parallel Translation:** [politics_article_32_MP_found_not_guilty_of_sexually_assaulti.md](politics_article_32_MP_found_not_guilty_of_sexually_assaulti.md)
+4. **Clacton by-election attracts 34 candidates**
+   - **Published:** Fri, 17 Jul 2026 21:06:11 GMT
+   - **Read Parallel Translation:** [politics_article_32_Clacton_by-election_attracts_34_candidat.md](politics_article_32_Clacton_by-election_attracts_34_candidat.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **16 World Cup viral moments - from Posh Spice's slow reaction to Haaland's bromance**
-   - **Published:** Fri, 17 Jul 2026 23:40:03 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_16_World_Cup_viral_moments_-_from_Posh_S.md](entertainment_article_33_16_World_Cup_viral_moments_-_from_Posh_S.md)
+1. **Gracie Abrams captures pain of early adulthood in new album - but you're left wanting more**
+   - **Published:** Sat, 18 Jul 2026 00:33:47 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Gracie_Abrams_captures_pain_of_early_adu.md](entertainment_article_33_Gracie_Abrams_captures_pain_of_early_adu.md)
+   - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Oscar-winning actress Brenda Fricker dies at 81**
-   - **Published:** Fri, 17 Jul 2026 15:32:35 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Oscar-winning_actress_Brenda_Fricker_die.md](entertainment_article_34_Oscar-winning_actress_Brenda_Fricker_die.md)
+2. **16 World Cup viral moments - from Posh Spice's nonchalance to Haaland's bromance**
+   - **Published:** Fri, 17 Jul 2026 23:40:03 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_16_World_Cup_viral_moments_-_from_Posh_S.md](entertainment_article_34_16_World_Cup_viral_moments_-_from_Posh_S.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Bayeux Tapestry in 'wonderful state' after journey to London, French minister says**
-   - **Published:** Fri, 17 Jul 2026 17:07:24 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Bayeux_Tapestry_in_wonderful_state_after.md](entertainment_article_35_Bayeux_Tapestry_in_wonderful_state_after.md)
+3. **'Wham! concerts changed lives in China' - Ridgeley**
+   - **Published:** Sat, 18 Jul 2026 05:12:20 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Wham_concerts_changed_lives_in_China_-_R.md](entertainment_article_35_Wham_concerts_changed_lives_in_China_-_R.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Lauren Laverne diagnosed with blood and bone marrow disorder**
-   - **Published:** Fri, 17 Jul 2026 16:03:31 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Lauren_Laverne_diagnosed_with_blood_and_.md](entertainment_article_36_Lauren_Laverne_diagnosed_with_blood_and_.md)
+4. **Signed Hockney print found in a book sells for £41K**
+   - **Published:** Sat, 18 Jul 2026 09:10:25 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Signed_Hockney_print_found_in_a_book_sel.md](entertainment_article_36_Signed_Hockney_print_found_in_a_book_sel.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
