@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From coffee grounds to guinea pig bedding - the composters keeping it local</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>From coffee grounds to guinea pig bedding - the composters keeping it local</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 19 Jul 2026 11:33:19 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c78y2q6ve04o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Food waste is a resource like water and should be kept in communities, compost champions say.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.02" data-end="18.41">
+            <p class="french-block">Steph Robinson et Fin Jordao se sont rencontrés pour la première fois au Centre for Alternative Technology, une organisation caritative de développement durable à Machynlleth.</p>
+            <span class="english-block">Steph Robinson and ffin Jordao first met at the Centre for Alternative Technology sustainable development charity in Machynlleth</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.41" data-end="31.08">
+            <p class="french-block">Lorsque vous déposez les restes de nourriture à l’extérieur de la maison pour les collecter, que pensez-vous faire ? Vous débarrasser des déchets ou offrir une ressource précieuse qui pourrait être utilisée directement à votre porte ?</p>
+            <span class="english-block">When you put food leftovers outside the house for collection, what do you think you are doing? Getting rid of waste or giving away a valuable resource that could be used right on your doorstep?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.08" data-end="38.14">
+            <p class="french-block">Pour les fondateurs d'une entreprise communautaire de compostage primée, il va de soi que la deuxième réponse est la bonne.</p>
+            <span class="english-block">For the founders of an award-winning community compost business, it's a no-brainer that the second answer is the correct one.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.14" data-end="49.68">
+            <p class="french-block">Steph Robinson et Fin Jordao de Criw Compostio collectent les déchets alimentaires des cafés et des entreprises qui les paient et les transforment en compost sans tourbe, qui est ensuite utilisé par la communauté.</p>
+            <span class="english-block">Steph Robinson and ffin Jordao of Criw Compostio collect food waste from cafes and businesses who pay them and convert it into peat-free compost, which is then used by the community.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.68" data-end="60.98">
+            <p class="french-block">"Les producteurs locaux prennent ensuite ce compost, cultivent des aliments qui retournent aux cafés, les cafés les servent, les déchets nous reviennent et nous les transformons en compost", a déclaré Steph.</p>
+            <span class="english-block">"Local growers then take that compost, grow food that goes back to the cafes, cafes serve it, waste comes back to us and we turn it back into compost," said Steph.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.98" data-end="70.13">
+            <p class="french-block">Une fois prêt, il est disponible sur la base « payez ce que vous ressentez, payez ce que vous pouvez vous permettre » et tout reste au sein de la communauté.</p>
+            <span class="english-block">Once ready, it is available on a "pay what you feel, pay what you can afford" basis and all stays within the community.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.13" data-end="74.26">
+            <p class="french-block">Se familiariser avec le compost fait partie du travail...</p>
+            <span class="english-block">Getting up close and personal with compost is part of the job...</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.26" data-end="83.38">
+            <p class="french-block">Steph et Fin se sont rencontrés au Centre for Alternative Technology, external (CAT) juste à l'extérieur de Machynlleth, Powys.</p>
+            <span class="english-block">Steph and ffin met at the Centre for Alternative Technology, external (CAT) just outside Machynlleth, Powys.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.38" data-end="94.51">
+            <p class="french-block">Elle a été créée il y a plus de 50 ans par des bénévoles qui souhaitaient trouver des moyens de vivre sans dépendre des combustibles fossiles et est devenue une organisation caritative environnementale de premier plan.</p>
+            <span class="english-block">It was established more than 50 years ago by volunteers who wanted to find ways to live without relying on fossil fuels and grew into a leading environmental charity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.51" data-end="110.4">
+            <p class="french-block">Le biologiste Fin, 43 ans, originaire du Portugal, a déménagé au Pays de Galles pour travailler dans le département de biologie du CAT, tandis que Steph, 49 ans, a quitté l'Angleterre pour diriger le programme de cours de courte durée du centre.</p>
+            <span class="english-block">Biologist ffin, 43, originally from Portugal, moved to Wales to work in CAT's biology department while Steph, 49, moved from England to run the centre's short courses programme.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.4" data-end="120.22">
+            <p class="french-block">Son expérience concernait la diversité et l'inclusion, mais aussi l'analyse de systèmes, la gestion de projet et « toutes sortes de compétences commerciales en fait ».</p>
+            <span class="english-block">Her background was in diversity and inclusion but also systems analysis, project management and "all kinds of business skills really".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.22" data-end="132.14">
+            <p class="french-block">CAT a attiré ffin parce qu'il "m'a semblé être un endroit où l'on pouvait faire de la biologie très pratique et travailler sur des systèmes hors réseau, et également avoir une composante éducative et un centre de visiteurs".</p>
+            <span class="english-block">CAT attracted ffin because it "struck me as a place where you could do very hands-on biology and work on off-grid systems, and also have an education component and a visitor centre".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.14" data-end="140.42">
+            <p class="french-block">Criw Compostio est né d'un projet initialement mis en place grâce à une subvention du Fonds de Prospérité Partagée, externe en 2022.</p>
+            <span class="english-block">Criw Compostio grew out of a project ffin initially set up with a grant from the Shared Prosperity Fund, external in 2022.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.42" data-end="150.46">
+            <p class="french-block">Un financement supplémentaire leur a permis de se concentrer sur la recherche et le développement et de créer une école de compostage pour aider d'autres projets dans d'autres communautés à démarrer.</p>
+            <span class="english-block">Further funding has allowed them to focus on research and development and set up a composting school to help other projects in other communities get going.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.46" data-end="158.18">
+            <p class="french-block">Tout le compostage est effectué à la base de Criw Compostio à Machynlleth, ce qui réduit au minimum les kilomètres de transport.</p>
+            <span class="english-block">All composting is done at Criw Compostio's base in Machynlleth, keeping transport miles to a minimum</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.18" data-end="168.91">
+            <p class="french-block">Criw Compostio récupère les déchets, ainsi que les copeaux de bois d'une entreprise de menuiserie et les litières usagées de lapins et de cobayes des propriétaires d'animaux, deux fois par semaine.</p>
+            <span class="english-block">Criw Compostio picks up waste, as well as wood shavings from a carpentry business and used rabbit and guinea pig bedding from pet owners, twice a week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="168.91" data-end="178.01">
+            <p class="french-block">Il est ensuite acheminé vers un site de traitement à Machynlleth « nous parcourons donc une très courte distance » où ils disposent de composteurs spécialisés.</p>
+            <span class="english-block">It is then taken to a processing site in Machynlleth "so we're travelling a very short distance" where they have specialised composters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.01" data-end="187.18">
+            <p class="french-block">"Ils sont comme des hyper-composteurs chauds et à l'épreuve des rats qui le transforment en quelque chose de très peu attrayant pour les parasites et très rapidement", a déclaré Steph.</p>
+            <span class="english-block">"They're like hot, rat-proof hyper composters that turn it into something that's very unattractive to pests and such very quickly," said Steph.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.18" data-end="194.66">
+            <p class="french-block">Il faut environ un an pour le transformer en compost, qui, selon Steph, vient de remporter un prix pour sa qualité.</p>
+            <span class="english-block">It take about a year to turn it into compost, which Steph said had just won an award for its quality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.66" data-end="204.82">
+            <p class="french-block">"Les producteurs locaux prennent ensuite ce compost, cultivent des aliments qui retournent aux cafés, les cafés les servent, les déchets nous reviennent et nous les transformons en compost.</p>
+            <span class="english-block">"Local growers then take that compost, grow food that goes back to the cafes, cafes serve it, waste comes back to us and we turn it back into compost.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.82" data-end="215.86">
+            <p class="french-block">"Le cadre dans lequel nous travaillons signifie que le produit doit rester local, donc nous ne le vendons pas sur eBay, Amazon ou autre. Il reste dans cette boucle de ressources."</p>
+            <span class="english-block">"The frame that we work within means it has to stay local, so we don't sell it on eBay or Amazon or whatever. It stays within that resources loop."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.86" data-end="225.98">
+            <p class="french-block">Comme dans tous les autres comtés gallois, la collecte des déchets alimentaires auprès des ménages, plutôt que des entreprises, est obligatoire et effectuée par le conseil de Powys.</p>
+            <span class="english-block">As in every other Welsh county, food waste collections from households, rather than businesses, are mandatory and carried out by Powys council.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.98" data-end="235.99">
+            <p class="french-block">Cependant, Criw Compostio organise des sessions pour les ménages qui souhaitent améliorer le compostage qu'ils font à la maison ou améliorer le compostage dans les jardins familiaux.</p>
+            <span class="english-block">However, Criw Compostio run sessions for households who want to improve the composting they do at home or to improve composting at allotments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.99" data-end="248.59">
+            <p class="french-block">La majorité de leurs utilisateurs de compost sont des personnes qui cultivent des aliments destinés à être vendus « sur les marchés de Machynlleth, dans le magasin d'aliments complets local, ou directement aux restaurants locaux ».</p>
+            <span class="english-block">The majority of their compost users are people growing food to sell "in the Machynlleth markets, to sell in the local whole food shop, to sell directly to local restaurants".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.59" data-end="258.72">
+            <p class="french-block">Steph a déclaré que la crise du coût de la vie avait suscité l'intérêt des personnes cherchant à cultiver leur propre nourriture et que les jardins familiaux étaient "une propriété très prisée ici".</p>
+            <span class="english-block">Steph said the cost of living crisis had raised interest for individuals looking to grow their own food and allotments were "hot property here".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="258.72" data-end="265.51">
+            <p class="french-block">ffin a déclaré qu'il était "intéressant de constater à quel point la productivité peut provenir d'un petit jardin".</p>
+            <span class="english-block">ffin said it was "interesting how much productivity can come from a small garden".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.51" data-end="272.98">
+            <p class="french-block">Le compost est stocké et distribué dans des sacs en papier « parce que c'est un être vivant » et qu'il a besoin de respirer</p>
+            <span class="english-block">Compost is stored and distributed in paper bags "because it is a living thing" and needs to breathe</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.98" data-end="282.26">
+            <p class="french-block">Le local est la clé de leur philosophie : ils n'opèrent pas en dehors d'un rayon de 20 miles et leur seule ambition de croissance est d'aider d'autres à démarrer des projets similaires.</p>
+            <span class="english-block">Local is key to their ethos - they don't operate outside of a 20-mile radius and their only ambition for growth is helping others start similar projects.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.26" data-end="292.44">
+            <p class="french-block">Ils ont travaillé avec des groupes de Gwynedd voisin pour aider à établir des programmes similaires et ont accueilli des personnes dans leurs écoles de compostage venant d'aussi loin que Birmingham.</p>
+            <span class="english-block">They have worked with groups in neighbouring Gwynedd to help establish similar schemes and have hosted people at their composting schools from as far afield as Birmingham.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.44" data-end="305.5">
+            <p class="french-block">Il ne s'agit pas seulement des aspects pratiques ou environnementaux de la fabrication du compost à utiliser localement, Steph parle également de l'impact social que cela peut avoir, en particulier pour les personnes ayant des soucis financiers.</p>
+            <span class="english-block">It's not just about the practical or environmental aspects of making compost for use locally, Steph also talks about the social impact it can have, particularly for people with money worries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.5" data-end="315.82">
+            <p class="french-block">"Il y a des communautés en croissance très dynamiques qui existent depuis longtemps parce que les gens ont des difficultés économiques et doivent donc cultiver de la nourriture", a-t-elle déclaré.</p>
+            <span class="english-block">"There are really vibrant growing communities that have been going quite a long time because people have been struggling economically, so they need to grow food," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.82" data-end="327.0">
+            <p class="french-block">"Ils aiment pouvoir être ensemble sans avoir à dépenser d'argent. Il est possible de faire face à la solitude, à la déconnexion et à tous les problèmes sociaux auxquels nous sommes confrontés."</p>
+            <span class="english-block">"They're enjoying being able to be together without having to spend any money. There's access into dealing with loneliness, and disconnection and all the social problems that we're dealing with."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.0" data-end="332.33">
+            <p class="french-block">Le Centre de technologies alternatives a ouvert ses portes en 1973</p>
+            <span class="english-block">The Centre for Alternative Technology first opened in 1973</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="332.33" data-end="344.93">
+            <p class="french-block">En plus d'eux deux, le conseil d'administration de l'entreprise compte six administrateurs, un « gardien du compost » et une quinzaine de bénévoles permanents qui apprennent la création de compost et sont payés en compost.</p>
+            <span class="english-block">As well as the two of them, there are six directors on the company's board, a "compost caretaker" and about 15 volunteers on a rolling basis who learn about compost creation and get paid in compost.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="344.93" data-end="360.58">
+            <p class="french-block">Pour compléter la formation en biologie de ffin, ils disposent également d'un comité consultatif d'experts composé d'universitaires travaillant dans le domaine de l'écologie des sols dans diverses universités, avec lesquels ils peuvent se consulter sur les développements techniques et scientifiques.</p>
+            <span class="english-block">To complement ffin's biology background, they also have an expert advisory panel of academics working in soil ecology at various universities to consult with on technical and scientific developments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.58" data-end="366.19">
+            <p class="french-block">Le principe le plus fondamental pour eux est que le terme gaspillage alimentaire est erroné.</p>
+            <span class="english-block">The most fundamental principle for them is that the term food waste is wrong.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.19" data-end="379.01">
+            <p class="french-block">Steph explique : « Si nous renversons la situation, il s'agit d'une ressource précieuse qui pourrait potentiellement être considérée comme extraite de cette communauté, qui pourrait en fait rester et pourrait être très, très utile.</p>
+            <span class="english-block">Steph explains: "If we turn this on its head, this is a valuable resource which could potentially be seen as being extracted from this community, which actually could remain and could be very, very useful.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="379.01" data-end="392.64">
+            <p class="french-block">"Est-il utile que nous, en tant que communauté, disons 'OK, nous allons conserver ces choses parce que nous savons qu'elles ont vraiment de la valeur'. Nous allons les transformer en quelque chose qui crée des emplois et crée un sol nutritif."</p>
+            <span class="english-block">"How useful is it when we as a community say 'OK, we're going to hold on to these things because we know they're really valuable'. We're going to turn them into something that adds jobs, creates nutritious soil."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="392.64" data-end="399.02">
+            <p class="french-block">ffin le résume : « en faire la chose la plus précieuse qu'il puisse devenir : un aliment nutritif. »</p>
+            <span class="english-block">ffin sums it up: "Turning it into the most valuable thing it can be turned into: Nutritious food."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="399.02" data-end="405.0">
+            <p class="french-block">Les plans des funérailles de Bonnie Tyler annoncés alors que les fans sont invités à défiler dans les rues</p>
+            <span class="english-block">Bonnie Tyler funeral plans announced as fans invited to line the streets</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="405.0" data-end="412.92">
+            <p class="french-block">Un étudiant victime de la pêche au chat reçoit 10 000 £ après que des photos aient été utilisées pour de faux profils de rencontres</p>
+            <span class="english-block">Catfished student gets £10k after photos used for fake dating profiles</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="412.92" data-end="419.86">
+            <p class="french-block">Le musée de Cardiff qui survit chaque semaine est un miracle en raison des réparations nécessaires, selon le patron</p>
+            <span class="english-block">Cardiff museum surviving each week is a miracle due to repairs needed, boss says</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_22.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
