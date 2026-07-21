@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'If only people knew what a tick could do' - the deadly meat allergy caused by tick bites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>'If only people knew what a tick could do' - the deadly meat allergy caused by tick bites</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 20 Jul 2026 18:01:00 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj6g03567edo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Mammalian meat allergy is a growing problem along Australia's east coast - and it's caused by tick bites.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.57" data-end="15.17">
+            <p class="french-block">Jeremy Webb est mort d'une anaphylaxie déclenchée par une allergie à la viande de mammifère induite par les tiques</p>
+            <span class="english-block">Jeremy Webb died of anaphylaxis triggered by tick-induced mammalian meat allergy</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.17" data-end="25.68">
+            <p class="french-block">Lorsque Myfanwy Webb repense à sa fête d'anniversaire il y a cinq ans, elle est submergée de regrets – se souvenant de ce qu'elle considère désormais comme une occasion manquée de sauver la vie de son fils.</p>
+            <span class="english-block">When Myfanwy Webb looks back at her birthday party five years ago, she is overcome with regret - remembering what she now sees as a missed opportunity to save her son's life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.68" data-end="37.2">
+            <p class="french-block">Quelques heures après un déjeuner de fête au restaurant, Jeremy a commencé à avoir des difficultés à respirer. Ses parents ont appelé une ambulance et le jeune homme de 15 ans a commencé à vomir.</p>
+            <span class="english-block">Hours after a celebratory lunch at a restaurant Jeremy began having difficulty breathing. His parents called an ambulance, and the then-15-year-old began vomiting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.2" data-end="50.21">
+            <p class="french-block">À l'hôpital, les médecins ont noté que Jeremy souffrait d'une allergie à la viande, mais ont finalement imputé cet épisode à son asthme, qu'il souffrait depuis qu'il était tout petit. Il a été renvoyé chez lui le lendemain.</p>
+            <span class="english-block">At the hospital, doctors noted that Jeremy had a suspected meat allergy, but ultimately blamed the episode on his asthma, which he'd had since he was a toddler. He was sent home the next day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.21" data-end="64.13">
+            <p class="french-block">"J'ai pris la mauvaise décision", dit Webb, souhaitant avoir demandé davantage de tests. Si elle l'avait fait, les médecins auraient pu établir que Jeremy souffrait réellement d'anaphylaxie et l'auraient renvoyé chez lui avec un EpiPen.</p>
+            <span class="english-block">"I made the wrong decision," Webb says, wishing she had asked for more testing. If she had, doctors might have established that Jeremy had actually been suffering from anaphylaxis, and sent him home with an EpiPen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="64.13" data-end="74.45">
+            <p class="french-block">Un peu plus d'un an plus tard, en juin 2022, Jeremy est décédé après avoir mangé une saucisse de bœuf lors d'un séjour en camping avec des amis sur une plage au nord de Sydney.</p>
+            <span class="english-block">​​Just over a year later, in June 2022, Jeremy died after eating a beef sausage on a camping trip with friends at a beach north of Sydney.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.45" data-end="93.34">
+            <p class="french-block">La cause du décès a été initialement enregistrée simplement comme étant l’asthme. Mais en février, après une enquête demandée par sa famille, un coroner a statué que la crise d'asthme et l'anaphylaxie mortelle qui en a résulté avaient été déclenchées par une allergie à la viande de mammifère (MMA) induite par les tiques.</p>
+            <span class="english-block">The cause of death was initially recorded simply as asthma. But in February, after an inquest pushed for by his family, a coroner ruled that the asthma attack and resulting fatal anaphylaxis was triggered by tick-induced mammalian meat allergy (MMA).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.34" data-end="99.74">
+            <p class="french-block">Son décès est le premier au monde causé par le MMA, également connu sous le nom de syndrome alpha-gal.</p>
+            <span class="english-block">His death is the first in the world known to have been caused by MMA, also known as alpha-gal syndrome.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.74" data-end="120.48">
+            <p class="french-block">Les cas diagnostiqués de MMA ont régulièrement augmenté depuis 2007, lorsqu'un médecin australien a découvert pour la première fois que l'allergie était liée aux piqûres de tiques. Aujourd'hui, les scientifiques et les militants avertissent que cette maladie, bien que facilement évitable, peut se déclencher de manière inattendue et constituer une menace mortelle.</p>
+            <span class="english-block">Diagnosed cases of MMA have steadily escalated since 2007, when an Australian doctor first discovered the allergy was linked to tick bites. Now, scientists and campaigners are warning that the condition, though easily prevented, can be unexpectedly triggered - and could pose a deadly threat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.48" data-end="126.07">
+            <p class="french-block">Jeremy Webb, à gauche, avec sa famille, dont sa mère Myfanwy Webb</p>
+            <span class="english-block">Jeremy Webb, left, with his family, including his mother Myfanwy Webb</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.07" data-end="136.3">
+            <p class="french-block">Webb soupçonnait depuis longtemps que son fils souffrait d'une allergie à la viande, mais elle n'a jamais été officiellement diagnostiquée et la famille ne savait pas que cela pouvait être mortel.</p>
+            <span class="english-block">Webb had long suspected that her son had a meat allergy, but it was never formally diagnosed and the family had no idea it could be fatal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.3" data-end="144.38">
+            <p class="french-block">"Quand j'ai consulté les recherches à ce sujet, il n'y avait rien à ce moment-là qui suggérait qu'il s'agissait de plus qu'une intolérance alimentaire."</p>
+            <span class="english-block">"When I looked up the research about it, there wasn't at that time anything to suggest it was more than a food intolerance."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.38" data-end="149.42">
+            <p class="french-block">Rétrospectivement, dit-elle, c'était « comme une bombe à retardement ».</p>
+            <span class="english-block">In retrospect, she says, it was "like a ticking time bomb".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.42" data-end="161.28">
+            <p class="french-block">Les symptômes de l'allergie peuvent varier de légers à graves, notamment des éruptions cutanées, un gonflement, des crampes d'estomac, des vomissements et une anaphylaxie, qui peuvent mettre la vie en danger.</p>
+            <span class="english-block">Symptoms of the allergy can range from mild to severe including skin rashes, swelling, stomach cramps, vomiting and anaphylaxis, which can be life-threatening.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.28" data-end="183.46">
+            <p class="french-block">Dès l'âge de 10 ans environ, Jeremy souffrait de nausées après avoir mangé de la viande, ou même occasionnellement après avoir inhalé les vapeurs de la viande rôtie – ce qui, selon Webb, aurait pu déclencher l'épisode après sa fête d'anniversaire. À une autre occasion, il avait été hospitalisé après avoir mangé des guimauves, qui contiennent généralement de la gélatine dérivée de parties d'animaux.</p>
+            <span class="english-block">From around the age of 10 Jeremy had suffered nausea after eating meat, or even occasionally after inhaling the fumes from roast meat – which Webb believes may have set off the episode after her birthday party. On another occasion he had been hospitalised after eating marshmallows, which usually contain gelatin derived from animal parts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.46" data-end="194.04">
+            <p class="french-block">C'est le professeur Sheryl van Nunen qui a découvert le lien entre le MMA et les tiques il y a près de 20 ans, après avoir remarqué une corrélation chez les patients de sa clinique d'allergie de Sydney.</p>
+            <span class="english-block">It was Prof Sheryl van Nunen who discovered the link between MMA and ticks almost 20 years ago, after noticing a correlation in patients at her Sydney allergy clinic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.04" data-end="207.84">
+            <p class="french-block">Travaillant sur la côte est de l'Australie, elle s'est retrouvée par inadvertance dans l'un des deux hauts lieux du MMA au monde. L'autre se trouve aux États-Unis, bien que des cas d'allergie aient depuis été signalés sur les six continents où vivent les tiques.</p>
+            <span class="english-block">Working on Australia's east coast, she inadvertently found herself in one of the world's two MMA hotspots. The other is in the US - although cases of the allergy have since been noted on all six continents where ticks live.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.84" data-end="229.44">
+            <p class="french-block">En Australie, le MMA est causé par la piqûre de la tique de la paralysie orientale. Après deux piqûres de tiques, 50 % des personnes développeront des anticorps contre l'alpha-gal, une molécule de sucre présente dans la salive de la tique, explique van Nunen. Après cela, ils ont 15 à 20 % de chances de devenir allergiques à la viande.</p>
+            <span class="english-block">In Australia, MMA is caused by the bite of the eastern paralysis tick. After two tick bites 50% of people will develop antibodies to alpha-gal, a sugar molecule found in the tick's saliva, van Nunen explains. After that, they have a 15 to 20% chance of becoming allergic to meat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.44" data-end="233.5">
+            <p class="french-block">"Si seulement les gens savaient ce que peut faire une tique", dit-elle.</p>
+            <span class="english-block">"If only people knew what a tick could do," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.5" data-end="242.33">
+            <p class="french-block">Jeremy, qui a grandi au milieu d'une brousse dense dans sa maison familiale au nord de Sydney, avait été mordu par des tiques depuis qu'il était petit garçon.</p>
+            <span class="english-block">Jeremy, who grew up surrounded by dense bushland at his family home north of Sydney, had been bitten by ticks since he was a small boy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.33" data-end="248.95">
+            <p class="french-block">La vue depuis le promontoire de Barrenjoey sur les plages du nord de Sydney, un « hotspot » du MMA</p>
+            <span class="english-block">The view from Barrenjoey headland in Sydney's Northern Beaches, an MMA 'hotspot'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.95" data-end="268.37">
+            <p class="french-block">On ne sait pas vraiment pourquoi la côte est, en particulier les régions au nord de Sydney, est un point chaud du MMA : dans certaines régions, on compte plus de 700 malades pour 100 000 habitants. Mais il existe plusieurs hypothèses, explique le Dr Alex Gofton, un expert en tiques qui a récemment dirigé une étude sur l'allergie.</p>
+            <span class="english-block">It's not clear why the east coast, particularly areas north of Sydney, is an MMA hotspot - in some areas there are more than 700 sufferers per 100,000 people. But there are several hypotheses, says Dr Alex Gofton, a tick expert who led a recent study into the allergy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.37" data-end="273.24">
+            <p class="french-block">La première est que de plus en plus de personnes y entrent en contact avec des tiques.</p>
+            <span class="english-block">One is that more people are coming into contact with ticks there.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="273.24" data-end="281.88">
+            <p class="french-block">"La population dans ces zones où les tiques sont endémiques a augmenté de façon spectaculaire au cours des 20 ou 30 dernières années", explique Gofton.</p>
+            <span class="english-block">"The population in those tick endemic areas over the last 20, 30 years has increased dramatically," Gofton says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.88" data-end="296.59">
+            <p class="french-block">Les années entre 2020 et 2023 ont également été des années pluvieuses de La Nina – des conditions dans lesquelles les tiques se développent – ​​et à peu près au même moment, la pandémie de Covid a poussé encore plus de personnes à quitter les villes et à s'installer dans la brousse, ajoute-t-il.</p>
+            <span class="english-block">The years between 2020 and 2023 were also rainy La Nina years - conditions in which ticks thrive - and around the same time the Covid pandemic was pushing even more people to move out of cities and into the bush, he adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="296.59" data-end="318.0">
+            <p class="french-block">Le taux élevé de diagnostics – il y a eu une augmentation de 22 % des cas chaque année depuis 2020 – pourrait également être alimenté par une sensibilisation et des tests accrus, dit Gofton. En utilisant des données de laboratoire, il a conclu qu'il y avait plus de 5 000 cas suspects de MMA en Australie – bien qu'il estime qu'il s'agit d'une sous-représentation des chiffres réels.</p>
+            <span class="english-block">The high rate of diagnosis - there has been a 22% increase in cases every year since 2020 - may also be fuelled by increased awareness and testing, Gofton says. Using lab data, he has concluded there are more than 5,000 suspected MMA cases in Australia - although he believes this is an under representation of the true figures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="318.0" data-end="329.04">
+            <p class="french-block">La tique de la paralysie orientale (Ixodes holocyclus) se trouve le long de la côte est de l'Australie, du nord du Queensland jusqu'au nord de Victoria en passant par la Nouvelle-Galles du Sud.</p>
+            <span class="english-block">The eastern paralysis tick (Ixodes holocyclus) is found along Australia's east coast, from north Queensland through New South Wales to northern Victoria.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.04" data-end="335.64">
+            <p class="french-block">Malgré une prise de conscience croissante, le diagnostic d’une allergie à la viande peut être difficile.</p>
+            <span class="english-block">Despite increasing awareness, diagnosing a meat allergy can be difficult.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.64" data-end="344.57">
+            <p class="french-block">Les symptômes se développent souvent la nuit, quelques heures après le repas du soir, et pour les personnes asthmatiques, les deux peuvent souvent être confondus.</p>
+            <span class="english-block">Symptoms often develop at night, hours after people have eaten their evening meal, and for those suffering asthma, the two can often be confused.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="344.57" data-end="349.39">
+            <p class="french-block">Van Nunen la décrit comme « une allergie à tout moment mais pas à chaque fois ».</p>
+            <span class="english-block">Van Nunen describes it as "an anytime but not an every time allergy".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="349.39" data-end="366.43">
+            <p class="french-block">Les symptômes peuvent parfois ne pas apparaître du tout, tandis qu'à d'autres moments, ils peuvent être exacerbés par des facteurs tels que le type de viande, la façon dont elle est cuite et si elle est épicée, ainsi que le fait qu'une personne boive de l'alcool avec, fasse de l'exercice après avoir mangé ou soit privée de sommeil.</p>
+            <span class="english-block">Symptoms may sometimes not appear at all, while at other times they may be exacerbated by factors including the type of meat, how it is cooked and if it is spicy, as well as whether a person drinks alcohol with it, exercises after eating or is sleep deprived.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.43" data-end="390.62">
+            <p class="french-block">Les personnes hypersensibles peuvent également être déclenchées par des produits provenant de mammifères tels que le lait et tout ce qui contient un dérivé de la viande de mammifère - produits de beauté et adoucissants pour le linge contenant de la lanoline, par exemple, et même les sacs en plastique des supermarchés contenant de l'acide stéarique. Les vapeurs d'un barbecue ou les caresses d'un chat ou d'un chien peuvent également déclencher une réaction allergique.</p>
+            <span class="english-block">Those who are hypersensitive can also be triggered by mammalian products such as milk and anything that contains a derivative of mammal meat - beauty products and laundry softeners containing lanolin, for example, and even supermarket plastic bags containing stearic acid. Fumes from a barbecue, or petting a cat or dog, can also trigger an allergic reaction.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.62" data-end="405.17">
+            <p class="french-block">Elizabeth Rowley, mère de trois enfants qui vit à Hannam Vale, sur la côte nord de la Nouvelle-Galles du Sud, a passé des années à consulter des médecins et des allergologues, dans l'espoir qu'ils puissent diagnostiquer la maladie mystérieuse qui la tourmentait.</p>
+            <span class="english-block">Elizabeth Rowley, a mother of three who lives in Hannam Vale on the mid north coast of New South Wales, spent years going to doctors and allergy specialists, hoping they could diagnose the mystery illness that plagued her.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="405.17" data-end="420.58">
+            <p class="french-block">Mais beaucoup ont ignoré ses symptômes, qui ont commencé en 2006 et allaient de la perte de mémoire et du brouillard cérébral à des douleurs thoraciques, des engourdissements dans les bras, des douleurs dans tout le corps et des difficultés respiratoires qui l'ont amenée à s'évanouir régulièrement.</p>
+            <span class="english-block">But many dismissed her symptoms, which began in 2006 and ranged from memory loss and brain fog to chest pain, numbness in her arms, full body aches, and breathing difficulties that led to her regularly passing out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="420.58" data-end="427.54">
+            <p class="french-block">"[Ils ont dit] 'tu deviens un peu hypocondriaque - ce n'est pas de l'anaphylaxie - surmonte-toi'", se souvient-elle.</p>
+            <span class="english-block">"[They said] 'you're turning into a bit of a hypochondriac - it's not anaphylaxis - get over it'," she recalls.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="427.54" data-end="432.24">
+            <p class="french-block">Depuis, elle a créé un groupe Facebook pour soutenir ses semblables.</p>
+            <span class="english-block">She has since set up a Facebook group to support fellow sufferers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="432.24" data-end="441.02">
+            <p class="french-block">"C'est juste mentalement horrible plus que tout, juste d'essayer de découvrir ce que c'était", dit-elle. "Je pensais que je devenais fou."</p>
+            <span class="english-block">"It's just mentally horrendous more than anything, just trying to find out what it was," she says. "I thought I was going crazy."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="441.02" data-end="456.65">
+            <p class="french-block">Remy Williams, une étudiante en psychologie de 23 ans qui vit à Northern Beaches à Sydney et qui a reçu un diagnostic d'allergie lorsqu'elle était enfant, affirme que la vigilance constante qu'elle a portée à l'observation de ce qu'elle a mangé a basculé vers un trouble de l'alimentation.</p>
+            <span class="english-block">Remy Williams, a 23-year-old psychology student who lives in Sydney's Northern Beaches and was diagnosed with the allergy as a child, says the constant vigilance of watching what she ate tipped over into an eating disorder.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="456.65" data-end="467.76">
+            <p class="french-block">Mais l'impact encore plus important, dit-elle, a été de constater les effets sur sa mère, qui souffrait également de l'allergie et a subi à deux reprises de graves crises anaphylactiques dans des avions.</p>
+            <span class="english-block">But the even bigger impact, she says, was witnessing the effect on her mother, who also had the allergy and twice suffered severe anaphylactic attacks on aeroplanes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="467.76" data-end="474.62">
+            <p class="french-block">C'était "incroyablement effrayant", dit Rémy. Elle "a littéralement failli mourir devant moi".</p>
+            <span class="english-block">It was "incredibly scary," says Remy. She "literally almost died in front of me."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="474.62" data-end="480.53">
+            <p class="french-block">Elizabeth Rowley a passé des années à essayer de faire diagnostiquer ses mystérieux symptômes</p>
+            <span class="english-block">Elizabeth Rowley spent years trying to get her mystery symptoms diagnosed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="480.53" data-end="486.22">
+            <p class="french-block">Face à tant de déclencheurs potentiels, la vie quotidienne peut devenir difficile à gérer.</p>
+            <span class="english-block">Faced with so many potential triggers, everyday life can become tricky to navigate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="486.22" data-end="508.99">
+            <p class="french-block">Rowley a eu du mal à trouver du travail comme comptable car de nombreux endroits ont déclenché ses allergies. Les emplois dans les centres commerciaux ont été exclus en raison des fumées des restaurants et, même dans des environnements plus petits, les habitudes alimentaires de ses collègues pourraient l'affecter. Selon elle, l'habitude d'un patron de porter un toast matinal est devenue une épreuve quotidienne.</p>
+            <span class="english-block">Rowley struggled to find work as a bookkeeper because so many locations triggered her allergies. Jobs at shopping centres were ruled out because of the fumes from restaurants, and even in smaller environments her colleagues' eating habits could affect her. One boss's morning toast habit, she says, became a daily trial.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="508.99" data-end="519.84">
+            <p class="french-block">"Dès que le beurre touche, j'y vais…" gémit-elle. "Mais vous ne pouvez pas continuer à entrer et dire aux patrons : 'Désolé, vous ne pouvez pas manger ça'."</p>
+            <span class="english-block">"As soon as the butter hits it, I just go…" she groans. "But you can't keep walking in and saying to the bosses, 'Sorry, you can't eat that'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="519.84" data-end="527.74">
+            <p class="french-block">La socialisation peut également être difficile, étant donné que de nombreux événements et rassemblements sont centrés sur la nourriture.</p>
+            <span class="english-block">Socialising can also be difficult, given that many events and gatherings centre around food.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="527.74" data-end="536.26">
+            <p class="french-block">"Vous ne pouvez pas faire de barbecue", explique Rowley. "Je ne peux pas non plus faire certains restaurants, ni la plupart des restaurants."</p>
+            <span class="english-block">"You can't do barbecues," says Rowley. "Can't do some restaurants either, or most restaurants."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="536.26" data-end="543.7">
+            <p class="french-block">Sheryl van Nunen a découvert pour la première fois le lien entre les tiques et l'allergie à la viande chez les mammifères en 2007</p>
+            <span class="english-block">Sheryl van Nunen first discovered the link between ticks and mammalian meat allergy in 2007</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="543.7" data-end="556.46">
+            <p class="french-block">La plus grande préoccupation de Van Nunen, cependant, concerne les 85 % de personnes qui souffrent d'allergies sans le savoir – des personnes qui ont développé des anticorps mais qui ne réagissent pas après avoir mangé de la viande.</p>
+            <span class="english-block">Van Nunen's biggest concern, though, is the 85% of people who have the allergy without knowing it – people who have developed the antibodies but who do not react after eating meat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="556.46" data-end="570.67">
+            <p class="french-block">Étant donné que le MMA peut surgir de manière inattendue, ces personnes pourraient quand même réagir au traitement médical, explique van Nunen, car de nombreux médicaments contiennent des produits dérivés d'animaux, tels que des vaccins contenant de la gélatine.</p>
+            <span class="english-block">Since MMA can rear its head unexpectedly, these people could still react to medical treatment, van Nunen explains, because many drugs include products derived from animals, such as vaccines that contain gelatin.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="570.67" data-end="583.18">
+            <p class="french-block">Au moins une personne est décédée après avoir reçu le médicament cétuximab pour traiter le cancer du côlon et avoir souffert d'une anaphylaxie. Un autre est décédé après avoir reçu une transfusion sanguine.</p>
+            <span class="english-block">At least one person is known to have died after receiving the drug cetuximab to treat colon cancer and going into anaphylaxis. Another died after being given a blood transfusion.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="583.18" data-end="598.2">
+            <p class="french-block">Van Nunen dit qu'il est « bien connu » qu'il y a eu davantage de décès dus au MMA. Les mieux documentés sont cependant celui d'un pilote de ligne américain décédé quelques heures après avoir mangé un hamburger en 2024, et celui de Jeremy.</p>
+            <span class="english-block">Van Nunen says it is "well known" there have been more deaths from MMA. The best documented, however, are that of an American airline pilot who died hours after eating a hamburger in 2024, and Jeremy's.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="598.2" data-end="610.49">
+            <p class="french-block">Selon Van Nunen, le point clé à retenir d'un décès comme celui de Jeremy est que 94,8 % des personnes qui meurent d'une anaphylaxie liée à une allergie alimentaire meurent parce que cela déclenche leur asthme.</p>
+            <span class="english-block">The key point to take away from a death like Jeremy's, Van Nunen says, is that 94.8% of people who die from food allergy anaphylaxis die because it triggers their asthma.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="610.49" data-end="614.45">
+            <p class="french-block">L'une des passions de Jeremy était de réparer de vieux moteurs</p>
+            <span class="english-block">One of Jeremy's passions was fixing old motors</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="614.45" data-end="626.4">
+            <p class="french-block">"Ils passent directement en état de mal asthmatique et... à moins de les intuber dans un certain temps, s'ils font un arrêt respiratoire, vous avez quatre minutes, sinon ils sont en mort cérébrale", explique-t-elle.</p>
+            <span class="english-block">"They go straight into status asthmaticus and… unless you intubate them within a certain time, if they have a respiratory arrest, you have four minutes, otherwise they're brain dead," she explains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="626.4" data-end="639.14">
+            <p class="french-block">L’une des choses qui ont donné de la force à Webb depuis la mort de son fils est de se souvenir de la « tournure positive » que Jeremy a donnée à la vie. "Il a tout mis dedans, il n'a pas perdu une minute", dit-elle.</p>
+            <span class="english-block">One of the things that has given Webb strength since her son's death is remembering the "positive spin" Jeremy put on life. "He fitted everything into it, wouldn't waste a minute," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="639.14" data-end="648.98">
+            <p class="french-block">Cela l'a incitée à sensibiliser les gens à l'allergie qui lui a coûté la vie et à améliorer les protocoles de traitement, afin que d'autres familles n'aient pas à subir la même douleur.</p>
+            <span class="english-block">That has made her determined to raise awareness of the allergy that took his life and improve treatment protocols, so that other families don't have to experience the same pain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="648.98" data-end="664.75">
+            <p class="french-block">En plus de parler publiquement de la mort de Jeremy, Webb a coopéré avec l'hôpital où il a été soigné pour aider à développer une formation sur le MMA. Elle travaille également sur un article avec van Nunen, qui devrait être présenté lors d'une conférence plus tard cette année.</p>
+            <span class="english-block">In addition to speaking publicly about Jeremy's death, Webb has cooperated with the hospital where he was treated to help develop training on MMA. She is also working on a paper with van Nunen, which is due to be presented at a conference later this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="664.75" data-end="674.59">
+            <p class="french-block">"Maintenant, la vision positive de [Jeremy] aide réellement les gens, même s'il est décédé", dit-elle. "Je pense qu'il serait vraiment content de nous."</p>
+            <span class="english-block">"Now [Jeremy's] positive spin is actually helping people, even though he's passed," she says. "I think he'd be really pleased with us."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="674.59" data-end="677.47">
+            <p class="french-block">Comment éviter les piqûres de tiques :</p>
+            <span class="english-block">How to avoid tick bites:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="677.47" data-end="686.45">
+            <p class="french-block">Couvrez-vous lorsque vous êtes dans la brousse, rentrez vos chaussettes dans votre pantalon et portez des vêtements de couleur claire pour pouvoir repérer facilement les tiques.</p>
+            <span class="english-block">Cover up when you're in bushland, tuck your socks into your trousers and wear light coloured clothing so you can spot ticks easily</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="686.45" data-end="690.5">
+            <p class="french-block">Ne vous allongez pas directement et ne pique-niquez pas par terre</p>
+            <span class="english-block">Don't lie directly or picnic on the ground</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="690.5" data-end="694.78">
+            <p class="french-block">Portez des insecticides contenant du DEET ou de la picaridine</p>
+            <span class="english-block">Wear insecticides containing DEET or picaridin</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="694.78" data-end="702.43">
+            <p class="french-block">Vérifiez vous-même la présence de tiques après avoir marché sur le territoire des tiques et n'oubliez pas de vérifier vos animaux de compagnie</p>
+            <span class="english-block">Check yourself for ticks after walking in tick territory, and don't forget to check your pets</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="702.43" data-end="717.31">
+            <p class="french-block">Si vous êtes mordu par une tique, rappelez-vous "geler, ne pas presser", externe - utilisez un spray pour tuer la tique et laissez-la tomber d'elle-même plutôt que d'utiliser une pince à épiler, ce qui pourrait amener les tiques à expulser des toxines dans la circulation sanguine.</p>
+            <span class="english-block">If you get bitten by a tick, remember "freeze don't squeeze", external - use a spray to kill the tick and let it drop off by itself rather than using tweezers, which can cause the ticks to expel toxins into the bloodstream</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_25.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

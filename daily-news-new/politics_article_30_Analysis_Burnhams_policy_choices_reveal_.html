@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis: Burnham's policy choices reveal what kind of PM he wants to be</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Analysis: Burnham's policy choices reveal what kind of PM he wants to be</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 20 Jul 2026 15:41:02 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c3r0x5nzg0eo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The new prime minister has begun to set out key policies - starting with a vow to end rough sleeping.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.45" data-end="21.0">
+            <p class="french-block">Andy Burnham a été très discret sur les politiques qu'il poursuivrait lorsqu'il passerait au numéro 10, mais nous en savons maintenant plus sur quelles seront ses priorités – et ce que cela révèle sur le type de Premier ministre qu'il veut être.</p>
+            <span class="english-block">Andy Burnham has been very tight-lipped about policies he would pursue when he moved into Number 10 but we now know more about what his priorities will be – and what it tells about the kind of prime minister he wants to be.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.0" data-end="29.26">
+            <p class="french-block">Sa principale annonce dès le premier jour de son travail - avant même qu'il ait franchi les portes du numéro 10 - concernait le sommeil dans la rue.</p>
+            <span class="english-block">His main announcement on day one in the job - before he had even walked through the doors at Number 10 - was about rough sleeping.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.26" data-end="39.41">
+            <p class="french-block">Dans un e-mail adressé aux membres travaillistes, envoyé peu après son discours, il a déclaré : « Nous allons mettre fin au sommeil dans la rue dans ce pays à la première occasion.</p>
+            <span class="english-block">In an email to Labour members, sent shortly after he delivered his speech, he said: "We are going to end rough sleeping in this country at the first opportunity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.41" data-end="47.57">
+            <p class="french-block">"Les gens m'ont dit que cela prendrait des décennies. Certains disent que c'est impossible. Je n'accepte pas cela."</p>
+            <span class="english-block">"People have told me it would take decades. Some say it's impossible. I'm not having that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.57" data-end="55.15">
+            <p class="french-block">Ceci, dit-il aux membres et partisans travaillistes, "vous montre exactement quel type de gouvernement j'ai l'intention de diriger".</p>
+            <span class="english-block">This, he tells Labour members and supporters, "shows you exactly what kind of government I intend to lead".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.15" data-end="62.45">
+            <p class="french-block">Ceci est un exemple de son plan tant vanté visant à introduire le « manchesterisme » dans le reste du Royaume-Uni.</p>
+            <span class="english-block">This is an example of his much-vaunted plan to bring "Manchesterism" to the rest of the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.45" data-end="79.13">
+            <p class="french-block">En tant que maire du Grand Manchester, il a fait de l'élimination du sommeil dans la rue une priorité lorsqu'il a été élu à ce poste en 2017. Ses espoirs d'éradiquer ce problème d'ici 2020 ont été anéantis, même si les chiffres sont encore nettement inférieurs à ceux d'il y a 10 ans.</p>
+            <span class="english-block">As mayor of Greater Manchester he made ending rough sleeping a priority when he was elected to the role in 2017. His hopes of eradicating it by 2020 were dashed, although numbers are still down significantly on what they were 10 years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.13" data-end="91.92">
+            <p class="french-block">Mais il s’agit également de montrer aux membres et sympathisants travaillistes que lorsqu’il s’est engagé à être « authentiquement travailliste », il le pensait sincèrement : il défendrait certains des plus pauvres et des plus vulnérables de la société.</p>
+            <span class="english-block">But it is also about showing Labour members and supporters that when he pledged to be "authentically Labour", he meant it - he would be standing up for some of the poorest and most vulnerable in society.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.92" data-end="105.14">
+            <p class="french-block">L'annonce sera bien accueillie par l'aile gauche du Labour. En 2023, l’ancien leader travailliste Jeremy Corbyn a révélé qu’il prévoyait de faire une annonce similaire dès son premier jour en tant que Premier ministre.</p>
+            <span class="english-block">The announcement will go over well with Labour's left wing. In 2023, former Labour leader Jeremy Corbyn revealed that he had planned to make a similar announcement on his first day as prime minister.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.14" data-end="112.3">
+            <p class="french-block">Mais il est également probable qu’il soit bien accueilli par toutes les ailes du parti – ce qu’on ne peut pas dire de toutes ses politiques prévues.</p>
+            <span class="english-block">But it is also likely to be welcomed by all wings of the party - something that can not be said about all of his planned policies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.3" data-end="117.84">
+            <p class="french-block">Andy Burnham promet une aide au coût de la vie lors de son premier discours en tant que Premier ministre</p>
+            <span class="english-block">Andy Burnham pledges cost of living help in first speech as prime minister</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.84" data-end="123.98">
+            <p class="french-block">Burnham s’engage à mettre fin au sommeil dans la rue lors de son premier discours en tant que Premier ministre</p>
+            <span class="english-block">Burnham pledges to end rough sleeping in first speech as prime minister</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.98" data-end="129.12">
+            <p class="french-block">Il sera le premier Andy du n°10 – mais son ascension au pouvoir a pris des décennies</p>
+            <span class="english-block">He'll be the first Andy in No 10 - but his rise to power has been decades in the making</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.12" data-end="138.89">
+            <p class="french-block">Plus tard cette semaine, il devrait changer la position du gouvernement sur l'exploitation pétrolière et gazière, avec la nomination d'un nouveau secrétaire à l'énergie.</p>
+            <span class="english-block">Later this week, he is expected to change the government's stance on oil and gas exploitation, with a new energy secretary in place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.89" data-end="151.46">
+            <p class="french-block">Les députés travaillistes inquiets de voir le Parti Vert prendre leurs sièges s'en inquiéteront – mais bien plus encore s'inquiéteront de savoir si cela pourrait être considéré comme une dilution de l'engagement du gouvernement en faveur du zéro émission nette.</p>
+            <span class="english-block">Those Labour MPs worried about the Green Party taking their seats will be concerned about this - but a lot more will be worried about whether this could be seen to be diluting the government's commitment to net zero.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.46" data-end="160.13">
+            <p class="french-block">Il a également été promis de faire quelque chose contre le coût de la vie, avec plus de détails demain sur le "répit" qu'il offre aux familles en difficulté.</p>
+            <span class="english-block">There was also a promise to do something about the cost of living, with more detail tomorrow on the "breathing space" he is offering hard-pressed families.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.13" data-end="171.12">
+            <p class="french-block">L'extension du plafond des tarifs de bus de Manchester à 2 £ serait une étape tangible et également différente du plafond de 3 £ sous Keir Starmer et Rachel Reeves.</p>
+            <span class="english-block">Extending Manchester's £2 bus fare cap would be a tangible step and also different from the £3 cap under Keir Starmer and Rachel Reeves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.12" data-end="176.52">
+            <p class="french-block">Avec la nouvelle hausse des prix de l’énergie, des mesures pourraient être prises dans ce sens.</p>
+            <span class="english-block">With energy prices rising again, there may be action there.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.52" data-end="195.72">
+            <p class="french-block">L'ancienne ministre, Miatta Fahnbulleh, a passé les dernières semaines à travailler sur les options politiques. Elle est l'ancienne directrice du groupe de réflexion New Economic Foundation et celui-ci souhaite des mesures plus audacieuses en matière de coût de la vie – du contrôle des loyers à la gratuité totale des trajets en bus pour les moins de 25 ans.</p>
+            <span class="english-block">The former minister, Miatta Fahnbulleh, has spent the past few weeks working on policy options. She is the former head of the New Economic Foundation think tank and it wants bolder cost of living measures – from rent controls to making bus journeys entirely free for under 25s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.72" data-end="203.23">
+            <p class="french-block">La question est cependant de savoir si Burnham ira au-delà de l’annonce de politiques spécifiques et définira une vision plus large.</p>
+            <span class="english-block">The question though is whether Burnham will go beyond announcing specific policies and outline a broader vision.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.23" data-end="217.82">
+            <p class="french-block">Il a indiqué dans son discours qu'il préciserait comment seront financées les mesures liées au coût de la vie. Alors va-t-il avancer l'argument le plus important - et il le croit - selon lequel les impôts sur le revenu sont trop élevés et les impôts sur la fortune sont trop bas ?</p>
+            <span class="english-block">He indicated in his speech that he would set out how the cost of living measures will be paid for. So will he make the greater argument - which he believes - that taxes on income are too high, taxes on wealth are too low?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.82" data-end="227.38">
+            <p class="french-block">Va-t-il développer son interview au Times et s'engager à relever les seuils d'imposition au moins pour les contribuables au taux de base, tout en augmentant l'impôt sur les plus-values ​​?</p>
+            <span class="english-block">Will he expand on his Times interview and pledge to raise tax thresholds at least for basic rate taxpayers, while pushing up capital gains tax?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="227.38" data-end="241.22">
+            <p class="french-block">Burnham a déclaré qu'il "examinerait" l'abattement personnel non imposable avant son premier budget à l'automne, mais a souligné que le modifier serait "difficile" dans les circonstances économiques actuelles et pourrait avoir des "conséquences importantes".</p>
+            <span class="english-block">Burnham has said he will be "looking at" the tax-free personal allowance ahead of his first Budget in the autumn but stressed that changing it would be "difficult" in the current economic circumstances, and it could have "significant consequences".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.22" data-end="256.85">
+            <p class="french-block">Mais s'il veut répondre aux priorités des gens plus que son prédécesseur, il devra peut-être trouver un moyen de financer cela, car il a également déclaré avoir "entendu des problèmes liés aux allocations personnelles plus que tout sur le pas de la porte de Makerfield" (le siège qu'il représente).</p>
+            <span class="english-block">But if he wants to address people's priorities more than his predecessor he may have to find a way to fund this as he also said he had "heard issues related to the personal allowance more than anything on the doorsteps in Makerfield" (the seat he represents).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.85" data-end="269.54">
+            <p class="french-block">Il s'est engagé à respecter les « règles budgétaires » de Rachel Reeves, qui limitent la dette et les emprunts – il s'agira donc probablement d'une « re-priorisation » des dépenses existantes plutôt que de l'argent frais.</p>
+            <span class="english-block">He has pledged to stick to Rachel Reeves's "fiscal rules," which limit debt and borrowing - so it is likely to be "re-prioritisation" of existing spending rather than new money.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.54" data-end="274.44">
+            <p class="french-block">Mais cela peut encore raconter sa propre histoire sur son intention de gouverner.</p>
+            <span class="english-block">But that can still tell its own story about he intends to govern.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.44" data-end="282.48">
+            <p class="french-block">Burnham a également promis un nouveau type de politique – réutilisant son récent slogan « la résolution des problèmes ne marque pas de points ».</p>
+            <span class="english-block">Burnham also promised a new kind of politics – re-using his recent catchphrase of "problem solving not point scoring".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.48" data-end="295.42">
+            <p class="french-block">Cela pourrait être faire de la nécessité une vertu. S’il veut réaliser l’ambition qu’il s’est fixée aujourd’hui – ne pas quitter ses fonctions sans réformer la protection sociale – il aura alors besoin d’une coopération entre les partis.</p>
+            <span class="english-block">This could be making a virtue out of necessity. If he wants to achieve the ambition  he set out today - not to leave office without reforming social care – then he will need cross party co-operation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.42" data-end="300.26">
+            <p class="french-block">Plus largement, Andy Burnham n’a pas exactement répondu aux attentes.</p>
+            <span class="english-block">More widely, Andy Burnham has not exactly managed expectations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.26" data-end="309.38">
+            <p class="french-block">Il n’a promis rien de moins qu’un nouveau modèle économique, laissant derrière lui une ère de centralisation, de privatisation et de désindustrialisation.</p>
+            <span class="english-block">He has promised nothing less than a new economic model, leaving behind an era of centralisation, privatisation and de-industrialisation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.38" data-end="322.82">
+            <p class="french-block">Tout comme le fait de dormir dans la rue est censé indiquer aux membres du parti où il se situe, il devra bientôt élaborer des politiques symboliques qui révèlent – ​​aux électeurs comme aux marchés – quelle sera la réalité économique derrière la rhétorique radicale.</p>
+            <span class="english-block">Just as rough sleeping is meant to signal to party members where he stands, he will soon need to set out symbolic policies which reveal - to voters and the markets alike - what the economic reality will be behind the radical rhetoric.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.82" data-end="326.35">
+            <p class="french-block">Andy Burnham : Qui est le nouveau Premier ministre ?</p>
+            <span class="english-block">Andy Burnham: Who is the new PM?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.35" data-end="331.15">
+            <p class="french-block">Du maire de Manchester au Premier ministre, qui est-il et que représente-t-il ?</p>
+            <span class="english-block">From Manchester mayor to prime minister, who is he and what does stand for?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.15" data-end="335.3">
+            <p class="french-block">Quelles questions avez-vous sur le nouveau Premier ministre et sa politique ?</p>
+            <span class="english-block">What questions do you have about the new PM and his policies?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_30.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
