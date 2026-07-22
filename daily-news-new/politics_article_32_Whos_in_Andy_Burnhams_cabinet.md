@@ -1,7 +1,7 @@
 # Who's in Andy Burnham's cabinet?
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/ckg4we9g58do?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/ckg4we9g58do?at_medium=RSS&at_campaign=rss)  
-**Published:** Mon, 20 Jul 2026 23:16:54 GMT  
+**Published:** Tue, 21 Jul 2026 15:50:17 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](politics_article_32.mp3)  
 
 ---
@@ -12,17 +12,17 @@
 
 ### Section 1
 
-**🇬🇧 EN:** Prime Minister Andy Burnham has started building his new cabinet after taking office following the resignation of Sir Keir Starmer.
+**🇬🇧 EN:** Prime Minister Andy Burnham has announced his new cabinet after taking office following the resignation of Sir Keir Starmer.
 
-**🇫🇷 FR:** *Le Premier ministre Andy Burnham a commencé à constituer son nouveau cabinet après avoir pris ses fonctions suite à la démission de Sir Keir Starmer.*
+**🇫🇷 FR:** *Le Premier ministre Andy Burnham a annoncé la composition de son nouveau cabinet après avoir pris ses fonctions suite à la démission de Sir Keir Starmer.*
 
 ---
 
 ### Section 2
 
-**🇬🇧 EN:** Tap or click on a cabinet member in our interactive guide below to learn more about them and their role in government. The guide will be updated as new appointments are made.
+**🇬🇧 EN:** Tap or click on a person in our interactive guide below to learn more about them and their role in government.
 
-**🇫🇷 FR:** *Appuyez ou cliquez sur un membre du cabinet dans notre guide interactif ci-dessous pour en savoir plus sur lui et son rôle au sein du gouvernement. Le guide sera mis à jour au fur et à mesure de la prise de nouveaux rendez-vous.*
+**🇫🇷 FR:** *Appuyez ou cliquez sur une personne dans notre guide interactif ci-dessous pour en savoir plus sur elle et son rôle au sein du gouvernement.*
 
 ---
 
@@ -36,13 +36,21 @@
 
 ### Section 4
 
-**🇬🇧 EN:** He has pledged to shift power away from Whitehall, introduce "greater public control" of the water and energy sectors and to build more council houses – while keeping Labour’s election pledge not to raise the main rates of income tax, VAT or National Insurance.
+**🇬🇧 EN:** He has pledged to shift power away from Whitehall, introduce "greater public control" of the water and energy sectors and to build more council houses - while keeping Labour’s election pledge not to raise the main rates of income tax or National Insurance.In one of his first major policy announcements as prime minister, Burnham announced he will remove VAT from electricity bills later this year. Born in Aintree in 1970, Burnham was inspired by the miners’ strike to join the Labour Party in his teens and first became an MP in 2001.The former health secretary had twice failed to become party leader - losing to Ed Miliband in 2010 and Jeremy Corbyn in 2015 - and after leaving Parliament, served as Greater Manchester mayor. He returned as Makerfield MP in June and succeeded Sir Keir Starmer a month later. A life-long Everton fan and talented sportsman, he was part of Labour's Demon Eyes FC football team when Tony Blair was PM, and regularly featured in the Labour MPs vs Lobby journalists match while in Parliament.
 
-**🇫🇷 FR:** *Il s’est engagé à retirer le pouvoir de Whitehall, à introduire « un plus grand contrôle public » sur les secteurs de l’eau et de l’énergie et à construire davantage de logements sociaux – tout en respectant l’engagement électoral du parti travailliste de ne pas augmenter les principaux taux d’impôt sur le revenu, de TVA ou d’assurance nationale.*
+**🇫🇷 FR:** *Il s'est engagé à retirer le pouvoir de Whitehall, à introduire "un plus grand contrôle public" sur les secteurs de l'eau et de l'énergie et à construire davantage de logements sociaux - tout en respectant l'engagement électoral du parti travailliste de ne pas augmenter les principaux taux d'impôt sur le revenu ou d'assurance nationale. Dans l'une de ses premières annonces politiques majeures en tant que Premier ministre, Burnham a annoncé qu'il supprimerait la TVA des factures d'électricité plus tard cette année. Né à Aintree en 1970, Burnham s'est inspiré de la grève des mineurs pour rejoindre le Parti travailliste à l'adolescence et est devenu député pour la première fois en 2001. L'ancien secrétaire à la Santé n'a pas réussi à devenir chef du parti à deux reprises - perdant face à Ed Miliband en 2010 et Jeremy Corbyn en 2015 - et après avoir quitté le Parlement, il a été maire du Grand Manchester. Il est revenu en tant que député de Makerfield en juin et a succédé à Sir Keir Starmer un mois plus tard. Fan d'Everton depuis toujours et sportif talentueux, il faisait partie de l'équipe de football du Labour's Demon Eyes FC lorsque Tony Blair était Premier ministre, et participait régulièrement au match entre députés travaillistes et journalistes du lobby lorsqu'il était au Parlement.*
 
 ---
 
 ### Section 5
+
+**🇬🇧 EN:** In one of his first major policy announcements as prime minister, Burnham announced he will remove VAT from electricity bills later this year.
+
+**🇫🇷 FR:** *Dans l’une de ses premières annonces politiques majeures en tant que Premier ministre, Burnham a annoncé qu’il supprimerait la TVA des factures d’électricité plus tard cette année.*
+
+---
+
+### Section 6
 
 **🇬🇧 EN:** Born in Aintree in 1970, Burnham was inspired by the miners’ strike to join the Labour Party in his teens and first became an MP in 2001.
 
@@ -50,7 +58,7 @@
 
 ---
 
-### Section 6
+### Section 7
 
 **🇬🇧 EN:** The former health secretary had twice failed to become party leader - losing to Ed Miliband in 2010 and Jeremy Corbyn in 2015 - and after leaving Parliament, served as Greater Manchester mayor. He returned as Makerfield MP in June and succeeded Sir Keir Starmer a month later.
 
@@ -58,7 +66,7 @@
 
 ---
 
-### Section 7
+### Section 8
 
 **🇬🇧 EN:** A life-long Everton fan and talented sportsman, he was part of Labour's Demon Eyes FC football team when Tony Blair was PM, and regularly featured in the Labour MPs vs Lobby journalists match while in Parliament.
 
@@ -66,7 +74,7 @@
 
 ---
 
-### Section 8
+### Section 9
 
 **🇬🇧 EN:** John Healey has returned to the cabinet as chancellor of the exchequer, less than two months after quitting as defence secretary.
 
@@ -74,15 +82,23 @@
 
 ---
 
-### Section 9
+### Section 10
 
-**🇬🇧 EN:** In his resignation letter Healey was highly critical of the government's defence spending plans, saying Sir Keir Starmer had been "unable" and the Treasury was "unwilling to commit the resources the nation needs to defend the country".
+**🇬🇧 EN:** A former Treasury minister, Healey recently attacked what he called a "Treasury orthodoxy that's a dead hand on dynamic government" that viewed defence as "a drain rather than a driver of growth".
 
-**🇫🇷 FR:** *Dans sa lettre de démission, Healey a vivement critiqué les projets de dépenses de défense du gouvernement, affirmant que Sir Keir Starmer avait été "incapable" et que le Trésor n'était "pas disposé à engager les ressources dont la nation a besoin pour défendre le pays".*
+**🇫🇷 FR:** *Ancien ministre du Trésor, Healey a récemment attaqué ce qu'il appelle « une orthodoxie du Trésor qui met un frein à un gouvernement dynamique » et qui considère la défense comme « une fuite plutôt qu'un moteur de croissance ».*
 
 ---
 
-### Section 10
+### Section 11
+
+**🇬🇧 EN:** Senior figures in government say he shares Burnham's ambitions for reindustrialisation and devolution. He now faces the task of making the government's spending plans add up.
+
+**🇫🇷 FR:** *De hauts responsables du gouvernement affirment qu'il partage les ambitions de Burnham en matière de réindustrialisation et de décentralisation. Il lui incombe désormais de faire en sorte que les projets de dépenses du gouvernement s'additionnent.*
+
+---
+
+### Section 12
 
 **🇬🇧 EN:** It is a surprise appointment for the MP for Rawmarsh and Conisbrough in South Yorkshire, with many speculating the role would go to Ed Miliband or Shabana Mahmood.
 
@@ -90,7 +106,7 @@
 
 ---
 
-### Section 11
+### Section 13
 
 **🇬🇧 EN:** Healey was parliamentary private secretary to Chancellor Gordon Brown from 1999 to 2001, before serving as adult skills, Treasury, local government and housing minister between 2001 and 2010.
 
@@ -98,15 +114,7 @@
 
 ---
 
-### Section 12
-
-**🇬🇧 EN:** He is well-respected on the international stage and has built links with key economic allies in Europe, the Middle East and the United States.
-
-**🇫🇷 FR:** *Il est très respecté sur la scène internationale et a noué des liens avec des alliés économiques clés en Europe, au Moyen-Orient et aux États-Unis.*
-
----
-
-### Section 13
+### Section 14
 
 **🇬🇧 EN:** Louise Haigh has become chancellor of the Duchy of Lancaster, first secretary of state and Cabinet Office minister.
 
@@ -114,7 +122,7 @@
 
 ---
 
-### Section 14
+### Section 15
 
 **🇬🇧 EN:** Haigh, one of Andy Burnham’s closest allies, will run the Cabinet Office, the department that supports the prime minister and co-ordinates the government’s policies to deliver its agenda.
 
@@ -122,7 +130,7 @@
 
 ---
 
-### Section 15
+### Section 16
 
 **🇬🇧 EN:** After entering parliament as MP for Sheffield Heeley in 2015, Haigh was named the hardest-working new MP in 2016 due to the number of her Commons speeches and questions, and praised by then-Speaker John Bercow for her "terrier-like intensity".
 
@@ -130,7 +138,7 @@
 
 ---
 
-### Section 16
+### Section 17
 
 **🇬🇧 EN:** In 2025, the former special constable and Unite union shop steward became the first person to resign from Sir Keir Starmer’s cabinet as transport secretary after it emerged that she had admitted a fraud offence in 2013.
 
@@ -138,7 +146,7 @@
 
 ---
 
-### Section 17
+### Section 18
 
 **🇬🇧 EN:** On the backbenches she emerged as a crucial power broker on Labour's "soft left", and was at the heart of the huge rebellion that scuppered the government's welfare cuts in 2025.
 
@@ -146,7 +154,7 @@
 
 ---
 
-### Section 18
+### Section 19
 
 **🇬🇧 EN:** Ed Miliband is the new foreign secretary, moving from the energy and net zero brief he has held since Labour returned to power.
 
@@ -154,7 +162,7 @@
 
 ---
 
-### Section 19
+### Section 20
 
 **🇬🇧 EN:** He had been touted as a possible chancellor, but opinion was divided between supporters who pointed to his experience in the Treasury, and opponents who distrusted his views, particularly on energy.
 
@@ -162,7 +170,7 @@
 
 ---
 
-### Section 20
+### Section 21
 
 **🇬🇧 EN:** Since the election he has spoken out against those urging the government to drop its net zero ambitions and insisted the party's green power transition will help secure social justice and national security.
 
@@ -170,7 +178,7 @@
 
 ---
 
-### Section 21
+### Section 22
 
 **🇬🇧 EN:** Miliband has been the MP for Doncaster North since 2005 but has been at the centre of Labour politics for even longer - working for Labour MPs before the 1997 election win and as a special adviser to Gordon Brown when he became chancellor.
 
@@ -178,15 +186,15 @@
 
 ---
 
-### Section 22
+### Section 23
 
-**🇬🇧 EN:** He is best known as a former Labour leader - having beaten his brother David, among others, in the leadership contest that followed the party’s 2010 general election defeat - but has also co-hosted the Reasons to be Cheerful podcast since 2017.
+**🇬🇧 EN:** He is best known as a former Labour leader - having beaten his brother David, a former foreign secretary, among others, in the leadership contest that followed the party’s 2010 general election defeat - but also co-hosted the Reasons to be Cheerful podcast for several years.
 
-**🇫🇷 FR:** *Il est surtout connu comme ancien dirigeant travailliste – ayant battu son frère David, entre autres, lors de la course à la direction qui a suivi la défaite du parti aux élections générales de 2010 – mais il a également co-animé le podcast Reasons to be Cheerful depuis 2017.*
+**🇫🇷 FR:** *Il est surtout connu comme ancien dirigeant travailliste – ayant notamment battu son frère David, ancien ministre des Affaires étrangères, lors de la course à la direction qui a suivi la défaite du parti aux élections générales de 2010 – mais il a également co-animé le podcast Reasons to be Cheerful pendant plusieurs années.*
 
 ---
 
-### Section 23
+### Section 24
 
 **🇬🇧 EN:** Shabana Mahmood remains home secretary, the position she has held since September 2025.
 
@@ -194,7 +202,7 @@
 
 ---
 
-### Section 24
+### Section 25
 
 **🇬🇧 EN:** Mahmood, who has a reputation among Labour MPs as a hardliner on immigration, is responsible for that brief in the role, along with national security and for policing in England and Wales.
 
@@ -202,23 +210,23 @@
 
 ---
 
-### Section 25
-
-**🇬🇧 EN:** Shortly after being appointed, she announced sweeping changes to the UK’s asylum system, brushing off criticism from some Labour MPs and describing the previous system as “out of control”.
-
-**🇫🇷 FR:** *Peu de temps après sa nomination, elle a annoncé des changements radicaux au système d’asile britannique, balayant les critiques de certains députés travaillistes et qualifiant l’ancien système de « hors de contrôle ».*
-
----
-
 ### Section 26
 
-**🇬🇧 EN:** A former national campaign co-ordinator for Labour, Mahmood oversaw the party's Batley & Spen by-election win in 2021 which some have credited with saving Sir Keir Starmer’s leadership following a defeat in Hartlepool months earlier.
+**🇬🇧 EN:** When first appointed as home secretary, she announced sweeping changes to the UK’s asylum system, describing the previous system as "out of control".
 
-**🇫🇷 FR:** *Ancien coordinateur de campagne nationale du parti travailliste, Mahmood a supervisé la victoire du parti aux élections partielles de Batley & Spen en 2021, que certains attribuent au sauvetage de la direction de Sir Keir Starmer après une défaite à Hartlepool quelques mois plus tôt.*
+**🇫🇷 FR:** *Lors de sa première nomination au poste de ministre de l’Intérieur, elle a annoncé des changements radicaux au système d’asile britannique, qualifiant l’ancien système de « hors de contrôle ».*
 
 ---
 
 ### Section 27
+
+**🇬🇧 EN:** Her plans include making it harder for migrants already in the UK to settle permanently, which was criticised by more than 100 Labour MPs, peers and union leaders - and former deputy leader Angela Rayner, who is now back in the cabinet, described it as "un-British".
+
+**🇫🇷 FR:** *Ses projets incluent notamment de rendre plus difficile l'installation permanente des migrants déjà présents au Royaume-Uni, ce qui a été critiqué par plus de 100 députés travaillistes, pairs et dirigeants syndicaux - et l'ancienne dirigeante adjointe Angela Rayner, qui est maintenant de retour au cabinet, l'a qualifié de "non britannique".*
+
+---
+
+### Section 28
 
 **🇬🇧 EN:** The Birmingham Ladywood MP claims to be the first female Muslim MP - although she was elected in 2010 alongside Yasmin Qureshi and Rushanara Ali - because, she says, her count was the first completed on the night.
 
@@ -226,15 +234,15 @@
 
 ---
 
-### Section 28
+### Section 29
 
-**🇬🇧 EN:** Wes Streeting is the new defence secretary, replacing Dan Jarvis who had only been in the role for a matter of weeks.
+**🇬🇧 EN:** Wes Streeting is the new defence secretary, replacing former soldier Dan Jarvis who had only been in the role for a matter of weeks.
 
-**🇫🇷 FR:** *Wes Streeting est le nouveau secrétaire à la Défense, en remplacement de Dan Jarvis qui n'occupait ce poste que depuis quelques semaines.*
+**🇫🇷 FR:** *Wes Streeting est le nouveau secrétaire à la Défense, remplaçant l'ancien soldat Dan Jarvis qui n'occupait ce poste que depuis quelques semaines.*
 
 ---
 
-### Section 29
+### Section 30
 
 **🇬🇧 EN:** Streeting, who resigned as health secretary in May saying he had lost confidence in Sir Keir Starmer as prime minister, eventually decided to back Andy Burnham rather than launch his own leadership bid.
 
@@ -242,7 +250,7 @@
 
 ---
 
-### Section 30
+### Section 31
 
 **🇬🇧 EN:** The former National Union of Students president and London councillor is widely seen as one of the party’s most skilled communicators.
 
@@ -250,7 +258,7 @@
 
 ---
 
-### Section 31
+### Section 32
 
 **🇬🇧 EN:** He has written an autobiography about growing up in a council flat in London’s East End, visiting his bank robber grandfather in jail, growing up as a gay Christian and about being diagnosed and treated for kidney cancer at the age of 38.
 
@@ -258,7 +266,7 @@
 
 ---
 
-### Section 32
+### Section 33
 
 **🇬🇧 EN:** The Ilford North MP has said his upbringing left him "quite cynical" of the role of the state compared with many Labour colleagues, aware of its failings as well as its potential to enable opportunity.
 
@@ -266,7 +274,7 @@
 
 ---
 
-### Section 33
+### Section 34
 
 **🇬🇧 EN:** Yvette Cooper remains in cabinet but in a new role as health and social care secretary, having most recently served as foreign secretary in Sir Keir Starmer's government and home secretary before that.
 
@@ -274,39 +282,39 @@
 
 ---
 
-### Section 34
-
-**🇬🇧 EN:** She was first elected as an MP for Yorkshire seat of Pontefract and Castleford in 1997 and went to serve as the first female chief secretary to the Treasury, later becoming work and pensions secretary in the Labour government.
-
-**🇫🇷 FR:** *Elle a été élue pour la première fois députée du siège de Pontefract et Castleford dans le Yorkshire en 1997 et est devenue la première femme secrétaire en chef du Trésor, devenant plus tard secrétaire au travail et aux retraites du gouvernement travailliste.*
-
----
-
 ### Section 35
 
-**🇬🇧 EN:** After the 2010 election defeat for Labour, she took on the role of shadow home secretary. She now represents Pontefract, Castleford and Knottingley.
+**🇬🇧 EN:** She will face numerous challenges in the role, including getting NHS waiting lists in England down, improving relations with senior doctors and making progress on social care - one of Andy Burnham's priorities.
 
-**🇫🇷 FR:** *Après la défaite électorale du Parti travailliste en 2010, elle a assumé le rôle de secrétaire d’État fantôme à l’Intérieur. Elle représente désormais Pontefract, Castleford et Knottingley.*
+**🇫🇷 FR:** *Elle sera confrontée à de nombreux défis dans ce rôle, notamment réduire les listes d'attente du NHS en Angleterre, améliorer les relations avec les médecins seniors et progresser en matière de protection sociale - l'une des priorités d'Andy Burnham.*
 
 ---
 
 ### Section 36
 
-**🇬🇧 EN:** Among other firsts in her political career, the former journalist became the first minister to take maternity leave, and she was one half of the first married couple in the cabinet - alongside her husband, former education secretary and Strictly Come Dancing contestant, Ed Balls.
+**🇬🇧 EN:** The former journalist was first elected as an MP in 1997 and went to serve as the first female chief secretary to the Treasury, later becoming work and pensions secretary in the Labour government under Gordon Brown.
 
-**🇫🇷 FR:** *Entre autres premières dans sa carrière politique, l'ancienne journaliste est devenue la première ministre à prendre un congé de maternité, et elle était la moitié du premier couple marié au sein du cabinet - aux côtés de son mari, ancien secrétaire à l'Éducation et candidat à Strictly Come Dancing, Ed Balls.*
+**🇫🇷 FR:** *L'ancienne journaliste a été élue députée pour la première fois en 1997 et est devenue la première femme secrétaire en chef du Trésor, avant de devenir secrétaire au Travail et aux Retraites du gouvernement travailliste de Gordon Brown.*
 
 ---
 
 ### Section 37
 
-**🇬🇧 EN:** Lucy Powell has been appointed as education secretary.
+**🇬🇧 EN:** Among other firsts in her political career, the Pontefract, Castleford and Knottingley MP became the first minister to take maternity leave, and she was one half of the first married couple in the cabinet - alongside her husband, former education secretary and Strictly Come Dancing contestant, Ed Balls.
 
-**🇫🇷 FR:** *Lucy Powell a été nommée secrétaire à l'éducation.*
+**🇫🇷 FR:** *Entre autres premières dans sa carrière politique, la députée de Pontefract, Castleford et Knottingley est devenue la première ministre à prendre un congé de maternité, et elle était la moitié du premier couple marié au sein du cabinet - aux côtés de son mari, ancien secrétaire à l'Éducation et candidat à Strictly Come Dancing, Ed Balls.*
 
 ---
 
 ### Section 38
+
+**🇬🇧 EN:** Lucy Powell has been appointed as education secretary and says there is "no more important job" than making sure young people have the best education and opportunities they can.
+
+**🇫🇷 FR:** *Lucy Powell a été nommée secrétaire à l'Éducation et affirme qu'il n'y a « pas de travail plus important » que de veiller à ce que les jeunes bénéficient de la meilleure éducation et des meilleures opportunités possibles.*
+
+---
+
+### Section 39
 
 **🇬🇧 EN:** Powell had been leader of the House of Commons - responsible for delivering the government's legislative programme - until she was sacked by Sir Keir Starmer in the reshuffle that followed Angela Rayner's resignation from the cabinet.
 
@@ -314,7 +322,7 @@
 
 ---
 
-### Section 39
+### Section 40
 
 **🇬🇧 EN:** She went on to replace Rayner as deputy leader of the party, winning an election of Labour members.
 
@@ -322,7 +330,7 @@
 
 ---
 
-### Section 40
+### Section 41
 
 **🇬🇧 EN:** Powell, who joined the Labour Party at 15, has been an MP since winning a by-election in Manchester Central in 2012 and has held several shadow cabinet roles, including stints leading on education, housing and culture.
 
@@ -330,7 +338,7 @@
 
 ---
 
-### Section 41
+### Section 42
 
 **🇬🇧 EN:** She led Ed Miliband's successful campaign to become Labour leader in 2010, helping him defeat Andy Burnham among others, and was then Miliband's chief of staff for two years. However, as a Manchester MP she has also worked closely with Burnham for many years.
 
@@ -338,7 +346,7 @@
 
 ---
 
-### Section 42
+### Section 43
 
 **🇬🇧 EN:** Pat McFadden remains work and pensions secretary, the role he has held since September 2025.
 
@@ -346,15 +354,15 @@
 
 ---
 
-### Section 43
+### Section 44
 
-**🇬🇧 EN:** He took over the department months after the party was forced to U-turn on extensive changes designed to reduce the welfare bill.
+**🇬🇧 EN:** He took over the department months after the party was forced to U-turn on extensive changes designed to reduce the welfare bill and has pledged to reform the welfare system "in a way that is fair and sustainable".
 
-**🇫🇷 FR:** *Il a pris la tête du département quelques mois après que le parti ait été contraint de faire volte-face sur d'importants changements destinés à réduire la facture sociale.*
+**🇫🇷 FR:** *Il a pris la tête du département quelques mois après que le parti ait été contraint de faire volte-face sur d'importants changements destinés à réduire la facture sociale et s'est engagé à réformer le système social "d'une manière qui soit juste et durable".*
 
 ---
 
-### Section 44
+### Section 45
 
 **🇬🇧 EN:** As the party’s national campaign co-ordinator McFadden was one of the masterminds behind Labour’s historic 2024 election victory, constantly stressing the need for message discipline ahead of the election and warning activists and MPs alike to ignore the opinion polls.
 
@@ -362,7 +370,7 @@
 
 ---
 
-### Section 45
+### Section 46
 
 **🇬🇧 EN:** A former adviser to Sir Tony Blair, the Glasgow-born MP has represented the Wolverhampton South East constituency since 2005, serving as a business minister under Gordon Brown and in several shadow ministerial roles since then.
 
@@ -370,7 +378,7 @@
 
 ---
 
-### Section 46
+### Section 47
 
 **🇬🇧 EN:** McFadden has also held the post of chancellor of the Duchy of Lancaster, responsible for running the Cabinet Office - the department that supports the prime minister and co-ordinates the government’s policies to deliver its agenda.
 
@@ -378,7 +386,7 @@
 
 ---
 
-### Section 47
+### Section 48
 
 **🇬🇧 EN:** Angela Rayner has returned to the cabinet as secretary of state for housing, communities and local government, months after settling her tax affairs with HM Revenue and Customs.
 
@@ -386,7 +394,7 @@
 
 ---
 
-### Section 48
+### Section 49
 
 **🇬🇧 EN:** She quit as Sir Keir Starmer’s deputy PM and housing secretary after the then prime minister’s independent ethics adviser found that she had broken the ministerial code by underpaying stamp duty when she bought a flat in May 2025.
 
@@ -394,7 +402,7 @@
 
 ---
 
-### Section 49
+### Section 50
 
 **🇬🇧 EN:** Born in Stockport, Greater Manchester, in 1980, Rayner grew up on one of the area's poorest council estates and from an early age, was caring for her mother, who had bipolar disorder and suffered from depression.
 
@@ -402,7 +410,7 @@
 
 ---
 
-### Section 50
+### Section 51
 
 **🇬🇧 EN:** She left school with no qualifications but, after having her first child at 16, Rayner studied part-time at college, gained a vocational qualification in social care.
 
@@ -410,7 +418,7 @@
 
 ---
 
-### Section 51
+### Section 52
 
 **🇬🇧 EN:** As she worked as a care worker in Stockport, she also rose quickly through the ranks of the union Unison, and she credits the union movement for encouraging her to enter politics. She became MP for Ashton-under-Lyne in 2015 and is a powerful figure on Labour's "soft left".
 
@@ -418,7 +426,7 @@
 
 ---
 
-### Section 52
+### Section 53
 
 **🇬🇧 EN:** Jonathan Reynolds has become secretary of state for business, innovation, science and trade.
 
@@ -426,7 +434,7 @@
 
 ---
 
-### Section 53
+### Section 54
 
 **🇬🇧 EN:** It is a return to the business department he led until September 2025 but the role has been expanded to take in science and innovation, which were in a separate department.
 
@@ -434,7 +442,7 @@
 
 ---
 
-### Section 54
+### Section 55
 
 **🇬🇧 EN:** The son of a fireman, Reynolds grew up in Sunderland - and still supports the city’s football club - but he went to university in Manchester, where he joined the Labour Party and chose to remain after graduating.
 
@@ -442,7 +450,7 @@
 
 ---
 
-### Section 55
+### Section 56
 
 **🇬🇧 EN:** Reynolds, who has described himself as a Christian socialist, has been the MP for Stalybridge and Hyde in Greater Manchester since 2010 - he had been an assistant to the constituency’s previous MP James Purnell.
 
@@ -450,7 +458,7 @@
 
 ---
 
-### Section 56
+### Section 57
 
 **🇬🇧 EN:** Bridget Phillipson will remain in cabinet as women and equalities minister but will no longer be education secretary.
 
@@ -458,7 +466,7 @@
 
 ---
 
-### Section 57
+### Section 58
 
 **🇬🇧 EN:** Before becoming an MP she managed a refuge for women and children who were fleeing domestic violence.
 
@@ -466,7 +474,7 @@
 
 ---
 
-### Section 58
+### Section 59
 
 **🇬🇧 EN:** Raised by her mother in a small terrace council house with rotting window frames and no upstairs heating in a former mining town near Sunderland, she was bullied at school and received free school meals.
 
@@ -474,7 +482,7 @@
 
 ---
 
-### Section 59
+### Section 60
 
 **🇬🇧 EN:** But Phillipson credits "amazing teachers" for encouraging her to apply to Oxford, where she studied modern history.
 
@@ -482,15 +490,15 @@
 
 ---
 
-### Section 60
+### Section 61
 
-**🇬🇧 EN:** She had joined Labour aged 15 and became its MP for Houghton and Sunderland South in 2010, aged 26. She has been a member of Sir Keir Starmer’s top team since he became Labour leader.
+**🇬🇧 EN:** She had joined Labour aged 15 and became its MP for Houghton and Sunderland South in 2010, aged 26.
 
-**🇫🇷 FR:** *Elle avait rejoint le Parti travailliste à l’âge de 15 ans et en était devenue députée pour Houghton et Sunderland Sud en 2010, à l’âge de 26 ans. Elle est membre de la meilleure équipe de Sir Keir Starmer depuis qu’il est devenu leader travailliste.*
+**🇫🇷 FR:** *Elle avait rejoint le Parti travailliste à l'âge de 15 ans et en était devenue députée pour Houghton et Sunderland Sud en 2010, à l'âge de 26 ans.*
 
 ---
 
-### Section 61
+### Section 62
 
 **🇬🇧 EN:** Former Labour leadership challenger Lisa Nandy remains digital, culture, media and sport secretary.
 
@@ -498,7 +506,7 @@
 
 ---
 
-### Section 62
+### Section 63
 
 **🇬🇧 EN:** In the role she has held negotiations with the BBC about how it will be funded in the future and has said she is thinking "quite radically and creatively" about alternatives to the "deeply regressive" licence fee.
 
@@ -506,7 +514,7 @@
 
 ---
 
-### Section 63
+### Section 64
 
 **🇬🇧 EN:** Nandy stood against Sir Keir Starmer in the 2020 leadership race and was described as “refreshingly untribal” by one Tory MP who thought she was Labour’s best choice.
 
@@ -514,7 +522,7 @@
 
 ---
 
-### Section 64
+### Section 65
 
 **🇬🇧 EN:** She finished third but her reward was to become shadow foreign secretary. 
                         Nandy later shadowed Levelling Up Secretary Michael Gove before moving to international development.
@@ -524,7 +532,7 @@
 
 ---
 
-### Section 65
+### Section 66
 
 **🇬🇧 EN:** As co-founder of the Centre for Towns think tank, Nandy has been a vocal champion of places like Wigan, which she has represented since 2010, arguing they have been overlooked in discussions on regional development and devolution.
 
@@ -532,7 +540,7 @@
 
 ---
 
-### Section 66
+### Section 67
 
 **🇬🇧 EN:** Miatta Fahnbulleh has been named energy security and net zero secretary, replacing Ed Miliband who has become foreign secretary.
 
@@ -540,7 +548,7 @@
 
 ---
 
-### Section 67
+### Section 68
 
 **🇬🇧 EN:** She had been working on policy ideas for a potential Burnham government since resigning as a junior communities minister in the aftermath of Labour's disastrous local election results in May.
 
@@ -548,7 +556,7 @@
 
 ---
 
-### Section 68
+### Section 69
 
 **🇬🇧 EN:** Born in Liberia, she was brought to the UK as a five-year-old by her parents who were fleeing the country’s civil war in 1986 - the family were granted asylum in the late 1980s.
 
@@ -556,7 +564,7 @@
 
 ---
 
-### Section 69
+### Section 70
 
 **🇬🇧 EN:** A trained economist, she is a former civil servant and also ran the New Economics Foundation think tank before becoming MP for Peckham in London in 2024.
 
@@ -564,7 +572,7 @@
 
 ---
 
-### Section 70
+### Section 71
 
 **🇬🇧 EN:** She is seen as being part of Labour’s "soft left" faction.
 
@@ -572,7 +580,7 @@
 
 ---
 
-### Section 71
+### Section 72
 
 **🇬🇧 EN:** Former Home Office minister Alex Norris has been promoted to the role of justice secretary and Lord Chancellor.
 
@@ -580,7 +588,7 @@
 
 ---
 
-### Section 72
+### Section 73
 
 **🇬🇧 EN:** The former Trade Union organiser and Nottingham City councillor was first elected to Parliament in 2017.
 
@@ -588,7 +596,7 @@
 
 ---
 
-### Section 73
+### Section 74
 
 **🇬🇧 EN:** In the Home Office he was responsible for border security and asylum.
 
@@ -596,7 +604,7 @@
 
 ---
 
-### Section 74
+### Section 75
 
 **🇬🇧 EN:** The Nottingham North and Kimberley MP, who was born in Manchester, describes himself as a keen runner and Manchester City supporter.
 
@@ -604,7 +612,7 @@
 
 ---
 
-### Section 75
+### Section 76
 
 **🇬🇧 EN:** Heidi Alexander remains transport secretary, the role she has held since November 2024.
 
@@ -612,7 +620,7 @@
 
 ---
 
-### Section 76
+### Section 77
 
 **🇬🇧 EN:** The former Lewisham MP has previously been in charge of transport in London – having quit parliament in 2018 to become deputy mayor of London for transport.
 
@@ -620,7 +628,7 @@
 
 ---
 
-### Section 77
+### Section 78
 
 **🇬🇧 EN:** She has spoken of her pride at helping to bring the Elizabeth line into service and of keeping the city’s transport network running during the pandemic.
 
@@ -628,7 +636,7 @@
 
 ---
 
-### Section 78
+### Section 79
 
 **🇬🇧 EN:** Alexander returned to parliament as MP for Swindon South in July and was serving as a justice minister before taking on the transport brief.
 
@@ -636,7 +644,7 @@
 
 ---
 
-### Section 79
+### Section 80
 
 **🇬🇧 EN:** She had been shadow health secretary under Jeremy Corbyn but quit the role in 2016 describing the shadow cabinet as “entirely dysfunctional”.
 
@@ -644,7 +652,7 @@
 
 ---
 
-### Section 80
+### Section 81
 
 **🇬🇧 EN:** Dame Angela Eagle has been promoted to the cabinet as secretary of state for environment, food and rural affairs.
 
@@ -652,7 +660,7 @@
 
 ---
 
-### Section 81
+### Section 82
 
 **🇬🇧 EN:** She was previously a minister in the Home Office and Cabinet Office and has been on the Labour front bench since the last Labour government.
 
@@ -660,7 +668,7 @@
 
 ---
 
-### Section 82
+### Section 83
 
 **🇬🇧 EN:** Eagle is perhaps best known for challenging the leadership of Jeremy Corbyn in 2016 - but withdrawing to back rival Owen Smith days later.
 
@@ -668,7 +676,7 @@
 
 ---
 
-### Section 83
+### Section 84
 
 **🇬🇧 EN:** She has been MP for Wallasey since 1992 and was joined in the Commons in 1997 by her identical twin sister Maria Eagle.
 
@@ -676,7 +684,7 @@
 
 ---
 
-### Section 84
+### Section 85
 
 **🇬🇧 EN:** Sir Chris Bryant has been appointed secretary of state for Northern Ireland, replacing Hilary Benn.
 
@@ -684,7 +692,7 @@
 
 ---
 
-### Section 85
+### Section 86
 
 **🇬🇧 EN:** He moves from the Department for Business and Trade.
 
@@ -692,7 +700,7 @@
 
 ---
 
-### Section 86
+### Section 87
 
 **🇬🇧 EN:** It’s Sir Chris’s first cabinet position, although he held a number of shadow frontbench roles under Sir Keir Starmer and Jeremy Corbyn.
 
@@ -700,7 +708,7 @@
 
 ---
 
-### Section 87
+### Section 88
 
 **🇬🇧 EN:** Sir Chris, a former Anglican priest, was awarded a knighthood in 2023 in recognition of his campaigning work around acquired brain injury and melanoma - a type of skin cancer.
 
@@ -708,7 +716,7 @@
 
 ---
 
-### Section 88
+### Section 89
 
 **🇬🇧 EN:** He was elected as the MP for Rhondda and Ogmore (previously Rhondda) on 7 June 2001.
 
@@ -716,7 +724,7 @@
 
 ---
 
-### Section 89
+### Section 90
 
 **🇬🇧 EN:** Douglas Alexander stays in the cabinet as Scotland secretary, having previously been in the cabinets of Keir Starmer, Gordon Brown and Tony Blair.
 
@@ -724,7 +732,7 @@
 
 ---
 
-### Section 90
+### Section 91
 
 **🇬🇧 EN:** A former secretary of state for international development and for transport, Alexander lost his Paisley and Renfrewshire South seat to the SNP in one of the biggest shocks of the 2015 general election.
 
@@ -732,7 +740,7 @@
 
 ---
 
-### Section 91
+### Section 92
 
 **🇬🇧 EN:** He was re-elected to parliament in 2024 as MP for Lothian East and was tipped for an immediate return to cabinet, but Sir Keir Starmer initially appointed him as a trade and economic security minister.
 
@@ -740,15 +748,23 @@
 
 ---
 
-### Section 92
+### Section 93
 
-**🇬🇧 EN:** Alexander told the BBC he hadn’t missed “the game of politics” or the “brutality of social media” but had been asked to stand for re-election by local party members.
+**🇬🇧 EN:** Alexander is one of the few Scottish Labour MPs who knows Andy Burnham - from their time working together in the Blair and Brown governments - and is seen as experienced and smart.
 
-**🇫🇷 FR:** *Alexander a déclaré à la BBC qu’il n’avait pas manqué « le jeu de la politique » ni la « brutalité des médias sociaux », mais qu’il avait été invité à se présenter aux élections par les membres du parti local.*
+**🇫🇷 FR:** *Alexander est l'un des rares députés travaillistes écossais à connaître Andy Burnham - pour avoir travaillé ensemble au sein des gouvernements Blair et Brown - et est considéré comme expérimenté et intelligent.*
 
 ---
 
-### Section 93
+### Section 94
+
+**🇬🇧 EN:** He has been robust in his dealings with SNP ministers, who say his original appointment marked a significant deterioration in Scottish and UK government relations after a period of better co-operation in the early days of the Starmer government.
+
+**🇫🇷 FR:** *Il a été ferme dans ses relations avec les ministres du SNP, qui affirment que sa nomination initiale a marqué une détérioration significative des relations gouvernementales écossaises et britanniques après une période de meilleure coopération dans les premiers jours du gouvernement Starmer.*
+
+---
+
+### Section 95
 
 **🇬🇧 EN:** Stephen Kinnock has been named secretary of state for Wales.
 
@@ -756,7 +772,7 @@
 
 ---
 
-### Section 94
+### Section 96
 
 **🇬🇧 EN:** He had been the care minister since Labour won the general election in 2024.
 
@@ -764,7 +780,7 @@
 
 ---
 
-### Section 95
+### Section 97
 
 **🇬🇧 EN:** The son of former Labour leader Neil Kinnock, he joined the Labour Party aged 15 during the miners' strike and has been MP since 2015.
 
@@ -772,7 +788,7 @@
 
 ---
 
-### Section 96
+### Section 98
 
 **🇬🇧 EN:** He is married to the former prime minister of Denmark Helle Thorning-Schmidt.
 
@@ -780,7 +796,7 @@
 
 ---
 
-### Section 97
+### Section 99
 
 **🇬🇧 EN:** Emma Reynolds is chief secretary to the Treasury, working under new Chancellor John Healey.
 
@@ -788,7 +804,7 @@
 
 ---
 
-### Section 98
+### Section 100
 
 **🇬🇧 EN:** She was previously secretary of state for environment, food and rural affairs and had served in Labour’s shadow cabinet as shadow secretary of state for housing and planning and shadow secretary of state for communities and local government).
 
@@ -796,7 +812,7 @@
 
 ---
 
-### Section 99
+### Section 101
 
 **🇬🇧 EN:** She trained as a solicitor and worked in public policy before entering parliament.
 
@@ -804,7 +820,7 @@
 
 ---
 
-### Section 100
+### Section 102
 
 **🇬🇧 EN:** She was elected as MP for Wycombe in 2024, having previously served as MP for Wolverhampton North East from 2010 to 2019.
 
@@ -812,7 +828,7 @@
 
 ---
 
-### Section 101
+### Section 103
 
 **🇬🇧 EN:** Anneliese Midgley, one of the key figures in Andy Burnham's leadership campaign, has been promoted to the cabinet in the role of chief whip.
 
@@ -820,7 +836,7 @@
 
 ---
 
-### Section 102
+### Section 104
 
 **🇬🇧 EN:** She has only been the MP for Knowsley, not far from Makerfield, since 2024 but she has been an influential force in the Labour movement for much longer than that, working for both Sir Keir Starmer and Jeremy Corbyn in opposition, following stints at the TUC.
 
@@ -828,7 +844,7 @@
 
 ---
 
-### Section 103
+### Section 105
 
 **🇬🇧 EN:** She has spoken about how, when she was growing up, her family’s life was changed by the "secure, well-paid, unionised job" her father got at a car factory.
 
@@ -836,7 +852,7 @@
 
 ---
 
-### Section 104
+### Section 106
 
 **🇬🇧 EN:** Before her political career, music lover Midgey ran club nights in Liverpool, worked in record shops and helped bands including Pulp with press.
 
@@ -844,7 +860,7 @@
 
 ---
 
-### Section 105
+### Section 107
 
 **🇬🇧 EN:** She was briefly married to Bob Stanley, a member of indie group Saint Etienne, and has told how the couple shared their first kiss on hearing that Tory grandee and TV personality Michael Portillo had lost his seat in the 1997 election.
 
@@ -852,7 +868,7 @@
 
 ---
 
-### Section 106
+### Section 108
 
 **🇬🇧 EN:** Ellie Reeves has been appointed attorney general and will attend cabinet.
 
@@ -860,7 +876,7 @@
 
 ---
 
-### Section 107
+### Section 109
 
 **🇬🇧 EN:** The sister of former chancellor Rachel Reeves, Ellie has previously attended cabinet as minister without portfolio and Labour Party chair.
 
@@ -868,7 +884,7 @@
 
 ---
 
-### Section 108
+### Section 110
 
 **🇬🇧 EN:** She had been solicitor general since September 2025.
 
@@ -876,7 +892,7 @@
 
 ---
 
-### Section 109
+### Section 111
 
 **🇬🇧 EN:** The former employment rights lawyer, who joined the Labour Party at the age of 15, represents Lewisham West & East Dulwich and has been an MP since 2017.
 
@@ -884,7 +900,7 @@
 
 ---
 
-### Section 110
+### Section 112
 
 **🇬🇧 EN:** Sir Alan Campbell remains the leader of the House of Commons.
 
@@ -892,7 +908,7 @@
 
 ---
 
-### Section 111
+### Section 113
 
 **🇬🇧 EN:** In the role, he is responsible for delivering the government’s legislative programme, by working closely with the chief whip to manage Commons business, like motions and debates.
 
@@ -900,7 +916,7 @@
 
 ---
 
-### Section 112
+### Section 114
 
 **🇬🇧 EN:** He was previously chief whip, responsible for making sure MPs vote in line with party policy.
 
@@ -908,7 +924,7 @@
 
 ---
 
-### Section 113
+### Section 115
 
 **🇬🇧 EN:** Sir Alan has been MP for Tynemouth since 1997 and was Sir Keir Starmer’s opposition chief whip, but he also has experience in the Government Whips’ Office under Sir Tony Blair.
 
@@ -916,7 +932,7 @@
 
 ---
 
-### Section 114
+### Section 116
 
 **🇬🇧 EN:** The former history teacher was knighted in 2019.
 
@@ -924,7 +940,7 @@
 
 ---
 
-### Section 115
+### Section 117
 
 **🇬🇧 EN:** Baroness (Angela) Smith of Basildon remains leader of the House of Lords.
 
@@ -932,7 +948,7 @@
 
 ---
 
-### Section 116
+### Section 118
 
 **🇬🇧 EN:** The role, which she shadowed in opposition, sees her responsible for delivery of the government’s legislative programme in the Upper House.
 
@@ -940,7 +956,7 @@
 
 ---
 
-### Section 117
+### Section 119
 
 **🇬🇧 EN:** She was an MP for Basildon throughout the last Labour government from 1997 to 2010, serving as a minister under Sir Tony Blair and Gordon Brown.
 
@@ -948,7 +964,7 @@
 
 ---
 
-### Section 118
+### Section 120
 
 **🇬🇧 EN:** She became a life peer in the 2010 Dissolution Honours List and is also patron of an animal welfare charity.
 
@@ -956,7 +972,7 @@
 
 ---
 
-### Section 119
+### Section 121
 
 **🇬🇧 EN:** Hamish Falconer has been promoted to be minister for intergovernmental relations & European relations attending cabinet in the Foreign Office and the Cabinet Office.
 
@@ -964,7 +980,7 @@
 
 ---
 
-### Section 120
+### Section 122
 
 **🇬🇧 EN:** He will be responsible for intergovernmental and European relations.
 
@@ -972,7 +988,7 @@
 
 ---
 
-### Section 121
+### Section 123
 
 **🇬🇧 EN:** He entered the House of Commons as an MP after the 2024 general election and was promoted to the front bench, as a Foreign Office under-secretary, less than a year later.
 
@@ -980,7 +996,7 @@
 
 ---
 
-### Section 122
+### Section 124
 
 **🇬🇧 EN:** He is the son of Baron (Charlie) Falconer who served as Lord Chancellor under former Labour PM Tony Blair.
 
@@ -988,7 +1004,7 @@
 
 ---
 
-### Section 123
+### Section 125
 
 **🇬🇧 EN:** Before becoming MP for Lincoln, he had worked for the Foreign Office and for the Institute for Public Policy Research and Labour Together think tanks.
 
@@ -996,31 +1012,47 @@
 
 ---
 
-### Section 124
-
-**🇬🇧 EN:** Kanishka Narayan has been appointed as minister for artificial intelligence jointly in the Cabinet Office and the Department for Business, Innovation, Science and Trade.
-
-**🇫🇷 FR:** *Kanishka Narayan a été nommée ministre de l'intelligence artificielle conjointement au Cabinet Office et au ministère des Affaires, de l'Innovation, de la Science et du Commerce.*
-
----
-
-### Section 125
-
-**🇬🇧 EN:** He will attend cabinet.
-
-**🇫🇷 FR:** *Il siégera au Cabinet.*
-
----
-
 ### Section 126
 
-**🇬🇧 EN:** Born in India and raised in Cardiff, Narayan worked in government and business before entering Parliament in 2024, later serving as online safety minister.
+**🇬🇧 EN:** Kanishka Narayan has been appointed minister for artificial intelligence, and will attend cabinet.
 
-**🇫🇷 FR:** *Né en Inde et élevé à Cardiff, Narayan a travaillé dans le gouvernement et le monde des affaires avant d'entrer au Parlement en 2024, avant de devenir ministre de la Sécurité en ligne.*
+**🇫🇷 FR:** *Kanishka Narayan a été nommée ministre de l'Intelligence artificielle et fera partie du cabinet.*
 
 ---
 
 ### Section 127
+
+**🇬🇧 EN:** Born in India and raised in Cardiff, Narayan worked in government and business before entering Parliament in 2024 as the MP for the Vale of Glamorgan.
+
+**🇫🇷 FR:** *Né en Inde et élevé à Cardiff, Narayan a travaillé dans le gouvernement et le monde des affaires avant d'entrer au Parlement en 2024 en tant que député de la vallée de Glamorgan.*
+
+---
+
+### Section 128
+
+**🇬🇧 EN:** He was previously the minister for AI and online safety under Sir Keir Starmer, where he was part of the Department for Science, Innovation and Technology (DSIT), which has been abolished.
+
+**🇫🇷 FR:** *Il était auparavant ministre de l'IA et de la sécurité en ligne sous Sir Keir Starmer, où il faisait partie du ministère de la Science, de l'Innovation et de la Technologie (DSIT), qui a été supprimé.*
+
+---
+
+### Section 129
+
+**🇬🇧 EN:** Narayan, who holds an MBA from Stanford University, has frequently championed AI and its power to transform society, while noting its risks.
+
+**🇫🇷 FR:** *Narayan, titulaire d'un MBA de l'Université de Stanford, a souvent défendu l'IA et son pouvoir de transformer la société, tout en soulignant ses risques.*
+
+---
+
+### Section 130
+
+**🇬🇧 EN:** Credited as having a deep knowledge of the AI sector, his becoming a cabinet-level AI minister has been broadly welcomed - but DSIT's axing alongside this has also caused some concern.
+
+**🇫🇷 FR:** *Reconnu comme ayant une connaissance approfondie du secteur de l'IA, sa nomination au poste de ministre de l'IA au niveau du cabinet a été largement saluée - mais la suppression du DSIT en parallèle a également suscité certaines inquiétudes.*
+
+---
+
+### Section 131
 
 **🇬🇧 EN:** Matthew Pennycook will continue as housing minister in the Ministry of Housing, Communities and Local Government but will now attend cabinet.
 
@@ -1028,7 +1060,7 @@
 
 ---
 
-### Section 128
+### Section 132
 
 **🇬🇧 EN:** A former Labour councillor in the London Borough of Greenwich, Pennycook became an MP in 2015.
 
@@ -1036,7 +1068,7 @@
 
 ---
 
-### Section 129
+### Section 133
 
 **🇬🇧 EN:** Before that he had worked in the charity and voluntary sector, with a particular focus on child poverty and low pay.
 
@@ -1044,7 +1076,7 @@
 
 ---
 
-### Section 130
+### Section 134
 
 **🇬🇧 EN:** Images: House of Commons, Getty Images
 
@@ -1052,7 +1084,7 @@
 
 ---
 
-### Section 131
+### Section 135
 
 **🇬🇧 EN:** Burnham's policy choices reveal what kind of PM he wants to be
 
@@ -1060,7 +1092,7 @@
 
 ---
 
-### Section 132
+### Section 136
 
 **🇬🇧 EN:** Burnham promises help with your money. How could it affect you?
 

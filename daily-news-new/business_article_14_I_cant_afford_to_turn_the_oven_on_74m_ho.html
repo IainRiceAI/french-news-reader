@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'I can't afford to turn the oven on': 7.4m households struggling to buy essentials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>'I can't afford to turn the oven on': 7.4m households struggling to buy essentials</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 21 Jul 2026 23:57:49 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cglj9685nj0o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: As Andy Burnham promises “breathing space” for households, millions are unable to buy items such as clothing, heating and food.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.64" data-end="16.37">
+            <p class="french-block">Elaine Yates, 77 ans, dit qu'elle ne se souvient pas de la dernière fois où elle a utilisé son four pour préparer un repas chaud</p>
+            <span class="english-block">Elaine Yates, 77, says she can't remember the last time she used her oven to cook a hot meal</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.37" data-end="32.71">
+            <p class="french-block">Quatre ans après le début de la crise du coût de la vie, près des deux tiers des familles à faible revenu déclarent avoir du mal à acheter des produits de première nécessité tels que des vêtements, du chauffage et de la nourriture, selon l'association caritative anti-pauvreté Joseph Rowntree Foundation (JRF).</p>
+            <span class="english-block">Four years into the cost of living crisis, almost two-thirds of low-income families say they struggle to buy essentials such as clothes, heating and food, according to anti-poverty charity the Joseph Rowntree Foundation (JRF).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.71" data-end="46.97">
+            <p class="french-block">Un nombre record de 62 % des familles à faible revenu n'ont pas pu se permettre un article essentiel au cours des six derniers mois, a constaté l'association, soit l'équivalent de 7,4 millions de foyers, contre 7,1 millions il y a un an.</p>
+            <span class="english-block">A record 62% of low-income families were unable to afford an essential item in the past six months, the charity found - the equivalent of 7.4m households, up from 7.1 million a year ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.97" data-end="53.57">
+            <p class="french-block">Près de la moitié des personnes interrogées avaient sauté un repas ou réduit la taille des portions pour économiser de l'argent.</p>
+            <span class="english-block">Almost half of those surveyed had skipped a meal or cut portion sizes to save money.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.57" data-end="67.46">
+            <p class="french-block">Le Premier ministre nouvellement nommé, Andy Burnham, a promis d'expliquer comment il allait "donner aux gens un peu de répit, les aider à faire face au coût de la vie", notamment en réduisant la TVA sur les factures d'électricité à partir d'octobre.</p>
+            <span class="english-block">Newly appointed Prime Minister Andy Burnham has promised to set out how he will "give people some breathing space, help with the cost of living," including cutting VAT on electricity bills from October.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.46" data-end="76.75">
+            <p class="french-block">Elaine Yates, 77 ans, dit que des problèmes d'argent lui font "ne pas se souvenir" de la dernière fois qu'elle a utilisé son four pour préparer un repas chaud.</p>
+            <span class="english-block">Elaine Yates, 77, says money worries mean she "can't remember" the last time she used her oven to cook a hot meal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.75" data-end="88.03">
+            <p class="french-block">"Je ne prends pas soin de moi. Je ne me souviens pas de la dernière fois que j'ai allumé le four. J'ai une friteuse à air que j'ai probablement utilisée il y a environ trois semaines.</p>
+            <span class="english-block">"I don't look after myself. I can't remember the last time I put the oven on. I have got an air fryer that I probably used about three weeks ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.03" data-end="94.58">
+            <p class="french-block">"J'ai mangé deux tranches de pain grillé hier et deux Weetabix et des fruits, c'est tout ce que j'ai mangé aujourd'hui."</p>
+            <span class="english-block">"I had two slices of toast yesterday and two Weetabix and fruit is all I've had to eat today."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.58" data-end="110.86">
+            <p class="french-block">La retraitée vit seule dans la campagne du Northamptonshire après être devenue veuve il y a cinq ans. Après 20 ans passés à s'occuper à plein temps de son mari, ses finances sont "extrêmement tendues", elle se sent donc particulièrement vulnérable à la hausse des prix depuis le décès de son mari.</p>
+            <span class="english-block">The pensioner lives by herself in rural Northamptonshire after being widowed five years ago. Following 20 years as a full-time carer for her husband, her finances are "extremely tight", so she has felt particularly vulnerable to price rises since he passed away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.86" data-end="135.91">
+            <p class="french-block">"C'est une période vraiment difficile, pas seulement pour moi, mais pour des milliers d'autres personnes. Ma voiture me coûte un bras et une jambe. Les prix du carburant montent en flèche à nouveau, et je vis dans un village, j'ai donc besoin d'une voiture parce que je souffre d'arthrite et que je ne peux pas marcher très loin. Je dépense environ 50 £ par semaine en essence, ce qui est plus que ma facture de nourriture."</p>
+            <span class="english-block">"It's really hard times, not just for me, but for thousands of others. My car costs me an arm and a leg. The fuel prices are rocketing up again, and I live in a village, so I need a car because I've got arthritis and I can't walk very far. I spend about £50 a week on petrol, which is more than my food bill."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.91" data-end="145.18">
+            <p class="french-block">Elaine emmène souvent d'autres personnes dans son village qui n'ont pas de moyen de transport, pour ensuite se retrouver dans l'impossibilité de faire leurs courses à leurs côtés.</p>
+            <span class="english-block">Elaine often gives lifts to others in her village who don't have transport, only to find herself unable to shop alongside them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.18" data-end="155.76">
+            <p class="french-block">"J'ai une amie qui achète des vêtements et je m'assois devant le magasin parce que je n'ai pas les moyens d'entrer", dit-elle. "Je ne me souviens pas de la dernière fois où je me suis soigné."</p>
+            <span class="english-block">"I've got one friend who buys clothes and I sit outside the shop because I can't afford to go in," she says. "I can't remember the last time I treated myself."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.76" data-end="164.18">
+            <p class="french-block">En hiver, Elaine allume rarement le chauffage et lorsqu'elle le fait, elle maintient le thermostat à une température basse de 13 °C.</p>
+            <span class="english-block">In the winter, Elaine rarely turns the heating on, and when she does she keeps the thermostat at a low 13C.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.18" data-end="183.14">
+            <p class="french-block">"Toute aide supplémentaire pour leurs factures d'énergie sera bien accueillie par les personnes âgées, qui, nous le savons, s'inquiètent énormément du coût du carburant et rationnent souvent leur chauffage, mettant leur santé en danger, pour s'assurer qu'elles puissent joindre les deux bouts", a déclaré Caroline Abrahams, directrice caritative d'Age UK.</p>
+            <span class="english-block">"Any extra help with their energy bills will be welcomed by older people, who we know worry hugely about the cost of fuel and often ration their heating, putting their health at risk, to ensure they can make ends meet," said Caroline Abrahams, Charity Director at Age UK</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.14" data-end="192.55">
+            <p class="french-block">Mais l’association souhaite désormais que le Premier ministre aille plus loin et augmente la valeur du Warm Home Discount, afin de couvrir tous les ménages à faibles revenus.</p>
+            <span class="english-block">But the charity would now like the prime minister to go further and increase the value of the Warm Home Discount, to cover all households on low incomes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.55" data-end="202.85">
+            <p class="french-block">Zoe Hayden, 35 ans, est une mère célibataire qui s'est endettée après avoir été licenciée de son emploi dans le commerce de détail alors qu'elle était en congé de maternité.</p>
+            <span class="english-block">Zoe Hayden, 35, is a single parent who fell into debt after being made redundant from her retail job while on maternity leave.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.85" data-end="213.1">
+            <p class="french-block">Zoe, qui vit à North Oxford, n'a plus de dettes et termine un apprentissage en plomberie. Mais elle affirme que la hausse des coûts reste un défi pour nourrir une famille.</p>
+            <span class="english-block">Zoe, who lives in North Oxford, is now debt-free and completing a plumbing apprenticeship. But she says rising costs are still a challenge when feeding a family.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.1" data-end="230.28">
+            <p class="french-block">"Au cours des cinq dernières années, c'était absolument dingue, la façon dont les choses ont augmenté. Je me souviens d'être entré dans le magasin et de m'être dit, wow, presque tout ce que j'achète a augmenté de 50p ou 75p. C'est beaucoup d'argent quand on a du mal.</p>
+            <span class="english-block">"Over the last five years, it's been absolutely bonkers, the way that things have increased. I remember going into the shop and being like, wow, nearly everything I'm buying has increased by 50p or 75p. That's a lot of money when you're struggling.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.28" data-end="247.13">
+            <p class="french-block">"Je suis allé au magasin l'autre jour et j'ai dépensé 45 £ pour des produits de base, pas même deux sacs de courses. Cela signifie simplement que vous devez faire encore plus de sacrifices. Vous ne vivez pas votre meilleure vie, vous cherchez simplement à survivre."</p>
+            <span class="english-block">"I went into the shop the other day and I spent £45 on basic stuff, not even two bags of shopping. It just means you have to make even more sacrifices. You're not living your best life, you're just about surviving."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="247.13" data-end="260.5">
+            <p class="french-block">Elle aimerait également que Burnham aille au-delà des factures d'énergie moins chères et cherche à financer des activités gratuites ou abordables pour les enfants des familles à faible revenu, telles que des clubs de jeunes, des programmes de vacances et des camps sportifs.</p>
+            <span class="english-block">She would also like Burnham to go beyond cheaper energy bills and look to fund free or affordable activities for children in low-income families, such as youth clubs, holiday schemes and sports camps.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.5" data-end="271.61">
+            <p class="french-block">"Je suis allée au magasin l'autre jour et j'ai dépensé 45 £ pour des produits de base, pas même deux sacs de courses", explique Zoe Hayden, mère célibataire de 35 ans.</p>
+            <span class="english-block">"I went into the shop the other day and I spent £45 on basic stuff, not even two bags of shopping," says single parent Zoe Hayden, 35</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.61" data-end="281.62">
+            <p class="french-block">Une étude distincte de l'association caritative Christians Against Poverty a révélé qu'environ 35 % des adultes au Royaume-Uni s'inquiètent quotidiennement de leurs finances.</p>
+            <span class="english-block">Separate research from charity Christians Against Poverty found about 35% of adults in the UK worry about their finances every day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.62" data-end="297.46">
+            <p class="french-block">Étant donné que l'annonce de la TVA permettra aux ménages d'économiser environ 45 £ par an, « la crainte de jongler avec des budgets qui ne s'équilibrent tout simplement pas demeure », déclare Juliette Flachm, responsable par intérim des politiques et des affaires publiques.</p>
+            <span class="english-block">As the VAT announcement will save households about £45 a year, "the fear of juggling budgets that simply don't balance remains", says Juliette Flachm, Acting Head of Policy and Public Affair.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.46" data-end="307.27">
+            <p class="french-block">"Les revenus ne parvenant pas à suivre le coût élevé des produits de première nécessité, de nombreuses personnes que nous rencontrons se retrouvent confrontées à des décisions impossibles."</p>
+            <span class="english-block">"With incomes failing to keep pace with the high cost of essentials, many of the people we see are left facing impossible decisions."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="307.27" data-end="319.03">
+            <p class="french-block">L'économiste en chef du JRF, Chris Belfield, a déclaré : « Andy Burnham commence son mandat de Premier ministre à un moment où la crise du coût de la vie n'a jamais été aussi largement ressentie.</p>
+            <span class="english-block">JRF's chief economist Chris Belfield said: "Andy Burnham starts his time as prime minister at a time when the cost-of-living crisis has never been more widely felt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.03" data-end="333.58">
+            <p class="french-block">"La politique gouvernementale peut fonctionner. Nous avons besoin d'une plus grande intervention pour contrôler les prix des loyers, rendre l'énergie abordable et améliorer l'adéquation du crédit universel afin que chacun puisse se permettre l'essentiel."</p>
+            <span class="english-block">"Government policy can work. We need greater intervention to control rental prices, make energy affordable and improve the adequacy of Universal Credit so everyone can afford the essentials."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.58" data-end="355.18">
+            <p class="french-block">Un porte-parole du gouvernement a déclaré : « Nous sommes déterminés à inverser la tendance de la pauvreté après des années de difficultés croissantes. Nos récentes statistiques montrent que nos efforts commencent à faire une différence : les revenus des ménages ont augmenté de 5 % en termes réels, le recours aux banques alimentaires a diminué et l'insécurité alimentaire a diminué.</p>
+            <span class="english-block">A government spokesperson said: "We're determined to turn the tide on poverty after years of rising hardship. Our recent statistics show that effort is beginning to make a difference - household incomes have risen 5% in real terms, food bank usage has fallen, and food insecurity is down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.18" data-end="377.54">
+            <p class="french-block">"Des travaux sont en cours pour lutter contre les pressions sur le coût de la vie grâce à des mesures telles que l'augmentation du salaire minimum national, la suppression de la limite de deux enfants, la première augmentation soutenue au-dessus de l'inflation du crédit universel et le lancement du Fonds de crise et de résilience d'un milliard de livres sterling qui agira comme un véritable filet de sécurité pour ceux qui sont en crise financière."</p>
+            <span class="english-block">"Work is underway to tackle the cost-of-living pressures through measures such as increasing the National Minimum Wage, removing the two-child limit, implementing the first ever sustained above inflation increase to Universal Credit, and launching the £1bn Crisis and Resilience Fund which will act as a genuine safety net for those in financial crisis."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.54" data-end="388.68">
+            <p class="french-block">Les chiffres proviennent de l'outil de suivi de la pauvreté de la Fondation Joseph Rowntree, qui interroge environ 4 000 personnes appartenant à des ménages appartenant aux 40 % des revenus les plus bas.</p>
+            <span class="english-block">The figures come from the Joseph Rowntree Foundation's poverty tracker, which surveys about 4,000 people from households in the lowest 40% of incomes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="388.68" data-end="406.97">
+            <p class="french-block">L’association caritative a noté que l’inflation alimentaire était en moyenne de 4,1 % entre mai 2025 et mai 2026, contre 3,6 % pour l’inflation globale, ce qui a un impact plus important sur les ménages à faible revenu car ils consacrent une plus grande part de leurs revenus à l’alimentation.</p>
+            <span class="english-block">The charity noted that food inflation averaged 4.1% between May 2025 and May 2026, compared to 3.6% for overall inflation, which has greater impact on lower-income households because they spend more of their income on food.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="406.97" data-end="426.82">
+            <p class="french-block">Mais il a également noté que le nombre de ménages les plus pauvres qui ne pouvaient pas se permettre de garder leur maison au chaud a diminué d'un demi-million en deux ans, après que le gouvernement ait réduit la facture énergétique moyenne des ménages d'environ 150 £ par an grâce à des modifications des écoprélèvements et à des soutiens tels que la remise sur les maisons chaudes.</p>
+            <span class="english-block">But it also noted that the number of poorer households that couldn't afford to keep their homes warm has fallen by half a million in two years, after the government reduced average household energy bills by about £150 a year through changes to green levies and support like the warm homes discount.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_14.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

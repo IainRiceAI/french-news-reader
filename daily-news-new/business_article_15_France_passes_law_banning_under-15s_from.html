@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>France passes law banning under-15s from social media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>France passes law banning under-15s from social media</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 22 Jul 2026 03:50:55 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cq56l9p4y93o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The law will require social media platforms in France to verify all users age from January.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.39" data-end="18.82">
+            <p class="french-block">Le Parlement français a approuvé une loi interdisant les réseaux sociaux aux moins de 15 ans à partir de janvier 2027, ce qui en fait le premier pays européen à interdire l'accès des jeunes aux plateformes.</p>
+            <span class="english-block">France's parliament has approved a law to ban social media for under-15s from January 2027, making it the first European country to block young people from the platforms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.82" data-end="31.18">
+            <p class="french-block">La loi obligera tout le monde en France à vérifier son âge pour accéder aux réseaux sociaux et intervient alors que le Royaume-Uni et l'UE développent leurs propres limites en réponse aux préoccupations concernant la santé mentale des enfants.</p>
+            <span class="english-block">The law will mean everyone in France must verify their age to access social media and comes as the UK and EU are developing their own limits in response to concerns for children's mental health.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.18" data-end="39.46">
+            <p class="french-block">Le président français Emmanuel Macron a salué cette décision, qu'il s'était engagé à introduire pour marquer la fin de sa décennie au pouvoir.</p>
+            <span class="english-block">French President Emmanuel Macron has welcomed the move, which he had pledged to introduce to mark the end of his decade in office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.46" data-end="50.06">
+            <p class="french-block">Alors que les sceptiques remettent en question la viabilité de la loi, le gouvernement a insisté sur le fait que les outils en ligne permettant de mettre en place des contrôles d'âge sont efficaces et sûrs.</p>
+            <span class="english-block">While sceptics have questioned the law's viability, the government has insisted the online tools to put the age checks in place are effective and safe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.06" data-end="57.41">
+            <p class="french-block">Le Sénat et l’Assemblée nationale françaises ont adopté cette interdiction mardi, malgré les critiques de certains à gauche.</p>
+            <span class="english-block">Both the French Senate and National Assembly adopted the ban on Tuesday, despite criticism from some on the left.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.41" data-end="60.24">
+            <p class="french-block">Il sera mis en œuvre en deux étapes :</p>
+            <span class="english-block">It will be implemented in two stages:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.24" data-end="69.22">
+            <p class="french-block">À partir de septembre, les personnes de moins de 15 ans ne pourront plus ouvrir de compte et une vérification de l'âge sera requise sur tous les nouveaux comptes.</p>
+            <span class="english-block">From September, people under 15 will not be able to open accounts and age verification will be required on all new accounts</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.22" data-end="78.74">
+            <p class="french-block">En janvier 2027, cette règle s'appliquera à tous les comptes existants : tout le monde en France devra prouver qu'il a plus de 15 ans pour utiliser les réseaux sociaux.</p>
+            <span class="english-block">In January 2027, this rule will apply to all existing accounts - meaning everyone in France will have to prove they are over 15 to use social media</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.74" data-end="90.26">
+            <p class="french-block">Une fois l’interdiction en vigueur, les plateformes de médias sociaux devront utiliser des outils de vérification de l’âge approuvés par le régulateur français de la vie privée, selon l’agence de presse Reuters.</p>
+            <span class="english-block">Once the ban is in place, social media platforms would need to use age-verification tools approved by the French privacy regulator, according to Reuters news agency.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.26" data-end="104.35">
+            <p class="french-block">Mais des inquiétudes ont été soulevées concernant la vie privée, l'efficacité des outils de vérification de l'âge, les risques que les jeunes les contournent et la rapidité avec laquelle l'interdiction a été conçue et mise en œuvre, rapporte l'Agence France Presse.</p>
+            <span class="english-block">But concerns have been raised over privacy, the efficacy of age-verification tools, the risks of young people bypassing them, and how quickly the ban has been designed and brought in, Agence France Presse reports.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.35" data-end="116.09">
+            <p class="french-block">La ministre française du Numérique, Anne Le Hénanff, a défendu la rapidité de mise en œuvre de la loi avant le vote "parce que des outils de vérification de l'âge existent déjà", a ajouté l'agence.</p>
+            <span class="english-block">French Digital Minister Anne Le Hénanff defended the speed of the law's implementation ahead of the vote "because age-verification tools already exist", the agency added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.09" data-end="121.27">
+            <p class="french-block">La France est le deuxième pays à introduire une interdiction, après l'Australie.</p>
+            <span class="english-block">France is the second country to introduce a ban, following Australia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.27" data-end="130.32">
+            <p class="french-block">Bien que l’Australie ait interdit l’accès aux réseaux sociaux aux moins de 16 ans en décembre, il est largement reconnu que beaucoup continuent à utiliser ces plateformes.</p>
+            <span class="english-block">Despite Australia banning under-16s from social media in December, it is widely acknowledged that many continue to use the platforms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.32" data-end="142.56">
+            <p class="french-block">En mars, la Commission australienne de sécurité électronique a annoncé que sept enfants sur dix âgés de moins de 16 ans qui possédaient un compte sur les réseaux sociaux avant l'interdiction y avaient encore « un certain accès ».</p>
+            <span class="english-block">In March, Australia's eSafety Commission announced seven out of 10 children aged under 16 who had a social media account before the ban still had "some access".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.56" data-end="154.54">
+            <p class="french-block">Compte tenu de cela, Tama Leaver, professeur d'études Internet à l'Université Curtin d'Australie occidentale, a déclaré à la BBC que l'interdiction avait "échoué" dans ses objectifs techniques.</p>
+            <span class="english-block">Given this, Professor of Internet Studies at Western Australia's Curtin University Tama Leaver told the BBC the ban has "failed" in its technical aims.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.54" data-end="163.44">
+            <p class="french-block">Mais, dit-il, l'étude a démontré avec succès qu'une interdiction « peut être réalisée », tout en la qualifiant de « un peu une expérience ».</p>
+            <span class="english-block">But, he says, it has successfully shown a ban "can be done" though classifies it as "a bit of an experiment".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.44" data-end="173.54">
+            <p class="french-block">Une leçon que d’autres pays peuvent tirer de cet exemple est que « les jeunes doivent faire partie de cette conversation » afin qu’une interdiction soit « faite avec eux » et non « pour eux ».</p>
+            <span class="english-block">One lesson other countries can learn from its example is that "young people need to be part of this conversation" so that a ban is "done with them" and not "to them".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.54" data-end="185.35">
+            <p class="french-block">Leaver a déclaré que l'interdiction française pourrait avoir plus de chances de réussir en raison de l'obligation pour chaque personne de vérifier son âge, mais que cela augmenterait également les risques pour la vie privée.</p>
+            <span class="english-block">Leaver said France's ban may have a higher chance of succeeding because of the requirement for every person to verify their age but that this will also increase risks to privacy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.35" data-end="197.5">
+            <p class="french-block">Les risques supplémentaires liés à l'interdiction incluent le fait de pousser les jeunes vers des espaces en ligne moins réglementés, de réduire leur consommation d'informations et leur autonomisation politique, a-t-il ajouté.</p>
+            <span class="english-block">Additional risks of the ban include pushing young people into less-regulated online spaces, reducing their news consumption and their political empowerment, he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.5" data-end="203.95">
+            <p class="french-block">La législation restreignant l'accès des jeunes aux médias sociaux s'est multipliée dans toute l'Europe ces derniers mois.</p>
+            <span class="english-block">Legislation restricting young people's access to social media has been ramping up around Europe in the past few months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.95" data-end="221.57">
+            <p class="french-block">En juin, l'ancien Premier ministre britannique Sir Keir Starmer a annoncé que les moins de 16 ans au Royaume-Uni seraient interdits d'accès aux médias sociaux à partir de janvier 2027. Un couvre-feu facultatif à minuit pour les adolescents britanniques âgés de 16 et 17 ans a également été annoncé.</p>
+            <span class="english-block">In June, former British Prime Minister Sir Keir Starmer announced under-16s in the UK will be banned from social media from January 2027. An optional midnight curfew for UK teens aged 16 and 17 was also announced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.57" data-end="234.19">
+            <p class="french-block">En mai, la présidente de la Commission, Ursula von der Leyen, a proposé un « report des médias sociaux » pour les enfants en Europe et a déclaré qu'une nouvelle législation pourrait être proposée dans quelques mois.</p>
+            <span class="english-block">In May, Commission President Ursula von der Leyen proposed a "social media delay" for children in Europe and has said new legislation could be put forward in months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.19" data-end="239.47">
+            <p class="french-block">L'interdiction des réseaux sociaux pour les moins de 16 ans en Australie a-t-elle fonctionné ?</p>
+            <span class="english-block">Did Australia's under-16s social media ban work?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.47" data-end="245.16">
+            <p class="french-block">Interdiction des réseaux sociaux : audacieuse et brutale, mais pas de solution miracle</p>
+            <span class="english-block">Social media ban - bold and blunt, but no silver bullet</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.16" data-end="252.31">
+            <p class="french-block">« Étape majeure » : les députés français votent en faveur du projet de loi interdisant les réseaux sociaux aux moins de 15 ans</p>
+            <span class="english-block">'Major step': French MPs vote in favour of bill to ban social media for under-15s</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_15.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

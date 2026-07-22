@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parts of the UK move closer to drought</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Parts of the UK move closer to drought</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 21 Jul 2026 13:46:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/cjwx0xv571eo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Eight areas across England are now in prolonged dry weather – the stage before drought.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="5.9" data-end="12.74">
+            <p class="french-block">La terre sèche et craquelée est déjà visible dans certaines régions du Royaume-Uni, comme ici dans le Cambridgeshire.</p>
+            <span class="english-block">Dry, cracked earth is already evident in some parts of the UK, such as here in Cambridgeshire</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.74" data-end="21.72">
+            <p class="french-block">Certaines parties du sud, du centre et de l'est de l'Angleterre sont désormais proches de la sécheresse, selon le National Drought Group, externe.</p>
+            <span class="english-block">Parts of southern, central and eastern England are now close to drought, according to the National Drought Group, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.72" data-end="39.38">
+            <p class="french-block">Depuis lundi, l'East Anglia, les West Midlands, le Devon, les Cornouailles et les îles Scilly, le Lincolnshire et le Northamptonshire, le Hertfordshire et Londres, le Wessex, la Tamise, le Solent et les South Downs sont dans un « temps sec prolongé », l'étape précédant la sécheresse.</p>
+            <span class="english-block">As of Monday, East Anglia, the West Midlands, Devon, Cornwall and the Isles of Scilly, Lincolnshire and Northamptonshire, Hertfordshire and London, Wessex, Thames, Solent and the South Downs, are in "prolonged dry weather", the stage before drought.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.38" data-end="49.63">
+            <p class="french-block">Le groupe, qui rassemble le Met Office, le Syndicat national des agriculteurs, les compagnies des eaux et d'autres organismes d'experts, a fait cette annonce mardi.</p>
+            <span class="english-block">The group, which brings together the Met Office, the National Farmers' Union, water companies and other expert bodies, made the announcement on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.63" data-end="62.06">
+            <p class="french-block">Cela survient alors que 10,1 millions de personnes supplémentaires seront touchées par une interdiction des tuyaux d'arrosage, Thames Water annonçant une interdiction des tuyaux d'arrosage pour tous ses clients à partir de jeudi.</p>
+            <span class="english-block">It comes as a further 10.1 million people are to be impacted by a hosepipe ban, as Thames Water announces a hosepipe ban for all its customers from Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.06" data-end="75.26">
+            <p class="french-block">La dernière annonce signifie que plus de 20 millions de personnes vivront sous le coup d’une interdiction d’utiliser des tuyaux d’arrosage d’ici la fin de cette semaine. L’agriculture et la faune sauvage subissent également des conséquences.</p>
+            <span class="english-block">The latest announcement means that more than 20 million people will be living under hosepipe bans by the end of this week. Agriculture and wildlife are also experiencing consequences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.26" data-end="87.12">
+            <p class="french-block">La sécheresse - simplement définie comme un manque d'eau - n'a pas de seuil officiel, mais le Groupe national contre la sécheresse évaluera les conditions pour décider si une telle situation doit être déclarée.</p>
+            <span class="english-block">Drought - simply defined as a lack of water - has no official threshold criteria, but the National Drought Group will assess conditions to decide if one should be declared.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.12" data-end="98.38">
+            <p class="french-block">Cette évaluation prendra en compte le manque de précipitations, les impacts sur l'agriculture et la faune, la probabilité d'incendies de forêt et les faibles réserves d'eau et les niveaux des rivières.</p>
+            <span class="english-block">This assessment will consider lack of rainfall, impacts on agriculture and wildlife,  the likelihood of wildfires, and low reserves of water and river levels.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.38" data-end="114.12">
+            <p class="french-block">Outre le manque de précipitations, les températures élevées qui font évaporer l’eau du sol contribuent également à cette situation. Elle peut également être influencée par les activités humaines telles que la déforestation, l’agriculture intensive et la consommation excessive.</p>
+            <span class="english-block">As well as a lack of rainfall, a contributory factor is high temperatures which evaporate water from soil. It can be influenced, too, by human activity such as deforestation, intensive farming and excessive consumption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.12" data-end="125.04">
+            <p class="french-block">Selon le Met Office, contrairement à la plupart des autres phénomènes météorologiques extrêmes, la sécheresse a tendance à s'accumuler avec le temps et peut durer de quelques semaines à plusieurs années.</p>
+            <span class="english-block">According to the Met Office, external, unlike most other extreme weather, drought tends to build up over time and can last from as little as a few weeks to several years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.04" data-end="143.26">
+            <p class="french-block">L'approvisionnement public en eau est sous pression, la demande augmentant jusqu'à 30 % lors des jours les plus chauds de juillet. Sept compagnies des eaux ont mis en œuvre ou annoncé de futures interdictions d'arrosage afin de réduire la pression exercée sur les usines de traitement et de stockage pendant les périodes de pointe de la demande.</p>
+            <span class="english-block">There is pressure on public water supplies with demand increasing by up to 30% on the hottest days this July. Seven water companies have implemented or announced future hosepipe bans to reduce the strain on treatment works and storage during peak demand.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.26" data-end="150.77">
+            <p class="french-block">Un tuyau d’arrosage peut consommer mille litres d’eau par heure, soit plus qu’une famille de quatre personnes n’en consommera en une journée.</p>
+            <span class="english-block">A hosepipe can use a thousand litres of water an hour, more than a family of four will use in a day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.77" data-end="159.79">
+            <p class="french-block">Les agriculteurs ont dû commencer leurs récoltes tôt et des avertissements ont été émis selon lesquels les rendements céréaliers pourraient être affectés par le manque de pluie.</p>
+            <span class="english-block">Farmers have had to begin their harvests early and there have been warnings that cereal yields may be affected by the lack of rain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.79" data-end="173.45">
+            <p class="french-block">Les agriculteurs et les producteurs « travaillent sans relâche pour récolter les récoltes précoces, arroser les fruits et légumes et prendre soin de leur bétail », selon Paul Tompkins, vice-président du Syndicat national des agriculteurs.</p>
+            <span class="english-block">Farmers and growers are "working around the clock to harvest crops which have come early, keep fruit and vegetables watered, and care for their livestock", according to Paul Tompkins, deputy president of the National Farmers' Union.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.45" data-end="190.68">
+            <p class="french-block">« Certaines parties du pays, en particulier à l'est et au sud, ont connu des précipitations exceptionnellement faibles ce printemps et cet été », a-t-il déclaré, ce qui pourrait signifier « une autre récolte difficile et coûteuse après les impacts météorologiques extrêmes de 2024 et 2025 ».</p>
+            <span class="english-block">"Parts of the country, particularly in the east and south, have seen exceptionally low rainfall this spring and summer," he said, which could mean, "another difficult and expensive harvest after extreme weather impacts in both 2024 and 2025".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.68" data-end="197.74">
+            <p class="french-block">Dans de nombreuses régions du Royaume-Uni, les agriculteurs doivent s'adapter pour protéger le bétail et les cultures.</p>
+            <span class="english-block">Farmers in many parts of the UK are having to adapt to protect livestock and crops</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.74" data-end="209.76">
+            <p class="french-block">Les débits des rivières ont diminué ces dernières semaines en Angleterre selon l'Environment Agency, externe, avec 87% des captages désormais "en dessous de la normale à des niveaux exceptionnellement bas".</p>
+            <span class="english-block">River flows have decreased in recent weeks in England according to the Environment Agency, external, with 87% of catchments now at "below normal to exceptionally low levels".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.76" data-end="218.45">
+            <p class="french-block">Les rivières Avon dans le Hampshire, Cam, Derwent dans le Yorkshire, Swale, Tone, Wye et Yare sont exceptionnellement basses.</p>
+            <span class="english-block">The Rivers Avon in Hampshire, Cam, Derwent in Yorkshire, Swale, Tone, Wye and Yare are exceptionally low.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.45" data-end="232.44">
+            <p class="french-block">Le stockage national des réservoirs est inférieur de 5 % à la moyenne à long terme. Les niveaux des eaux souterraines connaissent une baisse saisonnière habituelle, mais les niveaux sont particulièrement bas dans les Cotswolds et les Wessex Downs.</p>
+            <span class="english-block">National reservoir storage is 5% lower than the long-term average. Groundwater levels are seeing a usual seasonal decline but there are notably low levels in the Cotswolds and Wessex Downs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.44" data-end="250.42">
+            <p class="french-block">Selon le National Drought Group, d’ici 2055, l’Angleterre devra trouver 5 milliards de litres d’eau supplémentaires par jour pour répondre à la demande d’approvisionnement public en eau. Les compagnies des eaux investissent dans dix nouveaux réservoirs et explorent le dessalement qui consiste à traiter l'eau de mer.</p>
+            <span class="english-block">According to the National Drought Group, by 2055 England will need to find an additional 5 billion litres of water a day to meet demand for public water supply. Water companies are investing in ten new reservoirs and exploring desalination which involves treating seawater.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.42" data-end="272.78">
+            <p class="french-block">Jusqu'à présent, l'été a été exceptionnellement chaud et sec dans une grande partie du Royaume-Uni, avec trois vagues de chaleur généralisées et la plus longue série de jours secs dans le centre de l'Angleterre depuis 1995. L'Angleterre, le Pays de Galles et l'est de l'Écosse ont été les régions les plus sèches ces dernières semaines, et cela fait suite à un printemps très sec dans des régions similaires.</p>
+            <span class="english-block">Summer so far has been exceptionally hot and dry across much of the UK, with three widespread heatwaves and the longest run of dry days in central England since 1995.  England, Wales and eastern Scotland have been the driest areas over recent weeks, and this follows a very dry spring in similar regions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.78" data-end="286.13">
+            <p class="french-block">L'Angleterre n'a reçu que 3 % de ses précipitations moyennes à long terme en juillet, le sud et l'est de l'Angleterre n'ayant reçu aucune pluie. Wisley, dans le Surrey, a connu 33 jours secs consécutifs.</p>
+            <span class="english-block">England has received only 3% of its long-term average July rainfall with the south and east of England seeing no rain at all. Wisley in Surrey has seen 33 consecutive dry days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="286.13" data-end="295.39">
+            <p class="french-block">Jusqu'à présent cet été, les précipitations ont été inférieures à la moyenne dans l'ensemble du Royaume-Uni, mais il existe un grand contraste régional.</p>
+            <span class="english-block">Rainfall so far this summer has been below average across the UK as a whole, but there has been large regional contrast.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.39" data-end="312.65">
+            <p class="french-block">Jusqu'au milieu de l'été, le 15 juillet, certaines parties de l'est et du nord-est de l'Angleterre n'avaient reçu que 26 % des précipitations estivales totales attendues. Les régions du nord et de l’ouest de l’Écosse en ont cependant enregistré plus que la moyenne pendant la première moitié de l’été.</p>
+            <span class="english-block">Up to the middle of summer - 15 July - parts of eastern and north-eastern England had received just 26% of their total expected summer rainfall. Areas of northern and western Scotland had more than average for the first half of the summer, though.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.65" data-end="327.6">
+            <p class="french-block">Au Pays de Galles, où seulement 5 % des précipitations de juillet sont tombées, Natural Resources Wales a placé les régions les plus touchées du nord et du sud-est dans un « statut de temps sec prolongé », la première étape de son plan de lutte contre la sécheresse.</p>
+            <span class="english-block">In Wales, where just 5% of July rainfall has fallen, Natural Resources Wales has moved the worst affected regions in the north and south-east into "prolonged dry weather status", the first step in its drought plan.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.6" data-end="340.63">
+            <p class="french-block">Des comparaisons sont faites avec l'été dernier, lorsque la sécheresse a été déclarée dans une grande partie de l'Angleterre, du Pays de Galles et de l'est de l'Écosse. Cela s’est officiellement terminé il y a à peine quatre mois.</p>
+            <span class="english-block">Comparisons are being made with last summer, when drought was declared across much of England, Wales and eastern Scotland. It officially ended just four months ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.63" data-end="351.24">
+            <p class="french-block">Cette année, la sécheresse ne s'est pas développée aussi rapidement car de fortes pluies ont réalimenté nos aquifères, nos rivières et nos réservoirs au cours d'un automne et d'un hiver très humides.</p>
+            <span class="english-block">This year, drought has not developed as quickly because heavy rainfall recharged our aquifers, rivers and reservoirs during a very wet autumn and winter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.24" data-end="364.99">
+            <p class="french-block">Cependant, le Centre britannique pour l'écologie et l'hydrologie affirme que les sécheresses soudaines, externes avec une transition soudaine entre des conditions humides et sèches, sont « susceptibles de se produire plus souvent et d'être plus intenses ».</p>
+            <span class="english-block">However, the UK Centre for Ecology and Hydrology says flash droughts, external with a sudden transition between wet and dry conditions are "likely to happen more often, and be more intense".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="364.99" data-end="382.8">
+            <p class="french-block">Alors que les effets du changement climatique d’origine humaine se poursuivent, le Met Office s’attend à ce que nos étés deviennent plus chauds et plus secs à l’avenir. En fait, d’ici 2070, nos étés pourraient être jusqu’à 60 % plus secs et 1 à 6 °C plus chauds qu’en 1990.</p>
+            <span class="english-block">As the effects of human-induced climate change continue, the Met Office expects our summers to become hotter and drier, external in the future. In fact, by 2070, our summers could be up to 60% drier and 1-6C warmer compared to 1990.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="382.8" data-end="390.38">
+            <p class="french-block">La semaine à venir apportera très peu de précipitations dans la plupart des endroits, à l'exception du nord-ouest de l'Écosse.</p>
+            <span class="english-block">The week ahead brings very little rainfall to most places away from north-west Scotland</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.38" data-end="409.1">
+            <p class="french-block">La haute pression reste en charge pour le reste de cette semaine, ce qui signifie qu’il n’y a pas de précipitations significatives pendant au moins les cinq prochains jours. Nous avons pu observer quelques averses en milieu de semaine, en particulier près des côtes du sud-est de l'Angleterre et de l'East Anglia, ainsi que du nord de l'Écosse.</p>
+            <span class="english-block">High pressure stays in charge for the rest of this week, meaning no significant rainfall for at least the next five days. We could see a few midweek showers  especially near coasts in south-east England and East Anglia, as well as northern Scotland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="409.1" data-end="431.26">
+            <p class="french-block">Tout au long du week-end, des fronts météorologiques porteurs de pluie tenteront de se déplacer depuis le nord-ouest, mais la majeure partie de ces pluies tomberont probablement sur certaines parties de l'Irlande du Nord et de l'Écosse. À mesure que les fronts se dirigent vers le sud, ils pourraient s’éteindre, ce qui signifierait peu ou pas de précipitations dans les endroits qui en ont le plus besoin, au sud et à l’est.</p>
+            <span class="english-block">Through the weekend, rain-bearing weather fronts will try to move in from the north-west, but most of this rain is likely to fall across parts of Northern Ireland and Scotland. As the fronts push south, they may fizzle out, meaning little or no rainfall for the places that need it most, in the south and east.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="431.26" data-end="443.45">
+            <p class="french-block">Quant au reste de l’été, il est trop loin pour en être sûr, mais certains indices suggèrent que le temps pourrait rester principalement sec et chaud, en particulier dans le sud, même si des orages estivaux sont possibles.</p>
+            <span class="english-block">As for the rest of summer, it is too far off to know for sure, but there are hints that things could stay mainly dry and warm, especially in the south, although summer thunderstorms are possible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="443.45" data-end="448.99">
+            <p class="french-block">Tenez-vous au courant des dernières prévisions sur le site Web ou l'application BBC Weather.</p>
+            <span class="english-block">Keep up to date with the latest forecast on the BBC Weather website or app.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="448.99" data-end="453.46">
+            <p class="french-block">L’été britannique a-t-il changé au point de devenir méconnaissable ?</p>
+            <span class="english-block">Has the British summer changed beyond recognition?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_23.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
