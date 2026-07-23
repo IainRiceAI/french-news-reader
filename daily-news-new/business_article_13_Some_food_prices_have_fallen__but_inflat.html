@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some food prices have fallen – but inflation expected to rise from here</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Some food prices have fallen – but inflation expected to rise from here</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 22 Jul 2026 10:10:01 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ckg4xj8j5vjo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: June's fall in inflation will be welcomed by the new prime minister but analysts warn the fall is temporary.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.75" data-end="13.44">
+            <p class="french-block">L'ONS a déclaré que les prix des produits alimentaires tels que le chocolat et le bœuf baissaient.</p>
+            <span class="english-block">The ONS said food products such as chocolate and beef were falling in price</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.44" data-end="22.78">
+            <p class="french-block">Les prix des denrées alimentaires augmentent à leur rythme le plus lent depuis près de deux ans, alors que le coût de certains produits de base tels que la margarine et le sucre a baissé.</p>
+            <span class="english-block">Food prices are rising at their slowest rate in nearly two years, as the cost of some staples such as margarine and sugar have gone down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.78" data-end="33.82">
+            <p class="french-block">Les guerres de prix dans les supermarchés ont contribué à faire baisser les prix au cours de l'année jusqu'en juin, affirme l'industrie, alors que les détaillants s'efforcent d'attirer les clients avec des offres d'été.</p>
+            <span class="english-block">Supermarket price wars have helped drive down prices in the year to June, the industry says, as retailers work to tempt customers with summer deals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.82" data-end="49.01">
+            <p class="french-block">L'inflation au Royaume-Uni est tombée à 2,6 % sur l'année jusqu'en juin, contre 2,8 % sur l'année jusqu'en mai, selon l'Office des statistiques nationales (ONS), en grande partie sous l'effet de la baisse des prix du carburant et des produits alimentaires.</p>
+            <span class="english-block">Inflation in the UK overall has fallen to 2.6% in the year to June, down from 2.8% in the year to May, according to the Office for National Statistics (ONS), driven largely by lower fuel and food prices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.01" data-end="61.54">
+            <p class="french-block">Le chiffre de juin sera bien accueilli par le nouveau Premier ministre Andy Burnham et son gouvernement, mais les analystes préviennent que la baisse est temporaire, car la hausse des prix de l'énergie en juillet devrait faire remonter l'inflation.</p>
+            <span class="english-block">June's figure will be welcomed by new Prime Minister Andy Burnham and his government, but analysts warn the fall is temporary, as higher energy prices in July are expected to push inflation back up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.54" data-end="72.36">
+            <p class="french-block">La baisse des coûts du carburant – en particulier la baisse des prix du diesel – a également fait baisser l’inflation, les prix à la pompe ayant chuté pour la première fois depuis le début de la guerre au Moyen-Orient.</p>
+            <span class="english-block">Lower fuel costs - particularly lower diesel prices - also pushed inflation down, with prices at the pump falling for the first time since the start of the war in the Middle East.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.36" data-end="80.76">
+            <p class="french-block">Les coûts des vêtements ont également diminué en raison des soldes d'été, de nombreux détaillants offrant des remises plus importantes que l'année dernière.</p>
+            <span class="english-block">Clothing costs fell as well due to the summer sales, with many retailers offering larger discounts than last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.76" data-end="92.3">
+            <p class="french-block">L'inflation des produits alimentaires et des boissons non alcoolisées a diminué de 0,2 % d'un mois à l'autre, le sucre, le chocolat et les confiseries ayant enregistré la plus forte baisse de prix.</p>
+            <span class="english-block">Food and non-alcoholic beverage inflation fell by 0.2% month-to-month, with sugar, chocolate and confectionery seeing the largest drop in price.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.3" data-end="112.92">
+            <p class="french-block">En ce qui concerne l'inflation sur l'année, l'inflation des prix de la viande de bœuf et de veau est passée de 9,4 % sur 12 mois jusqu'en mai à 5,1 % sur l'année jusqu'en juin, tandis que les abats comestibles, qui comprennent des éléments comme le foie, les rognons et la langue, ont ralenti de 9,2 % à 3,4 % sur la même période.</p>
+            <span class="english-block">Looking at inflation over the year, beef and veal price inflation eased from 9.4% in the 12 months to May to 5.1% in the year to June, while edible offal - which includes things like liver, kidneys and tongue - slowed from 9.2% to 3.4% over the same period.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.92" data-end="129.34">
+            <p class="french-block">Certains autres produits alimentaires étaient moins chers, selon les données de l'ONS. Les pizzas et les quiches, par exemple, ont chuté de 6,7 % sur un an jusqu'en juin. La margarine a chuté de 1,9 % au cours de la même période.</p>
+            <span class="english-block">Some other food items were cheaper, according to ONS data. Pizza and quiches, for example, fell by 6.7% in the year to June. Margarine dropped by 1.9% in the same period.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.34" data-end="139.44">
+            <p class="french-block">L’inflation alimentaire a souvent un décalage allant jusqu’à 13 mois en raison de la chaîne d’approvisionnement, de sorte que les effets de la guerre en Iran pourraient encore se faire sentir.</p>
+            <span class="english-block">Food inflation often has a lag of up to 13 months due to the supply chain, so any effects from the war in Iran could still be yet to come.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.44" data-end="149.4">
+            <p class="french-block">Les prix du carburant à la pompe ont chuté en juin après que les États-Unis et l’Iran ont convenu de suspendre les opérations militaires et d’autoriser la réouverture du détroit d’Ormuz.</p>
+            <span class="english-block">Fuel prices at the pump fell in June after the US and Iran agreed to halt military operations and allow the key Strait of Hormuz to re-open.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.4" data-end="157.82">
+            <p class="french-block">Mais la récente reprise des hostilités et une nouvelle hausse des prix du pétrole brut signifient que l’inflation pourrait à nouveau s’envoler dans les mois à venir.</p>
+            <span class="english-block">But the recent resumption of hostilities and a new jump in crude oil prices means inflation could spike again in the coming months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.82" data-end="166.82">
+            <p class="french-block">Le British Retail Consortium (BRC) a déclaré que la baisse de l'inflation alimentaire était due à "une concurrence intense entre les supermarchés".</p>
+            <span class="english-block">The British Retail Consortium (BRC) said lower food inflation was driven by "intense competition between supermarkets".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.82" data-end="179.76">
+            <p class="french-block">"Si les détaillants veulent maintenir des prix abordables pour les consommateurs à long terme, le gouvernement doit prendre des mesures pratiques pour réduire le coût quotidien des affaires", a déclaré Harvir Dhillon, économiste du BRC.</p>
+            <span class="english-block">"If retailers are to keep prices affordable for consumers in the long run, the Government needs to take practical steps to lower the everyday cost of doing business," BRC economist Harvir Dhillon said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.76" data-end="188.3">
+            <p class="french-block">"Andy Burnham a pris des mesures immédiates pour alléger la pression sur les budgets des ménages ; il doit désormais chercher à faire de même pour les entreprises."</p>
+            <span class="english-block">"Andy Burnham has taken immediate action to ease pressure on household budgets; he must now look to do the same for businesses."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.3" data-end="202.06">
+            <p class="french-block">Le nouveau Premier ministre s'est engagé à faire du coût de la vie une priorité de son gouvernement, et le nouveau chancelier John Healey a déclaré que la baisse du taux d'inflation était "une nouvelle que les familles veulent entendre", mais "il reste encore beaucoup à faire".</p>
+            <span class="english-block">The new prime minister has pledged to make the cost of living a priority for his government, and new Chancellor John Healey said the lower rate of inflation was "news families want to hear" but "there is much more to do".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.06" data-end="209.98">
+            <p class="french-block">Le gouvernement a annoncé mercredi matin que le plafond des tarifs des bus en Angleterre serait ramené à 2 £ en janvier.</p>
+            <span class="english-block">The government announced on Wednesday morning that the bus fare cap in England will be brought back down to £2 in January.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.98" data-end="218.52">
+            <p class="french-block">C'était après que Burnham a annoncé que la TVA sur les factures d'électricité nationales serait supprimée pour le reste de l'année à partir d'octobre.</p>
+            <span class="english-block">That was after Burnham announced that VAT on domestic electricity bills would be scrapped for the rest of the year from October.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.52" data-end="229.54">
+            <p class="french-block">Healey a déclaré : « Ces deux changements sont gagnant-gagnant. Ils contribuent à maintenir l'inflation à un niveau bas, tout en aidant les gens à se permettre les produits de première nécessité. »</p>
+            <span class="english-block">Healey said: "Both these changes are a win-win. They help keep inflation down, while helping people afford the essentials."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.54" data-end="232.27">
+            <p class="french-block">Qu’arrive-t-il aux prix au Royaume-Uni ?</p>
+            <span class="english-block">What is happening to UK prices?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.27" data-end="237.98">
+            <p class="french-block">Qu’arrive-t-il aux taux d’intérêt au Royaume-Uni et qu’est-ce que cela signifie pour les prêts hypothécaires ?</p>
+            <span class="english-block">What's happening to UK interest rates and what does it mean for mortgages?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.98" data-end="254.83">
+            <p class="french-block">Le dernier chiffre d'inflation reste supérieur à l'objectif de 2% de la Banque d'Angleterre, mais Suren Thiru, économiste en chef à l'Institut des comptables agréés d'Angleterre et du Pays de Galles, a déclaré qu'une augmentation des taux lors de la réunion de la Banque la semaine prochaine était peu probable.</p>
+            <span class="english-block">The latest inflation figure is still above the Bank of England's target of 2%, but Suren Thiru, chief economist at the Institute of Chartered Accountants in England and Wales, said a rate increase when the Bank meets next week is unlikely.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.83" data-end="264.43">
+            <p class="french-block">"Les décideurs voudront peut-être évaluer l'impact de toute mesure annoncée par le nouveau Premier ministre avant de décider de resserrer ou non la politique", a-t-il déclaré.</p>
+            <span class="english-block">"Rate-setters may want to assess the impact of any measures announced by the new Prime Minister before deciding whether to tighten policy again," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.43" data-end="277.01">
+            <p class="french-block">Il a ajouté que la hausse de l'inflation "deviendrait probablement un problème économique plus important" pour Healey, "réduisant sa marge budgétaire, augmentant les coûts d'emprunt et augmentant la volatilité des marchés financiers".</p>
+            <span class="english-block">He added that rising inflation will "likely become a more notable economic headache" for Healey, "squeezing his fiscal headroom, raising borrowing costs, and increasing financial market volatility".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="277.01" data-end="284.83">
+            <p class="french-block">YaelSelfin, économiste en chef de KPMG, a déclaré que le chiffre de juin serait probablement le plus bas de l'année.</p>
+            <span class="english-block">Yael Selfin, KPMG's chief economist, said the June figure is likely to be the lowest of the year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.83" data-end="293.88">
+            <p class="french-block">La hausse des factures d'énergie, provoquée par une hausse du plafond des prix d'Ofgem, fera probablement grimper à nouveau l'inflation, a-t-elle déclaré.</p>
+            <span class="english-block">Higher energy bills, brought about by a rise in Ofgem's price cap, will likely push inflation up again, she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.88" data-end="307.87">
+            <p class="french-block">"Bien que les impacts du choc énergétique initial aient été jusqu'à présent relativement limités, si les prix de l'énergie restent élevés plus longtemps, les effets de second tour risquent de se répercuter sur les salaires et plus largement sur l'ensemble de l'économie."</p>
+            <span class="english-block">"Although the impacts from the initial energy shock have so far been relatively limited, if energy prices remain high for longer, second-round effects risk feeding through into wages and more broadly across the economy."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="307.87" data-end="322.32">
+            <p class="french-block">Sarah Coles, responsable des finances personnelles chez AJ Bell, a déclaré : « Les marchés ne s'attendent toujours qu'à une seule hausse des taux d'ici la fin de 2026, mais elle devrait intervenir en septembre, et une autre pourrait suivre en février.</p>
+            <span class="english-block">Sarah Coles, head of personal finance at AJ Bell, said: "The markets are still only expecting a single rate hike by the end of 2026, but it's expected to hit in September, with another potentially following in February.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.32" data-end="335.5">
+            <p class="french-block">"Cela signifie que les taux les plus généreux sont susceptibles d'augmenter légèrement. Si vous êtes à la recherche d'un nouveau compte d'épargne, cela vaut la peine de garder l'œil ouvert pour une bonne affaire et d'agir rapidement tant qu'elle dure."</p>
+            <span class="english-block">"It means the most generous rates are likely to edge up. If you're in the market for a new savings account, it's worth keeping your eye open for a bargain and acting fast while it lasts."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.5" data-end="348.6">
+            <p class="french-block">Mais elle a ajouté : "Il y a de mauvaises nouvelles pour quiconque est à la recherche d'un nouveau prêt hypothécaire. Les taux hypothécaires avaient baissé partout, mais cette semaine, ils ont augmenté de manière significative."</p>
+            <span class="english-block">But she added: "There's miserable news for anyone in the market for a new mortgage. Mortgage rates had been falling across the board, but this week has seen them jump significantly."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="348.6" data-end="356.4">
+            <p class="french-block">« Je ne peux pas me permettre d'allumer le four » : 7,4 millions de foyers ont du mal à acheter des produits de première nécessité</p>
+            <span class="english-block">'I can't afford to turn the oven on': 7.4m households struggling to buy essentials</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="356.4" data-end="361.63">
+            <p class="french-block">La TVA va être réduite sur les factures d'électricité des ménages en octobre</p>
+            <span class="english-block">VAT to be cut from household electricity bills in October</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.63" data-end="369.72">
+            <p class="french-block">Burnham plafonne la plupart des tarifs de bus en Angleterre à 2 £ mais se retire d'une éventuelle réduction de l'impôt sur le revenu</p>
+            <span class="english-block">Burnham caps most bus fares in England at £2 but pulls back from possible income tax cut</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_13.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

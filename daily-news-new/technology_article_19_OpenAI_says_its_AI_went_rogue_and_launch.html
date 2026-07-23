@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI says its AI went rogue and launched 'unprecedented' cyber-attack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>OpenAI says its AI went rogue and launched 'unprecedented' cyber-attack</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 22 Jul 2026 11:40:11 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c3ek3gvdnj3o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: It is one of the first publicly disclosed cyber-attacks carried out by AI without direct human involvement.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.69" data-end="18.41">
+            <p class="french-block">OpenAI a révélé que certains de ses modèles d'IA les plus avancés sont devenus voyous et ont piraté une start-up après en avoir perdu le contrôle lors d'un test de sécurité.</p>
+            <span class="english-block">OpenAI has revealed some of its most advanced AI models went rogue and hacked a start-up after it lost control of them during a security test.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.41" data-end="31.61">
+            <p class="french-block">Le créateur de ChatGPT a déclaré que son agent – ​​un système d'IA qui peut fonctionner seul après instruction humaine – était testé dans un environnement contrôlé mais, après avoir découvert des faiblesses, a pu échapper aux limites du test.</p>
+            <span class="english-block">The ChatGPT-maker said its agent - an AI system which can operate alone after human instruction – was being tested in a controlled environment but, after finding weaknesses, was able to escape the test limits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.61" data-end="40.27">
+            <p class="french-block">Ils ont ciblé Hugging Face, l'un des plus grands centres de partage de modèles d'IA au monde, pour accéder à certains systèmes internes de l'entreprise.</p>
+            <span class="english-block">They targeted Hugging Face, one of the world's largest hubs for sharing AI models, gaining access to some internal company systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.27" data-end="54.1">
+            <p class="french-block">OpenAI a déclaré que l'incident était "sans précédent", externe, et menait une enquête aux côtés de Hugging Face, dont le patron Clément Delangue a déclaré dans un post sur X qu'il était "hallucinant que tout cela se soit produit de manière autonome".</p>
+            <span class="english-block">OpenAI said the incident was "unprecedented", external, and it was conducting an investigation alongside Hugging Face, whose boss Clement Delangue said in a post on X it was "mind-blowing that all of this happened autonomously".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.1" data-end="61.94">
+            <p class="french-block">"L'enquête est en cours et nous partagerons davantage d'enseignements sur ce qui pourrait être le premier incident de ce type", a ajouté Delangue.</p>
+            <span class="english-block">"The investigation is ongoing, and we'll share more learnings from what might be the first incident of its kind," Delangue added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.94" data-end="75.67">
+            <p class="french-block">Un porte-parole du gouvernement a déclaré que l'AI Security Institute du Royaume-Uni étudiait le comportement du système d'IA observé lors de l'incident et qu'il continuait à travailler avec OpenAI et d'autres laboratoires pour améliorer les garanties.</p>
+            <span class="english-block">A government spokesperson said the UK's AI Security Institute was studying the behaviour from the AI system seen in the incident and was continuing to work with OpenAI and other labs to improve safeguards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.67" data-end="86.23">
+            <p class="french-block">Ils ont déclaré que les organisations devraient renforcer leurs cyberdéfenses en prenant des mesures telles que l'inscription au programme de certification Cyber ​​Essentials soutenu par le gouvernement.</p>
+            <span class="english-block">They said organisations should step up their cyber-defences by taking steps such as enrolling in the government-backed Cyber Essentials certification scheme.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.23" data-end="104.47">
+            <p class="french-block">Gina Neff, directrice du Minderoo Center for Technology and Democracy à l'Université de Cambridge, a déclaré à l'émission Today de BBC Radio 4 que les tests de sécurité - appelés bacs à sable - sont "censés être des environnements sécurisés dans lesquels vous pouvez voir de quoi les modèles sont capables".</p>
+            <span class="english-block">Gina Neff, head of the Minderoo Centre for Technology and Democracy at the University of Cambridge, told BBC Radio 4's Today programme that the security tests - called sandboxes - are "supposed to be secure environments where you can see what the models are capable of".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.47" data-end="111.17">
+            <p class="french-block">"Dans ce cas, il semble qu'OpenAI n'ait pas créé un bac à sable suffisamment sécurisé", a-t-elle ajouté.</p>
+            <span class="english-block">"In this case, it looks like OpenAI didn't make a secure enough sandbox," she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.17" data-end="120.79">
+            <p class="french-block">Au lieu de cela, les agents ont créé leur propre cyber-attaque contre le bac à sable lui-même, trouvant une vulnérabilité qui leur a permis d'échapper aux restrictions.</p>
+            <span class="english-block">Instead, the agents created their own cyber-attack against the sandbox itself, finding a vulnerability which allowed them to escape the restrictions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.79" data-end="129.19">
+            <p class="french-block">Une fois à l’extérieur, l’IA a identifié Hugging Face comme la source probable des réponses qu’elle cherchait lors du test et a tenté d’y accéder.</p>
+            <span class="english-block">Once outside, the AI identified Hugging Face as a likely source of the answers they were seeking in the test, and tried to gain access.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.19" data-end="144.0">
+            <p class="french-block">Neil Lawrence, professeur d'apprentissage automatique à l'Université de Cambridge, l'a qualifié d'« exploit impressionnant », mais a averti qu'il « correspondait tout à fait aux capacités connues de la génération actuelle » de modèles d'IA de grande puissance.</p>
+            <span class="english-block">Neil Lawrence, Professor of machine learning at Cambridge University, called it an "impressive feat", but cautioned it "falls well within the known capabilities of the current generation" of high-powered AI models.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.0" data-end="154.94">
+            <p class="french-block">Il a souligné qu'OpenAI cherche à s'introduire en bourse et fait face à une pression intense de la part de la société rivale Anthropic, qui a fait la une des journaux avec son propre puissant outil d'IA, Mythos.</p>
+            <span class="english-block">He pointed out that OpenAI is looking to list itself on the stock market, and faces intense pressure from rival firm Anthropic, which has made headlines with its own powerful AI tool, Mythos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.94" data-end="163.44">
+            <p class="french-block">"OpenAI est désormais en train de rattraper son retard, ils tentent de démontrer les capacités de leurs propres systèmes en matière de cybersécurité."</p>
+            <span class="english-block">"OpenAI are now playing catch-up, they are trying to demonstrate their own systems' capabilities in cyber-security."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.44" data-end="170.52">
+            <p class="french-block">"Cela nous montre qu'OpenAI n'est pas capable de déployer sa propre technologie en toute sécurité", a-t-il ajouté.</p>
+            <span class="english-block">"It shows us that OpenAI are not capable of safely deploying their own technology," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.52" data-end="183.65">
+            <p class="french-block">Dans sa première divulgation externe du piratage le 16 juillet, Hugging Face a déclaré qu'il était toujours en train d'évaluer si les données de clients ou de partenaires étaient affectées et qu'il contacterait les parties concernées si nécessaire.</p>
+            <span class="english-block">In its initial disclosure of the hack on 16 July, external, Hugging Face said it was still assessing whether any customer or partner data was affected and would contact affected parties if necessary.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.65" data-end="191.09">
+            <p class="french-block">Il a déclaré avoir désormais corrigé les vulnérabilités mises en évidence par l'incident et reconstruit les systèmes concernés.</p>
+            <span class="english-block">It said it has now closed the vulnerabilities highlighted by the incident and rebuilt the affected systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.09" data-end="196.66">
+            <p class="french-block">"Les outils offensifs autonomes basés sur l'IA ne sont plus théoriques", a-t-il déclaré.</p>
+            <span class="english-block">"Autonomous, AI-driven offensive tooling is no longer theoretical," it said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.66" data-end="207.34">
+            <p class="french-block">« Défendre une plateforme en ligne signifie désormais traiter la surface des données et du modèle comme une surface d'attaque de premier ordre, et utiliser l'IA pour la défense pour suivre le rythme.</p>
+            <span class="english-block">"Defending an online platform now means treating the data and model surface as a first-class attack surface, and using AI on defence to keep pace.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.34" data-end="211.92">
+            <p class="french-block">"Nous continuerons à investir là-bas et à partager ce que nous apprenons."</p>
+            <span class="english-block">"We will keep investing there, and keep sharing what we learn."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.92" data-end="222.96">
+            <p class="french-block">L’incident a soulevé de nouvelles questions sur les capacités des systèmes d’IA avancés et sur la question de savoir si les protections existantes sont suffisantes à mesure que la technologie devient plus puissante.</p>
+            <span class="english-block">The incident has prompted fresh questions about the capabilities of advanced AI systems and whether existing safeguards are sufficient as the technology becomes more powerful.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.96" data-end="238.56">
+            <p class="french-block">Spencer Starkey, cadre de la société de cybersécurité SonicWall, a déclaré à la BBC que l'incident a clairement montré que les organisations devaient « renforcer » leurs propres défenses et « traiter la cyber-résilience comme une priorité opérationnelle essentielle ».</p>
+            <span class="english-block">Spencer Starkey, an executive at cyber-security firm SonicWall, told the BBC the incident made it clear organisations needed to "step up" their own defences and "treat cyber resilience as a core operational priority".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.56" data-end="248.16">
+            <p class="french-block">"La vérité inconfortable est que trop d'organisations continuent de se défendre à vitesse humaine tandis que les adversaires passent à la vitesse de la machine", a-t-il déclaré.</p>
+            <span class="english-block">"The uncomfortable truth is that too many organisations are still defending at human speed while adversaries are escalating to machine speed," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.16" data-end="262.18">
+            <p class="french-block">Pendant ce temps, Travis Lelle, ingénieur principal en sécurité au sein de la société de conseil en cybersécurité Guidepoint Security, a déclaré que la mise à jour marquait un « moment qui donne à réfléchir en matière de cybersécurité ».</p>
+            <span class="english-block">Meanwhile Travis Lelle, principal security engineer at cyber-security consulting firm Guidepoint Security, said the update marked a "sobering moment in cyber-security".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="262.18" data-end="266.59">
+            <p class="french-block">"Cela met en évidence une asymétrie connue", a-t-il déclaré.</p>
+            <span class="english-block">"This highlights a known asymmetry," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="266.59" data-end="276.38">
+            <p class="french-block">"Les agents offensifs ne sont soumis à aucune contrainte, tandis que les meilleurs outils défensifs sont enfermés derrière des garde-fous qui ne peuvent pas comprendre le contexte."</p>
+            <span class="english-block">"Offensive agents are unconstrained, while the best defensive tools are locked behind guardrails that cannot understand context."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.38" data-end="285.14">
+            <p class="french-block">Mais Jake Moore, conseiller mondial en cybersécurité chez ESET, a déclaré que cette annonce pourrait également avoir une dimension concurrentielle.</p>
+            <span class="english-block">But Jake Moore, global cyber-security advisor at ESET, said the announcement could also have a competitive dimension.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.14" data-end="294.48">
+            <p class="french-block">Il a fait valoir qu'OpenAI pourrait chercher à mettre en valeur ses propres capacités d'IA alors que son rival Anthropic attire une attention croissante pour son modèle Claude Mythos.</p>
+            <span class="english-block">He argued OpenAI may be seeking to highlight its own AI capabilities as rival Anthropic attracts growing attention for its Claude Mythos model.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.48" data-end="302.38">
+            <p class="french-block">"Cela pose la question de savoir si OpenAI poursuit potentiellement le rêve marketing d'Anthropic ces derniers temps", a-t-il déclaré.</p>
+            <span class="english-block">"It does pose the question that OpenAI are potentially chasing the marketing dream of Anthropic of late," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="302.38" data-end="315.41">
+            <p class="french-block">Cela survient une semaine après que la start-up chinoise d'IA Moonshot a dévoilé Kimi K3 - un nouveau modèle d'intelligence artificielle massif qui, selon elle, pourrait rivaliser avec les plus grandes entreprises américaines.</p>
+            <span class="english-block">It comes a week after Chinese AI start-up Moonshot unveiled Kimi K3 - a massive new artificial intelligence model it said could rival top US firms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.41" data-end="320.06">
+            <p class="french-block">Apple poursuit OpenAI et ses employés pour vol de secrets commerciaux</p>
+            <span class="english-block">Apple sues OpenAI, its employees claiming theft of trade secrets</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.06" data-end="323.52">
+            <p class="french-block">Qu’est-ce que Claude Mythos et quels risques présente-t-il ?</p>
+            <span class="english-block">What is Claude Mythos and what risks does it pose?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="323.52" data-end="327.12">
+            <p class="french-block">Comment empêcher les agents IA de devenir des voyous</p>
+            <span class="english-block">How to stop AI agents going rogue</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_19.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'What was their crime?': BBC visits Iran school where strike killed 120 children</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>'What was their crime?': BBC visits Iran school where strike killed 120 children</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 23 Jul 2026 04:49:24 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cewrx0ldlkko?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Nearly five months on, grief is still raw as a teacher and a mother recall the horror of the attack in Minab.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.41" data-end="15.12">
+            <p class="french-block">"Quel était leur crime ?" : la BBC visite une école iranienne où une frappe a tué 120 enfants</p>
+            <span class="english-block">'What was their crime?': BBC visits Iran school where strike killed 120 children</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.12" data-end="19.15">
+            <p class="french-block">Ce rapport contient des descriptions pénibles de décès d'enfants.</p>
+            <span class="english-block">This report contains distressing descriptions of the deaths of children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.15" data-end="35.54">
+            <p class="french-block">Amaineh Nademi parcourt prudemment ce qui reste de son ancienne école. Des morceaux de béton brisé pendent de manière précaire à l’étage supérieur endommagé. Quelques salles de classe sont encore debout, leurs murs aux couleurs vives étant décorés de ballons peints et de fleurs.</p>
+            <span class="english-block">Amaineh Nademi walks carefully through what is left of her old school. Chunks of broken concrete hang precariously from the damaged upper floor. A few classrooms are still standing, their brightly coloured walls decorated with painted balloons and flowers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.54" data-end="46.73">
+            <p class="french-block">L'enseignant de 33 ans sait exactement où se trouvait l'endroit : les classes de filles à l'étage supérieur, les classes de garçons en bas, le bureau du directeur, la salle de prière.</p>
+            <span class="english-block">The 33-year-old teacher knows exactly what was where - the girls' classrooms on the upper floor, the boys' classrooms below, the headteacher's office, the prayer room.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.73" data-end="56.23">
+            <p class="french-block">Les décombres sont tout ce qui reste de sa classe, où elle enseignait aux filles de première année de l'école primaire Shajareh Tayyebeh à Minab, une petite ville du sud de l'Iran.</p>
+            <span class="english-block">Rubble is all that remains of her classroom, where she taught first-grade girls at Shajareh Tayyebeh Primary School in Minab, a small city in southern Iran.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.23" data-end="61.87">
+            <p class="french-block">Des chaises pour enfants et des murs décorés sont encore visibles dans les salles de classe endommagées.</p>
+            <span class="english-block">Children's chairs and decorated walls can still be seen in the damaged classrooms</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.87" data-end="75.79">
+            <p class="french-block">Le 28 février, aux premières heures de la guerre américano-israélienne contre l'Iran, une frappe contre l'école a transformé un samedi matin ordinaire en l'une des tragédies déterminantes du conflit - et son incident le plus meurtrier pour les civils.</p>
+            <span class="english-block">On 28 February, in the opening hours of the US-Israeli war with Iran, a strike on the school transformed an ordinary Saturday morning into one of the conflict's defining tragedies - and its deadliest single incident for civilians.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.79" data-end="85.8">
+            <p class="french-block">Au total, 156 personnes, dont 120 enfants, ont été confirmées tuées, dont une femme enceinte et son enfant à naître, selon le parquet de Minab.</p>
+            <span class="english-block">In total, 156 people, including 120 children, have been confirmed killed, including a pregnant woman and her unborn child, according to the Minab prosecutor's office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.8" data-end="97.51">
+            <p class="french-block">Les experts affirment que les preuves indiquent que les forces américaines ont frappé l'école, qui se trouve à côté d'un complexe du CGRI qui, selon les images satellite, a été frappé à plusieurs reprises.</p>
+            <span class="english-block">Experts say evidence indicates that US forces hit the school, which is next to an IRGC compound that satellite images show was struck several times.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="97.51" data-end="108.77">
+            <p class="french-block">Les États-Unis n'ont pas reconnu leur responsabilité, même si les médias américains ont rapporté que les enquêteurs militaires estiment qu'il est probable que les forces américaines ont mené cette frappe involontairement.</p>
+            <span class="english-block">The US has not admitted responsibility, though US media have reported that military investigators believe it is likely that US forces carried out the strike unintentionally.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.77" data-end="115.46">
+            <p class="french-block">Les filles apprenaient à l'étage supérieur de l'école primaire tandis que les salles de classe des garçons étaient en contrebas.</p>
+            <span class="english-block">Girls were taught on the upper floor of the primary school while the boys' classrooms were below</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.46" data-end="127.1">
+            <p class="french-block">La douleur de ce qui s’est passé ici est encore vive. Les enseignants nous disent qu'ils prient sur place tous les jours. Les secouristes recherchent toujours les restes des personnes tuées ici.</p>
+            <span class="english-block">The pain of what happened here is still raw. Teachers tell us they pray at the site every day. Rescue workers are still searching for remains of those killed here.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.1" data-end="139.94">
+            <p class="french-block">Une grande partie de l’étage supérieur s’est effondrée dans celle du dessous. "On ne peut pas appeler cela une école", dit Amaineh, mais simplement "des murs qui sentent la mort, le chagrin et le sang qui a été versé ici".</p>
+            <span class="english-block">Much of the upper floor collapsed into the one below. "You can't call it a school," says Amaineh – just "walls that smell of death, grief and the blood that was shed here".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.94" data-end="153.65">
+            <p class="french-block">Les autorités iraniennes tenaient à ce que nous visitions l'école – cela prouve, disent-elles, qu'une campagne présentée par Washington comme une attaque contre l'appareil militaire et de sécurité iranien a au contraire infligé un coût dévastateur aux civils.</p>
+            <span class="english-block">The Iranian authorities were keen for us to visit the school – it is evidence, they say, that a campaign presented by Washington as an attack on Iran's military and security apparatus has instead inflicted a devastating cost on civilians.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.65" data-end="158.04">
+            <p class="french-block">La journée d'école avait commencé comme d'habitude, dit Amaineh.</p>
+            <span class="english-block">The school day had begun as usual, Amaineh says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.04" data-end="170.5">
+            <p class="french-block">Parce que c'était le mois sacré islamique du Ramadan, les enfants se rassemblaient dans la salle de prière pour réciter le Coran, se souvient-elle, avant de commencer à enseigner à ses élèves une nouvelle lettre de l'alphabet persan.</p>
+            <span class="english-block">Because it was the Islamic holy month of Ramadan, the children gathered inside the prayer hall to recite the Quran, she recalls, before she began teaching her pupils a new letter of the Persian alphabet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.5" data-end="183.07">
+            <p class="french-block">Mais, alors que les premières attaques de la guerre se déroulaient à travers l'Iran, elle dit que le directeur a annoncé la fermeture de l'école et que les enseignants ont commencé à contacter les parents, les exhortant à récupérer leurs enfants.</p>
+            <span class="english-block">But, as the first attacks of the war unfolded across Iran, she says the headteacher announced the school would be closing, and teachers began contacting parents, urging them to collect their children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.07" data-end="197.71">
+            <p class="french-block">Seuls cinq des 15 élèves de première année d'Amaineh étaient restés dans sa classe à l'étage supérieur, raconte-t-elle, lorsqu'elle a entendu pour la première fois une explosion non loin de l'école. Elle dit qu'elle était dans le couloir et qu'elle s'est précipitée vers les enfants.</p>
+            <span class="english-block">Only five of Amaineh's 15 first-grade pupils were left in her classroom on the upper floor, she says, when she first heard an explosion not far from the school. She says she was in the corridor and rushed back for the children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.71" data-end="209.09">
+            <p class="french-block">"Au moment où je partais, un missile a frappé l'école", raconte Amaineh. "Quelque chose m'a frappé la tête et celle de mes élèves. Nous avons tous été envoyés voler."</p>
+            <span class="english-block">"Just as I went to leave, a missile struck the school," says Amaineh. "Something hit my head and my students' heads - we were all sent flying."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.09" data-end="219.53">
+            <p class="french-block">Puis, raconte-t-elle, une épaisse fumée noire a rempli la salle de classe : "Je ne pouvais même pas voir les élèves que je tenais dans mes bras. Nous ne pouvions plus respirer."</p>
+            <span class="english-block">Then, she says, thick black smoke filled the classroom: "I couldn't even see the pupils I was holding in my arms. We couldn't breathe."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.53" data-end="228.91">
+            <p class="french-block">Elle dit se souvenir d'avoir entendu une autre explosion, ainsi que des cris, des enfants qui pleuraient, puis l'école elle-même s'effondrer – « détruite d'un seul coup ».</p>
+            <span class="english-block">She says she remembers hearing another explosion, as well as the sounds of screaming, children crying and then the school itself collapsing – "destroyed all at once".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.91" data-end="232.82">
+            <p class="french-block">"Le sang coulait de moi et des étudiants", ajoute-t-elle.</p>
+            <span class="english-block">"Blood was pouring from me and the students," she adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.82" data-end="238.94">
+            <p class="french-block">L'enseignante Amaineh Nademi dit qu'il y avait une fumée si épaisse qu'elle ne pouvait pas voir les enfants qu'elle tenait</p>
+            <span class="english-block">Teacher Amaineh Nademi says there was smoke so thick she could not see the children she was holding</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.94" data-end="255.89">
+            <p class="french-block">Lorsque la fumée s'est brièvement dissipée, elle dit qu'elle a confié les enfants blessés aux personnes en dessous et qu'elle a escaladé les incendies et les décombres en direction de la porte de l'école, où elle a vu une foule de parents. Beaucoup s'étaient précipités sur les lieux sans même mettre de chaussures, se souvient-elle.</p>
+            <span class="english-block">When the smoke briefly cleared, she says she passed the injured children down to people below and clambered past fire and rubble towards the school gate, where she saw a crowd of parents. Many had rushed to the site without even putting shoes on, she recalls.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.89" data-end="267.17">
+            <p class="french-block">Elle dit qu'elle ne comprenait pas pourquoi les parents couraient vers l'école, croyant à son choc et à sa confusion que tous les autres s'étaient déjà échappés du bâtiment : "Je ne savais pas qu'ils étaient tous sous les décombres".</p>
+            <span class="english-block">She says she could not understand why the parents were running towards the school, believing in her shock and confusion that everyone else had already escaped the building: "I didn't know that all of them were under the rubble."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.17" data-end="293.02">
+            <p class="french-block">Amaineh enseignait en première année à l'école depuis six ans. Elle énumère les noms des élèves et collègues tués ce jour-là : Adrina de sa classe de CP, qui, selon elle, a été tuée dans les escaliers avec sa mère, Fatemeh, en CE2, et bien d'autres, y compris des élèves de sixième à qui elle se souvient avoir enseigné l'alphabet, ainsi que le directeur, le directeur adjoint, le professeur d'éducation physique et le professeur de Coran.</p>
+            <span class="english-block">Amaineh had taught first grade at the school for six years. She lists the names of students and colleagues killed that day: Adrina from her first grade class, who she says was killed on the stairs with her mother, Fatemeh in second grade, and many others including students in sixth grade she remembers teaching the alphabet to, as well as the headteacher, deputy head, PE teacher and Quran teacher.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.02" data-end="297.31">
+            <p class="french-block">En quelques minutes, les secouristes ont commencé à arriver.</p>
+            <span class="english-block">Within minutes, emergency workers began arriving.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.31" data-end="312.22">
+            <p class="french-block">Reza Besharati, un employé de la Société iranienne du Croissant-Rouge, affirme qu'il a été parmi les premiers secouristes sur les lieux et qu'il a trouvé les routes proches de l'école remplies de circulation alors que des familles désespérées se précipitaient à la recherche de leurs enfants.</p>
+            <span class="english-block">Reza Besharati, a worker with the Iranian Red Crescent Society, says he was among the first rescuers on the scene, and found the roads near the school filled with traffic as desperate families rushed to look for their children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.22" data-end="324.34">
+            <p class="french-block">Minab est une petite ville. Alors que Reza se frayait un chemin à travers la foule et pénétrait dans les décombres, il dit avoir reconnu des personnes qu'il connaissait, notamment certains de ses propres proches.</p>
+            <span class="english-block">Minab is a small city. As Reza made his way through the crowd and into the wreckage, he says he recognised people he knew, including some of his own relatives.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="324.34" data-end="333.38">
+            <p class="french-block">"Nous avons commencé à retrouver les gens, pensant que peut-être quelqu'un serait en vie", dit-il. "Mais malheureusement, personne ne l'était."</p>
+            <span class="english-block">"We started to find the people, thinking maybe someone would be alive," he says. "But unfortunately, nobody was."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.38" data-end="339.1">
+            <p class="french-block">Reza Besharati dit qu'il ne peut pas oublier ce qu'il a vu lors de la fouille du bâtiment effondré</p>
+            <span class="english-block">Reza Besharati says he cannot forget what he saw when searching the collapsed building</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.1" data-end="353.69">
+            <p class="french-block">Il dit que les morts ont été retrouvés gravement défigurés : "Peut-être juste une main, peut-être juste une jambe… Personne n'avait un corps complet." De nombreuses familles reconnaissaient leurs enfants à leurs chaussures ou à leurs vêtements, ajoute-t-il.</p>
+            <span class="english-block">He says the dead were found grimly disfigured: "Maybe just a hand, maybe just a leg…  Nobody had a complete body." Many families recognised their children by their shoes or clothing, he adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.69" data-end="365.78">
+            <p class="french-block">L'un des proches de Reza cherchait et suppliait : « Trouve juste mon enfant, trouve mon fils », dit-il. "Je ne pouvais pas lui dire que son fils n'était pas en vie. Nous pleurions tous."</p>
+            <span class="english-block">One of Reza's relatives was searching and begging "just find my child, find my son", he says. "I couldn't tell her that her son was not alive. We were all just crying."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.78" data-end="378.41">
+            <p class="french-block">Reza dit que les vues qu'il a vues en fouillant le bâtiment effondré ne l'ont pas quitté : « Je n'ai pas pu dormir pendant quelques jours », dit-il. "Quand je ferme les yeux… je me souviens juste de ces choses que j'ai vues ici."</p>
+            <span class="english-block">Reza says the sights he saw while searching the collapsed building have not left him: "I couldn't sleep for a few days," he says. "When I close my eyes… I just remember these things that I have seen here."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="378.41" data-end="386.04">
+            <p class="french-block">Lorsque les détails de l’attaque ont été révélés, le président Donald Trump a d’abord blâmé l’Iran, sans fournir de preuves.</p>
+            <span class="english-block">As details of the strike emerged, President Donald Trump first blamed Iran, without providing evidence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="386.04" data-end="406.97">
+            <p class="french-block">Le secrétaire à la Défense, Pete Hegseth, a déclaré que l'armée enquêtait et que les forces américaines « ne ciblent jamais de cibles civiles ». Il a ensuite annoncé une enquête de plus haut niveau, menée par un officier extérieur au Commandement central américain (Centcom). L’administration Trump n’a toujours pas publié les résultats.</p>
+            <span class="english-block">Defense Secretary Pete Hegseth said the military was investigating and that US forces "never target civilian targets". He later announced a higher-level investigation, led by an officer from outside US Central Command (Centcom). The Trump administration has still not released the findings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="406.97" data-end="423.96">
+            <p class="french-block">Plusieurs médias américains ont rapporté - citant des personnes proches de l'enquête militaire américaine - que les résultats préliminaires ont conclu qu'il était probable que des données obsolètes fournies par la Defense Intelligence Agency des États-Unis aient conduit à considérer l'école comme faisant partie d'un site militaire.</p>
+            <span class="english-block">Several US media outlets have reported - citing people familiar with the US military investigation - that preliminary findings concluded it was likely that outdated data supplied by the US Defence Intelligence Agency led to the school being treated as part of a military site.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="423.96" data-end="454.51">
+            <p class="french-block">L’analyse vidéo d’experts a montré que le complexe du CGRI situé à côté de l’école a été touché par un missile Tomahawk à guidage de précision – un type de missile de croisière que ni Israël ni l’Iran ne possèdent à notre connaissance. Des images satellite ont montré que l'école et plusieurs bâtiments de l'enceinte avaient été touchés, et des vidéos vérifiées ont montré que la zone avait été touchée par une série de frappes. Les cartes militaires américaines confirment également les opérations américaines dans le sud de l’Iran – y compris dans la région de Minab – à l’époque.</p>
+            <span class="english-block">Expert video analysis has shown the IRGC complex next to the school was hit by a precision guided Tomahawk missile - a type of cruise missile that neither Israel nor Iran is known to possess. Satellite imagery showed the school and several buildings in the compound had been hit, and verified videos showed the area was hit by a series of strikes. US military maps also confirm American operations in southern Iran – including the Minab area - at the time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="454.51" data-end="464.86">
+            <p class="french-block">Des images satellite historiques montrent que la zone scolaire faisait auparavant partie du complexe du CGRI, mais qu’elle est murée depuis 2016 et possède ses propres entrées et cours.</p>
+            <span class="english-block">Historical satellite images show the school area was previously part of the IRGC complex, but has been walled off since 2016 and has its own entrances and yards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="464.86" data-end="478.68">
+            <p class="french-block">En outre, des informations indiquant que le site était une école étaient accessibles au public en ligne. Des instantanés archivés des sites Internet des sections filles et garçons de l'école – pris dans les mois précédant l'attaque – incluent l'adresse du site.</p>
+            <span class="english-block">Also, information indicating the site was a school was publicly available online. Archived snapshots of the websites for the girls' and boys' sections of the school – taken in the months before the attack - include the address of the site.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="478.68" data-end="496.03">
+            <p class="french-block">Le chef du Centcom a déclaré à un comité du Congrès en mai, sans donner plus de détails, que l'enquête était « complexe » car l'école se trouvait « sur une base active de missiles de croisière du CGRI » – ce que le ministère iranien des Affaires étrangères a rejeté comme une « fabrication sans fondement ».</p>
+            <span class="english-block">The head of Centcom told a congressional committee in May, without giving further detail, that the investigation was "complex" as the school was "on an active IRGC cruise missile base" – which Iran's foreign ministry rejected as a "baseless fabrication".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="496.03" data-end="520.66">
+            <p class="french-block">Le CGRI gère certaines installations communautaires et médicales en plus de ses vastes activités militaires, sécuritaires et économiques. Les résidents locaux ont déclaré à BBC Persan que le site était auparavant une base pour une brigade navale du CGRI, mais qu'ils pensaient que son utilisation militaire avait cessé depuis plusieurs années. Des photographies montrent que les bâtiments de l'enceinte comprenaient une clinique et un lave-auto.</p>
+            <span class="english-block">The IRGC runs some community and medical facilities in addition to its extensive military, security and economic activities. Local residents have told BBC Persian that the site had previously been a base for an IRGC naval brigade, but that they believed its military use had ceased several years ago. Photographs show buildings on the compound included a clinic and a car wash.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="520.66" data-end="532.54">
+            <p class="french-block">La BBC a contacté le ministère de la Défense et l'armée américaine pour obtenir leurs commentaires. Les responsables ont déclaré que l’enquête était en cours et qu’il n’y avait aucune autre mise à jour.</p>
+            <span class="english-block">The BBC approached the Department of Defense and the US military for comment. Officials said the investigation was ongoing and there were no further updates.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="532.54" data-end="538.99">
+            <p class="french-block">À quelques minutes en voiture de l'école en ruine se trouve le cimetière où sont enterrés de nombreux élèves et enseignants.</p>
+            <span class="english-block">A short drive from the ruined school is the cemetery where many of the pupils and teachers are buried.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="538.99" data-end="550.27">
+            <p class="french-block">Chaque soir, les familles se rassemblent près des tombes. Les mères essuient la poussière des photos de leurs enfants. Les parents s'assoient et prient longtemps après la tombée de la nuit.</p>
+            <span class="english-block">Every evening, families gather beside the graves. Mothers wipe dust from photographs of their children. Parents sit and pray long after darkness has fallen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="550.27" data-end="556.39">
+            <p class="french-block">Autour d’eux, des frères et sœurs jouent entre les pierres tombales de frères et sœurs dont la vie a été écourtée.</p>
+            <span class="english-block">Around them, brothers and sisters play between the headstones of siblings whose lives were cut short.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="556.39" data-end="561.5">
+            <p class="french-block">Setayesh, neuf ans, voulait devenir enseignante, dit sa mère</p>
+            <span class="english-block">Nine-year-old Setayesh wanted to be a teacher, her mother says</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="561.5" data-end="569.54">
+            <p class="french-block">Masoumeh Mehran Shekhabadi vient chaque jour rendre visite à sa fille Setayesh, âgée de neuf ans, et reste souvent tard dans la nuit.</p>
+            <span class="english-block">Masoumeh Mehran Shekhabadi comes to visit her nine-year-old daughter, Setayesh, every day, often staying long into the night.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="569.54" data-end="585.62">
+            <p class="french-block">Elle faisait partie des parents qui ont couru vers l'école après la grève. "Il n'y avait pas d'école", dit-elle, la voix brisée. "Il n'y avait que de la fumée, des cheveux d'enfants, une main d'un côté, un pied de l'autre. Ils avaient été mis en pièces."</p>
+            <span class="english-block">She was among the parents who ran to the school after the strike. "There was no school," she says, her voice breaking. "There was only smoke, children's hair, a hand on one side, a foot on the other. They had been torn to pieces."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="585.62" data-end="593.18">
+            <p class="french-block">Masoumeh ajoute : « Je n'arrêtais pas d'appeler, non seulement à Setayesh, mais à tous les enfants : 'Les enfants, où êtes-vous ?' »</p>
+            <span class="english-block">Masoumeh adds: "I kept calling out, not only to Setayesh, but to all the children: 'Children, where are you?'"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="593.18" data-end="611.59">
+            <p class="french-block">La famille de Setayesh n'a reçu la confirmation de sa mort que tôt le lendemain matin, dit Masoumeh. Elle se souvient qu'on lui a demandé à plusieurs reprises de quelle couleur les chaussettes l'enfant portait et qu'elle a répondu qu'elles étaient crème. Setayesh a ensuite été identifiée grâce à ses chaussettes, dit-elle.</p>
+            <span class="english-block">Setayesh's family did not receive confirmation of her death until the early hours of the following morning, Masoumeh says. She remembers being repeatedly asked what colour socks the child had been wearing, and replying that they were cream. Setayesh was then identified by her socks, she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="611.59" data-end="625.56">
+            <p class="french-block">La fillette de neuf ans voulait devenir enseignante, ajoute sa mère. "Elle alignait ses poupées sur le canapé et disait : 'Je suis ton professeur. Je suis à l'école primaire maintenant, donc je suis enseignante.'"</p>
+            <span class="english-block">The nine-year-old had wanted to be a teacher, her mother adds. "She would line up her dolls on the couch and say: 'I am your teacher. I'm in primary school now, so I am a teacher.'"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="625.56" data-end="636.62">
+            <p class="french-block">Comme pour de nombreux parents ici, le chagrin est désormais mêlé à la colère. "Que Trump soit détruit, afin que le sang de ces enfants ne soit pas gaspillé", a déclaré Masoumeh.</p>
+            <span class="english-block">As for many parents here, grief has become intertwined with anger. "May Trump be destroyed, so these children's blood is not wasted," Masoumeh says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="636.62" data-end="642.74">
+            <p class="french-block">Masoumeh dit se rappeler s'être précipitée vers l'école pour la trouver détruite et les enfants "mis en pièces"</p>
+            <span class="english-block">Masoumeh says she remembers rushing to the school to find it destroyed and children "torn to pieces"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="642.74" data-end="658.99">
+            <p class="french-block">Le gouvernement iranien a invoqué Minab à plusieurs reprises dans des discours, des forums internationaux et dans la couverture médiatique d'État - nommant même un avion transportant des négociateurs "Minab-168", en référence au bilan des morts précédemment donné par les responsables.</p>
+            <span class="english-block">Iran's government has repeatedly invoked Minab in speeches, international forums and state media coverage - even naming a plane carrying negotiators "Minab-168", in reference to the death toll previously given by officials.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="658.99" data-end="665.5">
+            <p class="french-block">L’attaque offre à la République islamique un puissant contre-récit à la description que Washington fait de sa campagne.</p>
+            <span class="english-block">The attack offers the Islamic Republic a powerful counter-narrative to Washington's description of its campaign.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="665.5" data-end="670.73">
+            <p class="french-block">Chaque soir, les familles visitent les tombes de leurs proches tués lors de la grève</p>
+            <span class="english-block">Every evening, families visit the graves of loved ones killed in the strike</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="670.73" data-end="689.95">
+            <p class="french-block">La guerre a divisé les Iraniens. Certains ont célébré le début des frappes aériennes, irrités par l'habitude du gouvernement d'arrêter des dissidents et d'utiliser la force meurtrière lors de vagues répétées de protestation. Ils espéraient que la pression militaire extérieure pourrait finalement affaiblir, voire faire tomber le régime.</p>
+            <span class="english-block">The war has divided Iranians. Some celebrated when the air strikes began, angered by the government's history of detaining dissidents and using lethal force during repeated waves of protest. They hoped military pressure from outside might finally weaken or even bring down the regime.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="689.95" data-end="706.85">
+            <p class="french-block">Certains opposants au gouvernement ont déclaré à la BBC qu'ils considéraient la frappe à Minab comme un coup dur. Cela a rendu impossible la poursuite de l’idée d’une guerre propre et chirurgicale et a permis aux autorités de se présenter comme les défenseurs du peuple iranien contre les attaques étrangères.</p>
+            <span class="english-block">Some opponents of the government have told the BBC they saw the strike at Minab as a huge blow. It made the idea of a clean, surgical war impossible to sustain and allowed the authorities to present themselves as the defenders of the Iranian people against foreign attack.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="706.85" data-end="712.85">
+            <p class="french-block">A Minab, Amaineh visite le cimetière, marchant parmi les tombes de ses anciens élèves.</p>
+            <span class="english-block">In Minab, Amaineh visits the cemetery, walking among the graves of her former pupils.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="712.85" data-end="721.49">
+            <p class="french-block">Sur un mur commémoratif voisin se trouvent les visages des enfants, du personnel et des parents qui ont quitté la maison ce samedi matin et ne sont jamais revenus.</p>
+            <span class="english-block">On a nearby memorial wall are the faces of the children, staff and parents who left home that Saturday morning and never returned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="721.49" data-end="726.46">
+            <p class="french-block">La mère de Setayesh est toujours assise à côté de la tombe de sa petite fille.</p>
+            <span class="english-block">Setayesh's mother still sits beside the grave of her little girl.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="726.46" data-end="739.8">
+            <p class="french-block">"Quel était le crime de ces enfants ? Portaient-ils des armes ? Un crayon, un livre, un cahier et un cartable. Ils n'avaient pas d'armes… Ils étaient partis apprendre", dit-elle.</p>
+            <span class="english-block">"What was these children's crime? Did they carry weapons? A pencil, a book, a notebook and a schoolbag. They had no weapons… They'd gone to learn," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="739.8" data-end="753.65">
+            <p class="french-block">Nawal Al-Maghafi fait un reportage depuis l'Iran à condition qu'aucun de ses reportages ne soit utilisé sur le service persan de la BBC. Ces restrictions s'appliquent à toutes les organisations médiatiques internationales opérant en Iran.</p>
+            <span class="english-block">Nawal Al-Maghafi is reporting from Iran on condition that none of her material is used on the BBC's Persian Service. These restrictions apply to all international media organisations operating in Iran.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_3.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
