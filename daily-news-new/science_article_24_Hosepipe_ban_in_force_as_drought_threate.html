@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosepipe ban in force as drought threatens - is your area affected?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Hosepipe ban in force as drought threatens - is your area affected?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 23 Jul 2026 14:01:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/crk661074ejo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: More than eight million households have been placed under hosepipe bans - which has raised questions about how effectively water resources are being managed.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.9" data-end="17.64">
+            <p class="french-block">Une sécheresse a été déclarée dans le nord du Pays de Galles et dans le bassin de la rivière Upper Severn, les vagues de chaleur successives ayant mis à rude épreuve les réserves d'eau.</p>
+            <span class="english-block">A drought has been declared in North Wales and the Upper Severn river basin as successive heatwaves have left water supplies under strain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.64" data-end="29.86">
+            <p class="french-block">Sans précipitations significatives dans les prochains jours, le Pays de Galles devrait enregistrer le mois de juillet le plus sec depuis le début des enregistrements il y a 190 ans, selon Natural Resources Wales.</p>
+            <span class="english-block">Without significant rainfall in the coming days, Wales is set to record the driest July since records began 190 years ago, according to Natural Resources Wales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.86" data-end="40.8">
+            <p class="french-block">L'été chaud et sec épuise les réserves d'eau et entraîne une forte demande dans tout le Royaume-Uni, avec plus de 20 millions de personnes en Angleterre et au Pays de Galles actuellement interdites d'arrosage.</p>
+            <span class="english-block">The hot, dry summer is depleting water supplies and driving high demand across the UK, with more than 20 million people in England and Wales currently under a hosepipe ban.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.8" data-end="49.2">
+            <p class="french-block">Cela signifie que les tuyaux d’arrosage ne peuvent pas être utilisés pour arroser les jardins, laver les véhicules et les fenêtres et remplir les piscines.</p>
+            <span class="english-block">This means hosepipes cannot be used for watering gardens, washing vehicles and windows and filling pools.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.2" data-end="58.13">
+            <p class="french-block">Mais si le printemps et le début de l'été ont vu les températures dépasser régulièrement les 30°C, l'hiver a été beaucoup plus humide que d'habitude.</p>
+            <span class="english-block">But while spring and early summer have seen temperatures regularly exceed 30C, winter was much wetter than usual.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.13" data-end="67.78">
+            <p class="french-block">Cela a soulevé des questions sur l’efficacité de la gestion des ressources en eau et sur la préparation du Royaume-Uni aux étés plus secs attendus en raison du changement climatique.</p>
+            <span class="english-block">It has raised questions about how effectively water resources are being managed, and whether the UK is prepared for drier summers expected with climate change.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.78" data-end="72.94">
+            <p class="french-block">Alors, comment se porte votre région et à quel point êtes-vous proche d’une sécheresse ?</p>
+            <span class="english-block">So how is your area doing and how close are you to a drought?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.94" data-end="96.82">
+            <p class="french-block">Il n’existe pas de définition unique de la sécheresse, mais elle commence souvent par une période de faibles précipitations. À mesure que le sol s’assèche, les cultures et la végétation peuvent commencer à avoir des difficultés. Si les conditions sèches persistent, les niveaux des rivières, des réservoirs et des eaux souterraines peuvent également baisser, ce qui exercera une pression sur les approvisionnements en eau.</p>
+            <span class="english-block">There is no single definition of drought, but it often begins with a period of low rainfall. As the ground dries out, crops and vegetation can begin to struggle. If dry conditions persist, rivers, reservoirs and groundwater levels can also fall, putting pressure on water supplies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.82" data-end="107.45">
+            <p class="french-block">Les organismes environnementaux de chaque pays du Royaume-Uni décident de déclarer une sécheresse ou une pénurie d'eau en évaluant les ressources en eau actuelles ainsi que les prévisions météorologiques.</p>
+            <span class="english-block">Environmental bodies in each UK nation decide whether to declare drought or water scarcity by assessing current water resources alongside weather forecasts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="107.45" data-end="112.58">
+            <p class="french-block">La sécheresse et la pénurie d’eau peuvent conduire à l’interdiction des tuyaux d’arrosage.</p>
+            <span class="english-block">Both drought and water scarcity can lead to hosepipe bans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.58" data-end="126.84">
+            <p class="french-block">Alors que la sécheresse est provoquée par un temps sec prolongé, la pénurie d’eau survient lorsque la demande en eau dépasse l’offre disponible. Cet été, des restrictions ont été introduites dans certaines régions pour aider à gérer la forte demande.</p>
+            <span class="english-block">While drought is driven by prolonged dry weather, water scarcity occurs when demand for water outstrips the available supply. This summer, restrictions have been introduced in some areas to help manage high demand.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.84" data-end="136.9">
+            <p class="french-block">Jusqu'à présent, huit compagnies des eaux britanniques ont annoncé l'interdiction des tuyaux d'arrosage : sept sont réparties dans le sud et l'est de l'Angleterre et une au Pays de Galles.</p>
+            <span class="english-block">So far, eight UK water companies have announced hosepipe bans - seven are spread across southern and eastern parts of England, and one is in Wales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.9" data-end="147.6">
+            <p class="french-block">Le nord du Pays de Galles et la Haute-Severn sont les seules régions en proie à la sécheresse, le reste du Pays de Galles connaissant un « temps sec prolongé » – la catégorie suivante en baisse.</p>
+            <span class="english-block">North Wales and Upper Severn are the only regions in drought, with the rest of Wales in "prolonged dry weather" - the next category down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.6" data-end="167.11">
+            <p class="french-block">En Angleterre, l'Agence pour l'Environnement a déclaré un temps sec prolongé dans de grandes parties du pays, notamment l'East Anglia, les West Midlands, le Devon, les Cornouailles et les îles Scilly, le Lincolnshire et le Northamptonshire, le Hertfordshire et Londres, le Wessex, la Tamise, ainsi que le Solent et les South Downs.</p>
+            <span class="english-block">In England, the Environment Agency has declared prolonged dry weather across large parts of the country, including East Anglia, the West Midlands, Devon, Cornwall and the Isles of Scilly, Lincolnshire and Northamptonshire, Hertfordshire and London, Wessex, Thames, and Solent and the South Downs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.11" data-end="173.23">
+            <p class="french-block">Le reste de l’Angleterre, principalement au nord, reste dans un statut « normal ».</p>
+            <span class="english-block">The remaining parts of England, mostly in the north, remain in "normal" status.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.23" data-end="178.7">
+            <p class="french-block">Pendant ce temps, il n’y a actuellement aucune sécheresse officielle en Irlande du Nord.</p>
+            <span class="english-block">Meanwhile, there are no official droughts currently in Northern Ireland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.7" data-end="183.24">
+            <p class="french-block">L'Écosse ne déclare pas de sécheresse mais surveille la « pénurie d'eau ».</p>
+            <span class="english-block">Scotland does not declare droughts but monitors "water scarcity".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.24" data-end="191.86">
+            <p class="french-block">Plusieurs régions de l’est de l’Écosse sont en « pénurie modérée », mais aucune n’entre dans la catégorie la plus extrême de « pénurie importante ».</p>
+            <span class="english-block">Several areas in eastern Scotland are in "moderate scarcity" but none are in the most extreme category of "significant scarcity".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.86" data-end="197.69">
+            <p class="french-block">Nos trois principales sources d’eau sont les rivières, les réservoirs et les profondeurs souterraines.</p>
+            <span class="english-block">Our three main sources of water are rivers, reservoirs and from deep underground.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.69" data-end="203.93">
+            <p class="french-block">Suite au temps chaud et sec, les débits des rivières étaient faibles en juin dans certaines parties du Royaume-Uni.</p>
+            <span class="english-block">Following the hot, dry weather, river flows were low in June for parts of the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.93" data-end="219.07">
+            <p class="french-block">"Sans précipitations significatives, nous pourrions constater des impacts croissants sur la faune, l'agriculture et les ressources en eau à mesure que l'été avance", a déclaré Steve Turner, hydrologue au Centre britannique pour l'écologie et l'hydrologie (UKCEH).</p>
+            <span class="english-block">"Without significant rainfall we could see increasing impacts on wildlife, agriculture and water resources as the summer progresses," said Steve Turner, a hydrologist at the UK Centre for Ecology & Hydrology (UKCEH).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.07" data-end="233.76">
+            <p class="french-block">En déclarant la sécheresse dans le nord du Pays de Galles et dans l'Upper Severn, Natural Resources Wales a déclaré que de nombreux débits de rivières dans la région étaient "exceptionnellement faibles" pour cette période de l'année, certains endroits connaissant des niveaux record pour juillet.</p>
+            <span class="english-block">When declaring drought in North Wales and Upper Severn, Natural Resources Wales said many river flows in the area are "exceptionally low" for the time of year, with some locations seeing record lows for July.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.76" data-end="246.43">
+            <p class="french-block">Les réservoirs constituent un élément crucial de l'approvisionnement en eau et les niveaux au Pays de Galles, en Irlande du Nord et en Écosse étaient tous normaux ou supérieurs aux attentes en juin, selon les dernières données disponibles.</p>
+            <span class="english-block">Reservoirs are a crucial part of water supplies and levels in Wales, Northern Ireland and Scotland were all normal or above expected in June, according to latest available data.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="246.43" data-end="255.94">
+            <p class="french-block">Les chiffres jusqu'à la mi-juillet montrent que les réservoirs d'Angleterre sont inférieurs aux niveaux moyens pour cette période de l'année, avec quelques variations à travers le pays.</p>
+            <span class="english-block">Figures up to mid-July show England's reservoirs are below average levels for the time of year, albeit with some variation across the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.94" data-end="261.07">
+            <p class="french-block">Le sud-est de l’Angleterre dépend davantage des eaux souterraines que des réservoirs.</p>
+            <span class="english-block">South-east England relies more heavily on groundwater than reservoirs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.07" data-end="268.3">
+            <p class="french-block">Les eaux souterraines proviennent des précipitations et sont naturellement stockées sous la surface dans les pores et les fractures des roches.</p>
+            <span class="english-block">Groundwater originates as rainfall and is naturally stored beneath the surface in the pore spaces and fractures in rocks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.3" data-end="279.65">
+            <p class="french-block">En juin, les niveaux des eaux souterraines étaient généralement égaux ou juste en dessous de la normale, après avoir été complétés par les pluies hivernales mais épuisés par un printemps plus sec dans la plupart des régions.</p>
+            <span class="english-block">In June, groundwater levels were generally at or just below normal, having been topped up by winter rainfall but depleted by a drier spring in most regions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.65" data-end="287.93">
+            <p class="french-block">Mais l’eau peut s’écouler plus lentement à travers certains types de roches que d’autres, et il faut parfois des années pour réagir pleinement aux conditions actuelles.</p>
+            <span class="english-block">But water can flow more slowly through some rock types than others, sometimes taking years to fully respond to current conditions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.93" data-end="301.61">
+            <p class="french-block">Ces réserves d'eau souterraine "réagissent plus lentement aux changements climatiques que les rivières, c'est pourquoi elles constituent un tampon utile pendant les périodes de sécheresse", a déclaré le professeur Alan MacDonald du British Geological Survey.</p>
+            <span class="english-block">These groundwater stores "respond more slowly to changes in the climate than rivers, which is why they provide a useful buffer during periods of drought", said Prof Alan MacDonald of the British Geological Survey.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="301.61" data-end="310.61">
+            <p class="french-block">C’est pourquoi les sécheresses des eaux souterraines dans le sud de l’Angleterre mettent généralement plus de temps à se développer, mais peuvent durer plus longtemps si elles se produisent.</p>
+            <span class="english-block">It is why groundwater droughts in the south of England generally take a longer time to develop but can be longer-lasting if they do occur.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.61" data-end="316.9">
+            <p class="french-block">Les sécheresses sont des phénomènes complexes, provoqués par un mélange de causes naturelles et humaines.</p>
+            <span class="english-block">Droughts are complex phenomena, driven by a mix of natural and human causes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="316.9" data-end="326.83">
+            <p class="french-block">Le Met Office s’attend à ce que le Royaume-Uni connaisse en moyenne des étés plus secs à l’avenir à mesure que le monde se réchauffe, bien qu’il n’y ait pas de tendance claire jusqu’à présent.</p>
+            <span class="english-block">The Met Office expects the UK to experience drier summers on average in future as the world warms, though there has been no clear trend so far.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.83" data-end="333.7">
+            <p class="french-block">Mais la hausse des températures peut jouer un rôle plus direct en attirant davantage d’humidité du sol par évaporation.</p>
+            <span class="english-block">But rising temperatures can play a more direct role by drawing extra moisture from the soil via evaporation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.7" data-end="351.62">
+            <p class="french-block">"Une atmosphère plus chaude a plus soif d'humidité, ce qui peut signifier que l'eau du sol, des rivières et des réservoirs s'épuise plus efficacement, conduisant à des sécheresses, des vagues de chaleur et des incendies de forêt plus rapides", a déclaré Richard Allan, professeur de science du climat à l'Université de Reading.</p>
+            <span class="english-block">"A warmer atmosphere is thirstier for moisture and this can mean water in the soil, rivers and reservoirs are depleted more effectively, leading to more rapidly onsetting droughts, heatwaves and wildfires," said Richard Allan, professor of climate science at the University of Reading.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.62" data-end="359.62">
+            <p class="french-block">Mais il existe d’autres facteurs qui déterminent si les conditions sèches entraînent des pénuries d’eau, notamment la manière dont nous utilisons l’eau.</p>
+            <span class="english-block">But there are other factors that determine whether dry conditions lead to water shortages, including how we use water.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="359.62" data-end="370.32">
+            <p class="french-block">Dans une étude historique sur le secteur de l’eau en Angleterre et au Pays de Galles, les compagnies des eaux ont été critiquées pour leur sous-investissement historique dans les infrastructures hydrauliques.</p>
+            <span class="english-block">In a landmark review into the water sector of England and Wales, water companies were criticised for historic underinvestment in water infrastructure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="370.32" data-end="382.54">
+            <p class="french-block">Dans le cadre des plans visant à remédier aux pénuries d'eau, le gouvernement et les compagnies des eaux prévoient neuf nouveaux réservoirs pour l'Angleterre d'ici 2050, en plus d'un en construction à Havant Thicket dans le Hampshire.</p>
+            <span class="english-block">As part of plans to address water shortages, the government and water companies are planning nine new reservoirs for England by 2050, in addition to one under construction at Havant Thicket in Hampshire.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="382.54" data-end="396.29">
+            <p class="french-block">Mais l'Agence pour l'Environnement a averti que des mesures visant à lutter contre les fuites d'eau et à contrôler la demande en eau – incluant potentiellement l'interdiction des tuyaux d'arrosage et davantage de compteurs intelligents – pourraient également être nécessaires en Angleterre.</p>
+            <span class="english-block">But the Environment Agency has warned that measures to tackle water leaks and control water demand - potentially including hosepipe bans and more smart meters - may be needed in England too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.29" data-end="408.74">
+            <p class="french-block">Les compagnies des eaux d'Écosse, du Pays de Galles et d'Irlande du Nord - qui sont toutes des organismes publics ou à but non lucratif - ont également déclaré qu'elles prenaient des mesures pour garantir leurs approvisionnements futurs.</p>
+            <span class="english-block">Water companies in Scotland, Wales and Northern Ireland - which are all public bodies or non-profit - also said they were taking steps to secure future supplies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="408.74" data-end="413.33">
+            <p class="french-block">Dites-nous comment vous êtes concerné par l'interdiction des tuyaux d'arrosage.</p>
+            <span class="english-block">Tell us how you're affected by the hosepipe ban.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="413.33" data-end="416.81">
+            <p class="french-block">Un guide très simple sur le changement climatique</p>
+            <span class="english-block">A really simple guide to climate change</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="416.81" data-end="424.06">
+            <p class="french-block">Comment le changement climatique aggrave les vagues de chaleur, les sécheresses, les incendies de forêt et les inondations</p>
+            <span class="english-block">How climate change worsens heatwaves, droughts, wildfires and floods</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="424.06" data-end="428.59">
+            <p class="french-block">« De plus en plus chaud » : le nouveau climat européen en sept graphiques</p>
+            <span class="english-block">'Hotter and hotter and hotter' - Europe's new climate in seven charts</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_24.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

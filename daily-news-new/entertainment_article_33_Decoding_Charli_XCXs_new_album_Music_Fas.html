@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoding Charli XCX's new album, Music, Fashion, Film</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Decoding Charli XCX's new album, Music, Fashion, Film</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 24 Jul 2026 00:09:40 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c151zp1p4qyo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The star's new album strips away artifice to examine her life after the phenomenal success of Brat.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.62" data-end="15.0">
+            <p class="french-block">Charli XCX est à la pointe de la pop depuis 10 ans et son nouvel album ajoute une touche rock au mix</p>
+            <span class="english-block">Charli XCX has been at pop's cutting edge for 10 years and her new album adds a rock sound to the mix</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="18.41">
+            <p class="french-block">Charli XCX était censé faire une pause.</p>
+            <span class="english-block">Charli XCX was supposed to be taking a break.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.41" data-end="28.2">
+            <p class="french-block">Son sixième album, Brat, était le genre de disque que l’on pourrait véritablement qualifier de définissant une époque, sans être accusé d’en exagérer l’importance.</p>
+            <span class="english-block">Her sixth album, Brat, was the sort of record you could genuinely call era-defining, without being accused of overstating its significance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.2" data-end="36.14">
+            <p class="french-block">Des chansons expérimentales mais accessibles comme Guess, Apple et 360 ont propulsé la star vers de nouveaux sommets de gloire.</p>
+            <span class="english-block">Experimental but accessible songs like Guess, Apple and 360 propelled the star to new heights of fame.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.14" data-end="53.3">
+            <p class="french-block">Son album a été coopté dans la campagne présidentielle de Kamala Harris en 2024, et le Collins English Dictionary a mis à jour sa définition de Brat, pour reconnaître son utilisation comme adjectif caractérisant « l'attitude confiante, indépendante et hédoniste » de la musique.</p>
+            <span class="english-block">Her album was co-opted into Kamala Harris's 2024 presidential campaign, and Collins English Dictionary updated its definition of Brat, to acknowledge its use as an adjective characterising the music's "confident, independent, and hedonistic attitude".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.3" data-end="65.71">
+            <p class="french-block">Après une tournée éprouvante d'un an, la chanteuse a accepté quelques rôles d'acteur, a écrit la bande originale de l'adaptation de Wuthering Heights par Emerald Fennel et a épousé son partenaire de longue date George Daniel.</p>
+            <span class="english-block">After a punishing year-long tour, the singer accepted a few acting roles, wrote the soundtrack to Emerald Fennel's adaptation of Wuthering Heights and married her longterm partner George Daniel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.71" data-end="69.6">
+            <p class="french-block">Mais au lieu de s’installer, elle s’est retrouvée en studio.</p>
+            <span class="english-block">But instead of settling down, she found herself back in the studio.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.6" data-end="78.86">
+            <p class="french-block">"À l'improviste, l'inspiration m'a frappé", dit-elle. "J'ai soudain eu l'impression que j'avais quelque chose à dire, alors j'ai couru avec."</p>
+            <span class="english-block">"Out of the blue, inspiration struck me," she says. "I suddenly felt like I had something to say, so I ran with it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.86" data-end="86.62">
+            <p class="french-block">En quelques semaines, elle a composé 11 courtes chansons à base de guitare qui tentaient de donner un sens à son tourbillon de deux années.</p>
+            <span class="english-block">In a matter of weeks, she dashed off 11 short, guitar-based songs that tried to make sense of her whirlwind two years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.62" data-end="98.42">
+            <p class="french-block">L’album qui en résulte, intitulé Music, Fashion, Film, est intelligent, autoréférentiel, drôle, antagoniste et regorge de moments pour stimuler votre ver d’oreille intérieur.</p>
+            <span class="english-block">The resulting album, titled Music, Fashion, Film, is smart, self-referential, funny, antagonistic and crammed full of moments to stimulate your inner earworm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.42" data-end="103.78">
+            <p class="french-block">De manière significative, délibérément, ce n'est pas Brat 2.0.</p>
+            <span class="english-block">Significantly, deliberately, it's not Brat 2.0.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.78" data-end="113.3">
+            <p class="french-block">"Si j'avais fait un autre album plus dance, cela aurait été vraiment dur, vraiment triste", a-t-elle déclaré à Vogue dans la première interview externe de l'album.</p>
+            <span class="english-block">"If I'd made another album that felt more dance-leaning, it would have felt really hard, really sad," she told Vogue in the first interview for the album, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="113.3" data-end="120.82">
+            <p class="french-block">En conséquence, il y a beaucoup à découvrir dans la musique et les paroles. Voici ce que nous avons appris.</p>
+            <span class="english-block">As a result, there's a lot to uncover in the music and lyrics. Here's what we learned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.82" data-end="129.53">
+            <p class="french-block">La chanteuse dit que ses nouvelles chansons ont commencé avec des riffs de guitare, plutôt que d'être construites sur des ordinateurs – mais ce n'est pas un album rock.</p>
+            <span class="english-block">The singer says her new songs started with guitar riffs, rather than being constructed on computers - but it's not a rock album</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.53" data-end="141.72">
+            <p class="french-block">Dans l'article de Vogue susmentionné, Charli a fait écouter à l'intervieweur un morceau intitulé Rock Music, avec les paroles : "Je pense que le dancefloor est mort, alors maintenant nous faisons de la musique rock".</p>
+            <span class="english-block">In the aforementioned Vogue article, Charli played the interviewer a track called Rock Music, featuring the lyric: "I think the dancefloor is dead, so now we're making rock music".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.72" data-end="150.29">
+            <p class="french-block">La publication a pris cela comme un évangile, qualifiant la musique, la mode et le cinéma de « réinvention du rock » de la star.</p>
+            <span class="english-block">The publication took that as gospel, calling Music, Fashion, Film the star's "rock reinvention".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.29" data-end="162.72">
+            <p class="french-block">Les fans ont reculé. Courtney Love a accusé Charli d'être un troll. Madonna a légendé une photo : "Si votre piste de danse semble morte, peut-être que vous jouez la mauvaise musique."</p>
+            <span class="english-block">Fans recoiled. Courtney Love accused Charli of being a troll. Madonna captioned a photo, "If your dance floor feels dead, maybe you're playing the wrong music."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.72" data-end="174.31">
+            <p class="french-block">Mais si les guitares constituent le son prédominant de l'album, c'est loin d'être un rejet de la musique club. Même la chanson Rock Music est pleine de voix manipulées et de fioritures électroniques.</p>
+            <span class="english-block">But while guitars are the album's predominant sound, it's far from being a rejection of club music. Even the song Rock Music is full of manipulated vocals and electronic flourishes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.31" data-end="183.46">
+            <p class="french-block">"Je n'ai jamais dit que je ferais un album rock", a posté Charli sur Instagram, expliquant que la chanson parlait vraiment de sa relation avec l'album Brat.</p>
+            <span class="english-block">"I never said I was making a rock album," Charli posted on Instagram, explaining that the song was really about her relationship with the Brat album.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.46" data-end="192.05">
+            <p class="french-block">"Je fais de la musique électronique depuis plus d'une décennie", a-t-elle déclaré au YouTuber musical Nicky Reardon. , externe</p>
+            <span class="english-block">"I've made electronic-leaning music for over a decade," she told music YouTuber Nicky Reardon. , external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.05" data-end="202.66">
+            <p class="french-block">"Cela a façonné qui je suis en tant qu'artiste. [La musique rock] est en quelque sorte mon pivot en tant qu'artiste qui ne veut pas continuer à faire la même chose encore et encore."</p>
+            <span class="english-block">"That's shaped who I am as an artist. [Rock Music] is kind of about my pivot from that as an artist who doesn't want to continue to do the same thing over and over and over again."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.66" data-end="208.3">
+            <p class="french-block">John Cale, Marc Jacobs et Martin Scorcese figurent sur la pochette de l'album</p>
+            <span class="english-block">John Cale, Marc Jacobs and Martin Scorcese star on the album sleeve</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.3" data-end="220.63">
+            <p class="french-block">Plutôt qu'une photo de Charli, l'album est présenté avec une élégante photo en noir et blanc du musicien du Velvet Underground John Cale, du créateur de mode Marc Jacobs et du réalisateur Martin Scorsese.</p>
+            <span class="english-block">Rather than a picture of Charli, the album is being promoted with a stylish black-and-white photo of Velvet Underground musician John Cale, fashion designer Marc Jacobs, and film director Martin Scorsese.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.63" data-end="229.51">
+            <p class="french-block">Le trio incarne l'excellence dans leurs domaines respectifs, reflétant le thème général de l'album : l'art, l'excellence et l'immortalité.</p>
+            <span class="english-block">The trio epitomise excellence in their respective fields - reflecting the album's overarching theme of art, excellence and immortality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.51" data-end="241.06">
+            <p class="french-block">La photo a été prise à New York en avril dernier par le cinéaste écossais Aidan Zamiri, qui a été derrière la caméra pour certains des récents clips de Charli, ainsi que pour son faux documentaire The Moment.</p>
+            <span class="english-block">The photo was taken in New York this April, by Scottish filmmaker Aidan Zamiri, who's been behind the camera for some of Charli's recent music videos, as well as her mockumentary The Moment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.06" data-end="249.19">
+            <p class="french-block">"Honnêtement, c'était une journée vraiment émouvante", a déclaré le chanteur à Nick Grimshaw de BBC 6 Music, en externe.</p>
+            <span class="english-block">"Honestly it was a really emotional day," the singer told BBC 6 Music's Nick Grimshaw, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.19" data-end="259.49">
+            <p class="french-block">"Je me suis dit : « Wow, ces trois personnes comptent tellement pour moi personnellement en tant qu'artiste ». Et je ne pouvais pas croire qu'ils étaient tous ensemble, vous savez ?</p>
+            <span class="english-block">"I was like, 'Wow, these three people mean so much to me personally as an artist'. And I couldn't believe that they were all together, you know?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.49" data-end="264.79">
+            <p class="french-block">"Nous étions tellement nerveux et quand cela se produisait, c'était vraiment très gentil."</p>
+            <span class="english-block">"We were so nervous and then when it was happening it was just honestly really sweet."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.79" data-end="271.37">
+            <p class="french-block">Charli était la seule artiste sur scène pendant plus de 90 minutes chaque soir de sa longue tournée Brat.</p>
+            <span class="english-block">Charli was the only performer on stage for more than 90 minutes every night of her extensive Brat tour</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.37" data-end="279.36">
+            <p class="french-block">Sur Rock Music, Charli admet que le côté physique époustouflant de la tournée Brat a fini par lui causer des lésions nerveuses dans le cou.</p>
+            <span class="english-block">On Rock Music, Charli admits that the head-banging physicality of the Brat tour ended up giving her nerve damage in her neck.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.36" data-end="291.31">
+            <p class="french-block">"Cela a vraiment beaucoup d'impact sur mes habitudes de sommeil", a-t-elle déclaré à Sam Murphy sur le Pop Pod, externe, affirmant que la douleur s'était "progressivement aggravée au cours des deux dernières années".</p>
+            <span class="english-block">"It really impacts a lot on my sleep habits," she told Sam Murphy on the Pop Pod, external, saying the pain had got "progressively worse over the past couple of years".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.31" data-end="305.42">
+            <p class="french-block">"Quand je pense à tourner ce disque, je pense que je devrais probablement adopter une approche différente", a-t-elle ajouté. "Mais qui sait où je finirai sur ce front, tu sais ? Parfois, je ne peux tout simplement pas m'en empêcher."</p>
+            <span class="english-block">"When I think about touring this record I do think I should probably be taking a different approach," she added. "But who knows where I'll end up on that front, you know? Sometimes I just can't stop myself."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.42" data-end="315.79">
+            <p class="french-block">Les fans ont eu un aperçu de la façon dont les choses pourraient changer lors d'un concert secret à Londres la semaine dernière, où Charli a interprété pour la première fois certains de ses nouveaux morceaux.</p>
+            <span class="english-block">Fans got a glimpse of how things might change at a secret show in London last week, where Charli performed some of her new material for the first time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.79" data-end="324.98">
+            <p class="french-block">Flanqué d'un groupe serré de trois musiciens, le set était moins exigeant du point de vue du claquement corporel, sans pour autant sacrifier l'énergie de la musique.</p>
+            <span class="english-block">Flanked by a tight, three piece band, the set was less demanding from a body-slamming perspective, without sacrificing the energy of the music.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="324.98" data-end="334.9">
+            <p class="french-block">Les critiques n'étaient pas autorisées - mais disons simplement que le nouveau matériel, avec ses guitares déformées et sa batterie percutante, sonnait encore mieux en live.</p>
+            <span class="english-block">Reviews weren't allowed - but let's just say the new material, with its distorted guitars and punchy drums, sounded even better live.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="334.9" data-end="339.84">
+            <p class="french-block">L'album explore la tension entre sa personnalité publique et sa vie privée</p>
+            <span class="english-block">The album explores the tension between her public persona and her private life</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.84" data-end="349.54">
+            <p class="french-block">Les nouvelles chansons de Charli la poussent à se demander si elle peut rester fidèle à ses racines pugnaces et subversives tout en profitant du succès commercial et du bonheur personnel.</p>
+            <span class="english-block">Charli's new songs find her grappling with whether she can stay true to her pugnacious, subversive roots while enjoying commercial success and personal happiness.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="349.54" data-end="356.71">
+            <p class="french-block">Le single slinky SS26 discute de la pression exercée sur les pop stars pour qu'elles fassent et disent les bonnes choses.</p>
+            <span class="english-block">The slinky single SS26 discusses the pressure on pop stars to do and say the right things.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="356.71" data-end="371.74">
+            <p class="french-block">En paroles, Charli désavoue les cigarettes et écrit des excuses sincères pour ses erreurs passées. Elle parle même d'utiliser sa politique comme une « stratégie de presse », notant que son héritage en partie indien « pourrait me donner une sacrée USP ».</p>
+            <span class="english-block">Lyrically, Charli disavows cigarettes and writes sincere apologies for her past mistakes. She even talks about using her politic as a "press strategy", noting that her part-Indian heritage "could give me quite the USP".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="371.74" data-end="384.0">
+            <p class="french-block">Mêlé de sarcasme, il met en lumière l'idiotie de maintenir les célébrités à des normes inaccessibles, au lieu de laisser la musique (et la mode et le cinéma) explorer le côté le plus sombre de la nature humaine.</p>
+            <span class="english-block">Laced with sarcasm, it highlights the idiocy of holding celebrities to unattainable standards, instead of letting music (and fashion and film) explore the darker side of human nature.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.0" data-end="392.21">
+            <p class="french-block">"Si vous êtes sur Internet, vous avez le sentiment de devoir être du bon côté dans chaque conversation", a déclaré Charli à Nicky Reardon.</p>
+            <span class="english-block">"If you're on the internet, there's this feeling like you need to be on the right side of every single conversation," Charli told Nicky Reardon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="392.21" data-end="407.35">
+            <p class="french-block">"Vous ne pouvez pas simplement être bon. Vous devez être le bon type de bien, d'une manière spécifique et sinon, vous êtes une mauvaise personne qui avait en fait un motif sinistre tout ce temps. Donc la chanson parle en fait de mon expérience avec ça. "</p>
+            <span class="english-block">"You can't just be good. You have to be the right type of good, in a specific way and if not, you're a bad person who actually had a sinister motive this entire time. So the song is actually talking about my experience with that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="407.35" data-end="418.15">
+            <p class="french-block">Le single Wink Wink est tout aussi convaincant, dans lequel Charli souligne sa nouvelle maturité – porter un pantalon, conduire des voitures raisonnables – avant d'admettre que tout cela n'est qu'une pose.</p>
+            <span class="english-block">Equally compelling is the single Wink Wink, where Charli emphasises her newfound maturity - wearing trousers, driving sensible cars - before admitting it's all a pose.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.15" data-end="422.26">
+            <p class="french-block">"Je ne suis plus une mauvaise fille / Clin d'œil, clin d'œil."</p>
+            <span class="english-block">"I'm not a bad girl anymore / Wink, wink."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="422.26" data-end="429.19">
+            <p class="french-block">Mais les paroles les plus honnêtes viennent de I'm Afraid – potentiellement la chanson la moins romantique jamais écrite sur les fiançailles.</p>
+            <span class="english-block">But the most nakedly honest lyric comes on I'm Afraid - potentially the least romantic song ever written about getting engaged.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="429.19" data-end="438.5">
+            <p class="french-block">"Le bonheur est arrivé dans une boîte", dit Charli à propos de la proposition, avant de sombrer dans la panique à l'idée de savoir qui elle deviendra si elle dit "oui".</p>
+            <span class="english-block">"Happiness came in a box," Charli says of the proposal, before spiralling into a panic about who she'll become if she says "yes".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="438.5" data-end="453.67">
+            <p class="french-block">"Je suis une femme, je suis un enfant / Je suis détruite, je suis une garce / Je suis trop ivre, je n'arrive pas à dormir / Je ne peux pas ressentir, j'ai peur / Je ne suis rien sans lui / Et si je gâche ça ?" elle chante, alors que des synthés discordants déchirent le tissu sonore.</p>
+            <span class="english-block">"I'm a wife, I'm a kid / I'm destroyed, I'm a bitch / I'm too drunk, I can't sleep / I can't feel, I'm afraid / I'm nothing without him / What if I ruin it?" she sings, as discordant synths rip apart the sonic fabric.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="453.67" data-end="460.68">
+            <p class="french-block">Relier les chansons est l’idée selon laquelle tout le monde a des défauts – mais le désordre et les frictions rendent la vie plus intéressante.</p>
+            <span class="english-block">Connecting the songs is the idea that everyone's flawed - but the mess and the friction make life more interesting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="460.68" data-end="467.66">
+            <p class="french-block">Brat a remporté cinq Brit Awards à la star en une seule soirée, dont le très convoité trophée du meilleur album</p>
+            <span class="english-block">Brat earned the star five Brit Awards in a single night, including the coveted best album trophy</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="467.66" data-end="474.82">
+            <p class="french-block">Si les paroles de Brat étaient directes et sans fioritures, le nouvel album de Charli pousse le minimalisme à l'extrême.</p>
+            <span class="english-block">If the lyrics on Brat were direct and unembellished, Charli's new album takes minimalism to an extreme.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="474.82" data-end="483.86">
+            <p class="french-block">La septième chanson, Yeah, est un exemple classique de tension et de relâchement dans la musique pop - qui réduit l'idée à sa forme la plus élémentaire.</p>
+            <span class="english-block">The seventh song, Yeah, is a textbook example of tension and release in pop music - that strips the idea down to its most elemental form.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="483.86" data-end="492.46">
+            <p class="french-block">Pendant les 30 premières secondes, Charli répète simplement la phrase « Je ne veux pas » encore et encore tandis qu'une guitare résonne en arrière-plan.</p>
+            <span class="english-block">For the first 30 seconds, Charli simply repeats the phrase, "I don't wanna," over and over while a guitar chugs in the background.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="492.46" data-end="502.99">
+            <p class="french-block">Puis, juste au moment où vous êtes sur le point d'appuyer sur l'interrupteur, elle déclare : "Attendez ! Maintenant, je veux le sentir", et la musique explose.</p>
+            <span class="english-block">Then, just when you're about to hit the off switch, she declares: "Wait! Now I wanna feel it," and the music explodes into life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="502.99" data-end="510.89">
+            <p class="french-block">C'est tellement bête et basique, et pourtant ça gratte une démangeaison musicale éprouvée avec une telle précision qu'il faut admirer son audace.</p>
+            <span class="english-block">It's so stupid and basic, and yet it scratches a tried-and-tested musical itch with such precision that you have to admire its audacity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="510.89" data-end="521.74">
+            <p class="french-block">Ouais, c'est la chanson qui ressemble le plus à une démo sur un album de 29 minutes qui semble parfois insuffisamment cuite. Mais la brièveté était tout à fait délibérée.</p>
+            <span class="english-block">Yeah is the most demo-like song on a 29-minute album that occasionally feels under-cooked. But the brevity was quite deliberate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="521.74" data-end="528.72">
+            <p class="french-block">"Je ne me disais pas 'Oh, je dois faire un album avec de petites chansons'", a déclaré Charli à Nick Grimshaw.</p>
+            <span class="english-block">"I wasn't like, 'Oh, I must make an album with tiny songs'," Charli told Nick Grimshaw.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="528.72" data-end="536.04">
+            <p class="french-block">"C'est exactement ainsi que les chansons sont sorties. C'était juste un choix qui convenait à la musique que nous faisions."</p>
+            <span class="english-block">"That was just the way that the songs came out. It was just a choice that felt right for the music that we were making."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="536.04" data-end="542.59">
+            <p class="french-block">La filmographie de David Cronenberg comprend The Fly, Videodrome, Crash et Scanners</p>
+            <span class="english-block">David Cronenberg's filmography includes The Fly, Videodrome, Crash and Scanners</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="542.59" data-end="550.8">
+            <p class="french-block">Charli est un cinéphile avoué, dont le cinquième album porte le nom du célèbre film d'horreur corporelle Crash de David Cronenberg.</p>
+            <span class="english-block">Charli is an avowed film buff, whose fifth album was named after David Cronenberg's notorious body-horror film Crash.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="550.8" data-end="561.58">
+            <p class="french-block">Le réalisateur canadien est également la dernière voix que l'on entend dans Musique, Mode, Film, dans un extrait d'une conversation "d'une heure" qu'il a eue avec Charli l'année dernière.</p>
+            <span class="english-block">The Canadian director is also the last voice you hear on Music, Fashion, Film, in an excerpt of an "hour-long" conversation he had with Charli last year,.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="561.58" data-end="570.17">
+            <p class="french-block">"Ce qui est fou, c'est qu'il a parlé en accord avec la chanson, sans jamais l'avoir entendue", a-t-elle déclaré à la radio australienne Triple J.</p>
+            <span class="english-block">"What's crazy is he actually spoke in tune with the song, without ever having heard it," she told Australia's Triple J radio station., external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="570.17" data-end="576.94">
+            <p class="french-block">Dans le clip, Cronenberg parle de l'héritage de l'art et de la question de savoir si la longévité compte vraiment.</p>
+            <span class="english-block">In the clip, Cronenberg talks about the legacy of art, and whether longevity really matters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="576.94" data-end="592.27">
+            <p class="french-block">"Oui, certains artistes ont créé un art qui a vraiment survécu pendant des milliers d'années, et c'est fantastique", dit-il. "Mais d'un point de vue expérientiel, pour eux, ils sont morts. Ils sont partis. Ils ne vivent pas cela."</p>
+            <span class="english-block">"Yes, some artists have created art that has really survived for thousands of years,  and that's fantastic," he says. "But experientially, for them, they are dead. They are gone. They're not experiencing that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="592.27" data-end="602.35">
+            <p class="french-block">Ce n’est pas une raison pour être triste, insiste-t-il. Cela signifie que vous ne devriez pas être accablé par le succès (ou l’échec) de votre travail.</p>
+            <span class="english-block">That's not a cause for sadness, he insists. It means you shouldn't be burdened by the success (or failure) of your work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="602.35" data-end="605.06">
+            <p class="french-block">"L'oubli, c'est la liberté."</p>
+            <span class="english-block">"Oblivion is freedom."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="605.06" data-end="613.94">
+            <p class="french-block">C'est comme s'il montrait à Charli la voie de sortie des attentes post-Brat. À en juger par cet album, elle a déjà franchi la porte.</p>
+            <span class="english-block">It feels like he's showing Charli the escape route from post-Brat expectations. On the evidence of this album, she's already made it through the door.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="613.94" data-end="621.22">
+            <p class="french-block">La bande originale de Wuthering Heights est le pivot parfait pour Charli XCX, déclare le co-scénariste de Brat</p>
+            <span class="english-block">Wuthering Heights soundtrack the perfect pivot for Charli XCX, says Brat co-writer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="621.22" data-end="626.06">
+            <p class="french-block">L'été des gosses est officiellement terminé, déclare Charli XCX</p>
+            <span class="english-block">Brat summer officially over, declares Charli XCX</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="626.06" data-end="631.49">
+            <p class="french-block">Charli XCX dit que faire équipe avec une légende de la musique l'a fait « pleurer »</p>
+            <span class="english-block">Charli XCX says teaming up with music legend made her 'cry'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_33.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

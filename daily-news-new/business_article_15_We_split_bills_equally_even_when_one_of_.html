@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We split bills equally even when one of us earned a lot more</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>We split bills equally even when one of us earned a lot more</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 23 Jul 2026 23:01:08 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cz05rdn1n80o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Hannah and Max continued to pool finances after Max was made redundant but took "drastic measures" to cut spending.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.42" data-end="13.13">
+            <p class="french-block">Hannah et Max ont un compte commun sur lequel leurs salaires sont versés et toutes les factures en sortent.</p>
+            <span class="english-block">Hannah and Max have one joint account where their salaries are paid into and all bills come out of it</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.13" data-end="19.75">
+            <p class="french-block">Hannah et Max ont toujours partagé leur argent de manière égale, même lorsque l'un a gagné beaucoup plus que l'autre.</p>
+            <span class="english-block">Hannah and Max have always split their money equally even when one has earned considerably more than the other.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.75" data-end="31.25">
+            <p class="french-block">"Nous avons toujours voulu faire les choses à 50/50", explique Max, 31 ans. "Nous nous sommes engagés l'un envers l'autre à ce que ce qui est à moi soit à vous, et vice versa."</p>
+            <span class="english-block">"We've always wanted to do things 50/50," Max, 31, says. "We made a commitment to each other that what's mine is yours, and vice versa."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.25" data-end="43.66">
+            <p class="french-block">Le couple s'est marié après deux ans ensemble, alors que Max gagnait 70 000 £ par an en travaillant dans la technologie et Hannah, qui travaille dans le secteur caritatif, gagnait considérablement moins.</p>
+            <span class="english-block">The couple got married after two years together, when Max was earning £70,000 a year working in tech, and Hannah, who works in the charity sector, was earning considerably less.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.66" data-end="53.42">
+            <p class="french-block">Leurs salaires sont versés sur un compte commun et leur hypothèque, leurs factures, leur nourriture, leur essence et d'autres dépenses domestiques sont payés grâce à ce compte.</p>
+            <span class="english-block">Their salaries go into a joint account and their mortgage, bills, food, petrol and other household costs are paid out of this.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.42" data-end="58.08">
+            <p class="french-block">Chaque mois, ils prélèvent le même montant pour leurs dépenses personnelles.</p>
+            <span class="english-block">Each month they take the same amount for personal spending.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.08" data-end="69.77">
+            <p class="french-block">Si l'un d'eux veut acheter des vêtements, se maquiller ou aller au pub, il peut le faire sans se sentir surveillé et "cela signifie que nous ne sommes pas responsables les uns envers les autres de ces choses", dit Max.</p>
+            <span class="english-block">If one of them wants to buy clothes, make-up or go to the pub they can do that without feeling watched and "it means we aren't accountable to each other for those things", says Max.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.77" data-end="77.88">
+            <p class="french-block">Ils divisent également l’argent en différentes catégories, y compris l’épargne et des fonds plus petits pour des dépenses prévisibles comme des coupes de cheveux.</p>
+            <span class="english-block">They also divide money into different pots, including savings and smaller funds for predictable spending like haircuts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.88" data-end="88.68">
+            <p class="french-block">Les deux hommes ont commencé leur relation avec des attitudes très différentes à l'égard de l'argent : la famille d'Hannah discute ouvertement des finances alors que pour Max, "l'argent était totalement tabou".</p>
+            <span class="english-block">The pair came into the relationship with very different attitudes to money - Hannah's family discuss finances openly whereas for Max, "money was totally taboo".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.68" data-end="98.93">
+            <p class="french-block">"Nous n'avons jamais parlé d'argent, donc en tant qu'adulte, je me suis retrouvé sans aucune connaissance de choses comme ce qu'est un bon salaire ou comment négocier mon salaire", dit-il.</p>
+            <span class="english-block">"We never spoke about money so as an adult I was left without any knowledge of things like what's a good salary or how to negotiate my pay," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.93" data-end="108.38">
+            <p class="french-block">Lorsqu’il s’agissait d’acheter une maison ensemble, ils devaient être honnêtes sur combien ils gagnaient, combien ils avaient en dépôt et ce qu’ils pouvaient raisonnablement se permettre.</p>
+            <span class="english-block">When it came to buying a home together they had to be honest about how much they earned, how much they had for a deposit and what they could realistically afford.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.38" data-end="120.6">
+            <p class="french-block">"En tant qu'acheteurs d'une première maison, il y a des coûts auxquels vous ne pensez pas, comme les droits de timbre et les frais d'avocat, il était donc important que nous sachions tous les deux exactement combien d'argent nous avions", explique Hannah.</p>
+            <span class="english-block">"As first-time buyers, there are costs you don't think about, like stamp duty and solicitor fees, so it was important we both knew exactly how much money we had," Hannah says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.6" data-end="124.97">
+            <p class="french-block">Max et Hannah ont un compte commun depuis leur mariage en 2022</p>
+            <span class="english-block">Max and Hannah have had a joint account since they got married in 2022</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.97" data-end="129.98">
+            <p class="french-block">Maintenant, Hannah et Max disent que l'argent est une conversation quotidienne.</p>
+            <span class="english-block">Now Hannah and Max say they make money an everyday conversation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.98" data-end="137.66">
+            <p class="french-block">« Ce matin même, nous parlions de ce que nous pouvons faire pour améliorer notre situation financière à l'avenir », explique Hannah.</p>
+            <span class="english-block">"Just this morning we were talking about what we can do to help improve our financial situation in the future," Hannah says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="137.66" data-end="152.21">
+            <p class="french-block">Une étude du gestionnaire de patrimoine Quilter suggère que près de la moitié des couples ne partagent pas la planification financière de manière égale, avec 46 % agissant seuls d'une manière ou d'une autre et plus d'un sur dix laissant un partenaire seul responsable.</p>
+            <span class="english-block">Research from wealth manager Quilter suggests almost half of couples do not share financial planning equally, with 46% acting alone in some way and more than one in 10 leaving one partner solely responsible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.21" data-end="159.96">
+            <p class="french-block">Karen Doherty, experte en relations, donne trois conseils pour entamer la conversation sur la planification financière.</p>
+            <span class="english-block">Relationship expert Karen Doherty has three pieces of advice when it comes to starting the conversation around financial planning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.96" data-end="171.62">
+            <p class="french-block">Le système de partage d'argent du couple est resté le même même lorsque Max a été licencié l'année dernière et ils ont dû compter sur le salaire d'Hannah compris entre 40 000 £ et 60 000 £.</p>
+            <span class="english-block">The couple's system of sharing money remained the same even when Max was made redundant last year and they had to rely on Hannah's salary of between £40,000 and £60,000.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.62" data-end="183.24">
+            <p class="french-block">"Au début, il y a eu un choc et une panique", raconte Hannah, qui n'a pas souhaité divulguer son salaire précis. "Mais nous nous sommes assis et avons vraiment cherché où nous pourrions supprimer des choses."</p>
+            <span class="english-block">"There was shock and panic initially," Hannah, who did not want to disclose her precise salary, says. "But we sat down and really looked through where we could cut things out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.24" data-end="193.39">
+            <p class="french-block">Ils ont annulé leur abonnement à une salle de sport et à Sky TV et ont examiné leurs finances pour s'assurer qu'ils pourraient couvrir leur hypothèque et leurs factures avec un revenu inférieur.</p>
+            <span class="english-block">They cancelled gym memberships and Sky TV and went through their finances to make sure they could cover their mortgage and bills on a lower income.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.39" data-end="205.08">
+            <p class="french-block">Max avait suivi une formation dans une école de cuisine au lieu de faire un baccalauréat et une université, mais il s'était éloigné du secteur de l'hôtellerie parce qu'il estimait que ce ne serait pas assez rémunérateur.</p>
+            <span class="english-block">Max had trained at culinary school instead of doing A-levels and university, but had moved away from hospitality because he felt it would not pay enough.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.08" data-end="214.56">
+            <p class="french-block">Lorsqu'il a été licencié, il a voulu profiter de l'opportunité pour créer sa propre entreprise dans un domaine qui lui plaisait vraiment - mais Hannah avait des réserves.</p>
+            <span class="english-block">When he was made redundant he wanted to use the opportunity to create his own business in something he genuinely enjoyed - but Hannah had reservations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="214.56" data-end="224.59">
+            <p class="french-block">« Au début, je lui ai dit de créer cette entreprise parallèlement à la recherche d'un autre emploi, mais nous avons vite compris que cela prendrait beaucoup de temps et d'énergie », dit-elle.</p>
+            <span class="english-block">"At first I told him to set this up alongside getting another job but we quickly realised the business would take a lot of time and energy," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="224.59" data-end="233.18">
+            <p class="french-block">"Nous avons analysé les chiffres et décidé que c'était le bon moment pour prendre des risques étant donné que nous n'avons pas d'enfants et que personne d'autre ne dépend de nous."</p>
+            <span class="english-block">"We ran the numbers and decided that this was the right moment to take the risk given we don't have kids and no one else is depending on us."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.18" data-end="244.61">
+            <p class="french-block">Max a dépensé 20 000 £ de son forfait de licenciement pour acheter et transformer une remorque à chevaux en camion à pizza, qui accueille désormais les mariages, les fêtes et les pop-ups.</p>
+            <span class="english-block">Max spent £20,000 from his redundancy package buying and converting a horsebox trailer into a pizza truck, which now caters for weddings, parties and pop-ups.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.61" data-end="254.21">
+            <p class="french-block">Il dit que l'argent qu'il a investi était la limite convenue pour faire fonctionner l'entreprise et que si celle-ci échouait, il trouverait un autre emploi plutôt que d'investir davantage.</p>
+            <span class="english-block">He says the money he invested was their agreed limit to make the business work and if it failed he would find another job rather than putting in more.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.21" data-end="262.49">
+            <p class="french-block">L'entreprise rapporte désormais entre 4 000 et 6 000 £ de revenus par mois et Max se verse un salaire qui couvre l'hypothèque.</p>
+            <span class="english-block">The business now brings in between £4,000 and £6,000 a month in revenue and Max pays himself a salary that covers the mortgage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="262.49" data-end="268.01">
+            <p class="french-block">Le couple a investi 20 000 £ dans l'idée commerciale de Max l'année dernière.</p>
+            <span class="english-block">The couple put £20,000 into Max's business idea last year</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.01" data-end="274.92">
+            <p class="french-block">Pour Max, l’espoir est que le commerce de la pizza se développe et que la maison haute qu’ils ont achetée prenne de la valeur.</p>
+            <span class="english-block">For Max, the hope is that the pizza business grows and the doer-upper house they bought increases in value.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.92" data-end="282.26">
+            <p class="french-block">Hannah dit que son conseil aux autres couples est de commencer à parler d'argent avant qu'une décision importante n'oblige la conversation.</p>
+            <span class="english-block">Hannah says her advice to other couples is to start talking about money before a big decision forces the conversation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.26" data-end="291.6">
+            <p class="french-block">"Commencez par les petites choses comme vos salaires ou combien vous dépensez pour différentes choses, car cela aidera les discussions plus importantes à paraître plus naturelles."</p>
+            <span class="english-block">"Start with the small things like your salaries or how much you spend on different things as that will help the bigger discussions feel more natural."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.6" data-end="297.22">
+            <p class="french-block">Racontez-nous votre expérience de conjugaison financière et de gestion de l’argent en couple.</p>
+            <span class="english-block">Tell us your experience of combining finances and managing money as a couple.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.22" data-end="303.22">
+            <p class="french-block">Je ne l'épouserais pas tant qu'il n'aura pas remboursé sa dette, maintenant je suis en charge de notre argent</p>
+            <span class="english-block">I wouldn't marry him until he paid off his debt, now I'm in charge of our money</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.22" data-end="308.35">
+            <p class="french-block">Mes amis veulent toujours partager la facture à parts égales, comment puis-je dire non ?</p>
+            <span class="english-block">My friends always want to split the bill equally, how do I say no?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="308.35" data-end="313.87">
+            <p class="french-block">« Je serais rebuté s'il demandait de le partager » : qui devrait payer lors d'un premier rendez-vous ?</p>
+            <span class="english-block">'I'd be put off if he asked to split it': Who should pay on a first date?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_15.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

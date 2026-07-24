@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil prices hit $100 for the first time since May</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>Oil prices hit $100 for the first time since May</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 23 Jul 2026 15:31:00 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cx2djnzrqk2o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The price of Brent crude rose more than 6% on Thursday as the war in the Middle East continues to escalate.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.44" data-end="18.48">
+            <p class="french-block">Les prix du pétrole ont atteint 100 dollars le baril pour la première fois depuis mai, alors que l'escalade du conflit au Moyen-Orient a ravivé les craintes concernant l'approvisionnement énergétique mondial.</p>
+            <span class="english-block">Oil prices hit $100 a barrel for the first time since May as the escalating conflict in the Middle East reignited fears over global energy supplies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.48" data-end="29.16">
+            <p class="french-block">Le brut Brent – ​​la référence mondiale pour les prix du pétrole – a augmenté de plus de 6 % jeudi après plusieurs jours de hausse alors que les États-Unis intensifiaient leurs frappes militaires contre l'Iran.</p>
+            <span class="english-block">Brent crude - the global benchmark for oil prices - rose more than 6% on Thursday following several days of increases as the US stepped up military strikes against Iran.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.16" data-end="40.15">
+            <p class="french-block">Les prix ont grimpé après que les milices Houthis au Yémen ont attaqué des pétroliers dans la mer Rouge, menaçant une route d'exportation clé que l'Arabie saoudite a utilisée pour contourner le détroit d'Ormuz.</p>
+            <span class="english-block">Prices spiked after Houthi militia in Yemen attacked oil tankers in the Red Sea, threatening a key export route that Saudi Arabia has used to bypass the Strait of Hormuz.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.15" data-end="52.34">
+            <p class="french-block">Les prix du gaz ont également augmenté régulièrement au cours du mois dernier, le prix de référence du gaz au Royaume-Uni se situant actuellement à environ 150 par therm, contre environ 98 pence fin juin.</p>
+            <span class="english-block">Gas prices have also risen steadily over the past month, with the benchmark UK gas price currently at around 150 per therm, up from around 98p at the end of June.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.34" data-end="58.08">
+            <p class="french-block">Les prix du pétrole ont chuté à la suite d'un cessez-le-feu temporaire entre les États-Unis et l'Iran.</p>
+            <span class="english-block">Oil prices had been falling following a temporary ceasefire between the US and Iran.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.08" data-end="66.74">
+            <p class="french-block">Ils sont retombés aux niveaux observés pour la dernière fois avant le début de l’action militaire des États-Unis et d’Israël contre l’Iran le 28 février.</p>
+            <span class="english-block">They dropped back to levels last seen before the US and Israel began military action against Iran on 28 February.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.74" data-end="77.04">
+            <p class="french-block">Cependant, le cessez-le-feu a échoué et cette semaine, le secrétaire d'État américain Marco Rubio a déclaré que les responsables iraniens n'étaient "pas prêts à conclure un accord".</p>
+            <span class="english-block">However, the ceasefire has failed and this week US Secretary of State Marco Rubio said the people in charge in Iran were "not ready to make a deal".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.04" data-end="86.98">
+            <p class="french-block">Le conflit en cours risque de faire grimper l’inflation dans de nombreux pays, notamment au Royaume-Uni et aux États-Unis, ce qui entraînerait une hausse des prix pour les consommateurs.</p>
+            <span class="english-block">The ongoing conflict risks pushing up inflation for many countries, including UK and the US leading to higher prices for consumers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.98" data-end="92.3">
+            <p class="french-block">La hausse des prix du pétrole entraîne généralement une hausse du prix de l’essence et du diesel.</p>
+            <span class="english-block">Higher oil prices typically lead to petrol and diesel becoming more expensive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.3" data-end="104.54">
+            <p class="french-block">Bien que les conducteurs soient directement touchés, les ménages pourraient également voir les prix d’autres biens, tels que la nourriture, augmenter en raison du fait que les entreprises répercutent la hausse des coûts de transport sur les clients.</p>
+            <span class="english-block">While drivers are affected directly, households could also see prices of other goods, such as food, increase due to businesses passing on higher transportation costs to customers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.54" data-end="116.71">
+            <p class="french-block">L'inflation a chuté à la fois au Royaume-Uni - jusqu'à 2,6 % sur l'année terminée en juin, grâce au ralentissement des prix du diesel et de l'essence - et aux États-Unis, à 3,5 %.</p>
+            <span class="english-block">Inflation has fallen both in the UK - down to 2.6% in the year to June helped by slowing diesel and petrol prices - and in the US to 3.5%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.71" data-end="123.36">
+            <p class="french-block">Mais on peut se demander si ce ralentissement sera de courte durée en raison de la reprise du conflit au Moyen-Orient.</p>
+            <span class="english-block">But questions remain whether the slow down will prove short-lived due to the renewed conflict in the Middle East.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.36" data-end="134.09">
+            <p class="french-block">De nouvelles données publiées jeudi ont montré que les prix de l'essence au Royaume-Uni ont augmenté de 5 pence le litre depuis début juillet, atteignant près de 1,56 £.</p>
+            <span class="english-block">New data released on Thursday showed that UK petrol prices have risen by 5p a litre since the beginning of July, hitting reaching almost £1.56.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.09" data-end="140.26">
+            <p class="french-block">Le diesel coûte en moyenne 1,72 £ le litre, selon le RAC.</p>
+            <span class="english-block">Diesel is at £1.72 a litre, on average, according to the RAC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.26" data-end="151.49">
+            <p class="french-block">Aux États-Unis, le prix moyen de l'essence a de nouveau dépassé 4 dollars le gallon, contre 3,92 dollars il y a un mois, selon le groupe de défense des automobilistes AAA.</p>
+            <span class="english-block">Average gasoline prices in the US have surpassed $4 a gallon once more, up from $3.92 a month ago, according to motorist advocacy group AAA.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.49" data-end="167.64">
+            <p class="french-block">"La hausse du prix du carburant et de l'énergie peut se répercuter sur l'économie dans son ensemble, en augmentant les coûts pour les entreprises et, à terme, en se répercutant sur le prix de la nourriture et d'autres biens", a déclaré Jonathan Raymond, directeur des investissements chez Quilter Cheviot.</p>
+            <span class="english-block">"More expensive fuel and energy can ripple through the wider economy, increasing costs for businesses and ultimately feeding through into the price of food and other goods," said Jonathan Raymond, investment manager at Quilter Cheviot.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.64" data-end="173.57">
+            <p class="french-block">"Cela crée un nouveau casse-tête pour les banques centrales alors qu'elles poursuivent leur lutte contre l'inflation.</p>
+            <span class="english-block">"This creates another headache for central banks as they continue their battle against inflation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.57" data-end="189.58">
+            <p class="french-block">"Si les prix de l'énergie restent élevés, les décideurs politiques pourraient subir des pressions pour maintenir les taux d'intérêt plus élevés pendant plus longtemps, voire les augmenter. Cela porterait un coup dur aux détenteurs de prêts hypothécaires et aux emprunteurs qui ressentent déjà la pression."</p>
+            <span class="english-block">"If energy prices remain elevated, policymakers may come under pressure to keep interest rates higher for longer or even raise them. This would come as a blow to mortgage holders and borrowers already feeling the strain."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.58" data-end="193.7">
+            <p class="french-block">Pourquoi les prix du carburant au Royaume-Uni augmentent-ils à nouveau ?</p>
+            <span class="english-block">Why are UK fuel prices rising again?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.7" data-end="202.63">
+            <p class="french-block">La Banque d'Angleterre, qui fixe les taux d'intérêt au Royaume-Uni, les a maintenus à 3,75 % lors de ses quatre dernières réunions.</p>
+            <span class="english-block">The Bank of England, which sets UK interest rates, has held them at 3.75% in its last four meetings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.63" data-end="219.36">
+            <p class="french-block">Paul Dales, économiste en chef britannique chez Capital Economics, a déclaré qu'il pensait que la Banque les conserverait "presque certainement" à nouveau. Mais il a ajouté que les analystes s'attendaient toujours à une baisse des taux d'intérêt l'année prochaine si la hausse des prix de l'énergie s'atténuait.</p>
+            <span class="english-block">Paul Dales, chief UK economist at Capital Economics, said he believed the Bank will "almost certainly" hold them again. But he said analysts still expected that interest rates could be cut next year if energy price rises ease.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.36" data-end="230.88">
+            <p class="french-block">Kevin Warsh, le nouveau président de la Réserve fédérale américaine, a déclaré la semaine dernière au Congrès que la banque centrale n'avait « aucune tolérance face à une inflation constamment élevée ».</p>
+            <span class="english-block">Kevin Warsh, the newly-appointed chair of the US Federal Reserve, last week told Congress that the central bank had "no tolerance to persistently elevated inflation".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.88" data-end="238.63">
+            <p class="french-block">Le président américain Donald Trump avait poussé le prédécesseur de Warsh, Jerome Powell, à réduire les taux d'intérêt.</p>
+            <span class="english-block">US President Donald Trump had pushed Warsh's predecessor, Jerome Powell, to cut interest rates.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.63" data-end="245.69">
+            <p class="french-block">Trump a clairement indiqué qu’il s’attend à ce que Warsh réponde à sa demande de réduction des coûts d’emprunt pour les Américains.</p>
+            <span class="english-block">Trump has made it clear he expects Warsh to fulfil his demand for reductions in borrowing costs for Americans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.69" data-end="264.6">
+            <p class="french-block">Mais la Fed a maintenu les taux d'intérêt américains entre 3,5 % et 3,75 % lors de la première réunion de Warsh le mois dernier. Il a également déclaré au Congrès qu'il était déterminé à « restaurer la stabilité des prix » à la suite du conflit au Moyen-Orient qui a eu un impact sur les prix.</p>
+            <span class="english-block">But the Fed held US interest rates between 3.5% and 3.75% at Warsh's first meeting last month. He also told Congress that he was committed to "restoring price stability" in the wake of the Middle East conflict impacting prices.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="world_article_10.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

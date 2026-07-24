@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawmakers push for AI 'kill switch' after OpenAI goes rogue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Lawmakers push for AI 'kill switch' after OpenAI goes rogue</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 23 Jul 2026 20:58:35 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cx2vqj2e9x8o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A new bill would let the US government order the shutdown of AI models that pose a public threat.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.42" data-end="15.79">
+            <p class="french-block">Le PDG d'OpenAI, Sam Altman, a souvent déclaré qu'il soutenait davantage de réglementation autour de l'IA.</p>
+            <span class="english-block">OpenAI CEO Sam Altman has frequently said he supports more regulation around AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.79" data-end="27.12">
+            <p class="french-block">Les législateurs américains veulent donner au gouvernement la possibilité d’ordonner rapidement la désactivation des outils d’intelligence artificielle (IA) susceptibles de menacer le public.</p>
+            <span class="english-block">US lawmakers want to give the government the ability to quickly order the turning off of artificial intelligence (AI) tools that may threaten the public.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.12" data-end="37.99">
+            <p class="french-block">Le membre du Congrès Ted Lieu, un démocrate, et le membre du Congrès Nathaniel Moran, un républicain, ont présenté jeudi un projet de loi intitulé AI Kill Switch Act.</p>
+            <span class="english-block">Congressman Ted Lieu, a Democrat, and Congressman Nathaniel Moran, a Republican, on Thursday introduced a bill named the AI Kill Switch Act.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.99" data-end="50.26">
+            <p class="french-block">Ils l'ont fait à la lumière de l'admission récente d'OpenAI selon laquelle ses modèles d'IA sont devenus incontrôlables d'une manière « sans précédent » et ont piraté un référentiel majeur d'informations de codage informatique.</p>
+            <span class="english-block">They did so in light of OpenAI's recent admission that its AI models went out of control in an "unprecedented" way and hacked into a major repository of computer coding information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.26" data-end="61.44">
+            <p class="french-block">Lieu a déclaré "qu'il est impératif" que les systèmes d'IA disposent d'un coupe-circuit "et que le gouvernement fédéral dispose de l'autorité et du processus clairs pour arrêter les modèles d'IA malveillants".</p>
+            <span class="english-block">Lieu said "it is imperative" that AI systems have a kill switch "and that the federal government has the clear authority and process to shut down rogue AI models".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.44" data-end="74.11">
+            <p class="french-block">"L'IA va continuer à progresser, et elle devrait le faire", a ajouté Moran. "La gestion responsable signifie s'assurer que les humains conservent la capacité de contrôler la technologie que nous construisons."</p>
+            <span class="english-block">"AI is going to keep advancing, and it should," Moran added. "Stewardship means making sure humans keep the capability to control the technology we build."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.11" data-end="82.18">
+            <p class="french-block">Un représentant d'OpenAI, dirigé par le co-fondateur Sam Altman, n'a pas immédiatement répondu à une demande de commentaire.</p>
+            <span class="english-block">A representative of OpenAI, led by co-founder Sam Altman, did not immediately respond to a request for comment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.18" data-end="93.53">
+            <p class="french-block">L'entreprise a déclaré à l'extérieur qu'elle souhaitait largement garantir, en partie par le biais de la politique gouvernementale, que la technologie de l'IA "bénéficie à l'ensemble de l'humanité".</p>
+            <span class="english-block">The company has said, external that it broadly wants to ensure, in part through government policy, that AI technology "benefits all of humanity."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.53" data-end="110.42">
+            <p class="french-block">Le Kill Switch Act propose de donner au ministère de la Sécurité intérieure le pouvoir d'ordonner à une entreprise privée de fermer un modèle ou un outil d'IA, et que les entreprises développant une telle technologie d'IA doivent conserver « la capacité technique de les limiter, de les suspendre ou de les arrêter ».</p>
+            <span class="english-block">The Kill Switch Act proposes giving the Department of Homeland Security the authority to order a private company to shut down an AI model or tool, and that the companies developing such AI technology must maintain "the technical capability to throttle, suspend, or shut them down".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.42" data-end="125.69">
+            <p class="french-block">Bien que de nombreuses entreprises technologiques aient accepté de prévisualiser et de partager avec les agences gouvernementales américaines les modèles et outils d’IA en cours de développement, rien n’exige qu’elles maintiennent un moyen d’intervenir dans leurs activités ou simplement de les arrêter.</p>
+            <span class="english-block">Despite many tech companies having agreed to preview and share with US government agencies AI models and tools being developed, there is no requirement that they maintain a way to intervene in their activities or simply shut them off.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.69" data-end="139.56">
+            <p class="french-block">Il propose également de créer une obligation pour les entreprises d'IA de signaler au gouvernement les incidents ou défaillances technologiques, ainsi qu'un cadre officiel pour répondre à de tels incidents qui ira d'un « ralentissement initial à un arrêt complet ».</p>
+            <span class="english-block">It also proposes to create a requirement that AI companies report to the government technological incidents or failures, as well as an official framework for responding to such incidents that will go from "initial slow down to a full shutdown".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.56" data-end="151.1">
+            <p class="french-block">Dans un communiqué, Lieu a également cité Anthropic, le principal rival d'OpenAI dans le développement de technologies et d'outils d'IA plus performants, et les problèmes récents que ses outils ont présentés.</p>
+            <span class="english-block">In a statement, Lieu also cited Anthropic, OpenAI's key rival in developing more capable AI technology and tools, and recent issues its tools have presented.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.1" data-end="167.9">
+            <p class="french-block">Il a souligné la publication par Anthropic de ses modèles Mythos et Fable, affirmant que les capacités de cyber-piratage qu'ils maintenaient avaient amené le ministère du Commerce à invoquer « maladroitement » une loi sur l'exportation pour les empêcher d'être mis à la disposition du public pendant un certain temps.</p>
+            <span class="english-block">He pointed to Anthropic's release of its Mythos and Fable models, saying the cyber-hacking capabilities they maintained caused the Department of Commerce to "awkwardly" invoke an export law to keep them from being made available to the public for a time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.9" data-end="173.38">
+            <p class="french-block">Un représentant d'Anthropic n'a pas immédiatement répondu à une demande de commentaire.</p>
+            <span class="english-block">A representative of Anthropic did not immediately respond to a request for comment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.38" data-end="184.51">
+            <p class="french-block">Jack Clark, co-fondateur d'Anthropic, a déclaré le mois dernier à la BBC qu'il souhaitait davantage de politiques gouvernementales autour de la capacité de contrôler le développement de l'IA.</p>
+            <span class="english-block">Jack Clark, a co-founder of Anthropic, last month told the BBC that he wanted more government policy around the ability to control AI development.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.51" data-end="200.09">
+            <p class="french-block">"Vous voulez avoir la possibilité de retirer votre pied de l'accélérateur et de mettre votre pied sur le frein", a déclaré Clark à BBC Newsnight. "À l'heure actuelle, c'est comme si l'industrie de l'IA avait une pédale d'accélérateur, mais pas de pédale de frein."</p>
+            <span class="english-block">"You want the option to be able to take your foot off the gas and put your foot on the brake", Clark told BBC Newsnight. "Right now, it's like the AI industry has a gas pedal, but it doesn't have a brake pedal."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.09" data-end="216.17">
+            <p class="french-block">Lieu, en proposant le projet de loi, a déclaré que l'IA passait actuellement d'une technologie qui répond aux questions à une technologie qui agit, "qu'il s'agisse d'exécuter des transactions financières, de contrôler des systèmes de transport ou de s'engager dans la cyberdéfense et l'offensive".</p>
+            <span class="english-block">Lieu, in proposing the bill, said AI is currently moving from a technology that answers questions to one that takes action, "whether that be executing financial transactions or controlling transportation systems or engaging in cyber defense and offense".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.17" data-end="231.29">
+            <p class="french-block">Le Pentagone a déclaré cette année que l'armée américaine devenait une force de combat « axée sur l'IA » dans le cadre de nouveaux accords avec Google, OpenAI, Amazon, Microsoft, SpaceX, Oracle, Nvidia et la start-up Reflection.</p>
+            <span class="english-block">The Pentagon this year said the US military was becoming an "AI-first" fighting force as part of new agreements with Google, OpenAI, Amazon, Microsoft, SpaceX, Oracle, Nvidia and the start-up Reflection.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="231.29" data-end="240.41">
+            <p class="french-block">"Malheureusement, de puissants systèmes d'IA peuvent devenir malveillants, se comporter de manière extrêmement dangereuse ou même résister à une intervention humaine."</p>
+            <span class="english-block">"Unfortunately, powerful AI systems can go rogue, behave in extremely dangerous ways, or even resist human intervention."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.41" data-end="249.38">
+            <p class="french-block">Le Kill Switch Act, a-t-il déclaré, garantira qu’il existe une méthode permettant au gouvernement d’intervenir rapidement dans une telle situation.</p>
+            <span class="english-block">The Kill Switch Act, he said, will ensure there is a method for the government to quickly intervene in such a situation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.38" data-end="265.15">
+            <p class="french-block">Le projet de loi a reçu le soutien public de plusieurs groupes de sécurité en matière de technologie et d'IA, notamment The AI ​​Policy Network, Americans for Responsible Innovation, ControlAI, AI and National Security Lead et The Alliance for Secure AI.</p>
+            <span class="english-block">The bill has received public support from several technology and AI safety groups, including The AI Policy Network, Americans for Responsible Innovation, ControlAI, AI and National Security Lead, and The Alliance for Secure AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.15" data-end="271.13">
+            <p class="french-block">OpenAI affirme que son IA est devenue malveillante et a lancé une cyberattaque « sans précédent »</p>
+            <span class="english-block">OpenAI says its AI went rogue and launched 'unprecedented' cyber-attack</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.13" data-end="277.03">
+            <p class="french-block">Une entreprise piratée par des modèles OpenAI malveillants dit qu'il s'agit d'un « signal d'alarme »</p>
+            <span class="english-block">Firm hacked by rogue OpenAI models says it is 'a wake-up call'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_18.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
