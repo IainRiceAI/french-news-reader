@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning shot or publicity stunt - how worried should we be about the OpenAI hack?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Warning shot or publicity stunt - how worried should we be about the OpenAI hack?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 24 Jul 2026 23:11:13 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cd9w22n9e4go?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Hugging Face said the hack was done at superhuman speed by an AI with little or no human guidance.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.93" data-end="17.23">
+            <p class="french-block">Cette semaine, le monde de la technologie a été captivé par une histoire qui a tout pour plaire – et qui a commencé comme un thriller de science-fiction.</p>
+            <span class="english-block">This week the tech world was gripped by a story that has it all - and which started like a sci-fi thriller.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.23" data-end="28.54">
+            <p class="french-block">Hugging Face, une sorte de boutique d'applications pour les outils d'intelligence artificielle, a annoncé le 16 juillet avoir été piraté par un cybercriminel doté d'une IA extrêmement puissante.</p>
+            <span class="english-block">Hugging Face - a kind of app store for artificial intelligence tools - announced on 16 July it had been hacked by a cyber criminal wielding enormously powerful AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.54" data-end="38.45">
+            <p class="french-block">L'annonce explosive était pleine de termes effrayants et très techniques : « un essaim de bacs à sable », « un attaquant agent » et « un commandement et un contrôle auto-migrants ».</p>
+            <span class="english-block">The bombshell announcement was full of scary, highly technical terms: "a swarm of sandboxes", "agentic attacker", and "self-migrating command and control".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.45" data-end="48.5">
+            <p class="french-block">Hugging Face a déclaré que le piratage était différent de tout ce qu'il avait fait auparavant, car il avait été réalisé à une vitesse surhumaine par une IA avec peu ou pas de guidage humain.</p>
+            <span class="english-block">Hugging Face said the hack was different from anything it had handled before because it was done at superhuman speed by an AI with little or no human guidance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="48.5" data-end="57.07">
+            <p class="french-block">L’IA a effectué 17 000 actions en moins de deux jours, réussissant à pénétrer dans une grande entreprise technologique riche pour voler des secrets.</p>
+            <span class="english-block">The AI performed 17,000 actions in less than two days, successfully breaching the large wealthy tech company to steal secrets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.07" data-end="63.91">
+            <p class="french-block">Cela a laissé le monde de la technologie sous le choc. Mais qui est responsable de cette attaque ?</p>
+            <span class="english-block">It left the tech world in shock. But who was responsible for this attack?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.91" data-end="73.27">
+            <p class="french-block">Les chercheurs de Hugging Face ont deviné que les mystérieux attaquants avaient utilisé l’un des grands modèles d’IA, mais ils n’avaient aucune idée de qui ni où se trouvaient les criminels.</p>
+            <span class="english-block">Hugging Face researchers guessed the mysterious attackers had used one of the big AI models but they had no idea who or where the criminals were.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="73.27" data-end="78.77">
+            <p class="french-block">L'entreprise, perplexe, a contacté la police et une enquête a commencé.</p>
+            <span class="english-block">The perplexed company contacted the police and investigations commenced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.77" data-end="90.55">
+            <p class="french-block">Les commentateurs et les analystes ont consulté leurs podcasts et leurs comptes de réseaux sociaux pour deviner quel groupe de cybercriminalité ou quel pirate informatique d’un État-nation pourrait être à l’origine de tout cela.</p>
+            <span class="english-block">Commentators and analysts took to their podcasts and social media accounts to guess which cyber crime group or nation state hacker might be behind it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.55" data-end="97.73">
+            <p class="french-block">Puis mercredi, près d'une semaine après que Hugging Face a sonné l'alarme, le véritable coupable a été démasqué.</p>
+            <span class="english-block">Then on Wednesday, nearly a week after Hugging Face raised the alarm, the true culprit was unmasked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="97.73" data-end="99.91">
+            <p class="french-block">C'était ChatGPT.</p>
+            <span class="english-block">It was ChatGPT.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.91" data-end="109.7">
+            <p class="french-block">La révélation à la manière de Scooby-Doo a été rendue encore plus bizarre – et inquiétante – parce qu’OpenAI a déclaré que son robot avait tout fait tout seul, sans autorisation.</p>
+            <span class="english-block">The Scooby-Doo-style reveal was made even more bizarre - and worrying - because OpenAI said its bot did the whole thing on its own, without permission.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.7" data-end="116.26">
+            <p class="french-block">L'entreprise a déclaré que tout s'était passé lors d'un test des compétences de piratage de sa technologie.</p>
+            <span class="english-block">The firm said it all went down during a test of its tech's hacking skills.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.26" data-end="125.78">
+            <p class="french-block">Deux nouvelles versions de ChatGPT, conçues pour être des maîtres pirates, sont sorties d'un environnement de test soi-disant sécurisé et ont accédé à Internet.</p>
+            <span class="english-block">Two new versions of ChatGPT, designed to be master hackers, broke out of a supposedly secure test environment and gained access to the internet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.78" data-end="132.65">
+            <p class="french-block">Ils ont ensuite attaqué Hugging Face pour accéder aux informations nécessaires pour les aider à réussir leur examen.</p>
+            <span class="english-block">They then attacked Hugging Face to get access to the information to help them ace their exam.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.65" data-end="144.0">
+            <p class="french-block">OpenAI a publié un communiqué de presse expliquant ce qui s'était passé et a déclaré qu'il « s'associe à Hugging Face » pour résoudre l'incident de sécurité et partager les leçons apprises.</p>
+            <span class="english-block">OpenAI issued a press release explaining what had happened and said it was "partnering with Hugging Face" to address the security incident and share lessons learned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.0" data-end="148.03">
+            <p class="french-block">Depuis, de vifs débats ont eu lieu autour de cet incident.</p>
+            <span class="english-block">Since then, there has been fierce debate about the incident.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.03" data-end="156.96">
+            <p class="french-block">Était-ce vraiment un avertissement sévère sur l’avenir de l’IA ? Ou s’agissait-il d’un coup publicitaire d’OpenAI pour montrer la puissance de leurs modèles ?</p>
+            <span class="english-block">Was it truly a stark warning about the future of AI? Or was it a publicity stunt by OpenAI to show off how powerful their models are?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.96" data-end="169.7">
+            <p class="french-block">C’est le genre de marketing alarmiste dont les sociétés d’IA sont accusées depuis des années et, depuis le lancement très controversé du modèle Mythos d’Anthropic, les prouesses en matière de cybersécurité sont au centre des préoccupations.</p>
+            <span class="english-block">It's the kind of scare marketing AI companies have been accused of for years and, since the much discussed launch of Anthropic's Mythos model, cyber-security prowess has been a focal point.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.7" data-end="183.43">
+            <p class="french-block">L'un des principaux commentaires sur le post X du patron d'OpenAI, Sam Altman, à propos de l'incident résume ce scepticisme : "Si vous ne comprenez pas que cela a été écrit uniquement pour se vanter du modèle, alors je ne sais pas quoi vous dire."</p>
+            <span class="english-block">One of the top comments on OpenAI boss Sam Altman's X post about the incident summarises this scepticism: "If y'all can't understand that this was written to purely brag about the model then I don't know what to tell you."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.43" data-end="198.84">
+            <p class="french-block">Le consultant en cybersécurité Daniel Card a déclaré sarcastiquement sur LinkedIn : « N'est-il pas heureux que parmi les millions de sites qui ont été pwn3d [piratés], OpenAI ait réussi à attirer quelqu'un qui pourrait également bénéficier de l'exposition marketing… »</p>
+            <span class="english-block">Cyber-security consultant Daniel Card said sarcastically on LinkedIn: "Isn't it lucky [that] out of the millions of sites that got pwn3d [hacked], OpenAI managed to pwn someone who also could benefit from the marketing exposure…"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.84" data-end="204.96">
+            <p class="french-block">Pour certains, l’histoire relève plus d’un drame conspirationniste que d’un thriller de science-fiction.</p>
+            <span class="english-block">For some, the story is more conspiracy drama than sci-fi thriller.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.96" data-end="213.94">
+            <p class="french-block">Le message est le suivant : "Mes outils d'IA ne sont-ils pas vraiment puissants ? Achetez-les pour pouvoir vous protéger des attaques d'IA d'autres personnes."</p>
+            <span class="english-block">The message is: "Aren't my AI tools really powerful? Buy them so you can protect yourself from other people's AI attacks."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.94" data-end="227.09">
+            <p class="french-block">Nous ne pouvons pas connaître la vérité, mais le point de vue opposé présenté par d’autres commentateurs est tout aussi dramatique. Est-ce le signe qu’OpenAI a commis une erreur de jugement et de planification potentiellement dangereuse ?</p>
+            <span class="english-block">We can't know the truth, but the opposing point of view posed by other commentators is just as dramatic. Is this a sign that OpenAI made a potentially dangerous error in judgement and planning?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="227.09" data-end="233.23">
+            <p class="french-block">J'ai couvert de nombreuses histoires sur l'IA, y compris les craintes autour du modèle Mythos d'Anthropic.</p>
+            <span class="english-block">I've covered lots of AI stories, including the fears around Anthropic's Mythos model.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.23" data-end="245.06">
+            <p class="french-block">Ma boîte de réception regorge désormais d'entreprises et d'experts en cybersécurité critiquant OpenAI pour ne pas avoir construit un conteneur plus solide pour tester son IA, connu sous le nom de bac à sable.</p>
+            <span class="english-block">My inbox is now chock full of cyber-security companies and experts criticising OpenAI for not building a stronger container to test its AI, known as a sandbox.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.06" data-end="251.38">
+            <p class="french-block">Après tout, ces agents IA avaient été spécialement formés pour pirater des lieux sans aucune restriction.</p>
+            <span class="english-block">After all, these AI agents had been trained specifically to hack into and out of places with no restrictions at all.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="251.38" data-end="266.95">
+            <p class="french-block">"L'incident d'OpenAI et de Hugging Face est un exemple concret d'un problème plus vaste que nous soulignons depuis des mois", a déclaré Dor Sarig de Pillar Security. "Les bacs à sable ne constituent pas à eux seuls une barrière de sécurité suffisante pour l'IA agentique."</p>
+            <span class="english-block">"The OpenAI and Hugging Face incident is a real-world example of a broader issue we've been highlighting for months," said Dor Sarig from Pillar Security. "Sandboxes alone are not a sufficient security boundary for agentic AI."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="266.95" data-end="272.86">
+            <p class="french-block">Une entreprise piratée par des modèles OpenAI malveillants dit qu'il s'agit d'un « signal d'alarme »</p>
+            <span class="english-block">Firm hacked by rogue OpenAI models says it is 'a wake-up call'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.86" data-end="288.53">
+            <p class="french-block">Le professeur de cybersécurité Alan Woodward de l'Université de Surrey a déclaré aux journalistes qu'OpenAI avait « un œuf sur le visage », et Katie Moussouris de Luta Security est allée plus loin, suggérant que l'industrie de l'IA ne parvient pas à contrôler ses inventions dangereuses.</p>
+            <span class="english-block">Cyber security Professor Alan Woodward from Surrey University told reporters OpenAI had "egg on it's face", and Katie Moussouris from Luta Security went further, suggesting the AI industry is failing to control its dangerous inventions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.53" data-end="295.61">
+            <p class="french-block">"Nous travaillons sur une technologie de pointe sans avoir les connaissances nécessaires pour la contenir", a-t-elle déclaré.</p>
+            <span class="english-block">"We are working on cutting edge technology without the knowledge to contain it," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.61" data-end="303.1">
+            <p class="french-block">"Ce n'est pas parce que nous avons les personnes les plus intelligentes qui développent l'IA que nous avons la capacité de le faire en toute sécurité."</p>
+            <span class="english-block">"Just because we have the smartest people developing AI does not mean we have the ability to do so safely."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.1" data-end="310.87">
+            <p class="french-block">Selon ces points de vue, si l’incident de piratage était un coup publicitaire, il semblerait qu’il se soit retourné contre lui.</p>
+            <span class="english-block">According to these views, if the hacking incident was a publicity stunt then it appears as though it backfired.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.87" data-end="322.51">
+            <p class="french-block">Quelle que soit la raison du piratage, il est clair qu’il s’agit d’un moment majeur pour l’industrie de l’IA et le monde de la cybersécurité, qui se sont affrontés cette année d’une manière que l’on craignait depuis longtemps.</p>
+            <span class="english-block">Whatever led to the hack, it's clear this is a major moment for the AI industry and the cyber security world, which collided this year in ways people had been fearing for a long time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.51" data-end="337.46">
+            <p class="french-block">Abordant ce débat acharné, Francesca Bosco, conseillère en IA et cybersécurité, a déclaré : « Deux récits simplistes sont tout aussi inutiles : qu'il s'agissait d'une évasion à la hollywoodienne ou qu'il s'agissait simplement d'un exercice publicitaire.</p>
+            <span class="english-block">Addressing this fierce debate, AI and cyber security advisor Francesca Bosco said: "Two simplistic narratives are equally unhelpful: that this was a Hollywood-style escape, or that it was merely a publicity exercise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.46" data-end="345.24">
+            <p class="french-block">"Une interprétation plus sérieuse est qu'un test de résistance a révélé des faiblesses dans l'architecture de confinement et d'évaluation."</p>
+            <span class="english-block">"A more serious interpretation is that a stress test exposed weaknesses in containment and evaluation architecture."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="345.24" data-end="350.98">
+            <p class="french-block">Cet événement est le dernier d’une série d’exemples inquiétants et étranges d’agents d’IA devenus voyous.</p>
+            <span class="english-block">This event is the latest in a string of worrying and weird examples of AI agents going rogue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.98" data-end="364.73">
+            <p class="french-block">Dans une étude récente, l'AI Security Institute (AISI) du Royaume-Uni a découvert que les modèles d'IA d'avant-garde sont tellement obsédés par l'accomplissement de tâches qu'ils « trichent » lors des tests pour atteindre leurs objectifs.</p>
+            <span class="english-block">In recent research, the UK's AI Security Institute (AISI) found frontier AI models are so fixated on completing tasks they "cheated" in tests to achieve their goals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="364.73" data-end="377.59">
+            <p class="french-block">Les recherches de l'AISI s'accompagnent de cet avertissement inquiétant : "Un modèle qui poursuit un objectif par des moyens involontaires ou non autorisés peut causer des dommages, en particulier dans les cas d'utilisation à enjeux élevés."</p>
+            <span class="english-block">The research from AISI came with this worrying warning: "A model that pursues a goal through unintended or unauthorised means may cause harm, particularly in high-stakes use cases."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.59" data-end="390.19">
+            <p class="french-block">Inévitablement, ce piratage d’OpenAI a encore alimenté les craintes quant à ce qui pourrait arriver si les agents d’IA étaient lâchés. Pourraient-ils devenir des voyous à plus grande échelle et provoquer une sorte de désastre ?</p>
+            <span class="english-block">Inevitably, this OpenAI hack has further fuelled fears of what could happen if AI agents are let loose. Could they go rogue on a larger scale and cause some sort of disaster?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.19" data-end="398.02">
+            <p class="french-block">Cela est particulièrement préoccupant alors que l’IA est de plus en plus utilisée dans les guerres, comme on le voit en Iran et en Ukraine.</p>
+            <span class="english-block">This is particularly concerning with AI being used increasingly in warfare as seen in Iran and Ukraine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="398.02" data-end="405.91">
+            <p class="french-block">Ciaran Martin, ancien directeur du Centre national de cybersécurité du Royaume-Uni, a offert un point de vue plus calme.</p>
+            <span class="english-block">Ciaran Martin, former head of the UK's National Cyber Security Centre, offered a calmer view.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="405.91" data-end="413.95">
+            <p class="french-block">"C'est un grand pas de passer de cet incident à dire que des agents d'IA vont prendre le contrôle des drones et commencer à tuer des gens", a-t-il déclaré.</p>
+            <span class="english-block">"It is a bit of a leap to go from this incident to saying that AI agents are going to take over drones and start killing people," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="413.95" data-end="422.3">
+            <p class="french-block">Mais pour Martin, et bien d’autres, l’histoire est sans aucun doute un autre exemple frappant de quelque chose que 2026 nous apprend rapidement :</p>
+            <span class="english-block">But for Martin, and many others, the story is undoubtedly another vivid example of something that 2026 is teaching us fast:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="422.3" data-end="428.81">
+            <p class="french-block">Les agents d’IA sont désormais de très bons hackers – et c’est une chose à laquelle nous devons nous préparer de toute urgence.</p>
+            <span class="english-block">AI agents are now very good hackers - and that is something we have to prepare for, urgently.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="428.81" data-end="434.78">
+            <p class="french-block">OpenAI affirme que son IA est devenue malveillante et a lancé une cyberattaque « sans précédent »</p>
+            <span class="english-block">OpenAI says its AI went rogue and launched 'unprecedented' cyber-attack</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="434.78" data-end="440.83">
+            <p class="french-block">Les conseils médicaux de ChatGPT ont amené un homme « au bord de la mort », selon un procès</p>
+            <span class="english-block">ChatGPT medical advice brought man 'to brink of death', lawsuit alleges</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="440.83" data-end="447.74">
+            <p class="french-block">Les législateurs poussent en faveur d'un « kill switch » pour l'IA après que les modèles OpenAI soient devenus voyous</p>
+            <span class="english-block">Lawmakers push for AI 'kill switch' after OpenAI models go rogue</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_8.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

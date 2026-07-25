@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claudia Winkleman's chat show ended after one series - can anyone replace Graham Norton?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Claudia Winkleman's chat show ended after one series - can anyone replace Graham Norton?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 24 Jul 2026 23:27:38 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c1m1rz7n0pzo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Many considered Claudia Winkleman as Norton's successor, but her chat show ended after just one series.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.65" data-end="15.1">
+            <p class="french-block">Winkleman a quitté son émission de discussion la semaine dernière après ses sept épisodes</p>
+            <span class="english-block">Winkleman steppd down from her chat show last week following its seven-episode run</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.1" data-end="23.23">
+            <p class="french-block">Lorsque Lisa Kudrow est apparue au Claudia Winkleman Show plus tôt cette année, elle était visiblement ravie de rencontrer Linda de The Traitors.</p>
+            <span class="english-block">When Lisa Kudrow appeared on The Claudia Winkleman Show earlier this year, she was visibly delighted to meet Linda from The Traitors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.23" data-end="38.57">
+            <p class="french-block">L'actrice de Friends, probablement l'invitée la plus célèbre du programme au cours de ses sept semaines, a déclaré qu'elle était "excitante" de rencontrer l'une des stars de l'émission de téléréalité, qui, selon elle, avait même inspiré l'une de ses propres performances récentes.</p>
+            <span class="english-block">The Friends actress, probably the most famous guest the programme had during its seven-week run, said it was "thrilling" to meet one of the reality show's breakout stars, who she revealed had even inspired one of her own recent performances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.57" data-end="50.11">
+            <p class="french-block">En tant qu'hôte de The Traitors, Winkleman était idéalement placé pour présenter le couple, ce qui a donné lieu au genre de rencontre d'esprit merveilleusement bizarre que l'on voit normalement au Graham Norton Show.</p>
+            <span class="english-block">As host of The Traitors, Winkleman was ideally placed to introduce the pair, resulting in the kind of wonderfully bizarre meeting of minds normally seen on The Graham Norton Show.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.11" data-end="66.74">
+            <p class="french-block">Mais l'émission de discussion de Winkleman n'a pas duré assez longtemps pour permettre des combinaisons d'invités plus inhabituelles sur son canapé bleu sarcelle. La présentatrice a démissionné la semaine dernière après une seule série, affirmant qu'elle était tout simplement "trop ​​nerveuse pour en profiter".</p>
+            <span class="english-block">But Winkleman's own chat show did not last long enough for any more unusual guest combinations on its teal sofa. The presenter quit last week after just one series, saying she was simply "too nervous to enjoy it".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.74" data-end="75.41">
+            <p class="french-block">Il était logique que la BBC commande The Claudia Winkleman Show, étant donné la popularité du présentateur dans des programmes tels que Strictly.</p>
+            <span class="english-block">It had made sense for the BBC to commission The Claudia Winkleman Show, given the presenter's popularity on programmes such as Strictly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.41" data-end="82.49">
+            <p class="french-block">Il y a cependant un niveau de pression différent lorsque vous organisez un spectacle avec votre propre nom au-dessus de la porte.</p>
+            <span class="english-block">There's a different level of pressure, however, hosting a show with your own name above the door.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.49" data-end="91.44">
+            <p class="french-block">Lisa Kudrow (deuxième à gauche) a déclaré qu'elle était « ravie » de rencontrer Linda des Traîtres (à l'extrême droite) sur le chat show</p>
+            <span class="english-block">Lisa Kudrow (second left) said she was "thrilled" to meet Linda from the Traitors (far right) on the chat show</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.44" data-end="106.03">
+            <p class="french-block">"Tout le monde pensait qu'elle pourrait réussir parce qu'elle est intelligente et drôle, mais une émission de discussion avec plusieurs invités est très difficile à gérer", a déclaré Anita Singh, rédactrice en chef des arts et du divertissement du Telegraph, à BBC News.</p>
+            <span class="english-block">"Everyone thought she could pull it off because she's smart and funny, but a chat show with multiple guests is very difficult to handle," the Telegraph's arts and entertainment editor, Anita Singh, tells BBC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.03" data-end="121.22">
+            <p class="french-block">"Vous devez organiser la conversation, donner à chaque invité un temps égal, les aider à brancher ce qu'ils branchent, puis indiquer l'anecdote dont ils ont convenu au préalable avec les chercheurs. Graham Norton donne à cela une apparence trompeusement facile."</p>
+            <span class="english-block">"You have to marshall the conversation, give each guest equal time, help them to plug whatever they're plugging, then cue in whatever anecdote they've agreed beforehand with the researchers. Graham Norton makes that look deceptively easy."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.22" data-end="133.3">
+            <p class="french-block">Elle ajoute : "Je pense que si Claudia avait fait quelques séries supplémentaires, elle serait devenue meilleure. Mais elle est à son meilleur lorsqu'elle est spontanée, et le format laisse très peu de place pour cela."</p>
+            <span class="english-block">She adds: "I think if Claudia had done a couple more series she would have become better at it. But she's at her best when she's being spontaneous, and the format allows very little space for that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.3" data-end="147.53">
+            <p class="french-block">La décision de Winkleman d’arrêter en a surpris plus d’un. Les chiffres d'audience étaient inférieurs à ceux de Norton, mais toujours respectables. Les critiques des critiques étaient mitigées, plutôt que universellement mauvaises.</p>
+            <span class="english-block">Winkleman's decision to quit surprised many. The viewing figures were lower than Norton's, but still respectable. The reviews from critics were mixed, rather than universally bad.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.53" data-end="157.08">
+            <p class="french-block">La BBC a confirmé que c'était la décision de Winkleman d'arrêter, et a laissé entendre qu'elle aurait volontiers commandé une deuxième série – et l'avait peut-être déjà fait.</p>
+            <span class="english-block">The BBC confirmed it was Winkleman's decision to stop, and implied that they would've happily commissioned a second series - and possibly already had.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.08" data-end="172.54">
+            <p class="french-block">"Je crois comprendre qu'ils avaient conclu un accord au-delà d'une saison", a déclaré Jake Kanter de Deadline, qui a fait un reportage sur le talk-show tout au long. "Je ne sais pas à quel point c'était formel. Mais il y avait une intention que cela continue."</p>
+            <span class="english-block">"My understanding is they had made a deal beyond one season," says Deadline's Jake Kanter, who has reported on the talk show throughout. "How formal that was, I don't know. But there was an intention for it to continue."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.54" data-end="180.77">
+            <p class="french-block">Il ajoute : "Je la crois de tout cœur que cela n'a peut-être pas fonctionné à cause de ses propres inquiétudes et de son anxiété concernant l'hébergement."</p>
+            <span class="english-block">He adds: "I wholeheartedly believe her that this perhaps didn't work out because of her own concerns and anxiety around the hosting."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.77" data-end="188.23">
+            <p class="french-block">L'émission de discussion de Winkleman a été réalisée par la société de production de Graham Norton, So Television.</p>
+            <span class="english-block">Winkleman's chat show was made by Graham Norton's production company So Television</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.23" data-end="201.89">
+            <p class="french-block">L'ancien contrôleur de BBC One, Peter Fincham, qui anime le podcast télévisé Insiders, le compare à l'émission de discussion de Davina McCall qu'il a commandée en 2006, qui s'est également terminée après une série.</p>
+            <span class="english-block">Former BBC One controller Peter Fincham, who hosts the TV podcast Insiders, likens it to the Davina McCall chat show he commissioned in 2006, which also ended after one series.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.89" data-end="212.66">
+            <p class="french-block">"Il ne faut pas oublier que, en particulier dans les émissions de discussion où le nom du présentateur figure dans le titre, c'est très révélateur pour eux", a-t-il déclaré à BBC News.</p>
+            <span class="english-block">"You have to remember, particularly chat shows where the presenter's name is in the title, it's very exposing for them," he tells BBC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.66" data-end="220.58">
+            <p class="french-block">"Si Claudia Winkleman avait voulu continuer son émission de discussion, cela aurait pu être un processus lent", réfléchit-il.</p>
+            <span class="english-block">"Had Claudia Winkleman wanted to carry on with her chat show, it could have been a slow burn," he reflects.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.58" data-end="228.77">
+            <p class="french-block">"Mais ce qu'elle a fait est rare, en fait, que quelqu'un dise : 'hmm, je n'ai pas vraiment apprécié ça, ne pense pas que je le referai'.</p>
+            <span class="english-block">"But what she's done is rare, actually, for somebody to say, 'hmm, didn't really enjoy that, don't think I'll do it again'.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.77" data-end="234.72">
+            <p class="french-block">"Cela dit quelque chose de très positif à son sujet que l'on ne voit pas souvent parmi les présentateurs."</p>
+            <span class="english-block">"That says something very positive about her that you don't often see among presenters."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.72" data-end="244.42">
+            <p class="french-block">Beaucoup considéraient Winkleman, 54 ans, comme le successeur présumé de l'empereur Graham Norton - notamment parce qu'il semblait la faire passer par lui-même.</p>
+            <span class="english-block">Many considered Winkleman, 54, to be chat show emperor Graham Norton's presumptive successor - not least because he seemed to be ushering her through himself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.42" data-end="256.8">
+            <p class="french-block">Ainsi, Television, dont Norton est copropriétaire, a également produit l'émission de Winkleman, et cela aurait pu être un bon moyen pour l'entreprise de conserver son travail lorsque Norton finira par démissionner.</p>
+            <span class="english-block">So Television, which Norton co-owns, also produced Winkleman's show, and it could have been a neat way for the company to retain work when Norton does eventually quit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.8" data-end="273.74">
+            <p class="french-block">Certes, l'émission de Norton n'est pas près de disparaître : il a signé un nouveau contrat de trois ans avec la BBC en 2025. Il a également entrepris plusieurs nouveaux projets, dont un podcast, d'autres romans et un jeu télévisé de courte durée sur ITV, The Neighbourhood.</p>
+            <span class="english-block">Admittedly, Norton's show is not vanishing any time soon - he signed a new three-year deal with the BBC in 2025. He has also taken on several new projects, including a podcast, more novels, and a short-lived ITV game show, The Neighbourhood.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="273.74" data-end="288.77">
+            <p class="french-block">Mais Norton, 63 ans, a également parlé ouvertement ces dernières années de la nécessité de travailler moins. Il a réduit le nombre d’épisodes de chat-show qu’il présente en 2022 et a également quitté son émission Virgin Radio deux ans plus tard.</p>
+            <span class="english-block">But Norton, 63, has also spoken openly in recent years about working less. He reduced the number of chat show episodes he presents in 2022, and also stepped down from his Virgin Radio show two years later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.77" data-end="294.91">
+            <p class="french-block">La BBC a signé un nouvel accord de trois ans avec The Graham Norton Show en 2025</p>
+            <span class="english-block">The BBC signed a new three-year deal with The Graham Norton Show in 2025</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.91" data-end="304.18">
+            <p class="french-block">La courte vie du Claudia Winkleman Show pourrait faire du plan de succession de Norton une question clé pour le nouveau chef du divertissement de la BBC, Ed Havard.</p>
+            <span class="english-block">The short life of The Claudia Winkleman Show could make the Norton succession plan a key issue for the BBC's incoming entertainment chief, Ed Havard.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.18" data-end="314.54">
+            <p class="french-block">"Cela laissera la BBC face à un problème si et quand Graham décide de prendre sa retraite, car si Claudia ne peut pas le faire, je ne sais pas qui le pourra", déclare Singh.</p>
+            <span class="english-block">"This does leave the BBC with a problem if and when Graham decides to retire, because if Claudia can't do it, I don't know who can," says Singh.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.54" data-end="327.7">
+            <p class="french-block">"Graham ne veut pas faire 52 semaines par an", note Fincham, "donc je suis sûr que la BBC aurait été ravie d'avoir une autre émission de discussion de longue durée que vous pouvez équilibrer avec la sienne, et ils pourraient essayer à nouveau."</p>
+            <span class="english-block">"Graham doesn't want to do 52 weeks a year," Fincham notes, "so I'm sure the BBC would have been delighted to have another long-running chat show that you can balance with his, and they may have another try."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.7" data-end="341.38">
+            <p class="french-block">Des dizaines de présentateurs adoreraient ce concert et beaucoup en seraient parfaitement capables - Jack Whitehall a fait un travail solide lorsqu'il a remplacé Norton auparavant, ou Alan Carr pourrait probablement être tenté de revenir à ses jours de Chatty Man.</p>
+            <span class="english-block">Dozens of presenters would love the gig and many would be perfectly capable - Jack Whitehall did a solid job when he stood in for Norton previously, or Alan Carr could probably be tempted to return to his Chatty Man days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="341.38" data-end="353.76">
+            <p class="french-block">Mais le paysage télévisuel regorge également d’exemples d’émissions de discussion annulées. Outre Winkleman et McCall, Lily Allen et Charlotte Church ont également animé des séries qui n'ont pas duré longtemps.</p>
+            <span class="english-block">But the TV landscape is also littered with examples of cancelled chat shows. As well as Winkleman and McCall, Lily Allen and Charlotte Church also hosted series which didn't last long.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.76" data-end="360.67">
+            <p class="french-block">Winkleman continuera d'animer The Traitors et la deuxième série à venir de son spin-off populaire sur les célébrités.</p>
+            <span class="english-block">Winkleman will continue to host The Traitors and the forthcoming second series of its popular celebrity spin-off</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.67" data-end="371.18">
+            <p class="french-block">Un cynique pourrait dire que la courte durée de vie de la série de Winkleman lui aura montré, ainsi qu'à la BBC, que lancer une nouvelle émission de discussion est plus difficile qu'il n'y paraît.</p>
+            <span class="english-block">A cynic might say that the short life of Winkleman's series will have shown both her and the BBC that launching a new chat show is harder than it looks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="371.18" data-end="377.78">
+            <p class="french-block">Mais Kanter a une interprétation plus nuancée : « Mon instinct est que cela a toujours été un peu une expérience.</p>
+            <span class="english-block">But Kanter has a more nuanced interpretation, reflecting: "My instinct is that this was always a bit of an experiment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.78" data-end="392.04">
+            <p class="french-block">"De toute évidence, c'était quelque chose que Claudia voulait faire, et quand vous avez une présentatrice au sommet de ses capacités, je pense que c'est tout simplement une bonne gestion des talents d'essayer de travailler avec cette présentatrice sur le projet de ses rêves."</p>
+            <span class="english-block">"Clearly it was something that Claudia wanted to do, and when you have a presenter at the peak of her powers, I think it's just good talent management to try and work together with that presenter on their dream project."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="392.04" data-end="399.22">
+            <p class="french-block">Il ajoute : "Je suis sûr que toutes les parties repartiront la tête haute, et cela valait la peine d'essayer, je pense."</p>
+            <span class="english-block">He adds: "I'm sure all sides will walk away with their heads held high, and it was worth giving it a crack, I think."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="399.22" data-end="413.18">
+            <p class="french-block">Outre les personnalités, se pose la question plus existentielle de savoir si la BBC a même besoin d'une nouvelle série de débats, alors qu'il existe désormais des centaines d'autres plateformes sur lesquelles les célébrités peuvent aller pour promouvoir leur produit.</p>
+            <span class="english-block">Personalities aside, there's the more existential question of whether the BBC even needs a new talk series, when there are now hundreds of other platforms where celebrities can go to promote their product.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="413.18" data-end="426.94">
+            <p class="french-block">Les stars peuvent tout aussi bien apparaître sur des chaînes YouTube telles que Snack Wars ou Hot Ones que dans une émission de discussion télévisée, ou passer autant de temps dans des conférences de presse à être interviewées par des TikTokers que dans les médias traditionnels.</p>
+            <span class="english-block">Stars can just as easily appear on YouTube strands such as Snack Wars or Hot Ones as a TV chat show, or spend as much time at press junkets being interviewed by TikTokers as legacy media outlets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="426.94" data-end="443.09">
+            <p class="french-block">Les agents talentueux savent que voir des stars d'Hollywood parler à un retraité adorable et jurant de l'Est de Londres, connu sous le nom de Grime Gran, ou jouer à un jeu de Tu préfères, avec LadBible, est tout aussi susceptible de générer de la publicité que des interviews traditionnelles.</p>
+            <span class="english-block">Talent agents know that seeing Hollywood stars talking to a lovable and sweary East London pensioner, external known as Grime Gran, or playing a game of Would You Rather, external with LadBible, is just as likely to generate publicity as traditional interviews.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="443.09" data-end="453.53">
+            <p class="french-block">Singh souligne que les extraits de programmes tels que Norton deviennent souvent viraux aussi, mais ajoute : "Je ne pense pas que le public ait envie d'une autre émission de discussion télévisée.</p>
+            <span class="english-block">Singh highlights that clips from programmes such as Norton's often go viral too, but adds: "I don't think the public is craving another TV chat show.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="453.53" data-end="464.76">
+            <p class="french-block">"Repensez aux rencontres les plus mémorables de l'époque des chat-shows", dit-elle. "Ils étaient en tête-à-tête : Parkinson avec Muhammad Ali ; Wogan avec George Best ou David Icke.</p>
+            <span class="english-block">"Think back to the most memorable encounters from the heyday of chat shows," she says. "They were one-on-one: Parkinson with Muhammad Ali; Wogan with George Best or David Icke.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="464.76" data-end="474.5">
+            <p class="french-block">"Ces interviews de longue durée ont désormais migré vers les podcasts, où les célébrités trouvent facile d'être ouvertes et les traitent essentiellement comme une séance de thérapie prolongée.</p>
+            <span class="english-block">"Those long-form interviews have moved to podcasts now, where celebrities find it easy to be open and essentially treat them as an extended therapy session.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="474.5" data-end="488.45">
+            <p class="french-block">"Et les interviews de célébrités les plus divertissantes du moment sont celles de Chicken Shop Date d'Amelia Dimoldenberg. Comparé à un contenu comme celui-là, une émission de discussion dans un studio de télévision semble assez démodée."</p>
+            <span class="english-block">"And the most entertaining celebrity interviews around are on Amelia Dimoldenberg's Chicken Shop Date. Compared to content like that, a chat show in a TV studio seems quite old-fashioned."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="488.45" data-end="495.24">
+            <p class="french-block">Dimoldenberg interviewe des stars de Chicken Shop Date et est désormais le journaliste du tapis rouge des Oscars</p>
+            <span class="english-block">Dimoldenberg interviews stars on Chicken Shop Date and now serves as the Oscars' red carpet reporter</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="495.24" data-end="507.89">
+            <p class="french-block">L'émission de Norton apporte clairement toujours une valeur énorme à la BBC, et Kanter affirme que "le format des émissions de discussion reste fort" et constitue une "partie vraiment importante du programme de BBC One".</p>
+            <span class="english-block">Norton's show clearly still delivers huge value for the BBC, and Kanter says the the "chat show format remains strong" and is a "really important part of the BBC One schedule".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="507.89" data-end="526.13">
+            <p class="french-block">"Cela répand un peu de poussière d'étoiles, c'est un rendez-vous à regarder, je pense que les gens aiment que ce soit un vendredi soir et qu'ils puissent se connecter à des divertissements, cela fonctionne bien en ligne, c'est un moteur de clips et de moments viraux, et c'est quelque chose qui doit être valorisé dans cette économie de l'attention", note-t-il.</p>
+            <span class="english-block">"It sprinkles a bit of stardust, it's appointment to view, I think people enjoy that it's a Friday night and they can tune in for some entertainment, it performs well online, it's an engine for clips and viral moments, and that's something that's to be valued in this attention economy," he notes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="526.13" data-end="532.99">
+            <p class="french-block">Et, parlant d'expérience, Fincham conclut qu'il n'est de toute façon « pas un grand fan des plans de succession ».</p>
+            <span class="english-block">And, speaking from experience, Fincham concludes he is "not a big fan of succession plans" anyway.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="532.99" data-end="543.77">
+            <p class="french-block">« J'ai dirigé BBC One entre 2005 et 2007 », se souvient-il, « et à cette époque, une conversation régulière était : « Quel est le plan de succession de David Attenborough ?</p>
+            <span class="english-block">"I ran BBC One between 2005 and 2007," he recalls, "and at that time, a regular conversation was 'What's the succession plan for David Attenborough?'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="543.77" data-end="555.02">
+            <p class="french-block">"C'était il y a 20 ans, et je ne peux m'empêcher de remarquer qu'il présente encore des programmes aujourd'hui. Alors méfiez-vous de l'hypothèse selon laquelle un plan de succession est nécessaire.</p>
+            <span class="english-block">"That was 20 years ago, and I can't help noticing he's still presenting programmes today. So beware of the assumption that a succession plan is needed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="555.02" data-end="560.93">
+            <p class="french-block">"Et Graham Norton, s'il choisit de continuer, en a encore beaucoup dans le réservoir."</p>
+            <span class="english-block">"And Graham Norton, if he chooses to continue, has got plenty more in the tank."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="560.93" data-end="564.36">
+            <p class="french-block">Claudia Winkleman quitte le chat après une série</p>
+            <span class="english-block">Claudia Winkleman quits chat show after one series</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="564.36" data-end="570.19">
+            <p class="french-block">"Le meilleur ami que vous aimeriez avoir" - Comment Claudia Winkleman a conquis la télévision</p>
+            <span class="english-block">'The best friend you'd love to have' - How Claudia Winkleman conquered TV</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_33.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
