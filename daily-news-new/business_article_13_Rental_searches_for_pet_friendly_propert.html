@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental searches for pet friendly properties drop after law change</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Rental searches for pet friendly properties drop after law change</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 26 Jul 2026 00:00:49 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj3gd312d8yo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Agents say some renters wrongly believe permission to have a pet is guaranteed.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.49" data-end="17.45">
+            <p class="french-block">Les recherches de Rightmove sur les propriétés locatives autorisant les animaux de compagnie ont chuté depuis que les modifications législatives ont donné plus de droits aux locataires.</p>
+            <span class="english-block">Rightmove searches for rental properties that allow pets have plummeted since law changes gave renters more rights.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.45" data-end="26.35">
+            <p class="french-block">Suite à l'introduction des nouvelles règles, les recherches d'animaux de compagnie ont chuté de plus de 50 % en mai et juin par rapport à l'année précédente.</p>
+            <span class="english-block">Following the introduction of the new rules, pet searches dropped by more than 50% in May and June compared with a year earlier.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="26.35" data-end="37.06">
+            <p class="french-block">Les propriétaires en Angleterre ne peuvent pas refuser de manière déraisonnable les animaux de compagnie dans leurs propriétés en vertu des modifications apportées en mai à la loi sur les droits des locataires.</p>
+            <span class="english-block">Landlords in England cannot unreasonably refuse pets in their properties under changes made in May in the Renters' Rights Act.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.06" data-end="49.87">
+            <p class="french-block">Mais les agents affirment que certains locataires croient à tort que l'autorisation d'avoir un animal de compagnie est garantie, et les propriétaires affirment que certaines maisons ne conviennent toujours pas à plusieurs animaux de compagnie ou à de gros chiens.</p>
+            <span class="english-block">But agents say some renters wrongly believe permission to have a pet is guaranteed, and landlords say some homes remain unsuitable for multiple pets or large dogs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.87" data-end="66.55">
+            <p class="french-block">"Les propriétaires doivent considérer les demandes de manière équitable et ne peuvent pas les refuser de manière déraisonnable, mais ils peuvent toujours refuser s'il existe une raison valable", a déclaré Megan Eighteen, présidente sortante de l'organisme commercial des agents de location ARLA Propertymark.</p>
+            <span class="english-block">"Landlords must consider requests fairly and cannot unreasonably refuse them, but they can still decline where there is a valid reason," said Megan Eighteen, immediate past president of lettings agents trade body ARLA Propertymark.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.55" data-end="74.78">
+            <p class="french-block">Elle a déclaré qu'il y avait beaucoup de "potentiels de malentendus" parmi les locataires au sujet des propriétés acceptant les animaux de compagnie.</p>
+            <span class="english-block">She said there was plenty of "potential for misunderstanding", among tenants about pet-friendly properties.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.78" data-end="92.69">
+            <p class="french-block">Les données de Rightmove suggèrent que moins de locataires filtrent de manière proactive les propriétés acceptant les animaux de compagnie lors de la recherche d'un logement. Même si les animaux de compagnie restent globalement le terme le plus recherché – devant les jardins, les garages et les meubles, la première place en tête diminue.</p>
+            <span class="english-block">The Rightmove data suggests that fewer tenants are proactively filtering for pet-friendly properties when searching for a home. While pets remain the most common searched-for term overall - ahead of gardens, garages and furnishings, the lead at the top is shrinking.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.69" data-end="112.87">
+            <p class="french-block">Les recherches des locataires pour des propriétés acceptant les animaux de compagnie ont chuté de 54 % en mai et de 52 % en juin par rapport aux mêmes mois de l'année précédente, selon les chiffres partagés avec la BBC. Les chutes se sont accélérées au cours de cette année, à mesure que les changements se rapprochaient et étaient ensuite introduits.</p>
+            <span class="english-block">Renter searches for properties that allow pets fell by 54% in May and 52% in June compared with the same months a year earlier, according to the figures shared with the BBC. Falls had accelerated through this year, as the changes got closer and were then introduced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.87" data-end="126.84">
+            <p class="french-block">Marc von Grundherr, directeur de l'agence Benham and Reeves, a déclaré que certains locataires n'ont divulgué un animal de compagnie qu'après avoir signé leur contrat de location, tandis que d'autres ont été découverts lors d'inspections de propriété.</p>
+            <span class="english-block">Marc von Grundherr, director of agency Benham and Reeves, said some tenants have only disclosed a pet after signing their tenancy agreement, while others have been discovered during property inspections.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.84" data-end="147.38">
+            <p class="french-block">"La réalité est que les locataires comprennent désormais que l'équilibre des pouvoirs a changé. Les propriétaires ne peuvent plus compter sur une politique générale interdisant les animaux de compagnie pour dissuader les demandes et devraient plutôt s'attendre à ce que les conversations sur la possession d'animaux de compagnie surviennent beaucoup plus tard dans le processus de location", a-t-il déclaré.</p>
+            <span class="english-block">"The reality is that tenants now understand the balance of power has shifted. Landlords can no longer rely on a blanket 'no pets' policy to deter applications and should instead expect conversations around pet ownership to arise much later in the letting process," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.38" data-end="167.02">
+            <p class="french-block">Désormais, en Angleterre, les propriétaires peuvent toujours refuser un animal de compagnie si un autre locataire souffre d'allergies, si la propriété est trop petite pour un gros animal de compagnie ou plusieurs animaux de compagnie, si l'animal est illégal ou si le propriétaire est locataire et que le propriétaire foncier n'autorise pas les animaux de compagnie.</p>
+            <span class="english-block">Now, in England, landlords may still be able to refuse a pet if another tenant has an allergy, the property is too small for a large pet or several pets, the pet is illegal, or the landlord is a leaseholder and the freeholder does not allow pets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.02" data-end="178.42">
+            <p class="french-block">Avant que les règles ne changent, Eve Williamson a dû abandonner son bouledogue américain, Khan, ou risquer d'être expulsée de son domicile, même si elle avait déjà eu un chien dans la propriété.</p>
+            <span class="english-block">Before the rules changed, Eve Williamson had to give up her American Bulldog, Khan, or face eviction from her home - despite having previously had a dog in the property.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.42" data-end="189.55">
+            <p class="french-block">L'ancienne coiffeuse de 41 ans, originaire de Londres, a décrit l'expérience comme horrible, d'autant plus que Khan lui avait apporté du réconfort tout en s'occupant à plein temps de sa mère.</p>
+            <span class="english-block">The 41-year-old former hairdresser, from London, described the experience as awful, especially as Khan had brought comfort while she gave full-time care to her mum.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.55" data-end="197.95">
+            <p class="french-block">"La vie peut être dure, mais les animaux de compagnie apportent un amour inconditionnel", a-t-elle déclaré. "Ils sont de la famille."</p>
+            <span class="english-block">"Life can get tough, but pets bring unconditional love," she said. "They're family."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.95" data-end="201.86">
+            <p class="french-block">Eve a dû abandonner son chien – Khan – ou risquer l'expulsion</p>
+            <span class="english-block">Eve had to give up her dog - Khan - or face eviction</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.86" data-end="206.64">
+            <p class="french-block">Khan a depuis été relogé avec bonheur et Eve s'est dite ravie du changement de loi.</p>
+            <span class="english-block">Khan has since been happily re-homed, and Eve said she was delighted with the law change.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.64" data-end="213.36">
+            <p class="french-block">Katie Smith, 29 ans, de Swindon, a deux chats – Pumpkin et Pippin – dans sa maison de location.</p>
+            <span class="english-block">Katie Smith, 29, from Swindon, has two cats - Pumpkin and Pippin - in her rental home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.36" data-end="222.84">
+            <p class="french-block">La nouvelle maman a déclaré que la famille avait partagé des « moments merveilleux » avec des animaux de compagnie, qui apprendraient également aux enfants la vie et la mort.</p>
+            <span class="english-block">The new mum said the family had shared "wonderful moments" with pets, which would also teach children about life and death.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.84" data-end="231.43">
+            <p class="french-block">Mais elle a ajouté que le choix des logements à louer diminuait encore fortement sur les portails immobiliers lorsque les animaux de compagnie faisaient partie de l'équation.</p>
+            <span class="english-block">But she said the choice of places to rent still dropped sharply on property portals when pets were part of the equation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="231.43" data-end="236.02">
+            <p class="french-block">"Les propriétaires devraient leur donner une chance", a-t-elle déclaré.</p>
+            <span class="english-block">"Landlords should give them a chance," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="236.02" data-end="250.75">
+            <p class="french-block">Pourtant, même avec les nouvelles règles, les propriétaires trouvaient des excuses pour refuser des locataires potentiels avec des animaux de compagnie, selon Russell Hunt, fondateur de Pets Lets, qui propose aux clients des locations acceptant les animaux de compagnie.</p>
+            <span class="english-block">Yet, even under the new rules, landlords were finding excuses to refuse potential tenants with pets, according to Russell Hunt, founder of Pets Lets, which matches clients with pet-friendly rentals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.75" data-end="257.74">
+            <p class="french-block">Russell Hunt a déclaré que les propriétaires devraient considérer chaque demande d'animal de compagnie selon ses mérites.</p>
+            <span class="english-block">Russell Hunt said landlords should consider each pet request on its merits</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="257.74" data-end="266.02">
+            <p class="french-block">Il vit avec un croisement Basset Beagle, appelé Biscuit, et ses trois adolescents, dont il plaisante qu'ils sont plus perturbateurs que le chien.</p>
+            <span class="english-block">He lives with a Basset Beagle cross, called Biscuit, and his three teenagers, who he jokes are more disruptive than the dog.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="266.02" data-end="282.34">
+            <p class="french-block">Il a déclaré que les CV des animaux de compagnie devraient être utilisés et que les propriétaires devraient examiner les circonstances plus attentivement, comme le fait que les chiens plus âgés soient plus calmes et dorment plus, plutôt que de simplement exclure les locataires ayant de grands ou plusieurs animaux de compagnie.</p>
+            <span class="english-block">He said pet CVs should be used and landlords should consider the circumstances more carefully, such as older dogs being calmer and sleeping more, rather than simply ruling out tenants with large or multiple pets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.34" data-end="292.18">
+            <p class="french-block">Les représentants des propriétaires disent comprendre l’importance de la compagnie que les animaux de compagnie offrent aux locataires, mais ils peuvent quand même faire face à des dommages coûteux.</p>
+            <span class="english-block">Representatives for landlords say they understand the importance of companionship that pets offer to tenants, but they can still face costly damage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.18" data-end="313.08">
+            <p class="french-block">"De nombreux propriétaires ont des inquiétudes légitimes quant au risque que certains propriétaires d'animaux irresponsables font peser sur les propriétés locatives, ou que certains propriétaires peuvent essayer de garder leurs animaux de compagnie dans des propriétés qui ne sont pas appropriées pour les animaux", a déclaré Chris Norris, directeur des politiques à la National Residential Landlords Association.</p>
+            <span class="english-block">"Many landlords have legitimate concerns about the risk that some irresponsible pet owners pose to rental properties, or that some owners may try to keep pets in properties that are not appropriate for animals," said Chris Norris, chief policy officer at the National Residential Landlords Association.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="313.08" data-end="317.74">
+            <p class="french-block">Il a déclaré que les propriétaires étaient confrontés à des problèmes tels que :</p>
+            <span class="english-block">He said that landlords faced issues including:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="317.74" data-end="322.22">
+            <p class="french-block">Pas de pouvoir pour contraindre les locataires à souscrire une assurance</p>
+            <span class="english-block">No power to compel tenants to take out insurance</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.22" data-end="326.06">
+            <p class="french-block">Aucun droit légal de demander un dépôt supplémentaire</p>
+            <span class="english-block">No legal right to request an additional deposit</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.06" data-end="330.55">
+            <p class="french-block">Une charge de frais si un animal cause des dommages à une propriété</p>
+            <span class="english-block">A burden of costs should a pet cause damage to a property</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.55" data-end="345.84">
+            <p class="french-block">Lesley Horton, médiateur immobilier en chef du Royaume-Uni, a déclaré que les propriétaires ne devraient pas prélever de suppléments pour animaux de compagnie, car cela ne dépasse pas les frais autorisés pour des problèmes tels que les retards de paiement ou la perte de clés de remplacement.</p>
+            <span class="english-block">Lesley Horton, the UK's chief property ombudsman said that landlords should not be levying pet surcharges as this fell outside permitted fees for issues such as late payments or lost key replacements.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="345.84" data-end="354.53">
+            <p class="french-block">Cependant, un propriétaire pourrait effectuer des déductions sur la caution de location à la fin de la location en cas de dommages avérés liés aux animaux.</p>
+            <span class="english-block">However, a landlord could make deductions from the tenancy deposit at the end of the tenancy for proven pet-related damage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="354.53" data-end="358.51">
+            <p class="french-block">Êtes-vous concerné par les problèmes soulevés dans cette histoire ?</p>
+            <span class="english-block">Are you affected by the issues raised in this story?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="358.51" data-end="363.86">
+            <p class="french-block">Ce que la loi sur les droits des locataires signifie pour les locataires et les propriétaires</p>
+            <span class="english-block">What the Renters' Rights Act means for tenants and landlords</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_13.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

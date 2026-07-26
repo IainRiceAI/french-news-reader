@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza, pasta, potatoes, protein - how Italian children became so overweight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Pizza, pasta, potatoes, protein - how Italian children became so overweight</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 25 Jul 2026 23:30:07 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c33y3151vydo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The Mediterranean diet was a blueprint for healthy living, yet Italian children are among the most overweight in Europe according to WHO.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.6" data-end="15.02">
+            <p class="french-block">Des snacks ultra-transformés remplissent les étagères d'un stand de nourriture à Naples</p>
+            <span class="english-block">Ultra-processed snacks fill the shelves of a food stall in Naples</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.02" data-end="25.03">
+            <p class="french-block">La vie quotidienne n'est pas facile pour Salvatore. À 17 ans, il pèse 170 kg (26e 10 lb) et a du mal à marcher.</p>
+            <span class="english-block">Daily life is not easy for Salvatore. At 17, he weighs 170kg (26st 10lb) and struggles to walk.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.03" data-end="33.07">
+            <p class="french-block">Il ne peut pas attacher ses propres lacets et son scooter Vespa peine à supporter son poids : en une semaine, ses roues se sont cassées sept fois.</p>
+            <span class="english-block">He can't tie his own shoelaces and his Vespa scooter strains to bear his weight - in one week, its wheels broke seven times.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.07" data-end="36.65">
+            <p class="french-block">"Il mange constamment", explique sa mère Anna.</p>
+            <span class="english-block">"He eats constantly," says his mother Anna.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.65" data-end="60.53">
+            <p class="french-block">Salvatore fait partie du nombre croissant d’enfants et d’adolescents italiens souffrant d’obésité. Le problème est particulièrement aigu dans le sud : dans certaines parties de la région de Campanie, plus de 40 % des enfants de huit et neuf ans sont en surpoids. La ville de Ponticelli, à la périphérie de Naples, a acquis la réputation peu enviable d'être l'une des capitales mondiales de l'obésité infantile.</p>
+            <span class="english-block">Salvatore is among a growing number of Italian children and teenagers living with obesity. The problem is particularly acute in the south: in parts of the Campania region, more than 40% of eight and nine-year-olds are overweight. The town of Ponticelli, on the outskirts of Naples, has earned the unenviable reputation as one of the world's child obesity capitals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.53" data-end="76.44">
+            <p class="french-block">Il s’agit d’une évolution frappante dans un pays longtemps considéré comme le foyer spirituel de la diète méditerranéenne. Pourtant, aujourd’hui, les enfants italiens sont parmi les plus en surpoids d’Europe, selon l’Organisation mondiale de la santé (OMS).</p>
+            <span class="english-block">It is a striking development in a country long regarded as the spiritual home of the Mediterranean diet. Yet today, Italian children are among the most overweight in Europe, according to the World Health Organization (WHO).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.44" data-end="87.84">
+            <p class="french-block">Salvatore attend une intervention chirurgicale qui changera sa vie à l'hôpital Betania de Ponticelli, où le Dr Sonja Chiappetta a passé 15 ans à soigner des patients souffrant d'obésité sévère.</p>
+            <span class="english-block">Salvatore is waiting for life-changing surgery at the Betania Hospital in Ponticelli, where Dr Sonja Chiappetta has spent 15 years treating patients with severe obesity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.84" data-end="100.97">
+            <p class="french-block">Jusqu'à récemment, dit-elle, la plupart de ses patients étaient dans la cinquantaine. "Maintenant, je vois ces mêmes patients lorsqu'ils sont adolescents, dès l'âge de 16 ans. Ils rajeunissent et c'est effrayant."</p>
+            <span class="english-block">Until recently, she says, most of her patients were in their fifties. "Now I see those same patients when they're teenagers, as young as 16. They are getting younger, and it's frightening."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.97" data-end="114.26">
+            <p class="french-block">L'opération qu'elle pratique enlève jusqu'à 90 % de l'estomac, ce qui signifie que les gens sont incapables de manger de grandes quantités de nourriture. La demande a fortement augmenté dans cette partie de l'Italie.</p>
+            <span class="english-block">The surgery she carries out removes up to 90% of the stomach - meaning people are unable to eat large quantities of food. Demand has risen sharply in this part of Italy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.26" data-end="122.04">
+            <p class="french-block">Mais Salvatore a appris qu'il ne pourrait pas se faire opérer. Son poids est si excessif que l’opération est trop dangereuse.</p>
+            <span class="english-block">But Salvatore has been told he cannot get the operation. His weight is so excessive it makes the surgery too dangerous.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.04" data-end="131.9">
+            <p class="french-block">Au lieu de cela, le Dr Chiappetta lui a prescrit une injection amaigrissante de GLP-1 pour réduire son appétit et l'aider à perdre suffisamment de poids pour l'opération.</p>
+            <span class="english-block">Instead, Dr Chiappetta has prescribed him a GLP-1 weight-loss injection to reduce his appetite and help him lose enough weight for the operation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.9" data-end="137.54">
+            <p class="french-block">L’Italie est depuis longtemps considérée comme le foyer spirituel du régime méditerranéen.</p>
+            <span class="english-block">Italy has long been regarded as the spiritual home of the Mediterranean diet</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="137.54" data-end="143.5">
+            <p class="french-block">Pendant des décennies, l’Italie a été présentée comme un modèle en matière d’alimentation saine.</p>
+            <span class="english-block">For decades, Italy was held up as a model of healthy eating.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.5" data-end="165.74">
+            <p class="french-block">Le régime méditerranéen - riche en légumes, légumineuses, huile d'olive, céréales complètes et poisson - est devenu célèbre après que le physiologiste américain Ancel Keys et son épouse, la biochimiste Margaret Keys, aient étudié les communautés du sud de l'Italie dans les années 1950 et établi un lien entre leurs habitudes et des taux de maladies cardiaques remarquablement faibles.</p>
+            <span class="english-block">The Mediterranean diet - rich in vegetables, legumes, olive oil, whole grains and fish - became famous after US physiologist Ancel Keys and his wife, biochemist Margaret Keys, studied communities in southern Italy in the 1950s and linked their habits to remarkably low rates of heart disease.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.74" data-end="173.83">
+            <p class="french-block">Leurs recherches ont transformé une façon régionale de manger en l’un des régimes alimentaires les plus connus au monde ; un modèle pour une vie saine.</p>
+            <span class="english-block">Their research transformed a regional way of eating into one of the world's best-known diets; a blueprint for healthy living.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.83" data-end="177.46">
+            <p class="french-block">Mais l’Italie qui a inspiré ces études n’existe plus.</p>
+            <span class="english-block">But the Italy that inspired those studies no longer exists.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.46" data-end="190.7">
+            <p class="french-block">"Le régime méditerranéen traditionnel a disparu", déclare le docteur Valter Longo, directeur du Longevity Institute de l'Université de Californie du Sud. "Seuls 10 % des Italiens le suivent vraiment."</p>
+            <span class="english-block">"The traditional Mediterranean diet has been lost," says Doctor Valter Longo, director of the Longevity Institute at the University of Southern California. "Only 10% of Italians really follow it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.7" data-end="201.74">
+            <p class="french-block">Le Dr Longo résume le régime alimentaire italien moderne avec ce qu'il appelle les « cinq P » : pizza, pâtes, pommes de terre, protéines et pane - le mot italien pour pain.</p>
+            <span class="english-block">Dr Longo sums up the modern Italian diet with what he calls the "five Ps": pizza, pasta, potatoes, protein and pane - the Italian word for bread.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.74" data-end="212.21">
+            <p class="french-block">La transformation est visible partout : des rayons des supermarchés remplis d’aliments ultra-transformés aux pizzerias vendant des tranches remplies de chips, de saucisses et de snacks frits.</p>
+            <span class="english-block">The transformation is visible everywhere: from supermarket shelves stocked with ultra-processed foods to pizzerias selling slices piled high with chips, sausages and fried snacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.21" data-end="221.47">
+            <p class="french-block">Le docteur Roberto Berni Canani, pédiatre et spécialiste de l'obésité à l'Université Federico II de Naples, en constate chaque jour les conséquences.</p>
+            <span class="english-block">Doctor Roberto Berni Canani, a paediatrician and obesity specialist at the Federico II University in Naples, sees the consequences every day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.47" data-end="227.95">
+            <p class="french-block">"J'ai soigné des enfants qui n'avaient que deux ou trois ans et qui pesaient déjà 25 kg", explique-t-il.</p>
+            <span class="english-block">"I've treated children who are just two or three years old and already weigh 25kg," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="227.95" data-end="241.3">
+            <p class="french-block">Il dit que la plupart des parents ne réalisent pas que leurs enfants sont en surpoids. "Ils viennent me voir à cause d'autres problèmes : toux, douleurs au ventre, diarrhée. Ils ne réalisent pas que le poids de leur enfant en est la cause."</p>
+            <span class="english-block">He says most parents don't recognise their children are overweight. "They come to see me because of other problems - a cough, stomach pain, diarrhoea. They don't realise their child's weight is what's causing it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.3" data-end="245.54">
+            <p class="french-block">La bombe à retardement de l’obésité infantile en Italie</p>
+            <span class="english-block">Italy’s child obesity time-bomb</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.54" data-end="255.31">
+            <p class="french-block">Les enfants italiens sont devenus parmi les plus obèses d'Europe, bien que le pays soit célèbre pour son régime dit méditerranéen. Que peut-on faire pour les aider ?</p>
+            <span class="english-block">Italian children have become some of the most overweight in Europe, despite the country being famous for the so-called Mediterranean diet. What can be done to help them?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.31" data-end="264.29">
+            <p class="french-block">Francesca, dix ans, a une toux persistante et a du mal à avaler. Les médecins soupçonnent une affection inflammatoire de l’œsophage.</p>
+            <span class="english-block">Ten-year-old Francesca has a persistent cough and struggles to swallow. Doctors suspect an inflammatory condition of the oesophagus.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.29" data-end="269.64">
+            <p class="french-block">Elle pèse 60 kg – mais ce n'est pas pour cela que ses parents ont consulté un médecin.</p>
+            <span class="english-block">She weighs 60kg (9st 6lb) - but that's not why her parents have sought medical help.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.64" data-end="280.42">
+            <p class="french-block">Francesca dit qu'elle mange du pain avec du Nutella au petit-déjeuner, une génoise fourrée au chocolat comme collation, des pâtes aux lentilles pour le déjeuner et généralement du poulet pour le dîner.</p>
+            <span class="english-block">Francesca says she eats bread with Nutella for breakfast, a chocolate-filled sponge cake as a snack, pasta with lentils for lunch and usually chicken for dinner.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.42" data-end="288.48">
+            <p class="french-block">"Mais elle ne mange pas de légumes", intervient sa mère, Carmen. "Je les ai mis devant elle, mais elle ne veut pas les toucher."</p>
+            <span class="english-block">"But she doesn't eat vegetables," her mother, Carmen, interjects. "I put them in front of her, but she won't touch them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.48" data-end="300.79">
+            <p class="french-block">Les parents de Francesca insistent sur le fait qu'elle est active. Elle fait de la gymnastique artistique et de la danse latine et ne se fatigue pas. Ils n’ont jamais considéré son poids comme un problème.</p>
+            <span class="english-block">Francesca's parents insist she is active. She does artistic gymnastics and Latin dance, and doesn't get tired. They have never considered her weight as a problem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.79" data-end="308.23">
+            <p class="french-block">Francesca, 10 ans, pèse 60 kg mais ses parents affirment qu'ils n'ont jamais considéré son poids comme un problème</p>
+            <span class="english-block">Francesca, 10, weighs 60kg but her parents say they have never considered her weight as a problem</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="308.23" data-end="312.48">
+            <p class="french-block">Le Dr Berni Canani arrive à une conclusion différente.</p>
+            <span class="english-block">Dr Berni Canani reaches a different conclusion.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.48" data-end="329.45">
+            <p class="french-block">Le problème, explique-t-il, réside dans le schéma général plutôt que dans un seul repas. Des petits aliments riches en calories consommés tout au long de la journée, des boissons sucrées, trop peu de fruits et légumes et une mauvaise compréhension de la façon dont ces habitudes s'accumulent au fil du temps.</p>
+            <span class="english-block">The problem, he explains, is the overall pattern rather than any single meal. Small, calorie-dense foods consumed throughout the day, sugary drinks, too few fruit and vegetables and little understanding of how these habits accumulate over time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.45" data-end="339.55">
+            <p class="french-block">"C'est une très bonne mère", dit-il. "Un très bon père. Ils ne reconnaissent tout simplement pas l'importance de la qualité de l'alimentation et du poids."</p>
+            <span class="english-block">"This is a very good mother," he says. "A very good father. They simply don't recognise the importance of diet quality and body weight."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.55" data-end="350.09">
+            <p class="french-block">Au moment où de nombreuses familles arrivent à sa clinique, les habitudes malsaines sont déjà profondément enracinées. Ils commencent à la maison et se renforcent à l'école.</p>
+            <span class="english-block">By the time many families arrive at his clinic, unhealthy habits have already become deeply ingrained. They begin at home and are reinforced at school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.09" data-end="355.94">
+            <p class="french-block">Et en Italie, encourager les enfants à être plus actifs peut s’avérer étonnamment difficile.</p>
+            <span class="english-block">And in Italy, encouraging children to be more active can be surprisingly difficult.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.94" data-end="362.86">
+            <p class="french-block">De nombreuses écoles sont situées dans de magnifiques vieux palais – ils n’ont jamais été conçus pour l’éducation physique moderne.</p>
+            <span class="english-block">Many schools are housed in beautiful old palazzi - they were never designed with modern physical education in mind.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.86" data-end="371.66">
+            <p class="french-block">Le Dr Roberto Berni Canani affirme qu'au moment où les familles arrivent à sa clinique, les habitudes malsaines sont déjà profondément enracinées.</p>
+            <span class="english-block">Dr Roberto Berni Canani says that by the time families arrive at his clinic, unhealthy habits have already become deeply ingrained</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="371.66" data-end="381.53">
+            <p class="french-block">L'école primaire Ugo Foscolo ne fait pas exception. Sa salle de sport dispose à peine de suffisamment d’espace pour qu’une classe d’enfants puisse se déplacer.</p>
+            <span class="english-block">The Ugo Foscolo primary school is no exception. Its gym has barely enough space for a class of children to move around.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="381.53" data-end="391.22">
+            <p class="french-block">"J'ai un élève qui me préoccupe particulièrement", déclare Francesca Pecce, qui enseigne à l'école. "Il a 10 ans et pèse environ 60 kilos."</p>
+            <span class="english-block">"I have one pupil I'm particularly concerned about," says Francesca Pecce, who teaches at the school. "He's 10 years old and weighs around 60 kilograms."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="391.22" data-end="394.8">
+            <p class="french-block">Elle a essayé de soulever le problème avec sa mère.</p>
+            <span class="english-block">She has tried raising the issue with his mother.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="394.8" data-end="405.46">
+            <p class="french-block">"Mais elle n'est pas inquiète", dit Pecce. "Dans la culture napolitaine, si un enfant est un peu potelé avec les joues roses, les gens pensent souvent qu'il est en bonne santé."</p>
+            <span class="english-block">"But she is not worried," Pecce says. "In Neapolitan culture, if a child is a little chubby with rosy cheeks, people often think they're healthy."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="405.46" data-end="414.19">
+            <p class="french-block">Selon elle, les écoles peuvent contribuer à changer cela, surtout si les enfants « emportent à la maison » des leçons sur une alimentation saine.</p>
+            <span class="english-block">Schools, she believes, can help change that, especially if children "take home" lessons about healthy eating.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="414.19" data-end="418.9">
+            <p class="french-block">"Il est parfois plus facile d'éduquer les parents à travers leurs enfants que l'inverse."</p>
+            <span class="english-block">"Sometimes it's easier to educate the parents through their children than the other way round."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.9" data-end="428.26">
+            <p class="french-block">Dans une école secondaire de Naples, les élèves se rassemblent dans une salle de classe pour un atelier sur la nutrition organisé par la Fondation Valter Longo.</p>
+            <span class="english-block">At a secondary school in Naples, students file into a classroom for a nutrition workshop run by the Valter Longo Foundation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="428.26" data-end="445.49">
+            <p class="french-block">Le programme fait partie d'une initiative régionale visant à lutter contre l'obésité infantile. Au cours des prochains mois, plus de 17 000 élèves répartis dans 25 écoles y participeront. Les familles recevront un soutien pour les aider à changer leurs habitudes alimentaires à la maison.</p>
+            <span class="english-block">The programme is part of a regional initiative to tackle childhood obesity. Over the coming months, more than 17,000 students across 25 schools will take part. Families will receive support to help change eating habits at home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="445.49" data-end="448.56">
+            <p class="french-block">Mais tous les étudiants ne sont pas convaincus.</p>
+            <span class="english-block">But not all of the students are convinced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="448.56" data-end="455.76">
+            <p class="french-block">Plus de 17 000 élèves de 25 écoles participeront à l’initiative visant à lutter contre l’obésité infantile</p>
+            <span class="english-block">More than 17,000 students across 25 schools will take part in the initiative to tackle childhood obesity</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="455.76" data-end="461.06">
+            <p class="french-block">Ciro, 18 ans, doute que l'information seule puisse changer les comportements.</p>
+            <span class="english-block">Eighteen-year-old Ciro doubts that information alone will change behaviour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="461.06" data-end="467.06">
+            <p class="french-block">"Mes camarades de classe savent déjà ce qui est sain", dit-il. "Ils s'en moquent."</p>
+            <span class="english-block">"My classmates already know what's healthy," he says. "They just don't care."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="467.06" data-end="470.76">
+            <p class="french-block">Carmen, 19 ans, est plus optimiste.</p>
+            <span class="english-block">Carmen, 19, is more optimistic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="470.76" data-end="478.1">
+            <p class="french-block">"Je pensais que c'était vraiment très utile parce que les adolescents d'aujourd'hui sont très friands de malbouffe et ne font pas autant d'exercice."</p>
+            <span class="english-block">"I thought it was actually really helpful because teenagers today are really big into junk food, and don't exercise as much."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="478.1" data-end="485.54">
+            <p class="french-block">Elle dit que le problème est que la tentation est partout. Même les aliments traditionnellement associés à l’Italie ont changé.</p>
+            <span class="english-block">She says the problem is that temptation is everywhere. Even foods traditionally associated with Italy have changed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="485.54" data-end="494.47">
+            <p class="french-block">"Quand nous allons manger une pizza, les gens ne commandent pas seulement une Margherita. Ils mettent des chips, des saucisses et des fritures dessus."</p>
+            <span class="english-block">"When we go out for pizza, people don't just order a Margherita. They put chips, sausages and fried food on top."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="494.47" data-end="502.8">
+            <p class="french-block">Ajoutez à cela les clichés séculaires des mères et grands-mères italiennes montrant leur amour à travers la nourriture, et c'est une tempête parfaite.</p>
+            <span class="english-block">Add to that the centuries-old cliches of Italian mothers and grandmothers showing their love through food, and it's a perfect storm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="502.8" data-end="508.49">
+            <p class="french-block">Plus de 17 000 élèves de 25 écoles participeront à des ateliers sur la nutrition</p>
+            <span class="english-block">More than 17,000 students across 25 schools will take part in nutrition workshops</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="508.49" data-end="521.5">
+            <p class="french-block">L'obésité est une « épidémie mondiale croissante », selon l'OMS. Plus d’un milliard de personnes dans le monde sont aujourd’hui obèses, et l’obésité infantile a quadruplé depuis 1990.</p>
+            <span class="english-block">Obesity is an "escalating global epidemic", says the WHO. More than one billion people worldwide are now obese, and childhood obesity has quadrupled since 1990.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="521.5" data-end="531.17">
+            <p class="french-block">En 2025, l’Italie est devenue le premier pays à adopter une loi nationale reconnaissant l’obésité comme une maladie chronique, évolutive et récurrente.</p>
+            <span class="english-block">In 2025, Italy became the first country to pass a national law recognising obesity as a chronic, progressive and relapsing disease.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="531.17" data-end="542.9">
+            <p class="french-block">Plutôt que de traiter l'obésité simplement comme le résultat de mauvais choix, la nouvelle loi du pays la reconnaît comme une maladie chronique influencée par la biologie, l'environnement et les circonstances sociales.</p>
+            <span class="english-block">Rather than treating obesity simply as the result of poor choices, the country's new law recognises it as a chronic disease influenced by biology, environment and social circumstances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="542.9" data-end="554.59">
+            <p class="french-block">La région de Campanie est devenue un terrain d'essai pour mettre en pratique cette philosophie, en mettant en œuvre une série d'interventions ambitieuses, notamment un essai controversé de "régime d'imitation rapide".</p>
+            <span class="english-block">The Campania region has become a testing ground for putting that philosophy into practice, implementing a series of ambitious interventions - including a controversial trial of a "fast-mimicking diet".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="554.59" data-end="567.31">
+            <p class="french-block">Les chercheurs recrutent 300 adolescents en surpoids qui suivront cinq jours tous les trois mois un régime contrôlé de 1 100 calories le premier jour et de 770 calories les quatre jours suivants – si restrictif qu'il ressemble à un jeûne.</p>
+            <span class="english-block">Researchers are recruiting 300 overweight adolescents who will spend five days every three months on a controlled diet of 1,100 calories on day one and 770 calories on following four days - so restrictive it resembles a fast.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="567.31" data-end="571.92">
+            <p class="french-block">Le but est de déclencher une « réinitialisation métabolique ».</p>
+            <span class="english-block">The goal is to trigger a "metabolic reset".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="571.92" data-end="583.56">
+            <p class="french-block">"Le jeûne, ou la privation contrôlée de nourriture, est lié à une durée de vie plus longue et en meilleure santé", explique le Dr Longo, qui a passé trois décennies à étudier les effets du jeûne.</p>
+            <span class="english-block">"Fasting, or controlled deprivation of food, is linked to a longer and healthier lifespan," says Dr Longo, who has spent three decades studying the effects of fasting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="583.56" data-end="589.58">
+            <p class="french-block">Mais tous les spécialistes de l’obésité ne sont pas convaincus que le jeûne soit la bonne approche pour les enfants.</p>
+            <span class="english-block">But not all obesity specialists are persuaded that fasting is the right approach for children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="589.58" data-end="599.14">
+            <p class="french-block">Le pédiatre Berni Canani estime que les preuves d'un régime imitant le jeûne chez les enfants sont encore trop limitées pour être recommandées dans les directives cliniques italiennes.</p>
+            <span class="english-block">Paediatrician Berni Canani believes the evidence for fasting-mimicking diets in children is still too limited to be recommended in Italy's clinical guidelines.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="599.14" data-end="608.06">
+            <p class="french-block">Il craint également que les régimes restrictifs ne comportent des risques psychologiques pour les adolescents, dont le rapport à la nourriture est encore en développement.</p>
+            <span class="english-block">He also worries restrictive diets could carry psychological risks for adolescents, whose relationship with food is still developing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="608.06" data-end="617.76">
+            <p class="french-block">"Je crains qu'imposer des restrictions alimentaires aux adolescents n'augmente le risque de troubles de l'alimentation, d'anorexie et de dysmorphie corporelle", dit-il.</p>
+            <span class="english-block">"I fear that imposing food restrictions on teenagers could increase the risk of eating disorders, anorexia and body dysmorphia," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="617.76" data-end="627.24">
+            <p class="french-block">Pendant ce temps, Salvatore espère se faire opérer cet été afin de pouvoir, pour la première fois depuis des années, porter un maillot de bain sans se sentir gêné.</p>
+            <span class="english-block">Meanwhile, Salvatore hopes to have surgery in the summer, so that, for the first time in years, he can wear a swimming costume without feeling self-conscious.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="627.24" data-end="637.39">
+            <p class="french-block">Mais il n'est pas seul. Dans toute l’Italie, une génération d’enfants grandit de plus en plus éloignée du régime méditerranéen qui a autrefois fait la renommée du pays.</p>
+            <span class="english-block">But he is not alone. Across Italy, a generation of children is growing up increasingly removed from the Mediterranean diet that once made the country famous.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="637.39" data-end="641.18">
+            <p class="french-block">Comment la Grande-Bretagne est devenue une nation de poulet frit</p>
+            <span class="english-block">How Britain became a fried chicken nation</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="641.18" data-end="647.28">
+            <p class="french-block">Les nouvelles étiquettes d'avertissement concernant l'alcool en Irlande dissuaderont-elles les gens de boire ?</p>
+            <span class="english-block">Will Ireland's new alcohol warning labels turn people away from drinking?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="647.28" data-end="651.22">
+            <p class="french-block">Coups de perte de poids : que se passe-t-il lorsque vous arrêtez ?</p>
+            <span class="english-block">Weight-loss jabs: What happens when you stop?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="651.22" data-end="656.83">
+            <p class="french-block">J'ai essayé le sandwich le plus « salé » du Royaume-Uni – voici ce que j'ai appris</p>
+            <span class="english-block">I tried the UK's 'saltiest' sandwich - here's what I learned</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_8.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

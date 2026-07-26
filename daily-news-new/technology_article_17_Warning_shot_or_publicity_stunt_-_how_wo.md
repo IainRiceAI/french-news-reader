@@ -1,7 +1,7 @@
 # Warning shot or publicity stunt - how worried should we be about the OpenAI hack?
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cd9w22n9e4go?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cd9w22n9e4go?at_medium=RSS&at_campaign=rss)  
-**Published:** Fri, 24 Jul 2026 23:11:13 GMT  
+**Published:** Sat, 25 Jul 2026 10:14:41 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](technology_article_17.mp3)  
 
 ---
@@ -204,13 +204,21 @@
 
 ### Section 25
 
+**🇬🇧 EN:** An OpenAI spokesperson said "we recognise there are a lot of questions and speculative details circulating" about the incident. They added that "we plan to publish a technical report of our learnings in the coming weeks".
+
+**🇫🇷 FR:** *Un porte-parole d'OpenAI a déclaré "nous reconnaissons qu'il y a beaucoup de questions et de détails spéculatifs qui circulent" sur l'incident. Ils ont ajouté que "nous prévoyons de publier un rapport technique de nos apprentissages dans les semaines à venir".*
+
+---
+
+### Section 26
+
 **🇬🇧 EN:** I've covered lots of AI stories, including the fears around Anthropic's Mythos model.
 
 **🇫🇷 FR:** *J'ai couvert de nombreuses histoires sur l'IA, y compris les craintes autour du modèle Mythos d'Anthropic.*
 
 ---
 
-### Section 26
+### Section 27
 
 **🇬🇧 EN:** My inbox is now chock full of cyber-security companies and experts criticising OpenAI for not building a stronger container to test its AI, known as a sandbox.
 
@@ -218,7 +226,7 @@
 
 ---
 
-### Section 27
+### Section 28
 
 **🇬🇧 EN:** After all, these AI agents had been trained specifically to hack into and out of places with no restrictions at all.
 
@@ -226,7 +234,7 @@
 
 ---
 
-### Section 28
+### Section 29
 
 **🇬🇧 EN:** "The OpenAI and Hugging Face incident is a real-world example of a broader issue we've been highlighting for months," said Dor Sarig from Pillar Security. "Sandboxes alone are not a sufficient security boundary for agentic AI."
 
@@ -234,7 +242,7 @@
 
 ---
 
-### Section 29
+### Section 30
 
 **🇬🇧 EN:** Firm hacked by rogue OpenAI models says it is 'a wake-up call'
 
@@ -242,7 +250,7 @@
 
 ---
 
-### Section 30
+### Section 31
 
 **🇬🇧 EN:** Cyber security Professor Alan Woodward from Surrey University told reporters OpenAI had "egg on it's face", and Katie Moussouris from Luta Security went further, suggesting the AI industry is failing to control its dangerous inventions.
 
@@ -250,7 +258,7 @@
 
 ---
 
-### Section 31
+### Section 32
 
 **🇬🇧 EN:** "We are working on cutting edge technology without the knowledge to contain it," she said.
 
@@ -258,7 +266,7 @@
 
 ---
 
-### Section 32
+### Section 33
 
 **🇬🇧 EN:** "Just because we have the smartest people developing AI does not mean we have the ability to do so safely."
 
@@ -266,7 +274,7 @@
 
 ---
 
-### Section 33
+### Section 34
 
 **🇬🇧 EN:** According to these views, if the hacking incident was a publicity stunt then it appears as though it backfired.
 
@@ -274,7 +282,7 @@
 
 ---
 
-### Section 34
+### Section 35
 
 **🇬🇧 EN:** Whatever led to the hack, it's clear this is a major moment for the AI industry and the cyber security world, which collided this year in ways people had been fearing for a long time.
 
@@ -282,7 +290,7 @@
 
 ---
 
-### Section 35
+### Section 36
 
 **🇬🇧 EN:** Addressing this fierce debate, AI and cyber security advisor Francesca Bosco said: "Two simplistic narratives are equally unhelpful: that this was a Hollywood-style escape, or that it was merely a publicity exercise.
 
@@ -290,7 +298,7 @@
 
 ---
 
-### Section 36
+### Section 37
 
 **🇬🇧 EN:** "A more serious interpretation is that a stress test exposed weaknesses in containment and evaluation architecture."
 
@@ -298,7 +306,7 @@
 
 ---
 
-### Section 37
+### Section 38
 
 **🇬🇧 EN:** This event is the latest in a string of worrying and weird examples of AI agents going rogue.
 
@@ -306,7 +314,7 @@
 
 ---
 
-### Section 38
+### Section 39
 
 **🇬🇧 EN:** In recent research, the UK's AI Security Institute (AISI) found frontier AI models are so fixated on completing tasks they "cheated" in tests to achieve their goals.
 
@@ -314,7 +322,7 @@
 
 ---
 
-### Section 39
+### Section 40
 
 **🇬🇧 EN:** The research from AISI came with this worrying warning: "A model that pursues a goal through unintended or unauthorised means may cause harm, particularly in high-stakes use cases."
 
@@ -322,7 +330,7 @@
 
 ---
 
-### Section 40
+### Section 41
 
 **🇬🇧 EN:** Inevitably, this OpenAI hack has further fuelled fears of what could happen if AI agents are let loose. Could they go rogue on a larger scale and cause some sort of disaster?
 
@@ -330,7 +338,7 @@
 
 ---
 
-### Section 41
+### Section 42
 
 **🇬🇧 EN:** This is particularly concerning with AI being used increasingly in warfare as seen in Iran and Ukraine.
 
@@ -338,7 +346,7 @@
 
 ---
 
-### Section 42
+### Section 43
 
 **🇬🇧 EN:** Ciaran Martin, former head of the UK's National Cyber Security Centre, offered a calmer view.
 
@@ -346,7 +354,7 @@
 
 ---
 
-### Section 43
+### Section 44
 
 **🇬🇧 EN:** "It is a bit of a leap to go from this incident to saying that AI agents are going to take over drones and start killing people," he said.
 
@@ -354,19 +362,11 @@
 
 ---
 
-### Section 44
-
-**🇬🇧 EN:** But for Martin, and many others, the story is undoubtedly another vivid example of something that 2026 is teaching us fast:
-
-**🇫🇷 FR:** *Mais pour Martin, et bien d’autres, l’histoire est sans aucun doute un autre exemple frappant de quelque chose que 2026 nous apprend rapidement :*
-
----
-
 ### Section 45
 
-**🇬🇧 EN:** AI agents are now very good hackers - and that is something we have to prepare for, urgently.
+**🇬🇧 EN:** But for Martin, and many others, the story is undoubtedly another vivid example of something that 2026 is teaching us fast: AI agents are now very good hackers - and that is something we have to prepare for, urgently.
 
-**🇫🇷 FR:** *Les agents d’IA sont désormais de très bons hackers – et c’est une chose à laquelle nous devons nous préparer de toute urgence.*
+**🇫🇷 FR:** *Mais pour Martin, et bien d’autres, cette histoire est sans aucun doute un autre exemple frappant de quelque chose que 2026 nous apprend rapidement : les agents d’IA sont désormais de très bons hackers – et c’est une chose à laquelle nous devons nous préparer de toute urgence.*
 
 ---
 

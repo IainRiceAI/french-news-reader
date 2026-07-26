@@ -132,9 +132,9 @@
 
 ### Section 16
 
-**🇬🇧 EN:** "As cities expand and food waste increases, humans and raccoons cross paths more often," said Dr Idil Galip, digital culture researcher at the University of Amsterdam.
+**🇬🇧 EN:** "As cities expand and food waste increases, humans and raccoons cross paths more often," said digital culture researcher Dr Idil Galip.
 
-**🇫🇷 FR:** *"À mesure que les villes s'étendent et que le gaspillage alimentaire augmente, les humains et les ratons laveurs se croisent plus souvent", a déclaré le Dr Idil Galip, chercheur en culture numérique à l'Université d'Amsterdam.*
+**🇫🇷 FR:** *"À mesure que les villes s'étendent et que le gaspillage alimentaire augmente, les humains et les ratons laveurs se croisent plus souvent", a déclaré le Dr Idil Galip, chercheur en culture numérique.*
 
 ---
 

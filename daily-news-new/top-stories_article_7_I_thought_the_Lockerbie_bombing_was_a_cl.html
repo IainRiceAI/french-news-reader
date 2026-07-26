@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I thought the Lockerbie bombing was a closed case until I started asking questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>I thought the Lockerbie bombing was a closed case until I started asking questions</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 25 Jul 2026 23:31:06 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c2dkx01n0y1o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The deeper I dug, the more complicated Lockerbie became and there have been times that I don't know what to believe.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.14" data-end="14.54">
+            <p class="french-block">Des responsables inspectent l'épave du vol Pan Am 103 le 21 décembre 1988</p>
+            <span class="english-block">Officials inspect the wreckage of Pan Am flight 103 on 21 December 1988</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.54" data-end="20.26">
+            <p class="french-block">Je n'avais qu'un an lorsque l'attaque terroriste la plus meurtrière au Royaume-Uni a choqué le monde.</p>
+            <span class="english-block">I was only a year old when the UK's deadliest terror attack shocked the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.26" data-end="30.77">
+            <p class="french-block">En décembre 1988, le vol Pan Am 103 a explosé au-dessus de la ville écossaise de Lockerbie, tuant les 259 personnes à bord ainsi que 11 au sol.</p>
+            <span class="english-block">In December 1988, Pan Am flight 103 exploded over the Scottish town of Lockerbie, killing all 259 people on board as well as 11 on the ground.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.77" data-end="43.75">
+            <p class="french-block">J’étais adolescent lorsque l’officier des renseignements libyens Abdelbaset al-Megrahi a été reconnu coupable de l’attentat à la bombe en 2001 et, lorsqu’il est décédé plus tard, j’ai pensé que c’était en grande partie la fin de l’histoire.</p>
+            <span class="english-block">I was a teenager by the time Libyan intelligence officer Abdelbaset al-Megrahi was convicted of the bombing in 2001 and, when he later died, I thought that was largely the end of the story.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.75" data-end="55.08">
+            <p class="french-block">L'affaire est toujours d'actualité et, plus tard cette année, un homme soupçonné d'avoir fabriqué la bombe qui a fait exploser l'avion, Abu Agila Masud, sera jugé à Washington DC.</p>
+            <span class="english-block">The case still rumbles on and, later this year, a man suspected of making the bomb which blew up the plane, Abu Agila Masud, goes on trial in Washington DC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.08" data-end="62.71">
+            <p class="french-block">Dans le cadre d’une série de podcasts Radio 4 Intrigue, j’ai eu l’occasion d’aborder cette affaire complexe avec un regard neuf.</p>
+            <span class="english-block">As part of a Radio 4 Intrigue podcast series, I had an opportunity to delve into this complex case with fresh eyes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.71" data-end="68.98">
+            <p class="french-block">Plus je creusais, plus Lockerbie devenait compliqué et il y a eu des moments où je ne savais pas quoi croire.</p>
+            <span class="english-block">The deeper I dug, the more complicated Lockerbie became and there have been times that I don't know what to believe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.98" data-end="74.35">
+            <p class="french-block">Abdelbaset al-Megrahi était le seul homme reconnu coupable de l'attentat de Lockerbie</p>
+            <span class="english-block">Abdelbaset al-Megrahi was the only man convicted of the Lockerbie bombing</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.35" data-end="79.92">
+            <p class="french-block">Jim Swire, en revanche, est sûr de ce qu'il croit – et ce n'est pas l'histoire officielle.</p>
+            <span class="english-block">Jim Swire, on the other hand, is sure what he believes - and it is not the official story.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.92" data-end="86.35">
+            <p class="french-block">Sa fille Flora est morte dans l'attentat, mais il est convaincu que celui qui l'a tuée a échappé à un massacre.</p>
+            <span class="english-block">His daughter Flora died in the bombing, but he is convinced that whoever killed her got away with mass murder.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.35" data-end="93.55">
+            <p class="french-block">Swire pense que Megrahi est innocent et s'est même lié d'amitié avec le kamikaze condamné jusqu'à sa mort en 2012.</p>
+            <span class="english-block">Swire believes Megrahi is innocent, even befriending the convicted bomber up until his death in 2012.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.55" data-end="98.04">
+            <p class="french-block">"La question brûlante était de découvrir la vérité", dit-il.</p>
+            <span class="english-block">"The burning issue was to get to the truth," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.04" data-end="103.82">
+            <p class="french-block">"Cela l'a toujours été, cela le sera toujours et je ne me tairai pas sur ce que je sais être vrai."</p>
+            <span class="english-block">"Always has been, always will be and I will not shut up about what I know to be true."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.82" data-end="118.75">
+            <p class="french-block">L'acharnement de Swire a fait de lui une voix importante, mais la plupart des familles des victimes de Lockerbie ne sont pas d'accord sur le fait que la condamnation de Megrahi était une erreur judiciaire - et les propres appels du kamikaze contre le verdict ont échoué ou ont été abandonnés.</p>
+            <span class="english-block">Swire's doggedness has made him a prominent voice but most of the Lockerbie victims' families don't agree that Megrahi's conviction was a miscarriage of justice - and the bomber’s own appeals against the verdict either failed or were abandoned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.75" data-end="124.78">
+            <p class="french-block">Pour Swire, l’explication la plus simple est que l’Iran était derrière l’attaque, et non la Libye.</p>
+            <span class="english-block">For Swire, the simplest explanation is that Iran was behind the attack - not Libya.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.78" data-end="134.02">
+            <p class="french-block">L'attentat de Lockerbie a eu lieu cinq mois après que 290 personnes ont été tuées lorsqu'un avion de ligne iranien a été abattu par un cuirassé américain.</p>
+            <span class="english-block">The Lockerbie bombing came five months after 290 people were killed when an Iranian commercial airliner was shot down by a US battleship.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.02" data-end="142.08">
+            <p class="french-block">L’Iran a juré de se venger et quelques mois plus tard, le vol 103 de la Pan Am a explosé alors qu’il se dirigeait vers New York.</p>
+            <span class="english-block">Iran swore revenge and months later Pan Am flight 103 exploded on its way to New York.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.08" data-end="147.29">
+            <p class="french-block">Flora, la fille de Jim Swire, est morte dans l'attentat de Lockerbie</p>
+            <span class="english-block">Jim Swire's daughter Flora died in the Lockerbie bombing</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.29" data-end="149.09">
+            <p class="french-block">Et il y a plus.</p>
+            <span class="english-block">And there's more.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.09" data-end="155.4">
+            <p class="french-block">L’Iran – tout comme c’est le cas aujourd’hui – a eu recours à des groupes militants mandataires pour parvenir à ses fins.</p>
+            <span class="english-block">Iran - much like they do now - used proxy militant groups to pursue their ends.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.4" data-end="168.84">
+            <p class="french-block">Avant l'attentat de Lockerbie, une cellule militante basée à Francfort, qui faisait partie du Front populaire de libération de la Palestine - Commandement général (FPLP-GC), avait été déjouée par la police allemande.</p>
+            <span class="english-block">Before the Lockerbie bombing, a militant cell based in Frankfurt, part of the Popular Front for the Liberation of Palestine - General Command (PFLP-GC), was foiled by German police.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="168.84" data-end="177.67">
+            <p class="french-block">La police a arrêté des suspects et saisi des engins explosifs dissimulés dans des lecteurs de cassettes radio, conçus pour se déclencher en altitude.</p>
+            <span class="english-block">Police arrested suspects and seized explosive devices, concealed in radio cassette players, that were designed to trigger at altitude.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.67" data-end="184.73">
+            <p class="french-block">La bombe qui a détruit la Pan Am 103 se trouvait dans un lecteur de cassettes radio caché dans une mallette Samsonite.</p>
+            <span class="english-block">The bomb that brought down Pan Am 103 was in a radio cassette player hidden inside a samsonite briefcase.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.73" data-end="193.97">
+            <p class="french-block">Pour cette raison, Swire pense que l'appareil qui a fait tomber le Pan Am 103 a été chargé à Francfort, et non à Malte comme l'avait conclu le tribunal.</p>
+            <span class="english-block">Because of this, Swire believes the device that brought down Pan Am 103 was loaded at Frankfurt, and not Malta as the court had concluded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.97" data-end="200.35">
+            <p class="french-block">Une maquette du magnétophone Toshiba chargé d'explosifs qui a fait exploser le vol Pan Am 103</p>
+            <span class="english-block">A mock-up of the explosives-loaded Toshiba cassette recorder which blew up Pan Am Flight 103</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.35" data-end="204.43">
+            <p class="french-block">Et, pour Swire, ce n’est que la pointe de l’iceberg.</p>
+            <span class="english-block">And, for Swire, this is only the tip of the iceberg.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.43" data-end="219.55">
+            <p class="french-block">Il remet également en question une grande partie des preuves présentées lors du procès de 2001, discrédite les témoins et se montre extrêmement méfiant quant à l'implication des agences de renseignement - comme le MI5, le MI6 et la CIA - dans la foulée de l'attentat à la bombe.</p>
+            <span class="english-block">He also questions much of the evidence presented at the 2001 trial, discredits witnesses, and is extremely suspicious of the involvement of intelligence agencies - like MI5, MI6 and the CIA - in the aftermath of the bombing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.55" data-end="230.23">
+            <p class="french-block">Combinez ces soupçons avec son chagrin dévorant et vous comprendrez pourquoi Swire est une telle force avec laquelle il faut compter dans sa quête d'une vérité qui, selon lui, lui a été refusée.</p>
+            <span class="english-block">Combine these suspicions with his all-consuming grief and you can see why Swire is such a force to be reckoned with on his quest for a truth he believes has been denied to him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.23" data-end="237.07">
+            <p class="french-block">"Découvrir la vérité est devenu ma façon de gérer les conséquences de la réaction de deuil", explique Swire.</p>
+            <span class="english-block">"Discovering the truth became my way of handling the consequences of the grief reaction," Swire says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.07" data-end="243.24">
+            <p class="french-block">"Et c'était très difficile pour les autres de comprendre ça, mais je suppose que c'est comme ça que je suis fait."</p>
+            <span class="english-block">"And it was very tough for other people to understand that but that's just the way I'm made, I suppose."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="243.24" data-end="245.76">
+            <p class="french-block">Intrigue : Lockerbie</p>
+            <span class="english-block">Intrigue: Lockerbie</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.76" data-end="261.31">
+            <p class="french-block">Le 21 décembre 1988, un avion explose au-dessus de Lockerbie, en Écosse, tuant 270 personnes. Près de quatre décennies plus tard, de nouvelles preuves apparaissent. Qui était réellement derrière cet attentat ?</p>
+            <span class="english-block">On 21 December 1988, a plane explodes over Lockerbie, Scotland, killing 270 people. Almost four decades on, there's fresh evidence. Who was really behind the bombing?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.31" data-end="274.9">
+            <p class="french-block">Dick Marquise, qui a dirigé le groupe de travail du FBI à Lockerbie, affirme qu'au début de l'affaire, lui aussi pensait que le FPLP-GC était le "suspect numéro un", mais des années d'enquête n'ont rien trouvé pour le prouver.</p>
+            <span class="english-block">Dick Marquise, who led the FBI's Lockerbie task force, says that in the early days of the case he too believed the PFLP-GC were the "number one suspect", but years of investigation found nothing to prove it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.9" data-end="285.48">
+            <p class="french-block">"Il n'y avait pas la moindre preuve qui pouvait être présentée au tribunal et obtenir une condamnation", dit-il. "Tu ne pouvais pas le faire. Il n'y avait rien."</p>
+            <span class="english-block">"There was not one shred of evidence that could be taken to court and get a conviction," he says. "You couldn't do it. There was nothing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.48" data-end="297.46">
+            <p class="french-block">Cependant, outre Swire, d'autres personnes remettent toujours en question le « récit officiel », notamment l'ancien agent de la CIA John Holt, qui pense également que l'Iran était derrière l'attentat à la bombe.</p>
+            <span class="english-block">However, there are others, besides Swire, who still question the "official narrative" - including former CIA agent John Holt who also believes Iran was behind the bombing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.46" data-end="310.68">
+            <p class="french-block">Holt a travaillé avec les services de renseignement libyens dans les années 1980 et était le responsable de l'agent double Abdul Majid Giaka, dont les informations sont devenues essentielles à l'enquête sur l'attentat à la bombe de Lockerbie.</p>
+            <span class="english-block">Holt worked with Libyan intelligence assets in the 1980s and was the handler of double agent Abdul Majid Giaka, whose information became central to the investigation into the Lockerbie bombing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.68" data-end="318.6">
+            <p class="french-block">Holt pense maintenant que Giaka était un "artiste BS" qui cherchait de l'argent et alimentait la CIA en fausses histoires pour être payé.</p>
+            <span class="english-block">Holt now believes Giaka was a "BS artist" who was out for money and was feeding the CIA fake stories to get paid.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="318.6" data-end="322.18">
+            <p class="french-block">"Je n'avais pas une grande opinion de lui", dit-il.</p>
+            <span class="english-block">"I didn't think much of him at all," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.18" data-end="332.71">
+            <p class="french-block">"Il nous a donné quelques petites informations sur ce qui se passait, mais il n'a jamais rien su de l'attentat de la Pan Am. Et il en savait beaucoup sur Megrahi", explique Holt.</p>
+            <span class="english-block">"He gave us some little tidbits about what was going on, but he never knew anything about the Pan Am bombing. And he knew a lot about Megrahi," Holt says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="332.71" data-end="338.11">
+            <p class="french-block">Holt pense que le fait que la CIA ait financé Giaka le dévalorise en tant qu'informateur.</p>
+            <span class="english-block">Holt believes the fact the CIA bankrolled Giaka devalues him as an informant.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="338.11" data-end="345.14">
+            <p class="french-block">"Cela permet à quelqu'un de dire plus facilement ce que la personne qui lui donne de l'argent veut qu'il dise", explique Holt.</p>
+            <span class="english-block">"It makes it easier for somebody to say whatever the person who's giving them money wants them to say," Holt says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="345.14" data-end="352.46">
+            <p class="french-block">Des membres des forces armées ramassent des débris dans des jardins résidentiels après l'explosion en vol du vol 103 de la Pan Am.</p>
+            <span class="english-block">Members of the armed forces collect debris from residential gardens after the mid-air explosion of Pan Am Flight 103</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.46" data-end="360.55">
+            <p class="french-block">J'ai réussi à mettre la main sur les documents de la CIA - appelés câbles - de l'époque, qui montraient ce que Giaka avait dit aux Américains.</p>
+            <span class="english-block">I managed to get a hold of the CIA papers - known as cables - from the time, which showed what Giaka had told the Americans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.55" data-end="368.66">
+            <p class="french-block">Les câbles remontent aux mois précédant Lockerbie et incluent des notes de conversations entre Giaka et Holt et deux anciens responsables de la CIA.</p>
+            <span class="english-block">The cables date back to the months before Lockerbie and include notes of conversations between Giaka and Holt and two earlier CIA handlers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="368.66" data-end="375.58">
+            <p class="french-block">Dans les câbles, Giaka situe Megrahi à Malte – où la bombe aurait été posée – à un moment clé du complot de Lockerbie.</p>
+            <span class="english-block">Within the cables, Giaka places Megrahi in Malta - where the bomb was said to have been planted - at a key time in the Lockerbie plot.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.58" data-end="386.78">
+            <p class="french-block">Megrahi aurait également visité un magasin de vêtements maltais, achetant des chemises et des vêtements pour bébés – qui ont été placés dans la valise avec la bombe et retrouvés plus tard sur le lieu de l'accident d'avion.</p>
+            <span class="english-block">Megrahi is also said to have visited a Maltese clothes shop, buying shirts and baby grows - which were placed in the suitcase with the bomb and later found at the plane crash site.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="386.78" data-end="399.12">
+            <p class="french-block">Giaka avait même parlé à la CIA au sujet de huit kilos d'explosifs de couleur orange stockés dans les bureaux de l'aéroport de Malte. Le Semtex, l'explosif utilisé à Lockerbie, est orange.</p>
+            <span class="english-block">Giaka had even talked to the CIA about eight kilos of orange-coloured explosives stored at the Malta airport offices. Semtex, the explosive used in Lockerbie, is orange.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="399.12" data-end="411.55">
+            <p class="french-block">Lors du procès de 2001, Giaka devait être un témoin « clé » dans la thèse de l'accusation, mais les quatre juges ont décrit certains de ses témoignages comme « au mieux grossièrement exagérés et au pire tout simplement faux ».</p>
+            <span class="english-block">In the 2001 trial, Giaka was to be a "key" witness in the prosecution's case but the four judges de­scribed some of his evidence as "at best grossly ex­ag­ger­ated and at worst sim­ply un­true".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="411.55" data-end="421.18">
+            <p class="french-block">Des décennies après la condamnation de Megrahi, de nouveaux documents de renseignement ont été récupérés, semble-t-il, au cœur des services de renseignement libyens.</p>
+            <span class="english-block">Decades on from Megrahi's conviction, new intelligence documents have been recovered allegedly from the heart of Libyan intelligence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="421.18" data-end="430.34">
+            <p class="french-block">Ils proviendraient du réseau de renseignement notoire du leader libyen, le colonel Kadhafi, dirigé par son chef des services secrets Abdallah Senussi.</p>
+            <span class="english-block">They are believed to have come from Libyan leader Colonel Gaddafi's notorious intelligence network run by his spy chief Abdullah Senussi.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="430.34" data-end="441.74">
+            <p class="french-block">Ces documents des services de renseignement libyens divulgués contiennent des informations qui pourraient potentiellement mettre fin au doute, aux théories et aux contre-théories qui ont noué tant de personnes, y compris moi-même.</p>
+            <span class="english-block">These leaked Libyan intelligence documents contain information that could potentially put an end to the doubt, theories and countertheories that have tied so many, including me, in knots.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="441.74" data-end="451.99">
+            <p class="french-block">Les « dossiers Senussi » originaux, comme on les appelle aujourd'hui, ont été montrés à des journalistes français qui ont ensuite publié un livre, L'assassin qu'il faut sauver.</p>
+            <span class="english-block">The original 'Senussi Files', as they are now known, were shown to French journalists who later published a book, The Murderer Who Must Be Saved.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="451.99" data-end="458.54">
+            <p class="french-block">Je me suis rendu à Paris pour rencontrer l'un des auteurs, le journaliste d'investigation Vincent Nouzille.</p>
+            <span class="english-block">I travelled to Paris to meet one of the authors, investigative journalist Vincent Nouzille.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="458.54" data-end="465.05">
+            <p class="french-block">Il a apporté des piles de documents, suffisamment pour couvrir tout le lit et le bureau de la chambre d'hôtel.</p>
+            <span class="english-block">He brought piles of documents, enough to cover the whole bed and the hotel room desk.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="465.05" data-end="472.66">
+            <p class="french-block">On peut dire qu'il aime son travail et, même s'il s'est penché sur ces documents pendant des années, il est toujours émerveillé par leur contenu.</p>
+            <span class="english-block">You can tell he loves his work and despite having pored over these documents for years, he's still awestruck by their content.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="472.66" data-end="481.99">
+            <p class="french-block">L'attentat de Lockerbie accusait Lamin Khalif Fhimah (à gauche) aux côtés du dirigeant libyen, le colonel Kadhafi, après son acquittement en 2001.</p>
+            <span class="english-block">Lockerbie bombing accused Lamin Khalif Fhimah (left) with Libyan leader Colonel Gaddafi after his acquittal in 2001</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="481.99" data-end="499.1">
+            <p class="french-block">Certains dossiers Senussi remontent à l’automne 1988, dans les mois précédant Lockerbie, et contiennent des documents détaillant apparemment des plans visant à cibler des avions sur des vols à escales multiples à l’aide d’une bombe à retardement de 11 heures dissimulée dans des bagages, un peu comme l’attentat de Lockerbie.</p>
+            <span class="english-block">Some of the Senussi files date back to autumn 1988, in the months before Lockerbie, and contain documents apparently detailing plans to target aircraft on multi-stop flights using a 11-hour long-delay timer bomb concealed in luggage much like the Lockerbie bombing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="499.1" data-end="504.7">
+            <p class="french-block">Il mentionne même des tests visant à dissimuler un appareil à l'intérieur d'un magnétophone.</p>
+            <span class="english-block">It even mentions tests on concealing a device inside a tape recorder.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="504.7" data-end="509.35">
+            <p class="french-block">Au fur et à mesure que nous parcourons chaque document, ma tête tourne.</p>
+            <span class="english-block">As we go through each document, my head is spinning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="509.35" data-end="521.59">
+            <p class="french-block">Il y a des références à des essais à sec, des faiblesses apparentes dans la sécurité de l'aéroport et suffisamment de détails sur les mouvements de Megrahi et d'autres pour que Nouzille puisse vérifier les dates et les lieux avec d'autres sources.</p>
+            <span class="english-block">There are references to dry runs, apparent weaknesses in airport security, and enough detail about the movements of Megrahi and others for Nouzille to crosscheck dates and places against other sources.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="521.59" data-end="526.97">
+            <p class="french-block">Nouzille dit avoir passé trois ans à vérifier soigneusement tout ce qui se trouvait dans les dossiers.</p>
+            <span class="english-block">Nouzille says he spent three years carefully verifying everything in the files.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="526.97" data-end="533.62">
+            <p class="french-block">Il me montre un autre dossier qui détaille les mouvements apparents de Megrahi et Masud, entrant et sortant de Malte.</p>
+            <span class="english-block">He shows me another file which details the apparent movements of Megrahi and Masud, coming in and out of Malta.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="533.62" data-end="540.96">
+            <p class="french-block">Ce récit concorde avec les informations fournies dans les câbles de la CIA émanant de Giaka, précédemment discrédité.</p>
+            <span class="english-block">This account lines up with the information provided in the CIA cables from the previously discredited Giaka.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="540.96" data-end="550.34">
+            <p class="french-block">"Nous savons par les câbles de la CIA que Giaka a dénoncé les mêmes personnes, les mêmes dates, le même faux passeport, à la même date", explique Nouzille.</p>
+            <span class="english-block">"We know from the CIA cables that Giaka reported the same people, the same dates, the same false passport, at the same date," Nouzille says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="550.34" data-end="554.57">
+            <p class="french-block">"Donc deux sources, indépendantes, qui correspondent."</p>
+            <span class="english-block">"So two sources, independent, which match."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="554.57" data-end="561.0">
+            <p class="french-block">Abu Agila Masud est accusé d'avoir fabriqué la bombe qui a fait exploser le vol 103 de la Pan Am.</p>
+            <span class="english-block">Abu Agila Masud is accused of making the bomb that blew up Pan Am flight 103</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="561.0" data-end="570.5">
+            <p class="french-block">Les dossiers Senussi semblent corroborer plusieurs détails mentionnés pour la première fois dans les câbles, notamment la présence de Semtex à l'aéroport de Luqa à Malte.</p>
+            <span class="english-block">The Senussi Files seem to corroborate several details first mentioned in the cables, including the presence of semtex at Luqa Airport in Malta.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="570.5" data-end="586.58">
+            <p class="french-block">Nouzille me montre un document traduit, signé par Megrahi, daté de janvier 87, qui mentionne « 10 kilos de matériel explosif » stockés à l'aéroport par Lamin Khalif Fhimah, l'homme qui a été jugé aux côtés de Megrahi en 2001 mais qui a été acquitté.</p>
+            <span class="english-block">Nouzille shows me a translated document, signed by Megrahi, dated January 87, which mentions "10 kilos of explosive material" stored at the airport by Lamin Khalif Fhimah, the man who stood trial alongside Megrahi in 2001 but was acquitted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="586.58" data-end="594.84">
+            <p class="french-block">J'ai essayé de contacter Fhimah par l'intermédiaire de son avocat plaidant pour lui faire part de ces allégations, mais je n'ai pas réussi à le joindre.</p>
+            <span class="english-block">I tried to contact Fhimah via his trial lawyer to put these allegations to him, but I was unable to reach him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="594.84" data-end="605.52">
+            <p class="french-block">Nouzille concède que ces documents ne constituent pas une « preuve définitive » que la Libye ciblait le vol Pan Am 103, mais il estime qu'il s'agit d'une preuve de leur mode opératoire.</p>
+            <span class="english-block">Nouzille concedes that these documents are not "final proof" that Libya was targeting Pan Am 103 flight, but he believes this is evidence of their modus operandi.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="605.52" data-end="614.04">
+            <p class="french-block">"Nous avons préparé un vol multi-escales et une valise. Et après 11 heures, la bombe va exploser", explique Nouzille.</p>
+            <span class="english-block">"We have a preparation of a multi-stop flight and a suitcase - and after 11 hours the bomb will explode," Nouzille says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="614.04" data-end="621.94">
+            <p class="french-block">Les dossiers Senussi dont dispose Nouzille sont des copies, et non des originaux, ils ne peuvent donc pas être testés médico-légalement.</p>
+            <span class="english-block">The Senussi Files that Nouzille has are copies, not originals, so they cannot be forensically tested.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="621.94" data-end="626.11">
+            <p class="french-block">Reste à savoir s’ils seront recevables lors du prochain procès.</p>
+            <span class="english-block">It remains to be seen whether they will be admissible in the upcoming trial.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="626.11" data-end="631.97">
+            <p class="french-block">S'ils sont authentiques, ces dossiers pourraient prouver une fois pour toutes la culpabilité de Megrahi.</p>
+            <span class="english-block">If they're authentic, these files may prove once and for all that Megrahi was guilty.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="631.97" data-end="640.01">
+            <p class="french-block">Paul Hudson, dont la fille Melina était l'une des victimes, brandit une banderole devant le tribunal fédéral de Washington DC.</p>
+            <span class="english-block">Paul Hudson, whose daughter Melina was one of the victims, holds up a banner outside the federal court in Washington DC</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="640.01" data-end="646.73">
+            <p class="french-block">Pendant que Nouzille rangeait les documents, j'ai pensé à Jim Swire et à ce que tout cela pourrait signifier pour lui.</p>
+            <span class="english-block">As Nouzille packed away the documents, I thought of Jim Swire and what this could all mean for him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="646.73" data-end="653.04">
+            <p class="french-block">Il a consacré sa vie à cette affaire – se liant même d'amitié avec Megrahi au cours de sa quête de réponses.</p>
+            <span class="english-block">He's devoted his life to this case - even befriending Megrahi during his quest to find answers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="653.04" data-end="662.47">
+            <p class="french-block">Cependant, malgré les années passées par Nouzille à authentifier les documents, les dossiers Senussi n'ont pas réussi à le convaincre de la responsabilité libyenne.</p>
+            <span class="english-block">However, despite the years spent by Nouzille to authenticate the documents, the Senussi Files have failed to convince him that Libya was responsible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="662.47" data-end="673.75">
+            <p class="french-block">Swire dit : "Je ne pense pas que vous devriez, les yeux ouverts, croire que des documents, aussi parfaits qu'ils puissent paraître, sont authentiques et prouvent commodément qu'il s'agissait d'un travail libyen."</p>
+            <span class="english-block">Swire says: "I don't think that you should, with your eyes open, go into believing that any documents, however perfect they may seem to be, are genuine which prove conveniently that this was a Libyan job."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="673.75" data-end="679.13">
+            <p class="french-block">Il a déclaré que la CIA avait la capacité de falsifier tous les documents qu'elle voulait.</p>
+            <span class="english-block">He said the CIA had the ability to forge any documents they wanted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="679.13" data-end="684.19">
+            <p class="french-block">Malgré plusieurs retards, Masud doit être jugé en août de cette année.</p>
+            <span class="english-block">Despite several delays, Masud is due to go on trial in August this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="684.19" data-end="687.86">
+            <p class="french-block">Reste à savoir si cela sera à nouveau repoussé.</p>
+            <span class="english-block">Whether this will be pushed back again remains to be seen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="687.86" data-end="697.85">
+            <p class="french-block">Il est très probable que les preuves historiques du procès initial de Lockerbie seront à nouveau examinées à la loupe, ouvrant ainsi de vieilles blessures et catalysant une nouvelle ère de questionnement.</p>
+            <span class="english-block">It's very likely that historical evidence from the original Lockerbie trial will be brought under the microscope once again - opening up old wounds and catalysing a new era of questioning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="697.85" data-end="706.58">
+            <p class="french-block">Ou bien, s’ils sont recevables et vérifiés, les dossiers Senussi pourraient prouver une fois pour toutes ce que Dick Marquise et d’autres enquêteurs disent depuis le début.</p>
+            <span class="english-block">Or, if admissible and verified, the Senussi Files might prove once and for all what Dick Marquise and other investigators have been saying all along.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="706.58" data-end="711.89">
+            <p class="french-block">De nouveaux documents accusent la Libye d'être responsable de l'attentat de Lockerbie</p>
+            <span class="english-block">New documents blame Libya for Lockerbie bombing</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="711.89" data-end="715.49">
+            <p class="french-block">Une atrocité qui a brisé le cœur du monde entier</p>
+            <span class="english-block">An atrocity that caused heartbreak around the world</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_7.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
