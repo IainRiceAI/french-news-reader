@@ -36,9 +36,9 @@
 
 ### Section 4
 
-**🇬🇧 EN:** Hugging Face said the hack was different from anything it had handled before because it was done at superhuman speed by an AI with little or no human guidance.
+**🇬🇧 EN:** Hugging Face said, external the hack was different from anything it had handled before because it was done at superhuman speed by an AI with little or no human guidance.
 
-**🇫🇷 FR:** *Hugging Face a déclaré que le piratage était différent de tout ce qu'il avait fait auparavant, car il avait été réalisé à une vitesse surhumaine par une IA avec peu ou pas de guidage humain.*
+**🇫🇷 FR:** *Hugging Face a déclaré qu'à l'extérieur, le piratage était différent de tout ce qu'il avait géré auparavant car il était effectué à une vitesse surhumaine par une IA avec peu ou pas de guidage humain.*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** Hugging Face researchers guessed the mysterious attackers had used one of the big AI models but they had no idea who or where the criminals were.
 
-**🇫🇷 FR:** *Les chercheurs de Hugging Face ont deviné que les mystérieux attaquants avaient utilisé l’un des grands modèles d’IA, mais ils n’avaient aucune idée de qui ni où se trouvaient les criminels.*
+**🇫🇷 FR:** *Les chercheurs de Hugging Face ont deviné que les mystérieux attaquants avaient utilisé l'un des grands modèles d'IA, mais ils n'avaient aucune idée de qui ni où se trouvaient les criminels.*
 
 ---
 
@@ -132,9 +132,9 @@
 
 ### Section 16
 
-**🇬🇧 EN:** OpenAI issued a press release explaining what had happened and said it was "partnering with Hugging Face" to address the security incident and share lessons learned.
+**🇬🇧 EN:** OpenAI issued a press release , externalexplaining what had happened and said it was "partnering with Hugging Face" to address the security incident and share lessons learned.
 
-**🇫🇷 FR:** *OpenAI a publié un communiqué de presse expliquant ce qui s'était passé et a déclaré qu'il « s'associe à Hugging Face » pour résoudre l'incident de sécurité et partager les leçons apprises.*
+**🇫🇷 FR:** *OpenAI a publié un communiqué de presse externe expliquant ce qui s'était passé et a déclaré qu'il "s'associait avec Hugging Face" pour résoudre l'incident de sécurité et partager les leçons apprises.*
 
 ---
 
@@ -174,7 +174,7 @@
 
 **🇬🇧 EN:** Cyber-security consultant Daniel Card said sarcastically on LinkedIn: "Isn't it lucky [that] out of the millions of sites that got pwn3d [hacked], OpenAI managed to pwn someone who also could benefit from the marketing exposure…"
 
-**🇫🇷 FR:** *Le consultant en cybersécurité Daniel Card a déclaré sarcastiquement sur LinkedIn : « N'est-il pas heureux que parmi les millions de sites qui ont été pwn3d [piratés], OpenAI ait réussi à attirer quelqu'un qui pourrait également bénéficier de l'exposition marketing… »*
+**🇫🇷 FR:** *Le consultant en cybersécurité Daniel Card a déclaré sarcastiquement sur LinkedIn : « N'est-il pas heureux que parmi les millions de sites qui ont été piratés par pwn3d, OpenAI ait réussi à attirer quelqu'un qui pourrait également bénéficier de l'exposition marketing… »*
 
 ---
 
@@ -252,9 +252,9 @@
 
 ### Section 31
 
-**🇬🇧 EN:** Cyber security Professor Alan Woodward from Surrey University told reporters OpenAI had "egg on it's face", and Katie Moussouris from Luta Security went further, suggesting the AI industry is failing to control its dangerous inventions.
+**🇬🇧 EN:** Cyber security Professor Alan Woodward from Surrey University told reporters OpenAI had "egg on it's face", and Katie Moussouris from Luta Security went further, external, suggesting the AI industry is failing to control its dangerous inventions.
 
-**🇫🇷 FR:** *Le professeur de cybersécurité Alan Woodward de l'Université de Surrey a déclaré aux journalistes qu'OpenAI avait « un œuf sur le visage », et Katie Moussouris de Luta Security est allée plus loin, suggérant que l'industrie de l'IA ne parvient pas à contrôler ses inventions dangereuses.*
+**🇫🇷 FR:** *Le professeur de cybersécurité Alan Woodward de l'Université de Surrey a déclaré aux journalistes qu'OpenAI avait "un œuf sur le visage", et Katie Moussouris de Luta Security est allée plus loin, suggérant que l'industrie de l'IA ne parvient pas à contrôler ses inventions dangereuses.*
 
 ---
 
@@ -316,9 +316,9 @@
 
 ### Section 39
 
-**🇬🇧 EN:** In recent research, the UK's AI Security Institute (AISI) found frontier AI models are so fixated on completing tasks they "cheated" in tests to achieve their goals.
+**🇬🇧 EN:** In recent research, external, the UK's AI Security Institute (AISI) found frontier AI models are so fixated on completing tasks they "cheated" in tests to achieve their goals.
 
-**🇫🇷 FR:** *Dans une étude récente, l'AI Security Institute (AISI) du Royaume-Uni a découvert que les modèles d'IA d'avant-garde sont tellement obsédés par l'accomplissement de tâches qu'ils « trichent » lors des tests pour atteindre leurs objectifs.*
+**🇫🇷 FR:** *Dans une récente étude externe, l'AI Security Institute (AISI) du Royaume-Uni a découvert que les modèles d'IA de pointe sont tellement obsédés par l'accomplissement de tâches qu'ils « trichent » lors des tests pour atteindre leurs objectifs.*
 
 ---
 
@@ -348,9 +348,9 @@
 
 ### Section 43
 
-**🇬🇧 EN:** Ciaran Martin, former head of the UK's National Cyber Security Centre, offered a calmer view.
+**🇬🇧 EN:** Ciaran Martin, former head of the UK's National Cyber Security Centre, offered a calmer view in a news interview.
 
-**🇫🇷 FR:** *Ciaran Martin, ancien directeur du Centre national de cybersécurité du Royaume-Uni, a offert un point de vue plus calme.*
+**🇫🇷 FR:** *Ciaran Martin, ancien directeur du Centre national de cybersécurité du Royaume-Uni, a offert un point de vue plus calme dans une interview accordée à la presse.*
 
 ---
 

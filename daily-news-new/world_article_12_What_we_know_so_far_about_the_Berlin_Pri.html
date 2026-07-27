@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What we know so far about the Berlin Pride ramming attack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>What we know so far about the Berlin Pride ramming attack</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 26 Jul 2026 20:34:23 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cevmdxz4872o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: German Chancellor Friedrich Merz condemns the attack as "heinous" after a suspect drove a car into a crowd near the Tiergarten park.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.86" data-end="20.54">
+            <p class="french-block">Une femme a été tuée et au moins 29 autres blessées après qu'une camionnette a foncé sur la foule lors d'un événement de la fierté de Berlin samedi soir, dans ce qui, selon les autorités, était probablement une "attaque terroriste islamiste".</p>
+            <span class="english-block">One woman has been killed and at least 29 others injured after a van was driven into a crowd at a Berlin Pride event on Saturday night, in what officials say was likely an "Islamist terror attack".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.54" data-end="27.94">
+            <p class="french-block">Le suspect, Abdul Ballout, 21 ans, a été tué par balle lors d'une opération de police à Berlin-Ouest.</p>
+            <span class="english-block">The suspect, 21-year-old Abdul Ballout, has been shot and killed during a police operation in west Berlin.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.94" data-end="33.14">
+            <p class="french-block">Le chancelier allemand Friedrich Merz a qualifié cet incident d'attaque « odieuse ».</p>
+            <span class="english-block">German Chancellor Friedrich Merz has condemned the incident as a "heinous" attack.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.14" data-end="36.19">
+            <p class="french-block">Voici ce que nous savons jusqu’à présent.</p>
+            <span class="english-block">Here is what we know so far.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.19" data-end="48.48">
+            <p class="french-block">L'attaque s'est produite vers 22h00 heure locale (20h00 GMT). La police de Berlin a été informée qu'un véhicule blanc avait foncé dans la foule lors d'un événement de la fierté dans la capitale.</p>
+            <span class="english-block">The attack happened at about 22:00 local time (20:00 GMT). A report was made to police in Berlin that a white vehicle had been driven into crowds at a Pride event in the capital.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="48.48" data-end="59.09">
+            <p class="french-block">Des centaines de milliers de personnes s'étaient rassemblées au parc Tiergarten, près de l'emblématique porte de Brandebourg, pour l'événement annuel, connu sous le nom de Christopher Street Day.</p>
+            <span class="english-block">Hundreds of thousands of people had gathered at Tiergarten park, near the iconic Brandenburg Gate, for the annual event, which is known as Christopher Street Day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.09" data-end="67.37">
+            <p class="french-block">Certaines personnes ont également été poignardées lors de l'incident, avec une lame, selon les autorités, qui aurait pu être une machette.</p>
+            <span class="english-block">Some people were also stabbed in the incident, with a blade officials believe could have been a machete.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.37" data-end="71.14">
+            <p class="french-block">Peu de temps après, l'événement Pride a été annulé.</p>
+            <span class="english-block">Shortly afterwards, the Pride event was cancelled.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.14" data-end="79.39">
+            <p class="french-block">Une représentation a pris fin brusquement, les organisateurs montant sur scène et conseillant à la foule de commencer à marcher vers les sorties.</p>
+            <span class="english-block">A performance was abruptly brought to a end, with organisers taking to the stage and advising the crowd to start walking towards the exits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.39" data-end="86.64">
+            <p class="french-block">Alors que le message était transmis à la foule, le mot « évacuation » a été projeté sur un grand écran sur la scène.</p>
+            <span class="english-block">As the message was being given to the crowd, the word "evacuation" was projected onto a large screen on the stage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.64" data-end="95.66">
+            <p class="french-block">Une vidéo non vérifiée publiée sur les réseaux sociaux montrait de grandes foules de personnes quittant les lieux tandis que des véhicules d'urgence se précipitaient sur les lieux.</p>
+            <span class="english-block">Unverified video posted to social media showed large crowds of people leaving the scene as emergency vehicles raced to the scene.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.66" data-end="103.2">
+            <p class="french-block">Vers 01h00, heure locale, la police a confirmé qu'une femme avait été tuée et que de nombreuses autres avaient été blessées.</p>
+            <span class="english-block">At about 01:00 local time, police confirmed that one woman had been killed and many more had suffered injuries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.2" data-end="114.38">
+            <p class="french-block">Peu de temps après, la police a confirmé avoir retrouvé le véhicule qui aurait été utilisé lors de l'attaque, affirmant qu'il avait percuté un arbre. Le véhicule aurait été loué.</p>
+            <span class="english-block">A short time later, police confirmed they had found the vehicle believed to have been used in the attack, saying it had crashed into a tree. The vehicle is believed to have been rented.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.38" data-end="118.42">
+            <p class="french-block">Les enquêteurs sur place dimanche dans le parc Tiergarten</p>
+            <span class="english-block">Investigators at the scene in Tiergarten park on Sunday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.42" data-end="125.71">
+            <p class="french-block">Vers 3h30, la police a déclaré sur X avoir identifié un suspect ayant des liens avec les islamistes.</p>
+            <span class="english-block">At about 03:30, police said on X they had identified a suspect with Islamist links.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.71" data-end="133.61">
+            <p class="french-block">La zone de recherche a été élargie à l’ensemble de la ville et a impliqué des milliers de policiers, dont des officiers des États allemands voisins.</p>
+            <span class="english-block">The search area was widened to the entire city and involved thousands of police, including officers from surrounding German states.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.61" data-end="141.41">
+            <p class="french-block">Dimanche, des policiers montaient la garde devant un immeuble du quartier berlinois de Tiergarten, qui serait le domicile du suspect.</p>
+            <span class="english-block">On Sunday, police officers stood guard outside an apartment block in Berlin's Tiergarten district, which is said to be the suspect's home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.41" data-end="152.52">
+            <p class="french-block">La police a déclaré qu'il avait ensuite été tué par balle dans un lotissement familial à Spandau, un quartier à l'ouest de la capitale, après s'être précipité sur les policiers avec un couteau.</p>
+            <span class="english-block">Police say he was later shot and killed at an allotment complex in Spandau, a borough in the west of the capital, after he rushed at officers with a knife.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.52" data-end="160.06">
+            <p class="french-block">Le suspect a été identifié par la police comme étant Abdul Ballout, 21 ans, citoyen allemand d'origine libanaise.</p>
+            <span class="english-block">The suspect has been named by police as 21-year-old Abdul Ballout, a German citizen of Lebanese background.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.06" data-end="165.38">
+            <p class="french-block">Il était connu de la police et avait été radicalisé, ont indiqué les autorités.</p>
+            <span class="english-block">He was known to police and had been radicalised, officials said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.38" data-end="172.3">
+            <p class="french-block">Un communiqué publié par le parquet de Berlin a révélé de plus amples détails sur les antécédents criminels de Ballout.</p>
+            <span class="english-block">A statement released by the Berlin public prosecutor's office revealed further details about Ballout's criminal history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.3" data-end="188.38">
+            <p class="french-block">En mai 2025, les procureurs ont déclaré qu’il s’était rendu au Liban via la Turquie, avec l’intention de rejoindre le groupe État islamique (EI) en Syrie. Au Liban, il aurait pris contact avec plusieurs individus qu'il croyait être des membres de l'EI.</p>
+            <span class="english-block">In May 2025, prosecutors said he travelled via Turkey to Lebanon, with the intention of joining the Islamic State group (IS) in Syria. While in Lebanon he allegedly made contact with several individuals he believed were members of IS.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.38" data-end="196.06">
+            <p class="french-block">Il a été arrêté au Liban en juillet 2025 et condamné à trois mois de prison pour incitation aux conflits religieux et sectaires.</p>
+            <span class="english-block">He was arrested in Lebanon in July 2025 and sentenced to three months in prison for incitement to religious and sectarian conflict.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.06" data-end="204.98">
+            <p class="french-block">Puis, en novembre 2025, il est retourné en Allemagne où il a été arrêté à l'aéroport de Berlin-Brandebourg et placé en détention provisoire.</p>
+            <span class="english-block">Then in November 2025 he returned to Germany where he was arrested at Berlin Brandenburg Airport and held in pre-trial detention.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.98" data-end="220.2">
+            <p class="french-block">En mai de cette année, il a été condamné à un an et dix mois de prison pour « préparation d'un acte de violence grave mettant en danger l'État ». La décision a été reportée de six mois et il a été placé sous la surveillance d'un agent de libération conditionnelle.</p>
+            <span class="english-block">In May this year, he was sentenced to one year and 10 months in prison for "preparing a serious act of violence endangering the state". The decision was deferred for six months and he was placed under the supervision of a parole officer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.2" data-end="228.72">
+            <p class="french-block">Il avait déjà été reconnu coupable d’agression et de vol qualifié en 2022, et d’avoir volé des écouteurs à une victime en 2020.</p>
+            <span class="english-block">He was previously convicted of assault and robbery in 2022, and of robbing a victim of headphones in 2020.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.72" data-end="234.55">
+            <p class="french-block">L'attaque a eu lieu dans le parc populaire du Tiergarten, près de la porte de Brandenberg.</p>
+            <span class="english-block">The attack took place in the popular Tiergarten park, near the Brandenberg Gate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.55" data-end="247.8">
+            <p class="french-block">Un grand nombre de personnes et de chars ont participé à l'événement Christopher Street Day, qui a traversé la ville, avant de traverser le parc Tiergarten, devant le monument de la Colonne de la Victoire et vers la porte de Brandenberg.</p>
+            <span class="english-block">A large number of people and floats took part in the Christopher Street Day event, which passed through the city, before moving through Tiergarten park, past the Victory Column monument, and towards the Brandenberg Gate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="247.8" data-end="257.02">
+            <p class="french-block">La police berlinoise a déclaré que des personnes avaient été frappées sur l'Ahornsteig, un long chemin qui traverse le parc, en grande partie dans une zone boisée.</p>
+            <span class="english-block">Berlin Police have said people were hit on Ahornsteig, which is a long path stretching across the park, largely in a forested area.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="257.02" data-end="261.02">
+            <p class="french-block">Les dirigeants européens n’ont pas tardé à condamner l’attaque.</p>
+            <span class="english-block">European leaders have been swift to condemn the attack.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.02" data-end="274.85">
+            <p class="french-block">La présidente de la Commission européenne, Ursula von der Leyen, a exprimé sa sympathie aux victimes, affirmant que l'événement de la fierté symbolisait « la liberté, la dignité et l'égalité – les valeurs fondamentales de l'UE ».</p>
+            <span class="english-block">European Commission President Ursula von der Leyen expressed her sympathy to the victims, saying the Pride event stands for "freedom, dignity, and equality - the fundamental values of the EU".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.85" data-end="281.74">
+            <p class="french-block">"Chaque personne devrait pouvoir vivre, aimer et défendre ses droits sans crainte", a-t-elle écrit sur les réseaux sociaux.</p>
+            <span class="english-block">"Every person should be able to live, love, and stand up for their rights without fear," she wrote on social media.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.74" data-end="295.06">
+            <p class="french-block">Rob Jetten, Premier ministre des Pays-Bas, a déclaré que les Pays-Bas étaient « aux côtés de nos voisins allemands », tandis que la Première ministre italienne Georgia Meloni a exprimé « sa solidarité et sa sincère sympathie ».</p>
+            <span class="english-block">Rob Jetten, prime minister of the Netherlands, said the Dutch stand "shoulder to shoulder with our German neighbours", while Italy's prime minister Georgia Meloni expressed "solidarity and sincere sympathy".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.06" data-end="305.66">
+            <p class="french-block">Le secrétaire britannique à la Défense, Wes Streeting, a qualifié l'incident de « désastre absolument horrible », ajoutant que ses pensées et ses prières allaient vers le peuple allemand.</p>
+            <span class="english-block">The UK's defence secretary Wes Streeting called the incident "an absolutely horrific disaster", adding his thoughts and prayers are with the German people.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.66" data-end="312.53">
+            <p class="french-block">Avez-vous assisté à la Berlin Pride ? Si vous pouvez le faire en toute sécurité, contactez-nous.</p>
+            <span class="english-block">Did you attend Berlin Pride? If it is safe to do so, get in touch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.53" data-end="314.81">
+            <p class="french-block">Contactez-nous ici</p>
+            <span class="english-block">Get in touch here</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.81" data-end="321.86">
+            <p class="french-block">WhatsApp : +44 7756 165803</p>
+            <span class="english-block">WhatsApp: +44 7756 165803</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.86" data-end="326.18">
+            <p class="french-block">E-mail : yourvoice@bbc.co.uk</p>
+            <span class="english-block">Email: yourvoice@bbc.co.uk</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.18" data-end="331.18">
+            <p class="french-block">Veuillez lire nos conditions générales et notre politique de confidentialité</p>
+            <span class="english-block">Please read our terms & conditions and privacy policy</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.18" data-end="336.74">
+            <p class="french-block">Le suspect de l'attentat de la fierté de Berlin tué par balle lors d'une opération de police</p>
+            <span class="english-block">Berlin Pride attack suspect shot and killed during police operation</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="world_article_12.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

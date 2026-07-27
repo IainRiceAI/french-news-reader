@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'It's like having an amusement park and not opening it' - algae closures take toll</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>'It's like having an amusement park and not opening it' - algae closures take toll</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 26 Jul 2026 07:01:30 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c1m159e54l9o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: There are currently 245 algae blooms across water systems in Northern Ireland.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.8" data-end="11.78">
+            <p class="french-block">Les proliférations d’algues peuvent réapparaître par temps chaud</p>
+            <span class="english-block">Algal blooms can resurge during warm weather conditions</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="11.78" data-end="22.92">
+            <p class="french-block">Alors que les habitants et les visiteurs se rendent dans les lacs d'Irlande du Nord à la recherche du soleil d'été, ils sont une fois de plus confrontés à un spectacle indésirable : les algues bleu-vert.</p>
+            <span class="english-block">As locals and visitors make the trip to Northern Ireland's lakes in search of summer sunshine, they are once again facing an unwelcome sight: blue-green algae.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.92" data-end="34.2">
+            <p class="french-block">Les bactéries toxiques, qui peuvent provoquer des irritations cutanées et des maladies chez les personnes et les animaux qui entrent en contact avec elles, sont devenues un élément indésirable de ces derniers étés.</p>
+            <span class="english-block">The toxic bacteria, which can cause skin irritation and sickness in people and animals who come into contact with it, has become an unwelcome feature of recent summers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.2" data-end="49.32">
+            <p class="french-block">Il y a actuellement 248 proliférations d'algues dans les systèmes hydrographiques du Lough Neagh et de l'Irlande du Nord, selon le Centre britannique pour l'écologie et l'hydrologie, externe. Quatre-vingts ont été confirmés rien qu’en juin et juillet.</p>
+            <span class="english-block">There are currently 248 algae blooms across Lough Neagh and Northern Ireland's water systems, according to the UK Centre for Ecology and Hydrology, external. Eighty have been confirmed in June and July alone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.32" data-end="60.17">
+            <p class="french-block">Le ministère de l'Agriculture, de l'Environnement et des Affaires rurales (Daera) a déclaré que deux des zones touchées étaient le lac Camlough, près de Newry, et les lacs Craigavon.</p>
+            <span class="english-block">The Department of Agriculture, Environment and Rural Affairs (Daera) said two of the areas affected were Camlough Lake near Newry and Craigavon Lakes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.17" data-end="66.91">
+            <p class="french-block">Pour un propriétaire d’entreprise basé à Camlough Lake, le retour des algues bleu-vert a eu un impact immédiat.</p>
+            <span class="english-block">For one business owner based at Camlough Lake, the return of blue-green algae has had an immediate impact.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.91" data-end="81.0">
+            <p class="french-block">Karl Toner, qui possède un chariot à café sur le rivage ainsi qu'un site de glamping et une entreprise de location de paddleboards à proximité, a déclaré que le nombre de visiteurs avait fortement chuté depuis l'émission de l'avertissement le 13 juillet.</p>
+            <span class="english-block">Karl Toner, who owns a coffee cart on the shore as well as a nearby glamping site and paddleboard hire business, said visitor numbers had fallen sharply since the warning was issued on 13 July.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.0" data-end="88.01">
+            <p class="french-block">"En été, cet endroit se détériore vraiment, maintenant les algues l'ont complètement tué", a-t-il déclaré.</p>
+            <span class="english-block">"In the summertime this place really goes off, now the algae has just completely killed it," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.01" data-end="96.62">
+            <p class="french-block">Toner a expliqué comment le temps chaud attirerait normalement des visiteurs de toute l'Irlande du Nord et au-delà dans la région, stimulant ainsi le commerce.</p>
+            <span class="english-block">Toner explained how warm weather would normally bring visitors from across Northern Ireland and beyond to the area, providing a trade boost.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.62" data-end="106.46">
+            <p class="french-block">"Dans les bons jours, il y aurait des centaines de personnes ici du matin jusqu'à minuit, nageant et profitant du lac, mais maintenant l'endroit est vide", a-t-il déclaré.</p>
+            <span class="english-block">"On a good day, there would be hundreds of people here from the morning right through until midnight, swimming and enjoying the lake, but now the place is empty," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.46" data-end="111.5">
+            <p class="french-block">Karl Toner travaille dans la région autour du lac Camlough depuis plus de cinq ans.</p>
+            <span class="english-block">Karl Toner has been working in the area around Camlough Lake for over five years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.5" data-end="125.3">
+            <p class="french-block">Toner a déclaré que les avertissements d'algues des années précédentes avaient entraîné une baisse du nombre de visiteurs, mais que le moment était désormais particulièrement préjudiciable à la fréquentation pendant l'une des meilleures périodes météorologiques estivales.</p>
+            <span class="english-block">Toner said algae warnings in previous years meant visitor numbers suffered, but now the timing was particularly damaging for footfall during one of the best spells of summer weather.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.3" data-end="133.03">
+            <p class="french-block">"Quand il fait beau, le lac est fermé. C'est comme avoir un parc d'attractions et ne pas l'ouvrir", a-t-il déclaré.</p>
+            <span class="english-block">"When the weather gets good, the lake is closed. It's like having an amusement park and not opening it," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.03" data-end="137.04">
+            <p class="french-block">Des panneaux d'avertissement ont été érigés près du lac Camlough</p>
+            <span class="english-block">Warning signs have been erected close to Camlough Lake</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="137.04" data-end="151.13">
+            <p class="french-block">Le conseil du district de Newry, Mourne et Down a déclaré avoir été informé par Daera le 13 juillet de la présence d'algues bleu-vert au lac Camlough et a immédiatement érigé des panneaux d'avertissement pour alerter le public des risques potentiels pour la santé.</p>
+            <span class="english-block">Newry, Mourne and Down District Council said it was notified by Daera on 13 July of the presence of blue-green algae at Camlough Lake, and erected warning signs immediately to alert the public to the potential health risks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.13" data-end="164.23">
+            <p class="french-block">Le conseil a déclaré qu'il effectuait une surveillance visuelle régulière du lac et organisait des tests de toxines, ajoutant que les panneaux d'avertissement resteraient en place jusqu'à ce que les critères de sécurité requis par le protocole soient remplis.</p>
+            <span class="english-block">The council said it was carrying out regular visual monitoring of the lake and arranging toxin testing, adding that warning signs will remain in place until the required safety criteria under the protocol is met.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.23" data-end="177.17">
+            <p class="french-block">Un porte-parole de Daera a déclaré que même s'il n'y avait « pas de solution miracle », restaurer et protéger la santé écologique des plans d'eau était « possible en respectant la science et en soutenant les décisions difficiles nécessaires ».</p>
+            <span class="english-block">A Daera spokesperson said that while there were "no quick fixes", restoring and protecting the ecological health of water bodies was "possible by respecting the science and supporting the difficult decisions needed".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.17" data-end="180.86">
+            <p class="french-block">Joanne Callan aime la nature et la natation en eau libre.</p>
+            <span class="english-block">Joanne Callan has a love for nature and open-water swimming</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.86" data-end="192.89">
+            <p class="french-block">Joanne Callan, une thérapeute holistique de Bessbrook, a commencé à nager occasionnellement au lac Camlough en 2018 avant de devenir une nageuse régulière en eau libre pendant la pandémie de Covid-19.</p>
+            <span class="english-block">Joanne Callan, a holistic therapist from Bessbrook, began swimming at Camlough Lake occasionally in 2018 before becoming a regular open-water swimmer during the Covid-19 pandemic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.89" data-end="204.14">
+            <p class="french-block">Depuis lors, elle a déclaré qu'une communauté de nageurs et de baigneurs d'eau froide s'était développée pour atteindre plus de 100 personnes et que de nombreuses amitiés s'étaient nouées grâce à un "amour partagé du lac".</p>
+            <span class="english-block">Since then, she said a community of swimmers and cold-water dippers had grown to more than 100 people and many friendships had been formed through a "shared love of the lake".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.14" data-end="219.77">
+            <p class="french-block">Elle a déclaré que le lac Camlough était généralement une ruche d'activités pendant les mois d'été, avec des jeunes se rassemblant, des familles jouant dans les eaux peu profondes, des paddleboarders se rendant au lac et des athlètes l'utilisant comme espace d'entraînement pendant la saison de triathlon.</p>
+            <span class="english-block">She said Camlough Lake was usually a hive of activity during the summer months, with young people gathering, families playing in the shallow water, paddleboarders taking to the lake and athletes using it as a training space during triathlon season.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.77" data-end="229.82">
+            <p class="french-block">Elle a ajouté que garder le lac fermé ou restreindre l'accès au plus fort de l'été aurait « un impact sur de nombreuses personnes, physiquement, émotionnellement et socialement ».</p>
+            <span class="english-block">She added that keeping the lake closed or restricting access during the height of summer would "impact many people, physically, emotionally and socially".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.82" data-end="235.97">
+            <p class="french-block">Les activités en eau libre aux lacs Craigavon ​​ont été suspendues en raison de la prolifération d'algues</p>
+            <span class="english-block">Open-water activities at Craigavon Lakes have been suspended due to algal blooms</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.97" data-end="249.82">
+            <p class="french-block">Un porte-parole de la ville d'Armagh, de Banbridge et du conseil d'arrondissement de Craigavon ​​a déclaré que les activités de sports nautiques et la natation en eau libre aux lacs Craigavon ​​avaient été suspendues le 21 juillet en raison de la présence d'algues bleu-vert.</p>
+            <span class="english-block">A spokesperson for Armagh City, Banbridge and Craigavon Borough Council said watersports activities and open-water swimming at Craigavon Lakes were suspended on 21 July due to the presence of blue-green algae.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.82" data-end="260.18">
+            <p class="french-block">Le conseil a déclaré que la situation était « surveillée quotidiennement », avec « des évaluations régulières de l'état de l'eau effectuées conformément aux procédures de sécurité ».</p>
+            <span class="english-block">The council said the situation was being "monitored daily", with "regular assessments of water conditions carried out in line with safety procedures".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.18" data-end="269.04">
+            <p class="french-block">Il a ajouté que les restrictions resteraient en place jusqu'à ce que les conditions soient considérées comme sûres, et que les activités reprendraient "dès que possible".</p>
+            <span class="english-block">It added that restrictions would remain in place until conditions were considered safe, with activities resuming "as soon as possible".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.04" data-end="273.46">
+            <p class="french-block">Rachel et Tilly « évitent » généralement l’eau des lacs Craigavon</p>
+            <span class="english-block">Rachel and Tilly typically "avoid" the water at Craigavon Lakes</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="273.46" data-end="287.81">
+            <p class="french-block">Rachel et Tilly Turkington, de Derrytrasna, dans le comté d'Armagh, visitent régulièrement les lacs Craigavon ​​pour des promenades et des sorties au café, mais ont déclaré qu'ils avaient évité d'entrer dans l'eau en raison de préoccupations concernant sa qualité.</p>
+            <span class="english-block">Rachel and Tilly Turkington, from Derrytrasna, County Armagh, regularly visit Craigavon Lakes for walks and trips to the café, but said they had avoided entering the water because of concerns over its quality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.81" data-end="297.62">
+            <p class="french-block">La famille s'intéresse aux sports nautiques et a récemment acheté un paddleboard, mais Rachel a déclaré qu'elle n'envisagerait d'utiliser le lac que si ces préoccupations étaient résolues.</p>
+            <span class="english-block">The family are interested in watersports and recently bought a paddleboard, but Rachel said they would only consider using the lake if those concerns were addressed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.62" data-end="305.5">
+            <p class="french-block">"Si cette eau était plus propre et qu'il n'y avait pas de problèmes d'algues, nous apporterions certainement le paddleboard ici", a-t-elle déclaré.</p>
+            <span class="english-block">"If this water was cleaner and there wasn't the algae issues, we would definitely bring the paddleboard here," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.5" data-end="314.11">
+            <p class="french-block">Lors d'une récente promenade, les deux hommes ont déclaré avoir remarqué des zones où l'eau semblait stagnante, avec des taches vertes et des fleurs visibles.</p>
+            <span class="english-block">On a recent walk, the pair said they noticed areas where the water appeared stagnant, with green patches and visible blooms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.11" data-end="324.55">
+            <p class="french-block">Bien qu'ils vivent à proximité des rives du Lough Neagh, ils ont déclaré que les récentes inquiétudes concernant la qualité de l'eau les avaient rendus plus prudents à l'égard des voies navigables locales.</p>
+            <span class="english-block">Despite living close to the shores of Lough Neagh, they said recent concerns around water quality had made them more cautious around local waterways.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="324.55" data-end="330.7">
+            <p class="french-block">"Nous faisons très attention et je ne laisserais pas le chien boire de l'eau au cas où", a déclaré Rachel.</p>
+            <span class="english-block">"We take extra care and I wouldn't let the dog drink the water just in case," Rachel said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.7" data-end="337.25">
+            <p class="french-block">En 2023, les algues ont été détectées à des niveaux jamais vus depuis les années 1970</p>
+            <span class="english-block">In 2023, algae was detected at levels not seen since the 1970s</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.25" data-end="348.5">
+            <p class="french-block">Toute période de temps ensoleillé et calme fera apparaître en force les algues bleu-vert, même si la floraison a semblé un peu lente à démarrer cette année. Cela est dû à la météo.</p>
+            <span class="english-block">Any spell of sunny, settled weather will bring blue-green algae out in force, although the blooms have felt a little slow to start this year. That has been due to the weather.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="348.5" data-end="362.52">
+            <p class="french-block">Les spores d'algues ont peut-être rendu l'eau verte par endroits dans toute l'Irlande du Nord, mais des vents violents et de fortes pluies ont maintenu les surfaces trop agitées pour la formation des tapis à très grande échelle que nous avons vus auparavant. Et nous les reverrons.</p>
+            <span class="english-block">Algal spores may have turned the water green in places across Northern Ireland, but strong winds and heavy rain have kept surfaces too agitated for the formation of the very large-scale mats we've seen before. And we will see them again.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.52" data-end="373.06">
+            <p class="french-block">Prenez le Lough Neagh : selon les estimations des scientifiques, environ quatre décennies de phosphore, le nutriment qui stimule la croissance, sont stockées dans ses sédiments.</p>
+            <span class="english-block">Take Lough Neagh – by scientists' estimation, approximately four decades' worth of phosphorus, the nutrient that stimulates growth, are stored in its sediment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="373.06" data-end="387.48">
+            <p class="french-block">Et même si les algues consomment ce phosphore, celui-ci est ajouté dans l’eau par l’agriculture, les eaux usées, les fosses septiques non entretenues, l’industrie et chaque foyer du bassin versant qui introduit des détergents contenant du phosphore dans le système.</p>
+            <span class="english-block">And even as algae consumes that phosphorus, it is being topped up in the water by agriculture, wastewater, un-maintained septic tanks, industry and every household in the catchment that puts phosphorus-containing detergent into the system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="387.48" data-end="399.26">
+            <p class="french-block">C’est pourquoi s’attaquer à la pollution par les nutriments à la source est la première mesure à prendre pour s’attaquer au problème, et pourquoi les principaux contributeurs – l’agriculture et le traitement de l’eau – sont la première escale.</p>
+            <span class="english-block">That is why addressing nutrient pollution at source is the first point of action in tackling the problem, and why the big contributors – farming and water treatment – are the first port of call.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="399.26" data-end="410.11">
+            <p class="french-block">Des politiques telles que le Programme d’action pour les nutriments jouent un rôle important. Mais il n’existe pas de solution miracle, et il existe peu de solutions faciles ou peu coûteuses.</p>
+            <span class="english-block">Policies like the Nutrient Action Programme play an important role. But there is no quick fix, and few cheap or easy ones.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="410.11" data-end="413.42">
+            <p class="french-block">Les algues bleu-vert reviennent dans le Lough Neagh</p>
+            <span class="english-block">Blue-green algae returns to Lough Neagh</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="413.42" data-end="418.2">
+            <p class="french-block">Une œuvre de fiction pourrait-elle attirer l’attention sur le sort du Lough Neagh ?</p>
+            <span class="english-block">Could a work of fiction draw attention to plight of Lough Neagh?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.2" data-end="422.3">
+            <p class="french-block">Les étudiants ont une solution pour nettoyer le Lough Neagh</p>
+            <span class="english-block">The students with a solution to clean up Lough Neagh</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_23.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

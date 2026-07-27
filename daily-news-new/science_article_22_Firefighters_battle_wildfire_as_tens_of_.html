@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefighters battle wildfire as tens of thousands evacuated near Bordeaux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Firefighters battle wildfire as tens of thousands evacuated near Bordeaux</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 26 Jul 2026 18:40:08 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/clyj8k4nn5jo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: More than 330,000 people have now been evacuated from wildfires across France and Spain.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.3" data-end="17.64">
+            <p class="french-block">Les pompiers luttent pour contenir les incendies de forêt qui brûlent près de la ville de Bordeaux alors que des dizaines de milliers de personnes ont été évacuées de la région environnante.</p>
+            <span class="english-block">Firefighters are battling to contain wildfires burning near the city of Bordeaux as tens of thousands of people have been evacuated from the surrounding region.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.64" data-end="32.23">
+            <p class="french-block">Le ministre français de l'Intérieur, Laurent Nuñez, a déclaré que la situation dans la région restait "très défavorable" et que l'incendie "se déplaçait de manière erratique vers" Bordeaux, bien que les autorités aient minimisé la possibilité d'une évacuation.</p>
+            <span class="english-block">France's Interior Minister Laurent Nuñez said the situation in the region remained "very unfavourable" and the fire was "moving erratically towards" Bordeaux, though officials downplayed the possibility of evacuation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.23" data-end="41.74">
+            <p class="french-block">Dans la nuit de dimanche, environ 55 000 personnes ont été évacuées des villages situés au sud de la ville, en Gironde, célèbre pour ses vignobles.</p>
+            <span class="english-block">Overnight into Sunday, about 55,000 people were evacuated from villages to the south of the city in the Gironde region, famed for its vineyards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="41.74" data-end="51.24">
+            <p class="french-block">Des incendies de forêt ont fait rage dans toute l'Europe la semaine dernière, principalement en France et en Espagne, où plus de 330 000 personnes ont été évacuées.</p>
+            <span class="english-block">Wildfires have raged across Europe over the past week, primarily in France and Spain, where more than 330,000 people have been evacuated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.24" data-end="69.62">
+            <p class="french-block">La France est l'une des régions les plus touchées, avec une superficie de 42 000 hectares brûlés dans le sud-ouest, ce qui en fait l'un des plus grands incendies de forêt depuis la Seconde Guerre mondiale. Environ 115 000 hectares ont brûlé à travers le pays depuis le début de l'année, a déclaré dimanche Nuñez aux médias français.</p>
+            <span class="english-block">France has been one of worst affected regions, with an area of 42,000 hectares burnt in the south-west, making it one of the largest forest fires since World War Two. About 115,000 hectares have burnt across the country since the start of the year, Nuñez told French media on Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.62" data-end="75.29">
+            <p class="french-block">Au total, plus de 220 000 personnes ont été évacuées dans le sud-ouest du pays.</p>
+            <span class="english-block">In total, more than 220,000 people have been evacuated in the south-west of the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.29" data-end="87.94">
+            <p class="french-block">Le capitaine Nicolas Braz, l'un des chefs des opérations de lutte contre les incendies, a déclaré que l'incendie avait créé "ses propres vents, accompagnés de tourbillons", ajoutant qu'il était "erratique et ingérable".</p>
+            <span class="english-block">Captain Nicolas Braz, one of the leaders of the firefighting operation, said the fire had created "its own winds - complete with whirlwinds", adding it was "erratic and unmanageable".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.94" data-end="101.9">
+            <p class="french-block">Les habitants du Porge, l'une des villes côtières touchées par les incendies, ont mis en place un réseau de bénévoles improvisé pour soutenir les pompiers épuisés, en leur préparant des repas et en leur offrant un endroit pour se reposer entre les périodes de travail.</p>
+            <span class="english-block">Residents in Le Porge, one of the coastal towns hit by the fires, have set up an improvised volunteer network to support exhausted firefighters, cooking them meals and offering a place to rest in between shifts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.9" data-end="109.3">
+            <p class="french-block">"Je pense que beaucoup d'entre eux n'ont jamais connu un incendie d'une telle ampleur auparavant", a déclaré la bénévole Nathalie Augonnet.</p>
+            <span class="english-block">"I think many of them have never experienced a fire of this magnitude before," volunteer Nathalie Augonnet said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.3" data-end="114.5">
+            <p class="french-block">Plus de 150 maisons ont été détruites dans la commune de 3 500 habitants.</p>
+            <span class="english-block">More than 150 houses have been destroyed in the town of 3,500 inhabitants.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.5" data-end="119.57">
+            <p class="french-block">Plusieurs maisons du Porge, en Gironde, ont été détruites par un incendie</p>
+            <span class="english-block">Several houses in Le Porge, in the Gironde region, have been destroyed by a fire</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="119.57" data-end="127.03">
+            <p class="french-block">"Je suis un peu dévasté pour cette belle ville, pour ses forêts, sa faune et pour les gens qui ont tant perdu", a déclaré Augonnet.</p>
+            <span class="english-block">"I'm a little devastated for this beautiful town, for its forests, its wildlife and for the people who have lost so much," Augonnet said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.03" data-end="138.22">
+            <p class="french-block">"Pour l'instant, nous sommes concentrés sur l'action, donc nous n'avons pas vraiment le temps de réfléchir. Je pense que le plus difficile viendra après, lors de la reconstruction."</p>
+            <span class="english-block">"Right now, we're focused on taking action, so we don't really have time to think. I think the difficult part will come afterwards, during the reconstruction."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.22" data-end="147.84">
+            <p class="french-block">Pendant ce temps, en Espagne, les incendies continuent de se propager, avec plus de 90 000 personnes évacuées des régions autour de Madrid et d'Ávila.</p>
+            <span class="english-block">Meanwhile in Spain, fires continue to spread, with more than 90,000 evacuated from the regions around Madrid and Ávila.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.84" data-end="157.06">
+            <p class="french-block">Environ 77 000 hectares ont été touchés par les incendies en Espagne, a indiqué dimanche la ministre de la Transition écologique, Sara Aagesen.</p>
+            <span class="english-block">Around 77,000 hectares have been affected by the fires in Spain, minister for ecological transition, Sara Aagesen, said on Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.06" data-end="163.92">
+            <p class="french-block">Elle a ajouté que l'incendie de forêt qui ravage la région d'Ávila est le plus important de l'histoire récente du pays.</p>
+            <span class="english-block">She added that the wildfire burning in the Ávila region is the largest in the country's recent history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.92" data-end="173.95">
+            <p class="french-block">Parmi les habitants évacuant les environs se trouve Olga Congacha, 50 ans, qui a dû fuir en toute hâte son village de Robledo de Chavela, à l'ouest de Madrid.</p>
+            <span class="english-block">Among the residents evacuating surrounding areas is Olga Congacha, 50, who had to flee her village of Robledo de Chavela west of Madrid in a haste.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.95" data-end="179.81">
+            <p class="french-block">Elle a déclaré qu'elle s'était sentie « paniquée » lorsqu'on lui a dit de quitter son domicile.</p>
+            <span class="english-block">She said she felt "panicked" when she was told to leave her home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.81" data-end="186.91">
+            <p class="french-block">"Je ne savais pas si je devais pleurer ou quoi. C'était un moment où on se sent très mal", a-t-elle ajouté.</p>
+            <span class="english-block">"I didn't know whether to cry or what. It was a moment when you feel awful," she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.91" data-end="194.3">
+            <p class="french-block">De retour chez elle dimanche pour chercher des médicaments, elle a déclaré que les rues étaient désertes et sa maison couverte de cendres.</p>
+            <span class="english-block">Returning to her home briefly on Sunday to get medicine, she said the streets were deserted and her house covered in ash.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.3" data-end="204.24">
+            <p class="french-block">Des touristes à Madrid ont rapporté avoir vu du feu et de la fumée près de l'aéroport, un couple néo-zélandais décrivant également avoir senti la fumée de leur hôtel dans la ville.</p>
+            <span class="english-block">Tourists in Madrid have reported seeing the fire and smoke near the airport, with one couple from New Zealand describing also smelling the smoke from their hotel in the city.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.24" data-end="212.69">
+            <p class="french-block">La touriste canadienne Letisha Lucas a déclaré que l'odeur était immédiatement évidente à son arrivée à Madrid "et très irritante pour la gorge".</p>
+            <span class="english-block">Canadian tourist Letisha Lucas said the smell was immediately obvious on arrival in Madrid "and very irritating on the throat".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.69" data-end="220.73">
+            <p class="french-block">Robledo de Chavela, une petite ville située à 50 km à l'ouest de Madrid, a été ravagée par un incendie de forêt.</p>
+            <span class="english-block">Robledo de Chavela, a small town 50km (30 miles) west of Madrid, has been ravaged by a forest fire</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.73" data-end="226.51">
+            <p class="french-block">Dans la nuit de dimanche, un nouveau front s'est également ouvert près de la ville côtière de Valence.</p>
+            <span class="english-block">Overnight into Sunday, a new front also opened up near the coastal city of Valencia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="226.51" data-end="237.36">
+            <p class="french-block">S'adressant aux journalistes samedi soir, le président régional de Valence, Juanfran Pérez Llorca, a déclaré : "L'incendie dépasse notre capacité à l'éteindre".</p>
+            <span class="english-block">Speaking to reporters late on Saturday, Valencia's regional President Juanfran Pérez Llorca said: "The fire is beyond our capacity to extinguish."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.36" data-end="245.9">
+            <p class="french-block">Pilar Bernabé, déléguée du gouvernement central à Valence, a déclaré que la situation dans la région risquait de se détériorer dimanche.</p>
+            <span class="english-block">Pilar Bernabe, the central government's delegate to Valencia, said conditions in the region were likely to worsen throughout Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.9" data-end="253.73">
+            <p class="french-block">Dimanche, on s'attend à des températures élevées et à une faible humidité, ce qui pourrait permettre au feu de se propager davantage.</p>
+            <span class="english-block">Sunday is expected to bring high temperatures and low humidity, potentially allowing the fire to spread further.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.73" data-end="261.77">
+            <p class="french-block">Samedi, un civil a été tué dans un incendie de moindre envergure dans la région de Valence – le seul décès civil signalé jusqu'à présent.</p>
+            <span class="english-block">On Saturday, one civilian was killed in a smaller fire in the Valencia region - the only civilian death so far reported.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.77" data-end="267.72">
+            <p class="french-block">Plus tôt dans la semaine, deux pompiers ont été tués lors d'un incendie près de Bordeaux, en France.</p>
+            <span class="english-block">Earlier in the week, two firefighters were killed fighting the blaze near to Bordeaux in France.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.72" data-end="284.35">
+            <p class="french-block">S'exprimant dimanche lors d'une visite dans une zone touchée par des incendies de forêt à l'ouest de Madrid, le Premier ministre du pays, Pedro Sánchez, a déclaré que "des heures difficiles nous attendaient", mais a ajouté qu'il y avait des indications "positives" dans la nuit pour contenir l'incendie.</p>
+            <span class="english-block">Speaking on Sunday during a visit to an area hit by wildfires to the west of Madrid, the country's Prime Minister Pedro Sanchez said "difficult hours lie ahead" but added there were "positive" indications overnight towards containing the blaze.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.35" data-end="289.82">
+            <p class="french-block">Il a également déclaré qu'il fallait "un pacte public majeur sur l'urgence climatique".</p>
+            <span class="english-block">He also said there needed to be "a major public pact on the climate emergency".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.82" data-end="297.94">
+            <p class="french-block">La présidente régionale de Madrid, Isabel Díaz Ayuso, a qualifié la situation de "pire incendie de l'histoire de la région".</p>
+            <span class="english-block">Madrid's regional president Isabel Díaz Ayuso described the situation as the "worst fire in the history of the region".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.94" data-end="311.74">
+            <p class="french-block">En Gironde, les secours mobilisent 2 500 pompiers, dont une équipe suisse, 1 500 militaires et près de 1 200 policiers et gendarmes, qui procèdent aux évacuations et participent aux opérations de sauvetage et de sécurisation.</p>
+            <span class="english-block">Rescue efforts in France's Gironde region involve 2,500 firefighters, including a Swiss team, 1,500 military personnel and almost 1,200 police and gendarmes, who are carrying out evacuations and helping with rescue and securing operations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="311.74" data-end="321.6">
+            <p class="french-block">Une végétation sèche et des vents violents ont provoqué la propagation du feu, 60 km de l'autoroute A63, qui mène à l'Espagne, ayant été fermés.</p>
+            <span class="english-block">Dry vegetation and brisk winds are causing the fire to spread, with 60km (37 miles) of the A63 motorway, which leads to Spain, having been closed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.6" data-end="329.98">
+            <p class="french-block">Dimanche après-midi, les panneaux des départs et des arrivées de l'aéroport de Bordeaux affichaient des retards sur tous les vols à partir de 17h15.</p>
+            <span class="english-block">On Sunday afternoon, Bordeaux Airport's departures and arrivals boards were showing delays to every flight from 17:15 onwards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.98" data-end="339.46">
+            <p class="french-block">Quelque 28 vols Easyjet à eux seuls ont été retardés, beaucoup sans nouvelle heure de départ ou d'arrivée indiquée, et cinq annulés, y compris des vols au Royaume-Uni.</p>
+            <span class="english-block">Some 28 Easyjet flights alone were delayed, many with no new departure or arrival time given, and five cancelled including UK flights.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.46" data-end="353.18">
+            <p class="french-block">L'aéroport de Bordeaux a déclaré à BBC News que des restrictions de contrôle du trafic aérien avaient été mises en place "pour faciliter le travail des services d'urgence" dans la lutte contre les incendies, tous les vols commerciaux étant concernés.</p>
+            <span class="english-block">Bordeaux Airport told BBC News air traffic control restrictions had been put in place "to facilitate the work of the emergency services" in fighting the fires, with all commercial flights affected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.18" data-end="357.91">
+            <p class="french-block">On ne sait pas combien de temps dureront les retards, a ajouté l'aéroport.</p>
+            <span class="english-block">It is unclear how long the delays will last, the airport added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="357.91" data-end="371.45">
+            <p class="french-block">La dernière étape du Tour de France a été raccourcie dimanche de 133 km à 89 km (de 82 miles à 55) pour permettre aux forces de sécurité d'être redéployées vers la lutte contre les incendies.</p>
+            <span class="english-block">The final stage of the Tour de France was shortened on Sunday from 133km to 89km (from 82 miles to 55) to allow security forces to be redeployed to the firefighting effort.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="371.45" data-end="379.94">
+            <p class="french-block">Le président Emmanuel Macron a déclaré que la France « reconstruirait » et que son gouvernement « serait là aussi longtemps que nécessaire ».</p>
+            <span class="english-block">President Emmanuel Macron said France would "rebuild" and his government would "be there for as long as is needed".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="379.94" data-end="384.58">
+            <p class="french-block">Un palais des congrès de Bordeaux transformé en refuge pour les évacués</p>
+            <span class="english-block">A convention centre in Bordeaux has been converted into a refuge for evacuees</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.58" data-end="390.98">
+            <p class="french-block">Êtes-vous dans une région touchée?  Si vous pouvez le faire en toute sécurité, contactez-nous.</p>
+            <span class="english-block">Are you in an affected region?  If it’s safe to do so, get in touch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.98" data-end="397.58">
+            <p class="french-block">Des touristes racontent à la BBC comment leurs vacances se sont transformées en course pour échapper aux incendies</p>
+            <span class="english-block">Tourists tell BBC how their holiday turned into race to escape fires</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="397.58" data-end="402.62">
+            <p class="french-block">« Bouleversement » : évacuations françaises en pleine nuit suite aux incendies de forêt</p>
+            <span class="english-block">'Upheaval' - French wildfire evacuations in the middle of the night</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_22.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
