@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why budding birders are flocking to Shazam-like apps to identify avians</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Why budding birders are flocking to Shazam-like apps to identify avians</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 27 Jul 2026 07:53:30 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cr59m5nmemno?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Birdwatchers tell the BBC how apps have changed their lifelong hobby - and attracted new birders.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.52" data-end="15.38">
+            <p class="french-block">Megan observe les oiseaux depuis son enfance, mais Merlin Bird ID fait désormais partie de sa boîte à outils</p>
+            <span class="english-block">Megan has been birding since childhood, but Merlin Bird ID has become part of her toolkit</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.38" data-end="20.64">
+            <p class="french-block">Megan Szostak, 26 ans, a toujours été une « enfant oiseau ».</p>
+            <span class="english-block">Megan Szostak, 26, was always a "bird kid".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.64" data-end="31.58">
+            <p class="french-block">L'envie d'observer et d'apprécier le monde qui l'entoure - et les oiseaux qui y entrent et en sortent - est ancrée en elle depuis son enfance, lorsqu'elle a reçu les jumelles de son grand-père après sa mort.</p>
+            <span class="english-block">The urge to watch and appreciate the world around her - and avians flitting in and out of it - has been ingrained in her since childhood, when she was given her grandfather's binoculars after he died.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.58" data-end="39.05">
+            <p class="french-block">Armée de cela et d'un guide de terrain dans sa maison de San Francisco, elle s'est mise à identifier les oiseaux dès son plus jeune âge.</p>
+            <span class="english-block">Armed with this and a field guide in her home of San Francisco, she set about identifying birds from an early age.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.05" data-end="47.69">
+            <p class="french-block">Mais ces dernières années, sa ceinture à outils d'observation des oiseaux s'est élargie pour inclure quelque chose de beaucoup plus moderne : une application.</p>
+            <span class="english-block">But in recent years, her birding toolbelt has expanded to include something far more modern - an app.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.69" data-end="59.83">
+            <p class="french-block">"J'avais des amis qui ne se décriraient probablement pas comme des ornithologues amateurs, mais plutôt simplement curieux de connaître la nature et le monde qui les entoure, et ils me le recommandent", a déclaré Megan.</p>
+            <span class="english-block">"I had friends who probably wouldn't describe themselves as birders, but more just curious about nature and the world around them, recommend it to me," Megan said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.83" data-end="70.2">
+            <p class="french-block">Elle fait partie des millions de personnes qui ont téléchargé Merlin Bird ID, qui prétend être capable d'identifier presque n'importe quel oiseau par son apparence, son chant ou son cri.</p>
+            <span class="english-block">She is one of many millions of people who have downloaded Merlin Bird ID, which claims to be able to identify almost any bird by its look, song or call.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.2" data-end="77.28">
+            <p class="french-block">"Je pense que c'est un outil vraiment formidable que j'ai intégré à ma routine d'observation des oiseaux", a-t-elle déclaré.</p>
+            <span class="english-block">"I think that it's been a really great tool that I've integrated into my birding routine," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.28" data-end="86.78">
+            <p class="french-block">Et qu’il s’agisse des vagues de chaleur qui envoient davantage de personnes dehors ou des jeunes qui se lancent dans l’observation des oiseaux, ces applications gagnent en popularité.</p>
+            <span class="english-block">And whether down to heatwaves sending more people outdoors, or younger people delving into birding, these apps are booming in popularity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.78" data-end="94.32">
+            <p class="french-block">Le principal d'entre eux est Merlin Bird ID, qui a été développé par le laboratoire d'ornithologie de l'Université Cornell.</p>
+            <span class="english-block">Chief among them is Merlin Bird ID, which was developed by Cornell University's Lab of Ornithology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.32" data-end="104.76">
+            <p class="french-block">Il a été téléchargé 12 millions de fois rien qu'en 2026, selon la réalisatrice Jessie Barry, qui affirme qu'il a été téléchargé 42 millions de fois au total.</p>
+            <span class="english-block">It has been downloaded 12 million times in 2026 alone, according to director Jessie Barry - who says it has had 42 million downloads overall.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.76" data-end="117.74">
+            <p class="french-block">Elle affirme que l'application a parcouru un long chemin depuis son lancement aux États-Unis en 2014, avec des systèmes d'apprentissage automatique capables d'identifier 285 espèces d'oiseaux communs à partir de photos.</p>
+            <span class="english-block">She says the app has come a long way since it first launched in the US in 2014, with machine learning systems which could identify 285 common bird species from photos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.74" data-end="127.32">
+            <p class="french-block">Une véritable plume à l'époque, mais une dizaine d'années plus tard, il peut désormais identifier 11 000 espèces d'oiseaux, soit autant qu'il en existe dans le monde.</p>
+            <span class="english-block">A real feather in its cap at the time, but a decade or so on, and it can now identify 11,000 species of birds - around as many as exist in the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.32" data-end="139.44">
+            <p class="french-block">Barry a attribué le développement à l'IA, ainsi qu'à « une incroyable communauté mondiale d'observateurs d'oiseaux capables de soumettre leurs enregistrements », ce qui signifie plus de données pour former la technologie.</p>
+            <span class="english-block">Barry put the development down to AI, as well as "an amazing community of global bird watchers who are able to submit their recordings" - meaning more data to train the tech.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.44" data-end="145.8">
+            <p class="french-block">Connu pour sa queue distinctive, le canard à longue queue reste l'un des favoris de Jessie Barry de Merlin.</p>
+            <span class="english-block">Known for its distinctive tail, the Long-Tailed Duck remains a firm favourite of Merlin's Jessie Barry</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.8" data-end="152.18">
+            <p class="french-block">Les ornithologues amateurs chevronnés diraient rapidement que l’application ne fonctionne pas toujours correctement.</p>
+            <span class="english-block">Seasoned birdwatchers would be quick to say the app doesn't always get it right.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.18" data-end="162.55">
+            <p class="french-block">Certains experts et organisations caritatives ont exhorté à ne pas trop compter sur Merlin ou sur d’autres applications similaires, notamment pour enregistrer les observations officielles.</p>
+            <span class="english-block">Some experts and charities have urged not to rely too much on Merlin, or other apps like it, especially to record official sightings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.55" data-end="169.92">
+            <p class="french-block">Néanmoins, Cornell affirme que son outil Sound ID a été utilisé pour 4,4 milliards d'identifications.</p>
+            <span class="english-block">Nonetheless, Cornell says its Sound ID tool has been used for 4.4 billion identifications.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.92" data-end="183.41">
+            <p class="french-block">La société d'information commerciale Sensor Tower a déclaré que d'autres applications Bird ID ont également été davantage utilisées, comme Birda, qui, selon elle, a eu 31 % de téléchargements en plus cette année.</p>
+            <span class="english-block">Market intelligence firm Sensor Tower said other Bird ID apps have also been used more - such as Birda, which it says has had 31% more downloads this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.41" data-end="195.12">
+            <p class="french-block">Ces récentes poussées pourraient à leur tour refléter la popularité croissante de l’observation des oiseaux chez les jeunes, les ornithologues amateurs de la génération Z ayant afflué vers les réserves naturelles.</p>
+            <span class="english-block">These recent surges may in turn reflect the growing popularity of birdwatching among young people, with reports Gen Z birders have flocked to nature reserves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.12" data-end="203.9">
+            <p class="french-block">"Nous disposons de peu d'informations démographiques, mais nous pouvons certainement constater une évolution vers un public plus jeune", a déclaré Barry.</p>
+            <span class="english-block">"We have minimal demographic information, but we can definitely see the shift to younger audiences," said Barry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.9" data-end="217.7">
+            <p class="french-block">"Les gens qui partagent leurs expériences avec Merlin, parlant du fait qu'ils viennent tout juste de commencer à observer les oiseaux pour la première fois, pourraient faire des références du genre" eh bien, maintenant que j'ai 30 ans, je suis un ornithologue amateur ".</p>
+            <span class="english-block">"The folks who are sharing their experiences with Merlin, talking how they're just getting started birding for the first time, might be making references like 'well now that I'm 30, I'm a bird watcher'.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.7" data-end="221.26">
+            <p class="french-block">"C'était vraiment amusant de voir des jeunes se lancer."</p>
+            <span class="english-block">"It's been really fun to see younger folks jump in."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.26" data-end="228.34">
+            <p class="french-block">Tech Life : « nez » électroniques, compréhension des applications de sommeil et d'identification des oiseaux</p>
+            <span class="english-block">Tech Life: Electronic 'noses', understanding sleep and bird ID apps</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.34" data-end="238.92">
+            <p class="french-block">Pour Megan, le fait de disposer de méthodes audio et visuelles pour identifier les oiseaux à Merlin reflète la nature « inclusive et accessible » de l'observation des oiseaux.</p>
+            <span class="english-block">For Megan, having both audio and visual methods to ID birds in Merlin reflects the "inclusive and accessible" nature of birdwatching.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.92" data-end="243.6">
+            <p class="french-block">"Beaucoup de gens utilisent leurs oreilles ou leurs yeux", a déclaré Megan.</p>
+            <span class="english-block">"A lot of people out there bird using their ears or their eyes," Megan said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="243.6" data-end="250.15">
+            <p class="french-block">"Vous n'avez pas besoin d'utiliser tous vos sens lorsque vous observez des oiseaux, ce qui est vraiment incroyable."</p>
+            <span class="english-block">"You don't need to use all of your senses while you're birding, which is really amazing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.15" data-end="264.43">
+            <p class="french-block">Et tout en notant les critiques "justes" selon lesquelles l'application se trompe parfois, Megan a déclaré que cela a contribué à ouvrir un passe-temps "que les gens pensaient autrefois réservé à un type très spécifique de personne avec un ensemble spécifique de connaissances".</p>
+            <span class="english-block">And while noting "fair" criticism that the app gets it wrong sometimes, Megan said it helped open up a hobby "people once thought was reserved for a very specific type of person with a specific set of knowledge".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.43" data-end="277.13">
+            <p class="french-block">Faisant partie d'un contingent de la génération Z dont l'appréciation pour l'observation des oiseaux a fait surface sur les réseaux sociaux, Megan partage également ses observations sur TikTok et Instagram, en externe.</p>
+            <span class="english-block">As part of a Gen Z contingent whose appreciation for birding has surfaced on social media, Megan also shares her sightings on TikTok and Instagram, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="277.13" data-end="289.03">
+            <p class="french-block">"Honnêtement, j'ai vraiment aimé voir ces souvenirs et créer ces petites vidéos, et je ne suis en aucun cas un maître vidéaste, mais je pense que ma plus grande force est de ralentir et de remarquer", ajoute Megan.</p>
+            <span class="english-block">"I honestly really enjoyed seeing those memories and creating these little videos, and I'm by no means a master videographer, but I do think my biggest strength with it is slowing down and noticing," Megan adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.03" data-end="293.93">
+            <p class="french-block">"Je pense que créer des vidéos m'encourage honnêtement à faire cela davantage."</p>
+            <span class="english-block">"I think that creating the videos honestly encourages me to do that more."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.93" data-end="304.92">
+            <p class="french-block">Megan dit que voir différentes espèces de cormorans pendant son enfance sur la côte est des États-Unis et à l'âge adulte sur la côte ouest a fourni "une sorte de fil conducteur" tout au long de sa vie.</p>
+            <span class="english-block">Megan says seeing varying cormorant species during her childhood on the US East Coast and in her adulthood on the West Coast has provided "a kind of thread" through her life</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.92" data-end="315.7">
+            <p class="french-block">Merlin a souvent été qualifié de "Shazam pour les oiseaux", le comparant à l'application d'Apple permettant aux utilisateurs d'identifier une chanson jouée à l'aide du microphone d'un téléphone.</p>
+            <span class="english-block">Merlin has often been called a "Shazam for birds" - likening it to Apple's app letting users identify a song playing using a phone's microphone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.7" data-end="320.09">
+            <p class="french-block">Mais certains fans ont estimé que cela laissait de la place à davantage.</p>
+            <span class="english-block">But some fans felt it left room for more.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.09" data-end="331.03">
+            <p class="french-block">Sam Lewis, un ingénieur logiciel de 32 ans vivant à Stockport, a utilisé Merlin pendant plusieurs années avant de créer sa propre application d'identification d'oiseaux, Lifer.</p>
+            <span class="english-block">Sam Lewis, a 32-year-old software engineer living in Stockport, used Merlin for several years before he was inspired to build his own bird ID app, Lifer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.03" data-end="339.72">
+            <p class="french-block">Il permet aux gens de collecter des cartes virtuelles pour leurs prises, avec des arrière-plans illustrés d'aquarelles dessinées à la main par sa partenaire Emily.</p>
+            <span class="english-block">It lets people collect virtual cards for their catches, with backgrounds illustrated in hand-drawn watercolours by his partner Emily.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.72" data-end="349.94">
+            <p class="french-block">Il emprunte des idées à d'autres jeux, les cartes changeant en fonction de la qualité de l'image ou de l'enregistrement sonore utilisé pour identifier l'oiseau, ainsi que de sa rareté.</p>
+            <span class="english-block">It borrows ideas from other games, with the cards changing based on the quality of the image or sound recording used to ID the bird - as well as its rarity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="349.94" data-end="360.65">
+            <p class="french-block">Sam espère attirer ceux qui, comme lui, ont ressenti les affres d'un tristement célèbre jeu de collecte de monstres en utilisant Merlin pour identifier et sauvegarder leurs observations d'oiseaux.</p>
+            <span class="english-block">Sam hopes to attract those who, like himself, felt the pangs of an infamous monster collecting game when using Merlin to ID and save their bird sightings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.65" data-end="366.29">
+            <p class="french-block">"Ce sont vraiment des Pokémon réels, si vous y réfléchissez bien", a-t-il déclaré.</p>
+            <span class="english-block">"They are real-life Pokémon, really, if you think about it," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.29" data-end="373.32">
+            <p class="french-block">Sam dit qu'il a aimé voir des observations d'Engoulevent, connus pour leurs cris distinctifs, apparaître sur Lifer.</p>
+            <span class="english-block">Sam says he has enjoyed seeing sightings of Nightjars, known for their distinctive churring calls, appear on Lifer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="373.32" data-end="388.22">
+            <p class="french-block">Pokémon Go, toujours populaire une décennie plus tard, a incité les gens à s'aventurer pour les attraper tous, avec l'avantage supplémentaire de les aider à rester en forme - quelque chose que Sam pense que cela se prête naturellement à l'observation des oiseaux.</p>
+            <span class="english-block">Pokémon Go, still popular a decade on, prompted people to venture out to catch 'em all, with the added perk of it helping them stay fit - something Sam thinks this lends itself naturally to birding.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="388.22" data-end="394.82">
+            <p class="french-block">"Je pense qu'il s'agit de sortir, mais avec toujours ce côté technique gamifié", a-t-il déclaré.</p>
+            <span class="english-block">"I think it's getting out and about, but still having that gamified technical side to it," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="394.82" data-end="403.03">
+            <p class="french-block">"Les gens aiment la rareté et la rareté des choses, comme les cartes Pokémon, et il existe des oiseaux rares que vous pouvez voir et entendre en ce moment."</p>
+            <span class="english-block">"People love the rarity and scarcity of stuff, like Pokémon cards, and there's rare birds out there that you can see and hear right now."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.03" data-end="408.38">
+            <p class="french-block">Sam espère que son idée pourra contribuer plus largement aux efforts de conservation.</p>
+            <span class="english-block">Sam hopes his idea can contribute more broadly to conservation efforts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="408.38" data-end="421.2">
+            <p class="french-block">Pour lutter contre les craintes que l'utilisation de telles applications puisse pousser les gens à rechercher certaines espèces alors qu'ils ne devraient pas, Lifer cache les emplacements précis des oiseaux nicheurs rares sur les cartes pendant les périodes sensibles.</p>
+            <span class="english-block">To combat fears using such apps may drive people to seek out some species when they shouldn't, Lifer hides precise locations of rare breeding birds on maps during sensitive periods.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="421.2" data-end="431.62">
+            <p class="french-block">Les captures éligibles sont également envoyées au Centre mondial d'information sur la biodiversité, un réseau international qui offre un accès ouvert aux données sur tous les types de vie.</p>
+            <span class="english-block">Qualifying catches are also sent to the Global Biodiversity Information Facility, an international network which provides open access to data about all types of life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="431.62" data-end="437.35">
+            <p class="french-block">Emily et Sam ont combiné leurs compétences en art et en génie logiciel pour développer Lifer</p>
+            <span class="english-block">Emily and Sam combined their skills in art and software engineering to develop Lifer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="437.35" data-end="442.78">
+            <p class="french-block">Et Barry dit à la BBC que le plan futur pour Merlin est de continuer à rester simple.</p>
+            <span class="english-block">And Barry tells the BBC the future plan for Merlin is to continue keeping it simple.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="442.78" data-end="452.76">
+            <p class="french-block">"Nous voulons avant tout que Merlin soit amusant et facile à utiliser, et que ce soit un endroit où vous pouvez vous lancer et réfléchir à votre monde d'oiseaux", a-t-elle déclaré.</p>
+            <span class="english-block">"We really want Merlin to be fun and easy to use, first and foremost, and have it be a place where you can jump in and think about your world of birds," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="452.76" data-end="464.74">
+            <p class="french-block">"Nous essayons d'offrir la meilleure expérience possible avec la technologie d'un appareil mobile à la main, mais nous vous encourageons vraiment à sortir, à observer ces oiseaux et à profiter de cette expérience avec eux."</p>
+            <span class="english-block">"It's trying to be the best experience with the technology of a mobile device in your hand, but really encourage you to get outside, look at those birds and enjoy that experience with them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="464.74" data-end="470.66">
+            <p class="french-block">Des scientifiques découvrent le secret de la « diversité spectaculaire » du chant des oiseaux</p>
+            <span class="english-block">Scientists find the secret of birdsong's 'spectacular diversity'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="470.66" data-end="475.44">
+            <p class="french-block">L'observation des oiseaux est cool maintenant - les jeunes nous disent pourquoi</p>
+            <span class="english-block">Birdwatching is cool now - young people tell us why</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="475.44" data-end="481.22">
+            <p class="french-block">Des satellites et l'IA utilisés pour suivre les hérissons britanniques afin de ralentir leur déclin</p>
+            <span class="english-block">Satellites and AI used to track UK hedgehogs in bid to slow decline</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_20.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
