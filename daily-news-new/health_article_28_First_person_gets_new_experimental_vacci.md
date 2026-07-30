@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** Ed Hunt receiving the Ebola vaccine in Oxford
 
-**🇫🇷 FR:** *Ed Hunt reçoit le vaccin contre Ebola à Oxford*
+**🇫🇷 FR:** *[Error Translate] Ed Hunt receiving the Ebola vaccine in Oxford*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Hunt is the first of 50 healthy volunteers aged 18-55 being recruited for the trial.
 
-**🇫🇷 FR:** *Hunt est le premier des 50 volontaires sains âgés de 18 à 55 ans recrutés pour l'essai.*
+**🇫🇷 FR:** *Hunt est le premier des 50 volontaires en bonne santé âgés de 18 à 55 ans recrutés pour l'essai.*
 
 ---
 

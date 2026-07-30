@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devastating European wildfires in maps - and how they're being tackled</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Devastating European wildfires in maps - and how they're being tackled</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 29 Jul 2026 11:53:40 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj638jx0l53o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Spain and France have so far borne the burnt of this summer's wildfires, caused by a succession of heatwaves and prolonged dry spells.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.82" data-end="13.13">
+            <p class="french-block">Les incendies de forêt dévastateurs en Europe sur des cartes – et comment ils sont combattus</p>
+            <span class="english-block">Devastating European wildfires in maps - and how they're being tackled</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.13" data-end="22.37">
+            <p class="french-block">Depuis la mi-juillet, des incendies de forêt ont ravagé la France, l'Espagne et le Portugal, obligeant plus de 300 000 personnes à évacuer leurs maisons.</p>
+            <span class="english-block">Since mid-July wildfires have torn through France, Spain, and Portugal forcing more than 300,000 people to evacuate their homes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.37" data-end="30.12">
+            <p class="french-block">Les responsables de la capitale espagnole, Madrid, ont déclaré que ces incendies étaient les pires que la région ait jamais connu.</p>
+            <span class="english-block">Officials in the Spanish capital Madrid have said the fires are the worst the region have ever experienced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.12" data-end="43.06">
+            <p class="french-block">Le président français Emmanuel Macron, en visite dans la région de la Gironde ravagée par les incendies, a qualifié cet incendie de forêt « totalement sans précédent » de « le plus violent depuis la Seconde Guerre mondiale ».</p>
+            <span class="english-block">French President Emmanuel Macron, visiting the fire-ravaged area in the Gironde region, called the "completely unprecedented" wildfire the "toughest since World War Two".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.06" data-end="57.43">
+            <p class="french-block">Les incendies se sont déclarés au milieu d’un été étouffant et caniculaire à travers l’Europe. La France et l'Espagne connaissent désormais une nouvelle forte hausse des températures, avec des pics de 41 à 42 °C attendus en France.</p>
+            <span class="english-block">The fires have broken out amid a sweltering summer of heatwaves across Europe. Both France and Spain are now seeing another sharp rise in temperatures, with peaks of 41-42C expected in France.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.43" data-end="73.97">
+            <p class="french-block">Les incendies de forêt dans les régions à l'extérieur de Madrid ont brûlé environ 1 570 km² depuis le 1er juillet, selon le Système européen d'information sur les incendies de forêt (Effis). Cela représente une superficie deux fois plus grande que la ville elle-même.</p>
+            <span class="english-block">Wildfires in the regions outside Madrid have burned about 606 sq miles (1570 sq km) since 1 July, according to the European Forest Fire Information System (Effis). That is an area more than twice as large as the city itself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="73.97" data-end="83.4">
+            <p class="french-block">En France, la région la plus touchée a été la Gironde, autour de la ville de Bordeaux, où plus de 200 000 personnes ont été contraintes de quitter leur domicile.</p>
+            <span class="english-block">In France, the worst affected area has been the Gironde, around the city of Bordeaux, where more than 200,000 people were forced from their homes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.4" data-end="98.35">
+            <p class="french-block">À partir du 22 juillet, l'incendie s'est propagé rapidement, ravageant les forêts et les champs de la célèbre région viticole de France, et brûlant plus de 420 kilomètres carrés en moins de quatre jours, soit une superficie environ quatre fois la taille de Paris.</p>
+            <span class="english-block">From 22 July the blaze spread rapidly, tearing through forests and fields in France's famous wine region, and burning more than 162 sq miles (420 sq km) in less than four days - an area roughly four times the size of Paris.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.35" data-end="106.68">
+            <p class="french-block">À son apogée, l’incendie de forêt s’est produit à 15 km au sud de Bordeaux, même si la ville n’a jamais été sérieusement menacée.</p>
+            <span class="english-block">At its peak, the wildfire came as close as nine miles (15km) from the south of Bordeaux, although the city was never under serious threat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.68" data-end="120.38">
+            <p class="french-block">Les incendies ont également approché un certain nombre de sites militaires et industriels sensibles de la région, notamment des installations travaillant sur des missiles balistiques français, des moteurs de fusée et le traitement de produits chimiques dangereux.</p>
+            <span class="english-block">The fires have also came close to a number of sensitive military and industrial sites in the area, including facilities that work on French ballistic missiles, rocket motors, and the processing of hazardous chemicals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.38" data-end="125.02">
+            <p class="french-block">Les incendies sont devenus si extrêmes qu’ils ont créé leur propre orage géant.</p>
+            <span class="english-block">The fires became so extreme they created their own giant fire thunderstorm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.02" data-end="137.64">
+            <p class="french-block">Événement météorologique rare, des tempêtes comme celles-ci se forment lorsque la chaleur des incendies de forêt fait monter rapidement l’air au-dessus du feu, entraînant de la fumée, des cendres et de la vapeur d’eau dans l’atmosphère.</p>
+            <span class="english-block">A rare weather event, storms like these are formed when heat from the wildfires makes the air above the fire rise rapidly, carrying smoke, ash and water vapour high into the atmosphere.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="137.64" data-end="151.97">
+            <p class="french-block">À mesure que l’air monte, il se refroidit et la vapeur d’eau se condense en un nuage. Si le feu est suffisamment puissant et que l’atmosphère est instable, ce nuage peut se transformer en cumulonimbus – le même type de nuage associé aux orages.</p>
+            <span class="english-block">As the air rises, it cools, and the water vapour condenses into a cloud. If the fire is powerful enough and the atmosphere is unstable, that cloud can grow into a cumulonimbus - the same type of cloud associated with thunderstorms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.97" data-end="163.78">
+            <p class="french-block">Si ces nuages ​​deviennent suffisamment gros, ils peuvent produire leurs propres éclairs, qui peuvent alors déclencher de nouveaux incendies. Ils peuvent aussi occasionnellement apporter de la grêle et de la pluie.</p>
+            <span class="english-block">If these clouds then become large enough, they can produce their own lightning, which can then start new fires. They can also occasionally bring hail and rain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.78" data-end="169.32">
+            <p class="french-block">Ces conditions extrêmes et imprévisibles rendent les incendies encore plus difficiles à arrêter.</p>
+            <span class="english-block">These extreme and unpredictable conditions make the fires all the more difficult to stop.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.32" data-end="182.9">
+            <p class="french-block">Pour les combattre, les pompiers français utilisent des avions chargés de produits ignifuges, ainsi que des avions comme le Canadair, capables de prélever 6 000 litres d'eau des lacs ou de la mer en 12 secondes et de les larguer directement sur les incendies.</p>
+            <span class="english-block">To combat them, French firefighters have been using planes loaded with fire retardant, as well as planes like the Canadair, which can scoop 6,000 litres of water from lakes or the sea in 12 seconds and drop it directly on the fires.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="182.9" data-end="200.38">
+            <p class="french-block">Les jours dangereux, des avions chargés patrouillent dans les zones à haut risque avant qu'un incendie ne soit signalé, afin de pouvoir atterrir quelques minutes après leur observation. Planes often fly in a continuous shuttle while retardant is laid along the edges of the fire and ground crews attack the flames directly.</p>
+            <span class="english-block">On dangerous days, loaded aircraft patrol high-risk areas before any fires have been reported, so they can drop within minutes of a sighting. Planes often fly in a continuous shuttle while retardant is laid along the edges of the fire and ground crews attack the flames directly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.38" data-end="208.54">
+            <p class="french-block">Des avions comme cet Air Tractor AT-802F Fire Boss ont été utilisés pour déverser de l'eau sur des incendies en Espagne et en France.</p>
+            <span class="english-block">Planes like this Air Tractor AT-802F Fire Boss have been used to dump water on fires in both Spain and France</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.54" data-end="217.51">
+            <p class="french-block">Un avion de transport militaire A400M de l'Armée de l'Air française a été utilisé pour larguer un produit ignifuge au-dessus de l'incendie de forêt près de Lacanau.</p>
+            <span class="english-block">A French Air Force military transport A400M aircraft was used to drop fire retardant over the wildfire near Lacanau</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.51" data-end="225.65">
+            <p class="french-block">Un nuage de pyrocumulonimbus – ou « nuage de feu » – observé dans la région de Narrabri, en Australie, en 2023</p>
+            <span class="english-block">A pyrocumulonimbus cloud - or 'fire cloud - seen in the Narrabri region, Australia, in 2023</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.65" data-end="234.79">
+            <p class="french-block">En Gironde, environ 2 500 pompiers, 1 500 militaires et 1 200 policiers et gendarmes ont été mobilisés pour lutter contre l'incendie.</p>
+            <span class="english-block">In Gironde, about 2,500 firefighters, 1,500 military personnel, and 1,200 police officers and gendarmes have been involved in tackling the blaze.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.79" data-end="240.31">
+            <p class="french-block">Quatre pompiers français sont morts dans l'exercice de leurs fonctions, selon les autorités.</p>
+            <span class="english-block">Four French firefighters have died while on duty, officials say.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.31" data-end="250.15">
+            <p class="french-block">Mais même avec ces chiffres, le responsable girondin Jean-Luc Gleyze a déclaré à la BBC que les autorités n'avaient pas suffisamment de personnel pour lutter contre les incendies.</p>
+            <span class="english-block">But even with these numbers, Gironde official Jean-Luc Gleyze told the BBC that authorities don't have enough people to combat the fires.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.15" data-end="257.5">
+            <p class="french-block">"Nous n'avons pas assez de personnel ni assez de camions et même moi, je pense que la France n'en a pas assez", a-t-il déclaré.</p>
+            <span class="english-block">"We don't have enough people and enough trucks and even I think France don't have enough," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="257.5" data-end="267.96">
+            <p class="french-block">Autour de la ville de Lacanau, des bulldozers, des pelleteuses et des pelles mécaniques ont été utilisés pour tailler un coupe-feu de 100 m de large par endroits, selon les médias français.</p>
+            <span class="english-block">Around the town of Lacanau, bulldozers, diggers and mechanical shovels were used to carve a firebreak that is 100m (328ft) wide at points, according to French media.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.96" data-end="278.78">
+            <p class="french-block">Un coupe-feu est une étendue de terrain qui a été dépouillée de toute végétation pour empêcher le feu de se propager, éliminant ainsi tout combustible potentiel avant que le feu n'ait une chance de l'atteindre.</p>
+            <span class="english-block">A firebreak is a stretch of land that has been stripped of all vegetation to stop the fire from spreading - removing any potential fuel before the fire has a chance to reach it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.78" data-end="289.08">
+            <p class="french-block">Les équipes espagnoles ont utilisé bon nombre des mêmes techniques pour lutter contre leurs incendies de forêt, qui sont en passe de devenir les pires que le pays ait connu depuis deux décennies.</p>
+            <span class="english-block">Spanish teams have been using many of the same techniques to tackle their wildfires, which are on course to become the worst the country has seen in two decades.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.08" data-end="298.92">
+            <p class="french-block">Francisco Martín, délégué du gouvernement à Madrid, a qualifié l'un de ces incendies de "sans aucun doute le plus grand incendie de l'histoire de la région de Madrid".</p>
+            <span class="english-block">Francisco Martín, a government delegate in Madrid, described one of the fires as  "undoubtedly the largest fire in the history of the Madrid region".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="298.92" data-end="309.79">
+            <p class="french-block">Les incendies de cet été ont été favorisés par les conditions plus chaudes et plus sèches causées par le changement climatique, qui permettent aux incendies de se propager plus rapidement et de brûler plus violemment.</p>
+            <span class="english-block">This summer's fires have been aided by the hotter, drier conditions caused by climate change, which allow fires to spread faster and burn more fiercely.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.79" data-end="321.24">
+            <p class="french-block">"L'urgence climatique s'aggrave d'année en année et nous devons être unis dans la lutte contre les incendies, ainsi que dans la prévention et la reconstruction", a déclaré le Premier ministre Pedro Sánchez.</p>
+            <span class="english-block">"The climate emergency is worsening year after year, and we are required to be united to fight against fire, as well as in prevention and reconstruction," Prime Minister Pedro Sánchez has said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.24" data-end="330.53">
+            <p class="french-block">Faisant appel aux gouvernements régionaux de son pays, Sánchez a ajouté : « Le déni climatique est le pire carburant pour la lutte contre l'urgence climatique. »</p>
+            <span class="english-block">Appealing to his country's regional governments, Sánchez added: "Climate denial is the worst fuel for the fight against the climate emergency."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.53" data-end="335.06">
+            <p class="french-block">Les incendies près de Bordeaux se situent dans une zone prisée des touristes</p>
+            <span class="english-block">The fires near Bordeaux are in an area popular with tourists</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.06" data-end="338.52">
+            <p class="french-block">La région borde également l'océan Atlantique</p>
+            <span class="english-block">The region also borders the Atlantic ocean</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="338.52" data-end="343.75">
+            <p class="french-block">Les incendies de Gironde ont ravagé 162 milles carrés en moins de quatre jours</p>
+            <span class="english-block">The Gironde fires have torn through 162 sq miles in less than four days</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.75" data-end="346.63">
+            <p class="french-block">Les forêts et les champs ont été brûlés</p>
+            <span class="english-block">Forests and fields have been scorched</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="346.63" data-end="352.34">
+            <p class="french-block">En Espagne, les pompiers ont eu du mal à contenir l'incendie qui menace villes et villages.</p>
+            <span class="english-block">In Spain, firefighters have struggled to contain the blaze as it threatens towns and villages</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.34" data-end="357.89">
+            <p class="french-block">Comment les « orages générés par le feu » rendent les incendies de forêt plus meurtriers</p>
+            <span class="english-block">How 'fire-generated thunderstorms' make wildfires more deadly</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="357.89" data-end="362.21">
+            <p class="french-block">Une unité militaire combat d'intenses flammes à l'ouest de Madrid</p>
+            <span class="english-block">Military unit fights intense flames west of Madrid</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.21" data-end="368.59">
+            <p class="french-block">Macron convoque une réunion de crise alors que les incendies de forêt menacent Bordeaux et la canicule menace</p>
+            <span class="english-block">Macron calls crisis meeting as wildfires threaten Bordeaux and heatwave looms</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_24.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

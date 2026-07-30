@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** She said any reform must be funded by reducing current spending and not raising taxes, and also be fair to those who have "made provisions and saved up over the course of their lives".
 
-**🇫🇷 FR:** *Elle a déclaré que toute réforme doit être financée par une réduction des dépenses courantes et non par une augmentation des impôts, et doit également être équitable envers ceux qui ont « pris des dispositions et épargné au cours de leur vie ».*
+**🇫🇷 FR:** *Elle a déclaré que toute réforme doit être financée par une réduction des dépenses courantes et non par une augmentation des impôts, et doit également être équitable envers ceux qui ont « pris des dispositions et économisé au cours de leur vie ».*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** Burnham is expected to make a speech on adult social care this week. A No 10 source said this was part of his plan to "run towards problems that have been neglected".
 
-**🇫🇷 FR:** *Burnham devrait prononcer un discours sur la protection sociale pour adultes cette semaine. Une source du numéro 10 a déclaré que cela faisait partie de son projet de "courir vers des problèmes qui ont été négligés".*
+**🇫🇷 FR:** *Burnham devrait prononcer un discours sur la protection sociale pour adultes cette semaine. Une source du numéro 10 a déclaré que cela faisait partie de son plan visant à "courir vers des problèmes qui ont été négligés".*
 
 ---
 
@@ -70,7 +70,7 @@
 
 **🇬🇧 EN:** Badenoch said it was a "hugely important issue" but that previous efforts to form a "durable consensus around social care has not been at all simple".
 
-**🇫🇷 FR:** *Badenoch a déclaré qu'il s'agissait d'une "question extrêmement importante", mais que les efforts antérieurs pour former un "consensus durable autour de la protection sociale n'avaient pas été du tout simples".*
+**🇫🇷 FR:** *Badenoch a déclaré qu'il s'agissait d'une "question extrêmement importante", mais que les efforts antérieurs pour former un "consensus durable autour de la protection sociale n'ont pas été du tout simples".*
 
 ---
 

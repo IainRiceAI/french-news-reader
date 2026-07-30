@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** The morning-after pill, known as emergency contraception, external, is medication designed to prevent unwanted pregnancies. It usually has to be taken within three to five days of having unprotected sex. The sooner it is taken, the more effective it is.
 
-**🇫🇷 FR:** *La pilule du lendemain, dite contraception d'urgence externe, est un médicament destiné à prévenir les grossesses non désirées. Il doit généralement être pris dans les trois à cinq jours suivant un rapport sexuel non protégé. Plus il est pris tôt, plus il est efficace.*
+**🇫🇷 FR:** *La pilule du lendemain, dite contraception d'urgence externe, est un médicament destiné à prévenir les grossesses non désirées. It usually has to be taken within three to five days of having unprotected sex. Plus il est pris tôt, plus il est efficace.*
 
 ---
 
