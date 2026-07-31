@@ -1,20 +1,20 @@
 # Hosepipe bans in force as drought declared - is your area affected?
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/crk661074ejo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/crk661074ejo?at_medium=RSS&at_campaign=rss)  
-**Published:** Wed, 29 Jul 2026 13:03:18 GMT  
+**Published:** Thu, 30 Jul 2026 14:50:42 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](science_article_23.mp3)  
 
 ---
 
-> **BBC Summary:** More than eight million households have been placed under hosepipe bans - which has raised questions about how effectively water resources are being managed.
+> **BBC Summary:** More than 20 million households have been placed under hosepipe bans due to higher demand and low rainfall.
 
 ---
 
 ### Section 1
 
-**🇬🇧 EN:** Droughts have been declared across large parts of England and Wales as successive heatwaves have left water supplies under strain.
+**🇬🇧 EN:** Drought has been declared across large parts of England and the whole of Wales as successive heatwaves have left water supplies under strain.
 
-**🇫🇷 FR:** *Des sécheresses ont été déclarées dans de grandes parties de l'Angleterre et du Pays de Galles, les vagues de chaleur successives ayant mis à rude épreuve les réserves d'eau.*
+**🇫🇷 FR:** *La sécheresse a été déclarée dans une grande partie de l'Angleterre et dans l'ensemble du Pays de Galles, les vagues de chaleur successives ayant mis à rude épreuve les réserves d'eau.*
 
 ---
 
@@ -28,9 +28,9 @@
 
 ### Section 3
 
-**🇬🇧 EN:** A drought has also been declared by Natural Resources Wales (NRW) in North Wales and the Upper Severn river basin.
+**🇬🇧 EN:** A drought now also covers all of Wales, after Natural Resources Wales (NRW) extended the measure initially brought in for North Wales and the Upper Severn river basin.
 
-**🇫🇷 FR:** *Une sécheresse a également été déclarée par Natural Resources Wales (NRW) dans le nord du Pays de Galles et dans le bassin de la rivière Upper Severn.*
+**🇫🇷 FR:** *Une sécheresse couvre désormais également tout le Pays de Galles, après que Natural Resources Wales (NRW) a étendu la mesure initialement introduite pour le nord du Pays de Galles et le bassin de la rivière Upper Severn.*
 
 ---
 
@@ -140,9 +140,9 @@
 
 ### Section 17
 
-**🇬🇧 EN:** Elsewhere, North Wales and Upper Severn are in drought, with the rest of Wales in prolonged dry weather.
+**🇬🇧 EN:** Elsewhere, the whole of Wales is in drought, with NRW saying sustained high temperatures were causing the condition of the natural environment to "deteriorate".
 
-**🇫🇷 FR:** *Ailleurs, le nord du Pays de Galles et la Haute-Severn sont en proie à la sécheresse, tandis que le reste du Pays de Galles connaît un temps sec prolongé.*
+**🇫🇷 FR:** *Ailleurs, l'ensemble du Pays de Galles est en proie à la sécheresse, NRW affirmant que les températures élevées et soutenues provoquaient une «détérioration» de l'environnement naturel.*
 
 ---
 
@@ -156,9 +156,9 @@
 
 ### Section 19
 
-**🇬🇧 EN:** Scotland does not declare droughts but monitors "water scarcity". Several areas are now in the most extreme category of "significant scarcity".
+**🇬🇧 EN:** Scotland does not declare droughts but monitors "water scarcity". Several areas of eastern Scotland are now in the most extreme category of "significant scarcity".
 
-**🇫🇷 FR:** *L'Écosse ne déclare pas de sécheresse mais surveille la « pénurie d'eau ». Plusieurs zones se trouvent désormais dans la catégorie la plus extrême de « pénurie importante ».*
+**🇫🇷 FR:** *L'Écosse ne déclare pas de sécheresse mais surveille la « pénurie d'eau ». Plusieurs régions de l’est de l’Écosse se trouvent désormais dans la catégorie la plus extrême de « pénurie importante ».*
 
 ---
 
@@ -196,21 +196,13 @@
 
 ### Section 24
 
-**🇬🇧 EN:** When declaring drought in North Wales and Upper Severn, Natural Resources Wales said many river flows in the area are "exceptionally low" for the time of year, with some locations seeing record lows for July.
+**🇬🇧 EN:** Meanwhile, reservoirs are a crucial part of water supplies and levels in Wales, Northern Ireland and Scotland are all in a reasonable position, according to the latest available data.
 
-**🇫🇷 FR:** *En déclarant une sécheresse dans le nord du Pays de Galles et dans la Haute-Severn, Natural Resources Wales a déclaré que de nombreux débits de rivières dans la région étaient « exceptionnellement faibles » pour cette période de l'année, certains endroits connaissant des niveaux record pour juillet.*
+**🇫🇷 FR:** *Parallèlement, les réservoirs constituent un élément crucial de l'approvisionnement en eau et les niveaux au Pays de Galles, en Irlande du Nord et en Écosse sont tous dans une position raisonnable, selon les dernières données disponibles.*
 
 ---
 
 ### Section 25
-
-**🇬🇧 EN:** Meanwhile, reservoirs are a crucial part of water supplies and levels in Wales, Northern Ireland and Scotland were all normal or above expected in June, according to the latest available data.
-
-**🇫🇷 FR:** *Dans le même temps, les réservoirs jouent un rôle crucial dans l'approvisionnement en eau et les niveaux au Pays de Galles, en Irlande du Nord et en Écosse étaient tous normaux ou supérieurs aux attentes en juin, selon les dernières données disponibles.*
-
----
-
-### Section 26
 
 **🇬🇧 EN:** But figures up to 21 July show England's reservoirs are below average levels for the time of year.
 
@@ -218,7 +210,7 @@
 
 ---
 
-### Section 27
+### Section 26
 
 **🇬🇧 EN:** South-east England relies more heavily on groundwater than reservoirs.
 
@@ -226,7 +218,7 @@
 
 ---
 
-### Section 28
+### Section 27
 
 **🇬🇧 EN:** Groundwater originates as rainfall and is naturally stored beneath the surface in the pore spaces and fractures in rocks.
 
@@ -234,7 +226,7 @@
 
 ---
 
-### Section 29
+### Section 28
 
 **🇬🇧 EN:** In June, groundwater levels were generally at or just below normal, having been topped up by winter rainfall but depleted by a drier spring in most regions.
 
@@ -242,7 +234,7 @@
 
 ---
 
-### Section 30
+### Section 29
 
 **🇬🇧 EN:** But water can flow more slowly through some rock types than others, sometimes taking years to fully respond to current conditions.
 
@@ -250,7 +242,7 @@
 
 ---
 
-### Section 31
+### Section 30
 
 **🇬🇧 EN:** These groundwater stores "respond more slowly to changes in the climate than rivers, which is why they provide a useful buffer during periods of drought", said Prof Alan MacDonald of the British Geological Survey.
 
@@ -258,7 +250,7 @@
 
 ---
 
-### Section 32
+### Section 31
 
 **🇬🇧 EN:** It is why groundwater droughts in the south of England generally take a longer time to develop but can be longer-lasting if they do occur.
 
@@ -266,7 +258,7 @@
 
 ---
 
-### Section 33
+### Section 32
 
 **🇬🇧 EN:** Droughts are complex phenomena, driven by a mix of natural and human causes.
 
@@ -274,7 +266,7 @@
 
 ---
 
-### Section 34
+### Section 33
 
 **🇬🇧 EN:** The Met Office expects the UK to experience drier summers on average in future as the world warms, though there has been no clear trend so far.
 
@@ -282,7 +274,7 @@
 
 ---
 
-### Section 35
+### Section 34
 
 **🇬🇧 EN:** But rising temperatures can play a more direct role by drawing extra moisture from the soil via evaporation.
 
@@ -290,7 +282,7 @@
 
 ---
 
-### Section 36
+### Section 35
 
 **🇬🇧 EN:** "A warmer atmosphere is thirstier for moisture and this can mean water in the soil, rivers and reservoirs are depleted more effectively, leading to more rapidly onsetting droughts, heatwaves and wildfires," said Richard Allan, professor of climate science at the University of Reading.
 
@@ -298,7 +290,7 @@
 
 ---
 
-### Section 37
+### Section 36
 
 **🇬🇧 EN:** But there are other factors that determine whether dry conditions lead to water shortages, including how we use water.
 
@@ -306,7 +298,7 @@
 
 ---
 
-### Section 38
+### Section 37
 
 **🇬🇧 EN:** In a landmark review into the water sector of England and Wales, water companies were criticised for historic underinvestment in water infrastructure.
 
@@ -314,7 +306,7 @@
 
 ---
 
-### Section 39
+### Section 38
 
 **🇬🇧 EN:** As part of plans to address water shortages, the government and water companies are planning nine new reservoirs for England by 2050, in addition to one under construction at Havant Thicket in Hampshire.
 
@@ -322,15 +314,15 @@
 
 ---
 
-### Section 40
+### Section 39
 
-**🇬🇧 EN:** But the Environment Agency has warned that measures to tackle water leaks and control water demand - potentially including hosepipe bans and more smart meters - may be needed in England too.
+**🇬🇧 EN:** But the EA has warned that measures to tackle water leaks and control water demand - potentially including hosepipe bans and more smart meters - may be needed in England too.
 
-**🇫🇷 FR:** *Mais l'Agence pour l'Environnement a averti que des mesures visant à lutter contre les fuites d'eau et à contrôler la demande en eau – incluant potentiellement l'interdiction des tuyaux d'arrosage et davantage de compteurs intelligents – pourraient également être nécessaires en Angleterre.*
+**🇫🇷 FR:** *Mais l'EA a averti que des mesures visant à lutter contre les fuites d'eau et à contrôler la demande en eau – incluant potentiellement l'interdiction des tuyaux d'arrosage et davantage de compteurs intelligents – pourraient également être nécessaires en Angleterre.*
 
 ---
 
-### Section 41
+### Section 40
 
 **🇬🇧 EN:** Water companies in Scotland, Wales and Northern Ireland - which are all public bodies or non-profit - also said they were taking steps to secure future supplies.
 
@@ -338,7 +330,7 @@
 
 ---
 
-### Section 42
+### Section 41
 
 **🇬🇧 EN:** Tell us how you're affected by the hosepipe ban.
 
@@ -346,7 +338,7 @@
 
 ---
 
-### Section 43
+### Section 42
 
 **🇬🇧 EN:** A really simple guide to climate change
 
@@ -354,7 +346,7 @@
 
 ---
 
-### Section 44
+### Section 43
 
 **🇬🇧 EN:** How climate change worsens heatwaves, droughts, wildfires and floods
 
@@ -362,7 +354,7 @@
 
 ---
 
-### Section 45
+### Section 44
 
 **🇬🇧 EN:** 'Hotter and hotter and hotter' - Europe's new climate in seven charts
 

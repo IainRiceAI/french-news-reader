@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-07-30 06:28:00  
+Generated on: 2026-07-31 06:25:51  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **US launches 'heavy' strikes on Iran after attempted attack on American troops**
-   - **Published:** Thu, 30 Jul 2026 03:33:01 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_US_launches_heavy_strikes_on_Iran_after_.md](top-stories_article_1_US_launches_heavy_strikes_on_Iran_after_.md)
+1. **Fifa says 'nobody selling football' as it presses ahead with investment plan**
+   - **Published:** Fri, 31 Jul 2026 04:17:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Fifa_says_nobody_selling_football_as_it_.md](top-stories_article_1_Fifa_says_nobody_selling_football_as_it_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Saudi Arabia's dilemma as it tries to stay out of US-Iran war**
-   - **Published:** Wed, 29 Jul 2026 18:41:31 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Saudi_Arabias_dilemma_as_it_tries_to_sta.md](top-stories_article_2_Saudi_Arabias_dilemma_as_it_tries_to_sta.md)
+2. **Andy Burnham to give regional mayors share of income tax**
+   - **Published:** Thu, 30 Jul 2026 21:32:09 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Andy_Burnham_to_give_regional_mayors_sha.md](top-stories_article_2_Andy_Burnham_to_give_regional_mayors_sha.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Burnham says nuclear sub investment will protect UK and boost jobs**
-   - **Published:** Thu, 30 Jul 2026 02:36:53 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Burnham_says_nuclear_sub_investment_will.md](top-stories_article_3_Burnham_says_nuclear_sub_investment_will.md)
+3. **Crews tackling Suffolk wildfire say they are in better position**
+   - **Published:** Fri, 31 Jul 2026 01:12:58 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Crews_tackling_Suffolk_wildfire_say_they.md](top-stories_article_3_Crews_tackling_Suffolk_wildfire_say_they.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Cooler conditions on way for parts of UK - but still no rain for drought-hit areas**
-   - **Published:** Thu, 30 Jul 2026 01:40:07 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Cooler_conditions_on_way_for_parts_of_UK.md](top-stories_article_4_Cooler_conditions_on_way_for_parts_of_UK.md)
+4. **UK rapper Yung Filly found not guilty of raping woman after Australian show**
+   - **Published:** Fri, 31 Jul 2026 04:36:04 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_UK_rapper_Yung_Filly_found_not_guilty_of.md](top-stories_article_4_UK_rapper_Yung_Filly_found_not_guilty_of.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **How the UK's extreme heat is shifting the conversation about air-con**
-   - **Published:** Wed, 29 Jul 2026 23:33:01 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_How_the_UKs_extreme_heat_is_shifting_the.md](top-stories_article_5_How_the_UKs_extreme_heat_is_shifting_the.md)
+5. **Teen hackers tell BBC how police are helping them use their skills for good**
+   - **Published:** Fri, 31 Jul 2026 00:42:48 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Teen_hackers_tell_BBC_how_police_are_hel.md](top-stories_article_5_Teen_hackers_tell_BBC_how_police_are_hel.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Two children among eight dead in Russian strikes on Ukraine, officials say**
-   - **Published:** Thu, 30 Jul 2026 04:47:33 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Two_children_among_eight_dead_in_Russian.md](top-stories_article_6_Two_children_among_eight_dead_in_Russian.md)
+6. **British Airways flight called mayday on approach to Heathrow**
+   - **Published:** Thu, 30 Jul 2026 17:34:26 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_British_Airways_flight_called_mayday_on_.md](top-stories_article_6_British_Airways_flight_called_mayday_on_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Police to take no further action against Polanski over guillotine re-post**
-   - **Published:** Wed, 29 Jul 2026 19:53:48 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Police_to_take_no_further_action_against.md](top-stories_article_7_Police_to_take_no_further_action_against.md)
+7. **MP Diane Abbott readmitted into Labour Party after suspension**
+   - **Published:** Thu, 30 Jul 2026 20:54:11 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_MP_Diane_Abbott_readmitted_into_Labour_P.md](top-stories_article_7_MP_Diane_Abbott_readmitted_into_Labour_P.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Singapore fines French teen $465 for viral straw-licking stunt**
-   - **Published:** Thu, 30 Jul 2026 02:54:54 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Singapore_fines_French_teen_465_for_vira.md](top-stories_article_8_Singapore_fines_French_teen_465_for_vira.md)
+8. **Spain sending troops as thousands enter enclave of Ceuta from Morocco**
+   - **Published:** Fri, 31 Jul 2026 02:41:09 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Spain_sending_troops_as_thousands_enter_.md](top-stories_article_8_Spain_sending_troops_as_thousands_enter_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **US launches 'heavy' strikes on Iran after attempted attack on American troops**
-   - **Published:** Thu, 30 Jul 2026 03:33:01 GMT
-   - **Read Parallel Translation:** [world_article_9_US_launches_heavy_strikes_on_Iran_after_.md](world_article_9_US_launches_heavy_strikes_on_Iran_after_.md)
+1. **Hamas says it has agreed to disarm after Trump announces Board of Peace plan**
+   - **Published:** Fri, 31 Jul 2026 03:24:14 GMT
+   - **Read Parallel Translation:** [world_article_9_Hamas_says_it_has_agreed_to_disarm_after.md](world_article_9_Hamas_says_it_has_agreed_to_disarm_after.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Saudi Arabia's dilemma as it tries to stay out of US-Iran war**
-   - **Published:** Wed, 29 Jul 2026 18:41:31 GMT
-   - **Read Parallel Translation:** [world_article_10_Saudi_Arabias_dilemma_as_it_tries_to_sta.md](world_article_10_Saudi_Arabias_dilemma_as_it_tries_to_sta.md)
+2. **Rushdi Abualouf: If Hamas disarmament plan holds, it could mark first credible step to ending Gaza war**
+   - **Published:** Fri, 31 Jul 2026 04:25:49 GMT
+   - **Read Parallel Translation:** [world_article_10_Rushdi_Abualouf_If_Hamas_disarmament_pla.md](world_article_10_Rushdi_Abualouf_If_Hamas_disarmament_pla.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Three Greek firefighters die as wildfires threaten parts of southern Europe**
-   - **Published:** Thu, 30 Jul 2026 01:53:25 GMT
-   - **Read Parallel Translation:** [world_article_11_Three_Greek_firefighters_die_as_wildfire.md](world_article_11_Three_Greek_firefighters_die_as_wildfire.md)
+3. **Nirmal Purja among 10 climbers feared missing after avalanche**
+   - **Published:** Fri, 31 Jul 2026 00:52:54 GMT
+   - **Read Parallel Translation:** [world_article_11_Nirmal_Purja_among_10_climbers_feared_mi.md](world_article_11_Nirmal_Purja_among_10_climbers_feared_mi.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **'It's our home, it's our forest': BBC speaks to locals fighting France wildfire**
-   - **Published:** Wed, 29 Jul 2026 16:49:41 GMT
-   - **Read Parallel Translation:** [world_article_12_Its_our_home_its_our_forest_BBC_speaks_t.md](world_article_12_Its_our_home_its_our_forest_BBC_speaks_t.md)
+4. **Spain sending troops as thousands enter enclave of Ceuta from Morocco**
+   - **Published:** Fri, 31 Jul 2026 02:41:09 GMT
+   - **Read Parallel Translation:** [world_article_12_Spain_sending_troops_as_thousands_enter_.md](world_article_12_Spain_sending_troops_as_thousands_enter_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Interest rates expected to be held again by Bank of England**
-   - **Published:** Wed, 29 Jul 2026 23:01:56 GMT
-   - **Read Parallel Translation:** [business_article_13_Interest_rates_expected_to_be_held_again.md](business_article_13_Interest_rates_expected_to_be_held_again.md)
+1. **Thames Water boss says leakage targets 'not realistic'**
+   - **Published:** Thu, 30 Jul 2026 23:06:37 GMT
+   - **Read Parallel Translation:** [business_article_13_Thames_Water_boss_says_leakage_targets_n.md](business_article_13_Thames_Water_boss_says_leakage_targets_n.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **What happens here has a big impact on your money**
-   - **Published:** Wed, 29 Jul 2026 16:00:24 GMT
-   - **Read Parallel Translation:** [business_article_14_What_happens_here_has_a_big_impact_on_yo.md](business_article_14_What_happens_here_has_a_big_impact_on_yo.md)
+2. **Anthropic says Claude AI hacked three organisations during cyber tests**
+   - **Published:** Fri, 31 Jul 2026 04:31:30 GMT
+   - **Read Parallel Translation:** [business_article_14_Anthropic_says_Claude_AI_hacked_three_or.md](business_article_14_Anthropic_says_Claude_AI_hacked_three_or.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Burnham says nuclear sub investment will protect UK and boost jobs**
-   - **Published:** Thu, 30 Jul 2026 02:36:53 GMT
-   - **Read Parallel Translation:** [business_article_15_Burnham_says_nuclear_sub_investment_will.md](business_article_15_Burnham_says_nuclear_sub_investment_will.md)
+3. **'I pay £580 a month to live in a disused care home': Property guardians show us around**
+   - **Published:** Thu, 30 Jul 2026 23:05:41 GMT
+   - **Read Parallel Translation:** [business_article_15_I_pay_580_a_month_to_live_in_a_disused_c.md](business_article_15_I_pay_580_a_month_to_live_in_a_disused_c.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **I dropped out of university and built five beauty businesses. Here's how I did it**
-   - **Published:** Wed, 29 Jul 2026 23:02:18 GMT
-   - **Read Parallel Translation:** [business_article_16_I_dropped_out_of_university_and_built_fi.md](business_article_16_I_dropped_out_of_university_and_built_fi.md)
+4. **Three things we learned about AI from Big Tech earnings**
+   - **Published:** Fri, 31 Jul 2026 01:31:50 GMT
+   - **Read Parallel Translation:** [business_article_16_Three_things_we_learned_about_AI_from_Bi.md](business_article_16_Three_things_we_learned_about_AI_from_Bi.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Trump considering AI controls after OpenAI hacking incidents**
-   - **Published:** Thu, 30 Jul 2026 00:41:28 GMT
-   - **Read Parallel Translation:** [technology_article_17_Trump_considering_AI_controls_after_Open.md](technology_article_17_Trump_considering_AI_controls_after_Open.md)
+1. **Three things we learned about AI from Big Tech earnings**
+   - **Published:** Fri, 31 Jul 2026 01:31:50 GMT
+   - **Read Parallel Translation:** [technology_article_17_Three_things_we_learned_about_AI_from_Bi.md](technology_article_17_Three_things_we_learned_about_AI_from_Bi.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Meta shares fall as frustration grows over AI spending plans**
-   - **Published:** Wed, 29 Jul 2026 22:44:18 GMT
-   - **Read Parallel Translation:** [technology_article_18_Meta_shares_fall_as_frustration_grows_ov.md](technology_article_18_Meta_shares_fall_as_frustration_grows_ov.md)
+2. **Teen hackers tell BBC how police are helping them use their skills for good**
+   - **Published:** Fri, 31 Jul 2026 00:42:48 GMT
+   - **Read Parallel Translation:** [technology_article_18_Teen_hackers_tell_BBC_how_police_are_hel.md](technology_article_18_Teen_hackers_tell_BBC_how_police_are_hel.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Data centres could pay hundreds of millions in deposits for power demands**
-   - **Published:** Wed, 29 Jul 2026 11:35:35 GMT
-   - **Read Parallel Translation:** [technology_article_19_Data_centres_could_pay_hundreds_of_milli.md](technology_article_19_Data_centres_could_pay_hundreds_of_milli.md)
+3. **India wants to join the strawberry superpowers**
+   - **Published:** Thu, 30 Jul 2026 22:04:09 GMT
+   - **Read Parallel Translation:** [technology_article_19_India_wants_to_join_the_strawberry_super.md](technology_article_19_India_wants_to_join_the_strawberry_super.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **OpenAI says its rogue AI tried to hack other companies**
-   - **Published:** Wed, 29 Jul 2026 08:49:27 GMT
-   - **Read Parallel Translation:** [technology_article_20_OpenAI_says_its_rogue_AI_tried_to_hack_o.md](technology_article_20_OpenAI_says_its_rogue_AI_tried_to_hack_o.md)
+4. **Xbox tech boss says 'unacceptable' outage should not have affected disc games**
+   - **Published:** Thu, 30 Jul 2026 14:53:20 GMT
+   - **Read Parallel Translation:** [technology_article_20_Xbox_tech_boss_says_unacceptable_outage_.md](technology_article_20_Xbox_tech_boss_says_unacceptable_outage_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Can a heatwave cause trees to fall?**
-   - **Published:** Wed, 29 Jul 2026 15:53:42 GMT
-   - **Read Parallel Translation:** [science_article_21_Can_a_heatwave_cause_trees_to_fall.md](science_article_21_Can_a_heatwave_cause_trees_to_fall.md)
+1. **India wants to join the strawberry superpowers**
+   - **Published:** Thu, 30 Jul 2026 22:04:09 GMT
+   - **Read Parallel Translation:** [science_article_21_India_wants_to_join_the_strawberry_super.md](science_article_21_India_wants_to_join_the_strawberry_super.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **More than half of England in drought, Environment Agency declares**
-   - **Published:** Wed, 29 Jul 2026 14:37:30 GMT
-   - **Read Parallel Translation:** [science_article_22_More_than_half_of_England_in_drought_Env.md](science_article_22_More_than_half_of_England_in_drought_Env.md)
+2. **Danube's record low levels force shutdown of Hungary's only nuclear plant**
+   - **Published:** Thu, 30 Jul 2026 17:55:24 GMT
+   - **Read Parallel Translation:** [science_article_22_Danubes_record_low_levels_force_shutdown.md](science_article_22_Danubes_record_low_levels_force_shutdown.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
 3. **Hosepipe bans in force as drought declared - is your area affected?**
-   - **Published:** Wed, 29 Jul 2026 13:03:18 GMT
+   - **Published:** Thu, 30 Jul 2026 14:50:42 GMT
    - **Read Parallel Translation:** [science_article_23_Hosepipe_bans_in_force_as_drought_declar.md](science_article_23_Hosepipe_bans_in_force_as_drought_declar.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Devastating European wildfires in maps - and how they're being tackled**
-   - **Published:** Wed, 29 Jul 2026 11:53:40 GMT
-   - **Read Parallel Translation:** [science_article_24_Devastating_European_wildfires_in_maps_-.md](science_article_24_Devastating_European_wildfires_in_maps_-.md)
+4. **Drought declared across whole of Wales as conditions 'deteriorate'**
+   - **Published:** Thu, 30 Jul 2026 14:15:09 GMT
+   - **Read Parallel Translation:** [science_article_24_Drought_declared_across_whole_of_Wales_a.md](science_article_24_Drought_declared_across_whole_of_Wales_a.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **Hundreds of thousands of women get morning-after pill via free pharmacy service**
-   - **Published:** Tue, 28 Jul 2026 00:14:41 GMT
-   - **Read Parallel Translation:** [health_article_25_Hundreds_of_thousands_of_women_get_morni.md](health_article_25_Hundreds_of_thousands_of_women_get_morni.md)
+1. **Holidaymakers warned about 'explosive diarrhoea' cyclospora parasite infection**
+   - **Published:** Thu, 30 Jul 2026 11:10:02 GMT
+   - **Read Parallel Translation:** [health_article_25_Holidaymakers_warned_about_explosive_dia.md](health_article_25_Holidaymakers_warned_about_explosive_dia.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Badenoch says PM must rule out tax rises to fund social care reform**
-   - **Published:** Sun, 26 Jul 2026 21:00:27 GMT
-   - **Read Parallel Translation:** [health_article_26_Badenoch_says_PM_must_rule_out_tax_rises.md](health_article_26_Badenoch_says_PM_must_rule_out_tax_rises.md)
+2. **Hundreds of thousands of women get morning-after pill via free pharmacy service**
+   - **Published:** Tue, 28 Jul 2026 00:14:41 GMT
+   - **Read Parallel Translation:** [health_article_26_Hundreds_of_thousands_of_women_get_morni.md](health_article_26_Hundreds_of_thousands_of_women_get_morni.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Burnham to address social care, youth unemployment and devolution**
-   - **Published:** Sat, 25 Jul 2026 20:00:26 GMT
-   - **Read Parallel Translation:** [health_article_27_Burnham_to_address_social_care_youth_une.md](health_article_27_Burnham_to_address_social_care_youth_une.md)
+3. **Badenoch says PM must rule out tax rises to fund social care reform**
+   - **Published:** Sun, 26 Jul 2026 21:00:27 GMT
+   - **Read Parallel Translation:** [health_article_27_Badenoch_says_PM_must_rule_out_tax_rises.md](health_article_27_Badenoch_says_PM_must_rule_out_tax_rises.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **First person gets new experimental vaccine for Ebola**
-   - **Published:** Fri, 24 Jul 2026 14:43:51 GMT
-   - **Read Parallel Translation:** [health_article_28_First_person_gets_new_experimental_vacci.md](health_article_28_First_person_gets_new_experimental_vacci.md)
+4. **Burnham to address social care, youth unemployment and devolution**
+   - **Published:** Sat, 25 Jul 2026 20:00:26 GMT
+   - **Read Parallel Translation:** [health_article_28_Burnham_to_address_social_care_youth_une.md](health_article_28_Burnham_to_address_social_care_youth_une.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Police to take no further action against Polanski over guillotine re-post**
-   - **Published:** Wed, 29 Jul 2026 19:53:48 GMT
-   - **Read Parallel Translation:** [politics_article_29_Police_to_take_no_further_action_against.md](politics_article_29_Police_to_take_no_further_action_against.md)
+1. **Andy Burnham to give regional mayors share of income tax**
+   - **Published:** Thu, 30 Jul 2026 21:32:09 GMT
+   - **Read Parallel Translation:** [politics_article_29_Andy_Burnham_to_give_regional_mayors_sha.md](politics_article_29_Andy_Burnham_to_give_regional_mayors_sha.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Burnham says nuclear sub investment will protect UK and boost jobs**
-   - **Published:** Thu, 30 Jul 2026 02:36:53 GMT
-   - **Read Parallel Translation:** [politics_article_30_Burnham_says_nuclear_sub_investment_will.md](politics_article_30_Burnham_says_nuclear_sub_investment_will.md)
+2. **MP Diane Abbott readmitted into Labour Party after suspension**
+   - **Published:** Thu, 30 Jul 2026 20:54:11 GMT
+   - **Read Parallel Translation:** [politics_article_30_MP_Diane_Abbott_readmitted_into_Labour_P.md](politics_article_30_MP_Diane_Abbott_readmitted_into_Labour_P.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Inquiry finds MoD Afghan data breach was foreseeable failure**
-   - **Published:** Wed, 29 Jul 2026 23:13:43 GMT
-   - **Read Parallel Translation:** [politics_article_31_Inquiry_finds_MoD_Afghan_data_breach_was.md](politics_article_31_Inquiry_finds_MoD_Afghan_data_breach_was.md)
+3. **Burnham says he told Trump UK will be pragmatic about North Sea oil**
+   - **Published:** Thu, 30 Jul 2026 16:19:08 GMT
+   - **Read Parallel Translation:** [politics_article_31_Burnham_says_he_told_Trump_UK_will_be_pr.md](politics_article_31_Burnham_says_he_told_Trump_UK_will_be_pr.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Fix palliative care before assisted dying debate, says PM**
-   - **Published:** Wed, 29 Jul 2026 12:56:01 GMT
-   - **Read Parallel Translation:** [politics_article_32_Fix_palliative_care_before_assisted_dyin.md](politics_article_32_Fix_palliative_care_before_assisted_dyin.md)
+4. **Greens review social media operation as Polanski row rumbles on**
+   - **Published:** Thu, 30 Jul 2026 16:42:21 GMT
+   - **Read Parallel Translation:** [politics_article_32_Greens_review_social_media_operation_as_.md](politics_article_32_Greens_review_social_media_operation_as_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Zendaya on working with Tom Holland in Spider-Man: ‘When you’re best friends it’s easy’**
-   - **Published:** Wed, 29 Jul 2026 20:21:46 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Zendaya_on_working_with_Tom_Holland_in_S.md](entertainment_article_33_Zendaya_on_working_with_Tom_Holland_in_S.md)
+1. **Olivia Dean nominated and  Lily Allen missing from Mercury Prize list**
+   - **Published:** Thu, 30 Jul 2026 09:45:12 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Olivia_Dean_nominated_and__Lily_Allen_mi.md](entertainment_article_33_Olivia_Dean_nominated_and__Lily_Allen_mi.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **BBC cancels Blankety Blank, Celebrity Mastermind and Live at the Apollo**
-   - **Published:** Wed, 29 Jul 2026 13:02:12 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_BBC_cancels_Blankety_Blank_Celebrity_Mas.md](entertainment_article_34_BBC_cancels_Blankety_Blank_Celebrity_Mas.md)
+2. **Zendaya on working with Tom Holland in Spider-Man: ‘When you’re best friends it’s easy’**
+   - **Published:** Wed, 29 Jul 2026 20:21:46 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Zendaya_on_working_with_Tom_Holland_in_S.md](entertainment_article_34_Zendaya_on_working_with_Tom_Holland_in_S.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Peppa Pig owners win copyright battle against 'impostor' Wolfoo**
-   - **Published:** Wed, 29 Jul 2026 17:19:54 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Peppa_Pig_owners_win_copyright_battle_ag.md](entertainment_article_35_Peppa_Pig_owners_win_copyright_battle_ag.md)
+3. **Former England football star Shaun Wright-Phillips joins Strictly line-up**
+   - **Published:** Thu, 30 Jul 2026 11:54:21 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Former_England_football_star_Shaun_Wrigh.md](entertainment_article_35_Former_England_football_star_Shaun_Wrigh.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Oscar-winning songwriter Glen Hansard killed in crash**
-   - **Published:** Wed, 29 Jul 2026 15:33:14 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Oscar-winning_songwriter_Glen_Hansard_ki.md](entertainment_article_36_Oscar-winning_songwriter_Glen_Hansard_ki.md)
+4. **Salman Rushdie attacker convicted of terror offences**
+   - **Published:** Wed, 29 Jul 2026 22:15:33 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Salman_Rushdie_attacker_convicted_of_ter.md](entertainment_article_36_Salman_Rushdie_attacker_convicted_of_ter.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>British Airways flight called mayday on approach to Heathrow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>British Airways flight called mayday on approach to Heathrow</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 30 Jul 2026 17:34:26 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cn8n1knkkz9o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The call was made on an Airbus A320 flying from Dusseldorf airport in Germany on 6 July following two stall warnings.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.39" data-end="18.1">
+            <p class="french-block">Un vol de British Airways a lancé un appel de détresse "Mayday" à son approche de l'aéroport d'Heathrow au début du mois, selon un communiqué de l'autorité française d'enquête sur les accidents.</p>
+            <span class="english-block">A British Airways flight issued a "mayday" distress call on its approach to Heathrow Airport earlier this month, according to a statement from France's accident investigation authority.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.1" data-end="30.26">
+            <p class="french-block">L'appel a été effectué le 6 juillet à bord d'un Airbus A320 en provenance de l'aéroport de Düsseldorf en Allemagne, suite à deux avertissements de décrochage de l'avion, avant son atterrissage sans autre incident.</p>
+            <span class="english-block">The call was made on an Airbus A320 flying from Dusseldorf airport in Germany on 6 July following two stall warnings on the aircraft, before it landed without further incident.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.26" data-end="38.06">
+            <p class="french-block">La branche britannique d'enquête sur les accidents aériens (AAIB) a déclaré qu'elle « enquêtait sur un incident grave ».</p>
+            <span class="english-block">The UK's Air Accidents Investigation Branch (AAIB) said it was "investigating a serious incident".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.06" data-end="47.5">
+            <p class="french-block">Un porte-parole de British Airways a déclaré que la compagnie aérienne aidait l'AAIB dans son enquête et qu'elle n'était pas légalement en mesure de commenter davantage à ce stade.</p>
+            <span class="english-block">A British Airways spokesperson said the airline was assisting the AAIB with its investigation and was not legally able to comment further at this stage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.5" data-end="56.45">
+            <p class="french-block">Le BEA a déclaré que, alors que l'avion approchait d'Heathrow, une panne du système de données s'était produite qui avait déclenché une alerte de décrochage.</p>
+            <span class="english-block">The French Air Safety Investigation Authority, the BEA, said that as the plane approached Heathrow, there was a data system failure which triggered a stall warning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.45" data-end="75.48">
+            <p class="french-block">L'équipage a ensuite piloté l'avion dans un mode différent appelé « loi alternative », qui supprime certains systèmes automatisés de protection des vols. Un autre avertissement de décrochage s'est ensuite produit à 3 000 pieds - ce qui, selon les experts, se trouvait probablement à quelques kilomètres de l'aéroport.</p>
+            <span class="english-block">The crew then flew the aircraft in a different mode called "alternate law", which removes some automated flight protection systems. Another stall warning then occurred at 3,000 feet - which experts say was likely to have been just miles away from the airport.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.48" data-end="81.86">
+            <p class="french-block">L'appel d'urgence que l'équipage avait déjà émis a été mis à niveau vers Mayday, indiquant un danger imminent.</p>
+            <span class="english-block">The urgency call the crew had already made was upgraded to mayday, indicating imminent danger.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.86" data-end="88.9">
+            <p class="french-block">Le site Internet du BEA a attribué la déclaration à l'AAIB, mais l'AAIB n'a pas confirmé qu'elle provenait d'eux.</p>
+            <span class="english-block">The BEA website attributed the statement to the AAIB, but the AAIB would not confirm it was from them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.9" data-end="98.76">
+            <p class="french-block">Ils ont publié la déclaration suivante : "L'AAIB enquête sur un incident grave impliquant un avion commercial survenu le 6 juillet à l'approche de l'aéroport d'Heathrow."</p>
+            <span class="english-block">They issued the following statement: "The AAIB is investigating a serious incident involving a commercial aircraft which occurred on 6 July on approach to Heathrow airport."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.76" data-end="107.64">
+            <p class="french-block">Il a précisé que l'enquête serait une enquête par correspondance, ce qui signifie qu'aucune équipe ne serait envoyée pour mener des enquêtes sur le terrain.</p>
+            <span class="english-block">It said the investigation would be a correspondence investigation, meaning that no team would be sent to carry out field investigations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="107.64" data-end="118.03">
+            <p class="french-block">L'enquêteur de la sécurité aérienne, David Gleave, a déclaré qu'il existe différentes formes d'appels de secours et qu'envoyer un message d'urgence n'était "pas inhabituel".</p>
+            <span class="english-block">Aviation safety investigator David Gleave said there are different forms of mayday calls, and to send an urgency message was "not unusual".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.03" data-end="130.15">
+            <p class="french-block">"Il se peut qu'il y ait à bord des passagers malades qui ont besoin de soins médicaux urgents... c'est donc à la discrétion des commandants de bord quant à leur nom, mais il est très inhabituel qu'il s'agisse d'une panne importante à bord de l'avion."</p>
+            <span class="english-block">"You could have sick passengers on board who need urgent medical attention… so it's up to the captains' discretion as to what they call, but its very unusual for it to be a significant failure on board the aeroplane."</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_6.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

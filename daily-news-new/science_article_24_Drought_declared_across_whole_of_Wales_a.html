@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drought declared across whole of Wales as conditions 'deteriorate'</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Drought declared across whole of Wales as conditions 'deteriorate'</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 30 Jul 2026 14:15:09 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c8jn1v37znvo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Wales is on course for its driest July on record in almost 190 years.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.7" data-end="16.9">
+            <p class="french-block">Une sécheresse s'est étendue à l'ensemble du Pays de Galles et le pays est en passe de connaître son mois de juillet le plus sec jamais enregistré depuis 190 ans.</p>
+            <span class="english-block">A drought has been extended across the whole of Wales with the country on course for its driest July on record in 190 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.9" data-end="30.31">
+            <p class="french-block">Déclarant la sécheresse, l'organisme environnemental du pays, Natural Resources Wales (NRW), a déclaré que les températures élevées et soutenues provoquaient une "détérioration" de l'état de l'environnement naturel.</p>
+            <span class="english-block">Declaring the drought, the country's environment body Natural Resources Wales (NRW) said sustained high temperatures were causing the condition of the natural environment to "deteriorate".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.31" data-end="42.05">
+            <p class="french-block">Cette décision a été prise en réponse au niveau record des rivières, à la sécheresse des sols, aux incendies de forêt généralisés et aux impacts croissants sur la faune, l'agriculture et la foresterie.</p>
+            <span class="english-block">The decision has been made in response to record-low river levels, dry soils, widespread wildfires and mounting impacts on wildlife, farming and forestry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.05" data-end="49.18">
+            <p class="french-block">NRW avait déjà annoncé la semaine dernière une sécheresse dans le nord et dans certaines parties du centre du Pays de Galles.</p>
+            <span class="english-block">NRW had already announced a drought across the north and parts of mid Wales last week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.18" data-end="56.71">
+            <p class="french-block">Le manque de pluie au Pays de Galles a entraîné de faibles niveaux d'eau dans des réservoirs comme Llyn Aled Isaf à Conwy la semaine dernière.</p>
+            <span class="english-block">The lack of rain in Wales has led to low water levels in reservoirs like Llyn Aled Isaf in Conwy last week</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.71" data-end="65.4">
+            <p class="french-block">L'annonce nationale faite jeudi déclenchera une surveillance accrue des rivières et des conseils plus stricts à l'intention du public sur l'utilisation de l'eau.</p>
+            <span class="english-block">The nationwide announcement made on Thursday will trigger more monitoring of rivers and stronger advice for the public on use of water.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.4" data-end="78.77">
+            <p class="french-block">La déclaration d'une sécheresse ne signifie pas qu'il existe actuellement une menace pour l'approvisionnement en eau des habitations et des entreprises, les compagnies des eaux galloises affirmant que les niveaux des réservoirs se maintiennent après un début d'année pluvieux.</p>
+            <span class="english-block">The declaration of a drought does not mean there is currently a threat to water supplies for homes and businesses, with Welsh water companies saying reservoir levels are holding up after a wet start to the year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.77" data-end="90.12">
+            <p class="french-block">NRW a déclaré que les chiffres montraient que le Pays de Galles avait reçu 8 % de ses précipitations moyennes à long terme pour juillet, la plupart des rivières du pays étant « exceptionnellement basses ».</p>
+            <span class="english-block">NRW said figures had shown Wales had received 8% of its long-term average rainfall for July, with most rivers in the country "exceptionally low".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.12" data-end="97.73">
+            <p class="french-block">Les niveaux des eaux souterraines sont également en baisse au Pays de Galles, certains étant plus bas que prévu pour cette période de l'année.</p>
+            <span class="english-block">Groundwater levels are also falling in Wales, with some lower than expected for the time of year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="97.73" data-end="110.54">
+            <p class="french-block">L'organisme environnemental a déclaré que ses équipes étaient confrontées à des rapports faisant état d'"impacts de grande envergure sur l'environnement" et que "les conditions dans l'environnement naturel du Pays de Galles ont continué à se détériorer".</p>
+            <span class="english-block">The environmental body said its teams were dealing with reports of "wide-reaching impacts to the environment", and that "conditions across Wales' natural environment have continued to deteriorate".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.54" data-end="125.76">
+            <p class="french-block">Cela inclut l'assèchement des lits de rivières, les poissons en détresse, une accumulation d'algues, le risque d'incendies de forêt et les inquiétudes des agriculteurs concernant la croissance des cultures, les conditions de pâturage et la disponibilité de l'eau pour le bétail.</p>
+            <span class="english-block">This includes drying riverbeds, fish in distress, an accumulation of algae, wildfire risk and concern from farmers about crop growth, grazing conditions and water availability for livestock.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.76" data-end="134.45">
+            <p class="french-block">Des terres arides ont été observées dans une grande partie du Pays de Galles cette semaine, y compris dans ce parc de Dinas Powys, dans la vallée de Glamorgan.</p>
+            <span class="english-block">Parched land has been seen across much of Wales this week, including in this park in Dinas Powys, Vale of Glamorgan</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.45" data-end="144.55">
+            <p class="french-block">Rhian Thomas, de NRW, a déclaré que les conséquences du récent temps sec étaient "claires à voir" et que les équipes surveillaient de près les prévisions et le débit des rivières.</p>
+            <span class="english-block">Rhian Thomas, from NRW, said the toll from the recent dry weather had been "clear to see", and teams were closely monitoring forecasts and river flows.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.55" data-end="157.01">
+            <p class="french-block">"En l'absence d'indications fortes de précipitations notables dans les prévisions et de risques de nouvelles vagues de chaleur au cours de l'été, il est plus important que jamais que nous utilisions tous l'eau à bon escient", a-t-elle déclaré.</p>
+            <span class="english-block">"With no strong indications for notable rainfall in the forecasts, and risks of further heatwaves over the summer, it's more important than ever that we all use water wisely," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.01" data-end="163.25">
+            <p class="french-block">"Chaque goutte que nous gaspillons représente moins d'eau pour nos rivières et notre faune lorsqu'elles en ont le plus besoin."</p>
+            <span class="english-block">"Every drop we waste is less water for our rivers and wildlife when they need it the most."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.25" data-end="170.45">
+            <p class="french-block">Le temps sec de ces dernières semaines a également coïncidé avec un certain nombre d’incendies de forêt à travers le Pays de Galles.</p>
+            <span class="english-block">The dry weather in recent weeks has also coincided with a number of wildfires across Wales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.45" data-end="181.66">
+            <p class="french-block">Un incendie qui s'est déclaré au début du mois dans les montagnes Rhinogydd à Gwynedd a pu être observé depuis l'espace, avec un hélicoptère de lutte contre l'incendie déployé pour lutter contre l'incendie.</p>
+            <span class="english-block">A fire that broke out earlier this month in the Rhinogydd mountains in Gwynedd could be seen from space, with a firefighting helicopter deployed to tackle the blaze.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="181.66" data-end="192.29">
+            <p class="french-block">Les résidents qui ont été évacués de leurs maisons à la suite d'un incendie près de Conwy Mountain ont déclaré avoir entendu l'incendie, qui ressemblait "à du pop-corn", descendre la montagne.</p>
+            <span class="english-block">Residents who were evacuated from their homes following a fire close to Conwy Mountain said they had heard the blaze, which had sounded "like popcorn", coming down the mountain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.29" data-end="200.42">
+            <p class="french-block">Le Premier ministre Rhun ap Iorwerth a déclaré qu'il avait organisé un sommet pour examiner les risques d'incendies dus à de graves sécheresses.</p>
+            <span class="english-block">First Minister Rhun ap Iorwerth said he had organised a summit to look at the risks of fires from severe droughts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.42" data-end="214.54">
+            <p class="french-block">S'adressant à Matt Chorley sur BBC Radio 5 Live, il a déclaré que même s'il n'y avait pas de « risque immédiat pour l'approvisionnement en eau potable », il fallait « plus de résilience dans nos approvisionnements en eau » au Pays de Galles et au Royaume-Uni.</p>
+            <span class="english-block">Speaking to Matt Chorley on BBC Radio 5 Live, he said while there was no "immediate risk to the provision of drinking water", there needed to be "more resilience in our water supplies" across Wales and the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="214.54" data-end="219.53">
+            <p class="french-block">George Tomlinson dit que le temps sec l'inquiète pour l'avenir de l'agriculture</p>
+            <span class="english-block">George Tomlinson says the dry weather makes him worry about the future of farming</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.53" data-end="230.21">
+            <p class="french-block">George Tomlinson, 29 ans, qui dirige Rossett Park Farming à Wrexham, a déclaré qu'il avait dû vendre 60 vaches parce que la sécheresse avait détruit les pâturages.</p>
+            <span class="english-block">George Tomlinson, 29, who runs Rossett Park Farming in Wrexham, said he had to sell 60 cows because the drought had killed off grazing land.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.21" data-end="242.76">
+            <p class="french-block">"Il n'y a rien à manger pour les vaches sur la plate-forme de pâturage, à part un peu d'herbe morte que mangent certaines vaches taries", a déclaré Tomlinson, ajoutant "vous devez prendre des décisions difficiles pour survivre".</p>
+            <span class="english-block">"There's nothing available for the cows to eat on the grazing platform apart from a little bit of dead grass some dry cows are eating," said Tomlinson, adding "you've got to make tough decisions in order to survive".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.76" data-end="248.54">
+            <p class="french-block">Il s’est également dit inquiet de ce que l’avenir pourrait lui réserver avec les étés plus chauds attendus.</p>
+            <span class="english-block">He said he was also worried about what the future might hold with warmer summers expected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.54" data-end="258.94">
+            <p class="french-block">"Si cela continue, de nombreux agriculteurs seront obligés de fermer leurs portes et de ne plus jamais les rouvrir", a-t-il déclaré, qualifiant cette situation de "déprimante".</p>
+            <span class="english-block">"If this continues a lot of farmers will be forced to close their gates and never open them again," he said, describing it as "depressing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="258.94" data-end="265.61">
+            <p class="french-block">L'agriculteur Richard Anthony affirme que sa terre est aussi dure qu'un « roc » et n'a « aucune humidité »</p>
+            <span class="english-block">Farmer Richard Anthony says his land is as hard as a "rock" and has "no moisture at all"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.61" data-end="276.94">
+            <p class="french-block">Richard Anthony, dont la ferme s'étend sur la vallée de Glamorgan et le comté de Bridgend, a déclaré que le sol de ses terres était aussi dur qu'un « roc » et n'avait « aucune humidité du tout ».</p>
+            <span class="english-block">Richard Anthony, whose farm stretches over the Vale of Glamorgan and Bridgend county, said the ground on his land was as hard as a "rock" and had "no moisture at all".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.94" data-end="284.57">
+            <p class="french-block">La terre aride a empêché Anthony de planter ses cultures, qui a ajouté qu'il n'avait "jamais été dans cette situation" auparavant.</p>
+            <span class="english-block">The dry land has left Anthony unable to plant his crops, who added he had "never ever been in this situation" before.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.57" data-end="295.61">
+            <p class="french-block">"Dès que nous avons récolté une récolte, nous semons la récolte suivante, mais nous ne pouvons rien faire maintenant", a-t-il déclaré. "Je n'ai jamais vu ça aussi grave que ça."</p>
+            <span class="english-block">"As soon as we've harvested the one crop, we plant in the next crop, but we can't do any of that now," he said. "I've never seen it as bad as this."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.61" data-end="306.48">
+            <p class="french-block">Nos ventes de blé sont en baisse de 20 à 30 %. C'est énorme. nous devrons nous en sortir, nous survivrons, mais les répercussions sont énormes."</p>
+            <span class="english-block">Our wheat deals are down between 20% and 30%. That is massive. we'll have to cope, we will survive, but the knock-on effect is huge."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="306.48" data-end="314.93">
+            <p class="french-block">Anthony s'est dit inquiet du fait qu'une fois la pluie arrivée, elle ne s'arrêtera pas, le laissant incapable de planter les récoltes de l'année prochaine.</p>
+            <span class="english-block">Anthony said he is concerned that once the rain comes it will not  stop, leaving him unable to plant next year's crops.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.93" data-end="319.46">
+            <p class="french-block">"De là, ça va aller jusqu'à être trop humide", a-t-il ajouté.</p>
+            <span class="english-block">"It'll go from this to being too wet", he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.46" data-end="329.98">
+            <p class="french-block">Le président du Syndicat national des agriculteurs de Cymru, Abi Reader, a averti que le coût du temps sec et chaud persistant aurait un impact financier sur les agriculteurs.</p>
+            <span class="english-block">National Farmers Union Cymru president Abi Reader has warned that the cost of the continuing dry and hot weather will have a financial impact on farmers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.98" data-end="340.87">
+            <p class="french-block">"Nous allons voir les coûts pour ces fermes augmenter, car elles devront peut-être acheter des aliments supplémentaires pour leur bétail, ou dépenser beaucoup d'argent pour transporter de l'eau", a-t-elle déclaré.</p>
+            <span class="english-block">"We're going to see costs for these farms rising, because they might be having to buy in extra feed for their livestock, or they might be spending a lot of money carting water," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.87" data-end="353.11">
+            <p class="french-block">"Nous sommes dans cette situation depuis longtemps maintenant, et il faudra beaucoup de temps pour s'en remettre, et absolument tout le monde doit se rappeler que la sécurité alimentaire commence par la sécurité de l'eau", a-t-elle ajouté.</p>
+            <span class="english-block">"We've been in this a long time now, and it's going to take a long time to recover, and absolutely everybody needs to remember that food security starts with water security," she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.11" data-end="361.92">
+            <p class="french-block">Une sécheresse survient lorsqu’un manque prolongé de précipitations et des températures élevées provoquent de graves stress sur les écosystèmes naturels.</p>
+            <span class="english-block">A drought occurs when a prolonged lack of rainfall and high temperatures causes severe stress to natural ecosystems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.92" data-end="372.38">
+            <p class="french-block">NRW affirme que cela entraîne des niveaux d'eaux fluviales et souterraines extrêmement bas ainsi que des sols secs, ce qui a un impact sur la faune, la pêche et les habitats protégés.</p>
+            <span class="english-block">NRW says it results in critically low river and groundwater levels as well as dry soils - which has an impact on wildlife, fisheries and protected habitats.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="372.38" data-end="382.42">
+            <p class="french-block">Cela a également des conséquences sur l’agriculture et la foresterie – comme de mauvaises récoltes – alors que les réserves d’eau privées comme les sources naturelles et les forages peuvent s’assécher.</p>
+            <span class="english-block">It also has impacts for farming and forestry - such as failing crops - while private water supplies like natural springs and boreholes can run dry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="382.42" data-end="390.96">
+            <p class="french-block">Une déclaration de sécheresse environnementale déclenche une surveillance accrue des rivières et des rejets des réservoirs pour aider à reconstituer le débit.</p>
+            <span class="english-block">A declaration of environmental drought triggers more monitoring of rivers and releases from reservoirs to help top up the flow.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.96" data-end="398.11">
+            <p class="french-block">Ceux qui disposent d’un permis pour puiser l’eau des rivières – des fermes et canaux aux terrains de golf – seront confrontés à des restrictions.</p>
+            <span class="english-block">Those who have licences to take water from rivers - from farms and canals to golf courses - will face restrictions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="398.11" data-end="407.66">
+            <p class="french-block">Il y a aussi un élément de communication important dans ce projet - cela signifie donc des conseils plus fermes pour le public sur la manière d'utiliser l'eau judicieusement.</p>
+            <span class="english-block">There's a big communications element to this too - so it means firmer advice for the public on using water wisely.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="407.66" data-end="413.38">
+            <p class="french-block">Il y a une différence entre les annonces de sécheresse en NRW et celles des compagnies des eaux.</p>
+            <span class="english-block">There is a difference between NRW's drought announcements and those made by water companies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="413.38" data-end="428.62">
+            <p class="french-block">Welsh Water a déjà mis en place une interdiction des tuyaux d'arrosage dans certaines parties de l'ouest du Pays de Galles en raison d'une demande sans précédent lors des récentes vagues de chaleur, ce qui rend plus difficile le traitement et la fourniture d'une quantité suffisante d'eau sur le réseau.</p>
+            <span class="english-block">Welsh Water already have a hosepipe ban in place for parts of west Wales as a result of unprecedented demand during the recent heatwaves, making it harder to process and deliver enough water around the network.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="428.62" data-end="435.84">
+            <p class="french-block">Mais ils affirment qu’il n’y a actuellement aucune menace pour l’approvisionnement en eau potable et que les niveaux des réservoirs se maintiennent.</p>
+            <span class="english-block">But they say there is currently no threat to drinking water supplies and reservoir levels are holding up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="435.84" data-end="440.69">
+            <p class="french-block">Mon mal de tête de 10 jours était un cancer du cerveau en phase terminale</p>
+            <span class="english-block">My 10-day headache was terminal brain cancer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="440.69" data-end="446.04">
+            <p class="french-block">Russell T Davies dit que la mort de son défunt mari a été sa « plus grande perte »</p>
+            <span class="english-block">Russell T Davies says death of late husband has been his 'greatest loss'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="446.04" data-end="451.9">
+            <p class="french-block">Un piéton décède après avoir été heurté par plusieurs véhicules, dont une voiture de police</p>
+            <span class="english-block">Pedestrian dies after being hit by several vehicles including police car</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_24.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
