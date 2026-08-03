@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** Any proposed solution must firstly be fair to those who have "made provisions and saved up over the course of their lives", Badenoch said.
 
-**🇫🇷 FR:** *Toute solution proposée doit avant tout être équitable envers ceux qui ont "prévoyé et économisé au cours de leur vie", a déclaré Badenoch.*
+**🇫🇷 FR:** *Toute solution proposée doit d'abord être équitable envers ceux qui ont "prévoyé et économisé au cours de leur vie", a déclaré Badenoch.*
 
 ---
 

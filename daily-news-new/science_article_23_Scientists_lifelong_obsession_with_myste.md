@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** The discovery would become a lifelong obsession and a decades-long scientific puzzle.
 
-**🇫🇷 FR:** *La découverte allait devenir une obsession de toute une vie et un casse-tête scientifique qui durerait des décennies.*
+**🇫🇷 FR:** *La découverte deviendrait une obsession de toute une vie et un casse-tête scientifique qui durerait des décennies.*
 
 ---
 
@@ -190,7 +190,7 @@
 
 **🇬🇧 EN:** Francis Bunker, a freelance and independent marine biologist, kept finding the tiny seaweed in samples he had collected on that survey.
 
-**🇫🇷 FR:** *Francis Bunker, biologiste marin indépendant et indépendant, a continué à trouver de minuscules algues dans les échantillons qu'il avait collectés lors de cette étude.*
+**🇫🇷 FR:** *Francis Bunker, biologiste marin indépendant et indépendant, a continué à trouver de minuscules algues dans les échantillons qu'il avait collectés lors de cette enquête.*
 
 ---
 
