@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-08-03 06:17:02  
+Generated on: 2026-08-04 06:24:53  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Trump suggests new talks with Iran to begin on Monday**
-   - **Published:** Mon, 03 Aug 2026 00:11:18 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Trump_suggests_new_talks_with_Iran_to_be.md](top-stories_article_1_Trump_suggests_new_talks_with_Iran_to_be.md)
+1. **PC Harper's mother 'devastated' his killers set for early release under revised plans**
+   - **Published:** Tue, 04 Aug 2026 00:50:33 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_PC_Harpers_mother_devastated_his_killers.md](top-stories_article_1_PC_Harpers_mother_devastated_his_killers.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **'My only son was shot standing up for justice' - inside city gripped by deadly protests in Pakistan-administered Kashmir**
-   - **Published:** Mon, 03 Aug 2026 03:32:21 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_My_only_son_was_shot_standing_up_for_jus.md](top-stories_article_2_My_only_son_was_shot_standing_up_for_jus.md)
+2. **Breast cancer checks missing most women under 50 who are at risk, says study**
+   - **Published:** Tue, 04 Aug 2026 01:08:13 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Breast_cancer_checks_missing_most_women_.md](top-stories_article_2_Breast_cancer_checks_missing_most_women_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Ariana Grande to take a break from public life amid 'endless' scrutiny**
-   - **Published:** Sun, 02 Aug 2026 23:15:14 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Ariana_Grande_to_take_a_break_from_publi.md](top-stories_article_3_Ariana_Grande_to_take_a_break_from_publi.md)
+3. **EU calls for stronger borders after Ceuta migrant crossings**
+   - **Published:** Mon, 03 Aug 2026 21:43:10 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_EU_calls_for_stronger_borders_after_Ceut.md](top-stories_article_3_EU_calls_for_stronger_borders_after_Ceut.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Almost £200,000 of fuel stolen from UK forecourts every day since Iran war began**
-   - **Published:** Mon, 03 Aug 2026 01:04:23 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Almost_200000_of_fuel_stolen_from_UK_for.md](top-stories_article_4_Almost_200000_of_fuel_stolen_from_UK_for.md)
+4. **There's a reason child vaccination rates are falling - and it's not social media**
+   - **Published:** Mon, 03 Aug 2026 23:10:05 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Theres_a_reason_child_vaccination_rates_.md](top-stories_article_4_Theres_a_reason_child_vaccination_rates_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Burnham pledges to be 'relentless' in curbing small boat crossings**
-   - **Published:** Sun, 02 Aug 2026 21:18:26 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Burnham_pledges_to_be_relentless_in_curb.md](top-stories_article_5_Burnham_pledges_to_be_relentless_in_curb.md)
+5. **US states sue to block Trump tariffs impacting dozens of countries**
+   - **Published:** Tue, 04 Aug 2026 02:53:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_US_states_sue_to_block_Trump_tariffs_imp.md](top-stories_article_5_US_states_sue_to_block_Trump_tariffs_imp.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Heat health alerts in England as temperatures set to reach 34C**
-   - **Published:** Mon, 03 Aug 2026 02:06:27 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Heat_health_alerts_in_England_as_tempera.md](top-stories_article_6_Heat_health_alerts_in_England_as_tempera.md)
+6. **Thunderstorms and flash flood risk on final day of UK heatwave**
+   - **Published:** Mon, 03 Aug 2026 23:28:34 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Thunderstorms_and_flash_flood_risk_on_fi.md](top-stories_article_6_Thunderstorms_and_flash_flood_risk_on_fi.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **'No guarantees' - joyful Glasgow cannot banish all Commonwealth Games doubts**
-   - **Published:** Sun, 02 Aug 2026 21:45:22 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_No_guarantees_-_joyful_Glasgow_cannot_ba.md](top-stories_article_7_No_guarantees_-_joyful_Glasgow_cannot_ba.md)
+7. **West Ham co-owner David Sullivan advised to stay away from home matches**
+   - **Published:** Mon, 03 Aug 2026 20:09:46 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_West_Ham_co-owner_David_Sullivan_advised.md](top-stories_article_7_West_Ham_co-owner_David_Sullivan_advised.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **What are the 'luteal uglies'? And how they're affecting women**
-   - **Published:** Mon, 03 Aug 2026 00:57:22 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_What_are_the_luteal_uglies_And_how_theyr.md](top-stories_article_8_What_are_the_luteal_uglies_And_how_theyr.md)
+8. **Russia says seven killed and 40 injured by Ukrainian drone hitting busy beach**
+   - **Published:** Tue, 04 Aug 2026 03:37:14 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Russia_says_seven_killed_and_40_injured_.md](top-stories_article_8_Russia_says_seven_killed_and_40_injured_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Trump suggests new talks with Iran to begin on Monday**
-   - **Published:** Mon, 03 Aug 2026 00:11:18 GMT
-   - **Read Parallel Translation:** [world_article_9_Trump_suggests_new_talks_with_Iran_to_be.md](world_article_9_Trump_suggests_new_talks_with_Iran_to_be.md)
+1. **EU calls for stronger borders after Ceuta migrant crossings**
+   - **Published:** Mon, 03 Aug 2026 21:43:10 GMT
+   - **Read Parallel Translation:** [world_article_9_EU_calls_for_stronger_borders_after_Ceut.md](world_article_9_EU_calls_for_stronger_borders_after_Ceut.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **'My only son was shot standing up for justice' - inside city gripped by deadly protests in Pakistan-administered Kashmir**
-   - **Published:** Mon, 03 Aug 2026 03:32:21 GMT
-   - **Read Parallel Translation:** [world_article_10_My_only_son_was_shot_standing_up_for_jus.md](world_article_10_My_only_son_was_shot_standing_up_for_jus.md)
+2. **Russia says seven killed and 40 injured by Ukrainian drone hitting busy beach**
+   - **Published:** Tue, 04 Aug 2026 03:37:14 GMT
+   - **Read Parallel Translation:** [world_article_10_Russia_says_seven_killed_and_40_injured_.md](world_article_10_Russia_says_seven_killed_and_40_injured_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Two crew killed after firefighting helicopters collide in Greece, as British pilot survives**
-   - **Published:** Mon, 03 Aug 2026 01:03:31 GMT
-   - **Read Parallel Translation:** [world_article_11_Two_crew_killed_after_firefighting_helic.md](world_article_11_Two_crew_killed_after_firefighting_helic.md)
+3. **Iran says it is in talks with Oman but not the US after Trump says negotiations to resume**
+   - **Published:** Mon, 03 Aug 2026 19:42:55 GMT
+   - **Read Parallel Translation:** [world_article_11_Iran_says_it_is_in_talks_with_Oman_but_n.md](world_article_11_Iran_says_it_is_in_talks_with_Oman_but_n.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Massive Attack respond after Singapore ban over Palestine display**
-   - **Published:** Mon, 03 Aug 2026 01:31:05 GMT
-   - **Read Parallel Translation:** [world_article_12_Massive_Attack_respond_after_Singapore_b.md](world_article_12_Massive_Attack_respond_after_Singapore_b.md)
+4. **Ariana Grande has had enough of body comments, but 'scrutiny' will linger**
+   - **Published:** Mon, 03 Aug 2026 23:25:14 GMT
+   - **Read Parallel Translation:** [world_article_12_Ariana_Grande_has_had_enough_of_body_com.md](world_article_12_Ariana_Grande_has_had_enough_of_body_com.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Almost £200,000 of fuel stolen from UK forecourts every day since Iran war began**
-   - **Published:** Mon, 03 Aug 2026 01:04:23 GMT
-   - **Read Parallel Translation:** [business_article_13_Almost_200000_of_fuel_stolen_from_UK_for.md](business_article_13_Almost_200000_of_fuel_stolen_from_UK_for.md)
+1. **Half price rail travel extended to 18-year-olds**
+   - **Published:** Mon, 03 Aug 2026 23:34:13 GMT
+   - **Read Parallel Translation:** [business_article_13_Half_price_rail_travel_extended_to_18-ye.md](business_article_13_Half_price_rail_travel_extended_to_18-ye.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **US and Japan take action to prop up yen in rare joint move**
-   - **Published:** Mon, 03 Aug 2026 02:43:06 GMT
-   - **Read Parallel Translation:** [business_article_14_US_and_Japan_take_action_to_prop_up_yen_.md](business_article_14_US_and_Japan_take_action_to_prop_up_yen_.md)
+2. **US states sue to block Trump tariffs impacting dozens of countries**
+   - **Published:** Tue, 04 Aug 2026 02:53:00 GMT
+   - **Read Parallel Translation:** [business_article_14_US_states_sue_to_block_Trump_tariffs_imp.md](business_article_14_US_states_sue_to_block_Trump_tariffs_imp.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **The change that may help you get a mortgage as a first-time buyer**
-   - **Published:** Sun, 02 Aug 2026 23:16:32 GMT
-   - **Read Parallel Translation:** [business_article_15_The_change_that_may_help_you_get_a_mortg.md](business_article_15_The_change_that_may_help_you_get_a_mortg.md)
+3. **Why is Trump Media selling early access to Trump's Truth Social posts?**
+   - **Published:** Tue, 04 Aug 2026 00:17:48 GMT
+   - **Read Parallel Translation:** [business_article_15_Why_is_Trump_Media_selling_early_access_.md](business_article_15_Why_is_Trump_Media_selling_early_access_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **New Spider-Man film sees second-biggest ever global opening weekend**
-   - **Published:** Mon, 03 Aug 2026 04:10:16 GMT
-   - **Read Parallel Translation:** [business_article_16_New_Spider-Man_film_sees_second-biggest_.md](business_article_16_New_Spider-Man_film_sees_second-biggest_.md)
+4. **Threat to oil tankers in Middle East  worst since start of Iran war, analysts say**
+   - **Published:** Mon, 03 Aug 2026 15:57:27 GMT
+   - **Read Parallel Translation:** [business_article_16_Threat_to_oil_tankers_in_Middle_East__wo.md](business_article_16_Threat_to_oil_tankers_in_Middle_East__wo.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Snapchat joins other popular platforms in fight against 'AI slop'**
-   - **Published:** Fri, 31 Jul 2026 21:57:59 GMT
-   - **Read Parallel Translation:** [technology_article_17_Snapchat_joins_other_popular_platforms_i.md](technology_article_17_Snapchat_joins_other_popular_platforms_i.md)
+1. **Tokenomics: Why making AI pay is tricky**
+   - **Published:** Mon, 03 Aug 2026 23:21:10 GMT
+   - **Read Parallel Translation:** [technology_article_17_Tokenomics_Why_making_AI_pay_is_tricky.md](technology_article_17_Tokenomics_Why_making_AI_pay_is_tricky.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **AI firms must answer for rogue bots, says boss of hacked company**
-   - **Published:** Fri, 31 Jul 2026 18:10:28 GMT
-   - **Read Parallel Translation:** [technology_article_18_AI_firms_must_answer_for_rogue_bots_says.md](technology_article_18_AI_firms_must_answer_for_rogue_bots_says.md)
+2. **Xbox Series X price hiked by £170 due to rising memory chip costs**
+   - **Published:** Mon, 03 Aug 2026 11:18:10 GMT
+   - **Read Parallel Translation:** [technology_article_18_Xbox_Series_X_price_hiked_by_170_due_to_.md](technology_article_18_Xbox_Series_X_price_hiked_by_170_due_to_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Amazon and Apple just told us more about their AI plans - here are three things we learned**
-   - **Published:** Fri, 31 Jul 2026 01:31:50 GMT
-   - **Read Parallel Translation:** [technology_article_19_Amazon_and_Apple_just_told_us_more_about.md](technology_article_19_Amazon_and_Apple_just_told_us_more_about.md)
+3. **Snapchat joins other popular platforms in fight against 'AI slop'**
+   - **Published:** Fri, 31 Jul 2026 21:57:59 GMT
+   - **Read Parallel Translation:** [technology_article_19_Snapchat_joins_other_popular_platforms_i.md](technology_article_19_Snapchat_joins_other_popular_platforms_i.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **How police are trying to divert teen hackers away from crime**
-   - **Published:** Fri, 31 Jul 2026 00:42:48 GMT
-   - **Read Parallel Translation:** [technology_article_20_How_police_are_trying_to_divert_teen_hac.md](technology_article_20_How_police_are_trying_to_divert_teen_hac.md)
+4. **AI firms must answer for rogue bots, says boss of hacked company**
+   - **Published:** Fri, 31 Jul 2026 18:10:28 GMT
+   - **Read Parallel Translation:** [technology_article_20_AI_firms_must_answer_for_rogue_bots_says.md](technology_article_20_AI_firms_must_answer_for_rogue_bots_says.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Italy putting nearly all major cities on highest heat alert**
-   - **Published:** Sat, 01 Aug 2026 17:51:46 GMT
-   - **Read Parallel Translation:** [science_article_21_Italy_putting_nearly_all_major_cities_on.md](science_article_21_Italy_putting_nearly_all_major_cities_on.md)
+1. **What heatwaves mean for summer weddings – and how to plan for one**
+   - **Published:** Mon, 03 Aug 2026 23:20:15 GMT
+   - **Read Parallel Translation:** [science_article_21_What_heatwaves_mean_for_summer_weddings_.md](science_article_21_What_heatwaves_mean_for_summer_weddings_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Free diver, 21, wants to 'give back' to the ocean that has helped him**
-   - **Published:** Sat, 01 Aug 2026 12:50:03 GMT
-   - **Read Parallel Translation:** [science_article_22_Free_diver_21_wants_to_give_back_to_the_.md](science_article_22_Free_diver_21_wants_to_give_back_to_the_.md)
+2. **Rhine falls to record low levels as drought strains Europe's rivers**
+   - **Published:** Mon, 03 Aug 2026 16:27:43 GMT
+   - **Read Parallel Translation:** [science_article_22_Rhine_falls_to_record_low_levels_as_drou.md](science_article_22_Rhine_falls_to_record_low_levels_as_drou.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Scientist's lifelong obsession with mystery of elusive 'pink zebra' seaweed**
-   - **Published:** Fri, 31 Jul 2026 23:43:10 GMT
-   - **Read Parallel Translation:** [science_article_23_Scientists_lifelong_obsession_with_myste.md](science_article_23_Scientists_lifelong_obsession_with_myste.md)
+3. **'You can't describe the loss' - the reality of bovine TB on farmers**
+   - **Published:** Sun, 02 Aug 2026 23:00:07 GMT
+   - **Read Parallel Translation:** [science_article_23_You_cant_describe_the_loss_-_the_reality.md](science_article_23_You_cant_describe_the_loss_-_the_reality.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **England and Wales on course for driest July on record**
-   - **Published:** Fri, 31 Jul 2026 15:37:17 GMT
-   - **Read Parallel Translation:** [science_article_24_England_and_Wales_on_course_for_driest_J.md](science_article_24_England_and_Wales_on_course_for_driest_J.md)
+4. **Italy putting nearly all major cities on highest heat alert**
+   - **Published:** Sat, 01 Aug 2026 17:51:46 GMT
+   - **Read Parallel Translation:** [science_article_24_Italy_putting_nearly_all_major_cities_on.md](science_article_24_Italy_putting_nearly_all_major_cities_on.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **What your summer reading list says about you**
-   - **Published:** Fri, 31 Jul 2026 00:26:02 GMT
-   - **Read Parallel Translation:** [health_article_25_What_your_summer_reading_list_says_about.md](health_article_25_What_your_summer_reading_list_says_about.md)
+1. **Breast cancer checks missing most women under 50 who are at risk, says study**
+   - **Published:** Tue, 04 Aug 2026 01:08:13 GMT
+   - **Read Parallel Translation:** [health_article_25_Breast_cancer_checks_missing_most_women_.md](health_article_25_Breast_cancer_checks_missing_most_women_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Holidaymakers warned about 'explosive diarrhoea' cyclospora parasite infection**
-   - **Published:** Thu, 30 Jul 2026 11:10:02 GMT
-   - **Read Parallel Translation:** [health_article_26_Holidaymakers_warned_about_explosive_dia.md](health_article_26_Holidaymakers_warned_about_explosive_dia.md)
+2. **Woman has pioneering womb surgery to fix 'miracle' baby with intestines outside its body**
+   - **Published:** Mon, 03 Aug 2026 05:02:25 GMT
+   - **Read Parallel Translation:** [health_article_26_Woman_has_pioneering_womb_surgery_to_fix.md](health_article_26_Woman_has_pioneering_womb_surgery_to_fix.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Hundreds of thousands of women get morning-after pill via free pharmacy service**
-   - **Published:** Tue, 28 Jul 2026 00:14:41 GMT
-   - **Read Parallel Translation:** [health_article_27_Hundreds_of_thousands_of_women_get_morni.md](health_article_27_Hundreds_of_thousands_of_women_get_morni.md)
+3. **What your summer reading list says about you**
+   - **Published:** Fri, 31 Jul 2026 00:26:02 GMT
+   - **Read Parallel Translation:** [health_article_27_What_your_summer_reading_list_says_about.md](health_article_27_What_your_summer_reading_list_says_about.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Badenoch says PM must rule out tax rises to fund social care reform**
-   - **Published:** Sun, 26 Jul 2026 21:00:27 GMT
-   - **Read Parallel Translation:** [health_article_28_Badenoch_says_PM_must_rule_out_tax_rises.md](health_article_28_Badenoch_says_PM_must_rule_out_tax_rises.md)
+4. **Holidaymakers warned about 'explosive diarrhoea' cyclospora parasite infection**
+   - **Published:** Thu, 30 Jul 2026 11:10:02 GMT
+   - **Read Parallel Translation:** [health_article_28_Holidaymakers_warned_about_explosive_dia.md](health_article_28_Holidaymakers_warned_about_explosive_dia.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Burnham pledges to be 'relentless' in curbing small boat crossings**
-   - **Published:** Sun, 02 Aug 2026 21:18:26 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_pledges_to_be_relentless_in_curb.md](politics_article_29_Burnham_pledges_to_be_relentless_in_curb.md)
+1. **PC Harper's mother 'devastated' his killers set for early release under revised plans**
+   - **Published:** Tue, 04 Aug 2026 00:50:33 GMT
+   - **Read Parallel Translation:** [politics_article_29_PC_Harpers_mother_devastated_his_killers.md](politics_article_29_PC_Harpers_mother_devastated_his_killers.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Ballot paper for Clacton by-election is longest in British electoral history**
-   - **Published:** Sun, 02 Aug 2026 04:49:31 GMT
-   - **Read Parallel Translation:** [politics_article_30_Ballot_paper_for_Clacton_by-election_is_.md](politics_article_30_Ballot_paper_for_Clacton_by-election_is_.md)
+2. **France hits out at Reform UK plan to return migrants using Navy**
+   - **Published:** Mon, 03 Aug 2026 16:48:58 GMT
+   - **Read Parallel Translation:** [politics_article_30_France_hits_out_at_Reform_UK_plan_to_ret.md](politics_article_30_France_hits_out_at_Reform_UK_plan_to_ret.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Sir John Curtice: The 'Burnham bounce' is real but it's not massive**
-   - **Published:** Sat, 01 Aug 2026 09:13:00 GMT
-   - **Read Parallel Translation:** [politics_article_31_Sir_John_Curtice_The_Burnham_bounce_is_r.md](politics_article_31_Sir_John_Curtice_The_Burnham_bounce_is_r.md)
+3. **Farage says he discussed return to politics months before general election**
+   - **Published:** Mon, 03 Aug 2026 17:18:52 GMT
+   - **Read Parallel Translation:** [politics_article_31_Farage_says_he_discussed_return_to_polit.md](politics_article_31_Farage_says_he_discussed_return_to_polit.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Mayor says Burnham's new powers will change lives**
-   - **Published:** Sat, 01 Aug 2026 13:15:42 GMT
-   - **Read Parallel Translation:** [politics_article_32_Mayor_says_Burnhams_new_powers_will_chan.md](politics_article_32_Mayor_says_Burnhams_new_powers_will_chan.md)
+4. **Sir John Curtice: The 'Burnham bounce' is real but it's not massive**
+   - **Published:** Sat, 01 Aug 2026 09:13:00 GMT
+   - **Read Parallel Translation:** [politics_article_32_Sir_John_Curtice_The_Burnham_bounce_is_r.md](politics_article_32_Sir_John_Curtice_The_Burnham_bounce_is_r.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Ariana Grande to take a break from public life amid 'endless' scrutiny**
-   - **Published:** Sun, 02 Aug 2026 23:15:14 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Ariana_Grande_to_take_a_break_from_publi.md](entertainment_article_33_Ariana_Grande_to_take_a_break_from_publi.md)
+1. **Ariana Grande has had enough of body comments, but 'scrutiny' will linger**
+   - **Published:** Mon, 03 Aug 2026 23:25:14 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Ariana_Grande_has_had_enough_of_body_com.md](entertainment_article_33_Ariana_Grande_has_had_enough_of_body_com.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **New Spider-Man film sees second-biggest ever global opening weekend**
-   - **Published:** Mon, 03 Aug 2026 04:10:16 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_New_Spider-Man_film_sees_second-biggest_.md](entertainment_article_34_New_Spider-Man_film_sees_second-biggest_.md)
+2. **Comedian Jimmy Cricket dies aged 80**
+   - **Published:** Mon, 03 Aug 2026 17:31:53 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Comedian_Jimmy_Cricket_dies_aged_80.md](entertainment_article_34_Comedian_Jimmy_Cricket_dies_aged_80.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Massive Attack respond after Singapore ban over Palestine display**
-   - **Published:** Mon, 03 Aug 2026 01:31:05 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Massive_Attack_respond_after_Singapore_b.md](entertainment_article_35_Massive_Attack_respond_after_Singapore_b.md)
+3. **Newspaper columnist and broadcaster Rod Liddle dies aged 66**
+   - **Published:** Mon, 03 Aug 2026 13:35:45 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Newspaper_columnist_and_broadcaster_Rod_.md](entertainment_article_35_Newspaper_columnist_and_broadcaster_Rod_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Why Love Island fans are choosing the US edition: 'They actually fancy each other'**
-   - **Published:** Sat, 01 Aug 2026 23:46:48 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Why_Love_Island_fans_are_choosing_the_US.md](entertainment_article_36_Why_Love_Island_fans_are_choosing_the_US.md)
+4. **Huw Edwards criticised for entering festival poetry competition**
+   - **Published:** Mon, 03 Aug 2026 21:00:48 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Huw_Edwards_criticised_for_entering_fest.md](entertainment_article_36_Huw_Edwards_criticised_for_entering_fest.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

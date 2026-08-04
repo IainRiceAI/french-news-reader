@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>There's a reason child vaccination rates are falling - and it's not social media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>There's a reason child vaccination rates are falling - and it's not social media</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 03 Aug 2026 23:10:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c0qvlw2dd0no?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: As child immunisation rates fall across the UK, one clinic in west Yorkshire is taking aggressive steps to boost immunisations
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.5" data-end="14.62">
+            <p class="french-block">Il y a une raison pour laquelle les taux de vaccination des enfants diminuent – ​​et ce n'est pas à cause des réseaux sociaux</p>
+            <span class="english-block">There's a reason child vaccination rates are falling - and it's not social media</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.62" data-end="22.73">
+            <p class="french-block">Grayson, vingt semaines, aurait facilement pu devenir l'un des dizaines de milliers de bébés britanniques non vaccinés contre la polio.</p>
+            <span class="english-block">Twenty-week-old Grayson easily could have become one of the tens of thousands of British babies left unvaccinated against polio.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.73" data-end="47.18">
+            <p class="french-block">Sa mère, Lily, est d'accord avec le principe de la vaccination. Mais bouleversée par les premières semaines de maternité et souffrant de dépression post-partum après un accouchement traumatisant, elle était intimidée par la perspective d'un long voyage jusqu'à un cabinet médical. "J'ai traversé les tranchées, je suis resté éveillé toute la nuit. Vous ne voulez pas quitter la maison ou aller dans une autre ville."</p>
+            <span class="english-block">His mother, Lily, agrees with the principle of immunisation. But overwhelmed by the early weeks of motherhood, and suffering from post-partum depression after a traumatic birth, she was daunted by the prospect of a long journey to a doctor's surgery. "I've been through the trenches, awake all night. You don't want to leave the house, or go to a different town."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.18" data-end="65.33">
+            <p class="french-block">Les semaines passèrent et Grayson finit par rater les vaccins contre la polio et la diphtérie qu'il était censé recevoir à l'âge de huit semaines. À ce stade, il était officiellement classé par le NHS comme « en retard » pour la vaccination ; en fait, il figurait sur la liste des vilains médecins généralistes.</p>
+            <span class="english-block">Weeks ticked by, and eventually Grayson missed the polio and diptheria jabs he was supposed to get at eight weeks old. By that point he was officially classed by the NHS as "overdue" for vaccination; effectively, he was on his GP's naughty list.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.33" data-end="71.86">
+            <p class="french-block">Puis Lily réalisa qu'il y avait une clinique pratiquement à côté de sa porte – à un endroit auquel elle ne s'attendait pas.</p>
+            <span class="english-block">Then Lily realised there was a clinic practically on her doorstep - at a location she hadn't expected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.86" data-end="95.66">
+            <p class="french-block">Cette clinique - située à Keighley, dans le Yorkshire de l'Ouest - est située dans un magasin vacant du centre commercial Airedale, un quartier des années 1960 qui, selon les habitants, a connu des moments difficiles ces dernières années, avec de nombreux logements vides et fermés. Le personnel qui a créé la clinique s’est demandé : pourquoi ne pas utiliser l’une de ces unités vacantes pour administrer des vaccins ?</p>
+            <span class="english-block">That clinic - in Keighley, west Yorkshire - runs from a vacant retail unit at the Airedale shopping centre, a 1960s-era precinct that locals say has fallen on hard times in recent years, with plenty of empty, boarded-up units. The staff who created the clinic thought: why not use one of those vacant units to administer vaccines?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.66" data-end="108.89">
+            <p class="french-block">"C'était un magasin vide ; il n'y avait rien ici, les fenêtres étaient toutes occultées", me raconte Flora Jennings, une coordinatrice caritative locale, au milieu du rire d'un bébé, le matin de ma visite à la clinique.</p>
+            <span class="english-block">"This was an empty shop; there was nothing here, the windows were all blacked out," Flora Jennings, a local charity coordinator, tells me over the sound of a baby's laughter, on the morning I visit the clinic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.89" data-end="118.51">
+            <p class="french-block">Le Dr Zoyah Hussain dirige une clinique de vaccination sans rendez-vous au centre commercial Airedale, contribuant ainsi à augmenter les taux de vaccination de la région.</p>
+            <span class="english-block">Dr Zoyah Hussain leads a walk-in vaccination clinic at the Airedale shopping centre, helping to boost the area's immunisation rates</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.51" data-end="150.62">
+            <p class="french-block">C'est une solution imaginative à un problème national. Au cours des 15 dernières années, les taux de vaccination des enfants ont chuté partout en Grande-Bretagne. La part des enfants de cinq ans en Angleterre qui ont reçu un vaccin quatre en un (qui protège contre des virus comme la polio et le tétanos) est désormais de 81 %, contre 89 % en 2014. Environ 84 % ont reçu leurs deux vaccins ROR (rougeole, oreillons et rubéole) recommandés, contre 88 % il y a dix ans.</p>
+            <span class="english-block">It's an imaginative solution to a national problem. Over the last 15 years, childhood vaccination rates have fallen across Britain. The share of five-year-olds in England who have received a four-in-one jab (which protects against viruses like polio and tetanus) is now 81%, down from 89% in 2014. About 84% have received both of their recommended MMR (measles, mumps and rubella) jabs, down from 88% a decade ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.62" data-end="172.85">
+            <p class="french-block">"Si vous regardez simplement la population généralisée, le déclin ne semble pas horrible", déclare le professeur Dan Hungerford, épidémiologiste à l'Université de Liverpool qui a témoigné devant le Parlement sur ce sujet. "Mais si vous nous comparez à d'autres pays, en particulier à nos voisins européens, nous sommes l'un des pays les moins performants en termes de vaccination précoce des enfants."</p>
+            <span class="english-block">"If you just look at the generalised population, the decline doesn't look horrific," says Prof Dan Hungerford, an epidemiologist at the University of Liverpool who gave evidence to Parliament on this topic. "But if you compare us to other nations, particularly our European neighbours, we are one of the worst-performing countries in terms of getting early-life vaccinations to children."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.85" data-end="184.13">
+            <p class="french-block">Les politiciens se demandent maintenant comment la Grande-Bretagne – le pays d’Edward Jenner, le « père de l’immunologie » – a pu laisser ses taux de vaccination chuter si bas, et comment y remédier.</p>
+            <span class="english-block">Politicians are now asking how Britain - the country of Edward Jenner, the "father of immunology" - could have allowed its immunisation rates to drop so low, and what could fix it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.13" data-end="198.1">
+            <p class="french-block">Un député travailliste de la commission de la santé est allé plus loin, déclarant à la BBC qu'il était temps d'envisager une politique courante dans certains pays, mais qui reste quelque peu taboue en Grande-Bretagne : la vaccination obligatoire des enfants.</p>
+            <span class="english-block">One Labour MP on the Health Committee has gone further, telling the BBC that it's time to consider a policy that's commonplace in some countries, but still something of a taboo in Britain: mandatory childhood immunisations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.1" data-end="210.91">
+            <p class="french-block">Avant les années 1800, entre 40 et 50 % des enfants en Europe mouraient avant leur 15e anniversaire. Aujourd’hui, en Grande-Bretagne, ce chiffre est bien inférieur à 1 %, selon l’ONU.</p>
+            <span class="english-block">Before the 1800s, between 40% and 50% of children in Europe died before their 15th birthday. Now, in Britain that number is well below 1%, according to the UN.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.91" data-end="217.13">
+            <p class="french-block">Les scientifiques s’accordent largement sur le fait que les vaccins ont joué un rôle clé dans cette amélioration.</p>
+            <span class="english-block">Scientists broadly agree that vaccines were key to this improvement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.13" data-end="229.85">
+            <p class="french-block">"Avec l'eau potable et l'assainissement, la vaccination a eu un impact profond sur le maintien des enfants en vie", déclare Ben Kasstan-Dabush, maître de conférences en politique de santé mondiale à l'Université d'Édimbourg.</p>
+            <span class="english-block">"Along with clean water and sanitation, immunisations have had a profound impact on keeping children alive," says Ben Kasstan-Dabush, a lecturer in global health policy at the University of Edinburgh.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.85" data-end="245.98">
+            <p class="french-block">Et c’est pourquoi certains trouvent si inquiétant la baisse des taux britanniques. L'année dernière seulement, des épidémies de rougeole ont eu lieu dans certaines parties de Birmingham, Bristol et au nord de Londres ; Jusqu'à présent cette année, deux enfants en Angleterre sont morts de la maladie.</p>
+            <span class="english-block">And that's why some find it so worrying that Britain's rates have slipped. Last year alone saw measles outbreaks in parts of Birmingham, Bristol, and north London; so far this year, two children in England have died of the disease.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.98" data-end="252.38">
+            <p class="french-block">En janvier, les députés de la commission de la santé ont qualifié ce recul de « honte nationale ».</p>
+            <span class="english-block">In January, MPs on the Health Committee described the backslide as "national disgrace".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="252.38" data-end="270.17">
+            <p class="french-block">Certains accusent la montée de la désinformation sur les réseaux sociaux. L'année dernière, un groupe de scientifiques américains a découvert que la lecture d'un seul commentaire anti-vax sur Facebook à propos du vaccin contre le VPH - administré aux adolescents - suffisait à faire hésiter certains parents.</p>
+            <span class="english-block">Some blame the rise of misinformation on social media. Last year, a group of American scientists found that reading just one anti-vax Facebook comment about the HPV jab - given to teenagers - was enough to make some parents hesitate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.17" data-end="282.79">
+            <p class="french-block">Mais tous les experts en santé publique qui ont parlé à la BBC ont déclaré que même si le sentiment anti-vax sur les réseaux sociaux joue un rôle, ils ne pensent pas que ce soit la principale raison pour laquelle les taux de vaccination ont chuté.</p>
+            <span class="english-block">But all of the public health experts who spoke to the BBC said that whilst anti-vax social media sentiment plays its part, they don't think it's the main reason immunisation rates have slipped.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.79" data-end="293.98">
+            <p class="french-block">Au lieu de cela, ils soulignent quelque chose de plus banal : ils pensent que les parents de jeunes enfants ont tout simplement moins de contacts en face-à-face avec des professionnels de la santé qu’il y a 10 ou 15 ans.</p>
+            <span class="english-block">Instead, they point to something more mundane: they think that parents of young children simply have fewer face-to-face contacts with medical professionals than they did 10 or 15 years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.98" data-end="309.1">
+            <p class="french-block">Selon les scientifiques, la vaccination des enfants est l'une des principales raisons pour lesquelles la mortalité infantile a diminué au cours du 20e siècle. Ci-dessus, des enfants dans une clinique de vaccination du sud de Londres en 1956.</p>
+            <span class="english-block">Child vaccinations are a key reason infant mortality fell over the 20th Century, scientists say. Above, children at a south London vaccination clinic in 1956</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.1" data-end="335.14">
+            <p class="french-block">Beccy Baird, chercheur principal au groupe de réflexion King's Fund, affirme que malgré les reportages médiatiques colorés sur les « anti-vaccins », la plupart des parents qui refusent la vaccination n'y sont pas idéologiquement opposés. La commodité joue un grand rôle, dit-elle ; les taux de vaccination sont plus élevés lorsque les parents interagissent régulièrement avec des médecins, qui peuvent leur rappeler de faire vacciner leurs enfants et leur dire exactement où le faire.</p>
+            <span class="english-block">Beccy Baird, a senior fellow at the King's Fund think tank, says that despite colourful media reporting around "anti-vaxxers", most parents who turn down vaccination are not ideologically opposed to it. Convenience plays a big role, she says; vaccination rates are highest when parents regularly interact with medics, who can remind them to get their children jabbed and tell them exactly where to do it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.14" data-end="358.7">
+            <p class="french-block">Et ces interactions sont devenues plus rares. L'Angleterre a connu une baisse de 45 % au cours de la dernière décennie du nombre de visiteurs de santé (infirmières et sages-femmes qui soignent les jeunes enfants à leur domicile), selon une analyse de la BBC. Cela fait partie du travail d'un visiteur de santé de rappeler aux parents les vaccins et, dans certains cas, d'administrer les vaccins directement.</p>
+            <span class="english-block">And those interactions have become rarer. England has seen a 45% decline over the last decade in the number of health visitors (nurses and midwives who treat young children at their home), according to BBC analysis. It's part of a health visitor's job to remind parents about vaccines and, in some cases, administer jabs directly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="358.7" data-end="385.49">
+            <p class="french-block">Et sur à peu près la même période, le nombre de médecins généralistes pleinement formés en Angleterre a eu du mal à répondre à la demande croissante de patients, selon les données de la British Medical Association ; tandis que le groupe de réflexion Nuffield Trust suggère que les patients sont devenus moins susceptibles de consulter le même médecin généraliste lors de visites répétées, ce qui signifie que les familles n'établissent pas de relations de confiance avec les médecins qu'elles reconnaissent.</p>
+            <span class="english-block">And over roughly the same period, the number of fully trained GPs in England struggled to keep up with rising patient demand, according to British Medical Association data; while the Nuffield Trust think tank suggests that patients have become less likely to see the same GP on repeated visits - meaning families don't build trusted relationships with doctors they recognise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="385.49" data-end="390.46">
+            <p class="french-block">"Ces points de contact sont devenus moins nombreux", explique Kasstan-Dabush.</p>
+            <span class="english-block">"Those touch points have become fewer," says Kasstan-Dabush.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.46" data-end="397.94">
+            <p class="french-block">Au centre commercial Keighley's, à l'intérieur de la clinique de vaccination, des infirmières distribuent des biscuits.</p>
+            <span class="english-block">At Keighley's shopping centre, inside the vaccination clinic, nurses are passing around biscuits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="397.94" data-end="411.89">
+            <p class="french-block">"La cuisine est là, le parc est là", explique Jennings en montrant un jeu doux où les parents peuvent laisser leurs enfants pendant que leurs frères et sœurs sont vaccinés. "Je voulais que ce soit vraiment invitant, presque comme si vous entriez dans la maison de quelqu'un."</p>
+            <span class="english-block">"The kitchen's there, the playpen's there," says Jennings as she points to a soft-play where parents can leave children while their siblings are vaccinated. "I wanted it to be really inviting, almost like you're walking into someone's home."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="411.89" data-end="421.58">
+            <p class="french-block">L’idée d’ouvrir une clinique de vaccination dans une galerie marchande du centre-ville a semblé étrange à certains membres du personnel lorsqu’elle a été suggérée pour la première fois.</p>
+            <span class="english-block">The idea of opening a vaccination clinic inside a town centre shopping arcade seemed odd to some of the staff when it was first suggested.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="421.58" data-end="441.05">
+            <p class="french-block">Aujourd'hui, ils disent que c'est la clé du succès de la clinique. "Nous devons simplifier les choses, nous devons offrir des services là où les gens viennent", déclare Jennings. Cela signifie qu'ils peuvent attraper des acheteurs occasionnels qui « passent la tête par la porte » et décident sur un coup de tête de faire vacciner leur enfant.</p>
+            <span class="english-block">Now, they say it's key to the clinic's success. "We need to make it simple, we need to put services where people come," says Jennings. It means they can catch casual shoppers who "pop their head around the door" and decide on a whim to get their child vaccinated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="441.05" data-end="455.47">
+            <p class="french-block">"Nous sommes en plein centre. Et ici, c'est plat, donc vous n'avez pas besoin de pousser une poussette pour gravir une colline." Elle dit que certains parents ne se rendront tout simplement pas à une clinique si celle-ci implique plus d'un autobus.</p>
+            <span class="english-block">"We're right in the centre. And down here it's flat, so you don't have to push a pram up a hill." She says some parents simply won't attend a clinic if it involves more than one bus.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="455.47" data-end="480.24">
+            <p class="french-block">Et dans les familles viennent. Dans la matinée, la clinique vaccine 10 nourrissons, dont certains sont classés par le NHS comme « en retard ». Dans de nombreux cas, les parents se présentent pour utiliser un service différent, comme la pesée de bébé, mais une fois à l'intérieur, le médecin généraliste en chef, le Dr Zoyah Hussain, suggère gentiment une vaccination - et la plupart des parents disent oui.</p>
+            <span class="english-block">And in the families come. Over the morning, the clinic vaccinates 10 infants, some of whom are classed by the NHS as "overdue". In many cases, the parents actually turn up  to use a different service, like baby weighing, but once they are inside, lead GP Dr Zoyah Hussain gently suggests an immunisation - and most parents say yes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="480.24" data-end="489.62">
+            <p class="french-block">"Je reçois beaucoup de questions… 'Pourquoi devons-nous leur donner des vaccins ?', 'Pourquoi ne laissons-nous pas simplement la nature se gérer elle-même ?'", dit Hussain.</p>
+            <span class="english-block">"I do get a lot of questions… 'why do we need to give them jabs?',  'why don't we just let nature manage itself?'," Hussain says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="489.62" data-end="512.21">
+            <p class="french-block">Il y a Lily, la jeune femme de 18 ans qui fait enfin vacciner son fils Grayson contre la polio et la diphtérie. Et il y a Keeley, une assistante dans un magasin de céramique, qui arrive avec son bébé Luca et est impressionnée par la commodité de la clinique, sans avoir besoin d'un appel téléphonique à 8h00 ou d'un formulaire en ligne compliqué. "C'est très simple", dit-elle.</p>
+            <span class="english-block">There's Lily, the 18-year-old who finally gets her son Grayson his polio and diphtheria jabs. And there's Keeley, an assistant in a ceramics shop, who arrives with her baby Luca, and is impressed by the clinic's convenience, with no need for an 08:00 phone call or complicated online form. "It's easy-peasy," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="512.21" data-end="536.76">
+            <p class="french-block">La plupart des jeunes mères ont découvert des publications anti-vax en ligne. "Je vois ces choses sur Facebook où l'on dit de ne pas donner de vaccins à votre enfant parce qu'il souffre de TDAH", explique Lily. En effet, Hussain dit qu'elle entend encore des parents demander si le vaccin ROR provoque l'autisme, 28 ans après qu'un lien ait été suggéré dans un article désormais discrédité de l'ancien médecin Andrew Wakefield.</p>
+            <span class="english-block">Most of the young mothers have come across online anti-vax posts. "I see these things on Facebook where it's like, don't give your child vaccines because it's got ADHD in them," says Lily. Indeed, Hussain says she still hears parents asking if the MMR jab causes autism, a full 28 years after a link was suggested in a now-discredited paper by the former doctor Andrew Wakefield.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="536.76" data-end="563.5">
+            <p class="french-block">La clinique – qui dessert une communauté relativement pauvre – a vacciné des centaines de nourrissons depuis 2023, contribuant ainsi à accroître la couverture dans une zone qui a historiquement eu un faible taux de vaccination. Depuis mars de cette année, 88 % des enfants inscrits auprès de Modality AWC (le cabinet généraliste qui gère la clinique) reçoivent désormais leur première dose de ROR à l'âge de 18 mois, contre 78 % il y a trois ans.</p>
+            <span class="english-block">The clinic - which serves a relatively poor community - has vaccinated hundreds of infants since 2023, helping to boost coverage in an area that's historically had a low rate of immunisations. As of March this year, 88% of the children registered with Modality AWC (the GP practice that runs the clinic) now receive their first MMR dose by the age of 18 months, up from 78% three years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="563.5" data-end="570.89">
+            <p class="french-block">"Nous allons à l'encontre de cette tendance nationale", déclare Bill Graham, administrateur principal du cabinet.</p>
+            <span class="english-block">"We are bucking that national trend," says Bill Graham, a senior administrator at the practice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="570.89" data-end="576.58">
+            <p class="french-block">Alors, que peut-on faire pour lutter contre la baisse des taux de vaccination dans le reste du pays ?</p>
+            <span class="english-block">So what can be done about falling vaccination rates across the rest of the country?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="576.58" data-end="591.7">
+            <p class="french-block">Une option consiste à imiter le modèle Keighley et à ouvrir des cliniques sans rendez-vous dans les unités commerciales vacantes. Jennings affirme qu'il existe dans tout le pays des centres commerciaux en ruine, touchés par les achats en ligne, qui pourraient faire l'affaire.</p>
+            <span class="english-block">One option is to emulate the Keighley model, and open walk-in clinics in vacant retail units. Jennings argues there are crumbling shopping centres all over the country, hit by online shopping, that could do the job.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="591.7" data-end="619.7">
+            <p class="french-block">Baird, du King's Fund, convient que la vaccination fonctionne mieux lorsqu'elle est effectuée dans de petits lieux locaux faciles d'accès - comme les centres commerciaux - plutôt que dans de grands centres de vaccination intimidants qui pourraient impliquer un long voyage. Dans un article, elle a étudié le déploiement des vaccins Covid dans le Gloucestershire – et a découvert que « les vaccins livrés localement via… des lieux communautaires familiers – au lieu de centres de vaccination de masse – rendaient l’accès plus facile et plus fiable ».</p>
+            <span class="english-block">Baird, from the King's Fund, agrees that vaccination works best when it's carried out in small, easy-to-access local venues - like shopping centres - rather than large, intimidating vaccine hubs that might involve a long journey. In a paper, she studied the roll-out of Covid vaccines in Gloucestershire - and found that "vaccines delivered locally through… familiar community venues - instead of mass-vaccination centres - made access easier, more trusted".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="619.7" data-end="624.34">
+            <p class="french-block">Elle dit : "Si vous le mettez dans le parking Tesco, les gens l'auront."</p>
+            <span class="english-block">She says: "If you put it in Tesco car park, people will get it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="624.34" data-end="648.05">
+            <p class="french-block">Mais certains experts sont sceptiques. Même si des programmes comme celui de Keighley peuvent aider à la marge, affirment-ils, une réponse bien plus importante est nécessaire au niveau national. Hungerford affirme que la pauvreté des enfants est un facteur clé du refus de se faire vacciner ; Les parents qui doivent se soucier des factures n'ont souvent pas l'espace cérébral nécessaire pour penser aux vaccinations, dit-il.</p>
+            <span class="english-block">But some experts are sceptical. Whilst schemes like Keighley's can help on the margins, they say, at the national level a much bigger answer is needed. Hungerford says that child poverty is a key driver of vaccine refusal; parents who have to worry about bills often don't have the brain space to think about immunisations, he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="648.05" data-end="651.41">
+            <p class="french-block">Et certains poussent à des solutions plus radicales.</p>
+            <span class="english-block">And some are pushing for more radical solutions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="651.41" data-end="673.56">
+            <p class="french-block">La députée travailliste Paulette Hamilton, ancienne infirmière qui a récemment été présidente par intérim de la commission parlementaire de la santé, a déclaré à la BBC qu'il était temps d'avoir une « conversation nationale » sur la question de savoir si la vaccination des enfants devrait être « opt-out » plutôt que « opt-in » (bien qu'elle souligne qu'elle ne parle pas au nom de la commission).</p>
+            <span class="english-block">Labour MP Paulette Hamilton, a former nurse who was recently interim chair of Parliament's Health Committee, tells the BBC it's time for a "national conversation" on whether child vaccinations should be "opt out" rather than "opt in" (though she stresses she is not speaking on behalf of the committee).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="673.56" data-end="696.65">
+            <p class="french-block">"Nous étions un pays exempt de certaines de ces maladies infantiles, et maintenant la situation devient vraiment grave", dit-elle. "La conversation devrait porter sur la question suivante : recevez-vous un petit paiement [pour faire vacciner votre enfant] ? Le rendez-vous obligatoire, donc vous vous désengagez plutôt que de vous inscrire ? Est-ce que nous avons besoin de plus d'éducation ?".</p>
+            <span class="english-block">"We were a country that was free of some of these childhood illnesses, and now it's just getting really bad," she says. "The conversation should be about, do you get a small payment [for getting your child vaccinated]? Do you make it mandatory, so you opt out rather than opt in? Is it that we need more education?."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="696.65" data-end="727.3">
+            <p class="french-block">Elle n'a pas précisé à quoi ressemblerait une politique de « non-participation », mais plusieurs États américains l'appliquent déjà. Au Texas, un enfant a besoin de certains vaccins pour aller à l'école, à moins que ses parents ne remplissent un formulaire émis par le gouvernement expliquant une exemption morale, religieuse ou médicale. Les partisans affirment que ces politiques ciblent les « refusniks occasionnels » – des gens qui ne sont pas particulièrement opposés à la vaccination, mais qui ne font tout simplement pas l’effort de faire vacciner leur enfant.</p>
+            <span class="english-block">She didn't specify what an "opt out" policy would look like, but various US states already do it. In Texas, a child needs certain vaccinations to attend school, unless their parent fills out a government-issued form explaining a moral, religious, or medical exemption. Supporters say these policies capture the "casual refuseniks" - people who aren't particularly opposed to vaccination, but simply don't make the effort to get their child jabbed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="727.3" data-end="738.5">
+            <p class="french-block">Andrew Wakefield a été radié du registre médical en 2010, à la suite d'une controverse autour de son article universitaire de 1998 liant le vaccin ROR à l'autisme.</p>
+            <span class="english-block">Andrew Wakefield was struck off the medical register in 2010, following controversy over his 1998 academic paper linking the MMR jab with autism</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="738.5" data-end="756.31">
+            <p class="french-block">D'autres endroits vont plus loin. En Allemagne, les parents peuvent être condamnés à une amende si leurs enfants ne sont pas vaccinés contre la rougeole. En vertu de la politique australienne « pas de vaccin, pas de salaire », les parents qui refusent les vaccinations se voient refuser certains avantages.</p>
+            <span class="english-block">Other places go further. In Germany, parents can be fined if their children aren't jabbed against measles. Under Australia's "no jab, no pay" policy, parents who refuse immunisations are denied certain benefits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="756.31" data-end="773.45">
+            <p class="french-block">Mais ces politiques dures et coercitives laissent certains mal à l’aise. "La vaccination obligatoire a été abandonnée au Royaume-Uni pour de bonnes raisons", déclare Hungerford. D'une part, pense-t-il, « vous risquez d'exclure les personnes vulnérables de choses comme la garde d'enfants ».</p>
+            <span class="english-block">But those tough, coercive policies leave some uncomfortable. "Mandatory vaccination has been steered away from in the UK for good reason," says Hungerford. For one thing, he thinks, "you risk excluding vulnerable people from things like childcare."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="773.45" data-end="783.62">
+            <p class="french-block">D’autres affirment qu’interdire l’accès à l’école aux enfants non vaccinés ne fera qu’éloigner davantage leurs parents des soins de santé, amplifiant ainsi leur méfiance à l’égard de l’autorité.</p>
+            <span class="english-block">Others say that barring unvaccinated children from school is only likely to alienate their parents further from healthcare, amplifying their mistrust of authority.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="783.62" data-end="806.83">
+            <p class="french-block">Au centre commercial Keighley, Bill Graham dit qu'il ne pense pas qu'une approche obligatoire fonctionnerait dans son coin du Yorkshire. "Je pense que cela détruit la confiance. Les soins de santé en Grande-Bretagne sont basés sur la confiance. Peut-être que la confiance n'est plus tout à fait la même qu'elle était il y a 10 ou 15 ans, mais nous n'allons pas la renforcer en rendant les soins de santé obligatoires."</p>
+            <span class="english-block">At the Keighley shopping centre, Bill Graham says he doesn't think a mandatory approach would work in his corner of Yorkshire. "I think it destroys trust. Healthcare in Britain is based on trust. Maybe the trust isn't quite where it was again 10, 15 years ago, but we're not going to build that up by mandating healthcare."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="806.83" data-end="814.32">
+            <p class="french-block">Cela dit, les experts soulignent qu’il existe encore un certain mystère autour du problème de la vaccination en Grande-Bretagne.</p>
+            <span class="english-block">All that said, experts stress that there's still a degree of mystery about Britain's vaccination problem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="814.32" data-end="825.17">
+            <p class="french-block">Certains parents qui refusent les injections ne diront tout simplement pas pourquoi – et ce sont les mêmes groupes (pauvres, avec un niveau d’éducation inférieur) qu’il est difficile d’atteindre via des enquêtes.</p>
+            <span class="english-block">Some parents who refuse jabs simply won't say why - and they're the same groups (poor, lower levels of educational attainment) who are hard to reach via surveys.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="825.17" data-end="843.82">
+            <p class="french-block">Cela se manifeste vers la fin de ma matinée à la clinique, lorsqu'un couple d'une trentaine d'années arrive pour faire peser leur bébé. Hussain remarque rapidement que leur enfant de 23 semaines n'a reçu aucun des vaccins recommandés – et demande s'ils pourraient l'envisager. Le couple se regarde et secoue doucement la tête.</p>
+            <span class="english-block">This becomes apparent towards the end of my morning at the clinic, when a couple in their thirties arrive to have their baby weighed. Hussain quickly notices that their 23-week-old hasn't had any of his recommended jabs - and asks if they might consider it. The couple glance at each other and quietly shake their heads.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="843.82" data-end="849.36">
+            <p class="french-block">Ils ne donnent pas de raison et refusent ma demande d'entretien (les seuls parents à le faire).</p>
+            <span class="english-block">They don't give a reason, and they turn down my request for an interview (the only parents who do so).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="849.36" data-end="861.1">
+            <p class="french-block">Hussain espère néanmoins que leur conversation aura pu semer une graine. "Je lui ai envoyé des informations. Leur donner une plateforme pour exprimer leurs préoccupations peut aider.</p>
+            <span class="english-block">Still, Hussain hopes their conversation might have planted a seed. "I've sent her some information. Giving them a platform to speak about their concerns can help.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="861.1" data-end="866.16">
+            <p class="french-block">"Il ne s'agit pas d'imposer cela à qui que ce soit. C'est un choix."</p>
+            <span class="english-block">"It's not us forcing it on anyone. This is a choice."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="866.16" data-end="869.42">
+            <p class="french-block">Crédit image du haut : Getty Images.</p>
+            <span class="english-block">Top image credit: Getty Images.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="869.42" data-end="876.29">
+            <p class="french-block">La dentisterie du NHS est en train de pourrir. Le plan pour y remédier fonctionnera-t-il ?</p>
+            <span class="english-block">NHS dentistry is rotting. Will the plan to fix it work?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="876.29" data-end="882.65">
+            <p class="french-block">J'ai passé des mois à essayer de savoir si améliorer ma santé intestinale pourrait m'aider à mieux vieillir</p>
+            <span class="english-block">I spent months trying to find out if boosting my gut health could help me age better</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="882.65" data-end="889.2">
+            <p class="french-block">Ce que le NHS peut apprendre du pays européen qui a aidé davantage de personnes à survivre au cancer</p>
+            <span class="english-block">What the NHS can learn from the European country that helped more people survive cancer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="889.2" data-end="893.59">
+            <p class="french-block">Êtes-vous personnellement touché par les problèmes soulevés dans cette histoire ?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_4.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

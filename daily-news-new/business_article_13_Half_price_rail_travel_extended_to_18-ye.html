@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half price rail travel extended to 18-year-olds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Half price rail travel extended to 18-year-olds</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 03 Aug 2026 23:34:13 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cy0jyln07r7o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: They'll be able to buy the 16-17 Saver railcard up until the day before they turn 18.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.72" data-end="19.56">
+            <p class="french-block">Les jeunes de 18 ans pourront acheter des billets de train à moitié prix pour la plupart des services lorsque les règles relatives aux cartes ferroviaires seront modifiées plus tard ce mois-ci, a annoncé le ministère des Transports (DfT).</p>
+            <span class="english-block">Eighteen-year-olds will be able to buy half price train tickets for most services when railcard rules are changed later this month, the Department for Transport (DfT) has announced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.56" data-end="32.88">
+            <p class="french-block">Il s'agit d'une extension de la carte ferroviaire Saver 16-17 qui expire actuellement lorsque le titulaire atteint l'âge de 18 ans. À partir du 17 août, elle sera valable une année complète à compter de la date d'achat.</p>
+            <span class="english-block">It's an extension of the 16-17 Saver railcard which currently expires when the holder turns 18. From 17 August, they will be valid for a full year from the date of purchase.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.88" data-end="42.22">
+            <p class="french-block">Cela signifie que les jeunes de 17 ans pourront acheter la carte ferroviaire jusqu'à la veille de leurs 18 ans, ce qui la rendra valable jusqu'à la veille de leurs 19 ans.</p>
+            <span class="english-block">It means 17-year-olds will be able to buy the railcard up until the day before they turn 18, making it valid until the day before they turn 19.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.22" data-end="56.76">
+            <p class="french-block">La règle existante signifie que plus de 70 000 étudiants chaque année se retrouvent en moyenne 175 £ dans une situation pire que ceux de la même année universitaire qui n'ont pas encore fêté leur 18e anniversaire, a déclaré le DfT.</p>
+            <span class="english-block">The existing rule meant more than 70,000 students each year were an average of £175 worse off than those in the same academic year who hadn't yet had their 18th birthday, the DfT said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.76" data-end="65.3">
+            <p class="french-block">La 16-17 Saver Railcard coûte 35 £ par an et donne droit à 50 % de réduction sur la plupart des tarifs de train.</p>
+            <span class="english-block">The 16-17 Saver Railcard costs £35 per year and entitles the holder to 50% off most train fares.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.3" data-end="75.48">
+            <p class="french-block">Le ministre des Chemins de fer, Lord Hendy, a affirmé que ce « changement de bon sens » était « exactement ce que les passagers devraient attendre du chemin de fer ».</p>
+            <span class="english-block">Rail minister Lord Hendy claimed this "common sense change" is "exactly what passengers should expect from the railway".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.48" data-end="87.5">
+            <p class="french-block">Il a déclaré que ce changement « réduirait le coût des déplacements à un moment critique pour les adolescents, qu'ils poursuivent leurs études, qu'ils suivent une voie professionnelle ou qu'ils trouvent leur place sur le marché du travail ».</p>
+            <span class="english-block">He said the change would "lower the cost of travel at a critical time for teenagers, whether they're pursuing further education, vocational pathways or getting their footing in the jobs market".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.5" data-end="100.7">
+            <p class="french-block">Jacqueline Starr, directrice générale de l'organisme industriel Rail Delivery Group, a déclaré que ce changement démontre l'engagement du secteur à « offrir des tarifs plus avantageux et à fournir un chemin de fer plus intégré ».</p>
+            <span class="english-block">Jacqueline Starr, chief executive of industry body the Rail Delivery Group, said the change demonstrates the sector's commitment to "offering better value fares and delivering a more joined-up railway".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.7" data-end="114.17">
+            <p class="french-block">Kaynat Ahmad, vice-président de l'enseignement supérieur au Syndicat national des étudiants, a décrit la carte ferroviaire comme "essentielle pour les jeunes qui dépendent du train pour se rendre à l'université, travailler ou suivre une formation".</p>
+            <span class="english-block">Kaynat Ahmad, vice president for further education at the National Union of Students, described the railcard as "essential for young people reliant on trains to get to college, work or training".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.17" data-end="123.19">
+            <p class="french-block">Les jeunes de dix-huit ans avaient déjà droit à une carte ferroviaire 16-25, mais celle-ci ne leur donne droit qu'à un tiers de réduction sur le prix du voyage.</p>
+            <span class="english-block">Eighteen-year-olds were already entitled to a 16-25 Railcard, but that only entitles them to a third off the cost of travel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.19" data-end="134.21">
+            <p class="french-block">Cette annonce intervient après que le gouvernement a annoncé que le plafond de la plupart des tarifs de bus simples en Angleterre serait réduit de 3 £ à 2 £ l'année prochaine.</p>
+            <span class="english-block">The announcement comes after the government said the cap on most single bus fares in England will be cut from £3 to £2 next year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.21" data-end="140.83">
+            <p class="french-block">Utiliserez-vous une carte ferroviaire 16-17 à 18 ans et combien d’argent cela vous fera-t-il économiser ?</p>
+            <span class="english-block">Will you use a 16-17 railcard when you're 18 and how much money will it save you?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_13.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

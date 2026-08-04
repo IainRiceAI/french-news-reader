@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What your summer reading list says about you</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>What your summer reading list says about you</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 31 Jul 2026 00:26:02 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cd69glgl2jzo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Just picked your holiday book? Our choices can subconsciously reveal important parts of our personality, studies show.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="5.66" data-end="8.54">
+            <p class="french-block">Plongez dans un bon livre cet été</p>
+            <span class="english-block">Dive into a good book this summer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="8.54" data-end="21.98">
+            <p class="french-block">Cela fait des mois que vous rêvez de ces vacances d'été sur le transat, un livre dans une main et un verre dans l'autre. Désormais, la course vers la porte d'entrée de l'aéroport, la gare ou les heures de route sont tout ce qui vous gêne.</p>
+            <span class="english-block">You've been dreaming about that summer break on the sun lounger, book in one hand and drink in the other, for months. Now the dash to the airport gate, train station or hours-long drive is all that stands in your way.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.98" data-end="26.23">
+            <p class="french-block">Mais que dit de vous le livre que vous venez de glisser dans votre valise ?</p>
+            <span class="english-block">But what does the book you've just shoved in your suitcase say about you?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="26.23" data-end="39.38">
+            <p class="french-block">"Ce n'est certainement pas un choix aléatoire", déclare Edgar Dubourg, chercheur en sciences cognitives à l'École Normale Supérieure de Paris. "Votre liste de lecture est essentiellement une carte de votre personnalité.</p>
+            <span class="english-block">"It's definitely not a random choice," says Edgar Dubourg, a cognitive scientist at the École Normale Supérieure in Paris. "Your reading list is basically a map of your personality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.38" data-end="52.13">
+            <p class="french-block">"Lorsque vous choisissez un thriller, une romance, une horreur ou une science-fiction, vous n'échappez pas à votre psychologie, d'une certaine manière, vous ressentez vraiment des parties très intuitives et très anciennes de votre cerveau.</p>
+            <span class="english-block">"When you pick a thriller or romance or horror or science fiction you're not escaping your psychology, in a way, you're really feeling very intuitive and very old parts of your brain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.13" data-end="59.83">
+            <p class="french-block">"La fiction n'invente pas de nouvelles émotions en vous. Elle fait pression sur des motivations préexistantes comme les instincts."</p>
+            <span class="english-block">"Fiction isn't inventing new emotions in you. It's pressing on those pre-existing motivations like instincts."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.83" data-end="70.49">
+            <p class="french-block">Des études ont montré que nos choix de livres peuvent inconsciemment révéler des parties importantes de notre personnalité, notamment ce qui nous procure du plaisir et ce qui nous fait ressentir de l'émotion.</p>
+            <span class="english-block">Studies have shown that our book choices can subconsciously reveal important parts of our personality - including what gives us pleasure and what makes us feel emotion.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.49" data-end="85.58">
+            <p class="french-block">Les recherches du Dr Valerie van Mulukom, maître de conférences en psychologie à l'Université Oxford Brookes, suggèrent que nos angoisses intérieures (ou ce qu'elle appelle les insécurités existentielles) déterminent le livre que nous choisissons dans les étagères.</p>
+            <span class="english-block">Research by Dr Valerie van Mulukom, a senior lecturer in psychology at Oxford Brookes University, suggests that our inner anxieties (or what she calls existential insecurities) determine which book we pick from the shelf.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.58" data-end="94.56">
+            <p class="french-block">Au cours de son étude, elle a utilisé la fréquence à laquelle une personne pourrait s'engager dans un certain genre pour le faire correspondre à l'un des quatre groupes suivants :</p>
+            <span class="english-block">During her study, she used how often someone might engage with a certain genre to match it up with one of the following four clusters:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.56" data-end="102.79">
+            <p class="french-block">Aventures épiques d'un autre monde (action, aventure, science-fiction, dystopique/post-apocalyptique, fantastique)</p>
+            <span class="english-block">Epic other-world adventures (action, adventure, science fiction, dystopian/post-apocalyptic, fantasy)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.79" data-end="109.73">
+            <p class="french-block">Vie quotidienne et relations humaines (comédie, romantique, drame, familial, musical)</p>
+            <span class="english-block">Everyday life and human relationships (comedy, romantic, drama, family, musical)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.73" data-end="115.3">
+            <p class="french-block">Menace et danger (véritable crime, crime/mystère/thriller, horreur)</p>
+            <span class="english-block">Threat and danger (true crime, crime/mystery/thriller, horror)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.3" data-end="120.12">
+            <p class="french-block">Faits et histoires (documentaire, biographie, historique)</p>
+            <span class="english-block">Facts and histories (documentary, biography, historical)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.12" data-end="125.81">
+            <p class="french-block">Mais que veulent-ils dire ? Et comment correspondent-elles à nos propres anxiétés ?</p>
+            <span class="english-block">But what do they mean? And how do they match up with our own anxieties?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.81" data-end="133.49">
+            <p class="french-block">Si, comme moi, vous aimez les romans policiers, cela suggère que vous êtes préoccupé – ou intrigué par – la menace et le danger.</p>
+            <span class="english-block">If, like me, you're big on crime novels, then this suggests you're concerned with - or intrigued by - threat and danger.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.49" data-end="145.03">
+            <p class="french-block">Cela ne se limite pas aux romans policiers à l'ancienne ou aux thrillers psychologiques, mais peut aller des véritables histoires de crime et d'espionnage aux horreurs surnaturelles comme les œuvres des livres de Stephen King.</p>
+            <span class="english-block">This isn't just limited to old-fashioned detective novels or psychological thrillers, but can be anything from true crime and spy stories to supernatural horrors like the works of Stephen King's books.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.03" data-end="154.3">
+            <p class="french-block">Les listes de best-sellers britanniques contiennent une gamme de titres qui appartiennent à la catégorie « menace et danger » définie par la recherche, notamment :</p>
+            <span class="english-block">The UK bestseller lists have a range of titles that sit in the "threat and danger" category defined by the research, including:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.3" data-end="157.87">
+            <p class="french-block">Le Secret des Secrets de Dan Brown (Pingouin)</p>
+            <span class="english-block">The Secret of Secrets by Dan Brown (Penguin)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.87" data-end="161.47">
+            <p class="french-block">L'ami de la famille de Claire Douglas (Pingouin)</p>
+            <span class="english-block">The Family Friend by Claire Douglas (Penguin)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.47" data-end="165.67">
+            <p class="french-block">La chute de Londres de Patrick Radden Keefe (Picador)</p>
+            <span class="english-block">London Falling by Patrick Radden Keefe (Picador)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.67" data-end="179.76">
+            <p class="french-block">Pendant ce temps, si la romance lascive est plus votre truc (pas vraiment le mien), alors vos insécurités sont plus susceptibles de concerner vos relations, à la fois romantiques et platoniques, et vos réflexions sur le statut social et la réputation.</p>
+            <span class="english-block">Meanwhile, if lustful romance is more your thing (very much not mine), then your insecurities are more likely to be about your relationships, both romantic and platonic, and your thoughts on social status and reputation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.76" data-end="189.62">
+            <p class="french-block">Les listes de best-sellers britanniques comprennent une gamme de titres qui appartiennent à la catégorie « Vie quotidienne et relations humaines » définie par la recherche, notamment :</p>
+            <span class="english-block">The UK bestseller lists have a range of titles that sit in the "everyday life and human relationships" category defined by the research, including:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.62" data-end="193.44">
+            <p class="french-block">Le correspondant de Virginia Evans (Pingouin)</p>
+            <span class="english-block">The Correspondent by Virginia Evans (Penguin)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.44" data-end="196.56">
+            <p class="french-block">Les noms de Florence Knapp (Phoenix)</p>
+            <span class="english-block">The Names by Florence Knapp (Phoenix)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.56" data-end="199.97">
+            <p class="french-block">Heartstopper Tome 6 d'Alice Oseman (Hodder)</p>
+            <span class="english-block">Heartstopper Volume 6 by Alice Oseman (Hodder)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.97" data-end="207.55">
+            <p class="french-block">À l’opposé, quelqu’un qui aime les romans de science-fiction ou de fantasy a tendance à se préoccuper davantage de l’état du monde.</p>
+            <span class="english-block">At the opposite end, someone who likes science fiction or fantasy novels tends to be more concerned with the state of the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.55" data-end="222.74">
+            <p class="french-block">Si vous passez enfin vos vacances d'été à lire les romans de Game of Thrones, connus pour mélanger intrigues politiques et batailles médiévales avec des histoires de dragons et d'armées de morts-vivants, alors vous êtes probablement quelqu'un qui s'inquiète du changement climatique ou de la menace de guerre.</p>
+            <span class="english-block">If you're spending your summer holiday finally reading the Game of Thrones novels, known for mixing political intrigue and medieval battles with tales of dragons and undead armies, then you're likely to be someone who worries about climate change or the threat of war.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.74" data-end="232.75">
+            <p class="french-block">Les listes de best-sellers britanniques contiennent une gamme de titres qui appartiennent à la catégorie « aventures épiques d'un autre monde » définie par la recherche, notamment :</p>
+            <span class="english-block">The UK bestseller lists have a range of titles that sit in the "epic other-world adventures" category defined by the research, including:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.75" data-end="236.98">
+            <p class="french-block">Duskbound de Bree Grenwich et Parker Lennox (Pingouin)</p>
+            <span class="english-block">Duskbound by Bree Grenwich and Parker Lennox (Penguin)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="236.98" data-end="241.8">
+            <p class="french-block">Red Dwarf : Titan de Rob Grant et Andrew Marshall (Gollancz)</p>
+            <span class="english-block">Red Dwarf: Titan by Rob Grant and Andrew Marshall (Gollancz)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.8" data-end="246.5">
+            <p class="french-block">Enflammer une fleur sauvage par Sarah A Parker (HarperVoyager)</p>
+            <span class="english-block">To Flame a Wild Flower by Sarah A Parker (HarperVoyager)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="246.5" data-end="261.65">
+            <p class="french-block">Pour moi, la lecture de vacances est un travail sérieux. Lors de mon dernier voyage à l'étranger, j'ai pris huit livres pour des vacances de trois semaines, allant de l'épopée de science-fiction Dune de Frank Herbert au film noir de James Ellroy, The Black Dahlia.</p>
+            <span class="english-block">For me, holiday reading is serious work. On my last trip abroad, I took eight books for a three-week holiday, ranging from Frank Herbert's sci-fi epic Dune to James Ellroy's noir throwback The Black Dahlia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.65" data-end="269.62">
+            <p class="french-block">Mais tout le monde n’aime pas disparaître dans des mondes fictifs. Et si vous préfériez les autobiographies ou les livres sur l’histoire ?</p>
+            <span class="english-block">But not everyone likes disappearing off into fictional worlds. What if autobiographies or books about history are more your thing?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.62" data-end="276.38">
+            <p class="french-block">Selon le Dr Dubourg, ce sont les récits qui sont importants, pas nécessairement qu'ils soient réels ou fictifs.</p>
+            <span class="english-block">Dr Dubourg says it is narratives that are important, not necessarily whether they're fact or fiction.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.38" data-end="284.81">
+            <p class="french-block">"Tout le monde consomme des récits, que ce soit sous forme d'actualités réelles, d'anecdotes, d'histoires que les gens racontent dans les quartiers."</p>
+            <span class="english-block">"Everybody consumes narratives, be it in the form of actual news, of anecdotes, of stories that people tell in neighbourhoods."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.81" data-end="294.02">
+            <p class="french-block">Les listes de best-sellers britanniques contiennent une gamme de titres qui appartiennent à la catégorie « faits et histoire » définie par la recherche, notamment :</p>
+            <span class="english-block">The UK bestseller lists have a range of titles that sit in the "facts and history" category defined by the research, including:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.02" data-end="299.35">
+            <p class="french-block">Changement de régime par Maggie Haberman et Jonathan Swan (Simon & Schuster)</p>
+            <span class="english-block">Regime Change by Maggie Haberman and Jonathan Swan (Simon & Schuster)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="299.35" data-end="303.26">
+            <p class="french-block">Mère Marie vient à moi par Arundhati Roy (Pingouin)</p>
+            <span class="english-block">Mother Mary Comes to Me by Arundhati Roy (Penguin)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.26" data-end="306.91">
+            <p class="french-block">Des gens insouciants de Sarah Wynn-Williams (Pan)</p>
+            <span class="english-block">Careless People by Sarah Wynn-Williams (Pan)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="306.91" data-end="316.85">
+            <p class="french-block">Ainsi, la prochaine fois que vous lirez un livre, ce que vous pensez être quelque chose de vaguement intéressant pourrait en fait constituer une partie importante de votre psychologie.</p>
+            <span class="english-block">So next time you pick up a book, what you think is just something vaguely interesting might actually make up an important part of your psychology.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_27.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
