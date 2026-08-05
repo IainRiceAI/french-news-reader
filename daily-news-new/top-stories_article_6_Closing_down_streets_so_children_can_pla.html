@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closing down streets so children can play</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Closing down streets so children can play</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 04 Aug 2026 23:43:00 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c8jnmzekx0ro?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: In Leeds, streets are being temporarily closed to traffic so kids have more space to safely play - an initiative proving beneficial to both children and adults.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.41" data-end="16.8">
+            <p class="french-block">La fermeture temporaire des rues résidentielles pour permettre aux enfants de jouer et de socialiser à l'extérieur en toute sécurité s'est avérée bénéfique tant pour les enfants que pour les adultes.</p>
+            <span class="english-block">Temporarily closing residential streets to allow kids to play and socialise safely outside has proved beneficial for both children and adults</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.8" data-end="31.13">
+            <p class="french-block">Aydin, sept ans, savoure l'opportunité de jouer dans un nouvel endroit. Il s'agit de Colenso Mount, une rue du quartier Holbeck de Leeds où il vit, qui a été temporairement fermée à la circulation pour devenir une « Play Street ».</p>
+            <span class="english-block">Seven-year-old Aydin is relishing the chance to play somewhere new. It's Colenso Mount, a street in the Holbeck area of Leeds where he lives, which has been temporarily closed to traffic to become a ‘Play Street’.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.13" data-end="38.54">
+            <p class="french-block">"Tout le monde peut faire du scooter et les garçons là-bas jouent au football, ce qui est très amusant", dit-il avec enthousiasme.</p>
+            <span class="english-block">"Everyone can ride scooters and the boys over there play football which is very fun", he says excitedly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.54" data-end="50.64">
+            <p class="french-block">Alors qu'Aydin saute en scooter par-dessus des rampes installées au milieu de la route, les enfants autour de lui dessinent à la craie, soufflent des bulles et jouent dans un ballon de football à un endroit où passent habituellement les voitures.</p>
+            <span class="english-block">As Aydin jumps a scooter over ramps set up in the middle of the road, children around him are drawing with chalk, blowing bubbles and kicking a football in a spot where cars are usually driving through.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.64" data-end="59.35">
+            <p class="french-block">C’est une occasion rare pour les enfants de ce quartier de jouer dehors ensemble, dans un espace suffisamment grand pour s’ébattre et à l’abri de la circulation.</p>
+            <span class="english-block">It’s a rare chance for the kids in this neighbourhood to play outside together, in a space big enough to frolic and safe from traffic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.35" data-end="71.33">
+            <p class="french-block">Selon une enquête externe du groupe de campagne Play Their Way, publiée mercredi, près de la moitié des parents (46 %) déclarent que leur enfant ne dispose pas d'un endroit sûr pour jouer à l'extérieur.</p>
+            <span class="english-block">According to a survey from the campaign group Play Their Way, external, out on Wednesday, nearly half of parents (46%) say their child doesn't have a safe place to play outdoors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.33" data-end="82.87">
+            <p class="french-block">Le Premier ministre Andy Burnham est invité à rétablir une stratégie nationale de jeu externe pour les enfants en Angleterre – une initiative qu'il a défendue lorsqu'il était secrétaire à la Culture en 2008.</p>
+            <span class="english-block">Prime Minister Andy Burnham is being urged to bring back a national play strategy, external for children in England - an initiative he championed while culture secretary in 2008.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.87" data-end="87.5">
+            <p class="french-block">Aydin, sept ans, adore jouer avec d'autres enfants du coin.</p>
+            <span class="english-block">Seven-year-old Aydin has relished playing with other local kids</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.5" data-end="96.1">
+            <p class="french-block">Le Pays de Galles et l'Écosse ont déjà imposé aux autorités locales une obligation légale de garantir aux enfants suffisamment d'opportunités de jouer.</p>
+            <span class="english-block">Both Wales, external and Scotland, external have already made it a legal requirement for local authorities to ensure there are enough opportunities for children to play.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.1" data-end="105.38">
+            <p class="french-block">Mais en Angleterre, le groupe de campagne Play England avertit que de nombreux enfants n’ont pas accès à des terrains de jeux et à des opportunités de jeu de haute qualité.</p>
+            <span class="english-block">But in England, campaign group Play England is warning that many children don’t have access to high quality playgrounds and play opportunities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.38" data-end="115.42">
+            <p class="french-block">Le groupe exhorte le Premier ministre à obliger les conseils à évaluer régulièrement si les enfants disposent de suffisamment de temps, d'espace et de liberté pour jouer là où ils vivent.</p>
+            <span class="english-block">The group is urging the prime minister to force councils to regularly assess whether children have enough time, space and freedom to play where they live.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.42" data-end="127.2">
+            <p class="french-block">Un porte-parole du gouvernement a déclaré à la BBC que « chaque enfant mérite un espace pour courir et être un enfant » et ils investissent 18 millions de livres sterling pour rouvrir les espaces de jeux perdus.</p>
+            <span class="english-block">A spokesperson for the government told the BBC that "every child deserves the space to run around and be a kid" and they are investing £18m to reopen lost play spaces.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.2" data-end="143.42">
+            <p class="french-block">Il indique qu'il déploie des séances gratuites de séjour et de jeu dans ses nouveaux centres communautaires locaux, connus sous le nom de Centres familiaux Meilleur départ, et qu'il « donne aux parents de nouvelles directives sur le temps passé devant un écran et protège les terrains de jeux grâce à nos règles de planification ».</p>
+            <span class="english-block">It says it is rolling out free stay-and-play sessions in their new local community centres, known as Best Start Family Hubs, as well as "giving parents new guidance on screen time, and protecting playgrounds through our planning rules."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.42" data-end="149.59">
+            <p class="french-block">Beth dit que fermer la rue à la circulation la rend plus à l'aise pour permettre à ses enfants de jouer dehors</p>
+            <span class="english-block">Beth says closing the street to traffic makes her more comfortable about allowing her children to play outside</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.59" data-end="162.29">
+            <p class="french-block">Une commission d'un an, externe sur le jeu, réalisée par le Center for Young Lives, a révélé l'année dernière que les enfants passaient moitié moins de temps à jouer en plein air non structuré que n'importe quelle génération avant eux.</p>
+            <span class="english-block">A year-long commission, external on play, by the Centre for Young Lives, last year found children spend half as much time in unstructured outdoor play than any generation before them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.29" data-end="175.3">
+            <p class="french-block">Le rapport indique que le jeu est trop souvent « discrètement évincé » de la vie quotidienne en raison de facteurs tels que l’augmentation du trafic, le temps passé devant un écran et une intolérance à l’égard du jeu dans les espaces publics.</p>
+            <span class="english-block">The report said that play was too often “quietly squeezed out” of daily life by things like increased traffic, screen time, and an intolerance against play in public spaces.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.3" data-end="183.29">
+            <p class="french-block">Pour Beth, une mère de Leeds, fermer la rue à la circulation signifiait qu'elle était plus à l'aise pour permettre à ses enfants de jouer dehors.</p>
+            <span class="english-block">For Beth, a parent in Leeds, closing the street to traffic meant she was more comfortable with allowing her children to play outside.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.29" data-end="188.98">
+            <p class="french-block">"C'est un environnement sûr, les routes sont bloquées et aucune voiture ne peut accélérer.</p>
+            <span class="english-block">"It is a safe environment, the roads are blocked off and there are no cars that can come speeding up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.98" data-end="195.17">
+            <p class="french-block">"C'est une zone défavorisée, donc les enfants l'adorent, car c'est un espace de jeu sûr pour eux."</p>
+            <span class="english-block">"This is a deprived area so the children absolutely love it, because it is a safe space for them to play."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.17" data-end="207.43">
+            <p class="french-block">Une autre résidente, Kate, habite au coin du mont Colenso. Elle dit qu'avoir une Play Street juste devant sa porte d'entrée est « génial » et lui a permis d'établir de nouveaux liens avec ses voisins.</p>
+            <span class="english-block">Another resident, Kate, lives on the corner of Colenso Mount. She says having a Play Street right outside her front door is "brilliant" and has led to making new connections with her neighbours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.43" data-end="217.85">
+            <p class="french-block">"C'est tellement facile de s'asseoir à l'intérieur, et les enfants s'ennuient, alors pouvoir sortir devant notre porte, jouer et rencontrer différentes personnes, c'est vraiment bien."</p>
+            <span class="english-block">"It's so easy just to sit inside, and kids get bored so being able to go outside our front door, play and meet different people, it's really good."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.85" data-end="224.5">
+            <p class="french-block">C'est la première fois que Colenso Mount à Holbeck, Leeds, ferme ses portes pour devenir une Play Street</p>
+            <span class="english-block">This is the first time Colenso Mount in Holbeck, Leeds, has closed to become a Play Street</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="224.5" data-end="238.78">
+            <p class="french-block">L'idée de fermer régulièrement les rues résidentielles pour que les enfants puissent jouer a été lancée en 2009 par un groupe de parents de Bristol, qui voulaient montrer que "jouer près de chez soi devrait être normal, cela ne doit pas nécessairement être un événement spécial".</p>
+            <span class="english-block">The idea of regularly closing down residential streets for children to play was started in 2009 by a group of parents in Bristol, who wanted to show that "playing out near home should be normal, it doesn't have to be a special event".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.78" data-end="249.48">
+            <p class="french-block">Alice Ferguson, l’un des parents fondateurs, affirme que le jeu est essentiel au bien-être des enfants et que les Play Streets organisées devraient être une étape vers cet objectif plus large.</p>
+            <span class="english-block">Alice Ferguson, one of the founding parents, says play is essential for children’s wellbeing and organised Play Streets should be a step towards that wider goal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.48" data-end="255.26">
+            <p class="french-block">"Si vous disposez d'un espace sûr, les enfants sortiront et joueront avec tout ce qu'ils ont."</p>
+            <span class="english-block">"If you've got a safe space, children will come out and play with whatever they have."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.26" data-end="267.55">
+            <p class="french-block">Le groupe de campagne de Ferguson, Playing Out, estime qu'environ 100 communes à travers le Royaume-Uni ont désormais une politique Play Street, avec plus de 1 600 rues régulièrement fermées à la circulation.</p>
+            <span class="english-block">Ferguson's campaign group Playing Out , externalestimates that around 100 councils across the UK now have a Play Street policy, with more than 1,600 streets regularly closing to traffic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.55" data-end="279.96">
+            <p class="french-block">Les politiques des conseils diffèrent à travers le pays et Ferguson affirme que la mise en place d'une politique nationale donnerait aux conseils et aux résidents « clarté et confiance » pour fermer les rues en toute sécurité.</p>
+            <span class="english-block">Council policies differ across the country and Ferguson says having a national policy in place would give councils and residents "clarity and confidence" to close streets safely.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.96" data-end="290.18">
+            <p class="french-block">"Il y a encore un long chemin à parcourir. Certains conseils ont des barrières financières ou insistent sur l'assurance, et beaucoup de conseils n'ont pas de politique du tout."</p>
+            <span class="english-block">"There's still a long way to go. Some councils have cost barriers or insist on insurance, and a lot of councils don't have a policy at all."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.18" data-end="303.96">
+            <p class="french-block">Mais elle dit qu'il existe des exigences communes pour organiser une Play Street, notamment un panneau officiel « route fermée », des barrières physiques à chaque extrémité et des bénévoles qui peuvent accompagner les résidents à l'entrée et à la sortie.</p>
+            <span class="english-block">But she says there are common requirements to hosting a Play Street, including an official “road closed” sign, physical barriers at each end, and volunteers who can escort residents in and out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.96" data-end="308.57">
+            <p class="french-block">Catherine Peacock a organisé environ 100 Play Streets à travers Leeds</p>
+            <span class="english-block">Catherine Peacock has organised around 100 Play Streets across Leeds</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="308.57" data-end="317.23">
+            <p class="french-block">Catherine Peacock, de l'association caritative KidzKlub de Leeds, a organisé environ 100 Play Streets dans sa ville au cours des dernières années.</p>
+            <span class="english-block">Catherine Peacock from the charity KidzKlub in Leeds has organised about 100 Play Streets across her city in the past few years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="317.23" data-end="325.56">
+            <p class="french-block">"Au départ, j'ai commencé en tant que mère, je faisais ça dans ma propre rue parce que je voulais que mes propres enfants puissent jouer en toute sécurité.</p>
+            <span class="english-block">"Originally I just started as a mum, doing it on my own street because I wanted my own kids to be able to play out safely.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.56" data-end="335.21">
+            <p class="french-block">"Mais comme mon travail s'effectue au sein de la communauté, j'ai pensé que d'autres rues avec lesquelles nous travaillons pourraient également en bénéficier et cela prend vraiment de l'ampleur."</p>
+            <span class="english-block">"But because my work is in the community I thought other streets we're working with could benefit from that too and it's really grown and grown."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.21" data-end="347.52">
+            <p class="french-block">Le conseil municipal de Leeds cible spécifiquement les zones les plus pauvres pour accueillir Play Streets, après que le personnel a remarqué que la plupart des résidents demandant la fermeture de leur route vivaient dans des zones plus riches.</p>
+            <span class="english-block">Leeds City Council is specifically targeting poorer areas to host Play Streets, after staff noticed most of the residents applying to close their road lived in more affluent areas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="347.52" data-end="362.42">
+            <p class="french-block">Jen Rutherford, responsable de la stratégie de jeu au conseil municipal de Leeds, s'efforce de garantir que l'accès des enfants au jeu soit pris en compte dans les décisions plus larges du conseil, et estime qu'il est limité de simplement penser aux terrains de jeux.</p>
+            <span class="english-block">Jen Rutherford, Play Strategy Officer for Leeds City Council, works to ensure children's access to play is factored into wider council decisions, and says it is limiting to just think about playgrounds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.42" data-end="372.24">
+            <p class="french-block">"Le jeu est l'affaire de tous au sein d'une autorité locale car il alimente votre stratégie de gestion des déchets, il alimente la façon dont vous concevez vos rues et vos espaces."</p>
+            <span class="english-block">"Play is everyone's business across a local authority because it feeds into your waste management strategy, it feeds into how you design your streets and spaces."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="372.24" data-end="387.17">
+            <p class="french-block">"Nous travaillons en étroite collaboration avec la planification de Leeds sur la manière dont nous pouvons faire en sorte que les promoteurs, lorsqu'ils construisent de nouveaux espaces dans notre ville, se concentrent sur les enfants et les jeunes et conçoivent également dans cette optique du jeu."</p>
+            <span class="english-block">"We're working very closely with planning in Leeds on how we can make it so that developers when they're building new spaces in our city are focusing on children and young people and are designing through that lens of play as well."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="387.17" data-end="395.78">
+            <p class="french-block">De retour à Colenso Mount, Mohamed, dix ans, espère avoir bientôt l'occasion de jouer à nouveau au football dans la rue avec ses amis.</p>
+            <span class="english-block">Back on Colenso Mount, ten-year-old Mohamed is hoping he gets the chance to play football in the street with his friends again soon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="395.78" data-end="403.82">
+            <p class="french-block">"C'est une bonne idée, car beaucoup d'enfants viendront et [ils] seront excités et heureux et auront quelque chose à faire pendant les vacances d'été."</p>
+            <span class="english-block">"It's a good idea, because lots of children will come and then [they] will be excited and happy and they'll have something to do in the summer holidays."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.82" data-end="408.43">
+            <p class="french-block">Le mouvement des jeux en plein air espère que davantage de rues seront fermées</p>
+            <span class="english-block">Outdoor play movement hopes more streets will close</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="408.43" data-end="413.02">
+            <p class="french-block">Cinq façons de profiter au maximum des vacances d'été avec les enfants</p>
+            <span class="english-block">Five ways to make the most of the summer holidays with kids</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="413.02" data-end="417.36">
+            <p class="french-block">« Arrêter le temps passé devant un écran pour mon fils a changé la donne »</p>
+            <span class="english-block">'Stopping screen time for my son was a gamechanger'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_6.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
