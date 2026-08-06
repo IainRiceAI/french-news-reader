@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta says AI model accessed the internet and hacked another firm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Meta says AI model accessed the internet and hacked another firm</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 06 Aug 2026 02:33:33 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cx2kgdnyk2po?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Meta is the latest company to disclose an AI agent breach, raising cyber-security concerns.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.8" data-end="11.83">
+            <p class="french-block">Mark Zuckerberg, directeur général de Meta</p>
+            <span class="english-block">Meta chief executive Mark Zuckerberg</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="11.83" data-end="26.33">
+            <p class="french-block">Meta, propriétaire de Facebook, affirme qu'un problème lors d'une évaluation par une société de test indépendante a permis à l'un de ses modèles d'intelligence artificielle (IA) de se connecter à Internet et de pirater le système d'une autre organisation.</p>
+            <span class="english-block">Facebook owner Meta says an issue during an evaluation by an independent testing company allowed one of its artificial intelligence (AI) models to connect to the internet and hack another organisation's system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="26.33" data-end="36.43">
+            <p class="french-block">Cette annonce fait suite à des incidents récents dans le secteur de l’IA, notamment des violations des modèles OpenAI et Anthropic, qui ont soulevé des problèmes de cybersécurité.</p>
+            <span class="english-block">The announcement follows recent incidents across the AI industry, including breaches by OpenAI and Anthropic models, that have raised cyber-security concerns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.43" data-end="48.26">
+            <p class="french-block">Un porte-parole de Meta a déclaré à la BBC qu'elle enquêtait sur le piratage provoqué par une "mauvaise configuration", qu'elle a décrite comme similaire aux incidents signalés précédemment dans d'autres entreprises.</p>
+            <span class="english-block">A Meta spokesperson told the BBC that it was investigating the hack that was caused by a "misconfiguration", which it described as similar to previously reported incidents at other firms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="48.26" data-end="55.08">
+            <p class="french-block">Ces incidents ont incité les chercheurs et les gouvernements à réclamer des garanties plus strictes et des tests plus rigoureux.</p>
+            <span class="english-block">The incidents have prompted researchers and governments to call for tougher safeguards and more rigorous testing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.08" data-end="67.7">
+            <p class="french-block">Meta a déclaré que les essais de sécurité avaient été menés par Irregular, le même fournisseur de sécurité IA qui avait effectué des tests pour le modèle d'IA d'Anthropic qui avait eu accès aux systèmes de trois autres sociétés.</p>
+            <span class="english-block">Meta said the security trials were conducted by Irregular, the same AI security vendor that carried out tests for Anthropic's AI model that had gained access to three other companies' systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.7" data-end="77.64">
+            <p class="french-block">Un porte-parole d'Irregular a déclaré que l'incident Meta "est exactement le même problème d'environnement d'évaluation qui a déjà été divulgué par Anthropic la semaine dernière".</p>
+            <span class="english-block">An Irregular spokesperson said the Meta incident "is the exact same evaluation-environment issue that was already disclosed by Anthropic last week."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.64" data-end="88.46">
+            <p class="french-block">Irregular travaille sur un rapport sur la façon d'exécuter en toute sécurité des tests de cybersécurité impliquant des agents d'IA, a déclaré le porte-parole de l'entreprise à la BBC.</p>
+            <span class="english-block">Irregular is working on a report on how to securely run cyber-security tests involving AI agents, the firm's spokesperson told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.46" data-end="94.68">
+            <p class="french-block">Meta a également déclaré qu'elle publierait plus d'informations sur l'incident "une fois que nous aurons tous les faits".</p>
+            <span class="english-block">Meta also said it will publish more information on the incident "once we have all the facts."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.68" data-end="105.48">
+            <p class="french-block">Au cours des deux dernières semaines, les leaders de l'IA OpenAI et Anthropic ont également signalé des incidents au cours desquels leurs modèles ont piraté les systèmes d'autres organisations lors de tests.</p>
+            <span class="english-block">In the past two weeks, AI leaders OpenAI and Anthropic have also reported incidents in which their models hacked into other organisation's systems during testing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.48" data-end="116.78">
+            <p class="french-block">Le créateur de ChatGPT, OpenAI, a déclaré dans une série d'annonces que ses agents avaient attaqué plusieurs services accessibles au public, notamment le centre d'outils d'IA Hugging Face.</p>
+            <span class="english-block">ChatGPT-maker OpenAI said in a series of announcements that its agents attacked several publicly available services, including AI tools hub Hugging Face.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.78" data-end="132.65">
+            <p class="french-block">La divulgation d'OpenAI a incité son rival Anthropic à effectuer ses propres vérifications, ce qui a conduit à la découverte que son modèle Claude AI avait mené des attaques similaires contre plusieurs entreprises après qu'une « mauvaise configuration » lui ait donné accès à Internet.</p>
+            <span class="english-block">OpenAI's disclosure prompted rival Anthropic to conduct its own checks, leading to the discovery that its Claude AI model had carried out similar attacks on several firms after a "misconfiguration" gave it access to the internet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.65" data-end="138.05">
+            <p class="french-block">Les actions Meta chutent alors que la frustration grandit face aux projets de dépenses en IA</p>
+            <span class="english-block">Meta shares fall as frustration grows over AI spending plans</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.05" data-end="144.5">
+            <p class="french-block">IA ou réel ? La BBC analyse des vidéos virales sur la catastrophe en Chine</p>
+            <span class="english-block">AI or real? BBC analyses viral China disaster videos</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.5" data-end="154.3">
+            <p class="french-block">Certains commentateurs se sont interrogés sur le moment choisi pour divulguer les incidents, alors que les entreprises technologiques luttent pour la domination du développement de l'IA.</p>
+            <span class="english-block">Some commentators have questioned the timing of disclosures about the incidents as tech firms wrestle for dominance in AI development.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.3" data-end="164.9">
+            <p class="french-block">OpenAI et Anthropic préparent des introductions en bourse à succès qui devraient valoriser chaque entreprise à environ 1 000 milliards de dollars (740 milliards de livres sterling).</p>
+            <span class="english-block">OpenAI and Anthropic are preparing blockbuster stock market listings that are expected to value each firm at around $1tn (£740bn).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.9" data-end="177.22">
+            <p class="french-block">Cette semaine, l'AI Security Institute (AISI) du Royaume-Uni a déclaré que ses tests avaient révélé que certains modèles avaient tenté de mener des cyberattaques en créant de faux profils humains pour tenter de tromper les gens.</p>
+            <span class="english-block">This week, the UK's AI Security Institute (AISI) said that its testing had found that some models tried to carry out cyber-attacks by creating fake human profiles to try and trick people.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.22" data-end="187.27">
+            <p class="french-block">Dans le cas le plus grave, l'AISI a déclaré que Mythos AI d'Anthropic avait tenté d'accéder à un service en envoyant des messages privés à l'aide de faux comptes imitant de vraies personnes.</p>
+            <span class="english-block">In the most serious case, the AISI said Anthropic's Mythos AI tried to gain access to a service by sending private messages using fake accounts mimicking real people.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.27" data-end="201.91">
+            <p class="french-block">Anthropic a déclaré que les tests d'AISI n'étaient "représentatifs d'aucun de nos modèles de production". OpenAI, dont les modèles ont également été testés, a déclaré que les évaluations d'AISI ne reflétaient pas une utilisation ordinaire.</p>
+            <span class="english-block">Anthropic said AISI's tests were not "representative of any of our production models". OpenAI, whose models were also tested, said AISI's evaluations did not reflect ordinary use.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_15.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
