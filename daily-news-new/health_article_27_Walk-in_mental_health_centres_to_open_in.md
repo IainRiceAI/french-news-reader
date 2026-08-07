@@ -1,7 +1,7 @@
 # Walk-in mental health centres to open in banks and libraries across England
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cpd76e737ljo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cpd76e737ljo?at_medium=RSS&at_campaign=rss)  
-**Published:** Wed, 05 Aug 2026 21:30:46 GMT  
+**Published:** Thu, 06 Aug 2026 07:28:08 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](health_article_27.mp3)  
 
 ---
@@ -124,13 +124,45 @@
 
 ### Section 15
 
-**🇬🇧 EN:** The  chief executive of the Centre for Mental Health, Andy Bell, said he welcomed the announcement on the whole - although was concerned that the mental health emergency departments had not been properly tested yet.
+**🇬🇧 EN:** Health Secretary Yvette Cooper added: "This is how we can turn the tide on mental ill health - preventing more people from reaching crisis, cutting waits for care, and building an NHS which is there for everyone when they need it.”
+
+**🇫🇷 FR:** *La secrétaire à la Santé, Yvette Cooper, a ajouté : "C'est ainsi que nous pouvons inverser la tendance en matière de santé mentale - en empêchant davantage de personnes d'entrer en crise, en réduisant les délais d'attente pour les soins et en construisant un NHS qui soit là pour chacun quand il en a besoin."*
+
+---
+
+### Section 16
+
+**🇬🇧 EN:** Speaking to BBC Breakfast, Cooper said there would be a "continual programme" of rolling out these mental health centres - with the first ones set to open this autumn.
+
+**🇫🇷 FR:** *S'adressant à BBC Breakfast, Cooper a déclaré qu'il y aurait un « programme continu » de déploiement de ces centres de santé mentale – les premiers devant ouvrir cet automne.*
+
+---
+
+### Section 17
+
+**🇬🇧 EN:** "It will take a bit of time in some areas but 100 right across the country I think will make a real difference to getting people mental health support early," she said, adding that "prevention can be much more effective to provide healthcare".
+
+**🇫🇷 FR:** *"Cela prendra un peu de temps dans certaines régions, mais je pense qu'en avoir 100 dans tout le pays fera une réelle différence pour obtenir un soutien précoce en matière de santé mentale", a-t-elle déclaré, ajoutant que "la prévention peut être beaucoup plus efficace pour fournir des soins de santé".*
+
+---
+
+### Section 18
+
+**🇬🇧 EN:** She said the government has already increased mental health staffing, but said "what these services are going to be doing is bringing together existing teams of staff to work together in a different way".
+
+**🇫🇷 FR:** *Elle a déclaré que le gouvernement avait déjà augmenté les effectifs en matière de santé mentale, mais que « ce que ces services vont faire, c'est rassembler les équipes de personnel existantes pour travailler ensemble d'une manière différente ».*
+
+---
+
+### Section 19
+
+**🇬🇧 EN:** The chief executive of the Centre for Mental Health, Andy Bell, said he welcomed the announcement on the whole - although was concerned that the mental health emergency departments had not been properly tested yet.
 
 **🇫🇷 FR:** *Le directeur général du Centre pour la santé mentale, Andy Bell, a déclaré qu'il saluait l'annonce dans son ensemble, même s'il était préoccupé par le fait que les services d'urgence en santé mentale n'avaient pas encore été correctement testés.*
 
 ---
 
-### Section 16
+### Section 20
 
 **🇬🇧 EN:** He also said children and young people, who will be able to use these services, needed their own dedicated hubs.
 
@@ -138,7 +170,7 @@
 
 ---
 
-### Section 17
+### Section 21
 
 **🇬🇧 EN:** But he said he was "delighted" that the government was taking action on mental health after it had been neglected by successive governments for too long.
 
@@ -146,7 +178,7 @@
 
 ---
 
-### Section 18
+### Section 22
 
 **🇬🇧 EN:** "This must now be backed up by investment, most crucially in the workforce needed to provide effective mental health care," he said.
 
@@ -154,7 +186,7 @@
 
 ---
 
-### Section 19
+### Section 23
 
 **🇬🇧 EN:** Stephen Jones, of the Royal College of Nursing, said he agreed investment in staff would be crucial if the new centres were going to cope with demand.
 
@@ -162,7 +194,7 @@
 
 ---
 
-### Section 20
+### Section 24
 
 **🇬🇧 EN:** "More services closer to people's homes are a crucial step towards more humane care," he said.
 
@@ -170,7 +202,7 @@
 
 ---
 
-### Section 21
+### Section 25
 
 **🇬🇧 EN:** But he added: "To succeed, both will need specialist mental health nurses at the centre."
 
@@ -178,7 +210,7 @@
 
 ---
 
-### Section 22
+### Section 26
 
 **🇬🇧 EN:** The Department of Health said that the initiative is backed by £343m and the first sites will open in autumn this year, with "further facilities following from March 2027".
 
@@ -186,7 +218,15 @@
 
 ---
 
-### Section 23
+### Section 27
+
+**🇬🇧 EN:** Do you have any views, comments or questions about this story?
+
+**🇫🇷 FR:** *Avez-vous des opinions, des commentaires ou des questions sur cette histoire ?*
+
+---
+
+### Section 28
 
 **🇬🇧 EN:** Mental health A&E centres to open across England
 
