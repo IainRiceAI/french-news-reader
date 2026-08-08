@@ -1,98 +1,98 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-08-07 06:25:38  
+Generated on: 2026-08-08 06:21:01  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Meta fined $567m in largest child safety ruling against social media giant**
-   - **Published:** Fri, 07 Aug 2026 00:54:03 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Meta_fined_567m_in_largest_child_safety_.md](top-stories_article_1_Meta_fined_567m_in_largest_child_safety_.md)
+1. **Police officers investigated over handling of sex offender who murdered two women**
+   - **Published:** Fri, 07 Aug 2026 23:56:11 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Police_officers_investigated_over_handli.md](top-stories_article_1_Police_officers_investigated_over_handli.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Trump denies US weapons shortage and says information 'leakers' being 'hunted down'**
-   - **Published:** Thu, 06 Aug 2026 18:53:51 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Trump_denies_US_weapons_shortage_and_say.md](top-stories_article_2_Trump_denies_US_weapons_shortage_and_say.md)
+2. **Counter-terror police reopen attempted burglary probe as part of Widdecombe inquiry**
+   - **Published:** Fri, 07 Aug 2026 22:42:43 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Counter-terror_police_reopen_attempted_b.md](top-stories_article_2_Counter-terror_police_reopen_attempted_b.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Arrests in Norfolk town as disorder continues for third night**
-   - **Published:** Fri, 07 Aug 2026 00:15:52 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Arrests_in_Norfolk_town_as_disorder_cont.md](top-stories_article_3_Arrests_in_Norfolk_town_as_disorder_cont.md)
+3. **Infantino denies claims Uefa paid off alleged 'lover'**
+   - **Published:** Fri, 07 Aug 2026 22:50:58 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Infantino_denies_claims_Uefa_paid_off_al.md](top-stories_article_3_Infantino_denies_claims_Uefa_paid_off_al.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Artificial Intelligence used to design brand new viruses**
-   - **Published:** Thu, 06 Aug 2026 18:01:52 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Artificial_Intelligence_used_to_design_b.md](top-stories_article_4_Artificial_Intelligence_used_to_design_b.md)
+4. **Spain imposes border controls against Italy as row over Ceuta migrant influx intensifies**
+   - **Published:** Fri, 07 Aug 2026 22:13:55 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Spain_imposes_border_controls_against_It.md](top-stories_article_4_Spain_imposes_border_controls_against_It.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Village sees 50 days without rain during summer heatwave**
-   - **Published:** Thu, 06 Aug 2026 23:06:41 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Village_sees_50_days_without_rain_during.md](top-stories_article_5_Village_sees_50_days_without_rain_during.md)
+5. **Watch: BBC asks Infantino if he will resign as Fifa president**
+   - **Published:** Fri, 07 Aug 2026 21:24:17 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Watch_BBC_asks_Infantino_if_he_will_resi.md](top-stories_article_5_Watch_BBC_asks_Infantino_if_he_will_resi.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Uefa says boycott may still go ahead as FA withdraws Infantino support**
-   - **Published:** Fri, 07 Aug 2026 01:57:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Uefa_says_boycott_may_still_go_ahead_as_.md](top-stories_article_6_Uefa_says_boycott_may_still_go_ahead_as_.md)
+6. **Hunter Biden tells BBC his pardon was 'not good' for America or his father's legacy**
+   - **Published:** Fri, 07 Aug 2026 22:07:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Hunter_Biden_tells_BBC_his_pardon_was_no.md](top-stories_article_6_Hunter_Biden_tells_BBC_his_pardon_was_no.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Amanda Knox defends Fringe comedy show after claims it will 'trivialise violence'**
-   - **Published:** Thu, 06 Aug 2026 19:39:43 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Amanda_Knox_defends_Fringe_comedy_show_a.md](top-stories_article_7_Amanda_Knox_defends_Fringe_comedy_show_a.md)
+7. **Child among three killed in Russian missile attacks near Kyiv**
+   - **Published:** Sat, 08 Aug 2026 04:23:33 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Child_among_three_killed_in_Russian_miss.md](top-stories_article_7_Child_among_three_killed_in_Russian_miss.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Boxer charged with killing aid worker in Greece after his wife gave police 'key' details**
-   - **Published:** Thu, 06 Aug 2026 17:26:56 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Boxer_charged_with_killing_aid_worker_in.md](top-stories_article_8_Boxer_charged_with_killing_aid_worker_in.md)
+8. **Obesity rates have doubled in England since 1993 - what's going on?**
+   - **Published:** Fri, 07 Aug 2026 18:38:46 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Obesity_rates_have_doubled_in_England_si.md](top-stories_article_8_Obesity_rates_have_doubled_in_England_si.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Meta fined $567m in largest child safety ruling against social media giant**
-   - **Published:** Fri, 07 Aug 2026 00:54:03 GMT
-   - **Read Parallel Translation:** [world_article_9_Meta_fined_567m_in_largest_child_safety_.md](world_article_9_Meta_fined_567m_in_largest_child_safety_.md)
+1. **Child among three killed in Russian missile attacks near Kyiv**
+   - **Published:** Sat, 08 Aug 2026 04:23:33 GMT
+   - **Read Parallel Translation:** [world_article_9_Child_among_three_killed_in_Russian_miss.md](world_article_9_Child_among_three_killed_in_Russian_miss.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Trump denies US weapons shortage and says information 'leakers' being 'hunted down'**
-   - **Published:** Thu, 06 Aug 2026 18:53:51 GMT
-   - **Read Parallel Translation:** [world_article_10_Trump_denies_US_weapons_shortage_and_say.md](world_article_10_Trump_denies_US_weapons_shortage_and_say.md)
+2. **Spain imposes border controls against Italy as row over Ceuta migrant influx intensifies**
+   - **Published:** Fri, 07 Aug 2026 22:13:55 GMT
+   - **Read Parallel Translation:** [world_article_10_Spain_imposes_border_controls_against_It.md](world_article_10_Spain_imposes_border_controls_against_It.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Uefa says boycott may still go ahead as FA withdraws Infantino support**
-   - **Published:** Fri, 07 Aug 2026 01:57:02 GMT
-   - **Read Parallel Translation:** [world_article_11_Uefa_says_boycott_may_still_go_ahead_as_.md](world_article_11_Uefa_says_boycott_may_still_go_ahead_as_.md)
+3. **Thai PM vows to introduce stricter gun laws after eight killed in shooting**
+   - **Published:** Fri, 07 Aug 2026 21:19:27 GMT
+   - **Read Parallel Translation:** [world_article_11_Thai_PM_vows_to_introduce_stricter_gun_l.md](world_article_11_Thai_PM_vows_to_introduce_stricter_gun_l.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Australian aviation crew carries out daring midwinter Antarctica rescue**
-   - **Published:** Fri, 07 Aug 2026 04:02:18 GMT
-   - **Read Parallel Translation:** [world_article_12_Australian_aviation_crew_carries_out_dar.md](world_article_12_Australian_aviation_crew_carries_out_dar.md)
+4. **I was standing in front of my teacher when she was shot, Thai pupil says**
+   - **Published:** Fri, 07 Aug 2026 14:20:27 GMT
+   - **Read Parallel Translation:** [world_article_12_I_was_standing_in_front_of_my_teacher_wh.md](world_article_12_I_was_standing_in_front_of_my_teacher_wh.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Meta fined $567m in largest child safety ruling against social media giant**
-   - **Published:** Fri, 07 Aug 2026 00:54:03 GMT
-   - **Read Parallel Translation:** [business_article_13_Meta_fined_567m_in_largest_child_safety_.md](business_article_13_Meta_fined_567m_in_largest_child_safety_.md)
+1. **How a 90-second power outage sparked chaos for rail commuters**
+   - **Published:** Fri, 07 Aug 2026 16:11:32 GMT
+   - **Read Parallel Translation:** [business_article_13_How_a_90-second_power_outage_sparked_cha.md](business_article_13_How_a_90-second_power_outage_sparked_cha.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Argos is getting a makeover - but can it attract new shoppers?**
-   - **Published:** Thu, 06 Aug 2026 23:03:48 GMT
-   - **Read Parallel Translation:** [business_article_14_Argos_is_getting_a_makeover_-_but_can_it.md](business_article_14_Argos_is_getting_a_makeover_-_but_can_it.md)
+2. **Goodwin considers selling part of defence business**
+   - **Published:** Fri, 07 Aug 2026 15:22:51 GMT
+   - **Read Parallel Translation:** [business_article_14_Goodwin_considers_selling_part_of_defenc.md](business_article_14_Goodwin_considers_selling_part_of_defenc.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Trump imposes 15% tariff on key chip material to counter China**
-   - **Published:** Fri, 07 Aug 2026 01:03:35 GMT
-   - **Read Parallel Translation:** [business_article_15_Trump_imposes_15_tariff_on_key_chip_mate.md](business_article_15_Trump_imposes_15_tariff_on_key_chip_mate.md)
+3. **Surprise fall in US jobs last month as slow summer continues**
+   - **Published:** Fri, 07 Aug 2026 14:03:55 GMT
+   - **Read Parallel Translation:** [business_article_15_Surprise_fall_in_US_jobs_last_month_as_s.md](business_article_15_Surprise_fall_in_US_jobs_last_month_as_s.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **EasyJet agrees to £5.7bn takeover by US firm**
-   - **Published:** Thu, 06 Aug 2026 16:35:32 GMT
-   - **Read Parallel Translation:** [business_article_16_EasyJet_agrees_to_57bn_takeover_by_US_fi.md](business_article_16_EasyJet_agrees_to_57bn_takeover_by_US_fi.md)
+4. **Meta fined $567m in largest child safety ruling against social media giant**
+   - **Published:** Fri, 07 Aug 2026 09:22:03 GMT
+   - **Read Parallel Translation:** [business_article_16_Meta_fined_567m_in_largest_child_safety_.md](business_article_16_Meta_fined_567m_in_largest_child_safety_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
@@ -100,7 +100,7 @@ Scraped Feed Mode: `ALL`
 ### Section: TECHNOLOGY
 
 1. **Meta fined $567m in largest child safety ruling against social media giant**
-   - **Published:** Fri, 07 Aug 2026 00:54:03 GMT
+   - **Published:** Fri, 07 Aug 2026 09:22:03 GMT
    - **Read Parallel Translation:** [technology_article_17_Meta_fined_567m_in_largest_child_safety_.md](technology_article_17_Meta_fined_567m_in_largest_child_safety_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
@@ -123,96 +123,96 @@ Scraped Feed Mode: `ALL`
 
 ### Section: SCIENCE
 
-1. **Drone warnings and sheltering in airports as South Korea battles historic heatwave**
-   - **Published:** Fri, 07 Aug 2026 04:49:18 GMT
-   - **Read Parallel Translation:** [science_article_21_Drone_warnings_and_sheltering_in_airport.md](science_article_21_Drone_warnings_and_sheltering_in_airport.md)
+1. **Hosepipe bans in force as drought declared - is your area affected?**
+   - **Published:** Fri, 07 Aug 2026 17:50:13 GMT
+   - **Read Parallel Translation:** [science_article_21_Hosepipe_bans_in_force_as_drought_declar.md](science_article_21_Hosepipe_bans_in_force_as_drought_declar.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Where is Jackie? Beloved live cam eagle in critical condition**
-   - **Published:** Thu, 06 Aug 2026 22:31:18 GMT
-   - **Read Parallel Translation:** [science_article_22_Where_is_Jackie_Beloved_live_cam_eagle_i.md](science_article_22_Where_is_Jackie_Beloved_live_cam_eagle_i.md)
+2. **Is this the best day of the year for stargazing?**
+   - **Published:** Fri, 07 Aug 2026 15:30:46 GMT
+   - **Read Parallel Translation:** [science_article_22_Is_this_the_best_day_of_the_year_for_sta.md](science_article_22_Is_this_the_best_day_of_the_year_for_sta.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Watch: Nasa astronauts conduct 6.5-hour spacewalk outside ISS**
-   - **Published:** Thu, 06 Aug 2026 21:49:48 GMT
-   - **Read Parallel Translation:** [science_article_23_Watch_Nasa_astronauts_conduct_65-hour_sp.md](science_article_23_Watch_Nasa_astronauts_conduct_65-hour_sp.md)
+3. **Trump administration to pay German firm $1.2bn to halt US wind projects**
+   - **Published:** Fri, 07 Aug 2026 13:32:41 GMT
+   - **Read Parallel Translation:** [science_article_23_Trump_administration_to_pay_German_firm_.md](science_article_23_Trump_administration_to_pay_German_firm_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Wildfire-ravaged habitats could take centuries to recover, environmentalists say**
-   - **Published:** Thu, 06 Aug 2026 21:11:52 GMT
-   - **Read Parallel Translation:** [science_article_24_Wildfire-ravaged_habitats_could_take_cen.md](science_article_24_Wildfire-ravaged_habitats_could_take_cen.md)
+4. **Wildfire damage could take hundreds of years to recover from, experts say**
+   - **Published:** Fri, 07 Aug 2026 05:15:56 GMT
+   - **Read Parallel Translation:** [science_article_24_Wildfire_damage_could_take_hundreds_of_y.md](science_article_24_Wildfire_damage_could_take_hundreds_of_y.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **Artificial Intelligence used to design brand new viruses**
-   - **Published:** Thu, 06 Aug 2026 18:01:52 GMT
-   - **Read Parallel Translation:** [health_article_25_Artificial_Intelligence_used_to_design_b.md](health_article_25_Artificial_Intelligence_used_to_design_b.md)
+1. **How a former GB Olympian curbed his porn problem - and the signs and steps to recovery**
+   - **Published:** Sat, 08 Aug 2026 01:34:07 GMT
+   - **Read Parallel Translation:** [health_article_25_How_a_former_GB_Olympian_curbed_his_porn.md](health_article_25_How_a_former_GB_Olympian_curbed_his_porn.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **NHS must plan for heatwaves like it does for winter, health secretary says**
-   - **Published:** Thu, 06 Aug 2026 12:05:00 GMT
-   - **Read Parallel Translation:** [health_article_26_NHS_must_plan_for_heatwaves_like_it_does.md](health_article_26_NHS_must_plan_for_heatwaves_like_it_does.md)
+2. **Moment earthquake shakes hospital operating room in Japan**
+   - **Published:** Fri, 07 Aug 2026 06:46:34 GMT
+   - **Read Parallel Translation:** [health_article_26_Moment_earthquake_shakes_hospital_operat.md](health_article_26_Moment_earthquake_shakes_hospital_operat.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Walk-in mental health centres to open in banks and libraries across England**
-   - **Published:** Thu, 06 Aug 2026 07:28:08 GMT
-   - **Read Parallel Translation:** [health_article_27_Walk-in_mental_health_centres_to_open_in.md](health_article_27_Walk-in_mental_health_centres_to_open_in.md)
+3. **Artificial Intelligence used to design brand new viruses**
+   - **Published:** Thu, 06 Aug 2026 18:01:52 GMT
+   - **Read Parallel Translation:** [health_article_27_Artificial_Intelligence_used_to_design_b.md](health_article_27_Artificial_Intelligence_used_to_design_b.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Sunshine to meal times: How to beat jet lag**
-   - **Published:** Wed, 05 Aug 2026 23:49:46 GMT
-   - **Read Parallel Translation:** [health_article_28_Sunshine_to_meal_times_How_to_beat_jet_l.md](health_article_28_Sunshine_to_meal_times_How_to_beat_jet_l.md)
+4. **NHS must plan for heatwaves like it does for winter, health secretary says**
+   - **Published:** Thu, 06 Aug 2026 12:05:00 GMT
+   - **Read Parallel Translation:** [health_article_28_NHS_must_plan_for_heatwaves_like_it_does.md](health_article_28_NHS_must_plan_for_heatwaves_like_it_does.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Burnham orders review of grooming gang early releases**
-   - **Published:** Thu, 06 Aug 2026 13:56:53 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_orders_review_of_grooming_gang_e.md](politics_article_29_Burnham_orders_review_of_grooming_gang_e.md)
+1. **Prisoner release row proving to be Burnham's first big test as PM**
+   - **Published:** Fri, 07 Aug 2026 15:18:00 GMT
+   - **Read Parallel Translation:** [politics_article_29_Prisoner_release_row_proving_to_be_Burnh.md](politics_article_29_Prisoner_release_row_proving_to_be_Burnh.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Conservatives pledge to ban foreign nationals from social housing**
-   - **Published:** Thu, 06 Aug 2026 21:00:05 GMT
-   - **Read Parallel Translation:** [politics_article_30_Conservatives_pledge_to_ban_foreign_nati.md](politics_article_30_Conservatives_pledge_to_ban_foreign_nati.md)
+2. **Streeting 'sickened' by sex abuse claims at Army college**
+   - **Published:** Fri, 07 Aug 2026 16:53:25 GMT
+   - **Read Parallel Translation:** [politics_article_30_Streeting_sickened_by_sex_abuse_claims_a.md](politics_article_30_Streeting_sickened_by_sex_abuse_claims_a.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Illegal working arrests double in two years, Home Office says**
-   - **Published:** Thu, 06 Aug 2026 23:32:12 GMT
-   - **Read Parallel Translation:** [politics_article_31_Illegal_working_arrests_double_in_two_ye.md](politics_article_31_Illegal_working_arrests_double_in_two_ye.md)
+3. **Conservatives pledge to ban foreign nationals from social housing**
+   - **Published:** Fri, 07 Aug 2026 07:43:31 GMT
+   - **Read Parallel Translation:** [politics_article_31_Conservatives_pledge_to_ban_foreign_nati.md](politics_article_31_Conservatives_pledge_to_ban_foreign_nati.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **The serial candidates standing against Farage in the Clacton by-election**
-   - **Published:** Thu, 06 Aug 2026 13:22:26 GMT
-   - **Read Parallel Translation:** [politics_article_32_The_serial_candidates_standing_against_F.md](politics_article_32_The_serial_candidates_standing_against_F.md)
+4. **Badenoch pens letter to Clacton ahead of by-election**
+   - **Published:** Fri, 07 Aug 2026 18:12:39 GMT
+   - **Read Parallel Translation:** [politics_article_32_Badenoch_pens_letter_to_Clacton_ahead_of.md](politics_article_32_Badenoch_pens_letter_to_Clacton_ahead_of.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Lauryn Hill and Wyclef ‘in an amazing place’ as fans hope for new Fugees album after 30 years**
-   - **Published:** Thu, 06 Aug 2026 23:16:05 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Lauryn_Hill_and_Wyclef_in_an_amazing_pla.md](entertainment_article_33_Lauryn_Hill_and_Wyclef_in_an_amazing_pla.md)
+1. **Madonna and Blur producer William Orbit dies aged 69**
+   - **Published:** Fri, 07 Aug 2026 16:45:04 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Madonna_and_Blur_producer_William_Orbit_.md](entertainment_article_33_Madonna_and_Blur_producer_William_Orbit_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Amanda Knox defends Fringe comedy show after claims it will 'trivialise violence'**
-   - **Published:** Thu, 06 Aug 2026 19:39:43 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Amanda_Knox_defends_Fringe_comedy_show_a.md](entertainment_article_34_Amanda_Knox_defends_Fringe_comedy_show_a.md)
+2. **Campaigners call for Jared Leto's concerts to be cancelled after criminal sexual conduct claims**
+   - **Published:** Fri, 07 Aug 2026 14:28:50 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Campaigners_call_for_Jared_Letos_concert.md](entertainment_article_34_Campaigners_call_for_Jared_Letos_concert.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Nadia Sawalha threatens ITV with legal action over Loose Women removal**
-   - **Published:** Thu, 06 Aug 2026 11:57:13 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Nadia_Sawalha_threatens_ITV_with_legal_a.md](entertainment_article_35_Nadia_Sawalha_threatens_ITV_with_legal_a.md)
+3. **Lauryn Hill and Wyclef ‘in an amazing place’ as fans hope for new Fugees album after 30 years**
+   - **Published:** Thu, 06 Aug 2026 23:16:05 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Lauryn_Hill_and_Wyclef_in_an_amazing_pla.md](entertainment_article_35_Lauryn_Hill_and_Wyclef_in_an_amazing_pla.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Stephen Bear jailed for harassing ex-partner Georgia Harrison**
-   - **Published:** Thu, 06 Aug 2026 16:38:03 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Stephen_Bear_jailed_for_harassing_ex-par.md](entertainment_article_36_Stephen_Bear_jailed_for_harassing_ex-par.md)
+4. **Amanda Knox defends Fringe comedy show after claims it will 'trivialise violence'**
+   - **Published:** Fri, 07 Aug 2026 08:49:15 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Amanda_Knox_defends_Fringe_comedy_show_a.md](entertainment_article_36_Amanda_Knox_defends_Fringe_comedy_show_a.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
