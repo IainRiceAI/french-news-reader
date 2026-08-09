@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** "But it also needs much stronger prevention - we know that it's the elderly and vulnerable who are at risk when you have these heatwaves."
 
-**🇫🇷 FR:** *"Mais cela nécessite également une prévention beaucoup plus forte. Nous savons que ce sont les personnes âgées et vulnérables qui sont à risque lorsque nous traversons ces vagues de chaleur."*
+**🇫🇷 FR:** *"Mais cela nécessite également une prévention beaucoup plus forte. Nous savons que ce sont les personnes âgées et vulnérables qui sont à risque lorsque nous connaissons ces vagues de chaleur."*
 
 ---
 

@@ -190,7 +190,7 @@
 
 **🇬🇧 EN:** Hie argues this has the potential to "massively improve human health" by developing new drugs and therapies.
 
-**🇫🇷 FR:** *Hie affirme que cela pourrait potentiellement « améliorer considérablement la santé humaine » en développant de nouveaux médicaments et thérapies.*
+**🇫🇷 FR:** *Hie affirme que cela pourrait « améliorer considérablement la santé humaine » en développant de nouveaux médicaments et thérapies.*
 
 ---
 

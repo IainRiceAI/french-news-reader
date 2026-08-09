@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** Amanda Knox defends Fringe comedy show after Kercher family criticism
 
-**🇫🇷 FR:** *Amanda Knox défend la série comique Fringe après les critiques de la famille Kercher*
+**🇫🇷 FR:** *Amanda Knox défend la série humoristique Fringe après les critiques de la famille Kercher*
 
 ---
 

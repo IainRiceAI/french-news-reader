@@ -156,21 +156,13 @@
 
 ### Section 19
 
-**🇬🇧 EN:** In 2000, Orbit worked on Madonna's album Music, as well as releasing his own Grammy-nominated solo LP, Pieces In A Modern Style - a critically acclaimed electronic-classical crossover record.
+**🇬🇧 EN:** In 2000, Orbit worked on Madonna's album Music, and they reunited in 2012 when he produced six tracks on her MDNA album.
 
-**🇫🇷 FR:** *En 2000, Orbit a travaillé sur l'album Music de Madonna et a sorti son propre LP solo nominé aux Grammy Awards, Pieces In A Modern Style - un disque crossover électronique-classique acclamé par la critique.*
+**🇫🇷 FR:** *En 2000, Orbit a travaillé sur l'album Music de Madonna, et ils se sont réunis en 2012 lorsqu'il a produit six titres sur son album MDNA.*
 
 ---
 
 ### Section 20
-
-**🇬🇧 EN:** He and Madonna reunited in 2012 when he produced six tracks on her MDNA album.
-
-**🇫🇷 FR:** *Lui et Madonna se sont réunis en 2012 lorsqu'il a produit six titres sur son album MDNA.*
-
----
-
-### Section 21
 
 **🇬🇧 EN:** William Orbit pictured in February 2025
 
@@ -178,7 +170,7 @@
 
 ---
 
-### Section 22
+### Section 21
 
 **🇬🇧 EN:** With Blur, Orbit produced the 1999 album 13, which saw the Britpop band take a darker and rawer lyrical turn, providing hit singles such as Tender, Coffee & TV and No Distance Left To Run.
 
@@ -186,7 +178,7 @@
 
 ---
 
-### Section 23
+### Section 22
 
 **🇬🇧 EN:** He later worked on their track Sweet Song from 2003's Think Tank album.
 
@@ -194,7 +186,7 @@
 
 ---
 
-### Section 24
+### Section 23
 
 **🇬🇧 EN:** Orbit's collaboration with pop star Pink, Feel Good Time, from the soundtrack of 2003 film Charlie's Angels: Full Throttle, brought more success, reaching number three in the UK and bagging another Grammy nomination.
 
@@ -202,7 +194,7 @@
 
 ---
 
-### Section 25
+### Section 24
 
 **🇬🇧 EN:** His signature soundscape gave many of his recordings a dreamy, blissful aura - whether on upbeat hits by Madonna or Pink, or slower songs like Pure Shores and Black Coffee by All Saints.
 
@@ -210,7 +202,7 @@
 
 ---
 
-### Section 26
+### Section 25
 
 **🇬🇧 EN:** Group member Shaznay Lewis and Orbit wrote Pure Shores for the 2000 film The Beach, starring Leonardo DiCaprio, and the track went to number one in the UK.
 
@@ -218,7 +210,7 @@
 
 ---
 
-### Section 27
+### Section 26
 
 **🇬🇧 EN:** Lewis posted a broken heart emoji in response to the news of his death.
 
@@ -226,7 +218,7 @@
 
 ---
 
-### Section 28
+### Section 27
 
 **🇬🇧 EN:** His other collaborators included Beth Orton, including co-writing her 1996 single She Cries Your Name; and U2, producing the Irish band's 2002 single Electrical Storm.
 
@@ -234,19 +226,19 @@
 
 ---
 
-### Section 29
+### Section 28
 
-**🇬🇧 EN:** Orbit released 12 studio albums as a solo artist, the best-received being 1999's Pieces in a Modern Style, which featured his interpretations of various classical pieces.
+**🇬🇧 EN:** Orbit released 12 studio albums as a solo artist, the best-received being Pieces in a Modern Style, which featured his interpretations of various classical pieces.
 
-**🇫🇷 FR:** *Orbit a sorti 12 albums studio en tant qu'artiste solo, le plus reçu étant Pieces in a Modern Style de 1999, qui présentait ses interprétations de diverses pièces classiques.*
+**🇫🇷 FR:** *Orbit a sorti 12 albums studio en tant qu'artiste solo, le plus reçu étant Pieces in a Modern Style, qui présentait ses interprétations de diverses pièces classiques.*
 
 ---
 
-### Section 30
+### Section 29
 
-**🇬🇧 EN:** The album reached number four, and a dance remix of his version of Samuel Barber's Adagio for Strings was a club smash and went to number two in the singles chart.
+**🇬🇧 EN:** The album reached number two in 2000, and a dance remix of his version of Samuel Barber's Adagio for Strings was a club smash and went to number four in the singles chart.
 
-**🇫🇷 FR:** *L'album a atteint la quatrième place, et un remix dance de sa version de Adagio for Strings de Samuel Barber a été un succès en club et est allé à la deuxième place du classement des singles.*
+**🇫🇷 FR:** *L'album a atteint la deuxième place en 2000, et un remix dance de sa version de Adagio for Strings de Samuel Barber a été un succès en club et est allé à la quatrième place du classement des singles.*
 
 ---
 

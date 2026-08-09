@@ -1,146 +1,146 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-08-08 06:21:01  
+Generated on: 2026-08-09 06:21:37  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Police officers investigated over handling of sex offender who murdered two women**
-   - **Published:** Fri, 07 Aug 2026 23:56:11 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Police_officers_investigated_over_handli.md](top-stories_article_1_Police_officers_investigated_over_handli.md)
+1. **Andy Burnham to embark on cost of living tour through the UK**
+   - **Published:** Sat, 08 Aug 2026 23:10:50 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Andy_Burnham_to_embark_on_cost_of_living.md](top-stories_article_1_Andy_Burnham_to_embark_on_cost_of_living.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Counter-terror police reopen attempted burglary probe as part of Widdecombe inquiry**
-   - **Published:** Fri, 07 Aug 2026 22:42:43 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Counter-terror_police_reopen_attempted_b.md](top-stories_article_2_Counter-terror_police_reopen_attempted_b.md)
+2. **Fifa criticises campaign to oust president Infantino**
+   - **Published:** Sat, 08 Aug 2026 22:06:44 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Fifa_criticises_campaign_to_oust_preside.md](top-stories_article_2_Fifa_criticises_campaign_to_oust_preside.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Infantino denies claims Uefa paid off alleged 'lover'**
-   - **Published:** Fri, 07 Aug 2026 22:50:58 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Infantino_denies_claims_Uefa_paid_off_al.md](top-stories_article_3_Infantino_denies_claims_Uefa_paid_off_al.md)
+3. **Killed a month after his wedding - why PC Andrew Harper's death touched so many**
+   - **Published:** Sat, 08 Aug 2026 23:13:35 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Killed_a_month_after_his_wedding_-_why_P.md](top-stories_article_3_Killed_a_month_after_his_wedding_-_why_P.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Spain imposes border controls against Italy as row over Ceuta migrant influx intensifies**
-   - **Published:** Fri, 07 Aug 2026 22:13:55 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Spain_imposes_border_controls_against_It.md](top-stories_article_4_Spain_imposes_border_controls_against_It.md)
+4. **Israel accused of weaponising archaeology at ancient West Bank sites**
+   - **Published:** Sat, 08 Aug 2026 23:43:44 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Israel_accused_of_weaponising_archaeolog.md](top-stories_article_4_Israel_accused_of_weaponising_archaeolog.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Watch: BBC asks Infantino if he will resign as Fifa president**
-   - **Published:** Fri, 07 Aug 2026 21:24:17 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Watch_BBC_asks_Infantino_if_he_will_resi.md](top-stories_article_5_Watch_BBC_asks_Infantino_if_he_will_resi.md)
+5. **Perez Hilton faces long recovery after self-harm livestream**
+   - **Published:** Sun, 09 Aug 2026 04:32:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Perez_Hilton_faces_long_recovery_after_s.md](top-stories_article_5_Perez_Hilton_faces_long_recovery_after_s.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Hunter Biden tells BBC his pardon was 'not good' for America or his father's legacy**
-   - **Published:** Fri, 07 Aug 2026 22:07:00 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Hunter_Biden_tells_BBC_his_pardon_was_no.md](top-stories_article_6_Hunter_Biden_tells_BBC_his_pardon_was_no.md)
+6. **Australia is the planet's extinction hotspot, but one animal offers a glimmer of hope**
+   - **Published:** Sat, 08 Aug 2026 19:00:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Australia_is_the_planets_extinction_hots.md](top-stories_article_6_Australia_is_the_planets_extinction_hots.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Child among three killed in Russian missile attacks near Kyiv**
-   - **Published:** Sat, 08 Aug 2026 04:23:33 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Child_among_three_killed_in_Russian_miss.md](top-stories_article_7_Child_among_three_killed_in_Russian_miss.md)
+7. **Kellie Bright to leave EastEnders after 13 years**
+   - **Published:** Sun, 09 Aug 2026 00:53:54 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Kellie_Bright_to_leave_EastEnders_after_.md](top-stories_article_7_Kellie_Bright_to_leave_EastEnders_after_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Obesity rates have doubled in England since 1993 - what's going on?**
-   - **Published:** Fri, 07 Aug 2026 18:38:46 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Obesity_rates_have_doubled_in_England_si.md](top-stories_article_8_Obesity_rates_have_doubled_in_England_si.md)
+8. **Zendaya saw me on the red carpet and her jaw dropped - I'm still in shock**
+   - **Published:** Sun, 09 Aug 2026 00:39:27 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Zendaya_saw_me_on_the_red_carpet_and_her.md](top-stories_article_8_Zendaya_saw_me_on_the_red_carpet_and_her.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Child among three killed in Russian missile attacks near Kyiv**
-   - **Published:** Sat, 08 Aug 2026 04:23:33 GMT
-   - **Read Parallel Translation:** [world_article_9_Child_among_three_killed_in_Russian_miss.md](world_article_9_Child_among_three_killed_in_Russian_miss.md)
+1. **Israel accused of weaponising archaeology at ancient West Bank sites**
+   - **Published:** Sat, 08 Aug 2026 23:43:44 GMT
+   - **Read Parallel Translation:** [world_article_9_Israel_accused_of_weaponising_archaeolog.md](world_article_9_Israel_accused_of_weaponising_archaeolog.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Spain imposes border controls against Italy as row over Ceuta migrant influx intensifies**
-   - **Published:** Fri, 07 Aug 2026 22:13:55 GMT
-   - **Read Parallel Translation:** [world_article_10_Spain_imposes_border_controls_against_It.md](world_article_10_Spain_imposes_border_controls_against_It.md)
+2. **Hundreds arrested over French wildfires, but who is to blame?**
+   - **Published:** Sat, 08 Aug 2026 23:59:23 GMT
+   - **Read Parallel Translation:** [world_article_10_Hundreds_arrested_over_French_wildfires_.md](world_article_10_Hundreds_arrested_over_French_wildfires_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Thai PM vows to introduce stricter gun laws after eight killed in shooting**
-   - **Published:** Fri, 07 Aug 2026 21:19:27 GMT
-   - **Read Parallel Translation:** [world_article_11_Thai_PM_vows_to_introduce_stricter_gun_l.md](world_article_11_Thai_PM_vows_to_introduce_stricter_gun_l.md)
+3. **Hormuz talks positive, Oman says, as Iran warns deal would not open strait**
+   - **Published:** Sat, 08 Aug 2026 19:18:57 GMT
+   - **Read Parallel Translation:** [world_article_11_Hormuz_talks_positive_Oman_says_as_Iran_.md](world_article_11_Hormuz_talks_positive_Oman_says_as_Iran_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **I was standing in front of my teacher when she was shot, Thai pupil says**
-   - **Published:** Fri, 07 Aug 2026 14:20:27 GMT
-   - **Read Parallel Translation:** [world_article_12_I_was_standing_in_front_of_my_teacher_wh.md](world_article_12_I_was_standing_in_front_of_my_teacher_wh.md)
+4. **Perez Hilton faces long recovery after self-harm livestream**
+   - **Published:** Sun, 09 Aug 2026 04:32:06 GMT
+   - **Read Parallel Translation:** [world_article_12_Perez_Hilton_faces_long_recovery_after_s.md](world_article_12_Perez_Hilton_faces_long_recovery_after_s.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **How a 90-second power outage sparked chaos for rail commuters**
-   - **Published:** Fri, 07 Aug 2026 16:11:32 GMT
-   - **Read Parallel Translation:** [business_article_13_How_a_90-second_power_outage_sparked_cha.md](business_article_13_How_a_90-second_power_outage_sparked_cha.md)
+1. **Is football AI-proof? Why tech investors wanted a slice of the World Cup**
+   - **Published:** Sat, 08 Aug 2026 13:41:32 GMT
+   - **Read Parallel Translation:** [business_article_13_Is_football_AI-proof_Why_tech_investors_.md](business_article_13_Is_football_AI-proof_Why_tech_investors_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Goodwin considers selling part of defence business**
-   - **Published:** Fri, 07 Aug 2026 15:22:51 GMT
-   - **Read Parallel Translation:** [business_article_14_Goodwin_considers_selling_part_of_defenc.md](business_article_14_Goodwin_considers_selling_part_of_defenc.md)
+2. **How a 90-second power outage sparked chaos for rail commuters**
+   - **Published:** Fri, 07 Aug 2026 16:11:32 GMT
+   - **Read Parallel Translation:** [business_article_14_How_a_90-second_power_outage_sparked_cha.md](business_article_14_How_a_90-second_power_outage_sparked_cha.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Surprise fall in US jobs last month as slow summer continues**
-   - **Published:** Fri, 07 Aug 2026 14:03:55 GMT
-   - **Read Parallel Translation:** [business_article_15_Surprise_fall_in_US_jobs_last_month_as_s.md](business_article_15_Surprise_fall_in_US_jobs_last_month_as_s.md)
+3. **Goodwin considers selling part of defence business**
+   - **Published:** Fri, 07 Aug 2026 15:22:51 GMT
+   - **Read Parallel Translation:** [business_article_15_Goodwin_considers_selling_part_of_defenc.md](business_article_15_Goodwin_considers_selling_part_of_defenc.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **Meta fined $567m in largest child safety ruling against social media giant**
-   - **Published:** Fri, 07 Aug 2026 09:22:03 GMT
-   - **Read Parallel Translation:** [business_article_16_Meta_fined_567m_in_largest_child_safety_.md](business_article_16_Meta_fined_567m_in_largest_child_safety_.md)
+4. **Surprise fall in US jobs last month as slow summer continues**
+   - **Published:** Fri, 07 Aug 2026 14:03:55 GMT
+   - **Read Parallel Translation:** [business_article_16_Surprise_fall_in_US_jobs_last_month_as_s.md](business_article_16_Surprise_fall_in_US_jobs_last_month_as_s.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Meta fined $567m in largest child safety ruling against social media giant**
-   - **Published:** Fri, 07 Aug 2026 09:22:03 GMT
-   - **Read Parallel Translation:** [technology_article_17_Meta_fined_567m_in_largest_child_safety_.md](technology_article_17_Meta_fined_567m_in_largest_child_safety_.md)
+1. **Is football AI-proof? Why tech investors wanted a slice of the World Cup**
+   - **Published:** Sat, 08 Aug 2026 13:41:32 GMT
+   - **Read Parallel Translation:** [technology_article_17_Is_football_AI-proof_Why_tech_investors_.md](technology_article_17_Is_football_AI-proof_Why_tech_investors_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Why airlines are warning over lithium-ion batteries**
-   - **Published:** Thu, 06 Aug 2026 23:04:40 GMT
-   - **Read Parallel Translation:** [technology_article_18_Why_airlines_are_warning_over_lithium-io.md](technology_article_18_Why_airlines_are_warning_over_lithium-io.md)
+2. **Meta fined $567m in largest child safety ruling against social media giant**
+   - **Published:** Fri, 07 Aug 2026 09:22:03 GMT
+   - **Read Parallel Translation:** [technology_article_18_Meta_fined_567m_in_largest_child_safety_.md](technology_article_18_Meta_fined_567m_in_largest_child_safety_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **First OpenAI, now Meta - why do AI hacks keep happening?**
-   - **Published:** Thu, 06 Aug 2026 15:59:34 GMT
-   - **Read Parallel Translation:** [technology_article_19_First_OpenAI_now_Meta_-_why_do_AI_hacks_.md](technology_article_19_First_OpenAI_now_Meta_-_why_do_AI_hacks_.md)
+3. **Why airlines are warning over lithium-ion batteries**
+   - **Published:** Thu, 06 Aug 2026 23:04:40 GMT
+   - **Read Parallel Translation:** [technology_article_19_Why_airlines_are_warning_over_lithium-io.md](technology_article_19_Why_airlines_are_warning_over_lithium-io.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **Cashing in on SpaceX: 'Every chance I get, I'll sell a little more'**
-   - **Published:** Thu, 06 Aug 2026 14:50:54 GMT
-   - **Read Parallel Translation:** [technology_article_20_Cashing_in_on_SpaceX_Every_chance_I_get_.md](technology_article_20_Cashing_in_on_SpaceX_Every_chance_I_get_.md)
+4. **First OpenAI, now Meta - why do AI hacks keep happening?**
+   - **Published:** Thu, 06 Aug 2026 15:59:34 GMT
+   - **Read Parallel Translation:** [technology_article_20_First_OpenAI_now_Meta_-_why_do_AI_hacks_.md](technology_article_20_First_OpenAI_now_Meta_-_why_do_AI_hacks_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Hosepipe bans in force as drought declared - is your area affected?**
-   - **Published:** Fri, 07 Aug 2026 17:50:13 GMT
-   - **Read Parallel Translation:** [science_article_21_Hosepipe_bans_in_force_as_drought_declar.md](science_article_21_Hosepipe_bans_in_force_as_drought_declar.md)
+1. **Rare turtle to be sent back home in 5,000-mile 'incredibly emotional' trip**
+   - **Published:** Sat, 08 Aug 2026 20:52:22 GMT
+   - **Read Parallel Translation:** [science_article_21_Rare_turtle_to_be_sent_back_home_in_5000.md](science_article_21_Rare_turtle_to_be_sent_back_home_in_5000.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Is this the best day of the year for stargazing?**
-   - **Published:** Fri, 07 Aug 2026 15:30:46 GMT
-   - **Read Parallel Translation:** [science_article_22_Is_this_the_best_day_of_the_year_for_sta.md](science_article_22_Is_this_the_best_day_of_the_year_for_sta.md)
+2. **Australia is the planet's extinction hotspot, but one animal offers a glimmer of hope**
+   - **Published:** Sat, 08 Aug 2026 19:00:22 GMT
+   - **Read Parallel Translation:** [science_article_22_Australia_is_the_planets_extinction_hots.md](science_article_22_Australia_is_the_planets_extinction_hots.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Trump administration to pay German firm $1.2bn to halt US wind projects**
-   - **Published:** Fri, 07 Aug 2026 13:32:41 GMT
-   - **Read Parallel Translation:** [science_article_23_Trump_administration_to_pay_German_firm_.md](science_article_23_Trump_administration_to_pay_German_firm_.md)
+3. **Typhoon Dolphin batters Japan's Okinawa before bearing down on China**
+   - **Published:** Sat, 08 Aug 2026 15:15:17 GMT
+   - **Read Parallel Translation:** [science_article_23_Typhoon_Dolphin_batters_Japans_Okinawa_b.md](science_article_23_Typhoon_Dolphin_batters_Japans_Okinawa_b.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Wildfire damage could take hundreds of years to recover from, experts say**
-   - **Published:** Fri, 07 Aug 2026 05:15:56 GMT
-   - **Read Parallel Translation:** [science_article_24_Wildfire_damage_could_take_hundreds_of_y.md](science_article_24_Wildfire_damage_could_take_hundreds_of_y.md)
+4. **Hosepipe bans in force as drought declared - is your area affected?**
+   - **Published:** Fri, 07 Aug 2026 17:50:13 GMT
+   - **Read Parallel Translation:** [science_article_24_Hosepipe_bans_in_force_as_drought_declar.md](science_article_24_Hosepipe_bans_in_force_as_drought_declar.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
