@@ -68,9 +68,9 @@
 
 ### Section 8
 
-**🇬🇧 EN:** Sport is central to that strategy, and that is where football - and securing a minority stake in the World Cup under Fifa's proposed Forward Enterprise (FFE), - became an opportunity.
+**🇬🇧 EN:** Sport is central to that strategy, and that is where football - and securing a minority stake in the World Cup under Fifa's proposed Forward Enterprise (FFE) - became an opportunity.
 
-**🇫🇷 FR:** *Le sport est au cœur de cette stratégie, et c’est là que le football – et l’obtention d’une participation minoritaire dans la Coupe du monde dans le cadre du projet Forward Enterprise (FFE) proposé par la Fifa – est devenu une opportunité.*
+**🇫🇷 FR:** *Le sport est au cœur de cette stratégie, et c’est là que le football – et l’obtention d’une participation minoritaire dans la Coupe du monde dans le cadre du projet Forward Enterprise (FFE) de la Fifa – est devenu une opportunité.*
 
 ---
 
@@ -132,7 +132,7 @@
 
 ### Section 16
 
-**🇬🇧 EN:** Despite this summer's World Cup, hosted by the US, Canada and Mexico, providing an clear picture of World Cup commercialisation, the BBC understands talks over the FFE proposal involving Thrive started last year, with Greg Maffei, the former boss of Formula 1 owner Liberty Media, brought in as a commercial adviser.
+**🇬🇧 EN:** Despite this summer's World Cup, hosted by the US, Canada and Mexico, providing a clear picture of World Cup commercialisation, the BBC understands talks over the FFE proposal involving Thrive started last year, with Greg Maffei, the former boss of Formula 1 owner Liberty Media, brought in as a commercial adviser.
 
 **🇫🇷 FR:** *Bien que la Coupe du monde de cet été, organisée par les États-Unis, le Canada et le Mexique, donne une image claire de la commercialisation de la Coupe du monde, la BBC comprend que les discussions sur la proposition FFE impliquant Thrive ont commencé l'année dernière, avec Greg Maffei, l'ancien patron du propriétaire de Formule 1 Liberty Media, engagé comme conseiller commercial.*
 
@@ -228,9 +228,9 @@
 
 ### Section 28
 
-**🇬🇧 EN:** But some question where Fifa - and the World Cup - needed this cash injection.
+**🇬🇧 EN:** But some question whether Fifa - and the World Cup - needed this cash injection.
 
-**🇫🇷 FR:** *Mais certains se demandent où la Fifa – et la Coupe du monde – ont eu besoin de cette injection de liquidités.*
+**🇫🇷 FR:** *Mais certains se demandent si la Fifa – et la Coupe du monde – avaient besoin de cette injection de liquidités.*
 
 ---
 

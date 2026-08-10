@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How a 90-second power outage sparked chaos for rail commuters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>How a 90-second power outage sparked chaos for rail commuters</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 07 Aug 2026 16:11:32 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c3ekd5784k5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The incident raised questions about how a disrupted power supply can have such a widespread impact.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.46" data-end="13.8">
+            <p class="french-block">La panne de courant qui a frappé un centre d'opérations de Network Rail à Manchester était un incident rare.</p>
+            <span class="english-block">The power failure which hit a Network Rail operations centre in Manchester was a rare incident.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.8" data-end="24.34">
+            <p class="french-block">Mais après que les navetteurs se soient retrouvés face au chaos, des questions ont été soulevées quant à la manière dont une courte panne dans un centre d'exploitation pourrait avoir un impact généralisé.</p>
+            <span class="english-block">But after commuters were left facing chaos, it has raised questions about how a short outage at one operating centre could have a widespread impact.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.34" data-end="31.42">
+            <p class="french-block">Network Rail fera l'objet d'un examen minutieux pour déterminer comment ses systèmes ont fait face à la panne et y ont répondu.</p>
+            <span class="english-block">Network Rail will face scrutiny for how its systems coped and responded to the outage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.42" data-end="43.44">
+            <p class="french-block">Il s'agit de l'organisme public dont la mission est d'exploiter et d'entretenir l'infrastructure ferroviaire britannique. Cela signifie les voies, les signaux, les remblais et les grandes gares.</p>
+            <span class="english-block">That's the publicly-owned body whose job it is to operate and maintain Britain's railway infrastructure. That means the tracks, signals, embankments and major stations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.44" data-end="59.74">
+            <p class="french-block">C'est au centre opérationnel de Network Rail à Manchester que le problème a commencé. Ses centres d'exploitation abritent les contrôles cruciaux qui permettent aux trains de circuler en toute sécurité à travers le pays, le centre de Manchester étant responsable de grandes parties du Nord-Ouest.</p>
+            <span class="english-block">It was at Network Rail's operating centre in Manchester that the problem started. Its operating centres are where crucial controls are housed that let trains run safely across the country, with Manchester's centre responsible for large parts of the North West.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.74" data-end="74.86">
+            <p class="french-block">Il a été touché par une coupure de courant dans la zone, qui a été résolue en 90 secondes. Compte tenu de l'importance du centre, des sauvegardes sont en place. Mais des questions ont été soulevées sur la manière dont ils ont réagi.</p>
+            <span class="english-block">It was hit by a power cut in the area, which was resolved within 90 seconds. Given the centre's importance, backups are in place. But questions have been raised about how they responded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.86" data-end="87.48">
+            <p class="french-block">Chris Wright, directeur de la route nord-ouest chez Network Rail, a déclaré à la BBC "nous n'avons pas connu d'interruption de 90 secondes", insistant sur le fait que ses systèmes étaient de nouveau en ligne plus tôt.</p>
+            <span class="english-block">Chris Wright, north-west route director at Network Rail, told the BBC "we didn't experience a 90-second interruption," insisting its systems were back online sooner.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.48" data-end="97.08">
+            <p class="french-block">Mais il a déclaré que certains systèmes de communication de Network Rail "n'ont pas répondu comme nous l'aurions prévu, et ont donc dû être reconfigurés et remplacés".</p>
+            <span class="english-block">But he said some of Network Rail's communications systems "did not respond how we would have expected, and then needed reconfiguring and replacing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="97.08" data-end="103.54">
+            <p class="french-block">"Nous devons travailler très dur et très rapidement maintenant pour comprendre pourquoi c'est le cas", a-t-il ajouté.</p>
+            <span class="english-block">"We've got to work really hard very quickly now to understand why that's the case," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.54" data-end="111.82">
+            <p class="french-block">Parce que la signalisation était affectée - il s'agit essentiellement des feux de circulation des chemins de fer - les trains ont dû s'arrêter.</p>
+            <span class="english-block">Because signalling was affected - think of that essentially as the traffic lights of the railway - trains had to stop.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.82" data-end="123.1">
+            <p class="french-block">Les systèmes ont dû être redémarrés. Mais ceux qui contrôlent la signalisation ont subi quelques dégâts, qui ont pris du temps à être réparés en raison de la nécessité de remplacer certaines pièces.</p>
+            <span class="english-block">Systems had to be rebooted. But there was some damage to those that control signalling, which took time to fix because of the need to replace certain parts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.1" data-end="135.62">
+            <p class="french-block">Penser à quel point certaines parties du réseau ferroviaire sont occupées et au nombre de trains et d’équipages qui ont été laissés hors de position dans le nord-ouest de l’Angleterre et au-delà permet d’expliquer pourquoi l’impact a été si important.</p>
+            <span class="english-block">Thinking about how busy parts of the rail network are, and how many trains and crews were left out of position across the North West of England and beyond, helps explain why the impact was so big.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.62" data-end="140.45">
+            <p class="french-block">Network Rail s'est excusé auprès de ses clients et a ouvert une enquête.</p>
+            <span class="english-block">Network Rail has apologised to customers and opened an investigation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.45" data-end="150.84">
+            <p class="french-block">Les patrons affirment que les ingénieurs ont travaillé dur pour « renforcer la résilience supplémentaire de nos systèmes de signalisation afin de garantir que cela ne se reproduise plus ».</p>
+            <span class="english-block">Bosses say engineers have been working hard to "build additional resilience into our signalling systems to ensure that this doesn't happen again".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.84" data-end="167.78">
+            <p class="french-block">Network Rail a évolué vers la création de 12 centres d'exploitation ferroviaire à travers la Grande-Bretagne, remplaçant une structure précédente composée de centaines de postes de signalisation plus anciens. Ils sont censés être des pôles de haute technologie centralisant le contrôle du réseau.</p>
+            <span class="english-block">Network Rail has moved towards having 12 so-called Rail Operating Centres across Great Britain, replacing a previous structure of hundreds of older signal boxes. They are meant to be high tech hubs which centralise control of the network.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.78" data-end="173.23">
+            <p class="french-block">Le centre d'exploitation ferroviaire de Manchester a été ouvert en 2014.</p>
+            <span class="english-block">Manchester's Rail Operating Centre was opened in 2014.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.23" data-end="180.46">
+            <p class="french-block">Les experts préviennent qu’une telle consolidation signifie que si un centre est gravement touché, l’impact est beaucoup plus large.</p>
+            <span class="english-block">Experts have warned consolidating in this way means that if one centre is badly affected, the impact is much broader.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.46" data-end="191.04">
+            <p class="french-block">L'écrivain ferroviaire Christian Wolmar a déclaré que le problème qu'ils ont créé est que "si une chose ne va pas, cela peut anéantir, comme nous l'avons vu, une grande partie du réseau".</p>
+            <span class="english-block">Rail writer Christian Wolmar said the problem they have created is that "if one thing goes wrong, it can wipe out, as we saw, quite a lot of the network".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.04" data-end="204.79">
+            <p class="french-block">"Ils doivent donc vraiment commencer à réfléchir à la fois à la résilience, mais aussi à la question de savoir si la centralisation de toute la signalisation et des communications dans un très petit nombre d'endroits est la bonne chose à faire", a-t-il ajouté.</p>
+            <span class="english-block">"So really they've got to start thinking about both resilience, but also whether the centralisation of all the signalling and communications into a very small number of places is the right thing to do," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.79" data-end="209.54">
+            <p class="french-block">Les services ferroviaires sont interrompus en raison des effets du temps sec</p>
+            <span class="english-block">Rail services cut due to effects of dry weather</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.54" data-end="222.65">
+            <p class="french-block">Rien ne permet de relier spécifiquement cet incident particulier à d'autres problèmes récents rencontrés par les usagers du rail ; par exemple l’impact des restrictions de vitesse et des pannes d’infrastructures lors des récentes chaleurs extrêmes.</p>
+            <span class="english-block">There's nothing to specifically link this particular incident to other recent problems experienced by rail users; for example the impact of speed restrictions and infrastructure failures during the recent extreme heat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.65" data-end="237.43">
+            <p class="french-block">Mais il est peu probable que cela inspire confiance aux passagers qui ont souffert ces dernières années de problèmes tels que les mauvaises performances des opérateurs, les grèves et la hausse des prix des billets. Les tarifs réglementés ont été gelés en Angleterre cette année.</p>
+            <span class="english-block">But it is unlikely to inspire confidence among passengers who have in the past few years suffered from issues such as poor performance among operators, strikes and rising ticket prices. Regulated fares have been frozen in England this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.43" data-end="260.23">
+            <p class="french-block">L'ingénieur ferroviaire et écrivain Gareth Dennis a également établi un lien entre l'incident et les pressions financières et les suppressions d'emplois auxquelles Network Rail a été confronté. Il a déclaré que cela soulevait des questions telles que : « Leur personnel dispose-t-il de ressources adéquates ? Y a-t-il suffisamment de personnel pour garantir que des choses comme ces contrôles de cet approvisionnement ont lieu ?</p>
+            <span class="english-block">Rail engineer and writer Gareth Dennis also drew a link between the incident and the funding pressures and job cuts Network Rail has faced. He said it raised questions including: "Are their staff suitably resourced? Are there enough staff to be ensuring that things like those checks of that supply are happening?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.23" data-end="269.4">
+            <p class="french-block">Network Rail obtient des accords de financement sur cinq ans, signés par le gouvernement. Le dernier en date a débuté en 2024.</p>
+            <span class="english-block">Network Rail gets five-year funding settlements, signed off by the government. The latest one started in 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.4" data-end="283.15">
+            <p class="french-block">Le gouvernement a engagé 44,1 milliards de livres sterling pour la période 2024-29 du plan d’affaires stratégique, soit une augmentation de 3 milliards de livres sterling par rapport aux cinq années précédentes.</p>
+            <span class="english-block">The government committed £44.1bn for the 2024-29 period of the strategic business plan, a £3bn increase from the previous five years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="283.15" data-end="292.3">
+            <p class="french-block">Des facteurs tels que l’augmentation des coûts due à l’inflation et la multiplication des événements météorologiques extrêmes ont soumis son financement à de fortes pressions.</p>
+            <span class="english-block">Factors including rising costs due to inflation and a rise in extreme weather events have left its funding under severe pressure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.3" data-end="303.48">
+            <p class="french-block">En présentant le nouveau plan d'affaires de Network Rail, l'ancien directeur général Andrew Haines a déclaré que, compte tenu du budget limité, le financement "devrait aller plus loin que jamais".</p>
+            <span class="english-block">Introducing Network Rail's new business plan, former chief executive Andrew Haines said that, given the constrained budget, funding would "need to go further than ever before".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.48" data-end="325.06">
+            <p class="french-block">La politique ferroviaire actuelle du gouvernement se concentre sur la nationalisation des opérateurs ferroviaires voyageurs qui n'étaient pas déjà sous contrôle public (un certain nombre d'opérateurs avaient déjà été nationalisés sous les gouvernements conservateurs précédents) - puis sur le regroupement de l'exploitation des services ferroviaires et de l'infrastructure sous une nouvelle organisation appelée Great British Railways.</p>
+            <span class="english-block">The government's current rail policy centres around nationalising the passenger rail operators who weren't already in public control (a number of operators had already been nationalised under past Conservative governments) - then bringing the running of train services and the infrastructure under a new organisation called Great British Railways.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.06" data-end="335.66">
+            <p class="french-block">Network Rail devrait être aboli en tant qu'entité distincte. En amont, des équipes de gestion conjointes ont été constituées, par exemple dans le Sud-Ouest.</p>
+            <span class="english-block">Network Rail is expected to be abolished as a separate entity. Ahead of that, some joint management teams have been formed, for example in the South West.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.66" data-end="347.18">
+            <p class="french-block">La question de savoir combien d’argent des contribuables dépenser pour soutenir à la fois les services ferroviaires voyageurs et investir dans les infrastructures est importante – et les budgets gouvernementaux restent serrés.</p>
+            <span class="english-block">The question of how much taxpayer money to spend supporting both passenger rail services, and investing in infrastructure, is a significant one - and government budgets remain squeezed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="347.18" data-end="352.85">
+            <p class="french-block">Avez-vous été affecté par la perturbation du train ? Faites-le-nous savoir</p>
+            <span class="english-block">Were you affected by the train disruption? Let us know</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.85" data-end="357.31">
+            <p class="french-block">Network Rail affirme que les infrastructures deviennent moins fiables</p>
+            <span class="english-block">Network Rail says infrastructure to get less reliable</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_15.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
