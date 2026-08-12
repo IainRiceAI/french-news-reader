@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun-tanned cauliflowers and knobbly spuds - the heatwave veg that's good to eat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Sun-tanned cauliflowers and knobbly spuds - the heatwave veg that's good to eat</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 11 Aug 2026 23:00:26 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c4g360z8d2lo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: British shoppers should expect to see more wonky vegetables due to repeated heatwaves.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.5" data-end="14.81">
+            <p class="french-block">Achèteriez-vous un chou-fleur qui semble avoir été brûlé par le soleil ou un concombre recroquevillé sur lui-même ?</p>
+            <span class="english-block">Would you buy a cauliflower that looks like it's been sunburnt or a cucumber that's curled back on itself?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.81" data-end="29.74">
+            <p class="french-block">Les agriculteurs du Royaume-Uni sont aux prises avec l’une des saisons de croissance les plus sèches et les plus chaudes depuis des décennies. Les vagues de chaleur répétées après un printemps plus chaud que d'habitude ont conduit à prédire la pire récolte depuis le début des relevés.</p>
+            <span class="english-block">Farmers across the UK are grappling with one of the driest, hottest growing seasons in decades. Repeated heatwaves after a warmer than usual spring have led to predictions of the worst harvest since records began.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.74" data-end="35.5">
+            <p class="french-block">La chaleur n’affecte pas seulement la quantité de produits cultivés, mais aussi leur apparence.</p>
+            <span class="english-block">The heat is not only affecting how much produce is grown, but also how it looks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.5" data-end="50.81">
+            <p class="french-block">Les détaillants rejettent généralement les fruits et légumes qui ne répondent pas à des directives strictes en matière de taille, de forme et de couleur. Mais avec des approvisionnements sous pression, beaucoup devraient désormais assouplir ces règles plutôt que de risquer des étagères vides.</p>
+            <span class="english-block">Retailers usually reject fruit and vegetables that don't meet strict guidelines on size, shape and colour. But with supplies under pressure, many are now expected to loosen those rules rather than risk empty shelves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.81" data-end="62.54">
+            <p class="french-block">Cela signifie que les acheteurs pourraient commencer à voir des légumes plus petits, plus bizarres ou de couleurs étranges sur les étagères dans les semaines à venir – et les vendeurs et les producteurs disent qu'ils sont toujours bons à manger.</p>
+            <span class="english-block">That means shoppers could start seeing smaller, wonkier or oddly coloured veg on the shelves in the coming weeks - and sellers and growers say it's still good to eat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.54" data-end="68.21">
+            <p class="french-block">La chaleur extrême de cette année fait jaunir les têtes de chou-fleur plutôt que de les blanchir.</p>
+            <span class="english-block">This year's extreme heat is turning cauliflower heads yellow rather than white</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.21" data-end="73.25">
+            <p class="french-block">Le chou-fleur est l’un des légumes les plus touchés par temps chaud car il a besoin de beaucoup d’eau.</p>
+            <span class="english-block">Cauliflower is one of the most affected vegetables in hot weather because it needs lots of water.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="73.25" data-end="81.05">
+            <p class="french-block">Ses têtes sont généralement protégées du soleil par les feuilles, mais cette année, davantage de lumière les atteint et les fait jaunir.</p>
+            <span class="english-block">Its heads are usually shielded from sunlight by the leaves, but in this year more light is reaching them and turning them yellow.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.05" data-end="94.08">
+            <p class="french-block">Emilie Vanpoperingh, co-fondatrice d'Oddbox, une société d'abonnement qui vend des surplus de produits rejetés par les supermarchés, a déclaré qu'il s'agissait d'un "défaut purement esthétique" et que les plantes avaient exactement le même goût.</p>
+            <span class="english-block">Emilie Vanpoperingh, co-founder of Oddbox, a subscription company that sells surplus produce that supermarkets reject, said it is "purely a cosmetic defect" and the plants taste exactly the same.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.08" data-end="101.93">
+            <p class="french-block">Elle a déclaré qu'Oddbox avait acquis la semaine dernière 6 000 têtes de chou-fleur qui étaient trop sombres pour que les supermarchés puissent les vendre.</p>
+            <span class="english-block">She said Oddbox acquired 6,000 cauliflower heads last week that were too dark for supermarkets to sell.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.93" data-end="114.98">
+            <p class="french-block">Les producteurs signalent que leurs réserves d'eau sont épuisées, a déclaré Vanpoperingh, ce qui signifie que la famille des choux-fleurs et des brocolis connaîtra une croissance plus lente, ce qui entraînera une diminution des approvisionnements.</p>
+            <span class="english-block">Growers are reporting that their water reserves are depleted, Vanpoperingh said, which means the cauliflower and broccoli family of brassicas will experience slower growth, leading to shorter supplies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.98" data-end="130.3">
+            <p class="french-block">Cette pénurie signifie que les détaillants pourraient bientôt commencer à stocker du chou-fleur « bronzé au soleil », car « leur plus grand cauchemar, ce sont les étagères vides », a-t-elle déclaré. "Ils veulent s'assurer d'avoir des produits disponibles à tout moment."</p>
+            <span class="english-block">That short supply means retailers may soon start stocking "sun-tanned" cauliflower because "their biggest nightmare is empty shelves", she said. "They want to make sure that they've got availability of produce all the time."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.3" data-end="134.86">
+            <p class="french-block">La chaleur extrême fait également que les concombres se replient sur eux-mêmes.</p>
+            <span class="english-block">Extreme heat is also causing cucumbers to curl back in on themselves</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.86" data-end="141.36">
+            <p class="french-block">Les producteurs signalent également des concombres qui sortent déformés, certains se repliant en spirale.</p>
+            <span class="english-block">Growers are also reporting cucumbers that are coming out misshapen, with some bending back into a spiral.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.36" data-end="151.61">
+            <p class="french-block">En effet, les plantes sont cultivées dans des serres qui surchauffent à cause des températures extérieures élevées, ce qui provoque un stress chez les plantes, a expliqué Vanpoperingh.</p>
+            <span class="english-block">That is because the plants are grown in greenhouses which overheat in the high outdoor temperatures, causing the plants to become stressed, Vanpoperingh said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.61" data-end="158.38">
+            <p class="french-block">"Même s'ils sont irrigués, c'est juste une chaleur extrême, ce qui signifie que la plante ne peut plus pousser."</p>
+            <span class="english-block">"Even if they get the irrigation then it's just extreme heat, which means the plant is not able to grow anymore."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.38" data-end="164.4">
+            <p class="french-block">Les parasites qui supportent bien la chaleur mangent des trous dans les feuilles du pak choi de John Harper.</p>
+            <span class="english-block">Pests that do well in the heat are eating holes in the leaves of John Harper's pak choi</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.4" data-end="177.36">
+            <p class="french-block">John Harper, un agriculteur du Worcestershire, cultive du pak choi pour Sainsbury's, Aldi et Co-op, et a jeté plus de produits que d'habitude cette année à cause de minuscules trous creusés par des parasites.</p>
+            <span class="english-block">John Harper, a farmer in Worcestershire, grows pak choi for Sainsbury's, Aldi and Co-op, and has discarded more produce than usual this year because of tiny holes made by pests.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.36" data-end="189.46">
+            <p class="french-block">Les altises prospèrent dans des conditions chaudes et sèches, et les agriculteurs ne sont plus autorisés à utiliser autant de pesticides qu'avant, ce qui signifie que les couvertures en filet sont la seule défense de Harper.</p>
+            <span class="english-block">Flea beetles thrive in hot, dry conditions, and farmers are no longer allowed to use as many pesticides as before, meaning net covers are Harper's only defence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.46" data-end="199.51">
+            <p class="french-block">Les règles cosmétiques strictes des supermarchés signifient qu'"un tout petit trou peut rendre la plante inutile", a-t-il déclaré, mais certains ont temporairement assoupli les règles.</p>
+            <span class="english-block">Supermarkets' strict cosmetic rules mean "one tiny little hole can render the plant useless", he said, but some have temporarily loosened the rules.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.51" data-end="206.11">
+            <p class="french-block">"Nous avons travaillé avec eux pendant cette période chaude et en général, ils comprennent", a-t-il ajouté.</p>
+            <span class="english-block">"We've been working with them through this hot period and in general they sort of get it," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.11" data-end="215.23">
+            <p class="french-block">Harper a déclaré que la grande majorité des pak choi affectés sont toujours comestibles – même s'ils « semblent également très savoureux » pour les coléoptères.</p>
+            <span class="english-block">Harper said the vast majority of affected pak choi is still edible - even if "it seems to be quite tasty" for the beetles too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.23" data-end="219.79">
+            <p class="french-block">Le temps chaud peut faire pousser les pommes de terre en plusieurs sections distinctes</p>
+            <span class="english-block">Hot weather can cause potatoes to grow into several separate sections</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.79" data-end="234.84">
+            <p class="french-block">Lucy Munns, une productrice de pommes de terre dans le Cambridgeshire, a déclaré que le temps chaud ralentirait la croissance des légumes-racines, ce qui donnerait lieu à des tubercules de forme étrange que les supermarchés et les friteries, qu'elle fournit, n'achèteraient normalement pas.</p>
+            <span class="english-block">Lucy Munns, a potato farmer in Cambridgeshire, said the hot weather will stunt the root vegetable's growth, leading to oddly shaped tubers that supermarkets and chip shops, which she supplies, wouldn't normally buy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.84" data-end="244.56">
+            <p class="french-block">Lorsque le temps se rafraîchit après une période chaude, au lieu de pousser le principal tubercule de pomme de terre, « il a tendance à former une petite bosse à l'extrémité ».</p>
+            <span class="english-block">When the weather gets cooler after a hot period, instead of the main potato tuber growing "it tends to grow a little knobble on the end".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.56" data-end="254.81">
+            <p class="french-block">"Essayer de trouver des gens qui accepteront des pommes de terre comme celles-là est très difficile. Cela signifie donc finalement beaucoup de gaspillage pour nous", a ajouté Munns.</p>
+            <span class="english-block">"Trying to find people that will accept potatoes like that is very difficult. So that ultimately means a lot of wastage for us," Munns added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.81" data-end="259.51">
+            <p class="french-block">"C'est criminel, pour être honnête, de jeter autant de nourriture."</p>
+            <span class="english-block">"It's criminal, to be honest, to be chucking that much food away."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.51" data-end="265.92">
+            <p class="french-block">Ces « pommes de terre noueuses et difformes » sont cependant tout à fait bonnes à manger, a-t-elle déclaré.</p>
+            <span class="english-block">Those "knobbly and misshapen potatoes" however are absolutely fine to eat, she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.92" data-end="272.18">
+            <p class="french-block">"La seule difficulté est de les peler, mais il suffit de couper la partie noueuse et de la peler séparément."</p>
+            <span class="english-block">"The only difficulty is peeling them, but just cut the knobbly bit off and peel it separately."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.18" data-end="278.14">
+            <p class="french-block">De nombreux supermarchés ont lancé leurs propres gammes de « légumes imparfaits » ces dernières années</p>
+            <span class="english-block">Many supermarkets have started their own 'imperfect veg' lines in recent years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.14" data-end="285.72">
+            <p class="french-block">Des supermarchés comme Sainsbury's, Tesco, Morrisons et Waitrose proposent déjà des lignes dédiées aux légumes farfelus.</p>
+            <span class="english-block">Supermarkets including Sainsbury's, Tesco, Morrisons and Waitrose already have dedicated lines for wonky vegetables.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.72" data-end="302.21">
+            <p class="french-block">Calum Kelly, responsable technique des produits de Waitrose, a déclaré que dans des conditions météorologiques exigeantes, "nous assouplissons les directives en matière de taille et de forme pour les légumes clés afin d'éviter le gaspillage et de fournir plus de revenus à nos producteurs et agriculteurs".</p>
+            <span class="english-block">Calum Kelly, Waitrose's produce technical manager, said in demanding weather conditions "we relax size and shape guidelines for key veg to avoid waste and provide more income to our growers and farmers".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="302.21" data-end="316.34">
+            <p class="french-block">"Les pommes de terre au four pourraient être un peu plus petites que d'habitude cette récolte si la sécheresse continue. Tous ces légumes ont toujours bon goût, mais comme beaucoup d'entre nous en période de canicule, ils pourraient simplement paraître un peu moins que parfaits."</p>
+            <span class="english-block">"Baking potatoes might be a little smaller than usual this harvest if the drought continues. All these veg still taste great, but like many of us in a heatwave, they might just look a little less than perfect."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="316.34" data-end="334.54">
+            <p class="french-block">Cependant, toutes les lacunes ne peuvent pas être comblées de cette façon. Andrew Opie, directeur de l'alimentation et du développement durable au British Retail Consortium, a déclaré que les supermarchés importent également davantage de produits alimentaires de l'étranger alors que les approvisionnements britanniques s'épuisent.</p>
+            <span class="english-block">Not every gap can be filled this way though. Andrew Opie, the director of food and sustainability at the British Retail Consortium, said supermarkets are also importing more food from abroad as UK supplies run short.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="334.54" data-end="347.02">
+            <p class="french-block">"Les détaillants sont confrontés au dilemme de soutenir les agriculteurs britanniques, mais aussi de s'assurer que nous, en tant que clients, avons ce que nous espérons acheter lorsque nous allons dans le magasin", a-t-il déclaré.</p>
+            <span class="english-block">"Retailers face the dilemma of supporting British farmers, but also making sure that we, as customers, have what we expect to buy when we go in the shop," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="347.02" data-end="355.46">
+            <p class="french-block">"Cela va être une période difficile jusqu'à l'automne. Nous entendons dire que cela pourrait également affecter des choses comme les cerises."</p>
+            <span class="english-block">"It's going to be a challenging period right through into the autumn. We're hearing potentially it could affect things like cherries as well."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.46" data-end="361.37">
+            <p class="french-block">Les supermarchés sont obligés d'importer davantage de produits de l'étranger à cause de la chaleur.</p>
+            <span class="english-block">Supermarkets are being forced to import more produce from abroad because of the heat</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.37" data-end="369.65">
+            <p class="french-block">Les étés britanniques deviennent de plus en plus chauds et secs à mesure que le climat change et que les vagues de chaleur comme celle-ci deviennent plus fréquentes.</p>
+            <span class="english-block">British summers are getting hotter and drier as the climate changes and heatwaves like this one are becoming more frequent.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.65" data-end="378.5">
+            <p class="french-block">Cela signifie qu’une saison comme celle-ci pourrait devenir moins ponctuelle et plutôt un aperçu de ce à quoi l’agriculture britannique est régulièrement confrontée.</p>
+            <span class="english-block">That means a season like this one may become less of a one-off, and more of a preview of what British farming has to deal with regularly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="378.5" data-end="390.65">
+            <p class="french-block">De nombreux agriculteurs devront soit accepter davantage de déchets, investir dans de meilleurs systèmes d’irrigation et de stockage de l’eau, soit trouver un moyen de vendre davantage de produits douteux aux consommateurs.</p>
+            <span class="english-block">Many farmers will either have to accept more waste, invest in better irrigation and water storage systems, or find a way to sell more wonky produce to consumers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.65" data-end="400.27">
+            <p class="french-block">Munns, le producteur de pommes de terre, a déclaré que davantage de gens devraient essayer d'acheter des légumes imparfaits s'ils en voient dans les allées des supermarchés cette année.</p>
+            <span class="english-block">Munns, the potato farmer, said more people should try buying imperfect veg if they see it in the supermarket aisle this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="400.27" data-end="412.85">
+            <p class="french-block">Les gens devraient « être un peu moins pointilleux » sur les produits frais, a-t-elle déclaré. "Nous avons été trop gâtés au Royaume-Uni… Dans d'autres pays moins fortunés, nous n'aurions pas le choix."</p>
+            <span class="english-block">People should "be a bit less picky" about fresh produce, she said. "We've been too spoilt in the UK … In other less fortunate countries we wouldn't have a choice."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="412.85" data-end="417.62">
+            <p class="french-block">[Error Translate] Winemakers prosper but veg farms wilt in the drought</p>
+            <span class="english-block">Winemakers prosper but veg farms wilt in the drought</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="417.62" data-end="422.71">
+            <p class="french-block">Les vagues de chaleur pourraient-elles rendre votre magasin d’alimentation plus cher ?</p>
+            <span class="english-block">Could heatwaves make your food shop more expensive?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="422.71" data-end="428.9">
+            <p class="french-block">De Stonehenge à la Serpentine : des images satellite montrent l'impact d'un été chaud et sec</p>
+            <span class="english-block">From Stonehenge to the Serpentine - satellite images show impact of hot, dry summer</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_14.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

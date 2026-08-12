@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-08-11 06:28:55  
+Generated on: 2026-08-12 06:25:54  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **PM asks justice secretary to find way to keep PC Harper's killers in jail**
-   - **Published:** Tue, 11 Aug 2026 04:25:55 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_PM_asks_justice_secretary_to_find_way_to.md](top-stories_article_1_PM_asks_justice_secretary_to_find_way_to.md)
+1. **Woman assaulted by double murderer says nightmare became 'real life' when police let him attack again**
+   - **Published:** Tue, 11 Aug 2026 21:00:46 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Woman_assaulted_by_double_murderer_says_.md](top-stories_article_1_Woman_assaulted_by_double_murderer_says_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Amber heat health alerts for almost all of England as next heatwave begins**
-   - **Published:** Tue, 11 Aug 2026 01:38:14 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Amber_heat_health_alerts_for_almost_all_.md](top-stories_article_2_Amber_heat_health_alerts_for_almost_all_.md)
+2. **More weather records broken as UK heat set to spike again**
+   - **Published:** Tue, 11 Aug 2026 23:37:43 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_More_weather_records_broken_as_UK_heat_s.md](top-stories_article_2_More_weather_records_broken_as_UK_heat_s.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Councils to get more powers to stop vape and betting shops, PM announces**
-   - **Published:** Mon, 10 Aug 2026 21:33:51 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Councils_to_get_more_powers_to_stop_vape.md](top-stories_article_3_Councils_to_get_more_powers_to_stop_vape.md)
+3. **Police chiefs call for PM to prevent early release of PC Harper's killers**
+   - **Published:** Tue, 11 Aug 2026 21:21:44 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Police_chiefs_call_for_PM_to_prevent_ear.md](top-stories_article_3_Police_chiefs_call_for_PM_to_prevent_ear.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **At least 132 killed in Colombia's largest  earthquake in years**
-   - **Published:** Tue, 11 Aug 2026 04:06:07 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_At_least_132_killed_in_Colombias_largest.md](top-stories_article_4_At_least_132_killed_in_Colombias_largest.md)
+4. **UK to get best eclipse since 1999 as Moon blocks out Sun across Europe**
+   - **Published:** Tue, 11 Aug 2026 23:17:15 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_UK_to_get_best_eclipse_since_1999_as_Moo.md](top-stories_article_4_UK_to_get_best_eclipse_since_1999_as_Moo.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **England set to eliminate hepatitis C**
-   - **Published:** Mon, 10 Aug 2026 23:40:58 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_England_set_to_eliminate_hepatitis_C.md](top-stories_article_5_England_set_to_eliminate_hepatitis_C.md)
+5. **Trump says he switched planes after Nato summit because of possible threat**
+   - **Published:** Wed, 12 Aug 2026 03:44:55 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Trump_says_he_switched_planes_after_Nato.md](top-stories_article_5_Trump_says_he_switched_planes_after_Nato.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **'I started in my 20s and made £8,000': Why women are often better investors than men**
-   - **Published:** Mon, 10 Aug 2026 23:32:10 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_I_started_in_my_20s_and_made_8000_Why_wo.md](top-stories_article_6_I_started_in_my_20s_and_made_8000_Why_wo.md)
+6. **Children as young as nine hurt in growing number of e-scooter crashes**
+   - **Published:** Tue, 11 Aug 2026 23:31:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Children_as_young_as_nine_hurt_in_growin.md](top-stories_article_6_Children_as_young_as_nine_hurt_in_growin.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **The lonely Chinese men being conned by fake brides**
-   - **Published:** Mon, 10 Aug 2026 22:02:21 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_The_lonely_Chinese_men_being_conned_by_f.md](top-stories_article_7_The_lonely_Chinese_men_being_conned_by_f.md)
+7. **PM admits cost of living help is not enough and hints at further support**
+   - **Published:** Wed, 12 Aug 2026 04:13:45 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_PM_admits_cost_of_living_help_is_not_eno.md](top-stories_article_7_PM_admits_cost_of_living_help_is_not_eno.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Firefighting in New Forest to continue for several days**
-   - **Published:** Tue, 11 Aug 2026 03:51:06 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Firefighting_in_New_Forest_to_continue_f.md](top-stories_article_8_Firefighting_in_New_Forest_to_continue_f.md)
+8. **Rescuers scramble for survivors with 180 dead in Colombia earthquake**
+   - **Published:** Tue, 11 Aug 2026 19:09:52 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Rescuers_scramble_for_survivors_with_180.md](top-stories_article_8_Rescuers_scramble_for_survivors_with_180.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **At least 132 killed in Colombia's largest  earthquake in years**
-   - **Published:** Tue, 11 Aug 2026 04:06:07 GMT
-   - **Read Parallel Translation:** [world_article_9_At_least_132_killed_in_Colombias_largest.md](world_article_9_At_least_132_killed_in_Colombias_largest.md)
+1. **Rescuers scramble for survivors with 180 dead in Colombia earthquake**
+   - **Published:** Tue, 11 Aug 2026 19:09:52 GMT
+   - **Read Parallel Translation:** [world_article_9_Rescuers_scramble_for_survivors_with_180.md](world_article_9_Rescuers_scramble_for_survivors_with_180.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Canada flight cancelled after child refuses to wear seat belt**
-   - **Published:** Mon, 10 Aug 2026 21:06:27 GMT
-   - **Read Parallel Translation:** [world_article_10_Canada_flight_cancelled_after_child_refu.md](world_article_10_Canada_flight_cancelled_after_child_refu.md)
+2. **Trump's dramatic plane swap hints at personal stakes of Iran war**
+   - **Published:** Wed, 12 Aug 2026 00:14:42 GMT
+   - **Read Parallel Translation:** [world_article_10_Trumps_dramatic_plane_swap_hints_at_pers.md](world_article_10_Trumps_dramatic_plane_swap_hints_at_pers.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Watch: What we know about Tupac murder suspect Duane 'Keffe D' Davis**
-   - **Published:** Mon, 10 Aug 2026 20:45:29 GMT
-   - **Read Parallel Translation:** [world_article_11_Watch_What_we_know_about_Tupac_murder_su.md](world_article_11_Watch_What_we_know_about_Tupac_murder_su.md)
+3. **Trump says he switched planes after Nato summit because of possible threat**
+   - **Published:** Wed, 12 Aug 2026 03:44:55 GMT
+   - **Read Parallel Translation:** [world_article_11_Trump_says_he_switched_planes_after_Nato.md](world_article_11_Trump_says_he_switched_planes_after_Nato.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **At least 13 killed in Ukrainian drone strike deep into Russia**
-   - **Published:** Mon, 10 Aug 2026 14:34:25 GMT
-   - **Read Parallel Translation:** [world_article_12_At_least_13_killed_in_Ukrainian_drone_st.md](world_article_12_At_least_13_killed_in_Ukrainian_drone_st.md)
+4. **US says helicopter fired missiles to disable ship breaking Iran blockade**
+   - **Published:** Tue, 11 Aug 2026 21:14:56 GMT
+   - **Read Parallel Translation:** [world_article_12_US_says_helicopter_fired_missiles_to_dis.md](world_article_12_US_says_helicopter_fired_missiles_to_dis.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Nvidia gets $500bn from major investors to develop AI infrastructure**
-   - **Published:** Mon, 10 Aug 2026 22:31:42 GMT
-   - **Read Parallel Translation:** [business_article_13_Nvidia_gets_500bn_from_major_investors_t.md](business_article_13_Nvidia_gets_500bn_from_major_investors_t.md)
+1. **First 'pounds for pylons' energy bill discount sites revealed**
+   - **Published:** Tue, 11 Aug 2026 23:03:04 GMT
+   - **Read Parallel Translation:** [business_article_13_First_pounds_for_pylons_energy_bill_disc.md](business_article_13_First_pounds_for_pylons_energy_bill_disc.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Trump Media reports $238m loss as crypto falls**
-   - **Published:** Tue, 11 Aug 2026 02:21:31 GMT
-   - **Read Parallel Translation:** [business_article_14_Trump_Media_reports_238m_loss_as_crypto_.md](business_article_14_Trump_Media_reports_238m_loss_as_crypto_.md)
+2. **Sun-tanned cauliflowers and knobbly spuds - the heatwave veg that's good to eat**
+   - **Published:** Tue, 11 Aug 2026 23:00:26 GMT
+   - **Read Parallel Translation:** [business_article_14_Sun-tanned_cauliflowers_and_knobbly_spud.md](business_article_14_Sun-tanned_cauliflowers_and_knobbly_spud.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Councils to get more powers to stop vape and betting shops, PM announces**
-   - **Published:** Mon, 10 Aug 2026 21:33:51 GMT
-   - **Read Parallel Translation:** [business_article_15_Councils_to_get_more_powers_to_stop_vape.md](business_article_15_Councils_to_get_more_powers_to_stop_vape.md)
+3. **'I started in my 20s and made £8,000': Why women are often better investors than men**
+   - **Published:** Mon, 10 Aug 2026 23:32:10 GMT
+   - **Read Parallel Translation:** [business_article_15_I_started_in_my_20s_and_made_8000_Why_wo.md](business_article_15_I_started_in_my_20s_and_made_8000_Why_wo.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **Thames Water gave finance boss a £1m signing-on fee**
-   - **Published:** Mon, 10 Aug 2026 14:49:46 GMT
-   - **Read Parallel Translation:** [business_article_16_Thames_Water_gave_finance_boss_a_1m_sign.md](business_article_16_Thames_Water_gave_finance_boss_a_1m_sign.md)
+4. **Tributes to co-founder of John Pye auction house**
+   - **Published:** Tue, 11 Aug 2026 20:22:40 GMT
+   - **Read Parallel Translation:** [business_article_16_Tributes_to_co-founder_of_John_Pye_aucti.md](business_article_16_Tributes_to_co-founder_of_John_Pye_aucti.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Nvidia gets $500bn from major investors to develop AI infrastructure**
-   - **Published:** Mon, 10 Aug 2026 22:31:42 GMT
-   - **Read Parallel Translation:** [technology_article_17_Nvidia_gets_500bn_from_major_investors_t.md](technology_article_17_Nvidia_gets_500bn_from_major_investors_t.md)
+1. **Tokenomics: Why making AI pay is tricky**
+   - **Published:** Tue, 11 Aug 2026 23:03:52 GMT
+   - **Read Parallel Translation:** [technology_article_17_Tokenomics_Why_making_AI_pay_is_tricky.md](technology_article_17_Tokenomics_Why_making_AI_pay_is_tricky.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Tech leaders say AI means less work - their staff say they work up to 90 hours a week**
-   - **Published:** Mon, 10 Aug 2026 05:00:32 GMT
-   - **Read Parallel Translation:** [technology_article_18_Tech_leaders_say_AI_means_less_work_-_th.md](technology_article_18_Tech_leaders_say_AI_means_less_work_-_th.md)
+2. **AI agent hacks gym to get its user a spot in pilates class**
+   - **Published:** Tue, 11 Aug 2026 12:09:26 GMT
+   - **Read Parallel Translation:** [technology_article_18_AI_agent_hacks_gym_to_get_its_user_a_spo.md](technology_article_18_AI_agent_hacks_gym_to_get_its_user_a_spo.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Meta fined $567m in largest child safety ruling against social media giant**
-   - **Published:** Fri, 07 Aug 2026 09:22:03 GMT
-   - **Read Parallel Translation:** [technology_article_19_Meta_fined_567m_in_largest_child_safety_.md](technology_article_19_Meta_fined_567m_in_largest_child_safety_.md)
+3. **Wall Street giants hand Nvidia $500bn to fund boom in AI projects**
+   - **Published:** Tue, 11 Aug 2026 08:44:52 GMT
+   - **Read Parallel Translation:** [technology_article_19_Wall_Street_giants_hand_Nvidia_500bn_to_.md](technology_article_19_Wall_Street_giants_hand_Nvidia_500bn_to_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **Why airlines are warning over lithium-ion batteries**
-   - **Published:** Thu, 06 Aug 2026 23:04:40 GMT
-   - **Read Parallel Translation:** [technology_article_20_Why_airlines_are_warning_over_lithium-io.md](technology_article_20_Why_airlines_are_warning_over_lithium-io.md)
+4. **Tech leaders say AI means less work - their staff say they work up to 90 hours a week**
+   - **Published:** Mon, 10 Aug 2026 05:00:32 GMT
+   - **Read Parallel Translation:** [technology_article_20_Tech_leaders_say_AI_means_less_work_-_th.md](technology_article_20_Tech_leaders_say_AI_means_less_work_-_th.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Perseid meteor shower reaches peak: When and where to catch a glimpse**
-   - **Published:** Tue, 11 Aug 2026 01:59:24 GMT
-   - **Read Parallel Translation:** [science_article_21_Perseid_meteor_shower_reaches_peak_When_.md](science_article_21_Perseid_meteor_shower_reaches_peak_When_.md)
+1. **British driver who broke sound barrier sets new speed record**
+   - **Published:** Wed, 12 Aug 2026 04:11:19 GMT
+   - **Read Parallel Translation:** [science_article_21_British_driver_who_broke_sound_barrier_s.md](science_article_21_British_driver_who_broke_sound_barrier_s.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Disabled in a heatwave: 'We're talking about survival'**
-   - **Published:** Tue, 11 Aug 2026 00:18:49 GMT
-   - **Read Parallel Translation:** [science_article_22_Disabled_in_a_heatwave_Were_talking_abou.md](science_article_22_Disabled_in_a_heatwave_Were_talking_abou.md)
+2. **UK to get best eclipse since 1999 as Moon blocks out Sun across Europe**
+   - **Published:** Tue, 11 Aug 2026 23:17:15 GMT
+   - **Read Parallel Translation:** [science_article_22_UK_to_get_best_eclipse_since_1999_as_Moo.md](science_article_22_UK_to_get_best_eclipse_since_1999_as_Moo.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **What he told me made my blood run cold - Michael Sheen investigates Wales' toxic legacy**
-   - **Published:** Mon, 10 Aug 2026 23:25:12 GMT
-   - **Read Parallel Translation:** [science_article_23_What_he_told_me_made_my_blood_run_cold_-.md](science_article_23_What_he_told_me_made_my_blood_run_cold_-.md)
+3. **Watch: Severe storms overturn vehicle and trigger flooding in Ohio**
+   - **Published:** Tue, 11 Aug 2026 20:56:08 GMT
+   - **Read Parallel Translation:** [science_article_23_Watch_Severe_storms_overturn_vehicle_and.md](science_article_23_Watch_Severe_storms_overturn_vehicle_and.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Jackie, the famous California bald eagle, dies after weeks of intensive care**
-   - **Published:** Mon, 10 Aug 2026 22:40:23 GMT
-   - **Read Parallel Translation:** [science_article_24_Jackie_the_famous_California_bald_eagle_.md](science_article_24_Jackie_the_famous_California_bald_eagle_.md)
+4. **Solar eclipse glasses 'sold out everywhere' as people look for alternatives**
+   - **Published:** Tue, 11 Aug 2026 17:58:11 GMT
+   - **Read Parallel Translation:** [science_article_24_Solar_eclipse_glasses_sold_out_everywher.md](science_article_24_Solar_eclipse_glasses_sold_out_everywher.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **England set to eliminate hepatitis C**
-   - **Published:** Mon, 10 Aug 2026 23:40:58 GMT
-   - **Read Parallel Translation:** [health_article_25_England_set_to_eliminate_hepatitis_C.md](health_article_25_England_set_to_eliminate_hepatitis_C.md)
+1. **Children as young as nine hurt in growing number of e-scooter crashes**
+   - **Published:** Tue, 11 Aug 2026 23:31:02 GMT
+   - **Read Parallel Translation:** [health_article_25_Children_as_young_as_nine_hurt_in_growin.md](health_article_25_Children_as_young_as_nine_hurt_in_growin.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **New weight-loss pill approved for use in UK**
-   - **Published:** Mon, 10 Aug 2026 15:25:07 GMT
-   - **Read Parallel Translation:** [health_article_26_New_weight-loss_pill_approved_for_use_in.md](health_article_26_New_weight-loss_pill_approved_for_use_in.md)
+2. **England set to be one of the first countries to eliminate hepatitis C**
+   - **Published:** Tue, 11 Aug 2026 08:54:57 GMT
+   - **Read Parallel Translation:** [health_article_26_England_set_to_be_one_of_the_first_count.md](health_article_26_England_set_to_be_one_of_the_first_count.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **How a former GB Olympian curbed his porn problem - and the signs and steps to recovery**
-   - **Published:** Sat, 08 Aug 2026 01:34:07 GMT
-   - **Read Parallel Translation:** [health_article_27_How_a_former_GB_Olympian_curbed_his_porn.md](health_article_27_How_a_former_GB_Olympian_curbed_his_porn.md)
+3. **New weight-loss pill approved for use in UK**
+   - **Published:** Mon, 10 Aug 2026 15:25:07 GMT
+   - **Read Parallel Translation:** [health_article_27_New_weight-loss_pill_approved_for_use_in.md](health_article_27_New_weight-loss_pill_approved_for_use_in.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Moment earthquake shakes hospital operating room in Japan**
-   - **Published:** Fri, 07 Aug 2026 06:46:34 GMT
-   - **Read Parallel Translation:** [health_article_28_Moment_earthquake_shakes_hospital_operat.md](health_article_28_Moment_earthquake_shakes_hospital_operat.md)
+4. **How a former GB Olympian curbed his porn problem - and the signs and steps to recovery**
+   - **Published:** Sat, 08 Aug 2026 01:34:07 GMT
+   - **Read Parallel Translation:** [health_article_28_How_a_former_GB_Olympian_curbed_his_porn.md](health_article_28_How_a_former_GB_Olympian_curbed_his_porn.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **PM asks justice secretary to find way to keep PC Harper's killers in jail**
-   - **Published:** Tue, 11 Aug 2026 04:25:55 GMT
-   - **Read Parallel Translation:** [politics_article_29_PM_asks_justice_secretary_to_find_way_to.md](politics_article_29_PM_asks_justice_secretary_to_find_way_to.md)
+1. **Police chiefs call for PM to prevent early release of PC Harper's killers**
+   - **Published:** Tue, 11 Aug 2026 21:21:44 GMT
+   - **Read Parallel Translation:** [politics_article_29_Police_chiefs_call_for_PM_to_prevent_ear.md](politics_article_29_Police_chiefs_call_for_PM_to_prevent_ear.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Councils to get more powers to stop vape and betting shops, PM announces**
-   - **Published:** Mon, 10 Aug 2026 21:33:51 GMT
-   - **Read Parallel Translation:** [politics_article_30_Councils_to_get_more_powers_to_stop_vape.md](politics_article_30_Councils_to_get_more_powers_to_stop_vape.md)
+2. **Wealthier areas must play their part in housing asylum seekers, Burnham suggests**
+   - **Published:** Tue, 11 Aug 2026 20:07:31 GMT
+   - **Read Parallel Translation:** [politics_article_30_Wealthier_areas_must_play_their_part_in_.md](politics_article_30_Wealthier_areas_must_play_their_part_in_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Ban on 'subscription traps' brought forward by three months**
-   - **Published:** Mon, 10 Aug 2026 09:57:54 GMT
-   - **Read Parallel Translation:** [politics_article_31_Ban_on_subscription_traps_brought_forwar.md](politics_article_31_Ban_on_subscription_traps_brought_forwar.md)
+3. **Burnham faces unpopularity test over prisons dilemma**
+   - **Published:** Tue, 11 Aug 2026 15:50:37 GMT
+   - **Read Parallel Translation:** [politics_article_31_Burnham_faces_unpopularity_test_over_pri.md](politics_article_31_Burnham_faces_unpopularity_test_over_pri.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Send foreign prisoners abroad to end early releases, says Reform**
-   - **Published:** Mon, 10 Aug 2026 15:50:31 GMT
-   - **Read Parallel Translation:** [politics_article_32_Send_foreign_prisoners_abroad_to_end_ear.md](politics_article_32_Send_foreign_prisoners_abroad_to_end_ear.md)
+4. **Burnham 'confident' early release of PC Harper's killers can be halted**
+   - **Published:** Tue, 11 Aug 2026 20:09:52 GMT
+   - **Read Parallel Translation:** [politics_article_32_Burnham_confident_early_release_of_PC_Ha.md](politics_article_32_Burnham_confident_early_release_of_PC_Ha.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **30 years later, a former gang member will stand trial for Tupac's murder**
-   - **Published:** Mon, 10 Aug 2026 16:52:47 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_30_years_later_a_former_gang_member_will.md](entertainment_article_33_30_years_later_a_former_gang_member_will.md)
+1. **The Office actress Lucy Davis says she has 'incurable' cancer**
+   - **Published:** Tue, 11 Aug 2026 22:51:24 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_The_Office_actress_Lucy_Davis_says_she_h.md](entertainment_article_33_The_Office_actress_Lucy_Davis_says_she_h.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Radio Caroline breached Ofcom rules after mistakenly announcing King's death**
-   - **Published:** Mon, 10 Aug 2026 11:57:40 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Radio_Caroline_breached_Ofcom_rules_afte.md](entertainment_article_34_Radio_Caroline_breached_Ofcom_rules_afte.md)
+2. **Anne Hathaway pokes fun at 'fake baby bump' theories**
+   - **Published:** Tue, 11 Aug 2026 16:07:08 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Anne_Hathaway_pokes_fun_at_fake_baby_bum.md](entertainment_article_34_Anne_Hathaway_pokes_fun_at_fake_baby_bum.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **'Spectacular' Game of Thrones stage spin-off opens at home of Shakespeare**
-   - **Published:** Sun, 09 Aug 2026 22:29:18 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Spectacular_Game_of_Thrones_stage_spin-o.md](entertainment_article_35_Spectacular_Game_of_Thrones_stage_spin-o.md)
+3. **Amanda Knox comedy show 'sincere' but 'just not very funny'**
+   - **Published:** Tue, 11 Aug 2026 13:35:00 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Amanda_Knox_comedy_show_sincere_but_just.md](entertainment_article_35_Amanda_Knox_comedy_show_sincere_but_just.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Ex-Cambridge professor Jason Arday cancels live event after plagiarism row**
-   - **Published:** Mon, 10 Aug 2026 14:58:24 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Ex-Cambridge_professor_Jason_Arday_cance.md](entertainment_article_36_Ex-Cambridge_professor_Jason_Arday_cance.md)
+4. **Football YouTuber John Nellis joins Strictly line-up**
+   - **Published:** Tue, 11 Aug 2026 10:49:43 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Football_YouTuber_John_Nellis_joins_Stri.md](entertainment_article_36_Football_YouTuber_John_Nellis_joins_Stri.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

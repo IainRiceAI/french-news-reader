@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More weather records broken as UK heat set to spike again</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>More weather records broken as UK heat set to spike again</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 11 Aug 2026 23:37:43 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/c36dr3r3ny0o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Summer's record-breaking streak continues as the tally for days above 30C in the UK is broken.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.58" data-end="14.9">
+            <p class="french-block">Le record du nombre de jours atteignant 30°C chaque année au Royaume-Uni a été battu, selon le Met Office.</p>
+            <span class="english-block">The record for the number of days reaching 30C in any year in the UK has been broken, according to the Met Office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.9" data-end="29.18">
+            <p class="french-block">Après que plusieurs endroits aient dépassé les 30°C dimanche, il a été confirmé qu'il y a eu un total de 35 jours où la température quotidienne maximale a dépassé ce seuil, dépassant les 34 jours fixés en 1995.</p>
+            <span class="english-block">After several locations exceeded 30C on Sunday, it has now confirmed that there have been a total of 35 days where the maximum daily temperature has exceeded this threshold - beating the 34 days set in 1995.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.18" data-end="38.98">
+            <p class="french-block">Ce chiffre devrait être à nouveau dépassé mercredi et jeudi avec des températures culminant entre 30 et 30 °C dans les Midlands et le sud-est de l'Angleterre.</p>
+            <span class="english-block">This tally is widely expected to be topped again on Wednesday and Thursday with temperatures peaking in the mid-to-high 30s across the Midlands and south-east of England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.98" data-end="45.14">
+            <p class="french-block">Un rare avertissement de chaleur extrême orange a été émis par le Met Office, externe pour jeudi.</p>
+            <span class="english-block">A rare amber extreme heat warning has been issued by the Met Office, external for Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.14" data-end="50.23">
+            <p class="french-block">L'avertissement de chaleur orange du Met Office couvre une grande partie de l'Angleterre</p>
+            <span class="english-block">The Met Office's amber heat warning covers a large swathe of England</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.23" data-end="62.86">
+            <p class="french-block">Mercredi après-midi, le Premier ministre Andy Burnham présidera une réunion du comité d'urgence COBR du gouvernement pour discuter de la réponse du Royaume-Uni à la chaleur extrême, aux incendies de forêt et à la sécheresse.</p>
+            <span class="english-block">Wednesday afternoon will see Prime Minister Andy Burnham chair a meeting of the government's emergency COBR committee to discuss the UK's response to extreme heat, wildfires and drought.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.86" data-end="78.84">
+            <p class="french-block">Un porte-parole du No 10 a déclaré que cet été s'était avéré "difficile" au Royaume-Uni, en particulier pour "les pompiers qui luttent contre les incendies de forêt, les agriculteurs travaillant dans des conditions de sécheresse et le personnel du NHS dans les unités A&E très occupées".</p>
+            <span class="english-block">A spokesperson for No 10 said this summer was proving "challenging" in the UK, particularly for "firefighters tackling wildfires, farmers working in drought conditions, and NHS staff in busy A&E units".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.84" data-end="89.04">
+            <p class="french-block">"Nous continuerons à prendre les mesures nécessaires pour assurer la sécurité des communautés, protéger les approvisionnements en eau et sauvegarder l'environnement", ont-ils déclaré.</p>
+            <span class="english-block">"We will continue to take the action needed to keep communities safe, protect water supplies and safeguard the environment," they said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="89.04" data-end="98.42">
+            <p class="french-block">Le temps le plus chaud cette semaine est attendu jeudi dans les Midlands, l’est de l’Angleterre, Londres et le sud-est de l’Angleterre, le Yorkshire et Humber.</p>
+            <span class="english-block">The hottest weather this week is expected on Thursday across the Midlands, Eastern England, London and south-east England, Yorkshire and Humber.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.42" data-end="109.78">
+            <p class="french-block">Les températures pourraient potentiellement atteindre 38°C, ce qui équivaudrait à la température la plus élevée de l'été enregistrée jusqu'à présent à Lingwood dans le Norfolk le 26 juin.</p>
+            <span class="english-block">Temperatures could potentially reach 38C which would equal the highest temperature of the summer so far recorded at Lingwood in Norfolk on 26 June.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.78" data-end="118.1">
+            <p class="french-block">Il s'agirait du jour d'août le plus chaud depuis 2003, année où la température avait été enregistrée à 38,5°C.</p>
+            <span class="english-block">This would be the hottest August day since 2003, when 38.5C was recorded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.1" data-end="126.46">
+            <p class="french-block">Ce sera également probablement le quatrième mois civil de cette année à enregistrer 35°C ou plus, ce qui est sans précédent.</p>
+            <span class="english-block">It is also likely to be the fourth calendar month this year to record 35C or more, which is unprecedented.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.46" data-end="133.01">
+            <p class="french-block">L'été 2026 est en passe d'être le plus chaud jamais enregistré au Royaume-Uni, selon le Met Office</p>
+            <span class="english-block">Summer 2026 on course to be UK's hottest on record, says Met Office</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.01" data-end="136.82">
+            <p class="french-block">Températures prévues pour le pic de chaleur de jeudi</p>
+            <span class="english-block">Forecast temperatures for the peak of heat on Thursday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.82" data-end="145.56">
+            <p class="french-block">L'Agence de sécurité sanitaire du Royaume-Uni a également émis des alertes sanitaires de chaleur orange, qui couvrent l'ensemble de l'Angleterre.</p>
+            <span class="english-block">The UK's Health Security Agency has also issued amber heat health alerts, which cover the whole of England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.56" data-end="155.38">
+            <p class="french-block">Les alertes sanitaires en matière de chaleur avertissent le public et les professionnels de la santé lorsque les périodes de temps chaud ou froid constituent une menace pour la santé.</p>
+            <span class="english-block">Heat health alerts warn the public and medical professionals when periods of hot or cold weather pose a threat to health.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.38" data-end="163.75">
+            <p class="french-block">Ils préviennent que des impacts significatifs sont probables dans les domaines social et sanitaire, notamment une augmentation du nombre de décès.</p>
+            <span class="english-block">They warn that significant impacts are likely across social and health care, including a rise in deaths.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.75" data-end="167.52">
+            <p class="french-block">Les alertes sont en vigueur jusqu'à vendredi soir.</p>
+            <span class="english-block">The alerts are in place until Friday evening.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.52" data-end="170.45">
+            <p class="french-block">Quel effet la chaleur a-t-elle sur le corps ?</p>
+            <span class="english-block">What does hot weather do to the body?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.45" data-end="173.64">
+            <p class="french-block">Quels sont les signes d’un coup de chaleur chez le chien ?</p>
+            <span class="english-block">What are the signs of heatstroke in dogs?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.64" data-end="183.65">
+            <p class="french-block">Cette vague de chaleur devrait être de moins longue durée que les autres jusqu’à présent cet été, les températures commençant à paraître sensiblement plus fraîches au cours du week-end.</p>
+            <span class="english-block">This heatwave should be shorter lived than others so far this summer with temperatures starting to feel noticeably cooler over the weekend.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.65" data-end="197.28">
+            <p class="french-block">L’Écosse et l’Irlande du Nord ne connaîtront pas la même chaleur extrême que le sud de l’Angleterre, même si les parties orientales de l’Irlande du Nord, le sud et l’est de l’Écosse connaîtront toujours des températures bien supérieures au seuil de canicule.</p>
+            <span class="english-block">Scotland and Northern Ireland will not experience the same extreme heat as southern England, although eastern parts of Northern Ireland, southern and eastern Scotland will still see temperatures well above the heatwave threshold.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.28" data-end="204.14">
+            <p class="french-block">Ils seront nettement supérieurs à la moyenne à la mi-août et l'humidité devrait s'intensifier dans la nuit de mercredi à jeudi.</p>
+            <span class="english-block">They will be notably above average for mid-August and the humidity is likely to intensify on Wednesday night into Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.14" data-end="215.42">
+            <p class="french-block">Certains endroits pourraient atteindre les températures moyennes à élevées de 20 degrés Celsius mercredi - alors qu'une température diurne typique en août serait généralement comprise entre 15 et 20 degrés Celsius.</p>
+            <span class="english-block">Some places could reach the mid to high 20s Celsius on Wednesday - when a typical August daytime temperature would generally be in the high teens to low 20s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.42" data-end="223.42">
+            <p class="french-block">L’ouest de l’Écosse et l’ouest de l’Irlande du Nord devraient rester un peu plus frais en raison des nuages ​​et des pluies occasionnelles venant de l’Atlantique.</p>
+            <span class="english-block">Western Scotland and western parts of Northern Ireland are likely to remain somewhat cooler due to cloud and occasional rain moving in from the Atlantic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.42" data-end="231.62">
+            <p class="french-block">Même si la confiance dans les détails reste faible, cela pourrait ouvrir la porte à des averses et peut-être à des épisodes de pluie prolongés.</p>
+            <span class="english-block">While confidence in the details remains low, this could open the door for showers and perhaps some prolonged spells of rain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="231.62" data-end="238.44">
+            <p class="french-block">Toutefois, pour atténuer la sécheresse, des mois de précipitations supérieures à la moyenne sont nécessaires.</p>
+            <span class="english-block">To alleviate drought though, months of above-average rainfall is needed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.44" data-end="242.95">
+            <p class="french-block">Plus des deux tiers de l'Angleterre sont désormais en proie à la sécheresse</p>
+            <span class="english-block">More than two-thirds of England now in drought</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.95" data-end="245.23">
+            <p class="french-block">Perspectives mensuelles</p>
+            <span class="english-block">Monthly Outlook</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_2.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

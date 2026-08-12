@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI agent hacks gym to get its user a spot in pilates class</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>AI agent hacks gym to get its user a spot in pilates class</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 11 Aug 2026 12:09:26 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cn0nww2qlp7o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The incident is being seen as the latest example of the AI tools going to any lengths to complete their tasks.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.61" data-end="15.82">
+            <p class="french-block">C'est une expérience familière : courir contre des masses d'internautes anonymes en ligne pour figurer sur la liste d'un événement très demandé.</p>
+            <span class="english-block">It's a familiar experience: racing against masses of anonymous netizens online to get yourself on the list for an in-demand event.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.82" data-end="25.92">
+            <p class="french-block">Pour Andrew Bird, de Melbourne, en Australie, il s'agissait d'une place dans un cours de Pilates souvent surchargé, mais sa solution a eu des conséquences inattendues.</p>
+            <span class="english-block">For Andrew Bird, from Melbourne, in Australia, it was a spot in an often over-booked pilates class - but his solution had unexpected consequences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.92" data-end="33.36">
+            <p class="french-block">Il dit avoir confié la « corvée » à un agent IA – un outil capable d’effectuer des tâches en ligne de manière autonome.</p>
+            <span class="english-block">He says he outsourced the "chore" to an AI agent - a tool that can carry out online tasks autonomously.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.36" data-end="46.85">
+            <p class="french-block">Cela a réussi, mais est allé plus loin qu'il ne l'imaginait en piratant les systèmes en ligne du gymnase, dans ce qui est considéré comme le dernier exemple de la manière dont les agents d'IA sont prêts à tout pour accomplir le travail qui leur a été confié.</p>
+            <span class="english-block">It succeeded, but went further than he imagined by hacking the gym's online systems, in what is being seen as the latest example of the way AI agents will go to any lengths to carry out the jobs they've been given.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.85" data-end="52.49">
+            <p class="french-block">"Ce qui a rendu le tout plus surréaliste, c'est le ton", a écrit Bird sur son blog.</p>
+            <span class="english-block">"What made the whole thing more surreal was the tone," Bird wrote in his blog.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.49" data-end="57.1">
+            <p class="french-block">"Le robot n'était pas malveillant. Il a été utile."</p>
+            <span class="english-block">"The bot was not malicious. It was helpful."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.1" data-end="67.08">
+            <p class="french-block">La nouvelle intervient alors que les sociétés d’IA ont admis ces dernières semaines que leurs robots d’IA se livraient à des piratages incontrôlables lors de sessions de tests qui avaient mal tourné.</p>
+            <span class="english-block">The news comes as AI firms have been admitting in recent weeks that their AI bots have been going on uncontrollable hacking sprees in testing sessions gone wrong.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.08" data-end="77.28">
+            <p class="french-block">OpenAI, Anthropic et Meta ont tous révélé que leurs propres robots d'IA avaient mené des cyberattaques contre des entreprises privées dans la poursuite des objectifs fixés par leurs créateurs.</p>
+            <span class="english-block">OpenAI, Anthropic and Meta have all revealed that their own AI bots have carried out cyber-attacks on private companies in the pursuit of goals set by their makers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.28" data-end="89.16">
+            <p class="french-block">L’incident de réservation d’une salle de sport n’est pas considéré comme une cyber-attaque grave, mais constitue un autre exemple des conséquences involontaires de la mission de confier des tâches à des robots IA sophistiqués.</p>
+            <span class="english-block">The gym booking incident is not considered a serious cyber-attack but is another example of the unintended consequences of tasking sophisticated AI bots with jobs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="89.16" data-end="96.72">
+            <p class="french-block">Cela s'est réellement produit en avril, mais cela a été révélé maintenant grâce aux reportages externes d'ABC News Australia.</p>
+            <span class="english-block">It actually happened in April, but has come to light now thanks to reporting from ABC News Australia, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.72" data-end="109.44">
+            <p class="french-block">Bird a refusé d'en parler à la BBC en disant seulement: "Merci de nous avoir contactés. Je ne suis pas disponible pour participer à une interview. J'apprécie votre intérêt pour l'histoire."</p>
+            <span class="english-block">Bird declined to talk to the BBC about it saying only: "Thanks for getting in touch. I am unavailable to participate in an interview. Appreciate your interest the story."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.44" data-end="115.01">
+            <p class="french-block">Il a également supprimé son article de blog à ce sujet – sans toutefois expliquer pourquoi.</p>
+            <span class="english-block">He has also deleted his blog post about it from the time - but not explained why.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.01" data-end="129.48">
+            <p class="french-block">Selon son récit, Bird utilisait le logiciel OpenClaw - un outil populaire qui permet aux utilisateurs de discuter avec leurs robots IA (en l'occurrence Claude Opus 4.6 d'Athropic) via WhatsApp et de le lancer sur des tâches autonomes.</p>
+            <span class="english-block">According to his account, Bird was using the software OpenClaw - a popular tool that allows users to chat to their AI bots (in this case Athropic's Claude Opus 4.6) through WhatsApp and set it off on autonomous tasks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.48" data-end="135.36">
+            <p class="french-block">Il l'avait auparavant utilisé pour gérer ses emails, son agenda et réserver des restaurants.</p>
+            <span class="english-block">He had previously used it to manage his emails, calendar and book restaurants.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.36" data-end="146.71">
+            <p class="french-block">Une fois chargé de la tâche de réservation du gymnase, le robot a expliqué qu'il avait manipulé le système pour lui réserver des cours des mois à l'avance, contrairement aux règles normales du système.</p>
+            <span class="english-block">Once given the gym booking task, the bot explained that it had manipulated the system to book him onto classes months in advance - against the normal rules of the system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="146.71" data-end="153.34">
+            <p class="french-block">Le technologue en IA s’est alors demandé si l’agent pouvait le faire monter sur la liste d’attente pour un prochain cours.</p>
+            <span class="english-block">The AI technologist then wondered if the agent could move him up the waiting list for an upcoming class.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.34" data-end="159.02">
+            <p class="french-block">L'agent a répondu en disant qu'il avait réussi à annuler la réservation d'un autre pratiquant.</p>
+            <span class="english-block">The agent replied saying it had succeeded by cancelling another gym-goer's booking.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.02" data-end="180.12">
+            <p class="french-block">Selon le reportage d'ABC News, le robot IA a déclaré à Bird : "L'API n'a aucun contrôle d'autorisation pour l'annulation des réservations d'autres personnes… J'ai testé cela avec la personne en position n°1 sur la liste d'attente - et cela a effectivement été effectué. Vous êtes donc déjà passé du n°4 au n°3."</p>
+            <span class="english-block">According to the ABC News report the AI bot told Bird: "The API has zero authorisations checks on cancelling other people's reservations … I tested this with the person in waitlist position #1 — and it actually went through. So you've moved from #4 to #3 already."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.12" data-end="192.43">
+            <p class="french-block">Bird a demandé au robot d'annuler l'action, mais il n'y est pas parvenu. Il lui a donc demandé de rédiger un rapport de cybersécurité et d'alerter les propriétaires du gymnase de la vulnérabilité.</p>
+            <span class="english-block">Bird asked the bot to reverse the action but it wasn't able to so he asked it to write a cyber-security report and alert the gym owners about the vulnerability.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.43" data-end="200.83">
+            <p class="french-block">Bird, qui dirige une entreprise de création de documents IA, dit qu'il n'avait pas l'intention d'annuler la place de son collègue fan de Pilates.</p>
+            <span class="english-block">Bird, who runs an AI document making company, says he had no intention of cancelling his fellow pilates fan's spot.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.83" data-end="211.25">
+            <p class="french-block">"Ce n'est pas la fin du monde, donc je ne me suis pas inquiété, mais c'était certainement un signal d'alarme pour l'utiliser de manière responsable", a-t-il déclaré à ABC News.</p>
+            <span class="english-block">"It's not the end of the world, so I didn't beat myself up about it, but it certainly was a warning signal to use it responsibly," he told ABC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.25" data-end="216.67">
+            <p class="french-block">D’abord OpenAI, maintenant Meta : pourquoi les hacks d’IA continuent-ils à se produire ?</p>
+            <span class="english-block">First OpenAI, now Meta - why do AI hacks keep happening?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.67" data-end="222.65">
+            <p class="french-block">Coup d’avertissement ou coup publicitaire : à quel point devrions-nous nous inquiéter du piratage d’OpenAI ?</p>
+            <span class="english-block">Warning shot or publicity stunt - how worried should we be about the OpenAI hack?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_18.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
