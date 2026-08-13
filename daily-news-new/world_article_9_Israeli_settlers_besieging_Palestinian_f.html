@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Israeli settlers besieging Palestinian families in West Bank village</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>Israeli settlers besieging Palestinian families in West Bank village</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 12 Aug 2026 16:14:08 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cn0npjkqrleo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Israeli security forces have reportedly withdrawn and about a dozen settlers are said to remain at the site where two families have been besieged since Sunday.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.3" data-end="21.29">
+            <p class="french-block">Depuis dimanche, des colons israéliens assiègent deux familles palestiniennes dans leurs maisons en Cisjordanie occupée, les familles affirmant que leurs provisions s'épuisaient et les groupes de défense des droits exhortant les autorités à intervenir.</p>
+            <span class="english-block">Israeli settlers have been besieging two Palestinian families in their homes in the occupied West Bank since Sunday, with the families saying their supplies were running out and rights groups urging the authorities to step in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.29" data-end="36.1">
+            <p class="french-block">Mercredi, les forces de sécurité israéliennes se seraient retirées de l'avant-poste de colons juifs du village de Qusra, près de Naplouse, à la suite d'affrontements avec une foule de colons extrémistes. Une douzaine de colons seraient restés sur le site.</p>
+            <span class="english-block">On Wednesday Israeli security forces were reported to have withdrawn from the Jewish settler outpost in the village of Qusra near Nablus, following clashes with a crowd of extremist settlers. About a dozen settlers are said to remain at the site.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.1" data-end="45.82">
+            <p class="french-block">Après que les propriétaires palestiniens ont fait leur premier rapport à l'armée israélienne, les premiers soldats arrivés sur les lieux ont été filmés en train de prier avec les colons.</p>
+            <span class="english-block">After the Palestinian homeowners made their initial report to the Israeli army, the first soldiers who arrived at the scene were filmed praying with the settlers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.82" data-end="56.66">
+            <p class="french-block">Les familles Abu Ridi et Hassan ont publié sur les réseaux sociaux des appels à l'aide après que leurs approvisionnements en eau et en électricité ont été coupés et que leurs stocks de nourriture se sont épuisés.</p>
+            <span class="english-block">The Abu Ridi and Hassan families have been posting on social media appealing for help after their water and power supplies were cut off and their food stocks ran low.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.66" data-end="66.48">
+            <p class="french-block">On ne sait pas exactement ce que veulent les colons de Qusra. Dans le passé, les colons ont forcé les Palestiniens à quitter leurs maisons et ont saisi leurs propriétés.</p>
+            <span class="english-block">It is not clear exactly what the settlers in Qusra want. In the past, settlers have forced Palestinians out of their homes and seized their properties.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.48" data-end="71.52">
+            <p class="french-block">L'objectif déclaré des colons est de vider la zone de ses résidents palestiniens.</p>
+            <span class="english-block">The stated aim of the settlers is to empty the area of its Palestinian residents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.52" data-end="80.76">
+            <p class="french-block">Les derniers développements surviennent alors qu'un haut responsable de l'ONU a déclaré mardi au Conseil de sécurité à New York que "la Cisjordanie est au point de rupture".</p>
+            <span class="english-block">The latest developments come as a top UN official told the Security Council in New York on Tuesday that "the West Bank is at breaking point".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.76" data-end="89.78">
+            <p class="french-block">Toutes les colonies sont illégales au regard du droit international. Des avant-postes sont installés sans autorisation officielle israélienne.</p>
+            <span class="english-block">All settlements are illegal under international law. Outposts are set up without official Israeli authorisation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="89.78" data-end="99.82">
+            <p class="french-block">Des images de caméras de sécurité palestiniennes montrent des colons démolir un mur devant la maison de la famille Abu Ridi dimanche soir et utiliser les pierres pour bloquer la route.</p>
+            <span class="english-block">Palestinian security camera footage shows settlers tearing down a wall outside the Abu Ridi family's home on Sunday evening and using the stones to block the road.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.82" data-end="115.42">
+            <p class="french-block">Cela a empêché sept personnes – dont deux jeunes filles – de quitter leur domicile et les autres Palestiniens ne pouvaient pas les atteindre. Ils vivent dans ce que l’on appelle la zone B, une partie de la Cisjordanie sous contrôle administratif palestinien et contrôle de sécurité israélien.</p>
+            <span class="english-block">This left seven people - including two young girls – unable to leave their homes while other Palestinians could not reach them. They live in what is known as Area B, part of the West Bank under Palestinian administrative control and Israeli security control.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.42" data-end="123.1">
+            <p class="french-block">Sur Facebook, Qusay Abu Ridi a déclaré que la situation était critique, « d'autant plus que nous sommes complètement isolés ».</p>
+            <span class="english-block">Posting on Facebook, Qusay Abu Ridi said the situation was critical, "especially as we are completely isolated".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.1" data-end="132.67">
+            <p class="french-block">Il a écrit : « Nous vivons dans notre propre maison, sur notre propre terre, et nous ne demandons rien d'autre que le droit de vivre en sécurité et dans la dignité. »</p>
+            <span class="english-block">He wrote: "We are living in our own home, on our own land, and we are asking for nothing more than the right to live safely and with dignity."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.67" data-end="143.16">
+            <p class="french-block">Aysha Hassan a déclaré à Reuters que les colons avaient « tenté de briser la porte » de la maison et « avaient commencé à nous jeter des pierres, à nous injurier et à nous insulter ».</p>
+            <span class="english-block">Aysha Hassan told Reuters the settlers had "tried to break the gate" to the house and "started throwing stones at us, cursing and insulting us".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.16" data-end="148.25">
+            <p class="french-block">Elle a déclaré que sa famille « mourait de peur, extrêmement terrifiée ».</p>
+            <span class="english-block">She said her family was "dying of fear, extremely terrified".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.25" data-end="170.88">
+            <p class="french-block">Lundi, des colons israéliens ont empêché les journalistes israéliens du journal de gauche Haaretz de tenter d'accéder aux propriétés palestiniennes. Les journalistes ont déclaré que les soldats israéliens présents sur les lieux avaient refusé de les aider lorsque leur voiture était bloquée pendant deux heures. On leur a dit que la zone était une zone militaire fermée, mais l'ordre n'a pas été appliqué aux colons.</p>
+            <span class="english-block">On Monday, Israeli settlers blocked Israeli journalists from the left-leaning Haaretz newspaper from trying to reach the Palestinian properties. The reporters said Israeli soldiers at the scene refused to help them when their car was blocked for two hours. They were told the area was a closed military zone, however the order was not enforced on the settlers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.88" data-end="184.99">
+            <p class="french-block">Un jour plus tard, le groupe israélien de défense des droits humains Yesh Din a appelé de toute urgence le chef du commandement central de l'armée israélienne à ce que l'armée protège les habitants assiégés, évacue l'avant-poste des colons et demande des comptes aux colons.</p>
+            <span class="english-block">A day later the Israeli human rights group Yesh Din urgently appealed to the head of the Israeli military's Central Command for the army to protect the besieged residents, evacuate the settlers' outpost and hold the settlers accountable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.99" data-end="194.86">
+            <p class="french-block">Mardi soir, une ambulance palestinienne a finalement été autorisée à atteindre les familles, leur livrant de la nourriture et emmenant un enfant pour un traitement médical.</p>
+            <span class="english-block">Late on Tuesday, a Palestinian ambulance was finally allowed to reach the families, delivering food and taking one child away for medical treatment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.86" data-end="211.92">
+            <p class="french-block">À peu près au même moment, les Forces de défense israéliennes (FDI) ont publié une déclaration condamnant la création du nouvel avant-poste. Il a déclaré que pénétrer dans les maisons palestiniennes et s'en emparer était « une activité illégale, répréhensible et inacceptable ».</p>
+            <span class="english-block">At about the same time, the Israel Defense Forces (IDF) put out a statement condemning the establishment of the new outpost. It said that entering and seizing Palestinian homes was "illegal, reprehensible, and unacceptable activity".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.92" data-end="225.07">
+            <p class="french-block">Lorsque le chef du commandement central, le général de division Avi Bluth, et d'autres officiers supérieurs sont arrivés sur les lieux tôt mercredi, ils auraient rencontré les habitants et leur auraient fait part de leur « grave inquiétude ».</p>
+            <span class="english-block">When the head of its Central Command, Maj Gen Avi Bluth and other senior officers arrived at the scene early on Wednesday they are said to have met residents and voiced their "grave concern".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.07" data-end="241.92">
+            <p class="french-block">Par la suite, une vidéo d’une caméra de sécurité palestinienne partagée avec la BBC a montré des affrontements entre des soldats israéliens, la police des frontières et une grande foule de colons. Les forces de sécurité ont utilisé des gaz lacrymogènes et des grenades assourdissantes.</p>
+            <span class="english-block">Afterwards, Palestinian security camera video shared with the BBC showed confrontations between Israeli soldiers and border police and a large crowd of settlers. The security forces used tear gas and stun grenades.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.92" data-end="245.78">
+            <p class="french-block">L'accès aux maisons est bloqué par les colons depuis dimanche</p>
+            <span class="english-block">Access to the homes has been blocked by settlers since Sunday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.78" data-end="254.33">
+            <p class="french-block">Dans d'autres images, les forces israéliennes semblent avoir confisqué l'auvent sous lequel les colons s'abritaient, tout en laissant leur autre équipement.</p>
+            <span class="english-block">In other footage, the Israeli forces appear to have confiscated the canopy under which the settlers were sheltering, while leaving their other equipment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.33" data-end="264.48">
+            <p class="french-block">"Les forces de la police des frontières ont évacué la tente et s'efforcent d'évacuer les civils qui y séjournaient. L'incident se poursuit", a déclaré l'armée israélienne.</p>
+            <span class="english-block">"Border Police forces evacuated the tent and are working to evacuate the civilians who were staying there. The incident is still ongoing," the IDF stated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.48" data-end="274.85">
+            <p class="french-block">Il a indiqué qu'il avait été décidé que "des mesures disciplinaires seraient prises à l'encontre du personnel de sécurité impliqué, qui a été documenté sur les lieux il y a plusieurs jours".</p>
+            <span class="english-block">It said it was decided that "disciplinary action would be taken against the security personnel involved, who were documented at the site several days ago".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.85" data-end="291.94">
+            <p class="french-block">Le maire du village palestinien, Abdel Azim Wadi, a déclaré à la BBC que les résidents locaux avaient constaté « une tendance claire et soutenue à cibler Qusra ». Le mois dernier, une mosquée récemment achevée a été incendiée et des graffitis en hébreu ont été peints à proximité.</p>
+            <span class="english-block">The Palestinian village mayor, Abdel Azim Wadi, told the BBC that local residents had seen "a clear and sustained pattern of targeting Qusra". Last month a newly completed mosque was set on fire with graffiti in Hebrew sprayed nearby.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.94" data-end="312.62">
+            <p class="french-block">Cette attaque de colons était l’une des nombreuses attaques qui faisaient suite à un incident survenu dans le village palestinien de Tal. L’attaque de Tal par les colons israéliens a déclenché une escalade au cours de laquelle six personnes ont été tuées – quatre Palestiniens et deux soldats israéliens – dont l’un agissait en tant que coordinateur de sécurité pour une colonie israélienne voisine.</p>
+            <span class="english-block">That settler attack was one of many that followed on from an incident in the Palestinian village of Tal. After Israeli settlers attacked Tal, it triggered an escalation in which six people were killed - four Palestinians and two Israeli soldiers – one of whom acted as a security coordinator for a nearby Israeli settlement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.62" data-end="327.5">
+            <p class="french-block">En juillet, des colons ont également encerclé une maison palestinienne dans le village de Jalud, près de Qusra, pendant plus de deux semaines. Par la suite, les propriétaires ont fui et les colons ont repris la propriété où ils se trouvent jusqu'à présent.</p>
+            <span class="english-block">In July, settlers also surrounded a Palestinian home in the village of Jalud, near Qusra, for more than two weeks. Afterwards, the owners fled and settlers took over the property where they remain until now.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.5" data-end="340.68">
+            <p class="french-block">"La violence des colons a atteint des niveaux sans précédent", a déclaré mardi le coordonnateur spécial adjoint de l'ONU pour le processus de paix au Moyen-Orient, Ramiz Alakbarov, au Conseil de sécurité lors d'un point de presse.</p>
+            <span class="english-block">"Settler violence has reached unprecedented levels," the UN's Deputy Special Coordinator for the Middle East Peace Process, Ramiz Alakbarov, told the Security Council in a briefing on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.68" data-end="351.26">
+            <p class="french-block">Il a évoqué ce qu'il a décrit comme « un bilan humain qui donne à réfléchir » et a mentionné que le gouvernorat de Naplouse en particulier avait été durement touché récemment par la violence.</p>
+            <span class="english-block">He gave what he described as "the sobering human toll" and mentioned that the Nablus Governorate in particular had been hit hard recently by violence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.26" data-end="370.63">
+            <p class="french-block">Selon les chiffres de l'ONU, 76 Palestiniens – dont 18 enfants – ont été tués cette année en Cisjordanie, par les forces israéliennes ou par les colons. Au même moment, trois Israéliens – dont un civil – ont été tués lors d’affrontements avec des Palestiniens et lors d’une attaque à l’auto-bélier présumée perpétrée par un Palestinien en Cisjordanie.</p>
+            <span class="english-block">According to the UN's figures, 76 Palestinians – including 18 children - have been killed in the West Bank this year, by Israeli forces or settlers. At the same time, three Israelis – including one civilian – were killed in confrontations with Palestinians and in an alleged ramming attack by a Palestinian in the West Bank.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="370.63" data-end="384.82">
+            <p class="french-block">Depuis janvier 2023, 127 communautés palestiniennes de Cisjordanie ont connu un déplacement total ou partiel, dont 47 ont été entièrement déplacées, affectant plus de 6 390 Palestiniens, selon l'ONU.</p>
+            <span class="english-block">Since January 2023, 127 Palestinian communities in the West Bank have experienced full or partial displacement, including 47 that have been entirely displaced, affecting more than 6,390 Palestinians, the UN says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.82" data-end="396.82">
+            <p class="french-block">Il a enregistré qu'en 2026, environ 3 800 Palestiniens, dont près de la moitié étaient des enfants, ont été déplacés en raison de la violence des colons, des démolitions et des expulsions.</p>
+            <span class="english-block">It has registered that in 2026, about 3,800 Palestinians, nearly half of them children, have been displaced due to settler violence, demolitions and evictions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.82" data-end="413.76">
+            <p class="french-block">S'exprimant lors de la réunion de l'ONU, l'ambassadeur d'Israël auprès de l'ONU, Danny Danon, a rejeté l'idée selon laquelle les colonies seraient un obstacle à la paix. Il a déclaré qu'ils resteraient et continueraient de croître car son pays avait des droits bibliques, historiques et légaux sur la terre.</p>
+            <span class="english-block">Speaking at the UN meeting, Israel's Ambassador to the UN, Danny Danon dismissed the idea that settlements were an obstacle to peace. He said that they would remain and continue to grow as his country had biblical, historic and legal rights to the land.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="413.76" data-end="420.26">
+            <p class="french-block">Il a déclaré que le Conseil de sécurité « doit comprendre une vérité simple : nous n'allons nulle part ».</p>
+            <span class="english-block">He said that the Security Council "must understand a simple truth: we are not going anywhere".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="420.26" data-end="427.9">
+            <p class="french-block">Un colon israélien de Cisjordanie déclare à la BBC que les attaques contre les Palestiniens sont justifiées comme une vengeance</p>
+            <span class="english-block">Israeli West Bank settler tells BBC attacks on Palestinians are justified as revenge</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="427.9" data-end="434.52">
+            <p class="french-block">« Des colons israéliens ont assiégé notre maison » : l'intérieur d'un village palestinien attaqué chaque semaine</p>
+            <span class="english-block">'Israeli settlers laid siege to our home': Inside a Palestinian village under weekly attack</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="world_article_9.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
