@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children in temporary accommodation hits record high</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Children in temporary accommodation hits record high</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 13 Aug 2026 15:25:02 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c5yw7nxdwlpo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The number of children living in temporary accommodation has hit its 18th quarterly high in a row.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.74" data-end="11.42">
+            <p class="french-block">Ronesha dit que le fait d'être déplacé a été très perturbant pour ses fils</p>
+            <span class="english-block">Ronesha says being moved around has been very disruptive for her sons</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="11.42" data-end="22.97">
+            <p class="french-block">Le nombre d'enfants sans abri en Angleterre vivant dans des hébergements temporaires a augmenté de 5 % en un an pour atteindre 177 530, selon de nouveaux chiffres du gouvernement.</p>
+            <span class="english-block">The number of homeless children in England living in temporary accommodation has risen 5% in a year to 177,530, according to new government figures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.97" data-end="32.4">
+            <p class="french-block">De janvier à mars, on a enregistré la 18e augmentation trimestrielle consécutive, même si le nombre d'enfants vivant dans des chambres d'hôtes a diminué.</p>
+            <span class="english-block">January to March saw the 18th quarterly increase in a row, although the number of children living in B&Bs has fallen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.4" data-end="43.7">
+            <p class="french-block">Parallèlement, le nombre total de ménages hébergés temporairement a augmenté de près de 4 % en un an, a indiqué le ministère du Logement, des Communautés et des Gouvernements locaux.</p>
+            <span class="english-block">Meanwhile, the total number of households in temporary accommodation increased by nearly 4% in a year, the Ministry of Housing, Communities and Local Government said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.7" data-end="51.36">
+            <p class="french-block">Le Premier ministre Andy Burnham s'est engagé à lancer "le plus grand programme de construction de logements sociaux depuis l'après-guerre".</p>
+            <span class="english-block">Prime Minister Andy Burnham has pledged to introduce "the biggest council house-building programme since the postwar period".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.36" data-end="69.02">
+            <p class="french-block">Ronesha, 31 ans, vit dans un logement temporaire avec ses deux fils depuis 2024, après s'être retrouvée sans abri suite à une expulsion sans faute. Elle n'avait pas les moyens de louer à titre privé et a découvert que de nombreux bailleurs sociaux souhaitaient que les locataires potentiels aient un garant.</p>
+            <span class="english-block">Ronesha, 31, has been living in temporary accommodation with her two sons since 2024, after being made homeless following a no-fault eviction. She could not afford to rent privately and discovered that many social landlords wanted prospective tenants to have a guarantor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.02" data-end="83.23">
+            <p class="french-block">La famille a été hébergée dans un B&B pendant sept semaines – au-delà de la limite de six semaines – sans installations de cuisine adéquates ni réfrigérateur pour les médicaments de son fils, a-t-elle expliqué, avant d'être transférée dans leur logement actuel.</p>
+            <span class="english-block">The family was housed in a B&B for seven weeks - beyond the six-week limit - without proper cooking facilities or a fridge for her son's medication, she said, before being moved into their current accommodation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.23" data-end="88.73">
+            <p class="french-block">« Vivre dans un logement temporaire a coûté très cher à ma famille », a-t-elle déclaré.</p>
+            <span class="english-block">"Living in temporary accommodation has taken a huge toll on my family," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.73" data-end="103.85">
+            <p class="french-block">Ronesha, qui vit dans le nord de Londres, s'occupe de son plus jeune enfant, qui souffre de diabète de type 1 et d'autres besoins complexes. Il a trouvé l'instabilité d'être déplacé entre des foyers temporaires très difficile à gérer, a-t-elle déclaré.</p>
+            <span class="english-block">Ronesha, who lives in North London, is a registered carer for her younger child, who has type one diabetes and other complex needs. He has found the instability of being moved between temporary homes very difficult to cope with, she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.85" data-end="111.98">
+            <p class="french-block">Son glucomètre pour diabète émet un bip la nuit dans le petit appartement, ce qui réveille son fils aîné et l'a distrait de ses études GCSE.</p>
+            <span class="english-block">His diabetes glucose monitor beeps in the night in the small flat, which wakes up her older son and has distracted him from his GCSE studies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.98" data-end="124.18">
+            <p class="french-block">"Il a fait de son mieux pour faire toutes les révisions qu'il pouvait, mais je me sentais vraiment mal parce que je ne pouvais rien faire à part proposer des alternatives comme étudier chez un ami ou aller à la bibliothèque", a déclaré Ronesha.</p>
+            <span class="english-block">"He tried his best to do all the revision he could, but I felt really bad because there was nothing that I could do apart from giving alternatives like studying at a friend's house, or going to the library," Ronesha said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.18" data-end="127.78">
+            <p class="french-block">"C'était très difficile pour lui d'étudier à la maison."</p>
+            <span class="english-block">"It was very difficult for him to study at home."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.78" data-end="141.38">
+            <p class="french-block">Les expulsions « sans faute » au titre de l'article 21, où les locataires peuvent être expulsés sans donner de raison, sont largement considérées comme l'un des principaux facteurs de sans-abrisme et ont été interdites à partir de mai 2026.</p>
+            <span class="english-block">Section 21 "no-fault" evictions, where tenants can be evicted without giving a reason, are widely regarded as a key driver of homelessness, and were banned from May 2026.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.38" data-end="153.58">
+            <p class="french-block">Mais Ronesha a déclaré que « l'article 21 n'est pas le problème », ajoutant : « Mon problème est que le gouvernement permet aux propriétaires de faire monter en flèche les prix des loyers, qui ne correspondent pas aux salaires.</p>
+            <span class="english-block">But Ronesha said "Section 21 is not the problem", adding: "My issue is the government allowing landlords to skyrocket rental prices, which are not in line with salaries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.58" data-end="155.5">
+            <p class="french-block">"Ça ne compte pas."</p>
+            <span class="english-block">"It doesn't add up."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.5" data-end="166.39">
+            <p class="french-block">Le gouvernement travailliste s'est engagé à construire 1,5 million de nouveaux logements en Angleterre au cours de cette législature, mais n'est actuellement pas en mesure d'atteindre cet objectif.</p>
+            <span class="english-block">The Labour government pledged to build 1.5 million new homes in England over the course of this Parliament, but is currently not on course to meet that target.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.39" data-end="180.6">
+            <p class="french-block">"Il est honteux qu'un nombre record d'enfants grandissent sans logement parce que des décennies d'échec politique ont étouffé l'offre de logements sociaux véritablement abordables", a déclaré Sarah Elliot, directrice générale de l'association caritative Shelter.</p>
+            <span class="english-block">"It is shameful that a record number of children are growing up without a home because decades of political failure have choked off the supply of genuinely affordable social homes," said Sarah Elliot, chief executive of housing charity Shelter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.6" data-end="188.64">
+            <p class="french-block">"À l'heure actuelle, trop d'enfants passent leur enfance dans des logements temporaires qui sont à peine adaptés à un séjour d'une nuit, voire des années.</p>
+            <span class="english-block">"Right now, too many children are spending their childhoods in temporary accommodation that is barely fit for a one-night stay, let alone years on end.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.64" data-end="196.18">
+            <p class="french-block">"Des familles entières s'entassent dans des B&B, des auberges et de minuscules studios glacials et humides en hiver et bouillants en été."</p>
+            <span class="english-block">"Whole families are crammed into B&Bs, hostels and tiny bedsits that are freezing and damp in the winter and boiling in the summer."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.18" data-end="209.59">
+            <p class="french-block">Dans son nouveau discours en tant que Premier ministre, Burnham a laissé entendre que le Royaume-Uni était en proie à une « crise du logement » et qu'il souhaitait mettre en œuvre « le plus grand programme de construction de logements sociaux depuis l'après-guerre ».</p>
+            <span class="english-block">In his incoming speech as prime minister, Burnham suggested the UK was in the grip of a "housing crisis" and that he wanted to deliver "the biggest council house-building programme since the post-war period".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.59" data-end="223.25">
+            <p class="french-block">Shelter a déclaré qu'il souhaitait qu'il utilise le budget d'octobre pour « relancer la révolution des logements sociaux qu'il a promise » en supprimant les barrières financières qui empêchent les conseils de construire davantage de logements à loyer social.</p>
+            <span class="english-block">Shelter said it wanted him to use October's Budget to "kickstart the council house revolution he promised" by removing financial barriers that prevent councils from building more social rent homes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.25" data-end="234.46">
+            <p class="french-block">Le nombre total de ménages hébergés dans des B&B a diminué de près d'un quart au cours de l'année terminée en mars, le nombre de ménages contenant des enfants vivant dans des B&B ayant diminué de moitié.</p>
+            <span class="english-block">The total number of households in B&B accommodation fell by almost a quarter in the year to March, with the number of households containing children living in B&Bs falling by half.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.46" data-end="243.36">
+            <p class="french-block">Environ 1 000 ménages avec enfants séjournaient dans un hébergement B&B depuis plus de six semaines, bien que cela représente une baisse par rapport à un an plus tôt.</p>
+            <span class="english-block">About 1,000 households with children had been in B&B accommodation for more than the six-week limit, although this represented a fall on a year earlier.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="243.36" data-end="260.59">
+            <p class="french-block">"Même s'il est positif que davantage de ménages soient aidés à accéder à un logement et que moins de familles vivent dans des chambres d'hôtes, ces chiffres montrent qu'il reste encore un long chemin à parcourir, avec un nombre record de personnes bloquées dans des logements temporaires", a déclaré la secrétaire au Logement, Angela Rayner.</p>
+            <span class="english-block">"While it's welcome that more households are being helped into a home and fewer families are living in bed and breakfast accommodation, these figures show there is still a long way to go, with record numbers stuck in temporary accommodation," Housing Secretary Angela Rayner said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.59" data-end="268.1">
+            <p class="french-block">Le gouvernement a également promis 340 millions de livres sterling supplémentaires pour mettre fin au sommeil dans la rue.</p>
+            <span class="english-block">The government has also pledged an additional £340m to end rough sleeping.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_30.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
