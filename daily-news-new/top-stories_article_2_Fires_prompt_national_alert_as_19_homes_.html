@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fires prompt national alert as 19 homes destroyed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Fires prompt national alert as 19 homes destroyed</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 15 Aug 2026 02:54:04 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c2k7y4k98x3o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The prime minister said 37 fires were currently burning across England and Wales
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.82" data-end="18.0">
+            <p class="french-block">Les incendies en Angleterre et au Pays de Galles ont déclenché une alerte du gouvernement national avertissant les gens de ne pas allumer quoi que ce soit qui pourrait déclencher un incendie de forêt.</p>
+            <span class="english-block">Fires across England and Wales have prompted a national government alert warning people not to light anything that could spark a wildfire.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.0" data-end="33.46">
+            <p class="french-block">L'avertissement de vendredi soir est intervenu alors qu'il a été révélé que 19 maisons avaient été détruites et 18 autres endommagées lors d'un énorme incendie à Stourbridge, dans les West Midlands, qui s'est propagé rapidement à travers l'herbe et les bois jeudi avant d'endommager les maisons.</p>
+            <span class="english-block">The warning on Friday evening came as it was revealed 19 homes were destroyed and a further 18 damaged in a huge fire in Stourbridge, West Midlands, that spread rapidly through grass and woodland on Thursday before damaging homes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.46" data-end="42.19">
+            <p class="french-block">Le Premier ministre Andy Burnham a demandé au public de prendre l'avertissement "au sérieux", ajoutant qu'il avait été déclenché à la demande des pompiers.</p>
+            <span class="english-block">Prime Minister Andy Burnham told members of the public to take the warning "seriously", adding it was triggered at the request of firefighters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.19" data-end="53.26">
+            <p class="french-block">Simon Tuhill, chef des pompiers du service d'incendie des West Midlands, a déclaré que l'incendie de Stourbridge était l'un des incidents les plus importants auxquels le service ait jamais été confronté.</p>
+            <span class="english-block">West Midlands Fire Service chief fire officer Simon Tuhill said the Stourbridge blaze was one of the most significant incidents the service had ever dealt with.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.26" data-end="58.68">
+            <p class="french-block">Il s’agit de l’un des nombreux incendies survenus vendredi en Angleterre et au Pays de Galles.</p>
+            <span class="english-block">It was one of several fires being dealt with across England and Wales on Friday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.68" data-end="68.47">
+            <p class="french-block">Au Pays de Galles, un incident majeur a été déclaré près de Llandovery, dans le Carmarthenshire, après l'évacuation de dizaines de maisons et la fermeture de routes.</p>
+            <span class="english-block">In Wales, a major incident was declared near Llandovery, Carmarthenshire, after dozens of homes were evacuated and roads closed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.47" data-end="77.71">
+            <p class="french-block">Dans le Hampshire, les pompiers ont passé une sixième journée à lutter contre un incendie de forêt dans la New Forest, dans le Hampshire, qui a éclaté dimanche.</p>
+            <span class="english-block">In Hampshire, firefighters spent a sixth day tackling a wildfire in the New Forest, Hampshire, which broke out on Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.71" data-end="87.53">
+            <p class="french-block">Seize urgences ont été traitées par le service d'incendie et de secours de Norfolk jeudi après-midi, dont un incendie à Mousehold Heath, près de Gurney Road, dans la ville.</p>
+            <span class="english-block">Sixteen emergencies were tackled by Norfolk Fire and Rescue Service on Thursday afternoon, including a fire at Mousehold Heath, off Gurney Road in the city.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.53" data-end="101.86">
+            <p class="french-block">Ailleurs dans les West Midlands, les incendies ont causé jeudi d'importants dégâts à Warstock et Kings Norton, Birmingham. Un homme de 55 ans a été arrêté car soupçonné d'incendie criminel avec intention de mettre sa vie en danger.</p>
+            <span class="english-block">Elsewhere in the West Midlands fires caused extensive damage in Warstock and Kings Norton, Birmingham on Thursday. A 55-year-old man was arrested on suspicion of arson with intent to endanger life .</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.86" data-end="119.45">
+            <p class="french-block">Jeudi, à Stoke-on-Trent, quatre maisons de Sandyford ont été détruites et d'autres propriétés ont été endommagées. Deux personnes soupçonnées d'incendie criminel ont été arrêtées. Six pompiers ont été transportés à l'hôpital en raison d'une inhalation de fumée et d'un épuisement dû à la chaleur.</p>
+            <span class="english-block">In Stoke-on-Trent on Thursday four homes in Sandyford were destroyed, with other properties damaged. Two people were arrested on suspicion of arson. Six firefighters were taken to hospital due to smoke inhalation and heat exhaustion.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="119.45" data-end="128.38">
+            <p class="french-block">À Willenhall, dans les West Midlands, au moins trois maisons et plusieurs jardins ont été détruits dans des incendies sur Stonehouse Avenue et Harry Perks Street.</p>
+            <span class="english-block">In Willenhall, West Midlands, at least three homes and several gardens were destroyed in fires on Stonehouse Avenue and Harry Perks Street.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.38" data-end="138.84">
+            <p class="french-block">Les enquêteurs ont déclaré qu'ils travaillaient avec d'autres services d'urgence pour déterminer comment l'incendie de Stourbridge avait commencé, la police affirmant qu'elle gardait l'esprit ouvert.</p>
+            <span class="english-block">Investigators said they were working with other emergency services to establish how the Stourbridge fire started, with police saying they were keeping an open mind.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.84" data-end="148.66">
+            <p class="french-block">Certaines des zones les plus touchées ont été bouclées et de nombreux habitants évacués, dont l'évêque de Dudley, le très révérend Martin Gorick, n'ont pas pu rentrer chez eux.</p>
+            <span class="english-block">Some of the worst-affected areas have been cordoned off and many residents who were evacuated, including the Bishop of Dudley, the Right Reverand Martin Gorick, have not been able to return home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.66" data-end="155.3">
+            <p class="french-block">Des personnes se sont retrouvées sans abri après que les incendies se soient rapidement propagés dans les zones résidentielles</p>
+            <span class="english-block">People have been left without homes after fires spread rapidly into residential areas</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.3" data-end="161.47">
+            <p class="french-block">Le Premier ministre s'est rendu à Stourbridge plus tôt et a qualifié la scène de « dévastatrice ».</p>
+            <span class="english-block">The prime minister visited Stourbridge earlier and described the scene as "devastating".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.47" data-end="172.15">
+            <p class="french-block">Dans la nuit de samedi, il y a eu des nouvelles positives à Stourbridge, les services d'incendie des West Midlands annonçant que Norton Road rouvrirait avec un accès limité aux véhicules.</p>
+            <span class="english-block">Overnight into Saturday there was some positive news in Stourbridge, with the West Midlands Fire Service announcing Norton Road would be reopening with some limited access to vehicles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.15" data-end="176.66">
+            <p class="french-block">Les pompiers ont travaillé "extrêmement dur" pour éteindre l'incendie.</p>
+            <span class="english-block">It said firefighters were working "extremely hard" to put out the blaze.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.66" data-end="187.06">
+            <p class="french-block">Il a déclaré que le pays était une « poudrière » et a averti que le week-end à venir pourrait être difficile, tout en promettant un soutien supplémentaire aux services d'urgence.</p>
+            <span class="english-block">He said the country was a "tinderbox" and warned the coming weekend could be difficult, while promising extra support for emergency services.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.06" data-end="196.61">
+            <p class="french-block">Le gouvernement a également annoncé une interdiction temporaire de la vente de barbecues jetables, estimant qu'ils étaient responsables de graves incendies cet été.</p>
+            <span class="english-block">The government has also announced a temporary ban on the sale of disposable barbecues, saying they had been responsible for serious fires this summer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.61" data-end="205.66">
+            <p class="french-block">Burnham a déclaré que 37 incendies brûlaient actuellement en Angleterre et au Pays de Galles, bien que tous n'aient pas été provoqués par des barbecues jetables.</p>
+            <span class="english-block">Burnham said 37 fires were currently burning across England and Wales, although not all had been caused by disposable barbecues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.66" data-end="210.77">
+            <p class="french-block">Andy Burnham a rencontré les services d'urgence lors de sa visite dans la ville</p>
+            <span class="english-block">Andy Burnham met emergency services when he visited the town</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.77" data-end="222.1">
+            <p class="french-block">Mike Davis, qui a été évacué de son domicile à Stourbridge avec sa famille, a déclaré que la police leur avait dit de partir et qu'il ne savait pas si leur maison serait toujours debout à leur retour.</p>
+            <span class="english-block">Mike Davis, who was evacuated from his home in Stourbridge with his family, said they were told by police to leave and did not know whether their home would still be standing when they returned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.1" data-end="229.03">
+            <p class="french-block">"C'était une scène d'enfer... une épaisse fumée et quelque chose que je n'avais jamais vu auparavant", a-t-il déclaré.</p>
+            <span class="english-block">"It was a hell of a scene... thick smoke and just something I've never seen before," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.03" data-end="232.78">
+            <p class="french-block">"Nous avons juste pris quelques affaires et sommes partis."</p>
+            <span class="english-block">"We just grabbed a few things and headed out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.78" data-end="244.03">
+            <p class="french-block">Jane Baxter, dont la maison est située à côté du terrain de golf, a déclaré qu'elle et son mari n'avaient que quelques minutes pour récupérer leurs affaires essentielles avant de recevoir l'ordre de partir.</p>
+            <span class="english-block">Jane Baxter, whose home backs on to the golf course, said she and her husband had only minutes to collect essential belongings before being told to leave.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.03" data-end="255.38">
+            <p class="french-block">"Il s'agissait littéralement de prendre ce dont vous aviez besoin et de sortir et au bout de quatre ou cinq minutes environ, la police a de nouveau frappé à la porte et a dit : 'Vous devez vraiment sortir maintenant'."</p>
+            <span class="english-block">"It was literally grab what you needed and get out and within about four or five minutes the police knocked on the door again and said, 'You really have got to get out now'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.38" data-end="260.28">
+            <p class="french-block">Des flammes ont touché des propriétés après que les gens ont reçu l'ordre d'évacuer</p>
+            <span class="english-block">Flames hit properties after people were told to evacuate</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.28" data-end="270.26">
+            <p class="french-block">L'incendie menaçait également un centre équestre voisin. Le personnel du centre équestre Sugarloaf s'est précipité pour sauver les chevaux à l'approche des flammes.</p>
+            <span class="english-block">The fire also threatened a nearby equestrian centre. Staff at the Sugarloaf Equestrian Centre rushed to rescue horses as flames approached.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.26" data-end="283.42">
+            <p class="french-block">Abbie Harvey a déclaré que le feu brûlait déjà dans un champ où étaient gardés des chevaux et qu'elle et ses collègues devaient travailler rapidement pour les sauver. Elle a déclaré que la chaleur était si intense qu'ils pouvaient "la sentir nous brûler les jambes".</p>
+            <span class="english-block">Abbie Harvey said the fire was already burning in a field where horses were being kept and that she and colleagues had to work quickly to save them. She said the heat was so intense they could "feel it burning our legs".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="283.42" data-end="292.75">
+            <p class="french-block">Deux personnes de Stourbridge ont été transportées à l'hôpital en raison de l'inhalation de fumée, tandis que des pompiers ont également été blessés dans les West Midlands.</p>
+            <span class="english-block">Two people from Stourbridge were taken to hospital due to smoke inhalation, while firefighters were also injured across the West Midlands.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.75" data-end="297.53">
+            <p class="french-block">La fumée des incendies pouvait être vue et sentie à des kilomètres à la ronde</p>
+            <span class="english-block">The smoke from the fires could be seen and smelt for miles</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.53" data-end="302.57">
+            <p class="french-block">Dites-nous quelles histoires nous devrions couvrir à Birmingham et dans le Black Country</p>
+            <span class="english-block">Tell us which stories we should cover in Birmingham and the Black Country</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="302.57" data-end="310.94">
+            <p class="french-block">Suivez BBC Birmingham sur BBC Sounds, Facebook, externe, X, externe et Instagram, externe.</p>
+            <span class="english-block">Follow BBC Birmingham on BBC Sounds, Facebook, external, X, external and Instagram, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.94" data-end="320.69">
+            <p class="french-block">Des millions de personnes ont envoyé une alerte téléphonique d'urgence en cas d'incendie de forêt, avertissant de « toute activité susceptible de déclencher un incendie »</p>
+            <span class="english-block">Millions sent wildfire emergency phone alert warning against 'any activity that could start a fire'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.69" data-end="326.18">
+            <p class="french-block">De multiples incendies détruisent des maisons et provoquent des ravages dans les West Midlands</p>
+            <span class="english-block">Multiple fires destroy homes and cause devastation in West Midlands</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.18" data-end="329.4">
+            <p class="french-block">Service d'incendie des West Midlands</p>
+            <span class="english-block">West Midlands Fire Service</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.4" data-end="332.69">
+            <p class="french-block">Service d'ambulance des West Midlands</p>
+            <span class="english-block">West Midlands Ambulance Service</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_2.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

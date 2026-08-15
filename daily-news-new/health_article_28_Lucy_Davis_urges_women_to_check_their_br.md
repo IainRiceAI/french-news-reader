@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** The NHS says to check your breasts, external or chest about once a month.
 
-**🇫🇷 FR:** *Le NHS recommande de vérifier vos seins, externes ou thoraciques environ une fois par mois.*
+**🇫🇷 FR:** *Le NHS dit de vérifier vos seins, externes ou thoraciques environ une fois par mois.*
 
 ---
 

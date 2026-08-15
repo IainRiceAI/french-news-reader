@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derailed Essex to London train leads to travel chaos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Derailed Essex to London train leads to travel chaos</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 14 Aug 2026 19:57:50 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cq561qvg7qgo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: More than 60 patients were checked over by ambulance crews but all were discharged at the scene.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.15" data-end="11.71">
+            <p class="french-block">Le train a déraillé au sud de la gare de Wickford dans l'Essex</p>
+            <span class="english-block">The train derailed south of Wickford railway station in Essex</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="11.71" data-end="17.23">
+            <p class="french-block">Les services ferroviaires ont été plongés dans le chaos après le déraillement d'un train dans l'Essex.</p>
+            <span class="english-block">Railway services were plunged into chaos after a train derailed in Essex.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.23" data-end="29.09">
+            <p class="french-block">Le service Greater Anglia de Southend Victoria à Londres Liverpool Street a déraillé à Wickford vendredi à 14h12 BST, entraînant l'annulation de tous les voyages de l'entreprise depuis la gare.</p>
+            <span class="english-block">The Greater Anglia service from Southend Victoria to London Liverpool Street came off the tracks in Wickford at 14:12 BST on Friday, leading to all the firm's trips from the station being cancelled.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.09" data-end="39.29">
+            <p class="french-block">Plus de 60 passagers se trouvaient à bord du train de banlieue mais personne n'a été blessé et il est resté debout, selon les enquêteurs et le service d'ambulance de l'Est de l'Angleterre.</p>
+            <span class="english-block">More than 60 passengers were on board the commuter-line train but nobody was injured and it remained upright, according to investigators and the East of England Ambulance Service.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.29" data-end="46.73">
+            <p class="french-block">Cela s'est produit moins de 24 heures après que deux passagers ont été grièvement blessés dans un autre déraillement dans l'East Sussex.</p>
+            <span class="english-block">It happened less than 24 hours after two passengers were seriously injured in a separate derailment in East Sussex.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.73" data-end="52.78">
+            <p class="french-block">Tous les services d'urgence se sont précipités à Wickford au fur et à mesure que l'incident se déroulait.</p>
+            <span class="english-block">All emergency services rushed to Wickford as the incident unfolded</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.78" data-end="58.46">
+            <p class="french-block">"Le train a basculé violemment", déclare un passager à bord du service qui a déraillé</p>
+            <span class="english-block">'The train swung wildly,' says passenger on board derailed service</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.46" data-end="63.31">
+            <p class="french-block">Un deuxième train qui n'a pas pu poursuivre son trajet a également été évacué.</p>
+            <span class="english-block">A second train that was unable to continue its journey was also evacuated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.31" data-end="68.06">
+            <p class="french-block">Les trains exploités par c2c depuis Southend Central fonctionnent toujours.</p>
+            <span class="english-block">Trains operated by c2c from Southend Central are still operating.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.06" data-end="78.22">
+            <p class="french-block">Network Rail a averti les passagers que des « perturbations majeures » se poursuivraient au moins jusqu'à samedi, y compris pour ceux à destination de Southminster et Braintree.</p>
+            <span class="english-block">Network Rail has warned passengers that "major disruption" will continue until at least Saturday, including for those going to Southminster and Braintree.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.22" data-end="87.7">
+            <p class="french-block">Le train a quitté Rayleigh à 14 h 06 mais n'a pas réussi à atteindre Wickford à 14 h 11 comme prévu, en raison de la sortie de deux de ses wagons arrière des voies.</p>
+            <span class="english-block">The train departed Rayleigh at 14:06 but failed to reach Wickford at 14:11 as planned, due to two of its rear carriages coming off the tracks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.7" data-end="93.48">
+            <p class="french-block">Jon Young est descendu du train avec un membre du personnel de Greater Anglia qui était à bord.</p>
+            <span class="english-block">Jon Young got off the train with a member of Greater Anglia staff who was on board</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.48" data-end="101.83">
+            <p class="french-block">"Le train a basculé violemment pendant environ 10 secondes, comme s'il était sur le point de basculer", a déclaré Jon Young à la BBC.</p>
+            <span class="english-block">"The train swung wildly for around 10 seconds, like it was about to tilt over," Jon Young told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.83" data-end="108.05">
+            <p class="french-block">"Cela a ensuite continué pendant quelques minutes, mais il y a eu un horrible bruit de vibration."</p>
+            <span class="english-block">"It then carried on going for a couple of minutes but there was a horrible vibrating sound."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.05" data-end="116.21">
+            <p class="french-block">L'homme de 37 ans de Brentwood a déclaré que de la fumée était entrée dans le wagon arrière et avait poussé les gens à courir "paniqués" de peur.</p>
+            <span class="english-block">The 37-year-old from Brentwood said smoke entered the rear carriage and led to "panicked" people running in fear.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.21" data-end="122.5">
+            <p class="french-block">Il y a également eu une confusion à l'aéroport de Southend, qui se trouve sur la ligne ferroviaire concernée.</p>
+            <span class="english-block">There was also confusion at Southend Airport, which is on the affected train line.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.5" data-end="133.85">
+            <p class="french-block">"De nombreux passagers ne peuvent pas se rendre à leur destination à partir de la gare ici", a déclaré Matt Knight, journaliste de la BBC Essex, qui venait lui-même d'atterrir après des vacances.</p>
+            <span class="english-block">"Many passengers can't get to their onward destinations from the railway station here," said BBC Essex reporter Matt Knight, who had, himself, just landed from holiday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.85" data-end="144.5">
+            <p class="french-block">Une ambulance aérienne a atterri près des lieux, au large de Salcott Crescent, par mesure de précaution, aux côtés de la police, des pompiers et des ambulanciers paramédicaux.</p>
+            <span class="english-block">An air ambulance landed close to the scene off Salcott Crescent as a precaution, alongside police, firefighters and paramedics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.5" data-end="152.74">
+            <p class="french-block">La Direction des enquêtes sur les accidents ferroviaires (RAIB) a également déployé une équipe d'enquêteurs pour recueillir des preuves.</p>
+            <span class="english-block">The Rail Accident Investigation Branch (RAIB) also deployed a team of investigators to gather evidence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.74" data-end="156.26">
+            <p class="french-block">Les enquêteurs évaluent comment le train a déraillé</p>
+            <span class="english-block">Investigators are asessing how the train came off the tracks</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.26" data-end="164.59">
+            <p class="french-block">Danielle Belton, qui dirige une entreprise à proximité, a déclaré que le déraillement avait été si bruyant qu'il avait ébranlé son bureau.</p>
+            <span class="english-block">Danielle Belton, who runs a business nearby, said the derailment was so loud it shook her office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.59" data-end="174.22">
+            <p class="french-block">"Toutes les filles de mon bureau, nous nous sommes toutes dit 'bon sang, qu'est-ce que c'était ?'", a déclaré Belton, un conseiller conservateur de la ville voisine de Rochford.</p>
+            <span class="english-block">"All the girls in my office, we all kind of went, 'blimey, what was that?'," said Belton, a Conservative councillor in neighbouring Rochford.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.22" data-end="178.46">
+            <p class="french-block">"Vous avez senti le bureau trembler et vous avez entendu le bruit."</p>
+            <span class="english-block">"You felt the office rattle and you heard the loud noise."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.46" data-end="187.87">
+            <p class="french-block">Les résidents ont distribué de l'eau en bouteille et des glaces aux équipes d'urgence travaillant dans une chaleur de 33°C (91,4F).</p>
+            <span class="english-block">Residents handed out bottled water and ice lollies to emergency crews working in the 33C (91.4F) heat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.87" data-end="193.58">
+            <p class="french-block">Certains passagers de l'aéroport de Southend ont été bloqués par le manque de services ferroviaires</p>
+            <span class="english-block">Some passengers at Southend Airport were left stranded by the lack of rail services</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.58" data-end="201.91">
+            <p class="french-block">Martin Frobisher, de Network Rail, a déclaré que le temps chaud de l'été avait « présenté des défis exceptionnels au chemin de fer ».</p>
+            <span class="english-block">Martin Frobisher, of Network Rail, said the summer's hot weather had "presented exceptional challenges to the railway".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.91" data-end="213.26">
+            <p class="french-block">Dans une interview avec Katy Austin, correspondante des transports de la BBC, Frobisher a également confirmé qu'aucune restriction de vitesse n'était en place ni à Wickford ni à Lewes.</p>
+            <span class="english-block">In an interview with the BBC Transport Correspondent Katy Austin, Frobisher also confirmed speed restrictions were not in place in either Wickford or Lewes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.26" data-end="219.98">
+            <p class="french-block">Concernant l'impact possible du temps chaud, il a déclaré : "Oui, c'est l'une des choses que nous étudions.</p>
+            <span class="english-block">On the possible impact of the hot weather, he said "yes, that's one of the things that we're looking at.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.98" data-end="231.02">
+            <p class="french-block">"Nos enquêtes sont en cours. Nous avons des ingénieurs techniques sur place, nos meilleurs experts qui sont sur place avec la Direction des enquêtes sur les accidents ferroviaires.</p>
+            <span class="english-block">"We've got our investigations underway. We've got technical engineers on site, our best experts who are on site with the Rail Accident Investigation Branch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="231.02" data-end="239.59">
+            <p class="french-block">"Ils examinent de manière très approfondie ce qui s'est passé. Et sur cette base, nous agirons en fonction de ce que nous apprendrons."</p>
+            <span class="english-block">"They're looking very thoroughly at what's happened. And based on that, we will act on what we learn."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.59" data-end="244.97">
+            <p class="french-block">Cependant, il a ajouté qu'il était "trop ​​tôt pour spéculer sur les résultats complets".</p>
+            <span class="english-block">However, he added it was "too early to speculate on the full findings".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.97" data-end="255.12">
+            <p class="french-block">L'enquête évaluerait spécifiquement "si cela était lié ou non aux conditions météorologiques", a déclaré Mark François, député conservateur de Rayleigh et Wickford.</p>
+            <span class="english-block">The investigation would specifically assess "whether or not this was weather-related", said Mark Francois, the Conservative MP for Rayleigh and Wickford.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.12" data-end="262.8">
+            <p class="french-block">Le ministère des Transports a souligné que les chemins de fer britanniques étaient « parmi les plus sûrs au monde » en réaction à l'incident.</p>
+            <span class="english-block">The Department for Transport stressed Britain's railways were "among the safest in the world" as it reacted to the incident.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="262.8" data-end="267.72">
+            <p class="french-block">Il a déclaré que les déraillements étaient des événements « incroyablement rares ».</p>
+            <span class="english-block">It said derailments were "incredibly rare" events.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.72" data-end="276.24">
+            <p class="french-block">Un porte-parole du service d'ambulance de l'Est de l'Angleterre a déclaré : « Nos équipes ont évalué 62 patients qui se trouvaient à bord du train.</p>
+            <span class="english-block">An East of England Ambulance Service spokesperson said: "Our crews assessed 62 patients who were on board the train.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.24" data-end="280.2">
+            <p class="french-block">"Après évaluation, tous les patients ont pu quitter les lieux.</p>
+            <span class="english-block">"Following assessment, all patients were discharged at the scene.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.2" data-end="286.68">
+            <p class="french-block">"Nous avons également aidé à l'évacuation d'un deuxième train qui n'a pas pu continuer son voyage en raison du déraillement.</p>
+            <span class="english-block">"We also assisted with the evacuation of a second train that was unable to continue its journey due to the derailment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="286.68" data-end="290.23">
+            <p class="french-block">"Il n'y a eu aucune victime parmi les personnes à bord."</p>
+            <span class="english-block">"There were no casualties among those on board."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.23" data-end="295.61">
+            <p class="french-block">Un porte-parole du BTP a également confirmé qu'aucun blessé n'avait été signalé.</p>
+            <span class="english-block">A spokesperson for BTP also confirmed there were no reported injuries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.61" data-end="304.25">
+            <p class="french-block">Suivez l'actualité d'Essex sur BBC Sounds, Facebook, externe, Instagram, externe et X, externe.</p>
+            <span class="english-block">Follow Essex news on BBC Sounds, Facebook, external, Instagram, external and X, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.25" data-end="310.49">
+            <p class="french-block">"Le train a basculé violemment", déclare un passager à bord d'un service qui a déraillé dans l'Essex</p>
+            <span class="english-block">'The train swung wildly,' says passenger on board derailed service in Essex</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.49" data-end="314.26">
+            <p class="french-block">Direction des enquêtes sur les accidents ferroviaires</p>
+            <span class="english-block">Rail Accident Investigation Branch</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_8.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
