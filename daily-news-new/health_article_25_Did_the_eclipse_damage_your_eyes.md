@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** Millions across the UK on Wednesday witnessed the most significant solar eclipse in 27 years - which saw more than 90% of the Sun covered by the Moon.
 
-**🇫🇷 FR:** *Mercredi, des millions de personnes à travers le Royaume-Uni ont été témoins de l'éclipse solaire la plus importante depuis 27 ans – qui a vu plus de 90 % du Soleil couvert par la Lune.*
+**🇫🇷 FR:** *Mercredi, des millions de personnes à travers le Royaume-Uni ont été témoins de l'éclipse solaire la plus importante depuis 27 ans, au cours de laquelle plus de 90 % du Soleil a été recouvert par la Lune.*
 
 ---
 
