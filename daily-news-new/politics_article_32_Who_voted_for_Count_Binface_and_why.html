@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who voted for Count Binface and why?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Who voted for Count Binface and why?</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 15 Aug 2026 16:59:49 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj36gyxv2lyo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Cheaper Flakes and using Adele to fund the NHS - voters on why they support a man dressed as a bin.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="5.93" data-end="10.27">
+            <p class="french-block">Le comte Binface a obtenu son plus grand nombre de voix à Clacton</p>
+            <span class="english-block">Count Binface has secured his largest amount of votes in Clacton</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.27" data-end="20.45">
+            <p class="french-block">Le comte Binface, autoproclamé guerrier de l'espace intergalactique, a terminé deuxième de l'élection partielle de Clacton jeudi avec 9 455 voix.</p>
+            <span class="english-block">Self-styled intergalactic space warrior Count Binface finished second in the Clacton by-election on Thursday with 9,455 votes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.45" data-end="31.27">
+            <p class="french-block">Un nombre record de 34 candidats se sont présentés au scrutin, mais Binface et le leader de Reform UK, Nigel Farage, ont été les seuls à obtenir plus de 500 voix.</p>
+            <span class="english-block">A record 34 candidates stood in the contest, but Binface and Reform UK leader Nigel Farage were the only contenders to secure more than 500 votes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.27" data-end="42.48">
+            <p class="french-block">Les autres grands partis britanniques ont boycotté les élections, déclenchées par la démission de Farage en tant que député en juillet, après avoir remporté le siège des conservateurs en 2024.</p>
+            <span class="english-block">The other major UK parties boycotted the election, which was triggered by Farage's resignation as an MP in July, having won the seat from the Conservatives in 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.48" data-end="55.56">
+            <p class="french-block">Binface s'est présenté à diverses élections très médiatisées à travers le pays ces dernières années. Avant Clacton, ses meilleurs résultats étaient de plus de 24 000 voix lors des deux dernières élections municipales de Londres.</p>
+            <span class="english-block">Binface has stood in various high-profile elections around the country in recent years. Before Clacton, his best results were more than 24,000 votes in the last two London mayoral elections.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.56" data-end="64.3">
+            <p class="french-block">Avec plus de candidats que jamais sur le bulletin de vote, pourquoi 26,9 % des électeurs ont-ils choisi un homme portant une poubelle sur la tête ?</p>
+            <span class="english-block">With more candidates on the ballot than ever before, why did 26.9% of voters choose a man wearing a bin on his head?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="64.3" data-end="73.3">
+            <p class="french-block">Ben Peters, 18 ans, électeur pour la première fois et originaire de Holland-on-Sea, a déclaré que l'élection était une "blague" depuis le début.</p>
+            <span class="english-block">First-time voter Ben Peters, 18, from Holland-on-Sea, said the election had been a "joke" since the start.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="73.3" data-end="83.45">
+            <p class="french-block">Il a déclaré : "C'était un peu excitant, mais en même temps, cela me semblait presque inutile parce que je savais que, quoi que je fasse, Farage allait reprendre place."</p>
+            <span class="english-block">He said: "It was a bit of a thrill, but at the same time it felt almost pointless because I knew that, no matter what I did, Farage was going to get back into the seat."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.45" data-end="85.34">
+            <p class="french-block">Plus d’Essex :</p>
+            <span class="english-block">More from Essex:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.34" data-end="89.59">
+            <p class="french-block">Stephen Bear emprisonné pour violations de délinquants sexuels</p>
+            <span class="english-block">Stephen Bear jailed over sex offender breaches</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="89.59" data-end="93.43">
+            <p class="french-block">L’élection partielle a-t-elle changé la donne pour Clacton ?</p>
+            <span class="english-block">Has the by-election changed things for Clacton?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.43" data-end="98.06">
+            <p class="french-block">Un manifestant anti-asile qui avait bousculé la police est emprisonné</p>
+            <span class="english-block">Anti-asylum protester who shoved police is jailed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.06" data-end="110.54">
+            <p class="french-block">Les politiques de Binface comprenaient la nationalisation de la chanteuse Adele, le déplacement d'un sèche-mains dans un pub à Uxbridge et l'imposition d'un prix de 99 pence sur les glaces contenant 99 flocons.</p>
+            <span class="english-block">Binface's policies had included nationalising the singer Adele, moving a pub hand dryer in Uxbridge and enforcing a 99p price tag on ice creams with 99 flakes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.54" data-end="123.46">
+            <p class="french-block">Peters a déclaré: "Même si cela signifie voter pour le comte Binface et obtenir des glaces à 99 pence pour 99 flocons, c'est une étape de plus que ce que Nigel Farage n'a jamais fait pour Clacton."</p>
+            <span class="english-block">Peters said: "Even if it means voting for Count Binface and getting 99p ice creams for 99 flakes, that is one more step than Nigel Farage has ever done for Clacton."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.46" data-end="128.59">
+            <p class="french-block">Alex Greenwood a déclaré que les politiques de Binface n'étaient "pas si farfelues"</p>
+            <span class="english-block">Alex Greenwood said Binface's policies were not "not actually that far-fetched"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.59" data-end="139.97">
+            <p class="french-block">Alex Greenwood, de Thorpe-le-Soken, a reconnu que certaines politiques étaient « un peu stupides », mais l'étudiant de 18 ans a fait valoir qu'il y avait une logique sous-jacente à ces politiques.</p>
+            <span class="english-block">Alex Greenwood, from Thorpe-le-Soken, acknowledged some policies were "a bit silly" but the 18-year-old student argued there was an underlying logic to them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.97" data-end="150.7">
+            <p class="french-block">"Nationaliser Adele... tous les bénéfices de la chanson d'Adele vont à une société privée qui va aux actionnaires et ses chansons sont en quelque sorte des icônes culturelles", a-t-il déclaré.</p>
+            <span class="english-block">"Nationalising Adele... all of Adele's song proceeds go to a private company which goes to shareholders and her songs are pretty much cultural icons," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.7" data-end="158.3">
+            <p class="french-block">"Ce n'est pas si farfelu en fait... pourquoi ne pas reverser tout cet argent au gouvernement qui pourrait être utilisé pour le NHS et tout ça ?"</p>
+            <span class="english-block">"It's not actually that far-fetched... why not have all that money go to the government which could be used on the NHS and stuff?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.3" data-end="170.33">
+            <p class="french-block">Greenwood a suggéré que son vote était en partie une protestation contre Farage, qui, selon lui, a convoqué l'élection partielle pour éviter l'examen minutieux du Bureau du commissaire parlementaire aux normes.</p>
+            <span class="english-block">Greenwood suggested his vote was partially a protest against Farage, whom he believes called the by-election to avoid scrutiny from the Office of the Parliamentary Commissioner for Standards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.33" data-end="175.73">
+            <p class="french-block">Il a ajouté : "J'aime Binface. Je n'aime pas tellement Farage."</p>
+            <span class="english-block">He added: "I do like Binface. I don't like Farage all that much."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.73" data-end="182.52">
+            <p class="french-block">Kerry Mitchell s'est rendue aux urnes pour voter pour le comte Binface, créé et interprété par Jonathan Harvey.</p>
+            <span class="english-block">Kerry Mitchell headed to the polls to vote for Count Binface, who was created and was portrayed by Jonathan Harvey</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="182.52" data-end="198.41">
+            <p class="french-block">Avant que Farage ne quitte son siège à Clacton en juillet, l'organisme de surveillance des normes du Parlement avait enquêté sur lui pour ne pas avoir déclaré un cadeau de 5 millions de livres sterling qu'il avait reçu du milliardaire réformateur britannique Christopher Harborne avant de devenir député.</p>
+            <span class="english-block">Before Farage quit his Clacton seat in July, Parliament's standards watchdog had been investigating him for not declaring a £5m gift he received from billionaire Reform UK donor Christopher Harborne before he became an MP.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.41" data-end="208.06">
+            <p class="french-block">Il a déclaré que l'élection partielle était une confrontation "le peuple contre l'establishment", affirmant que "les habitants de Clacton devraient être juges de mes actions".</p>
+            <span class="english-block">He said the by-election was a "people versus the establishment" showdown, saying the "people of Clacton should be the judges of my actions".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.06" data-end="220.44">
+            <p class="french-block">Kerry Mitchell, qui vit à Wix, a déclaré qu'elle avait voté pour le comte Binface parce qu'il aurait fait un député "plus crédible, honnête, responsable, pour ne pas dire engagé, que Nigel Farage".</p>
+            <span class="english-block">Kerry Mitchell, who lives in Wix, said she had voted for Count Binface because he would have made for a "more credible, honest, responsible, not to say committed, MP than Nigel Farage".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.44" data-end="233.28">
+            <p class="french-block">L'homme de 61 ans, qui a voté travailliste en 2024, a déclaré : « Nigel Farage constitue une réelle menace pour la démocratie au Royaume-Uni et si Binface avait gagné, cela aurait mis fin à lui.</p>
+            <span class="english-block">The 61-year-old, who voted Labour in 2024, said: "Nigel Farage poses a real threat to democracy in the UK and if Binface had won, it would have put an end to him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.28" data-end="238.58">
+            <p class="french-block">"Et cela a également ajouté un peu d'humour et de légèreté indispensable à la politique.</p>
+            <span class="english-block">"And it also added some much-needed humour and lightness into politics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.58" data-end="252.22">
+            <p class="french-block">"Le monde se trouve actuellement dans une période très sombre, et un peu de légèreté et d'humour est fantastique, surtout quand on le contraste avec la rhétorique d'indignation, de division et de colère que nous entendons de la part de l'extrême droite."</p>
+            <span class="english-block">"The world is in a very dark place at the moment, and a bit of levity and humour is fantastic, especially when you contrast it with the rhetoric of outrage, division and anger that we hear from the far-right."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="252.22" data-end="261.17">
+            <p class="french-block">Tracey Donovan a déclaré que Nigel Farage avait déclenché l'élection partielle pour « mettre fin à l'examen minutieux de lui et se donner un tour d'ego »</p>
+            <span class="english-block">Tracey Donovan said Nigel Farage had triggered the by-election to "halt the scrutiny on him and to give himself an ego trip"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.17" data-end="272.4">
+            <p class="french-block">Tracey Donovan, 61 ans, a également voté travailliste lors des dernières élections générales et a décidé de soutenir Binface jeudi car c'était "la seule alternative viable à Farage".</p>
+            <span class="english-block">Tracey Donovan, 61, also voted Labour in the last general election and decided to back Binface on Thursday because it was "the only viable alternative to Farage".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.4" data-end="281.54">
+            <p class="french-block">"Je déteste Farage et tout ce qu'il représente. Il n'a absolument rien fait pour notre circonscription", a-t-elle déclaré à la BBC.</p>
+            <span class="english-block">"I detest Farage and everything he stands for. He has done absolutely nothing for our constituency," she told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.54" data-end="287.4">
+            <p class="french-block">"Je veux un député qui représente notre région et qui prenne en compte les intérêts des électeurs.</p>
+            <span class="english-block">"I want an MP who represents our area with the constituents' interests being addressed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.4" data-end="292.39">
+            <p class="french-block">"Il prétend que l'establishment est contre lui, mais il est l'establishment."</p>
+            <span class="english-block">"He claims the establishment is against him, but he is the establishment."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.39" data-end="301.3">
+            <p class="french-block">Donovan, qui a vécu à Clacton toute sa vie, a ajouté qu'elle avait été agréablement surprise par le nombre de personnes ayant voté pour Binface.</p>
+            <span class="english-block">Donovan, who has lived in Clacton her entire life, added she was pleasantly surprised by how many people voted for Binface.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="301.3" data-end="315.98">
+            <p class="french-block">"Il a obtenu près d'un tiers des suffrages exprimés en prétendant qu'il s'agissait d'un candidat farfelu, et je suis très heureuse que ce ne soit qu'un peu plus d'un quart de la population de la circonscription [votante] qui ait activement soutenu Farage et la Réforme", a-t-elle déclaré.</p>
+            <span class="english-block">"He had almost a third of the votes cast as supposedly a joke candidate, and I'm very pleased that it is only really just over a quarter of the constituency [voting] population who actively backed Farage and Reform," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.98" data-end="327.05">
+            <p class="french-block">"Le comte Binface aurait pu débarrasser cette ville de son étiquette de Petite-Bretagne si une plus grande partie des 55 % qui n'ont pas voté du tout s'était rendue sur place et avait voté contre Farage."</p>
+            <span class="english-block">"Count Binface could have rid this town of its Little Britain label if more of the 55% who didn't vote at all had got out there and voted against Farage."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.05" data-end="333.19">
+            <p class="french-block">Verda Rigby a déclaré que l'élection partielle serait toujours une course à deux entre Farage et Binface</p>
+            <span class="english-block">Verda Rigby said the by-election was always going to be a two-horse race between Farage and Binface</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.19" data-end="344.71">
+            <p class="french-block">La propriétaire du salon, Verda Rigby, qui vit à St Osyth, avait l'habitude de voter pour les conservateurs avant de « devenir socialiste » et de commencer à soutenir les travaillistes.</p>
+            <span class="english-block">Salon owner Verda Rigby, who lives in St Osyth, used to vote for the Conservatives before she "became a socialist" and started supporting Labour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="344.71" data-end="353.3">
+            <p class="french-block">Cependant, lors de cette élection, comme voter pour les travaillistes n’était pas une option, l’homme de 66 ans a plutôt opté pour Binface.</p>
+            <span class="english-block">In this election, however, as voting for Labour was not an option, the 66-year-old instead opted for Binface.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.3" data-end="362.35">
+            <p class="french-block">"J'aurais pu rester à la maison, mais nous nous sommes battus pour le droit de vote et, écoutez, c'était en partie pour plaisanter sur Farage", a-t-elle déclaré.</p>
+            <span class="english-block">"I could have stayed at home, but we fought for the right to vote and, look, it was partly for the joke that Farage is," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.35" data-end="368.54">
+            <p class="french-block">"Et je méprise les partis de droite Reform, Restore et Reclaim – c'est comme un mauvais groupe pop de idiots."</p>
+            <span class="english-block">"And I despise the right-wing parties Reform, Restore, and Reclaim - it's like a bad pop group of numpties."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="368.54" data-end="373.3">
+            <p class="french-block">Les habitants de Clacton réagissent à la réélection de Nigel Farage</p>
+            <span class="english-block">People in Clacton react to Nigel Farage's re-election</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="373.3" data-end="383.59">
+            <p class="french-block">Philip Bird, 66 ans, vit à Clacton depuis 30 ans et a déclaré que lui aussi aurait voté pour le parti travailliste si le parti avait présenté un candidat aux élections.</p>
+            <span class="english-block">Philip Bird, 66, has lived in Clacton for 30 years and said he, too, would have voted for Labour if the party had stood a candidate in the election.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="383.59" data-end="391.82">
+            <p class="french-block">"Je pense qu'il était tout à fait juste de ne présenter personne car aucun des principaux partis n'aurait dû cautionner cette élection", a-t-il déclaré.</p>
+            <span class="english-block">"I think it was absolutely right not to stand anyone because none of the major parties should have condoned this election," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="391.82" data-end="401.9">
+            <p class="french-block">"C'était ridicule, complètement inutile et conçu pour détourner l'attention, et cela n'allait rien changer, donc j'étais assez à l'aise de voter pour un candidat satirique.</p>
+            <span class="english-block">"It was farcical, completely unnecessary, and designed to distract attention, and it wasn't going to change anything, so I was quite comfortable voting for a satirical candidate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="401.9" data-end="413.28">
+            <p class="french-block">"Farage a grandement nui au débat dans ce pays, il a été un épouvantable député, il n'a rien fait pour Clacton, et en réalité, sa politique est précisément ce dont Clacton n'a pas besoin."</p>
+            <span class="english-block">"Farage has greatly harmed the conversation in this country, he has been a dreadful MP, he has done nothing for Clacton, and in reality his politics are precisely what Clacton doesn't need."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="413.28" data-end="427.68">
+            <p class="french-block">Dans un communiqué après sa victoire vendredi, le chef réformiste a déclaré : « Le verdict est maintenant tombé, et c'est une victoire convaincante et écrasante, avec plus de voix que nous n'en avons obtenu lors des élections générales de 2024.</p>
+            <span class="english-block">In a statement after his win on Friday, the Reform leader said: "The verdict is now in, and it is a convincing, overwhelming win, with more votes than we got in the general election of 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="427.68" data-end="434.09">
+            <p class="french-block">"Aujourd'hui, les électeurs de Clacton ont tendu le doigt à l'ensemble de l'establishment politique."</p>
+            <span class="english-block">"Today, the voters in Clacton have stuck up two fingers to the entire political establishment."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="434.09" data-end="442.73">
+            <p class="french-block">Suivez l'actualité d'Essex sur BBC Sounds, Facebook, externe, Instagram, externe et X, externe.</p>
+            <span class="english-block">Follow Essex news on BBC Sounds, Facebook, external, Instagram, external and X, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="442.73" data-end="447.58">
+            <p class="french-block">Que pensent les habitants de Clacton de la victoire de Farage aux élections partielles ?</p>
+            <span class="english-block">What do people in Clacton think of Farage's by-election win?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="447.58" data-end="452.5">
+            <p class="french-block">Le comte Binface obtient près de 10 000 voix aux élections partielles de Clacton</p>
+            <span class="english-block">Count Binface gets almost 10,000 votes in Clacton by-election</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="452.5" data-end="458.81">
+            <p class="french-block">Farage fait face à une nouvelle enquête de surveillance après la victoire aux élections partielles de Clacton</p>
+            <span class="english-block">Farage faces renewed watchdog probe after Clacton by-election victory</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="458.81" data-end="463.75">
+            <p class="french-block">En fait : mises à jour sur le résultat de l’élection partielle de Clacton</p>
+            <span class="english-block">As it happened: Updates on Clacton by-election result</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_32.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing pubs into homes to be made harder under new rules</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Changing pubs into homes to be made harder under new rules</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 16 Aug 2026 15:04:13 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/clyllg1v0kdo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The rules will come into force on Monday along with other changes to planning policy.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.13" data-end="16.7">
+            <p class="french-block">La transformation des pubs en logements ou en bureaux sera rendue plus difficile dans le cadre des changements apportés aux règles de planification gouvernementale en Angleterre.</p>
+            <span class="english-block">Turning pubs into housing or offices will be made harder as part of changes to government planning rules in England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.7" data-end="29.02">
+            <p class="french-block">Le cadre politique national de planification (NPPF) mis à jour entrera en vigueur lundi et devrait contenir davantage de protections pour les pubs menacés de fermeture pour conversion à un autre usage.</p>
+            <span class="english-block">The updated National Planning Policy Framework (NPPF) will come into force on Monday and is expected to contain more protections for pubs at threat of closure for conversion to another use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.02" data-end="34.87">
+            <p class="french-block">Une précédente consultation sur les plans n'avait accordé la protection qu'au dernier pub de la zone.</p>
+            <span class="english-block">A previous consultation on the plans only gave the protection to the last pub in the area.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.87" data-end="51.79">
+            <p class="french-block">Cependant, les groupes de pub et d’hôtellerie affirment que les impôts et les coûts salariaux sont les principales raisons pour lesquelles les pubs ferment. Pendant ce temps, les conservateurs ont déclaré que le gouvernement travailliste « échouait lamentablement » à atteindre ses objectifs en matière de logement.</p>
+            <span class="english-block">However, pub and hospitality groups say taxes and employment costs are the big reasons why pubs are closing. Meanwhile, the Conservatives said the Labour government is "failing abysmally" to meet its housing targets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.79" data-end="56.9">
+            <p class="french-block">Les pubs britanniques fermeront au rythme de près de deux par jour en 2026</p>
+            <span class="english-block">British pubs closing at a rate of almost two per day in 2026</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.9" data-end="62.83">
+            <p class="french-block">Pourquoi il y a une dispute à propos de la « consommation verticale » dans le centre de Londres</p>
+            <span class="english-block">Why there's a row about 'vertical drinking' in central London</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.83" data-end="72.89">
+            <p class="french-block">Pour procéder à un changement d'usage selon les nouvelles règles, les promoteurs devront fournir la preuve qu'il n'y a aucune perspective raisonnable de maintenir une activité de pub.</p>
+            <span class="english-block">To go ahead with a change of use under the new rules, developers will need to provide evidence that there is no reasonable prospect of keeping a pub business running.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.89" data-end="78.7">
+            <p class="french-block">La preuve devra inclure la preuve qu'il a été commercialisé pour la vente pendant au moins 12 mois.</p>
+            <span class="english-block">The evidence will need to include proof it was marketed for sale for at least 12 months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.7" data-end="86.93">
+            <p class="french-block">Un porte-parole du gouvernement a déclaré que les conseils de la BBC devraient évaluer l'impact sur une communauté d'un changement d'utilisation.</p>
+            <span class="english-block">A government spokesperson told the BBC councils would need to assess the impact on a community of a change of use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.93" data-end="96.72">
+            <p class="french-block">Les règles empêcheraient les propriétaires de supprimer délibérément le commerce afin de justifier une fermeture, protégeant ainsi les pubs qui ont connu du succès historique.</p>
+            <span class="english-block">The rules will reportedly stop owners from deliberately killing off trade in order to justify a closure, protecting pubs which have been historically successful.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.72" data-end="105.58">
+            <p class="french-block">Le NPPF définit les politiques de planification du gouvernement pour l'Angleterre et la manière dont elles doivent être appliquées par les autorités locales.</p>
+            <span class="english-block">The NPPF sets out government's planning policies for England and how they should be applied by local authorities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.58" data-end="112.3">
+            <p class="french-block">L'Écosse, le Pays de Galles et l'Irlande du Nord ont leurs propres cadres et lois de planification décentralisés.</p>
+            <span class="english-block">Scotland, Wales, and Northern Ireland have their own devolved planning frameworks and laws.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.3" data-end="125.69">
+            <p class="french-block">La Campagne pour la Real Ale a déjà déclaré que les pubs sont « perdus à jamais à cause de la conversion ou de la démolition alors que les promoteurs cherchent à tirer profit des emplacements recherchés et de l'architecture unique des pubs et des clubs sociaux ».</p>
+            <span class="english-block">The Campaign for Real Ale has previously said that pubs are being "lost forever to conversion or demolition as developers look to cash in on the desirable locations and unique architecture of pubs and social clubs".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.69" data-end="135.98">
+            <p class="french-block">La British Beer and Pub Association et UKHospitality ont également fait campagne contre les fermetures de pubs, toutes deux accusant en grande partie les hausses d'impôts et d'autres coûts.</p>
+            <span class="english-block">The British Beer and Pub Association and UKHospitality have also campaigned against pub closures, with both largely blaming tax rises and other costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.98" data-end="149.78">
+            <p class="french-block">Allen Simpson, directeur général d'UKHospitality, a déclaré : « Le plus gros problème auquel sont confrontées les entreprises hôtelières sont les coûts tels que la TVA et les tarifs professionnels qui poussent les pubs à la faillite en premier lieu.</p>
+            <span class="english-block">Allen Simpson, chief executive of UKHospitality, said: "The biggest issue facing hospitality businesses is costs like VAT and business rates pushing pubs out of business in the first place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.78" data-end="163.54">
+            <p class="french-block">"Tout ce qui rend plus difficile le retrait de ces actifs importants de leurs communautés doit être bien accueilli, mais le gouvernement devrait se concentrer sur la poursuite de son solide engagement pour réparer les dommages causés à l'hospitalité au cours des deux dernières années."</p>
+            <span class="english-block">"Anything that makes it harder to take these important assets away from their communities has to be welcomed, but the government should focus on continuing its strong start on fixing the harm done to hospitality over the past two years."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.54" data-end="177.24">
+            <p class="french-block">En juillet, le gouvernement travailliste a déclaré que les pubs, les clubs sociaux et les salles de concert en Angleterre bénéficieraient d'une réduction de 20 % de leurs tarifs professionnels, en plus de l'allégement des tarifs annoncé en janvier.</p>
+            <span class="english-block">In July, the Labour government  said pubs, social clubs and live music venues in England will be given a 20% cut to business rates on top of rates relief announced in January.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.24" data-end="188.18">
+            <p class="french-block">La mise à jour du NPPF publiée lundi inclut également l'approbation par défaut des maisons construites autour des gares ferroviaires en Angleterre dans le but d'augmenter le nombre de constructions de logements.</p>
+            <span class="english-block">The NPPF update being published Monday also includes default approval for homes being built around railway stations in England in an attempt to increase housebuilding numbers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.18" data-end="205.97">
+            <p class="french-block">La secrétaire au Logement, Angela Rayner, a déclaré : « En ouvrant des milliers de logements autour de centres de transport bien connectés, nous aidons les gens à vivre plus près du travail, de l'école et des services dont ils dépendent, tout en soutenant les entreprises locales et en stimulant la croissance de nos communautés. »</p>
+            <span class="english-block">Housing Secretary Angela Rayner said: "By unlocking thousands of homes around well-connected transport hubs, we're helping people live closer to work, school and the services they rely on, while backing local businesses and driving growth in our communities."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.97" data-end="215.86">
+            <p class="french-block">La mise à jour signifie également que certains groupes n'auront plus besoin d'être consultés sur les plans de développement de logements dans le cadre du processus d'obtention d'autorisation.</p>
+            <span class="english-block">The update also means that some groups will no longer need to be consulted on housing development plans as part of the process of getting permission.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.86" data-end="228.12">
+            <p class="french-block">Le Gardens Trust, une organisation caritative chargée du patrimoine et de la conversion des parcs et jardins, a qualifié de « dévastatrice » la décision de supprimer son rôle de consultant statutaire.</p>
+            <span class="english-block">The Gardens Trust, a parks and gardens heritage and conversion charity, called the decision to remove its role as a statutory consultee "devastating".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.12" data-end="234.89">
+            <p class="french-block">Il a déclaré que cela dévalorisait les parcs et jardins et « les rendait vulnérables à un développement mal informé ».</p>
+            <span class="english-block">It said it devalued parks and gardens and "makes them vulnerable to poorly informed development".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.89" data-end="245.18">
+            <p class="french-block">Dans le cadre des changements, le Gardens Trust et le Theatres Trust seront toujours informés des demandes pertinentes et Sport England continuera de donner des conseils sur les cas importants.</p>
+            <span class="english-block">Under the changes, the Gardens Trust and Theatres Trust will still be notified of relevant applications and Sport England will continue to advise on significant cases.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.18" data-end="261.62">
+            <p class="french-block">Le parti travailliste s'est fixé pour objectif de construire 1,5 million de logements d'ici 2029. Selon des données officielles externes, il a jusqu'à présent construit 392 000 logements en Angleterre depuis son arrivée au pouvoir en juillet 2024.</p>
+            <span class="english-block">Labour has set a target to build 1.5 million homes by 2029. According to official data, external, it has so far built 392,000 homes in England since coming into power in July 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.62" data-end="273.22">
+            <p class="french-block">Le secrétaire fantôme au logement, Sir James Cleverly, a déclaré que les travaillistes « échouent lamentablement » à atteindre leur objectif en raison des impôts et des formalités administratives.</p>
+            <span class="english-block">Shadow housing secretary Sir James Cleverly said Labour is "failing abysmally" to meet their target because of taxes and red tape.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="273.22" data-end="287.95">
+            <p class="french-block">"Pour tenter de réparer leur propre désordre, les travaillistes envisagent une prise de pouvoir, prenant le contrôle des communautés locales et les forçant à accepter le développement dans les mauvaises zones parce que les travaillistes ne construiront pas dans les bonnes zones", a-t-il ajouté.</p>
+            <span class="english-block">"To try to fix their own mess, Labour are planning a power grab, seizing control from local communities and forcing them to accept development in the wrong areas because Labour won't build in the right areas," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.95" data-end="293.59">
+            <p class="french-block">Pourquoi les Soho ont craché en se tenant debout en buvant pourrait être la première d'une longue série</p>
+            <span class="english-block">Why the Soho spat over standing while drinking could be the first of many</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.59" data-end="299.78">
+            <p class="french-block">Les pubs applaudissent l'allégement des taux d'affaires tandis que d'autres entreprises sont « laissées pour compte »</p>
+            <span class="english-block">Pubs cheer business rates relief while other firms 'left out in the cold'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_15.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

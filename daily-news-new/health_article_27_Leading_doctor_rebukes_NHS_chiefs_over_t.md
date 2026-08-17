@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Professor Derek Manas, the medical director of NHS Blood and Transplant, admonished NHS England for creating a system with a burnt-out workforce, "few consequences for poor performance" and operations cancelled "last-minute".
 
-**🇫🇷 FR:** *Le professeur Derek Manas, directeur médical du NHS Blood and Transplant, a réprimandé le NHS England pour avoir créé un système avec une main d'œuvre épuisée, « peu de conséquences en cas de mauvaise performance » et des opérations annulées « à la dernière minute ».*
+**🇫🇷 FR:** *[Error Translate] Professor Derek Manas, the medical director of NHS Blood and Transplant, admonished NHS England for creating a system with a burnt-out workforce, "few consequences for poor performance" and operations cancelled "last-minute".*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** This is "leading to last-minute cancellations [and] unpredictable utilisation of donated organs," he warned.
 
-**🇫🇷 FR:** *Cela « conduit à des annulations de dernière minute [et] à une utilisation imprévisible des dons d'organes », a-t-il prévenu.*
+**🇫🇷 FR:** *[Error Translate] This is "leading to last-minute cancellations [and] unpredictable utilisation of donated organs," he warned.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** The NHS transplants one in 10 lungs and one in seven hearts that are donated - half the proportions seen in some other countries.
 
-**🇫🇷 FR:** *Le NHS transplante un poumon sur dix et un cœur sur sept donnés – la moitié des proportions observées dans certains autres pays.*
+**🇫🇷 FR:** *[Error Translate] The NHS transplants one in 10 lungs and one in seven hearts that are donated - half the proportions seen in some other countries.*
 
 ---
 
@@ -182,7 +182,7 @@
 
 **🇬🇧 EN:** Among those who believe the system should change is Dr Zubir Ahmed, who was the health minister responsible for transplantation until he quit Sir Keir Starmer's government in May.
 
-**🇫🇷 FR:** *Parmi ceux qui pensent que le système devrait changer se trouve le Dr Zubir Ahmed, qui était ministre de la Santé responsable de la transplantation jusqu'à ce qu'il quitte le gouvernement de Sir Keir Starmer en mai.*
+**🇫🇷 FR:** *[Error Translate] Among those who believe the system should change is Dr Zubir Ahmed, who was the health minister responsible for transplantation until he quit Sir Keir Starmer's government in May.*
 
 ---
 
@@ -214,7 +214,7 @@
 
 **🇬🇧 EN:** In a statement, NHS England said transplant services are "complex and impacted by many factors, including the number of organs made available for transplantation, but the NHS is working hard to improve these lifesaving services".
 
-**🇫🇷 FR:** *Dans un communiqué, le NHS England a déclaré que les services de transplantation sont « complexes et influencés par de nombreux facteurs, notamment le nombre d'organes disponibles pour la transplantation, mais le NHS travaille dur pour améliorer ces services vitaux ».*
+**🇫🇷 FR:** *[Error Translate] In a statement, NHS England said transplant services are "complex and impacted by many factors, including the number of organs made available for transplantation, but the NHS is working hard to improve these lifesaving services".*
 
 ---
 

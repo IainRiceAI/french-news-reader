@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why tech bosses keep sharing their manifestos about AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Why tech bosses keep sharing their manifestos about AI</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 14 Aug 2026 23:06:27 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cz97ljy91zxo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Meta boss Mark Zuckerberg is the latest Big Tech name to pen a letter thousands of words long about AI.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.08" data-end="14.33">
+            <p class="french-block">Mark Zuckerberg est le dernier grand patron de la technologie à avoir écrit un long message pour consacrer sa vision de l'IA</p>
+            <span class="english-block">Mark Zuckerberg is the latest big tech boss to have penned a lengthy message to enshrine his vision for AI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.33" data-end="24.26">
+            <p class="french-block">La semaine dernière, Mark Zuckerberg, PDG de Meta, a publié une lettre ouverte externe de 6 500 mots intitulée « L'avenir est pour tout le monde ».</p>
+            <span class="english-block">This past week, Meta CEO Mark Zuckerberg published a 6,500 word open letter, external entitled "The Future is for Everyone".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.26" data-end="33.43">
+            <p class="french-block">Pour certains, c’est une expression d’espoir dans les promesses de l’IA. Pour d’autres, il ne s’agit que d’un exercice de relations publiques verbeux.</p>
+            <span class="english-block">To some, it's an expression of hope in AI's promise. To others, it's little more than a verbose public relations exercise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.43" data-end="41.4">
+            <p class="french-block">Le manifeste de Zuckerberg est le dernier exemple d’un patron de la technologie expliquant pourquoi l’IA est la prochaine grande nouveauté.</p>
+            <span class="english-block">Zuckerberg's manifesto is the latest example of a tech boss opining on why AI is the next big thing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="41.4" data-end="51.22">
+            <p class="french-block">Sa vision fait écho à ce que les leaders de l'IA ont exprimé sous diverses formes : le produit qu'ils construisent fait partie des « technologies les plus importantes de l'histoire ».</p>
+            <span class="english-block">His vision echoes what AI leaders have expressed in various forms: the product they are building is among the "most important technologies in history."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.22" data-end="66.91">
+            <p class="french-block">Marc Andreessen, co-fondateur du premier titan du Web Netscape, a peut-être lancé cette tendance en 2023 avec un essai de 5 000 mots qu'il a intitulé « Le manifeste techno-optimiste », qui affirmait que l'innovation était le moyen de résoudre les problèmes de la vie.</p>
+            <span class="english-block">Marc Andreessen, co-founder of early web titan Netscape, perhaps started this trend in 2023 with a 5,000-word essay he called "The Techno-Optimist Manifesto", which argued innovation was the way to solve life's problems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.91" data-end="71.66">
+            <p class="french-block">« Alors ils écrivent des manifestes maintenant ? », me souviens-je m'être dit.</p>
+            <span class="english-block">“So they're writing manifestos now?,” I remember thinking to myself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.66" data-end="79.61">
+            <p class="french-block">Les écrits d'Andreessen ont commencé par le récit de mensonges qu'il prétendait que les gens répandaient, et il a appelé les lecteurs à s'y opposer.</p>
+            <span class="english-block">Andreessen's writing began with him recounting lies he claimed people were spreading, and called for readers to push back against this.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.61" data-end="88.61">
+            <p class="french-block">[Error Translate] "We believe growth is progress – leading to vitality, expansion of life, increasing knowledge, higher well being," he wrote.</p>
+            <span class="english-block">"We believe growth is progress – leading to vitality, expansion of life, increasing knowledge, higher well being," he wrote.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.61" data-end="98.52">
+            <p class="french-block">Le récent essai de Zuckerberg ne cite pas de noms – mais le patron de Meta imite Andreessen en interrogeant ceux qui ont mis en garde contre les aspects négatifs de la technologie future.</p>
+            <span class="english-block">Zuckerberg's recent essay doesn't name names - but the Meta boss mimics Andreessen by questioning those who have warned about the negatives of future tech.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.52" data-end="104.26">
+            <p class="french-block">"Il est surprenant que le discours de nombreux développeurs d'IA soit si pessimiste", écrit-il.</p>
+            <span class="english-block">"It is surprising that the discourse from many developing AI is so filled with doom," he writes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.26" data-end="117.46">
+            <p class="french-block">Alors que le Fonds monétaire international (FMI) prévient que l’IA pourrait affecter près de 40 % des emplois et aggraver les inégalités financières mondiales, Zuckerberg estime qu’il y aura une abondance d’emplois à l’avenir.</p>
+            <span class="english-block">As the International Monetary Fund (IMF) warns AI could affect nearly 40% of jobs and worsen global financial inequality, Zuckerberg says he believes there will be an abundance of jobs in the future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.46" data-end="127.03">
+            <p class="french-block">"Je ne comprends pas pourquoi quiconque croit que l'IA éliminera la plupart des emplois et une grande partie de l'importance de l'humanité se précipiterait pour construire cet avenir."</p>
+            <span class="english-block">"I do not understand why anyone who believes that AI will eliminate most jobs and much of humanity's relevance would rush to build that future."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.03" data-end="136.7">
+            <p class="french-block">Peu importe que Meta de Zuckerberg ait supprimé 10 % de ses effectifs mondiaux – environ 8 000 emplois – alors que l'entreprise se réorganise pour se concentrer sur l'IA.</p>
+            <span class="english-block">Never mind that Zuckerberg's Meta has cut 10% of its global workforce - about 8,000 jobs - as the company reorganizes to focus on AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.7" data-end="142.25">
+            <p class="french-block">"Profitons du voyage", déclare Elon Musk, alors que les craintes de l'IA montent</p>
+            <span class="english-block">'Let's enjoy the ride' says Elon Musk, as AI fears mount</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.25" data-end="149.9">
+            <p class="french-block">Les PDG du secteur technologique adorent soudainement blâmer l’IA pour les suppressions massives d’emplois. Pourquoi?</p>
+            <span class="english-block">Tech CEOs suddenly love blaming AI for mass job cuts. Why?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.9" data-end="157.3">
+            <p class="french-block">Le manifeste de Zuckerberg est le dernier à apparaître sur nos réseaux sociaux dans le but de donner une tournure positive à l'IA.</p>
+            <span class="english-block">Zuckerberg's manifesto is the latest to land in our social media feeds in an effort to put a positive spin on AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.3" data-end="171.1">
+            <p class="french-block">En 2024, Sam Altman, le patron d'OpenAI, créateur de ChatGPT, a publié un manifeste intitulé « The Intelligence Age », une expression radicale d'optimisme quant au potentiel de la technologie.</p>
+            <span class="english-block">In 2024, ChatGPT-maker OpenAI boss Sam Altman released a manifesto called "The Intelligence Age", a sweeping expression of optimism about the tech's potential.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.1" data-end="176.69">
+            <p class="french-block">Le progrès humain est sur le point de s’accélérer de façon spectaculaire, a-t-il promis.</p>
+            <span class="english-block">Human progress was poised to accelerate in dramatic fashion, he promised.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.69" data-end="181.54">
+            <p class="french-block">"Nous devons agir avec sagesse mais avec conviction", a-t-il déclaré.</p>
+            <span class="english-block">"We need to act wisely but with conviction," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="181.54" data-end="194.42">
+            <p class="french-block">La même année, dans un manifeste intitulé « Machines of Loving Grace », le PDG d'Anthropic, Dario Amodei, vantait le potentiel de l'IA pour tout transformer, des soins de santé à la politique.</p>
+            <span class="english-block">That same year, in a manifesto titled "Machines of Loving Grace", Anthropic CEO Dario Amodei touted the potential of AI to transform everything from healthcare to politics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.42" data-end="201.96">
+            <p class="french-block">Il l’a présenté comme une tentative de partager les avantages potentiels de l’IA – et il ne voulait pas être considéré comme un condamné.</p>
+            <span class="english-block">He framed it as an attempt to share the potential upsides of AI - and he didn't want to be seen as a doomer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.96" data-end="208.8">
+            <p class="french-block">Le patron d'Anthropic, Dario Amodei, a également exposé sa vision de l'IA dans un manifeste</p>
+            <span class="english-block">Anthropic boss Dario Amodei has also set out his vision for AI in a manifesto</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.8" data-end="223.37">
+            <p class="french-block">Zuckerberg n’est pas étranger au format d’essai de longue haleine. Durant la première administration du président américain Donald Trump, il a même écrit sur des sujets épineux tels que la diffusion de fausses informations sur ses plateformes externes.</p>
+            <span class="english-block">Zuckerberg is no stranger to the long-winded essay format. During US President Donald Trump's first administration, he even wrote about thorny topics such as the spread of misinformation on his platforms, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.37" data-end="229.75">
+            <p class="french-block">Il a ensuite pris la plume pour expliquer le pivot malheureux de l’entreprise vers le métaverse en 2021.</p>
+            <span class="english-block">He later put pen to paper to explain the company's ill-fated pivot to the metaverse in 2021.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.75" data-end="238.13">
+            <p class="french-block">Mais les enjeux sont plus importants à l’ère de l’IA, affirme le blogueur économique Noah Smith, et les commentaires des dirigeants le reflètent.</p>
+            <span class="english-block">But the stakes are higher in the AI era, argues economics blogger Noah Smith, and the commentary from executives reflects that.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.13" data-end="248.06">
+            <p class="french-block">"Je pense qu'ils ont tous le sentiment que c'est un moment tellement important qu'il leur incombe de faire tout ce qu'ils peuvent pour façonner la direction que prend cette technologie", a déclaré Smith.</p>
+            <span class="english-block">"I think they all feel like it's such an important moment that it's incumbent upon them to do whatever they can to shape the direction that this technology is going," Smith said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.06" data-end="264.67">
+            <p class="french-block">Le nouveau manifeste de Zuckerberg annonce son intention de partager plus ouvertement ses outils d'intelligence artificielle, ce qui signifie que la conception ou le code derrière la technologie sera rendu public, permettant à quiconque de le visualiser, de l'utiliser et de le modifier.</p>
+            <span class="english-block">Zuckerberg's new manifesto announced plans to share its artificial intelligence tools more openly, meaning that the design or code behind the tech will be made public, allowing anyone to view, use and change it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.67" data-end="271.63">
+            <p class="french-block">Les décisions quant à savoir si ces outils doivent être open source ont un poids important étant donné leur potentiel nuisible.</p>
+            <span class="english-block">Decisions about whether these tools should be open source carry significant weight given their potential to do harm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.63" data-end="279.5">
+            <p class="french-block">Ces dernières semaines, plusieurs modèles d’IA très puissants ont piraté des sites Web ou, comme certains le disent, « sont devenus des voyous ».</p>
+            <span class="english-block">In recent weeks, several highly powerful AI models hacked into websites, or as some put it, "went rogue".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.5" data-end="289.34">
+            <p class="french-block">Il s’agissait des modèles les plus puissants, et non de ceux qui étaient rendus open source – mais à mesure que la technologie se développe, cela a soulevé une sérieuse question pour Smith.</p>
+            <span class="english-block">These were the most powerful models, not the ones being made open source - but as the technology develops, it has raised a serious question for Smith.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.34" data-end="295.06">
+            <p class="french-block">"Devrions-nous ouvrir quelque chose qui ait la capacité de tuer l'humanité ?" il a demandé.</p>
+            <span class="english-block">"Should we open-source something that has the ability to kill humanity?" he asked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.06" data-end="299.28">
+            <p class="french-block">"Si vous ne prenez pas ça au sérieux, vous n'êtes qu'un imbécile."</p>
+            <span class="english-block">"If you don't take that seriously, you're just a fool."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="299.28" data-end="305.16">
+            <p class="french-block">C'est pourquoi il pense que ces manifestes sont importants, même si certains internautes s'en moquent.</p>
+            <span class="english-block">It's why he thinks these manifestos are important, even if some online poke fun at them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.16" data-end="313.42">
+            <p class="french-block">Et ils suscitent un intérêt accru à une époque où le marché de l’open source est dominé par des modèles d’IA chinois comme Qwen, DeepSeek et GLM.</p>
+            <span class="english-block">And they're gaining additional interest at a time when the open source market is dominated by Chinese AI models like Qwen, DeepSeek and GLM.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="313.42" data-end="323.02">
+            <p class="french-block">La famille de modèles Gemma de Google est devenue un rival open source populaire sur le marché occidental, aux côtés de Meta's Llama et des outils de Mistral AI.</p>
+            <span class="english-block">Google's Gemma family of models has become a popular open-source rival in the Western market, alongside Meta's Llama and tools from Mistral AI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="323.02" data-end="331.7">
+            <p class="french-block">Mais la fréquence de ces manifestes d’entreprise permet également aux dirigeants de se positionner, ainsi que leur entreprise, sur le marché des idées.</p>
+            <span class="english-block">But the frequency of these corporate manifestos also serves as a way for executives to position themselves and their companies in the marketplace of ideas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.7" data-end="339.84">
+            <p class="french-block">"C'est une façon de montrer à quel point vous êtes intelligent", a déclaré Rob Lalka, professeur de commerce à l'université de Tulane.</p>
+            <span class="english-block">"It's a way of showing how smart you are," said Rob Lalka, a business professor at Tulane University.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.84" data-end="348.58">
+            <p class="french-block">Les dirigeants utilisent depuis longtemps le blog d'entreprise "pour exposer leurs idées d'une manière qui les rapproche en quelque sorte d'un homme d'affaires-philosophe".</p>
+            <span class="english-block">Executives have long used the corporate blog "to expound on ideas in a way where they're sort of this businessman-philosopher, in a sense".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="348.58" data-end="354.77">
+            <p class="french-block">"Ils essaient de plaider en faveur de l'optimisme comme moyen d'envisager l'avenir", a-t-il déclaré.</p>
+            <span class="english-block">"They're trying to argue for optimism as a way of looking at the future," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="354.77" data-end="365.26">
+            <p class="french-block">Lalka a déclaré que le moment choisi pour le manifeste de Zuckerberg coïncide avec une colère croissante face à l'impact de l'IA sur tous les domaines, de l'emploi à l'environnement.</p>
+            <span class="english-block">Lalka said the timing of Zuckerberg's manifesto coincides with rising anger over AI's impact on everything from jobs to the environment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.26" data-end="376.1">
+            <p class="french-block">Et même si les journalistes techniques et les universitaires peuvent s’y pencher pour tenter d’y glaner des pépites de sens, ces manifestes exécutifs ne parviennent pas nécessairement au grand public.</p>
+            <span class="english-block">And while tech journalists and academics might pore over them trying to glean nuggets of meaning, these executive manifestos are not necessarily landing with the general public.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="376.1" data-end="385.3">
+            <p class="french-block">"Ils essaient de faire valoir que les aspects positifs l'emporteront de loin sur certains des aspects négatifs soulignés par la réaction du public", a-t-il déclaré.</p>
+            <span class="english-block">"They're trying to make the case that the positives will far outweigh some of those negatives that the public backlash is pointing out," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="385.3" data-end="389.93">
+            <p class="french-block">"Mais je pense que de nombreuses raisons d'être optimistes restent encore à voir."</p>
+            <span class="english-block">"But I think a lot of the reasons for optimism are still yet to be seen."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="389.93" data-end="395.11">
+            <p class="french-block">Qu’est-ce que l’IA, comment fonctionne-t-elle et pourquoi certaines personnes s’en inquiètent-elles ?</p>
+            <span class="english-block">What is AI, how does it work and why are some people concerned about it?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="395.11" data-end="400.54">
+            <p class="french-block">D’abord OpenAI, maintenant Meta : pourquoi les hacks d’IA continuent-ils à se produire ?</p>
+            <span class="english-block">First OpenAI, now Meta - why do AI hacks keep happening?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="400.54" data-end="405.94">
+            <p class="french-block">Les actions Meta chutent alors que la frustration grandit face aux projets de dépenses en IA</p>
+            <span class="english-block">Meta shares fall as frustration grows over AI spending plans</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_20.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
