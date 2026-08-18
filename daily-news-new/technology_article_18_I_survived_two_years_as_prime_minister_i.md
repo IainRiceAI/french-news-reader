@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** While some situations may sound farcical, Brewis said he had plenty of real life examples to draw on as inspiration.
 
-**🇫🇷 FR:** *Bien que certaines situations puissent sembler farfelues, Brewis a déclaré qu’il avait de nombreux exemples concrets sur lesquels s’inspirer.*
+**🇫🇷 FR:** *Même si certaines situations peuvent sembler farfelues, Brewis a déclaré qu’il disposait de nombreux exemples concrets sur lesquels s’inspirer.*
 
 ---
 

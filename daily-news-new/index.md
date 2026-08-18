@@ -1,107 +1,107 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-08-17 06:18:18  
+Generated on: 2026-08-18 06:26:45  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Trump envoy Kushner arrives in Israel after rare Hamas talks on Gaza peace plan**
-   - **Published:** Mon, 17 Aug 2026 04:50:56 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Trump_envoy_Kushner_arrives_in_Israel_af.md](top-stories_article_1_Trump_envoy_Kushner_arrives_in_Israel_af.md)
+1. **Trump threatens to bomb US ally Oman if it 'gets in the way' over Iran deal**
+   - **Published:** Mon, 17 Aug 2026 19:25:05 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Trump_threatens_to_bomb_US_ally_Oman_if_.md](top-stories_article_1_Trump_threatens_to_bomb_US_ally_Oman_if_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Heroes actress Hayden Panettiere dies aged 36**
-   - **Published:** Mon, 17 Aug 2026 04:53:27 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Heroes_actress_Hayden_Panettiere_dies_ag.md](top-stories_article_2_Heroes_actress_Hayden_Panettiere_dies_ag.md)
+2. **Russia warns UK over supplying drones to Ukraine**
+   - **Published:** Tue, 18 Aug 2026 04:59:25 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Russia_warns_UK_over_supplying_drones_to.md](top-stories_article_2_Russia_warns_UK_over_supplying_drones_to.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **UK to turn cooler with rain after exceptional heat and dry spell**
-   - **Published:** Mon, 17 Aug 2026 02:08:56 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_UK_to_turn_cooler_with_rain_after_except.md](top-stories_article_3_UK_to_turn_cooler_with_rain_after_except.md)
+3. **Fifa official sacked after Infantino plan criticism**
+   - **Published:** Mon, 17 Aug 2026 20:46:08 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Fifa_official_sacked_after_Infantino_pla.md](top-stories_article_3_Fifa_official_sacked_after_Infantino_pla.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Five teenagers dead and four injured after car drives on wrong side of motorway**
-   - **Published:** Sun, 16 Aug 2026 20:07:40 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Five_teenagers_dead_and_four_injured_aft.md](top-stories_article_4_Five_teenagers_dead_and_four_injured_aft.md)
+4. **Tributes to actress Hayden Panettiere as coroner finds 'no signs of trauma'**
+   - **Published:** Mon, 17 Aug 2026 23:28:54 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Tributes_to_actress_Hayden_Panettiere_as.md](top-stories_article_4_Tributes_to_actress_Hayden_Panettiere_as.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Trump says US to scale back South Korea military drills after it stayed out of Iran war**
-   - **Published:** Mon, 17 Aug 2026 02:51:27 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Trump_says_US_to_scale_back_South_Korea_.md](top-stories_article_5_Trump_says_US_to_scale_back_South_Korea_.md)
+5. **BBC breaks down Trump's latest shift on North and South Korea**
+   - **Published:** Mon, 17 Aug 2026 23:42:38 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_BBC_breaks_down_Trumps_latest_shift_on_N.md](top-stories_article_5_BBC_breaks_down_Trumps_latest_shift_on_N.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Russia says at least seven killed in largest Ukrainian attack of 2026**
-   - **Published:** Sun, 16 Aug 2026 19:03:04 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Russia_says_at_least_seven_killed_in_lar.md](top-stories_article_6_Russia_says_at_least_seven_killed_in_lar.md)
+6. **Young adults are taking prescription drugs instead of alcohol - and it's dividing experts**
+   - **Published:** Tue, 18 Aug 2026 00:00:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Young_adults_are_taking_prescription_dru.md](top-stories_article_6_Young_adults_are_taking_prescription_dru.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **History for Hunt and Asher-Smith in golden finish for GB**
-   - **Published:** Sun, 16 Aug 2026 20:14:46 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_History_for_Hunt_and_Asher-Smith_in_gold.md](top-stories_article_7_History_for_Hunt_and_Asher-Smith_in_gold.md)
+7. **Jason Arday's family 'still coming to terms' with his death as vigil held**
+   - **Published:** Mon, 17 Aug 2026 21:24:11 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Jason_Ardays_family_still_coming_to_term.md](top-stories_article_7_Jason_Ardays_family_still_coming_to_term.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Calls for public inquiry into Jason Arday 'witch hunt'**
-   - **Published:** Sun, 16 Aug 2026 15:33:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Calls_for_public_inquiry_into_Jason_Arda.md](top-stories_article_8_Calls_for_public_inquiry_into_Jason_Arda.md)
+8. **Disabled people in England to get 24-hour free bus travel**
+   - **Published:** Tue, 18 Aug 2026 00:32:51 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Disabled_people_in_England_to_get_24-hou.md](top-stories_article_8_Disabled_people_in_England_to_get_24-hou.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Trump envoy Kushner arrives in Israel after rare Hamas talks on Gaza peace plan**
-   - **Published:** Mon, 17 Aug 2026 04:50:56 GMT
-   - **Read Parallel Translation:** [world_article_9_Trump_envoy_Kushner_arrives_in_Israel_af.md](world_article_9_Trump_envoy_Kushner_arrives_in_Israel_af.md)
+1. **Trump threatens to bomb US ally Oman if it 'gets in the way' over Iran deal**
+   - **Published:** Mon, 17 Aug 2026 19:25:05 GMT
+   - **Read Parallel Translation:** [world_article_9_Trump_threatens_to_bomb_US_ally_Oman_if_.md](world_article_9_Trump_threatens_to_bomb_US_ally_Oman_if_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Trump says US to scale back South Korea military drills after it stayed out of Iran war**
-   - **Published:** Mon, 17 Aug 2026 02:51:27 GMT
-   - **Read Parallel Translation:** [world_article_10_Trump_says_US_to_scale_back_South_Korea_.md](world_article_10_Trump_says_US_to_scale_back_South_Korea_.md)
+2. **Tupac murder trial: 'All hell broke loose' night of rapper's shooting, witness says**
+   - **Published:** Tue, 18 Aug 2026 02:06:04 GMT
+   - **Read Parallel Translation:** [world_article_10_Tupac_murder_trial_All_hell_broke_loose_.md](world_article_10_Tupac_murder_trial_All_hell_broke_loose_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Russia says at least seven killed in largest Ukrainian attack of 2026**
-   - **Published:** Sun, 16 Aug 2026 19:03:04 GMT
-   - **Read Parallel Translation:** [world_article_11_Russia_says_at_least_seven_killed_in_lar.md](world_article_11_Russia_says_at_least_seven_killed_in_lar.md)
+3. **Russia warns UK over supplying drones to Ukraine**
+   - **Published:** Tue, 18 Aug 2026 04:59:25 GMT
+   - **Read Parallel Translation:** [world_article_11_Russia_warns_UK_over_supplying_drones_to.md](world_article_11_Russia_warns_UK_over_supplying_drones_to.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Heroes actress Hayden Panettiere dies aged 36**
-   - **Published:** Mon, 17 Aug 2026 04:53:27 GMT
-   - **Read Parallel Translation:** [world_article_12_Heroes_actress_Hayden_Panettiere_dies_ag.md](world_article_12_Heroes_actress_Hayden_Panettiere_dies_ag.md)
+4. **BBC breaks down Trump's latest shift on North and South Korea**
+   - **Published:** Mon, 17 Aug 2026 23:42:38 GMT
+   - **Read Parallel Translation:** [world_article_12_BBC_breaks_down_Trumps_latest_shift_on_N.md](world_article_12_BBC_breaks_down_Trumps_latest_shift_on_N.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Ferrari's first ever electric car sold for record $40m at auction**
-   - **Published:** Mon, 17 Aug 2026 02:22:04 GMT
-   - **Read Parallel Translation:** [business_article_13_Ferraris_first_ever_electric_car_sold_fo.md](business_article_13_Ferraris_first_ever_electric_car_sold_fo.md)
+1. **To joke or not to joke?: How to write a good out-of-office message**
+   - **Published:** Mon, 17 Aug 2026 23:00:41 GMT
+   - **Read Parallel Translation:** [business_article_13_To_joke_or_not_to_joke_How_to_write_a_go.md](business_article_13_To_joke_or_not_to_joke_How_to_write_a_go.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **If Meta loses this trial, Instagram and Facebook could change forever**
-   - **Published:** Sun, 16 Aug 2026 23:27:36 GMT
-   - **Read Parallel Translation:** [business_article_14_If_Meta_loses_this_trial_Instagram_and_F.md](business_article_14_If_Meta_loses_this_trial_Instagram_and_F.md)
+2. **US-Canada trade talks 'intense' as new tariff deadline looms**
+   - **Published:** Tue, 18 Aug 2026 00:02:31 GMT
+   - **Read Parallel Translation:** [business_article_14_US-Canada_trade_talks_intense_as_new_tar.md](business_article_14_US-Canada_trade_talks_intense_as_new_tar.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Changing pubs into homes to be made harder under new rules**
-   - **Published:** Sun, 16 Aug 2026 15:04:13 GMT
-   - **Read Parallel Translation:** [business_article_15_Changing_pubs_into_homes_to_be_made_hard.md](business_article_15_Changing_pubs_into_homes_to_be_made_hard.md)
+3. **Virgin takes step towards running Channel Tunnel rail services**
+   - **Published:** Mon, 17 Aug 2026 12:46:25 GMT
+   - **Read Parallel Translation:** [business_article_15_Virgin_takes_step_towards_running_Channe.md](business_article_15_Virgin_takes_step_towards_running_Channe.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **I survived two years as prime minister in a hit new game - then my cabinet deserted me**
-   - **Published:** Sat, 15 Aug 2026 23:45:44 GMT
-   - **Read Parallel Translation:** [business_article_16_I_survived_two_years_as_prime_minister_i.md](business_article_16_I_survived_two_years_as_prime_minister_i.md)
+4. **Fifa official sacked after Infantino plan criticism**
+   - **Published:** Mon, 17 Aug 2026 20:46:08 GMT
+   - **Read Parallel Translation:** [business_article_16_Fifa_official_sacked_after_Infantino_pla.md](business_article_16_Fifa_official_sacked_after_Infantino_pla.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **If Meta loses this trial, Instagram and Facebook could change forever**
-   - **Published:** Sun, 16 Aug 2026 23:27:36 GMT
-   - **Read Parallel Translation:** [technology_article_17_If_Meta_loses_this_trial_Instagram_and_F.md](technology_article_17_If_Meta_loses_this_trial_Instagram_and_F.md)
+1. **Instagram and Facebook could change forever if Meta loses child privacy trial**
+   - **Published:** Mon, 17 Aug 2026 05:00:25 GMT
+   - **Read Parallel Translation:** [technology_article_17_Instagram_and_Facebook_could_change_fore.md](technology_article_17_Instagram_and_Facebook_could_change_fore.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
 2. **I survived two years as prime minister in a hit new game - then my cabinet deserted me**
@@ -123,24 +123,24 @@ Scraped Feed Mode: `ALL`
 
 ### Section: SCIENCE
 
-1. **About 100 homes swept away after Hurricane Lala lashes Hawaii**
-   - **Published:** Mon, 17 Aug 2026 00:20:51 GMT
-   - **Read Parallel Translation:** [science_article_21_About_100_homes_swept_away_after_Hurrica.md](science_article_21_About_100_homes_swept_away_after_Hurrica.md)
+1. **Watch: Flash flood sweeps vehicle away in Hawaii after Hurricane Lala**
+   - **Published:** Mon, 17 Aug 2026 15:35:47 GMT
+   - **Read Parallel Translation:** [science_article_21_Watch_Flash_flood_sweeps_vehicle_away_in.md](science_article_21_Watch_Flash_flood_sweeps_vehicle_away_in.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Belgian wildfire doubles in size on third day tearing through nature reserve**
-   - **Published:** Sun, 16 Aug 2026 20:01:51 GMT
-   - **Read Parallel Translation:** [science_article_22_Belgian_wildfire_doubles_in_size_on_thir.md](science_article_22_Belgian_wildfire_doubles_in_size_on_thir.md)
+2. **More hosepipe bans in force as drought declared - is your area affected?**
+   - **Published:** Mon, 17 Aug 2026 15:27:01 GMT
+   - **Read Parallel Translation:** [science_article_22_More_hosepipe_bans_in_force_as_drought_d.md](science_article_22_More_hosepipe_bans_in_force_as_drought_d.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **'Days of the farmers' union dictating policy are over' - Muir**
-   - **Published:** Fri, 14 Aug 2026 16:07:57 GMT
-   - **Read Parallel Translation:** [science_article_23_Days_of_the_farmers_union_dictating_poli.md](science_article_23_Days_of_the_farmers_union_dictating_poli.md)
+3. **Consultation ending on controversial Rosebank oil field**
+   - **Published:** Mon, 17 Aug 2026 11:25:59 GMT
+   - **Read Parallel Translation:** [science_article_23_Consultation_ending_on_controversial_Ros.md](science_article_23_Consultation_ending_on_controversial_Ros.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Electric vehicle sales targets could be cut after pressure from car makers**
-   - **Published:** Fri, 14 Aug 2026 15:58:21 GMT
-   - **Read Parallel Translation:** [science_article_24_Electric_vehicle_sales_targets_could_be_.md](science_article_24_Electric_vehicle_sales_targets_could_be_.md)
+4. **Muir resignation demand is 'not personal' says UFU**
+   - **Published:** Mon, 17 Aug 2026 11:06:39 GMT
+   - **Read Parallel Translation:** [science_article_24_Muir_resignation_demand_is_not_personal_.md](science_article_24_Muir_resignation_demand_is_not_personal_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
@@ -171,48 +171,48 @@ Scraped Feed Mode: `ALL`
 
 ### Section: POLITICS
 
-1. **Calls for public inquiry into Jason Arday 'witch hunt'**
-   - **Published:** Sun, 16 Aug 2026 15:33:02 GMT
-   - **Read Parallel Translation:** [politics_article_29_Calls_for_public_inquiry_into_Jason_Arda.md](politics_article_29_Calls_for_public_inquiry_into_Jason_Arda.md)
+1. **Burnham exchanged messages with person posing as Trump's chief of staff**
+   - **Published:** Mon, 17 Aug 2026 18:51:22 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_exchanged_messages_with_person_p.md](politics_article_29_Burnham_exchanged_messages_with_person_p.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **UK-made drones strike targets inside Russia**
-   - **Published:** Sun, 16 Aug 2026 12:22:25 GMT
-   - **Read Parallel Translation:** [politics_article_30_UK-made_drones_strike_targets_inside_Rus.md](politics_article_30_UK-made_drones_strike_targets_inside_Rus.md)
+2. **Labour MP suspended as party launches investigation into Covid loans**
+   - **Published:** Mon, 17 Aug 2026 16:08:10 GMT
+   - **Read Parallel Translation:** [politics_article_30_Labour_MP_suspended_as_party_launches_in.md](politics_article_30_Labour_MP_suspended_as_party_launches_in.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Reform UK benefits ban for foreign nationals would include EU citizens**
-   - **Published:** Sun, 16 Aug 2026 21:41:32 GMT
-   - **Read Parallel Translation:** [politics_article_31_Reform_UK_benefits_ban_for_foreign_natio.md](politics_article_31_Reform_UK_benefits_ban_for_foreign_natio.md)
+3. **Reform proposes ban on most benefits for foreign nationals in UK**
+   - **Published:** Mon, 17 Aug 2026 15:15:26 GMT
+   - **Read Parallel Translation:** [politics_article_31_Reform_proposes_ban_on_most_benefits_for.md](politics_article_31_Reform_proposes_ban_on_most_benefits_for.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Who voted for Count Binface and why?**
-   - **Published:** Sat, 15 Aug 2026 16:59:49 GMT
-   - **Read Parallel Translation:** [politics_article_32_Who_voted_for_Count_Binface_and_why.md](politics_article_32_Who_voted_for_Count_Binface_and_why.md)
+4. **Does Reform's plan to cut £50bn in welfare spending add up?**
+   - **Published:** Mon, 17 Aug 2026 19:54:08 GMT
+   - **Read Parallel Translation:** [politics_article_32_Does_Reforms_plan_to_cut_50bn_in_welfare.md](politics_article_32_Does_Reforms_plan_to_cut_50bn_in_welfare.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Ariana Grande leaves problems at home as her tour hits the UK**
-   - **Published:** Sun, 16 Aug 2026 02:01:42 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Ariana_Grande_leaves_problems_at_home_as.md](entertainment_article_33_Ariana_Grande_leaves_problems_at_home_as.md)
+1. **Tributes to actress Hayden Panettiere as coroner finds 'no signs of trauma'**
+   - **Published:** Mon, 17 Aug 2026 23:28:54 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Tributes_to_actress_Hayden_Panettiere_as.md](entertainment_article_33_Tributes_to_actress_Hayden_Panettiere_as.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Four 'extraordinary' Renaissance paintings stolen from Italian museum**
-   - **Published:** Sun, 16 Aug 2026 13:34:38 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Four_extraordinary_Renaissance_paintings.md](entertainment_article_34_Four_extraordinary_Renaissance_paintings.md)
+2. **Hayden Panettiere: A life of struggles alongside screen success**
+   - **Published:** Mon, 17 Aug 2026 11:47:52 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Hayden_Panettiere_A_life_of_struggles_al.md](entertainment_article_34_Hayden_Panettiere_A_life_of_struggles_al.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Thousands of Bonnie Tyler fans line the streets as coffin taken to Swansea home**
-   - **Published:** Sat, 15 Aug 2026 17:33:38 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Thousands_of_Bonnie_Tyler_fans_line_the_.md](entertainment_article_35_Thousands_of_Bonnie_Tyler_fans_line_the_.md)
+3. **Emotional farewell to 'global, iconic superstar' Bonnie Tyler**
+   - **Published:** Mon, 17 Aug 2026 14:29:58 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Emotional_farewell_to_global_iconic_supe.md](entertainment_article_35_Emotional_farewell_to_global_iconic_supe.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **I wish I had been a more rebellious teenager, says Bella Ramsey**
-   - **Published:** Sat, 15 Aug 2026 00:10:47 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_I_wish_I_had_been_a_more_rebellious_teen.md](entertainment_article_36_I_wish_I_had_been_a_more_rebellious_teen.md)
+4. **Mrs Brown's Boys Christmas specials cancelled after star breaks jaw**
+   - **Published:** Mon, 17 Aug 2026 12:09:43 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Mrs_Browns_Boys_Christmas_specials_cance.md](entertainment_article_36_Mrs_Browns_Boys_Christmas_specials_cance.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** "We believe growth is progress – leading to vitality, expansion of life, increasing knowledge, higher well being," he wrote.
 
-**🇫🇷 FR:** *[Error Translate] "We believe growth is progress – leading to vitality, expansion of life, increasing knowledge, higher well being," he wrote.*
+**🇫🇷 FR:** *"Nous pensons que la croissance est un progrès – menant à la vitalité, à l'expansion de la vie, à l'augmentation des connaissances et à un plus grand bien-être", a-t-il écrit.*
 
 ---
 
