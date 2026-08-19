@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Everyone in for Christmas' - Burnham unveils rough sleeping plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>'Everyone in for Christmas' - Burnham unveils rough sleeping plan</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 19 Aug 2026 03:42:16 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cvgvy2n6grno?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Rough sleepers in England will be offered housing, in a move likened to the “Everyone In” initiative during the pandemic.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.06" data-end="11.47">
+            <p class="french-block">Un dormeur dans la rue à Londres le mois dernier</p>
+            <span class="english-block">A rough sleeper in London last month</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="11.47" data-end="18.7">
+            <p class="french-block">Chaque personne qui dort dans la rue en Angleterre se verra proposer un logement cet hiver, a déclaré le Premier ministre.</p>
+            <span class="english-block">Every rough sleeper in England will be offered accommodation this winter, the prime minister has said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.7" data-end="28.15">
+            <p class="french-block">Andy Burnham a fait de mettre fin au sommeil dans la rue son premier engagement en entrant dans Downing Street en juillet et dit maintenant qu'il veut "inviter tout le monde à passer Noël".</p>
+            <span class="english-block">Andy Burnham made ending rough sleeping his first pledge when entering Downing Street in July and now says he wants "to get everyone in for Christmas".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.15" data-end="40.25">
+            <p class="french-block">Un hébergement d'urgence sera fourni pour mettre fin au besoin de dormir dans la rue, ainsi qu'un soutien pratique pour tout besoin de santé, dans le cadre d'un programme de 442 millions de livres sterling.</p>
+            <span class="english-block">Emergency accommodation will be provided to end the need for rough sleeping alongside practical support for any health needs, as part of a £442m package.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.25" data-end="50.09">
+            <p class="french-block">Le secrétaire fantôme au logement, James Cleverley, a déclaré qu'il y avait « peu de détails » sur la manière dont l'initiative serait financée ou mise en œuvre.</p>
+            <span class="english-block">Shadow housing secretary James Cleverley said there was "little detail" about how the initiative would be paid for or delivered.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.09" data-end="56.95">
+            <p class="french-block">L'association caritative pour les sans-abri Crisis a déclaré que cette annonce était "vraiment significative".</p>
+            <span class="english-block">Homeless charity Crisis said the announcement was "really significant".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.95" data-end="65.16">
+            <p class="french-block">"Cela marque un tournant dans notre pays : nous n'allons pas tolérer que des gens soient forcés de dormir dans la rue", a déclaré un porte-parole.</p>
+            <span class="english-block">"It marks a turning point in our country that we're not going to tolerate people being forced to sleep on the streets," a spokesperson said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.16" data-end="71.88">
+            <p class="french-block">Le gouvernement conservateur précédent s’était engagé à mettre fin au sommeil dans la rue d’ici 2024.</p>
+            <span class="english-block">The previous Conservative government had pledged to end rough sleeping by 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.88" data-end="84.02">
+            <p class="french-block">Selon les données officielles, on estime que 4 793 personnes ont dormi dans la rue en une seule nuit en Angleterre à l'automne 2025, soit une augmentation de 96 % en cinq ans.</p>
+            <span class="english-block">According to official data, there were an estimated 4,793 people sleeping rough on a single night in England in the autumn of 2025, external, a 96% increase in five years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="84.02" data-end="93.24">
+            <p class="french-block">Cependant, l’instantané annuel semble sous-estimer considérablement l’ampleur du problème en raison de règles strictes sur la manière dont les données sont collectées.</p>
+            <span class="english-block">However, the annual snapshot is seen as significantly undercounting the extent of the problem due to strict rules over how the data is collected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.24" data-end="97.01">
+            <p class="french-block">Chloé dormait dans la rue et dit qu'elle salue l'initiative</p>
+            <span class="english-block">Chloe used to sleep rough and says she welcomes the initiative</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="97.01" data-end="107.35">
+            <p class="french-block">Chloé, 27 ans, originaire de Londres, a fini par dormir dans la rue l'année dernière après avoir passé du temps en contact avec des services de soins et d'accueil en grandissant.</p>
+            <span class="english-block">Chloe, 27, from London, ended up rough sleeping last year after spending time in contact with care and foster services growing up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="107.35" data-end="116.95">
+            <p class="french-block">Elle a dormi dans des parcs éloignés du centre-ville pour essayer de rester cachée, et affirme qu'aucune personne sans abri ne refuserait un lit s'il était doté du bon soutien.</p>
+            <span class="english-block">She slept in parks away from the centre of the city to try and to stay hidden, and says no rough sleeper would turn down a bed if it came with the right support.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.95" data-end="134.59">
+            <p class="french-block">"La possibilité de mettre fin au sans-abrisme est incroyable. [Mais] des choses comme le sans-abrisme caché ont été normalisées, avec des gens qui surfent sur leur canapé et vivent d'un salaire à l'autre, je pense qu'il y a certaines choses fondamentales qui doivent être abordées en premier pour s'assurer que l'ampleur de l'aide est là."</p>
+            <span class="english-block">"The possibility of ending homelessness is amazing. [But] things like hidden homelessness have been normalised, with people sofa-surfing and living paycheck to paycheck, I think there are certain foundational things that need to be addressed first to make sure the scope of help is there."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.59" data-end="142.08">
+            <p class="french-block">Chloé a été aidée par Crisis qui l'a hébergée dans un logement temporaire et a désormais une place pour étudier dans une école de cinéma.</p>
+            <span class="english-block">Chloe was helped by Crisis who housed her in temporary accommodation and now has a place to study at film school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.08" data-end="147.41">
+            <p class="french-block">Elle continue de penser que le projet sera bien accueilli par la majorité des sans-abri.</p>
+            <span class="english-block">She still thinks that the scheme will be welcomed by the majority of rough sleepers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.41" data-end="165.65">
+            <p class="french-block">"En général, les gens dans la rue veulent un logement. Les gens finissent généralement par se retrouver sans abri pour des raisons de santé mentale ou financières. Donc, si cela pouvait également être résolu, il n'y a personne qui dort dans la rue en ce moment qui ne voudrait pas d'une certaine forme de sécurité."</p>
+            <span class="english-block">"In general, people on the street want a home. People usually end up coming back to homelessness for mental health or financial reasons. So if that could also be addressed, there is no person sleeping on the street right now who wouldn't want some type of security."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.65" data-end="170.78">
+            <p class="french-block">Meron dort dans une tente dans un tunnel du centre de Londres depuis environ deux mois.</p>
+            <span class="english-block">Meron has been sleeping in a tent in a tunnel in central London for about two months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.78" data-end="176.5">
+            <p class="french-block">Il dit qu'il est devenu sans abri après la fin de son contrat de trois mois dans un entrepôt Amazon.</p>
+            <span class="english-block">He says he became homeless after his three-month contract at an Amazon Warehouse ended.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.5" data-end="188.59">
+            <p class="french-block">"Les gens laissent leurs déchets dehors. Il y a des voitures, de la musique forte, ce n'est pas dangereux mais je n'arrive pas à dormir. Je continue de postuler pour un emploi mais je n'en trouve pas."</p>
+            <span class="english-block">"People leave their rubbish out. There are cars, loud music, it's not dangerous but I can't sleep. I keep applying for jobs but I can't find one."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.59" data-end="193.39">
+            <p class="french-block">Il est originaire d’Érythrée et est arrivé seul au Royaume-Uni il y a trois ans.</p>
+            <span class="english-block">He is originally from Eritrea and came to the UK by himself three years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.39" data-end="202.7">
+            <p class="french-block">"Je cherche n'importe quel emploi et quand j'en aurai un, j'aurai une maison. Mais je postule pour un emploi en dehors de Londres parce que c'est trop cher."</p>
+            <span class="english-block">"I'm looking for any job and when I get a job I'll get a house. But I'm applying for jobs outside of London because it's too expensive."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.7" data-end="206.69">
+            <p class="french-block">Meron dort dans la rue dans une tente depuis environ deux mois</p>
+            <span class="english-block">Meron has been rough sleeping in a tent for about two months</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.69" data-end="231.67">
+            <p class="french-block">Dans un article d'opinion externe du Guardian, Burnham a écrit : « Pendant des décennies, Westminster a traité le sommeil dans la rue comme un problème à contourner plutôt qu'à résoudre. C'est une philosophie qui s'est imposée dans les années 1980 et est revenue en force à l'ère de l'austérité : cette idée selon laquelle le sommeil dans la rue est simplement une réalité de la vie plutôt que quelque chose que le gouvernement a la responsabilité d'y mettre fin...</p>
+            <span class="english-block">In an opinion piece in the Guardian, external, Burnham wrote: "For decades, Westminster has treated rough sleeping like a problem to step around rather than solve. It's a philosophy that took hold in the 1980s and came back full force in the era of austerity: this idea that rough sleeping is just a fact of life rather than something government has a responsibility to end...</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="231.67" data-end="241.46">
+            <p class="french-block">"Peu importe qui ils sont ou ce qu'ils ont vécu, chaque personne qui dort dans la rue mérite une chance de se remettre sur pied – et, ensemble, c'est exactement ce que nous leur donnerons."</p>
+            <span class="english-block">"No matter who they are or what they've been through, every person sleeping rough deserves a chance to get back on their feet – and, together, that's exactly what we'll give them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.46" data-end="253.97">
+            <p class="french-block">Le Premier ministre a déclaré qu’il souhaitait s’appuyer sur le succès de Everyone In, un programme datant de l’ère de la pandémie de Covid qui a permis à des milliers de sans-abri d’être hébergés dans des hôtels et des logements temporaires.</p>
+            <span class="english-block">The prime minister said he wanted to build on the success of Everyone In, a Covid pandemic-era scheme that saw thousands of rough sleepers housed in hotels and temporary accommodation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.97" data-end="268.85">
+            <p class="french-block">Environ 37 000 personnes ont bénéficié de ce programme depuis son lancement en mars 2020. L'association caritative Shelter a constaté qu'environ un quart d'entre elles avaient trouvé un logement stable, sous la forme d'un logement d'une durée d'au moins six mois.</p>
+            <span class="english-block">About 37,000 people were helped by the scheme following its launch in March 2020.  The charity Shelter found that about a quarter of them had found settled accommodation, in the form of housing lasting at least six months., external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.85" data-end="288.24">
+            <p class="french-block">L'annonce s'accompagne d'un nouveau financement supplémentaire de 102 millions de livres sterling, ce qui porte l'engagement total de Burnham à lutter contre le sommeil dans la rue à 442 millions de livres sterling depuis qu'il est devenu Premier ministre.  L'argent serait « entièrement financé » par le budget du ministère du Logement.</p>
+            <span class="english-block">The announcement comes with an additional £102m in new funding, taking Burnham's total commitment to tackling rough sleeping to £442m since becoming prime minister.  The money is said to be "fully funded" within the Ministry of Housing's budget.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.24" data-end="312.34">
+            <p class="french-block">En plus de fournir un soutien immédiat pour sortir les gens de la rue, le financement est également conçu pour fournir plus de 1 000 logements au cours des trois prochaines années afin de fournir un logement permanent aux personnes qui dorment dans la rue.  Le financement fournira également un « soutien global intensif », généralement des services psychiatriques et de lutte contre la toxicomanie et l'alcoolisme, pour aider les gens à reconstruire leur vie.</p>
+            <span class="english-block">As well as providing immediate support get people off the streets, the funding is also designed to deliver over 1,000 homes over the next three years to provide rough sleepers with permanent accommodation.  The funding will also provide "intensive wraparound support," typically psychiatric and drug and alcohol services to help people rebuild their lives.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.34" data-end="333.07">
+            <p class="french-block">Burnham dit qu'il organisera une conférence spéciale à l'automne, invitant les entreprises, les organisations caritatives et les groupes confessionnels à expliquer comment ils peuvent contribuer à résoudre le problème.  Les conseils et les maires joueront un rôle de premier plan dans l’élaboration de solutions locales, les zones les plus problématiques recevant le plus de soutien.</p>
+            <span class="english-block">Burnham says he will organise a special conference in the autumn, inviting business, charities and faith groups to outline how they can help tackle the problem.  Councils and mayors will play a leading role in devising local solutions with the areas with the biggest problem receiving the most support.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.07" data-end="343.42">
+            <p class="french-block">Jasmine Basran, responsable des politiques chez Crisis, a déclaré que l'association se félicitait de l'annonce et pensait qu'il était possible de mettre fin au sommeil dans la rue.</p>
+            <span class="english-block">Jasmine Basran, head of policy at Crisis, said the charity welcomed the announcement and believed an end to rough sleeping was possible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.42" data-end="351.36">
+            <p class="french-block">"Ce que nous souhaitons également voir à plus long terme, ce sont des interventions visant à empêcher que les gens ne soient forcés de dormir dans la rue."</p>
+            <span class="english-block">"What we also want to see in the longer term is interventions to prevent people from being forced to sleep rough in the first place."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.36" data-end="361.7">
+            <p class="french-block">Elle a exhorté les départements du gouvernement à travailler ensemble pour résoudre ce problème, affirmant que trop de personnes sortant de l'hôpital ou sortant des soins se retrouvaient dans la rue.</p>
+            <span class="english-block">She urged departments across government to work together to address the issue - saying too many people being discharged from hospital or leaving care were ending up on the streets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.7" data-end="369.55">
+            <p class="french-block">Sarah Elliott, directrice générale de Shelter, a qualifié l'engagement de Burnham de « mesure révolutionnaire ».</p>
+            <span class="english-block">Sarah Elliott, Shelter's chief executive, called Burnham's pledge  a "game-changing move".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.55" data-end="382.46">
+            <p class="french-block">Elle a déclaré que "s'attaquer à la forme la plus visible de sans-abrisme est un bon début", mais a exhorté le Premier ministre à tenir sa promesse de construire davantage de logements sociaux pour aider les personnes vivant dans des logements temporaires.</p>
+            <span class="english-block">She said "tackling the most visible form of homelessness is a strong start" but urged the prime minister to act on his promise to build more council houses to help people living in temporary accommodation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="382.46" data-end="393.7">
+            <p class="french-block">Le secrétaire fantôme au logement a déclaré que Burnham avait promis de mettre fin au sommeil dans la rue alors qu'il était maire de Manchester "et avait échoué parce qu'il n'avait pas fait le travail acharné nécessaire".</p>
+            <span class="english-block">The shadow housing secretary said Burnham had promised to end rough sleeping while Manchester mayor "and failed because he didn't do the hard work necessary".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="393.7" data-end="403.44">
+            <p class="french-block">James Cleverly a ajouté que les familles craindraient des augmentations d'impôts à moins que les travaillistes ne puissent "dire clairement quels autres programmes ils suppriment pour financer ce projet".</p>
+            <span class="english-block">James Cleverly added that families would fear there would be tax rises unless Labour could "come clean on what other programmes they are cutting to pay for this project".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.44" data-end="420.89">
+            <p class="french-block">Le porte-parole libéral-démocrate en matière de logement, Gideon Amos, a déclaré : « Les pansements adhésifs ne résoudront pas la crise des sans-abri. Sans un plan approprié à long terme, les gens pourraient simplement se retrouver à nouveau dans la rue une fois que les gros titres festifs s'estomperont. »</p>
+            <span class="english-block">Liberal Democrat housing spokesperson Gideon Amos said: "Sticking plasters won't fix the homelessness crisis. Without a proper long-term plan, people could simply find themselves back on the streets once the festive headlines fade."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="420.89" data-end="427.68">
+            <p class="french-block">Il a exhorté Burnham à s’engager sur l’objectif Lib Dem de construire 150 000 logements sociaux chaque année.</p>
+            <span class="english-block">He urged Burnham to commit to a Lib Dem target to build 150,000 social homes every year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="427.68" data-end="445.7">
+            <p class="french-block">Le chef adjoint de la réforme britannique, Richard Tice, a également critiqué les efforts de Burnham pour lutter contre le sans-abrisme alors qu'il était maire de Manchester, et a décrit les nouveaux plans du gouvernement comme « encore une autre annonce vague sans substances qui utilisent nos plus vulnérables pour marquer des points politiques ».</p>
+            <span class="english-block">Deputy Reform UK leader Richard Tice also criticised Burnham's efforts to tackle homelessness while Manchester mayor, and described the government's new plans as "yet another vague announcement with no substances which uses our most vulnerable for political point-scoring".</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_29.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
