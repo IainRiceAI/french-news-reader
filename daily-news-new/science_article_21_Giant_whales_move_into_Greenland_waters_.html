@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giant whales move into Greenland waters as ice disappears</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Giant whales move into Greenland waters as ice disappears</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 20 Aug 2026 02:05:20 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cq6dn9gj7eno?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Melting sea ice from climate change has opened up the region for giant whales to undertake "feeding frenzies".
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.49" data-end="15.26">
+            <p class="french-block">Les rorquals communs se nourrissent dans les eaux libres de glace de l'est du Groenland, comme l'observent les scientifiques depuis leurs bateaux</p>
+            <span class="english-block">Fin whales feed in ice-free East Greenland waters, as scientists observe from their boats</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.26" data-end="24.17">
+            <p class="french-block">La glace marine a disparu de l'est du Groenland, permettant aux baleines géantes d'en profiter et de s'installer dans des zones auparavant inaccessibles.</p>
+            <span class="english-block">Sea ice has been disappearing from East Greenland, allowing giant whales to take advantage and move in to previously inaccessible areas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.17" data-end="39.34">
+            <p class="french-block">C'est la conclusion d'une étude de plusieurs décennies qui a enregistré - et filmé - des centaines de plus grandes baleines du monde, notamment des rorquals à bosse, des petits rorquals et des rorquals communs, se nourrissant dans les mers libres de glace le long de la côte en été.</p>
+            <span class="english-block">That is the conclusion of a decades-long study that has recorded - and filmed -  hundreds of the world's biggest whales including humpbacks, minke and fin whales, feeding in ice-free seas along the coast in summer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.34" data-end="52.92">
+            <p class="french-block">Historiquement, aucun de ces mammifères marins n'a été trouvé ici car ils ont été exclus des eaux côtières par la glace. Aujourd’hui, alors que le changement climatique réchauffe la mer et fait fondre la glace, ils se sont adaptés.</p>
+            <span class="english-block">None of these marine mammals were historically found here as they have been locked out of the coastal waters by ice. Now, as climate change warms the sea and melts that ice, they have adapted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.92" data-end="65.38">
+            <p class="french-block">Les scientifiques décrivent ce résultat comme une «frénésie alimentaire» saisonnière dans l'Arctique, qui s'inscrit dans le cadre d'un changement de régime majeur dans l'environnement océanique le long de l'est du Groenland.</p>
+            <span class="english-block">Scientists describe the result as seasonal Arctic "feeding frenzies" - part of a major  regime shift in the ocean environment along East Greenland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.38" data-end="69.72">
+            <p class="french-block">Une baleine à bosse se nourrissant dans les eaux côtières subarctiques</p>
+            <span class="english-block">A humpback whale feeding in coastal subarctic waters</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.72" data-end="78.36">
+            <p class="french-block">Le changement est spectaculaire : les relevés maritimes effectués dans la région n’ont enregistré aucune observation de baleine à bosse avant 2006.</p>
+            <span class="english-block">The change is dramatic: ship-based surveys in the region did not record a single humpback whale sighting there until 2006.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.36" data-end="87.17">
+            <p class="french-block">En 2007, sept baleines à bosse ont été observées et, en 2024, 150 baleines géantes ont été observées depuis des navires.</p>
+            <span class="english-block">In 2007, seven humpbacks were seen, and by 2024, there were 150 ship-based sightings of these giant whales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.17" data-end="100.37">
+            <p class="french-block">Les premiers relevés aériens systématiques des baleines à fanons – un groupe comprenant les nageoires, les petits rorquals et les baleines à bosse – au large de la côte est du Groenland ont été réalisés par les chercheurs au cours des étés 2015 et 2024.</p>
+            <span class="english-block">The first systematic aerial surveys of baleen whales - a group that includes fin, minke and humpbacks - off the East Greenland coast were carried out by the researchers during the summers of 2015 and 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.37" data-end="115.66">
+            <p class="french-block">Ils ont combiné ces informations avec les traces de 15 baleines marquées par satellite et les témoignages de chasseurs inuits – le tout construisant une image de ce que le chercheur principal, le professeur Mads Peter Heide-Jørgensen, a appelé un « changement majeur de régime écologique ».</p>
+            <span class="english-block">They combined that information with the tracks of 15 satellite-tagged whales and  testimony from Inuit hunters - all building a picture of what the lead researcher Prof Mads Peter Heide-Jørgensen called a "major ecological regime shift".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.66" data-end="124.7">
+            <p class="french-block">On estime que 4 000 baleines à bosse, 6 000 rorquals communs et 6 000 petits rorquals ont visité la mer du Groenland au cours de l’été 2024.</p>
+            <span class="english-block">An estimated 4,000 humpback whales, 6,000 fin whales and 6,000 minke whales visited the Greenland Sea in the summer of 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.7" data-end="131.83">
+            <p class="french-block">Les chercheurs ont installé des dispositifs de suivi par satellite sur certaines baleines pour suivre leurs mouvements saisonniers.</p>
+            <span class="english-block">The researchers fitted satellite tracking devices to some whales to follow their seasonal movements</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.83" data-end="144.31">
+            <p class="french-block">Le professeur Heide-Jørgensen, de l'Institut des ressources naturelles du Groenland, a déclaré à BBC News que les changements dans la région étaient « probablement les plus radicaux que nous puissions voir dans le subarctique ».</p>
+            <span class="english-block">Prof Heide-Jørgensen, from the Greenland Institute of Natural Resources, told BBC News that the changes in the region were "probably the most radical we can see anywhere in the subarctic".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.31" data-end="156.22">
+            <p class="french-block">Ce changement est dû à la hausse de la température de la mer et à la disponibilité alimentaire. Les baleines semblent se nourrir de poissons qui se sont déplacés vers les eaux chaudes de l’est du Groenland.</p>
+            <span class="english-block">That shift is driven by rising sea temperatures and food availability. The whales appear to be feeding on fish that have moved into the warming waters of East Greenland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.22" data-end="164.57">
+            <p class="french-block">Ils ont estimé que les trois espèces de baleines consommeraient au moins 800 000 tonnes de poisson et de krill au cours d'une saison d'alimentation estivale.</p>
+            <span class="english-block">They estimated that the three whale species would consume at least 800,000 tonnes of fish and krill during a summer feeding season.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.57" data-end="171.67">
+            <p class="french-block">Alors que certaines baleines profitent du réchauffement des eaux, des espèces arctiques comme les narvals perdent leur habitat</p>
+            <span class="english-block">While some whales are benefiting from warming waters, Arctic species like narwhals are losing habitat</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.67" data-end="181.7">
+            <p class="french-block">Cette étude ne permet pas de savoir si le changement reflète une augmentation globale des populations de ces espèces de baleines, ou simplement une redistribution depuis d'autres zones.</p>
+            <span class="english-block">It is not clear from this study whether the change reflects an overall increase in the populations of these whale species, or just a redistribution from other areas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="181.7" data-end="195.79">
+            <p class="french-block">D'autres experts avec lesquels la BBC s'est entretenue s'inquiétaient du fait que l'étude suggérait un afflux d'animaux en provenance de l'ouest du Groenland. C'est une question sensible au Groenland, un pays où certaines baleines sont chassées.</p>
+            <span class="english-block">Other experts the BBC spoke to were concerned that the study suggested there was an influx of the animals from West Greenland. That is a sensitive issue in Greenland, a country where some whales are hunted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.79" data-end="204.89">
+            <p class="french-block">Mais les scientifiques ont déclaré que leurs découvertes suggèrent que ces baleines à fanons « opportunistes » semblent s'adapter et pourraient même bénéficier du changement.</p>
+            <span class="english-block">But the scientists said that their findings do suggest that these "opportunistic" baleen whales appear to be adapting and might even be benefiting from the change.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.89" data-end="212.23">
+            <p class="french-block">Cependant, d'autres espèces arctiques sont "maintenant en difficulté", a expliqué le professeur Heide-Jørgensen.</p>
+            <span class="english-block">Other Arctic species, however, are "in trouble now", explained Prof Heide-Jørgensen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.23" data-end="220.51">
+            <p class="french-block">Des animaux, notamment les narvals et les bélugas, partagent leur habitat avec ces autres baleines, voire sont déplacés par celles-ci.</p>
+            <span class="english-block">Animals including narwhals and belugas are sharing habitat with - or even being displaced by - these other whales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.51" data-end="232.85">
+            <p class="french-block">"Pour certaines espèces, le changement climatique ne constitue pas nécessairement un problème : il ouvre de nouvelles opportunités", a déclaré le professeur Heide-Jørgensen, "mais d'autres espèces perdent leur habitat".</p>
+            <span class="english-block">"For some species, climate change is not necessarily a problem - it opens up new opportunities," said Prof Heide-Jørgensen, "but other species are losing their habitat".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.85" data-end="237.79">
+            <p class="french-block">L'étude est publiée dans la revue Frontiers in Marine Science, externe.</p>
+            <span class="english-block">The study is published in the journal Frontiers in Marine Science, external.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_21.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

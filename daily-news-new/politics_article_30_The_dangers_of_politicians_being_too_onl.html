@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The dangers of politicians being 'too online' - or not online enough</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>The dangers of politicians being 'too online' - or not online enough</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 20 Aug 2026 00:57:09 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cn5nvkdwy74o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: In an era when reputations can be made or broken with a single post, getting the balance right is tricky.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.87" data-end="12.77">
+            <p class="french-block">Les dangers que les politiciens soient « trop en ligne » – ou pas assez en ligne</p>
+            <span class="english-block">The dangers of politicians being 'too online' - or not online enough</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.77" data-end="34.22">
+            <p class="french-block">Début 2015, des couronnes de fleurs ont commencé à apparaître sur la tête d'Ed Miliband. Des pétales et des cœurs ont été photoshopés sur le dirigeant travailliste de l'époque par le "Milifandom", un mouvement de jeunes électeurs, pour la plupart des femmes, partageant des images romancées sur Twitter pour protester contre la "représentation médiatique déformée" de Miliband.</p>
+            <span class="english-block">In early 2015, flower crowns started appearing on Ed Miliband's head. Petals and hearts were photoshopped on to the then-Labour leader by the "Milifandom", a movement of young, mostly female, voters sharing romanticised images on Twitter to protest against Miliband's "distorted media portrayal".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.22" data-end="49.92">
+            <p class="french-block">C'est l'idée originale d'Abby Tomlinson, une étudiante de 17 ans en sixième, qui a pris la défense de celui qu'elle appelait "Milibae". Le hashtag #Milifandom est à la mode. Puis les travaillistes ont perdu les élections de 2015.</p>
+            <span class="english-block">It was the brainchild of Abby Tomlinson, a 17-year-old sixth-form student, who came to the defence of the man she called "Milibae". The hashtag #Milifandom trended. Then Labour lost the 2015 election.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.92" data-end="74.83">
+            <p class="french-block">Cela a incité David Cameron, dont les conservateurs ont augmenté le nombre de sièges, à se vanter : « La Grande-Bretagne et Twitter ne sont pas la même chose ». Tomlinson m'a dit plus tard que le fait d'avoir déçu ses espoirs de voir Milibae dans le numéro 10 avait fait d'elle une "pessimiste politique", après avoir réalisé que gagner les électeurs en ligne "ne se fait pas en un jour, une semaine ou même des mois, cela va prendre des années".</p>
+            <span class="english-block">This prompted David Cameron, whose Conservatives increased their number of seats, to boast: "Britain and Twitter are not the same thing." Tomlinson later told me that having her hopes of Milibae in No10 dashed had made her a "political pessimist", after realising winning over voters online "doesn't happen in a day, a week or even months, it's going to take years".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.83" data-end="99.07">
+            <p class="french-block">Plus d’une décennie plus tard, elle utilise à nouveau les médias sociaux pour saluer un leader travailliste, mais cette fois au cœur du gouvernement. Elle siège au bureau de presse du 12 Downing Street en tant que responsable du contenu d'Andy Burnham. Le gouvernement a passé les dernières semaines à recruter des producteurs, des vidéastes et des stratèges, travaillant à la fois à Whitehall et au No 10 North à Manchester.</p>
+            <span class="english-block">More than a decade on and she is again using social media to big up a Labour leader, but this time in the heart of government. She sits in the press office in No 12 Downing Street as head of content for Andy Burnham. The government has spent the last few weeks recruiting producers, videographers and strategists, working out of both Whitehall and No 10 North in Manchester.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.07" data-end="126.67">
+            <p class="french-block">Au cours de son premier mois en tant que Premier ministre, Burnham a publié plus de 50 fois sur Instagram, allant de réunions avec des dirigeants mondiaux, des militants, des agriculteurs et des influenceurs, à du contenu basé sur des mèmes comme le classement des collations dans les pubs avec le chancelier John Healey dans le cadre d'une annonce sur les tarifs professionnels. Les stratèges pensent qu'Instagram et TikTok peuvent mettre à profit les atouts de communication et le sens de l'humour de Burnham.</p>
+            <span class="english-block">In his first month as PM, Burnham posted more than 50 times on Instagram, ranging from meetings with world leaders, campaigners, farmers and influencers, to meme-based content like ranking pub snacks with Chancellor John Healey as part of an announcement on business rates. Strategists believe Instagram and TikTok can play to Burnham's communication strengths and sense of humour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.67" data-end="131.95">
+            <p class="french-block">Le jeu du Premier ministre sur les réseaux sociaux a été un succès auprès des experts</p>
+            <span class="english-block">The PM's social media game has been a hit with pundits</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.95" data-end="157.1">
+            <p class="french-block">Ils sont tous là, bien sûr. Les vidéos du chef conservateur Kemi Badenoch déchirant le budget ou se moquant de l’ancien Premier ministre Sir Keir Starmer sont devenues virales. Nigel Farage, de Reform UK, possède de loin la plus grande audience en ligne parmi tous les dirigeants de partis britanniques, avec 7,6 millions de followers sur Facebook, Instagram, X, TikTok et YouTube.</p>
+            <span class="english-block">They're all at it, of course. Videos of Conservative leader Kemi Badenoch tearing into the budget or mocking ex-PM Sir Keir Starmer have gone viral. Reform UK's Nigel Farage has by far the biggest online audience of any UK party leader, with 7.6 million followers across Facebook, Instagram, X, TikTok and YouTube.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.1" data-end="174.5">
+            <p class="french-block">En Écosse, le SNP mobilise depuis longtemps son armée en ligne pour faire campagne pour l’indépendance, se bâtissant un public plus large que celui des Lib Dems, qui font campagne dans toute la Grande-Bretagne, dont le chef Ed Davey a obtenu un certain succès grâce à ses campagnes électorales devenues virales.</p>
+            <span class="english-block">In Scotland, the SNP have long mobilised their online army to campaign for independence, building a following larger than that of the Lib Dems, which campaigns across Britain, whose leader Ed Davey has achieved some success with campaign stunts going viral.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.5" data-end="189.94">
+            <p class="french-block">Restore Britain, fondée par l'ancien député réformiste Rupert Lowe, bénéficie du plus haut niveau de soutien parmi les utilisateurs de X. La plateforme appartient à Elon Musk qui a publiquement soutenu le parti, élargissant ainsi sa portée.</p>
+            <span class="english-block">Restore Britain, founded by former Reform MP Rupert Lowe, enjoys its highest level of support among users of X. The platform is owned by Elon Musk who has publicly endorsed the party, expanding its reach.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.94" data-end="213.58">
+            <p class="french-block">Plaid Cymru, nouvellement installé au sein du gouvernement du Pays de Galles, expérimente toujours cette approche, utilisant le Premier ministre Rhun Ap Iorweth dans des mèmes « amusants » tout en publiant également des extraits d'interviews plus sérieuses. Zack Polanski des Verts a fait grand cas de la gestion de ses propres comptes, même si, comme il l'a constaté ces dernières semaines, cela comporte également des risques.</p>
+            <span class="english-block">Plaid Cymru, newly installed in government in Wales, is still experimenting with its approach, using First Minister Rhun Ap Iorweth in "fun" memes while also posting more serious interview excerpts. The Greens' Zack Polanski has made much of running his own accounts, though as he has found in recent weeks, this comes with risks too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.58" data-end="232.78">
+            <p class="french-block">Alors, combien est-ce suffisant ? Dans un monde où les réputations peuvent être bâties (ou brisées) avec un seul commentaire ou une seule collaboration, il est difficile de trouver le juste équilibre : être accessible, authentique et abordable, sans grincer des dents. Et est-ce que cela change quelque chose pour les élections ?</p>
+            <span class="english-block">So how much is enough? In a world where reputations can be made (or broken) with one comment or collaboration, getting the balance right is tricky – being accessible, authentic and approachable, without being cringe. And does it make any difference to elections?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.78" data-end="262.32">
+            <p class="french-block">La successeure de Cameron, Theresa May, doutait également des mérites des médias sociaux. Lorsqu'elle a pris ses fonctions, elle a repoussé ses collaborateurs qui lui ont suggéré de commencer à tweeter : "Les gens ne disent pas 'passez-moi le journal hashtag, ou je voudrais un café hashtag'." Les annonces devaient être faites officiellement. Lorsque les ministres ont été nommés lors du premier remaniement de mai, cela a été annoncé dans des communiqués de presse sous les armoiries du gouvernement britannique.</p>
+            <span class="english-block">Cameron's successor, Theresa May, was similarly doubtful about the merits of social media. When she took office she rebuffed aides who suggested she start tweeting: "People don't say 'pass me the hashtag newspaper, or I'd like a hashtag coffee'." Announcements were to be made formally. When cabinet ministers were appointed in May's first reshuffle, it was heralded in press statements beneath the UK government coat of arms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="262.32" data-end="280.15">
+            <p class="french-block">En revanche, cet été, en présentant mon émission 5 Live depuis Downing Street lors du premier remaniement de Burnham, je pouvais prédire l'apparition d'un autre nouveau ministre car l'équipe de deux personnes chargée des médias sociaux du n°10 se mettrait en position pour capturer les nouveaux arrivants sur leurs caméras.</p>
+            <span class="english-block">By contrast, this summer, presenting my 5 Live show from Downing Street during Burnham's first reshuffle, I could predict the appearance of another new minister because the two-person social media team from No 10 would move into position to capture the new arrivals on their cameras.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.15" data-end="312.38">
+            <p class="french-block">Bien entendu, les premiers ministres (et les aspirants) se sont depuis longtemps adaptés aux nouvelles technologies. Winston Churchill a exploité le pouvoir de la radio, mais a considéré la télévision comme une vulgaire diversion. Dans les années 1960, Harold Wilson, du Parti travailliste, a calqué sa campagne télévisée sur JFK en Amérique. Dans les années 1990 et 2000, des dirigeants comme Tony Blair étaient tout aussi susceptibles d'être trouvés sur le canapé du chatshow que dans l'émission Today.</p>
+            <span class="english-block">Of course, prime ministers (and wannabes) have long adapted to new technology. Winston Churchill harnessed the power of radio, but thought television a vulgar diversion. In the 1960s, Labour's Harold Wilson modelled his TV campaigning on JFK in America. In the 1990s, and 2000s leaders like Tony Blair were just as likely to be found on the chatshow sofa as on the Today programme.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.38" data-end="319.61">
+            <p class="french-block">Le nombre d'abonnés de Nigel Farage sur les réseaux sociaux est plus important que celui de tout autre dirigeant britannique.</p>
+            <span class="english-block">Nigel Farage's social media following is larger than that of any other UK leader</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.61" data-end="330.94">
+            <p class="french-block">Désormais, les podcasts offrent des opportunités longues – et moins combatives – de se connecter avec les électeurs, tandis que les médias sociaux donnent une dose rapide de dopamine démocratique directe.</p>
+            <span class="english-block">Now, podcasts give long-form - and less combative - opportunities to connect with voters, while social media gives a quick hit of direct democratic dopamine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.94" data-end="342.86">
+            <p class="french-block">Peter Hyman, ancien conseiller de Tony Blair et de Keir Starmer lorsqu'il était à Downing Street, a déclaré que le succès des premiers produits numériques de Burnham reposait sur "la quantité ainsi que la qualité".</p>
+            <span class="english-block">Peter Hyman, a former adviser to both Tony Blair and Keir Starmer when in Downing Street, said the success of Burnham's early digital output was about "quantity as well as quality".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.86" data-end="354.79">
+            <p class="french-block">"Vous devez raconter l'histoire de ce que vous faites trois, quatre ou cinq fois par jour pour pouvoir y aller régulièrement", a déclaré Hyman. "Keir Starmer n'était pas assez présent et il n'a donc pas atterri."</p>
+            <span class="english-block">"You have to narrate the story of what you are doing three or four or five times a day so that you are out there regularly," Hyman said. "Keir Starmer wasn't out there enough and therefore it wasn't landing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="354.79" data-end="365.81">
+            <p class="french-block">Il y a ici un dilemme de causalité. Burnham est-il plus populaire dans les sondages parce qu'il accumule des likes sur les réseaux sociaux, ou est-il plus performant en ligne parce que les gens l'aiment ?</p>
+            <span class="english-block">There is a causality dilemma here. Is Burnham more popular in the polls because he is racking up the likes on social media, or is he doing better online because people like him?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.81" data-end="387.96">
+            <p class="french-block">Tout le monde n’est pas convaincu. Cody Dahler, un comédien qui publie des explications politiques grossières à ses deux millions de followers, prévient que les électeurs deviendront cyniques s'ils ont l'impression que les politiciens n'utilisent les médias sociaux que "comme un outil de communication". Burnham, m'a dit Dahler sur Newsnight, apparaît comme un "professeur suppléant cool".</p>
+            <span class="english-block">Not everyone is convinced. Cody Dahler, a comedian who posts sweary political explainers to his two million followers, warns voters will become cynical if they sense politicians are just using social media simply "as a comms tool". Burnham, Dahler told me on Newsnight, comes across like a "cool substitute teacher".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="387.96" data-end="404.06">
+            <p class="french-block">Et après que Burnham ait publié une vidéo expliquant comment on appelle un petit pain dans différentes régions du pays – barm, cob ou bap – pour promouvoir ses projets de décentralisation, le diffuseur Piers Morgan lui a demandé « d’arrêter de perdre votre temps et le nôtre avec ces vidéos grinçantes ».</p>
+            <span class="english-block">And after Burnham released a video discussing what a bread roll is called in different parts of the country – barm, cob or bap - to promote his plans for devolution, broadcaster Piers Morgan asked him to "stop wasting your time and ours with these cringe videos".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="404.06" data-end="424.13">
+            <p class="french-block">Et c’est là que réside la difficulté de trouver un équilibre. Bea Timpson, ancienne attachée de presse de Liz Truss et Rishi Sunak, qui dit préférer les « médias traditionnels » comme la radiodiffusion et la presse écrite, a ajouté : « Je dois accepter que ce n'est désormais pas négociable d'être un peu en ligne, mais on peut certainement en être trop. »</p>
+            <span class="english-block">And therein lies the difficulty of striking a balance. Bea Timpson, a former press secretary to Liz Truss and Rishi Sunak who says she prefers "trad media" like broadcast and print, added:  "I have to accept that it's now non-negotiable to be online a bit, but you definitely can be too much."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="424.13" data-end="463.94">
+            <p class="french-block">La télévision et les sites Web en ligne restent les sources d'information les plus utilisées, mais nous sommes de plus en plus nombreux à déclarer que nous recevons également des informations sur les réseaux sociaux, selon l'organisme de surveillance des médias Ofcom. Bien que ce chiffre soit le plus élevé chez les 16-24 ans (78 %), une majorité d'adultes de tous les groupes d'âge utilisent les médias sociaux pour accéder à l'actualité, à l'exception des plus de 65 ans. Même parmi les plus de 75 ans, 22 % découvrent ce qui se passe dans le monde grâce aux réseaux sociaux. Pour les politiciens, il ne s’agit plus seulement d’atteindre les jeunes : il s’agit de tous les électeurs.</p>
+            <span class="english-block">TV and online websites remain the most used sources for news, but more and more of us say we also get news from social media, according to media watchdog Ofcom. While this is highest among 16-24 year olds at 78%, a majority of adults in every age group use social media to access news, apart from the over-65s. Even among over 75s, 22% find out what is happening in the world from social media. For politicians, this is no longer just about reaching young people – this is all voters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="463.94" data-end="494.98">
+            <p class="french-block">Certaines plateformes sont plus importantes que d’autres. Même après la conversion de Twitter en X par Elon Musk, vous verrez toujours des députés, des spécialistes d'image et des journalistes du village de Westminster parcourir la plateforme, mais les stratèges numériques affirment que les « vrais électeurs » se trouvent sur d'autres plateformes. Les principaux partis ont bien plus de followers sur Facebook (4 millions au total), qui est globalement beaucoup plus utilisé, que sur X (où ils en ont au total 3,2 millions).</p>
+            <span class="english-block">Some platforms are more important than others. Even after Elon Musk's conversion of Twitter into X, you will still see MPs, spin doctors and journalists in the Westminster village scrolling through the platform, but digital strategists say "real voters" are found on other platforms. The main parties have far more followers on Facebook (four million combined), which is much more widely used overall, than X (where they have a combined 3.2 million).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="494.98" data-end="502.34">
+            <p class="french-block">Les hommes politiques ont toujours cherché des idées politiques et de campagne à l’étranger, et les médias sociaux ne font pas exception.</p>
+            <span class="english-block">Politicians have always looked abroad for policy and campaigning ideas, and social media is no different.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="502.34" data-end="512.35">
+            <p class="french-block">Ceux de droite cherchent à imiter l’impact de Donald Trump sur TruthSocial, tandis que les politiciens de gauche se tournent vers le succès de Zohran Mamdani comme maire de New York.</p>
+            <span class="english-block">Those on the right seek to emulate the impact Donald Trump has on TruthSocial, while left-wing politicians look to the success of Zohran Mamdani becoming mayor of New York.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="512.35" data-end="543.17">
+            <p class="french-block">Certains ont même fait venir des experts en médias sociaux de l’étranger. En 2019, Boris Johnson a embauché le duo néo-zélandais Ben Guerin et Sean Topham pour mener la campagne numérique pour les élections générales. Ils ont importé dans la politique britannique le concept de « shitposting », diffusant délibérément de mauvaises images afin de susciter une réaction. Cela comprenait la publication d'un tweet comportant le slogan "Get Brexit Done" dans Comic Sans, une police détestée par les graphistes.</p>
+            <span class="english-block">Some have even imported social media experts from overseas. In 2019 Boris Johnson hired New Zealand duo Ben Guerin and Sean Topham to run the digital campaign for the general election. They imported into UK politics the concept of "shitposting", releasing deliberately bad images in order to generate a reaction. This included posting a tweet featuring the slogan "Get Brexit Done" in Comic Sans, a font loathed by graphic designers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="543.17" data-end="564.74">
+            <p class="french-block">Il y avait une méthode dans la folie. "Les gens sont plus susceptibles de s'intéresser à quelque chose s'ils ont l'impression que cela a été écrit par un humain et non par un comité d'experts en design", m'a expliqué Guerin. "Il est assez facile de devenir viral en faisant quelque chose de bizarre et de farfelu, mais cela ne fait pas toujours avancer les objectifs de votre campagne."</p>
+            <span class="english-block">There was a method in the madness. "People are more likely to engage with something if they feel like it's been written by a human, not by a committee of design experts," Guerin told me. "It's pretty easy to go viral for doing something weird and wacky, but that doesn't always advance the objectives of your campaign."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="564.74" data-end="583.73">
+            <p class="french-block">Cela semble être confirmé par certains succès récents. La publication TikTok de Burnham sur les collations de pub a attiré un million de vues. Pourtant, une vidéo moins fantaisiste, énumérant clairement les cinq choses qu'il dit avoir faites au cours de sa première semaine en tant que Premier ministre, a obtenu cinq millions.</p>
+            <span class="english-block">This seems to be borne out by some recent hits. Burnham's TikTok post rating pub snacks attracted a million views. Yet a less gimmicky video, straightforwardly listing the five things he said he had done in his first week as PM, got five million.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="583.73" data-end="595.63">
+            <p class="french-block">Il existe une tension inhérente aux médias sociaux politiques. L'authenticité est la clé. Mais qui s’attend vraiment à ce que le Premier ministre filme et mette en ligne son propre contenu ?</p>
+            <span class="english-block">There is an inherent tension in political social media. Authenticity is key. Yet who really expects the prime minister to be shooting and uploading his own content?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="595.63" data-end="610.8">
+            <p class="french-block">En 2013, j'ai écrit un article sur la manière dont le compte Twitter de Cameron avait mis en favoris un tweet se moquant de William Hague à partir d'un compte qui faisait une blague grossière sur l'ancien député conservateur Norman Tebbit blessé dans l'attentat à la bombe de Brighton.</p>
+            <span class="english-block">Back in 2013 I wrote a story about how Cameron's Twitter account had favourited a tweet mocking William Hague from an account handle that made a crude joke about former Tory MP Norman Tebbit being injured in the Brighton bombing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="610.8" data-end="633.48">
+            <p class="french-block">Le directeur de la communication du Premier ministre m'a appelé pour me plaindre de mes reportages « bâclés et merdiques ». Mon crime ? Y compris une phrase qui admettait la possibilité que quelqu'un d'autre que Cameron ait cliqué sur le bouton J'aime par erreur. Cela gâcherait apparemment la magie pour ceux qui pensaient que le Premier ministre gérait son propre compte pour ses 500 000 abonnés.</p>
+            <span class="english-block">The prime minister's director of communications called me to complain about my "slapdash and crappy" reporting. My crime? Including a sentence which allowed for the possibility that someone other than Cameron had clicked on the like button by mistake. This would, apparently, spoil the magic for those that thought the prime minister was running his own account for his 500,000 followers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="633.48" data-end="638.98">
+            <p class="french-block">Zack Polanski a été critiqué pour un article controversé et une collaboration</p>
+            <span class="english-block">Zack Polanski has faced criticism for a controversial post and collaboration</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="638.98" data-end="681.14">
+            <p class="french-block">On sait désormais que Zack Polanski dispose bel et bien de ses propres identifiants. Le chef du Parti Vert en Angleterre et au Pays de Galles a été critiqué en mai pour avoir publié un message condamnant les actions de la police lors de l'attaque de Golders Green, pour lequel il s'est excusé. Puis, en juillet, il a accepté une collaboration sur Instagram qui comprenait un homme portant un T-shirt avec une guillotine de dessin animé et les paroles de la chanson "nous ne faisons que des plans pour Nigel". Reform UK a déclaré que cela équivalait à une incitation à la violence contre Farage. "J'accepte ma responsabilité dans la mesure où je n'aurais pas dû accepter cette collaboration", a déclaré Polanski, mais a refusé de s'excuser.</p>
+            <span class="english-block">We now know that Zack Polanski does indeed have his own log-ins. The leader of the Green Party in England and Wales faced criticism in May for sharing a post condemning police actions in the Golders Green attack, for which he apologised. Then in July he accepted an Instagram collaboration which included a man wearing a T-shirt featuring a cartoon guillotine and the song lyrics "we're only making plans for Nigel". Reform UK said it amounted to incitement of violence against Farage. "I'm accepting my responsibility in that I shouldn't have accepted that collaboration," Polanski said, but refused to apologise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="681.14" data-end="697.22">
+            <p class="french-block">Gawain Towler, de Reform UK, conseiller de longue date en matière de médias auprès de Nigel Farage, déclare : «  Ce que je retiens le plus est : ne soyez pas un imbécile sur les réseaux sociaux,  ce qui, je pense, était également le grand point de Zack Polanski."</p>
+            <span class="english-block">Reform UK's Gawain Towler, a long-time media adviser to Nigel Farage, says: " My big takeaway is: don't be a berk on social media,  which I think was Zack Polanski's big takeaway too."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="697.22" data-end="703.08">
+            <p class="french-block">Les performances de Kemi Badenoch à l'émission Questions du Premier ministre sont devenues virales</p>
+            <span class="english-block">Kemi Badenoch's performances at Prime Minister's Questions have gone viral</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="703.08" data-end="725.21">
+            <p class="french-block">Dov Forman, qui a aidé le député conservateur devenu réformateur Robert Jenrick à faire passer son nombre de partisans de 20 000 à plus d'un demi-million avec des clips viraux, notamment des confrontations avec des fraudeurs dans le métro de Londres, dit qu'il est « risqué » pour un dirigeant de gérer ses propres médias sociaux. Mais parfois, cela peut être un risque qui vaut la peine d’être pris.</p>
+            <span class="english-block">Dov Forman, who helped Tory-turned-Reform MP Robert Jenrick grow his following from 20,000 to more than half a million with viral clips including confronting fare dodgers on the London Underground, says it is "risky" for a leader to run their own social media. But sometimes it can be a risk worth taking.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="725.21" data-end="742.15">
+            <p class="french-block">Badenoch a commencé à réaliser ses propres vidéos, indiquant à ses collaborateurs ce qu'elle souhaite publier. Elle a attiré le soutien sur X des rappeurs américains Nicki Minaj et Azealia Banks. C’est le genre d’approbation authentique de tiers dont les politiciens ont besoin.</p>
+            <span class="english-block">Badenoch has taken to directing her own videos, telling aides what she wants to post. She has attracted backing on X from American rappers Nicki Minaj and Azealia Banks. Those are the sort of authentic third-party endorsements politicians crave.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="742.15" data-end="765.84">
+            <p class="french-block">Le jour où il est devenu Premier ministre, une vidéo a été publiée de Burnham interviewé sur Career Ladder, une série dirigée par le TikToker ukrainien Max Klymenko qui interviewe des invités sur leur carrière, debout sur une échelle. "S'ils n'ont pas personnellement vu la chaîne, il est parfois très difficile pour eux de comprendre", explique Klymenko. Burnham avait vu le spectacle et avait utilisé l'échelle.</p>
+            <span class="english-block">On the day he became prime minister, a video was released of Burnham being interviewed on the Career Ladder, a series run by Ukrainian TikToker Max Klymenko who interviews guests about their career, while standing on a ladder. "If they personally haven't seen the channel it's sometimes quite difficult to make sense for them," Klymenko says. Burnham had seen the show, and did use the ladder.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="765.84" data-end="788.98">
+            <p class="french-block">Ce qui nous amène à la grande question : est-ce que tout cela fonctionne réellement ? Emma Connolly, une universitaire qui a mené des recherches sur ce sujet au Digital Speech Lab de l'UCL, n'en est pas sûre. "Nous n'avons pas nécessairement de preuves vraiment solides ou convaincantes que cela pourrait réellement persuader ou transformer l'opinion des électeurs opposants ou même de ceux qui sont indécis", dit-elle.</p>
+            <span class="english-block">Which leads us to the big question: Does any of this actually work? Emma Connolly, an academic who has researched this at the Digital Speech Lab at UCL, isn't sure. "We don't necessarily have really strong evidence or convincing evidence that it could really persuade or transform the opinion of opponent voters or even those that are undecided," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="788.98" data-end="795.17">
+            <p class="french-block">Les jeunes adultes prennent des médicaments sur ordonnance plutôt que de l'alcool – et cela divise les experts</p>
+            <span class="english-block">Young adults are taking prescription drugs instead of alcohol - and it's dividing experts</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="795.17" data-end="800.3">
+            <p class="french-block">Cinq ans après l’arrivée au pouvoir des talibans, l’Occident a-t-il une influence ?</p>
+            <span class="english-block">Five years after the Taliban swept to power, does the West have any influence?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="800.3" data-end="804.89">
+            <p class="french-block">Pourquoi les téléphones sur haut-parleur peuvent devenir juste un autre bruit</p>
+            <span class="english-block">Why phones on loudspeaker may become just another noise</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="804.89" data-end="825.07">
+            <p class="french-block">Et cela soulève à son tour la question de savoir combien de temps pourrait durer la lune de miel numérique de Burnham. Un Premier ministre TikTok peut-il se frayer un chemin à travers une guerre, une attaque terroriste ou un procès controversé ? L'annonce d'un nouveau cadeau peut devenir virale, mais qu'en est-il des détails des réductions nécessaires pour le payer ?</p>
+            <span class="english-block">And this in turn raises the question of how long the Burnham digital honeymoon might last. Can a prime minister TikTok his way through a war, terror attack or controversial court case? Announcing a new giveaway may go viral, but what about the details of the cuts to pay for it?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="825.07" data-end="847.1">
+            <p class="french-block">La vérité est que rien de tout cela n'est nouveau, comme l'explique Hyman : « Les politiciens qui se trompent pensent que les médias sociaux sont désormais le seul endroit où ils peuvent être, et un substitut au travail acharné et au gros travail nécessaire pour élaborer la bonne politique, obtenir le bon récit et raconter cette histoire correctement », dit-il. "La politique, c'est gagner des arguments."</p>
+            <span class="english-block">The truth is none of this is new, as Hyman explains: "The politicians who get this wrong think that social media is now the only place to be, and a substitute for doing the hard work and the heavy lifting of actually getting the right policy, getting the right narrative, and telling that story properly," he says. "Politics is about winning arguments."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="847.1" data-end="858.41">
+            <p class="french-block">Après tout, les hommes politiques ont toujours voulu être appréciés. C'est juste que de nos jours, ils peuvent le voir instantanément si vous appuyez sur le bouton en forme de cœur de votre flux.</p>
+            <span class="english-block">After all, politicians have always wanted to be liked. It's just these days they can see it instantly if you hit that heart button on your feed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="858.41" data-end="865.82">
+            <p class="french-block">Écoutez Matt Chorley en direct de Westminster, en semaine à partir de 14h00 sur BBC Radio 5 Live.</p>
+            <span class="english-block">Listen to Matt Chorley live from Westminster, weekdays from 14:00 on BBC Radio 5 Live.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="865.82" data-end="870.22">
+            <p class="french-block">Êtes-vous personnellement touché par les problèmes soulevés dans cette histoire ?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_30.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
