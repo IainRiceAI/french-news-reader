@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-08-20 06:20:59  
+Generated on: 2026-08-21 06:23:16  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Prince Harry and Meghan moving back to UK later this month**
-   - **Published:** Thu, 20 Aug 2026 01:14:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Prince_Harry_and_Meghan_moving_back_to_U.md](top-stories_article_1_Prince_Harry_and_Meghan_moving_back_to_U.md)
+1. **El Niño weather system set to be 'strongest in living memory', warns Met Office**
+   - **Published:** Fri, 21 Aug 2026 00:33:21 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_El_Niño_weather_system_set_to_be_stronge.md](top-stories_article_1_El_Niño_weather_system_set_to_be_stronge.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Harry and Meghan are experts in surprise - but is their UK return forever?**
-   - **Published:** Thu, 20 Aug 2026 02:00:51 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Harry_and_Meghan_are_experts_in_surprise.md](top-stories_article_2_Harry_and_Meghan_are_experts_in_surprise.md)
+2. **Will Harry's return heal rift with his brother? Don't hold your breath**
+   - **Published:** Fri, 21 Aug 2026 04:07:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Will_Harrys_return_heal_rift_with_his_br.md](top-stories_article_2_Will_Harrys_return_heal_rift_with_his_br.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Students wait for GCSE and BTec grades as app launches for 750 schools in England**
-   - **Published:** Wed, 19 Aug 2026 17:09:34 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Students_wait_for_GCSE_and_BTec_grades_a.md](top-stories_article_3_Students_wait_for_GCSE_and_BTec_grades_a.md)
+3. **Meghan could return to acting once back in UK**
+   - **Published:** Fri, 21 Aug 2026 02:52:29 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Meghan_could_return_to_acting_once_back_.md](top-stories_article_3_Meghan_could_return_to_acting_once_back_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Russia launches missile strikes on Kyiv and surrounding region, killing at least eight**
-   - **Published:** Thu, 20 Aug 2026 04:46:32 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Russia_launches_missile_strikes_on_Kyiv_.md](top-stories_article_4_Russia_launches_missile_strikes_on_Kyiv_.md)
+4. **French becoming more effective in stopping small boat crossings, UK says**
+   - **Published:** Thu, 20 Aug 2026 22:23:24 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_French_becoming_more_effective_in_stoppi.md](top-stories_article_4_French_becoming_more_effective_in_stoppi.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Giant whales move into Greenland waters as ice disappears**
-   - **Published:** Thu, 20 Aug 2026 02:05:20 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Giant_whales_move_into_Greenland_waters_.md](top-stories_article_5_Giant_whales_move_into_Greenland_waters_.md)
+5. **My student day out in London turned to terror - now survivors like me won't be forgotten**
+   - **Published:** Fri, 21 Aug 2026 00:11:18 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_My_student_day_out_in_London_turned_to_t.md](top-stories_article_5_My_student_day_out_in_London_turned_to_t.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Vaccine breakthrough stops cancer returning in trial**
-   - **Published:** Wed, 19 Aug 2026 19:00:48 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Vaccine_breakthrough_stops_cancer_return.md](top-stories_article_6_Vaccine_breakthrough_stops_cancer_return.md)
+6. **How much could Trump's 'economic D-Day' hurt Iran?**
+   - **Published:** Thu, 20 Aug 2026 23:16:45 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_How_much_could_Trumps_economic_D-Day_hur.md](top-stories_article_6_How_much_could_Trumps_economic_D-Day_hur.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Downpours to continue for UK with risk of flash flooding**
-   - **Published:** Wed, 19 Aug 2026 23:56:33 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Downpours_to_continue_for_UK_with_risk_o.md](top-stories_article_7_Downpours_to_continue_for_UK_with_risk_o.md)
+7. **Millennials are struggling to buy a home - but is it actually getting easier?**
+   - **Published:** Thu, 20 Aug 2026 23:10:58 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Millennials_are_struggling_to_buy_a_home.md](top-stories_article_7_Millennials_are_struggling_to_buy_a_home.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **People smuggler exposed by BBC investigation arrested and charged**
-   - **Published:** Wed, 19 Aug 2026 20:54:51 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_People_smuggler_exposed_by_BBC_investiga.md](top-stories_article_8_People_smuggler_exposed_by_BBC_investiga.md)
+8. **British rapper Yung Filly to face retrial on rape charges in Australia**
+   - **Published:** Fri, 21 Aug 2026 04:17:05 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_British_rapper_Yung_Filly_to_face_retria.md](top-stories_article_8_British_rapper_Yung_Filly_to_face_retria.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Russia launches missile strikes on Kyiv and surrounding region, killing at least eight**
-   - **Published:** Thu, 20 Aug 2026 04:46:32 GMT
-   - **Read Parallel Translation:** [world_article_9_Russia_launches_missile_strikes_on_Kyiv_.md](world_article_9_Russia_launches_missile_strikes_on_Kyiv_.md)
+1. **UK, France, Germany, Italy and Canada condemn Israel's West Bank settlement project**
+   - **Published:** Thu, 20 Aug 2026 18:55:14 GMT
+   - **Read Parallel Translation:** [world_article_9_UK_France_Germany_Italy_and_Canada_conde.md](world_article_9_UK_France_Germany_Italy_and_Canada_conde.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Israel confirms soldiers fired at car in which Hind Rajab was killed and opens criminal investigation**
-   - **Published:** Thu, 20 Aug 2026 04:17:53 GMT
-   - **Read Parallel Translation:** [world_article_10_Israel_confirms_soldiers_fired_at_car_in.md](world_article_10_Israel_confirms_soldiers_fired_at_car_in.md)
+2. **How much could Trump's 'economic D-Day' hurt Iran?**
+   - **Published:** Thu, 20 Aug 2026 23:16:45 GMT
+   - **Read Parallel Translation:** [world_article_10_How_much_could_Trumps_economic_D-Day_hur.md](world_article_10_How_much_could_Trumps_economic_D-Day_hur.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Australia 'outraged' after Israeli decision not to prosecute over killing of aid worker in Gaza**
-   - **Published:** Thu, 20 Aug 2026 03:12:07 GMT
-   - **Read Parallel Translation:** [world_article_11_Australia_outraged_after_Israeli_decisio.md](world_article_11_Australia_outraged_after_Israeli_decisio.md)
+3. **El Niño set to be 'strongest in living memory', says Met Office**
+   - **Published:** Fri, 21 Aug 2026 00:33:21 GMT
+   - **Read Parallel Translation:** [world_article_11_El_Niño_set_to_be_strongest_in_living_me.md](world_article_11_El_Niño_set_to_be_strongest_in_living_me.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Trump threatens 'tremendous economic consequences' on any country helping Iran**
-   - **Published:** Thu, 20 Aug 2026 03:22:57 GMT
-   - **Read Parallel Translation:** [world_article_12_Trump_threatens_tremendous_economic_cons.md](world_article_12_Trump_threatens_tremendous_economic_cons.md)
+4. **Why the US economy is ringing alarm bells**
+   - **Published:** Thu, 20 Aug 2026 23:15:15 GMT
+   - **Read Parallel Translation:** [world_article_12_Why_the_US_economy_is_ringing_alarm_bell.md](world_article_12_Why_the_US_economy_is_ringing_alarm_bell.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Trump threatens 'tremendous economic consequences' on any country helping Iran**
-   - **Published:** Thu, 20 Aug 2026 03:22:57 GMT
-   - **Read Parallel Translation:** [business_article_13_Trump_threatens_tremendous_economic_cons.md](business_article_13_Trump_threatens_tremendous_economic_cons.md)
+1. **Stifling heat and broken toilets: TUI River Cruise passengers tell of their holiday hell**
+   - **Published:** Thu, 20 Aug 2026 22:59:35 GMT
+   - **Read Parallel Translation:** [business_article_13_Stifling_heat_and_broken_toilets_TUI_Riv.md](business_article_13_Stifling_heat_and_broken_toilets_TUI_Riv.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **US national debt passes $40tn after doubling in a decade**
-   - **Published:** Thu, 20 Aug 2026 01:24:26 GMT
-   - **Read Parallel Translation:** [business_article_14_US_national_debt_passes_40tn_after_doubl.md](business_article_14_US_national_debt_passes_40tn_after_doubl.md)
+2. **Millennials are struggling to buy a home - but is it actually getting easier?**
+   - **Published:** Thu, 20 Aug 2026 23:10:58 GMT
+   - **Read Parallel Translation:** [business_article_14_Millennials_are_struggling_to_buy_a_home.md](business_article_14_Millennials_are_struggling_to_buy_a_home.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **I quit my £80,000 job to make ice cream - here's how**
-   - **Published:** Wed, 19 Aug 2026 23:08:03 GMT
-   - **Read Parallel Translation:** [business_article_15_I_quit_my_80000_job_to_make_ice_cream_-_.md](business_article_15_I_quit_my_80000_job_to_make_ice_cream_-_.md)
+3. **Why the US economy is ringing alarm bells**
+   - **Published:** Thu, 20 Aug 2026 23:15:15 GMT
+   - **Read Parallel Translation:** [business_article_15_Why_the_US_economy_is_ringing_alarm_bell.md](business_article_15_Why_the_US_economy_is_ringing_alarm_bell.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **Founder of China's Evergrande sentenced to life in prison**
-   - **Published:** Thu, 20 Aug 2026 04:42:13 GMT
-   - **Read Parallel Translation:** [business_article_16_Founder_of_Chinas_Evergrande_sentenced_t.md](business_article_16_Founder_of_Chinas_Evergrande_sentenced_t.md)
+4. **How much could Trump's 'economic D-Day' hurt Iran?**
+   - **Published:** Thu, 20 Aug 2026 23:16:45 GMT
+   - **Read Parallel Translation:** [business_article_16_How_much_could_Trumps_economic_D-Day_hur.md](business_article_16_How_much_could_Trumps_economic_D-Day_hur.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **81,000 warning letters sent to crypto holders in HMRC tax crackdown**
-   - **Published:** Wed, 19 Aug 2026 16:14:46 GMT
-   - **Read Parallel Translation:** [technology_article_17_81000_warning_letters_sent_to_crypto_hol.md](technology_article_17_81000_warning_letters_sent_to_crypto_hol.md)
+1. **How landscape gardening is being electrified**
+   - **Published:** Thu, 20 Aug 2026 23:12:38 GMT
+   - **Read Parallel Translation:** [technology_article_17_How_landscape_gardening_is_being_electri.md](technology_article_17_How_landscape_gardening_is_being_electri.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Monzo says issue with card payments and transfers now resolved**
-   - **Published:** Wed, 19 Aug 2026 16:04:16 GMT
-   - **Read Parallel Translation:** [technology_article_18_Monzo_says_issue_with_card_payments_and_.md](technology_article_18_Monzo_says_issue_with_card_payments_and_.md)
+2. **Is Vine back? Short-form video-sharing app Divine opens to public**
+   - **Published:** Thu, 20 Aug 2026 16:58:37 GMT
+   - **Read Parallel Translation:** [technology_article_18_Is_Vine_back_Short-form_video-sharing_ap.md](technology_article_18_Is_Vine_back_Short-form_video-sharing_ap.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **OpenAI slows down training after its AI carried out hack**
-   - **Published:** Wed, 19 Aug 2026 11:19:12 GMT
-   - **Read Parallel Translation:** [technology_article_19_OpenAI_slows_down_training_after_its_AI_.md](technology_article_19_OpenAI_slows_down_training_after_its_AI_.md)
+3. **UK business hit by 'daylight robbery' 1500% price hike for invoicing software**
+   - **Published:** Thu, 20 Aug 2026 09:44:04 GMT
+   - **Read Parallel Translation:** [technology_article_19_UK_business_hit_by_daylight_robbery_1500.md](technology_article_19_UK_business_hit_by_daylight_robbery_1500.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **The critical tech staying safe by going underground**
-   - **Published:** Tue, 18 Aug 2026 23:25:21 GMT
-   - **Read Parallel Translation:** [technology_article_20_The_critical_tech_staying_safe_by_going_.md](technology_article_20_The_critical_tech_staying_safe_by_going_.md)
+4. **81,000 warning letters sent to crypto holders in HMRC tax crackdown**
+   - **Published:** Wed, 19 Aug 2026 16:14:46 GMT
+   - **Read Parallel Translation:** [technology_article_20_81000_warning_letters_sent_to_crypto_hol.md](technology_article_20_81000_warning_letters_sent_to_crypto_hol.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Giant whales move into Greenland waters as ice disappears**
-   - **Published:** Thu, 20 Aug 2026 02:05:20 GMT
-   - **Read Parallel Translation:** [science_article_21_Giant_whales_move_into_Greenland_waters_.md](science_article_21_Giant_whales_move_into_Greenland_waters_.md)
+1. **El Niño set to be 'strongest in living memory', says Met Office**
+   - **Published:** Fri, 21 Aug 2026 00:33:21 GMT
+   - **Read Parallel Translation:** [science_article_21_El_Niño_set_to_be_strongest_in_living_me.md](science_article_21_El_Niño_set_to_be_strongest_in_living_me.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Downpours to continue for UK with risk of flash flooding**
-   - **Published:** Wed, 19 Aug 2026 23:56:33 GMT
-   - **Read Parallel Translation:** [science_article_22_Downpours_to_continue_for_UK_with_risk_o.md](science_article_22_Downpours_to_continue_for_UK_with_risk_o.md)
+2. **Rain to stop in time for weekend as sun returns**
+   - **Published:** Fri, 21 Aug 2026 00:14:00 GMT
+   - **Read Parallel Translation:** [science_article_22_Rain_to_stop_in_time_for_weekend_as_sun_.md](science_article_22_Rain_to_stop_in_time_for_weekend_as_sun_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **How soon will the drought be over?**
-   - **Published:** Tue, 18 Aug 2026 12:26:05 GMT
-   - **Read Parallel Translation:** [science_article_23_How_soon_will_the_drought_be_over.md](science_article_23_How_soon_will_the_drought_be_over.md)
+3. **My family have fished this river for 300 years - now pollution has killed all the fish**
+   - **Published:** Thu, 20 Aug 2026 20:47:39 GMT
+   - **Read Parallel Translation:** [science_article_23_My_family_have_fished_this_river_for_300.md](science_article_23_My_family_have_fished_this_river_for_300.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Watch: Flash flood sweeps vehicle away in Hawaii after Hurricane Lala**
-   - **Published:** Mon, 17 Aug 2026 15:35:47 GMT
-   - **Read Parallel Translation:** [science_article_24_Watch_Flash_flood_sweeps_vehicle_away_in.md](science_article_24_Watch_Flash_flood_sweeps_vehicle_away_in.md)
+4. **Glass deposit operator confirmed after months of wrangling**
+   - **Published:** Thu, 20 Aug 2026 17:31:04 GMT
+   - **Read Parallel Translation:** [science_article_24_Glass_deposit_operator_confirmed_after_m.md](science_article_24_Glass_deposit_operator_confirmed_after_m.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **'I'd love a normal life, but being a 17-year-old carer means sacrifices'**
-   - **Published:** Thu, 20 Aug 2026 00:49:25 GMT
-   - **Read Parallel Translation:** [health_article_25_Id_love_a_normal_life_but_being_a_17-yea.md](health_article_25_Id_love_a_normal_life_but_being_a_17-yea.md)
+1. **Vaccine breakthrough stops cancer returning in trial**
+   - **Published:** Thu, 20 Aug 2026 08:10:33 GMT
+   - **Read Parallel Translation:** [health_article_25_Vaccine_breakthrough_stops_cancer_return.md](health_article_25_Vaccine_breakthrough_stops_cancer_return.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Weekly type 2 diabetes jab could replace daily injections**
-   - **Published:** Thu, 20 Aug 2026 00:39:40 GMT
-   - **Read Parallel Translation:** [health_article_26_Weekly_type_2_diabetes_jab_could_replace.md](health_article_26_Weekly_type_2_diabetes_jab_could_replace.md)
+2. **'I can't do the things my friends do': Life as a teenage carer**
+   - **Published:** Thu, 20 Aug 2026 00:49:25 GMT
+   - **Read Parallel Translation:** [health_article_26_I_cant_do_the_things_my_friends_do_Life_.md](health_article_26_I_cant_do_the_things_my_friends_do_Life_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Vapes could lead to health harms in children, doctors warn**
-   - **Published:** Thu, 20 Aug 2026 00:35:22 GMT
-   - **Read Parallel Translation:** [health_article_27_Vapes_could_lead_to_health_harms_in_chil.md](health_article_27_Vapes_could_lead_to_health_harms_in_chil.md)
+3. **Weekly type 2 diabetes jab could replace daily injections**
+   - **Published:** Thu, 20 Aug 2026 00:39:40 GMT
+   - **Read Parallel Translation:** [health_article_27_Weekly_type_2_diabetes_jab_could_replace.md](health_article_27_Weekly_type_2_diabetes_jab_could_replace.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Vaccine breakthrough stops cancer returning in trial**
-   - **Published:** Wed, 19 Aug 2026 19:00:48 GMT
-   - **Read Parallel Translation:** [health_article_28_Vaccine_breakthrough_stops_cancer_return.md](health_article_28_Vaccine_breakthrough_stops_cancer_return.md)
+4. **Vapes could lead to health harms in children, doctors warn**
+   - **Published:** Thu, 20 Aug 2026 00:35:22 GMT
+   - **Read Parallel Translation:** [health_article_28_Vapes_could_lead_to_health_harms_in_chil.md](health_article_28_Vapes_could_lead_to_health_harms_in_chil.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **People smuggler exposed by BBC investigation arrested and charged**
-   - **Published:** Wed, 19 Aug 2026 20:54:51 GMT
-   - **Read Parallel Translation:** [politics_article_29_People_smuggler_exposed_by_BBC_investiga.md](politics_article_29_People_smuggler_exposed_by_BBC_investiga.md)
+1. **Burnham announces plans to clean up worst three illegal waste dumps**
+   - **Published:** Thu, 20 Aug 2026 16:45:26 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_announces_plans_to_clean_up_wors.md](politics_article_29_Burnham_announces_plans_to_clean_up_wors.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **The dangers of politicians being 'too online' - or not online enough**
-   - **Published:** Thu, 20 Aug 2026 00:57:09 GMT
-   - **Read Parallel Translation:** [politics_article_30_The_dangers_of_politicians_being_too_onl.md](politics_article_30_The_dangers_of_politicians_being_too_onl.md)
+2. **Asylum seekers told rape and harassment illegal in UK in new Home Office booklet**
+   - **Published:** Thu, 20 Aug 2026 14:58:40 GMT
+   - **Read Parallel Translation:** [politics_article_30_Asylum_seekers_told_rape_and_harassment_.md](politics_article_30_Asylum_seekers_told_rape_and_harassment_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Burnham unveils plan to get rough sleepers off streets for Christmas**
-   - **Published:** Wed, 19 Aug 2026 15:57:40 GMT
-   - **Read Parallel Translation:** [politics_article_31_Burnham_unveils_plan_to_get_rough_sleepe.md](politics_article_31_Burnham_unveils_plan_to_get_rough_sleepe.md)
+3. **Reform UK proposes tax rebates for firms to boost apprenticeships**
+   - **Published:** Thu, 20 Aug 2026 16:31:44 GMT
+   - **Read Parallel Translation:** [politics_article_31_Reform_UK_proposes_tax_rebates_for_firms.md](politics_article_31_Reform_UK_proposes_tax_rebates_for_firms.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Behaviour guidelines for life in UK published for asylum seekers**
-   - **Published:** Wed, 19 Aug 2026 19:45:15 GMT
-   - **Read Parallel Translation:** [politics_article_32_Behaviour_guidelines_for_life_in_UK_publ.md](politics_article_32_Behaviour_guidelines_for_life_in_UK_publ.md)
+4. **John Swinney defends £45,000 business-class flights to World Cup**
+   - **Published:** Thu, 20 Aug 2026 12:33:09 GMT
+   - **Read Parallel Translation:** [politics_article_32_John_Swinney_defends_45000_business-clas.md](politics_article_32_John_Swinney_defends_45000_business-clas.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **ADHD charity complains about Channel 4 documentary**
-   - **Published:** Wed, 19 Aug 2026 18:23:05 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_ADHD_charity_complains_about_Channel_4_d.md](entertainment_article_33_ADHD_charity_complains_about_Channel_4_d.md)
+1. **Brandon Flowers: Is fame worth it? I'm not sure anymore**
+   - **Published:** Fri, 21 Aug 2026 00:26:57 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Brandon_Flowers_Is_fame_worth_it_Im_not_.md](entertainment_article_33_Brandon_Flowers_Is_fame_worth_it_Im_not_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Christian metal band Demon Hunter sue Netflix over KPop Demon Hunters**
-   - **Published:** Wed, 19 Aug 2026 11:30:40 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Christian_metal_band_Demon_Hunter_sue_Ne.md](entertainment_article_34_Christian_metal_band_Demon_Hunter_sue_Ne.md)
+2. **BBC DJ Trevor Nelson reveals brain tumour surgery 'went well'**
+   - **Published:** Thu, 20 Aug 2026 16:01:37 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_BBC_DJ_Trevor_Nelson_reveals_brain_tumou.md](entertainment_article_34_BBC_DJ_Trevor_Nelson_reveals_brain_tumou.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Emma Barnett reveals she 'had the hysterectomy I never wanted to have'**
-   - **Published:** Wed, 19 Aug 2026 13:00:57 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Emma_Barnett_reveals_she_had_the_hystere.md](entertainment_article_35_Emma_Barnett_reveals_she_had_the_hystere.md)
+3. **ADHD charity complains about Channel 4 documentary**
+   - **Published:** Thu, 20 Aug 2026 07:38:05 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_ADHD_charity_complains_about_Channel_4_d.md](entertainment_article_35_ADHD_charity_complains_about_Channel_4_d.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **'I don't want to send you to prison', witness tells Tupac accused in combative testimony**
-   - **Published:** Wed, 19 Aug 2026 03:00:35 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_I_dont_want_to_send_you_to_prison_witnes.md](entertainment_article_36_I_dont_want_to_send_you_to_prison_witnes.md)
+4. **Calls to plan ahead for Reading Festival impact**
+   - **Published:** Thu, 20 Aug 2026 05:09:14 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Calls_to_plan_ahead_for_Reading_Festival.md](entertainment_article_36_Calls_to_plan_ahead_for_Reading_Festival.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

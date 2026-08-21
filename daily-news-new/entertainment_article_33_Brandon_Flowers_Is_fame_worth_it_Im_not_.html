@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Flowers: Is fame worth it? I'm not sure anymore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Brandon Flowers: Is fame worth it? I'm not sure anymore</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 21 Aug 2026 00:26:57 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c7vgple783go?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The Killers frontman asks big questions on his third solo album, which takes a detour into country.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.92" data-end="13.63">
+            <p class="french-block">Brandon Flowers est en pause avec The Killers, avec son premier album solo en 11 ans</p>
+            <span class="english-block">Brandon Flowers is on a break from The Killers, with his first solo album in 11 years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.63" data-end="16.3">
+            <p class="french-block">Brandon Flowers a des aveux.</p>
+            <span class="english-block">Brandon Flowers has a confession.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.3" data-end="28.51">
+            <p class="french-block">Au cours des 25 dernières années, il a été le leader du groupe The Killers, canalisant son amour du rock de stade et de la new wave britannique sur des chansons comme Mr Brightside, When You Were Young and Human.</p>
+            <span class="english-block">For the last 25 years, he's been the frontman of The Killers, channelling his love of stadium rock and British new wave on songs like Mr Brightside, When You Were Young and Human.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.51" data-end="33.38">
+            <p class="french-block">Mais au fond de son esprit, il y a toujours eu une bande-son alternative.</p>
+            <span class="english-block">But in the back of his mind, there's always been an alternative soundtrack.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.38" data-end="39.62">
+            <p class="french-block">"Vous savez, beaucoup de gars dans mon secteur d'activité développent une dépendance à la drogue", dit-il.</p>
+            <span class="english-block">"You know, a lot of guys in my line of business develop drug addictions," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.62" data-end="43.03">
+            <p class="french-block">[Error Translate] "I got a country addiction."</p>
+            <span class="english-block">"I got a country addiction."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.03" data-end="59.42">
+            <p class="french-block">Cela a commencé quand il était enfant à Néphi, en Utah. Son père jouait Johnny Cash, Merle Haggard et John Conlee sur l'autoradio. Les danses scolaires, organisées au club de golf local, comportaient toujours des danses lentes country et western.</p>
+            <span class="english-block">It started when he was a kid in Nephi, Utah. His dad would play Johnny Cash, Merle Haggard and John Conlee on the car stereo. School dances, held at the local golf club, would always feature country and western slow dances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.42" data-end="67.49">
+            <p class="french-block">Ainsi, lorsque Flowers est rentré chez lui et a commencé à revisiter ses repaires d'enfance, sa passion pour la country s'est ravivée.</p>
+            <span class="english-block">So when Flowers moved back home and started revisiting his childhood haunts, his passion for country was rekindled.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.49" data-end="88.37">
+            <p class="french-block">Vous pouvez entendre les résultats sur son troisième album solo, Thrasher, enregistré dans le célèbre RCA Studio A de Nashville - qui abrite Jolene and I Will Always Love You de Dolly Parton - avec un groupe de musiciens chevronnés comprenant la légende du Pedal Steel Bruce Bouton, l'harmonica de 85 ans Charlie McCoy et la musicienne américaine Margo Price.</p>
+            <span class="english-block">You can hear the results on his third solo album, Thrasher, recorded in Nashville's famed RCA Studio A - home to Dolly Parton's Jolene and I Will Always Love You -  with a group of veteran musicians that included pedal steel legend Bruce Bouton, 85-year-old harmonica player Charlie McCoy, and Americana musician Margo Price.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.37" data-end="96.26">
+            <p class="french-block">"J'ai chanté en live avec eux et je pense qu'ils ont vraiment apprécié ça, parce que c'est une façon très romantique de le faire", dit-il.</p>
+            <span class="english-block">"I sang live with them and I think they really appreciated that, because it's a very romantic way of doing it," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.26" data-end="103.39">
+            <p class="french-block">"Ce n'est plus quelque chose que les gens font désormais. Transférer cette énergie sur bande est une chose différente."</p>
+            <span class="english-block">"It's not something that people do anymore. To actually get that energy down on tape is a different thing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.39" data-end="106.7">
+            <p class="french-block">C'est un album qu'il n'aurait pas pu faire à 20 ans.</p>
+            <span class="english-block">It's an album he couldn't have made in his 20s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.7" data-end="116.02">
+            <p class="french-block">Le chanteur a présenté en avant-première sa nouvelle musique au prestigieux Newport Folk Festival, avec l'aide de l'auteure-compositrice-interprète Lucy Dacus.</p>
+            <span class="english-block">The singer previewed his new music at the prestigious Newport Folk Festival, with assistance from singer-songwriter Lucy Dacus</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.02" data-end="130.63">
+            <p class="french-block">Flowers a dit un jour que ses « expériences n’étaient pas assez intéressantes » pour être transformées en paroles. Maintenant, il fouille son journal pour écrire sur son éducation rurale et ses expériences de travail dans les casinos de Las Vegas.</p>
+            <span class="english-block">Flowers once said his "experiences weren't interesting enough" to be turned into lyrics. Now, he's excavating his diary to write about his rural upbringing and experiences of working in Las Vegas casinos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.63" data-end="140.88">
+            <p class="french-block">Il y a aussi un hommage à son beau-frère, décédé subitement il y a plusieurs années et, sur Miss America, une critique de la crise des opioïdes qui a frappé sa ville natale.</p>
+            <span class="english-block">There's also a tribute to his brother-in-law, who died suddenly several years ago and, on Miss America, a critique of the opioid crisis that hit his hometown.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.88" data-end="150.31">
+            <p class="french-block">"C'est une chose triste, vous savez ? Ce sont essentiellement des médecins qui prescrivent de l'héroïne aux gens, et cela a coûté tellement de vies inutilement."</p>
+            <span class="english-block">"It's a sad thing, you know? It's basically doctors prescribing people heroin, and it took so many lives unnecessarily."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.31" data-end="156.34">
+            <p class="french-block">Les analgésiques sur ordonnance sont chimiquement similaires à l’héroïne, mais pas identiques.</p>
+            <span class="english-block">Prescription painkillers are chemically similar to but not the same as heroin.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.34" data-end="166.18">
+            <p class="french-block">Il ajoute : "Même dans ma promotion dans cette petite ville, tant d'enfants sont partis. C'est assez stupéfiant. C'est une sale affaire."</p>
+            <span class="english-block">He adds: "Even just in my graduating class in that little town, so many of the kids are gone. It's kind of staggering. Such a dirty business."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.18" data-end="171.1">
+            <p class="french-block">BBC Radio 2 : Brandon Flowers reprend les morceaux de mes années</p>
+            <span class="english-block">BBC Radio 2: Brandon Flowers picks The Tracks of My Years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.1" data-end="186.24">
+            <p class="french-block">L'album montre également Flowers faisant le point sur sa propre vie. Sur American Dream, il rêve de rencontrer Elvis Presley (dans une Tesla volante, rien de moins) et de lui demander si la gloire et la fortune sont tout ce qu'elle prétend être.</p>
+            <span class="english-block">The album also finds Flowers taking stock of his own life. On American Dream, he fantasises about meeting Elvis Presley (in a flying Tesla, no less) and asking him whether fame and fortune is all it's cracked up to be.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.24" data-end="191.78">
+            <p class="french-block">Elvis se contente de rire – mais c'est une question qui tourmente Flowers depuis des années.</p>
+            <span class="english-block">Elvis just laughs - but it's a question that's plagued Flowers for years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.78" data-end="201.53">
+            <p class="french-block">"Parfois, je me demande : qu'est-ce que j'essaie d'accomplir, qu'est-ce que j'essaie de prouver, et à qui j'essaie de le prouver, et qu'est-ce que j'en ai retiré ?" dit-il.</p>
+            <span class="english-block">"Sometimes I wonder, what am I trying to achieve, and what am I trying to prove, and who am I trying to prove it to, and what have I gotten from it?" he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.53" data-end="209.02">
+            <p class="french-block">La chanson est issue d'une conversation qu'il a eue avec ses trois fils adolescents, "parce que je crains qu'ils ne se comparent à mon succès".</p>
+            <span class="english-block">The song came from a conversation he had with his three teenage sons, "because I worry about them comparing themselves to my success".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.02" data-end="225.0">
+            <p class="french-block">Flowers a toujours pris soin d’isoler sa famille des effets de la célébrité. "On n'en parle pas beaucoup. Il n'y a pas de disques d'or accrochés dans les toilettes ou quoi que ce soit du genre." Et il souligne que le succès n’apporte pas automatiquement le contentement.</p>
+            <span class="english-block">Flowers has always been careful to isolate his family from the effects of fame. "We don't talk about it much. There's no gold records hanging in the bathroom or anything like that." And he emphasises that success doesn't automatically bring contentment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="231.48">
+            <p class="french-block">"Mon père n'avait pas ça, mais est-il moins heureux que moi ? Il est peut-être même plus heureux que moi.</p>
+            <span class="english-block">"My dad didn't have that, but is he less happy than me? He may even be more happy than I am.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="231.48" data-end="240.29">
+            <p class="french-block">"Il gagnait 25 000 $ par an et s'en sortait à peine, mais il a 82 ans, il peint, il va dans des vide-greniers et il est excité pour ça.</p>
+            <span class="english-block">"He made $25,000 a year and barely got by but he's 82 and he paints, and he goes to garage sales, and he's, like, pumped for that.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.29" data-end="245.33">
+            <p class="french-block">"Alors oui, je ne sais pas si ça vaut le coup. Je ne sais plus."</p>
+            <span class="english-block">"So yeah, I don't know if it's worth it. I don't know anymore."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.33" data-end="253.87">
+            <p class="french-block">Les Killers sont en pause depuis la finale de l'UEFA Champions League cet été, mais Flowers dit qu'il a "des affaires en tête" pour le retour du groupe.</p>
+            <span class="english-block">The Killers have been on a break since playing the UEFA Champions League final this summer, but Flowers says he has "business in mind" for the band's return</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.87" data-end="271.42">
+            <p class="french-block">Il est facile de comprendre son ambivalence. Flowers n’est pas une rock star typique. Il parle doucement et est effacé. Ses anecdotes sont ponctuées de rires nerveux, même s'il sait mieux établir un contact visuel que lors de notre première rencontre à l'époque des Tueurs.</p>
+            <span class="english-block">It's easy to understand his ambivalence. Flowers is not your typical rock star. He's quietly spoken and self-effacing. His anecdotes are punctuated with nervous laughter, although he's better at making eye contact than when we first met in the Killers' heyday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.42" data-end="279.82">
+            <p class="french-block">Dans ces interviews, il a parlé de sa lutte contre le trac et des difficultés liées à l'équilibre entre les engagements en tournée et la vie de famille.</p>
+            <span class="english-block">In those interviews, he talked about battling stage fright, and the difficulties of balancing touring commitments with family life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.82" data-end="288.36">
+            <p class="french-block">Mais à l’approche de son 21e anniversaire de mariage, il affirme que les absences périodiques de la maison peuvent avoir des avantages inattendus.</p>
+            <span class="english-block">But as he approaches his 21st wedding anniversary, he says that periodic absences from home can have unexpected benefits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.36" data-end="297.53">
+            <p class="french-block">"Il y a un danger que vous vous sépariez, mais il y a aussi cette grande redécouverte qui peut se produire, et une fraîcheur qu'elle peut apporter, à votre retour."</p>
+            <span class="english-block">"There's a danger you could grow apart, but there's also this great rediscovery that can happen, and a freshness it can bring, when you return."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.53" data-end="311.35">
+            <p class="french-block">Il prend l'engagement au sérieux. Si sérieusement, en fait, qu'il cherche désespérément à réparer les paroles du dernier album de Killers, intitulé In Another Life, qui ont amené certains fans à remettre en question leurs relations.</p>
+            <span class="english-block">He takes commitment seriously. So seriously, in fact, that he's desperate to make amends for a lyric on the last Killers album, called In Another Life, that made some fans question their relationships.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="311.35" data-end="320.78">
+            <p class="french-block">"Dans la chanson, l'homme s'inquiète de sa situation et demande à sa femme : 'Suis-je l'homme de tes rêves, ou juste un gars de ta ville natale ?'", explique-t-il.</p>
+            <span class="english-block">"In the song, the man is concerned about his situation, and he's asking his wife, 'Am I the man of your dreams, or just a guy from your hometown?'," he explains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.78" data-end="330.72">
+            <p class="french-block">"Il se demande si leur proximité est la seule raison pour laquelle ils sont ensemble. Et j'ai remarqué que cela incitait les gens à voir leurs relations sous un jour négatif.</p>
+            <span class="english-block">"He's wondering if their proximity is the only reason they're together. And I noticed it was making people look at their relationships in a negative light.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.72" data-end="338.21">
+            <p class="french-block">"À un moment donné, quelqu'un a dit qu'il avait divorcé à cause de cette phrase, et je me suis demandé : 'Comment puis-je arranger ça ?'"</p>
+            <span class="english-block">"At one point someone said they got divorced because of this line, and I thought, 'How can I fix this?'"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="338.21" data-end="344.83">
+            <p class="french-block">La réponse a été d’écrire une nouvelle chanson, Does It Ever Cross Your Mind, qui a recadré l’argument.</p>
+            <span class="english-block">The answer was to write a new song, Does It Ever Cross Your Mind, that reframed the argument.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="344.83" data-end="355.15">
+            <p class="french-block">"De tous les coins de l'univers / Nous nous sommes retrouvés main dans la main", chante-t-il sur un banjo vibrant. "Certains diront que c'est une coïncidence / Mais je préfère le design."</p>
+            <span class="english-block">"Of all the corners of the universe / We wound up hand in hand," he sings over a twangy banjo. "Some may call it a coincidence / But I prefer design."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.15" data-end="359.98">
+            <p class="french-block">La star présentera son nouvel album au Royal Albert Hall cet automne</p>
+            <span class="english-block">The star will bring his new album to the Royal Albert Hall this autumn</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="359.98" data-end="365.81">
+            <p class="french-block">C'est l'une des 23 chansons qu'il a enregistrées à Nashville sur une période de seulement trois semaines.</p>
+            <span class="english-block">It's one of 23 songs he recorded in Nashville over a period of just three weeks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.81" data-end="376.37">
+            <p class="french-block">Seulement 10 ont été retenus pour Thrasher. Les 13 autres sont mixés « de la manière la plus lente possible » pour un album séparé, peut-être l’année prochaine.</p>
+            <span class="english-block">Only 10 made the cut for Thrasher. The other 13 are being mixed "in the slowest, slowest possible way" for a separate album, maybe next year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="376.37" data-end="384.19">
+            <p class="french-block">Toute cette activité solo ne signifie pas la fin de The Killers, même s'il admet : "Je ne sais pas ce que l'avenir réserve" au groupe.</p>
+            <span class="english-block">All this solo activity doesn't mean the end of The Killers, although he admits, "I don't know what the future holds" for the band.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.19" data-end="392.14">
+            <p class="french-block">"Nous sommes toujours ensemble, nous allons encore faire un autre disque [mais] il y a quelque chose de beau à vieillir avec grâce", dit-il.</p>
+            <span class="english-block">"We're still together, we're still going to make another record [but] there's something beautiful about ageing gracefully," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="392.14" data-end="402.12">
+            <p class="french-block">Étudiant en histoire de la musique, il sait que la longévité nécessite une évolution – et ce nouveau lot de chansons country pourrait même annoncer la prochaine incarnation de The Killers.</p>
+            <span class="english-block">A student of music history, he knows that longevity requires evolution - and this new batch of country songs could even signpost The Killers' next incarnation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="402.12" data-end="411.58">
+            <p class="french-block">Pour le dire autrement, Flowers ne peut pas imaginer se faire passer pour le jeune de 20 ans qui a écrit Mr Brightside dans la chambre de son ami pour le reste de sa vie.</p>
+            <span class="english-block">To put it another way, Flowers can't imagine pretending to be the 20-year-old who wrote Mr Brightside in his friend's bedroom for the rest of his life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="411.58" data-end="422.69">
+            <p class="french-block">"C'est dommage de voir des gens faire ça et essayer de tenir le coup", dit-il. "J'évoque toujours John Lennon ou Tom Petty comme d'excellents exemples de [musiciens] habitant leur époque."</p>
+            <span class="english-block">"It's a shame when you see people doing that and trying to hold on," he says. "I always bring up John Lennon or Tom Petty as great examples of [musicians] inhabiting their age."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="422.69" data-end="437.88">
+            <p class="french-block">Il y a une curieuse tristesse dans sa situation difficile. Tomber amoureux de la musique est une proposition radicalement différente d’en faire votre carrière ; et, comme beaucoup de groupes de rock d'âge moyen, The Killers se sentent redevables de leurs premiers succès.</p>
+            <span class="english-block">There's a curious sadness to his predicament. Falling in love with music is a radically different proposition to making it your career; and, like many middle-aged rock bands, The Killers feel beholden to their earliest hits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="437.88" data-end="446.54">
+            <p class="french-block">Les Killers ont fait la une à Glastonbury à deux reprises, la dernière fois en 2019 – lorsqu'ils ont été rejoints par Johnny Marr et Pet Shop Boys.</p>
+            <span class="english-block">The Killers have headlined Glastonbury twice, most recently in 2019 - when they were joined by Johnny Marr and Pet Shop Boys</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="446.54" data-end="458.04">
+            <p class="french-block">Flowers est toujours reconnaissant envers ces chansons. "Ça ne vieillit jamais, ressentir l'attente [du public] pour Quand tu étais jeune, ou Toutes ces choses que j'ai faites, ou quoi que ce soit."</p>
+            <span class="english-block">Flowers is still grateful to those songs. "It never gets old, feeling the [crowd's] anticipation for When You Were Young, or All These Things That I've Done, or whatever it is."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="458.04" data-end="464.21">
+            <p class="french-block">Mais l’effet secondaire de passer sa vie sur scène est qu’il ne peut plus aimer regarder d’autres personnes en concert.</p>
+            <span class="english-block">But the side-effect of spending his life on the stage is that he can no longer enjoy watching other people in concert.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="464.21" data-end="468.65">
+            <p class="french-block">"Ça m'a perdu de l'attrait parce que c'est là que je vais travailler, tu sais ?</p>
+            <span class="english-block">"It's lost the allure to me because that's where I go to work, you know?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="468.65" data-end="483.05">
+            <p class="french-block">"Avant, j'étais captivé. Je ne pouvais pas croire que j'avais autant de chance d'être là, de voir Morrissey pour la première fois ou de voir The Cure pour la première fois. C'était le paradis. Ce sentiment a disparu."</p>
+            <span class="english-block">"I used to be enthralled. I couldn't believe I was so lucky to be there, seeing Morrissey for the first time, or seeing The Cure for the first time. It was heaven. That feeling is gone."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="483.05" data-end="502.37">
+            <p class="french-block">Mais il n'est pas découragé. En fait, il a hâte de faire la tournée de Thrasher, simplement pour le plaisir de jouer du nouveau matériel et de réarranger certains classiques. Et il pense qu'il y a un groupe qui pourrait raviver son amour de la musique live…. Le groupe qui l’a inspiré pour former The Killers en premier lieu.</p>
+            <span class="english-block">But he's not despondent. In fact, he's looking forward to touring Thrasher, simply for the joy of playing new material, and re-arranging some of the classics. And there's one band who he thinks could revive his love of live music…. The band who inspired him to form The Killers in the first place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="502.37" data-end="516.94">
+            <p class="french-block">"Vous savez quoi ? J'étais contre la réunion d'Oasis - non pas parce que je ne suis pas content qu'ils se soient remis ensemble, mais parce que tout d'un coup tout le monde était juste un fan d'Oasis, même en Amérique, et j'ai en quelque sorte pesté contre cela.</p>
+            <span class="english-block">"You know what? I was kicking against the Oasis reunion - not because I'm not happy they got back together, but because everyone was just an Oasis fan all of a sudden, even in America, and I sort of railed against it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="516.94" data-end="534.02">
+            <p class="french-block">"Mais maintenant, j'ai un fils de 15 ans qui est tombé amoureux d'Oasis. Il a appris [leurs chansons] à la guitare, et je vais jouer du piano, ressassant ces chansons que j'adorais quand j'avais 19 ans. Donc je pense que je ressentirais probablement ça à nouveau si j'allais voir Oasis."</p>
+            <span class="english-block">"But now I have a son who is 15 who has fallen in love with Oasis. He's learned [their songs] on guitar, and I'll play the piano, rehashing these songs that I loved when I was 19. So I think I would probably feel it again if I went to see Oasis."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="534.02" data-end="537.31">
+            <p class="french-block">Liam et Noel, la balle est dans votre camp.</p>
+            <span class="english-block">Liam and Noel, the ball is in your court.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="537.31" data-end="541.97">
+            <p class="french-block">"J'ai réservé The Killers pour pouvoir jouer dans une salle au-dessus d'un pub"</p>
+            <span class="english-block">'I booked The Killers as a favour to play in a room above a pub'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="541.97" data-end="546.94">
+            <p class="french-block">Comment Mr Brightside des Killers a obtenu le « statut légendaire »</p>
+            <span class="english-block">How The Killers' Mr Brightside got 'legendary status'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="546.94" data-end="551.02">
+            <p class="french-block">Interview de Brandon Flowers : "J'ai un don pour la pop"</p>
+            <span class="english-block">Brandon Flowers interview: 'I have a knack for pop'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_33.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

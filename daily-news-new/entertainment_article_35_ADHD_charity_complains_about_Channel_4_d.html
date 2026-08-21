@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHD charity complains about Channel 4 documentary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>ADHD charity complains about Channel 4 documentary</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 20 Aug 2026 07:38:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj63jyg6zg9o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: One newspaper calls Channel 4’s The Great ADHD Myth? "the most controversial show of the year".
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.75" data-end="13.92">
+            <p class="french-block">Le documentaire a été présenté par le psychiatre du NHS, le Dr Max Pemberton.</p>
+            <span class="english-block">The documentary was presented by NHS psychiatrist Dr Max Pemberton</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.92" data-end="25.01">
+            <p class="french-block">Une association caritative spécialisée dans le TDAH a déclaré s'être plainte auprès du régulateur des médias Ofcom d'un documentaire de Channel 4 suggérant que cette maladie était un mythe.</p>
+            <span class="english-block">An ADHD charity has said it has complained to media regulator Ofcom about a Channel 4 documentary that suggested the condition is a myth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.01" data-end="38.71">
+            <p class="french-block">L'émission, intitulée Le grand mythe du TDAH ?, a été diffusée mardi et son animateur, le Dr Max Pemberton, psychiatre du NHS, a conclu qu'il s'agissait « d'une construction sociale et non d'un trouble du cerveau ».</p>
+            <span class="english-block">The programme, titled The Great ADHD Myth?, was broadcast on Tuesday and its host, NHS psychiatrist Dr Max Pemberton, concluded it was "a social construct, not a disorder of the brain".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.71" data-end="46.61">
+            <p class="french-block">ADHD UK a déposé une plainte disant : « Le TDAH n'est pas un mythe. Ce n'est pas une construction sociale. »</p>
+            <span class="english-block">ADHD UK filed a complaint, saying: "ADHD is not a myth. It is not a social construct."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.61" data-end="52.63">
+            <p class="french-block">Le Collège royal des psychiatres a également mis en garde contre « l’invalidation de la condition ».</p>
+            <span class="english-block">The Royal College of Psychiatrists also warned against "invalidating the condition".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.63" data-end="65.52">
+            <p class="french-block">Channel 4 a défendu l'émission, affirmant qu'il y avait « un débat public considérable sur divers aspects du TDAH » et qu'il « était légitime d'explorer ce débat et de remettre en question les compréhensions conventionnelles ».</p>
+            <span class="english-block">Channel 4 defended the show, saying there is "considerable public debate on various aspects of ADHD" and it "is legitimate for that debate to be explored and for conventional understandings to be challenged".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.52" data-end="71.52">
+            <p class="french-block">Le programme mettait en vedette des experts sceptiques quant au TDAH et à la manière dont il est traité.</p>
+            <span class="english-block">The programme featured experts who are sceptical about ADHD and the way it is treated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.52" data-end="85.42">
+            <p class="french-block">L'étude a également suivi un garçon de 10 ans qui a arrêté ses médicaments et modifié son mode de vie pour voir comment cela affectait son comportement. Le documentaire se terminait avec sa mère disant qu'il ne prendrait pas de drogue pour le moment.</p>
+            <span class="english-block">It also followed a 10-year-old boy who stopped his medication and made lifestyle changes to see how it affected his behaviour. The documentary ended with his mother saying he would stay off the drugs for the time being.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.42" data-end="96.24">
+            <p class="french-block">Une légende à la fin du programme indiquait que le garçon avait repris ses médicaments deux mois après le tournage et que ses résultats scolaires s'étaient améliorés, mais qu'il souhaitait les arrêter à nouveau à l'avenir.</p>
+            <span class="english-block">A caption at the end of the programme said the boy went back on his medication two months after filming and his school performance improved, but that he wanted to come off them again in the future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.24" data-end="108.65">
+            <p class="french-block">ADHD UK a déclaré, en externe : « Le générique de fin du programme vous disait ce que ses 60 minutes ne diraient pas : le garçon au centre a repris ses médicaments et son travail scolaire s'est amélioré.</p>
+            <span class="english-block">ADHD UK said, external: "The programme's own end credits told you what its 60 minutes wouldn't: the boy at its centre went back on his medication, and his schoolwork improved.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.65" data-end="118.08">
+            <p class="french-block">"Leur expérience a réfuté leurs conclusions. Ils ont quand même diffusé leur version. Nous avons déjà porté plainte auprès de l'Ofcom."</p>
+            <span class="english-block">"Their experiment disproved their conclusion. They aired their version anyway. We have already complained to Ofcom."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.08" data-end="138.46">
+            <p class="french-block">Il y a également eu des critiques de la part du professeur Subodh Dave, président externe du Royal College of Psychiatrists, qui a reconnu que les gens « peuvent avoir leurs propres opinions sur le diagnostic et le traitement du TDAH », mais a déclaré : « L'invalidation de la condition ne rend pas service aux personnes atteintes de TDAH et aux professionnels impliqués dans leurs soins.</p>
+            <span class="english-block">There was also criticism from Prof Subodh Dave, president of the Royal College of Psychiatrists, external, who acknowledged that people "may have their own opinions about the diagnosis and treatment of ADHD", but said: "Invalidating the condition does a disservice to people with ADHD and professionals involved in their care."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.46" data-end="154.7">
+            <p class="french-block">Il a ajouté : « L'accent devrait être mis sur l'amélioration de l'accès à des évaluations et à des soins de haute qualité en s'attaquant aux listes d'attente qui laissent de nombreuses personnes sans soutien vital pendant des années, sans remettre en question la légitimité d'un trouble neurodéveloppemental bien établi. »</p>
+            <span class="english-block">He added: "The focus should be on improving access to high-quality assessments and care by addressing waiting lists that leave many people without vital support for years at a time, not questioning the legitimacy of a well-established neurodevelopmental disorder."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.7" data-end="162.65">
+            <p class="french-block">Une autre organisation caritative externe, ADHD Embrace, s'est dite "extrêmement déçue de la qualité du journalisme".</p>
+            <span class="english-block">Another charity, ADHD Embrace, external, said it was "hugely disappointed with the quality of the journalism".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.65" data-end="177.55">
+            <p class="french-block">La fondatrice de l'association, Annette Wilson, a déclaré que le programme « laissera aux téléspectateurs non seulement des informations inexactes sur le TDAH, mais entraînera également un plus grand scepticisme du public à l'égard de cette maladie ».</p>
+            <span class="english-block">Founder of the charity, Annette Wilson, said the programme "will leave viewers with not only inaccurate information about ADHD but also will result in greater public scepticism of the condition".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.55" data-end="185.76">
+            <p class="french-block">"Cela contribue à marginaliser cette maladie, discrédite les luttes des familles atteintes de TDAH et renforce leur sentiment d'isolement."</p>
+            <span class="english-block">"This contributes to the condition being marginalised, discredits the struggles of families with ADHD and reinforces their feelings of isolation."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.76" data-end="209.76">
+            <p class="french-block">Dans un communiqué, Channel 4 a déclaré : « Ce documentaire ne nie pas l'expérience vécue des personnes diagnostiquées avec le TDAH, mais présente le point de vue d'un large éventail d'experts médicaux de haut niveau – dont beaucoup travaillent ou ont travaillé avec le NHS ou ont occupé des postes présidentiels au sein d'organismes professionnels – qui cherchent à remettre en question la compréhension conventionnelle du TDAH et s'il s'agit d'une maladie neurodéveloppementale.</p>
+            <span class="english-block">In a statement, Channel 4 said: "This documentary does not deny the lived experience of those diagnosed with ADHD, but does present the view of an extensive range of senior medical experts - many of whom work or have worked with the NHS or have held presidential roles at professional membership bodies - who seek to question the conventional understanding of ADHD and if it is a neurodevelopmental condition.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.76" data-end="219.5">
+            <p class="french-block">"Ils se demandent également si la vie moderne a contribué à une augmentation du nombre de diagnostics et s'il existe de meilleures alternatives que les médicaments pour certains enfants."</p>
+            <span class="english-block">"They also ask whether modern living has contributed to a rise in diagnoses, and whether there may be better alternatives for some children than medication."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.5" data-end="230.3">
+            <p class="french-block">La chaîne a également déclaré que l'émission cherchait à déterminer si les facteurs sociétaux contribuaient à l'augmentation du nombre de diagnostics et de médicaments, en particulier chez les garçons.</p>
+            <span class="english-block">The channel also said the programme sought to explore whether societal factors were contributing to the rise in diagnosis and medication, especially among boys.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.3" data-end="250.58">
+            <p class="french-block">Channel 4 a déclaré : "Bien que le film ne cherche pas à apporter des réponses à partir de l'expérience d'une famille, leurs expériences ont ouvert le débat sur la question de savoir si le monde d'aujourd'hui est équipé pour s'adapter aux comportements du TDAH et sur l'éthique de leur traitement, en particulier chez les enfants et en particulier lorsque les effets à long terme restent inconnus."</p>
+            <span class="english-block">Channel 4 said: "Whilst the film does not seek to provide answers from one family's experience, their experiences have opened up discussion around whether today's world is equipped to accommodate ADHD behaviours and the ethics of medicating these, particularly in children and particularly when the long-term effects remain unknown."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.58" data-end="266.04">
+            <p class="french-block">Le Guardian a qualifié le programme de "l'émission la plus controversée de l'année", externe, et sa critique quatre étoiles a déclaré que le documentaire "va encenser et offenser certains de ses téléspectateurs", mais que "Pemberton répond à ses questions de manière convaincante".</p>
+            <span class="english-block">The Guardian called the programme "the most controversial show of the year", external, and its four-star review said the documentary "will incense and offend some of its viewers", but that "Pemberton answers his questions convincingly".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="266.04" data-end="276.1">
+            <p class="french-block">Le Times a également attribué quatre étoiles externes, affirmant qu'une grande partie du documentaire "semblait convaincante, ou du moins le début d'une discussion nécessaire".</p>
+            <span class="english-block">The Times also gave four stars, external, saying much of the documentary "felt convincing, or at least the start of a necessary discussion".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.1" data-end="287.93">
+            <p class="french-block">Le TDAH est décrit par l'Institut national d'excellence en santé et en soins (Nice) comme « un syndrome comportemental caractérisé par l'hyperactivité, l'impulsivité et l'inattention ».</p>
+            <span class="english-block">ADHD is described by the National Institute for Health and Care Excellence (Nice) , externalas "a behavioural syndrome characterised by hyperactivity, impulsivity, and inattention".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.93" data-end="296.28">
+            <p class="french-block">Le NHS estime qu'environ 2,5 millions de personnes en Angleterre souffrent de TDAH, y compris celles sans diagnostic formel.</p>
+            <span class="english-block">The NHS estimates, external that about 2.5 million people in England have ADHD, including those without a formal diagnosis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="296.28" data-end="309.77">
+            <p class="french-block">Les taux de diagnostic du TDAH et de l'autisme ont grimpé en flèche, et les listes d'attente pour les évaluations du NHS en Angleterre ont atteint des niveaux record, les listes étant même fermées dans certaines régions en raison de l'énorme demande.</p>
+            <span class="english-block">Diagnosis rates of ADHD and autism have soared, and waiting lists for assessments on the NHS in England are at record levels, with lists even closing in some areas due to the huge demand.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.77" data-end="319.7">
+            <p class="french-block">Une étude de l’University College London suggère que le nombre d’adultes britanniques diagnostiqués avec un TDAH a été multiplié par 20 entre 2000 et 2018.</p>
+            <span class="english-block">Research from University College London suggests nearly a 20-fold increase in the number of UK adults diagnosed with ADHD between 2000 and 2018.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.7" data-end="328.54">
+            <p class="french-block">Malgré cette augmentation du nombre de diagnostics et de références, certaines études suggèrent que le TDAH est en réalité sous-diagnostiqué.</p>
+            <span class="english-block">Despite these rises in diagnosis and referrals, some studies suggest ADHD is actually underdiagnosed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="328.54" data-end="351.94">
+            <p class="french-block">En juin, la revue Lancet Regional Health Europe a publié une étude suggérant que même si environ 1,2 % des adultes en Angleterre avaient un diagnostic de TDAH, les données internationales de prévalence estiment que ce trouble affecte 3 à 5 % des personnes. Les auteurs de l’étude ont déclaré que cela indique qu’il pourrait encore être sous-diagnostiqué, en particulier chez les groupes plus âgés.</p>
+            <span class="english-block">In June, the Lancet Regional Health Europe journal published research suggesting that while around 1.2% of adults in England had an ADHD diagnosis, international prevalence data estimates it affects 3-5% of people. The authors of the study said this indicates it could still be under-diagnosed, particularly in older age groups.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.94" data-end="354.86">
+            <p class="french-block">Plus d'actualités sur le TDAH</p>
+            <span class="english-block">More news about ADHD</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="354.86" data-end="362.06">
+            <p class="french-block">Le TDAH a repensé le lieu de travail. Voilà ce que cela signifie pour les patrons et les travailleurs</p>
+            <span class="english-block">ADHD has rewired the workplace. This is what it means for bosses and workers</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.06" data-end="368.35">
+            <p class="french-block">Comment l’augmentation des demandes de prestations pour le TDAH aggrave le défi des dépenses sociales</p>
+            <span class="english-block">How a rise in ADHD benefits claims is adding to welfare spending challenge</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_35.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
