@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** The review said vaping should not be seen as a "harmless part of growing up".
 
-**🇫🇷 FR:** *L'étude indique que le vapotage ne doit pas être considéré comme une « partie inoffensive de la croissance ».*
+**🇫🇷 FR:** *L'étude indique que le vapotage ne doit pas être considéré comme un « élément inoffensif de la croissance ».*
 
 ---
 

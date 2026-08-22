@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** Cancer experts have also hailed the news as positive, but are keen to stress the findings are still early.
 
-**🇫🇷 FR:** *Les experts en cancérologie ont également salué la nouvelle comme positive, mais tiennent à souligner que les résultats sont encore précoces.*
+**🇫🇷 FR:** *Les experts en cancérologie ont également salué la nouvelle comme étant positive, mais tiennent à souligner que les résultats sont encore précoces.*
 
 ---
 

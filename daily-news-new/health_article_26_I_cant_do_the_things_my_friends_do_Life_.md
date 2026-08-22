@@ -246,7 +246,7 @@
 
 **🇬🇧 EN:** "Often young carers are left to fight their own battles for too long - and so school and their own health come second," he said.
 
-**🇫🇷 FR:** *"Souvent, les jeunes soignants sont laissés trop longtemps livrer leurs propres batailles - et l'école et leur propre santé passent donc au second plan", a-t-il déclaré.*
+**🇫🇷 FR:** *"Souvent, les jeunes soignants sont laissés trop longtemps se battre eux-mêmes - et l'école et leur propre santé passent donc au second plan", a-t-il déclaré.*
 
 ---
 
