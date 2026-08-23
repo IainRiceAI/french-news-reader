@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restriction zone scheme for offenders to start in October</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Restriction zone scheme for offenders to start in October</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 23 Aug 2026 02:37:03 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cy8e8jx0x5wo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Serious violent and sexual offenders may be confined to areas of just a few miles after leaving prison on probation.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.86" data-end="19.56">
+            <p class="french-block">Un programme visant à confiner les délinquants sexuels et violents graves dans des zones situées à quelques kilomètres seulement après leur sortie de prison sera lancé en octobre, a annoncé le secrétaire à la Justice, Alex Norris.</p>
+            <span class="english-block">A scheme that could see serious sexual and violent offenders confined to areas just a few miles wide after leaving prison will be launched in October, Justice Secretary Alex Norris has announced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.56" data-end="28.42">
+            <p class="french-block">Les ministres du gouvernement affirment que cela vise à donner aux victimes une plus grande liberté et à réduire davantage les risques de contacts non désirés.</p>
+            <span class="english-block">Government ministers say this is designed to give victims greater freedom and further reduce the possibility of unwanted contact</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.42" data-end="38.95">
+            <p class="french-block">L'intention d'introduire des « zones de restriction » pour les délinquants violents qui sortent de prison et qui sont en probation a été annoncée pour la première fois par le gouvernement l'année dernière.</p>
+            <span class="english-block">The intention to introduce "restriction zones" for violent offenders who leave prison and who are on probation was first announced by the government last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.95" data-end="50.59">
+            <p class="french-block">Les agents de probation pourront limiter les lieux où les délinquants graves peuvent se rendre aussi longtemps que cela est jugé nécessaire. Ceux qui franchissent leurs nouvelles limites pourraient être rappelés en prison.</p>
+            <span class="english-block">Probation officers will be able to limit where serious offenders can go for as long as it is deemed necessary. Those who breach their new boundaries could be recalled to prison.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.59" data-end="61.8">
+            <p class="french-block">Cela irait au-delà de la pratique actuelle consistant à imposer des « zones d'exclusion » qui interdisent aux délinquants d'accéder à des lieux spécifiques tels que le domicile ou le lieu de travail d'une victime.</p>
+            <span class="english-block">This would go beyond the current practice of imposing "exclusion zones" which ban offenders from specific locations such as a victim's home or place of work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.8" data-end="70.92">
+            <p class="french-block">Norris devrait présenter des propositions visant à restreindre davantage la libération anticipée de certains prisonniers à la reprise du Parlement le mois prochain.</p>
+            <span class="english-block">Norris is expected to come up with proposals to further restrict the early release of some prisoners when Parliament resumes next month.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.92" data-end="82.27">
+            <p class="french-block">Mais les conservateurs affirment que la meilleure chose que les travaillistes pourraient faire pour protéger les victimes est de présenter une législation d'urgence qui empêcherait la libération anticipée de milliers de criminels.</p>
+            <span class="english-block">But the Conservatives say that the best thing Labour could do to protect victims is to bring forward emergency legislation which would stop the early release of thousands of criminals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.27" data-end="89.38">
+            <p class="french-block">Il existe un risque que les auteurs et les victimes de crimes sexuels et violents graves se rencontrent en dehors des zones d'exclusion.</p>
+            <span class="english-block">There is a risk that serious sexual and violent offenders and victims could encounter one another outside exclusion zones.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="89.38" data-end="97.37">
+            <p class="french-block">Le nouveau programme précisera les zones confinées pour les délinquants dans des plans adaptés à eux et élaborés en consultation avec les victimes.</p>
+            <span class="english-block">The new scheme will specify confined areas for offenders in plans tailored to them and developed in consultation with victims.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="97.37" data-end="109.13">
+            <p class="french-block">Norris a déclaré que le projet utiliserait la technologie GPS surveillée par des agents de probation afin que "ceux qui sortent des limites puissent être rapidement identifiés et risquent d'être renvoyés en prison".</p>
+            <span class="english-block">Norris said the scheme would use GPS technology monitored by probation officers so that "those who step outside the boundaries can be quickly identified and face being sent back to prison".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.13" data-end="115.42">
+            <p class="french-block">"Les délinquants devraient supporter les conséquences de leurs crimes, et non leurs victimes", a-t-il ajouté.</p>
+            <span class="english-block">"Offenders should carry the consequences of their crimes, not their victims," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.42" data-end="128.5">
+            <p class="french-block">Amy Glover, directrice des services de lutte contre la violence domestique chez Advance, une organisation caritative qui soutient les femmes et les filles victimes de violence domestique, a salué ce « changement d'orientation ».</p>
+            <span class="english-block">Amy Glover, director of domestic abuse services at Advance, a charity supporting women and girls who have experienced domestic abuse, praised the "change in focus".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.5" data-end="142.99">
+            <p class="french-block">Cependant, elle a également appelé à une réforme du système de justice pénale, affirmant que de nombreuses victimes d'abus ont choisi « de ne pas poursuivre en justice pénale, et que parmi celles qui y parviennent, seulement 5 % obtiennent une condamnation ».</p>
+            <span class="english-block">However, she also called for reform to the criminal justice system saying many survivors of abuse chose "not to pursue a criminal conviction, and for those that do only 5% reach conviction."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.99" data-end="156.74">
+            <p class="french-block">Une survivante de violence conjugale nommée Kristina a qualifié les zones de restriction de « concept fantastique », mais a noté qu'un agresseur avait continuellement enfreint son ordonnance d'interdiction à durée indéterminée « sans conséquence ».</p>
+            <span class="english-block">A domestic abuse survivor named only as Kristina called the restriction zones a "fantastic concept" but noted that a perpetrator had continuously breached her indefinite restraining order "without consequence".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.74" data-end="164.57">
+            <p class="french-block">"Le plus grand défi serait de gagner la confiance des victimes dans les autorités pour qu'elles tiennent leurs promesses de protection", a-t-elle ajouté.</p>
+            <span class="english-block">"The biggest challenge would be to gain victims' confidence in authorities to follow through their promises of protection," she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.57" data-end="174.65">
+            <p class="french-block">L'annonce de la date de début du programme de zones de restriction intervient après une modification du programme de libération anticipée du gouvernement suite à une réaction violente.</p>
+            <span class="english-block">The announcement of the restriction zone scheme's start date comes after a change to the government's early release scheme following a backlash.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.65" data-end="187.94">
+            <p class="french-block">Introduite pour réduire la surpopulation carcérale, la politique a été mise à jour le 4 août afin que les personnes condamnées pour viol, délits sexuels graves sur des enfants et toilettage ne soient pas éligibles à une libération anticipée.</p>
+            <span class="english-block">Introduced to ease prison overcrowding, on 4 August the policy was updated so people sentenced for rape, serious child sex offences and grooming would not be eligible for early release.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.94" data-end="197.3">
+            <p class="french-block">L'association des directeurs de prison a averti que cette modification des plans à un "stade très tardif" accentuerait la pression sur le personnel pénitentiaire.</p>
+            <span class="english-block">The Prison Governors' association warned this change to plans at a "very late stage" put further pressure on prison staff.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.3" data-end="212.16">
+            <p class="french-block">Le système de zones de restriction a été critiqué lorsqu'il a été annoncé l'année dernière, car il risquait d'exercer une pression sur le personnel de probation, ce que le gouvernement dit espérer atténuer en augmentant le personnel et en utilisant davantage la technologie.</p>
+            <span class="english-block">The restriction zone scheme was criticised when it was announced last year for potentially putting pressure on probation staff, something the government says it hopes to alleviate with more staff and a greater use of technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.16" data-end="216.98">
+            <p class="french-block">Les délinquants graves seront maintenus dans des zones réglementées selon les plans</p>
+            <span class="english-block">Serious offenders to be kept in restricted zones under plans</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.98" data-end="220.44">
+            <p class="french-block">Pourquoi a-t-on dû libérer certains prisonniers plus tôt ?</p>
+            <span class="english-block">What's behind having to release some prisoners early?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.44" data-end="225.46">
+            <p class="french-block">Que pourrait-il arriver maintenant au programme de libération anticipée des prisonniers ?</p>
+            <span class="english-block">What could happen to prisoner early release scheme now?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_30.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
