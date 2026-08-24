@@ -1,7 +1,7 @@
 # Mayors to get powers to overrule local councils on planning decisions
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cy8m0gxexl4o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cy8m0gxexl4o?at_medium=RSS&at_campaign=rss)  
-**Published:** Sun, 23 Aug 2026 03:10:51 GMT  
+**Published:** Sun, 23 Aug 2026 10:02:23 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](politics_article_29.mp3)  
 
 ---
@@ -60,21 +60,45 @@
 
 ### Section 7
 
-**🇬🇧 EN:** Housebuilding has fallen in London in recent years, but Pennycook insisted the "call in" powers had helped the mayor "unblock strategic growth sites" in the capital.
+**🇬🇧 EN:** Paul Bristow, the Conservative mayor of Cambridgeshire and Peterborough, told BBC Breakfast that if he had local powers, he would approve "tomorrow" a couple of blocked schemes that he said would "get new homes built that families could move into and charge economic growth".
 
-**🇫🇷 FR:** *La construction de logements a chuté à Londres ces dernières années, mais Pennycook a insisté sur le fait que les pouvoirs de « rappel » avaient aidé le maire à « débloquer des sites de croissance stratégiques » dans la capitale.*
+**🇫🇷 FR:** *Paul Bristow, maire conservateur du Cambridgeshire et de Peterborough, a déclaré à BBC Breakfast que s'il disposait de pouvoirs locaux, il approuverait "demain" quelques projets bloqués qui, selon lui, "permettraient de construire de nouvelles maisons dans lesquelles les familles pourraient emménager et stimuler la croissance économique".*
 
 ---
 
 ### Section 8
 
-**🇬🇧 EN:** In the 2024 general election, the Labour government promised to build 1.5 million homes in England by the end of the decade but housebuilders have warned the target could be missed.
+**🇬🇧 EN:** Bristow said "it's not about overriding what local people want", but about developers and councils finding a compromise on projects instead of just saying no - which he believed the "perceived threat of intervention" would help.
 
-**🇫🇷 FR:** *Lors des élections générales de 2024, le gouvernement travailliste avait promis de construire 1,5 million de logements en Angleterre d'ici la fin de la décennie, mais les constructeurs ont prévenu que cet objectif pourrait être manqué.*
+**🇫🇷 FR:** *Bristow a déclaré "qu'il ne s'agit pas d'ignorer ce que veulent les populations locales", mais de trouver un compromis sur les projets au lieu de simplement dire non - ce que, selon lui, la "menace perçue d'intervention" aiderait.*
 
 ---
 
 ### Section 9
+
+**🇬🇧 EN:** In London, where Khan already has the power to review decisions on certain developments, external, housebuilding has fallen in recent years. But Pennycook insisted the "call in" powers had helped the mayor "unblock strategic growth sites" in the capital.
+
+**🇫🇷 FR:** *A Londres, où Khan a déjà le pouvoir de réviser les décisions sur certains développements extérieurs, la construction de logements a chuté ces dernières années. Mais Pennycook a insisté sur le fait que les pouvoirs de « rappel » avaient aidé le maire à « débloquer des sites de croissance stratégiques » dans la capitale.*
+
+---
+
+### Section 10
+
+**🇬🇧 EN:** Bristow said if he had a similar local plan it would be "much more light touch" than London.
+
+**🇫🇷 FR:** *Bristow a déclaré que s'il avait un plan local similaire, ce serait "beaucoup plus léger" que celui de Londres.*
+
+---
+
+### Section 11
+
+**🇬🇧 EN:** In the 2024 general election, the Labour government promised to build 1.5 million homes in England by the end of the decade, but housebuilders have warned the target could be missed.
+
+**🇫🇷 FR:** *Lors des élections générales de 2024, le gouvernement travailliste avait promis de construire 1,5 million de logements en Angleterre d’ici la fin de la décennie, mais les constructeurs ont prévenu que cet objectif pourrait être manqué.*
+
+---
+
+### Section 12
 
 **🇬🇧 EN:** Pennycook said the government was "absolutely determined to stick with that ambition".
 
@@ -82,7 +106,7 @@
 
 ---
 
-### Section 10
+### Section 13
 
 **🇬🇧 EN:** He acknowledged the target was "really stretching" but said nearly 180,000 children were in temporary accommodation and "any smaller target wouldn't be commensurate with the scale of the challenge".
 
@@ -90,7 +114,23 @@
 
 ---
 
-### Section 11
+### Section 14
+
+**🇬🇧 EN:** Bristow said the government has "no chance whatsoever" to meet its 1.5 million target.
+
+**🇫🇷 FR:** *Bristow a déclaré que le gouvernement n'avait « aucune chance » d'atteindre son objectif de 1,5 million de personnes.*
+
+---
+
+### Section 15
+
+**🇬🇧 EN:** "We need economic growth in this country, we need to get building and families need places to live, and at the moment, the planning system just isn't working."
+
+**🇫🇷 FR:** *"Nous avons besoin de croissance économique dans ce pays, nous avons besoin de construire et les familles ont besoin d'un endroit où vivre, et pour le moment, le système de planification ne fonctionne tout simplement pas."*
+
+---
+
+### Section 16
 
 **🇬🇧 EN:** In addition to gaining the new "call-in" powers, mayors are set to be able to grant "up-front permission", which the government says will allow building to begin "without a developer having to apply".
 
@@ -98,7 +138,7 @@
 
 ---
 
-### Section 12
+### Section 17
 
 **🇬🇧 EN:** A consultation on how the powers will work is due to be published next week.
 
@@ -106,7 +146,7 @@
 
 ---
 
-### Section 13
+### Section 18
 
 **🇬🇧 EN:** The government has sought to stress that local councils will continue to decide the majority of applications and that all decisions must still follow planning rules.
 
@@ -114,7 +154,7 @@
 
 ---
 
-### Section 14
+### Section 19
 
 **🇬🇧 EN:** It has also said mayors will get a "bigger say" over how housing funding is spent in their area, with the government directing national agency Homes England to focus on local mayors' priorities.
 
@@ -122,7 +162,7 @@
 
 ---
 
-### Section 15
+### Section 20
 
 **🇬🇧 EN:** New Prime Minister Andy Burnham, who served as mayor for Greater Manchester for nearly a decade, has repeatedly expressed his desire to transfer more powers to local mayors.
 
@@ -130,7 +170,7 @@
 
 ---
 
-### Section 16
+### Section 21
 
 **🇬🇧 EN:** "Challenge does need to be made to local decision-making and actually it cuts both ways," he told the Sunday Times.
 
@@ -138,7 +178,7 @@
 
 ---
 
-### Section 17
+### Section 22
 
 **🇬🇧 EN:** "Sometimes it's the other way round. It's the local authority putting forward something that's unacceptable in terms of the impact on the community. It's a two-way street."
 
@@ -146,7 +186,7 @@
 
 ---
 
-### Section 18
+### Section 23
 
 **🇬🇧 EN:** Last month, Burnham promised to give all mayors a share of income tax revenue, saying he wanted to "bring power home" to "every postcode".
 
@@ -154,7 +194,7 @@
 
 ---
 
-### Section 19
+### Section 24
 
 **🇬🇧 EN:** Earlier this week, he announced a secondment programme to send high-performing civil servants to work in mayoral offices.
 
@@ -162,7 +202,7 @@
 
 ---
 
-### Section 20
+### Section 25
 
 **🇬🇧 EN:** The approach has faced criticism from some in his own party and the Liberal Democrats, who fear it could create a "two-tier system" that discriminates against those areas that do not have an elected mayor.
 
@@ -170,7 +210,7 @@
 
 ---
 
-### Section 21
+### Section 26
 
 **🇬🇧 EN:** Planning bids for new homes rise in England but building remains low, data suggests
 
@@ -178,7 +218,7 @@
 
 ---
 
-### Section 22
+### Section 27
 
 **🇬🇧 EN:** Affordable housing quota for London falls to 20%
 
@@ -186,7 +226,7 @@
 
 ---
 
-### Section 23
+### Section 28
 
 **🇬🇧 EN:** Responding to the new powers for mayors, Sir James Cleverly, the shadow housing secretary, said the government was "simultaneously stripping councils across the country of their ability to make planning decisions in their own communities, while making it easier to build traveller sites against local wishes".
 
@@ -194,7 +234,7 @@
 
 ---
 
-### Section 24
+### Section 29
 
 **🇬🇧 EN:** Sir James also suggested Labour mayors had failed to meet housing targets, adding: "The Conservatives are the only party with a plan to get Britain building and moving again with our plan to scrap stamp duty on the family home."
 
@@ -202,7 +242,7 @@
 
 ---
 
-### Section 25
+### Section 30
 
 **🇬🇧 EN:** Gideon Amos, the Liberal Democrat housing and planning spokesperson, said "taking powers away from communities and local councillors is taking powers away from local people".
 
@@ -210,7 +250,7 @@
 
 ---
 
-### Section 26
+### Section 31
 
 **🇬🇧 EN:** "Instead of silencing residents and handing mayors a blank cheque, the government should be empowering local councils with the resources to deliver genuinely affordable homes alongside the infrastructure to support them," he added.
 
@@ -218,7 +258,7 @@
 
 ---
 
-### Section 27
+### Section 32
 
 **🇬🇧 EN:** Mothin Ali, deputy leader of the Greens, said "more powers for mayors to direct local councils" was "more tinkering from the Labour government when local authorities continue to be forced by government into austerity budgets".
 
@@ -226,7 +266,7 @@
 
 ---
 
-### Section 28
+### Section 33
 
 **🇬🇧 EN:** Reform UK accused Labour of "centralisation in disguise", saying: "Westminster is stretching its tentacles outward instead of giving real power, resources and decision-making capabilities to devolved authorities."
 

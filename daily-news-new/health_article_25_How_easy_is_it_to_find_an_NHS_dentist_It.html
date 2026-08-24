@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How easy is it to find an NHS dentist? It depends where you live</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>How easy is it to find an NHS dentist? It depends where you live</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 23 Aug 2026 23:10:18 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c9v4w77d9m8o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Nearly 600 practices in England have withdrawn from NHS dentistry over the last 10 years, as the service heads towards a two-tier system.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.73" data-end="16.42">
+            <p class="french-block">Des centaines de cabinets dentaires abandonnent le travail du NHS alors que le service dérive vers un système à deux niveaux, suggère une nouvelle analyse.</p>
+            <span class="english-block">Hundreds of dentist practices are abandoning NHS work as the service drifts towards a two-tier system, new analysis suggests.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.42" data-end="35.98">
+            <p class="french-block">Les données analysées par le Nuffield Trust ont révélé que près de 600 cabinets en Angleterre se sont retirés de la dentisterie du NHS au cours des 10 dernières années. Le déclin a été particulièrement marqué dans certaines parties du sud-ouest et de l’est de l’Angleterre, suscitant des inquiétudes quant aux inégalités croissantes en matière d’accès aux soins.</p>
+            <span class="english-block">Data analysed by the Nuffield Trust found that nearly 600 practices in England have withdrawn from NHS dentistry over the last 10 years. The decline has been particularly sharp in parts of the South West and East of England, raising concerns about growing inequalities in access to care.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.98" data-end="47.69">
+            <p class="french-block">L'analyse suggère que plus d'un cabinet dentaire sur dix qui offrait autrefois des soins au NHS ne le fait plus, ce qui rend presque impossible pour certaines communautés de trouver des rendez-vous avec le NHS.</p>
+            <span class="english-block">The analysis suggests more than one in 10 dental practices that once offered NHS care no longer do so, leaving it near impossible for some communities to find NHS appointments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.69" data-end="66.29">
+            <p class="french-block">L’activité dentaire du NHS est inférieure de 8 % à ce qu’elle était avant Covid, tandis que six adultes sur 10 n’ont pas vu un dentiste du NHS depuis deux ans. Parmi ceux qui ont tenté d'obtenir un nouveau rendez-vous au cours des deux dernières années, seulement 38 % ont réussi, selon une enquête Nuffield Trust.</p>
+            <span class="english-block">NHS dental activity is 8% lower than it was pre Covid, while six in 10 adults have not seen an NHS dentist in two years. Of those who attempted to get a new appointment in the last two years, just 38% were successful, according to a Nuffield Trust Survey.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.29" data-end="86.64">
+            <p class="french-block">Les Cornouailles, le Devon et le Northamptonshire ont connu certaines des réductions les plus importantes du nombre de cabinets proposant des soins du NHS. À Cornwall, plus d’un quart des cabinets qui proposaient auparavant des traitements du NHS ont cessé de le faire, ce qui en fait l’un des exemples les plus frappants de l’abandon de la dentisterie du NHS.</p>
+            <span class="english-block">Cornwall, Devon and Northamptonshire have seen some of the biggest reductions in the number of practices offering NHS care. In Cornwall, more than a quarter of practices that previously offered NHS treatment have stopped doing so, making it one of the starkest examples of the shift away from NHS dentistry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.64" data-end="100.87">
+            <p class="french-block">Ces conclusions interviennent alors que les ministres se sont engagés à s'attaquer aux soi-disant « déserts dentaires », mais les dentistes affirment que l'accord actuel n'est pas viable. Beaucoup ont rendu leurs contrats NHS parce que travailler est déficitaire.</p>
+            <span class="english-block">The findings come as ministers have pledged to tackle so-called "dental deserts", but dentists say the current deal is not viable. Many have handed back their NHS contracts because to work is loss-making.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.87" data-end="114.22">
+            <p class="french-block">Dans le Somerset, moins d’un cabinet dentaire sur cinq propose désormais des services du NHS. Alan, 83 ans, qui vit dans le comté, dit qu'il a renoncé à trouver un dentiste du NHS.</p>
+            <span class="english-block">In Somerset, fewer than one in five dental practices now offers NHS services. Alan, 83, who lives in the county, says he has given up trying to find an NHS dentist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.22" data-end="122.18">
+            <p class="french-block">"J'avais l'habitude d'essayer, mais il serait impossible d'obtenir un rendez-vous chez le dentiste à proximité de chez moi", dit-il.</p>
+            <span class="english-block">"I used to try, but getting a dental appointment anywhere near where I live would be impossible," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.18" data-end="134.06">
+            <p class="french-block">Alan n'a plus qu'une dent après que les autres se soient « effondrées au fil des années » et dit qu'il a dû adapter son alimentation, même s'il plaisante en disant qu'il a perfectionné une façon de manger les noix du Brésil.</p>
+            <span class="english-block">Alan has only one tooth remaining after the others "crumbled out over the years" and says he has had to adapt what he eats, although he jokes that he has perfected a way of eating Brazil nuts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.06" data-end="139.9">
+            <p class="french-block">Alan, 83 ans, dit qu'il a renoncé à trouver un dentiste du NHS</p>
+            <span class="english-block">Alan, 83, says he has given up trying to find an NHS dentist</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.9" data-end="152.5">
+            <p class="french-block">Vivak Shah, qui dirige trois cabinets dentaires dans le Northamptonshire, continue de proposer des traitements NHS mais affirme qu'il fonctionne à perte. Il n'accepte plus de nouveaux patients du NHS.</p>
+            <span class="english-block">Vivak Shah, who runs three dental practices in Northamptonshire, continues to offer NHS treatment but says it operates at a loss. He no longer takes on new NHS patients.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.5" data-end="161.98">
+            <p class="french-block">"Chaque année, nous avons du mal à décider quoi faire, et il y a une limite à la capacité du secteur privé à couvrir les pertes du NHS", explique Shah.</p>
+            <span class="english-block">"Each year we struggle to decide what to do, and there is a limit to how much the private side can cover the NHS losses," says Shah.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.98" data-end="175.2">
+            <p class="french-block">Il a averti que si les cabinets cessent de fournir un traitement au NHS, de nombreux patients pourraient souffrir ou être contraints de chercher de l'aide ailleurs dans les services de santé, notamment dans les services d'accidents hospitaliers et d'urgences.</p>
+            <span class="english-block">He warned that if practices stop providing NHS treatment, many patients could be left in pain or forced to seek help elsewhere in the health service, including hospital accident and emergency departments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.2" data-end="191.88">
+            <p class="french-block">"Un contrat restitué dans une ville attire peu d'attention nationale en soi, mais répété à travers le pays pendant une décennie, il équivaut à la transformation discrète de la dentisterie en un service à deux vitesses", a déclaré Mark Dayan, responsable des affaires publiques au Nuffield Trust.</p>
+            <span class="english-block">"A contract handed back in one town attracts little national attention on its own but repeated across the country for a decade it amounts to the quiet transformation of dentistry into a two-tier service," says Mark Dayan, head of public affairs at the Nuffield Trust.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.88" data-end="198.65">
+            <p class="french-block">"L'accès aux soins dentaires dépend de plus en plus de ce que les gens peuvent se permettre de payer et de l'endroit où ils vivent."</p>
+            <span class="english-block">"Access to dental care increasingly depends on what people can afford to pay and where they live."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.65" data-end="205.06">
+            <p class="french-block">Jim Sykes est dentiste à Hexham. Il a rendu son contrat NHS en 2024.</p>
+            <span class="english-block">Jim Sykes is a dentist in Hexham. He handed back his NHS contract in 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.06" data-end="226.7">
+            <p class="french-block">"C'était une décision émotionnelle très difficile, mais le travail du NHS se déroulait avec une telle perte. Je devais penser à mon équipe et faire en sorte que cela fonctionne", dit-il. Sykes a demandé s'il pouvait continuer à traiter uniquement les enfants, mais on lui a répondu qu'il devait également accepter les adultes, ou abandonner le travail du NHS.</p>
+            <span class="english-block">"It was a really hard emotional decision, but the NHS work was running at such a loss. I had to think of my team of staff and make it work," he says. Sykes asked if he could continue treating just children but was told he had to accept adults as well, or give up the NHS work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="226.7" data-end="238.75">
+            <p class="french-block">"Il y a eu une véritable rupture de confiance pour moi. Même s'il y avait une nouvelle offre du gouvernement, je serais toujours très nerveux à l'idée de conclure un nouveau contrat avec le NHS", dit-il.</p>
+            <span class="english-block">"There has been a real breakdown in trust for me. Even if there was a new government offer, I would still be very nervous about entering a new NHS contract," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.75" data-end="246.98">
+            <p class="french-block">Le dentiste Jim Sykes a rendu son contrat avec le NHS en 2024 et dit que c'était « une décision émotionnelle très difficile »</p>
+            <span class="english-block">Dentist Jim Sykes handed back his NHS contract in 2024 and says it was "a really hard emotional decision"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="246.98" data-end="260.04">
+            <p class="french-block">Sykes dit qu'aucun de ses amis de sa promotion en médecine dentaire ne travaille encore au NHS. "Mes amis sont devenus privés, ont pris leur retraite ou ont enseigné – n'importe quelle voie pour éviter la dentisterie du NHS."</p>
+            <span class="english-block">Sykes says that none of his friends in his graduating class in dentistry still works in the NHS. "My friends have gone private, retired or teach - any pathway to avoid NHS dentistry."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.04" data-end="282.82">
+            <p class="french-block">Shiv Pabary, président du comité de pratique dentaire générale de l'association dentaire britannique, affirme que la situation est « le résultat direct des choix faits par les gouvernements successifs ». Il prévient qu'à moins que les ministres « réparent et financent la dentisterie du NHS », davantage de dentistes pourraient choisir de réduire leur travail dans le NHS ou de quitter complètement le service.</p>
+            <span class="english-block">Shiv Pabary, chair of the British Dental Association's General Dental Practice Committee, says the situation is "the direct result of choices made by successive governments". He warns that unless ministers "fix and fund NHS dentistry", more dentists could choose to reduce their NHS work or leave the service altogether.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.82" data-end="288.7">
+            <p class="french-block">Le nombre global de cabinets dentaires a augmenté en Angleterre au cours de la dernière décennie.</p>
+            <span class="english-block">Overall dentist practice numbers have risen in England over the last decade.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.7" data-end="303.22">
+            <p class="french-block">"Il ne s'agit pas d'une pénurie de soins dentaires mais d'une pénurie de soins dentaires du NHS", explique Dayan. "Les pratiques devront être incitées à revenir dans le travail du NHS dans les endroits où l'empreinte du NHS s'est le plus réduite."</p>
+            <span class="english-block">"This is not a shortage of dentistry but a shortage of NHS dentistry," says Dayan. "Practices will need to be incentivised back into NHS work in the places where the NHS footprint has thinned most."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.22" data-end="316.32">
+            <p class="french-block">Alors que la plupart des régions d'Angleterre ont enregistré une baisse du nombre de cabinets proposant des soins dentaires du NHS, les réductions ont été les plus faibles dans le nord-ouest de Londres, le Black Country et le nord-est de Londres.</p>
+            <span class="english-block">While most parts of England recorded declines in practices offering NHS dental care, the reductions were smallest in North West London, the Black Country and North East London.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="316.32" data-end="326.83">
+            <p class="french-block">Le nord-est de Londres a été la seule région à connaître une augmentation au cours de la période, enregistrant un cabinet supplémentaire proposant un traitement NHS par rapport à il y a dix ans.</p>
+            <span class="english-block">North East London was the only area to see any increase during the period, recording one additional practice offering NHS treatment compared with a decade ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.83" data-end="332.47">
+            <p class="french-block">Toutes les autres régions d’Angleterre ont vu le nombre de cabinets dentaires du NHS diminuer.</p>
+            <span class="english-block">Every other region of England saw the number of NHS dental practices fall.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="332.47" data-end="353.04">
+            <p class="french-block">Examiner le nombre de cabinets effectuant du travail dans le NHS n'est pas la même chose que d'examiner exactement la capacité des services de santé : les cabinets peuvent varier en taille. Mais si l’on considère d’autres mesures, comme le nombre de traitements effectués, les chiffres sont toujours en baisse, mais pas aussi fortement que la baisse des chiffres de pratique.</p>
+            <span class="english-block">Looking at the number of practices doing NHS work is not the same as looking at exactly how much health service capacity there is - practices can vary in size. But if you look at other measures such as the amount of treatment being done, the numbers are still down, although not as steep as the fall in practice numbers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.04" data-end="369.22">
+            <p class="french-block">Le gouvernement affirme qu'il modifie le contrat dentaire et forme davantage de dentistes dans les régions qui en ont le plus besoin. Le gouvernement déclare qu'il exigera également que les dentistes nouvellement qualifiés exercent au sein du NHS pendant une période minimale d'au moins trois ans.</p>
+            <span class="english-block">The government says that it is changing the dental contract and training more dentists in the areas most in need. The government says it will also make it a requirement for newly qualified dentists to practice in the NHS for a minimum period of at least three years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.22" data-end="384.67">
+            <p class="french-block">Le groupe de campagne 38 Degrees qualifie la crise dentaire actuelle de « honteuse », les gens étant « obligés de payer de l'argent qu'ils ne peuvent pas se permettre ou de souffrir de la douleur, de la honte et d'autres complications qui découlent du refus de soins de santé vitaux du NHS ».</p>
+            <span class="english-block">Campaign group 38 degrees calls the current dental crisis "shameful", with people being "forced to pay money they can't afford or suffer with the pain, shame, and further complications that come from being denied vital NHS healthcare".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.67" data-end="391.54">
+            <p class="french-block">La dentisterie du NHS est en train de pourrir. Le plan pour y remédier fonctionnera-t-il ?</p>
+            <span class="english-block">NHS dentistry is rotting. Will the plan to fix it work?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="391.54" data-end="399.02">
+            <p class="french-block">«J'ai dépensé les économies de l'université pour faire réparer mes dents» – le coût réel de la pénurie de dentistes du NHS</p>
+            <span class="english-block">'I spent uni savings on getting my teeth fixed' - the real cost of NHS dentist shortage</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_25.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
