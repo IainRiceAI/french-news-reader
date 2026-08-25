@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity? Acting? The Cotswolds? What will Harry and Meghan's UK life look like?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Charity? Acting? The Cotswolds? What will Harry and Meghan's UK life look like?</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 24 Aug 2026 19:43:51 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6243glyqv7o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The couple's return to the UK is imminent - and what they'll be focusing on here is gradually becoming clearer.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.38" data-end="16.92">
+            <p class="french-block">[Error Translate] Harry and Meghan's arrival back in Britain is imminent (the couple are seen here on their recent Australia tour)</p>
+            <span class="english-block">Harry and Meghan's arrival back in Britain is imminent (the couple are seen here on their recent Australia tour)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.92" data-end="26.86">
+            <p class="french-block">[Error Translate] Within the next few days, the Duke and Duchess of Sussex and their two children will have departed California and become residents of the UK.</p>
+            <span class="english-block">Within the next few days, the Duke and Duchess of Sussex and their two children will have departed California and become residents of the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="26.86" data-end="38.81">
+            <p class="french-block">[Error Translate] Since news broke of the move, there has been some confusion as to what British life for Harry and Meghan will look like - but a picture is emerging of the family's priorities.</p>
+            <span class="english-block">Since news broke of the move, there has been some confusion as to what British life for Harry and Meghan will look like - but a picture is emerging of the family's priorities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.81" data-end="52.54">
+            <p class="french-block">[Error Translate] Over the weekend, there was a deluge of stories about Meghan's return to acting with speculation she would have a role in the next series of The Gentlemen on Netflix, created by British director Guy Ritchie.</p>
+            <span class="english-block">Over the weekend, there was a deluge of stories about Meghan's return to acting with speculation she would have a role in the next series of The Gentlemen on Netflix, created by British director Guy Ritchie.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.54" data-end="69.19">
+            <p class="french-block">[Error Translate] Talks are still said to be in the early stages and we understand filming for the third series of the show is imminent - but Netflix has made no comment on who will star, leaving the way open for a former working member of the royal family with an acting background to be cast.</p>
+            <span class="english-block">Talks are still said to be in the early stages and we understand filming for the third series of the show is imminent - but Netflix has made no comment on who will star, leaving the way open for a former working member of the royal family with an acting background to be cast.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.19" data-end="75.79">
+            <p class="french-block">[Error Translate] The comedy is about a duke turned drug baron and is mostly filmed in the Cotswolds.</p>
+            <span class="english-block">The comedy is about a duke turned drug baron and is mostly filmed in the Cotswolds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.79" data-end="90.5">
+            <p class="french-block">[Error Translate] What is clear is that a return to acting more broadly is very much on the agenda for Meghan. It would be financially lucrative for the family in a world of expensive homes, school fees and international travel.</p>
+            <span class="english-block">What is clear is that a return to acting more broadly is very much on the agenda for Meghan. It would be financially lucrative for the family in a world of expensive homes, school fees and international travel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.5" data-end="105.58">
+            <p class="french-block">[Error Translate] Speaking in June last year to British businesswoman and podcaster Emma Grede, Meghan talked about her Netflix lifestyle series With Love, Meghan, and hinted at a return to acting when asked if she missed that side to her life.</p>
+            <span class="english-block">Speaking in June last year to British businesswoman and podcaster Emma Grede, Meghan talked about her Netflix lifestyle series With Love, Meghan, and hinted at a return to acting when asked if she missed that side to her life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.58" data-end="117.74">
+            <p class="french-block">[Error Translate] "Sometimes," Meghan replied. "Being back on set with With Love, Meghan was great because I realised how much I miss my crew. I love being around a crew."</p>
+            <span class="english-block">"Sometimes," Meghan replied. "Being back on set with With Love, Meghan was great because I realised how much I miss my crew. I love being around a crew."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.74" data-end="130.32">
+            <p class="french-block">[Error Translate] But Variety's chief correspondent Marlow Stern says when it comes to deliberations over a potential acting role for Meghan, "a lot of it has to do with scheduling, to be honest".</p>
+            <span class="english-block">But Variety's chief correspondent Marlow Stern says when it comes to deliberations over a potential acting role for Meghan, "a lot of it has to do with scheduling, to be honest".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.32" data-end="144.34">
+            <p class="french-block">[Error Translate] "They're maybe also negotiating the size of the role and how many days she'll shoot, and also compensation for it. Both sides often play the media to try and push things along, and we could be seeing that."</p>
+            <span class="english-block">"They're maybe also negotiating the size of the role and how many days she'll shoot, and also compensation for it. Both sides often play the media to try and push things along, and we could be seeing that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.34" data-end="153.79">
+            <p class="french-block">[Error Translate] For Harry, the focus once back in the UK will be on the charity work and patronages he has kept hold of while living thousands of miles away.</p>
+            <span class="english-block">For Harry, the focus once back in the UK will be on the charity work and patronages he has kept hold of while living thousands of miles away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.79" data-end="161.93">
+            <p class="french-block">[Error Translate] He has now completed his final charity engagements in the US before flying back to the UK in the coming days.</p>
+            <span class="english-block">He has now completed his final charity engagements in the US before flying back to the UK in the coming days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.93" data-end="174.67">
+            <p class="french-block">[Error Translate] In Washington DC, he met military veterans and their families and visited America's main hospital for injured servicemen and women, Walter Reed National Military Medical Centre.</p>
+            <span class="english-block">In Washington DC, he met military veterans and their families and visited America's main hospital for injured servicemen and women, Walter Reed National Military Medical Centre.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.67" data-end="186.58">
+            <p class="french-block">[Error Translate] At Arlington National Cemetery, he visited the final resting place of many service personal killed in Iraq and Afghanistan wars where he himself served on two operational tours.</p>
+            <span class="english-block">At Arlington National Cemetery, he visited the final resting place of many service personal killed in Iraq and Afghanistan wars where he himself served on two operational tours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.58" data-end="203.21">
+            <p class="french-block">[Error Translate] At the grave of Sergeant Michael Verardo, who died last year from complications related to injuries sustained in Afghanistan in 2010, he met Verardo's widow Sarah - who now supports other military families - and their nine-year-old daughter, Elizabeth.</p>
+            <span class="english-block">At the grave of Sergeant Michael Verardo, who died last year from complications related to injuries sustained in Afghanistan in 2010, he met Verardo's widow Sarah - who now supports other military families - and their nine-year-old daughter, Elizabeth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.21" data-end="210.84">
+            <p class="french-block">[Error Translate] Prince Harry met widow Sarah and her daughter Elizabeth, 9, at Arlington National Cemetery</p>
+            <span class="english-block">Prince Harry met widow Sarah and her daughter Elizabeth, 9, at Arlington National Cemetery</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.84" data-end="224.04">
+            <p class="french-block">[Error Translate] "All my daughter knows about princes or princesses is probably contained to a movie... she whispered to me and said, 'Where is his crown? Did he leave it in the car?'" Sarah said.</p>
+            <span class="english-block">"All my daughter knows about princes or princesses is probably contained to a movie... she whispered to me and said, 'Where is his crown? Did he leave it in the car?'" Sarah said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="224.04" data-end="236.09">
+            <p class="french-block">[Error Translate] "She was very dazzled by the ability to meet him and it made it made us find bits of sparkle for her at a young age in a very hard experience - and that means a lot to me personally."</p>
+            <span class="english-block">"She was very dazzled by the ability to meet him and it made it made us find bits of sparkle for her at a young age in a very hard experience - and that means a lot to me personally."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="236.09" data-end="245.35">
+            <p class="french-block">[Error Translate] It is a reminder of the impact Prince Harry is able to make and what he will hope to bring to an increased amount of public work in the UK.</p>
+            <span class="english-block">It is a reminder of the impact Prince Harry is able to make and what he will hope to bring to an increased amount of public work in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.35" data-end="251.98">
+            <p class="french-block">[Error Translate] Plans for a number of charity engagements in September in Britain were already in place.</p>
+            <span class="english-block">Plans for a number of charity engagements in September in Britain were already in place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="251.98" data-end="262.56">
+            <p class="french-block">[Error Translate] He will be at the WellChild Awards in London towards the end of the month, continuing his support for the event which honours the bravery of seriously ill children.</p>
+            <span class="english-block">He will be at the WellChild Awards in London towards the end of the month, continuing his support for the event which honours the bravery of seriously ill children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="262.56" data-end="271.51">
+            <p class="french-block">[Error Translate] There will inevitably be an emphasis on the Invictus Games for wounded service personnel which will be held in Birmingham next July.</p>
+            <span class="english-block">There will inevitably be an emphasis on the Invictus Games for wounded service personnel which will be held in Birmingham next July.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.51" data-end="283.34">
+            <p class="french-block">[Error Translate] In an ideal world, the King, as head of the Armed Forces, would officially open the Games - putting father and son together in public for the first time in several years.</p>
+            <span class="english-block">In an ideal world, the King, as head of the Armed Forces, would officially open the Games - putting father and son together in public for the first time in several years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="283.34" data-end="289.75">
+            <p class="french-block">[Error Translate] That remains an aspiration from Invictus organisers rather than any definitive plan.</p>
+            <span class="english-block">That remains an aspiration from Invictus organisers rather than any definitive plan.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.75" data-end="295.44">
+            <p class="french-block">[Error Translate] The couple are thought to have chosen the Cotswolds as their home (file image)</p>
+            <span class="english-block">The couple are thought to have chosen the Cotswolds as their home (file image)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.44" data-end="307.03">
+            <p class="french-block">[Error Translate] It's thought the family will base themselves in the Cotswolds. Harry and Meghan previously rented a property there in 2018 and are known to have friends in the area.</p>
+            <span class="english-block">It's thought the family will base themselves in the Cotswolds. Harry and Meghan previously rented a property there in 2018 and are known to have friends in the area.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="307.03" data-end="319.18">
+            <p class="french-block">[Error Translate] Reports that the couple have turned to former Spice Girl Geri Horner and her husband Christian Horner for advice on life in the area have been rejected by Harry and Meghan's official spokesperson.</p>
+            <span class="english-block">Reports that the couple have turned to former Spice Girl Geri Horner and her husband Christian Horner for advice on life in the area have been rejected by Harry and Meghan's official spokesperson.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.18" data-end="328.58">
+            <p class="french-block">[Error Translate] "Harry and Meghan are great fans of Geri and Christian… the Horners are not advising them on their return, nor have they been asked to do so."</p>
+            <span class="english-block">"Harry and Meghan are great fans of Geri and Christian… the Horners are not advising them on their return, nor have they been asked to do so."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="328.58" data-end="342.19">
+            <p class="french-block">[Error Translate] The couple will be back in the UK about a week before the autumn school term begins for their two children, seven-year-old Archie and five-year-old Lilibet. Most terms begin at the end of next week.</p>
+            <span class="english-block">The couple will be back in the UK about a week before the autumn school term begins for their two children, seven-year-old Archie and five-year-old Lilibet. Most terms begin at the end of next week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.19" data-end="355.2">
+            <p class="french-block">[Error Translate] It's understood Meghan will concentrate on settling her children into the routine of life in a British school. She is not expected to embark on any kind of full programme of public engagements.</p>
+            <span class="english-block">It's understood Meghan will concentrate on settling her children into the routine of life in a British school. She is not expected to embark on any kind of full programme of public engagements.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.2" data-end="368.59">
+            <p class="french-block">[Error Translate] Exploring acting opportunities and running her business, As Ever, will fill her time once her family is settled. She may also appear alongside her husband at some of his charity events.</p>
+            <span class="english-block">Exploring acting opportunities and running her business, As Ever, will fill her time once her family is settled. She may also appear alongside her husband at some of his charity events.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="368.59" data-end="376.46">
+            <p class="french-block">[Error Translate] Meghan previously starred in Suits. She is seen here at the season five premiere in 2016</p>
+            <span class="english-block">Meghan previously starred in Suits. She is seen here at the season five premiere in 2016</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="376.46" data-end="393.41">
+            <p class="french-block">[Error Translate] The couple will keep their multi-million dollar home in Montecito, about a two-hour drive north of Los Angeles. Meghan's mother, Doria Ragland, who has been heavily involved in helping to care for her grandchildren, will remain living in California.</p>
+            <span class="english-block">The couple will keep their multi-million dollar home in Montecito, about a two-hour drive north of Los Angeles. Meghan's mother, Doria Ragland, who has been heavily involved in helping to care for her grandchildren, will remain living in California.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="393.41" data-end="402.1">
+            <p class="french-block">[Error Translate] The family is expected to return to the US regularly as well as use the holiday home they have bought near Melides in Portugal.</p>
+            <span class="english-block">The family is expected to return to the US regularly as well as use the holiday home they have bought near Melides in Portugal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="402.1" data-end="411.98">
+            <p class="french-block">[Error Translate] It is close to a property bought by Princess Eugenie and her husband Jack Brooksbank who have remained close to the Sussexes during the royal fallout.</p>
+            <span class="english-block">It is close to a property bought by Princess Eugenie and her husband Jack Brooksbank who have remained close to the Sussexes during the royal fallout.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="411.98" data-end="420.77">
+            <p class="french-block">[Error Translate] How involved Harry, Meghan, Archie and Lilibet will be with the wider royal family has not yet been decided.</p>
+            <span class="english-block">How involved Harry, Meghan, Archie and Lilibet will be with the wider royal family has not yet been decided.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="420.77" data-end="436.87">
+            <p class="french-block">[Error Translate] Over the next few months, several significant royal engagements are in the diary that would involve most senior royals - Remembrance Sunday at the Cenotaph, the Princess of Wales' Carol Service at Westminster Abbey and then Christmas at Sandringham.</p>
+            <span class="english-block">Over the next few months, several significant royal engagements are in the diary that would involve most senior royals - Remembrance Sunday at the Cenotaph, the Princess of Wales' Carol Service at Westminster Abbey and then Christmas at Sandringham.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="436.87" data-end="442.06">
+            <p class="french-block">[Error Translate] Will there be invitations extended to the Sussex family?</p>
+            <span class="english-block">Will there be invitations extended to the Sussex family?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="442.06" data-end="454.92">
+            <p class="french-block">[Error Translate] Trust remains an issue. There is caution, a degree of wariness and even hostility in some quarters of the Royal Household. These decisions are very much a work in progress.</p>
+            <span class="english-block">Trust remains an issue. There is caution, a degree of wariness and even hostility in some quarters of the Royal Household. These decisions are very much a work in progress.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="454.92" data-end="462.7">
+            <p class="french-block">[Error Translate] Harry and Meghan's team has described the move to the UK as being for "an extended period of time".</p>
+            <span class="english-block">Harry and Meghan's team has described the move to the UK as being for "an extended period of time".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="462.7" data-end="477.7">
+            <p class="french-block">[Error Translate] It is not necessarily a long-term move but may be a chance for the family to experience life in the UK, allowing the children to get to know their grandfather, the King, while they are young enough to not have their education disrupted.</p>
+            <span class="english-block">It is not necessarily a long-term move but may be a chance for the family to experience life in the UK, allowing the children to get to know their grandfather, the King, while they are young enough to not have their education disrupted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="477.7" data-end="493.27">
+            <p class="french-block">[Error Translate] Much of what happens in the months ahead will be a test - of Harry and Meghan's liking for life in the UK, of public reaction to them and of the royal family's ability to continue with their duties alongside the distractions the Sussex family may bring.</p>
+            <span class="english-block">Much of what happens in the months ahead will be a test - of Harry and Meghan's liking for life in the UK, of public reaction to them and of the royal family's ability to continue with their duties alongside the distractions the Sussex family may bring.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="493.27" data-end="499.66">
+            <p class="french-block">[Error Translate] As they return to the UK, Harry and Meghan search for a brand that sticks</p>
+            <span class="english-block">As they return to the UK, Harry and Meghan search for a brand that sticks</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="499.66" data-end="504.43">
+            <p class="french-block">[Error Translate] What happened to Harry and Meghan's American dream?</p>
+            <span class="english-block">What happened to Harry and Meghan's American dream?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="504.43" data-end="509.21">
+            <p class="french-block">[Error Translate] What happened to Harry and Meghan's American dream?</p>
+            <span class="english-block">What happened to Harry and Meghan's American dream?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_34.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

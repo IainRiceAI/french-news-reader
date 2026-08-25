@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch and Amazon face legal action over using livestreams to train AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Twitch and Amazon face legal action over using livestreams to train AI</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 24 Aug 2026 13:09:44 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c70ljqk5kjqo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The lawsuit alleges Twitch used streamers' videos to train AI without their permission or proper compensation.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.59" data-end="17.14">
+            <p class="french-block">Amazon fait face à un procès externe pour sa décision de former ses modèles d'IA sur des vidéos diffusées sur la populaire plateforme de streaming Twitch.</p>
+            <span class="english-block">Amazon is facing a lawsuit, external over its move to train its AI models on videos people broadcast on the popular streaming platform Twitch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.14" data-end="29.95">
+            <p class="french-block">Cette décision a suscité des réactions négatives de la part des utilisateurs lorsqu'elle a été annoncée en août, les utilisateurs ayant la possibilité de se désinscrire s'ils ne souhaitent pas que leurs données soient utilisées de cette manière.</p>
+            <span class="english-block">The move faced backlash from users when it was announced in August - with people having the option to opt-out if they do not want their data used this way.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.95" data-end="42.26">
+            <p class="french-block">Le recours collectif a été intenté au nom de millions de streamers qui utilisent Twitch, alléguant que sa société mère Amazon a utilisé leurs vidéos pour entraîner l'IA sans leur autorisation ni une compensation appropriée.</p>
+            <span class="english-block">The class action lawsuit has been brought on behalf of millions of streamers who use Twitch, alleging its parent company Amazon used their videos to train AI without their permission or proper compensation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.26" data-end="45.55">
+            <p class="french-block">Twitch et Amazon n'ont pas commenté le procès.</p>
+            <span class="english-block">Twitch and Amazon have not commented on the lawsuit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.55" data-end="53.06">
+            <p class="french-block">Les streamers de la plateforme auraient produit plus de 215 millions d’heures de contenu au cours des seuls premiers mois de 2026.</p>
+            <span class="english-block">Streamers on the platform reportedly produced, external more than 215 million hours of content in the first few months of 2026 alone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.06" data-end="58.9">
+            <p class="french-block">Le procès a été intenté par le streamer Warren Pandiscia, basé dans le Connecticut.</p>
+            <span class="english-block">The lawsuit was brought by Connecticut-based streamer Warren Pandiscia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.9" data-end="68.74">
+            <p class="french-block">Il affirme que Twitch a rompu son contrat avec les utilisateurs en utilisant ce contenu comme données de formation d'IA pour les modèles d'Amazon sans obtenir leur autorisation.</p>
+            <span class="english-block">It claims Twitch breached its contract with users by using that content as AI training data for Amazon's models without obtaining their permission.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.74" data-end="76.42">
+            <p class="french-block">Il ajoute que les streamers ne devraient pas voir leur travail exploité commercialement pour développer l’IA sans consentement ni compensation.</p>
+            <span class="english-block">It adds streamers should not have their work commercially exploited to develop AI without consent or compensation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.42" data-end="87.31">
+            <p class="french-block">Le procès vise à obtenir des dommages-intérêts pour les streamers dont le contenu aurait été utilisé pour entraîner l'IA, ainsi qu'une ordonnance empêchant Amazon de poursuivre cette pratique présumée.</p>
+            <span class="english-block">The lawsuit seeks damages for streamers whose content was allegedly used to train AI, as well as an order preventing Amazon from continuing the alleged practice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.31" data-end="93.91">
+            <p class="french-block">On ne sait pas quand Amazon a commencé à collecter les données des utilisateurs de Twitch pour former ses modèles d'IA.</p>
+            <span class="english-block">It is not clear when Amazon began collecting Twitch users' data to train its AI models.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.91" data-end="106.56">
+            <p class="french-block">Le directeur des produits de Twitch, Mike Minton, a précédemment déclaré qu'il ne savait pas si les données des utilisateurs avaient été récupérées à des fins de formation avant de donner aux gens la possibilité de se désinscrire.</p>
+            <span class="english-block">Twitch's chief product officer Mike Minton previously said he did not know if users' data had been scraped for training before it gave people the opportunity to opt-out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.56" data-end="114.36">
+            <p class="french-block">Il a ajouté qu'il n'était pas sûr de ce qu'Amazon "avait fait en termes de formation des modèles et de ce qu'ils avaient utilisé et non utilisé".</p>
+            <span class="english-block">He said he was unsure what Amazon "has done in terms of model training and what they've used and not used".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.36" data-end="123.74">
+            <p class="french-block">Dans la FAQ de Twitch sur la formation en IA, il est indiqué que l'audio d'une personne pourrait être utilisé pour "affiner les modèles qui créent de la parole en texte".</p>
+            <span class="english-block">In Twitch's own FAQs about AI training, it said a person's audio might be used to "refine models that create speech to text".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.74" data-end="131.18">
+            <p class="french-block">Il a déclaré que cela contribuerait à améliorer les sous-titres automatiques sur les flux Twitch ainsi que sur les vidéos Amazon.</p>
+            <span class="english-block">It said this would help improve automatic subtitles on Twitch streams as well as Amazon videos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.18" data-end="145.92">
+            <p class="french-block">Ceux qui souhaitent désactiver la fonctionnalité devront accéder à l'onglet Paramètres de leur tableau de bord Streamer, cliquer sur l'onglet Sécurité et confidentialité, puis faire défiler vers le bas des options et désactiver « Formation pour l'IA générative ».</p>
+            <span class="english-block">Those that want to disable the feature would need to navigate to the Settings tab in their Streamer Dashboard, click the Security and Privacy tab, then scroll down to near the bottom of the options and toggle off "training for Generative AI".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.92" data-end="158.71">
+            <p class="french-block">Cependant, la désinscription ne s'applique qu'aux flux individuels, ce qui signifie que le contenu des créateurs peut toujours être utilisé pour la formation en IA lorsqu'ils apparaissent dans un flux où la fonctionnalité reste activée.</p>
+            <span class="english-block">However, the opt-out only applies to individual streams, meaning creators' content could still be used for AI training when they appear in a stream where the feature remains enabled.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.71" data-end="173.04">
+            <p class="french-block">Amazon, qui a acheté Twitch pour près d'un milliard de dollars (740 millions de livres sterling) en 2014, a fait de l'IA une priorité majeure car elle est en concurrence avec Google, Meta et d'autres géants de la technologie.</p>
+            <span class="english-block">Amazon, which bought Twitch for nearly $1bn (£740m) in 2014, has made AI a major focus as it competes with Google, Meta and other tech giants.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.04" data-end="179.3">
+            <p class="french-block">La star de Twitch, QTCinderella, dit qu'elle souhaiterait ne jamais avoir commencé à diffuser</p>
+            <span class="english-block">Twitch star QTCinderella says she wishes she never started streaming</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.3" data-end="185.5">
+            <p class="french-block">Spotify va ajouter un label pour les artistes générés par l'IA et les supprimer des recommandations</p>
+            <span class="english-block">Spotify to add label for AI-generated artists and remove them from recommendations</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_19.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
