@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-08-26 06:18:43  
+Generated on: 2026-08-27 06:23:22  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **How Dolly Parton told her life story through six iconic songs**
-   - **Published:** Tue, 25 Aug 2026 23:43:13 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_How_Dolly_Parton_told_her_life_story_thr.md](top-stories_article_1_How_Dolly_Parton_told_her_life_story_thr.md)
+1. **BBC visits hospital in Kathmandu as families wait for news**
+   - **Published:** Wed, 26 Aug 2026 21:15:34 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_BBC_visits_hospital_in_Kathmandu_as_fami.md](top-stories_article_1_BBC_visits_hospital_in_Kathmandu_as_fami.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **NHS failing child sex abuse victims in adulthood, say psychiatrists**
-   - **Published:** Wed, 26 Aug 2026 04:07:48 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_NHS_failing_child_sex_abuse_victims_in_a.md](top-stories_article_2_NHS_failing_child_sex_abuse_victims_in_a.md)
+2. **Woman who died in fire with niece, 7, was 'beautiful soul', mother tells BBC**
+   - **Published:** Thu, 27 Aug 2026 00:12:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Woman_who_died_in_fire_with_niece_7_was_.md](top-stories_article_2_Woman_who_died_in_fire_with_niece_7_was_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Winter energy prices expected to rise to three-year high**
-   - **Published:** Tue, 25 Aug 2026 23:07:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Winter_energy_prices_expected_to_rise_to.md](top-stories_article_3_Winter_energy_prices_expected_to_rise_to.md)
+3. **New thunderstorm warnings for parts of UK as rain set to continue**
+   - **Published:** Wed, 26 Aug 2026 19:15:35 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_New_thunderstorm_warnings_for_parts_of_U.md](top-stories_article_3_New_thunderstorm_warnings_for_parts_of_U.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **CIA chief travels to Moscow for unannounced talks, US media reports**
-   - **Published:** Tue, 25 Aug 2026 19:48:14 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_CIA_chief_travels_to_Moscow_for_unannoun.md](top-stories_article_4_CIA_chief_travels_to_Moscow_for_unannoun.md)
+4. **Meta's $18bn settlement may hasten reckoning for social media on child safety**
+   - **Published:** Wed, 26 Aug 2026 23:04:24 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Metas_18bn_settlement_may_hasten_reckoni.md](top-stories_article_4_Metas_18bn_settlement_may_hasten_reckoni.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Why Pride is facing a backlash - from inside and outside the LGBT community**
-   - **Published:** Tue, 25 Aug 2026 23:13:34 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Why_Pride_is_facing_a_backlash_-_from_in.md](top-stories_article_5_Why_Pride_is_facing_a_backlash_-_from_in.md)
+5. **At least one dead after car crashes into crowd in northern France**
+   - **Published:** Thu, 27 Aug 2026 02:42:17 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_At_least_one_dead_after_car_crashes_into.md](top-stories_article_5_At_least_one_dead_after_car_crashes_into.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Yellow warnings in force as rain and thunderstorms hit parts of UK**
-   - **Published:** Tue, 25 Aug 2026 23:11:15 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Yellow_warnings_in_force_as_rain_and_thu.md](top-stories_article_6_Yellow_warnings_in_force_as_rain_and_thu.md)
+6. **World's first patient to undergo live AI-assisted brain surgery has tumour removed**
+   - **Published:** Wed, 26 Aug 2026 23:07:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Worlds_first_patient_to_undergo_live_AI-.md](top-stories_article_6_Worlds_first_patient_to_undergo_live_AI-.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Canada announces 'dollar-for-dollar' retaliatory tariffs on US as high as 50%**
-   - **Published:** Tue, 25 Aug 2026 19:50:57 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Canada_announces_dollar-for-dollar_retal.md](top-stories_article_7_Canada_announces_dollar-for-dollar_retal.md)
+7. **Burnham calls summit of Welsh, Scottish and Northern Irish first ministers**
+   - **Published:** Wed, 26 Aug 2026 21:32:52 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Burnham_calls_summit_of_Welsh_Scottish_a.md](top-stories_article_7_Burnham_calls_summit_of_Welsh_Scottish_a.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Man dies in crash after police pursuit**
-   - **Published:** Tue, 25 Aug 2026 19:39:44 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Man_dies_in_crash_after_police_pursuit.md](top-stories_article_8_Man_dies_in_crash_after_police_pursuit.md)
+8. **Susan Sarandon leads tributes to Rocky Horror Picture Show co-star Tim Curry**
+   - **Published:** Thu, 27 Aug 2026 00:32:27 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Susan_Sarandon_leads_tributes_to_Rocky_H.md](top-stories_article_8_Susan_Sarandon_leads_tributes_to_Rocky_H.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Canada announces 'dollar-for-dollar' retaliatory tariffs on US as high as 50%**
-   - **Published:** Tue, 25 Aug 2026 19:50:57 GMT
-   - **Read Parallel Translation:** [world_article_9_Canada_announces_dollar-for-dollar_retal.md](world_article_9_Canada_announces_dollar-for-dollar_retal.md)
+1. **Heart, hope and a steely determination: Dolly Parton's musical legacy**
+   - **Published:** Wed, 26 Aug 2026 11:32:11 GMT
+   - **Read Parallel Translation:** [world_article_9_Heart_hope_and_a_steely_determination_Do.md](world_article_9_Heart_hope_and_a_steely_determination_Do.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **China hits out at 'illegal' new US sanctions on Iran and trading partners**
-   - **Published:** Tue, 25 Aug 2026 11:53:36 GMT
-   - **Read Parallel Translation:** [world_article_10_China_hits_out_at_illegal_new_US_sanctio.md](world_article_10_China_hits_out_at_illegal_new_US_sanctio.md)
+2. **Door was locked at Pakistan hospital where fire killed 14 babies, witnesses say**
+   - **Published:** Wed, 26 Aug 2026 14:42:03 GMT
+   - **Read Parallel Translation:** [world_article_10_Door_was_locked_at_Pakistan_hospital_whe.md](world_article_10_Door_was_locked_at_Pakistan_hospital_whe.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **CIA chief travels to Moscow for unannounced talks, US media reports**
-   - **Published:** Tue, 25 Aug 2026 19:48:14 GMT
-   - **Read Parallel Translation:** [world_article_11_CIA_chief_travels_to_Moscow_for_unannoun.md](world_article_11_CIA_chief_travels_to_Moscow_for_unannoun.md)
+3. **Trump officials threaten Kennedy Center demolition if court blocks renovations**
+   - **Published:** Wed, 26 Aug 2026 15:42:45 GMT
+   - **Read Parallel Translation:** [world_article_11_Trump_officials_threaten_Kennedy_Center_.md](world_article_11_Trump_officials_threaten_Kennedy_Center_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Mass arrests in global crackdown on West African cyber-crime networks**
-   - **Published:** Tue, 25 Aug 2026 19:30:37 GMT
-   - **Read Parallel Translation:** [world_article_12_Mass_arrests_in_global_crackdown_on_West.md](world_article_12_Mass_arrests_in_global_crackdown_on_West.md)
+4. **At least 12 dead as wildfires sweep through northern Algeria**
+   - **Published:** Thu, 27 Aug 2026 02:10:18 GMT
+   - **Read Parallel Translation:** [world_article_12_At_least_12_dead_as_wildfires_sweep_thro.md](world_article_12_At_least_12_dead_as_wildfires_sweep_thro.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Winter energy prices expected to rise to three-year high**
-   - **Published:** Tue, 25 Aug 2026 23:07:29 GMT
-   - **Read Parallel Translation:** [business_article_13_Winter_energy_prices_expected_to_rise_to.md](business_article_13_Winter_energy_prices_expected_to_rise_to.md)
+1. **Meta's $18bn settlement may hasten reckoning for social media on child safety**
+   - **Published:** Wed, 26 Aug 2026 23:04:24 GMT
+   - **Read Parallel Translation:** [business_article_13_Metas_18bn_settlement_may_hasten_reckoni.md](business_article_13_Metas_18bn_settlement_may_hasten_reckoni.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Back to school: How to save on uniform costs**
-   - **Published:** Tue, 25 Aug 2026 23:08:31 GMT
-   - **Read Parallel Translation:** [business_article_14_Back_to_school_How_to_save_on_uniform_co.md](business_article_14_Back_to_school_How_to_save_on_uniform_co.md)
+2. **Plug-in solar panels are coming to a shop near you - here's what to know**
+   - **Published:** Wed, 26 Aug 2026 23:06:41 GMT
+   - **Read Parallel Translation:** [business_article_14_Plug-in_solar_panels_are_coming_to_a_sho.md](business_article_14_Plug-in_solar_panels_are_coming_to_a_sho.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Musk's rocket firm SpaceX to build $100bn launch facility**
-   - **Published:** Wed, 26 Aug 2026 01:32:07 GMT
-   - **Read Parallel Translation:** [business_article_15_Musks_rocket_firm_SpaceX_to_build_100bn_.md](business_article_15_Musks_rocket_firm_SpaceX_to_build_100bn_.md)
+3. **Experts' five tips to make a rented property feel like home**
+   - **Published:** Wed, 26 Aug 2026 23:08:42 GMT
+   - **Read Parallel Translation:** [business_article_15_Experts_five_tips_to_make_a_rented_prope.md](business_article_15_Experts_five_tips_to_make_a_rented_prope.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **Why Tesla has been caught up in a massive car recall in China**
-   - **Published:** Wed, 26 Aug 2026 03:33:59 GMT
-   - **Read Parallel Translation:** [business_article_16_Why_Tesla_has_been_caught_up_in_a_massiv.md](business_article_16_Why_Tesla_has_been_caught_up_in_a_massiv.md)
+4. **Unexpected chat between OpenAI agents led to Hugging Face hack**
+   - **Published:** Wed, 26 Aug 2026 22:03:45 GMT
+   - **Read Parallel Translation:** [business_article_16_Unexpected_chat_between_OpenAI_agents_le.md](business_article_16_Unexpected_chat_between_OpenAI_agents_le.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Firms scramble for battery power in Spain and Portugal**
-   - **Published:** Tue, 25 Aug 2026 23:09:31 GMT
-   - **Read Parallel Translation:** [technology_article_17_Firms_scramble_for_battery_power_in_Spai.md](technology_article_17_Firms_scramble_for_battery_power_in_Spai.md)
+1. **Unexpected chat between OpenAI agents led to Hugging Face hack**
+   - **Published:** Wed, 26 Aug 2026 22:03:45 GMT
+   - **Read Parallel Translation:** [technology_article_17_Unexpected_chat_between_OpenAI_agents_le.md](technology_article_17_Unexpected_chat_between_OpenAI_agents_le.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Songs created by AI banned from Australia's music charts**
-   - **Published:** Tue, 25 Aug 2026 04:54:01 GMT
-   - **Read Parallel Translation:** [technology_article_18_Songs_created_by_AI_banned_from_Australi.md](technology_article_18_Songs_created_by_AI_banned_from_Australi.md)
+2. **Nvidia revenue doubles on continued AI demand**
+   - **Published:** Wed, 26 Aug 2026 21:49:26 GMT
+   - **Read Parallel Translation:** [technology_article_18_Nvidia_revenue_doubles_on_continued_AI_d.md](technology_article_18_Nvidia_revenue_doubles_on_continued_AI_d.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Sharing dangerous driving videos is 'truly reprehensible', PM says**
-   - **Published:** Mon, 24 Aug 2026 16:03:24 GMT
-   - **Read Parallel Translation:** [technology_article_19_Sharing_dangerous_driving_videos_is_trul.md](technology_article_19_Sharing_dangerous_driving_videos_is_trul.md)
+3. **Meta to pay up to $18bn to settle claims its platforms harm children**
+   - **Published:** Wed, 26 Aug 2026 21:27:23 GMT
+   - **Read Parallel Translation:** [technology_article_19_Meta_to_pay_up_to_18bn_to_settle_claims_.md](technology_article_19_Meta_to_pay_up_to_18bn_to_settle_claims_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **Twitch and Amazon face legal action over using livestreams to train AI**
-   - **Published:** Mon, 24 Aug 2026 13:09:44 GMT
-   - **Read Parallel Translation:** [technology_article_20_Twitch_and_Amazon_face_legal_action_over.md](technology_article_20_Twitch_and_Amazon_face_legal_action_over.md)
+4. **Xbox boss 'thinking about affordability' of next-gen console**
+   - **Published:** Wed, 26 Aug 2026 15:38:49 GMT
+   - **Read Parallel Translation:** [technology_article_20_Xbox_boss_thinking_about_affordability_o.md](technology_article_20_Xbox_boss_thinking_about_affordability_o.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **A nosy polar bear and a lucky squirrel: Wildlife Photographer of the Year 2026 shortlist**
-   - **Published:** Tue, 25 Aug 2026 23:41:13 GMT
-   - **Read Parallel Translation:** [science_article_21_A_nosy_polar_bear_and_a_lucky_squirrel_W.md](science_article_21_A_nosy_polar_bear_and_a_lucky_squirrel_W.md)
+1. **Dozens of US and Canadian citizens missing after flash flooding in Nepal**
+   - **Published:** Wed, 26 Aug 2026 23:14:14 GMT
+   - **Read Parallel Translation:** [science_article_21_Dozens_of_US_and_Canadian_citizens_missi.md](science_article_21_Dozens_of_US_and_Canadian_citizens_missi.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Yellow warnings in force as rain and thunderstorms hit parts of UK**
-   - **Published:** Tue, 25 Aug 2026 23:11:15 GMT
-   - **Read Parallel Translation:** [science_article_22_Yellow_warnings_in_force_as_rain_and_thu.md](science_article_22_Yellow_warnings_in_force_as_rain_and_thu.md)
+2. **A nosy polar bear and a lucky squirrel: Wildlife Photographer of the Year 2026 shortlist**
+   - **Published:** Tue, 25 Aug 2026 23:41:13 GMT
+   - **Read Parallel Translation:** [science_article_22_A_nosy_polar_bear_and_a_lucky_squirrel_W.md](science_article_22_A_nosy_polar_bear_and_a_lucky_squirrel_W.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Firms scramble for battery power in Spain and Portugal**
-   - **Published:** Tue, 25 Aug 2026 23:09:31 GMT
-   - **Read Parallel Translation:** [science_article_23_Firms_scramble_for_battery_power_in_Spai.md](science_article_23_Firms_scramble_for_battery_power_in_Spai.md)
+3. **Parrot eggs hatch after suspected Thai smuggler arrested at South African airport**
+   - **Published:** Wed, 26 Aug 2026 19:19:46 GMT
+   - **Read Parallel Translation:** [science_article_23_Parrot_eggs_hatch_after_suspected_Thai_s.md](science_article_23_Parrot_eggs_hatch_after_suspected_Thai_s.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Does 'rewilded' land need better wildfire prevention measures?**
-   - **Published:** Tue, 25 Aug 2026 22:07:29 GMT
-   - **Read Parallel Translation:** [science_article_24_Does_rewilded_land_need_better_wildfire_.md](science_article_24_Does_rewilded_land_need_better_wildfire_.md)
+4. **How to see the 'Blood Moon' lunar eclipse**
+   - **Published:** Wed, 26 Aug 2026 14:54:46 GMT
+   - **Read Parallel Translation:** [science_article_24_How_to_see_the_Blood_Moon_lunar_eclipse.md](science_article_24_How_to_see_the_Blood_Moon_lunar_eclipse.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **NHS failing child sex abuse victims in adulthood, say psychiatrists**
-   - **Published:** Wed, 26 Aug 2026 04:07:48 GMT
-   - **Read Parallel Translation:** [health_article_25_NHS_failing_child_sex_abuse_victims_in_a.md](health_article_25_NHS_failing_child_sex_abuse_victims_in_a.md)
+1. **Treatment involving patient's family cuts mental health hospital admissions, study finds**
+   - **Published:** Wed, 26 Aug 2026 23:07:51 GMT
+   - **Read Parallel Translation:** [health_article_25_Treatment_involving_patients_family_cuts.md](health_article_25_Treatment_involving_patients_family_cuts.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Nicotine vapes best chance to quit smoking, major review finds**
-   - **Published:** Tue, 25 Aug 2026 23:40:38 GMT
-   - **Read Parallel Translation:** [health_article_26_Nicotine_vapes_best_chance_to_quit_smoki.md](health_article_26_Nicotine_vapes_best_chance_to_quit_smoki.md)
+2. **World's first patient to undergo live AI-assisted brain surgery has tumour removed**
+   - **Published:** Wed, 26 Aug 2026 23:07:22 GMT
+   - **Read Parallel Translation:** [health_article_26_Worlds_first_patient_to_undergo_live_AI-.md](health_article_26_Worlds_first_patient_to_undergo_live_AI-.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **HPV home-testing kits available for women in England who have missed cervical screening**
-   - **Published:** Mon, 24 Aug 2026 23:27:50 GMT
-   - **Read Parallel Translation:** [health_article_27_HPV_home-testing_kits_available_for_wome.md](health_article_27_HPV_home-testing_kits_available_for_wome.md)
+3. **NHS failing child sexual abuse victims in adulthood, say psychiatrists**
+   - **Published:** Wed, 26 Aug 2026 04:07:48 GMT
+   - **Read Parallel Translation:** [health_article_27_NHS_failing_child_sexual_abuse_victims_i.md](health_article_27_NHS_failing_child_sexual_abuse_victims_i.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Why is it so hard to find an NHS dentist? Find out how many have closed where you live**
-   - **Published:** Sun, 23 Aug 2026 23:10:18 GMT
-   - **Read Parallel Translation:** [health_article_28_Why_is_it_so_hard_to_find_an_NHS_dentist.md](health_article_28_Why_is_it_so_hard_to_find_an_NHS_dentist.md)
+4. **Nicotine vapes best chance to quit smoking, major review finds**
+   - **Published:** Tue, 25 Aug 2026 23:40:38 GMT
+   - **Read Parallel Translation:** [health_article_28_Nicotine_vapes_best_chance_to_quit_smoki.md](health_article_28_Nicotine_vapes_best_chance_to_quit_smoki.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Burnham refuses to rule out tax rises in autumn Budget**
-   - **Published:** Tue, 25 Aug 2026 06:40:33 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_refuses_to_rule_out_tax_rises_in.md](politics_article_29_Burnham_refuses_to_rule_out_tax_rises_in.md)
+1. **Burnham calls summit of Welsh, Scottish and Northern Irish first ministers**
+   - **Published:** Wed, 26 Aug 2026 21:32:52 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_calls_summit_of_Welsh_Scottish_a.md](politics_article_29_Burnham_calls_summit_of_Welsh_Scottish_a.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **More than 70,000 social and affordable homes to be built across England over 10 years**
-   - **Published:** Tue, 25 Aug 2026 12:10:13 GMT
-   - **Read Parallel Translation:** [politics_article_30_More_than_70000_social_and_affordable_ho.md](politics_article_30_More_than_70000_social_and_affordable_ho.md)
+2. **Household energy bills to hit three-year high as Ofgem announces 4% rise from October**
+   - **Published:** Wed, 26 Aug 2026 11:03:50 GMT
+   - **Read Parallel Translation:** [politics_article_30_Household_energy_bills_to_hit_three-year.md](politics_article_30_Household_energy_bills_to_hit_three-year.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **UK drone factories may face attacks from 'unknown sources', says former Russian minister**
-   - **Published:** Tue, 25 Aug 2026 04:06:34 GMT
-   - **Read Parallel Translation:** [politics_article_31_UK_drone_factories_may_face_attacks_from.md](politics_article_31_UK_drone_factories_may_face_attacks_from.md)
+3. **Burnham refuses to rule out tax rises in autumn Budget**
+   - **Published:** Tue, 25 Aug 2026 06:40:33 GMT
+   - **Read Parallel Translation:** [politics_article_31_Burnham_refuses_to_rule_out_tax_rises_in.md](politics_article_31_Burnham_refuses_to_rule_out_tax_rises_in.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Row breaks out over minister's tribute to all A66 crash victims**
-   - **Published:** Tue, 25 Aug 2026 13:51:23 GMT
-   - **Read Parallel Translation:** [politics_article_32_Row_breaks_out_over_ministers_tribute_to.md](politics_article_32_Row_breaks_out_over_ministers_tribute_to.md)
+4. **Wes Streeting deluged with homophobic hate mail since becoming defence secretary**
+   - **Published:** Wed, 26 Aug 2026 21:21:19 GMT
+   - **Read Parallel Translation:** [politics_article_32_Wes_Streeting_deluged_with_homophobic_ha.md](politics_article_32_Wes_Streeting_deluged_with_homophobic_ha.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Dolly Parton: Life of the music legend whose songs touched millions**
-   - **Published:** Tue, 25 Aug 2026 18:14:13 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Dolly_Parton_Life_of_the_music_legend_wh.md](entertainment_article_33_Dolly_Parton_Life_of_the_music_legend_wh.md)
+1. **'Angel by my side' - Miley Cyrus pays tribute to godmother Dolly Parton**
+   - **Published:** Wed, 26 Aug 2026 17:26:12 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Angel_by_my_side_-_Miley_Cyrus_pays_trib.md](entertainment_article_33_Angel_by_my_side_-_Miley_Cyrus_pays_trib.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Dolly Parton: A life in pictures**
-   - **Published:** Tue, 25 Aug 2026 18:34:05 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Dolly_Parton_A_life_in_pictures.md](entertainment_article_34_Dolly_Parton_A_life_in_pictures.md)
+2. **Rocky Horror star Tim Curry dies at 80**
+   - **Published:** Wed, 26 Aug 2026 19:53:35 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Rocky_Horror_star_Tim_Curry_dies_at_80.md](entertainment_article_34_Rocky_Horror_star_Tim_Curry_dies_at_80.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Dolly Parton: The life of an iconic country singer**
-   - **Published:** Tue, 25 Aug 2026 18:27:22 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Dolly_Parton_The_life_of_an_iconic_count.md](entertainment_article_35_Dolly_Parton_The_life_of_an_iconic_count.md)
+3. **Heart, hope and a steely determination: Dolly Parton's musical legacy**
+   - **Published:** Wed, 26 Aug 2026 11:32:11 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Heart_hope_and_a_steely_determination_Do.md](entertainment_article_35_Heart_hope_and_a_steely_determination_Do.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Kit Harington replaces Nicholas Hoult in HBO's Harry Potter series**
-   - **Published:** Tue, 25 Aug 2026 07:39:25 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Kit_Harington_replaces_Nicholas_Hoult_in.md](entertainment_article_36_Kit_Harington_replaces_Nicholas_Hoult_in.md)
+4. **Maura Higgins to fill Cilla Black's shoes as host of Blind Date reboot**
+   - **Published:** Wed, 26 Aug 2026 15:29:53 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Maura_Higgins_to_fill_Cilla_Blacks_shoes.md](entertainment_article_36_Maura_Higgins_to_fill_Cilla_Blacks_shoes.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
