@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Cowboy builders' targeted in new government clampdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>'Cowboy builders' targeted in new government clampdown</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 27 Aug 2026 21:44:02 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cx2z44982e4o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A database of trusted tradespeople and a system to protect customers' money is being launched by the government next month.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.77" data-end="14.35">
+            <p class="french-block">[Error Translate] The prime minister said rogue builders gave "decent, hardworking" traders a bad name [file pic]</p>
+            <span class="english-block">The prime minister said rogue builders gave "decent, hardworking" traders a bad name [file pic]</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.35" data-end="27.36">
+            <p class="french-block">[Error Translate] People carrying out home renovations will gain greater protections against "cowboy builders" through a new database of trusted traders and a payment system offering more safeguards, the government has said.</p>
+            <span class="english-block">People carrying out home renovations will gain greater protections against "cowboy builders" through a new database of trusted traders and a payment system offering more safeguards, the government has said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.36" data-end="36.38">
+            <p class="french-block">Les commerçants qui adhéreront au programme lancé le mois prochain devront démontrer certaines normes de service client, de transparence et de résolution des litiges.</p>
+            <span class="english-block">Traders signing up to the scheme launching next month will need to demonstrate certain standards of customer service, transparency and dispute resolution.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.38" data-end="44.83">
+            <p class="french-block">[Error Translate] Prime Minister Andy Burnham said unscrupulous tradespeople "leave families with months of stress" as well as unfinished work.</p>
+            <span class="english-block">Prime Minister Andy Burnham said unscrupulous tradespeople "leave families with months of stress" as well as unfinished work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="44.83" data-end="56.88">
+            <p class="french-block">[Error Translate] The National Federation of Builders said the changes would not stop rogue operators while the Tories suggested there would be added paperwork for firms already operating legitimately.</p>
+            <span class="english-block">The National Federation of Builders said the changes would not stop rogue operators while the Tories suggested there would be added paperwork for firms already operating legitimately.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.88" data-end="64.37">
+            <p class="french-block">[Error Translate] Citizens Advice has said home renovations are one of its biggest sources of consumer complaints.</p>
+            <span class="english-block">Citizens Advice has said home renovations are one of its biggest sources of consumer complaints.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="64.37" data-end="76.49">
+            <p class="french-block">[Error Translate] The government said more than a quarter of people who carried out home improvements in the past 18 months have experienced problems, such as builders disappearing after upfront payments were made.</p>
+            <span class="english-block">The government said more than a quarter of people who carried out home improvements in the past 18 months have experienced problems, such as builders disappearing after upfront payments were made.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.49" data-end="92.5">
+            <p class="french-block">[Error Translate] It cited a survey carried out for the Competition and Markets Authority, external suggesting customers lost more £10bn in 2024 on home and garden maintenance services due to losses, overpriced costs or unfair practices by traders.</p>
+            <span class="english-block">It cited a survey carried out for the Competition and Markets Authority, external suggesting customers lost more £10bn in 2024 on home and garden maintenance services due to losses, overpriced costs or unfair practices by traders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.5" data-end="103.1">
+            <p class="french-block">BBC News a déjà fait état d'escroqueries de type « appât et changement », dans lesquelles les clients recevaient un premier devis bon marché avant que des frais cachés et des travaux inutiles ne soient ajoutés.</p>
+            <span class="english-block">BBC News has previously reported on "bait-and-switch" locksmith scams, where customers were given an initial cheap quote before hidden charges and unnecessary work were added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.1" data-end="112.03">
+            <p class="french-block">Dans le cadre du nouveau programme des commerçants, l'argent des clients sera conservé sur un compte et débloqué en partie une fois certaines étapes des projets franchies.</p>
+            <span class="english-block">Under the new traders' scheme, customers' money will be held in an account and released in parts after certain milestones in projects are completed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.03" data-end="122.06">
+            <p class="french-block">La Fédération nationale des constructeurs (ONF) a déclaré à BBC Breakfast que des programmes étaient déjà en place pour trouver des constructeurs dignes de confiance.</p>
+            <span class="english-block">The National Federation of Builders (NFB) told BBC Breakfast there are already schemes in place to find trustworthy builders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.06" data-end="135.14">
+            <p class="french-block">[Error Translate] Adas Rico Wojtulewicz-Richmond, the NFB's director of policy, said: "Is this scheme going to stop bad actors operating and ripping people off? I don't think it will."</p>
+            <span class="english-block">Adas Rico Wojtulewicz-Richmond, the NFB's director of policy, said: "Is this scheme going to stop bad actors operating and ripping people off? I don't think it will."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.14" data-end="142.68">
+            <p class="french-block">[Error Translate] He said a better approach would be for every project to have a "passport" which records all the work done.</p>
+            <span class="english-block">He said a better approach would be for every project to have a "passport" which records all the work done.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.68" data-end="151.8">
+            <p class="french-block">"Cela protège les consommateurs parce que vous pouvez découvrir quelles entreprises font un mauvais travail et cela élève les normes de l'industrie", a-t-il déclaré.</p>
+            <span class="english-block">"It protects consumers because you can find out which companies are doing a poor job, and it brings up the industry standards," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.8" data-end="162.05">
+            <p class="french-block">[Error Translate] The prime minister said rogue tradespeople gave their "decent, hardworking" counterparts a bad name and would be "putting the cowboys out of business".</p>
+            <span class="english-block">The prime minister said rogue tradespeople gave their "decent, hardworking" counterparts a bad name and would be "putting the cowboys out of business".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.05" data-end="179.88">
+            <p class="french-block">Le secrétaire d'État aux Affaires, Jonathan Reynolds, a déclaré que, même si les rénovations domiciliaires peuvent être stressantes, « nous prenons des mesures pour protéger les consommateurs, soutenir les commerçants réputés et nous assurer que les gens peuvent dépenser leur argent avec plus de confiance et de sécurité ».</p>
+            <span class="english-block">Business Secretary Jonathan Reynolds said that, while home improvements can be stressful, "we're taking action to protect consumers, support reputable traders and make sure people can spend their money with greater confidence and security".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.88" data-end="194.45">
+            <p class="french-block">[Error Translate] Shadow business secretary Andrew Griffith said the announcement looks like "the sort of government initiative that risks the unintended consequence of piling more paperwork onto the majority of businesses who already do the right thing".</p>
+            <span class="english-block">Shadow business secretary Andrew Griffith said the announcement looks like "the sort of government initiative that risks the unintended consequence of piling more paperwork onto the majority of businesses who already do the right thing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.45" data-end="209.86">
+            <p class="french-block">Il a déclaré : "Le gouvernement ferait bien mieux de renforcer l'application de la loi et d'imposer des peines plus sévères à la minorité qui arnaque frauduleusement les clients. Ceux qui enfreignent les règles continueront à les enfreindre, qu'il y ait ou non une application sur leur chemin."</p>
+            <span class="english-block">He said: "The government would do far better to beef up law enforcement and have tougher sentences for the minority who fraudulently rip off customers. Those who break the rules will keep breaking them regardless of whether there is an app in the way."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.86" data-end="228.34">
+            <p class="french-block">La porte-parole libérale-démocrate du monde des affaires, Sarah Olney, a déclaré : « Chaque année, les constructeurs malhonnêtes causent de réels dégâts et ruinent de vraies vies. Le système actuel n'est tout simplement pas adapté à son objectif et cette annonce à moitié cuite ne parvient malheureusement pas à y remédier.</p>
+            <span class="english-block">Liberal Democrat business spokesperson Sarah Olney said: "Rogue builders cause real harm and ruin real lives every year. The current system is simply not fit for purpose and this half-baked announcement falls frustratingly short from fixing it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.34" data-end="240.14">
+            <p class="french-block">"Un code volontaire pour les artisans manque complètement la cible. Les opérateurs malhonnêtes ne s'y inscrireont pas volontairement - ils continueront simplement à exploiter les familles dans l'ombre."</p>
+            <span class="english-block">"A voluntary code for tradespeople completely misses the mark. Rogue operators won't voluntarily sign up - they will simply keep exploiting families in the shadows."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.14" data-end="258.31">
+            <p class="french-block">Parallèlement à l'action contre les commerçants malhonnêtes, le gouvernement a annoncé son intention de réglementer les huissiers de justice privés en Angleterre et au Pays de Galles, afin de protéger les personnes endettées contre « un comportement intimidant, un traitement injuste ou d'être poussées vers des modalités de remboursement excessives ».</p>
+            <span class="english-block">Alongside action on rogue tradespeople, the government has announced plans to regulate private bailiffs in England and Wales, to protect people in debt from "intimidating behaviour, unfair treatment or being pushed into excessive repayment arrangements".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="258.31" data-end="269.3">
+            <p class="french-block">Dans le cadre de ces changements, les personnes confrontées à des mesures coercitives auront accès à une procédure de plainte indépendante et les huissiers privés seront tenus de respecter les normes professionnelles.</p>
+            <span class="english-block">Under the changes, people facing enforcement action will have access to an independent complaints process, and private bailiffs will be held to professional standards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.3" data-end="280.58">
+            <p class="french-block">Sarah Sackman, ministre des tribunaux et des services juridiques, a déclaré que les huissiers faisaient un travail important, mais que « cette responsabilité doit s'accompagner de normes élevées ».</p>
+            <span class="english-block">Sarah Sackman, minister for courts and legal services, said bailiffs did an important job, but "with that responsibility must come high standards".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.58" data-end="292.73">
+            <p class="french-block">[Error Translate] As part of the changes, the government will look at how organisations such as Trading Standards work with regulators and enforcement bodies "so consumers are not passed from pillar to post".</p>
+            <span class="english-block">As part of the changes, the government will look at how organisations such as Trading Standards work with regulators and enforcement bodies "so consumers are not passed from pillar to post".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.73" data-end="305.47">
+            <p class="french-block">L'année dernière, une demande d'accès à l'information de Which? a révélé que le manque de personnel dans les équipes chargées des normes commerciales conduisait à davantage d'escroqueries et de ventes de produits dangereux.</p>
+            <span class="english-block">Last year, a Freedom of Information request by Which? revealed that understaffing in trading standards teams was leading to more scams and dangerous products being sold.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.47" data-end="310.42">
+            <p class="french-block">Un tournage secret surprend un serrurier qui facture 10 fois sa citation</p>
+            <span class="english-block">Secret filming catches locksmith charging 10 times quote</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.42" data-end="314.71">
+            <p class="french-block">"J'ai été menacée de viol après une escroquerie chez un serrurier"</p>
+            <span class="english-block">'I was threatened with rape after locksmith scam'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_32.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

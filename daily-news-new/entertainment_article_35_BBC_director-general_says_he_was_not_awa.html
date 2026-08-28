@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC director-general says he was not aware of 'severity' of cuts needed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>BBC director-general says he was not aware of 'severity' of cuts needed</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 27 Aug 2026 17:09:37 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cx2zllwewlko?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Matt Brittin succeeded Tim Davie as boss of the BBC in May.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.59" data-end="18.46">
+            <p class="french-block">Le directeur général de la BBC, Matt Brittin, a déclaré qu'il n'était pas conscient de la « gravité » des coupes budgétaires nécessaires dans l'entreprise.</p>
+            <span class="english-block">BBC director-general Matt Brittin says he wasn't aware of the "severity" of cuts needed at the corporation</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.46" data-end="28.94">
+            <p class="french-block">Le directeur général de la BBC, Matt Brittin, a déclaré qu'il n'était pas conscient de la gravité des coupes budgétaires que la société devait opérer lorsqu'il a pris ses fonctions.</p>
+            <span class="english-block">BBC director-general Matt Brittin has said he was not aware of the severity of the cuts the corporation needed to make when he took on his role.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.94" data-end="44.59">
+            <p class="french-block">Des objectifs d’économies ont été annoncés en juin, avec des réductions prévues dans les divisions d’information, de pays et de contenu pour générer 160 millions de livres sterling sur 500 millions de livres sterling d’économies d’ici l’exercice 2028-29.</p>
+            <span class="english-block">Savings targets were announced in June, with planned cuts across news, nations and content divisions to deliver £160m of £500m in savings by the 2028-29 financial year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="44.59" data-end="58.08">
+            <p class="french-block">S'exprimant jeudi au Festival de télévision d'Edimbourg, Brittin a déclaré : "Sur le plan financier, je savais que des coupes avaient été annoncées et que des économies avaient été annoncées, mais je n'en avais pas vraiment compris la gravité."</p>
+            <span class="english-block">Speaking at the Edinburgh TV Festival on Thursday, Brittin said: "On the financial side, I knew that cuts had been announced and that savings had been announced, but I hadn't really understood the severity."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.08" data-end="63.29">
+            <p class="french-block">Dans le cadre de ce processus, environ 2 000 emplois devraient être supprimés.</p>
+            <span class="english-block">There are expected to be around 2,000 jobs cut as part of the process.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.29" data-end="71.26">
+            <p class="french-block">[Error Translate] Matt Brittin used to work at Google and says he wants to bring what he learnt at the tech giant to the BBC</p>
+            <span class="english-block">Matt Brittin used to work at Google and says he wants to bring what he learnt at the tech giant to the BBC</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.26" data-end="91.22">
+            <p class="french-block">Lors de sa conversation avec Kirsty Wark, sa première apparition majeure dans l'industrie, Brittin a également déclaré qu'il avait été "impressionné" par la "créativité et le talent" de la BBC, mais a ajouté que "chaque organisation médiatique est aux prises avec l'évolution rapide du comportement des consommateurs et la puissance de la révolution de l'IA".</p>
+            <span class="english-block">During the conversation with Kirsty Wark, his first major industry appearance, Brittin also said he had been "impressed" by the "creativity and talent" at the BBC, but added "every media organisation is struggling with rapidly changing consumer behaviour and the power of the AI revolution".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.22" data-end="99.67">
+            <p class="french-block">Qualifiant l'entreprise de « repliée sur elle-même », il a également critiqué l'organisation pour ce qui conduit à « une aversion pour le risque ».</p>
+            <span class="english-block">Describing the corporation as "inward looking", he also criticised the organisation for this leading to "an aversion to risk".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.67" data-end="110.54">
+            <p class="french-block">"Vous avez des critiques très virulentes, dont beaucoup sont des rivaux commerciaux de l'entreprise, et vous subissez des pressions politiques sur tout ce que vous faites journalistiquement", a-t-il déclaré.</p>
+            <span class="english-block">"You've got very loud critics, many of whom are the commercial rivals of the corporation and you've got political pressure on everything that you do journalistically," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.54" data-end="116.5">
+            <p class="french-block">Brittin, qui travaillait auparavant chez Google, a succédé à Tim Davie plus tôt cette année.</p>
+            <span class="english-block">Brittin, who previously worked at Google, took over from Tim Davie earlier this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.5" data-end="124.37">
+            <p class="french-block">Il est le premier directeur général depuis Greg Dyke en 2000 à assumer ce rôle, sans avoir été un ancien employé de la BBC.</p>
+            <span class="english-block">He is the first director-general since Greg Dyke in 2000 to take on the role having not been a former BBC employee.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.37" data-end="140.64">
+            <p class="french-block">L'ancien responsable de la politique régionale du géant de la technologie a déclaré qu'il souhaitait utiliser ces compétences pour "avancer plus rapidement grâce à l'expérimentation et à l'apprentissage" au sein de l'organisation et travailler avec ses collègues pour "trouver ensemble un chemin vers l'avenir".</p>
+            <span class="english-block">The former regional policy manager for the tech giant said he wanted to use those skills to "move faster through experimenting and learning" at the organisation and work with colleagues to "find a way to the future together".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.64" data-end="149.95">
+            <p class="french-block">Brittin a également évoqué la nécessité pour la BBC de « défendre son intégrité » alors qu'elle conteste l'affaire de diffamation de Donald Trump.</p>
+            <span class="english-block">Brittin also spoke about the BBC's need to "defend its integrity" as it challenges Donald Trump's defamation case.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.95" data-end="164.54">
+            <p class="french-block">Le président américain demande 10 milliards de dollars (7,4 milliards de livres sterling) de dommages et intérêts devant un tribunal de Floride pour le montage d'un documentaire Panorama de 2024 sur les émeutes du Capitole américain.</p>
+            <span class="english-block">The US president is seeking $10bn (£7.4bn) in damages in a Florida court over the editing of a Panorama documentary from 2024 about the US Capitol riots.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.54" data-end="173.42">
+            <p class="french-block">Les représentants légaux de la BBC cherchent à faire rejeter l'affaire et la société s'est déjà excusée pour une "erreur de jugement" dans le montage du programme.</p>
+            <span class="english-block">Legal representatives for the BBC are looking to have the case thrown out, and the corporation has previously apologised for an "error of judgement" in the editing of the programme.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.42" data-end="189.72">
+            <p class="french-block">"Nous avons décidé de classer l'affaire pour des raisons de compétence, dans la mesure où personne aux États-Unis n'a réellement vu l'émission avec les mauvais montages, et c'était un mauvais montage, et il a gagné les élections, et il est devenu plus riche", a déclaré Brittin au cours de la conversation.</p>
+            <span class="english-block">"We moved to dismiss the case on the grounds of jurisdiction in that nobody in the US actually saw the show with the bad edits, and it was a bad edit, and he won the election, and he's got richer," Brittin said during the conversation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.72" data-end="195.79">
+            <p class="french-block">L'ancien patron de Google, Matt Brittin, est-il la bonne personne pour diriger la BBC ?</p>
+            <span class="english-block">Is ex-Google boss Matt Brittin the right person to steer the BBC?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.79" data-end="201.14">
+            <p class="french-block">Le nouveau patron de la BBC prévient que « des choix difficiles sont inévitables »</p>
+            <span class="english-block">New BBC boss warns that 'tough choices are unavoidable'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.14" data-end="207.43">
+            <p class="french-block">La redevance TV est "le modèle d'hier", déclare le nouveau directeur général de la BBC</p>
+            <span class="english-block">TV licence fee is 'yesterday's model', new BBC director general says</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_35.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

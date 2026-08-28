@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military veterans told they owe thousands of pounds over clerical error</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Military veterans told they owe thousands of pounds over clerical error</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 27 Aug 2026 23:06:22 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c5y4512mlxdo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Hundreds of former UK service personnel have had their pensions cut after being overpaid.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.97" data-end="14.62">
+            <p class="french-block">Ray Lawton, vétéran de la Royal Artillery, a été condamné à rembourser 8 000 £</p>
+            <span class="english-block">Royal Artillery veteran Ray Lawton has been ordered to repay £8,000</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.62" data-end="23.93">
+            <p class="french-block">Des centaines d'anciens militaires ont vu leurs pensions réduites après avoir reçu des lettres leur demandant de rembourser des milliers de livres sterling en raison d'une erreur matérielle.</p>
+            <span class="english-block">Hundreds of former members of the military have had their pensions slashed after receiving letters telling them to repay thousands of pounds because of a clerical error.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.93" data-end="42.58">
+            <p class="french-block">Le ministère de la Défense (MoD) a confirmé à la BBC que plus de 1 000 militaires retraités sont poursuivis pour dettes. La majorité, 335 anciens combattants, ont été payés en trop pour un total de 5,1 millions de livres sterling en raison de calculs incorrects de l'assurance nationale.</p>
+            <span class="english-block">The Ministry of Defence (MoD) confirmed to the BBC that more than 1000 retired service personnel are being pursued for debts. The majority, 335 veterans, were overpaid a total of £5.1m as a result of incorrect National Insurance calculations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.58" data-end="51.96">
+            <p class="french-block">La Société de retraite des Forces a déclaré qu'elle était au courant d'un petit nombre d'anciens combattants dont les dettes ont été effacées après avoir déposé une plainte officielle.</p>
+            <span class="english-block">The Forces Pension Society said it is aware of a small number of veterans whose debts were wiped after raising a formal complaint.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.96" data-end="67.01">
+            <p class="french-block">Ray Lawton, 70 ans, a appris en juillet qu'il devait 8 000 £ après six ans de trop-payés. Quelques jours plus tard, sa pension militaire mensuelle a été réduite de 550 £ à 365 £.</p>
+            <span class="english-block">Ray Lawton, 70, was told in July he owed £8,000 following six years of overpayments. Days later, his monthly military pension was cut from £550 to £365.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.01" data-end="73.82">
+            <p class="french-block">"Je n'ai pas 8 000 £ à payer", a déclaré Lawton, qui a servi 16 ans dans la Royal Artillery.</p>
+            <span class="english-block">"I haven't got £8,000 to pay out," said Lawton, who served 16 years in the Royal Artillery.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="73.82" data-end="77.78">
+            <p class="french-block">"J'ai mis un peu de côté, mais c'est loin d'être suffisant."</p>
+            <span class="english-block">"I've got a little bit put aside but nowhere near that much."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.78" data-end="91.39">
+            <p class="french-block">Le vétéran basé à Portsmouth a déclaré à la BBC : "J'ai fait confiance à l'armée toute ma vie, même quand je suis parti, et j'avais confiance que ma pension serait correcte. Puis cette lettre arrive et elle a tout fait exploser."</p>
+            <span class="english-block">The Portsmouth-based veteran told the BBC: "I've trusted the army all my life even when I left and I trusted my pension would be right. Then this letter comes and it's just blown it all out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.39" data-end="99.67">
+            <p class="french-block">La lettre de Lawton a été envoyée par une société appelée Equiiniti, qui administre le régime de retraite au nom du ministère de la Défense.</p>
+            <span class="english-block">Lawton's letter was sent from a company called Equiniti, which administers the pension scheme on behalf of the MoD.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.67" data-end="105.38">
+            <p class="french-block">Il a déclaré qu'une erreur dans son système signifiait qu'il avait été trop payé pendant des années.</p>
+            <span class="english-block">It said an error in its system meant he had been overpaid for years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.38" data-end="115.13">
+            <p class="french-block">Lawton est l'un des nombreux vétérans de tout le Royaume-Uni qui ont contacté BBC Your Voice après avoir reçu des lettres à l'improviste demandant de l'argent qu'ils ne savaient pas devoir.</p>
+            <span class="english-block">Lawton is one of many veterans from across the UK who contacted BBC Your Voice after receiving letters out of the blue seeking money they didn't know they owed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.13" data-end="126.96">
+            <p class="french-block">La Forces Pension Society, une organisation à but non lucratif qui vient en aide aux retraités militaires, a déclaré être au courant de nombreux cas de trop-payés s'élevant à des dizaines de milliers de livres sterling.</p>
+            <span class="english-block">The Forces Pension Society, a not-for-profit which supports military retirees, said it is aware of many overpayment cases running into the tens of thousands of pounds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.96" data-end="131.81">
+            <p class="french-block">Un petit nombre d’anciens combattants se sont fait dire qu’ils devaient des sommes à six chiffres.</p>
+            <span class="english-block">A small number of veterans have been told they owe six-figure sums.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.81" data-end="148.99">
+            <p class="french-block">Le ministère de la Défense a confirmé des erreurs liées aux ajustements de l'assurance nationale, aux ordonnances de partage des pensions (PSO), aux paiements de départ anticipé (EDP) et à l'âge de la retraite de l'État (SPA). Il affirme enquêter sur les problèmes au cas par cas.</p>
+            <span class="english-block">The MoD confirmed errors relating to National Insurance adjustments, Pension Sharing Orders (PSO), Early Departure Payments (EDP) and State Pension Age (SPA). It says it is investigating issues on a case-by-case basis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.99" data-end="167.93">
+            <p class="french-block">Il ajoute que sur les 335 anciens combattants touchés par des erreurs de l'Assurance nationale, un tiers ont remboursé intégralement leur dette et 52 ont mis en place un plan de remboursement convenu. Jusqu’à présent, sur les 5,1 millions de livres sterling, 304 000 livres sterling ont été remboursées.</p>
+            <span class="english-block">It added that of the 335 veterans affected by National Insurance errors, a third have paid off their debt in full and 52 have an agreed repayment plan in place. So far, of the £5.1m, £304,000 has been paid back.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.93" data-end="177.43">
+            <p class="french-block">Les anciens combattants ont déclaré qu’ils souhaitaient plus de clarté sur la dette et sur la manière dont elle a été calculée. Certains ont demandé son effacement.</p>
+            <span class="english-block">Veterans said they want more clarity about the debt and how it has been calculated. Some have called for it to be wiped.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.43" data-end="182.47">
+            <p class="french-block">Le gouvernement a déclaré qu'il avait la responsabilité de récupérer les fonds.</p>
+            <span class="english-block">The government said it has a responsibility to recover the funds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="182.47" data-end="196.63">
+            <p class="french-block">Un porte-parole du ministère de la Défense a déclaré à la BBC qu'il reconnaissait que des erreurs dans le paiement des retraites "peuvent créer de l'incertitude", ajoutant qu'il contactait les anciens combattants et "apportait un soutien à toute personne qui en avait besoin".</p>
+            <span class="english-block">An MoD spokesperson told the BBC that it recognises that errors to pension payments "may cause uncertainty", adding that it is contacting veterans and "providing support for anyone who requires it".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.63" data-end="208.66">
+            <p class="french-block">"Lorsque les paiements ont été effectués par erreur, nous avons la responsabilité de récupérer les fonds des contribuables et nous chercherons toujours à le faire de manière sensible et proportionnée", a ajouté le porte-parole.</p>
+            <span class="english-block">"Where payments have been made in genuine error, we have a responsibility to recover taxpayer funds and will always seek to do so in a sensitive and proportionate way," the spokesperson added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.66" data-end="223.58">
+            <p class="french-block">Cependant, l'ancienne secrétaire conservatrice à la Défense, Penny Mordaunt, a déclaré : « Même si les organismes publics ont le devoir de récupérer ces coûts s'il est financièrement judicieux de le faire, aucune évaluation de ce type n'a été réalisée dans ces cas.</p>
+            <span class="english-block">However, former Conservative defence secretary Penny Mordaunt, said: "While public bodies have a duty to recoup such costs if it makes financial sense to do so, no such assessment has been made in these cases.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.58" data-end="229.61">
+            <p class="french-block">"Dans de nombreux cas, il existe des arguments convaincants en faveur de l'effacement de la dette".</p>
+            <span class="english-block">"There is a compelling case in many instances for the debt to be wiped".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.61" data-end="236.45">
+            <p class="french-block">Andrew Thorburn, vétéran de la Royal Navy, a appris qu'il devait plus de 26 000 £</p>
+            <span class="english-block">Royal Navy veteran Andrew Thorburn has been told he owes more than £26,000</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="236.45" data-end="248.06">
+            <p class="french-block">Lawton ne veut pas que le contribuable paie la note, il est heureux de voir sa pension réduite au niveau qu'elle aurait dû être, mais pense que l'entreprise privée devrait rembourser la facture pour ce qu'il considère comme une erreur.</p>
+            <span class="english-block">Lawton does not want the taxpayer to pick up the tab, he is happy to have his pension reduced to the level it should have been but thinks the private company should refund the bill for what he sees as their mistake.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.06" data-end="253.15">
+            <p class="french-block">"Je pense qu'ils devraient en assumer la responsabilité parce que ce n'est pas de ma faute."</p>
+            <span class="english-block">"I think they should take responsibility for it because it's not my fault."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.15" data-end="256.63">
+            <p class="french-block">À Truro, Andrew Thorburn est du même avis.</p>
+            <span class="english-block">In Truro, Andrew Thorburn agrees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.63" data-end="269.52">
+            <p class="french-block">Il a servi 36 ans dans la Royal Navy et on lui a dit qu'il devait 26 438 £. En conséquence, sa pension a été réduite d'environ 650 £ par mois.</p>
+            <span class="english-block">He served 36 years in the Royal Navy and has been told he owes £26,438. As a result, his pension has been cut by around £650 per month.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.52" data-end="279.62">
+            <p class="french-block">"Je pense qu'il est méprisable qu'ils disent maintenant 'oui, nous avons commis cette erreur, mais vous allez en payer le prix'. Comment puis-je pardonner cela au gouvernement ?"</p>
+            <span class="english-block">"I think it's despicable that they are now saying 'yes, we've made this mistake however you're going to pay for it'. How can I forgive the government for that?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.62" data-end="285.05">
+            <p class="french-block">Il a déclaré : « Le choc financier est absolument dévastateur et il continue. »</p>
+            <span class="english-block">He said: "The financial shock is absolutely devastating and it's still ongoing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.05" data-end="291.62">
+            <p class="french-block">Barrie Goodwin a déclaré que l'impact du remboursement de 32 000 £ serait très difficile</p>
+            <span class="english-block">Barrie Goodwin said the impact of repaying £32,000 would be very difficult</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.62" data-end="300.22">
+            <p class="french-block">Le vétéran de la RAF, Barrie Goodwin, a contacté Equiiniti il ​​y a six ans après avoir reçu un paiement plus élevé que ce à quoi il s'attendait.</p>
+            <span class="english-block">RAF veteran Barrie Goodwin contacted Equiniti six years ago after receiving a higher payment than he was expecting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.22" data-end="312.77">
+            <p class="french-block">On lui a dit que ce changement était dû au fait qu'il avait atteint l'âge légal de la retraite. Il a depuis été informé qu'il avait reçu un trop-payé de 32 188 £ et qu'il devait le restituer.</p>
+            <span class="english-block">He was told the change was because he had reached state pension age. He's since been notified he was overpaid £32,188 and must hand it back.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.77" data-end="327.1">
+            <p class="french-block">"J'ai vérifié, on m'a dit que tout était correct et que je dois maintenant rembourser", a-t-il déclaré. "Je suis déjà en train de réduire mes dépenses de luxe. J'aidais un de mes petits-enfants à la garderie - cela a dû changer.</p>
+            <span class="english-block">"I checked, was told it was all correct and now have to repay it," he said. "I'm already cutting back on luxuries. I was helping one of my grandchildren through nursey - that's had to change.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.1" data-end="330.91">
+            <p class="french-block">"Si la dette n'est pas annulée, j'aurai vraiment du mal."</p>
+            <span class="english-block">"If the debt isn't waived, I will really struggle."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.91" data-end="338.86">
+            <p class="french-block">Equiiniti a déclaré à la BBC qu'elle ne pouvait pas discuter de cas individuels, mais a reconnu l'inquiétude suscitée par les retraités.</p>
+            <span class="english-block">Equiniti told the BBC it could not discuss individual cases but recognised the concern caused to pensioners.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="338.86" data-end="352.42">
+            <p class="french-block">Un porte-parole a déclaré qu'il n'était pas responsable de la décision de récupérer l'argent des contribuables, mais que "l'administration d'un projet de cette envergure implique plusieurs organisations, systèmes et processus sur de nombreuses années".</p>
+            <span class="english-block">A spokesperson said it said it was not responsible for the decision to recoup taxpayers' money but "administration of a scheme of this scale involves multiple organisations, systems and processes over many years".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.42" data-end="362.26">
+            <p class="french-block">L'entreprise technologique Sopra Steria est en charge du régime de retraite des anciens combattants depuis 2023 et en a sous-traité l'administration à Equiiniti.</p>
+            <span class="english-block">Technology company Sopra Steria has been in charge of the veterans' pension scheme since 2023, and had subcontracted the administration to Equiniti.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.26" data-end="373.32">
+            <p class="french-block">Un porte-parole de Sopra Steria a déclaré à la BBC que "les erreurs ayant conduit à des paiements de retraite incorrects se sont produites plus d'une décennie avant que Sopra Steria ne reprenne le contrat".</p>
+            <span class="english-block">A Sopra Steria spokesperson told the BBC that "errors that led to incorrect pension payments originated over a decade before Sopra Steria took over the contract".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="373.32" data-end="383.23">
+            <p class="french-block">La société a déclaré qu'elle "travaillait en étroite collaboration avec le ministère de la Défense et Equiiniti pour garantir que des garanties solides soient en place à long terme".</p>
+            <span class="english-block">The company said it is "working closely with the MoD and Equiniti to ensure robust safeguards are in place for the long term".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="383.23" data-end="397.18">
+            <p class="french-block">La Société de retraite des Forces conseille à toute personne recevant une lettre de trop-payé de vérifier son authenticité, de demander plus d'informations à Equiiniti et d'utiliser son droit de porter plainte via la procédure de règlement des différends internes.</p>
+            <span class="english-block">The Forces Pension Society is advising anyone who receives an overpayment letter  to verify its authenticity, request more information from Equiniti and using the right to complain through the Internal Disputes Procedure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="397.18" data-end="401.66">
+            <p class="french-block">Reportages supplémentaires : Adam Clarkson et Elaine Doran</p>
+            <span class="english-block">Additional reporting: Adam Clarkson and Elaine Doran</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="401.66" data-end="408.14">
+            <p class="french-block">Êtes-vous concerné par les problèmes abordés dans cette histoire ?  Partagez vos expériences.</p>
+            <span class="english-block">Are you affected by issues covered in this story?  Share your experiences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="408.14" data-end="411.55">
+            <p class="french-block">Les familles Gurkha se battent pour leurs retraites</p>
+            <span class="english-block">The Gurkha families fighting for their pensions</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_13.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
