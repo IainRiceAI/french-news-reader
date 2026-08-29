@@ -214,7 +214,7 @@
 
 **🇬🇧 EN:** In most cases people recover without further help but older people, babies and people with weakened immune systems are at greatest risk of severe disease.
 
-**🇫🇷 FR:** *Dans la plupart des cas, les gens guérissent sans aide supplémentaire, mais les personnes âgées, les bébés et les personnes dont le système immunitaire est affaibli courent le plus grand risque de développer une maladie grave.*
+**🇫🇷 FR:** *Dans la plupart des cas, les gens se rétablissent sans aide supplémentaire, mais les personnes âgées, les bébés et les personnes dont le système immunitaire est affaibli courent le plus grand risque de développer une maladie grave.*
 
 ---
 

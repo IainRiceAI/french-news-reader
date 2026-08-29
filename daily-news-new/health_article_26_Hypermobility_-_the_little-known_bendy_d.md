@@ -12,9 +12,9 @@
 
 ### Section 1
 
-**🇬🇧 EN:** Ella Kipling was diagnosed with HSD in February, at 24
+**🇬🇧 EN:** Ella, who was diagnosed at 24, explains the symptoms of HSD
 
-**🇫🇷 FR:** *Ella Kipling a reçu un diagnostic de HSD en février, à 24 ans.*
+**🇫🇷 FR:** *[Error Translate] Ella, who was diagnosed at 24, explains the symptoms of HSD*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** "I saw myself in everything they were saying," she tells me. "So I armed myself with all the information and went to my doctor."
 
-**🇫🇷 FR:** *"Je me voyais dans tout ce qu'ils disaient", me dit-elle. "Alors je me suis armé de toutes les informations et je suis allé chez mon médecin."*
+**🇫🇷 FR:** *[Error Translate] "I saw myself in everything they were saying," she tells me. "So I armed myself with all the information and went to my doctor."*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** Due to lax collagen between connective tissues, muscles have to work harder to keep joints stable, leading to fatigue and pain, as well as clumsiness.
 
-**🇫🇷 FR:** *En raison du relâchement du collagène entre les tissus conjonctifs, les muscles doivent travailler plus fort pour maintenir la stabilité des articulations, ce qui entraîne de la fatigue et des douleurs, ainsi que de la maladresse.*
+**🇫🇷 FR:** *[Error Translate] Due to lax collagen between connective tissues, muscles have to work harder to keep joints stable, leading to fatigue and pain, as well as clumsiness.*
 
 ---
 
@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** She adds that HSD and hEDS seem to affect women more. "We know that women's health is not necessarily as well-researched as problems affecting men."
 
-**🇫🇷 FR:** *Elle ajoute que HSD et hEDS semblent affecter davantage les femmes. "Nous savons que la santé des femmes n'est pas nécessairement aussi bien étudiée que les problèmes qui touchent les hommes."*
+**🇫🇷 FR:** *[Error Translate] She adds that HSD and hEDS seem to affect women more. "We know that women's health is not necessarily as well-researched as problems affecting men."*
 
 ---
 
@@ -174,7 +174,7 @@
 
 **🇬🇧 EN:** She says "time and time again" she sees people in her clinic who cannot work because of "severe brain fog" linked to hypermobility.
 
-**🇫🇷 FR:** *Elle dit « à maintes reprises » qu'elle voit dans sa clinique des personnes qui ne peuvent pas travailler à cause d'un « sévère brouillard cérébral » lié à l'hypermobilité.*
+**🇫🇷 FR:** *[Error Translate] She says "time and time again" she sees people in her clinic who cannot work because of "severe brain fog" linked to hypermobility.*
 
 ---
 
@@ -182,7 +182,7 @@
 
 **🇬🇧 EN:** Vivienne is among those feeling unsupported. "I need to be able to help myself and I don't know where to go. I'm finding out about this condition on social media."
 
-**🇫🇷 FR:** *Vivienne fait partie de ceux qui ne se sentent pas soutenus. "J'ai besoin de pouvoir m'aider moi-même et je ne sais pas où aller. Je découvre cette maladie sur les réseaux sociaux."*
+**🇫🇷 FR:** *[Error Translate] Vivienne is among those feeling unsupported. "I need to be able to help myself and I don't know where to go. I'm finding out about this condition on social media."*
 
 ---
 
@@ -334,7 +334,7 @@
 
 **🇬🇧 EN:** However, she feels the tendency to tell sufferers to "just do a bit of physio" and get on with life is unhelpful. Ultimately, she says more attention needs to be given to HSD and hEDS.
 
-**🇫🇷 FR:** *Cependant, elle estime que la tendance à dire aux patients de « faire juste un peu de physiothérapie » et de continuer leur vie n'est d'aucune utilité. En fin de compte, elle affirme qu’une plus grande attention doit être accordée à l’HSD et à l’hEDS.*
+**🇫🇷 FR:** *Cependant, elle estime que la tendance à dire aux patients de « faire juste un peu de physiothérapie » et de continuer leur vie est inutile. En fin de compte, elle affirme qu’une plus grande attention doit être accordée à l’HSD et à l’hEDS.*
 
 ---
 
@@ -343,6 +343,14 @@
 **🇬🇧 EN:** "It takes people working together and sharing ideas, and for the government to recognise this, to tackle this."
 
 **🇫🇷 FR:** *"Il faut que les gens travaillent ensemble et partagent des idées, et que le gouvernement reconnaisse cela et s'attaque à ce problème."*
+
+---
+
+### Section 43
+
+**🇬🇧 EN:** Are you affected by hypermobility? Share Your experience.
+
+**🇫🇷 FR:** *Êtes-vous concerné par l’hypermobilité ? Partagez votre expérience.*
 
 ---
 

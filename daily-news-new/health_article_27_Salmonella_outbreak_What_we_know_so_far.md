@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Evidence also suggests people caught the bug while eating out, rather than at home - with catering and food services such as restaurants, cafes or take-aways likely to play a part.
 
-**🇫🇷 FR:** *Les preuves suggèrent également que les gens ont attrapé le virus en mangeant au restaurant plutôt qu'à la maison - les services de restauration tels que les restaurants, les cafés ou les plats à emporter sont susceptibles de jouer un rôle.*
+**🇫🇷 FR:** *Les preuves suggèrent également que les gens ont attrapé le virus en mangeant au restaurant plutôt qu'à la maison – les services de restauration tels que les restaurants, les cafés ou les plats à emporter sont susceptibles de jouer un rôle.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** In most cases people recover without further help but older people, babies and people with weakened immune systems are at greatest risk of severe disease.
 
-**🇫🇷 FR:** *Dans la plupart des cas, les gens guérissent sans aide supplémentaire, mais les personnes âgées, les bébés et les personnes dont le système immunitaire est affaibli courent le plus grand risque de développer une maladie grave.*
+**🇫🇷 FR:** *Dans la plupart des cas, les gens se rétablissent sans aide supplémentaire, mais les personnes âgées, les bébés et les personnes dont le système immunitaire est affaibli courent le plus grand risque de développer une maladie grave.*
 
 ---
 

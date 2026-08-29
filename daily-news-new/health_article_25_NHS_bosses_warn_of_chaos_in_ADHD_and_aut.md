@@ -20,9 +20,9 @@
 
 ### Section 2
 
-**🇬🇧 EN:** The NHS Alliance, which represents health managers, says the current system represents a "bad deal" for patients and taxpayers alike.
+**🇬🇧 EN:** The NHS Alliance, which represents health managers, says the current system in England represents a "bad deal" for patients and taxpayers alike.
 
-**🇫🇷 FR:** *La NHS Alliance, qui représente les gestionnaires de la santé, affirme que le système actuel représente une « mauvaise affaire » tant pour les patients que pour les contribuables.*
+**🇫🇷 FR:** *La NHS Alliance, qui représente les gestionnaires de la santé, affirme que le système actuel en Angleterre représente une « mauvaise affaire » tant pour les patients que pour les contribuables.*
 
 ---
 
@@ -44,21 +44,29 @@
 
 ### Section 5
 
-**🇬🇧 EN:** The government said an independent review into services  would be published soon and it would act on the findings of that, promising a “new national approach” for autism, ADHD and mental health.
+**🇬🇧 EN:** The government said an independent review into services and what is behind the rising demand, including whether there is over-diagnosis of these conditions, would be published soon.
 
-**🇫🇷 FR:** *Le gouvernement a déclaré qu’une étude indépendante sur les services serait bientôt publiée et qu’il agirait en fonction de ses conclusions, promettant une « nouvelle approche nationale » pour l’autisme, le TDAH et la santé mentale.*
+**🇫🇷 FR:** *Le gouvernement a déclaré qu'une étude indépendante sur les services et sur ce qui se cache derrière la demande croissante, y compris s'il y a un surdiagnostic de ces conditions, serait bientôt publiée.*
 
 ---
 
 ### Section 6
 
-**🇬🇧 EN:** Ahead of that, the NHS Alliance has been gathering information from integrated care boards, which hold the budgets for local services, about the current state of care.
+**🇬🇧 EN:** It said it would act on the findings of that, promising a “new national approach” for autism, ADHD and mental health.
 
-**🇫🇷 FR:** *Avant cela, la NHS Alliance avait rassemblé des informations auprès des conseils de soins intégrés, qui détiennent les budgets des services locaux, sur l'état actuel des soins.*
+**🇫🇷 FR:** *Il a déclaré qu’il donnerait suite aux conclusions de cette étude, promettant une « nouvelle approche nationale » pour l’autisme, le TDAH et la santé mentale.*
 
 ---
 
 ### Section 7
+
+**🇬🇧 EN:** Ahead of that, the NHS Alliance has been gathering information from integrated care boards, which hold the budgets for local services, about the current state of care.
+
+**🇫🇷 FR:** *[Error Translate] Ahead of that, the NHS Alliance has been gathering information from integrated care boards, which hold the budgets for local services, about the current state of care.*
+
+---
+
+### Section 8
 
 **🇬🇧 EN:** A split in the spectrum? The ongoing battle to define autism
 
@@ -66,23 +74,23 @@
 
 ---
 
-### Section 8
+### Section 9
 
 **🇬🇧 EN:** Under the right to choose policy, patients can decide to opt for care from both NHS and non-NHS autism and ADHD services.
 
-**🇫🇷 FR:** *Dans le cadre de la politique du droit de choisir, les patients peuvent décider d’opter pour des soins provenant à la fois des services d’autisme et de TDAH du NHS et des non-NHS.*
-
----
-
-### Section 9
-
-**🇬🇧 EN:** The initiative is aimed at helping patients bypass the long waiting lists that have developed in recent years.
-
-**🇫🇷 FR:** *L'initiative vise à aider les patients à éviter les longues listes d'attente qui se sont développées ces dernières années.*
+**🇫🇷 FR:** *[Error Translate] Under the right to choose policy, patients can decide to opt for care from both NHS and non-NHS autism and ADHD services.*
 
 ---
 
 ### Section 10
+
+**🇬🇧 EN:** The initiative is aimed at helping patients bypass the long waiting lists that have developed in recent years.
+
+**🇫🇷 FR:** *[Error Translate] The initiative is aimed at helping patients bypass the long waiting lists that have developed in recent years.*
+
+---
+
+### Section 11
 
 **🇬🇧 EN:** The NHS Alliance said the policy has led to an influx of new providers, helping to reduce some of the longest waits for adults and children, but at a cost.
 
@@ -90,7 +98,7 @@
 
 ---
 
-### Section 11
+### Section 12
 
 **🇬🇧 EN:** It found a number of boards were reporting sharp rises in spending, describing it as "out of control".
 
@@ -98,23 +106,23 @@
 
 ---
 
-### Section 12
-
-**🇬🇧 EN:** One board saw costs rising 10-fold in a year, to £1.5 million a month.
-
-**🇫🇷 FR:** *Un conseil d'administration a vu ses coûts multiplier par 10 en un an, pour atteindre 1,5 million de livres sterling par mois.*
-
----
-
 ### Section 13
 
-**🇬🇧 EN:** Another saw annual spend jump from £4 million a year to £30 million over the course of two years.
+**🇬🇧 EN:** One board saw costs rising 10-fold in a year, to £1.5m a month.
 
-**🇫🇷 FR:** *Un autre a vu ses dépenses annuelles passer de 4 millions de livres sterling par an à 30 millions de livres sterling sur une période de deux ans.*
+**🇫🇷 FR:** *[Error Translate] One board saw costs rising 10-fold in a year, to £1.5m a month.*
 
 ---
 
 ### Section 14
+
+**🇬🇧 EN:** Another saw annual spend jump from £4m a year to £30m over the course of two years, while in Cheshire and Merseyside spending on adult ADHD has gone from £11m in 2023-24 to a projected £51 million this year.
+
+**🇫🇷 FR:** *Un autre a vu les dépenses annuelles passer de 4 millions de livres sterling par an à 30 millions de livres sterling sur une période de deux ans, tandis que dans le Cheshire et le Merseyside, les dépenses consacrées au TDAH chez les adultes sont passées de 11 millions de livres sterling en 2023-24 à un montant prévu de 51 millions de livres sterling cette année.*
+
+---
+
+### Section 15
 
 **🇬🇧 EN:** It said a particular problem was the huge variation in what was being charged by non-NHS providers.
 
@@ -122,23 +130,23 @@
 
 ---
 
-### Section 15
+### Section 16
 
 **🇬🇧 EN:** Unlike for routine operations, like hip and knee replacements, where there is a set tariff for different treatments regardless of whether the NHS or private sector carry them out, for autism and ADHD there are only guide prices that do not have to be kept to.
 
-**🇫🇷 FR:** *Contrairement aux opérations de routine, comme les arthroplasties de la hanche et du genou, pour lesquelles il existe un tarif fixe pour différents traitements, qu'ils soient effectués par le NHS ou le secteur privé, pour l'autisme et le TDAH, il n'existe que des prix indicatifs qu'il n'est pas nécessaire de respecter.*
-
----
-
-### Section 16
-
-**🇬🇧 EN:** Local health bosses have also reported a rapid increase in providers. One board reported working with 48 providers – four times more than in two years previously.
-
-**🇫🇷 FR:** *Les responsables locaux de la santé ont également signalé une augmentation rapide du nombre de prestataires. Un conseil scolaire a déclaré travailler avec 48 prestataires, soit quatre fois plus qu'au cours des deux années précédentes.*
+**🇫🇷 FR:** *[Error Translate] Unlike for routine operations, like hip and knee replacements, where there is a set tariff for different treatments regardless of whether the NHS or private sector carry them out, for autism and ADHD there are only guide prices that do not have to be kept to.*
 
 ---
 
 ### Section 17
+
+**🇬🇧 EN:** Local health bosses have also reported a rapid increase in providers. One board reported working with 48 providers – four times more than in two years previously.
+
+**🇫🇷 FR:** *[Error Translate] Local health bosses have also reported a rapid increase in providers. One board reported working with 48 providers – four times more than in two years previously.*
+
+---
+
+### Section 18
 
 **🇬🇧 EN:** This expansion was causing problems with the ability of boards to check the quality and safety of the care and support being provided.
 
@@ -146,47 +154,63 @@
 
 ---
 
-### Section 18
+### Section 19
 
 **🇬🇧 EN:** Providers who carry out assessments only do not have to be registered with the Care Quality Commission, the regulatory body for health and care.
 
-**🇫🇷 FR:** *Les prestataires qui effectuent uniquement des évaluations n'ont pas besoin d'être enregistrés auprès de la Care Quality Commission, l'organisme de réglementation de la santé et des soins.*
-
----
-
-### Section 19
-
-**🇬🇧 EN:** Rebecca Gray of the NHS Alliance said managers were "caught between a rock and a hard place".
-
-**🇫🇷 FR:** *Rebecca Gray, de la NHS Alliance, a déclaré que les managers étaient « pris entre le marteau et l'enclume ».*
+**🇫🇷 FR:** *[Error Translate] Providers who carry out assessments only do not have to be registered with the Care Quality Commission, the regulatory body for health and care.*
 
 ---
 
 ### Section 20
 
-**🇬🇧 EN:** "They understand the anguish and frustration caused by long delays in the system as people wait for assessments, treatment and support.
+**🇬🇧 EN:** Rebecca Gray of the NHS Alliance said managers were "caught between a rock and a hard place".
 
-**🇫🇷 FR:** *« Ils comprennent l'angoisse et la frustration causées par les longs délais dans le système alors que les gens attendent des évaluations, un traitement et un soutien.*
+**🇫🇷 FR:** *[Error Translate] Rebecca Gray of the NHS Alliance said managers were "caught between a rock and a hard place".*
 
 ---
 
 ### Section 21
 
-**🇬🇧 EN:** "But in working to meeting demand they face soaring costs that are running out of control."
+**🇬🇧 EN:** "They understand the anguish and frustration caused by long delays in the system as people wait for assessments, treatment and support.
 
-**🇫🇷 FR:** *"Mais en s'efforçant de répondre à la demande, ils sont confrontés à des coûts qui montent en flèche et deviennent incontrôlables."*
+**🇫🇷 FR:** *[Error Translate] "They understand the anguish and frustration caused by long delays in the system as people wait for assessments, treatment and support.*
 
 ---
 
 ### Section 22
 
-**🇬🇧 EN:** She said the situation was a "bad deal for patients and taxpayers" and there was a risk the whole system would fall into "chaos".
+**🇬🇧 EN:** "But in working to meeting demand they face soaring costs that are running out of control."
 
-**🇫🇷 FR:** *Elle a déclaré que la situation était « une mauvaise affaire pour les patients et les contribuables » et qu'il y avait un risque que l'ensemble du système sombre dans le « chaos ».*
+**🇫🇷 FR:** *[Error Translate] "But in working to meeting demand they face soaring costs that are running out of control."*
 
 ---
 
 ### Section 23
+
+**🇬🇧 EN:** She said the situation was a "bad deal for patients and taxpayers" and there was a risk the whole system would fall into "chaos".
+
+**🇫🇷 FR:** *[Error Translate] She said the situation was a "bad deal for patients and taxpayers" and there was a risk the whole system would fall into "chaos".*
+
+---
+
+### Section 24
+
+**🇬🇧 EN:** But a spokeswoman for the Independent Healthcare Providers Network said private providers were helping the NHS meet the growing demand by bringing "significant capacity and innovation".
+
+**🇫🇷 FR:** *[Error Translate] But a spokeswoman for the Independent Healthcare Providers Network said private providers were helping the NHS meet the growing demand by bringing "significant capacity and innovation".*
+
+---
+
+### Section 25
+
+**🇬🇧 EN:** However, she agreed there needed to be better co-ordination, including a national tariff to ensure consistent prices were paid by the NHS.
+
+**🇫🇷 FR:** *[Error Translate] However, she agreed there needed to be better co-ordination, including a national tariff to ensure consistent prices were paid by the NHS.*
+
+---
+
+### Section 26
 
 **🇬🇧 EN:** Mel Merritt, of the National Autistic Society, said it was clear the system was in crisis.
 
@@ -194,7 +218,7 @@
 
 ---
 
-### Section 24
+### Section 27
 
 **🇬🇧 EN:** "Spending is rising on short-term solutions due to years of a lack of long-term investment in improving services."
 
@@ -202,11 +226,19 @@
 
 ---
 
-### Section 25
+### Section 28
 
 **🇬🇧 EN:** And she added despite the sums being spent people were still facing "unacceptable" delays.
 
-**🇫🇷 FR:** *Et elle a ajouté que malgré les sommes dépensées, les gens étaient toujours confrontés à des retards « inacceptables ».*
+**🇫🇷 FR:** *[Error Translate] And she added despite the sums being spent people were still facing "unacceptable" delays.*
+
+---
+
+### Section 29
+
+**🇬🇧 EN:** Are you on an NHS waiting list for ADHD and autism assessment?
+
+**🇫🇷 FR:** *[Error Translate] Are you on an NHS waiting list for ADHD and autism assessment?*
 
 ---
 

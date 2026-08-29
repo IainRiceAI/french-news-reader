@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** UN human rights head Volker Türk
 
-**🇫🇷 FR:** *Volker Türk, responsable des droits de l'homme à l'ONU*
+**🇫🇷 FR:** *[Error Translate] UN human rights head Volker Türk*
 
 ---
 
@@ -70,7 +70,7 @@
 
 **🇬🇧 EN:** It included steps such as protecting data privacy and focusing on safer platform design, including better methods of verifying a user's age and not exposing such users to addictive design features.
 
-**🇫🇷 FR:** *Il comprenait des étapes telles que la protection de la confidentialité des données et la concentration sur une conception de plate-forme plus sûre, y compris de meilleures méthodes pour vérifier l'âge d'un utilisateur et ne pas exposer ces utilisateurs à des fonctionnalités de conception addictives.*
+**🇫🇷 FR:** *[Error Translate] It included steps such as protecting data privacy and focusing on safer platform design, including better methods of verifying a user's age and not exposing such users to addictive design features.*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** In agreeing on Wednesday to make various changes to end the states' lawsuit, Meta said they would only be truly effective "if all our peers join us."
 
-**🇫🇷 FR:** *En acceptant mercredi d'apporter divers changements pour mettre fin aux poursuites judiciaires des États, Meta a déclaré que ces changements ne seraient vraiment efficaces que "si tous nos pairs nous rejoignent".*
+**🇫🇷 FR:** *[Error Translate] In agreeing on Wednesday to make various changes to end the states' lawsuit, Meta said they would only be truly effective "if all our peers join us."*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** But he warned he was "willing to take additional steps" if they did not voluntarily make changes along the lines that Meta will be making.
 
-**🇫🇷 FR:** *Mais il a prévenu qu'il était "prêt à prendre des mesures supplémentaires" s'ils n'apportaient pas volontairement des changements dans le sens de ceux que Meta apporterait.*
+**🇫🇷 FR:** *[Error Translate] But he warned he was "willing to take additional steps" if they did not voluntarily make changes along the lines that Meta will be making.*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** One-hour daily time limit
 
-**🇫🇷 FR:** *[Error Translate] One-hour daily time limit*
+**🇫🇷 FR:** *Délai quotidien d’une heure*
 
 ---
 
@@ -166,7 +166,7 @@
 
 **🇬🇧 EN:** Age assurance measures
 
-**🇫🇷 FR:** *Mesures de garantie de l'âge*
+**🇫🇷 FR:** *[Error Translate] Age assurance measures*
 
 ---
 
@@ -190,7 +190,7 @@
 
 **🇬🇧 EN:** Meta to pay up to $18bn to settle claims its platforms harm children
 
-**🇫🇷 FR:** *Meta va payer jusqu'à 18 milliards de dollars pour régler les allégations selon lesquelles ses plateformes nuisent aux enfants*
+**🇫🇷 FR:** *[Error Translate] Meta to pay up to $18bn to settle claims its platforms harm children*
 
 ---
 
