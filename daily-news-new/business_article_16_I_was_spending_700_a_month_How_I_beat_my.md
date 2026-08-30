@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Ella Hewitt, from Liverpool, says her shopping addiction got so bad in 2021 that she was spending up to £700 a month on fast fashion she couldn't afford and sometimes never even wore.
 
-**🇫🇷 FR:** *Ella Hewitt, de Liverpool, dit que sa dépendance au shopping est devenue si grave en 2021 qu'elle dépensait jusqu'à 700 £ par mois pour une mode rapide qu'elle ne pouvait pas se permettre et qu'elle ne portait parfois même jamais.*
+**🇫🇷 FR:** *[Error Translate] Ella Hewitt, from Liverpool, says her shopping addiction got so bad in 2021 that she was spending up to £700 a month on fast fashion she couldn't afford and sometimes never even wore.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** "Horrified" by how much she was buying, she began using diversionary tactics to control her spending.
 
-**🇫🇷 FR:** *« Horrifiée » par le montant de ses achats, elle a commencé à utiliser des tactiques de diversion pour contrôler ses dépenses.*
+**🇫🇷 FR:** *[Error Translate] "Horrified" by how much she was buying, she began using diversionary tactics to control her spending.*
 
 ---
 
@@ -142,7 +142,7 @@
 
 **🇬🇧 EN:** "I'm not perfect. There are times when I will buy things because I want it. But I am way more in control."
 
-**🇫🇷 FR:** *"Je ne suis pas parfait. Il y a des moments où j'achète des choses parce que je le veux. Mais je suis bien plus en contrôle."*
+**🇫🇷 FR:** *[Error Translate] "I'm not perfect. There are times when I will buy things because I want it. But I am way more in control."*
 
 ---
 

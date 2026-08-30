@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Our parents were crossing the border an hour before the flood hit'</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>'Our parents were crossing the border an hour before the flood hit'</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 28 Aug 2026 17:59:31 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cn5dzldq1pzo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Authorities say nearly 2,000 people are missing, including more than 100 Americans and Canadians, as families await word on loved ones after the Nepal flash floods.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.51" data-end="13.82">
+            <p class="french-block">« Nous voulons juste qu'ils rentrent chez eux » : les filles d'un couple portées disparues après un pèlerinage au Tibet</p>
+            <span class="english-block">'We just want them home': Daughters of couple missing after Tibet pilgrimage</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.82" data-end="24.5">
+            <p class="french-block">Des centaines de ressortissants étrangers attendent désespérément des nouvelles de leurs proches qui auraient été victimes des inondations meurtrières et des coulées de boue le long de la frontière entre le Népal et le Tibet.</p>
+            <span class="english-block">Hundreds of foreign nationals are desperately waiting to hear from loved ones thought to be caught in the deadly flash flood and mudslide along the Nepal-Tibet border.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.5" data-end="37.2">
+            <p class="french-block">[Error Translate] Sisters Shreya and Ashna Ahuja are among those anxiously waiting for some news of their parents, Deepak and Madhu Ahuja, who had travelled from Texas to Mount Kailash on a group pilgrimage.</p>
+            <span class="english-block">Sisters Shreya and Ashna Ahuja are among those anxiously waiting for some news of their parents, Deepak and Madhu Ahuja, who had travelled from Texas to Mount Kailash on a group pilgrimage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.2" data-end="51.02">
+            <p class="french-block">"Cela ne fait qu'un jour, mais cela semble bien plus long", ont déclaré les sœurs à la BBC. "Nous les aimons beaucoup et voulons qu'ils reviennent à la maison." L’un des frères et sœurs a parlé à leurs parents juste avant les inondations.</p>
+            <span class="english-block">"It's only been one day, but it has felt like much longer," the sisters tell the BBC. "We just love them a lot and want them to come home." One of the siblings spoke to their parents just before the floods struck.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.02" data-end="65.88">
+            <p class="french-block">[Error Translate] Nearly 2,000 people are missing, including tourists from the US, Australia, Canada, India, and the UK. Nepali authorities say more than 575 people have died.</p>
+            <span class="english-block">Nearly 2,000 people are missing, including tourists from the US, Australia, Canada, India, and the UK. Nepali authorities say more than 575 people have died.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.88" data-end="72.72">
+            <p class="french-block">Suivez les mises à jour en direct : craintes d’une deuxième inondation alors que la recherche des survivants se poursuit</p>
+            <span class="english-block">Follow live updates: Fears of second flood as search for survivors continues</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.72" data-end="84.96">
+            <p class="french-block">[Error Translate] About 90 US citizens may have been impacted by the floods, the State Department said on Thursday, confirming that five Americans in Nepal have made their way to safety.</p>
+            <span class="english-block">About 90 US citizens may have been impacted by the floods, the State Department said on Thursday, confirming that five Americans in Nepal have made their way to safety.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="84.96" data-end="95.98">
+            <p class="french-block">Les sœurs Ahuja ont contacté le Département d'État et les ambassades américaines à Delhi, au Népal et en Chine, mais elles affirment ne disposer d'aucune information concrète sur le sort de leurs parents.</p>
+            <span class="english-block">The Ahuja sisters have contacted the State Department and US embassies in Delhi, Nepal and China, but they say they have no concrete information on the whereabouts of their parents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.98" data-end="102.89">
+            <p class="french-block">La région est un lieu de pèlerinage pour les hindous et les bouddhistes et est visitée par des dizaines de milliers de pèlerins chaque année.</p>
+            <span class="english-block">The region is a pilgrimage site for Hindus and Buddhists, and visited by tens of thousands of pilgrims each year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.89" data-end="117.58">
+            <p class="french-block">Les parents de Radhika Sharma, Ramesh Sharma, 65 ans et Neelam Sharma, 64 ans, deux citoyens américains vivant à New York, se rendaient également au mont Kailash, dans la région de Katmandou, lorsque la catastrophe a frappé.</p>
+            <span class="english-block">Radhika Sharma's parents, Ramesh Sharma, 65 and Neelam Sharma, 64, two US citizens who live in New York City, were also travelling to Mount Kailash in the Kathmandu region when the disaster struck.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.58" data-end="121.01">
+            <p class="french-block">[Error Translate] Deepak and Madhu Ahuja</p>
+            <span class="english-block">Deepak and Madhu Ahuja</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.01" data-end="126.46">
+            <p class="french-block">Ce pèlerinage était leur premier voyage seul depuis qu'ils ont pris leur retraite l'année dernière.</p>
+            <span class="english-block">The pilgrimage was their first trip on their own since retiring last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.46" data-end="140.16">
+            <p class="french-block">"J'essaie juste de les trouver, je n'ai pas de réponses", a déclaré Radhika Sharma à la BBC. Sharma est généralement en contact fréquent avec ses parents, envoyant souvent des SMS plusieurs fois au cours de la journée.</p>
+            <span class="english-block">"I am just trying to find them, I don't have any answers," Radhika Sharma told the BBC. Sharma is typically in frequent contact with her parents, often texting multiple times during the day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.16" data-end="152.28">
+            <p class="french-block">"La dernière fois que nous savons, c'est qu'ils étaient à la frontière à 8 heures du matin, donc environ une heure avant les inondations", a-t-elle expliqué. "Et nous espérons qu'ils parviendront du côté du Tibet."</p>
+            <span class="english-block">"The last we know is they were at the border at 8am, so about an hour before the floods," she said. "And we are hoping that they made it to the Tibet side."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.28" data-end="160.49">
+            <p class="french-block">Sharma, qui a été en contact avec les ambassades américaines à Pékin et à Katmandou, a déclaré : « Personne n'a de réponses ».</p>
+            <span class="english-block">Sharma, who has been in contact with the US embassies in Beijing and Kathmandu, said: "No one has any answers."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.49" data-end="167.02">
+            <p class="french-block">[Error Translate] Collapsed glacier likely caused devastating Nepal-Tibet floods, scientists say</p>
+            <span class="english-block">Collapsed glacier likely caused devastating Nepal-Tibet floods, scientists say</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.02" data-end="173.78">
+            <p class="french-block">« Les inondations ont tout emporté » : des survivants du Népal décrivent leur horreur de voir leurs proches emportés</p>
+            <span class="english-block">'The flood took everything': Nepal survivors describe horror of loved ones being swept away</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.78" data-end="182.9">
+            <p class="french-block">Elle a également noué des contacts avec d'autres Américains qui se trouvent dans une situation similaire, pour se soutenir mutuellement et consolider les informations.</p>
+            <span class="english-block">She has also connected with other Americans who are in a similar situation, to support one another and consolidate information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="182.9" data-end="196.06">
+            <p class="french-block">Au moins 77 personnes victimes de la catastrophe font partie d'un pèlerinage organisé par la Fondation Isha, un groupe à but non lucratif dont le siège est en Inde et qui possède également une base à McMinnville, dans le Tennessee.</p>
+            <span class="english-block">At least 77 people caught in the disaster are part of a pilgrimage organised by the Isha Foundation, a non-profit group headquartered in India that also has a base in McMinnville, Tennessee.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.06" data-end="209.38">
+            <p class="french-block">Leslie Crespi, chargée de liaison communautaire pour la Fondation, a déclaré à la BBC que le groupe travaillait sur les formalités d'immigration dans ce qui était censé être un bâtiment parasismique près de la frontière lorsque l'eau est entrée.</p>
+            <span class="english-block">Leslie Crespi, a community liaison for the Foundation, told the BBC that the group had been working on immigration paperwork in what was meant to be an earthquake-resistant building near the border when the water came through.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.38" data-end="213.46">
+            <p class="french-block">"Ils étaient comme une famille", dit-elle, la voix brisée.</p>
+            <span class="english-block">"They were like family," she said, her voice breaking.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.46" data-end="223.58">
+            <p class="french-block">[Error Translate] Ramesh Sharma, 65, and Neelam Sharma, 64, two US citizens from New York have been missing since the flood hit</p>
+            <span class="english-block">Ramesh Sharma, 65, and Neelam Sharma, 64, two US citizens from New York have been missing since the flood hit</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.58" data-end="233.04">
+            <p class="french-block">Prabhath Sajeepa, un autre citoyen américain porté disparu après les inondations, était l'une des 77 personnes voyageant avec la Fondation Isha.</p>
+            <span class="english-block">Prabhath Sajeepa, another US citizen who went missing after the flood hit, was one of the 77 people travelling with the Isha Foundation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.04" data-end="244.97">
+            <p class="french-block">[Error Translate] Sajeepa works for a software company in California, and has been involved with the Isha Foundation for a few years, according to his niece, who lives in Germany.</p>
+            <span class="english-block">Sajeepa works for a software company in California, and has been involved with the Isha Foundation for a few years, according to his niece, who lives in Germany.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.97" data-end="257.35">
+            <p class="french-block">"Cela a été terrible. J'espère qu'il se trouve dans un endroit sûr", a déclaré sa nièce, Kavya Koulagi Jayatheertha, à la BBC. "Nous espérons de bonnes nouvelles."</p>
+            <span class="english-block">"It has been terrible. I hope he is somewhere safe," his niece, Kavya Koulagi Jayatheertha, told the BBC. "We are hoping for good news."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="257.35" data-end="267.84">
+            <p class="french-block">Le Département d'État a déclaré que l'ambassade américaine au Népal travaillait en étroite collaboration avec les agences touristiques et les autorités locales pour aider les Américains touchés.</p>
+            <span class="english-block">The State Department said that the US embassy in Nepal was working closely with local tour agencies and authorities to assist affected Americans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.84" data-end="276.12">
+            <p class="french-block">Les responsables n'ont pas fourni de chiffres ni de détails supplémentaires concernant les Américains concernés pour des raisons de confidentialité.</p>
+            <span class="english-block">Officials did not provide figures or additional details regarding the Americans affected for privacy reasons.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.12" data-end="284.45">
+            <p class="french-block">Le président américain Donald Trump a déclaré jeudi aux journalistes que son administration avait proposé d'aider le gouvernement népalais.</p>
+            <span class="english-block">US President Donald Trump told reporters on Thursday that his administration had offered to help the Nepalese government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.45" data-end="293.04">
+            <p class="french-block">"Nous envoyons de l'aide et nous avons parlé aux dirigeants", a déclaré Trump. "Et nous leur faisons savoir tout ce qu'ils veulent, nous l'aurons."</p>
+            <span class="english-block">"We are sending aid and we've spoken to the leadership," Trump said. "And we let them know anything they want, we'll have."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.04" data-end="305.38">
+            <p class="french-block">Le ministère canadien des Affaires étrangères a déclaré qu'il était au courant de la présence de 32 Canadiens et résidents permanents au Népal et dans la région du Tibet dont le sort et l'état de santé n'avaient pas encore été confirmés.</p>
+            <span class="english-block">Canada's foreign office said it was aware of 32 Canadians and permanent residents in Nepal and in the Tibet region whose whereabouts and well-being had not yet been confirmed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.38" data-end="316.7">
+            <p class="french-block">« Compte tenu des circonstances extrêmement difficiles sur le terrain, ce chiffre pourrait fluctuer à mesure que de nouvelles informations arrivent », a déclaré jeudi Affaires mondiales Canada dans un communiqué.</p>
+            <span class="english-block">"Given the extremely difficult circumstances on the ground, this number may fluctuate as new information comes in," Global Affairs Canada said in a statement on Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="316.7" data-end="328.87">
+            <p class="french-block">Le secrétaire d'État canadien au Développement international, Randeep Sarai, a déclaré vendredi après-midi que son objectif était d'aider les familles à traverser ce qu'il ne peut "qu'imaginer être un cauchemar vivant".</p>
+            <span class="english-block">Canada's Secretary of State for International Development, Randeep Sarai, said on Friday afternoon his focus is on helping families get through what he can "only imagine to be a living nightmare."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="328.87" data-end="342.74">
+            <p class="french-block">Le ministère des Affaires étrangères a déclaré que 820 Canadiens sont enregistrés comme étant au Népal et cinq sont enregistrés comme étant dans la région autonome du Tibet, en Chine, citant le système d'enregistrement des Canadiens à l'étranger.</p>
+            <span class="english-block">The foreign office said 820 Canadians are registered as being in Nepal and five are registered as being in the Tibet Autonomous Region, China, citing the Registration of Canadians Abroad system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.74" data-end="352.15">
+            <p class="french-block">Selon la police népalaise, plus de 500 touristes originaires de 28 pays différents sont portés disparus, dont la plupart sont des ressortissants étrangers.</p>
+            <span class="english-block">According to Nepal police, more than 500 tourists are missing from 28 different countries - most of whom are foreign nationals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.15" data-end="359.14">
+            <p class="french-block">[Error Translate] The Nepal Tourism Board has broken down the missing by nationality, external.</p>
+            <span class="english-block">The Nepal Tourism Board has broken down the missing by nationality, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="359.14" data-end="375.62">
+            <p class="french-block">Les médias d'État chinois, qui contrôlent le Tibet, ont fait état de trois morts et d'au moins 558 disparus. Parmi eux se trouvent 260 ressortissants étrangers, a indiqué CCTV. Il n'est pas clair si ces chiffres chevauchent ceux fournis par le Népal.</p>
+            <span class="english-block">State media in China, which controls Tibet, reported three dead and at least 558 missing there. Among these are 260 foreign nationals, CCTV said. It is not clear if these figures overlap with the numbers provided by Nepal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.62" data-end="380.76">
+            <p class="french-block">Des images aériennes montrent des inondations à la frontière entre le Népal et le Tibet</p>
+            <span class="english-block">Aerial footage shows floods on Nepal-Tibet border</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="380.76" data-end="388.46">
+            <p class="french-block">Les premiers rapports en provenance du Népal suggéraient qu'un tremblement de terre aurait pu déclencher l'avalanche de glace et le glissement de terrain.</p>
+            <span class="english-block">Initial reports from Nepal had suggested that an earthquake may have triggered the ice avalanche and landslide.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="388.46" data-end="400.3">
+            <p class="french-block">Mais l'US Geological Survey, qui étudie les tremblements de terre, a maintenant déclaré qu'une analyse plus approfondie indique "que l'énergie sismique a plutôt été générée par un glissement de terrain" lui-même.</p>
+            <span class="english-block">But the US Geological Survey, which studies earthquakes, has now said that further analysis indicates "that the seismic energy was instead generated by a landslide" by itself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="400.3" data-end="411.84">
+            <p class="french-block">Les glissements de terrain ou les avalanches peuvent avoir divers déclencheurs. Une possibilité est que l’eau – provenant des précipitations ou de la fonte des glaces – ait déstabilisé le sol ou la glace.</p>
+            <span class="english-block">Landslides or avalanches can have various triggers. One possibility is that water - either from rainfall or melting ice - may have destabilised the ground or ice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="411.84" data-end="423.0">
+            <p class="french-block">On sait que le changement climatique accélère la fonte des glaciers dans la région de l'Hindu Kush, en Himalaya, mais les scientifiques estiment qu'il est trop tôt pour déterminer son rôle dans cet événement spécifique.</p>
+            <span class="english-block">Climate change is known to be driving faster glacier melt in the Hindu Kush Himalaya region, but scientists say it is too soon to pinpoint its role in this specific event.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="423.0" data-end="444.98">
+            <p class="french-block">Les inondations soudaines ont emporté des communautés entières. Des routes et des ponts d'une valeur de plus de 15 milliards de roupies népalaises (72,18 millions de livres sterling, 98,33 millions de dollars) ont été endommagés par les inondations, a déclaré un responsable gouvernemental à la BBC Nepali, citant les premières estimations.</p>
+            <span class="english-block">The flash flooding swept away entire communities. Roads and bridges worth more than 15bn Nepalese rupees (£72.18m, $98.33m) were damaged by the floods, a government official told BBC Nepali, citing initial estimates.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="444.98" data-end="459.07">
+            <p class="french-block">Le président népalais Ram Chandra Paudel a appelé le gouvernement, les partis politiques, les organisations sociales, toutes les agences, y compris les forces de sécurité, et le grand public à intensifier les efforts de secours et de secours.</p>
+            <span class="english-block">Nepal's President Ram Chandra Paudel has called upon the government, political parties, social organisations, all agencies including security forces, and the general public to intensify rescue and relief efforts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="459.07" data-end="468.7">
+            <p class="french-block">"J'exhorte tout le monde à rester vigilant et à s'engager activement dans la coordination et la coopération nécessaires dans les zones côtières inférieures", a-t-il déclaré.</p>
+            <span class="english-block">"I urge everyone to remain vigilant and actively engage in necessary coordination and cooperation in the lower coastal areas," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="468.7" data-end="476.21">
+            <p class="french-block">Une crue soudaine à la frontière entre le Népal et le Tibet fait plus de 150 morts et des centaines de touristes sont portés disparus</p>
+            <span class="english-block">Flash flood on Nepal-Tibet border kills more than 150, with hundreds of tourists missing</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="476.21" data-end="480.36">
+            <p class="french-block">Ce que nous savons des inondations meurtrières au Népal et au Tibet</p>
+            <span class="english-block">What we know about deadly Nepal-Tibet floods</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_24.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

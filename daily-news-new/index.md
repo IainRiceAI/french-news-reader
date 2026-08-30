@@ -1,50 +1,50 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-08-29 06:22:22  
+Generated on: 2026-08-30 06:17:12  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **97-year-old woman rescued after Nepali floods looked like 'a warrior'**
-   - **Published:** Fri, 28 Aug 2026 21:17:54 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_97-year-old_woman_rescued_after_Nepali_f.md](top-stories_article_1_97-year-old_woman_rescued_after_Nepali_f.md)
+1. **Iceland EU referendum on a knife edge as counting continues**
+   - **Published:** Sun, 30 Aug 2026 03:57:01 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Iceland_EU_referendum_on_a_knife_edge_as.md](top-stories_article_1_Iceland_EU_referendum_on_a_knife_edge_as.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Footage of Tibet floods isn't being shown in China - and we know little about victims there**
-   - **Published:** Sat, 29 Aug 2026 03:54:11 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Footage_of_Tibet_floods_isnt_being_shown.md](top-stories_article_2_Footage_of_Tibet_floods_isnt_being_shown.md)
+2. **At least 37 dead and hundreds evacuated after strike on Kyiv weapons depot**
+   - **Published:** Sat, 29 Aug 2026 20:13:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_At_least_37_dead_and_hundreds_evacuated_.md](top-stories_article_2_At_least_37_dead_and_hundreds_evacuated_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Man dies and at least six injured after sign falls at Christian festival**
-   - **Published:** Fri, 28 Aug 2026 21:41:12 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Man_dies_and_at_least_six_injured_after_.md](top-stories_article_3_Man_dies_and_at_least_six_injured_after_.md)
+3. **Cleverly quits shadow cabinet to run for London mayor**
+   - **Published:** Sat, 29 Aug 2026 16:24:39 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Cleverly_quits_shadow_cabinet_to_run_for.md](top-stories_article_3_Cleverly_quits_shadow_cabinet_to_run_for.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Landlady to 9/11 hijackers reveals their links to alleged Saudi spy**
-   - **Published:** Sat, 29 Aug 2026 00:32:17 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Landlady_to_911_hijackers_reveals_their_.md](top-stories_article_4_Landlady_to_911_hijackers_reveals_their_.md)
+4. **Rescue to continue overnight for 'in distress' vessel carrying five in the Channel**
+   - **Published:** Sat, 29 Aug 2026 23:49:43 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Rescue_to_continue_overnight_for_in_dist.md](top-stories_article_4_Rescue_to_continue_overnight_for_in_dist.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Close race as Iceland votes on whether to restart talks on joining EU**
-   - **Published:** Sat, 29 Aug 2026 00:56:19 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Close_race_as_Iceland_votes_on_whether_t.md](top-stories_article_5_Close_race_as_Iceland_votes_on_whether_t.md)
+5. **I've been to Gamescom six times - here's what excited me this year**
+   - **Published:** Sat, 29 Aug 2026 23:02:28 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Ive_been_to_Gamescom_six_times_-_heres_w.md](top-stories_article_5_Ive_been_to_Gamescom_six_times_-_heres_w.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **The race to stop England running out of water**
-   - **Published:** Sat, 29 Aug 2026 00:46:00 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_The_race_to_stop_England_running_out_of_.md](top-stories_article_6_The_race_to_stop_England_running_out_of_.md)
+6. **British heavyweight Moses Itauma stretchered out after shock defeat in gruelling world title fight**
+   - **Published:** Sat, 29 Aug 2026 23:16:03 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_British_heavyweight_Moses_Itauma_stretch.md](top-stories_article_6_British_heavyweight_Moses_Itauma_stretch.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Trump hails 'historic' deal for US to control 65bn barrels of Venezuela's oil**
-   - **Published:** Sat, 29 Aug 2026 02:42:27 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Trump_hails_historic_deal_for_US_to_cont.md](top-stories_article_7_Trump_hails_historic_deal_for_US_to_cont.md)
+7. **97-year-old woman rescued after Nepali floods looked like 'a warrior'**
+   - **Published:** Fri, 28 Aug 2026 21:17:54 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_97-year-old_woman_rescued_after_Nepali_f.md](top-stories_article_7_97-year-old_woman_rescued_after_Nepali_f.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Somali piracy surges as the impact of the US-Iran war ripples outwards**
-   - **Published:** Sat, 29 Aug 2026 01:14:13 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Somali_piracy_surges_as_the_impact_of_th.md](top-stories_article_8_Somali_piracy_surges_as_the_impact_of_th.md)
+8. **Footage of Tibet floods isn't being shown in China - and we know little about victims there**
+   - **Published:** Sat, 29 Aug 2026 03:54:11 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Footage_of_Tibet_floods_isnt_being_shown.md](top-stories_article_8_Footage_of_Tibet_floods_isnt_being_shown.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
@@ -56,19 +56,19 @@ Scraped Feed Mode: `ALL`
    - **Read Parallel Translation:** [world_article_9_Footage_of_Tibet_floods_isnt_being_shown.md](world_article_9_Footage_of_Tibet_floods_isnt_being_shown.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Trump hails 'historic' deal for US to control 65bn barrels of Venezuela's oil**
-   - **Published:** Sat, 29 Aug 2026 02:42:27 GMT
-   - **Read Parallel Translation:** [world_article_10_Trump_hails_historic_deal_for_US_to_cont.md](world_article_10_Trump_hails_historic_deal_for_US_to_cont.md)
+2. **Iceland EU referendum on a knife edge as counting continues**
+   - **Published:** Sun, 30 Aug 2026 03:57:01 GMT
+   - **Read Parallel Translation:** [world_article_10_Iceland_EU_referendum_on_a_knife_edge_as.md](world_article_10_Iceland_EU_referendum_on_a_knife_edge_as.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Landlady to 9/11 hijackers reveals their links to alleged Saudi spy**
-   - **Published:** Sat, 29 Aug 2026 00:32:17 GMT
-   - **Read Parallel Translation:** [world_article_11_Landlady_to_911_hijackers_reveals_their_.md](world_article_11_Landlady_to_911_hijackers_reveals_their_.md)
+3. **At least 37 dead and hundreds evacuated after strike on Kyiv weapons depot**
+   - **Published:** Sat, 29 Aug 2026 20:13:16 GMT
+   - **Read Parallel Translation:** [world_article_11_At_least_37_dead_and_hundreds_evacuated_.md](world_article_11_At_least_37_dead_and_hundreds_evacuated_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Norway mourns King Harald as Haakon VIII ascends throne**
-   - **Published:** Fri, 28 Aug 2026 19:40:45 GMT
-   - **Read Parallel Translation:** [world_article_12_Norway_mourns_King_Harald_as_Haakon_VIII.md](world_article_12_Norway_mourns_King_Harald_as_Haakon_VIII.md)
+4. **Right-wing commentator Milo Yiannopoulos deported from US to UK**
+   - **Published:** Sat, 29 Aug 2026 17:52:42 GMT
+   - **Read Parallel Translation:** [world_article_12_Right-wing_commentator_Milo_Yiannopoulos.md](world_article_12_Right-wing_commentator_Milo_Yiannopoulos.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
@@ -76,7 +76,7 @@ Scraped Feed Mode: `ALL`
 ### Section: BUSINESS
 
 1. **Trump hails 'historic' deal for US to control 65bn barrels of Venezuela's oil**
-   - **Published:** Sat, 29 Aug 2026 02:42:27 GMT
+   - **Published:** Sun, 30 Aug 2026 04:01:02 GMT
    - **Read Parallel Translation:** [business_article_13_Trump_hails_historic_deal_for_US_to_cont.md](business_article_13_Trump_hails_historic_deal_for_US_to_cont.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
@@ -99,48 +99,48 @@ Scraped Feed Mode: `ALL`
 
 ### Section: TECHNOLOGY
 
-1. **Matt Lucas and Hugh Bonneville among actors calling for law on AI voice cloning**
-   - **Published:** Fri, 28 Aug 2026 05:11:16 GMT
-   - **Read Parallel Translation:** [technology_article_17_Matt_Lucas_and_Hugh_Bonneville_among_act.md](technology_article_17_Matt_Lucas_and_Hugh_Bonneville_among_act.md)
+1. **I've been to Gamescom six times - here's what excited me this year**
+   - **Published:** Sat, 29 Aug 2026 23:02:28 GMT
+   - **Read Parallel Translation:** [technology_article_17_Ive_been_to_Gamescom_six_times_-_heres_w.md](technology_article_17_Ive_been_to_Gamescom_six_times_-_heres_w.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Time is running out for cyber security, warn top tech firms**
-   - **Published:** Thu, 27 Aug 2026 19:44:27 GMT
-   - **Read Parallel Translation:** [technology_article_18_Time_is_running_out_for_cyber_security_w.md](technology_article_18_Time_is_running_out_for_cyber_security_w.md)
+2. **Matt Lucas and Hugh Bonneville among actors calling for law on AI voice cloning**
+   - **Published:** Fri, 28 Aug 2026 05:11:16 GMT
+   - **Read Parallel Translation:** [technology_article_18_Matt_Lucas_and_Hugh_Bonneville_among_act.md](technology_article_18_Matt_Lucas_and_Hugh_Bonneville_among_act.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Reform of all social media should come with Meta changes, UN says**
-   - **Published:** Thu, 27 Aug 2026 19:31:10 GMT
-   - **Read Parallel Translation:** [technology_article_19_Reform_of_all_social_media_should_come_w.md](technology_article_19_Reform_of_all_social_media_should_come_w.md)
+3. **Time is running out for cyber security, warn top tech firms**
+   - **Published:** Thu, 27 Aug 2026 19:44:27 GMT
+   - **Read Parallel Translation:** [technology_article_19_Time_is_running_out_for_cyber_security_w.md](technology_article_19_Time_is_running_out_for_cyber_security_w.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **What the Meta settlement means for the UK, and other questions after the deal**
-   - **Published:** Thu, 27 Aug 2026 13:24:03 GMT
-   - **Read Parallel Translation:** [technology_article_20_What_the_Meta_settlement_means_for_the_U.md](technology_article_20_What_the_Meta_settlement_means_for_the_U.md)
+4. **Reform of all social media should come with Meta changes, UN says**
+   - **Published:** Thu, 27 Aug 2026 19:31:10 GMT
+   - **Read Parallel Translation:** [technology_article_20_Reform_of_all_social_media_should_come_w.md](technology_article_20_Reform_of_all_social_media_should_come_w.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Strong winds and thunderstorms kick off the bank holiday weekend**
-   - **Published:** Sat, 29 Aug 2026 00:53:13 GMT
-   - **Read Parallel Translation:** [science_article_21_Strong_winds_and_thunderstorms_kick_off_.md](science_article_21_Strong_winds_and_thunderstorms_kick_off_.md)
+1. **The race to stop England running out of water**
+   - **Published:** Sat, 29 Aug 2026 14:50:35 GMT
+   - **Read Parallel Translation:** [science_article_21_The_race_to_stop_England_running_out_of_.md](science_article_21_The_race_to_stop_England_running_out_of_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Mountain of broken fridges growing across England and Wales**
-   - **Published:** Sat, 29 Aug 2026 00:51:02 GMT
-   - **Read Parallel Translation:** [science_article_22_Mountain_of_broken_fridges_growing_acros.md](science_article_22_Mountain_of_broken_fridges_growing_acros.md)
+2. **Strong winds and thunderstorms kick off the bank holiday weekend**
+   - **Published:** Sat, 29 Aug 2026 10:51:21 GMT
+   - **Read Parallel Translation:** [science_article_22_Strong_winds_and_thunderstorms_kick_off_.md](science_article_22_Strong_winds_and_thunderstorms_kick_off_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **The race to stop England running out of water**
-   - **Published:** Sat, 29 Aug 2026 00:46:00 GMT
-   - **Read Parallel Translation:** [science_article_23_The_race_to_stop_England_running_out_of_.md](science_article_23_The_race_to_stop_England_running_out_of_.md)
+3. **How the weather in space can affect us on Earth - and the team trying to protect us**
+   - **Published:** Sat, 29 Aug 2026 06:05:15 GMT
+   - **Read Parallel Translation:** [science_article_23_How_the_weather_in_space_can_affect_us_o.md](science_article_23_How_the_weather_in_space_can_affect_us_o.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **How the weather in space can affect us on Earth - and the team trying to protect us**
-   - **Published:** Fri, 28 Aug 2026 20:44:07 GMT
-   - **Read Parallel Translation:** [science_article_24_How_the_weather_in_space_can_affect_us_o.md](science_article_24_How_the_weather_in_space_can_affect_us_o.md)
+4. **'Our parents were crossing the border an hour before the flood hit'**
+   - **Published:** Fri, 28 Aug 2026 17:59:31 GMT
+   - **Read Parallel Translation:** [science_article_24_Our_parents_were_crossing_the_border_an_.md](science_article_24_Our_parents_were_crossing_the_border_an_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
@@ -171,48 +171,48 @@ Scraped Feed Mode: `ALL`
 
 ### Section: POLITICS
 
-1. **Burnham says he will not vote on assisted dying unlike Starmer**
-   - **Published:** Fri, 28 Aug 2026 17:04:28 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_says_he_will_not_vote_on_assiste.md](politics_article_29_Burnham_says_he_will_not_vote_on_assiste.md)
+1. **Burnham's summer tour is over - now he has to prove himself in Parliament**
+   - **Published:** Sat, 29 Aug 2026 10:31:18 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnhams_summer_tour_is_over_-_now_he_ha.md](politics_article_29_Burnhams_summer_tour_is_over_-_now_he_ha.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Greens call for temporary ban on new data centres**
-   - **Published:** Fri, 28 Aug 2026 10:59:13 GMT
-   - **Read Parallel Translation:** [politics_article_30_Greens_call_for_temporary_ban_on_new_dat.md](politics_article_30_Greens_call_for_temporary_ban_on_new_dat.md)
+2. **Burnham says he will not vote on assisted dying unlike Starmer**
+   - **Published:** Fri, 28 Aug 2026 17:04:28 GMT
+   - **Read Parallel Translation:** [politics_article_30_Burnham_says_he_will_not_vote_on_assiste.md](politics_article_30_Burnham_says_he_will_not_vote_on_assiste.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Sports Direct founder attacks Burnham's 'populist' High Street plans**
-   - **Published:** Fri, 28 Aug 2026 07:40:00 GMT
-   - **Read Parallel Translation:** [politics_article_31_Sports_Direct_founder_attacks_Burnhams_p.md](politics_article_31_Sports_Direct_founder_attacks_Burnhams_p.md)
+3. **Greens call for temporary ban on new data centres**
+   - **Published:** Fri, 28 Aug 2026 10:59:13 GMT
+   - **Read Parallel Translation:** [politics_article_31_Greens_call_for_temporary_ban_on_new_dat.md](politics_article_31_Greens_call_for_temporary_ban_on_new_dat.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **South of France holiday scuppers Davey's blood donation**
-   - **Published:** Fri, 28 Aug 2026 14:22:07 GMT
-   - **Read Parallel Translation:** [politics_article_32_South_of_France_holiday_scuppers_Daveys_.md](politics_article_32_South_of_France_holiday_scuppers_Daveys_.md)
+4. **Sports Direct founder attacks Burnham's 'populist' High Street plans**
+   - **Published:** Fri, 28 Aug 2026 07:40:00 GMT
+   - **Read Parallel Translation:** [politics_article_32_Sports_Direct_founder_attacks_Burnhams_p.md](politics_article_32_Sports_Direct_founder_attacks_Burnhams_p.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Charli XCX electrifies Reading Festival with era-spanning set**
-   - **Published:** Fri, 28 Aug 2026 23:34:34 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Charli_XCX_electrifies_Reading_Festival_.md](entertainment_article_33_Charli_XCX_electrifies_Reading_Festival_.md)
+1. **Dolly Parton's dad couldn't read - it inspired her to send books to millions of children**
+   - **Published:** Sat, 29 Aug 2026 00:35:04 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Dolly_Partons_dad_couldnt_read_-_it_insp.md](entertainment_article_33_Dolly_Partons_dad_couldnt_read_-_it_insp.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Paul Heaton scores first number one album as Dolly Parton's 9 to 5 finally reaches top 40**
-   - **Published:** Fri, 28 Aug 2026 16:48:36 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Paul_Heaton_scores_first_number_one_albu.md](entertainment_article_34_Paul_Heaton_scores_first_number_one_albu.md)
+2. **Charli XCX electrifies Reading Festival with era-spanning set**
+   - **Published:** Fri, 28 Aug 2026 23:34:34 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Charli_XCX_electrifies_Reading_Festival_.md](entertainment_article_34_Charli_XCX_electrifies_Reading_Festival_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Jacob Elordi on why The Dog Stars had him asking 'What am I missing' in life?**
-   - **Published:** Thu, 27 Aug 2026 23:44:07 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Jacob_Elordi_on_why_The_Dog_Stars_had_hi.md](entertainment_article_35_Jacob_Elordi_on_why_The_Dog_Stars_had_hi.md)
+3. **Paul Heaton scores first number one album as Dolly Parton's 9 to 5 finally reaches top 40**
+   - **Published:** Fri, 28 Aug 2026 16:48:36 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Paul_Heaton_scores_first_number_one_albu.md](entertainment_article_35_Paul_Heaton_scores_first_number_one_albu.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **What we know after the big Grand Theft Auto 6 preview**
-   - **Published:** Fri, 28 Aug 2026 11:04:11 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_What_we_know_after_the_big_Grand_Theft_A.md](entertainment_article_36_What_we_know_after_the_big_Grand_Theft_A.md)
+4. **Jacob Elordi on why The Dog Stars had him asking 'What am I missing' in life?**
+   - **Published:** Thu, 27 Aug 2026 23:44:07 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Jacob_Elordi_on_why_The_Dog_Stars_had_hi.md](entertainment_article_36_Jacob_Elordi_on_why_The_Dog_Stars_had_hi.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

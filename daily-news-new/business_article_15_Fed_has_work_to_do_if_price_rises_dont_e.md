@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** The head of the US central bank has said policymakers will "have work to do" if they were not confident cost-of-living pressures were easing for Americans.
 
-**🇫🇷 FR:** *Le chef de la banque centrale américaine a déclaré que les décideurs politiques "auraient du travail à faire" s'ils n'étaient pas convaincus que les pressions sur le coût de la vie s'atténuaient pour les Américains.*
+**🇫🇷 FR:** *[Error Translate] The head of the US central bank has said policymakers will "have work to do" if they were not confident cost-of-living pressures were easing for Americans.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** Latest figures show prices rose 3.4% in the year to July, above the Fed's 2% target. Another inflation measure closely watched by the Fed is running at 3.7%.
 
-**🇫🇷 FR:** *Les derniers chiffres montrent que les prix ont augmenté de 3,4 % sur l'année jusqu'en juillet, au-dessus de l'objectif de 2 % de la Fed. Une autre mesure d'inflation étroitement surveillée par la Fed s'élève à 3,7 %.*
+**🇫🇷 FR:** *[Error Translate] Latest figures show prices rose 3.4% in the year to July, above the Fed's 2% target. Another inflation measure closely watched by the Fed is running at 3.7%.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Warsh made the comments in his first speech at the annual Jackson Hole Economic Policy Symposium in Wyoming, which sees central bankers, government officials and academics from around the world gather to talk about interest rates, inflation and other economic issues.
 
-**🇫🇷 FR:** *Warsh a fait ces commentaires lors de son premier discours lors du symposium annuel de politique économique de Jackson Hole, dans le Wyoming, qui rassemble des banquiers centraux, des responsables gouvernementaux et des universitaires du monde entier pour discuter des taux d'intérêt, de l'inflation et d'autres questions économiques.*
+**🇫🇷 FR:** *[Error Translate] Warsh made the comments in his first speech at the annual Jackson Hole Economic Policy Symposium in Wyoming, which sees central bankers, government officials and academics from around the world gather to talk about interest rates, inflation and other economic issues.*
 
 ---
 
@@ -54,7 +54,7 @@
 
 **🇬🇧 EN:** Warsh said given prices were rising by more than 2% on an annual basis, "the Fed's predominant focus right now should be on prices".
 
-**🇫🇷 FR:** *Warsh a déclaré que, étant donné que les prix augmentent de plus de 2% sur une base annuelle, "la Fed devrait actuellement se concentrer principalement sur les prix".*
+**🇫🇷 FR:** *[Error Translate] Warsh said given prices were rising by more than 2% on an annual basis, "the Fed's predominant focus right now should be on prices".*
 
 ---
 
@@ -70,7 +70,7 @@
 
 **🇬🇧 EN:** The central bank boss has remained tight-lipped about the potential path of interest rates, but investors will have watched his speech closely for any signs of the Fed's approach under his leadership.
 
-**🇫🇷 FR:** *Le patron de la banque centrale est resté discret sur l'évolution potentielle des taux d'intérêt, mais les investisseurs auront surveillé de près son discours pour déceler tout signe de l'approche de la Fed sous sa direction.*
+**🇫🇷 FR:** *[Error Translate] The central bank boss has remained tight-lipped about the potential path of interest rates, but investors will have watched his speech closely for any signs of the Fed's approach under his leadership.*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** The central bank's next interest rate decision will be made on 15-16 September.
 
-**🇫🇷 FR:** *La prochaine décision de la banque centrale sur les taux d'intérêt sera prise les 15 et 16 septembre.*
+**🇫🇷 FR:** *[Error Translate] The central bank's next interest rate decision will be made on 15-16 September.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** Trump, who appointed Warsh in May, repeatedly criticised and pushed his predecessor Jerome Powell to cut interest rates. The president has previously said rate hikes "just keeps the country down".
 
-**🇫🇷 FR:** *Trump, qui a nommé Warsh en mai, a critiqué et poussé à plusieurs reprises son prédécesseur Jerome Powell à réduire les taux d’intérêt. Le président a précédemment déclaré que les hausses de taux « ne faisaient que maintenir le pays au plus bas ».*
+**🇫🇷 FR:** *[Error Translate] Trump, who appointed Warsh in May, repeatedly criticised and pushed his predecessor Jerome Powell to cut interest rates. The president has previously said rate hikes "just keeps the country down".*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** Following Warsh's remarks, the rates market showed growing expectations of an interest rate rise in September, according to CME data.
 
-**🇫🇷 FR:** *Suite aux remarques de Warsh, le marché des taux a montré des attentes croissantes d'une hausse des taux d'intérêt en septembre, selon les données du CME.*
+**🇫🇷 FR:** *[Error Translate] Following Warsh's remarks, the rates market showed growing expectations of an interest rate rise in September, according to CME data.*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** Analysts at Capital Economics said Warsh's speech delivered a "far clearer - and hawkish - message" and that it left "the door open to a hike" earlier than previously expected.
 
-**🇫🇷 FR:** *Les analystes de Capital Economics ont déclaré que le discours de Warsh délivrait un "message beaucoup plus clair - et belliciste -" et qu'il laissait "la porte ouverte à une hausse" plus tôt que prévu.*
+**🇫🇷 FR:** *[Error Translate] Analysts at Capital Economics said Warsh's speech delivered a "far clearer - and hawkish - message" and that it left "the door open to a hike" earlier than previously expected.*
 
 ---
 
@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** Why the US economy is ringing alarm bells
 
-**🇫🇷 FR:** *Pourquoi l’économie américaine tire la sonnette d’alarme*
+**🇫🇷 FR:** *[Error Translate] Why the US economy is ringing alarm bells*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** 'No magic wand' to tackle high prices, Fed boss says as US interest rates held
 
-**🇫🇷 FR:** *"Pas de baguette magique" pour lutter contre la hausse des prix, déclare le patron de la Fed alors que les taux d'intérêt américains restent inchangés*
+**🇫🇷 FR:** *[Error Translate] 'No magic wand' to tackle high prices, Fed boss says as US interest rates held*
 
 ---
 
@@ -166,7 +166,7 @@
 
 **🇬🇧 EN:** Higher oil prices has also fuelled bond market investors, who have demanded higher returns, leading to higher borrowing costs for the US government and other major corporations.
 
-**🇫🇷 FR:** *La hausse des prix du pétrole a également stimulé les investisseurs sur le marché obligataire, qui ont exigé des rendements plus élevés, ce qui a entraîné une hausse des coûts d'emprunt pour le gouvernement américain et d'autres grandes entreprises.*
+**🇫🇷 FR:** *[Error Translate] Higher oil prices has also fuelled bond market investors, who have demanded higher returns, leading to higher borrowing costs for the US government and other major corporations.*
 
 ---
 
@@ -182,7 +182,7 @@
 
 **🇬🇧 EN:** The spike in interest payments has driven US national debt past the $40tn (£29.5tn). The figure has doubled in a decade under both the Trump and Joe Biden administrations.
 
-**🇫🇷 FR:** *La hausse des paiements d’intérêts a poussé la dette nationale américaine au-delà de 40 000 milliards de dollars (29,5 000 milliards de livres sterling). Ce chiffre a doublé en une décennie sous les administrations Trump et Joe Biden.*
+**🇫🇷 FR:** *[Error Translate] The spike in interest payments has driven US national debt past the $40tn (£29.5tn). The figure has doubled in a decade under both the Trump and Joe Biden administrations.*
 
 ---
 
@@ -190,7 +190,7 @@
 
 **🇬🇧 EN:** The figure is rising by about $90,000 (£66,500) every second, or $7.8bn a day, according to the Congress Joint Economic Committee.
 
-**🇫🇷 FR:** *Ce chiffre augmente d'environ 90 000 dollars (66 500 £) chaque seconde, soit 7,8 milliards de dollars par jour, selon le Comité économique conjoint du Congrès.*
+**🇫🇷 FR:** *[Error Translate] The figure is rising by about $90,000 (£66,500) every second, or $7.8bn a day, according to the Congress Joint Economic Committee.*
 
 ---
 
@@ -198,7 +198,7 @@
 
 **🇬🇧 EN:** Treasury Secretary Scott Bessent said the government would buy back more debt in a bid to lower borrowing costs, but the market's reaction to the announcement proved short lived.
 
-**🇫🇷 FR:** *Le secrétaire au Trésor, Scott Bessent, a déclaré que le gouvernement rachèterait davantage de dette dans le but de réduire les coûts d'emprunt, mais la réaction du marché à cette annonce s'est avérée de courte durée.*
+**🇫🇷 FR:** *[Error Translate] Treasury Secretary Scott Bessent said the government would buy back more debt in a bid to lower borrowing costs, but the market's reaction to the announcement proved short lived.*
 
 ---
 

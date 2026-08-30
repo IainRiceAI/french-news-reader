@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** Most people get better without treatment, however.
 
-**🇫🇷 FR:** *Cependant, la plupart des gens s’améliorent sans traitement.*
+**🇫🇷 FR:** *[Error Translate] Most people get better without treatment, however.*
 
 ---
 
@@ -110,7 +110,7 @@
 
 **🇬🇧 EN:** 38 confirmed cases and one death linked to t5.9765
 
-**🇫🇷 FR:** *38 cas confirmés et un décès lié au t5.9765*
+**🇫🇷 FR:** *[Error Translate] 38 confirmed cases and one death linked to t5.9765*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** 177 confirmed cases linked to the t0.24068
 
-**🇫🇷 FR:** *177 cas confirmés liés au t0.24068*
+**🇫🇷 FR:** *[Error Translate] 177 confirmed cases linked to the t0.24068*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** The majority have been in England, with many in London and Yorkshire and Humber.
 
-**🇫🇷 FR:** *La majorité se trouvent en Angleterre, et beaucoup à Londres et dans le Yorkshire et Humber.*
+**🇫🇷 FR:** *[Error Translate] The majority have been in England, with many in London and Yorkshire and Humber.*
 
 ---
 
@@ -142,7 +142,7 @@
 
 **🇬🇧 EN:** There have been a small number of cases in Scotland, Wales and Northern Ireland too.
 
-**🇫🇷 FR:** *Il y a également eu un petit nombre de cas en Écosse, au Pays de Galles et en Irlande du Nord.*
+**🇫🇷 FR:** *[Error Translate] There have been a small number of cases in Scotland, Wales and Northern Ireland too.*
 
 ---
 
@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** Preparing and cooking food thoroughly can prevent infection, as well as washing your hands after using the bathroom and before handling food.
 
-**🇫🇷 FR:** *Préparer et cuire soigneusement les aliments peut prévenir l’infection, tout comme se laver les mains après être allé aux toilettes et avant de manipuler des aliments.*
+**🇫🇷 FR:** *[Error Translate] Preparing and cooking food thoroughly can prevent infection, as well as washing your hands after using the bathroom and before handling food.*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** It is safe to buy and eat eggs that have a British Lion mark or are produced under the Laid in Britain egg assurance scheme, experts advise.
 
-**🇫🇷 FR:** *Il est sécuritaire d’acheter et de manger des œufs portant la marque British Lion ou produits dans le cadre du programme d’assurance des œufs Laid in Britain, conseillent les experts.*
+**🇫🇷 FR:** *[Error Translate] It is safe to buy and eat eggs that have a British Lion mark or are produced under the Laid in Britain egg assurance scheme, experts advise.*
 
 ---
 
@@ -166,7 +166,7 @@
 
 **🇬🇧 EN:** Any suppliers of British Lion mark eggs have to stick to a strict code that covers testing and vaccinating hens against salmonella.
 
-**🇫🇷 FR:** *Tous les fournisseurs d’œufs britanniques du Lion doivent respecter un code strict qui couvre les tests et la vaccination des poules contre la salmonelle.*
+**🇫🇷 FR:** *[Error Translate] Any suppliers of British Lion mark eggs have to stick to a strict code that covers testing and vaccinating hens against salmonella.*
 
 ---
 
@@ -174,7 +174,7 @@
 
 **🇬🇧 EN:** Prof Ian Young from the Food Standards Agency said: "We continue to work closely with the UK Health Security Agency and other partners to investigate.
 
-**🇫🇷 FR:** *Le professeur Ian Young de la Food Standards Agency a déclaré : « Nous continuons à travailler en étroite collaboration avec l'Agence britannique de sécurité sanitaire et d'autres partenaires pour enquêter.*
+**🇫🇷 FR:** *[Error Translate] Prof Ian Young from the Food Standards Agency said: "We continue to work closely with the UK Health Security Agency and other partners to investigate.*
 
 ---
 
@@ -182,7 +182,7 @@
 
 **🇬🇧 EN:** "The exact causes of these outbreaks have not yet been identified, but investigations so far have identified links to imported eggs. There is no evidence that UK-produced eggs are affected."
 
-**🇫🇷 FR:** *"Les causes exactes de ces foyers n'ont pas encore été identifiées, mais les enquêtes menées jusqu'à présent ont identifié des liens avec des œufs importés. Il n'y a aucune preuve que les œufs produits au Royaume-Uni soient affectés."*
+**🇫🇷 FR:** *[Error Translate] "The exact causes of these outbreaks have not yet been identified, but investigations so far have identified links to imported eggs. There is no evidence that UK-produced eggs are affected."*
 
 ---
 
@@ -190,7 +190,7 @@
 
 **🇬🇧 EN:** The UKHSA said: "We will continue to follow up cases and investigate any further common sources if they come to light."
 
-**🇫🇷 FR:** *L'UKHSA a déclaré : "Nous continuerons à suivre les cas et à enquêter sur toute autre source commune si elles sont révélées."*
+**🇫🇷 FR:** *[Error Translate] The UKHSA said: "We will continue to follow up cases and investigate any further common sources if they come to light."*
 
 ---
 
@@ -198,7 +198,7 @@
 
 **🇬🇧 EN:** Symptoms include stomach cramps, diarrhoea, vomiting or fever. These usually develop between 12 and 72 hours after becoming infected.
 
-**🇫🇷 FR:** *Les symptômes comprennent des crampes d'estomac, de la diarrhée, des vomissements ou de la fièvre. Ceux-ci se développent généralement entre 12 et 72 heures après avoir été infectés.*
+**🇫🇷 FR:** *[Error Translate] Symptoms include stomach cramps, diarrhoea, vomiting or fever. These usually develop between 12 and 72 hours after becoming infected.*
 
 ---
 
@@ -206,7 +206,7 @@
 
 **🇬🇧 EN:** Anyone who is concerned should contact their GP or out of hours service in the first instance, says the UKHSA.
 
-**🇫🇷 FR:** *Toute personne inquiète doit en premier lieu contacter son médecin généraliste ou son service en dehors des heures d'ouverture, indique l'UKHSA.*
+**🇫🇷 FR:** *[Error Translate] Anyone who is concerned should contact their GP or out of hours service in the first instance, says the UKHSA.*
 
 ---
 
@@ -214,7 +214,7 @@
 
 **🇬🇧 EN:** In most cases people recover without further help but older people, babies and people with weakened immune systems are at greatest risk of severe disease.
 
-**🇫🇷 FR:** *Dans la plupart des cas, les gens se rétablissent sans aide supplémentaire, mais les personnes âgées, les bébés et les personnes dont le système immunitaire est affaibli courent le plus grand risque de développer une maladie grave.*
+**🇫🇷 FR:** *[Error Translate] In most cases people recover without further help but older people, babies and people with weakened immune systems are at greatest risk of severe disease.*
 
 ---
 

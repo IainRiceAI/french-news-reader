@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** The turbulence hit over Myanmar, with the flight then diverted to Bangkok, in Thailand, for an emergency landing.
 
-**🇫🇷 FR:** *[Error Translate] The turbulence hit over Myanmar, with the flight then diverted to Bangkok, in Thailand, for an emergency landing.*
+**🇫🇷 FR:** *Les turbulences ont frappé le Myanmar, et le vol a ensuite été dérouté vers Bangkok, en Thaïlande, pour un atterrissage d'urgence.*
 
 ---
 

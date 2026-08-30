@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** But there is still a lot to be discovered.
 
-**🇫🇷 FR:** *Mais il reste encore beaucoup à découvrir.*
+**🇫🇷 FR:** *[Error Translate] But there is still a lot to be discovered.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** drinking contaminated water
 
-**🇫🇷 FR:** *boire de l'eau contaminée*
+**🇫🇷 FR:** *[Error Translate] drinking contaminated water*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** cross contamination after mixing raw and cooked food in the kitchen for example
 
-**🇫🇷 FR:** *contamination croisée après avoir mélangé des aliments crus et cuits dans la cuisine par exemple*
+**🇫🇷 FR:** *[Error Translate] cross contamination after mixing raw and cooked food in the kitchen for example*
 
 ---
 
