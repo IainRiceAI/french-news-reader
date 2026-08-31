@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** Ella, who was diagnosed at 24, explains the symptoms of HSD
 
-**🇫🇷 FR:** *[Error Translate] Ella, who was diagnosed at 24, explains the symptoms of HSD*
+**🇫🇷 FR:** *Ella, qui a été diagnostiquée à 24 ans, explique les symptômes de l'HSD*
 
 ---
 
@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** Vivienne Duval has always been flexible. She can do every yoga pose there is, but it was not until she turned 58 that she realised that this bendiness was not a good thing.
 
-**🇫🇷 FR:** *[Error Translate] Vivienne Duval has always been flexible. She can do every yoga pose there is, but it was not until she turned 58 that she realised that this bendiness was not a good thing.*
+**🇫🇷 FR:** *Vivienne Duval a toujours été flexible. Elle peut faire toutes les poses de yoga, mais ce n'est qu'à l'âge de 58 ans qu'elle a réalisé que cette flexion n'était pas une bonne chose.*
 
 ---
 
@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** In fact, it was the answer to all of the strange health problems she had been experiencing for years - issues with digestion, fatigue, and pain.
 
-**🇫🇷 FR:** *[Error Translate] In fact, it was the answer to all of the strange health problems she had been experiencing for years - issues with digestion, fatigue, and pain.*
+**🇫🇷 FR:** *En fait, c'était la réponse à tous les étranges problèmes de santé qu'elle souffrait depuis des années : problèmes de digestion, fatigue et douleur.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** Earlier this year, when Vivienne came across a video on social media explaining the symptoms of Hypermobility Spectrum Disorder, it was like a light bulb switching on.
 
-**🇫🇷 FR:** *[Error Translate] Earlier this year, when Vivienne came across a video on social media explaining the symptoms of Hypermobility Spectrum Disorder, it was like a light bulb switching on.*
+**🇫🇷 FR:** *Plus tôt cette année, lorsque Vivienne est tombée sur une vidéo sur les réseaux sociaux expliquant les symptômes du trouble du spectre de l'hypermobilité, c'était comme si une ampoule s'allumait.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** "I saw myself in everything they were saying," she tells me. "So I armed myself with all the information and went to my doctor."
 
-**🇫🇷 FR:** *[Error Translate] "I saw myself in everything they were saying," she tells me. "So I armed myself with all the information and went to my doctor."*
+**🇫🇷 FR:** *"Je me voyais dans tout ce qu'ils disaient", me dit-elle. "Alors je me suis armé de toutes les informations et je suis allé chez mon médecin."*
 
 ---
 
@@ -54,7 +54,7 @@
 
 **🇬🇧 EN:** Vivienne's hunch was confirmed - she had hypermobile joints. "I had all these separate things, but no one had ever put them all together. Now it's blindingly obvious."
 
-**🇫🇷 FR:** *[Error Translate] Vivienne's hunch was confirmed - she had hypermobile joints. "I had all these separate things, but no one had ever put them all together. Now it's blindingly obvious."*
+**🇫🇷 FR:** *L'intuition de Vivienne s'est confirmée : elle avait des articulations hypermobiles. "J'avais toutes ces choses distinctes, mais personne ne les avait jamais toutes rassemblées. Maintenant, c'est d'une évidence aveuglante."*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** The disorder may affect hundreds of thousands of people in the UK, but many - like Vivienne - face significant delays in getting a diagnosis.
 
-**🇫🇷 FR:** *[Error Translate] The disorder may affect hundreds of thousands of people in the UK, but many - like Vivienne - face significant delays in getting a diagnosis.*
+**🇫🇷 FR:** *Cette maladie peut toucher des centaines de milliers de personnes au Royaume-Uni, mais nombre d'entre elles, comme Vivienne, sont confrontées à des retards importants avant d'obtenir un diagnostic.*
 
 ---
 
@@ -70,7 +70,7 @@
 
 **🇬🇧 EN:** Vivienne Duval was diagnosed at the age of 58, after decades of wondering what was going on with her body
 
-**🇫🇷 FR:** *[Error Translate] Vivienne Duval was diagnosed at the age of 58, after decades of wondering what was going on with her body*
+**🇫🇷 FR:** *Vivienne Duval a été diagnostiquée à l'âge de 58 ans, après des décennies à se demander ce qui se passait avec son corps.*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** Hypermobility Spectrum Disorders (HSD) are connective tissue disorders that cause joint hypermobility - when joints have a greater-than-normal range of motion.
 
-**🇫🇷 FR:** *[Error Translate] Hypermobility Spectrum Disorders (HSD) are connective tissue disorders that cause joint hypermobility - when joints have a greater-than-normal range of motion.*
+**🇫🇷 FR:** *Les troubles du spectre d'hypermobilité (HSD) sont des troubles du tissu conjonctif qui provoquent une hypermobilité articulaire, lorsque les articulations ont une amplitude de mouvement supérieure à la normale.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** Due to lax collagen between connective tissues, muscles have to work harder to keep joints stable, leading to fatigue and pain, as well as clumsiness.
 
-**🇫🇷 FR:** *[Error Translate] Due to lax collagen between connective tissues, muscles have to work harder to keep joints stable, leading to fatigue and pain, as well as clumsiness.*
+**🇫🇷 FR:** *En raison du relâchement du collagène entre les tissus conjonctifs, les muscles doivent travailler plus fort pour maintenir la stabilité des articulations, ce qui entraîne de la fatigue et des douleurs, ainsi que de la maladresse.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** HSD can also cause gastrointestinal symptoms because the connective tissue within the digestive system is stretchier.
 
-**🇫🇷 FR:** *[Error Translate] HSD can also cause gastrointestinal symptoms because the connective tissue within the digestive system is stretchier.*
+**🇫🇷 FR:** *La HSD peut également provoquer des symptômes gastro-intestinaux car le tissu conjonctif du système digestif est plus extensible.*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** Links between HSD and neurodiversity such as autism and ADHD have also been established.
 
-**🇫🇷 FR:** *[Error Translate] Links between HSD and neurodiversity such as autism and ADHD have also been established.*
+**🇫🇷 FR:** *Des liens entre les HSD et la neurodiversité comme l’autisme et le TDAH ont également été établis.*
 
 ---
 
@@ -110,7 +110,7 @@
 
 **🇬🇧 EN:** Some people, like Vivienne, also have hypermobile Ehlers-Danlos Syndrome (hEDS), which is diagnosed by looking for hypermobility and faulty connective tissue throughout the body, as well as musculoskeletal issues like dislocations.
 
-**🇫🇷 FR:** *[Error Translate] Some people, like Vivienne, also have hypermobile Ehlers-Danlos Syndrome (hEDS), which is diagnosed by looking for hypermobility and faulty connective tissue throughout the body, as well as musculoskeletal issues like dislocations.*
+**🇫🇷 FR:** *Certaines personnes, comme Vivienne, souffrent également du syndrome d'Ehlers-Danlos hypermobile (SEDh), qui est diagnostiqué en recherchant une hypermobilité et des tissus conjonctifs défectueux dans tout le corps, ainsi que des problèmes musculo-squelettiques tels que des luxations.*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** Hypermobility disorders may affect hundreds of thousands of people in the UK, though many remain undiagnosed, according to new research, external from the University of Edinburgh.
 
-**🇫🇷 FR:** *[Error Translate] Hypermobility disorders may affect hundreds of thousands of people in the UK, though many remain undiagnosed, according to new research, external from the University of Edinburgh.*
+**🇫🇷 FR:** *Les troubles d'hypermobilité peuvent affecter des centaines de milliers de personnes au Royaume-Uni, bien que beaucoup ne soient pas diagnostiqués, selon une nouvelle étude externe de l'Université d'Édimbourg.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** It found patients with hEDS and HSD in the UK waited an average of 19 to 21.7 years for diagnosis.
 
-**🇫🇷 FR:** *[Error Translate] It found patients with hEDS and HSD in the UK waited an average of 19 to 21.7 years for diagnosis.*
+**🇫🇷 FR:** *Elle a révélé que les patients atteints de SEDh et de HSD au Royaume-Uni attendaient en moyenne 19 à 21,7 ans pour un diagnostic.*
 
 ---
 
@@ -142,7 +142,7 @@
 
 **🇬🇧 EN:** Dr Jessica Eccles, a researcher on brain-body interactions and hypermobility, says diagnosis can be a "postcode lottery in terms of where you are and what opportunities are available to you for assessment".
 
-**🇫🇷 FR:** *[Error Translate] Dr Jessica Eccles, a researcher on brain-body interactions and hypermobility, says diagnosis can be a "postcode lottery in terms of where you are and what opportunities are available to you for assessment".*
+**🇫🇷 FR:** *Le Dr Jessica Eccles, chercheuse sur les interactions cerveau-corps et l'hypermobilité, affirme que le diagnostic peut être une « loterie du code postal en termes de lieu où vous vous trouvez et des opportunités qui s'offrent à vous pour l'évaluation ».*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** The research found that under a third of those diagnosed said their GP had initiated management for the disorder, and only 13% had access to a "knowledgeable clinician".
 
-**🇫🇷 FR:** *[Error Translate] The research found that under a third of those diagnosed said their GP had initiated management for the disorder, and only 13% had access to a "knowledgeable clinician".*
+**🇫🇷 FR:** *La recherche a révélé que moins d'un tiers des personnes diagnostiquées ont déclaré que leur médecin généraliste avait initié la prise en charge de la maladie, et que seulement 13 % avaient accès à un « clinicien compétent ».*
 
 ---
 
@@ -214,7 +214,7 @@
 
 **🇬🇧 EN:** After speaking with my consultant, I found my clumsiness was connected to HSD, that it wasn't normal to wake up every morning already feeling tired, and that, unlike me, most people do not experience pain when standing in a queue or on the train.
 
-**🇫🇷 FR:** *[Error Translate] After speaking with my consultant, I found my clumsiness was connected to HSD, that it wasn't normal to wake up every morning already feeling tired, and that, unlike me, most people do not experience pain when standing in a queue or on the train.*
+**🇫🇷 FR:** *Après avoir parlé avec mon consultant, j'ai découvert que ma maladresse était liée au HSD, qu'il n'était pas normal de se réveiller tous les matins déjà fatigué et que, contrairement à moi, la plupart des gens ne ressentent pas de douleur lorsqu'ils font la queue ou dans le train.*
 
 ---
 
@@ -238,7 +238,7 @@
 
 **🇬🇧 EN:** He hasn't sought treatment, which he says is probably down to "imposter syndrome", fuelled by a lack of information on HSD.
 
-**🇫🇷 FR:** *[Error Translate] He hasn't sought treatment, which he says is probably down to "imposter syndrome", fuelled by a lack of information on HSD.*
+**🇫🇷 FR:** *Il n'a pas cherché à se faire soigner, ce qui, selon lui, est probablement dû au "syndrome de l'imposteur", alimenté par un manque d'informations sur l'HSD.*
 
 ---
 
@@ -318,7 +318,7 @@
 
 **🇬🇧 EN:** There are ways to treat HSD, Dr Eccles says, but no "single magic bullet". Physiotherapy can be useful, while others may benefit from gentle exercise like swimming.
 
-**🇫🇷 FR:** *[Error Translate] There are ways to treat HSD, Dr Eccles says, but no "single magic bullet". Physiotherapy can be useful, while others may benefit from gentle exercise like swimming.*
+**🇫🇷 FR:** *Il existe des moyens de traiter la HSD, dit le Dr Eccles, mais pas de « solution miracle ». La physiothérapie peut être utile, tandis que d'autres peuvent bénéficier d'exercices doux comme la natation.*
 
 ---
 
@@ -326,7 +326,7 @@
 
 **🇬🇧 EN:** Dr Barrett explains that physiotherapy can help by "toning up and strengthening the key muscles which hold the skeleton together".
 
-**🇫🇷 FR:** *[Error Translate] Dr Barrett explains that physiotherapy can help by "toning up and strengthening the key muscles which hold the skeleton together".*
+**🇫🇷 FR:** *Le Dr Barrett explique que la physiothérapie peut aider en « tonifiant et en renforçant les muscles clés qui maintiennent le squelette ensemble ».*
 
 ---
 

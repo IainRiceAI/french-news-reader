@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** The letter warns, external cyber-attacks which use AI will become both more widespread and more sophisticated in a matter of months as the technology rapidly improves.
 
-**🇫🇷 FR:** *[Error Translate] The letter warns, external cyber-attacks which use AI will become both more widespread and more sophisticated in a matter of months as the technology rapidly improves.*
+**🇫🇷 FR:** *La lettre prévient que les cyberattaques externes utilisant l’IA deviendront à la fois plus répandues et plus sophistiquées dans quelques mois à mesure que la technologie s’améliorera rapidement.*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** The incident has been described as the world's first AI-enabled cyber-attack.
 
-**🇫🇷 FR:** *[Error Translate] The incident has been described as the world's first AI-enabled cyber-attack.*
+**🇫🇷 FR:** *L'incident a été décrit comme la première cyberattaque au monde basée sur l'IA.*
 
 ---
 
@@ -110,7 +110,7 @@
 
 **🇬🇧 EN:** Hugging Face has also signed the Thursday letter. It used a Chinese AI tool from the firm Z.AI in its investigation into how OpenAI's agents hacked into its operations.
 
-**🇫🇷 FR:** *[Error Translate] Hugging Face has also signed the Thursday letter. It used a Chinese AI tool from the firm Z.AI in its investigation into how OpenAI's agents hacked into its operations.*
+**🇫🇷 FR:** *Hugging Face a également signé la lettre de jeudi. Il a utilisé un outil d'IA chinois de la société Z.AI dans son enquête sur la manière dont les agents d'OpenAI ont piraté ses opérations.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** While the letter puts forward more advanced AI tools, which many of the signatories have developed and sell, as part of a solution to what is described as a growing threat, such tools are not always easily available.
 
-**🇫🇷 FR:** *[Error Translate] While the letter puts forward more advanced AI tools, which many of the signatories have developed and sell, as part of a solution to what is described as a growing threat, such tools are not always easily available.*
+**🇫🇷 FR:** *Même si la lettre propose des outils d’IA plus avancés, développés et vendus par de nombreux signataires, dans le cadre d’une solution à ce qui est décrit comme une menace croissante, ces outils ne sont pas toujours facilement disponibles.*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** Mythos, developed by Anthropic, was said by the firm to be able to find weaknesses in systems in seconds which have long evaded human hackers. It found one in a legacy platform which had remained undiscovered for 27 years.
 
-**🇫🇷 FR:** *[Error Translate] Mythos, developed by Anthropic, was said by the firm to be able to find weaknesses in systems in seconds which have long evaded human hackers. It found one in a legacy platform which had remained undiscovered for 27 years.*
+**🇫🇷 FR:** *Mythos, développé par Anthropic, serait capable de détecter en quelques secondes les faiblesses des systèmes qui ont longtemps échappé aux pirates informatiques humains. Il en a trouvé un sur une plate-forme héritée restée inconnue depuis 27 ans.*
 
 ---
 
@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** However, the letter calls on frontier AI companies, or those tech companies building their own AI models and tools, to "provide responsible model access, significant funding, training, and hands-on support, especially for under-resourced critical-infrastructure defenders."
 
-**🇫🇷 FR:** *[Error Translate] However, the letter calls on frontier AI companies, or those tech companies building their own AI models and tools, to "provide responsible model access, significant funding, training, and hands-on support, especially for under-resourced critical-infrastructure defenders."*
+**🇫🇷 FR:** *Cependant, la lettre appelle les entreprises pionnières de l'IA, ou les entreprises technologiques qui construisent leurs propres modèles et outils d'IA, à « fournir un accès responsable aux modèles, un financement important, une formation et un soutien pratique, en particulier aux défenseurs des infrastructures critiques qui manquent de ressources ».*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** The letter does not detail when or how this vision of broader model access will be enacted.
 
-**🇫🇷 FR:** *[Error Translate] The letter does not detail when or how this vision of broader model access will be enacted.*
+**🇫🇷 FR:** *La lettre ne précise pas quand ni comment cette vision d’un accès plus large au modèle sera mise en œuvre.*
 
 ---
 
@@ -190,7 +190,7 @@
 
 **🇬🇧 EN:** In the US, senators have proposed a new law call the Kill Switch Act which would give authorities the power to shut down rogue AI models.
 
-**🇫🇷 FR:** *[Error Translate] In the US, senators have proposed a new law call the Kill Switch Act which would give authorities the power to shut down rogue AI models.*
+**🇫🇷 FR:** *Aux États-Unis, les sénateurs ont proposé une nouvelle loi appelée Kill Switch Act, qui donnerait aux autorités le pouvoir de fermer les modèles d’IA malveillants.*
 
 ---
 
@@ -198,7 +198,7 @@
 
 **🇬🇧 EN:** Geoffrey Hinton, a technologist and Nobel Laureate who formerly work on AI at Google, on Thursday told BBC World Business Report that society could be "in real trouble" should the technology get to a point where it is "smarter" than humans.
 
-**🇫🇷 FR:** *[Error Translate] Geoffrey Hinton, a technologist and Nobel Laureate who formerly work on AI at Google, on Thursday told BBC World Business Report that society could be "in real trouble" should the technology get to a point where it is "smarter" than humans.*
+**🇫🇷 FR:** *Geoffrey Hinton, technologue et lauréat du prix Nobel qui a travaillé sur l'IA chez Google, a déclaré jeudi au BBC World Business Report que la société pourrait être « en réelle difficulté » si la technologie parvenait à un point où elle serait « plus intelligente » que les humains.*
 
 ---
 
@@ -214,7 +214,7 @@
 
 **🇬🇧 EN:** "We have one future where we figure out how to deal with the risks of AI", Hinton added on Thursday. "And we have another future where we don't figure out how to deal with that sensibly. And it's a very bleak future."
 
-**🇫🇷 FR:** *[Error Translate] "We have one future where we figure out how to deal with the risks of AI", Hinton added on Thursday. "And we have another future where we don't figure out how to deal with that sensibly. And it's a very bleak future."*
+**🇫🇷 FR:** *"Nous avons un avenir dans lequel nous trouverons comment gérer les risques de l'IA", a ajouté Hinton jeudi. "Et nous avons un autre avenir dans lequel nous ne savons pas comment gérer cela de manière raisonnable. Et c'est un avenir très sombre."*
 
 ---
 
@@ -222,7 +222,7 @@
 
 **🇬🇧 EN:** Unexpected chat between OpenAI agents led to Hugging Face hack
 
-**🇫🇷 FR:** *[Error Translate] Unexpected chat between OpenAI agents led to Hugging Face hack*
+**🇫🇷 FR:** *Une conversation inattendue entre des agents OpenAI a conduit au piratage de Hugging Face*
 
 ---
 
@@ -230,7 +230,7 @@
 
 **🇬🇧 EN:** OpenAI slows down training after its AI carried out hack
 
-**🇫🇷 FR:** *[Error Translate] OpenAI slows down training after its AI carried out hack*
+**🇫🇷 FR:** *OpenAI ralentit la formation après le piratage de son IA*
 
 ---
 
@@ -238,7 +238,7 @@
 
 **🇬🇧 EN:** Version of AI tool 'too powerful for public' released to public
 
-**🇫🇷 FR:** *[Error Translate] Version of AI tool 'too powerful for public' released to public*
+**🇫🇷 FR:** *La version de l'outil d'IA "trop ​​puissante pour le public" rendue publique*
 
 ---
 

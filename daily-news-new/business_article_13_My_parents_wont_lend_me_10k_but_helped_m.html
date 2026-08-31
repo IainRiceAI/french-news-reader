@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'My parents won't lend me £10k but helped my brother': When families play financial favourites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>'My parents won't lend me £10k but helped my brother': When families play financial favourites</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 30 Aug 2026 23:22:24 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cx279dml00ro?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: So-called financial favouritism can cause jealousy and resentment long into adulthood. Here is how experts say you can avoid it
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="10.18" data-end="16.82">
+            <p class="french-block">[Error Translate] One US study suggests around 15% of siblings have had conflicts over money</p>
+            <span class="english-block">One US study suggests around 15% of siblings have had conflicts over money</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.82" data-end="22.1">
+            <p class="french-block">Vos parents ont-ils un enfant préféré et leur donnent plus d'argent, de cadeaux ou d'aide ?</p>
+            <span class="english-block">Do your parents have a favourite child and give them more money, gifts or help?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.1" data-end="36.46">
+            <p class="french-block">[Error Translate] Financial favouritism can cause jealousy and resentment long into adulthood and, in some cases, even spark legal disputes after a parent dies. But experts say there are strategies that can help you avoid it.</p>
+            <span class="english-block">Financial favouritism can cause jealousy and resentment long into adulthood and, in some cases, even spark legal disputes after a parent dies. But experts say there are strategies that can help you avoid it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.46" data-end="49.8">
+            <p class="french-block">[Error Translate] John says his parents, who have always supported his younger brother, recently refused to lend him £10,000 towards a house deposit after he broke up with his partner.</p>
+            <span class="english-block">John says his parents, who have always supported his younger brother, recently refused to lend him £10,000 towards a house deposit after he broke up with his partner.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.8" data-end="56.18">
+            <p class="french-block">[Error Translate] This was despite the money being "well within their financial grasp", he says.</p>
+            <span class="english-block">This was despite the money being "well within their financial grasp", he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.18" data-end="63.84">
+            <p class="french-block">[Error Translate] His parents had previously given his brother a deposit to buy a home and subsidised his living expenses.</p>
+            <span class="english-block">His parents had previously given his brother a deposit to buy a home and subsidised his living expenses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.84" data-end="80.57">
+            <p class="french-block">John, 47 ans, dont nous avons changé le vrai nom, dit qu'il était considéré comme l'homme le plus académique en grandissant et qu'on s'attendait à ce qu'il puisse voler de ses propres ailes financièrement, tandis que son frère, 42 ans, avait du mal à se frayer un chemin dans le monde et était "dorloté".</p>
+            <span class="english-block">John, 47, whose real name we have changed, says he was viewed as the more academic one growing up and expected to stand on his "own two feet" financially, while his brother, 42, struggled to make his way in the world and was "coddled".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.57" data-end="90.86">
+            <p class="french-block">Il dit que le favoritisme lui a fait croire que « les besoins des autres priment sur les miens », le laissant se sentir « isolé » et affectant ses amitiés et ses relations amoureuses.</p>
+            <span class="english-block">He says the favouritism has made him believe "the needs of others take precedence over my own", leaving him feeling "isolated" and affecting friendships and romantic relationships.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.86" data-end="99.74">
+            <p class="french-block">Les forums externes comme Mumsnet et Reddit regorgent de messages se plaignant du fait que les frères et sœurs bénéficient d'un traitement préférentiel en matière d'argent.</p>
+            <span class="english-block">Forums like Mumsnet and Reddit, external are full of posts complaining about siblings being shown preferential treatment regarding money.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.74" data-end="114.26">
+            <p class="french-block">Les reproches courants incluent le montant du soutien financier que les enfants adultes ont reçu, externe de la part de leurs parents au cours de leur vie, la façon dont l'héritage est partagé, externe et si un frère ou une sœur a soutenu ses parents plus que d'autres, externe.</p>
+            <span class="english-block">Common gripes include the amount of financial support adult children have received, external from their parents during their lifetime, the way inheritance is divided, external, and whether a sibling has supported their parents more than others, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.26" data-end="124.08">
+            <p class="french-block">Le Dr Fenia Christodulidi, du service de conseil Relate, affirme que les désaccords sur l'argent entre frères et sœurs concernent rarement uniquement l'argent lui-même.</p>
+            <span class="english-block">Dr Fenia Christodoulidi, from counselling service Relate, says that disagreements about money between siblings are rarely just about the money itself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.08" data-end="136.66">
+            <p class="french-block">"Le soutien financier des parents a souvent une forte signification émotionnelle et certains frères et sœurs ont tendance à interpréter les différences de soutien comme des signes de favoritisme, d'amour inégal ou de manque de reconnaissance."</p>
+            <span class="english-block">"Financial support from parents often carries a powerful emotional meaning and some siblings tend to interpret differences in support as signs of favouritism, unequal love or a lack of recognition."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.66" data-end="148.1">
+            <p class="french-block">[Error Translate] She adds that even when parents have "practical reasons" for treating their children differently, failing to communicate these clearly can "leave room for misunderstanding and resentment".</p>
+            <span class="english-block">She adds that even when parents have "practical reasons" for treating their children differently, failing to communicate these clearly can "leave room for misunderstanding and resentment".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.1" data-end="159.02">
+            <p class="french-block">Ces raisons peuvent inclure un enfant adulte ayant besoin de plus de soutien parce qu’il gagne beaucoup moins, qu’il est malade ou qu’il doit payer plus pour accéder au logement en raison de la hausse des prix externes.</p>
+            <span class="english-block">Those reasons might include an adult child needing more support because they earn significantly less, have an illness, or have to pay more to get on the housing ladder due to rising prices, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.02" data-end="165.31">
+            <p class="french-block">[Error Translate] Ellis, 26, says there is no financial favourite in her family</p>
+            <span class="english-block">Ellis, 26, says there is no financial favourite in her family</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.31" data-end="177.17">
+            <p class="french-block">[Error Translate] Ellis, who works in finance in London, tells the BBC that she and her siblings have had "different levels of support at different times" from their parents and it's never been a problem.</p>
+            <span class="english-block">Ellis, who works in finance in London, tells the BBC that she and her siblings have had "different levels of support at different times" from their parents and it's never been a problem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.17" data-end="181.39">
+            <p class="french-block">[Error Translate] Tasha says her siblings have had disagreements</p>
+            <span class="english-block">Tasha says her siblings have had disagreements</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="181.39" data-end="192.43">
+            <p class="french-block">[Error Translate] But her colleague Tasha, the youngest of seven, says her siblings have fallen out over perceived favouritism, even though she thinks her parents treat them all the same.</p>
+            <span class="english-block">But her colleague Tasha, the youngest of seven, says her siblings have fallen out over perceived favouritism, even though she thinks her parents treat them all the same.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.43" data-end="200.66">
+            <p class="french-block">[Error Translate] "I just think people sometimes get a bit uncertain or jealous and that's quite normal," says the 33-year-old.</p>
+            <span class="english-block">"I just think people sometimes get a bit uncertain or jealous and that's quite normal," says the 33-year-old.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.66" data-end="208.06">
+            <p class="french-block">"Parfois, les gens arrêtent de parler un moment ou vont réfléchir à ce qu'ils ressentent, puis ils se réunissent et se disputent."</p>
+            <span class="english-block">"Sometimes people stop talking for a bit or go to process what they are feeling, and they come back together and they just hash it out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.06" data-end="218.23">
+            <p class="french-block">[Error Translate] Having "open conversations about expectations and the reasons behind decisions" can help reduce feelings of resentment about money, Christodoulidi says.</p>
+            <span class="english-block">Having "open conversations about expectations and the reasons behind decisions" can help reduce feelings of resentment about money, Christodoulidi says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.23" data-end="222.5">
+            <p class="french-block">[Error Translate] But for some, it's not that easy.</p>
+            <span class="english-block">But for some, it's not that easy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.5" data-end="230.93">
+            <p class="french-block">[Error Translate] "Talking about money is verboten in my family - be it salaries or savings or financial assistance," says John.</p>
+            <span class="english-block">"Talking about money is verboten in my family - be it salaries or savings or financial assistance," says John.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.93" data-end="237.89">
+            <p class="french-block">[Error Translate] "Any time I've tried to air my feelings my parents just become evasive so now I don't bother."</p>
+            <span class="english-block">"Any time I've tried to air my feelings my parents just become evasive so now I don't bother."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.89" data-end="249.05">
+            <p class="french-block">[Error Translate] John says he is now planning his financial future on the basis he won't have any inheritance - although he expects to be asked to step in if his parents get ill or lose capacity.</p>
+            <span class="english-block">John says he is now planning his financial future on the basis he won't have any inheritance - although he expects to be asked to step in if his parents get ill or lose capacity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.05" data-end="258.43">
+            <p class="french-block">[Error Translate] He says he has a "great relationship with his brother" but feels resentment towards his parents for creating the "imbalance" between them.</p>
+            <span class="english-block">He says he has a "great relationship with his brother" but feels resentment towards his parents for creating the "imbalance" between them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="258.43" data-end="263.3">
+            <p class="french-block">[Error Translate] Open conversations can help reduce feelings of resentment</p>
+            <span class="english-block">Open conversations can help reduce feelings of resentment</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="263.3" data-end="273.7">
+            <p class="french-block">[Error Translate] Claire Webb, a solicitor and mediator at Family Solutions Now, regularly helps siblings who have disputes over inheritance and other money matters.</p>
+            <span class="english-block">Claire Webb, a solicitor and mediator at Family Solutions Now, regularly helps siblings who have disputes over inheritance and other money matters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="273.7" data-end="284.62">
+            <p class="french-block">[Error Translate] "One sibling might argue the other was given more money earlier on in life, say, to buy a house, and that the parents said this would be reflected in the will.</p>
+            <span class="english-block">"One sibling might argue the other was given more money earlier on in life, say, to buy a house, and that the parents said this would be reflected in the will.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.62" data-end="294.48">
+            <p class="french-block">[Error Translate] "Then the will says, 'everything should be shared equally'. So you have all of that historic feeling of unfairness being dredged up."</p>
+            <span class="english-block">"Then the will says, 'everything should be shared equally'. So you have all of that historic feeling of unfairness being dredged up."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.48" data-end="302.98">
+            <p class="french-block">[Error Translate] To avoid conflict, she says parents need to be clear with their children about what they want while they are still alive.</p>
+            <span class="english-block">To avoid conflict, she says parents need to be clear with their children about what they want while they are still alive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="302.98" data-end="314.11">
+            <p class="french-block">[Error Translate] Siblings who do fall out should consider mediation before taking legal action, she adds. This is when a trained professional helps them remedy their problems.</p>
+            <span class="english-block">Siblings who do fall out should consider mediation before taking legal action, she adds. This is when a trained professional helps them remedy their problems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.11" data-end="321.55">
+            <p class="french-block">[Error Translate] The good news is, siblings who take the legal route more often than not reach an amicable solution.</p>
+            <span class="english-block">The good news is, siblings who take the legal route more often than not reach an amicable solution.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.55" data-end="330.22">
+            <p class="french-block">[Error Translate] "Most of the time there is a deep-down family bond - and if you can crack what started the problem they often find a way through."</p>
+            <span class="english-block">"Most of the time there is a deep-down family bond - and if you can crack what started the problem they often find a way through."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.22" data-end="339.91">
+            <p class="french-block">[Error Translate] 1. Recognise what's behind the row: It may be about feeling valued or treated fairly, rather than the money itself</p>
+            <span class="english-block">1. Recognise what's behind the row: It may be about feeling valued or treated fairly, rather than the money itself</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.91" data-end="348.77">
+            <p class="french-block">[Error Translate] 2. Avoid making assumptions about a sibling's financial situation or the reasons behind parental decisions</p>
+            <span class="english-block">2. Avoid making assumptions about a sibling's financial situation or the reasons behind parental decisions</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="348.77" data-end="358.15">
+            <p class="french-block">[Error Translate] 3. Encourage open, respectful conversations where everyone has the opportunity to explain how they feel</p>
+            <span class="english-block">3. Encourage open, respectful conversations where everyone has the opportunity to explain how they feel</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="358.15" data-end="368.95">
+            <p class="french-block">[Error Translate] 4. Parents should communicate their intentions as clearly as possible, particularly if they are supporting children differently for practical reasons</p>
+            <span class="english-block">4. Parents should communicate their intentions as clearly as possible, particularly if they are supporting children differently for practical reasons</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="368.95" data-end="377.4">
+            <p class="french-block">[Error Translate] 5. Consider family counselling if conversations repeatedly become stuck or emotionally charged</p>
+            <span class="english-block">5. Consider family counselling if conversations repeatedly become stuck or emotionally charged</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.4" data-end="384.6">
+            <p class="french-block">[Error Translate] 6. Consider mediation before taking legal action in inheritance disputes.</p>
+            <span class="english-block">6. Consider mediation before taking legal action in inheritance disputes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.6" data-end="402.02">
+            <p class="french-block">[Error Translate] 7. Choose powers of attorney carefully: Parents usually appoint their children to oversee their care and finances if they get ill or lose mental capacity. But if there's a risk they'll fall out, they can appoint someone else including a solicitor.</p>
+            <span class="english-block">7. Choose powers of attorney carefully: Parents usually appoint their children to oversee their care and finances if they get ill or lose mental capacity. But if there's a risk they'll fall out, they can appoint someone else including a solicitor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="402.02" data-end="406.56">
+            <p class="french-block">[Error Translate] Sources: Relate, Family Now Solutions</p>
+            <span class="english-block">Sources: Relate, Family Now Solutions</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_13.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

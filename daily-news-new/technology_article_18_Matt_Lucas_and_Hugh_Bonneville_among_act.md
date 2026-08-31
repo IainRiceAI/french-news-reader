@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Voice clones are created by training AI on recordings of real people. Quick versions can be made in minutes from a few seconds of audio, but high-quality copycats tend to require hours.
 
-**🇫🇷 FR:** *[Error Translate] Voice clones are created by training AI on recordings of real people. Quick versions can be made in minutes from a few seconds of audio, but high-quality copycats tend to require hours.*
+**🇫🇷 FR:** *Les clones vocaux sont créés en entraînant l’IA sur des enregistrements de personnes réelles. Des versions rapides peuvent être réalisées en quelques minutes à partir de quelques secondes d'audio, mais les copieurs de haute qualité ont tendance à nécessiter des heures.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** Audiobook narrator Alice Sockett, who co-founded the campaign, called it "an existential threat to our entire industry".
 
-**🇫🇷 FR:** *[Error Translate] Audiobook narrator Alice Sockett, who co-founded the campaign, called it "an existential threat to our entire industry".*
+**🇫🇷 FR:** *La narratrice du livre audio Alice Sockett, co-fondatrice de la campagne, l'a qualifiée de « menace existentielle pour l'ensemble de notre industrie ».*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** More than 80 performers have signed the letter, with Derry Girls actress Siobhán McSweeney saying she was "deeply worried" that the government was lagging behind.
 
-**🇫🇷 FR:** *[Error Translate] More than 80 performers have signed the letter, with Derry Girls actress Siobhán McSweeney saying she was "deeply worried" that the government was lagging behind.*
+**🇫🇷 FR:** *Plus de 80 artistes ont signé la lettre, l'actrice des Derry Girls, Siobhán McSweeney, se disant « profondément inquiète » du retard du gouvernement.*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** "Without creativity, we are nothing."
 
-**🇫🇷 FR:** *[Error Translate] "Without creativity, we are nothing."*
+**🇫🇷 FR:** *"Sans créativité, nous ne sommes rien."*
 
 ---
 
@@ -142,7 +142,7 @@
 
 **🇬🇧 EN:** It comes a few months after lawyers warned UK legislation has become "unfit for purpose" because of the advancements of AI tech.
 
-**🇫🇷 FR:** *[Error Translate] It comes a few months after lawyers warned UK legislation has become "unfit for purpose" because of the advancements of AI tech.*
+**🇫🇷 FR:** *Cela survient quelques mois après que des avocats ont averti que la législation britannique était devenue « inadaptée » en raison des progrès de la technologie de l’IA.*
 
 ---
 
@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** "The law comes close, but it doesn't fully protect your voice, your face or your identity," Dr Mathilde Pavis said in June.
 
-**🇫🇷 FR:** *[Error Translate] "The law comes close, but it doesn't fully protect your voice, your face or your identity," Dr Mathilde Pavis said in June.*
+**🇫🇷 FR:** *"La loi s'en rapproche, mais elle ne protège pas totalement votre voix, votre visage ou votre identité", a déclaré le Dr Mathilde Pavis en juin.*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** However, some people - for example those who are unable so speak properly because of illness - have welcomed technology that can replicate a person's voice.
 
-**🇫🇷 FR:** *[Error Translate] However, some people - for example those who are unable so speak properly because of illness - have welcomed technology that can replicate a person's voice.*
+**🇫🇷 FR:** *Cependant, certaines personnes - par exemple celles qui ne peuvent pas parler correctement à cause d'une maladie - ont accueilli favorablement la technologie capable de reproduire la voix d'une personne.*
 
 ---
 
@@ -166,7 +166,7 @@
 
 **🇬🇧 EN:** Yvonne Johnson, who lost her voice due to motor neurone disease, told the BBC's Tech Life programme in February how having it cloned by AI had "totally blown her mind", and brought her closer to her family, who had forgotten what she sounded like.
 
-**🇫🇷 FR:** *[Error Translate] Yvonne Johnson, who lost her voice due to motor neurone disease, told the BBC's Tech Life programme in February how having it cloned by AI had "totally blown her mind", and brought her closer to her family, who had forgotten what she sounded like.*
+**🇫🇷 FR:** *Yvonne Johnson, qui a perdu sa voix à cause d'une maladie du motoneurone, a déclaré en février au programme Tech Life de la BBC que le clonage de sa voix par l'IA lui avait "totalement époustouflé" et l'avait rapprochée de sa famille, qui avait oublié à quoi elle ressemblait.*
 
 ---
 
@@ -174,7 +174,7 @@
 
 **🇬🇧 EN:** Others have gone a step further and used AI not only to replicate a person's voice, but to create a holographic representation of them.
 
-**🇫🇷 FR:** *[Error Translate] Others have gone a step further and used AI not only to replicate a person's voice, but to create a holographic representation of them.*
+**🇫🇷 FR:** *D'autres sont allés plus loin et ont utilisé l'IA non seulement pour reproduire la voix d'une personne, mais aussi pour en créer une représentation holographique.*
 
 ---
 
@@ -206,7 +206,7 @@
 
 **🇬🇧 EN:** AI gold rush draws crypto firms away from Bitcoin
 
-**🇫🇷 FR:** *[Error Translate] AI gold rush draws crypto firms away from Bitcoin*
+**🇫🇷 FR:** *La ruée vers l’or de l’IA éloigne les sociétés de cryptographie du Bitcoin*
 
 ---
 

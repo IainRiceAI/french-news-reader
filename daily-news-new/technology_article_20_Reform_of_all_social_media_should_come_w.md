@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Part of the deal the tech giant struck with almost all US states was to add more child safety measures - but Meta also called on TikTok and YouTube to add the same features.
 
-**🇫🇷 FR:** *[Error Translate] Part of the deal the tech giant struck with almost all US states was to add more child safety measures - but Meta also called on TikTok and YouTube to add the same features.*
+**🇫🇷 FR:** *Une partie de l’accord conclu par le géant de la technologie avec presque tous les États américains consistait à ajouter davantage de mesures de sécurité pour les enfants – mais Meta a également appelé TikTok et YouTube à ajouter les mêmes fonctionnalités.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** What does the Meta settlement mean for the UK? Five things we learned
 
-**🇫🇷 FR:** *[Error Translate] What does the Meta settlement mean for the UK? Five things we learned*
+**🇫🇷 FR:** *Que signifie le règlement Meta pour le Royaume-Uni ? Cinq choses que nous avons apprises*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** Meanwhile, California Attorney General Rob Bonta - who represented one of the leading states in the Meta lawsuit - said he was "looking to ensure" TikTok adopted similar measures to Meta.
 
-**🇫🇷 FR:** *[Error Translate] Meanwhile, California Attorney General Rob Bonta - who represented one of the leading states in the Meta lawsuit - said he was "looking to ensure" TikTok adopted similar measures to Meta.*
+**🇫🇷 FR:** *Pendant ce temps, le procureur général de Californie, Rob Bonta – qui représentait l'un des principaux États dans le procès Meta – a déclaré qu'il « cherchait à garantir » que TikTok adopte des mesures similaires à celles de Meta.*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** One-hour daily time limit
 
-**🇫🇷 FR:** *[Error Translate] One-hour daily time limit*
+**🇫🇷 FR:** *Délai quotidien d’une heure*
 
 ---
 

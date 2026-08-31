@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** Close to 500 people have become ill with salmonella linked to imported eggs, say UK authorities, who say they have identified two new clusters of the infection.
 
-**🇫🇷 FR:** *Près de 500 personnes ont contracté la salmonelle liée à des œufs importés, affirment les autorités britanniques, qui affirment avoir identifié deux nouveaux foyers d'infection.*
+**🇫🇷 FR:** *[Error Translate] Close to 500 people have become ill with salmonella linked to imported eggs, say UK authorities, who say they have identified two new clusters of the infection.*
 
 ---
 
@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** The UK Health Security Agency, external reported 207 cases last week. That has been increased to 259, with the two new clusters bringing the total to 474. There have been two deaths recorded.
 
-**🇫🇷 FR:** *L'agence externe de sécurité sanitaire du Royaume-Uni a signalé 207 cas la semaine dernière. Ce nombre a été porté à 259, les deux nouveaux clusters portant le total à 474. Deux décès ont été enregistrés.*
+**🇫🇷 FR:** *[Error Translate] The UK Health Security Agency, external reported 207 cases last week. That has been increased to 259, with the two new clusters bringing the total to 474. There have been two deaths recorded.*
 
 ---
 
@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Some of the cases date back a year, but all involve bacteria that are almost genetically identical, suggesting a common food source.
 
-**🇫🇷 FR:** *Certains cas remontent à un an, mais tous impliquent des bactéries presque génétiquement identiques, ce qui suggère une source alimentaire commune.*
+**🇫🇷 FR:** *[Error Translate] Some of the cases date back a year, but all involve bacteria that are almost genetically identical, suggesting a common food source.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** Investigations are ongoing, but based on what is known so far, experts say people have fallen sick after eating out rather than cooking eggs at home.
 
-**🇫🇷 FR:** *Les enquêtes sont en cours, mais d'après ce que l'on sait jusqu'à présent, les experts affirment que des personnes sont tombées malades après avoir mangé au restaurant plutôt qu'après avoir cuisiné des œufs à la maison.*
+**🇫🇷 FR:** *[Error Translate] Investigations are ongoing, but based on what is known so far, experts say people have fallen sick after eating out rather than cooking eggs at home.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Cases of salmonella are being seen in other European countries, external too - Austria (2), Belgium (15), Denmark (1), France (4), Germany (6), the Netherlands (106).
 
-**🇫🇷 FR:** *Des cas de salmonelles sont observés dans d'autres pays européens, y compris à l'extérieur : Autriche (2), Belgique (15), Danemark (1), France (4), Allemagne (6), Pays-Bas (106).*
+**🇫🇷 FR:** *[Error Translate] Cases of salmonella are being seen in other European countries, external too - Austria (2), Belgium (15), Denmark (1), France (4), Germany (6), the Netherlands (106).*
 
 ---
 
@@ -54,7 +54,7 @@
 
 **🇬🇧 EN:** Investigations in the Netherlands suggests a link with chicken meat, rather than eggs.
 
-**🇫🇷 FR:** *Des enquêtes menées aux Pays-Bas suggèrent un lien avec la viande de poulet plutôt qu'avec les œufs.*
+**🇫🇷 FR:** *[Error Translate] Investigations in the Netherlands suggests a link with chicken meat, rather than eggs.*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** Salmonella can be found in a number of food sources including raw or under-cooked poultry or meat and eggs.
 
-**🇫🇷 FR:** *La salmonelle peut être trouvée dans un certain nombre de sources alimentaires, notamment la volaille ou la viande crue ou insuffisamment cuite et les œufs.*
+**🇫🇷 FR:** *[Error Translate] Salmonella can be found in a number of food sources including raw or under-cooked poultry or meat and eggs.*
 
 ---
 
@@ -70,7 +70,7 @@
 
 **🇬🇧 EN:** More than a third of those ill in the UK - some babies and others as old as 92 - have needed hospital care.
 
-**🇫🇷 FR:** *Plus d'un tiers des personnes malades au Royaume-Uni – certains bébés et d'autres âgés de 92 ans – ont eu besoin de soins hospitaliers.*
+**🇫🇷 FR:** *[Error Translate] More than a third of those ill in the UK - some babies and others as old as 92 - have needed hospital care.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** While salmonella cases can happen any time, the UK outbreak involves a few specific, near-identical genetic clusters called t5.9411, t0.24068 and t5.9765.
 
-**🇫🇷 FR:** *Bien que des cas de salmonelle puissent survenir à tout moment, l'épidémie au Royaume-Uni implique quelques groupes génétiques spécifiques presque identiques appelés t5.9411, t0.24068 et t5.9765.*
+**🇫🇷 FR:** *[Error Translate] While salmonella cases can happen any time, the UK outbreak involves a few specific, near-identical genetic clusters called t5.9411, t0.24068 and t5.9765.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** There have been:
 
-**🇫🇷 FR:** *Il y a eu :*
+**🇫🇷 FR:** *[Error Translate] There have been:*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** 259 confirmed cases and one death linked to t5.9411
 
-**🇫🇷 FR:** *259 cas confirmés et un décès lié au t5.9411*
+**🇫🇷 FR:** *[Error Translate] 259 confirmed cases and one death linked to t5.9411*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** Most have been recorded in recent weeks and months, but the investigations go back to cases as far as August 2025.
 
-**🇫🇷 FR:** *La plupart ont été enregistrés au cours des dernières semaines et mois, mais les enquêtes remontent à des cas remontant à août 2025.*
+**🇫🇷 FR:** *[Error Translate] Most have been recorded in recent weeks and months, but the investigations go back to cases as far as August 2025.*
 
 ---
 
@@ -222,7 +222,7 @@
 
 **🇬🇧 EN:** Salmonella outbreak: What we know so far
 
-**🇫🇷 FR:** *Épidémie de salmonelle : ce que nous savons jusqu’à présent*
+**🇫🇷 FR:** *[Error Translate] Salmonella outbreak: What we know so far*
 
 ---
 
