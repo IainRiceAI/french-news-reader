@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salmonella outbreak: What we know so far</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>Salmonella outbreak: What we know so far</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 27 Aug 2026 11:02:19 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cp30gqnpqjqo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Hundreds have fallen ill with salmonella infections in an outbreak linked to imported eggs.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.31" data-end="15.74">
+            <p class="french-block">[Error Translate] More people have become ill in an outbreak of salmonella food poising that the UK Health Security Agency (UKHSA) is investigating.</p>
+            <span class="english-block">More people have become ill in an outbreak of salmonella food poising that the UK Health Security Agency (UKHSA) is investigating.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.74" data-end="22.22">
+            <p class="french-block">[Error Translate] Imported eggs, or dishes containing them, are the leading suspects as to the cause.</p>
+            <span class="english-block">Imported eggs, or dishes containing them, are the leading suspects as to the cause.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.22" data-end="34.32">
+            <p class="french-block">Les preuves suggèrent également que les gens ont attrapé le virus en mangeant au restaurant plutôt qu'à la maison – les services de restauration tels que les restaurants, les cafés ou les plats à emporter sont susceptibles de jouer un rôle.</p>
+            <span class="english-block">Evidence also suggests people caught the bug while eating out, rather than at home - with catering and food services such as restaurants, cafes or take-aways likely to play a part.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.32" data-end="38.64">
+            <p class="french-block">[Error Translate] But there is still a lot to be discovered.</p>
+            <span class="english-block">But there is still a lot to be discovered.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.64" data-end="41.81">
+            <p class="french-block">Que savons-nous et quelles questions restent en suspens ?</p>
+            <span class="english-block">What do we know and what questions remain?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="41.81" data-end="56.62">
+            <p class="french-block">Les salmonelles sont une famille de bactéries qui vivent généralement de manière inoffensive dans le tube digestif des animaux, notamment les bovins, les porcs et les poulets. C'est pourquoi les œufs et la volaille font partie des aliments communément associés à l'infection.</p>
+            <span class="english-block">Salmonella are a family of bacteria that typically live harmlessly in the digestive tract of animals including cattle, pigs and chicken - which is why eggs and poultry are among foods commonly associated with the infection.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.62" data-end="60.6">
+            <p class="french-block">Les bactéries sont excrétées dans les excréments des animaux.</p>
+            <span class="english-block">The bacteria are shed in animal faeces.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.6" data-end="63.14">
+            <p class="french-block">Vous pouvez attraper le bug en :</p>
+            <span class="english-block">You can catch the bug by:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.14" data-end="68.81">
+            <p class="french-block">[Error Translate] eating contaminated food that has not been cooked properly</p>
+            <span class="english-block">eating contaminated food that has not been cooked properly</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.81" data-end="72.62">
+            <p class="french-block">[Error Translate] drinking contaminated water</p>
+            <span class="english-block">drinking contaminated water</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.62" data-end="77.11">
+            <p class="french-block">[Error Translate] coming into contact with infected animals</p>
+            <span class="english-block">coming into contact with infected animals</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.11" data-end="83.38">
+            <p class="french-block">[Error Translate] cross contamination after mixing raw and cooked food in the kitchen for example</p>
+            <span class="english-block">cross contamination after mixing raw and cooked food in the kitchen for example</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.38" data-end="86.86">
+            <p class="french-block">La propagation de personne à personne est rare.</p>
+            <span class="english-block">Person-to-person spread is rare.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.86" data-end="98.9">
+            <p class="french-block">[Error Translate] Signs to watch out for include stomach cramps, diarrhoea, vomiting or fever. These usually develop between 12 and 72 hours after becoming infected.</p>
+            <span class="english-block">Signs to watch out for include stomach cramps, diarrhoea, vomiting or fever. These usually develop between 12 and 72 hours after becoming infected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.9" data-end="109.3">
+            <p class="french-block">[Error Translate] In most cases people recover without further help but older people, babies and people with weakened immune systems are at greatest risk of severe disease.</p>
+            <span class="english-block">In most cases people recover without further help but older people, babies and people with weakened immune systems are at greatest risk of severe disease.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.3" data-end="115.03">
+            <p class="french-block">[Error Translate] Hospital care with fluids and sometimes antibiotics can help in these cases.</p>
+            <span class="english-block">Hospital care with fluids and sometimes antibiotics can help in these cases.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.03" data-end="121.8">
+            <p class="french-block">Toute personne inquiète doit contacter en premier lieu son médecin généraliste ou son service en dehors des heures d'ouverture.</p>
+            <span class="english-block">Anyone who is concerned should contact their GP or out of hours service in the first instance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.8" data-end="127.44">
+            <p class="french-block">[Error Translate] Yes, cooking eggs and other food thoroughly can prevent infection.</p>
+            <span class="english-block">Yes, cooking eggs and other food thoroughly can prevent infection.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.44" data-end="136.9">
+            <p class="french-block">[Error Translate] Other ways to protect yourself include washing your hands before preparing food, after using the bathroom and after contact with animals.</p>
+            <span class="english-block">Other ways to protect yourself include washing your hands before preparing food, after using the bathroom and after contact with animals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.9" data-end="143.88">
+            <p class="french-block">[Error Translate] In the current outbreak most infections do not seem to arise from food that has cooked at home.</p>
+            <span class="english-block">In the current outbreak most infections do not seem to arise from food that has cooked at home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.88" data-end="153.67">
+            <p class="french-block">La Food Standards Agency, externe, a récemment publié des directives à l'intention des entreprises de restauration sur le stockage et la manipulation des œufs.</p>
+            <span class="english-block">The Food Standards Agency, external has recently issued guidance to catering businesses on the storage and handling of eggs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.67" data-end="160.9">
+            <p class="french-block">[Error Translate] The majority of recent cases have been in England, including London and Yorkshire and Humber.</p>
+            <span class="english-block">The majority of recent cases have been in England, including London and Yorkshire and Humber.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.9" data-end="166.54">
+            <p class="french-block">[Error Translate] There have been several in Scotland, Wales and Northern Ireland too.</p>
+            <span class="english-block">There have been several in Scotland, Wales and Northern Ireland too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.54" data-end="177.65">
+            <p class="french-block">Bien que les cas soient dispersés, les scientifiques ont utilisé un type d’empreinte génétique complète appelé séquençage du génome entier, qui a révélé que les microbes impliqués sont tous étroitement liés.</p>
+            <span class="english-block">While the cases are spread out, scientists used a type of comprehensive genetic fingerprinting called whole-genome sequencing, which revealed the bugs involved are all closely related.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.65" data-end="187.82">
+            <p class="french-block">[Error Translate] Tests show there are only a handful of differences in their DNA sequences, which indicate the infections are part of the same outbreak, with a common source.</p>
+            <span class="english-block">Tests show there are only a handful of differences in their DNA sequences, which indicate the infections are part of the same outbreak, with a common source.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.82" data-end="195.74">
+            <p class="french-block">[Error Translate] Genetic testing of the bacteria suggests there are similarities with a previous outbreak involving imported eggs.</p>
+            <span class="english-block">Genetic testing of the bacteria suggests there are similarities with a previous outbreak involving imported eggs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.74" data-end="204.72">
+            <p class="french-block">[Error Translate] UKHSA experts questioned people involved in the current outbreak and their answers indicate that eggs provide the "strongest signal" or clue.</p>
+            <span class="english-block">UKHSA experts questioned people involved in the current outbreak and their answers indicate that eggs provide the "strongest signal" or clue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.72" data-end="214.87">
+            <p class="french-block">[Error Translate] Links to five businesses or food outlets (which have not been named) have been found, with some diners reporting they ate dishes containing eggs.</p>
+            <span class="english-block">Links to five businesses or food outlets (which have not been named) have been found, with some diners reporting they ate dishes containing eggs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="214.87" data-end="222.0">
+            <p class="french-block">Les enquêtes suggèrent que ces locaux peuvent utiliser des œufs provenant de sources multiples, y compris de sources importées.</p>
+            <span class="english-block">Investigations suggest these premises may use eggs that are supplied from multiple sources, including imported sources.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.0" data-end="227.18">
+            <p class="french-block">[Error Translate] In some localities there have been questions over hygiene practices.</p>
+            <span class="english-block">In some localities there have been questions over hygiene practices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="227.18" data-end="234.31">
+            <p class="french-block">[Error Translate] "At this time there is no identified link to UK-produced eggs or poultry," the UKHSA says.</p>
+            <span class="english-block">"At this time there is no identified link to UK-produced eggs or poultry," the UKHSA says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.31" data-end="247.68">
+            <p class="french-block">[Error Translate] Jacquelyn McCormick, head of incidents at the Food Security Agency, says the standard advice remains unchanged - thoroughly cooked eggs that are handled hygienically should not present a food safety risk.</p>
+            <span class="english-block">Jacquelyn McCormick, head of incidents at the Food Security Agency, says the standard advice remains unchanged - thoroughly cooked eggs that are handled hygienically should not present a food safety risk.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="247.68" data-end="259.2">
+            <p class="french-block">[Error Translate] Infants, young children, those who are pregnant and older adults should only eat runny or raw eggs if they have a British Lion mark or are produced under the Laid in Britain egg assurance scheme.</p>
+            <span class="english-block">Infants, young children, those who are pregnant and older adults should only eat runny or raw eggs if they have a British Lion mark or are produced under the Laid in Britain egg assurance scheme.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.2" data-end="263.66">
+            <p class="french-block">Les personnes immunodéprimées doivent suivre les conseils de leur médecin.</p>
+            <span class="english-block">People who are immunocompromised should follow their doctor's advice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="263.66" data-end="275.47">
+            <p class="french-block">Pendant ce temps, le Dr Kathleen O'Reilly de la London School of Hygiene and Tropical Medicine recommande de vérifier les évaluations en matière d'hygiène alimentaire avant de choisir un café ou un restaurant.</p>
+            <span class="english-block">Meanwhile Dr Kathleen O'Reilly at the London School of Hygiene and Tropical Medicine recommends checking out food hygiene ratings when deciding on cafes or restaurants.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.47" data-end="294.86">
+            <p class="french-block">[Error Translate] The vaccination of commercial hens against common salmonella strains, which began in the mid-1990s in the UK, has been a "major public health success" and has "substantially reduced egg-associated salmonella infections," according to Dr Charlotte Hammer at the University of Cambridge.</p>
+            <span class="english-block">The vaccination of commercial hens against common salmonella strains, which began in the mid-1990s in the UK, has been a "major public health success" and has "substantially reduced egg-associated salmonella infections," according to Dr Charlotte Hammer at the University of Cambridge.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.86" data-end="301.3">
+            <p class="french-block">Une autre mesure de contrôle de qualité est le British Lion Scheme, lancé en 1998.</p>
+            <span class="english-block">Another quality control measure is the British Lion Scheme, launched in 1998.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="301.3" data-end="313.3">
+            <p class="french-block">[Error Translate] Any suppliers of eggs given the British Lion mark have to stick to a strict code that covers the vaccinating of hens, regular testing and a passport system to make sure hens are traceable.</p>
+            <span class="english-block">Any suppliers of eggs given the British Lion mark have to stick to a strict code that covers the vaccinating of hens, regular testing and a passport system to make sure hens are traceable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="313.3" data-end="323.88">
+            <p class="french-block">Paul Wigley, professeur d'écosystèmes microbiens animaux à la Bristol Veterinary School, affirme que l'amélioration de la surveillance et de la détection a également contribué.</p>
+            <span class="english-block">Paul Wigley, professor in animal microbial ecosystems at the Bristol Veterinary School, says improved surveillance and detection has also helped.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="323.88" data-end="336.96">
+            <p class="french-block">[Error Translate] "However, we do still import a large number of eggs and egg product, and salmonella could be contained within these because the countries in which they're produced don't use that same level of control," he added.</p>
+            <span class="english-block">"However, we do still import a large number of eggs and egg product, and salmonella could be contained within these because the countries in which they're produced don't use that same level of control," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="336.96" data-end="351.17">
+            <p class="french-block">[Error Translate] Meanwhile, Mark Williams, chairman of the British Egg Industry Council, said food businesses which import eggs should check their supply lines for vaccination information and that all the food safety checks have been done.</p>
+            <span class="english-block">Meanwhile, Mark Williams, chairman of the British Egg Industry Council, said food businesses which import eggs should check their supply lines for vaccination information and that all the food safety checks have been done.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.17" data-end="359.86">
+            <p class="french-block">Les experts de la santé doivent encore confirmer que les œufs en sont la source et l'UKHSA continue d'interroger les personnes confirmées comme ayant attrapé le virus.</p>
+            <span class="english-block">Health experts still need to confirm that eggs are the source and the UKHSA is continuing to interview people confirmed to have caught the bug.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="359.86" data-end="367.54">
+            <p class="french-block">Les autorités locales procéderont à des tests sur les entreprises susceptibles d'être impliquées ainsi qu'à des tests opportunistes.</p>
+            <span class="english-block">Local authorities will be carrying out tests on businesses that are likely to be involved as well as carrying out some opportunistic testing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="367.54" data-end="378.46">
+            <p class="french-block">Les experts devront également examiner l’ensemble de la chaîne d’approvisionnement, en recherchant par exemple où les œufs ou les ovoproduits ont été consommés, fournis, stockés et élevés.</p>
+            <span class="english-block">Experts will also need to look at the whole supply chain, investigating where the eggs or egg products have been eaten, supplied stored and farmed, for example.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="378.46" data-end="385.7">
+            <p class="french-block">Une fois qu’ils disposeront de suffisamment d’informations, une étape importante consistera à limiter de nouvelles infections.</p>
+            <span class="english-block">Once they have enough information an important step would be to limit further infections.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="385.7" data-end="391.2">
+            <p class="french-block">[Error Translate] The exact source and country of origin will need to be traced.</p>
+            <span class="english-block">The exact source and country of origin will need to be traced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="391.2" data-end="398.69">
+            <p class="french-block">[Error Translate] One challenge is that when a business imports a large number of eggs, they can come from mixed sources.</p>
+            <span class="english-block">One challenge is that when a business imports a large number of eggs, they can come from mixed sources.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="398.69" data-end="405.48">
+            <p class="french-block">L'UKHSA a alerté d'autres pays de cette épidémie afin qu'ils puissent rechercher toute infection génétiquement similaire.</p>
+            <span class="english-block">The UKHSA has alerted other countries about this outbreak so they can check for any genetically similar infections.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="405.48" data-end="420.86">
+            <p class="french-block">[Error Translate] And while salmonella infections occur every year in the UK, outbreaks that grow this quickly are relatively unusual, according to Dr Gauri Godbole at the UKHSA, so scientists will want to examine the factors that led to this situation.</p>
+            <span class="english-block">And while salmonella infections occur every year in the UK, outbreaks that grow this quickly are relatively unusual, according to Dr Gauri Godbole at the UKHSA, so scientists will want to examine the factors that led to this situation.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_28.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
