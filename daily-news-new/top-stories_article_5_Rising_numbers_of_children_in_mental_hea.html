@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising numbers of children in mental health crisis ending up in A&E</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Rising numbers of children in mental health crisis ending up in A&E</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 01 Sep 2026 23:38:20 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cn5d2r0zqvdo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: NHS emergency departments are seeing more cases of self-harm, eating disorders and emotional distress in young people.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.23" data-end="18.22">
+            <p class="french-block">[Error Translate] There has been a sharp rise in children and young people attending A&E units in England in a mental health crisis, NHS doctors are warning.</p>
+            <span class="english-block">There has been a sharp rise in children and young people attending A&E units in England in a mental health crisis, NHS doctors are warning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.22" data-end="36.34">
+            <p class="french-block">[Error Translate] The number of six to 17-year-olds turning up in significant distress for things like self-harm and eating disorders, or in emotional crisis, rose by 36% between 2019 and 2025, according to the Royal College of Paediatrics and Child Health analysis.</p>
+            <span class="english-block">The number of six to 17-year-olds turning up in significant distress for things like self-harm and eating disorders, or in emotional crisis, rose by 36% between 2019 and 2025, according to the Royal College of Paediatrics and Child Health analysis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.34" data-end="49.51">
+            <p class="french-block">Certains ont dû attendre plus de 12 heures une fois sur place. Le collège a déclaré que les urgences n'étaient pas le meilleur endroit pour eux, mais que le manque de soutien dans la communauté signifiait qu'ils n'avaient souvent nulle part où se tourner.</p>
+            <span class="english-block">Some faced waits of more than 12 hours once there. The college said A&Es were not the best place for them, but a lack of support in the community meant they often had nowhere else to turn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.51" data-end="55.37">
+            <p class="french-block">Le gouvernement a déclaré qu'il cherchait à améliorer les services et qu'il présenterait bientôt des plans.</p>
+            <span class="english-block">The government said it was looking to improve services and would be setting out plans soon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.37" data-end="68.93">
+            <p class="french-block">L’analyse – basée sur les chiffres fournis par le NHS England en vertu du Freedom of Information Act – a révélé qu’il y avait 75 491 visites aux A&E d’enfants et de jeunes pour un problème de santé mentale en 2025.</p>
+            <span class="english-block">The analysis – based on figures provided under the Freedom of Information Act by NHS England – found there were 75,491 attendances at A&E by children and young people for a mental health concern in 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.93" data-end="88.13">
+            <p class="french-block">Cela représente une augmentation par rapport à 55 525 en 2019, avec certaines des augmentations les plus importantes observées chez les très jeunes enfants âgés de six à neuf ans. Ces augmentations dépassent de loin l'augmentation globale de la fréquentation, qui a augmenté d'un peu plus de 8 % sur la période.</p>
+            <span class="english-block">That is up from 55,525 in 2019 with some of the biggest rises seen in very young children aged six to nine. The increases far outstrip the overall jump in attendances, which has risen by just over 8% over the period.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.13" data-end="99.96">
+            <p class="french-block">Les médecins ont déclaré que les cas concernaient des enfants et des jeunes amenés par des familles, des soignants et la police – certains de ceux qui étaient en crise émotionnelle devenaient agressifs ou avaient un comportement difficile.</p>
+            <span class="english-block">Doctors said the cases included children and young people brought in by families, carers and police – some of those in emotional crisis become aggressive or have challenging behaviour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.96" data-end="106.97">
+            <p class="french-block">Au total, plus de 6 200, soit environ 8 %, ont attendu plus de 12 heures dans les urgences.</p>
+            <span class="english-block">In total, more than 6,200, around 8%, waited over 12 hours in A&E.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.97" data-end="125.71">
+            <p class="french-block">Le Dr Sam Jones, responsable de la santé mentale au RCPCH, a déclaré qu'il y avait un manque de soins de santé mentale plus larges et, en particulier, d'un soutien en cas de crise disponible dans de nombreuses régions du pays, ce qui signifiait que ces enfants et jeunes vulnérables ne recevaient pas l'aide dont ils avaient besoin.</p>
+            <span class="english-block">RCPCH officer for mental health Dr Sam Jones said there was a lack of wider mental health care and, in particular, crisis support available in many parts of the country that meant these vulnerable children and young people were not getting the help they needed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.71" data-end="132.48">
+            <p class="french-block">"Derrière chacun de ces personnages se cache un enfant ou un jeune en détresse et une famille qui ne savait plus où se tourner.</p>
+            <span class="english-block">"Behind every one of these figures is a child or young person in distress and a family who didn't know where lese to turn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.48" data-end="142.78">
+            <p class="french-block">"Les services d'urgence constituent un filet de sécurité vital, mais ils n'ont jamais été conçus pour être un endroit où les enfants en crise de santé mentale attendent parfois plusieurs jours.</p>
+            <span class="english-block">"Emergency departments are a vital safety net, but they were never designed to be a place where children in mental health crisis wait for days at time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.78" data-end="148.08">
+            <p class="french-block">"Il s'agit d'une crise nationale qui ne fera qu'empirer sans une intervention urgente."</p>
+            <span class="english-block">"This is a national crisis that will only get worse without urgent intervention."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.08" data-end="163.08">
+            <p class="french-block">Elle a déclaré qu'en plus d'investir davantage dans les services de santé mentale pour enfants, le personnel des principales agences de santé, de protection sociale et d'éducation avait besoin d'une meilleure formation pour aider les enfants en difficulté avec leur santé mentale.</p>
+            <span class="english-block">She said alongside greater investment in children's mental health services, staff from key agencies across health, social care and education needed better training in helping children who are struggling with their mental health.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.08" data-end="175.06">
+            <p class="french-block">Le Dr Mark Buchanan, du Royal College of Emergency Medicine, a déclaré que les enfants et les jeunes confrontés à une crise de santé mentale se retrouvaient « par défaut » dans les urgences.</p>
+            <span class="english-block">Dr Mark Buchanan, of the Royal College of Emergency Medicine, said children and young people facing a mental health crisis were ending up in A&E by "default".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.06" data-end="180.36">
+            <p class="french-block">"Ils méritent des soins au sein de systèmes et de contextes conçus pour répondre à leurs besoins."</p>
+            <span class="english-block">"They deserve care within systems and settings that are designed to meet their needs."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.36" data-end="196.13">
+            <p class="french-block">Gemma Byrne, de l'association caritative Mind, a déclaré : « Les urgences peuvent être un environnement effrayant pour toute personne en crise de santé mentale, sans parler d'un enfant. Les obliger à y passer plus de 12 heures est tout simplement inacceptable.</p>
+            <span class="english-block">Gemma Byrne, of the mental health charity Mind, said: "A&E can be a frightening environment for anyone in mental health crisis, let alone a child. Making them spend more than 12 hours there is simply unacceptable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.13" data-end="201.5">
+            <p class="french-block">Elle a déclaré que les enfants ne recevaient pas suffisamment tôt le soutien dont ils avaient besoin.</p>
+            <span class="english-block">She said children were not getting the support they need early enough.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.5" data-end="212.4">
+            <p class="french-block">"Le système actuel, dans lequel de nombreux services de santé mentale n'offrent un soutien que lorsque les jeunes sont considérés comme "suffisamment malades" pour y prétendre, ne fonctionne clairement pas."</p>
+            <span class="english-block">"The current system, where many mental health services only provide support when young people are considered 'unwell enough' to qualify, clearly isn't working."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.4" data-end="223.8">
+            <p class="french-block">Elle a déclaré que l’expansion du réseau de pôles de jeunes futurs, qui rassemblent une gamme de soutien couvrant la santé mentale, l’emploi, le sport et le volontariat, était une étape cruciale.</p>
+            <span class="english-block">She said expanding the network of young future hubs, which bring together a range of support covering mental health, employment, sports and volunteering, was a crucial step.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.8" data-end="230.04">
+            <p class="french-block">Le gouvernement prévoit de publier une nouvelle stratégie en matière de santé mentale plus tard cet été.</p>
+            <span class="english-block">The government is planning to publish a new mental health strategy later in the summer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.04" data-end="246.34">
+            <p class="french-block">Mais un porte-parole du ministère de la Santé et des Affaires sociales a déclaré que des améliorations étaient déjà en cours grâce à des investissements dans des équipes de santé mentale pour les écoles et dans plus de 150 nouveaux centres de santé mentale dans des lieux communautaires tels que des banques et des bibliothèques.</p>
+            <span class="english-block">But a Department of Health and Social Care spokesman said improvements were already being made with investment in mental health teams for schools and more than 150 new mental health hubs in community locations such as banks and libraries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="246.34" data-end="253.25">
+            <p class="french-block">"Aucun enfant ne devrait avoir à atteindre un point de crise avant d'obtenir le soutien dont il a besoin", a-t-il ajouté.</p>
+            <span class="english-block">"No child should have to reach crisis point before getting the support they need," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.25" data-end="264.12">
+            <p class="french-block">Claire Evans, d'Anna Freud, une organisation caritative de santé mentale destinée aux enfants, aux jeunes et aux familles, a déclaré que ces chiffres étaient profondément préoccupants.</p>
+            <span class="english-block">Claire Evans, of Anna Freud, a mental health charity for children, young people and families, said the figures were deeply concerning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.12" data-end="276.94">
+            <p class="french-block">[Error Translate] "The new mental health strategy must  place children at its heart, creating the conditions for lifelong positive mental health and accelerating investment in accessible, community-based support."</p>
+            <span class="english-block">"The new mental health strategy must  place children at its heart, creating the conditions for lifelong positive mental health and accelerating investment in accessible, community-based support."</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_5.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
