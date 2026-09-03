@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminals publish data of 8.7m people after airports hack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Criminals publish data of 8.7m people after airports hack</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 02 Sep 2026 11:00:59 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c74k39g3ee5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The company, which owns Manchester, Stansted and East Midlands airports, was hacked last month.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.28" data-end="16.51">
+            <p class="french-block">Des pirates informatiques ont mis en ligne les données personnelles de près de neuf millions de personnes après avoir pénétré dans trois aéroports britanniques.</p>
+            <span class="english-block">Criminal hackers have posted the personal data of nearly nine million people online after breaching three UK airports.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.51" data-end="25.27">
+            <p class="french-block">Les pirates ont extorqué Manchester Airports Group (MAG) pour un montant non divulgué, mais n'ont pas réussi à obtenir le paiement de leur rançon.</p>
+            <span class="english-block">Hackers extorted Manchester Airports Group (MAG) for an undisclosed amount but failed to get their ransom paid.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.27" data-end="35.62">
+            <p class="french-block">Les clients des aéroports de Manchester, Londres Stansted et East Midlands sont avertis des attaques secondaires, car les données sont désormais accessibles à d'autres criminels.</p>
+            <span class="english-block">Customers of Manchester, London Stansted and East Midlands airports are being warned of secondary attacks as the data is now available to other criminals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.62" data-end="50.59">
+            <p class="french-block">"MAG est convaincu que nous avons pris des mesures efficaces pour protéger nos clients et nous avons contacté toutes les personnes concernées, notamment celles ayant des réservations à venir pour les informer d'une assistance supplémentaire", a déclaré la société dans un communiqué.</p>
+            <span class="english-block">"MAG is confident that we have taken effective measures to protect our customers and we have contacted all those affected, including reaching out to all those with upcoming bookings to advise them of additional support," the company said in a statement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.59" data-end="62.09">
+            <p class="french-block">Les coordonnées, les immatriculations des véhicules et les codes postaux ont été volés lors de la brèche qui semble avoir accédé à des bases de données contenant les informations de connexion Wi-Fi et de stationnement.</p>
+            <span class="english-block">Contact details, vehicle registrations and postcodes were stolen in the breach that appears to have accessed databases containing wi-fi log in and car parking details.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.09" data-end="71.09">
+            <p class="french-block">Le groupe de cybercriminalité - que la BBC ne nomme pas - propose gratuitement l'ensemble des données à d'autres criminels ou escrocs via son site Web.</p>
+            <span class="english-block">The cyber-crime group - which the BBC is not naming - is offering the entire data set for free to other criminals or scammers through their website.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.09" data-end="76.58">
+            <p class="french-block">"Aujourd'hui, nous publions la base de données du groupe Manchester", ont-ils écrit.</p>
+            <span class="english-block">"Today we are releasing the Manchester Group database," they wrote.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.58" data-end="82.97">
+            <p class="french-block">"Un demi-téraoctet, et chaque octet est de pures PII [informations personnellement identifiables]."</p>
+            <span class="english-block">"Half a terabyte, and every byte of it is pure PII [personally identifiable information]."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.97" data-end="99.43">
+            <p class="french-block">Les experts en données volées de HaveIBeenPwned ont analysé le matériel publié et confirmé qu'il contient les adresses e-mail, les numéros de téléphone, les adresses, les numéros de plaque d'immatriculation, l'historique des achats et les données des appareils de navigation des personnes.</p>
+            <span class="english-block">Stolen data experts at HaveIBeenPwned have analysed the published material and confirmed it contains people's email addresses, phone numbers, addresses, licence plate numbers, purchasing history and browsing device data.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.43" data-end="111.96">
+            <p class="french-block">L'expert en cybersécurité, Kevin Beaumont, a averti les personnes concernées d'être en état d'alerte face à d'autres formes d'escroquerie et de piratage, en particulier les individus très médiatisés ou fortunés.</p>
+            <span class="english-block">Cyber-security expert Kevin Beaumont warned those affected to be on high alert for other forms of scam and hack - especially high profile or wealthy individuals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.96" data-end="123.34">
+            <p class="french-block">"Les données incluent à la fois les emplacements historiques et les voyages futurs prévus, de sorte que les personnes sensibles au fait que leurs mouvements soient connus devront peut-être prendre des précautions", a-t-il déclaré.</p>
+            <span class="english-block">"The data includes both historical locations and planned future travel, so individuals sensitive to their movements being known may need to take precautions," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.34" data-end="134.04">
+            <p class="french-block">"Les gens doivent être attentifs aux fraudeurs qui réutilisent les données et connaissent ainsi des détails tels que les numéros de téléphone et les numéros d'immatriculation des voitures", a-t-il ajouté.</p>
+            <span class="english-block">"People should be alert to scammers reusing the data and so knowing details such as phone numbers and car registration numbers," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.04" data-end="148.58">
+            <p class="french-block">Les organismes chargés de l'application des lois, notamment la National Crime Agency du Royaume-Uni, conseillent depuis longtemps aux victimes d'attaques d'extorsion de ne pas payer de rançons criminelles, car cela alimente l'écosystème des pirates informatiques.</p>
+            <span class="english-block">Law enforcement organisations including the UK's National Crime Agency have long advised victims of extortion attacks not to pay criminal ransoms as it fuels the hacker ecosystem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.58" data-end="157.66">
+            <p class="french-block">MAG affirme travailler avec les autorités et des conseillers spécialisés et affirme que la sécurité physique des passagers n'est pas menacée dans les aéroports.</p>
+            <span class="english-block">MAG says it is working with the authorities and specialist advisors and says passengers' physical safety has not be at risk in the airports.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.66" data-end="170.4">
+            <p class="french-block">Fait inhabituel, le site Web des cybercriminels sur lequel les données MAG sont disponibles est hébergé sur Internet clair et non sur le dark net comme la plupart des autres « sites de fuite » de pirates informatiques.</p>
+            <span class="english-block">Unusually, the cyber criminals' website where the MAG data is available is hosted on the clear internet and not on the dark net like most other so-called hacker "leak sites".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.4" data-end="179.62">
+            <p class="french-block">Cela rend les données plus faciles d'accès, augmentant ainsi le risque pour les victimes de MAG et des autres sociétés que le gang a violées au cours des derniers mois.</p>
+            <span class="english-block">This makes the data easier to access, increasing the risk to victims of MAG and the other companies the gang has breached in recent months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.62" data-end="193.85">
+            <p class="french-block">En plus de publier les données volées, les pirates se sont vantés de la façon dont ils ont piraté chaque victime en utilisant à chaque fois la même méthode : en exploitant les faiblesses dans la façon dont les entreprises stockent leurs clés numériques pour les réseaux internes.</p>
+            <span class="english-block">As well as posting the stolen data, the hackers boasted about how they breached each victim using the same method each time - exploiting weaknesses in how companies store their digital keys for internal networks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.85" data-end="205.54">
+            <p class="french-block">L'organisme de surveillance des données, le Bureau du commissaire à l'information, propose sur son site Web des conseils externes aux personnes dont les données ont été piratées. Il comprend :</p>
+            <span class="english-block">Data watchdog the Information Commissioner's Office has advice on its website, external for people whose data has been hacked. It includes:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.54" data-end="213.34">
+            <p class="french-block">Signalez à l'émetteur tous les détails des documents volés, notamment les passeports, les cartes de crédit ou les permis de conduire.</p>
+            <span class="english-block">Report any details of stolen documents including passports, credit cards or driver's licences to the issuer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.34" data-end="219.05">
+            <p class="french-block">Vérifiez votre relevé bancaire et votre rapport de crédit pour toute activité inhabituelle</p>
+            <span class="english-block">Check your bank statement and credit report for any unusual activity</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.05" data-end="223.87">
+            <p class="french-block">Restez attentif à tout e-mail, message ou appel téléphonique suspect</p>
+            <span class="english-block">Keep alert for any suspicious emails, messages or phone calls</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.87" data-end="229.39">
+            <p class="french-block">Utilisez des mots de passe forts et une authentification multifacteur pour les comptes en ligne</p>
+            <span class="english-block">Use strong passwords and multi-factor authentication for online accounts</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.39" data-end="234.12">
+            <p class="french-block">Des pirates informatiques volent les données de millions de clients de l'aéroport</p>
+            <span class="english-block">Hackers steal data from millions of airport customers</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.12" data-end="240.6">
+            <p class="french-block">Les cyber-chefs britanniques déclarent qu'il est temps d'abandonner les mots de passe pour les clés d'accès – de quoi s'agit-il ?</p>
+            <span class="english-block">UK cyber chiefs say it's time to ditch passwords for passkeys - what are they?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.6" data-end="244.49">
+            <p class="french-block">Le patron de l'aéroport défend les revenus du stationnement</p>
+            <span class="english-block">Airport boss defends car parking income</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_20.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

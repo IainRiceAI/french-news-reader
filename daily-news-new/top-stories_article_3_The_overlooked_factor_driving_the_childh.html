@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The overlooked factor driving the childhood obesity crisis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>The overlooked factor driving the childhood obesity crisis</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 03 Sep 2026 00:47:45 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c70de1ny92wo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: At a specialist childhood obesity clinic, almost all of the children are not in school. Why?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.39" data-end="12.79">
+            <p class="french-block">[Error Translate] The overlooked factor driving the childhood obesity crisis</p>
+            <span class="english-block">The overlooked factor driving the childhood obesity crisis</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.79" data-end="17.74">
+            <p class="french-block">[Error Translate] "I loved school. I loved to learn."</p>
+            <span class="english-block">"I loved school. I loved to learn."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.74" data-end="35.04">
+            <p class="french-block">[Error Translate] Ibbie, 16, always struggled with her weight, but it was during the Covid-19 lockdowns that she started eating even more. She was bullied by classmates over her size, and in her first year of secondary school she stopped attending completely.</p>
+            <span class="english-block">Ibbie, 16, always struggled with her weight, but it was during the Covid-19 lockdowns that she started eating even more. She was bullied by classmates over her size, and in her first year of secondary school she stopped attending completely.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.04" data-end="40.75">
+            <p class="french-block">[Error Translate] Away from the routine of the school day, her weight problems worsened.</p>
+            <span class="english-block">Away from the routine of the school day, her weight problems worsened.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.75" data-end="52.32">
+            <p class="french-block">[Error Translate] "When you are at home 24/7 it is very easy to go into the kitchen to get a snack. It's not the same if you are at school," says Ibbie, from Doncaster.</p>
+            <span class="english-block">"When you are at home 24/7 it is very easy to go into the kitchen to get a snack. It's not the same if you are at school," says Ibbie, from Doncaster.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.32" data-end="68.28">
+            <p class="french-block">[Error Translate] By the age of 12 she weighed nearly 22 stone (140kg) and was diagnosed with liver damage. "I was told that I might need to have a liver transplant if I didn't lose weight. That was scary to hear."</p>
+            <span class="english-block">By the age of 12 she weighed nearly 22 stone (140kg) and was diagnosed with liver damage. "I was told that I might need to have a liver transplant if I didn't lose weight. That was scary to hear."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.28" data-end="96.86">
+            <p class="french-block">[Error Translate] Ibbie's experience is one of the more extreme examples of children living with obesity in the UK – but her story is not unique. She is one of more than 6,000 children who have been treated at a pioneering weight-loss service for the most obese children in the country. These Complications from Excess Weight (CEW) clinics are a network of 39 specialist NHS hubs across England designed to treat severe obesity in children.</p>
+            <span class="english-block">Ibbie's experience is one of the more extreme examples of children living with obesity in the UK – but her story is not unique. She is one of more than 6,000 children who have been treated at a pioneering weight-loss service for the most obese children in the country. These Complications from Excess Weight (CEW) clinics are a network of 39 specialist NHS hubs across England designed to treat severe obesity in children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.86" data-end="108.19">
+            <p class="french-block">[Error Translate] Sixteen-year-old Ibbie lost 10 stone (64kg) with the help of weight-loss drugs. She says being away from school fuelled her obesity</p>
+            <span class="english-block">Sixteen-year-old Ibbie lost 10 stone (64kg) with the help of weight-loss drugs. She says being away from school fuelled her obesity</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.19" data-end="117.22">
+            <p class="french-block">[Error Translate] Some of the young people treated at the clinics have mental health problems and learning disabilities; others are neurodiverse or autistic.</p>
+            <span class="english-block">Some of the young people treated at the clinics have mental health problems and learning disabilities; others are neurodiverse or autistic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.22" data-end="124.34">
+            <p class="french-block">[Error Translate] But there's one characteristic that unites nearly all the children: they do not attend school.</p>
+            <span class="english-block">But there's one characteristic that unites nearly all the children: they do not attend school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.34" data-end="137.33">
+            <p class="french-block">[Error Translate] The scientific picture is still emerging, but senior doctors who have spoken to the BBC say that school attendance is emerging as a key, overlooked factor in the battle against childhood obesity.</p>
+            <span class="english-block">The scientific picture is still emerging, but senior doctors who have spoken to the BBC say that school attendance is emerging as a key, overlooked factor in the battle against childhood obesity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="137.33" data-end="150.82">
+            <p class="french-block">[Error Translate] In the 2000s, when Jamie Oliver was touring British schools for his influential Channel 4 series, it was argued that children were getting fat from buying too many turkey twizzlers at the school canteen.</p>
+            <span class="english-block">In the 2000s, when Jamie Oliver was touring British schools for his influential Channel 4 series, it was argued that children were getting fat from buying too many turkey twizzlers at the school canteen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.82" data-end="157.27">
+            <p class="french-block">[Error Translate] Now, it's being away from school that seems to be a problem, scientists say.</p>
+            <span class="english-block">Now, it's being away from school that seems to be a problem, scientists say.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.27" data-end="168.31">
+            <p class="french-block">[Error Translate] Childhood obesity has been rising in the UK for decades, and scientists have generally identified a simple culprit: increased consumption of junk food.</p>
+            <span class="english-block">Childhood obesity has been rising in the UK for decades, and scientists have generally identified a simple culprit: increased consumption of junk food.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="168.31" data-end="191.21">
+            <p class="french-block">[Error Translate] But then, in 2020, it became more complicated. While childhood obesity had been rising steadily long before the pandemic, the rates exploded during the lockdowns. The proportion of overweight and obese 10 and 11-year-olds rose from 35% to 41%, with poorer children disproportionately affected.</p>
+            <span class="english-block">But then, in 2020, it became more complicated. While childhood obesity had been rising steadily long before the pandemic, the rates exploded during the lockdowns. The proportion of overweight and obese 10 and 11-year-olds rose from 35% to 41%, with poorer children disproportionately affected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.21" data-end="209.45">
+            <p class="french-block">[Error Translate] Although obesity levels have come down since, they have never returned to pre-pandemic levels. The most recent government data shows that one in 10 children starting school in England is obese, but that figure rises to one in five by the time children leave primary school.</p>
+            <span class="english-block">Although obesity levels have come down since, they have never returned to pre-pandemic levels. The most recent government data shows that one in 10 children starting school in England is obese, but that figure rises to one in five by the time children leave primary school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.45" data-end="242.83">
+            <p class="french-block">[Error Translate] Prof Ken Ong, the lead clinician at Cambridge University Hospital's CEW clinic, believes that the current high level of childhood obesity is rooted in the school time that was missed during the pandemic. "We do know that diets got worse. We do know that children did a lot less physical activity. We know that for many children, they became quite isolated being taken out of schools," he says. "I think these are the same factors that are and have been contributing to overweight and obesity."</p>
+            <span class="english-block">Prof Ken Ong, the lead clinician at Cambridge University Hospital's CEW clinic, believes that the current high level of childhood obesity is rooted in the school time that was missed during the pandemic. "We do know that diets got worse. We do know that children did a lot less physical activity. We know that for many children, they became quite isolated being taken out of schools," he says. "I think these are the same factors that are and have been contributing to overweight and obesity."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.83" data-end="270.91">
+            <p class="french-block">[Error Translate] It's well-documented that even short periods of time out of school, like the summer holidays, can lead to an increase in children's weight. And since the pandemic, fewer British children are attending school altogether. In 2019, about 10% of pupils at English state schools were classed as "persistently absent", meaning they missed at least 10% of classes. Now, it is 18%.</p>
+            <span class="english-block">It's well-documented that even short periods of time out of school, like the summer holidays, can lead to an increase in children's weight. And since the pandemic, fewer British children are attending school altogether. In 2019, about 10% of pupils at English state schools were classed as "persistently absent", meaning they missed at least 10% of classes. Now, it is 18%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.91" data-end="296.47">
+            <p class="french-block">[Error Translate] We don't have official, UK-specific data tracking the connection between obesity and school absence, but international research has historically suggested a connection. A meta-analysis published in 2017, which looked at research across seven countries, suggested that an obese child was 54% more likely to be absent from school compared to a child with a healthy weight.</p>
+            <span class="english-block">We don't have official, UK-specific data tracking the connection between obesity and school absence, but international research has historically suggested a connection. A meta-analysis published in 2017, which looked at research across seven countries, suggested that an obese child was 54% more likely to be absent from school compared to a child with a healthy weight.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="296.47" data-end="306.89">
+            <p class="french-block">[Error Translate] There has been no extensive research in Britain on why school absence might be causing obesity, but doctors who have spoken to the BBC have their theories.</p>
+            <span class="english-block">There has been no extensive research in Britain on why school absence might be causing obesity, but doctors who have spoken to the BBC have their theories.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="306.89" data-end="337.97">
+            <p class="french-block">[Error Translate] One factor is diet. Since the 2000s - when all four UK governments passed laws to make school lunches healthier - it's become much harder to find high-sugar or high-fat foods in most canteens. At home, those restrictions don't apply. By 2010, a few years after the new laws were introduced, a study from the University of Leeds found that only 1.1% of home-packed lunches met the nutritional requirements that would apply to a meal bought by a child at school.</p>
+            <span class="english-block">One factor is diet. Since the 2000s - when all four UK governments passed laws to make school lunches healthier - it's become much harder to find high-sugar or high-fat foods in most canteens. At home, those restrictions don't apply. By 2010, a few years after the new laws were introduced, a study from the University of Leeds found that only 1.1% of home-packed lunches met the nutritional requirements that would apply to a meal bought by a child at school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.97" data-end="351.94">
+            <p class="french-block">[Error Translate] And a US study from earlier this year found that child obesity rose in states where a universal free school meal programme was withdrawn in 2022 (presumably because it prompted children to eat unhealthy food at home).</p>
+            <span class="english-block">And a US study from earlier this year found that child obesity rose in states where a universal free school meal programme was withdrawn in 2022 (presumably because it prompted children to eat unhealthy food at home).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.94" data-end="368.88">
+            <p class="french-block">[Error Translate] "While school food is not as good as it should be, there are some regulations around it," says Keith Godfrey, an epidemiology professor at the University of Southampton. "Whereas in the home environment, it's much more variable in terms of what children receive."</p>
+            <span class="english-block">"While school food is not as good as it should be, there are some regulations around it," says Keith Godfrey, an epidemiology professor at the University of Southampton. "Whereas in the home environment, it's much more variable in terms of what children receive."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="368.88" data-end="382.37">
+            <p class="french-block">[Error Translate] Exercise also matters. A British study from 2014 looked at step counts measured with electronic sensors, and found that most children are more active on school days than weekends.</p>
+            <span class="english-block">Exercise also matters. A British study from 2014 looked at step counts measured with electronic sensors, and found that most children are more active on school days than weekends.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="382.37" data-end="392.83">
+            <p class="french-block">[Error Translate] 'Jamie's School Dinners', presented by the TV chef Jamie Oliver in 2005, added to a national debate about the healthiness of school food</p>
+            <span class="english-block">'Jamie's School Dinners', presented by the TV chef Jamie Oliver in 2005, added to a national debate about the healthiness of school food</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="392.83" data-end="414.79">
+            <p class="french-block">[Error Translate] Dr Catherine Falconer, a leading researcher who has looked at the link between child health and school absence (and who also works for the UK Health Security Agency), says there's "quite strong evidence that going to school has a big impact on health". She adds: "The very act of leaving the house and walking to school is beneficial."</p>
+            <span class="english-block">Dr Catherine Falconer, a leading researcher who has looked at the link between child health and school absence (and who also works for the UK Health Security Agency), says there's "quite strong evidence that going to school has a big impact on health". She adds: "The very act of leaving the house and walking to school is beneficial."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="414.79" data-end="430.03">
+            <p class="french-block">[Error Translate] The science is not yet settled, of course, and it can be difficult to disentangle cause from effect. School absence might be driving obesity - but it's also possible that obesity is making children miss school.</p>
+            <span class="english-block">The science is not yet settled, of course, and it can be difficult to disentangle cause from effect. School absence might be driving obesity - but it's also possible that obesity is making children miss school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="430.03" data-end="448.87">
+            <p class="french-block">[Error Translate] And everyone agrees that if school absence is causing obesity, it's just one of many causes. Other factors - like the proliferation of ultra-processed foods - also matter. And there are thousands of home-schooled children in Britain who maintain a perfectly healthy weight.</p>
+            <span class="english-block">And everyone agrees that if school absence is causing obesity, it's just one of many causes. Other factors - like the proliferation of ultra-processed foods - also matter. And there are thousands of home-schooled children in Britain who maintain a perfectly healthy weight.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="448.87" data-end="458.74">
+            <p class="french-block">[Error Translate] But scientists who have spoken to the BBC say they are confident that, at least in some cases, school absence is playing a key causal role.</p>
+            <span class="english-block">But scientists who have spoken to the BBC say they are confident that, at least in some cases, school absence is playing a key causal role.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="458.74" data-end="483.94">
+            <p class="french-block">[Error Translate] "School attendance is key," says Prof Simon Kenny, NHS England's national clinical director for children and young people, and the man who launched the first CEW clinics in 2021. "I hadn't quite clocked how absent these children are not just from school but from life. You don't see them in the street or youth clubs or sports centres. They are outside of society."</p>
+            <span class="english-block">"School attendance is key," says Prof Simon Kenny, NHS England's national clinical director for children and young people, and the man who launched the first CEW clinics in 2021. "I hadn't quite clocked how absent these children are not just from school but from life. You don't see them in the street or youth clubs or sports centres. They are outside of society."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="483.94" data-end="499.51">
+            <p class="french-block">[Error Translate] And it can lead to unhappiness. Prof Julian Hamilton-Shield, a consultant paediatrician at the Bristol Royal Hospital for Children, says that the severely obese children he treats are "the most unhappy children I have come across".</p>
+            <span class="english-block">And it can lead to unhappiness. Prof Julian Hamilton-Shield, a consultant paediatrician at the Bristol Royal Hospital for Children, says that the severely obese children he treats are "the most unhappy children I have come across".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="499.51" data-end="520.08">
+            <p class="french-block">[Error Translate] Ibbie, the 16-year-old treated at Sheffield's CEW clinic, remembers some dark days. "The bullying got so bad… there was physical bullying as well as verbal," she remembers. "I had suicidal thoughts. It got to the stage where I actually tried to take my own life."</p>
+            <span class="english-block">Ibbie, the 16-year-old treated at Sheffield's CEW clinic, remembers some dark days. "The bullying got so bad… there was physical bullying as well as verbal," she remembers. "I had suicidal thoughts. It got to the stage where I actually tried to take my own life."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="520.08" data-end="524.33">
+            <p class="french-block">[Error Translate] So, how can the problem be fixed?</p>
+            <span class="english-block">So, how can the problem be fixed?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="524.33" data-end="535.06">
+            <p class="french-block">[Error Translate] One approach is to send health workers directly into schools to deliver personalised health plans. The CEW clinics have tried just this approach.</p>
+            <span class="english-block">One approach is to send health workers directly into schools to deliver personalised health plans. The CEW clinics have tried just this approach.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="535.06" data-end="563.81">
+            <p class="french-block">[Error Translate] Tessa Saunders, a family therapist at Cambridge's CEW clinic, says that schools should in some cases allow children to follow their own diet plans - even if it means breaking school rules. Obese children could be given extra time in the canteen, she says, to help them slow down their eating so their bodies have more time to feel full. And they could be offered an extra snack in the afternoon so they're not tempted to overeat when they get home.</p>
+            <span class="english-block">Tessa Saunders, a family therapist at Cambridge's CEW clinic, says that schools should in some cases allow children to follow their own diet plans - even if it means breaking school rules. Obese children could be given extra time in the canteen, she says, to help them slow down their eating so their bodies have more time to feel full. And they could be offered an extra snack in the afternoon so they're not tempted to overeat when they get home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="563.81" data-end="578.86">
+            <p class="french-block">[Error Translate] She admits it might "seem weird" if obese children are given more food than other children. But, she says, "there's a reason behind it. It's not the mum trying to make her kid the special one."</p>
+            <span class="english-block">She admits it might "seem weird" if obese children are given more food than other children. But, she says, "there's a reason behind it. It's not the mum trying to make her kid the special one."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="578.86" data-end="589.46">
+            <p class="french-block">[Error Translate] She says teachers could also closely monitor the water intake of obese children (sometimes when children think they feel hungry, they are actually thirsty).</p>
+            <span class="english-block">She says teachers could also closely monitor the water intake of obese children (sometimes when children think they feel hungry, they are actually thirsty).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="589.46" data-end="601.06">
+            <p class="french-block">[Error Translate] Children in the UK missed several months of school during the 2020/21 Covid-19 lockdowns - and doctors say that fuelled a spike in childhood obesity</p>
+            <span class="english-block">Children in the UK missed several months of school during the 2020/21 Covid-19 lockdowns - and doctors say that fuelled a spike in childhood obesity</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="601.06" data-end="612.48">
+            <p class="french-block">[Error Translate] "I think in this country we have been focused on school attendance being a school problem,"  Dr Falconer says.  "School absence should be treated as a public health issue."</p>
+            <span class="english-block">"I think in this country we have been focused on school attendance being a school problem,"  Dr Falconer says.  "School absence should be treated as a public health issue."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="612.48" data-end="630.1">
+            <p class="french-block">[Error Translate] She also thinks that reversing the decline in school nurses could help spot vulnerable children sooner. "I think there is a real potential around schools being a place you can receive some level of healthcare, whether it's around healthy eating, vaccinations or dental care."</p>
+            <span class="english-block">She also thinks that reversing the decline in school nurses could help spot vulnerable children sooner. "I think there is a real potential around schools being a place you can receive some level of healthcare, whether it's around healthy eating, vaccinations or dental care."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="630.1" data-end="647.59">
+            <p class="french-block">[Error Translate] Of course, it takes work to get a child back into school after a long period of absence. Some parents who attend the clinic hope there might be an easier solution to their child's obesity: weight-loss drugs like Mounjaro and Ozempic, known as GLP-1s.</p>
+            <span class="english-block">Of course, it takes work to get a child back into school after a long period of absence. Some parents who attend the clinic hope there might be an easier solution to their child's obesity: weight-loss drugs like Mounjaro and Ozempic, known as GLP-1s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="647.59" data-end="661.25">
+            <p class="french-block">[Error Translate] The drugs are only licensed for children aged 12 and over, and they aren't routinely recommended for anyone under 18, under guidelines from the UK's National Institute for Health and Care Excellence.</p>
+            <span class="english-block">The drugs are only licensed for children aged 12 and over, and they aren't routinely recommended for anyone under 18, under guidelines from the UK's National Institute for Health and Care Excellence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="661.25" data-end="672.58">
+            <p class="french-block">[Error Translate] Prof Ong says he has encountered parents at his clinic who want access to weight-loss jabs - an easier option, perhaps, than getting a child back into school.</p>
+            <span class="english-block">Prof Ong says he has encountered parents at his clinic who want access to weight-loss jabs - an easier option, perhaps, than getting a child back into school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="672.58" data-end="691.7">
+            <p class="french-block">[Error Translate] And many doctors see their promise. They point out that obesity in children is a potentially life-threatening condition if left untreated for decades. Prof Julian Hamilton-Shield says he's seen weight-loss drugs have a transformative effect on the self-esteem of severely obese teenagers.</p>
+            <span class="english-block">And many doctors see their promise. They point out that obesity in children is a potentially life-threatening condition if left untreated for decades. Prof Julian Hamilton-Shield says he's seen weight-loss drugs have a transformative effect on the self-esteem of severely obese teenagers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="691.7" data-end="698.02">
+            <p class="french-block">[Error Translate] There's a reason child vaccination rates are falling - and it's not social media</p>
+            <span class="english-block">There's a reason child vaccination rates are falling - and it's not social media</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="698.02" data-end="704.93">
+            <p class="french-block">[Error Translate] Young adults are taking prescription drugs instead of alcohol - and it's dividing experts</p>
+            <span class="english-block">Young adults are taking prescription drugs instead of alcohol - and it's dividing experts</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="704.93" data-end="711.31">
+            <p class="french-block">[Error Translate] A split in the spectrum? The ongoing battle to define autism</p>
+            <span class="english-block">A split in the spectrum? The ongoing battle to define autism</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="711.31" data-end="748.61">
+            <p class="french-block">[Error Translate] Around the same time as she dropped out of school, Ibbie was given GLP-1 injections as part of her treatment at the Sheffield CEW clinic. She was just 12 years old. She lost 10 stone (64kg) and is now much healthier. "It has completely changed my life," she says. "I actually started losing weight before taking the drugs just to prove to myself I could do it. After losing the extra weight I no longer have liver failure, I am no longer prediabetic. I am a lot happier and more confident in myself."</p>
+            <span class="english-block">Around the same time as she dropped out of school, Ibbie was given GLP-1 injections as part of her treatment at the Sheffield CEW clinic. She was just 12 years old. She lost 10 stone (64kg) and is now much healthier. "It has completely changed my life," she says. "I actually started losing weight before taking the drugs just to prove to myself I could do it. After losing the extra weight I no longer have liver failure, I am no longer prediabetic. I am a lot happier and more confident in myself."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="748.61" data-end="764.06">
+            <p class="french-block">[Error Translate] Some parents who are desperate to find a solution to their child's obesity have resorted to buying the drugs privately online. "These parents have the best possible intentions," Prof Hamilton-Shield says, "but I can't advocate for that."</p>
+            <span class="english-block">Some parents who are desperate to find a solution to their child's obesity have resorted to buying the drugs privately online. "These parents have the best possible intentions," Prof Hamilton-Shield says, "but I can't advocate for that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="764.06" data-end="773.54">
+            <p class="french-block">[Error Translate] But Prof Ong cautions that weight-loss drugs alone aren't going to offer severely obese children the life-changing health benefits they need.</p>
+            <span class="english-block">But Prof Ong cautions that weight-loss drugs alone aren't going to offer severely obese children the life-changing health benefits they need.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="773.54" data-end="790.32">
+            <p class="french-block">[Error Translate] "Some families see weight-loss medication as a quick fix," he says. "Families who come here have very complex needs and if those aren't addressed then either the weight will come back very quickly, or the medication is papering over the many other needs of these children."</p>
+            <span class="english-block">"Some families see weight-loss medication as a quick fix," he says. "Families who come here have very complex needs and if those aren't addressed then either the weight will come back very quickly, or the medication is papering over the many other needs of these children."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="790.32" data-end="799.73">
+            <p class="french-block">[Error Translate] Ultimately, he thinks, it's more important for a child to build a healthy routine - and that means regular attendance at school.</p>
+            <span class="english-block">Ultimately, he thinks, it's more important for a child to build a healthy routine - and that means regular attendance at school.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="799.73" data-end="826.58">
+            <p class="french-block">[Error Translate] Doctors say that getting obese children back into school could be a key tool to address the childhood obesity crisis. But obstacles remain. The current network of 39 CEW clinics in England reaches just 5% of the obese children that are eligible. The annual cost of treating obesity-related ill health (for all ages) in the NHS is now estimated at £12bn.</p>
+            <span class="english-block">Doctors say that getting obese children back into school could be a key tool to address the childhood obesity crisis. But obstacles remain. The current network of 39 CEW clinics in England reaches just 5% of the obese children that are eligible. The annual cost of treating obesity-related ill health (for all ages) in the NHS is now estimated at £12bn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="826.58" data-end="851.71">
+            <p class="french-block">[Error Translate] Although Ibbie became fitter and healthier, she never did return to school. She says the bullying she received from classmates was so bad she developed symptoms of PTSD. Instead she was home-schooled by her mother, Andrea, with a schedule that included plenty of history field trips. Ibbie's year group took their GCSEs this summer; Ibbie is yet to take them.</p>
+            <span class="english-block">Although Ibbie became fitter and healthier, she never did return to school. She says the bullying she received from classmates was so bad she developed symptoms of PTSD. Instead she was home-schooled by her mother, Andrea, with a schedule that included plenty of history field trips. Ibbie's year group took their GCSEs this summer; Ibbie is yet to take them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="851.71" data-end="869.59">
+            <p class="french-block">[Error Translate] But she hasn't given up on education. Inspired by her time at the clinic, she now hopes one day to study healthcare at college. "I just know how life-changing the support in the clinic was for me," she says. "I want to help other people too."</p>
+            <span class="english-block">But she hasn't given up on education. Inspired by her time at the clinic, she now hopes one day to study healthcare at college. "I just know how life-changing the support in the clinic was for me," she says. "I want to help other people too."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="869.59" data-end="873.65">
+            <p class="french-block">[Error Translate] Top image credit: Getty Images.</p>
+            <span class="english-block">Top image credit: Getty Images.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="873.65" data-end="878.9">
+            <p class="french-block">[Error Translate] Are you personally affected by the issues raised in this story?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_3.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
