@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-09-03 06:25:46  
+Generated on: 2026-09-04 06:18:50  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Burnham pressed on economy at first PMQs as borrowing costs surge**
-   - **Published:** Wed, 02 Sep 2026 20:43:06 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Burnham_pressed_on_economy_at_first_PMQs.md](top-stories_article_1_Burnham_pressed_on_economy_at_first_PMQs.md)
+1. **Farage senior aide filmed suggesting way to avoid donations law**
+   - **Published:** Thu, 03 Sep 2026 21:07:58 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Farage_senior_aide_filmed_suggesting_way.md](top-stories_article_1_Farage_senior_aide_filmed_suggesting_way.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **King hails 'unprecedented' Bayeux Tapestry exhibition in London**
-   - **Published:** Wed, 02 Sep 2026 18:57:51 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_King_hails_unprecedented_Bayeux_Tapestry.md](top-stories_article_2_King_hails_unprecedented_Bayeux_Tapestry.md)
+2. **Watch: Moment workers are rescued from Nepal tunnel**
+   - **Published:** Fri, 04 Sep 2026 04:45:54 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Watch_Moment_workers_are_rescued_from_Ne.md](top-stories_article_2_Watch_Moment_workers_are_rescued_from_Ne.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **The overlooked factor driving the childhood obesity crisis**
-   - **Published:** Thu, 03 Sep 2026 00:47:45 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_The_overlooked_factor_driving_the_childh.md](top-stories_article_3_The_overlooked_factor_driving_the_childh.md)
+3. **Controversial Jackdaw gas field set to be approved in weeks, sources say**
+   - **Published:** Thu, 03 Sep 2026 23:00:15 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Controversial_Jackdaw_gas_field_set_to_b.md](top-stories_article_3_Controversial_Jackdaw_gas_field_set_to_b.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Uber launches UK's first robotaxis with a driver - here's what it's like to ride in one**
-   - **Published:** Wed, 02 Sep 2026 23:36:49 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Uber_launches_UKs_first_robotaxis_with_a.md](top-stories_article_4_Uber_launches_UKs_first_robotaxis_with_a.md)
+4. **Transplanted pig kidney works in US man's body for record 271 days**
+   - **Published:** Thu, 03 Sep 2026 22:31:23 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Transplanted_pig_kidney_works_in_US_mans.md](top-stories_article_4_Transplanted_pig_kidney_works_in_US_mans.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **EU and Nato vow to step up pressure on Russia after 'new escalation' in Germany**
-   - **Published:** Thu, 03 Sep 2026 03:21:24 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_EU_and_Nato_vow_to_step_up_pressure_on_R.md](top-stories_article_5_EU_and_Nato_vow_to_step_up_pressure_on_R.md)
+5. **Argentine leader threatens to sanction oil firms working off Falklands**
+   - **Published:** Fri, 04 Sep 2026 04:59:34 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Argentine_leader_threatens_to_sanction_o.md](top-stories_article_5_Argentine_leader_threatens_to_sanction_o.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Chris Mason: Reform face headwinds as they gather for conference**
-   - **Published:** Thu, 03 Sep 2026 01:55:46 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Chris_Mason_Reform_face_headwinds_as_the.md](top-stories_article_6_Chris_Mason_Reform_face_headwinds_as_the.md)
+6. **Girl group Katseye are missing two members, but their tour still dazzles**
+   - **Published:** Fri, 04 Sep 2026 00:19:53 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Girl_group_Katseye_are_missing_two_membe.md](top-stories_article_6_Girl_group_Katseye_are_missing_two_membe.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **B&Q and Five Guys among firms that paid staff below minimum wage**
-   - **Published:** Wed, 02 Sep 2026 23:08:05 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_BQ_and_Five_Guys_among_firms_that_paid_s.md](top-stories_article_7_BQ_and_Five_Guys_among_firms_that_paid_s.md)
+7. **Watch: Inside court as Lindsay Clancy's lawyer asks judge to remove juror**
+   - **Published:** Fri, 04 Sep 2026 00:55:45 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Watch_Inside_court_as_Lindsay_Clancys_la.md](top-stories_article_7_Watch_Inside_court_as_Lindsay_Clancys_la.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Rocky Horror star Tim Curry's cause of death revealed**
-   - **Published:** Wed, 02 Sep 2026 23:47:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Rocky_Horror_star_Tim_Currys_cause_of_de.md](top-stories_article_8_Rocky_Horror_star_Tim_Currys_cause_of_de.md)
+8. **Volkswagen board approves plan to cut another 50,000 jobs**
+   - **Published:** Fri, 04 Sep 2026 01:20:32 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Volkswagen_board_approves_plan_to_cut_an.md](top-stories_article_8_Volkswagen_board_approves_plan_to_cut_an.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says**
-   - **Published:** Wed, 02 Sep 2026 17:33:45 GMT
-   - **Read Parallel Translation:** [world_article_9_Iranian_attack_on_Saudi_tanker_killed_tw.md](world_article_9_Iranian_attack_on_Saudi_tanker_killed_tw.md)
+1. **Nepal says it will need billions in funding to rebuild after flash floods**
+   - **Published:** Fri, 04 Sep 2026 02:20:37 GMT
+   - **Read Parallel Translation:** [world_article_9_Nepal_says_it_will_need_billions_in_fund.md](world_article_9_Nepal_says_it_will_need_billions_in_fund.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Protests in Spain against government's handling of Ceuta migrant crisis**
-   - **Published:** Wed, 02 Sep 2026 21:34:27 GMT
-   - **Read Parallel Translation:** [world_article_10_Protests_in_Spain_against_governments_ha.md](world_article_10_Protests_in_Spain_against_governments_ha.md)
+2. **Tensions flare as judge declines to remove juror in Lindsay Clancy trial**
+   - **Published:** Fri, 04 Sep 2026 00:54:46 GMT
+   - **Read Parallel Translation:** [world_article_10_Tensions_flare_as_judge_declines_to_remo.md](world_article_10_Tensions_flare_as_judge_declines_to_remo.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **EU and Nato vow to step up pressure on Russia after 'new escalation' in Germany**
-   - **Published:** Thu, 03 Sep 2026 03:21:24 GMT
-   - **Read Parallel Translation:** [world_article_11_EU_and_Nato_vow_to_step_up_pressure_on_R.md](world_article_11_EU_and_Nato_vow_to_step_up_pressure_on_R.md)
+3. **Argentine leader threatens to sanction oil firms working off Falklands**
+   - **Published:** Fri, 04 Sep 2026 04:59:34 GMT
+   - **Read Parallel Translation:** [world_article_11_Argentine_leader_threatens_to_sanction_o.md](world_article_11_Argentine_leader_threatens_to_sanction_o.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Rosenberg: Putin's veiled threat to UK part of Russia's campaign against West**
-   - **Published:** Wed, 02 Sep 2026 11:47:11 GMT
-   - **Read Parallel Translation:** [world_article_12_Rosenberg_Putins_veiled_threat_to_UK_par.md](world_article_12_Rosenberg_Putins_veiled_threat_to_UK_par.md)
+4. **US investigating if missile hit Iran wedding, Vance says**
+   - **Published:** Thu, 03 Sep 2026 22:19:59 GMT
+   - **Read Parallel Translation:** [world_article_12_US_investigating_if_missile_hit_Iran_wed.md](world_article_12_US_investigating_if_missile_hit_Iran_wed.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **B&Q and Five Guys among firms that paid staff below minimum wage**
-   - **Published:** Wed, 02 Sep 2026 23:08:05 GMT
-   - **Read Parallel Translation:** [business_article_13_BQ_and_Five_Guys_among_firms_that_paid_s.md](business_article_13_BQ_and_Five_Guys_among_firms_that_paid_s.md)
+1. **Controversial Jackdaw gas field set to be approved in weeks, sources say**
+   - **Published:** Thu, 03 Sep 2026 23:00:15 GMT
+   - **Read Parallel Translation:** [business_article_13_Controversial_Jackdaw_gas_field_set_to_b.md](business_article_13_Controversial_Jackdaw_gas_field_set_to_b.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Almost half of households do not see benefits of economic growth, report says**
-   - **Published:** Wed, 02 Sep 2026 23:26:58 GMT
-   - **Read Parallel Translation:** [business_article_14_Almost_half_of_households_do_not_see_ben.md](business_article_14_Almost_half_of_households_do_not_see_ben.md)
+2. **Volkswagen board approves plan to cut another 50,000 jobs**
+   - **Published:** Fri, 04 Sep 2026 01:20:32 GMT
+   - **Read Parallel Translation:** [business_article_14_Volkswagen_board_approves_plan_to_cut_an.md](business_article_14_Volkswagen_board_approves_plan_to_cut_an.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **'I don't even like them': How much should you give to office gift collections?**
-   - **Published:** Wed, 02 Sep 2026 23:25:50 GMT
-   - **Read Parallel Translation:** [business_article_15_I_dont_even_like_them_How_much_should_yo.md](business_article_15_I_dont_even_like_them_How_much_should_yo.md)
+3. **Argentine leader threatens to sanction oil firms working off Falklands**
+   - **Published:** Fri, 04 Sep 2026 04:59:34 GMT
+   - **Read Parallel Translation:** [business_article_15_Argentine_leader_threatens_to_sanction_o.md](business_article_15_Argentine_leader_threatens_to_sanction_o.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **How Victoria Beckham turned her fashion firm around and made it profitable**
-   - **Published:** Wed, 02 Sep 2026 23:24:06 GMT
-   - **Read Parallel Translation:** [business_article_16_How_Victoria_Beckham_turned_her_fashion_.md](business_article_16_How_Victoria_Beckham_turned_her_fashion_.md)
+4. **'I lost my savings after a job interview scam'**
+   - **Published:** Thu, 03 Sep 2026 23:41:49 GMT
+   - **Read Parallel Translation:** [business_article_16_I_lost_my_savings_after_a_job_interview_.md](business_article_16_I_lost_my_savings_after_a_job_interview_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Uber launches UK's first robotaxis with a driver - here's what it's like to ride in one**
-   - **Published:** Wed, 02 Sep 2026 23:36:49 GMT
-   - **Read Parallel Translation:** [technology_article_17_Uber_launches_UKs_first_robotaxis_with_a.md](technology_article_17_Uber_launches_UKs_first_robotaxis_with_a.md)
+1. **Could robots be the future of theme parks?**
+   - **Published:** Fri, 04 Sep 2026 02:02:02 GMT
+   - **Read Parallel Translation:** [technology_article_17_Could_robots_be_the_future_of_theme_park.md](technology_article_17_Could_robots_be_the_future_of_theme_park.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Uber to cut over 3,000 jobs in major global restructuring**
-   - **Published:** Wed, 02 Sep 2026 16:51:49 GMT
-   - **Read Parallel Translation:** [technology_article_18_Uber_to_cut_over_3000_jobs_in_major_glob.md](technology_article_18_Uber_to_cut_over_3000_jobs_in_major_glob.md)
+2. **AI data centres are booming in Australia - but at what cost?**
+   - **Published:** Thu, 03 Sep 2026 18:32:03 GMT
+   - **Read Parallel Translation:** [technology_article_18_AI_data_centres_are_booming_in_Australia.md](technology_article_18_AI_data_centres_are_booming_in_Australia.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Lords call for AI 'kill switch' powers in UK**
-   - **Published:** Wed, 02 Sep 2026 14:41:52 GMT
-   - **Read Parallel Translation:** [technology_article_19_Lords_call_for_AI_kill_switch_powers_in_.md](technology_article_19_Lords_call_for_AI_kill_switch_powers_in_.md)
+3. **Nvidia strikes $12.9bn deal to buy AI platform Hugging Face**
+   - **Published:** Thu, 03 Sep 2026 16:32:05 GMT
+   - **Read Parallel Translation:** [technology_article_19_Nvidia_strikes_129bn_deal_to_buy_AI_plat.md](technology_article_19_Nvidia_strikes_129bn_deal_to_buy_AI_plat.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **Criminals publish data of 8.7m people after airports hack**
-   - **Published:** Wed, 02 Sep 2026 11:00:59 GMT
-   - **Read Parallel Translation:** [technology_article_20_Criminals_publish_data_of_87m_people_aft.md](technology_article_20_Criminals_publish_data_of_87m_people_aft.md)
+4. **Watch: BBC travels in self-driving Uber around London**
+   - **Published:** Thu, 03 Sep 2026 07:20:23 GMT
+   - **Read Parallel Translation:** [technology_article_20_Watch_BBC_travels_in_self-driving_Uber_a.md](technology_article_20_Watch_BBC_travels_in_self-driving_Uber_a.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Widow whose husband died after falling into slurry pit warns of pressure on farmers**
-   - **Published:** Wed, 02 Sep 2026 21:57:00 GMT
-   - **Read Parallel Translation:** [science_article_21_Widow_whose_husband_died_after_falling_i.md](science_article_21_Widow_whose_husband_died_after_falling_i.md)
+1. **'Miracle' eagle with broken wing spotted back above Scottish coast**
+   - **Published:** Fri, 04 Sep 2026 00:46:54 GMT
+   - **Read Parallel Translation:** [science_article_21_Miracle_eagle_with_broken_wing_spotted_b.md](science_article_21_Miracle_eagle_with_broken_wing_spotted_b.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Will your name be the next UK storm?**
-   - **Published:** Wed, 02 Sep 2026 10:26:15 GMT
-   - **Read Parallel Translation:** [science_article_22_Will_your_name_be_the_next_UK_storm.md](science_article_22_Will_your_name_be_the_next_UK_storm.md)
+2. **‘So scary’: massive hail and torrential rain causes chaos in Toronto**
+   - **Published:** Thu, 03 Sep 2026 17:52:37 GMT
+   - **Read Parallel Translation:** [science_article_22_So_scary_massive_hail_and_torrential_rai.md](science_article_22_So_scary_massive_hail_and_torrential_rai.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Watch: Astronauts set out on rare all-female spacewalk**
-   - **Published:** Tue, 01 Sep 2026 21:08:48 GMT
-   - **Read Parallel Translation:** [science_article_23_Watch_Astronauts_set_out_on_rare_all-fem.md](science_article_23_Watch_Astronauts_set_out_on_rare_all-fem.md)
+3. **How the brain of a fly may help explain human behaviour**
+   - **Published:** Thu, 03 Sep 2026 15:01:41 GMT
+   - **Read Parallel Translation:** [science_article_23_How_the_brain_of_a_fly_may_help_explain_.md](science_article_23_How_the_brain_of_a_fly_may_help_explain_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **How a small island in Canada appeared, vanished, and was found again**
-   - **Published:** Tue, 01 Sep 2026 17:36:44 GMT
-   - **Read Parallel Translation:** [science_article_24_How_a_small_island_in_Canada_appeared_va.md](science_article_24_How_a_small_island_in_Canada_appeared_va.md)
+4. **Will El Nino bring chaos to UK weather?**
+   - **Published:** Thu, 03 Sep 2026 13:12:44 GMT
+   - **Read Parallel Translation:** [science_article_24_Will_El_Nino_bring_chaos_to_UK_weather.md](science_article_24_Will_El_Nino_bring_chaos_to_UK_weather.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **Children as young as six going to A&E in mental health crisis**
-   - **Published:** Wed, 02 Sep 2026 12:21:27 GMT
-   - **Read Parallel Translation:** [health_article_25_Children_as_young_as_six_going_to_AE_in_.md](health_article_25_Children_as_young_as_six_going_to_AE_in_.md)
+1. **Transplanted pig kidney works in US man's body for record 271 days**
+   - **Published:** Thu, 03 Sep 2026 22:31:23 GMT
+   - **Read Parallel Translation:** [health_article_25_Transplanted_pig_kidney_works_in_US_mans.md](health_article_25_Transplanted_pig_kidney_works_in_US_mans.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Flu vaccine rollout begins as NHS regroups from 'busiest summer'**
-   - **Published:** Wed, 02 Sep 2026 11:33:07 GMT
-   - **Read Parallel Translation:** [health_article_26_Flu_vaccine_rollout_begins_as_NHS_regrou.md](health_article_26_Flu_vaccine_rollout_begins_as_NHS_regrou.md)
+2. **Children as young as six going to A&E in mental health crisis**
+   - **Published:** Wed, 02 Sep 2026 12:21:27 GMT
+   - **Read Parallel Translation:** [health_article_26_Children_as_young_as_six_going_to_AE_in_.md](health_article_26_Children_as_young_as_six_going_to_AE_in_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Families hit by long waits for dementia diagnosis**
-   - **Published:** Wed, 02 Sep 2026 01:46:08 GMT
-   - **Read Parallel Translation:** [health_article_27_Families_hit_by_long_waits_for_dementia_.md](health_article_27_Families_hit_by_long_waits_for_dementia_.md)
+3. **Flu vaccine rollout begins as NHS regroups from 'busiest summer'**
+   - **Published:** Wed, 02 Sep 2026 11:33:07 GMT
+   - **Read Parallel Translation:** [health_article_27_Flu_vaccine_rollout_begins_as_NHS_regrou.md](health_article_27_Flu_vaccine_rollout_begins_as_NHS_regrou.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Urine test can spot more than nine in 10 bladder cancers**
-   - **Published:** Wed, 02 Sep 2026 01:39:17 GMT
-   - **Read Parallel Translation:** [health_article_28_Urine_test_can_spot_more_than_nine_in_10.md](health_article_28_Urine_test_can_spot_more_than_nine_in_10.md)
+4. **Families hit by long waits for dementia diagnosis**
+   - **Published:** Wed, 02 Sep 2026 01:46:08 GMT
+   - **Read Parallel Translation:** [health_article_28_Families_hit_by_long_waits_for_dementia_.md](health_article_28_Families_hit_by_long_waits_for_dementia_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Burnham pressed on economy at first PMQs as borrowing costs surge**
-   - **Published:** Wed, 02 Sep 2026 20:43:06 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_pressed_on_economy_at_first_PMQs.md](politics_article_29_Burnham_pressed_on_economy_at_first_PMQs.md)
+1. **Farage senior aide filmed suggesting way to avoid donations law**
+   - **Published:** Thu, 03 Sep 2026 21:07:58 GMT
+   - **Read Parallel Translation:** [politics_article_29_Farage_senior_aide_filmed_suggesting_way.md](politics_article_29_Farage_senior_aide_filmed_suggesting_way.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Reform up against 'complainants' society', Farage tells BBC**
-   - **Published:** Wed, 02 Sep 2026 17:43:48 GMT
-   - **Read Parallel Translation:** [politics_article_30_Reform_up_against_complainants_society_F.md](politics_article_30_Reform_up_against_complainants_society_F.md)
+2. **Burnham and Macron agree to scale up action on small boats**
+   - **Published:** Thu, 03 Sep 2026 15:46:49 GMT
+   - **Read Parallel Translation:** [politics_article_30_Burnham_and_Macron_agree_to_scale_up_act.md](politics_article_30_Burnham_and_Macron_agree_to_scale_up_act.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Burnham's PMQs debut shows the challenge of delivering new style of politics**
-   - **Published:** Wed, 02 Sep 2026 14:26:39 GMT
-   - **Read Parallel Translation:** [politics_article_31_Burnhams_PMQs_debut_shows_the_challenge_.md](politics_article_31_Burnhams_PMQs_debut_shows_the_challenge_.md)
+3. **Reform UK promises £80bn cuts to public spending**
+   - **Published:** Thu, 03 Sep 2026 18:49:34 GMT
+   - **Read Parallel Translation:** [politics_article_31_Reform_UK_promises_80bn_cuts_to_public_s.md](politics_article_31_Reform_UK_promises_80bn_cuts_to_public_s.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Burnham promises more devolution and public control of essential services**
-   - **Published:** Tue, 01 Sep 2026 21:48:44 GMT
-   - **Read Parallel Translation:** [politics_article_32_Burnham_promises_more_devolution_and_pub.md](politics_article_32_Burnham_promises_more_devolution_and_pub.md)
+4. **Zack Polanski says he'll run for former PM Starmer's seat in by-election**
+   - **Published:** Thu, 03 Sep 2026 16:28:24 GMT
+   - **Read Parallel Translation:** [politics_article_32_Zack_Polanski_says_hell_run_for_former_P.md](politics_article_32_Zack_Polanski_says_hell_run_for_former_P.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **‘I'd be the last to know’: Stars of The Gentlemen react to Meghan reports**
-   - **Published:** Wed, 02 Sep 2026 21:44:13 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Id_be_the_last_to_know_Stars_of_The_Gent.md](entertainment_article_33_Id_be_the_last_to_know_Stars_of_The_Gent.md)
+1. **Girl group Katseye are missing two members, but their tour still dazzles**
+   - **Published:** Fri, 04 Sep 2026 00:19:53 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Girl_group_Katseye_are_missing_two_membe.md](entertainment_article_33_Girl_group_Katseye_are_missing_two_membe.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Lizzo 'grateful' after judge dismisses lawsuit against production company**
-   - **Published:** Wed, 02 Sep 2026 15:20:19 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Lizzo_grateful_after_judge_dismisses_law.md](entertainment_article_34_Lizzo_grateful_after_judge_dismisses_law.md)
+2. **Amelia Dimoldenberg to close doors of Chicken Shop Date**
+   - **Published:** Thu, 03 Sep 2026 16:08:53 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Amelia_Dimoldenberg_to_close_doors_of_Ch.md](entertainment_article_34_Amelia_Dimoldenberg_to_close_doors_of_Ch.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **King hails 'unprecedented' Bayeux Tapestry exhibition in London**
-   - **Published:** Wed, 02 Sep 2026 18:57:51 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_King_hails_unprecedented_Bayeux_Tapestry.md](entertainment_article_35_King_hails_unprecedented_Bayeux_Tapestry.md)
+3. **'Beautiful, vibrant' Disney star Carla Jeffery dies aged 33**
+   - **Published:** Thu, 03 Sep 2026 09:37:34 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Beautiful_vibrant_Disney_star_Carla_Jeff.md](entertainment_article_35_Beautiful_vibrant_Disney_star_Carla_Jeff.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Ariana Grande makes emotional tour exit and steps back from public life**
-   - **Published:** Tue, 01 Sep 2026 21:41:05 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Ariana_Grande_makes_emotional_tour_exit_.md](entertainment_article_36_Ariana_Grande_makes_emotional_tour_exit_.md)
+4. **Dolly Parton gets new star on Hollywood Walk of Fame after vandalism**
+   - **Published:** Thu, 03 Sep 2026 11:47:51 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Dolly_Parton_gets_new_star_on_Hollywood_.md](entertainment_article_36_Dolly_Parton_gets_new_star_on_Hollywood_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
