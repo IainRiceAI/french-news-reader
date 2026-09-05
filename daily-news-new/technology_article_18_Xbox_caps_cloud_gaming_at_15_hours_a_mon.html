@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xbox caps cloud gaming at 15 hours a month for Game Pass subscribers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Xbox caps cloud gaming at 15 hours a month for Game Pass subscribers</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 04 Sep 2026 11:48:24 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj06zd4l99lo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Xbox said the limits were due to the rising cost of cloud gaming, and would allow it to invest more in its performance
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.78" data-end="16.87">
+            <p class="french-block">Xbox introduit des limites de durée mensuelles strictes pour les abonnés Game Pass qui diffusent des jeux en ligne via son service de jeu en cloud.</p>
+            <span class="english-block">Xbox is introducing strict monthly time limits for Game Pass subscribers who stream games online through its cloud gaming service.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.87" data-end="31.1">
+            <p class="french-block">Les changements, qui entreront en vigueur en novembre, permettront à un abonné au forfait mensuel Ultimate à 16,99 £ de diffuser des jeux jusqu'à 15 heures par mois – avant de devoir acheter du temps de jeu supplémentaire dans le cloud.</p>
+            <span class="english-block">The changes, which come into effect in November, will see a subscriber to the  £16.99 Ultimate monthly plan able to stream games for up to 15 hours a month - before having to purchase additional cloud play time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.1" data-end="42.41">
+            <p class="french-block">[Error Translate] Xbox said the limits were due to the rising cost of cloud gaming, and they would allow the firm to "continue to invest" in the service's "reliability and performance".</p>
+            <span class="english-block">Xbox said the limits were due to the rising cost of cloud gaming, and they would allow the firm to "continue to invest" in the service's "reliability and performance".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.41" data-end="53.33">
+            <p class="french-block">[Error Translate] While some questioned, external whether the service was used by many to begin with, others called out, external the additional limits for subscribers.</p>
+            <span class="english-block">While some questioned, external whether the service was used by many to begin with, others called out, external the additional limits for subscribers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.33" data-end="67.1">
+            <p class="french-block">Le cloud gaming permet aux joueurs de diffuser et de jouer à des jeux en ligne à partir d'un serveur distant à l'aide d'un téléphone, d'une tablette ou d'une manette, plutôt que de les télécharger et de les exécuter sur un PC ou une console à la maison.</p>
+            <span class="english-block">Cloud gaming allows players to stream and play games online from a remote server using a phone, tablet or controller, rather than downloading and running it on a PC or console at home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.1" data-end="72.53">
+            <p class="french-block">[Error Translate] Different tiers of subscription to Game Pass will have different limits.</p>
+            <span class="english-block">Different tiers of subscription to Game Pass will have different limits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.53" data-end="82.42">
+            <p class="french-block">[Error Translate] Premium users will get 10 hours, while those on the basic Essential tier will get five hours a month before they have to pay for extra time.</p>
+            <span class="english-block">Premium users will get 10 hours, while those on the basic Essential tier will get five hours a month before they have to pay for extra time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.42" data-end="92.9">
+            <p class="french-block">[Error Translate] Xbox claimed just 4% of the people who use Games Pass - its Netflix-style subscription plan for games - use its cloud gaming service.</p>
+            <span class="english-block">Xbox claimed just 4% of the people who use Games Pass - its Netflix-style subscription plan for games - use its cloud gaming service.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.9" data-end="106.1">
+            <p class="french-block">[Error Translate] A recent Wall Street Journal article, external reported Game Pass has 30 million subscribers, which would leave the number of people affected by the cloud gaming changes at roughly 1.2 million.</p>
+            <span class="english-block">A recent Wall Street Journal article, external reported Game Pass has 30 million subscribers, which would leave the number of people affected by the cloud gaming changes at roughly 1.2 million.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.1" data-end="120.1">
+            <p class="french-block">[Error Translate] "This is a pretty awful change, hopefully Xbox adds an extra zero on the end cause 15hrs is abysmal. 30 minutes a day, really?" posted one commenter on X, external.</p>
+            <span class="english-block">"This is a pretty awful change, hopefully Xbox adds an extra zero on the end cause 15hrs is abysmal. 30 minutes a day, really?" posted one commenter on X, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.1" data-end="133.7">
+            <p class="french-block">Jez Corden de Windows Central a déclaré à la BBC que l'annonce montrait que "absolument rien n'était à l'abri de la crise des composants liés à l'IA", mais il a ajouté que cela mettait également en évidence "où se situent les priorités de Microsoft".</p>
+            <span class="english-block">Jez Corden of Windows Central told the BBC the announcement showed that "absolutely nothing is safe from the AI-driven component crisis," but he added it also highlighted "where Microsoft's priorities are".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.7" data-end="139.22">
+            <p class="french-block">[Error Translate] Both cloud gaming and AI use data centres to process information.</p>
+            <span class="english-block">Both cloud gaming and AI use data centres to process information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.22" data-end="150.07">
+            <p class="french-block">[Error Translate] "For them to continue to offer unlimited access to Microsoft Copilot [AI] for free but restrict paid cloud gaming in this way shows some contradiction," he added.</p>
+            <span class="english-block">"For them to continue to offer unlimited access to Microsoft Copilot [AI] for free but restrict paid cloud gaming in this way shows some contradiction," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.07" data-end="165.79">
+            <p class="french-block">Xbox a déclaré dans un article de blog externe qu'à partir de novembre, les utilisateurs pourraient également utiliser la fonctionnalité de jeu dans le cloud de l'entreprise sans s'abonner au Game Pass, mais en achetant des « heures de jeu dans le cloud » via la boutique Xbox.</p>
+            <span class="english-block">Xbox said in a blog post, external that from November, users would also be able to use the company's cloud gaming feature without subscribing to Game Pass, but by buying "cloud playtime hours" through the Xbox store.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.79" data-end="172.01">
+            <p class="french-block">[Error Translate] It has not revealed how much extra hours of cloud gaming would cost.</p>
+            <span class="english-block">It has not revealed how much extra hours of cloud gaming would cost.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.01" data-end="189.91">
+            <p class="french-block">La nouvelle intervient alors qu'Asha Sharma, directrice générale de Xbox, a déclaré récemment à la BBC dans une interview exclusive que l'entreprise et l'industrie dans son ensemble devaient "commencer à innover en matière d'abordabilité et d'efficacité", dans un contexte de "crise" des prix de l'informatique.</p>
+            <span class="english-block">The news comes as Asha Sharma, Xbox's chief executive, told the BBC in an exclusive recent interview that the company and the industry as a whole needed to "start to innovate on affordability and efficiency," amid a "crisis" in computing prices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.91" data-end="200.86">
+            <p class="french-block">[Error Translate] "As an industry, we're in the middle of 'Rampocalypse'. We're in the middle of people coming back from Covid and the patterns changing," she said.</p>
+            <span class="english-block">"As an industry, we're in the middle of 'Rampocalypse'. We're in the middle of people coming back from Covid and the patterns changing," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.86" data-end="216.74">
+            <p class="french-block">[Error Translate] "Rampocalypse" refers to the fact that the cost of a previously cheap hardware component, random access memory (Ram), has shot up in price with the expansion of compute-hungry data centres. Some people also call it "Ramageddon".</p>
+            <span class="english-block">"Rampocalypse" refers to the fact that the cost of a previously cheap hardware component, random access memory (Ram), has shot up in price with the expansion of compute-hungry data centres. Some people also call it "Ramageddon".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.74" data-end="232.85">
+            <p class="french-block">[Error Translate] Sharma added: "Within Xbox, we haven't been healthy. And so a lot of the reset that will take us throughout the year is really meant to help ensure that we are here for the next 25 years and we're continuing to serve our purpose and our mission."</p>
+            <span class="english-block">Sharma added: "Within Xbox, we haven't been healthy. And so a lot of the reset that will take us throughout the year is really meant to help ensure that we are here for the next 25 years and we're continuing to serve our purpose and our mission."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.85" data-end="249.43">
+            <p class="french-block">[Error Translate] According to Xbox owner Microsoft's July financial filings, external, annual Xbox revenue dropped by $1.7bn to roughly $21.8bn (£16.1bn) - a 7% decline from 2025.</p>
+            <span class="english-block">According to Xbox owner Microsoft's July financial filings, external, annual Xbox revenue dropped by $1.7bn to roughly $21.8bn (£16.1bn) - a 7% decline from 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.43" data-end="264.72">
+            <p class="french-block">[Error Translate] Part of Sharma's reset has seen 3,200 people let go at the company - with 1,600 job losses announced in July, and the remaining posts to go gradually over the course of Microsoft's 2027 financial year.</p>
+            <span class="english-block">Part of Sharma's reset has seen 3,200 people let go at the company - with 1,600 job losses announced in July, and the remaining posts to go gradually over the course of Microsoft's 2027 financial year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.72" data-end="278.57">
+            <p class="french-block">[Error Translate] Studios which had been acquired by Xbox - including Compulsion Games, which made the Bafta-winning South of Midnight and Double Fine Productions, makers of Psychonauts - were also made independent again.</p>
+            <span class="english-block">Studios which had been acquired by Xbox - including Compulsion Games, which made the Bafta-winning South of Midnight and Double Fine Productions, makers of Psychonauts - were also made independent again.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.57" data-end="288.07">
+            <p class="french-block">[Error Translate] Sharma is betting these changes can reverse its fortunes despite concerns over its subscription strategy and rising AI-related costs.</p>
+            <span class="english-block">Sharma is betting these changes can reverse its fortunes despite concerns over its subscription strategy and rising AI-related costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.07" data-end="299.71">
+            <p class="french-block">[Error Translate] "Sometimes you have to restructure a business when it's not doing well, and that was true with our Xbox business," Microsoft's president Brad Smith recently told the BBC.</p>
+            <span class="english-block">"Sometimes you have to restructure a business when it's not doing well, and that was true with our Xbox business," Microsoft's president Brad Smith recently told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="299.71" data-end="312.96">
+            <p class="french-block">[Error Translate] In an interview in July, Jeff Gattiss, Amazon's head of gaming, told the BBC he believed the rising cost of tech would mean people will turn to streaming games online rather than buying new consoles.</p>
+            <span class="english-block">In an interview in July, Jeff Gattiss, Amazon's head of gaming, told the BBC he believed the rising cost of tech would mean people will turn to streaming games online rather than buying new consoles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.96" data-end="321.14">
+            <p class="french-block">[Error Translate] However, despite some big names investing in the technology, it has never fully reached the mainstream.</p>
+            <span class="english-block">However, despite some big names investing in the technology, it has never fully reached the mainstream.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.14" data-end="330.19">
+            <p class="french-block">[Error Translate] Google launched its own cloud gaming service Stadia in November 2019, positioning it as a "Netflix for games".</p>
+            <span class="english-block">Google launched its own cloud gaming service Stadia in November 2019, positioning it as a "Netflix for games".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.19" data-end="339.7">
+            <p class="french-block">[Error Translate] The service was discontinued in January 2023, external after the company said it had not attracted as many users as hoped.</p>
+            <span class="english-block">The service was discontinued in January 2023, external after the company said it had not attracted as many users as hoped.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.7" data-end="351.07">
+            <p class="french-block">[Error Translate] For many gamers, cloud gaming remains too unreliable for regular use due to its reliance on high-speed internet - and an additional fee may further limit its appeal.</p>
+            <span class="english-block">For many gamers, cloud gaming remains too unreliable for regular use due to its reliance on high-speed internet - and an additional fee may further limit its appeal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.07" data-end="356.93">
+            <p class="french-block">[Error Translate] Tech firms are blaming AI for mega device and console price rises</p>
+            <span class="english-block">Tech firms are blaming AI for mega device and console price rises</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="356.93" data-end="361.85">
+            <p class="french-block">[Error Translate] Xbox workers stunned after jobs 'bloodbath'</p>
+            <span class="english-block">Xbox workers stunned after jobs 'bloodbath'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.85" data-end="367.78">
+            <p class="french-block">[Error Translate] Xbox cuts prices for Game Pass but ends day-one Call of Duty access</p>
+            <span class="english-block">Xbox cuts prices for Game Pass but ends day-one Call of Duty access</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_18.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

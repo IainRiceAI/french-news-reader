@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'I'd rather die than ring the police': Distrust and fear in Middlesbrough after A66 crash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>'I'd rather die than ring the police': Distrust and fear in Middlesbrough after A66 crash</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 04 Sep 2026 19:50:01 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c2e0w2e0k0ro?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: BBC News visits town where violence has escalated after the fatal crash and residents say they are living in fear.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.41" data-end="15.12">
+            <p class="french-block">Il est peu après 20 heures à Grangetown, près de Middlesbrough, et la lumière décline.</p>
+            <span class="english-block">It is just after 8pm in Grangetown, near Middlesbrough, and the light is fading.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.12" data-end="23.76">
+            <p class="french-block">[Error Translate] Two teenagers in balaclavas tear across a park on a muddy red quad bike, pulling wheelies as they pass a man walking his dog.</p>
+            <span class="english-block">Two teenagers in balaclavas tear across a park on a muddy red quad bike, pulling wheelies as they pass a man walking his dog.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.76" data-end="30.55">
+            <p class="french-block">[Error Translate] Younger boys, some not yet in their teens, gather excitedly around the bike.</p>
+            <span class="english-block">Younger boys, some not yet in their teens, gather excitedly around the bike.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.55" data-end="45.74">
+            <p class="french-block">[Error Translate] We're here because Grangetown and neighbouring South Bank now find themselves at the centre of a large police operation, with fears organised crime is out of control after the deaths of two police officers and five young men in a car crash on the A66.</p>
+            <span class="english-block">We're here because Grangetown and neighbouring South Bank now find themselves at the centre of a large police operation, with fears organised crime is out of control after the deaths of two police officers and five young men in a car crash on the A66.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.74" data-end="54.77">
+            <p class="french-block">[Error Translate] Suddenly one of our team is hit by a pellet, which appears to have been fired from the group. It stings but he's OK.</p>
+            <span class="english-block">Suddenly one of our team is hit by a pellet, which appears to have been fired from the group. It stings but he's OK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.77" data-end="60.26">
+            <p class="french-block">[Error Translate] Then the quad riders pull over for a chat, engine running.</p>
+            <span class="english-block">Then the quad riders pull over for a chat, engine running.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.26" data-end="66.77">
+            <p class="french-block">[Error Translate] I ask the riders if it is normal to be driving around the park on a quad bike.</p>
+            <span class="english-block">I ask the riders if it is normal to be driving around the park on a quad bike.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.77" data-end="80.28">
+            <p class="french-block">[Error Translate] "Yeah, this isn't any special day," the passenger says. "You're born and bred and brought up with it. What do you expect? You don't know anything different."</p>
+            <span class="english-block">"Yeah, this isn't any special day," the passenger says. "You're born and bred and brought up with it. What do you expect? You don't know anything different."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.28" data-end="90.86">
+            <p class="french-block">Depuis l'accident, plus de 20 personnes ont été arrêtées à Middlesbrough et dans ses environs dans le cadre d'une opération plus large contre ce que la police a qualifié de « crime grave et organisé ».</p>
+            <span class="english-block">Since the crash, more than 20 people have been arrested in Middlesbrough and the surrounding area as part of a wider operation into what police have called "serious and organised crime".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.86" data-end="96.53">
+            <p class="french-block">[Error Translate] Sources say there are two feuding gangs at the centre of a spike in violence.</p>
+            <span class="english-block">Sources say there are two feuding gangs at the centre of a spike in violence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.53" data-end="102.43">
+            <p class="french-block">[Error Translate] Is this area out of control, I ask the quad bike riders.</p>
+            <span class="english-block">Is this area out of control, I ask the quad bike riders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.43" data-end="105.74">
+            <p class="french-block">[Error Translate] "No. Definitely not."</p>
+            <span class="english-block">"No. Definitely not."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.74" data-end="114.65">
+            <p class="french-block">Ensuite, ils révèlent quelque chose que nous avons entendu à plusieurs reprises de la part des jeunes d’ici. Ils ne font pas confiance à la police.</p>
+            <span class="english-block">Then they reveal something we repeatedly heard from young people here. They do not trust the police.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.65" data-end="125.42">
+            <p class="french-block">[Error Translate] "They're saying there are gangs, but there are no gangs," the driver says. "It's not London, mate. Do you know what I mean?"</p>
+            <span class="english-block">"They're saying there are gangs, but there are no gangs," the driver says. "It's not London, mate. Do you know what I mean?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.42" data-end="134.76">
+            <p class="french-block">Comme beaucoup de jeunes ici, ils imputent à la police les morts sur l'A66. Les circonstances font toujours l'objet d'une enquête indépendante.</p>
+            <span class="english-block">Like many young people here, they blame the police for the deaths on the A66. The circumstances remain under independent investigation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.76" data-end="141.17">
+            <p class="french-block">[Error Translate] The quad bike riders we met said they felt the area wasn't out of control</p>
+            <span class="english-block">The quad bike riders we met said they felt the area wasn't out of control</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.17" data-end="153.5">
+            <p class="french-block">[Error Translate] What we do know is that on Saturday 22 August, a Volkswagen Passat that had been pursued by police travelled the wrong way along the A66 and collided head-on with a police vehicle.</p>
+            <span class="english-block">What we do know is that on Saturday 22 August, a Volkswagen Passat that had been pursued by police travelled the wrong way along the A66 and collided head-on with a police vehicle.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.5" data-end="172.39">
+            <p class="french-block">[Error Translate] PC Matthew Blades, 37, and PC Tom Clough, 38, were killed. So were all five people in the Passat: Michael Cahill, 23, Jakub Matusiak, 23, Makai Saddington, 18, Theo Rae and Cole Worthy, both 17.</p>
+            <span class="english-block">PC Matthew Blades, 37, and PC Tom Clough, 38, were killed. So were all five people in the Passat: Michael Cahill, 23, Jakub Matusiak, 23, Makai Saddington, 18, Theo Rae and Cole Worthy, both 17.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.39" data-end="186.12">
+            <p class="french-block">[Error Translate] Four of the five young men killed had amassed 30 convictions between them for offences including car theft, drug possession, assaulting police officers and driving offences. Cahill had no convictions.</p>
+            <span class="english-block">Four of the five young men killed had amassed 30 convictions between them for offences including car theft, drug possession, assaulting police officers and driving offences. Cahill had no convictions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.12" data-end="195.12">
+            <p class="french-block">[Error Translate] The chain of events that ended on the A66 is believed to have begun eight miles away, in a quiet suburban street in Acklam.</p>
+            <span class="english-block">The chain of events that ended on the A66 is believed to have begun eight miles away, in a quiet suburban street in Acklam.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.12" data-end="205.78">
+            <p class="french-block">[Error Translate] It feels a world away from Grangetown. Hanging baskets and neat front gardens line the bay windows of 1930s semi-detached homes.</p>
+            <span class="english-block">It feels a world away from Grangetown. Hanging baskets and neat front gardens line the bay windows of 1930s semi-detached homes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.78" data-end="211.06">
+            <p class="french-block">[Error Translate] Disorder at balloon release unacceptable, says MP</p>
+            <span class="english-block">Disorder at balloon release unacceptable, says MP</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.06" data-end="216.98">
+            <p class="french-block">[Error Translate] Who has been arrested in the wake of the A66 fatal crash?</p>
+            <span class="english-block">Who has been arrested in the wake of the A66 fatal crash?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.98" data-end="221.86">
+            <p class="french-block">[Error Translate] Schools close early for A66 crash funeral</p>
+            <span class="english-block">Schools close early for A66 crash funeral</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.86" data-end="232.51">
+            <p class="french-block">[Error Translate] Many residents are reluctant to speak. Why? Because of what happened to one house here that stands behind large metal barriers.</p>
+            <span class="english-block">Many residents are reluctant to speak. Why? Because of what happened to one house here that stands behind large metal barriers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.51" data-end="241.82">
+            <p class="french-block">[Error Translate] A car was rammed into the bay window, exposing the room inside. Some of the other windows were also smashed.</p>
+            <span class="english-block">A car was rammed into the bay window, exposing the room inside. Some of the other windows were also smashed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.82" data-end="247.37">
+            <p class="french-block">[Error Translate] Fragments of lights and bumper remain scattered across the driveway.</p>
+            <span class="english-block">Fragments of lights and bumper remain scattered across the driveway.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="247.37" data-end="255.12">
+            <p class="french-block">[Error Translate] The home belongs to Cole Worthy's father, Gye Worthy, and the ramming happened on the same night Cole died.</p>
+            <span class="english-block">The home belongs to Cole Worthy's father, Gye Worthy, and the ramming happened on the same night Cole died.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.12" data-end="267.12">
+            <p class="french-block">[Error Translate] Police say the car used in the attack was a Volvo XC60. The BBC understands that Cole Worthy and the four others then set off in the Passat to find the Volvo.</p>
+            <span class="english-block">Police say the car used in the attack was a Volvo XC60. The BBC understands that Cole Worthy and the four others then set off in the Passat to find the Volvo.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.12" data-end="274.46">
+            <p class="french-block">[Error Translate] Now neighbours describe a street living in fear and say the home has been targeted for more than a year.</p>
+            <span class="english-block">Now neighbours describe a street living in fear and say the home has been targeted for more than a year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.46" data-end="280.37">
+            <p class="french-block">[Error Translate] There is no suggestion that Gye Worthy is involved in criminal activity.</p>
+            <span class="english-block">There is no suggestion that Gye Worthy is involved in criminal activity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.37" data-end="287.71">
+            <p class="french-block">[Error Translate] Gye Worthy's house was rammed on the same day as the A66 crash, which killed seven people</p>
+            <span class="english-block">Gye Worthy's house was rammed on the same day as the A66 crash, which killed seven people</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.71" data-end="298.85">
+            <p class="french-block">[Error Translate] All but one of the residents who speak to us do so on the condition of anonymity. They are worried that showing their faces could place them or their homes at risk.</p>
+            <span class="english-block">All but one of the residents who speak to us do so on the condition of anonymity. They are worried that showing their faces could place them or their homes at risk.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="298.85" data-end="304.85">
+            <p class="french-block">[Error Translate] What message do the attacks send to people on this street, I ask one.</p>
+            <span class="english-block">What message do the attacks send to people on this street, I ask one.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.85" data-end="316.56">
+            <p class="french-block">[Error Translate] "Well, they should be scared, shouldn't they, that something's going to happen to their property if they say anything or get involved. So we don't."</p>
+            <span class="english-block">"Well, they should be scared, shouldn't they, that something's going to happen to their property if they say anything or get involved. So we don't."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="316.56" data-end="326.06">
+            <p class="french-block">[Error Translate] Victoria, who moved here several years ago, says the escalating violence cannot be separated from the wider condition of the town.</p>
+            <span class="english-block">Victoria, who moved here several years ago, says the escalating violence cannot be separated from the wider condition of the town.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.06" data-end="335.78">
+            <p class="french-block">[Error Translate] "This is a social problem, especially in this area. Teesside has been massively neglected and ignored," she says.</p>
+            <span class="english-block">"This is a social problem, especially in this area. Teesside has been massively neglected and ignored," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.78" data-end="353.59">
+            <p class="french-block">[Error Translate] The attack in Acklam is far from Middlesbrough's only recent case of a vehicle being used as a weapon. Back in May, a tractor was driven into a house on Priory Road, and since the A66 crash Cleveland Police has investigated at least two further rammings.</p>
+            <span class="english-block">The attack in Acklam is far from Middlesbrough's only recent case of a vehicle being used as a weapon. Back in May, a tractor was driven into a house on Priory Road, and since the A66 crash Cleveland Police has investigated at least two further rammings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.59" data-end="361.1">
+            <p class="french-block">[Error Translate] Detectives have also linked their wider investigation to a caravan fire on Attlee Road in Grangetown.</p>
+            <span class="english-block">Detectives have also linked their wider investigation to a caravan fire on Attlee Road in Grangetown.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.1" data-end="369.79">
+            <p class="french-block">[Error Translate] "It's getting worse," a nearby resident says. "They're always balaclava-ed up as well, do you know what I mean?"</p>
+            <span class="english-block">"It's getting worse," a nearby resident says. "They're always balaclava-ed up as well, do you know what I mean?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.79" data-end="372.62">
+            <p class="french-block">[Error Translate] He blames drugs.</p>
+            <span class="english-block">He blames drugs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="372.62" data-end="380.52">
+            <p class="french-block">[Error Translate] "It can't be anything else. Why would you be like you are unless it was drugs?" he says.</p>
+            <span class="english-block">"It can't be anything else. Why would you be like you are unless it was drugs?" he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="380.52" data-end="396.24">
+            <p class="french-block">[Error Translate] Whether every incident is part of a single feud has not been established. But taken together, the rammings, fires and arrests have created a powerful sense that violence is being used to intimidate, punish and send messages.</p>
+            <span class="english-block">Whether every incident is part of a single feud has not been established. But taken together, the rammings, fires and arrests have created a powerful sense that violence is being used to intimidate, punish and send messages.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.24" data-end="403.15">
+            <p class="french-block">[Error Translate] What is most unsettling for these residents is the sense that nobody is fully in control.</p>
+            <span class="english-block">What is most unsettling for these residents is the sense that nobody is fully in control.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.15" data-end="414.89">
+            <p class="french-block">[Error Translate] Grangetown and South Bank are communities still living with the void left by the decline of heavy industry. Both now rank among England's most deprived neighbourhoods.</p>
+            <span class="english-block">Grangetown and South Bank are communities still living with the void left by the decline of heavy industry. Both now rank among England's most deprived neighbourhoods.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="414.89" data-end="426.79">
+            <p class="french-block">[Error Translate] In South Bank, we see a group of teenagers tend three ponies tethered on the grass. Two perform wheelies on electric scooters while another uses a long stick to scatter rubbish.</p>
+            <span class="english-block">In South Bank, we see a group of teenagers tend three ponies tethered on the grass. Two perform wheelies on electric scooters while another uses a long stick to scatter rubbish.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="426.79" data-end="432.89">
+            <p class="french-block">[Error Translate] On the adjoining estate, more than a dozen homes have boarded-up windows.</p>
+            <span class="english-block">On the adjoining estate, more than a dozen homes have boarded-up windows.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="432.89" data-end="441.79">
+            <p class="french-block">[Error Translate] On a wall are the words "RIP 2UZZI", said locally to have been the nickname of Jakub Matusiak, who lived one street away.</p>
+            <span class="english-block">On a wall are the words "RIP 2UZZI", said locally to have been the nickname of Jakub Matusiak, who lived one street away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="441.79" data-end="451.01">
+            <p class="french-block">[Error Translate] One 17-year-old boy tells us he knew him. "He was my best mate," he says. "It's sad."</p>
+            <span class="english-block">One 17-year-old boy tells us he knew him. "He was my best mate," he says. "It's sad."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="451.01" data-end="458.33">
+            <p class="french-block">[Error Translate] Elsewhere, three letters are repeated: "FTP" - an expletive directed at the police.</p>
+            <span class="english-block">Elsewhere, three letters are repeated: "FTP" - an expletive directed at the police.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="458.33" data-end="465.55">
+            <p class="french-block">[Error Translate] I ask the teenager if he would call the police if another young person approached him carrying a knife.</p>
+            <span class="english-block">I ask the teenager if he would call the police if another young person approached him carrying a knife.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="465.55" data-end="475.66">
+            <p class="french-block">[Error Translate] "No," he says. Before adding: "I've never needed the police in my life. I'd rather die than ring the police."</p>
+            <span class="english-block">"No," he says. Before adding: "I've never needed the police in my life. I'd rather die than ring the police."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="475.66" data-end="482.78">
+            <p class="french-block">[Error Translate] Again and again, the young people we speak to express a profound distrust of the police.</p>
+            <span class="english-block">Again and again, the young people we speak to express a profound distrust of the police.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="482.78" data-end="489.46">
+            <p class="french-block">[Error Translate] Cleveland's Chief Constable Victoria Fuller said what we'd heard was "horrifying".</p>
+            <span class="english-block">Cleveland's Chief Constable Victoria Fuller said what we'd heard was "horrifying".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="489.46" data-end="500.5">
+            <p class="french-block">[Error Translate] "Yes, there are a small minority of people in the Grangetown area who blight those communities. But we will continue relentlessly to serve our communities."</p>
+            <span class="english-block">"Yes, there are a small minority of people in the Grangetown area who blight those communities. But we will continue relentlessly to serve our communities."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="500.5" data-end="506.62">
+            <p class="french-block">[Error Translate] The scale of the challenge facing the force and the community it serves is not new.</p>
+            <span class="english-block">The scale of the challenge facing the force and the community it serves is not new.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="506.62" data-end="513.36">
+            <p class="french-block">[Error Translate] The area has some of the highest police-recorded crime rates in England and Wales.</p>
+            <span class="english-block">The area has some of the highest police-recorded crime rates in England and Wales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="513.36" data-end="521.02">
+            <p class="french-block">[Error Translate] Its leaders have been warning for years that its resources did not match the demands placed upon it.</p>
+            <span class="english-block">Its leaders have been warning for years that its resources did not match the demands placed upon it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="521.02" data-end="531.94">
+            <p class="french-block">[Error Translate] But recent inspections show Cleveland is one of the most improved forces in England and Wales, with performance levels also judged to be some of the best in the country.</p>
+            <span class="english-block">But recent inspections show Cleveland is one of the most improved forces in England and Wales, with performance levels also judged to be some of the best in the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="531.94" data-end="543.07">
+            <p class="french-block">[Error Translate] The force has recently arrested 87 people for offences linked to organised crime gangs and over the past two years 16 people have been jailed for such crimes.</p>
+            <span class="english-block">The force has recently arrested 87 people for offences linked to organised crime gangs and over the past two years 16 people have been jailed for such crimes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="543.07" data-end="556.75">
+            <p class="french-block">[Error Translate] Since the crash, more than 200 additional officers have been deployed in Middlesbrough and surrounding communities. Their immediate task is to suppress the violence and identify those directing it.</p>
+            <span class="english-block">Since the crash, more than 200 additional officers have been deployed in Middlesbrough and surrounding communities. Their immediate task is to suppress the violence and identify those directing it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="556.75" data-end="563.16">
+            <p class="french-block">[Error Translate] There is also the question of restoring order and rebuilding trust and confidence.</p>
+            <span class="english-block">There is also the question of restoring order and rebuilding trust and confidence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="563.16" data-end="573.17">
+            <p class="french-block">[Error Translate] The graffiti is a tribute to 2Uzzi, said to be the nickname of Jakub Matusiak - one of the five people who died in the A66 crash</p>
+            <span class="english-block">The graffiti is a tribute to 2Uzzi, said to be the nickname of Jakub Matusiak - one of the five people who died in the A66 crash</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="573.17" data-end="589.34">
+            <p class="french-block">[Error Translate] As darkness settles over Grangetown, the quad bike is still circling the field and one woman, who moved here not long ago, asks us to move our car from outside her home, frightened we will be targeted and her property will become collateral damage.</p>
+            <span class="english-block">As darkness settles over Grangetown, the quad bike is still circling the field and one woman, who moved here not long ago, asks us to move our car from outside her home, frightened we will be targeted and her property will become collateral damage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="589.34" data-end="605.42">
+            <p class="french-block">[Error Translate] But what worries her more is her children's future. "I'm terrified my son will end up like them, he's only 10, I don't want him to grow up like that," she says gesturing to the lads with balaclavas tearing up the grass on the quad bike.</p>
+            <span class="english-block">But what worries her more is her children's future. "I'm terrified my son will end up like them, he's only 10, I don't want him to grow up like that," she says gesturing to the lads with balaclavas tearing up the grass on the quad bike.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_2.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

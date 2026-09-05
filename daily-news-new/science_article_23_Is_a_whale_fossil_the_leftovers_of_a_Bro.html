@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is a whale fossil the leftovers of a Bronze Age Sunday roast?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Is a whale fossil the leftovers of a Bronze Age Sunday roast?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 04 Sep 2026 05:13:54 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cly4zkpvl4wo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A 10-year-old boy was out looking for fossils along the shore in Islandmagee when he spotted the back of the skull.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.18" data-end="13.34">
+            <p class="french-block">[Error Translate] This fossilised hunk of whale bone has lain hidden in the earth at Portmuck Harbour</p>
+            <span class="english-block">This fossilised hunk of whale bone has lain hidden in the earth at Portmuck Harbour</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.34" data-end="21.77">
+            <p class="french-block">[Error Translate] The head of a whale, believed to date back to the Bronze Age, has been discovered buried on a beach in Islandmagee.</p>
+            <span class="english-block">The head of a whale, believed to date back to the Bronze Age, has been discovered buried on a beach in Islandmagee.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.77" data-end="34.08">
+            <p class="french-block">[Error Translate] A 10-year-old boy was out looking for fossils along the shore when he spotted the back of the skull protruding from a bank of earth - but could the fossil be the remnants of a prehistoric Sunday roast?</p>
+            <span class="english-block">A 10-year-old boy was out looking for fossils along the shore when he spotted the back of the skull protruding from a bank of earth - but could the fossil be the remnants of a prehistoric Sunday roast?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.08" data-end="47.3">
+            <p class="french-block">[Error Translate] The find has been described as a totally unique, with geologists and marine specialists trying to establish the fossil's story and the Natural History Museum in London helping to identify it.</p>
+            <span class="english-block">The find has been described as a totally unique, with geologists and marine specialists trying to establish the fossil's story and the Natural History Museum in London helping to identify it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.3" data-end="56.71">
+            <p class="french-block">[Error Translate] It was found on the same beach where Ireland's only dinosaur bones were discovered in the late 19th Century and the 1980s.</p>
+            <span class="english-block">It was found on the same beach where Ireland's only dinosaur bones were discovered in the late 19th Century and the 1980s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.71" data-end="61.1">
+            <p class="french-block">[Error Translate] George found the fossil at Portmuck Harbour</p>
+            <span class="english-block">George found the fossil at Portmuck Harbour</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.1" data-end="68.69">
+            <p class="french-block">[Error Translate] Ten-year-old George was out on a walk at Portmuck Harbour with his parents when he spotted something unusual.</p>
+            <span class="english-block">Ten-year-old George was out on a walk at Portmuck Harbour with his parents when he spotted something unusual.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.69" data-end="74.42">
+            <p class="french-block">[Error Translate] "It was just the weird patterns on it," he told BBC News NI.</p>
+            <span class="english-block">"It was just the weird patterns on it," he told BBC News NI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.42" data-end="88.58">
+            <p class="french-block">[Error Translate] "The bits that stuck out, it just didn't look like a rock. I thought it was a bone, but I just wasn't too sure. So I asked my dad and he said it was definitely a fossil."</p>
+            <span class="english-block">"The bits that stuck out, it just didn't look like a rock. I thought it was a bone, but I just wasn't too sure. So I asked my dad and he said it was definitely a fossil."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.58" data-end="95.76">
+            <p class="french-block">[Error Translate] This fossilised hunk of whale bone has lain hidden in the earth on Portmuck Beach for possibly millennia.</p>
+            <span class="english-block">This fossilised hunk of whale bone has lain hidden in the earth on Portmuck Beach for possibly millennia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.76" data-end="104.42">
+            <p class="french-block">Seul l'arrière de la tête était visible pour George, invisible pendant des siècles était le bec, qui mesurait environ un pied de long lorsqu'il était creusé.</p>
+            <span class="english-block">Only the back of the head was visible to George, invisible for centuries was the beak, which was about a foot long when excavated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.42" data-end="110.45">
+            <p class="french-block">[Error Translate] Katy McMonagle said the fossil was difficult to move and very heavy</p>
+            <span class="english-block">Katy McMonagle said the fossil was difficult to move and very heavy</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.45" data-end="119.59">
+            <p class="french-block">[Error Translate] Katy McMonagle, one of the archaeologists who dug the whale head out, said the fossil was difficult to move and very heavy.</p>
+            <span class="english-block">Katy McMonagle, one of the archaeologists who dug the whale head out, said the fossil was difficult to move and very heavy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="119.59" data-end="126.74">
+            <p class="french-block">[Error Translate] She said it was now in a warehouse in Belfast and there could be a week of cleaning work involved.</p>
+            <span class="english-block">She said it was now in a warehouse in Belfast and there could be a week of cleaning work involved.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.74" data-end="136.54">
+            <p class="french-block">[Error Translate] "There will be painstaking work in cleaning the fossil and preparing it for a marine specialist who will be able to find out more about the creature."</p>
+            <span class="english-block">"There will be painstaking work in cleaning the fossil and preparing it for a marine specialist who will be able to find out more about the creature."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.54" data-end="150.31">
+            <p class="french-block">[Error Translate] The process of discovering exactly how old it is may take some time, but flint tools, excavated with the fossil, suggest it could have been buried in Islandmagee as many as 3,000 years ago.</p>
+            <span class="english-block">The process of discovering exactly how old it is may take some time, but flint tools, excavated with the fossil, suggest it could have been buried in Islandmagee as many as 3,000 years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.31" data-end="155.14">
+            <p class="french-block">[Error Translate] George noticed the "weird patterns" on the fossil</p>
+            <span class="english-block">George noticed the "weird patterns" on the fossil</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.14" data-end="159.02">
+            <p class="french-block">[Error Translate] George said it had been overwhelming.</p>
+            <span class="english-block">George said it had been overwhelming.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.02" data-end="173.26">
+            <p class="french-block">[Error Translate] "Yeah, that's really hard to imagine. To think about what it looked like, what it was, what it sounded like. We have a bit of an idea, but we're not 100% sure yet.</p>
+            <span class="english-block">"Yeah, that's really hard to imagine. To think about what it looked like, what it was, what it sounded like. We have a bit of an idea, but we're not 100% sure yet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.26" data-end="184.9">
+            <p class="french-block">"C'est tellement cool, cela vous montre ce que vous pouvez trouver, puis vous voyez ce qui se passe une fois que vous avez trouvé quelque chose - ce que les experts en font, comment ils le découvrent, comment ils font cela."</p>
+            <span class="english-block">"It's been so cool, it shows you what you can find and then to see what happens after you find something - what the experts do with it, how they figure it out, how they do that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.9" data-end="189.43">
+            <p class="french-block">[Error Translate] The Natural History Museum is now involved</p>
+            <span class="english-block">The Natural History Museum is now involved</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.43" data-end="195.58">
+            <p class="french-block">[Error Translate] There are secrets and stories held within the remains of this majestic creature.</p>
+            <span class="english-block">There are secrets and stories held within the remains of this majestic creature.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.58" data-end="201.43">
+            <p class="french-block">[Error Translate] Geologist Ian Enlander works with the Irish Whale and Dolphin Group.</p>
+            <span class="english-block">Geologist Ian Enlander works with the Irish Whale and Dolphin Group.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.43" data-end="209.16">
+            <p class="french-block">[Error Translate] When he got the call to go down to the beach and see the fossil before it was moved he said he was very excited.</p>
+            <span class="english-block">When he got the call to go down to the beach and see the fossil before it was moved he said he was very excited.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.16" data-end="213.79">
+            <p class="french-block">"Je pense que cela va s'avérer unique, une chose unique dans une vie."</p>
+            <span class="english-block">"I think it is going to turn out to be unique, a once in a lifetime thing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.79" data-end="225.65">
+            <p class="french-block">[Error Translate] Enlander took images of a well preserved part of the whale's ear, which may also be useful for carbon dating, and sent photographs to the Natural History Museum in London.</p>
+            <span class="english-block">Enlander took images of a well preserved part of the whale's ear, which may also be useful for carbon dating, and sent photographs to the Natural History Museum in London.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.65" data-end="230.06">
+            <p class="french-block">[Error Translate] Only the back of the head was visible to George</p>
+            <span class="english-block">Only the back of the head was visible to George</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.06" data-end="244.58">
+            <p class="french-block">[Error Translate] "The keeper of Mammalian Zoology there was very gracious and kind enough to get back to me the following day. They confirmed that it is a beaked whale, and the likelihood is that it's a species called Cuvier's beaked whale.</p>
+            <span class="english-block">"The keeper of Mammalian Zoology there was very gracious and kind enough to get back to me the following day. They confirmed that it is a beaked whale, and the likelihood is that it's a species called Cuvier's beaked whale.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.58" data-end="258.0">
+            <p class="french-block">[Error Translate] "So to put that into some sort of context, all the beaked whales are deep water, offshore species, by and large. If they do come inshore, it's usually because they're ill or already dead."</p>
+            <span class="english-block">"So to put that into some sort of context, all the beaked whales are deep water, offshore species, by and large. If they do come inshore, it's usually because they're ill or already dead."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="258.0" data-end="267.05">
+            <p class="french-block">[Error Translate] Enlander said finding "a buried skull, without any other bone present" presented a problem in trying to discern what happened.</p>
+            <span class="english-block">Enlander said finding "a buried skull, without any other bone present" presented a problem in trying to discern what happened.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.05" data-end="282.14">
+            <p class="french-block">[Error Translate] "I've seen beaked whales in the Azores. I've seen them at the Bay of Biscay. I've never seen them around Ireland. They've never been recorded in this area. So how did it get here?"</p>
+            <span class="english-block">"I've seen beaked whales in the Azores. I've seen them at the Bay of Biscay. I've never seen them around Ireland. They've never been recorded in this area. So how did it get here?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.14" data-end="289.3">
+            <p class="french-block">[Error Translate] Enlander said finding "a buried skull, without any other bone present" is problematic</p>
+            <span class="english-block">Enlander said finding "a buried skull, without any other bone present" is problematic</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.3" data-end="294.36">
+            <p class="french-block">[Error Translate] Enlander added that the fossil "could be 3000 years old".</p>
+            <span class="english-block">Enlander added that the fossil "could be 3000 years old".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.36" data-end="313.56">
+            <p class="french-block">[Error Translate] "It looks as if it has been handled, perhaps deliberately buried. I suppose the great wish would be that the archaeologists examine the skull and find evidence of butcher marks, that Bronze Age people have been there, trying to decapitate it and utilising the rest of the body perhaps as Sunday roast.</p>
+            <span class="english-block">"It looks as if it has been handled, perhaps deliberately buried. I suppose the great wish would be that the archaeologists examine the skull and find evidence of butcher marks, that Bronze Age people have been there, trying to decapitate it and utilising the rest of the body perhaps as Sunday roast.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="313.56" data-end="317.9">
+            <p class="french-block">"Et puis, pour une raison quelconque, préserver le crâne."</p>
+            <span class="english-block">"And then for whatever reason, preserving the skull."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="317.9" data-end="323.35">
+            <p class="french-block">[Error Translate] George was out on a walk with his parents when he spotted the fossil</p>
+            <span class="english-block">George was out on a walk with his parents when he spotted the fossil</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="323.35" data-end="329.81">
+            <p class="french-block">Avec l'implication du Musée d'Histoire Naturelle, on espère que cette découverte aura une grande valeur.</p>
+            <span class="english-block">With the Natural History Museum now involved it's hoped this find will be of huge value.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.81" data-end="337.75">
+            <p class="french-block">[Error Translate] For George, it's been quite the experience, and he has some advice for other budding archaeologists.</p>
+            <span class="english-block">For George, it's been quite the experience, and he has some advice for other budding archaeologists.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.75" data-end="348.46">
+            <p class="french-block">[Error Translate] "Just keep your eyes open and see, you might find something good as well. Be curious. You never know what might happen."</p>
+            <span class="english-block">"Just keep your eyes open and see, you might find something good as well. Be curious. You never know what might happen."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="348.46" data-end="352.82">
+            <p class="french-block">Des os de dinosaures rares « appartiennent à différentes espèces »</p>
+            <span class="english-block">Rare dinosaur bones 'belong to different species'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.82" data-end="357.58">
+            <p class="french-block">Découverte du premier os de dinosaure de l'Antarctique dans un tiroir</p>
+            <span class="english-block">First dinosaur bone from Antarctica found in a drawer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="357.58" data-end="361.1">
+            <p class="french-block">Était-ce l'animal le plus lourd jamais vu sur Terre ?</p>
+            <span class="english-block">Was this the heaviest ever animal on Earth?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_23.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
