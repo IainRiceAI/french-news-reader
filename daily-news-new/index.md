@@ -1,74 +1,74 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-09-05 06:21:56  
+Generated on: 2026-09-06 06:22:42  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Cleveland police chief proud of force but being 'let down' by funding**
-   - **Published:** Fri, 04 Sep 2026 21:00:05 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Cleveland_police_chief_proud_of_force_bu.md](top-stories_article_1_Cleveland_police_chief_proud_of_force_bu.md)
+1. **US envoys set for Ukraine talks after meeting Putin in Moscow**
+   - **Published:** Sun, 06 Sep 2026 02:24:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_US_envoys_set_for_Ukraine_talks_after_me.md](top-stories_article_1_US_envoys_set_for_Ukraine_talks_after_me.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **'I'd rather die than ring the police': Distrust and fear in Middlesbrough after A66 crash**
-   - **Published:** Fri, 04 Sep 2026 19:50:01 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Id_rather_die_than_ring_the_police_Distr.md](top-stories_article_2_Id_rather_die_than_ring_the_police_Distr.md)
+2. **Disruption at Port of Dover as masked 'stop the boats' protesters block roads**
+   - **Published:** Sat, 05 Sep 2026 21:29:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Disruption_at_Port_of_Dover_as_masked_st.md](top-stories_article_2_Disruption_at_Port_of_Dover_as_masked_st.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **How the Lindsay Clancy trial gripped America - and ultimately fell apart**
-   - **Published:** Sat, 05 Sep 2026 01:26:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_How_the_Lindsay_Clancy_trial_gripped_Ame.md](top-stories_article_3_How_the_Lindsay_Clancy_trial_gripped_Ame.md)
+3. **Nigel Farage tells BBC he 'wasn't listening' during foreign donor talks filmed undercover**
+   - **Published:** Sat, 05 Sep 2026 14:26:37 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Nigel_Farage_tells_BBC_he_wasnt_listenin.md](top-stories_article_3_Nigel_Farage_tells_BBC_he_wasnt_listenin.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **UN votes to adopt new world map to reflect Africa's true size**
-   - **Published:** Sat, 05 Sep 2026 00:53:11 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_UN_votes_to_adopt_new_world_map_to_refle.md](top-stories_article_4_UN_votes_to_adopt_new_world_map_to_refle.md)
+4. **US and Iran trade retaliatory attacks on ships as conflict flares**
+   - **Published:** Sat, 05 Sep 2026 22:44:07 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_US_and_Iran_trade_retaliatory_attacks_on.md](top-stories_article_4_US_and_Iran_trade_retaliatory_attacks_on.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Flight price rises due to 'foolish leaders' starting wars, Virgin's Branson says**
-   - **Published:** Sat, 05 Sep 2026 01:03:35 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Flight_price_rises_due_to_foolish_leader.md](top-stories_article_5_Flight_price_rises_due_to_foolish_leader.md)
+5. **Aviation faces hotter, stormier skies – and passengers might have to accept more disruption**
+   - **Published:** Sat, 05 Sep 2026 23:20:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Aviation_faces_hotter_stormier_skies__an.md](top-stories_article_5_Aviation_faces_hotter_stormier_skies__an.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Lauryn Hill, Wyclef and Giggs among surprise guests at Jay-Z's long-awaited UK show**
-   - **Published:** Sat, 05 Sep 2026 01:53:45 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Lauryn_Hill_Wyclef_and_Giggs_among_surpr.md](top-stories_article_6_Lauryn_Hill_Wyclef_and_Giggs_among_surpr.md)
+6. **Temperatures could climb to 28C in late burst of warmth**
+   - **Published:** Sun, 06 Sep 2026 04:08:41 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Temperatures_could_climb_to_28C_in_late_.md](top-stories_article_6_Temperatures_could_climb_to_28C_in_late_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Tate brothers charged with further trafficking and sex crimes in Romania**
-   - **Published:** Sat, 05 Sep 2026 02:29:21 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Tate_brothers_charged_with_further_traff.md](top-stories_article_7_Tate_brothers_charged_with_further_traff.md)
+7. **Prince William to attend King Harald's funeral in Norway**
+   - **Published:** Sat, 05 Sep 2026 21:00:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Prince_William_to_attend_King_Haralds_fu.md](top-stories_article_7_Prince_William_to_attend_King_Haralds_fu.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Germany's far-right AfD bids for first taste of power in eastern vote**
-   - **Published:** Fri, 04 Sep 2026 23:07:23 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Germanys_far-right_AfD_bids_for_first_ta.md](top-stories_article_8_Germanys_far-right_AfD_bids_for_first_ta.md)
+8. **Why more women carry the 'mental load' - and how couples can share it**
+   - **Published:** Sat, 05 Sep 2026 23:31:14 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Why_more_women_carry_the_mental_load_-_a.md](top-stories_article_8_Why_more_women_carry_the_mental_load_-_a.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Mistrial declared in Lindsay Clancy murder case, after jury deadlocks**
-   - **Published:** Fri, 04 Sep 2026 22:48:38 GMT
-   - **Read Parallel Translation:** [world_article_9_Mistrial_declared_in_Lindsay_Clancy_murd.md](world_article_9_Mistrial_declared_in_Lindsay_Clancy_murd.md)
+1. **US envoys set for Ukraine talks after meeting Putin in Moscow**
+   - **Published:** Sun, 06 Sep 2026 02:24:16 GMT
+   - **Read Parallel Translation:** [world_article_9_US_envoys_set_for_Ukraine_talks_after_me.md](world_article_9_US_envoys_set_for_Ukraine_talks_after_me.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Trump's peace envoys to visit Moscow and Kyiv over weekend**
-   - **Published:** Sat, 05 Sep 2026 04:28:21 GMT
-   - **Read Parallel Translation:** [world_article_10_Trumps_peace_envoys_to_visit_Moscow_and_.md](world_article_10_Trumps_peace_envoys_to_visit_Moscow_and_.md)
+2. **US and Iran trade retaliatory attacks on ships as conflict flares**
+   - **Published:** Sat, 05 Sep 2026 22:44:07 GMT
+   - **Read Parallel Translation:** [world_article_10_US_and_Iran_trade_retaliatory_attacks_on.md](world_article_10_US_and_Iran_trade_retaliatory_attacks_on.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Europe targeted by spiralling campaign of sabotage - and Russia is the chief suspect**
-   - **Published:** Fri, 04 Sep 2026 16:49:15 GMT
-   - **Read Parallel Translation:** [world_article_11_Europe_targeted_by_spiralling_campaign_o.md](world_article_11_Europe_targeted_by_spiralling_campaign_o.md)
+3. **TV presenter among 11 sentenced to death in Egypt drugs case**
+   - **Published:** Sat, 05 Sep 2026 21:29:38 GMT
+   - **Read Parallel Translation:** [world_article_11_TV_presenter_among_11_sentenced_to_death.md](world_article_11_TV_presenter_among_11_sentenced_to_death.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **UN votes to adopt new world map to reflect Africa's true size**
-   - **Published:** Sat, 05 Sep 2026 00:53:11 GMT
-   - **Read Parallel Translation:** [world_article_12_UN_votes_to_adopt_new_world_map_to_refle.md](world_article_12_UN_votes_to_adopt_new_world_map_to_refle.md)
+4. **Watch: Moment 64-year-old Nepali woman is found alive in mud-buried home**
+   - **Published:** Sun, 06 Sep 2026 01:54:29 GMT
+   - **Read Parallel Translation:** [world_article_12_Watch_Moment_64-year-old_Nepali_woman_is.md](world_article_12_Watch_Moment_64-year-old_Nepali_woman_is.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
@@ -123,33 +123,33 @@ Scraped Feed Mode: `ALL`
 
 ### Section: SCIENCE
 
-1. **Ancient cave art discovery suggests first known humans in Ireland walked over from Wales**
-   - **Published:** Fri, 04 Sep 2026 22:01:41 GMT
-   - **Read Parallel Translation:** [science_article_21_Ancient_cave_art_discovery_suggests_firs.md](science_article_21_Ancient_cave_art_discovery_suggests_firs.md)
+1. **Aviation faces hotter, stormier skies – and passengers might have to accept more disruption**
+   - **Published:** Sat, 05 Sep 2026 23:20:00 GMT
+   - **Read Parallel Translation:** [science_article_21_Aviation_faces_hotter_stormier_skies__an.md](science_article_21_Aviation_faces_hotter_stormier_skies__an.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **At least 37 killed by toxic fumes during alleged petrol theft in Nigeria, reports say**
-   - **Published:** Fri, 04 Sep 2026 15:44:05 GMT
-   - **Read Parallel Translation:** [science_article_22_At_least_37_killed_by_toxic_fumes_during.md](science_article_22_At_least_37_killed_by_toxic_fumes_during.md)
+2. **Trump signs order to remove endangered species protection for grey wolves**
+   - **Published:** Sat, 05 Sep 2026 09:12:48 GMT
+   - **Read Parallel Translation:** [science_article_22_Trump_signs_order_to_remove_endangered_s.md](science_article_22_Trump_signs_order_to_remove_endangered_s.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Is a whale fossil the leftovers of a Bronze Age Sunday roast?**
-   - **Published:** Fri, 04 Sep 2026 05:13:54 GMT
-   - **Read Parallel Translation:** [science_article_23_Is_a_whale_fossil_the_leftovers_of_a_Bro.md](science_article_23_Is_a_whale_fossil_the_leftovers_of_a_Bro.md)
+3. **Ancient cave art discovery suggests first known humans in Ireland walked over from Wales**
+   - **Published:** Sat, 05 Sep 2026 05:52:05 GMT
+   - **Read Parallel Translation:** [science_article_23_Ancient_cave_art_discovery_suggests_firs.md](science_article_23_Ancient_cave_art_discovery_suggests_firs.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Renewable energy in NI reaches record level**
-   - **Published:** Fri, 04 Sep 2026 05:11:45 GMT
-   - **Read Parallel Translation:** [science_article_24_Renewable_energy_in_NI_reaches_record_le.md](science_article_24_Renewable_energy_in_NI_reaches_record_le.md)
+4. **At least 37 killed by toxic fumes during alleged petrol theft in Nigeria, reports say**
+   - **Published:** Fri, 04 Sep 2026 15:44:05 GMT
+   - **Read Parallel Translation:** [science_article_24_At_least_37_killed_by_toxic_fumes_during.md](science_article_24_At_least_37_killed_by_toxic_fumes_during.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **How the hunger for a new weight loss drug is feeding an industry of fakes**
+1. **How hunger for a new weight-loss drug is feeding an industry of fakes**
    - **Published:** Fri, 04 Sep 2026 23:47:40 GMT
-   - **Read Parallel Translation:** [health_article_25_How_the_hunger_for_a_new_weight_loss_dru.md](health_article_25_How_the_hunger_for_a_new_weight_loss_dru.md)
+   - **Read Parallel Translation:** [health_article_25_How_hunger_for_a_new_weight-loss_drug_is.md](health_article_25_How_hunger_for_a_new_weight-loss_drug_is.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
 2. **Transplanted pig kidney works in US man's body for record 271 days**
@@ -171,24 +171,24 @@ Scraped Feed Mode: `ALL`
 
 ### Section: POLITICS
 
-1. **Farage threatens to overhaul Lords and judges to meet his pledges**
-   - **Published:** Fri, 04 Sep 2026 19:20:18 GMT
-   - **Read Parallel Translation:** [politics_article_29_Farage_threatens_to_overhaul_Lords_and_j.md](politics_article_29_Farage_threatens_to_overhaul_Lords_and_j.md)
+1. **Nigel Farage tells BBC he 'wasn't listening' during foreign donor talks filmed undercover**
+   - **Published:** Sat, 05 Sep 2026 14:26:37 GMT
+   - **Read Parallel Translation:** [politics_article_29_Nigel_Farage_tells_BBC_he_wasnt_listenin.md](politics_article_29_Nigel_Farage_tells_BBC_he_wasnt_listenin.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Farage unveils small boats deal with French National Rally party**
-   - **Published:** Fri, 04 Sep 2026 15:49:02 GMT
-   - **Read Parallel Translation:** [politics_article_30_Farage_unveils_small_boats_deal_with_Fre.md](politics_article_30_Farage_unveils_small_boats_deal_with_Fre.md)
+2. **Chris Mason: Reform winded by donations row as insiders call for shift in approach**
+   - **Published:** Sat, 05 Sep 2026 12:32:31 GMT
+   - **Read Parallel Translation:** [politics_article_30_Chris_Mason_Reform_winded_by_donations_r.md](politics_article_30_Chris_Mason_Reform_winded_by_donations_r.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Farage says his aides' donor comments were 'loose pub talk'**
-   - **Published:** Fri, 04 Sep 2026 16:08:29 GMT
-   - **Read Parallel Translation:** [politics_article_31_Farage_says_his_aides_donor_comments_wer.md](politics_article_31_Farage_says_his_aides_donor_comments_wer.md)
+3. **Reform promises to increase tax-free personal allowance to £15,000**
+   - **Published:** Sat, 05 Sep 2026 12:59:02 GMT
+   - **Read Parallel Translation:** [politics_article_31_Reform_promises_to_increase_tax-free_per.md](politics_article_31_Reform_promises_to_increase_tax-free_per.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Stock up on food to prepare for extreme weather, minister says**
-   - **Published:** Fri, 04 Sep 2026 10:40:23 GMT
-   - **Read Parallel Translation:** [politics_article_32_Stock_up_on_food_to_prepare_for_extreme_.md](politics_article_32_Stock_up_on_food_to_prepare_for_extreme_.md)
+4. **Farage threatens to overhaul Lords and judges to meet his pledges**
+   - **Published:** Fri, 04 Sep 2026 19:20:18 GMT
+   - **Read Parallel Translation:** [politics_article_32_Farage_threatens_to_overhaul_Lords_and_j.md](politics_article_32_Farage_threatens_to_overhaul_Lords_and_j.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---

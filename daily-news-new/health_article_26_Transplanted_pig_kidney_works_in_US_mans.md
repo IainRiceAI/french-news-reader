@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** In the US, around 100,000 people are waiting for a kidney while only 25,000 transplants occur each year. More than 7,000 people in the UK are on the kidney transplant list.
 
-**🇫🇷 FR:** *Aux États-Unis, environ 100 000 personnes attendent un rein alors que seulement 25 000 greffes ont lieu chaque année. Au Royaume-Uni, plus de 7 000 personnes figurent sur la liste des personnes ayant subi une transplantation rénale.*
+**🇫🇷 FR:** *[Error Translate] In the US, around 100,000 people are waiting for a kidney while only 25,000 transplants occur each year. More than 7,000 people in the UK are on the kidney transplant list.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** But he described the idea of a pig transplant as "hope" and the "light at the end of the tunnel".
 
-**🇫🇷 FR:** *[Error Translate] But he described the idea of a pig transplant as "hope" and the "light at the end of the tunnel".*
+**🇫🇷 FR:** *Mais il a décrit l’idée d’une greffe de porc comme « un espoir » et la « lumière au bout du tunnel ».*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** "Hope is the biggest thing, the chance to be free from the [dialysis] machine and live your life."
 
-**🇫🇷 FR:** *[Error Translate] "Hope is the biggest thing, the chance to be free from the [dialysis] machine and live your life."*
+**🇫🇷 FR:** *"L'espoir est la chose la plus importante, la chance de se libérer de l'appareil [de dialyse] et de vivre sa vie."*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** Tim Andrews preparing for surgery in January 2025
 
-**🇫🇷 FR:** *[Error Translate] Tim Andrews preparing for surgery in January 2025*
+**🇫🇷 FR:** *Tim Andrews se prépare à une opération chirurgicale en janvier 2025*
 
 ---
 
@@ -110,7 +110,7 @@
 
 **🇬🇧 EN:** The donor kidney had been harvested from a genetically modified pig to make it suitable for human donation
 
-**🇫🇷 FR:** *[Error Translate] The donor kidney had been harvested from a genetically modified pig to make it suitable for human donation*
+**🇫🇷 FR:** *Le rein d'un donneur avait été prélevé sur un porc génétiquement modifié pour le rendre apte au don humain*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** Surgeons attached the pig kidney to the blood vessels inside Tim Andrews' body so the organ could filter the blood.
 
-**🇫🇷 FR:** *[Error Translate] Surgeons attached the pig kidney to the blood vessels inside Tim Andrews' body so the organ could filter the blood.*
+**🇫🇷 FR:** *Les chirurgiens ont attaché le rein de porc aux vaisseaux sanguins à l'intérieur du corps de Tim Andrews afin que l'organe puisse filtrer le sang.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** An emotional Tim Andrews and his wife Karen share an embrace while leaving Massachusetts General Hospital on Feb 1, 2025
 
-**🇫🇷 FR:** *[Error Translate] An emotional Tim Andrews and his wife Karen share an embrace while leaving Massachusetts General Hospital on Feb 1, 2025*
+**🇫🇷 FR:** *Tim Andrews, ému, et sa femme Karen partagent une étreinte en quittant le Massachusetts General Hospital le 1er février 2025.*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** Pigs are seen as the ideal animal for xenotransplantation. Their organs are roughly the right size and there have been years of experience farming them.
 
-**🇫🇷 FR:** *[Error Translate] Pigs are seen as the ideal animal for xenotransplantation. Their organs are roughly the right size and there have been years of experience farming them.*
+**🇫🇷 FR:** *Les porcs sont considérés comme l’animal idéal pour la xénotransplantation. Leurs organes sont à peu près de la bonne taille et il y a des années d’expérience dans leur élevage.*
 
 ---
 
@@ -142,7 +142,7 @@
 
 **🇬🇧 EN:** But you cannot just pop down to the farm and take a kidney from a pig and put it into a person. The human body would immediately identify the organ as foreign and launch a devastating immune assault that would destroy the kidney. It would turn black in minutes as holes are ripped in every cell and the organ clots from the inside.
 
-**🇫🇷 FR:** *[Error Translate] But you cannot just pop down to the farm and take a kidney from a pig and put it into a person. The human body would immediately identify the organ as foreign and launch a devastating immune assault that would destroy the kidney. It would turn black in minutes as holes are ripped in every cell and the organ clots from the inside.*
+**🇫🇷 FR:** *Mais vous ne pouvez pas simplement vous rendre à la ferme, prélever un rein de porc et l'administrer à une personne. Le corps humain identifierait immédiatement l’organe comme étranger et lancerait une attaque immunitaire dévastatrice qui détruirait le rein. Il deviendrait noir en quelques minutes à mesure que des trous seraient creusés dans chaque cellule et que les organes coaguleraient de l’intérieur.*
 
 ---
 
@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** So researchers have developed Yucatan miniature pigs that have gone through 69 genomic modifications to "humanise" their organs.
 
-**🇫🇷 FR:** *[Error Translate] So researchers have developed Yucatan miniature pigs that have gone through 69 genomic modifications to "humanise" their organs.*
+**🇫🇷 FR:** *Les chercheurs ont donc développé des porcs miniatures du Yucatan qui ont subi 69 modifications génomiques pour « humaniser » leurs organes.*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** These modifications strip out some features of pig cells that our immune system spots and attacks; add some human DNA that acts like camouflage netting to help hide the pig tissue from the immune system and further tweaks disable viruses that hide inside pig DNA to prevent infection.
 
-**🇫🇷 FR:** *[Error Translate] These modifications strip out some features of pig cells that our immune system spots and attacks; add some human DNA that acts like camouflage netting to help hide the pig tissue from the immune system and further tweaks disable viruses that hide inside pig DNA to prevent infection.*
+**🇫🇷 FR:** *Ces modifications suppriment certaines caractéristiques des cellules de porc que notre système immunitaire détecte et attaque ; ajoutez de l'ADN humain qui agit comme un filet de camouflage pour aider à cacher les tissus du porc au système immunitaire et des ajustements supplémentaires désactivent les virus qui se cachent dans l'ADN du porc pour prévenir l'infection.*
 
 ---
 
@@ -174,7 +174,7 @@
 
 **🇬🇧 EN:** Andrews had end stage kidney disease as a result of type 2 diabetes and his kidneys were failing.
 
-**🇫🇷 FR:** *[Error Translate] Andrews had end stage kidney disease as a result of type 2 diabetes and his kidneys were failing.*
+**🇫🇷 FR:** *Andrews souffrait d'une maladie rénale terminale due à un diabète de type 2 et ses reins étaient défaillants.*
 
 ---
 
@@ -182,7 +182,7 @@
 
 **🇬🇧 EN:** He was 66 years old when he had the xenotransplant on January 25, 2025.
 
-**🇫🇷 FR:** *[Error Translate] He was 66 years old when he had the xenotransplant on January 25, 2025.*
+**🇫🇷 FR:** *Il avait 66 ans lorsqu'il a subi la xénotransplantation le 25 janvier 2025.*
 
 ---
 
@@ -190,7 +190,7 @@
 
 **🇬🇧 EN:** The transplanted pig kidney worked immediately, according to details just published in the Lancet medical journal, external.
 
-**🇫🇷 FR:** *[Error Translate] The transplanted pig kidney worked immediately, according to details just published in the Lancet medical journal, external.*
+**🇫🇷 FR:** *Le rein de porc transplanté a fonctionné immédiatement, selon les détails qui viennent d'être publiés dans la revue médicale externe Lancet.*
 
 ---
 
@@ -198,7 +198,7 @@
 
 **🇬🇧 EN:** The kidney continued to function for 271 days until it was removed in October that year. Tim then needed dialysis for 82 days until he had an organ from a donor in January of this year. That organ has been working well.
 
-**🇫🇷 FR:** *[Error Translate] The kidney continued to function for 271 days until it was removed in October that year. Tim then needed dialysis for 82 days until he had an organ from a donor in January of this year. That organ has been working well.*
+**🇫🇷 FR:** *Le rein a continué à fonctionner pendant 271 jours jusqu'à ce qu'il soit retiré en octobre de la même année. Tim a ensuite eu besoin d'une dialyse pendant 82 jours jusqu'à ce qu'il reçoive un organe d'un donneur en janvier de cette année. Cet organe fonctionne bien.*
 
 ---
 
@@ -206,7 +206,7 @@
 
 **🇬🇧 EN:** Dr Leonardo Riella, from the centre for transplantation sciences at Mass General Brigham said the shortage of organs available for transplant meant " we are in a crisis".
 
-**🇫🇷 FR:** *[Error Translate] Dr Leonardo Riella, from the centre for transplantation sciences at Mass General Brigham said the shortage of organs available for transplant meant " we are in a crisis".*
+**🇫🇷 FR:** *Le Dr Leonardo Riella, du centre des sciences de la transplantation de Mass General Brigham, a déclaré que la pénurie d'organes disponibles pour la transplantation signifiait « que nous sommes dans une crise ».*
 
 ---
 
@@ -214,7 +214,7 @@
 
 **🇬🇧 EN:** "We are working really hard to bring hope and we truly feel that xenotransplantation can be an alternative for patients who don't have a living donor where we could potentially bypass dialysis and get them to a transplant," he said.
 
-**🇫🇷 FR:** *[Error Translate] "We are working really hard to bring hope and we truly feel that xenotransplantation can be an alternative for patients who don't have a living donor where we could potentially bypass dialysis and get them to a transplant," he said.*
+**🇫🇷 FR:** *"Nous travaillons très dur pour apporter de l'espoir et nous pensons vraiment que la xénotransplantation peut être une alternative pour les patients qui n'ont pas de donneur vivant, où nous pourrions potentiellement contourner la dialyse et les amener à une greffe", a-t-il déclaré.*
 
 ---
 
@@ -222,7 +222,7 @@
 
 **🇬🇧 EN:** Man who received first pig kidney transplant dies
 
-**🇫🇷 FR:** *[Error Translate] Man who received first pig kidney transplant dies*
+**🇫🇷 FR:** *L'homme qui a reçu sa première greffe de rein de porc est décédé*
 
 ---
 
@@ -230,7 +230,7 @@
 
 **🇬🇧 EN:** There were early signs Andrews' organ was being rejected by the immune system, but that was successfully treated by adjusting his medication.
 
-**🇫🇷 FR:** *[Error Translate] There were early signs Andrews' organ was being rejected by the immune system, but that was successfully treated by adjusting his medication.*
+**🇫🇷 FR:** *Il y avait des signes précoces de rejet de l'organe d'Andrews par le système immunitaire, mais cela a été traité avec succès en ajustant ses médicaments.*
 
 ---
 
@@ -238,7 +238,7 @@
 
 **🇬🇧 EN:** However, after around six months the blood vessels in the kidney started to become damaged and the organ inflamed and then it started to fail.
 
-**🇫🇷 FR:** *[Error Translate] However, after around six months the blood vessels in the kidney started to become damaged and the organ inflamed and then it started to fail.*
+**🇫🇷 FR:** *Cependant, après environ six mois, les vaisseaux sanguins du rein ont commencé à être endommagés et l'organe à s'enflammer, puis à cesser de fonctionner.*
 
 ---
 
@@ -246,7 +246,7 @@
 
 **🇬🇧 EN:** It is not clear exactly why as there were no signs of antibodies attacking the pig kidney.
 
-**🇫🇷 FR:** *[Error Translate] It is not clear exactly why as there were no signs of antibodies attacking the pig kidney.*
+**🇫🇷 FR:** *On ne sait pas exactement pourquoi, car il n’y avait aucun signe d’anticorps attaquant le rein du porc.*
 
 ---
 
@@ -254,7 +254,7 @@
 
 **🇬🇧 EN:** In their Lancet write-up the doctors state: "This case illustrates both the promise and the remaining challenges of clinical kidney xenotransplantation."
 
-**🇫🇷 FR:** *[Error Translate] In their Lancet write-up the doctors state: "This case illustrates both the promise and the remaining challenges of clinical kidney xenotransplantation."*
+**🇫🇷 FR:** *Dans leur article dans le Lancet, les médecins déclarent : « Ce cas illustre à la fois les promesses et les défis restants de la xénotransplantation rénale clinique. »*
 
 ---
 

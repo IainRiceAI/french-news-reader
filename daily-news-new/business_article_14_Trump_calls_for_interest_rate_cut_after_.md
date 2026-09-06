@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** In response to the stronger jobs figures raising expectations of a interest rate hike, US stock market indexes were trading down on Friday.
 
-**🇫🇷 FR:** *En réaction à l'amélioration des chiffres de l'emploi qui a fait naître les attentes d'une hausse des taux d'intérêt, les indices boursiers américains se sont négociés à la baisse vendredi.*
+**🇫🇷 FR:** *[Error Translate] In response to the stronger jobs figures raising expectations of a interest rate hike, US stock market indexes were trading down on Friday.*
 
 ---
 

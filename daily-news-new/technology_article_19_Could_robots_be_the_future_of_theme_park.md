@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** This is Galaxy Robot Park, a 16,500-square-meter venue that’s opened near Seoul in South Korea . The company behind the park says their aim is to bring artificial intelligence and robotics into the world of entertainment. The question is, can robots keep people coming back?
 
-**🇫🇷 FR:** *Il s'agit du Galaxy Robot Park, un site de 16 500 mètres carrés ouvert près de Séoul en Corée du Sud. L'entreprise derrière le parc affirme que son objectif est d'introduire l'intelligence artificielle et la robotique dans le monde du divertissement. La question est : les robots peuvent-ils inciter les gens à revenir ?*
+**🇫🇷 FR:** *[Error Translate] This is Galaxy Robot Park, a 16,500-square-meter venue that’s opened near Seoul in South Korea . The company behind the park says their aim is to bring artificial intelligence and robotics into the world of entertainment. The question is, can robots keep people coming back?*
 
 ---
 

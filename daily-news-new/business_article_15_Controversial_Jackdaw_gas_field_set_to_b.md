@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** The Jackdaw gas platform and drilling rig stand east of Aberdeen in the North Sea
 
-**🇫🇷 FR:** *[Error Translate] The Jackdaw gas platform and drilling rig stand east of Aberdeen in the North Sea*
+**🇫🇷 FR:** *La plate-forme gazière et l'appareil de forage Jackdaw se trouvent à l'est d'Aberdeen, en mer du Nord.*
 
 ---
 
@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Approval for the Jackdaw project could come in mid-September, just before  Parliament breaks for party conference season, according to government and industry sources.
 
-**🇫🇷 FR:** *[Error Translate] Approval for the Jackdaw project could come in mid-September, just before  Parliament breaks for party conference season, according to government and industry sources.*
+**🇫🇷 FR:** *L'approbation du projet Choucas pourrait intervenir à la mi-septembre, juste avant la pause parlementaire pour la saison des conférences du parti, selon des sources gouvernementales et industrielles.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** The gas field was approved by the former Conservative government in 2022 but was delayed by a legal ruling from a Scottish court, after environmental groups argued consent was given without fully considering the climate impact.
 
-**🇫🇷 FR:** *[Error Translate] The gas field was approved by the former Conservative government in 2022 but was delayed by a legal ruling from a Scottish court, after environmental groups argued consent was given without fully considering the climate impact.*
+**🇫🇷 FR:** *Le gisement de gaz a été approuvé par l'ancien gouvernement conservateur en 2022, mais a été retardé par une décision de justice d'un tribunal écossais, après que des groupes environnementaux ont soutenu que le consentement avait été donné sans pleinement prendre en compte l'impact climatique.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Jackdaw's owner says it will account for 6% of UK gas output when at peak production but environmental groups say it will provide only 2% of UK use when imports are included.
 
-**🇫🇷 FR:** *[Error Translate] Jackdaw's owner says it will account for 6% of UK gas output when at peak production but environmental groups say it will provide only 2% of UK use when imports are included.*
+**🇫🇷 FR:** *Le propriétaire de Jackdaw affirme qu'il représentera 6 % de la production de gaz du Royaume-Uni lorsqu'il atteindra son pic de production, mais les groupes environnementaux affirment qu'il ne fournira que 2 % de la consommation britannique lorsque les importations sont incluses.*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** The Court of Session in Edinburgh ruled last year that Rosebank and Jackdaw had been unlawfully approved because the government had failed to take into account the climate impact of burning extracted oil and gas from the sites.
 
-**🇫🇷 FR:** *[Error Translate] The Court of Session in Edinburgh ruled last year that Rosebank and Jackdaw had been unlawfully approved because the government had failed to take into account the climate impact of burning extracted oil and gas from the sites.*
+**🇫🇷 FR:** *La Cour de session d'Édimbourg a statué l'année dernière que Rosebank et Jackdaw avaient été illégalement approuvés parce que le gouvernement n'avait pas pris en compte l'impact climatique de la combustion du pétrole et du gaz extraits de ces sites.*
 
 ---
 
@@ -70,7 +70,7 @@
 
 **🇬🇧 EN:** A judge ruled that more detailed climate assessments had to be published, and further estimates were put out for consultation in July.
 
-**🇫🇷 FR:** *[Error Translate] A judge ruled that more detailed climate assessments had to be published, and further estimates were put out for consultation in July.*
+**🇫🇷 FR:** *Un juge a statué que des évaluations climatiques plus détaillées devaient être publiées, et des estimations supplémentaires ont été soumises à consultation en juillet.*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** Both Jackdaw and Rosebank are operated by Adura, a joint venture between energy giants Shell and Norway's Equinor. Aberdeen-based firm Ithaca also owns 20% of Rosebank.
 
-**🇫🇷 FR:** *[Error Translate] Both Jackdaw and Rosebank are operated by Adura, a joint venture between energy giants Shell and Norway's Equinor. Aberdeen-based firm Ithaca also owns 20% of Rosebank.*
+**🇫🇷 FR:** *Jackdaw et Rosebank sont exploités par Adura, une coentreprise entre les géants de l'énergie Shell et le norvégien Equinor. La société Ithaca, basée à Aberdeen, détient également 20 % de Rosebank.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** Adura has estimated that Jackdaw could produce 35.8m tonnes of carbon over its 11-year lifetime, the equivalent of 90% of Scotland's emissions for 2023. But it said a more likely estimate was about 23.6m tonnes - equivalent to 60% of the 2023 figure.
 
-**🇫🇷 FR:** *[Error Translate] Adura has estimated that Jackdaw could produce 35.8m tonnes of carbon over its 11-year lifetime, the equivalent of 90% of Scotland's emissions for 2023. But it said a more likely estimate was about 23.6m tonnes - equivalent to 60% of the 2023 figure.*
+**🇫🇷 FR:** *Adura a estimé que Choucas pourrait produire 35,8 millions de tonnes de carbone au cours de sa durée de vie de 11 ans, soit l'équivalent de 90 % des émissions de l'Écosse pour 2023. Mais il a indiqué qu'une estimation plus probable était d'environ 23,6 millions de tonnes, soit l'équivalent de 60 % du chiffre de 2023.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** Environmentalists insist that more drilling would be unconscionable, hampering efforts to cut planet-warming carbon emissions as deadly heatwaves and extreme weather affect billions across the globe.
 
-**🇫🇷 FR:** *[Error Translate] Environmentalists insist that more drilling would be unconscionable, hampering efforts to cut planet-warming carbon emissions as deadly heatwaves and extreme weather affect billions across the globe.*
+**🇫🇷 FR:** *Les écologistes insistent sur le fait que davantage de forages serait inadmissible et entraverait les efforts visant à réduire les émissions de carbone responsables du réchauffement de la planète, alors que les vagues de chaleur mortelles et les conditions météorologiques extrêmes affectent des milliards de personnes à travers le monde.*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** Scottish Labour leadership contenders back North Sea drilling approval
 
-**🇫🇷 FR:** *[Error Translate] Scottish Labour leadership contenders back North Sea drilling approval*
+**🇫🇷 FR:** *Les candidats à la direction du parti travailliste écossais soutiennent l'approbation du forage en mer du Nord*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** But industry bodies argue that starting production at the sites would provide much-needed jobs and improve the UK's energy security as overseas conflicts threaten supply.
 
-**🇫🇷 FR:** *[Error Translate] But industry bodies argue that starting production at the sites would provide much-needed jobs and improve the UK's energy security as overseas conflicts threaten supply.*
+**🇫🇷 FR:** *Mais les organismes industriels affirment que le démarrage de la production sur les sites créerait des emplois indispensables et améliorerait la sécurité énergétique du Royaume-Uni, alors que les conflits à l'étranger menacent l'approvisionnement.*
 
 ---
 
@@ -142,7 +142,7 @@
 
 **🇬🇧 EN:** Adura said that if approval comes in September, the field could start delivering gas to UK homes by this winter as the construction is "99% complete".
 
-**🇫🇷 FR:** *[Error Translate] Adura said that if approval comes in September, the field could start delivering gas to UK homes by this winter as the construction is "99% complete".*
+**🇫🇷 FR:** *Adura a déclaré que si l'approbation arrive en septembre, le champ pourrait commencer à livrer du gaz aux foyers britanniques d'ici cet hiver, la construction étant "achevée à 99 %".*
 
 ---
 
@@ -174,7 +174,7 @@
 
 **🇬🇧 EN:** Prime Minister Andy Burnham recently said there needs to be a "pragmatic approach" towards domestic oil and gas.
 
-**🇫🇷 FR:** *[Error Translate] Prime Minister Andy Burnham recently said there needs to be a "pragmatic approach" towards domestic oil and gas.*
+**🇫🇷 FR:** *Le Premier ministre Andy Burnham a récemment déclaré qu'il fallait adopter une « approche pragmatique » à l'égard du pétrole et du gaz nationaux.*
 
 ---
 
@@ -222,7 +222,7 @@
 
 **🇬🇧 EN:** Gas storage levels in Europe are significantly lower than usual for this time of year after countries delayed stockpiling in the summer in the hope that the conflict would end before winter and prices would in turn fall.
 
-**🇫🇷 FR:** *Les niveaux de stockage de gaz en Europe sont nettement inférieurs à la normale pour cette période de l'année, les pays ayant retardé leur stockage pendant l'été dans l'espoir que le conflit se terminerait avant l'hiver et que les prix baisseraient à leur tour.*
+**🇫🇷 FR:** *[Error Translate] Gas storage levels in Europe are significantly lower than usual for this time of year after countries delayed stockpiling in the summer in the hope that the conflict would end before winter and prices would in turn fall.*
 
 ---
 
@@ -230,7 +230,7 @@
 
 **🇬🇧 EN:** They face the prospect of rushing to buy gas now or paying potentially higher prices when the winter comes.
 
-**🇫🇷 FR:** *Ils sont confrontés à la perspective de se précipiter pour acheter du gaz maintenant ou de payer des prix potentiellement plus élevés lorsque l’hiver arrive.*
+**🇫🇷 FR:** *[Error Translate] They face the prospect of rushing to buy gas now or paying potentially higher prices when the winter comes.*
 
 ---
 
@@ -238,7 +238,7 @@
 
 **🇬🇧 EN:** Prices are set internationally and a green light to Jackdaw would not lower the cost of gas for domestic consumers.
 
-**🇫🇷 FR:** *Les prix sont fixés au niveau international et un feu vert au Choucas ne réduirait pas le coût du gaz pour les consommateurs nationaux.*
+**🇫🇷 FR:** *[Error Translate] Prices are set internationally and a green light to Jackdaw would not lower the cost of gas for domestic consumers.*
 
 ---
 
@@ -326,7 +326,7 @@
 
 **🇬🇧 EN:** "Any decision will take into account all relevant evidence, including environmental assessments and public representations received during the consultation process."
 
-**🇫🇷 FR:** *"Toute décision tiendra compte de toutes les preuves pertinentes, y compris les évaluations environnementales et les représentations publiques reçues au cours du processus de consultation."*
+**🇫🇷 FR:** *[Error Translate] "Any decision will take into account all relevant evidence, including environmental assessments and public representations received during the consultation process."*
 
 ---
 

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation faces hotter, stormier skies – and passengers might have to accept more disruption</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Aviation faces hotter, stormier skies – and passengers might have to accept more disruption</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 05 Sep 2026 23:20:00 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm274p8m88lo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Are people going to have to increasingly accept more delays and diversions as the effects of climate change intensify?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.84" data-end="16.49">
+            <p class="french-block">[Error Translate] Aviation faces hotter, stormier skies – and passengers might have to accept more disruption</p>
+            <span class="english-block">Aviation faces hotter, stormier skies – and passengers might have to accept more disruption</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.49" data-end="41.09">
+            <p class="french-block">[Error Translate] As the country sweltered through one of the many heatwaves of a baking summer in late June, towering thunderclouds were gathering over the south of England and across much of northern Europe. It was a Saturday, and with the holiday season getting under way, thousands of passengers were heading to London's Heathrow and Gatwick airports to catch flights abroad. It was always going to be a very busy day.</p>
+            <span class="english-block">As the country sweltered through one of the many heatwaves of a baking summer in late June, towering thunderclouds were gathering over the south of England and across much of northern Europe. It was a Saturday, and with the holiday season getting under way, thousands of passengers were heading to London's Heathrow and Gatwick airports to catch flights abroad. It was always going to be a very busy day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="41.09" data-end="72.02">
+            <p class="french-block">[Error Translate] What followed, however, was chaos for travellers. As air traffic controllers struggled to route aircraft around the storms, airspace became heavily congested and many planes due to fly were simply forced to wait on the ground. In the end, some 900 flights to and from both airports were delayed, some by up to 11 hours. Dozens more were cancelled. At airports across Europe, passengers expecting to fly into London also faced long waits and uncertainty.</p>
+            <span class="english-block">What followed, however, was chaos for travellers. As air traffic controllers struggled to route aircraft around the storms, airspace became heavily congested and many planes due to fly were simply forced to wait on the ground. In the end, some 900 flights to and from both airports were delayed, some by up to 11 hours. Dozens more were cancelled. At airports across Europe, passengers expecting to fly into London also faced long waits and uncertainty.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.02" data-end="83.98">
+            <p class="french-block">[Error Translate] The weather in the UK may now have cooled, and passengers may soon forget their experiences. But some within the industry believe what happened in June should be seen as a warning.</p>
+            <span class="english-block">The weather in the UK may now have cooled, and passengers may soon forget their experiences. But some within the industry believe what happened in June should be seen as a warning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.98" data-end="104.76">
+            <p class="french-block">[Error Translate] The timing in this case was clearly unlucky. But there are concerns that such incidents are only going to become more common as the effects of climate change mount up around the world and weather systems are likely to become increasingly unstable, making disruption more likely and adding to costs for airlines, airports and travellers.</p>
+            <span class="english-block">The timing in this case was clearly unlucky. But there are concerns that such incidents are only going to become more common as the effects of climate change mount up around the world and weather systems are likely to become increasingly unstable, making disruption more likely and adding to costs for airlines, airports and travellers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.76" data-end="116.62">
+            <p class="french-block">[Error Translate] Tim Atkinson, an airline risk consultant and former pilot, says the very crowded skies over the UK and northern Europe mean the region is particularly exposed.</p>
+            <span class="english-block">Tim Atkinson, an airline risk consultant and former pilot, says the very crowded skies over the UK and northern Europe mean the region is particularly exposed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.62" data-end="128.66">
+            <p class="french-block">[Error Translate] He thinks there is a real risk, for example, that all of London's airports could be affected by storms at the same time, potentially with major consequences in the air and on the ground.</p>
+            <span class="english-block">He thinks there is a real risk, for example, that all of London's airports could be affected by storms at the same time, potentially with major consequences in the air and on the ground.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.66" data-end="134.09">
+            <p class="french-block">[Error Translate] "What we're seeing now is very rapid climate change," he says.</p>
+            <span class="english-block">"What we're seeing now is very rapid climate change," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.09" data-end="152.4">
+            <p class="french-block">[Error Translate] "We're going from the kind of weather activity which takes out an airport, and which the system kind of copes with… to a situation where, with very little predictability, it would be possible to lose all of the London airports from real-time operation quite swiftly and with little notice".</p>
+            <span class="english-block">"We're going from the kind of weather activity which takes out an airport, and which the system kind of copes with… to a situation where, with very little predictability, it would be possible to lose all of the London airports from real-time operation quite swiftly and with little notice".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.4" data-end="165.22">
+            <p class="french-block">[Error Translate] Such a scenario, he thinks, would make the disruption for passengers caused by the incident in June seem relatively minor – and could even put lives at risk. But how likely is it?</p>
+            <span class="english-block">Such a scenario, he thinks, would make the disruption for passengers caused by the incident in June seem relatively minor – and could even put lives at risk. But how likely is it?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.22" data-end="185.02">
+            <p class="french-block">[Error Translate] For controllers at National Air Traffic Services's (NATS) main control centre in Swanwick, Hampshire, thunderstorms are a major preoccupation. When I visit, it is a hot and humid day, there are ominous dark clouds in the sky, and heavy, thundery downpours are hitting the surrounding region.</p>
+            <span class="english-block">For controllers at National Air Traffic Services's (NATS) main control centre in Swanwick, Hampshire, thunderstorms are a major preoccupation. When I visit, it is a hot and humid day, there are ominous dark clouds in the sky, and heavy, thundery downpours are hitting the surrounding region.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.02" data-end="204.43">
+            <p class="french-block">[Error Translate] In Terminal Control, the part of the building responsible for flights heading to or from airports in London and southern England, those same storm cells are being monitored continually. Their progress is tracked on large radar screens, while at the same time weather forecasts are carefully scrutinised.</p>
+            <span class="english-block">In Terminal Control, the part of the building responsible for flights heading to or from airports in London and southern England, those same storm cells are being monitored continually. Their progress is tracked on large radar screens, while at the same time weather forecasts are carefully scrutinised.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.43" data-end="223.85">
+            <p class="french-block">[Error Translate] Air traffic tends to come in waves during the day. Right now, at lunchtime, it is relatively quiet and the storms have yet to affect major routes. But with activity expected to intensify in the afternoon, staff are already preparing for what could be a tricky few hours.</p>
+            <span class="english-block">Air traffic tends to come in waves during the day. Right now, at lunchtime, it is relatively quiet and the storms have yet to affect major routes. But with activity expected to intensify in the afternoon, staff are already preparing for what could be a tricky few hours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.85" data-end="249.67">
+            <p class="french-block">[Error Translate] Stormy weather can shrink the available airspace, meaning traffic has to be restricted and rerouted. If planes are unable to land at one airport, for example due to high winds, they may need diverting to another. But that can create its own problems; if too many unscheduled aircraft land at an already busy airport, it might not have sufficient infrastructure to accommodate them all.</p>
+            <span class="english-block">Stormy weather can shrink the available airspace, meaning traffic has to be restricted and rerouted. If planes are unable to land at one airport, for example due to high winds, they may need diverting to another. But that can create its own problems; if too many unscheduled aircraft land at an already busy airport, it might not have sufficient infrastructure to accommodate them all.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.67" data-end="254.11">
+            <p class="french-block">[Error Translate] Heavy rain and storms can make flying harder</p>
+            <span class="english-block">Heavy rain and storms can make flying harder</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.11" data-end="268.13">
+            <p class="french-block">[Error Translate] Planes need fuel and somewhere to park. Passengers need food and facilities. Ultimately, if there isn't space, it can simply refuse to accept all but emergency traffic.</p>
+            <span class="english-block">Planes need fuel and somewhere to park. Passengers need food and facilities. Ultimately, if there isn't space, it can simply refuse to accept all but emergency traffic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.13" data-end="290.57">
+            <p class="french-block">[Error Translate] This is where the scenario set out by Atkinson comes in. He warns of a situation where traffic is diverted from Heathrow, Gatwick, Luton and Stansted at the same time, leaving aircraft coming in across the Atlantic and a large number of European flights all looking for somewhere to land at the same time, and some with dwindling fuel reserves.</p>
+            <span class="english-block">This is where the scenario set out by Atkinson comes in. He warns of a situation where traffic is diverted from Heathrow, Gatwick, Luton and Stansted at the same time, leaving aircraft coming in across the Atlantic and a large number of European flights all looking for somewhere to land at the same time, and some with dwindling fuel reserves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.57" data-end="307.42">
+            <p class="french-block">[Error Translate] This would at the very least create serious disruption for passengers, who might end up hundreds of miles from their destinations. But it could also, he thinks, create "a very serious risk event, such as an aircraft running out of fuel in the sky".</p>
+            <span class="english-block">This would at the very least create serious disruption for passengers, who might end up hundreds of miles from their destinations. But it could also, he thinks, create "a very serious risk event, such as an aircraft running out of fuel in the sky".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="307.42" data-end="318.74">
+            <p class="french-block">[Error Translate] Aircraft are legally required to carry enough fuel to take them to an alternative airport if necessary, and to allow them to fly for an extra 30 minutes on top of that.</p>
+            <span class="english-block">Aircraft are legally required to carry enough fuel to take them to an alternative airport if necessary, and to allow them to fly for an extra 30 minutes on top of that.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="318.74" data-end="331.44">
+            <p class="french-block">[Error Translate] Not everyone shares Atkinson's concern. Former airline executive Andrew Charlton, who manages the Swiss-based consultancy Aviation Advocacy, thinks the risk is low.</p>
+            <span class="english-block">Not everyone shares Atkinson's concern. Former airline executive Andrew Charlton, who manages the Swiss-based consultancy Aviation Advocacy, thinks the risk is low.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.44" data-end="341.83">
+            <p class="french-block">[Error Translate] "You've always got to imagine the worst-case scenario", he says. "But I also think we need to keep that worst case in context.</p>
+            <span class="english-block">"You've always got to imagine the worst-case scenario", he says. "But I also think we need to keep that worst case in context.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="341.83" data-end="357.46">
+            <p class="french-block">[Error Translate] "Yes, it's possible to imagine it. But I'm also fairly comfortable with the ability of this industry to react well and make good decisions… of all the things that wake me up at 3am…this is not the top of that list."</p>
+            <span class="english-block">"Yes, it's possible to imagine it. But I'm also fairly comfortable with the ability of this industry to react well and make good decisions… of all the things that wake me up at 3am…this is not the top of that list."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="357.46" data-end="388.61">
+            <p class="french-block">[Error Translate] Thunderstorms are caused by what is known as convective activity, where moist air close to the ground warms rapidly and rises quickly. As it rises, it expands and cools, allowing the moisture it carries to condense, forming large clouds. More heat means more convective energy, potentially creating instability. In addition, for every degree the Earth warms, the atmosphere can hold about 7% more moisture, increasing the probability of heavy rainfall.</p>
+            <span class="english-block">Thunderstorms are caused by what is known as convective activity, where moist air close to the ground warms rapidly and rises quickly. As it rises, it expands and cools, allowing the moisture it carries to condense, forming large clouds. More heat means more convective energy, potentially creating instability. In addition, for every degree the Earth warms, the atmosphere can hold about 7% more moisture, increasing the probability of heavy rainfall.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="388.61" data-end="424.78">
+            <p class="french-block">[Error Translate] It is not clear whether this means we will actually get more thunderstorms in the UK and across Europe, as so many variables are involved beyond the simple matter of energy and moisture. Some parts of the world may even get fewer. However, studies have shown that higher latitudes, particularly in the northern hemisphere, will see the biggest increases in favourable conditions for storms to form, and those that do may be more violent. According to the UK's Met Office, "while we may not see more thunderstorms overall, the ones we do experience could be more impactful".</p>
+            <span class="english-block">It is not clear whether this means we will actually get more thunderstorms in the UK and across Europe, as so many variables are involved beyond the simple matter of energy and moisture. Some parts of the world may even get fewer. However, studies have shown that higher latitudes, particularly in the northern hemisphere, will see the biggest increases in favourable conditions for storms to form, and those that do may be more violent. According to the UK's Met Office, "while we may not see more thunderstorms overall, the ones we do experience could be more impactful".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="424.78" data-end="456.65">
+            <p class="french-block">[Error Translate] Where possible, pilots will avoid flying through convective weather. Even though aircraft are designed to cope with severe conditions, storms can produce intense turbulence, capable of damaging the structural frame of the plane, as well as throwing people around the cabin if they are not strapped in. Hail can also be a big problem, potentially cracking windscreens or causing engine problems. So, however much inconvenience it may cause passengers, crews will invariably put safety first.</p>
+            <span class="english-block">Where possible, pilots will avoid flying through convective weather. Even though aircraft are designed to cope with severe conditions, storms can produce intense turbulence, capable of damaging the structural frame of the plane, as well as throwing people around the cabin if they are not strapped in. Hail can also be a big problem, potentially cracking windscreens or causing engine problems. So, however much inconvenience it may cause passengers, crews will invariably put safety first.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="456.65" data-end="462.26">
+            <p class="french-block">[Error Translate] New technology helps pilots navigate tricky flying conditions</p>
+            <span class="english-block">New technology helps pilots navigate tricky flying conditions</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="462.26" data-end="497.16">
+            <p class="french-block">[Error Translate] Onboard weather radars can help aircrew to see up to 320 nautical miles ahead. They also have access to live weather forecasting resources online. But thunderstorms can move quickly and, according to Prof Guy Gratton, an expert in aeronautics at Cranfield University, these systems are essentially "tactical rather than strategic". In other words, although they enable pilots to see storm cells on their screens from a relatively short distance away, and request a diversion, they do not allow for detailed long-distance planning.</p>
+            <span class="english-block">Onboard weather radars can help aircrew to see up to 320 nautical miles ahead. They also have access to live weather forecasting resources online. But thunderstorms can move quickly and, according to Prof Guy Gratton, an expert in aeronautics at Cranfield University, these systems are essentially "tactical rather than strategic". In other words, although they enable pilots to see storm cells on their screens from a relatively short distance away, and request a diversion, they do not allow for detailed long-distance planning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="497.16" data-end="532.34">
+            <p class="french-block">[Error Translate] The result is that unplanned diversions often happen late in flight, which is likely to mean burning more fuel. If storm delays do become more common, says Andrew Charlton, then aircraft will have to load more fuel as a matter of course, in case there is trouble brewing ahead. "Aircraft are going to have to fly further, and they're going to have to factor in the assumption they're going to fly further," he says. For an airline, fuel is one of its major costs – and if the fuel bill goes up, he says, it is inevitable passengers will pay more.</p>
+            <span class="english-block">The result is that unplanned diversions often happen late in flight, which is likely to mean burning more fuel. If storm delays do become more common, says Andrew Charlton, then aircraft will have to load more fuel as a matter of course, in case there is trouble brewing ahead. "Aircraft are going to have to fly further, and they're going to have to factor in the assumption they're going to fly further," he says. For an airline, fuel is one of its major costs – and if the fuel bill goes up, he says, it is inevitable passengers will pay more.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="532.34" data-end="547.25">
+            <p class="french-block">[Error Translate] More intense storms would be likely to make air traffic management in busy regions harder and potentially lead to more delays and cancellations. However, it is possible some of this could be mitigated using new technologies.</p>
+            <span class="english-block">More intense storms would be likely to make air traffic management in busy regions harder and potentially lead to more delays and cancellations. However, it is possible some of this could be mitigated using new technologies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="547.25" data-end="578.47">
+            <p class="french-block">[Error Translate] Both Heathrow and Gatwick, for example, have moved away from mandating minimum distances between incoming aircraft in favour of a system which continually calculates spacing times based on wind speeds and aircraft types. In practice, this is meant to allow controllers to reduce the distance between landing aircraft, particularly in high winds, and get them on the ground more quickly. According to NATS, it has successfully improved landing rates and reduced delays by a significant margin.</p>
+            <span class="english-block">Both Heathrow and Gatwick, for example, have moved away from mandating minimum distances between incoming aircraft in favour of a system which continually calculates spacing times based on wind speeds and aircraft types. In practice, this is meant to allow controllers to reduce the distance between landing aircraft, particularly in high winds, and get them on the ground more quickly. According to NATS, it has successfully improved landing rates and reduced delays by a significant margin.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="578.47" data-end="609.94">
+            <p class="french-block">[Error Translate] However, there could be other effects from more severe storms as well. Heavier rainfall, for instance, increases the likelihood of flooding. In a worst case, this can paralyse airport operations, as happened in April 2024 when torrential downpours hit Dubai International Airport. It briefly had to close its runways, while disruption lasted for two days. More than 1,200 flights were cancelled, affecting tens of thousands of passengers.</p>
+            <span class="english-block">However, there could be other effects from more severe storms as well. Heavier rainfall, for instance, increases the likelihood of flooding. In a worst case, this can paralyse airport operations, as happened in April 2024 when torrential downpours hit Dubai International Airport. It briefly had to close its runways, while disruption lasted for two days. More than 1,200 flights were cancelled, affecting tens of thousands of passengers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="609.94" data-end="614.66">
+            <p class="french-block">[Error Translate] Passengers were delayed during the floods in Dubai</p>
+            <span class="english-block">Passengers were delayed during the floods in Dubai</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="614.66" data-end="627.65">
+            <p class="french-block">[Error Translate] But even if runways and taxiways themselves are clear, and aircraft are able to fly without any difficulty, passengers may struggle to catch their flights if roads, railways or car parks are flooded.</p>
+            <span class="english-block">But even if runways and taxiways themselves are clear, and aircraft are able to fly without any difficulty, passengers may struggle to catch their flights if roads, railways or car parks are flooded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="627.65" data-end="650.11">
+            <p class="french-block">[Error Translate] Protecting against such risks can be expensive. Gatwick Airport, which experienced severe flooding over the Christmas period in 2013, has spent tens of millions of pounds on mitigation strategies in recent years – although those figures are dwarfed by the more than £2bn it is expecting to invest in its current expansion plans.</p>
+            <span class="english-block">Protecting against such risks can be expensive. Gatwick Airport, which experienced severe flooding over the Christmas period in 2013, has spent tens of millions of pounds on mitigation strategies in recent years – although those figures are dwarfed by the more than £2bn it is expecting to invest in its current expansion plans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="650.11" data-end="660.5">
+            <p class="french-block">[Error Translate] The problem of clear-air turbulence is also a real one. It cannot be seen, and is becoming increasingly common as the climate warms.</p>
+            <span class="english-block">The problem of clear-air turbulence is also a real one. It cannot be seen, and is becoming increasingly common as the climate warms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="660.5" data-end="686.28">
+            <p class="french-block">[Error Translate] This is when air moves violently at high altitudes with no clouds or other visual cues to help a pilot avoid it. For passengers, it usually only means a little bit of bumpiness, but occasionally it can be a lot more serious. On 1 March 2023, for example, a Lufthansa flight from Austin, Texas to Frankfurt encountered what the airline described as "brief but severe" turbulence.</p>
+            <span class="english-block">This is when air moves violently at high altitudes with no clouds or other visual cues to help a pilot avoid it. For passengers, it usually only means a little bit of bumpiness, but occasionally it can be a lot more serious. On 1 March 2023, for example, a Lufthansa flight from Austin, Texas to Frankfurt encountered what the airline described as "brief but severe" turbulence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="686.28" data-end="701.02">
+            <p class="french-block">[Error Translate] Those aboard described how passengers and flight crew were thrown around the cabin as the plane suddenly lost altitude. After it made an emergency landing in Washington DC, seven people were taken to hospital.</p>
+            <span class="english-block">Those aboard described how passengers and flight crew were thrown around the cabin as the plane suddenly lost altitude. After it made an emergency landing in Washington DC, seven people were taken to hospital.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="701.02" data-end="710.14">
+            <p class="french-block">[Error Translate] While still rare, this kind of turbulence is already much more prevalent than it used to be and is likely to become even more so.</p>
+            <span class="english-block">While still rare, this kind of turbulence is already much more prevalent than it used to be and is likely to become even more so.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="710.14" data-end="731.66">
+            <p class="french-block">[Error Translate] "You know the projections are pretty dire: doubling, trebling or worse in the amount of severe turbulence on many busy flight routes around the world," says Paul Williams, a professor of atmospheric science at the University of Reading. He says incidents over the North Atlantic have increased by 55% since 1979.</p>
+            <span class="english-block">"You know the projections are pretty dire: doubling, trebling or worse in the amount of severe turbulence on many busy flight routes around the world," says Paul Williams, a professor of atmospheric science at the University of Reading. He says incidents over the North Atlantic have increased by 55% since 1979.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="731.66" data-end="741.48">
+            <p class="french-block">[Error Translate] Nevertheless, he remains confident solutions can be found, including improvements to forecasting and making use of laser-based technology.</p>
+            <span class="english-block">Nevertheless, he remains confident solutions can be found, including improvements to forecasting and making use of laser-based technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="741.48" data-end="767.57">
+            <p class="french-block">[Error Translate] There is another climate-related threat to aviation, which may prove challenging to overcome: rising sea levels. When Hurricane Sandy arrived off the US East Coast in October 2012, it provoked a storm surge that flooded the city. The two runways at New York's LaGuardia airport were left under water for several days, preventing it from reopening even after the winds had subsided.</p>
+            <span class="english-block">There is another climate-related threat to aviation, which may prove challenging to overcome: rising sea levels. When Hurricane Sandy arrived off the US East Coast in October 2012, it provoked a storm surge that flooded the city. The two runways at New York's LaGuardia airport were left under water for several days, preventing it from reopening even after the winds had subsided.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="767.57" data-end="790.42">
+            <p class="french-block">[Error Translate] Significant flooding that would have affected the New York City area once in every 500 years in pre-industrial times is now experienced every 25 years or so – and could occur every five years by the middle of the century, according to one major study. That makes LaGuardia, built on reclaimed land next to Flushing Bay, appear highly vulnerable.</p>
+            <span class="english-block">Significant flooding that would have affected the New York City area once in every 500 years in pre-industrial times is now experienced every 25 years or so – and could occur every five years by the middle of the century, according to one major study. That makes LaGuardia, built on reclaimed land next to Flushing Bay, appear highly vulnerable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="790.42" data-end="796.13">
+            <p class="french-block">[Error Translate] LaGuardia could be at greater risk of flooding and future closures</p>
+            <span class="english-block">LaGuardia could be at greater risk of flooding and future closures</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="796.13" data-end="829.1">
+            <p class="french-block">[Error Translate] It is not alone. With some 40% of the world's population living within 100km of coastlines, many airports have been built on low-lying areas near the sea. According to research by Newcastle University, 269 airports around the world are already at risk of flooding due to rising sea levels, and that total is expected to rise. Among those potentially most exposed are the likes of Amsterdam Schiphol, London City, Bahrain International and Newark Liberty International.</p>
+            <span class="english-block">It is not alone. With some 40% of the world's population living within 100km of coastlines, many airports have been built on low-lying areas near the sea. According to research by Newcastle University, 269 airports around the world are already at risk of flooding due to rising sea levels, and that total is expected to rise. Among those potentially most exposed are the likes of Amsterdam Schiphol, London City, Bahrain International and Newark Liberty International.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="829.1" data-end="858.29">
+            <p class="french-block">[Error Translate] Many airports do already have some degree of flood protection, especially larger ones. But stopping the flood risks from rising over the next century means expensive investment in flood defences, raising runways, or even moving airports. It could cost up to $57bn (£42bn) according to the Newcastle report. Such costs are ultimately likely to be met by taxpayers or by travellers.</p>
+            <span class="english-block">Many airports do already have some degree of flood protection, especially larger ones. But stopping the flood risks from rising over the next century means expensive investment in flood defences, raising runways, or even moving airports. It could cost up to $57bn (£42bn) according to the Newcastle report. Such costs are ultimately likely to be met by taxpayers or by travellers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="858.29" data-end="878.88">
+            <p class="french-block">[Error Translate] The aviation industry is often criticised for its own contribution to climate change emissions. It faces a forbidding challenge in attempting to meet a target of being carbon neutral by 2050, while also accommodating growth that is expected to see the global aircraft fleet double in size over the next two decades.</p>
+            <span class="english-block">The aviation industry is often criticised for its own contribution to climate change emissions. It faces a forbidding challenge in attempting to meet a target of being carbon neutral by 2050, while also accommodating growth that is expected to see the global aircraft fleet double in size over the next two decades.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="878.88" data-end="884.28">
+            <p class="french-block">[Error Translate] The overlooked factor driving the childhood obesity crisis</p>
+            <span class="english-block">The overlooked factor driving the childhood obesity crisis</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="884.28" data-end="888.89">
+            <p class="french-block">[Error Translate] The race to stop England running out of water</p>
+            <span class="english-block">The race to stop England running out of water</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="888.89" data-end="894.1">
+            <p class="french-block">[Error Translate] How a new era of heatwaves could shake up the school calendar</p>
+            <span class="english-block">How a new era of heatwaves could shake up the school calendar</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="894.1" data-end="902.52">
+            <p class="french-block">[Error Translate] Yet it is clear the impacts of climate change will also be felt by airlines, airports and inevitably by passengers -</p>
+            <span class="english-block">Yet it is clear the impacts of climate change will also be felt by airlines, airports and inevitably by passengers -</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="902.52" data-end="908.21">
+            <p class="french-block">[Error Translate] "I think the best we can do is mitigate", says Andrew Charlton.</p>
+            <span class="english-block">"I think the best we can do is mitigate", says Andrew Charlton.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="908.21" data-end="919.39">
+            <p class="french-block">[Error Translate] "We need to make sure we have enough space at air terminals for people whose flights are being disrupted and delayed, that we have enough hotel rooms and parking space and so on."</p>
+            <span class="english-block">"We need to make sure we have enough space at air terminals for people whose flights are being disrupted and delayed, that we have enough hotel rooms and parking space and so on."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="919.39" data-end="925.9">
+            <p class="french-block">[Error Translate] But ultimately, he says, "disagreeable moments are going to happen more".</p>
+            <span class="english-block">But ultimately, he says, "disagreeable moments are going to happen more".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="925.9" data-end="932.26">
+            <p class="french-block">[Error Translate] Passengers, he thinks, will have to accept it as a fact of flying life.</p>
+            <span class="english-block">Passengers, he thinks, will have to accept it as a fact of flying life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="932.26" data-end="935.74">
+            <p class="french-block">[Error Translate] Lead image: Getty</p>
+            <span class="english-block">Lead image: Getty</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="935.74" data-end="940.99">
+            <p class="french-block">[Error Translate] Are you personally affected by the issues raised in this story?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_21.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

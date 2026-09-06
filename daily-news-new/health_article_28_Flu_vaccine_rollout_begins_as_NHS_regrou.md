@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** This winter's flu vaccine has been updated to protect against last year's subclade-K strain, with the first doses being given to schoolchildren and pregnant women.
 
-**🇫🇷 FR:** *[Error Translate] This winter's flu vaccine has been updated to protect against last year's subclade-K strain, with the first doses being given to schoolchildren and pregnant women.*
+**🇫🇷 FR:** *Le vaccin contre la grippe de cet hiver a été mis à jour pour protéger contre la souche de la sous-clade K de l'année dernière, les premières doses étant administrées aux écoliers et aux femmes enceintes.*
 
 ---
 
@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** Flu hit early last winter, with a new mutated version of the virus circulating
 
-**🇫🇷 FR:** *[Error Translate] Flu hit early last winter, with a new mutated version of the virus circulating*
+**🇫🇷 FR:** *La grippe a frappé au début de l'hiver dernier, avec une nouvelle version mutée du virus en circulation*
 
 ---
 
@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Schoolchildren are being prioritised - and like pregnant women can get the jab from Tuesday - because they can catch and spread flu easily. Protecting them also helps others, including baby brothers or sisters and grandparents.
 
-**🇫🇷 FR:** *[Error Translate] Schoolchildren are being prioritised - and like pregnant women can get the jab from Tuesday - because they can catch and spread flu easily. Protecting them also helps others, including baby brothers or sisters and grandparents.*
+**🇫🇷 FR:** *Les écoliers sont prioritaires – et, comme les femmes enceintes, peuvent se faire vacciner à partir de mardi – car ils peuvent facilement attraper et propager la grippe. Les protéger aide également les autres, y compris les petits frères ou sœurs et les grands-parents.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** Other eligible groups, including people aged 65 and over, can get a free NHS flu shot from October and should receive an invite by phone or post.
 
-**🇫🇷 FR:** *[Error Translate] Other eligible groups, including people aged 65 and over, can get a free NHS flu shot from October and should receive an invite by phone or post.*
+**🇫🇷 FR:** *D'autres groupes éligibles, y compris les personnes âgées de 65 ans et plus, peuvent se faire vacciner gratuitement contre la grippe du NHS à partir d'octobre et devraient recevoir une invitation par téléphone ou par courrier.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Last winter's flu season was unexpected, beginning more than a month earlier than usual, external with the new strain that some were calling Super flu.
 
-**🇫🇷 FR:** *[Error Translate] Last winter's flu season was unexpected, beginning more than a month earlier than usual, external with the new strain that some were calling Super flu.*
+**🇫🇷 FR:** *La saison grippale de l'hiver dernier a été inattendue, commençant plus d'un mois plus tôt que d'habitude, en raison de la nouvelle souche que certains appelaient Super grippe.*
 
 ---
 
@@ -54,7 +54,7 @@
 
 **🇬🇧 EN:** Super flu is not a medical term, and it does not mean the virus has become harder to treat, just that people are yet to build up immunity against it.
 
-**🇫🇷 FR:** *[Error Translate] Super flu is not a medical term, and it does not mean the virus has become harder to treat, just that people are yet to build up immunity against it.*
+**🇫🇷 FR:** *La super grippe n’est pas un terme médical et cela ne signifie pas que le virus est devenu plus difficile à traiter, mais simplement que les gens n’ont pas encore développé d’immunité contre lui.*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** Flu vaccines are updated annually to ensure they are a good match for the type of flu circulating. Influenza viruses constantly mutate and experts have to predict these changes ahead of time.
 
-**🇫🇷 FR:** *[Error Translate] Flu vaccines are updated annually to ensure they are a good match for the type of flu circulating. Influenza viruses constantly mutate and experts have to predict these changes ahead of time.*
+**🇫🇷 FR:** *Les vaccins contre la grippe sont mis à jour chaque année pour garantir qu'ils correspondent bien au type de grippe en circulation. Les virus de la grippe mutent constamment et les experts doivent prévoir ces changements à l’avance.*
 
 ---
 
@@ -70,7 +70,7 @@
 
 **🇬🇧 EN:** This year's vaccine has had a few tweaks, including one to better match subclade K.
 
-**🇫🇷 FR:** *[Error Translate] This year's vaccine has had a few tweaks, including one to better match subclade K.*
+**🇫🇷 FR:** *Le vaccin de cette année a subi quelques modifications, dont une pour mieux correspondre à la sous-clade K.*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** It is not clear when flu will hit this year, and whether it will be a bad season. But experts often look to southern hemisphere countries, like Australia and New Zealand, to gain a better understanding of how the UK could be affected.
 
-**🇫🇷 FR:** *[Error Translate] It is not clear when flu will hit this year, and whether it will be a bad season. But experts often look to southern hemisphere countries, like Australia and New Zealand, to gain a better understanding of how the UK could be affected.*
+**🇫🇷 FR:** *On ne sait pas exactement quand la grippe frappera cette année et si ce sera une mauvaise saison. Mais les experts se tournent souvent vers les pays de l’hémisphère sud, comme l’Australie et la Nouvelle-Zélande, pour mieux comprendre comment le Royaume-Uni pourrait être affecté.*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** "Last year's flu season came early and was made worse by a new variant, which had a major impact for patients and put enormous pressure on urgent and emergency care services across the country," she said.
 
-**🇫🇷 FR:** *[Error Translate] "Last year's flu season came early and was made worse by a new variant, which had a major impact for patients and put enormous pressure on urgent and emergency care services across the country," she said.*
+**🇫🇷 FR:** *"La saison grippale de l'année dernière est arrivée tôt et a été aggravée par un nouveau variant, qui a eu un impact majeur sur les patients et a exercé une pression énorme sur les services de soins d'urgence à travers le pays", a-t-elle déclaré.*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** Everyone is at risk of catching flu. It does not matter how fit and healthy you are, or your age.
 
-**🇫🇷 FR:** *[Error Translate] Everyone is at risk of catching flu. It does not matter how fit and healthy you are, or your age.*
+**🇫🇷 FR:** *Tout le monde risque d’attraper la grippe. Peu importe votre forme physique et votre santé, ni votre âge.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** Dr Doyle said: "Flu can really knock you for six, and for some children and pregnant women it can mean becoming seriously ill or ending up in hospital."
 
-**🇫🇷 FR:** *[Error Translate] Dr Doyle said: "Flu can really knock you for six, and for some children and pregnant women it can mean becoming seriously ill or ending up in hospital."*
+**🇫🇷 FR:** *Le Dr Doyle a déclaré : « La grippe peut vraiment vous frapper pendant six heures, et pour certains enfants et femmes enceintes, cela peut signifier tomber gravement malade ou se retrouver à l'hôpital. »*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** The vaccine cannot give you flu. Instead, it helps your body know how to fight the virus.
 
-**🇫🇷 FR:** *[Error Translate] The vaccine cannot give you flu. Instead, it helps your body know how to fight the virus.*
+**🇫🇷 FR:** *Le vaccin ne peut pas vous donner la grippe. Au lieu de cela, cela aide votre corps à savoir comment combattre le virus.*
 
 ---
 
@@ -222,7 +222,7 @@
 
 **🇬🇧 EN:** More adults are also being offered another vaccine this winter to protect against RSV or Respiratory Syncytial Virus, which attacks the lungs.
 
-**🇫🇷 FR:** *[Error Translate] More adults are also being offered another vaccine this winter to protect against RSV or Respiratory Syncytial Virus, which attacks the lungs.*
+**🇫🇷 FR:** *Cet hiver, davantage d'adultes se voient également proposer un autre vaccin pour se protéger contre le RSV ou virus respiratoire syncytial, qui attaque les poumons.*
 
 ---
 
@@ -230,7 +230,7 @@
 
 **🇬🇧 EN:** From this September, adults will be invited to have the vaccine when they are 65, rather than waiting until 75, if they have certain pre-existing health conditions, such as chronic lung disease.
 
-**🇫🇷 FR:** *[Error Translate] From this September, adults will be invited to have the vaccine when they are 65, rather than waiting until 75, if they have certain pre-existing health conditions, such as chronic lung disease.*
+**🇫🇷 FR:** *À partir de septembre, les adultes seront invités à se faire vacciner à 65 ans, plutôt que d’attendre jusqu’à 75 ans, s’ils souffrent de certains problèmes de santé préexistants, comme une maladie pulmonaire chronique.*
 
 ---
 
@@ -238,7 +238,7 @@
 
 **🇬🇧 EN:** Do you have any views, comments or questions about this story?
 
-**🇫🇷 FR:** *[Error Translate] Do you have any views, comments or questions about this story?*
+**🇫🇷 FR:** *Avez-vous des opinions, des commentaires ou des questions sur cette histoire ?*
 
 ---
 

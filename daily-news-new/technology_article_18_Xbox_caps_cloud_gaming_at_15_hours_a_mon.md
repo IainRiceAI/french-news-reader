@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** Xbox is introducing strict monthly time limits for Game Pass subscribers who stream games online through its cloud gaming service.
 
-**🇫🇷 FR:** *Xbox introduit des limites de durée mensuelles strictes pour les abonnés Game Pass qui diffusent des jeux en ligne via son service de jeu en cloud.*
+**🇫🇷 FR:** *[Error Translate] Xbox is introducing strict monthly time limits for Game Pass subscribers who stream games online through its cloud gaming service.*
 
 ---
 
@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** The changes, which come into effect in November, will see a subscriber to the  £16.99 Ultimate monthly plan able to stream games for up to 15 hours a month - before having to purchase additional cloud play time.
 
-**🇫🇷 FR:** *Les changements, qui entreront en vigueur en novembre, permettront à un abonné au forfait mensuel Ultimate à 16,99 £ de diffuser des jeux jusqu'à 15 heures par mois – avant de devoir acheter du temps de jeu supplémentaire dans le cloud.*
+**🇫🇷 FR:** *[Error Translate] The changes, which come into effect in November, will see a subscriber to the  £16.99 Ultimate monthly plan able to stream games for up to 15 hours a month - before having to purchase additional cloud play time.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Cloud gaming allows players to stream and play games online from a remote server using a phone, tablet or controller, rather than downloading and running it on a PC or console at home.
 
-**🇫🇷 FR:** *Le cloud gaming permet aux joueurs de diffuser et de jouer à des jeux en ligne à partir d'un serveur distant à l'aide d'un téléphone, d'une tablette ou d'une manette, plutôt que de les télécharger et de les exécuter sur un PC ou une console à la maison.*
+**🇫🇷 FR:** *[Error Translate] Cloud gaming allows players to stream and play games online from a remote server using a phone, tablet or controller, rather than downloading and running it on a PC or console at home.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** Jez Corden of Windows Central told the BBC the announcement showed that "absolutely nothing is safe from the AI-driven component crisis," but he added it also highlighted "where Microsoft's priorities are".
 
-**🇫🇷 FR:** *Jez Corden de Windows Central a déclaré à la BBC que l'annonce montrait que "absolument rien n'était à l'abri de la crise des composants liés à l'IA", mais il a ajouté que cela mettait également en évidence "où se situent les priorités de Microsoft".*
+**🇫🇷 FR:** *[Error Translate] Jez Corden of Windows Central told the BBC the announcement showed that "absolutely nothing is safe from the AI-driven component crisis," but he added it also highlighted "where Microsoft's priorities are".*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** Xbox said in a blog post, external that from November, users would also be able to use the company's cloud gaming feature without subscribing to Game Pass, but by buying "cloud playtime hours" through the Xbox store.
 
-**🇫🇷 FR:** *Xbox a déclaré dans un article de blog externe qu'à partir de novembre, les utilisateurs pourraient également utiliser la fonctionnalité de jeu dans le cloud de l'entreprise sans s'abonner au Game Pass, mais en achetant des « heures de jeu dans le cloud » via la boutique Xbox.*
+**🇫🇷 FR:** *[Error Translate] Xbox said in a blog post, external that from November, users would also be able to use the company's cloud gaming feature without subscribing to Game Pass, but by buying "cloud playtime hours" through the Xbox store.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** It has not revealed how much extra hours of cloud gaming would cost.
 
-**🇫🇷 FR:** *[Error Translate] It has not revealed how much extra hours of cloud gaming would cost.*
+**🇫🇷 FR:** *Il n’a pas révélé combien coûteraient des heures supplémentaires de jeu en nuage.*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** The news comes as Asha Sharma, Xbox's chief executive, told the BBC in an exclusive recent interview that the company and the industry as a whole needed to "start to innovate on affordability and efficiency," amid a "crisis" in computing prices.
 
-**🇫🇷 FR:** *La nouvelle intervient alors qu'Asha Sharma, directrice générale de Xbox, a déclaré récemment à la BBC dans une interview exclusive que l'entreprise et l'industrie dans son ensemble devaient "commencer à innover en matière d'abordabilité et d'efficacité", dans un contexte de "crise" des prix de l'informatique.*
+**🇫🇷 FR:** *[Error Translate] The news comes as Asha Sharma, Xbox's chief executive, told the BBC in an exclusive recent interview that the company and the industry as a whole needed to "start to innovate on affordability and efficiency," amid a "crisis" in computing prices.*
 
 ---
 

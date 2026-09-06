@@ -44,9 +44,9 @@
 
 ### Section 5
 
-**🇬🇧 EN:** Cooper added Sullivan would be "sorely missed by us all at the Royal Variety Charity".
+**🇬🇧 EN:** Cooper added O'Sullivan would be "sorely missed by us all at the Royal Variety Charity".
 
-**🇫🇷 FR:** *[Error Translate] Cooper added Sullivan would be "sorely missed by us all at the Royal Variety Charity".*
+**🇫🇷 FR:** *[Error Translate] Cooper added O'Sullivan would be "sorely missed by us all at the Royal Variety Charity".*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** "Although much of his career happened before I was born, I was fortunate enough to be able to enjoy and witness his incredible talents on the countless re-runs of his shows that made him the respected and loved actor that he was."
 
-**🇫🇷 FR:** *"Même si une grande partie de sa carrière s'est déroulée avant ma naissance, j'ai eu la chance de pouvoir apprécier et être témoin de ses incroyables talents lors des innombrables rediffusions de ses émissions qui ont fait de lui l'acteur respecté et aimé qu'il était."*
+**🇫🇷 FR:** *[Error Translate] "Although much of his career happened before I was born, I was fortunate enough to be able to enjoy and witness his incredible talents on the countless re-runs of his shows that made him the respected and loved actor that he was."*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** In Me and My Girl, he played a widow living with his adolescent daughter.
 
-**🇫🇷 FR:** *Dans Me and My Girl, il incarne une veuve vivant avec sa fille adolescente.*
+**🇫🇷 FR:** *[Error Translate] In Me and My Girl, he played a widow living with his adolescent daughter.*
 
 ---
 

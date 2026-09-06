@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** Households should stock up on food to prepare for extreme weather as the strongest El Niño event in a generation develops over the Pacific Ocean, a government minister has said.
 
-**🇫🇷 FR:** *Les ménages devraient s'approvisionner en nourriture pour se préparer à des conditions météorologiques extrêmes alors que le phénomène El Niño le plus puissant depuis une génération se développe sur l'océan Pacifique, a déclaré un ministre du gouvernement.*
+**🇫🇷 FR:** *[Error Translate] Households should stock up on food to prepare for extreme weather as the strongest El Niño event in a generation develops over the Pacific Ocean, a government minister has said.*
 
 ---
 
@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** Environment Secretary Dame Angela Eagle told the Guardian the powerful natural climate phenomenon will lead to "more extreme storms in this country".
 
-**🇫🇷 FR:** *La secrétaire à l'Environnement, Dame Angela Eagle, a déclaré au Guardian que le puissant phénomène climatique naturel entraînerait « des tempêtes plus extrêmes dans ce pays ».*
+**🇫🇷 FR:** *[Error Translate] Environment Secretary Dame Angela Eagle told the Guardian the powerful natural climate phenomenon will lead to "more extreme storms in this country".*
 
 ---
 
@@ -54,7 +54,7 @@
 
 **🇬🇧 EN:** "It will do a lot more damage in Asia with flooding, and therefore I think that we need to take it seriously.
 
-**🇫🇷 FR:** *"Cela fera beaucoup plus de dégâts en Asie avec les inondations, et je pense donc que nous devons prendre cela au sérieux.*
+**🇫🇷 FR:** *[Error Translate] "It will do a lot more damage in Asia with flooding, and therefore I think that we need to take it seriously.*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** "If you've got a store of a bit of food that can keep you going for a while before the emergency services can get to you, you're going to be a lot better off than if you haven't.
 
-**🇫🇷 FR:** *"Si vous disposez d'un peu de nourriture qui peut vous permettre de tenir un certain temps avant que les services d'urgence puissent vous atteindre, vous vous porterez bien mieux que si vous ne l'aviez pas.*
+**🇫🇷 FR:** *[Error Translate] "If you've got a store of a bit of food that can keep you going for a while before the emergency services can get to you, you're going to be a lot better off than if you haven't.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** It said ministers should encourage households to prepare for supply chain disruptions and learn from the approaches taken by other countries.
 
-**🇫🇷 FR:** *Il a déclaré que les ministres devraient encourager les ménages à se préparer aux perturbations de la chaîne d'approvisionnement et à tirer les leçons des approches adoptées par d'autres pays.*
+**🇫🇷 FR:** *[Error Translate] It said ministers should encourage households to prepare for supply chain disruptions and learn from the approaches taken by other countries.*
 
 ---
 
@@ -166,7 +166,7 @@
 
 **🇬🇧 EN:** In July, the government announced plans to set out the "small but important steps" households can take to prepare for food and water shortages in the event of extreme weather or cyber-attacks.
 
-**🇫🇷 FR:** *En juillet, le gouvernement a annoncé son intention de définir les « mesures petites mais importantes » que les ménages peuvent prendre pour se préparer aux pénuries de nourriture et d'eau en cas de conditions météorologiques extrêmes ou de cyberattaques.*
+**🇫🇷 FR:** *[Error Translate] In July, the government announced plans to set out the "small but important steps" households can take to prepare for food and water shortages in the event of extreme weather or cyber-attacks.*
 
 ---
 

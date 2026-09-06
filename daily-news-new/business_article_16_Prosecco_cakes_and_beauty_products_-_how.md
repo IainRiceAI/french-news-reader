@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** From meals to beauty products, you can get a lot of freebies on your birthday
 
-**🇫🇷 FR:** *[Error Translate] From meals to beauty products, you can get a lot of freebies on your birthday*
+**🇫🇷 FR:** *Des repas aux produits de beauté, vous pouvez obtenir de nombreux cadeaux pour votre anniversaire*
 
 ---
 
@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** "It's your birthday!" Cue the influx of emails offering you all sorts of freebies.
 
-**🇫🇷 FR:** *[Error Translate] "It's your birthday!" Cue the influx of emails offering you all sorts of freebies.*
+**🇫🇷 FR:** *"C'est ton anniversaire !" Repérez l'afflux d'e-mails vous offrant toutes sortes de cadeaux.*
 
 ---
 
@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Here are some of the things you can get on or around your birthday - and why they may not all be as free as they seem.
 
-**🇫🇷 FR:** *[Error Translate] Here are some of the things you can get on or around your birthday - and why they may not all be as free as they seem.*
+**🇫🇷 FR:** *Voici quelques-unes des choses que vous pouvez obtenir le jour ou autour de votre anniversaire - et pourquoi elles ne sont peut-être pas toutes aussi gratuites qu'il y paraît.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** Most chain coffee shops and bakeries offer a birthday treat through their loyalty apps. You can get a free sweet treat, usually a cake, cookie, muffin or doughnut, from Greggs, Costa, Caffè Nero, Krispy Kreme, Gail's, Subway and Ole & Steen if you have registered your date of birth in advance.
 
-**🇫🇷 FR:** *[Error Translate] Most chain coffee shops and bakeries offer a birthday treat through their loyalty apps. You can get a free sweet treat, usually a cake, cookie, muffin or doughnut, from Greggs, Costa, Caffè Nero, Krispy Kreme, Gail's, Subway and Ole & Steen if you have registered your date of birth in advance.*
+**🇫🇷 FR:** *La plupart des chaînes de cafés et de boulangeries proposent des cadeaux d'anniversaire via leurs applications de fidélité. Vous pouvez obtenir une friandise gratuite, généralement un gâteau, un biscuit, un muffin ou un beignet, auprès de Greggs, Costa, Caffè Nero, Krispy Kreme, Gail's, Subway et Ole & Steen si vous avez enregistré votre date de naissance à l'avance.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Lidl Plus members can claim a free bakery doughnut within seven days of their birthday, while M&S Sparks members can choose two gifts on their birthday from a range of 15 which includes cookies and chocolates.
 
-**🇫🇷 FR:** *[Error Translate] Lidl Plus members can claim a free bakery doughnut within seven days of their birthday, while M&S Sparks members can choose two gifts on their birthday from a range of 15 which includes cookies and chocolates.*
+**🇫🇷 FR:** *Les membres Lidl Plus peuvent réclamer un beignet de boulangerie gratuit dans les sept jours suivant leur anniversaire, tandis que les membres M&S Sparks peuvent choisir deux cadeaux pour leur anniversaire parmi une gamme de 15 comprenant des biscuits et des chocolats.*
 
 ---
 
@@ -54,7 +54,7 @@
 
 **🇬🇧 EN:** Hotel Chocolat gives members a £5 birthday reward with a minimum spend of £5.50 and Lindt offers a free box of truffles when you meet its minimum spend requirement.
 
-**🇫🇷 FR:** *[Error Translate] Hotel Chocolat gives members a £5 birthday reward with a minimum spend of £5.50 and Lindt offers a free box of truffles when you meet its minimum spend requirement.*
+**🇫🇷 FR:** *L'Hôtel Chocolat offre à ses membres une récompense d'anniversaire de 5 £ avec une dépense minimale de 5,50 £ et Lindt offre une boîte de truffes gratuite lorsque vous remplissez son exigence de dépense minimale.*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** Would you lie to get a birthday freebie?
 
-**🇫🇷 FR:** *[Error Translate] Would you lie to get a birthday freebie?*
+**🇫🇷 FR:** *Mentiriez-vous pour obtenir un cadeau d'anniversaire ?*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** However, most restaurant birthday offers are buy-one-get-one-free deals rather than completely free meals.
 
-**🇫🇷 FR:** *[Error Translate] However, most restaurant birthday offers are buy-one-get-one-free deals rather than completely free meals.*
+**🇫🇷 FR:** *Cependant, la plupart des offres d'anniversaire dans les restaurants sont des offres d'achat-un-un-un-gratuit plutôt que des repas entièrement gratuits.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** At Harvester and Zizzi's it's a free main when buying another full-price main. At Frankie & Benny's you get a free main when purchasing two or more main meals.
 
-**🇫🇷 FR:** *[Error Translate] At Harvester and Zizzi's it's a free main when buying another full-price main. At Frankie & Benny's you get a free main when purchasing two or more main meals.*
+**🇫🇷 FR:** *Chez Harvester et Zizzi's, c'est un plat principal gratuit lors de l'achat d'un autre plat principal au prix fort. Chez Frankie & Benny's, vous obtenez un plat principal gratuit à l'achat de deux plats principaux ou plus.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** Byron offers a free burger with a £5 minimum spend, while Wagamama offers free gyoza when you have earned at least one stamp on your loyalty card in the last six months.
 
-**🇫🇷 FR:** *[Error Translate] Byron offers a free burger with a £5 minimum spend, while Wagamama offers free gyoza when you have earned at least one stamp on your loyalty card in the last six months.*
+**🇫🇷 FR:** *Byron propose un hamburger gratuit avec une dépense minimale de 5 £, tandis que Wagamama propose des gyoza gratuits lorsque vous avez gagné au moins un tampon sur votre carte de fidélité au cours des six derniers mois.*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** Some chains give money off instead. Turtle Bay offers members a £20 birthday credit with no minimum spend, while Bella Italia gives you £15 off your total bill when you spend a minimum of £30. Las Iguanas offers a free main when two other meals are purchased or a 20% off voucher.
 
-**🇫🇷 FR:** *[Error Translate] Some chains give money off instead. Turtle Bay offers members a £20 birthday credit with no minimum spend, while Bella Italia gives you £15 off your total bill when you spend a minimum of £30. Las Iguanas offers a free main when two other meals are purchased or a 20% off voucher.*
+**🇫🇷 FR:** *Certaines chaînes donnent de l’argent à la place. Turtle Bay offre à ses membres un crédit d'anniversaire de 20 £ sans minimum de dépense, tandis que Bella Italia vous offre 15 £ de réduction sur votre facture totale lorsque vous dépensez un minimum de 30 £. Las Iguanas propose un plat principal gratuit à l'achat de deux autres repas ou un bon de réduction de 20 %.*
 
 ---
 
@@ -110,7 +110,7 @@
 
 **🇬🇧 EN:** Pizza Express birthday rewards depend on your loyalty level. Bronze members may get a free dessert with a £10 spend, while higher tiers can get a free pizza or drinks with a £15 minimum spend.
 
-**🇫🇷 FR:** *[Error Translate] Pizza Express birthday rewards depend on your loyalty level. Bronze members may get a free dessert with a £10 spend, while higher tiers can get a free pizza or drinks with a £15 minimum spend.*
+**🇫🇷 FR:** *Les récompenses d'anniversaire Pizza Express dépendent de votre niveau de fidélité. Les membres Bronze peuvent obtenir un dessert gratuit avec une dépense minimale de 10 £, tandis que les niveaux supérieurs peuvent obtenir une pizza ou des boissons gratuites avec une dépense minimale de 15 £.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** Fashion brands generally offer birthday discounts rather than freebies.
 
-**🇫🇷 FR:** *[Error Translate] Fashion brands generally offer birthday discounts rather than freebies.*
+**🇫🇷 FR:** *Les marques de mode proposent généralement des réductions d’anniversaire plutôt que des cadeaux.*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** Members of schemes run by brands such as Nike, Asos, River Island, Levi's, Timberland and H&M may receive money off, but some offers are personalised and not guaranteed for every customer.
 
-**🇫🇷 FR:** *[Error Translate] Members of schemes run by brands such as Nike, Asos, River Island, Levi's, Timberland and H&M may receive money off, but some offers are personalised and not guaranteed for every customer.*
+**🇫🇷 FR:** *Les membres de programmes gérés par des marques telles que Nike, Asos, River Island, Levi's, Timberland et H&M peuvent bénéficier de réductions, mais certaines offres sont personnalisées et ne sont pas garanties pour chaque client.*
 
 ---
 
@@ -142,7 +142,7 @@
 
 **🇬🇧 EN:** Beauty birthday gifts are often linked to your purchase history or require you to buy something.
 
-**🇫🇷 FR:** *[Error Translate] Beauty birthday gifts are often linked to your purchase history or require you to buy something.*
+**🇫🇷 FR:** *Les cadeaux d’anniversaire beauté sont souvent liés à votre historique d’achats ou nécessitent que vous achetiez quelque chose.*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** At Rituals, a birthday gift of a full-sized product or deluxe mini comes with another purchase, while Sephora rewards vary depending on membership tier. Boots usually offers double points during your birthday month rather than a free product.
 
-**🇫🇷 FR:** *[Error Translate] At Rituals, a birthday gift of a full-sized product or deluxe mini comes with another purchase, while Sephora rewards vary depending on membership tier. Boots usually offers double points during your birthday month rather than a free product.*
+**🇫🇷 FR:** *Chez Rituals, un cadeau d'anniversaire d'un produit pleine grandeur ou d'un mini de luxe est accompagné d'un autre achat, tandis que les récompenses Sephora varient en fonction du niveau d'adhésion. Boots offre généralement le double de points pendant le mois de votre anniversaire plutôt qu'un produit gratuit.*
 
 ---
 
@@ -198,7 +198,7 @@
 
 **🇬🇧 EN:** Many of these freebies require you to join a loyalty scheme, enter your date of birth and opt into marketing several weeks before your birthday.
 
-**🇫🇷 FR:** *[Error Translate] Many of these freebies require you to join a loyalty scheme, enter your date of birth and opt into marketing several weeks before your birthday.*
+**🇫🇷 FR:** *Beaucoup de ces cadeaux vous obligent à adhérer à un programme de fidélité, à saisir votre date de naissance et à opter pour le marketing plusieurs semaines avant votre anniversaire.*
 
 ---
 
@@ -230,7 +230,7 @@
 
 **🇬🇧 EN:** "So always read the small print and check to see whether your personal data will be used purely for generic marketing, or whether this will be used to build a profile of spending habits."
 
-**🇫🇷 FR:** *[Error Translate] "So always read the small print and check to see whether your personal data will be used purely for generic marketing, or whether this will be used to build a profile of spending habits."*
+**🇫🇷 FR:** *"Lisez donc toujours les petits caractères et vérifiez si vos données personnelles seront utilisées uniquement à des fins de marketing générique, ou si elles seront utilisées pour établir un profil d'habitudes de dépenses."*
 
 ---
 

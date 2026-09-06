@@ -374,7 +374,7 @@
 
 **🇬🇧 EN:** Other highlights included Daniela's death-defying dance break, complete with aerial splits, that led into Gabriella; and Megan's technotronic shakedown at the end of Pinky Up.
 
-**🇫🇷 FR:** *[Error Translate] Other highlights included Daniela's death-defying dance break, complete with aerial splits, that led into Gabriella; and Megan's technotronic shakedown at the end of Pinky Up.*
+**🇫🇷 FR:** *Parmi les autres moments forts, citons la pause dansante défiant la mort de Daniela, complétée par des grands écarts aériens, qui a conduit à Gabriella ; et le shakedown technotronique de Megan à la fin de Pinky Up.*
 
 ---
 
@@ -382,7 +382,7 @@
 
 **🇬🇧 EN:** For Yoonchae, the show's high point was Time Lapse, where she got to sing in her native Korean, while mingling with the crowd. ("Keep your hands to yourselves and don't throw any gifts on the stage for our safety," warned Lara, spoiling the atmosphere just a little).
 
-**🇫🇷 FR:** *[Error Translate] For Yoonchae, the show's high point was Time Lapse, where she got to sing in her native Korean, while mingling with the crowd. ("Keep your hands to yourselves and don't throw any gifts on the stage for our safety," warned Lara, spoiling the atmosphere just a little).*
+**🇫🇷 FR:** *Pour Yoonchae, le point culminant du spectacle a été Time Lapse, où elle a pu chanter dans son coréen natal, tout en se mêlant à la foule. ("Gardez vos mains pour vous et ne jetez aucun cadeau sur scène pour notre sécurité", prévient Lara, gâchant un peu l'ambiance).*
 
 ---
 

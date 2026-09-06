@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** The US rap superstar rolled back the years for more than two hours at the first of his two shows in London
 
-**🇫🇷 FR:** *La superstar du rap américain a remonté le temps pendant plus de deux heures lors du premier de ses deux concerts à Londres*
+**🇫🇷 FR:** *[Error Translate] The US rap superstar rolled back the years for more than two hours at the first of his two shows in London*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** The run is part of his Jay-Z 30 tour, which is marking the 30th anniversary of his debut album, Reasonable Doubt, and his culture-shaping career that followed.
 
-**🇫🇷 FR:** *Cette course fait partie de sa tournée Jay-Z 30, qui marque le 30e anniversaire de son premier album, Reasonable Doubt, et de sa carrière qui a façonné la culture qui a suivi.*
+**🇫🇷 FR:** *[Error Translate] The run is part of his Jay-Z 30 tour, which is marking the 30th anniversary of his debut album, Reasonable Doubt, and his culture-shaping career that followed.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** Fans of his wife Beyoncé had hoped she would join him on stage, like she did at two of his three New York shows this summer, as she was also celebrating her 45th birthday on Friday.
 
-**🇫🇷 FR:** *Les fans de son épouse Beyoncé espéraient qu'elle le rejoigne sur scène, comme elle l'a fait lors de deux de ses trois spectacles new-yorkais cet été, alors qu'elle fêtait également son 45e anniversaire vendredi.*
+**🇫🇷 FR:** *[Error Translate] Fans of his wife Beyoncé had hoped she would join him on stage, like she did at two of his three New York shows this summer, as she was also celebrating her 45th birthday on Friday.*
 
 ---
 
@@ -60,9 +60,9 @@
 
 ### Section 7
 
-**🇬🇧 EN:** Instead he asked the crowd to join him in singing Happy Birthday to the US superstar, who was sat in a private box, while sparkler-like fireworks erupted in the sky.
+**🇬🇧 EN:** Instead he asked the crowd to join him in singing Happy Birthday to the US superstar, who was sitting in a private box, while sparkler-like fireworks erupted in the sky.
 
-**🇫🇷 FR:** *Au lieu de cela, il a demandé à la foule de se joindre à lui pour chanter Joyeux anniversaire à la superstar américaine, qui était assise dans une loge privée, tandis que des feux d'artifice ressemblant à des cierges magiques éclataient dans le ciel.*
+**🇫🇷 FR:** *[Error Translate] Instead he asked the crowd to join him in singing Happy Birthday to the US superstar, who was sitting in a private box, while sparkler-like fireworks erupted in the sky.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** As Jay-Z took to the stage, he recalled coming to London in 1989 with his mentor Jaz-O and seeing "what was possible" and it became a "special" place in his career.
 
-**🇫🇷 FR:** *Alors que Jay-Z montait sur scène, il se souvenait d'être venu à Londres en 1989 avec son mentor Jaz-O et d'avoir vu « ce qui était possible » et c'est devenu un endroit « spécial » dans sa carrière.*
+**🇫🇷 FR:** *[Error Translate] As Jay-Z took to the stage, he recalled coming to London in 1989 with his mentor Jaz-O and seeing "what was possible" and it became a "special" place in his career.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** His return to the capital this time round was explosive, with the rapper rattling through a string of hits like Izzo (H.O.V.A.), On To The Next One and Song Cry.
 
-**🇫🇷 FR:** *Son retour dans la capitale a cette fois été explosif, le rappeur enchaînant les tubes comme Izzo (H.O.V.A.), On To The Next One et Song Cry.*
+**🇫🇷 FR:** *[Error Translate] His return to the capital this time round was explosive, with the rapper rattling through a string of hits like Izzo (H.O.V.A.), On To The Next One and Song Cry.*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** Throughout the show, vintage video clips and moments from his early career played across a massive LED screen, while an orchestra and a few guitarists accompanied him on stage.
 
-**🇫🇷 FR:** *Tout au long du spectacle, des clips vidéo vintage et des moments de ses débuts de carrière ont été diffusés sur un immense écran LED, tandis qu'un orchestre et quelques guitaristes l'accompagnaient sur scène.*
+**🇫🇷 FR:** *[Error Translate] Throughout the show, vintage video clips and moments from his early career played across a massive LED screen, while an orchestra and a few guitarists accompanied him on stage.*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** Jay-Z hailed the show a "legendary night" that he would "never forget"
 
-**🇫🇷 FR:** *Jay-Z a qualifié le spectacle de "soirée légendaire" qu'il "n'oubliera jamais"*
+**🇫🇷 FR:** *[Error Translate] Jay-Z hailed the show a "legendary night" that he would "never forget"*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** Jay-Z also took a moment to thank his fans who have been there from the beginning, telling them that "music saved my life".
 
-**🇫🇷 FR:** *Jay-Z a également pris un moment pour remercier ses fans qui étaient là depuis le début, en leur disant que "la musique m'a sauvé la vie".*
+**🇫🇷 FR:** *[Error Translate] Jay-Z also took a moment to thank his fans who have been there from the beginning, telling them that "music saved my life".*
 
 ---
 
@@ -134,15 +134,15 @@
 
 **🇬🇧 EN:** His reflective mood continued as he performed Hard Knock Life (Ghetto Anthem) and Where I'm From, which explores his upbringing in the Marcy housing projects in Brooklyn, New York.
 
-**🇫🇷 FR:** *Son humeur réfléchie s'est poursuivie alors qu'il interprétait Hard Knock Life (Ghetto Anthem) et Where I'm From, qui explore son éducation dans les projets d'habitation Marcy à Brooklyn, New York.*
+**🇫🇷 FR:** *[Error Translate] His reflective mood continued as he performed Hard Knock Life (Ghetto Anthem) and Where I'm From, which explores his upbringing in the Marcy housing projects in Brooklyn, New York.*
 
 ---
 
 ### Section 17
 
-**🇬🇧 EN:** He cranked the energy back up for his 2011 hit No Church in the Wild, which was amplified by firey pyrotechnics that radiated heat through the stadium.
+**🇬🇧 EN:** He cranked the energy back up for his 2011 hit No Church in the Wild, which was amplified by fiery pyrotechnics that radiated heat through the stadium.
 
-**🇫🇷 FR:** *[Error Translate] He cranked the energy back up for his 2011 hit No Church in the Wild, which was amplified by firey pyrotechnics that radiated heat through the stadium.*
+**🇫🇷 FR:** *Il a redynamisé l'énergie pour son tube No Church in the Wild de 2011, qui a été amplifié par des pièces pyrotechniques enflammées qui rayonnaient de la chaleur à travers le stade.*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** US DJ Khaled had a brief moment on stage while Jay-Z changed, but it was the appearance of London-born rapper Giggs which got the crowd erupting.
 
-**🇫🇷 FR:** *Le DJ américain Khaled a eu un bref instant sur scène pendant que Jay-Z se transformait, mais c'est l'apparition du rappeur londonien Giggs qui a fait exploser la foule.*
+**🇫🇷 FR:** *[Error Translate] US DJ Khaled had a brief moment on stage while Jay-Z changed, but it was the appearance of London-born rapper Giggs which got the crowd erupting.*
 
 ---
 
@@ -166,23 +166,23 @@
 
 **🇬🇧 EN:** He appeared overwhelmed at one stage, his hand clutching his face, as he took in the packed crowd while performing his track Talkin Da Hardest alongside Jay-Z.
 
-**🇫🇷 FR:** *Il a semblé dépassé à un moment donné, sa main serrant son visage, alors qu'il regardait la foule bondée tout en interprétant son morceau Talkin Da Hardest aux côtés de Jay-Z.*
+**🇫🇷 FR:** *[Error Translate] He appeared overwhelmed at one stage, his hand clutching his face, as he took in the packed crowd while performing his track Talkin Da Hardest alongside Jay-Z.*
 
 ---
 
 ### Section 21
 
-**🇬🇧 EN:** The surprise guests didn't stop there, as Lauryn Hill and Wyclef Jean from the 90s American hip-hop collective Fugees reunited to perform their hit tracks Ready or Not, Killing Me Softly With His Song and Fu-Gee-La.
+**🇬🇧 EN:** The surprise guests didn't stop there, as Lauryn Hill and Wyclef Jean from the 90s American hip-hop collective The Fugees reunited to perform their hit tracks Ready or Not, Killing Me Softly with His Song and Fu-Gee-La.
 
-**🇫🇷 FR:** *[Error Translate] The surprise guests didn't stop there, as Lauryn Hill and Wyclef Jean from the 90s American hip-hop collective Fugees reunited to perform their hit tracks Ready or Not, Killing Me Softly With His Song and Fu-Gee-La.*
+**🇫🇷 FR:** *[Error Translate] The surprise guests didn't stop there, as Lauryn Hill and Wyclef Jean from the 90s American hip-hop collective The Fugees reunited to perform their hit tracks Ready or Not, Killing Me Softly with His Song and Fu-Gee-La.*
 
 ---
 
 ### Section 22
 
-**🇬🇧 EN:** It was a full circle moment for both them and Jay-Z as he recalled supporting them on their European tour.
+**🇬🇧 EN:** It was a full-circle moment for both them and Jay-Z as he recalled supporting them on their European tour.
 
-**🇫🇷 FR:** *[Error Translate] It was a full circle moment for both them and Jay-Z as he recalled supporting them on their European tour.*
+**🇫🇷 FR:** *[Error Translate] It was a full-circle moment for both them and Jay-Z as he recalled supporting them on their European tour.*
 
 ---
 
@@ -190,7 +190,7 @@
 
 **🇬🇧 EN:** The US rap superstar closed out the night with rousing renditions of Public Service Announcement (Interlude) and Numb/Encore, hailing it as a "legendary night" that he would "never forget".
 
-**🇫🇷 FR:** *La superstar du rap américain a clôturé la soirée avec des interprétations entraînantes de Public Service Announcement (Interlude) et Numb/Encore, la qualifiant de "soirée légendaire" qu'il "n'oubliera jamais".*
+**🇫🇷 FR:** *[Error Translate] The US rap superstar closed out the night with rousing renditions of Public Service Announcement (Interlude) and Numb/Encore, hailing it as a "legendary night" that he would "never forget".*
 
 ---
 
@@ -198,7 +198,7 @@
 
 **🇬🇧 EN:** The crowd appeared to agree as thousands praised him by holding up his famous diamond hand gesture.
 
-**🇫🇷 FR:** *[Error Translate] The crowd appeared to agree as thousands praised him by holding up his famous diamond hand gesture.*
+**🇫🇷 FR:** *La foule a semblé être d'accord alors que des milliers de personnes l'ont félicité en brandissant son célèbre geste de la main en diamant.*
 
 ---
 
@@ -222,7 +222,7 @@
 
 **🇬🇧 EN:** "I think he's very impacting, especially for us black people because we don't get a lot of recognition," the 19-year-old from Leeds told BBC Newsbeat.
 
-**🇫🇷 FR:** *"Je pense qu'il a un impact très important, surtout pour nous, les Noirs, parce que nous n'obtenons pas beaucoup de reconnaissance", a déclaré le jeune homme de 19 ans originaire de Leeds à BBC Newsbeat.*
+**🇫🇷 FR:** *[Error Translate] "I think he's very impacting, especially for us black people because we don't get a lot of recognition," the 19-year-old from Leeds told BBC Newsbeat.*
 
 ---
 
@@ -252,17 +252,17 @@
 
 ### Section 31
 
-**🇬🇧 EN:** He was also the first rapper inducted into the Songwriters Hall of Fame in 2017, as well being inducted into the Rock & Roll Hall of Fame in 2021.
+**🇬🇧 EN:** He was also the first rapper inducted into the Songwriters Hall of Fame in 2017, as well as being inducted into the Rock & Roll Hall of Fame in 2021.
 
-**🇫🇷 FR:** *Il a également été le premier rappeur intronisé au Songwriters Hall of Fame en 2017, ainsi qu'au Rock & Roll Hall of Fame en 2021.*
+**🇫🇷 FR:** *[Error Translate] He was also the first rapper inducted into the Songwriters Hall of Fame in 2017, as well as being inducted into the Rock & Roll Hall of Fame in 2021.*
 
 ---
 
 ### Section 32
 
-**🇬🇧 EN:** Over the years, he has also become one of the most prominent music mogul's in the world, with his company Roc Nation representing a host of top talent and, in recent years, it has been behind the Super Bowl half-time show.
+**🇬🇧 EN:** Over the years, he has also become one of the most prominent music moguls in the world, with his company Roc Nation representing a host of top talent and, in recent years, it has been behind the Super Bowl half-time show.
 
-**🇫🇷 FR:** *[Error Translate] Over the years, he has also become one of the most prominent music mogul's in the world, with his company Roc Nation representing a host of top talent and, in recent years, it has been behind the Super Bowl half-time show.*
+**🇫🇷 FR:** *[Error Translate] Over the years, he has also become one of the most prominent music moguls in the world, with his company Roc Nation representing a host of top talent and, in recent years, it has been behind the Super Bowl half-time show.*
 
 ---
 
@@ -276,9 +276,9 @@
 
 ### Section 34
 
-**🇬🇧 EN:** The power couple have three children, daughter Blue Ivy, 14, and 9-year-old twins, Rumi and Sir.
+**🇬🇧 EN:** The power couple have three children, daughter Blue Ivy, 14, and nine-year-old twins, Rumi and Sir.
 
-**🇫🇷 FR:** *[Error Translate] The power couple have three children, daughter Blue Ivy, 14, and 9-year-old twins, Rumi and Sir.*
+**🇫🇷 FR:** *[Error Translate] The power couple have three children, daughter Blue Ivy, 14, and nine-year-old twins, Rumi and Sir.*
 
 ---
 
@@ -294,7 +294,7 @@
 
 **🇬🇧 EN:** Jay Z's delight at songwriting honour
 
-**🇫🇷 FR:** *Jay Z est ravi de recevoir un honneur en tant qu'auteur-compositeur*
+**🇫🇷 FR:** *[Error Translate] Jay Z's delight at songwriting honour*
 
 ---
 
@@ -302,7 +302,7 @@
 
 **🇬🇧 EN:** Jay-Z 'world's first billionaire rapper'
 
-**🇫🇷 FR:** *[Error Translate] Jay-Z 'world's first billionaire rapper'*
+**🇫🇷 FR:** *Jay-Z, "le premier rappeur milliardaire au monde"*
 
 ---
 
@@ -310,7 +310,7 @@
 
 **🇬🇧 EN:** Jay-Z answers $500k viral question about himself
 
-**🇫🇷 FR:** *[Error Translate] Jay-Z answers $500k viral question about himself*
+**🇫🇷 FR:** *Jay-Z répond à une question virale à 500 000 $ sur lui-même*
 
 ---
 
