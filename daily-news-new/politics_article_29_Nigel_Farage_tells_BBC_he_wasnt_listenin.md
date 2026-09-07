@@ -1,7 +1,7 @@
 # Nigel Farage tells BBC he 'wasn't listening' during foreign donor talks filmed undercover
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c0qxgn7q1vdo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c0qxgn7q1vdo?at_medium=RSS&at_campaign=rss)  
-**Published:** Sat, 05 Sep 2026 14:26:37 GMT  
+**Published:** Sun, 06 Sep 2026 09:18:37 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](politics_article_29.mp3)  
 
 ---
@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** His former chief of staff Dan Jukes and ex-head of policy James Orr have both been removed from their jobs after an investigation recorded them talking about how to get money to the party from an American donor and asking a fake company to pay for polling.
 
-**🇫🇷 FR:** *[Error Translate] His former chief of staff Dan Jukes and ex-head of policy James Orr have both been removed from their jobs after an investigation recorded them talking about how to get money to the party from an American donor and asking a fake company to pay for polling.*
+**🇫🇷 FR:** *Son ancien chef de cabinet Dan Jukes et son ex-responsable politique James Orr ont tous deux été démis de leurs fonctions après qu'une enquête les ait enregistrés en train de parler de la manière d'obtenir de l'argent pour le parti auprès d'un donateur américain et de demander à une fausse entreprise de payer pour des sondages.*
 
 ---
 
@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** Jukes has denied doing anything wrong. Orr has told Sky News he will co-operate fully with Reform's internal investigation.
 
-**🇫🇷 FR:** *[Error Translate] Jukes has denied doing anything wrong. Orr has told Sky News he will co-operate fully with Reform's internal investigation.*
+**🇫🇷 FR:** *Jukes a nié avoir fait quelque chose de mal. Orr a déclaré à Sky News qu'il coopérerait pleinement avec l'enquête interne du Parti réformé.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** In an interview with the BBC, the Reform leader said he was not listening to the discussion and revealed his family are "begging" him to leave his job amid increasing pressure.
 
-**🇫🇷 FR:** *[Error Translate] In an interview with the BBC, the Reform leader said he was not listening to the discussion and revealed his family are "begging" him to leave his job amid increasing pressure.*
+**🇫🇷 FR:** *Dans une interview accordée à la BBC, le leader réformiste a déclaré qu'il n'écoutait pas la discussion et a révélé que sa famille le « suppliait » de quitter son emploi face à une pression croissante.*
 
 ---
 
@@ -54,7 +54,7 @@
 
 **🇬🇧 EN:** Under electoral law, donors to UK political parties must be a UK registered voter, or a company registered in the UK, so cannot give money from abroad through a British resident.
 
-**🇫🇷 FR:** *[Error Translate] Under electoral law, donors to UK political parties must be a UK registered voter, or a company registered in the UK, so cannot give money from abroad through a British resident.*
+**🇫🇷 FR:** *En vertu de la loi électorale, les donateurs des partis politiques britanniques doivent être des électeurs inscrits au Royaume-Uni ou une entreprise enregistrée au Royaume-Uni. Ils ne peuvent donc pas donner d’argent de l’étranger par l’intermédiaire d’un résident britannique.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** "I was told there was a global family office based in London, so the money could have come from Singapore," he said of the conversation in the Channel 4 film.
 
-**🇫🇷 FR:** *[Error Translate] "I was told there was a global family office based in London, so the money could have come from Singapore," he said of the conversation in the Channel 4 film.*
+**🇫🇷 FR:** *"On m'a dit qu'il y avait un family office mondial basé à Londres, donc l'argent aurait pu venir de Singapour", a-t-il déclaré à propos de la conversation dans le film de Channel 4.*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** The row over the Channel 4 film has threatened to capsize Reform's conference, with Labour and the Liberal Democrats calling on the Metropolitan Police to investigate the claims. The force is assessing whether or not to investigate.
 
-**🇫🇷 FR:** *[Error Translate] The row over the Channel 4 film has threatened to capsize Reform's conference, with Labour and the Liberal Democrats calling on the Metropolitan Police to investigate the claims. The force is assessing whether or not to investigate.*
+**🇫🇷 FR:** *La querelle autour du film de Channel 4 a menacé de faire chavirer la conférence réformée, les travaillistes et les libéraux-démocrates appelant la police métropolitaine à enquêter sur ces allégations. La force évalue si elle doit ou non enquêter.*
 
 ---
 
@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** Jukes and Orr - both senior figures in Farage's inner circle - have stood down pending the outcome of the party's internal investigation, but political opponents are demanding that Farage is investigated and takes accountability.
 
-**🇫🇷 FR:** *[Error Translate] Jukes and Orr - both senior figures in Farage's inner circle - have stood down pending the outcome of the party's internal investigation, but political opponents are demanding that Farage is investigated and takes accountability.*
+**🇫🇷 FR:** *Jukes et Orr - tous deux hauts responsables du cercle restreint de Farage - ont démissionné en attendant les résultats de l'enquête interne du parti, mais les opposants politiques exigent que Farage fasse l'objet d'une enquête et qu'il assume ses responsabilités.*
 
 ---
 
@@ -188,13 +188,37 @@
 
 ### Section 23
 
+**🇬🇧 EN:** Speaking after watching the interview, Business Secretary Jonathan Reynolds said: "For a political party that don't like foreigners much they do seem to have a soft spot for foreign cash.
+
+**🇫🇷 FR:** *S'exprimant après avoir visionné l'interview, le secrétaire aux Affaires Jonathan Reynolds a déclaré : « Pour un parti politique qui n'aime pas beaucoup les étrangers, il semble avoir un faible pour l'argent étranger.*
+
+---
+
+### Section 24
+
+**🇬🇧 EN:** "We have rules in this country about how our democracy works and everyone has to stick to them."
+
+**🇫🇷 FR:** *"Nous avons des règles dans ce pays sur le fonctionnement de notre démocratie et tout le monde doit les respecter."*
+
+---
+
+### Section 25
+
+**🇬🇧 EN:** He added: "I think you see someone struggling to decide whether they're really serious about trying to run for power or want to keep the protest going."
+
+**🇫🇷 FR:** *Il a ajouté : "Je pense que l'on voit quelqu'un qui a du mal à décider s'il veut vraiment se présenter au pouvoir ou s'il veut poursuivre la protestation."*
+
+---
+
+### Section 26
+
 **🇬🇧 EN:** Laura Kuenssberg has been speaking to senior Reform figures and members at the party's annual conference in Birmingham
 
 **🇫🇷 FR:** *Laura Kuenssberg s'est entretenue avec de hauts responsables et membres du Parti réformiste lors de la conférence annuelle du parti à Birmingham.*
 
 ---
 
-### Section 24
+### Section 27
 
 **🇬🇧 EN:** There's no question the allegations in the Channel 4 film have been embarrassing for Reform, and disrupted what they hoped would be a conference about their plans for office if they win the next General Election.
 
@@ -202,7 +226,7 @@
 
 ---
 
-### Section 25
+### Section 28
 
 **🇬🇧 EN:** Everywhere around the huge, draughty exhibition hall in Birmingham are giant posters and placards saying, "Reform - the first 100 days".
 
@@ -210,7 +234,7 @@
 
 ---
 
-### Section 26
+### Section 29
 
 **🇬🇧 EN:** They wanted to herald their deal with a serious contender to be the next French President, Jordan Bardella, to deal with small boats.
 
@@ -218,7 +242,7 @@
 
 ---
 
-### Section 27
+### Section 30
 
 **🇬🇧 EN:** They were keen to highlight the promise to cut income tax if they win the election, scheduled to be in 2029.
 
@@ -226,7 +250,7 @@
 
 ---
 
-### Section 28
+### Section 31
 
 **🇬🇧 EN:** They wanted to talk about their proposals for education, welfare, planning, and the rest.
 
@@ -234,7 +258,7 @@
 
 ---
 
-### Section 29
+### Section 32
 
 **🇬🇧 EN:** Party members, delighted to have a reason to get together, have taken part in those sessions, applauded and cheered in the hall; gone wild for Farage on stage.
 
@@ -242,7 +266,7 @@
 
 ---
 
-### Section 30
+### Section 33
 
 **🇬🇧 EN:** But for the rest of the country, most of the noise from the conference will have been the huge and awkward story about the toxic mix of politics and money.
 
@@ -250,7 +274,7 @@
 
 ---
 
-### Section 31
+### Section 34
 
 **🇬🇧 EN:** What is harder to assess is the impact this mess will have on Farage's standing with the public, after a tricky summer and a recent poll slump.
 
@@ -258,7 +282,7 @@
 
 ---
 
-### Section 32
+### Section 35
 
 **🇬🇧 EN:** At the top of the party there is a quiet admission that what has happened here is a genuine mistake.
 
@@ -266,7 +290,7 @@
 
 ---
 
-### Section 33
+### Section 36
 
 **🇬🇧 EN:** One senior figure told me they could brush off other claims of murky funding, confident nothing had gone wrong - but they conceded these claims do matter, and that for a certain vital percentage of voters, it would "cause them to ask questions".
 
@@ -274,7 +298,7 @@
 
 ---
 
-### Section 34
+### Section 37
 
 **🇬🇧 EN:** No one is pretending it's just what Farage tried to joke was a "little, local difficulty".
 
@@ -282,7 +306,7 @@
 
 ---
 
-### Section 35
+### Section 38
 
 **🇬🇧 EN:** And there is a private acknowledgement that stories like this can be off putting to voters beyond Reform's no doubt very enthusiastic base.
 
@@ -290,7 +314,7 @@
 
 ---
 
-### Section 36
+### Section 39
 
 **🇬🇧 EN:** Another party source told me they were "totally blindsided" by the revelations; stunned "there'd just been no diligence" and in disbelief at how Jukes and Orr, who both say they'd done nothing wrong, seem to have behaved.
 
@@ -298,7 +322,7 @@
 
 ---
 
-### Section 37
+### Section 40
 
 **🇬🇧 EN:** A different member of the party's top team said, "hopefully, it's just growing pains". In other words, Reform's developed so fast that sometimes mistakes are made. But they told me: "The party has to step up – sometimes the people that got us here, aren't the people for the next stage".
 
@@ -306,7 +330,7 @@
 
 ---
 
-### Section 38
+### Section 41
 
 **🇬🇧 EN:** Among Farage's fans at the conference, I found different views. One member was convinced the party is treated unfairly: "It's the blob, it's all against him," she said.
 
@@ -314,7 +338,7 @@
 
 ---
 
-### Section 39
+### Section 42
 
 **🇬🇧 EN:** But another young Reform enthusiast rejected that, telling me: "It's all documented and there on camera – Nigel has to be more careful about what party members say."
 
@@ -322,7 +346,7 @@
 
 ---
 
-### Section 40
+### Section 43
 
 **🇬🇧 EN:** But there is a sense of "here we go again". When I asked another member what they thought of the financial scandal, a weary answer, "Which one?"
 
@@ -330,7 +354,7 @@
 
 ---
 
-### Section 41
+### Section 44
 
 **🇬🇧 EN:** This time last year in the same conference complex, Reform felt like they were simply sweeping all before them. Twelve months on, they are having to work harder, the scrutiny is more intense, and the pressure only growing.
 
@@ -338,7 +362,7 @@
 
 ---
 
-### Section 42
+### Section 45
 
 **🇬🇧 EN:** Farage's claim that he "wasn't listening" to the conversation was telling – to get to power without more of these kinds of serious embarrassments, he may have to pay more attention to what is going on.
 
@@ -346,7 +370,7 @@
 
 ---
 
-### Section 43
+### Section 46
 
 **🇬🇧 EN:** Reform UK winded by donations row as insiders call for shift in approach
 
@@ -354,7 +378,7 @@
 
 ---
 
-### Section 44
+### Section 47
 
 **🇬🇧 EN:** Two Reform officials step down after undercover donations report
 
@@ -362,7 +386,7 @@
 
 ---
 
-### Section 45
+### Section 48
 
 **🇬🇧 EN:** Reform promises to increase tax-free personal allowance to £15,000
 

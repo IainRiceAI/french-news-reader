@@ -126,7 +126,7 @@
 
 **🇬🇧 EN:** It has not revealed how much extra hours of cloud gaming would cost.
 
-**🇫🇷 FR:** *Il n’a pas révélé combien coûteraient des heures supplémentaires de jeu en nuage.*
+**🇫🇷 FR:** *[Error Translate] It has not revealed how much extra hours of cloud gaming would cost.*
 
 ---
 

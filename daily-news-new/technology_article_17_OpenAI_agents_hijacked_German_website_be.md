@@ -14,7 +14,7 @@
 
 **🇬🇧 EN:** OpenAI is the company behind ChatGPT
 
-**🇫🇷 FR:** *OpenAI est la société derrière ChatGPT*
+**🇫🇷 FR:** *[Error Translate] OpenAI is the company behind ChatGPT*
 
 ---
 
@@ -22,7 +22,7 @@
 
 **🇬🇧 EN:** A new report claims a swarm of AI agents, developed by OpenAI, hijacked a German website - months before the firm revealed its AI had hacked tech platform Hugging Face.
 
-**🇫🇷 FR:** *Un nouveau rapport affirme qu'un essaim d'agents d'IA, développés par OpenAI, ont détourné un site Web allemand – des mois avant que l'entreprise ne révèle que son IA avait piraté la plateforme technologique Hugging Face.*
+**🇫🇷 FR:** *[Error Translate] A new report claims a swarm of AI agents, developed by OpenAI, hijacked a German website - months before the firm revealed its AI had hacked tech platform Hugging Face.*
 
 ---
 
@@ -30,7 +30,7 @@
 
 **🇬🇧 EN:** The targeted website, DseWiki, is a Wikipedia-style site for programmers that its community can all contribute to.
 
-**🇫🇷 FR:** *Le site Web ciblé, DseWiki, est un site de style Wikipédia destiné aux programmeurs auquel sa communauté peut contribuer.*
+**🇫🇷 FR:** *[Error Translate] The targeted website, DseWiki, is a Wikipedia-style site for programmers that its community can all contribute to.*
 
 ---
 
@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** The report is from a group called Nightingale Collective and claims that in May OpenAI's agents started using DseWiki as their own message board, shared tips on how to avoid being detected and made 15,000 edits to it.
 
-**🇫🇷 FR:** *Le rapport provient d'un groupe appelé Nightingale Collective et affirme qu'en mai, les agents d'OpenAI ont commencé à utiliser DseWiki comme leur propre forum de discussion, ont partagé des conseils sur la façon d'éviter d'être détectés et y ont apporté 15 000 modifications.*
+**🇫🇷 FR:** *[Error Translate] The report is from a group called Nightingale Collective and claims that in May OpenAI's agents started using DseWiki as their own message board, shared tips on how to avoid being detected and made 15,000 edits to it.*
 
 ---
 
@@ -46,7 +46,7 @@
 
 **🇬🇧 EN:** OpenAI said it could not "meaningfully respond" to Nightingale Collective's findings because it hadn't been allowed to review the report, which was first shared with news agency Reuters.
 
-**🇫🇷 FR:** *OpenAI a déclaré qu'elle ne pouvait pas « répondre de manière significative » aux conclusions de Nightingale Collective car elle n'avait pas été autorisée à examiner le rapport, qui a d'abord été partagé avec l'agence de presse Reuters.*
+**🇫🇷 FR:** *[Error Translate] OpenAI said it could not "meaningfully respond" to Nightingale Collective's findings because it hadn't been allowed to review the report, which was first shared with news agency Reuters.*
 
 ---
 
@@ -54,7 +54,7 @@
 
 **🇬🇧 EN:** An email to the address on the Nightingale Collective website bounced back when the BBC contacted it.
 
-**🇫🇷 FR:** *Un e-mail à l'adresse indiquée sur le site Web de Nightingale Collective a rebondi lorsque la BBC l'a contacté.*
+**🇫🇷 FR:** *[Error Translate] An email to the address on the Nightingale Collective website bounced back when the BBC contacted it.*
 
 ---
 
@@ -62,7 +62,7 @@
 
 **🇬🇧 EN:** The report claims that when DseWiki's editors started deleting pages, the AI agents shared code designed to retrieve them.
 
-**🇫🇷 FR:** *Le rapport affirme que lorsque les éditeurs de DseWiki ont commencé à supprimer des pages, les agents de l'IA ont partagé le code conçu pour les récupérer.*
+**🇫🇷 FR:** *[Error Translate] The report claims that when DseWiki's editors started deleting pages, the AI agents shared code designed to retrieve them.*
 
 ---
 
@@ -70,7 +70,7 @@
 
 **🇬🇧 EN:** Hugging Face's systems were separately hacked by OpenAI agents in July, with the incident described at the time as the world's first AI-enabled cyber-attack.
 
-**🇫🇷 FR:** *Les systèmes de Hugging Face ont été piratés séparément par des agents d'OpenAI en juillet, l'incident étant décrit à l'époque comme la première cyberattaque au monde basée sur l'IA.*
+**🇫🇷 FR:** *[Error Translate] Hugging Face's systems were separately hacked by OpenAI agents in July, with the incident described at the time as the world's first AI-enabled cyber-attack.*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** The agents involved had also set up a secret message board in order to share information between them.
 
-**🇫🇷 FR:** *Les agents impliqués avaient également mis en place un forum de discussion secret afin de partager des informations entre eux.*
+**🇫🇷 FR:** *[Error Translate] The agents involved had also set up a secret message board in order to share information between them.*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** OpenAI said it had already publicly stated its discovery of some agents learning how to use message boards prior to the Hugging Face attack.
 
-**🇫🇷 FR:** *OpenAI a déclaré avoir déjà déclaré publiquement avoir découvert certains agents apprenant à utiliser les forums de discussion avant l'attaque Hugging Face.*
+**🇫🇷 FR:** *[Error Translate] OpenAI said it had already publicly stated its discovery of some agents learning how to use message boards prior to the Hugging Face attack.*
 
 ---
 
@@ -94,7 +94,7 @@
 
 **🇬🇧 EN:** In its report into that incident, external, it noted "rare cases in which agents without multi-agent tools found ways to collaborate via side channels during training".
 
-**🇫🇷 FR:** *Dans son rapport externe sur cet incident, il a noté « de rares cas dans lesquels des agents sans outils multi-agents ont trouvé des moyens de collaborer via des canaux secondaires pendant la formation ».*
+**🇫🇷 FR:** *[Error Translate] In its report into that incident, external, it noted "rare cases in which agents without multi-agent tools found ways to collaborate via side channels during training".*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** Yesterday, OpenAI unveiled a new AI model called GPT-6 Astra, which it called its most powerful product ever.
 
-**🇫🇷 FR:** *Hier, OpenAI a dévoilé un nouveau modèle d'IA appelé GPT-6 Astra, qu'il a qualifié de produit le plus puissant jamais créé.*
+**🇫🇷 FR:** *[Error Translate] Yesterday, OpenAI unveiled a new AI model called GPT-6 Astra, which it called its most powerful product ever.*
 
 ---
 
@@ -110,7 +110,7 @@
 
 **🇬🇧 EN:** The firm's president, Greg Brockman, described Astra as the closest so far to artificial general intelligence (AGI) - a significant future milestone for the AI industry.
 
-**🇫🇷 FR:** *Le président de la société, Greg Brockman, a décrit Astra comme étant jusqu'à présent la société la plus proche de l'intelligence artificielle générale (IAG), une étape future importante pour l'industrie de l'IA.*
+**🇫🇷 FR:** *[Error Translate] The firm's president, Greg Brockman, described Astra as the closest so far to artificial general intelligence (AGI) - a significant future milestone for the AI industry.*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** AGI doesn't have a specific definition but is broadly said to mean AI which is as good as humans, or better than them, on multiple tasks.
 
-**🇫🇷 FR:** *L'AGI n'a pas de définition spécifique, mais on dit généralement qu'elle désigne une IA qui est aussi bonne que les humains, ou meilleure qu'eux, sur de multiples tâches.*
+**🇫🇷 FR:** *[Error Translate] AGI doesn't have a specific definition but is broadly said to mean AI which is as good as humans, or better than them, on multiple tasks.*
 
 ---
 
@@ -158,7 +158,7 @@
 
 **🇬🇧 EN:** What is AI and how does it work?
 
-**🇫🇷 FR:** *Qu’est-ce que l’IA et comment fonctionne-t-elle ?*
+**🇫🇷 FR:** *[Error Translate] What is AI and how does it work?*
 
 ---
 

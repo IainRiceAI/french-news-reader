@@ -38,7 +38,7 @@
 
 **🇬🇧 EN:** "It's a horrible feeling to be out a substantial amount - something I wouldn't wish on my worst enemy," the victim, who wanted to stay anonymous, said.
 
-**🇫🇷 FR:** *[Error Translate] "It's a horrible feeling to be out a substantial amount - something I wouldn't wish on my worst enemy," the victim, who wanted to stay anonymous, said.*
+**🇫🇷 FR:** *"C'est un sentiment horrible de perdre une somme importante - quelque chose que je ne souhaiterais pas à mon pire ennemi", a déclaré la victime, qui a souhaité rester anonyme.*
 
 ---
 
@@ -78,7 +78,7 @@
 
 **🇬🇧 EN:** Dream Job Offer In Your DMs? It's Probably A Scam
 
-**🇫🇷 FR:** *[Error Translate] Dream Job Offer In Your DMs? It's Probably A Scam*
+**🇫🇷 FR:** *Offre d'emploi de rêve dans vos DM ? C'est probablement une arnaque*
 
 ---
 
@@ -86,7 +86,7 @@
 
 **🇬🇧 EN:** The victim - who lost their savings after being hacked - had handed in their notice and made it clear on LinkedIn that they were looking for a new job.
 
-**🇫🇷 FR:** *[Error Translate] The victim - who lost their savings after being hacked - had handed in their notice and made it clear on LinkedIn that they were looking for a new job.*
+**🇫🇷 FR:** *La victime, qui a perdu ses économies après avoir été piratée, avait remis son préavis et indiqué clairement sur LinkedIn qu'elle cherchait un nouvel emploi.*
 
 ---
 
@@ -102,7 +102,7 @@
 
 **🇬🇧 EN:** But the document was laced with malicious software.
 
-**🇫🇷 FR:** *[Error Translate] But the document was laced with malicious software.*
+**🇫🇷 FR:** *Mais le document contenait des logiciels malveillants.*
 
 ---
 
@@ -118,7 +118,7 @@
 
 **🇬🇧 EN:** "I wiped my computer and changed all my passwords and was exhausted emotionally and mentally drained," they said.
 
-**🇫🇷 FR:** *[Error Translate] "I wiped my computer and changed all my passwords and was exhausted emotionally and mentally drained," they said.*
+**🇫🇷 FR:** *"J'ai effacé mon ordinateur et changé tous mes mots de passe et j'étais épuisé émotionnellement et mentalement", ont-ils déclaré.*
 
 ---
 
@@ -134,7 +134,7 @@
 
 **🇬🇧 EN:** Cyber-security researchers from Have I Been Squatted carried out an analysis of how the attack worked and say the new wave of recruitment scams are hard to spot.
 
-**🇫🇷 FR:** *[Error Translate] Cyber-security researchers from Have I Been Squatted carried out an analysis of how the attack worked and say the new wave of recruitment scams are hard to spot.*
+**🇫🇷 FR:** *Les chercheurs en cybersécurité de Have I Been Squatted ont analysé le fonctionnement de l'attaque et affirment que la nouvelle vague d'escroqueries au recrutement est difficile à repérer.*
 
 ---
 
@@ -142,7 +142,7 @@
 
 **🇬🇧 EN:** "This wasn't a badly written email with a suspicious attachment - this person was walked through what looked like a real job interview, on real Google pages, behind a real Google login, and the software they were asked to install was digitally signed like any legitimate app," said chief executive Juxhin D Brigjaj.
 
-**🇫🇷 FR:** *[Error Translate] "This wasn't a badly written email with a suspicious attachment - this person was walked through what looked like a real job interview, on real Google pages, behind a real Google login, and the software they were asked to install was digitally signed like any legitimate app," said chief executive Juxhin D Brigjaj.*
+**🇫🇷 FR:** *"Il ne s'agissait pas d'un e-mail mal rédigé avec une pièce jointe suspecte. Cette personne a passé ce qui ressemblait à un véritable entretien d'embauche, sur de vraies pages Google, derrière un véritable identifiant Google, et le logiciel qu'on lui a demandé d'installer était signé numériquement comme n'importe quelle application légitime", a déclaré le directeur général Juxhin D. Brigjaj.*
 
 ---
 
@@ -150,7 +150,7 @@
 
 **🇬🇧 EN:** The case comes as others have reported similar attacks through the job listing platform Indeed, which put out advice in July about avoiding scams, external.
 
-**🇫🇷 FR:** *[Error Translate] The case comes as others have reported similar attacks through the job listing platform Indeed, which put out advice in July about avoiding scams, external.*
+**🇫🇷 FR:** *Cette affaire survient alors que d'autres ont signalé des attaques similaires via la plateforme d'offres d'emploi Indeed, qui a publié en juillet des conseils pour éviter les escroqueries externes.*
 
 ---
 
@@ -166,7 +166,7 @@
 
 **🇬🇧 EN:** According to cyber-security company Malwarebytes, the fake recruiters use lures such as: "Complete your interview by installing the Indeed app" or "salary agreement available after app installation".
 
-**🇫🇷 FR:** *[Error Translate] According to cyber-security company Malwarebytes, the fake recruiters use lures such as: "Complete your interview by installing the Indeed app" or "salary agreement available after app installation".*
+**🇫🇷 FR:** *Selon la société de cybersécurité Malwarebytes, les faux recruteurs utilisent des leurres tels que : « Terminez votre entretien en installant l'application Indeed » ou « accord salarial disponible après l'installation de l'application ».*
 
 ---
 
@@ -182,7 +182,7 @@
 
 **🇬🇧 EN:** "Interviewing through Indeed's platform happens entirely in a browser and never requires downloading a special app," Indeed recently posted online.
 
-**🇫🇷 FR:** *[Error Translate] "Interviewing through Indeed's platform happens entirely in a browser and never requires downloading a special app," Indeed recently posted online.*
+**🇫🇷 FR:** *"Les entretiens via la plateforme Indeed se déroulent entièrement dans un navigateur et ne nécessitent jamais le téléchargement d'une application spéciale", a récemment publié Indeed en ligne.*
 
 ---
 
@@ -198,7 +198,7 @@
 
 **🇬🇧 EN:** Have you been affected by a recruitment scam? Let us know.
 
-**🇫🇷 FR:** *[Error Translate] Have you been affected by a recruitment scam? Let us know.*
+**🇫🇷 FR:** *Avez-vous été concerné par une arnaque au recrutement ? Faites-le-nous savoir.*
 
 ---
 
@@ -206,7 +206,7 @@
 
 **🇬🇧 EN:** Seven job seekers scammed out of £200,000
 
-**🇫🇷 FR:** *[Error Translate] Seven job seekers scammed out of £200,000*
+**🇫🇷 FR:** *Sept demandeurs d'emploi escroqués pour 200 000 £*
 
 ---
 
@@ -214,7 +214,7 @@
 
 **🇬🇧 EN:** Fake 10 Downing Street listing exposes 'unfit' Booking.com, says consumer group
 
-**🇫🇷 FR:** *[Error Translate] Fake 10 Downing Street listing exposes 'unfit' Booking.com, says consumer group*
+**🇫🇷 FR:** *Une fausse annonce du 10 Downing Street révèle que Booking.com est « inapte », selon un groupe de consommateurs*
 
 ---
 
@@ -222,7 +222,7 @@
 
 **🇬🇧 EN:** Criminals publish data of 8.7m people after airports hack
 
-**🇫🇷 FR:** *[Error Translate] Criminals publish data of 8.7m people after airports hack*
+**🇫🇷 FR:** *Les criminels publient les données de 8,7 millions de personnes après le piratage des aéroports*
 
 ---
 
