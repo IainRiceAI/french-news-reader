@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turning cooler with wet and windy weather forecast for UK this week</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Turning cooler with wet and windy weather forecast for UK this week</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 07 Sep 2026 03:09:04 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/cvgynj49lzmo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Weekend warmth gives way to rain and strong winds for many into the start of the new week.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.58" data-end="14.59">
+            <p class="french-block">L'été météorologique est terminé, les écoles sont de retour, tout comme la météo instable au Royaume-Uni.</p>
+            <span class="english-block">Meteorological summer is over, schools are back and so is the UK's unsettled weather.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.59" data-end="27.62">
+            <p class="french-block">Après un pic de chaleur dimanche, les systèmes dépressionnaires continueront d'apporter des conditions humides et venteuses, notamment sur le nord du Royaume-Uni en début de semaine, avant que la situation ne se calme mercredi et jeudi.</p>
+            <span class="english-block">After a heat spike on Sunday, low pressure systems will continue to bring wet and windy conditions, especially to the north of the UK at the beginning of the week, before things settle down on Wednesday and Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.62" data-end="40.7">
+            <p class="french-block">Il fera également plus frais dans de nombreux endroits en Angleterre et au Pays de Galles, après que la température de dimanche ait approché 29 °C (84 °F) dans le sud-est de l'Angleterre.</p>
+            <span class="english-block">It will also feel cooler for many places across England and Wales, after Sunday's temperature approached 29C (84F) in south-east England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.7" data-end="50.21">
+            <p class="french-block">Malgré un week-end plutôt sec pour beaucoup, la semaine dernière a été la semaine la plus humide en Angleterre depuis début février, selon l'Agence pour l'Environnement.</p>
+            <span class="english-block">Despite a mostly dry weekend for many, last week was the wettest week in England since early February, according to the Environment Agency.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.21" data-end="60.12">
+            <p class="french-block">L'Espagne a enregistré 45,7°C à Huelva la semaine dernière, ce qui constitue jusqu'à présent la température la plus élevée du pays de l'année.</p>
+            <span class="english-block">Spain recorded 45.7C in Huelva last week, which was the country's highest temperature of the year so far.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.12" data-end="71.21">
+            <p class="french-block">La basse pression reste au nord-ouest de l'Écosse, poussant d'autres fronts météorologiques à travers le Royaume-Uni lundi - le front froid marqué par des triangles bleus apportera une sensation d'air plus frais.</p>
+            <span class="english-block">Low pressure remains to the north-west of Scotland pushing further weather fronts across the UK on Monday - the cold front marked in blue triangles will introduce fresher feeling air</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.21" data-end="80.21">
+            <p class="french-block">La pression diminue lundi, la direction du vent change et un front météorologique descend du nord-ouest, signalant un changement vers un temps plus frais et plus frais.</p>
+            <span class="english-block">Pressure is falling on Monday, the wind direction is changing and a weather front is moving down from the north-west, signalling a change to cooler and fresher weather.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.21" data-end="96.94">
+            <p class="french-block">Le front météorologique, constitué principalement d'une bande nuageuse avec quelques averses, balayera l'Angleterre et le Pays de Galles. Des éclaircies ensoleillées suivront. Les températures culmineront à 25°C dans le sud-est de l’Angleterre.</p>
+            <span class="english-block">The weather front, which is mainly a band of cloud with a few showers, will sweep across England and Wales. Sunny spells will follow. Temperatures will peak at 25C in south-east England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.94" data-end="100.73">
+            <p class="french-block">De l'air plus frais et moins humide suit la bande nuageuse.</p>
+            <span class="english-block">Cooler and less humid air follows the band of cloud.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.73" data-end="108.91">
+            <p class="french-block">Une autre bande de pluie plus forte se formera en Irlande du Nord lundi matin, puis se propagera à l'Écosse et à la Cumbrie dans l'après-midi.</p>
+            <span class="english-block">Another band of heavier rain will develop in Northern Ireland on Monday morning then spread across to Scotland and Cumbria in the afternoon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.91" data-end="117.7">
+            <p class="french-block">Accompagnées de vents forts et en rafales du sud-ouest, les pluies limiteront les températures à environ 17 °C en Écosse et en Irlande du Nord.</p>
+            <span class="english-block">Accompanied by strong and gusty southwesterly winds, the rain will limit temperatures to around 17C in Scotland and Northern Ireland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.7" data-end="126.14">
+            <p class="french-block">Lundi sera plus frais avec de l'air plus frais, mais pour beaucoup, les températures resteront supérieures à la moyenne pour cette période de l'année.</p>
+            <span class="english-block">Monday will be cooler with fresher air but temperatures for many will still be above average for the time of year</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.14" data-end="131.66">
+            <p class="french-block">Une profonde zone dépressionnaire sera toujours située au nord-ouest de l'Écosse mardi.</p>
+            <span class="english-block">A deep area of low pressure will still be situated to the north-west of Scotland on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.66" data-end="150.79">
+            <p class="french-block">Les régions du nord du Royaume-Uni seront particulièrement venteuses, avec des rafales de 50 à 60 mph possibles dans le nord et l'ouest de l'Écosse. Ces zones sont habituées aux vents forts à cette période de l’année, mais si les conditions venteuses se propagent dans les basses terres centrales, des perturbations pourraient survenir.</p>
+            <span class="english-block">Northern parts of the UK will be particularly windy with gusts of 50-60mph possible in northern and western Scotland. These areas are used to strong winds at this time of year but if the windy conditions funnel through the central lowlands there could be some disruption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.79" data-end="154.97">
+            <p class="french-block">Le temps venteux dans le nord sera accompagné d'averses fréquentes.</p>
+            <span class="english-block">The windy weather in the north will be accompanied by frequent showers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.97" data-end="163.61">
+            <p class="french-block">Plus au sud, à travers l'Angleterre et le Pays de Galles, une vague de pluie de la nuit persistera dans le sud-est mardi matin avant de se dissiper.</p>
+            <span class="english-block">Further south, across England and Wales, a spell of rain from overnight will linger in the southeast during Tuesday morning before clearing away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.61" data-end="170.64">
+            <p class="french-block">Les pluies ici ne seront pas si fortes et une grande partie de l’Angleterre et tout le Pays de Galles sont toujours en proie à la sécheresse.</p>
+            <span class="english-block">The rain here will not be that heavy and much of England and the whole of Wales are still in drought.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.64" data-end="177.38">
+            <p class="french-block">La zone de dépression se déplacera vers la mer du Nord mercredi et il y aura du vent le long de la côte est pendant un moment.</p>
+            <span class="english-block">The area of low pressure will move into the North Sea on Wednesday and it will be windy along the east coast for a while.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.38" data-end="185.16">
+            <p class="french-block">Sinon, la hausse de la pression laissera un milieu de semaine sec pour la plupart d’entre nous, avec un peu de soleil et des vents plus légers.</p>
+            <span class="english-block">Otherwise, rising pressure will leave a dry midweek for most of us with some sunshine and lighter winds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.16" data-end="193.01">
+            <p class="french-block">Les averses devraient revenir jeudi dans l’ouest du Royaume-Uni, mais elles s’atténueront vendredi à mesure qu’elles se déplaceront vers l’est.</p>
+            <span class="english-block">Showers are expected to return to western parts of the UK on Thursday but these will die out on Friday as they move into eastern areas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.01" data-end="202.27">
+            <p class="french-block">Les températures à partir du milieu de la semaine seront proches de la moyenne saisonnière avec les températures les plus élevées dans le sud-est de 22°C.</p>
+            <span class="english-block">Temperatures from midweek will be near the seasonal average with the highest temperatures in the south-east of 22C.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.27" data-end="207.48">
+            <p class="french-block">Vous pouvez consulter les derniers détails sur la météo pour la semaine à venir ici.</p>
+            <span class="english-block">You can check the latest details for the weather for the week ahead here.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.48" data-end="209.76">
+            <p class="french-block">Perspectives mensuelles</p>
+            <span class="english-block">Monthly Outlook</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.76" data-end="215.18">
+            <p class="french-block">Les températures pourraient grimper jusqu'à 28 °C en cas de chaleur tardive.</p>
+            <span class="english-block">Temperatures could climb to 28C in late burst of warmth</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.18" data-end="218.95">
+            <p class="french-block">Pourquoi il pleut en moyenne plus en août qu'en septembre</p>
+            <span class="english-block">Why on average it rains more in August than September</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_24.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-09-07 06:26:25  
+Generated on: 2026-09-08 06:25:15  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Protesters block roads in Portsmouth after 140 migrants rescued**
-   - **Published:** Mon, 07 Sep 2026 02:10:46 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Protesters_block_roads_in_Portsmouth_aft.md](top-stories_article_1_Protesters_block_roads_in_Portsmouth_aft.md)
+1. **UK government expected to announce restrictions on trade with West Bank settlements**
+   - **Published:** Tue, 08 Sep 2026 01:50:55 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_UK_government_expected_to_announce_restr.md](top-stories_article_1_UK_government_expected_to_announce_restr.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Germany's far-right AfD hails big victory in east, but falls short of majority**
-   - **Published:** Mon, 07 Sep 2026 04:48:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Germanys_far-right_AfD_hails_big_victory.md](top-stories_article_2_Germanys_far-right_AfD_hails_big_victory.md)
+2. **A&E did not get the basics right - now my son's life is ruined at 32**
+   - **Published:** Tue, 08 Sep 2026 03:49:39 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_AE_did_not_get_the_basics_right_-_now_my.md](top-stories_article_2_AE_did_not_get_the_basics_right_-_now_my.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Europe wrestles with impact of historic regional gains for Germany's AfD**
-   - **Published:** Mon, 07 Sep 2026 04:07:23 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Europe_wrestles_with_impact_of_historic_.md](top-stories_article_3_Europe_wrestles_with_impact_of_historic_.md)
+3. **Minister condemns disorder at Portsmouth anti-migrant protest after police officers hurt**
+   - **Published:** Mon, 07 Sep 2026 19:04:09 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Minister_condemns_disorder_at_Portsmouth.md](top-stories_article_3_Minister_condemns_disorder_at_Portsmouth.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Five dead after Amazon cargo plane crashes at Miami airport**
-   - **Published:** Mon, 07 Sep 2026 00:57:38 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Five_dead_after_Amazon_cargo_plane_crash.md](top-stories_article_4_Five_dead_after_Amazon_cargo_plane_crash.md)
+4. **King makes clear Harry and Meghan remain non-working royals**
+   - **Published:** Mon, 07 Sep 2026 18:23:31 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_King_makes_clear_Harry_and_Meghan_remain.md](top-stories_article_4_King_makes_clear_Harry_and_Meghan_remain.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Chancellor to say UK economy 'turning a corner' despite debt concerns**
-   - **Published:** Sun, 06 Sep 2026 23:34:18 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Chancellor_to_say_UK_economy_turning_a_c.md](top-stories_article_5_Chancellor_to_say_UK_economy_turning_a_c.md)
+5. **Flight recorders recovered from 'devastating' Amazon cargo plane crash**
+   - **Published:** Mon, 07 Sep 2026 22:23:03 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Flight_recorders_recovered_from_devastat.md](top-stories_article_5_Flight_recorders_recovered_from_devastat.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **BBC News presenter Maryam Moshiri reveals she has blood cancer**
-   - **Published:** Sun, 06 Sep 2026 22:00:36 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_BBC_News_presenter_Maryam_Moshiri_reveal.md](top-stories_article_6_BBC_News_presenter_Maryam_Moshiri_reveal.md)
+6. **Palestinian parents fear for children's lives at school as settler attacks grow**
+   - **Published:** Mon, 07 Sep 2026 21:12:37 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Palestinian_parents_fear_for_childrens_l.md](top-stories_article_6_Palestinian_parents_fear_for_childrens_l.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Minister to meet Jaguar Land Rover boss as thousands of job cuts expected**
-   - **Published:** Sun, 06 Sep 2026 16:32:59 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Minister_to_meet_Jaguar_Land_Rover_boss_.md](top-stories_article_7_Minister_to_meet_Jaguar_Land_Rover_boss_.md)
+7. **Self-described 'genocidal racist monster' jailed after BBC investigation**
+   - **Published:** Mon, 07 Sep 2026 19:58:04 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Self-described_genocidal_racist_monster_.md](top-stories_article_7_Self-described_genocidal_racist_monster_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Zelensky says he expects war to continue into winter after talks with US envoys**
-   - **Published:** Sun, 06 Sep 2026 20:41:58 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Zelensky_says_he_expects_war_to_continue.md](top-stories_article_8_Zelensky_says_he_expects_war_to_continue.md)
+8. **Prince George set for first day at Eton College**
+   - **Published:** Tue, 08 Sep 2026 01:00:32 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Prince_George_set_for_first_day_at_Eton_.md](top-stories_article_8_Prince_George_set_for_first_day_at_Eton_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Germany's far-right AfD hails big victory in east, but falls short of majority**
-   - **Published:** Mon, 07 Sep 2026 04:48:02 GMT
-   - **Read Parallel Translation:** [world_article_9_Germanys_far-right_AfD_hails_big_victory.md](world_article_9_Germanys_far-right_AfD_hails_big_victory.md)
+1. **Flight recorders recovered from 'devastating' Amazon cargo plane crash**
+   - **Published:** Mon, 07 Sep 2026 22:23:03 GMT
+   - **Read Parallel Translation:** [world_article_9_Flight_recorders_recovered_from_devastat.md](world_article_9_Flight_recorders_recovered_from_devastat.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Europe wrestles with impact of historic regional gains for Germany's AfD**
-   - **Published:** Mon, 07 Sep 2026 04:07:23 GMT
-   - **Read Parallel Translation:** [world_article_10_Europe_wrestles_with_impact_of_historic_.md](world_article_10_Europe_wrestles_with_impact_of_historic_.md)
+2. **Palestinian parents fear for children's lives at school as settler attacks grow**
+   - **Published:** Mon, 07 Sep 2026 21:12:37 GMT
+   - **Read Parallel Translation:** [world_article_10_Palestinian_parents_fear_for_childrens_l.md](world_article_10_Palestinian_parents_fear_for_childrens_l.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Five dead after Amazon cargo plane crashes at Miami airport**
-   - **Published:** Mon, 07 Sep 2026 00:57:38 GMT
-   - **Read Parallel Translation:** [world_article_11_Five_dead_after_Amazon_cargo_plane_crash.md](world_article_11_Five_dead_after_Amazon_cargo_plane_crash.md)
+3. **Germany's far-right AfD says 'democracy demands' parties work with them after state election win**
+   - **Published:** Mon, 07 Sep 2026 14:04:01 GMT
+   - **Read Parallel Translation:** [world_article_11_Germanys_far-right_AfD_says_democracy_de.md](world_article_11_Germanys_far-right_AfD_says_democracy_de.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Zelensky says he expects war to continue into winter after talks with US envoys**
-   - **Published:** Sun, 06 Sep 2026 20:41:58 GMT
-   - **Read Parallel Translation:** [world_article_12_Zelensky_says_he_expects_war_to_continue.md](world_article_12_Zelensky_says_he_expects_war_to_continue.md)
+4. **Eiffel Tower shut by staff protest after female workers moved for religious visit**
+   - **Published:** Mon, 07 Sep 2026 23:46:44 GMT
+   - **Read Parallel Translation:** [world_article_12_Eiffel_Tower_shut_by_staff_protest_after.md](world_article_12_Eiffel_Tower_shut_by_staff_protest_after.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Chancellor to say UK economy 'turning a corner' despite debt concerns**
-   - **Published:** Sun, 06 Sep 2026 23:34:18 GMT
-   - **Read Parallel Translation:** [business_article_13_Chancellor_to_say_UK_economy_turning_a_c.md](business_article_13_Chancellor_to_say_UK_economy_turning_a_c.md)
+1. **'I performed on stage to get my first job' - the firms turning recruitment into competitions**
+   - **Published:** Mon, 07 Sep 2026 23:06:14 GMT
+   - **Read Parallel Translation:** [business_article_13_I_performed_on_stage_to_get_my_first_job.md](business_article_13_I_performed_on_stage_to_get_my_first_job.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Minister to meet Jaguar Land Rover boss as thousands of job cuts expected**
-   - **Published:** Sun, 06 Sep 2026 16:32:59 GMT
-   - **Read Parallel Translation:** [business_article_14_Minister_to_meet_Jaguar_Land_Rover_boss_.md](business_article_14_Minister_to_meet_Jaguar_Land_Rover_boss_.md)
+2. **Canada braces for prolonged trade war as counter-tariffs on US take effect**
+   - **Published:** Tue, 08 Sep 2026 04:39:14 GMT
+   - **Read Parallel Translation:** [business_article_14_Canada_braces_for_prolonged_trade_war_as.md](business_article_14_Canada_braces_for_prolonged_trade_war_as.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **The £70 refund letter that isn't a scam**
-   - **Published:** Sun, 06 Sep 2026 23:16:05 GMT
-   - **Read Parallel Translation:** [business_article_15_The_70_refund_letter_that_isnt_a_scam.md](business_article_15_The_70_refund_letter_that_isnt_a_scam.md)
+3. **AI cancer cures slowed by chip shortage, says UK's biggest tech boss**
+   - **Published:** Mon, 07 Sep 2026 23:05:12 GMT
+   - **Read Parallel Translation:** [business_article_15_AI_cancer_cures_slowed_by_chip_shortage_.md](business_article_15_AI_cancer_cures_slowed_by_chip_shortage_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **Five dead after Amazon cargo plane crashes at Miami airport**
-   - **Published:** Mon, 07 Sep 2026 00:57:38 GMT
-   - **Read Parallel Translation:** [business_article_16_Five_dead_after_Amazon_cargo_plane_crash.md](business_article_16_Five_dead_after_Amazon_cargo_plane_crash.md)
+4. **Trump threatens to stop sale of Canadian Bombardier jets in US**
+   - **Published:** Tue, 08 Sep 2026 00:48:43 GMT
+   - **Read Parallel Translation:** [business_article_16_Trump_threatens_to_stop_sale_of_Canadian.md](business_article_16_Trump_threatens_to_stop_sale_of_Canadian.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **OpenAI agents hijacked German website before Hugging Face hack, report claims**
-   - **Published:** Fri, 04 Sep 2026 14:59:13 GMT
-   - **Read Parallel Translation:** [technology_article_17_OpenAI_agents_hijacked_German_website_be.md](technology_article_17_OpenAI_agents_hijacked_German_website_be.md)
+1. **AI cancer cures slowed by chip shortage, says UK's biggest tech boss**
+   - **Published:** Mon, 07 Sep 2026 23:05:12 GMT
+   - **Read Parallel Translation:** [technology_article_17_AI_cancer_cures_slowed_by_chip_shortage_.md](technology_article_17_AI_cancer_cures_slowed_by_chip_shortage_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Xbox caps cloud gaming at 15 hours a month for Game Pass subscribers**
-   - **Published:** Fri, 04 Sep 2026 11:48:24 GMT
-   - **Read Parallel Translation:** [technology_article_18_Xbox_caps_cloud_gaming_at_15_hours_a_mon.md](technology_article_18_Xbox_caps_cloud_gaming_at_15_hours_a_mon.md)
+2. **Grindr to pay £26m to settle claims it allegedly shared users' HIV status**
+   - **Published:** Mon, 07 Sep 2026 15:27:50 GMT
+   - **Read Parallel Translation:** [technology_article_18_Grindr_to_pay_26m_to_settle_claims_it_al.md](technology_article_18_Grindr_to_pay_26m_to_settle_claims_it_al.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Could robots be the future of theme parks?**
-   - **Published:** Fri, 04 Sep 2026 02:02:02 GMT
-   - **Read Parallel Translation:** [technology_article_19_Could_robots_be_the_future_of_theme_park.md](technology_article_19_Could_robots_be_the_future_of_theme_park.md)
+3. **OpenAI chief scientist warns no-one is prepared for consequences of AI**
+   - **Published:** Mon, 07 Sep 2026 12:22:07 GMT
+   - **Read Parallel Translation:** [technology_article_19_OpenAI_chief_scientist_warns_no-one_is_p.md](technology_article_19_OpenAI_chief_scientist_warns_no-one_is_p.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **'I lost my savings after a job interview scam'**
-   - **Published:** Thu, 03 Sep 2026 23:41:49 GMT
-   - **Read Parallel Translation:** [technology_article_20_I_lost_my_savings_after_a_job_interview_.md](technology_article_20_I_lost_my_savings_after_a_job_interview_.md)
+4. **Dolly Parton's sister pleads for end to 'AI garbage' posts after singer's death**
+   - **Published:** Mon, 07 Sep 2026 11:30:27 GMT
+   - **Read Parallel Translation:** [technology_article_20_Dolly_Partons_sister_pleads_for_end_to_A.md](technology_article_20_Dolly_Partons_sister_pleads_for_end_to_A.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Cooler temperatures with wet and windy weather forecast for UK this week**
-   - **Published:** Mon, 07 Sep 2026 03:09:04 GMT
-   - **Read Parallel Translation:** [science_article_21_Cooler_temperatures_with_wet_and_windy_w.md](science_article_21_Cooler_temperatures_with_wet_and_windy_w.md)
+1. **Gaps in evidence on vaccinating badgers against TB, researchers say**
+   - **Published:** Mon, 07 Sep 2026 19:11:55 GMT
+   - **Read Parallel Translation:** [science_article_21_Gaps_in_evidence_on_vaccinating_badgers_.md](science_article_21_Gaps_in_evidence_on_vaccinating_badgers_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **The volunteers risking their lives to defuse Indonesia's wildfire 'carbon bombs'**
-   - **Published:** Sun, 06 Sep 2026 23:13:29 GMT
-   - **Read Parallel Translation:** [science_article_22_The_volunteers_risking_their_lives_to_de.md](science_article_22_The_volunteers_risking_their_lives_to_de.md)
+2. **Public asked to have their say on proposed new renewable energy company**
+   - **Published:** Mon, 07 Sep 2026 18:02:43 GMT
+   - **Read Parallel Translation:** [science_article_22_Public_asked_to_have_their_say_on_propos.md](science_article_22_Public_asked_to_have_their_say_on_propos.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Aviation faces hotter, stormier skies – and passengers might have to accept more disruption**
-   - **Published:** Sat, 05 Sep 2026 23:20:00 GMT
-   - **Read Parallel Translation:** [science_article_23_Aviation_faces_hotter_stormier_skies__an.md](science_article_23_Aviation_faces_hotter_stormier_skies__an.md)
+3. **Pioneering fossil hunter recognised with blue plaque**
+   - **Published:** Mon, 07 Sep 2026 06:01:33 GMT
+   - **Read Parallel Translation:** [science_article_23_Pioneering_fossil_hunter_recognised_with.md](science_article_23_Pioneering_fossil_hunter_recognised_with.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Trump signs order to remove endangered species protection for grey wolves**
-   - **Published:** Sat, 05 Sep 2026 09:12:48 GMT
-   - **Read Parallel Translation:** [science_article_24_Trump_signs_order_to_remove_endangered_s.md](science_article_24_Trump_signs_order_to_remove_endangered_s.md)
+4. **Turning cooler with wet and windy weather forecast for UK this week**
+   - **Published:** Mon, 07 Sep 2026 03:09:04 GMT
+   - **Read Parallel Translation:** [science_article_24_Turning_cooler_with_wet_and_windy_weathe.md](science_article_24_Turning_cooler_with_wet_and_windy_weathe.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **BBC News presenter reveals she has blood cancer**
-   - **Published:** Sun, 06 Sep 2026 22:00:36 GMT
-   - **Read Parallel Translation:** [health_article_25_BBC_News_presenter_reveals_she_has_blood.md](health_article_25_BBC_News_presenter_reveals_she_has_blood.md)
+1. **A&E did not get the basics right - now my son's life is ruined at 32**
+   - **Published:** Tue, 08 Sep 2026 03:49:39 GMT
+   - **Read Parallel Translation:** [health_article_25_AE_did_not_get_the_basics_right_-_now_my.md](health_article_25_AE_did_not_get_the_basics_right_-_now_my.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **How hunger for a new weight-loss drug is feeding an industry of fakes**
-   - **Published:** Fri, 04 Sep 2026 23:47:40 GMT
-   - **Read Parallel Translation:** [health_article_26_How_hunger_for_a_new_weight-loss_drug_is.md](health_article_26_How_hunger_for_a_new_weight-loss_drug_is.md)
+2. **BBC News presenter reveals she has blood cancer**
+   - **Published:** Sun, 06 Sep 2026 22:00:36 GMT
+   - **Read Parallel Translation:** [health_article_26_BBC_News_presenter_reveals_she_has_blood.md](health_article_26_BBC_News_presenter_reveals_she_has_blood.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Transplanted pig kidney works in US man's body for record 271 days**
-   - **Published:** Thu, 03 Sep 2026 22:31:23 GMT
-   - **Read Parallel Translation:** [health_article_27_Transplanted_pig_kidney_works_in_US_mans.md](health_article_27_Transplanted_pig_kidney_works_in_US_mans.md)
+3. **How hunger for a new weight-loss drug is feeding an industry of fakes**
+   - **Published:** Fri, 04 Sep 2026 23:47:40 GMT
+   - **Read Parallel Translation:** [health_article_27_How_hunger_for_a_new_weight-loss_drug_is.md](health_article_27_How_hunger_for_a_new_weight-loss_drug_is.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Children as young as six going to A&E in mental health crisis**
-   - **Published:** Wed, 02 Sep 2026 12:21:27 GMT
-   - **Read Parallel Translation:** [health_article_28_Children_as_young_as_six_going_to_AE_in_.md](health_article_28_Children_as_young_as_six_going_to_AE_in_.md)
+4. **Transplanted pig kidney works in US man's body for record 271 days**
+   - **Published:** Thu, 03 Sep 2026 22:31:23 GMT
+   - **Read Parallel Translation:** [health_article_28_Transplanted_pig_kidney_works_in_US_mans.md](health_article_28_Transplanted_pig_kidney_works_in_US_mans.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Nigel Farage tells BBC he 'wasn't listening' during foreign donor talks filmed undercover**
-   - **Published:** Sun, 06 Sep 2026 09:18:37 GMT
-   - **Read Parallel Translation:** [politics_article_29_Nigel_Farage_tells_BBC_he_wasnt_listenin.md](politics_article_29_Nigel_Farage_tells_BBC_he_wasnt_listenin.md)
+1. **Chancellor calls for 'confidence about Britain' despite 'historic high' borrowing costs**
+   - **Published:** Mon, 07 Sep 2026 16:05:37 GMT
+   - **Read Parallel Translation:** [politics_article_29_Chancellor_calls_for_confidence_about_Br.md](politics_article_29_Chancellor_calls_for_confidence_about_Br.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Minister to meet Jaguar Land Rover boss as thousands of job cuts expected**
-   - **Published:** Sun, 06 Sep 2026 16:32:59 GMT
-   - **Read Parallel Translation:** [politics_article_30_Minister_to_meet_Jaguar_Land_Rover_boss_.md](politics_article_30_Minister_to_meet_Jaguar_Land_Rover_boss_.md)
+2. **Plans for major overhaul of councils halted**
+   - **Published:** Mon, 07 Sep 2026 16:30:19 GMT
+   - **Read Parallel Translation:** [politics_article_30_Plans_for_major_overhaul_of_councils_hal.md](politics_article_30_Plans_for_major_overhaul_of_councils_hal.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Green Party deputy leader linked to property lets despite opposition to landlords**
-   - **Published:** Sun, 06 Sep 2026 12:23:03 GMT
-   - **Read Parallel Translation:** [politics_article_31_Green_Party_deputy_leader_linked_to_prop.md](politics_article_31_Green_Party_deputy_leader_linked_to_prop.md)
+3. **UK begins talks to rejoin EU security missions**
+   - **Published:** Mon, 07 Sep 2026 16:39:26 GMT
+   - **Read Parallel Translation:** [politics_article_31_UK_begins_talks_to_rejoin_EU_security_mi.md](politics_article_31_UK_begins_talks_to_rejoin_EU_security_mi.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Police slow to respond to Dover protest, says council boss**
-   - **Published:** Sun, 06 Sep 2026 10:59:35 GMT
-   - **Read Parallel Translation:** [politics_article_32_Police_slow_to_respond_to_Dover_protest_.md](politics_article_32_Police_slow_to_respond_to_Dover_protest_.md)
+4. **Nigel Farage tells BBC he 'wasn't listening' during foreign donor talks filmed undercover**
+   - **Published:** Sun, 06 Sep 2026 09:18:37 GMT
+   - **Read Parallel Translation:** [politics_article_32_Nigel_Farage_tells_BBC_he_wasnt_listenin.md](politics_article_32_Nigel_Farage_tells_BBC_he_wasnt_listenin.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Why Munya Chawawa is 'jumping ship' from socials to Shakespeare**
-   - **Published:** Sun, 06 Sep 2026 00:13:09 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Why_Munya_Chawawa_is_jumping_ship_from_s.md](entertainment_article_33_Why_Munya_Chawawa_is_jumping_ship_from_s.md)
+1. **Liam Gallagher's tambourine grin and Charli XCX says bye to Brat - Music Photography Awards 2026 shortlist**
+   - **Published:** Mon, 07 Sep 2026 23:01:22 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Liam_Gallaghers_tambourine_grin_and_Char.md](entertainment_article_33_Liam_Gallaghers_tambourine_grin_and_Char.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **The next James Bond: The (00)7 questions fans want answered**
-   - **Published:** Sun, 06 Sep 2026 00:06:10 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_The_next_James_Bond_The_007_questions_fa.md](entertainment_article_34_The_next_James_Bond_The_007_questions_fa.md)
+2. **New Inbetweeners film confirmed by Netflix as lead stars return**
+   - **Published:** Mon, 07 Sep 2026 11:03:33 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_New_Inbetweeners_film_confirmed_by_Netfl.md](entertainment_article_34_New_Inbetweeners_film_confirmed_by_Netfl.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Natalie Imbruglia on her worst audition: 'I remember feeling icky'**
-   - **Published:** Sun, 06 Sep 2026 00:22:07 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Natalie_Imbruglia_on_her_worst_audition_.md](entertainment_article_35_Natalie_Imbruglia_on_her_worst_audition_.md)
+3. **Oasis: Don't Look Back In Anger review - emotional documentary glosses over the hard stuff**
+   - **Published:** Mon, 07 Sep 2026 15:43:11 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Oasis_Dont_Look_Back_In_Anger_review_-_e.md](entertainment_article_35_Oasis_Dont_Look_Back_In_Anger_review_-_e.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **TV presenter among 12 sentenced to death in Egypt drugs case**
-   - **Published:** Sun, 06 Sep 2026 08:05:22 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_TV_presenter_among_12_sentenced_to_death.md](entertainment_article_36_TV_presenter_among_12_sentenced_to_death.md)
+4. **BBC News presenter reveals she has blood cancer**
+   - **Published:** Sun, 06 Sep 2026 22:00:36 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_BBC_News_presenter_reveals_she_has_blood.md](entertainment_article_36_BBC_News_presenter_reveals_she_has_blood.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
