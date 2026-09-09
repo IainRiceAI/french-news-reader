@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&E did not get the basics right - my son's life was ruined at 32</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>A&E did not get the basics right - my son's life was ruined at 32</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 08 Sep 2026 03:49:39 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqlw0ke2v97o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Oli's experience is one of a growing number of clinical negligence claims being made in England, BBC analysis shows.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Oli Coppock avait une carrière dans le marketing digital et se sentait positif quant à son avenir.</p>
+            <span class="english-block">Oli Coppock had a career in digital marketing and was feeling positive about his future</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">[vLLM Connection Error] In May 2024, a few months after having treatment for a brain tumour, Oli Coppock went to Warrington Hospital's emergency department with bad headaches and dizziness.</p>
+            <span class="english-block">In May 2024, a few months after having treatment for a brain tumour, Oli Coppock went to Warrington Hospital's emergency department with bad headaches and dizziness.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">[vLLM Connection Error] He underwent tests and assessments, but did not have a brain scan, before going home. It was a decision that ultimately ruined his life at the age of 32, his family says. A week later, with fluid building up on the brain, he suffered a cardiac arrest. He did not recover and now lives in almost complete paralysis.</p>
+            <span class="english-block">He underwent tests and assessments, but did not have a brain scan, before going home. It was a decision that ultimately ruined his life at the age of 32, his family says. A week later, with fluid building up on the brain, he suffered a cardiac arrest. He did not recover and now lives in almost complete paralysis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">[vLLM Connection Error] Oli's case is just one of a growing number of clinical negligence claims being made in England relating to A&E care. An analysis by the BBC shows there has been a 41% rise in cases over the past five years, with doctors linking it to the long delays and pressures being seen in emergency departments.</p>
+            <span class="english-block">Oli's case is just one of a growing number of clinical negligence claims being made in England relating to A&E care. An analysis by the BBC shows there has been a 41% rise in cases over the past five years, with doctors linking it to the long delays and pressures being seen in emergency departments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">[vLLM Connection Error] Oli's father, Stephen, says he knows A&E staff are under pressure, but he cannot understand how a brain scan was not ordered, given his son's medical history.</p>
+            <span class="english-block">Oli's father, Stephen, says he knows A&E staff are under pressure, but he cannot understand how a brain scan was not ordered, given his son's medical history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">[vLLM Connection Error] Despite the brain tumour and a recent diagnosis of multiple sclerosis, Oli was otherwise fit and well and positive about his future. He had a career in digital marketing, loved going to the gym and did some DJing in his spare time.</p>
+            <span class="english-block">Despite the brain tumour and a recent diagnosis of multiple sclerosis, Oli was otherwise fit and well and positive about his future. He had a career in digital marketing, loved going to the gym and did some DJing in his spare time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">[vLLM Connection Error] Stephen says the whole family – including Oli's six siblings - has been left "angry and broken" by what happened to him.</p>
+            <span class="english-block">Stephen says the whole family – including Oli's six siblings - has been left "angry and broken" by what happened to him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">[vLLM Connection Error] Stephen Coppock says the whole family has been left broken by what happened to Oli</p>
+            <span class="english-block">Stephen Coppock says the whole family has been left broken by what happened to Oli</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">L'hôpital n'a pas assuré l'essentiel et mon fils a payé un terrible prix – sa vie est ruinée. C'était une erreur terrible. Il faisait confiance au système de santé et croyait qu'il était là pour l'aider, pas pour le détruire.</p>
+            <span class="english-block">"The hospital didn't get the basics right and my son has paid a terrible price – it's ruined his life. It was an awful error. He trusted the health service and believed it was there to help him, not destroy him."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">[vLLM Connection Error] He says Oli's body is now twisted and paralysed and he has no ability to move around. His breathing, feeding and toileting are all done through tubes at the neurological rehabilitation centre where he is being cared for. He can only communicate through blinking, but Stephen believes he understands everything going on around him.</p>
+            <span class="english-block">He says Oli's body is now twisted and paralysed and he has no ability to move around. His breathing, feeding and toileting are all done through tubes at the neurological rehabilitation centre where he is being cared for. He can only communicate through blinking, but Stephen believes he understands everything going on around him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">[vLLM Connection Error] "There is no worse space for a human to occupy – it's a permanent living nightmare."</p>
+            <span class="english-block">"There is no worse space for a human to occupy – it's a permanent living nightmare."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">[vLLM Connection Error] Oli, who is being cared for in a neurological rehab unit, communicates by blinking</p>
+            <span class="english-block">Oli, who is being cared for in a neurological rehab unit, communicates by blinking</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">[vLLM Connection Error] North Cheshire and Mersey NHS Foundation Trust, which runs Warrington's A&E, has now accepted a breach of duty in not ordering a CT brain scan, which on the balance of probabilities would have identified the fluid build-up in his brain and led to surgery to address it.</p>
+            <span class="english-block">North Cheshire and Mersey NHS Foundation Trust, which runs Warrington's A&E, has now accepted a breach of duty in not ordering a CT brain scan, which on the balance of probabilities would have identified the fluid build-up in his brain and led to surgery to address it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Nous sommes profondément désolés que M. Coppock n'ait pas reçu le standard de soins attendu et nous reconnaissons la détresse et l'impact durable sur les patients et leurs familles lorsqu'un préjudice est causé.</p>
+            <span class="english-block">In a statement, the trust said: "We are deeply sorry that Mr Coppock did not receive that standard of care that should be expected and we recognise the distress and lasting impact on patients and their families when harm is caused."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">[vLLM Connection Error] An interim damages payment has been agreed. However, Oli's solicitor, Tanzeela Aslam, head of medical negligence at Express Solicitors, says the time taken to get to this point – more than two years – has just added to the failings, depriving him of access to funds for therapies and support that could have improved his quality of life.</p>
+            <span class="english-block">An interim damages payment has been agreed. However, Oli's solicitor, Tanzeela Aslam, head of medical negligence at Express Solicitors, says the time taken to get to this point – more than two years – has just added to the failings, depriving him of access to funds for therapies and support that could have improved his quality of life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">[vLLM Connection Error] "Oli's case illustrates how preventable errors within the NHS can have devastating and life-changing consequences for individuals and their families."</p>
+            <span class="english-block">"Oli's case illustrates how preventable errors within the NHS can have devastating and life-changing consequences for individuals and their families."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">[vLLM Connection Error] She says she is seeing more and more A&E-related cases – something she too puts down to the growing pressures.</p>
+            <span class="english-block">She says she is seeing more and more A&E-related cases – something she too puts down to the growing pressures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">On constate une dépendance accrue aux soins dans les couloirs pour les patients, et nous observons des cas dans les services d'urgence de diagnostics erronés ayant entraîné de graves blessures et, dans certains cas, le décès.</p>
+            <span class="english-block">"There has been an increased reliance on corridor care for patients, and we are seeing cases across A&E departments of misdiagnoses that have led to serious injury and in some cases death."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">[vLLM Connection Error] A BBC analysis of NHS Resolution figures using published data and freedom of information requests showed there were more than 1,623 A&E-related clinical negligence claims in 2025-26 in England – up from 1,151 in 2020-21.</p>
+            <span class="english-block">A BBC analysis of NHS Resolution figures using published data and freedom of information requests showed there were more than 1,623 A&E-related clinical negligence claims in 2025-26 in England – up from 1,151 in 2020-21.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">[vLLM Connection Error] It means A&E is now the single biggest area for clinical negligence claims in terms of number. The value of those claims exceeded £550m last year.</p>
+            <span class="english-block">It means A&E is now the single biggest area for clinical negligence claims in terms of number. The value of those claims exceeded £550m last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Tous les recours ne aboutiront pas au paiement de dommages – cela arrive dans environ la moitié des cas. Le NHS accepte parfois la responsabilité, mais il est jugé que la compensation n'est pas nécessaire.</p>
+            <span class="english-block">Not all claims will result in damages being paid – that happens in about half of all cases. The NHS sometimes accepts liability but it is judged compensation is not needed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">[vLLM Connection Error] And there were points during the 2010s when the number of claims were higher per A&E attendance than they were now before falling.</p>
+            <span class="english-block">And there were points during the 2010s when the number of claims were higher per A&E attendance than they were now before falling.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Cependant, l'augmentation soutenue au cours des cinq dernières années cause de l'inquiétude, selon les experts.</p>
+            <span class="english-block">But the sustained increase over the past five years is causing concern, say experts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">[vLLM Connection Error] The pattern is not being repeated in other areas, such as maternity or orthopaedics, and the low point in 2020-21 is thought to be unrelated to any behaviour changes by patients during the Covid pandemic as it takes three years on average for a claim to be submitted.</p>
+            <span class="english-block">The pattern is not being repeated in other areas, such as maternity or orthopaedics, and the low point in 2020-21 is thought to be unrelated to any behaviour changes by patients during the Covid pandemic as it takes three years on average for a claim to be submitted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">[vLLM Connection Error] The Royal College of Emergency Medicine told the BBC it was worried about the rise, linking it to increasing pressure and long delays being seen in A&E in recent years.</p>
+            <span class="english-block">The Royal College of Emergency Medicine told the BBC it was worried about the rise, linking it to increasing pressure and long delays being seen in A&E in recent years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">[vLLM Connection Error] Over the last two years one in 10 patients who attended A&E spent more than 12 hours waiting to be treated or discharged.</p>
+            <span class="english-block">Over the last two years one in 10 patients who attended A&E spent more than 12 hours waiting to be treated or discharged.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">[vLLM Connection Error] RCEM's Dr Adrian Boyle said the figures were "sobering".</p>
+            <span class="english-block">RCEM's Dr Adrian Boyle said the figures were "sobering".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">C'est une préoccupation. Mais ce n'est pas surprenant quand on voit à quel point les départements sont occupés. Les employés restent plus longtemps et la pression sur le personnel augmente.</p>
+            <span class="english-block">"This is a concern. But it is not surprising when you see how busy departments are. People are staying longer and pressure on staffing is increasing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">[vLLM Connection Error] But he said clinical negligence cases were still relatively rare – happening in only around one in every 17,000 attendances.</p>
+            <span class="english-block">But he said clinical negligence cases were still relatively rare – happening in only around one in every 17,000 attendances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">[vLLM Connection Error] NHS Resolution, which supports NHS trusts with clinical negligence claims, said it was taking action on the "high volume" of claims and has published reports to help the NHS learn from mistakes.</p>
+            <span class="english-block">NHS Resolution, which supports NHS trusts with clinical negligence claims, said it was taking action on the "high volume" of claims and has published reports to help the NHS learn from mistakes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Ces erreurs incluent ne pas reconnaître les signes de détérioration aiguë chez les patients, ne pas prescrire les examens et scanners nécessaires et poser des diagnostics erronés.</p>
+            <span class="english-block">Such mistakes include missing the signs of acute deterioration in patients, failing to order the necessary tests and scans and making incorrect diagnoses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">NHS England a déclaré que le nombre de demandes d'indemnisation n'était pas un bon indicateur de la sécurité actuelle, en raison du délai entre la survenance des incidents et leur enregistrement, en ajoutant qu'il y avait des signes indiquant que les temps d'attente aux urgences avaient commencé à s'améliorer.</p>
+            <span class="english-block">NHS England said claim numbers were not a good measure of current safety because of the lag between the incident happening and claims being logged, adding there were signs A&E waiting times had started improving.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">[vLLM Connection Error] Matthew Hopkins, of NHS Alliance, which represents hospitals, said health bosses were "making every effort is made to ensure safe, high-quality care, and that lessons are learned when that falls short".</p>
+            <span class="english-block">Matthew Hopkins, of NHS Alliance, which represents hospitals, said health bosses were "making every effort is made to ensure safe, high-quality care, and that lessons are learned when that falls short".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">[vLLM Connection Error] For Stephen, "every waking hour" is spent worrying about his son.</p>
+            <span class="english-block">For Stephen, "every waking hour" is spent worrying about his son.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">[vLLM Connection Error] "I know staff are under pressure," he says, "but this is about doing the basics right. They failed Oli."</p>
+            <span class="english-block">"I know staff are under pressure," he says, "but this is about doing the basics right. They failed Oli."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Reporting supplémentaire par Nat Wright</p>
+            <span class="english-block">Additional reporting Nat Wright</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Avez-vous été affecté par les problèmes soulevés dans cette histoire?</p>
+            <span class="english-block">Have you been affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More flights delayed after hundreds cancelled by air traffic control glitch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>More flights delayed after hundreds cancelled by air traffic control glitch</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 09 Sep 2026 02:59:38 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ce8x3dp1zpxo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Departures from a number of airports are affected by a technical problem affecting air traffic control provider Nats.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les retards de vol se poursuivront mercredi après un problème de contrôle aérien au Royaume-Uni ayant annulé près de 2 000 vols.</p>
+            <span class="english-block">Flight delays will continue on Wednesday after an air traffic control problem in the UK cancelled nearly 2,000 flights.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">[vLLM Connection Error] Tens of thousands of passengers were affected by the disruption which saw more than 1,750 flights cancelled on Tuesday and a further 153 axed on Wednesday, according to aviation analytics firm Cirium.</p>
+            <span class="english-block">Tens of thousands of passengers were affected by the disruption which saw more than 1,750 flights cancelled on Tuesday and a further 153 axed on Wednesday, according to aviation analytics firm Cirium.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Nats, fournisseur de contrôle aérien, a imputé une panne technique et son PDG,</p>
+            <span class="english-block">Nats, the air traffic control provider, blamed a technical glitch and its boss Martin Rolfe apologised, saying there would be a full investigation after the firm admitted resolving the issue had taken "longer than hoped".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Heidi Alexander, secrétaire aux transports, a convoqué Rolfe à une réunion mercredi pour répondre à des questions sur les perturbations et la réponse.</p>
+            <span class="english-block">Transport Secretary Heidi Alexander has summoned Rolfe to a meeting on Wednesday to answer questions about the disruption and response.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">[vLLM Connection Error] She is also expected to tell MPs that a cyber attack was "categorically" not the cause of the fault.</p>
+            <span class="english-block">She is also expected to tell MPs that a cyber attack was "categorically" not the cause of the fault.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">[vLLM Connection Error] With few aircraft able to take off, it is understood landings were restricted, leading to some flights being unable to depart overseas airports.</p>
+            <span class="english-block">With few aircraft able to take off, it is understood landings were restricted, leading to some flights being unable to depart overseas airports.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">[vLLM Connection Error] The fault was widespread across the UK and beyond, with airports in Ireland also reporting disruption. EasyJet made 200 cancellations and British Airways more than 100.</p>
+            <span class="english-block">The fault was widespread across the UK and beyond, with airports in Ireland also reporting disruption. EasyJet made 200 cancellations and British Airways more than 100.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">[vLLM Connection Error] It is not the first time disruption has blighted Nats' control system. In 2023, a computer shutdown over the August bank holiday weekend caused chaos for 700,000 passengers.</p>
+            <span class="english-block">It is not the first time disruption has blighted Nats' control system. In 2023, a computer shutdown over the August bank holiday weekend caused chaos for 700,000 passengers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il a fallu trois heures à un ingénieur, qui n'avait pas pu corriger la panne depuis son domicile, pour se rendre au travail.</p>
+            <span class="english-block">It took an engineer, who had been unable to correct the fault from home, three hours to get to work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">[vLLM Connection Error] Ryanair and Wizz Air have called for an overhaul of Nats, with Wizz Air saying it was "not fit for purpose" in its current form.</p>
+            <span class="english-block">Ryanair and Wizz Air have called for an overhaul of Nats, with Wizz Air saying it was "not fit for purpose" in its current form.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">[vLLM Connection Error] When asked whether he was considering his position, Rolfe said there would be "lots of time for that later" but his focus now was on making sure the problem was solved.</p>
+            <span class="english-block">When asked whether he was considering his position, Rolfe said there would be "lots of time for that later" but his focus now was on making sure the problem was solved.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Alexander a déclaré qu'il faudrait du temps pour que les vols reprennent complètement, alors continuez à vérifier avec les compagnies aériennes.</p>
+            <span class="english-block">Alexander said that "it will take time to fully resume flights, so continue to check with airlines".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">[vLLM Connection Error] "I am seeking assurances that lessons will be learned and systems that support aviation are up to the job," she wrote on X.</p>
+            <span class="english-block">"I am seeking assurances that lessons will be learned and systems that support aviation are up to the job," she wrote on X.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">[vLLM Connection Error] Ryanair reported on Tuesday that more than 65,000 passengers had been delayed by up to eight hours.</p>
+            <span class="english-block">Ryanair reported on Tuesday that more than 65,000 passengers had been delayed by up to eight hours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">À Heathrow, l'un des aéroports les plus fréquentés d'Europe, les départs ont été initialement suspendus aux alentours de midi. Le trafic a ensuite repris, avant de connaître d'autres perturbations dans l'après-midi.</p>
+            <span class="english-block">At Heathrow, one of the busiest airports in Europe, departures were initially paused around lunchtime. Traffic then resumed, before facing further disruption in the afternoon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">On comprend que l'aéroport a été saturé en fin d'après-midi, les avions n'ayant pas décollé, ce qui a entraîné le redirigement de 13 vols destinés à Heathrow vers d'autres</p>
+            <span class="english-block">It is understood the airport ran out of space for incoming flights during the afternoon because planes had not been departing - 13 Heathrow-bound flights were diverted to other sites in the UK and Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Selon FlightRadar, les aéroports les plus touchés étaient Heathrow, Gatwick, Manchester et Birmingham.</p>
+            <span class="english-block">According to FlightRadar, the worst affected airports were Heathrow, Gatwick, Manchester and Birmingham.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Les passagers ont été conseillés de contacter leurs compagnies aériennes pour vérifier le statut de leurs vols.</p>
+            <span class="english-block">Passengers have been advised to contact their airlines to check the status of their flights.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">British Airways a déclaré s'attendre à des effets en chaîne.</p>
+            <span class="english-block">British Airways said it was anticipating knock-on effects.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Nous avons été contraints d'annuler ou de détourner plus de 100 vols mardi après-midi, a déclaré un porte-parole.</p>
+            <span class="english-block">"We were forced to cancel or divert more than 100 flights on Tuesday afternoon," a spokesperson said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">[vLLM Connection Error] "We're doing everything we can to keep our customers updated and make arrangements for them to continue their journeys.</p>
+            <span class="english-block">"We're doing everything we can to keep our customers updated and make arrangements for them to continue their journeys.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">[vLLM Connection Error] "We ask customers whose flights have been cancelled not to travel to the airport and to bear with us if they're trying to get in touch, as our call centres are incredibly busy at the moment."</p>
+            <span class="english-block">"We ask customers whose flights have been cancelled not to travel to the airport and to bear with us if they're trying to get in touch, as our call centres are incredibly busy at the moment."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Ryanair a déclaré que les passagers affectés seraient informés.</p>
+            <span class="english-block">Ryanair said affected passengers would be notified.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Phil White de Bexhill a déclaré à la BBC Your Voice que son vol pour Lanzarote avait embarqué à l'heure, mais qu'il avait été laissé assis sur le tarmac de Gatwick pendant des heures.</p>
+            <span class="english-block">Phil White from Bexhill told BBC Your Voice that his flight to Lanzarote boarded on time but he was left sitting on the tarmac at Gatwick for hours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">On nous a dit que le radar était en panne et qu'on ne pouvait pas décoller, a déclaré Phil</p>
+            <span class="english-block">"We've been told the radar is down and we can't take off," Phil said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">[vLLM Connection Error] "It's comfortable enough but the pilots been on every 20 minutes saying they are waiting for information from air traffic control and when he finds anything out he will let us know."</p>
+            <span class="english-block">"It's comfortable enough but the pilots been on every 20 minutes saying they are waiting for information from air traffic control and when he finds anything out he will let us know."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Phil White a été laissé assis dans un avion à Gatwick pendant des heures.</p>
+            <span class="english-block">Phil White was left sitting on a plane at Gatwick for hours</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Même si NATS a résolu le problème avec son système de traitement des vols, la perturbation risque de perdurer en raison des retards.</p>
+            <span class="english-block">Even if Nats has resolved the issue with its flight processing system, the disruption is likely to persist due to backlogs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Rolfe a déclaré que le problème était dans le système de traitement des données de vol de Nats. Il a indiqué qu'il ne s'agissait pas du même système qui avait échoué lors de l'incident en 2023.</p>
+            <span class="english-block">Rolfe said the issue was in Nats' flight data processing system. He said it was not the same system that failed during the incident in 2023.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">[vLLM Connection Error] Although the technical issue affected departures, arrivals were also hit as space on the ground became increasingly restricted.</p>
+            <span class="english-block">Although the technical issue affected departures, arrivals were also hit as space on the ground became increasingly restricted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Vos projets de voyage ont-ils été perturbés ? Partagez votre expérience.</p>
+            <span class="english-block">Have your travel plans been disrupted? Share your experience.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
