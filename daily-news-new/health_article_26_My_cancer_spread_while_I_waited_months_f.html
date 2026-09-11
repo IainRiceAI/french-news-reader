@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'My cancer spread while I waited months for surgery': The cost of England's cancer wait times</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>'My cancer spread while I waited months for surgery': The cost of England's cancer wait times</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 10 Sep 2026 09:31:16 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c93vderdkyvo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Cancer care has got worse since the government announced plans to speed up waiting times and save more lives, BBC analysis shows.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.95" data-end="14.26">
+            <p class="french-block">Alan est l'un des milliers de personnes qui ne sont pas traitées dans le délai prévu pour le cancer.</p>
+            <span class="english-block">Alan is one of thousands each month who are not being treated within the cancer target timeframe</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.26" data-end="20.74">
+            <p class="french-block">Alan a été diagnostiqué avec un cancer du poumon après avoir trouvé un nodule en juin de l'année dernière.</p>
+            <span class="english-block">Alan was diagnosed with lung cancer after a nodule was found in June last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.74" data-end="31.18">
+            <p class="french-block">L'opération devait avoir lieu en quelques semaines, mais il a dû attendre près de cinq mois, au cours duquel le cancer s'était propagé, ce qui a rendu sa chirurgie plus complexe.</p>
+            <span class="english-block">The 70-year-old was meant to be operated on within weeks but ended up waiting nearly five months, by which time the cancer had spread, making his surgery more complex.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.18" data-end="37.9">
+            <p class="french-block">"J'étais tellement frustré et en colère que je ne comprenais pas pourquoi ils m'avaient abandonné comme ça", dit Alan.</p>
+            <span class="english-block">"I was so frustrated and angry and couldn't understand why they would leave me like that," says Alan.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.9" data-end="49.01">
+            <p class="french-block">À deux reprises, les scans ont été annulés parce que les machines avaient été cassées et pendant des semaines, il a entendu peu ou rien de l'hôpital sur le moment où il allait subir une opération urgente.</p>
+            <span class="english-block">On two occasions, scans were cancelled because machines had broken and for weeks he heard little or nothing from the hospital about when he would eventually have the urgent surgery.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.01" data-end="54.26">
+            <p class="french-block">Alan est l'un des milliers de personnes qui ne reçoivent pas de traitement chaque mois en Angleterre.</p>
+            <span class="english-block">Alan is one of thousands each month in England who are not being treated within the target timeframe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.26" data-end="71.06">
+            <p class="french-block">Plus tôt cette année, le plan national du cancer du gouvernement, ainsi que les directives de planification du NHS, ont indiqué que 80% des patients en Angleterre commenceraient le traitement dans les 62 jours suivant la référence d'urgence du médecin généraliste d'ici mars 2027.</p>
+            <span class="english-block">Earlier this year, the government's National Cancer Plan, along with the NHS Planning Guidance, set out that 80% of patients in England would start treatment within 62 days from urgent GP referral by March 2027. This was to reach 85% by March 2029.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.06" data-end="79.61">
+            <p class="french-block">Mais depuis que le gouvernement a annoncé cette ambition, les performances ont empiré, selon les données du NHS en Angleterre, pas mieux.</p>
+            <span class="english-block">But in the months since the government announced this ambition, performance has got worse, according to NHS England data, not better.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.61" data-end="86.42">
+            <p class="french-block">Maintenant, 71,2% des patients commencent le traitement du cancer dans les 62 jours.</p>
+            <span class="english-block">Now, 71.2% of patients start cancer treatment within the 62 day timeframe. Previously it was 71.9%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.42" data-end="99.31">
+            <p class="french-block">Le professeur Pat Price, oncologue clinique universitaire britannique, dit que les objectifs du gouvernement "sont désormais tout simplement impossibles à atteindre", après ce qu'elle décrit comme une "perte complète de dynamique".</p>
+            <span class="english-block">Prof Pat Price, a leading UK clinical academic oncologist, says the government targets "are now simply impossible to hit", after what she describes as a "complete loss of momentum".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.31" data-end="105.02">
+            <p class="french-block">Price attribue les échecs actuels à un " manque total de plan ou de responsabilité ".</p>
+            <span class="english-block">Price attributes the current failures to a "complete lack of a plan or accountability".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.02" data-end="112.56">
+            <p class="french-block">Le plan prévoyait la création d'un nouveau conseil indépendant chargé du cancer, mais on ne sait toujours pas qui dirigera ce groupe.</p>
+            <span class="english-block">The plan stated that a new independent cancer board would be established, but it is still not known who will be leading this group.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.56" data-end="127.1">
+            <p class="french-block">Les données du NHS publiées jeudi pour juillet révèlent que 10 des 120 trusts hospitaliers en Angleterre ont réussi à obtenir 85% des patients à commencer le traitement dans les 62 ans suivant leur référencement urgent par un médecin généraliste.</p>
+            <span class="english-block">NHS data released on Thursday, for July, reveals 10 out of 120 hospital trusts in England managed to get 85% of patients to start treatment within 62 of their urgent referral by a GP.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.1" data-end="144.07">
+            <p class="french-block">L'analyse de radiothérapie au Royaume-Uni, partagée exclusivement avec la BBC, suggère que plus de 2 800 patients supplémentaires devraient commencer le traitement chaque mois - une augmentation de près de 15% par rapport aux chiffres actuels - pour atteindre l'objectif de mars 2027.</p>
+            <span class="english-block">Radiotherapy UK analysis, shared exclusively with the BBC, suggests more than 2,800 extra patients would need to start treatment every month - a near 15% increase on current numbers - to achieve the March 2027 target.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.07" data-end="150.41">
+            <p class="french-block">Cela va probablement augmenter à mesure que les références augmentent dans presque tous les types de cancer.</p>
+            <span class="english-block">That is likely to grow as referrals keep rising across nearly every cancer type.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.41" data-end="158.54">
+            <p class="french-block">Price dit que des milliers de patients " vont mourir inutilement, juste parce que le gouvernement ne peut pas se mettre en place pour traiter les gens à temps ".</p>
+            <span class="english-block">Price says thousands of patients "are going to die unnecessarily, just because the government can't get their act together to treat people on time".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.54" data-end="166.94">
+            <p class="french-block">Pour chaque mois qu'un patient atteint de cancer attend avant de commencer le traitement, sa chance de survie diminue d'environ 10%, en moyenne.</p>
+            <span class="english-block">For every month a cancer patient waits before starting treatment, their chance of survival falls by around 10%, on average.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.94" data-end="176.59">
+            <p class="french-block">Au moment de l'opération, le cancer s'était propagé aux ganglions lymphatiques et le ganglion " avait augmenté à un rythme alarmant ", selon le spécialiste du poumon.</p>
+            <span class="english-block">By the time Alan had his operation, the cancer had spread to his lymph nodes and the nodule "had grown at an alarming rate", according to the lung specialist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.59" data-end="188.59">
+            <p class="french-block">On lui a dit depuis que le cancer avait disparu en attendant son examen d'un an, mais l'opération l'a laissé dans une douleur débilitante. " J'avais l'habitude de jouer au golf et de sortir et de sortir.</p>
+            <span class="english-block">He has since been told the cancer has cleared awaiting his one-year review, but the operation has left him in debilitating pain. "I used to play golf and get out and about. Now I can't do any of the things I love," says Alan.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.59" data-end="198.05">
+            <p class="french-block">Environ 54 000 patients supplémentaires devront commencer le traitement dans les 62 jours avant 2029 pour que le gouvernement atteigne son objectif.</p>
+            <span class="english-block">Roughly 54,000 more patients will need to start treatment within 62 days before 2029 for the government to hit its goal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.05" data-end="206.69">
+            <p class="french-block">Une fiducie du NHS qui gagne en popularité sur ses numéros de liste d'attente est Salisbury, mais elle ne parvient toujours pas à atteindre ses cibles.</p>
+            <span class="english-block">One NHS trust that is gaining traction on its waiting list numbers is Salisbury, but it is still not hitting targets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.69" data-end="224.95">
+            <p class="french-block">Le personnel dit qu'il n'y a pas de solution unique, juste un accent incessant sur la bonne mise en place des bases; s'assurer que les patients connaissent leurs rendez-vous et se présentent, maintenir les systèmes informatiques en marche, recruter les bonnes personnes, s'assurer que les listes chirurgicales sont pleines et augmenter la capacité.</p>
+            <span class="english-block">Staff say there is no single fix, just a relentless focus on getting the basics right; making sure patients know about their appointments and turn up, keeping IT systems working, recruiting the right people, making sure surgical lists are full and expanding capacity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="224.95" data-end="233.04">
+            <p class="french-block">Une grande partie des progrès visibles ont été réalisés par le cancer de la peau et de la prostate, deux des cancers les plus courants dans le pays.</p>
+            <span class="english-block">Much of the visible progress has come through skin and prostate cancer, two of the most common cancers in the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.04" data-end="246.65">
+            <p class="french-block">Diane a été enlevée d'un bloc cancéreux de son visage à l'hôpital de district de Salisbury il y a quelques semaines, en utilisant une procédure innovante, qui vérifie les marges tumorales sont claires pendant que le patient est encore en chirurgie.</p>
+            <span class="english-block">Diane had a cancerous lump removed from her face at Salisbury District Hospital a few weeks ago, using an innovative procedure, which checks tumour margins are clear while the patient is still in surgery.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="246.65" data-end="252.67">
+            <p class="french-block">Cela signifie qu'il n'y a pas de suivi et permet une reconstruction complexe qui laisse à peine une trace.</p>
+            <span class="english-block">That means no follow-up operations, and it allows for complex reconstruction that leaves hardly a trace.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="252.67" data-end="260.88">
+            <p class="french-block">"C'est incroyable, vous ne pouvez pas voir que j'ai eu une grosse lésion cancéreuse enlevée de ma joue", dit-elle à la BBC dans la salle d'attente.</p>
+            <span class="english-block">"It's amazing, you literally can't see I had a large cancerous lesion removed from my cheek," she tells the BBC in the waiting room.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.88" data-end="271.8">
+            <p class="french-block">Le chirurgien plasticien consultant Neil Wickham a vérifié son visage, confirmé une masse biopsie sur son bras était bénigne, et l'a renvoyée à l'ENT pour une masse séparée dans son cou.</p>
+            <span class="english-block">Consultant plastic surgeon Neil Wickham checked her face, confirmed a biopsied lump on her arm was benign, and referred her to ENT for a separate lump in her neck.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.8" data-end="279.0">
+            <p class="french-block">C'est le genre de soins combinés que le plan du cancer du gouvernement devait déclencher dans les unités de cancer en Angleterre.</p>
+            <span class="english-block">It is the kind of joined-up care the government's Cancer Plan was meant to trigger in cancer units across England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.0" data-end="285.26">
+            <p class="french-block">Diane a bénéficié d'une procédure novatrice lorsqu'on lui a retiré une tumeur cancéreuse de son visage.</p>
+            <span class="english-block">Diane benefited from an innovative procedure when she had a cancerous lump removed from her face</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.26" data-end="291.65">
+            <p class="french-block">Mais en pathologie à la fiducie de Salisbury, le chef du département Lee Phillips ressent la pression.</p>
+            <span class="english-block">But over in pathology at the Salisbury trust, head of department Lee Phillips is feeling the pressure. His histology lab receives cancer service biopsies from across the hospital for diagnosis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.65" data-end="296.33">
+            <p class="french-block">"Le nombre d'échantillons que nous avons est notre problème", dit- il.</p>
+            <span class="english-block">"The sheer volume of specimens we have coming in is our problem," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="296.33" data-end="302.59">
+            <p class="french-block">"Nous avons besoin de plus de personnel et de plus de matériel pour répondre à la demande", dit Phillips.</p>
+            <span class="english-block">"We need more staff and more kit if we're going to keep up with demand," Phillips says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="302.59" data-end="314.78">
+            <p class="french-block">Comme beaucoup de fidèles, Salisbury n'a pas de machine sur place, de sorte que les patients ayant besoin de séances quotidiennes sur une à trois semaines doivent se rendre jusqu'à une heure à Southampton, et parfois à Bath.</p>
+            <span class="english-block">Radiotherapy is another bottleneck crying out for staff and kit. Like many trusts, Salisbury has no machine on site, so patients needing daily sessions over one to three weeks must travel up to an hour to Southampton, and sometimes Bath.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.78" data-end="327.24">
+            <p class="french-block">Mais le personnel de Salisbury dit aussi que les rendez-vous manqués, que ce soit à cause de lettres tardives, de maladies, de problèmes de transport ou d'anxiété, sont une épuisement constant sur un système déjà épuisé.</p>
+            <span class="english-block">But staff in Salisbury also say missed appointments, whether down to late letters, illness, transport problems or anxiety, are a constant drain on a system already stretched thin.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.24" data-end="335.33">
+            <p class="french-block">Emilia Scutt, gérante du cancer à Salisbury, dit que les efforts visant à réduire les rendez-vous manqués ont vraiment aidé leur nombre.</p>
+            <span class="english-block">Emilia Scutt, cancer manager in Salisbury, says that efforts to reduce missed appointments have really helped their numbers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.33" data-end="344.45">
+            <p class="french-block">"Nous savons que le cancer peut être terrifiant, alors nous sommes un peu comme un chien avec un os, soutenant les patients et les soutenir partout où nous le pouvons".</p>
+            <span class="english-block">"We know cancer can be terrifying so we are a bit like a dog with the bone, backing up patients and supporting them wherever we can."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="344.45" data-end="362.21">
+            <p class="french-block">Les fiducies qui ont connu les plus fortes baisses de leurs performances - y compris Buckinghamshire Healthcare, Bolton NHS Foundation Trust, Royal Devon University Healthcare Trust, East Cheshire, Torbay et South Devon - ont déclaré à la BBC qu'elles étaient confrontées à des pressions dans tous les domaines.</p>
+            <span class="english-block">Trusts with the sharpest declines in performance - including Buckinghamshire Healthcare, Bolton NHS Foundation Trust, Royal Devon University Healthcare Trust, East Cheshire, and Torbay and South Devon - told the BBC they face pressures across the board. Rising demand, workforce shortages and diagnostic bottlenecks have all played a part.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.21" data-end="373.3">
+            <p class="french-block">Certains ont souligné l'action industrielle et la maladie du personnel, d'autres la dépendance à l'égard de fournisseurs externes de diagnostic ou des changements majeurs dans le fonctionnement de leurs systèmes.</p>
+            <span class="english-block">Some pointed to industrial action and staff sickness, others to reliance on outside diagnostic providers or major changes to how their systems work. All say they are investing in extra capacity, working through backlogs and redesigning pathways, and are already seeing early signs of improvement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="373.3" data-end="385.63">
+            <p class="french-block">"Si le gouvernement est sérieux à l'égard de la réalisation des ambitions du Plan national du cancer pour l'Angleterre, il doit être aussi urgent que l'ambition", a déclaré Steve Haines, du Macmillan Cancer Support.</p>
+            <span class="english-block">"If government is serious about delivering on the ambitions of the National Cancer Plan for England, it must match ambition with urgency," said Steve Haines of Macmillan Cancer Support.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="385.63" data-end="396.94">
+            <p class="french-block">Il a déclaré que des " progrès visibles " étaient nécessaires sur la promesse de créer un Conseil national du cancer pour superviser les progrès réalisés en matière d'amélioration des temps d'attente et de traitement.</p>
+            <span class="english-block">He said that "visible progress" was needed on a promise to set up a National Cancer Board to oversee progress on improving waiting times and treatment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.94" data-end="407.35">
+            <p class="french-block">Un porte-parole du ministère de la Santé et des Soins sociaux a déclaré que "les temps d'attente pour le cancer vont dans la bonne direction et que les trois taux de cancer seront meilleurs qu'il y a un an".</p>
+            <span class="english-block">A Department of Health and Social Care spokesperson says "cancer waiting times are moving in the right direction will all three cancer standards better than a year ago".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="407.35" data-end="415.32">
+            <p class="french-block">Ils reconnaissent qu'"il y a encore plus à faire" et que le plan "aidera les gens à être diagnostiqués plus tôt et à commencer le traitement plus tôt".</p>
+            <span class="english-block">They concede that "there is more to do," and that the plan "will help people get diagnosed earlier and begin treatment sooner."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="415.32" data-end="419.35">
+            <p class="french-block">Rapport supplémentaire de Daniel Wainwright et Jess Carr</p>
+            <span class="english-block">Additional reporting Daniel Wainwright and Jess Carr</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="419.35" data-end="424.37">
+            <p class="french-block">Vous attendez plus de 62 jours avant le début de votre traitement du cancer ?</p>
+            <span class="english-block">Are you waiting longer than 62 days for your cancer treatment to begin?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="424.37" data-end="429.22">
+            <p class="french-block">"Les dangereuses longues attentes du cancer me mettent constamment à l'épreuve"</p>
+            <span class="english-block">'Dangerously long cancer waits have me constantly on a knife-edge'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="429.22" data-end="434.28">
+            <p class="french-block">Découvrez comment votre hôpital local se porte sur les attentes de cancer</p>
+            <span class="english-block">Find out how your local hospital is doing on cancer waits</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="434.28" data-end="440.76">
+            <p class="french-block">"Inacceptable" attend le traitement et le diagnostic du cancer, dit l'organisme de bienfaisance</p>
+            <span class="english-block">'Unacceptable' waits for cancer treatment and diagnosis, says charity</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_26.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
