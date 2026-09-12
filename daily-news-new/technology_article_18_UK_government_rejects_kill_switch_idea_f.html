@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK government rejects 'kill switch' idea for dangerous AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>UK government rejects 'kill switch' idea for dangerous AI</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 11 Sep 2026 15:07:07 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c3eq7kl5l00o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The Cabinet Office, which leads on AI safety, says the UK "cannot simply turn AI off".
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.78" data-end="15.55">
+            <p class="french-block">Le gouvernement britannique a rejeté l'idée de créer un soi-disant "switch de destruction" pour arrêter une attaque dangereuse de l'IA.</p>
+            <span class="english-block">The UK government has rejected the idea of creating a so-called "kill switch" to stop a dangerous attack from rogue AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.55" data-end="29.88">
+            <p class="french-block">La proposition de créer un mécanisme juridique pour que le Royaume-Uni désactive un modèle d'IA en cas d'urgence a été présentée au Parlement par les seigneurs et les députés ces dernières semaines, alors que les craintes croissent quant à la menace que la technologie représente.</p>
+            <span class="english-block">The proposal to create a legal mechanism for the UK to switch off an AI model in an emergency has been brought to Parliament by lords and MPs in recent weeks as fears grow about the threat the tech poses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.88" data-end="39.5">
+            <p class="french-block">Mais le Cabinet Office - la partie du gouvernement qui est à la tête de la sécurité de l'IA - a déclaré que le Royaume-Uni " ne peut pas simplement désactiver l'IA ".</p>
+            <span class="english-block">But the Cabinet Office - the part of government which leads on AI safety - said the UK "cannot simply turn AI off".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.5" data-end="48.62">
+            <p class="french-block">" Bloquer l'accès aux modèles au Royaume-Uni ne permettrait pas qu'ils soient développés ou utilisés à mauvais escient ailleurs ", a déclaré un porte-parole à BBC News.</p>
+            <span class="english-block">"Blocking access to models in the UK would not prevent them being developed or misused elsewhere", a spokesperson told BBC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="48.62" data-end="55.63">
+            <p class="french-block">L'opposition du gouvernement à la loi n'empêche pas son passage au Parlement, mais elle rend peu probable qu'elle devienne loi.</p>
+            <span class="english-block">The government's opposition to the legislation does not prevent it from progressing through parliament, but makes it unlikely it will become law.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.63" data-end="66.41">
+            <p class="french-block">L'ancien chercheur d'OpenAI, Daniel Kokotajlo, a convenu que l'idée d'un seul pays créant un switch de destruction juridique ou technique sans accord international n'était pas réalisable.</p>
+            <span class="english-block">Former OpenAI researcher Daniel Kokotajlo agreed the idea of a single country creating a legal or technical kill switch without international agreement was not feasible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.41" data-end="72.5">
+            <p class="french-block">"Switching off l'accès à un modèle d'IA en cas d'urgence fera peu pour vous protéger", a-t-il dit.</p>
+            <span class="english-block">"Switching off access to an AI model in an emergency will do little to protect you," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.5" data-end="77.54">
+            <p class="french-block">"Vous allez toujours être manipulé par les super-intelligences créées aux États-Unis".</p>
+            <span class="english-block">"You're still going to be steamrolled by the super intelligences created in the US."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.54" data-end="88.61">
+            <p class="french-block">Kokotajlo est co-auteur d'un document de recherche influent appelé AI2027 qui, l'année dernière, prédisait que l'IA pourrait anéantir les humains d'ici le milieu des années 2030.</p>
+            <span class="english-block">Kokotajlo is the co-author of an influential research paper called AI2027 which, last year, predicted AI could wipe out humans by the mid 2030s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.61" data-end="106.46">
+            <p class="french-block">Le Cabinet Office, qui supervise la sécurité et la recherche sur l'IA via son Institut de sécurité sur l'IA (AISI), a déclaré que "les entreprises ont une responsabilité claire de développer leurs produits en toute sécurité et d'investir dans les infrastructures de sécurité requises par cette technologie".</p>
+            <span class="english-block">The Cabinet Office, which oversees AI safety and research via its AI Security Institute (AISI) said "companies have a clear responsibility to develop their products safely and to invest in the security infrastructure this technology requires."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.46" data-end="115.97">
+            <p class="french-block">En théorie, une loi sur le commutateur de destruction pourrait permettre au Royaume-Uni de désactiver un modèle d'IA dans les centres de données au Royaume-Uni en cas d'urgence.</p>
+            <span class="english-block">In theory, a kill switch law could allow the UK to switch off an AI model in data centres in the UK in an emergency.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.97" data-end="123.43">
+            <p class="french-block">S'exprimant le 1er septembre lors d'un débat à la Chambre des Lords, Lord Clement-Jones a proposé l'idée avec d'autres pairs.</p>
+            <span class="english-block">Speaking on 1 September in a debate in the House of Lords, Lord Clement-Jones proposed the idea along with other peers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.43" data-end="147.62">
+            <p class="french-block">"Si un modèle autonome de frontière hautement capable, qu'il soit hébergé dans un centre de données britannique ou intégré à notre infrastructure critique, commence à présenter un comportement déloyal, une défaillance algorithmique composée ou un effondrement de l'alignement actif, nos services de sécurité et nos régulateurs n'ont aucun mécanisme légal agile spécifique pour forcer une fermeture physique ou numérique", a-t-il averti.</p>
+            <span class="english-block">"If a highly capable autonomous frontier model, whether hosted in a UK data centre or integrated across our critical infrastructure, begins exhibiting rogue behaviour, compound algorithmic failure or active alignment collapse, our security services and regulators possess no specific agile statutory mechanism to compel a physical or digital shutdown," he warned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.62" data-end="156.05">
+            <p class="french-block">La proposition a depuis été soulevée par le député travailliste Alex Sobel au Parlement commun et soutenue par un groupe de députés interpartis.</p>
+            <span class="english-block">The proposal has since been brought up by Labour MP Alex Sobel in the commons and supported by a cross party group of MPs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.05" data-end="165.05">
+            <p class="french-block">L'idée suit les rapports de modèles d'IA d'OpenAI, Anthropic et Meta qui sortent des environnements de test et se lancent dans des attaques de piratage incontrôlables.</p>
+            <span class="english-block">The idea follows reports of AI models from OpenAI, Anthropic and Meta breaking out of testing environments and going on uncontrollable hacking sprees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.05" data-end="171.31">
+            <p class="french-block">Dans certains cas, la technologie semblait savoir ce qu'elle faisait contre les barreaux placés par les chercheurs.</p>
+            <span class="english-block">In some cases the tech appeared to know what it was doing was against guardrails set by researchers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.31" data-end="182.04">
+            <p class="french-block">Le dimanche, le scientifique en chef d'OpenAI a déclaré que le risque des modèles d'IA de plus en plus capables " augmentait malheureusement " et que l'humanité devait procéder avec " extrême prudence ".</p>
+            <span class="english-block">On Sunday OpenAI's chief scientist said the risk from increasingly capable AI models is "unfortunately growing" and humanity must proceed with "extreme caution".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="182.04" data-end="188.66">
+            <p class="french-block">Puis, mercredi, un employé d'Anthropic a démissionné en disant que OpenAI "jouait avec des vies".</p>
+            <span class="english-block">Then on Wednesday an Anthropic employee resigned saying it and OpenAI were "gambling with lives".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.66" data-end="199.27">
+            <p class="french-block">Cela a été suivi d'une admission d'un chercheur senior en Anthropic, qui a déclaré qu'il croyait qu'il y avait plus de 10% de chances que l'IA " tuerait tous les humains " dans la prochaine décennie.</p>
+            <span class="english-block">This was followed by an admission from a senior Anthropic researcher, who said he believes there is a greater than 10% chance AI will "kill all humans" within the next decade.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.27" data-end="210.38">
+            <p class="french-block">Les critiques de l'idée de l'interrupteur de tuerie disent que ce serait trop lent - il a fallu des mois pour que les attaques d'agents malhonnêtes soient découvertes et ce n'est que après que les piratages aient été largement terminés.</p>
+            <span class="english-block">Critics of the kill switch idea say it would be too slow - it took months for the rogue agent attacks to be discovered and that was only after the hacks had largely concluded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.38" data-end="222.31">
+            <p class="french-block">Pour que la mise en œuvre d'un switch de destruction soit possible, les géants de la technologie devront être contraints de le faire à grande échelle, en particulier aux États-Unis, où se trouvent les plus grands centres de données.</p>
+            <span class="english-block">For a kill switch to work, tech giants would have to be compelled to do it at scale - especially in the US where the largest data centres are based.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.31" data-end="237.86">
+            <p class="french-block">Kokotajlo a déclaré que les commutateurs de destruction étaient " meilleurs que rien ", mais a exhorté les politiciens au Royaume-Uni et au-delà à se concentrer sur la diplomatie avec les États-Unis afin d'encourager une réglementation qui ralentirait significativement le développement de l'IA.</p>
+            <span class="english-block">Kokotajlo said kill switches were "better than nothing", but urged politicians in the UK and beyond to instead focus on diplomacy with the US to encourage regulation that would meaningfully slow down development of AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.86" data-end="251.02">
+            <p class="french-block">Une loi sur le switch de mort est également débattue par les politiciens américains, mais le président Trump a déclaré qu'il ne croyait pas que la technologie était une menace pour les humains - au lieu de cela, il a appelé l'industrie une "oie d'or".</p>
+            <span class="english-block">A kill switch act is also being debated by US politicians but President Trump has said he does not believe the technology is a threat to humans - instead calling the industry a "golden goose".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="251.02" data-end="260.78">
+            <p class="french-block">Le Cabinet Office a déclaré qu'il continuait à adopter "une approche à long terme, guidée par la science, pour comprendre et se préparer aux risques émergents de l'IA".</p>
+            <span class="english-block">The Cabinet Office said it was continuing to take "a long-term, science-led approach to understand and prepare for emerging risks from AI."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.78" data-end="266.21">
+            <p class="french-block">Les blocs anthropologiques tentent d'utiliser l'IA pour fabriquer des armes biologiques</p>
+            <span class="english-block">Anthropic blocks possible attempt to use AI to make biological weapons</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="266.21" data-end="270.58">
+            <p class="french-block">Pourquoi certains experts craignent de plus en plus que l'IA prenne le relais</p>
+            <span class="english-block">Why some experts increasingly fear AI will take over</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.58" data-end="273.48">
+            <p class="french-block">Qu'est-ce que l'IA et comment fonctionne-t-elle ?</p>
+            <span class="english-block">What is AI and how does it work?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_18.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

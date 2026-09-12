@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is a September heatwave forecast for the UK?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Is a September heatwave forecast for the UK?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 11 Sep 2026 23:41:50 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/c70l8vgk4vzo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Temperatures will return to summerlike levels over the weekend, despite some heavy rain.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.48" data-end="13.37">
+            <p class="french-block">Les températures devraient augmenter ce week-end, atteignant des niveaux semblables à ceux de l'été dans certains endroits.</p>
+            <span class="english-block">Temperatures are set to climb across the UK this weekend, reaching summerlike levels in some places.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.37" data-end="20.02">
+            <p class="french-block">Il fera chaud et mouillé, surtout quand il y aura de la lumière, bien que la pluie forte soit également prévue.</p>
+            <span class="english-block">It will feel warm and muggy - especially where there are sunny spells - although heavy rain also features in the forecast.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.02" data-end="30.12">
+            <p class="french-block">La chaleur persistera jusqu'au lundi dans de nombreuses régions, mais aucune ne devrait atteindre les critères d'une vague de chaleur et les conditions plus fraîches devraient revenir d'ici la mi-semaine.</p>
+            <span class="english-block">The warmth will persist into Monday in many areas but nowhere is expected to reach heatwave criteria and cooler conditions are due to return by midweek.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.12" data-end="42.89">
+            <p class="french-block">Les modèles météorologiques informatiques présentent une image très mixte pour la seconde moitié de septembre, mais, bien qu'il y ait probablement des périodes chaudes, il n'y a actuellement aucun signe définitif d'une vague de chaleur.</p>
+            <span class="english-block">Computer weather models paint a very mixed picture for the second half of September but, while there are likely to be some warm spells, there are currently no definitive signs of a heatwave.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.89" data-end="55.44">
+            <p class="french-block">Les épidémies de pluie se propageront vers le sud samedi, en partant de l'Écosse et de l'Irlande du Nord, mais se poursuivront jusqu'à l'après-midi dans certaines parties du nord de l'Angleterre, du Pays de Galles et des Midlands.</p>
+            <span class="english-block">Outbreaks of rain will spread southwards during Saturday, clearing from Scotland and Northern Ireland but continuing into the afternoon across parts of northern England, Wales and the Midlands.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.44" data-end="62.3">
+            <p class="french-block">Une partie de la pluie pourrait être lourde avec une chance de tonnerre et de foudre et sera accompagnée de vents forts du sud-ouest.</p>
+            <span class="english-block">Some of the rain could be heavy with a chance of thunder and lightning and will be accompanied by brisk south-westerly winds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.3" data-end="76.32">
+            <p class="french-block">Les régions du sud de l'Angleterre devraient rester largement sèches avec des intervalles ensoleillés et il sera particulièrement chaud et humide avec des températures qui atteindront le milieu des années 20 Celsius - plusieurs degrés au-dessus de la moyenne de septembre.</p>
+            <span class="english-block">Southern parts of England should stay largely dry with sunny intervals and it will feel particularly warm and humid with temperatures climbing into the mid-20s Celsius - several degrees above the September average.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.32" data-end="85.18">
+            <p class="french-block">Les températures typiques de mi-septembre vont de 14°C dans le nord de l'Écosse à 19°C dans le sud-est de l'Angleterre</p>
+            <span class="english-block">Typical mid-September temperatures range from 14C in northern Scotland to 19C in south-east England</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.18" data-end="96.22">
+            <p class="french-block">Le dimanche, la pluie peut persister un certain temps dans le sud de l'Angleterre, mais devrait laisser une après-midi sèche pour une grande partie du Royaume-Uni avec des saisons ensoleillées et des vents légers.</p>
+            <span class="english-block">On Sunday, rain may linger for a while in southern England but should clear to leave a dry afternoon for much of the UK with sunny spells and light winds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.22" data-end="102.62">
+            <p class="french-block">Les températures pourraient baisser légèrement dans la moitié nord du pays, mais augmenter un peu plus au sud.</p>
+            <span class="english-block">Temperatures may drop slightly in the northern half of the country but rise a little further south. Parts of Wales, the Midlands and southern England could reach 23-25C.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.62" data-end="115.18">
+            <p class="french-block">Lundi pourrait être encore plus chaud avec des sommets de 22-26 °C dans une grande partie de l'Angleterre et du Pays de Galles, et 20 °C probablement dans certaines parties de l'Écosse et de l'Irlande du Nord.</p>
+            <span class="english-block">Monday could be even warmer with highs of 22-26C across much of England and Wales, and 20C likely in parts of Scotland and Northern Ireland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.18" data-end="122.59">
+            <p class="french-block">Cependant, bien que cela se sentira sans aucun doute chaud, il restera en dessous des critères d'une vague de chaleur.</p>
+            <span class="english-block">However, while this will undoubtedly feel warm, it will remain below the criteria for a heatwave.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.59" data-end="133.27">
+            <p class="french-block">Il faudrait donc que les températures dépassent trois jours consécutifs un seuil qui varie de 25°C en Écosse et en Irlande du Nord à 28°C dans la région de Londres.</p>
+            <span class="english-block">This would require three consecutive days of temperatures above a threshold which varies from 25C in Scotland and Northern Ireland to 28C in the London area.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.27" data-end="139.37">
+            <p class="french-block">Les modèles informatiques suggèrent que la météo perturbée se poursuivra pendant la semaine prochaine.</p>
+            <span class="english-block">Computer models currently suggest unsettled weather will continue over the next week or so.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.37" data-end="148.92">
+            <p class="french-block">Le jet stream devrait apporter des zones à basse pression à travers le Royaume-Uni, ce qui signifie des périodes de pluie et, potentiellement, des vents plutôt violents.</p>
+            <span class="english-block">The jet stream is expected to bring areas of low pressure across the UK - meaning spells of rain and, potentially, some rather blustery winds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.92" data-end="156.77">
+            <p class="french-block">La perspective d'un temps humide sera bienvenue pour les grandes régions de l'Angleterre et du Pays de Galles qui restent en situation de sécheresse.</p>
+            <span class="english-block">The prospect of wet weather will be welcome for the large swathes of England and Wales that remain in drought.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.77" data-end="168.12">
+            <p class="french-block">Plus tard dans le mois, les zones à haute pression peuvent avoir une plus grande influence sur la météo, ce qui signifierait des interludes plus longues et des températures supérieures à la moyenne pendant la journée.</p>
+            <span class="english-block">Later in the month, areas of high pressure may have more influence on the weather which would mean longer dry interludes and the chance of above-average daytime temperatures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="168.12" data-end="176.71">
+            <p class="french-block">Bien que les prévisions à long terme soient incertaines et que les détails soient susceptibles de changer, rien ne montre actuellement qu'une vague de chaleur est en jeu.</p>
+            <span class="english-block">While long-range forecasting is fraught with uncertainty and details are subject to change, there is currently nothing to indicate that a heatwave is on the cards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.71" data-end="184.3">
+            <p class="french-block">En effet, à mesure que l'automne avance et que les nuits s'allongent, la pression élevée peut conduire à des matinées plutôt froides.</p>
+            <span class="english-block">Indeed, as autumn advances and the nights become longer, high pressure overhead could lead to some rather chilly mornings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.3" data-end="190.68">
+            <p class="french-block">Vous pouvez surveiller les températures de votre lieu en consultant la BBC Weather en ligne et l'application.</p>
+            <span class="english-block">You can keep an eye on the temperatures where you are by checking BBC Weather online and the app.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.68" data-end="195.53">
+            <p class="french-block">Le printemps d'El Niño sera probablement plus humide et plus chaud que d'habitude</p>
+            <span class="english-block">El Niño likely to cause wetter and warmer-than-normal autumn</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.53" data-end="201.62">
+            <p class="french-block">Le nouveau record de la saison des ouragans comme "historique" El Niño laisse l'Atlantique effrayant calme</p>
+            <span class="english-block">New hurricane season record as 'historic' El Niño leaves Atlantic eerily quiet</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.62" data-end="206.86">
+            <p class="french-block">L'été 2026 a été le plus chaud du Royaume-Uni, selon le Met Office.</p>
+            <span class="english-block">Summer 2026 was UK's hottest on record, Met Office says</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_7.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

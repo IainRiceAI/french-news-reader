@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle to save the tiny, gooey snail only found in one lake in the UK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Battle to save the tiny, gooey snail only found in one lake in the UK</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 11 Sep 2026 21:38:15 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c1j4ngr05l8o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Once prevalent across the UK, this mollusc is now only found in one lake in Wales.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.5" data-end="15.14">
+            <p class="french-block">L'escargot glutenus était autrefois répandu au Royaume-Uni, mais il ne se trouve maintenant qu'un seul lac gallois.</p>
+            <span class="english-block">The glutinous snail was once widespread in the UK, but is now only found in one Welsh lake</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.14" data-end="24.72">
+            <p class="french-block">Une minuscule caravane trouvée dans un seul lac au Royaume-Uni a été qualifiée de précieuse comme un artefact égyptien, alors que les conservateurs tentent de la sauver.</p>
+            <span class="english-block">A tiny snail found in only one lake in the UK has been dubbed as precious as an Egyptian artefact as conservationists bid to save it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.72" data-end="36.1">
+            <p class="french-block">Plusieurs zoos britanniques mettent en place des populations de ce qu'on appelle des arches de l'escargot glutinous, une des espèces les plus rares d'Europe, en utilisant des créatures élevées dans un jardin de Ceredigion.</p>
+            <span class="english-block">Several British zoos are setting up so-called ark populations of the glutinous snail, one of Europe's rarest species, using creatures bred in a back garden in Ceredigion.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.1" data-end="47.16">
+            <p class="french-block">"Méprisé par leur gentillesse", le conservateur Ian Hughes a fait de sa mission "d'une importance capitale" la protection du mollusque menacé, qui était autrefois répandu dans les eaux britanniques.</p>
+            <span class="english-block">"Beguiled by their cuteness," conservationist Ian Hughes has made it his "life-defining" mission to protect the threatened mollusc, which was once widespread in UK waters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.16" data-end="54.22">
+            <p class="french-block">"Il y avait un moment où nous avions plus d'escargots dans notre jardin que jamais auparavant dans la nature", a- t- il dit.</p>
+            <span class="english-block">"There was a point where we'd got more snails in our garden than have ever been seen in the wild," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.22" data-end="59.18">
+            <p class="french-block">Ian a environ 2000 des caracoles dans des réservoirs faits maison dans son jardin</p>
+            <span class="english-block">Ian has about 2,000 of the snails in homemade tanks in his garden</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.18" data-end="65.95">
+            <p class="french-block">Le nom de Myxas glutinosa vient du manteau collant qui couvre sa coquille brune extrêmement délicate et tachetée d'or.</p>
+            <span class="english-block">Myxas glutinosa gets its name from the gooey mantle that covers its extremely delicate, gold-flecked brown shell.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.95" data-end="72.94">
+            <p class="french-block">Il n'est pas plus grand qu'un bout du doigt, mais il a de grandes antennes comiques - que Hughes compare à des "grandes oreilles à floppy".</p>
+            <span class="english-block">It is no bigger than a fingertip, but has comically large antennae - which Hughes likens to "big floppy ears".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.94" data-end="82.46">
+            <p class="french-block">Les caracoles, qui se nourrissent d'algues et sont considérées comme un indicateur de la santé des lacs et des rivières, ont été menacées d'extinction dans toute l'Angleterre.</p>
+            <span class="english-block">The snails, which feed on algae and are considered an indicator of healthy lakes and rivers, have been driven to extinction across England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.46" data-end="87.7">
+            <p class="french-block">L'eau polluée et la perte d'habitats sont largement responsables de leur disparition.</p>
+            <span class="english-block">Polluted water and habitat loss are largely blamed for their disappearance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.7" data-end="93.62">
+            <p class="french-block">Hughes a dit que les caracoles étaient " quelque chose à préserver et à chérisser comme des objets égyptiens ".</p>
+            <span class="english-block">Hughes said the snails were "something to preserve and cherish like Egyptian artefacts".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.62" data-end="99.67">
+            <p class="french-block">La famille Hughes est également connue pour ses illustrations des espèces rares qu'elle a travaillées à protéger.</p>
+            <span class="english-block">The Hughes family are also known for their illustrations of the rare species they have worked to protect</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.67" data-end="110.5">
+            <p class="french-block">Au Royaume-Uni, leur dernier refuge connu est le plus grand lac naturel du Pays de Galles - Llyn Tegid - dans le parc national d'Eryri, également connu sous le nom de Snowdonia.</p>
+            <span class="english-block">In the UK, their last known refuge is Wales' largest natural lake - Llyn Tegid - in Eryri National Park, also known as Snowdonia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.5" data-end="118.15">
+            <p class="french-block">Depuis 2014, sous licence de Natural Resources Wales, Hughes va au lac pour recueillir et étudier les escargots.</p>
+            <span class="english-block">Since 2014, under licence from Natural Resources Wales, Hughes has been wading into the lake to collect and study the snails.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.15" data-end="127.54">
+            <p class="french-block">Il a conçu et installé de petits abris en béton pour eux dans le lac lui-même, et a mis en place sa propre population captive dans une serre dans sa maison à Llanarth.</p>
+            <span class="english-block">He has designed and installed small concrete shelters for them in the lake itself, and set up his own captive population in a greenhouse at his home in Llanarth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.54" data-end="132.38">
+            <p class="french-block">Llyn Tegid est la dernière maison connue de l'escargot glutenus au Royaume-Uni.</p>
+            <span class="english-block">Llyn Tegid is the last known home of the glutinous snail in the UK</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.38" data-end="136.1">
+            <p class="french-block">Hughes se demandait s'ils survivraient une heure, un jour.</p>
+            <span class="english-block">Hughes was left wondering "will they survive an hour, will they survive a day"?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.1" data-end="141.0">
+            <p class="french-block">Puis, après quatre mois, des œufs ont été repérés dans le réservoir.</p>
+            <span class="english-block">Then, after four months, eggs were spotted in the tank.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.0" data-end="146.14">
+            <p class="french-block">"Personne n'avait vu leurs œufs avant que nous ne fassions cette percée", a- t- il dit.</p>
+            <span class="english-block">"Nobody had knowingly seen their eggs before we made that breakthrough," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="146.14" data-end="154.37">
+            <p class="french-block">"On fait ces choses sur une aile et une prière quand on essaie de sauver quelque chose qui est en un seul site et on essaie de comprendre ce qu'il faut et comment le sauver.</p>
+            <span class="english-block">"You do these things on a wing and a prayer when you're trying to save something that's down to a single site and you're trying to fathom what it needs and how to save it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.37" data-end="159.12">
+            <p class="french-block">"Quand quelque chose fonctionne, c'est un de ces moments qui définissent la vie".</p>
+            <span class="english-block">"So when something actually works - it's one of those life-defining moments."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.12" data-end="164.76">
+            <p class="french-block">C' est le couvercle d' un refuge en béton que Ian a fait pour les escargots à Llyn Tegid</p>
+            <span class="english-block">This is the lid of one of the concrete refuges Ian made for the snails in Llyn Tegid</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.76" data-end="176.81">
+            <p class="french-block">L'élevage des caracoles - ainsi que d'autres invertébrés menacés de disparition comme les coléoptères de malachite écarlate, les araignées de ladybird et les crevettes de chenille - est devenu une affaire familiale.</p>
+            <span class="english-block">Rearing the snails - as well as other critically endangered invertebrates such as scarlet malachite beetles, ladybird spiders and tadpole shrimp - has become a family affair.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.81" data-end="183.34">
+            <p class="french-block">La femme d'Ian, Kerry, et leurs fils Jake, George et Ben, sont également pleinement investis.</p>
+            <span class="english-block">Ian's wife Kerry and their sons Jake, George and Ben, are also fully invested.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.34" data-end="191.06">
+            <p class="french-block">"Il faut avoir une certaine mentalité pour sortir dans un lac froid et gelé au milieu de janvier", explique Ben, 27 ans.</p>
+            <span class="english-block">"You've got to have a certain mindset to walk out into a freezing cold lake in the middle of January," Ben, 27, explained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.06" data-end="195.77">
+            <p class="french-block">"Mais savoir que vous aidez est plus que suffisant pour que tout cela en vaut la peine.</p>
+            <span class="english-block">"But knowing that you're helping is more than enough to make it all worth it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.77" data-end="203.18">
+            <p class="french-block">"Tout petit a sa place dans l'écosystème et si vous enlèvez un petit cog de n'importe quelle machine, il va cesser de fonctionner".</p>
+            <span class="english-block">"Every little thing has its place in the ecosystem and if you take a tiny little cog out of any machine it's going to stop working".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.18" data-end="213.77">
+            <p class="french-block">Comme le père, comme le fils, Ian et Ben disent que sauver l'escargot d'eau le plus rare de Grande-Bretagne de l'extinction vaut la peine de faire un tour à Llyn Tegid, même dans les jours les plus froids.</p>
+            <span class="english-block">Like father, like son - Ian and Ben say helping save Britain's rarest water snail from extinction is worth wading into Llyn Tegid for - even on the coldest of days</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.77" data-end="225.1">
+            <p class="french-block">La famille Hughes travaille maintenant avec l'Association britannique et irlandaise des zoos et des aquariums (BIAZA) pour délocaliser certaines de leurs caracoles dans des parcs de faune à travers l'Angleterre.</p>
+            <span class="english-block">The Hughes family is now working with the British and Irish Association of Zoos and Aquariums (BIAZA) to relocate some of their snails to wildlife parks across England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.1" data-end="238.8">
+            <p class="french-block">Il est considéré comme une première étape vers le rétablissement de ces espèces dans la nature au cours des prochaines années, dans le cadre d'un programme de 60 millions de livres sterling soutenu par le gouvernement britannique pour la protection des espèces rares.</p>
+            <span class="english-block">It is seen as a first step towards restoring them back to locations in the wild over the coming years, as part of a £60m UK government-backed scheme to protect rare species.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.8" data-end="253.15">
+            <p class="french-block">"C'est un projet de conservation si important et une histoire si merveilleuse", explique Samantha Eden, conservatrice adjointe au parc de la faune de Wingham, dans le Kent, qui est allée à la maison Hughes pour ramasser 24 caracoles glutenuses.</p>
+            <span class="english-block">"It's such a hugely important conservation project and such a wonderful story," explained Samantha Eden, assistant curator at Wingham Wildlife Park in Kent, who travelled to the Hughes home to pick up 24 glutinous snails.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.15" data-end="263.83">
+            <p class="french-block">"Nous avons mis en place une nouvelle installation pour eux: trois magnifiques étangs où nous allons les élever, en apprendre davantage sur eux et en comprendre un peu plus leurs besoins environnementaux".</p>
+            <span class="english-block">"We've got a new facility that we've set up for them - three beautiful ponds where we're going to be breeding them, learning about them and understanding a little bit more about their environmental needs."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="263.83" data-end="270.19">
+            <p class="french-block">Samantha a fait le voyage de six heures du Kent à Ceredigion pour ramasser quelques-unes des caracoles d'Ian.</p>
+            <span class="english-block">Samantha made the six-hour journey from Kent to Ceredigion to pick up some of Ian's snails</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.19" data-end="284.54">
+            <p class="french-block">Le parc faunique Askham Bryan à York et Longleat dans le Wiltshire, ainsi que les zoos de Dudley et Chester participent également au projet, le Freshwater Habitats Trust cherchant des réserves d'eau appropriées où les escargots pourraient éventuellement être libérés.</p>
+            <span class="english-block">Askham Bryan Wildlife Park in York and Longleat in Wiltshire, along with Dudley and Chester zoos are also taking part in the project, with the Freshwater Habitats Trust searching for suitable water bodies where the snails could eventually be released.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.54" data-end="295.82">
+            <p class="french-block">"Nous faisons beaucoup de recherches sur l'écologie des caracoles, leur élevage et leur génétique", explique Nicky Needham, responsable de la gestion et de la conservation des espèces à BIAZA.</p>
+            <span class="english-block">"We're doing a lot of research on the snails' ecology, their husbandry and their genetics," explained Nicky Needham, head of species management and conservation at BIAZA.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.82" data-end="303.48">
+            <p class="french-block">"Si nous pouvons construire une image vraiment forte, alors nous sommes en bonne position pour réintroduire certains d'entre eux [à la nature].</p>
+            <span class="english-block">"If we can build up a really strong picture then we're in a good position to reintroduce some of them [to the wild].</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.48" data-end="308.78">
+            <p class="french-block">" Avec les doigts croisés, j'aimerais penser que nous pourrions y parvenir dans les trois ans. "</p>
+            <span class="english-block">"With fingers and toes crossed I'd like to think that we could achieve that within three years' time."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="308.78" data-end="315.98">
+            <p class="french-block">Les escargots sont recouverts d'un manteau "glutiné", une couche de tissu translucide qui enveloppe la coquille de dessous.</p>
+            <span class="english-block">The snails are covered by a 'glutinous' mantle - a layer of translucent tissue that wraps around the shell from beneath.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.98" data-end="329.45">
+            <p class="french-block">"Je pense que c'est un projet incroyable et nous le soutenirons autant que nous le pourrons", a déclaré Simon Jones, directeur adjoint du parc national d'Eryri, qui a ajouté que le parc était "très fier" d'être le foyer de "l'espèce unique".</p>
+            <span class="english-block">"I think it's an amazing project and we'll support it as much as we can," said Simon Jones, assistant warden at Eryri National Park, who added the park was "really proud" to be home to the "unique species".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.45" data-end="338.9">
+            <p class="french-block">Mais le changement climatique signifie que ces espèces sont "en danger croissant" et, avec l'aide des zoos, "il y a plus de chances de maintenir la population en vie".</p>
+            <span class="english-block">But climate change means these species are "at an increased threat" and, with the zoos' help, "there's more of a chance of keeping the population alive".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="338.9" data-end="343.18">
+            <p class="french-block">Les caracoles s'installent dans leurs nouveaux réservoirs au zoo de Dudley</p>
+            <span class="english-block">The snails are settling into their new tanks at Dudley Zoo</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.18" data-end="349.8">
+            <p class="french-block">Pour Hughes, c'est "très excitant", alors voyez un nouvel élan derrière le sauvetage de l'escargot glutinous.</p>
+            <span class="english-block">For Hughes, it is "very exciting" so see fresh momentum behind saving the glutinous snail.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="349.8" data-end="358.78">
+            <p class="french-block">"Avoir tous vos œufs dans un panier est toujours un mouvement dangereux, donc avoir plus d'experts pour s'en occuper est vraiment la bonne façon de le faire", a-t-il dit.</p>
+            <span class="english-block">"Having all your eggs in one basket is always a dangerous move so having more experts looking after it is really the right way to go," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="358.78" data-end="369.82">
+            <p class="french-block">"Pour moi, ils sont un trésor absolu - comme un artefact égyptien... aussi précieux que cela", a- t- il ajouté - et les préserver est un devoir envers nos enfants et petits-enfants".</p>
+            <span class="english-block">"For me they're an absolute treasure - like an Egyptian artefact... as valuable as that," he added - "and preserving them is a duty to our children and grandchildren".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.82" data-end="377.21">
+            <p class="french-block">Nous avons dépensé 23 000 livres sterling pour le traitement de la fertilité - maintenant nos embryons seront détruits</p>
+            <span class="english-block">We spent £23,000 on fertility treatment - now our embryos will be destroyed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.21" data-end="383.59">
+            <p class="french-block">Deux amis qui sont morts sur la crête de montagne ont essayé d'appeler 999, enquête entend</p>
+            <span class="english-block">Two friends who died on mountain ridge tried calling 999, inquest hears</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="383.59" data-end="388.63">
+            <p class="french-block">Les livres bibliothécaires en retard de 116 ans retournés en "excellent état"</p>
+            <span class="english-block">Library books overdue by 116 years returned in 'excellent condition'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_21.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
