@@ -20,9 +20,9 @@
 
 ### Section 2
 
-**🇬🇧 EN:** Following a debate in which both sides made emotional speeches, the House of Commons voted 286 to 270, majority 16, against the proposed legislation.
+**🇬🇧 EN:** Following a debate in which both sides made emotional speeches, the House of Commons voted 286 to 270 - a majority of 16 - against the proposed legislation.
 
-**🇫🇷 FR:** *Après un débat dans lequel les deux parties ont prononcé des discours émotionnels, la Chambre des communes a voté 286 à 270, majorité 16, contre la législation proposée.*
+**🇫🇷 FR:** *Après un débat dans lequel les deux parties ont prononcé des discours émotionnels, la Chambre des communes a voté 286 à 270 voix contre la proposition de loi, soit une majorité de 16 voix.*
 
 ---
 
@@ -60,9 +60,9 @@
 
 ### Section 7
 
-**🇬🇧 EN:** MPs were given a free vote, meaning they did not vote on party lines.
+**🇬🇧 EN:** MPs were given a free vote, meaning they were not required to vote along party lines.
 
-**🇫🇷 FR:** *Les députés ont eu un vote libre, ce qui signifie qu'ils n'ont pas voté sur les lignes du parti.*
+**🇫🇷 FR:** *Les députés ont reçu un vote libre, ce qui signifie qu'ils n'étaient pas tenus de voter selon les lignes du parti.*
 
 ---
 
@@ -116,9 +116,9 @@
 
 ### Section 14
 
-**🇬🇧 EN:** Dame Esther Rantzen, who was unable to join supporters in Parliament Square, told the BBC that it was "so sad that people in this country won't have the choice" that terminally ill adults have in other countries.
+**🇬🇧 EN:** Dame Esther Rantzen, who was unable to join supporters in Parliament Square, told the BBC that it was "so sad that people in this country won't have the choice" that terminally ill adults in other countries have.
 
-**🇫🇷 FR:** *Dame Esther Rantzen, qui n'a pas pu rejoindre les partisans de la place du Parlement, a déclaré à la BBC qu'il était "triste que les gens de ce pays n'aient pas le choix" que les adultes en phase terminale ont dans d'autres pays.*
+**🇫🇷 FR:** *Dame Esther Rantzen, qui n'a pas pu rejoindre les partisans de la place du Parlement, a déclaré à la BBC qu'il était "triste que les gens de ce pays n'aient pas le choix" que les adultes en phase terminale d'autres pays ont.*
 
 ---
 
@@ -132,7 +132,7 @@
 
 ### Section 16
 
-**🇬🇧 EN:** The broadcaster, 86, is terminally ill with cancer and has said she is now "too physically fragile" to travel to Switzerland to end her life at an assisted suicide clinic.
+**🇬🇧 EN:** The broadcaster, 86, is terminally ill with cancer and has said she was now "too physically fragile" to travel to Switzerland to end her life at an assisted suicide clinic.
 
 **🇫🇷 FR:** *La radiodiffuseuseure, 86 ans, est gravement malade d'un cancer et a déclaré qu'elle était maintenant "trop fragile physiquement" pour se rendre en Suisse pour mettre fin à sa vie dans une clinique de suicide assistée.*
 
@@ -164,9 +164,9 @@
 
 ### Section 20
 
-**🇬🇧 EN:** Labour peer and former Home Secretary Lord Blunkett told the BBC's Newsnight programme that it was a "bad day for democracy".
+**🇬🇧 EN:** Labour peer and former Home Secretary Lord Blunkett told BBC Newsnight that it was a "bad day for democracy".
 
-**🇫🇷 FR:** *L'ancien secrétaire à l'Intérieur Lord Blunkett, un des pairs travaillistes, a déclaré à la BBC Newsnight que c'était "un mauvais jour pour la démocratie".*
+**🇫🇷 FR:** *L'ancien secrétaire à l'Intérieur Lord Blunkett, un des pairs travaillistes, a déclaré à BBC Newsnight que c'était "un mauvais jour pour la démocratie".*
 
 ---
 
@@ -196,9 +196,9 @@
 
 ### Section 24
 
-**🇬🇧 EN:** In a joint statement, they said: "This is not a moment for celebration, we understand the deep concerns of so many people across the country who have campaigned hard for a change in the law.
+**🇬🇧 EN:** They said in a joint statement: "This is not a moment for celebration, we understand the deep concerns of so many people across the country who have campaigned hard for a change in the law.
 
-**🇫🇷 FR:** *Dans une déclaration commune, ils ont déclaré: "Ce n'est pas un moment de célébration, nous comprenons les profondes préoccupations de tant de personnes à travers le pays qui ont fait campagne pour un changement de loi.*
+**🇫🇷 FR:** *Ils ont déclaré dans une déclaration commune: " Ce n'est pas un moment de célébration, nous comprenons les profondes préoccupations de tant de personnes à travers le pays qui ont fait campagne pour un changement de loi.*
 
 ---
 
@@ -228,7 +228,7 @@
 
 ### Section 28
 
-**🇬🇧 EN:** She added she still believed law change was "inevitable".
+**🇬🇧 EN:** She added that she still believed law change was "inevitable".
 
 **🇫🇷 FR:** *Elle a ajouté qu'elle croyait toujours que le changement de loi était "inévitable".*
 
@@ -260,9 +260,9 @@
 
 ### Section 32
 
-**🇬🇧 EN:** The bill in the last parliamentary session, brought forward by Leadbeater, cleared the House of Commons on 20 June 2025 with a majority of 23.
+**🇬🇧 EN:** The bill in the last parliamentary session brought by Leadbeater cleared Commons with a majority of 23.
 
-**🇫🇷 FR:** *Le projet de loi de la dernière session parlementaire, présenté par Leadbeater, a été approuvé par la Chambre des communes le 20 juin 2025 à la majorité de 23.*
+**🇫🇷 FR:** *Le projet de loi présenté par Leadbeater lors de la dernière session parlementaire a permis aux communes de déposer une majorité de 23 voix.*
 
 ---
 
@@ -276,29 +276,21 @@
 
 ### Section 34
 
-**🇬🇧 EN:** Edwards brought forward the proposals again in a bid to ensure peers could "finish their job", although this will no longer take place.
-
-**🇫🇷 FR:** *Edwards a de nouveau présenté les propositions dans le but de s'assurer que les pairs puissent " finir leur travail ", bien que cela ne se produise plus.*
-
----
-
-### Section 35
-
 **🇬🇧 EN:** During the debate, Labour MP Janet Daby was among those to confirm she would vote against the bill despite previously supporting it.
 
 **🇫🇷 FR:** *Pendant le débat, la députée travailliste Janet Daby a confirmé qu'elle voterait contre le projet de loi malgré son soutien précédent.*
 
 ---
 
-### Section 36
+### Section 35
 
-**🇬🇧 EN:** She told the Commons she had "nightmares about dying and death" after voting in favour of the last bill, adding: "I had to wrestle with myself, knowing that I was not entirely comfortable with the decision I had made, and my conscience was not at peace, and I cannot again, in good conscience, vote for the bill."
+**🇬🇧 EN:** She told the Commons she had "nightmares about dying and death" after voting in favour of the last bill, adding: "I had to wrestle with myself, knowing that I was not entirely comfortable with the decision I had made and my conscience was not at peace, and I cannot again, in good conscience, vote for the bill."
 
-**🇫🇷 FR:** *Elle a dit aux communes qu'elle avait des " cauchemars sur la mort et la mort " après avoir voté en faveur du dernier projet de loi, ajoutant: " J'ai dû me battre avec moi-même, sachant que je n'étais pas tout à fait à l'aise avec la décision que j'avais prise, et que ma conscience n'était pas en paix, et je ne peux pas à nouveau, en bonne conscience, voter pour le projet de loi. "*
+**🇫🇷 FR:** *Elle a dit aux communes qu'elle avait des " cauchemars sur la mort et la mort " après avoir voté en faveur du dernier projet de loi, ajoutant: " J'ai dû me battre avec moi-même, sachant que je n'étais pas tout à fait à l'aise avec la décision que j'avais prise et que ma conscience n'était pas en paix, et je ne peux pas à nouveau, en bonne conscience, voter pour le projet de loi. "*
 
 ---
 
-### Section 37
+### Section 36
 
 **🇬🇧 EN:** In another of the personal testimonies during the debate, Labour MP Claire Hazelgrove spoke about her mother's decision to bring her late-stage terminal illness to an end "on her terms".
 
@@ -306,7 +298,7 @@
 
 ---
 
-### Section 38
+### Section 37
 
 **🇬🇧 EN:** The MP for Filton and Bradley Stoke said the "harmful status quo" meant her mother had died alone in October of last year, after living with a rare blood cancer for half her life.
 
@@ -314,15 +306,15 @@
 
 ---
 
-### Section 39
+### Section 38
 
-**🇬🇧 EN:** Hazelgrove argued "not all pain can be palliated" as she spoke in favour of the bill.
+**🇬🇧 EN:** Hazelgrove argued that "not all pain can be palliated".
 
-**🇫🇷 FR:** *Hazelgrove a fait valoir que "toute douleur ne peut pas être atténuée" alors qu'elle parlait en faveur du projet de loi.*
+**🇫🇷 FR:** *Hazelgrove a fait valoir que "toute douleur ne peut pas être apaisée".*
 
 ---
 
-### Section 40
+### Section 39
 
 **🇬🇧 EN:** Conservative MP Martin Vickers said his "firm" view was that "if assisted dying is legalised we will be poorer as a society, we will have a crossed a line", adding it would also change the "relationship between doctor and patient".
 
@@ -330,7 +322,7 @@
 
 ---
 
-### Section 41
+### Section 40
 
 **🇬🇧 EN:** Liberal Democrat MP Tom Gordon called for a change in the law and described the bill as "better than what we currently have, which offers no safeguards and no protections for people in those final moments".
 
@@ -338,7 +330,7 @@
 
 ---
 
-### Section 42
+### Section 41
 
 **🇬🇧 EN:** Prime Minister Andy Burnham did not vote on the bill on Friday, previously describing it as "a matter for Parliament to decide".
 
@@ -346,11 +338,19 @@
 
 ---
 
+### Section 42
+
+**🇬🇧 EN:** He has said he personally believed that funding for end-of-life care in the UK should be improved before legalising assisted dying is considered.
+
+**🇫🇷 FR:** *Il a dit qu'il croyait personnellement que le financement des soins de fin de vie au Royaume-Uni devrait être amélioré avant que la légalisation du décès assisté ne soit envisagée.*
+
+---
+
 ### Section 43
 
-**🇬🇧 EN:** He has previously said he personally believes that funding for end-of-life care in the UK should be improved before legalising assisted dying is considered.
+**🇬🇧 EN:** Have you been affected by the issues in this story? Share your experience
 
-**🇫🇷 FR:** *Il a déjà déclaré qu'il croyait personnellement que le financement des soins de fin de vie au Royaume-Uni devrait être amélioré avant que la légalisation du décès assisté ne soit envisagée.*
+**🇫🇷 FR:** *Avez- vous été touché par les questions abordées dans cet article?*
 
 ---
 
@@ -375,14 +375,6 @@
 **🇬🇧 EN:** An extraordinary result - why did MPs reject assisted dying bill this time?
 
 **🇫🇷 FR:** *Un résultat extraordinaire: pourquoi les députés ont-ils rejeté cette fois le projet de loi sur l'assistance à la mort ?*
-
----
-
-### Section 47
-
-**🇬🇧 EN:** Have you been affected by the issues in this story? Share your experience
-
-**🇫🇷 FR:** *Avez- vous été touché par les questions abordées dans cet article?*
 
 ---
 
