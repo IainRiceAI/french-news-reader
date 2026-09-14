@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pitt is up for 25 Emmys - but the show's biggest fans are real-life doctors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>The Pitt is up for 25 Emmys - but the show's biggest fans are real-life doctors</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 13 Sep 2026 23:18:39 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/clyqx0e175ko?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Those in the medical profession say the HBO Max show about a US hospital emergency room is the most realistic medical drama yet.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.54" data-end="18.0">
+            <p class="french-block">Le personnage principal, le Dr Michael Robinavitch, joué par Noah Wyle, est un consultant en médecine d'urgence endurci et très expérimenté.</p>
+            <span class="english-block">The lead character Dr Michael Robinavitch, played by Noah Wyle, is a hardened and highly experienced emergency medicine consultant</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.0" data-end="37.42">
+            <p class="french-block">C'est un spectacle familier: une salle d'attente bondée, des chariots dans les couloirs, des médecins et des infirmières stressés. Mais ce n'est pas une unité de rééducation et de rééducation typique dans le NHS, c'est un décor hollywoodien avec des acteurs recréant le drame d'un service d'urgence pour la série télévisée The Pitt.</p>
+            <span class="english-block">It's a familiar sight: a crowded waiting room, trolleys in corridors, stressed doctors and nurses. But this isn't a typical A&E unit in the NHS, it's a Hollywood set with actors recreating the drama of an emergency department for TV series The Pitt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.42" data-end="41.86">
+            <p class="french-block">Et parmi ses plus grands fans, il y a des médecins de la vie réelle.</p>
+            <span class="english-block">And among its biggest fans are real-life doctors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="41.86" data-end="50.88">
+            <p class="french-block">" Nous nous sentons enfin validés pour tout ce que nous faisons chaque jour, dit le Dr Tony Cirillo, président de l'American College of Emergency Physicians.</p>
+            <span class="english-block">"We finally feel validated for everything we go through every day," says Dr Tony Cirillo, President of the American College of Emergency Physicians.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.88" data-end="60.6">
+            <p class="french-block">Lundi, The Pitt pourrait devenir la série la plus décorée de cette année aux Emmys, les honneurs télévisés les plus convoités de l'Amérique, avec 25 nominations.</p>
+            <span class="english-block">On Monday, The Pitt could become this year's most decorated series at the Emmys, America's most coveted TV honours, with 25 nominations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.6" data-end="68.83">
+            <p class="french-block">Les médecins et d'autres professionnels de la médecine disent que c'est pour eux le drame médical le plus réaliste à ce jour, et c'est pourquoi ils l'aiment.</p>
+            <span class="english-block">Doctors and others in the medical profession say, for them, it's the most realistic medical drama yet - which is why they love it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.83" data-end="76.15">
+            <p class="french-block">L' émission est un drame télévisé qui se concentre sur le personnel d' un centre de traumatismes fictif à Pittsburgh .</p>
+            <span class="english-block">The show is a TV drama focusing on the staff of a fictional trauma centre in Pittsburgh</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.15" data-end="81.48">
+            <p class="french-block">Wyle (à droite) est producteur de l'émission et membre de l'équipe de rédaction</p>
+            <span class="english-block">Wyle (right) is a producer on the show as well as part of the writing team</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.48" data-end="91.99">
+            <p class="french-block">La série couvre la vie et le travail du personnel du centre médical de traumatisme de Pittsburgh, chaque épisode représentant une heure d'une journée et il y en a 15 dans chaque série.</p>
+            <span class="english-block">The series covers the life and work of the staff of Pittsburgh's Trauma Medical Centre, with each episode representing an hour of a day and there are 15 in each series.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.99" data-end="100.68">
+            <p class="french-block">Un fil constant à travers chaque épisode est le bruit, le rythme d'activité et les demandes constantes du personnel qui ne semble jamais avoir de pause.</p>
+            <span class="english-block">A constant thread through each episode is the noise, the pace of activity and the constant demands on the staff who never seem to get a break. Complex procedures and life-saving interventions are shown in graphic, and often, gory detail.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.68" data-end="115.34">
+            <p class="french-block">Le personnage principal, le Dr Michael Robinavitch, connu sous le nom de Dr Robby, est un consultant en médecine d'urgence endurci et très expérimenté (dans les hôpitaux américains, un médecin de première classe assurant des soins d'urgence).</p>
+            <span class="english-block">The lead character Dr Michael Robinavitch, known as Dr Robby, is a hardened and highly experienced emergency medicine consultant (in US hospitals a senior emergency attending physician).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.34" data-end="127.39">
+            <p class="french-block">Joué par Noah Wyle, précédemment dans le casting du drame médical ER au milieu des années 90, il est producteur exécutif ainsi que membre de l'équipe de rédaction, qui comprend des médecins qualifiés.</p>
+            <span class="english-block">Played by Noah Wyle, previously in the cast of mid-90s medical drama ER, he is an executive producer as well as part of the writing team, which includes qualified doctors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.39" data-end="136.58">
+            <p class="french-block">Wyle a été invité à participer à une discussion sur une plateforme lors d'une conférence prestigieuse avec plus de 6.000 experts en médecine d'urgence dans l'auditoire.</p>
+            <span class="english-block">Wyle was invited to take part in a platform discussion at a prestigious conference with more than 6,000 emergency medicine experts in the audience.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.58" data-end="146.11">
+            <p class="french-block">"Les gens venaient vers lui et, contrairement aux acteurs et aux athlètes qui disent être incroyables ou aimer leur travail, les gens lui disaient simplement merci", dit Cirillo.</p>
+            <span class="english-block">"People came up to him and, as opposed to actors and athletes where they say they are amazing or love their work, people just said thank you to him," Cirillo says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="146.11" data-end="152.45">
+            <p class="french-block">"Le Pitt est plus qu'une bonne émission de télévision. "Le terme que j'utilise est validation".</p>
+            <span class="english-block">"The Pitt is more than just a good TV show – the term I use is validation."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.45" data-end="158.81">
+            <p class="french-block">Une fille stressée qui s'occupe de sa mère malade la laisse dans le service d'urgence et ne peut pas être retrouvée.</p>
+            <span class="english-block">Social and ethical issues are often reflected. A stressed daughter who is caring for her sick mother leaves her in the emergency department and then can't be found.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.81" data-end="167.38">
+            <p class="french-block">Il y a des conversations angoissées avec des parents désespérés qui veulent que leur enfant reste en vie, malgré le fait que les médecins disent qu'il n'y a pas d'espoir.</p>
+            <span class="english-block">There are anguished conversations with parents who are desperate for their child to be kept alive, despite doctors saying there is no hope.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.38" data-end="176.02">
+            <p class="french-block">Les inégalités en matière de santé sont mises en évidence, certains patients ayant du mal à payer les frais requis dans le système de santé américain.</p>
+            <span class="english-block">Health inequalities are highlighted, with some patients struggling with the payments required in the US health system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.02" data-end="181.44">
+            <p class="french-block">Les longues attentes et la frustration des patients sont des nuances évidentes du NHS.</p>
+            <span class="english-block">Long waits and patient frustration are obvious shades of the NHS.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="181.44" data-end="187.97">
+            <p class="french-block">Et, sur la base de nos conversations, la série est devenue plus populaire au Royaume-Uni avec les médecins.</p>
+            <span class="english-block">And, based on our conversations, the series has become more popular in the UK with medics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.97" data-end="193.56">
+            <p class="french-block">Les médecins disent qu' ils aiment se voir représentés à l'écran dans des émissions comme The Pitt</p>
+            <span class="english-block">Doctors say they like to see themselves represented on screen in shows like The Pitt</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.56" data-end="199.68">
+            <p class="french-block">Les médecins semblent prêts à regarder même dans les semaines où ils ont eu des jours ou des nuits de punition dans A&E.</p>
+            <span class="english-block">Doctors seem ready to watch even in weeks when they have had punishing days or nights in A&E.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.68" data-end="206.45">
+            <p class="french-block">L'une d'elles est la docteur Fiona Hunter, vice-présidente du Collège royal de médecine d'urgence en Écosse.</p>
+            <span class="english-block">One of them is Dr Fiona Hunter, vice president of the Royal College of Emergency Medicine in Scotland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.45" data-end="210.89">
+            <p class="french-block">"Je ne le ferais pas tout de suite après un quart de travail, dit- elle.</p>
+            <span class="english-block">"I wouldn't do it straight after a shift," she said. "We all need to decompress and debrief what we have experienced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.89" data-end="220.03">
+            <p class="french-block">Mais entre les heures de travail, quand je suis en pause, je suis observateur, je me sens à l'aise, et je pense que d'autres personnes peuvent le comprendre. "</p>
+            <span class="english-block">"But in between shifts, when I have got downtime, it's watchable, relatable. It makes me feel other people might get it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.03" data-end="225.24">
+            <p class="french-block">Le consultant du Nord-Galles, le Dr Rob Perry, est un autre fan.</p>
+            <span class="english-block">North Wales consultant Dr Rob Perry is another fan.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.24" data-end="238.03">
+            <p class="french-block">"Je pense qu'il est rassurant de voir des gens interpréter des médecins et des infirmières dans un métier similaire à la vôtre et, bien que ce ne soit pas au Royaume-Uni, ils font de leur mieux pour donner le meilleur soin qu'ils peuvent", a-t-il déclaré.</p>
+            <span class="english-block">"I think it is reassuring when you see people portraying doctors and nurses in a similar job to your own and, though its not in the UK, they are doing their level best to give the best care they can," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.03" data-end="248.02">
+            <p class="french-block">Les médecins avec qui nous avons parlé soulignent que chaque épisode de The Pitt rassemble plusieurs cas d'urgence traumatisant qui peuvent généralement être répartis sur 24 heures ou plus.</p>
+            <span class="english-block">Doctors we spoke to do point out that each episode of The Pitt brings together several urgent trauma cases which typically might be spread across 24 hours or more.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.02" data-end="255.7">
+            <p class="french-block">Mais le professeur Damian Roland, consultant en médecine d'urgence, note que le drame illustre des problèmes de santé plus larges.</p>
+            <span class="english-block">But Prof Damian Roland, a practising emergency medicine consultant, notes that the drama does illustrate wider health challenges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.7" data-end="259.9">
+            <p class="french-block">Il pense que cela met les problèmes du NHS en perspective.</p>
+            <span class="english-block">He thinks it puts the problems of the NHS in perspective.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.9" data-end="265.9">
+            <p class="french-block">" Presque tous les services d'urgence du monde n'ont pas assez d'espace pour voir des patients, dit- il.</p>
+            <span class="english-block">"Virtually every emergency department in the world at the moment has not enough space to see patients," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.9" data-end="276.43">
+            <p class="french-block">"C'est un thème très courant dans The Pitt, le personnage central discutant avec la direction de l'hôpital disant: "J'ai besoin de plus de flux, vous ne pouvez pas laisser ces patients ici".</p>
+            <span class="english-block">"It's a very common theme in The Pitt about the central character arguing with hospital management saying 'I need more flow, you can't just leave these patients here' – that's a very common problem."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.43" data-end="287.69">
+            <p class="french-block">" Dans mon travail au NHS, nous travaillons tous les uns pour les autres et j'aime que nous le représentons dans l'émission ", déclare Sarah Tosh, infirmière du NHS et conseillère médicale de la série.</p>
+            <span class="english-block">"In my work in the NHS, its very much we all work for one another and I like that we represent that on the show," says Sarah Tosh, a senior NHS nurse who is the series medical adviser.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.69" data-end="296.86">
+            <p class="french-block">"Dans The Pitt, ils ont un peu sur la vie quotidienne des personnages, mais c'est plus sur leur médecine, sur le patient qu'ils font et sur ce qu'ils vont faire ensuite".</p>
+            <span class="english-block">"In The Pitt they've got a bit about the characters' day-to-day life, but it's more about their medicine, which patient they are doing and what they are going on to next."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="296.86" data-end="303.79">
+            <p class="french-block">Gerran Howell (à droite) est un acteur britannique nominé pour un prix de meilleur acteur de soutien aux Emmys</p>
+            <span class="english-block">Gerran Howell (right) is a British actor nominated for an outstanding supporting actor award at the Emmys</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.79" data-end="309.53">
+            <p class="french-block">Gerran Howell, une des stars de The Pitt, est née et a grandi au Pays de Galles du Sud.</p>
+            <span class="english-block">One of the stars of The Pitt, Gerran Howell, was born and brought up in South Wales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.53" data-end="317.11">
+            <p class="french-block">Avec d'autres acteurs, il a été mis dans un camp d'entraînement médical pour apprendre rapidement les techniques médicales et le jargon.</p>
+            <span class="english-block">With other actors he was put through a medical boot camp for speed learning of medical techniques and jargon. This included training on dummies and CPR practice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="317.11" data-end="322.49">
+            <p class="french-block">Dans une interview de la BBC Wales, on lui a demandé s'il voulait être médecin.</p>
+            <span class="english-block">In a BBC Wales interview he was asked if he would like to train to be a doctor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.49" data-end="329.38">
+            <p class="french-block">" J'ai un tel respect pour la profession médicale, et je me suis peut-être rendu compte que je ne savais pas comment faire.</p>
+            <span class="english-block">"I have such a newfound respect for the medical profession. It's maybe made me realise that I don't know how I would do this. I will stick to acting."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.38" data-end="333.67">
+            <p class="french-block">Howell est nominé pour un prix de meilleur acteur de soutien aux Emmys.</p>
+            <span class="english-block">Howell is nominated for an outstanding supporting actor award at the Emmys.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.67" data-end="339.26">
+            <p class="french-block">Les gagnants seront annoncés le 14 septembre lors d'une cérémonie à Los Angeles.</p>
+            <span class="english-block">The winners will be announced on 14 September at a ceremony in Los Angeles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.26" data-end="344.9">
+            <p class="french-block">Le Pitt est disponible pour la diffusion sur HBO Max au Royaume-Uni et aux États-Unis.</p>
+            <span class="english-block">The Pitt is available to stream on HBO Max in the UK and US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="344.9" data-end="351.36">
+            <p class="french-block">Noah Wyle est de retour dans A&E avec le nouveau drame The Pitt: "J'espère que les gens regardent avec empathie"</p>
+            <span class="english-block">Noah Wyle is back in A&E with new drama The Pitt: 'I hope people watch with empathy'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_25.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -52,9 +52,9 @@
 
 ### Section 6
 
-**🇬🇧 EN:** And as Bhangra beats blared out, fans erupted with cheers while Dosanjh launched into his biggest hits, from G.O.A.T. to Lover.
+**🇬🇧 EN:** And as Bhangra beats blared out, fans erupted with cheers while Dosanjh launched into his biggest hits, from Born to Shine to Lover.
 
-**🇫🇷 FR:** *Et comme les battements de Bhangra ont éclaté, les fans ont éclaté de cris de joie tandis que Dosanjh a lancé ses plus grands succès, de G.O.A.T. à Lover.*
+**🇫🇷 FR:** *Et comme les battements de Bhangra ont éclaté, les fans ont éclaté de cris de joie tandis que Dosanjh a lancé ses plus grands succès, de Born to Shine to Lover.*
 
 ---
 
@@ -124,17 +124,17 @@
 
 ### Section 15
 
-**🇬🇧 EN:** When he came on the stage shortly after 8pm, dressed in traditional attire, the stadium erupted and the screams barely stopped for the next two-and-a-bit hours.
+**🇬🇧 EN:** "Diljit. I love you more than my husband," declared a third.
 
-**🇫🇷 FR:** *Quand il est monté sur scène peu après 20h, habillé en costume traditionnel, le stade a éclaté et les cris ont à peine cessé pendant les deux heures et demie suivantes.*
+**🇫🇷 FR:** *"Diljit, je t'aime plus que mon mari", déclarait un troisième.*
 
 ---
 
 ### Section 16
 
-**🇬🇧 EN:** Known for his high-energy performances, he wowed fans with his dance routines to songs including Hass Hass and Born to Shine.
+**🇬🇧 EN:** When he came on the stage shortly after 8pm, dressed in traditional attire, the stadium erupted and the screams barely stopped for the next two-and-a-bit hours.
 
-**🇫🇷 FR:** *Connu pour ses performances à haute énergie, il a impressionné les fans avec ses routines de danse à des chansons comme Hass Hass et Born to Shine.*
+**🇫🇷 FR:** *Quand il est monté sur scène peu après 20h, habillé en costume traditionnel, le stade a éclaté et les cris ont à peine cessé pendant les deux heures et demie suivantes.*
 
 ---
 
@@ -148,13 +148,21 @@
 
 ### Section 18
 
-**🇬🇧 EN:** Throughout the show, the audience waved lights, sang along and - of course - danced. At times, the standing area closest to the stage resembled an Indian wedding, with fans copying Dosanjh's impressive moves.
+**🇬🇧 EN:** Throughout the show, the audience waved lights, sang along and - of course - danced.
 
-**🇫🇷 FR:** *Pendant tout le spectacle, le public a allumé des lumières, chanté et, bien sûr, dansé.*
+**🇫🇷 FR:** *Tout au long du spectacle, le public a allumé des lumières, chanté et, bien sûr, dansé.*
 
 ---
 
 ### Section 19
+
+**🇬🇧 EN:** At times, the standing area closest to the stage resembled an Indian wedding, with fans copying Dosanjh's energetic moves.
+
+**🇫🇷 FR:** *Parfois, le lieu le plus proche de la scène ressemblait à un mariage indien, les fans imitant les mouvements énergiques de Dosanjh.*
+
+---
+
+### Section 20
 
 **🇬🇧 EN:** But despite performing in such a vast venue, Dosanjh proved again his ability to connect on a personal level with fans.
 
@@ -162,19 +170,11 @@
 
 ---
 
-### Section 20
-
-**🇬🇧 EN:** He brought a range of fans on stage, from young children to an elderly woman, taking selfies and giving them gifts.
-
-**🇫🇷 FR:** *Il a amené une gamme de fans sur scène, des jeunes enfants à une femme âgée, en prenant des selfies et en leur donnant des cadeaux.*
-
----
-
 ### Section 21
 
-**🇬🇧 EN:** He also acknowledged those in the back rows of the 90,000-seater stadium, saying those at the back were "full of heart", and encouraged applause for them.
+**🇬🇧 EN:** He brought fans on stage, giving them gifts and taking selfies, and also shouted out those in the back rows of the 90,000-seater stadium, saying they were "full of heart".
 
-**🇫🇷 FR:** *Il a également reconnu ceux qui étaient dans les dernières rangées du stade de 90.000 places, disant que ceux qui étaient à l'arrière étaient " pleins de cœur ", et il a encouragé les applaudissements.*
+**🇫🇷 FR:** *Il a amené les fans sur scène, leur a fait des cadeaux et a pris des selfies, et a aussi crié à ceux qui étaient dans les rangées arrières du stade de 90.000 places, disant qu'ils étaient " pleins de cœur ".*
 
 ---
 
@@ -188,15 +188,15 @@
 
 ### Section 23
 
-**🇬🇧 EN:** The concert was capped off with the emotion of the night - his track Main Hoon Punjabi, which means "I am Punjab" - set to a spectacular firework display.
+**🇬🇧 EN:** The concert was capped off with the emotion of the night - his track Main Hoon Punjab, which means "I am Punjab" - set to a spectacular firework display.
 
-**🇫🇷 FR:** *Le concert s'est terminé par l'émotion de la nuit - sa chanson Main Hoon Punjabi, qui signifie "Je suis le Punjab" - avec une spectaculaire exposition de feux d'artifice.*
+**🇫🇷 FR:** *Le concert s'est terminé par l'émotion de la nuit - sa chanson Main Hoon Punjab, qui signifie "Je suis Punjab" - avec une spectaculaire exposition de feux d'artifice.*
 
 ---
 
 ### Section 24
 
-**🇬🇧 EN:** "What an incredible show, the energy  and vibe was unparalleled!" concert goers Amit and Rani told the BBC.
+**🇬🇧 EN:** "What an incredible show, the energy and vibe was unparalleled!" concert goers Amit and Rani told the BBC.
 
 **🇫🇷 FR:** *"Quel spectacle incroyable, l'énergie et l'ambiance étaient sans égal!" ont déclaré à la BBC les assistants à ce concert, Amit et Rani.*
 
@@ -204,29 +204,21 @@
 
 ### Section 25
 
-**🇬🇧 EN:** "We love Diljit and have been to all his shows in the UK. This was something else, a moment in time we won't forget being a part of."
-
-**🇫🇷 FR:** *"Nous aimons Diljit et avons assisté à tous ses spectacles au Royaume-Uni.*
-
----
-
-### Section 26
-
 **🇬🇧 EN:** They added that it was not only a privilege "but a moment to celebrate for Punjabi culture".
 
 **🇫🇷 FR:** *Ils ont ajouté que ce n'était pas seulement un privilège "mais un moment de célébration pour la culture punjabi".*
 
 ---
 
-### Section 27
+### Section 26
 
-**🇬🇧 EN:** From Coachella to Fallon: Decoding Diljit Dosanjh's stardom
+**🇬🇧 EN:** Diljit Dosanjh performed under the famous Wembley arch
 
-**🇫🇷 FR:** *De Coachella à Fallon: Décodage de la renommée de Diljit Dosanjh*
+**🇫🇷 FR:** *Diljit Dosanjh a joué sous le célèbre arc de Wembley*
 
 ---
 
-### Section 28
+### Section 27
 
 **🇬🇧 EN:** Dosanjh likes a "first".
 
@@ -234,7 +226,7 @@
 
 ---
 
-### Section 29
+### Section 28
 
 **🇬🇧 EN:** From humble beginnings as a small village boy from Punjab, he made history in 2023 by becoming the first Punjabi-language singer to perform at the US music festival Coachella.
 
@@ -242,7 +234,7 @@
 
 ---
 
-### Section 30
+### Section 29
 
 **🇬🇧 EN:** He also famously made his Met Gala debut decked in majestic Punjabi attire.
 
@@ -250,7 +242,7 @@
 
 ---
 
-### Section 31
+### Section 30
 
 **🇬🇧 EN:** His meteoric rise has seen him perform across America and Europe, and collaborate with pop stars from Sia to Sheeran.
 
@@ -258,7 +250,7 @@
 
 ---
 
-### Section 32
+### Section 31
 
 **🇬🇧 EN:** His authenticity is a big part of his appeal. He remains true to his Punjabi roots, wears his turban as a sign of pride, and sings in his mother tongue.
 
@@ -266,11 +258,19 @@
 
 ---
 
-### Section 33
+### Section 32
 
 **🇬🇧 EN:** Away from music, Dosanjh is also a popular Bollywood actor - and a social media sensation. Even those who haven't heard his music have probably viewed his funny Instagram videos - such as him arguing with an Amazon Alexa device, external that couldn't understand his accent.
 
 **🇫🇷 FR:** *En dehors de la musique, Dosanjh est également un acteur populaire de Bollywood - et une sensation sur les réseaux sociaux.*
+
+---
+
+### Section 33
+
+**🇬🇧 EN:** From Coachella to Fallon: Decoding Diljit Dosanjh's stardom
+
+**🇫🇷 FR:** *De Coachella à Fallon: Décodage de la renommée de Diljit Dosanjh*
 
 ---
 

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I had 11 years of chemotherapy for a cancer I didn't have</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>I had 11 years of chemotherapy for a cancer I didn't have</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 13 Sep 2026 23:11:37 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c74e0zwkk18o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Becky Jones is among more than 40 people taking legal action against a hospital trust.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.58" data-end="14.11">
+            <p class="french-block">On a dit à Becky Jones qu'elle avait des mois à vivre malgré le fait qu' aucune tumeur ne soit apparue lors des scans.</p>
+            <span class="english-block">Becky Jones was told she had months to live despite no tumour showing up in scans</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.11" data-end="20.54">
+            <p class="french-block">Becky Jones n'avait que 21 ans quand on lui a dit qu'elle avait une tumeur cérébrale terminale et des mois à vivre.</p>
+            <span class="english-block">Becky Jones was just 21 when she was told she had a terminal brain tumour and months to live.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.54" data-end="28.46">
+            <p class="french-block">Elle n'avait pas rencontré son partenaire depuis longtemps et rêvait d'une carrière dans la police, mais soudain, l'avenir lui semblait sombre.</p>
+            <span class="english-block">She had not long met her partner and dreamed of a career in policing, but suddenly the future was looking bleak.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.46" data-end="37.46">
+            <p class="french-block">Le diagnostic, réalisé par un consultant en cancer expérimenté, a conduit à 11 ans de traitement chimiothérapeutique qui ont changé sa vie.</p>
+            <span class="english-block">The diagnosis, by an experienced cancer consultant, led to 11 years of chemotherapy treatment which changed her life. She regularly felt sick, she was unable to take part in family events, her career was curtailed and she felt constantly "on eggshells".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.46" data-end="45.46">
+            <p class="french-block">Elle a récemment appris qu'elle n'avait jamais eu de cancer, mais qu'elle avait une inflammation cérébrale qui aurait pu être traitée avec des stéroïdes.</p>
+            <span class="english-block">Now 33, she has recently learned she never had cancer at all but an inflammation of the brain that could have been treated with steroids.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.46" data-end="59.38">
+            <p class="french-block">La mère de deux enfants est l'une des plus de 40 patients qui ont recours à des mesures judiciaires contre les hôpitaux universitaires de Coventry et Warwickshire (UHCW) NHS Trust en raison d'un traitement prolongé ou inutile du cancer.</p>
+            <span class="english-block">The mother of two is one of more than 40 patients taking legal action against University Hospitals Coventry and Warwickshire (UHCW) NHS Trust due to prolonged or unnecessary cancer treatment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.38" data-end="64.68">
+            <p class="french-block">"On m'a dit à maintes reprises que sans la chimiothérapie je mourrais", a- t- elle dit.</p>
+            <span class="english-block">"I was told time and time again without the chemotherapy I would die," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="64.68" data-end="78.1">
+            <p class="french-block">En tant que jeune femme, Jones dit que le consultant du professeur Ian Brown à l'hôpital universitaire de Coventry lui a dit qu'elle aurait besoin de prendre le médicament chimiothérapeutique témozolomide (TMZ) pour le reste de sa vie.</p>
+            <span class="english-block">As a young woman, Jones says consultant Prof Ian Brown at University Hospital, Coventry, told her she would need to take chemotherapy drug temozolomide (TMZ) for the rest of her life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.1" data-end="82.3">
+            <p class="french-block">Cela malgré les directives recommandant six cycles sur six mois.</p>
+            <span class="english-block">This is despite guidelines recommending six cycles over six months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.3" data-end="90.98">
+            <p class="french-block">Lorsqu'elle a interrogé plusieurs scans qui ne semblaient pas montrer de preuves d'une tumeur, elle dit que le consultant lui a dit que ce ne serait pas "visible à l'œil nu".</p>
+            <span class="english-block">When she questioned multiple scans that did not seem to show evidence of a tumour, she says the consultant told her it would not be "visible to the naked eye".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.98" data-end="98.52">
+            <p class="french-block">Ce n'est qu'en 2025, quand les cas de cancer de la fiducie liée à Brown étaient examinés, qu'elle a appris la vérité.</p>
+            <span class="english-block">It was only in 2025, when cancer cases at the trust connected to Brown were being reviewed, that she learned the truth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.52" data-end="108.24">
+            <p class="french-block">"Je n'ai jamais eu de tumeur cérébrale, j'ai été diagnostiquée à tort et j'ai subi tout ce traitement pendant la majeure partie de ma vie adulte, sans raison", a-t-elle dit.</p>
+            <span class="english-block">"I never had a brain tumour. I was misdiagnosed and I've gone through all this treatment for the main part of my adult life, for no reason," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.24" data-end="113.06">
+            <p class="french-block">"Il a tout simplement ruiné ma vie, en fait", a- t- elle ajouté.</p>
+            <span class="english-block">"He's just ruined my life, essentially," she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="113.06" data-end="118.3">
+            <p class="french-block">Becky Jones a dit que les effets de la prise de la drogue pendant des années étaient "horribles"</p>
+            <span class="english-block">Becky Jones said the effects of taking the drugs for years was "horrendous"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.3" data-end="127.2">
+            <p class="french-block">Beaucoup de patients de Brown ont dit à la BBC qu'ils avaient reçu TMZ pendant des années, ce qui les a laissés avec une variété de problèmes médicaux graves.</p>
+            <span class="english-block">Many more of Brown's patients have told the BBC they were given TMZ for years, leaving them with a variety of serious medical issues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.2" data-end="134.88">
+            <p class="french-block">Une patiente a dit croire que le médicament l'avait rendue stérile, tandis qu'une autre a développé une leucémie après 100 cycles inutiles.</p>
+            <span class="english-block">One patient said she believed the drug had made her infertile, while another developed leukaemia after 100 unnecessary cycles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.88" data-end="146.54">
+            <p class="french-block">Les résultats préliminaires d'une revue du Collège royal des médecins (RCP) indiquent que les patients de l'hôpital ont régulièrement reçu des cours prolongés du médicament avec "peu ou aucune preuve d'avantages".</p>
+            <span class="english-block">The preliminary findings of a review by the Royal College of Physicians (RCP) said patients at the hospital were routinely given prolonged courses of the drug with "little or no evidence of benefit".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="146.54" data-end="161.42">
+            <p class="french-block">Il a constaté que les manquements du personnel de l'hôpital constituaient une " trahison de la confiance des patients " et a également remis en question pourquoi les équipes de pharmacie oncologique n'ont pas contesté les patients recevant une chimiothérapie orale en continu pendant 10 à 15 ans.</p>
+            <span class="english-block">It found staff failings at the hospital amounted to a "betrayal of patient trust" and also questioned why oncology pharmacy teams did not challenge patients receiving oral chemotherapy continuously for 10 to 15 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.42" data-end="173.66">
+            <p class="french-block">L'UHCW a déclaré qu'elle ne commenterait pas les cas individuels, mais a déclaré que des mesures avaient été mises en place pour assurer "une surveillance plus robuste de la prescription et de l'utilisation de TMZ".</p>
+            <span class="english-block">UHCW said it would not comment on individual cases, but said measures had been put in place to ensure "more robust oversight of the prescription and use of TMZ".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.66" data-end="191.06">
+            <p class="french-block">En 2012, la vie commençait tout juste pour Jones, opératrice de caméra de surveillance au stade de Coventry City. Elle a rencontré son partenaire Pete, un steward, au travail, mais peu de temps après elle a commencé à souffrir de migraines graves et a demandé de l'aide médicale.</p>
+            <span class="english-block">In 2012, life was just beginning for Jones, a CCTV operator at Coventry City stadium. She met her partner Pete, a steward, at work, but soon after she began experiencing severe migraines and sought medical help.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.06" data-end="195.94">
+            <p class="french-block">Elle a subi une biopsie cérébrale réalisée par un neurochirurgien privé.</p>
+            <span class="english-block">She underwent a brain biopsy carried out by a private neurosurgeon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.94" data-end="210.0">
+            <p class="french-block">Mais Fiona Tinsley, associée du cabinet d'avocats Brabners, a déclaré que le professeur Brown avait diagnostiqué un glioblastome de niveau quatre, l'une des formes les plus agressives de cancer du cerveau, avant que les résultats ne soient revenus.</p>
+            <span class="english-block">But Fiona Tinsley, a partner at law firm Brabners, said Prof Brown had diagnosed her with a grade four glioblastoma, one of the most aggressive forms of brain cancer, before the results had returned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.11">
+            <p class="french-block">La BBC a tenté de contacter le professeur à la retraite à plusieurs reprises.</p>
+            <span class="english-block">The BBC has attempted to contact the retired professor several times.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.11" data-end="219.53">
+            <p class="french-block">Une revue du traitement du cancer révèle "trahison à la confiance"</p>
+            <span class="english-block">Cancer treatment review finds 'betrayal of trust'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.53" data-end="223.66">
+            <p class="french-block">Un homme "a dit que 13 ans de chimiothérapie étaient inutiles"</p>
+            <span class="english-block">Man 'told 13 years of chemotherapy unnecessary'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.66" data-end="229.42">
+            <p class="french-block">Un médecin accusé d'avoir trop prescrit un médicament de chimiothérapie " est resté sans défi ".</p>
+            <span class="english-block">Doctor accused of over-prescribing chemotherapy drug 'went unchallenged'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.42" data-end="234.0">
+            <p class="french-block">Jones a décrit ses années de prise de chimiothérapie comme "horribles".</p>
+            <span class="english-block">Jones described her years taking the chemotherapy drugs as "horrendous".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.0" data-end="243.58">
+            <p class="french-block">"C'était une nausée constante, des douleurs à l'estomac, des ulcères dans la bouche, juste une fatigue quotidienne, c'était horrible", a- t- elle dit.</p>
+            <span class="english-block">"It was constant nausea, stomach pains, mouth ulcers, just day-to-day fatigue, it was awful," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="243.58" data-end="252.17">
+            <p class="french-block">La drogue a affecté tous les aspects de sa vie avec la peur de l'infection, ce qui signifie qu'elle a évité les événements sociaux et les réunions familiales.</p>
+            <span class="english-block">The drug affected every aspect of her life with the fear of infection meaning she avoided social events and family gatherings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="252.17" data-end="256.56">
+            <p class="french-block">Son permis de conduire a également été retiré, puis restreint.</p>
+            <span class="english-block">Her driving licence was also initially taken away, and then restricted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.56" data-end="266.9">
+            <p class="french-block">" Avant le traitement, j'allais à la salle de gym tout le temps, je courrais, et Pete et moi allions manger tout le temps, ce que je ne pouvais évidemment pas faire", explique- t- elle.</p>
+            <span class="english-block">"Before the treatment I used to go to the gym all the time, I was running, and me and Pete used to go for meals all the time, which obviously then I couldn't do," she explained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="266.9" data-end="271.54">
+            <p class="french-block">Le couple a aussi été informé qu'elle ne serait pas en mesure de concevoir.</p>
+            <span class="english-block">The couple were also told she would be unable to get pregnant.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.54" data-end="277.15">
+            <p class="french-block">" Plus tard, j'ai eu deux enfants, ce qu'il m'a dit être un miracle ", a- t- elle dit.</p>
+            <span class="english-block">"I later went on to have two children, which he told me were both miracles," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="277.15" data-end="280.7">
+            <p class="french-block">Plus de 40 patients prennent des mesures judiciaires</p>
+            <span class="english-block">More than 40 patients are taking legal action</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.7" data-end="291.41">
+            <p class="french-block">Son traitement a continué pendant plus d'une décennie, jusqu'à ce qu'une fois, en 2024, elle reçoive un appel téléphonique d'un médecin disant que sa chimiothérapie s'arrête.</p>
+            <span class="english-block">Her treatment continued for more than a decade, until suddenly, in 2024, she received a phonecall from a doctor saying her chemotherapy was stopping.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.41" data-end="300.6">
+            <p class="french-block">"Il n'avait aucune raison de le dire, mais il m'a dit que Ian Brown avait pris sa retraite, c'était la première fois que j'en entendais parler", a déclaré Jones.</p>
+            <span class="english-block">"He didn't have any reason as to why. He told me Ian Brown had retired - this was the first I'd heard of it," Jones said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.6" data-end="306.29">
+            <p class="french-block">On lui a dit que son oncologue répondrait à toutes ses questions, mais il ne lui a donné aucun nom.</p>
+            <span class="english-block">Any questions would be answered by her new oncologist, she was told, but she was not given any name.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="306.29" data-end="314.71">
+            <p class="french-block">"Je ne savais pas quoi faire, où aller, avec qui parler, parce que l'hôpital ne m'a pas soutenu pendant cette période", a- t- elle dit.</p>
+            <span class="english-block">"I didn't know what to do, where to turn, who to talk to because I had no support from the hospital during that time," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.71" data-end="325.06">
+            <p class="french-block">En mai 2025, après une analyse indépendante par des neurochirurgiens et des radiologues, au nom de ses avocats, on lui a dit qu'elle n'avait jamais eu de cancer du cerveau.</p>
+            <span class="english-block">In May 2025, after independent analysis by neurosurgeons and radiologists, on behalf of her lawyers, she was told she had never had cancer of the brain at all.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.06" data-end="334.08">
+            <p class="french-block">Elle souffrait en fait d'une démyélinisation tumefactive, une inflammation qui est généralement traitée par des neurologues qui lui prescrivent des stéroïdes forts.</p>
+            <span class="english-block">She had actually been suffering from a tumefactive demyelination - an inflammation which is usually treated by neurologists who would prescribe strong steroids.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="334.08" data-end="339.6">
+            <p class="french-block">Jones a eu l'information sur une vidéoconférence avec ses avocats et les experts.</p>
+            <span class="english-block">Jones got the news on a video call with her solicitors and the experts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.6" data-end="347.57">
+            <p class="french-block">"Quand nous avons découvert qu'il n'y avait que des larmes dans les yeux de tout le monde", a déclaré Tinsley, qui représente de nombreux patients.</p>
+            <span class="english-block">"When we found out there were just tears in everyone's eyes," said Tinsley, who is representing many of the patients.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="347.57" data-end="352.82">
+            <p class="french-block">La résidente de Coventry dit que le traitement de chimiothérapie a changé sa vie</p>
+            <span class="english-block">The Coventry resident says the chemotherapy treatment changed her life</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.82" data-end="364.03">
+            <p class="french-block">L'examen du RPC, qui n'a pas nommé le professeur Ian Brown mais a fait référence au "Dr Y", a révélé que sur les 20 cas examinés, 15 étaient "insatisfaisants dans l'ensemble".</p>
+            <span class="english-block">The RPC review, which did not name Prof Ian Brown but referred to "Dr Y", found out of the 20 cases reviewed, 15 were "unsatisfactory overall". The consultant did not participate in the review.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="364.03" data-end="372.17">
+            <p class="french-block">L'équipe de révision a constaté qu'il y avait " peu de preuves " de la compréhension et de la documentation des risques liés à la prise du médicament.</p>
+            <span class="english-block">There was "scant evidence" of the understanding and documentation of the risks of taking the drug, the review team found.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="372.17" data-end="385.82">
+            <p class="french-block">Les résultats préliminaires indiquent qu'il y a eu "une curiosité clinique insuffisante" dans certains cas et un manque de collaboration avec des collègues d'équipe multidisciplinaires, ce qui permet de persister dans des erreurs diagnostiques potentielles.</p>
+            <span class="english-block">The preliminary findings said there was "insufficient clinical curiosity" in some cases and a lack of collaboration with multidisciplinary team colleagues, allowing potential diagnostic errors to persist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="385.82" data-end="389.18">
+            <p class="french-block">Jones a décrit les résultats comme " effrayants ".</p>
+            <span class="english-block">Jones described the findings as "chilling".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="389.18" data-end="396.1">
+            <p class="french-block">"Ce n'est pas seulement ce qu'il a fait, c'est comment ils l'ont laissé agir seul pendant si longtemps", a- t- elle ajouté.</p>
+            <span class="english-block">"It's not just about what he's done, it's about how they let him act on his own for so long," she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.1" data-end="402.22">
+            <p class="french-block">"C'est presque comme s'il dirigeait son propre spectacle et que personne n'était là pour surveiller ce qu'il faisait".</p>
+            <span class="english-block">"It's almost like he was running his own show and no one was there to monitor what he was doing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="402.22" data-end="411.86">
+            <p class="french-block">Un porte-parole de l'UHCW a déclaré que tous les patients touchés avaient été examinés par des cliniciens supérieurs, "avec des plans de soins appropriés mis en place".</p>
+            <span class="english-block">A UHCW spokesperson said all affected patients had been reviewed by senior clinicians, "with appropriate care plans put in place".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="411.86" data-end="425.26">
+            <p class="french-block">"Nous effectuons également un examen indépendant de nos processus de communication, dirigé par une partie indépendante, afin de nous assurer que le personnel se sent pleinement soutenu et confiant dans la prise de position des préoccupations.</p>
+            <span class="english-block">"We are also undertaking an independent review of our speak-up processes, led by an independent party, to ensure staff feel fully supported and confident in raising any concerns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="425.26" data-end="434.11">
+            <p class="french-block">"La fiducie évaluera l'examen complet du PCR lorsqu'il sera publié et prendra des mesures appropriées supplémentaires en fonction de ses conclusions.</p>
+            <span class="english-block">"The trust will assess the full RCP review when it is published and will take further appropriate action based on its findings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="434.11" data-end="442.94">
+            <p class="french-block">"Nous voulons rassurer notre communauté que la sécurité, l'expérience et le bien-être des patients restent nos priorités", a ajouté la fiducie.</p>
+            <span class="english-block">"We want to reassure our community that patient safety, experience and wellbeing remain our top priorities," the trust added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="442.94" data-end="447.65">
+            <p class="french-block">Dites-nous quels articles nous devrions couvrir à Coventry et Warwickshire</p>
+            <span class="english-block">Tell us which stories we should cover in Coventry & Warwickshire</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="447.65" data-end="456.79">
+            <p class="french-block">Suivez BBC Coventry & Warwickshire sur BBC Sounds, Facebook, externe, X, externe et Instagram, externe.</p>
+            <span class="english-block">Follow BBC Coventry & Warwickshire on BBC Sounds, Facebook, external, X, external and Instagram, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="456.79" data-end="462.94">
+            <p class="french-block">Les retards de l'opération post-cerveau "l'homme gauche ayant besoin de soins 24 heures sur 24"</p>
+            <span class="english-block">Post-brain op delays 'left man needing 24/7 care'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="462.94" data-end="467.02">
+            <p class="french-block">L'homme a subi une chimiothérapie inutile pendant 14 ans.</p>
+            <span class="english-block">Man had unnecessary chemotherapy for 14 years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="467.02" data-end="471.53">
+            <p class="french-block">Hôpitaux universitaires Coventry et Warwickshire NHS Trust</p>
+            <span class="english-block">University Hospitals Coventry and Warwickshire NHS Trust</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="471.53" data-end="474.1">
+            <p class="french-block">Collège royal des médecins</p>
+            <span class="english-block">Royal College of Physicians</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_4.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
