@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I got paid $5,000 to move to a place I'd never heard of</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>I got paid $5,000 to move to a place I'd never heard of</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 14 Sep 2026 23:08:28 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c3eq7485kewo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Relocation schemes offer support for people who want to swap big cities for a cheaper, quieter life.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.94" data-end="15.74">
+            <p class="french-block">Brianna Beyrouti dit que déménager dans une partie moins chère des États-Unis signifie qu'elle peut se permettre d'emmener ses enfants en vacances</p>
+            <span class="english-block">Brianna Beyrouti says moving to a cheaper part of the US means she can afford to take her kids on holiday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.74" data-end="23.23">
+            <p class="french-block">Quand Brianna Beyrouti se rappelle sa vie passée à Portland, dans l'Oregon, elle dit qu'elle avait été "noyé" financièrement.</p>
+            <span class="english-block">When Brianna Beyrouti looks back on her former life in the city of Portland, Oregon, she says she had been financially "drowning".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.23" data-end="35.4">
+            <p class="french-block">" Je vivais absolument de chèque à chèque. Chaque fois que la plus petite chose venait à l'esprit, j'étais comme: 'Oh, mon Dieu, les enfants ont besoin de chaussures, comment vais- je me permettre cela?</p>
+            <span class="english-block">"I was absolutely living paycheque to paycheque. Every time the smallest thing came up, it was like 'Oh, gosh, the kids need shoes, how am I going to afford that?' As a single parent, everything falls on my shoulders."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.4" data-end="42.65">
+            <p class="french-block">L'année dernière, Brianna a quitté Portland et sa population métropolitaine de 2,5 millions de personnes.</p>
+            <span class="english-block">Last year, Brianna left Portland and its metropolitan population of 2.5 million people.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.65" data-end="59.28">
+            <p class="french-block">Elle et ses deux enfants ont déménagé à 2000 miles à l'est de Muncie, dans l'Indiana, une petite ville de 65 000 habitants, une université et beaucoup d'espace ouvert, en profitant d'un programme qui a contribué 5 000 $ au coût de la déménagement pour stimuler la croissance démographique.</p>
+            <span class="english-block">She and her two children moved 2,000 miles east to Muncie, Indiana, a small city with 65,000 people, a university and lots of open space, taking advantage of a scheme that contributed $5,000 towards the cost of the move to boost population growth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.28" data-end="71.38">
+            <p class="french-block">Elle continue de travailler à distance pour la même banque, donc son salaire annuel de 107 000 $ (79 000 £) est inchangé, mais elle a pu acheter une maison pour la première fois.</p>
+            <span class="english-block">The relocation has been a revelation for her finances. She continues to work remotely for the same bank, so her annual salary of $107,000 (£79,000) is unchanged, but she has been able to buy a home for the first time. And her mortgage is less than she used to have to pay in rent.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.38" data-end="85.73">
+            <p class="french-block">À Portland, elle payait 1,290 dollars par mois pour un appartement, tandis que le coût combiné de son prêt hypothécaire, de son assurance habitation et de l'impôt sur la propriété pour sa maison détachée à Muncie était de 1 100 dollars.</p>
+            <span class="english-block">In Portland she was paying rent of $1,290 a month for an apartment, while the combined cost of her mortgage, home insurance and property tax for her detached home in Muncie is $1,100.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.73" data-end="96.96">
+            <p class="french-block">Ajoutez le fait que l'impôt sur le revenu de l'État est plus bas dans l'Indiana, et que ses factures d'assurance automobile et d'énergie ont également diminué, et Brianna dit qu'elle est mieux avec 600 $ par mois.</p>
+            <span class="english-block">Add the fact that state income tax is lower in Indiana, and that her car insurance and energy bills have also fallen, and Brianna says she is $600 a month better off.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.96" data-end="105.77">
+            <p class="french-block">" Je suis plus capable de vivre que jamais, dit- elle. " Quand mes enfants veulent quelque chose, je suis beaucoup plus enclin à dire oui.</p>
+            <span class="english-block">"I'm able to live my life more than I was before," she says. "When my kids want something, I'm much more inclined to say yes. My quality of life has increased dramatically."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.77" data-end="110.11">
+            <p class="french-block">Brianna et ses enfants ont échangé Portland contre Muncie .</p>
+            <span class="english-block">Brianna and her children swapped Portland for Muncie</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.11" data-end="114.62">
+            <p class="french-block">Brianna n'est pas la seule à échanger une grande ville contre une plus petite.</p>
+            <span class="english-block">Brianna is not alone in swapping a big city for a smaller one.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.62" data-end="124.7">
+            <p class="french-block">Alors que le coût de la vie continue de monter aux États-Unis, de nombreuses grandes villes voient leur population diminuer, alors que les gens partent à la recherche d'une propriété moins chère.</p>
+            <span class="english-block">As the high cost of living continues to bite in the US, many of the biggest cities are seeing their populations fall, as people leave in search of cheaper property.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.7" data-end="135.1">
+            <p class="french-block">Un rapport de 2025 de l'Association nationale des agents immobiliers a révélé que pour les personnes qui déménagent dans un autre État, l'abordabilité était leur raison principale.</p>
+            <span class="english-block">A 2025 report from the National Association of Realtors found that for people moving to a different state, affordability was their primary reason., external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.1" data-end="151.7">
+            <p class="french-block">En conséquence, les grandes villes de New York et de Los Angeles à Portland, dans l'Oregon, ont connu une baisse de leur population, en dehors des États-Unis ces dernières années, alimentée par l'accroissement considérable de l'acceptation du travail à distance depuis la pandémie de Covid-19.</p>
+            <span class="english-block">As a result, big cities from the likes of New York and Los Angeles to Portland, Oregon have seen a dip in their populations, external in recent years, further fuelled by the greatly increased acceptance of remote working since the Covid-19 pandemic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.7" data-end="159.82">
+            <p class="french-block">En revanche, certaines petites villes et villes aux États-Unis, comme Muncie, voient leur population augmenter après des décennies de déclin.</p>
+            <span class="english-block">By contrast, some small towns and cities across the US, such as Muncie, are seeing their populations rise after decades of decline. The number of people who live in Muncie hit 65,466 last year, official figures showed., external This is up from 65,194 in 2020, but still way down on its population of 71,828 in 1990.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.82" data-end="172.54">
+            <p class="french-block">Pour l'aider à se démarquer de la foule et encourager les travailleurs éloignés à s'y installer en provenance de l'extérieur de l'Indiana, le conseil local de Muncie leur offre 5 000 dollars en espèces pour couvrir leurs frais de relocalisation.</p>
+            <span class="english-block">To help it stand out from the crowd, and encourage remote workers to move there from outside Indiana, Muncie's local council offers them $5,000 in cash to cover their relocation costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.54" data-end="183.17">
+            <p class="french-block">Il le fait via un site Web appelé MakeMyMove, qui énumère plusieurs de ces programmes de soutien à la relocalisation offerts par de petites villes et villages similaires à travers les États-Unis.</p>
+            <span class="english-block">It does this via a website called MakeMyMove, which lists several such relocation support schemes offered by similar small cities and towns across the US. These pay MakeMyMove a subscription fee.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.17" data-end="192.58">
+            <p class="french-block">D'autres locaux qui offrent des incitations aux nouveaux résidents potentiels sont des billets de cinéma complémentaires, des bons de restaurant et même des bouteilles de vin gratuits.</p>
+            <span class="english-block">Other incentives locations offer potential new residents are complementary cinema tickets, restaurant vouchers, and even free bottles of wine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.58" data-end="198.84">
+            <p class="french-block">Brianna et ses enfants sont l'une des 100 familles qui ont déménagé à Muncie grâce au programme MakeMyMove.</p>
+            <span class="english-block">Brianna and her children are one of around 100 families to have moved to Muncie through the MakeMyMove programme. She says she hadn't heard of the city before.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.84" data-end="207.46">
+            <p class="french-block">Aux États-Unis, MakeMyMove a aidé 1000 personnes à déménager l'année dernière, et vise à augmenter ce nombre à 1 500 en 2026.</p>
+            <span class="english-block">Across the US, MakeMyMove says it helped 1,000 people in total relocate last year, and is on target to increase that to 1,500 in 2026.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.46" data-end="212.4">
+            <p class="french-block">Déménager en Amérique a permis à Elena Chrysostomou d' acheter une maison.</p>
+            <span class="english-block">Moving to smalltown America has allowed Elena Chrysostomou to buy a home</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.4" data-end="221.88">
+            <p class="french-block">La scientifique Elena Chrysostomou a également utilisé un programme de soutien à la relocalisation pour échanger une grande ville contre une petite ville américaine.</p>
+            <span class="english-block">Scientist Elena Chrysostomou also used a relocation support scheme to swap a big city for smalltown US. In 2024 she relocated from San Diego, California, to Jacksonville, a town of 17,700 people in rural Illinois.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.88" data-end="237.82">
+            <p class="french-block">Cette décision a été soutenue par la Jacksonville Regional Economic Development Corporation (JREDC), qui lui a donné 5 000 $ en espèces, ainsi qu'un "forfait de qualité de vie" de 4 000 $ qui comprend des adhésions gratuites à la salle de gym et des cartes de golf.</p>
+            <span class="english-block">The move was backed by the Jacksonville Regional Economic Development Corporation (JREDC), which gave her $5,000 in cash, plus a "quality of life package" worth $4,000 that includes free gym memberships and golf passes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.82" data-end="245.33">
+            <p class="french-block">Le JREDC dit que si la région est "déjà un endroit idéal pour vivre", le régime de soutien aide à "souder l'accord".</p>
+            <span class="english-block">The JREDC says that while the region is "already a great place to live", the support scheme helps to "sweeten the deal".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.33" data-end="265.34">
+            <p class="french-block">Elena avait dépensé 3 000 $ pour louer un appartement d'une chambre à San Diego, mais elle possède maintenant une maison de trois chambres, avec une hypothèque de 1 868 $. En même temps, son salaire a augmenté de 22% après avoir changé d'emploi, et son trajet est passé de 15 minutes en voiture à une de seulement une minute.</p>
+            <span class="english-block">Elena was spending $3,000 renting a one-bedroom apartment in San Diego, but she now owns a three-bedroom home, with a mortgage of $1,868. At the same time, her salary has gone up 22% after she changed jobs, and her commute has gone down from a 15-minute drive to one of just one minute.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.34" data-end="276.05">
+            <p class="french-block">"Je n'ai jamais pensé pouvoir me permettre une maison seule, j'ai toujours pensé avoir besoin d'un partenaire, et même alors, à San Diego, ce serait si difficile", dit-elle.</p>
+            <span class="english-block">"I never thought that I'd be able to afford a house on my own, I always thought I'd need a partner, and even then, in San Diego, it would be so tough," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.05" data-end="280.97">
+            <p class="french-block">"C'est juste plus libérateur, plus de sécurité et d'indépendance".</p>
+            <span class="english-block">"It's just more freeing. There's more security and independence."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.97" data-end="295.61">
+            <p class="french-block">Bien que Brianna et elle n'aient aucun regret, ils admettent certains inconvénients de leur nouvelle vie: notamment le choix des activités et des restaurants, la disparition d'amis et de famille, et la difficulté de Brianna à installer ses enfants dans de nouvelles écoles.</p>
+            <span class="english-block">While both she and Brianna have no regrets, they do admit to some drawbacks to their new lives. These include the narrower range of activities and restaurant choices, leaving behind friends and family, and for Brianna the difficulty of settling her children into new schools.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.61" data-end="303.53">
+            <p class="french-block">Et alors qu'à Portland, Brianna aimait se promener dans les parcs et les magasins, elle se fie maintenant à sa voiture pour aller n'importe où.</p>
+            <span class="english-block">And while in Portland Brianna enjoyed walking to parks and shops, she now relies on her car to get anywhere.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.53" data-end="313.58">
+            <p class="french-block">Mais elle dit qu'elle est heureuse. " J'ai les plus grandes économies que j'ai jamais eues dans ma vie, et je suis propriétaire de maison, et je peux faire des choses avec mes enfants.</p>
+            <span class="english-block">But overall she says she is thrilled. "I have the biggest savings I've ever had in my life, and I'm a homeowner, and I can do things with my kids – we actually went on vacation for the first time in my youngest's life."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="313.58" data-end="318.31">
+            <p class="french-block">Nous avons fait des colis tous les jours pendant 10 ans et nous sommes sortis à 40 ans.</p>
+            <span class="english-block">We had packed lunches every day for 10 years and retired at 40</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="318.31" data-end="324.55">
+            <p class="french-block">"Ce que vous voyez, c'est ce que vous payez" - pourquoi certains restaurants américains interdisent les billets</p>
+            <span class="english-block">'What you see is what you pay' - why some US restaurants are banning tips</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="324.55" data-end="330.05">
+            <p class="french-block">La culture américaine des astuces "s'est-elle dépassée" en se propagant à l'étranger?</p>
+            <span class="english-block">Is 'out of control' US tipping culture spreading overseas?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_14.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # The Pitt is up for 25 Emmys - but the show's biggest fans are real-life doctors
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/clyqx0e175ko?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/clyqx0e175ko?at_medium=RSS&at_campaign=rss)  
-**Published:** Sun, 13 Sep 2026 23:18:39 GMT  
+**Published:** Mon, 14 Sep 2026 20:39:48 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](health_article_25.mp3)  
 
 ---
@@ -60,13 +60,21 @@
 
 ### Section 7
 
+**🇬🇧 EN:** FOLLOW LIVE - TV's biggest stars to walk red carpet ahead of 78th Emmy Awards
+
+**🇫🇷 FR:** *Suivez en direct - Les plus grandes stars de la télévision pour marcher sur le tapis rouge avant la 78e cérémonie des Emmy Awards*
+
+---
+
+### Section 8
+
 **🇬🇧 EN:** The show is a TV drama focusing on the staff of a fictional trauma centre in Pittsburgh
 
 **🇫🇷 FR:** *L' émission est un drame télévisé qui se concentre sur le personnel d' un centre de traumatismes fictif à Pittsburgh .*
 
 ---
 
-### Section 8
+### Section 9
 
 **🇬🇧 EN:** Wyle (right) is a producer on the show as well as part of the writing team
 
@@ -74,7 +82,7 @@
 
 ---
 
-### Section 9
+### Section 10
 
 **🇬🇧 EN:** The series covers the life and work of the staff of Pittsburgh's Trauma Medical Centre, with each episode representing an hour of a day and there are 15 in each series.
 
@@ -82,7 +90,7 @@
 
 ---
 
-### Section 10
+### Section 11
 
 **🇬🇧 EN:** A constant thread through each episode is the noise, the pace of activity and the constant demands on the staff who never seem to get a break. Complex procedures and life-saving interventions are shown in graphic, and often, gory detail.
 
@@ -90,7 +98,7 @@
 
 ---
 
-### Section 11
+### Section 12
 
 **🇬🇧 EN:** The lead character Dr Michael Robinavitch, known as Dr Robby, is a hardened and highly experienced emergency medicine consultant (in US hospitals a senior emergency attending physician).
 
@@ -98,7 +106,7 @@
 
 ---
 
-### Section 12
+### Section 13
 
 **🇬🇧 EN:** Played by Noah Wyle, previously in the cast of mid-90s medical drama ER, he is an executive producer as well as part of the writing team, which includes qualified doctors.
 
@@ -106,7 +114,7 @@
 
 ---
 
-### Section 13
+### Section 14
 
 **🇬🇧 EN:** Wyle was invited to take part in a platform discussion at a prestigious conference with more than 6,000 emergency medicine experts in the audience.
 
@@ -114,7 +122,7 @@
 
 ---
 
-### Section 14
+### Section 15
 
 **🇬🇧 EN:** "People came up to him and, as opposed to actors and athletes where they say they are amazing or love their work, people just said thank you to him," Cirillo says.
 
@@ -122,7 +130,7 @@
 
 ---
 
-### Section 15
+### Section 16
 
 **🇬🇧 EN:** "The Pitt is more than just a good TV show – the term I use is validation."
 
@@ -130,7 +138,7 @@
 
 ---
 
-### Section 16
+### Section 17
 
 **🇬🇧 EN:** Social and ethical issues are often reflected. A stressed daughter who is caring for her sick mother leaves her in the emergency department and then can't be found.
 
@@ -138,7 +146,7 @@
 
 ---
 
-### Section 17
+### Section 18
 
 **🇬🇧 EN:** There are anguished conversations with parents who are desperate for their child to be kept alive, despite doctors saying there is no hope.
 
@@ -146,7 +154,7 @@
 
 ---
 
-### Section 18
+### Section 19
 
 **🇬🇧 EN:** Health inequalities are highlighted, with some patients struggling with the payments required in the US health system.
 
@@ -154,7 +162,7 @@
 
 ---
 
-### Section 19
+### Section 20
 
 **🇬🇧 EN:** Long waits and patient frustration are obvious shades of the NHS.
 
@@ -162,7 +170,7 @@
 
 ---
 
-### Section 20
+### Section 21
 
 **🇬🇧 EN:** And, based on our conversations, the series has become more popular in the UK with medics.
 
@@ -170,7 +178,7 @@
 
 ---
 
-### Section 21
+### Section 22
 
 **🇬🇧 EN:** Doctors say they like to see themselves represented on screen in shows like The Pitt
 
@@ -178,7 +186,7 @@
 
 ---
 
-### Section 22
+### Section 23
 
 **🇬🇧 EN:** Doctors seem ready to watch even in weeks when they have had punishing days or nights in A&E.
 
@@ -186,7 +194,7 @@
 
 ---
 
-### Section 23
+### Section 24
 
 **🇬🇧 EN:** One of them is Dr Fiona Hunter, vice president of the Royal College of Emergency Medicine in Scotland.
 
@@ -194,7 +202,7 @@
 
 ---
 
-### Section 24
+### Section 25
 
 **🇬🇧 EN:** "I wouldn't do it straight after a shift," she said. "We all need to decompress and debrief what we have experienced.
 
@@ -202,7 +210,7 @@
 
 ---
 
-### Section 25
+### Section 26
 
 **🇬🇧 EN:** "But in between shifts, when I have got downtime, it's watchable, relatable. It makes me feel other people might get it."
 
@@ -210,7 +218,7 @@
 
 ---
 
-### Section 26
+### Section 27
 
 **🇬🇧 EN:** North Wales consultant Dr Rob Perry is another fan.
 
@@ -218,7 +226,7 @@
 
 ---
 
-### Section 27
+### Section 28
 
 **🇬🇧 EN:** "I think it is reassuring when you see people portraying doctors and nurses in a similar job to your own and, though its not in the UK, they are doing their level best to give the best care they can," he said.
 
@@ -226,7 +234,7 @@
 
 ---
 
-### Section 28
+### Section 29
 
 **🇬🇧 EN:** Doctors we spoke to do point out that each episode of The Pitt brings together several urgent trauma cases which typically might be spread across 24 hours or more.
 
@@ -234,7 +242,7 @@
 
 ---
 
-### Section 29
+### Section 30
 
 **🇬🇧 EN:** But Prof Damian Roland, a practising emergency medicine consultant, notes that the drama does illustrate wider health challenges.
 
@@ -242,7 +250,7 @@
 
 ---
 
-### Section 30
+### Section 31
 
 **🇬🇧 EN:** He thinks it puts the problems of the NHS in perspective.
 
@@ -250,7 +258,7 @@
 
 ---
 
-### Section 31
+### Section 32
 
 **🇬🇧 EN:** "Virtually every emergency department in the world at the moment has not enough space to see patients," he says.
 
@@ -258,7 +266,7 @@
 
 ---
 
-### Section 32
+### Section 33
 
 **🇬🇧 EN:** "It's a very common theme in The Pitt about the central character arguing with hospital management saying 'I need more flow, you can't just leave these patients here' – that's a very common problem."
 
@@ -266,7 +274,7 @@
 
 ---
 
-### Section 33
+### Section 34
 
 **🇬🇧 EN:** "In my work in the NHS, its very much we all work for one another and I like that we represent that on the show," says Sarah Tosh, a senior NHS nurse who is the series medical adviser.
 
@@ -274,7 +282,7 @@
 
 ---
 
-### Section 34
+### Section 35
 
 **🇬🇧 EN:** "In The Pitt they've got a bit about the characters' day-to-day life, but it's more about their medicine, which patient they are doing and what they are going on to next."
 
@@ -282,7 +290,7 @@
 
 ---
 
-### Section 35
+### Section 36
 
 **🇬🇧 EN:** Gerran Howell (right) is a British actor nominated for an outstanding supporting actor award at the Emmys
 
@@ -290,7 +298,7 @@
 
 ---
 
-### Section 36
+### Section 37
 
 **🇬🇧 EN:** One of the stars of The Pitt, Gerran Howell, was born and brought up in South Wales.
 
@@ -298,7 +306,7 @@
 
 ---
 
-### Section 37
+### Section 38
 
 **🇬🇧 EN:** With other actors he was put through a medical boot camp for speed learning of medical techniques and jargon. This included training on dummies and CPR practice.
 
@@ -306,7 +314,7 @@
 
 ---
 
-### Section 38
+### Section 39
 
 **🇬🇧 EN:** In a BBC Wales interview he was asked if he would like to train to be a doctor.
 
@@ -314,7 +322,7 @@
 
 ---
 
-### Section 39
+### Section 40
 
 **🇬🇧 EN:** "I have such a newfound respect for the medical profession. It's maybe made me realise that I don't know how I would do this. I will stick to acting."
 
@@ -322,7 +330,7 @@
 
 ---
 
-### Section 40
+### Section 41
 
 **🇬🇧 EN:** Howell is nominated for an outstanding supporting actor award at the Emmys.
 
@@ -330,7 +338,7 @@
 
 ---
 
-### Section 41
+### Section 42
 
 **🇬🇧 EN:** The winners will be announced on 14 September at a ceremony in Los Angeles.
 
@@ -338,7 +346,7 @@
 
 ---
 
-### Section 42
+### Section 43
 
 **🇬🇧 EN:** The Pitt is available to stream on HBO Max in the UK and US.
 
@@ -346,7 +354,7 @@
 
 ---
 
-### Section 43
+### Section 44
 
 **🇬🇧 EN:** Noah Wyle is back in A&E with new drama The Pitt: 'I hope people watch with empathy'
 

@@ -1,146 +1,146 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-09-14 06:12:48  
+Generated on: 2026-09-15 06:17:01  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Committee calls for bill to address AI threat to human rights**
-   - **Published:** Mon, 14 Sep 2026 03:23:54 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Committee_calls_for_bill_to_address_AI_t.md](top-stories_article_1_Committee_calls_for_bill_to_address_AI_t.md)
+1. **Lucy Letby public inquiry findings set to be published**
+   - **Published:** Tue, 15 Sep 2026 01:54:35 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Lucy_Letby_public_inquiry_findings_set_t.md](top-stories_article_1_Lucy_Letby_public_inquiry_findings_set_t.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Russia hits Ukrainian train shortly after Boris Johnson and top European officials leave station**
-   - **Published:** Mon, 14 Sep 2026 03:38:13 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Russia_hits_Ukrainian_train_shortly_afte.md](top-stories_article_2_Russia_hits_Ukrainian_train_shortly_afte.md)
+2. **Trump says AI safety fears a 'hoax' as he rejects calls for greater safeguards**
+   - **Published:** Tue, 15 Sep 2026 03:47:27 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Trump_says_AI_safety_fears_a_hoax_as_he_.md](top-stories_article_2_Trump_says_AI_safety_fears_a_hoax_as_he_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Deep-fried food banned under new school dinner rules in England**
-   - **Published:** Sun, 13 Sep 2026 21:30:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Deep-fried_food_banned_under_new_school_.md](top-stories_article_3_Deep-fried_food_banned_under_new_school_.md)
+3. **Chris Mason: Row over Reform's mega donations has mileage in it yet**
+   - **Published:** Mon, 14 Sep 2026 23:51:03 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Chris_Mason_Row_over_Reforms_mega_donati.md](top-stories_article_3_Chris_Mason_Row_over_Reforms_mega_donati.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **I had 11 years of chemotherapy for a cancer I didn't have**
-   - **Published:** Sun, 13 Sep 2026 23:11:37 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_I_had_11_years_of_chemotherapy_for_a_can.md](top-stories_article_4_I_had_11_years_of_chemotherapy_for_a_can.md)
+4. **Nato jets down drone that entered Lithuanian airspace**
+   - **Published:** Tue, 15 Sep 2026 02:22:07 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Nato_jets_down_drone_that_entered_Lithua.md](top-stories_article_4_Nato_jets_down_drone_that_entered_Lithua.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Why a fresh wave of North Korean soldiers may fight in Russia's war in Ukraine**
-   - **Published:** Sun, 13 Sep 2026 23:16:33 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Why_a_fresh_wave_of_North_Korean_soldier.md](top-stories_article_5_Why_a_fresh_wave_of_North_Korean_soldier.md)
+5. **Welsh actor Matthew Rhys makes Emmy Awards history with double win**
+   - **Published:** Tue, 15 Sep 2026 03:50:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md](top-stories_article_5_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **'Culture shift' needed in how UK does business, PM urges**
-   - **Published:** Sun, 13 Sep 2026 21:30:21 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Culture_shift_needed_in_how_UK_does_busi.md](top-stories_article_6_Culture_shift_needed_in_how_UK_does_busi.md)
+6. **Watch: Selena Gomez, Zendaya and other stars light up Emmys red carpet**
+   - **Published:** Tue, 15 Sep 2026 02:00:40 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Watch_Selena_Gomez_Zendaya_and_other_sta.md](top-stories_article_6_Watch_Selena_Gomez_Zendaya_and_other_sta.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Buckingham Palace works uncover trove of everyday items dating back to 1800s**
-   - **Published:** Sun, 13 Sep 2026 23:20:03 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Buckingham_Palace_works_uncover_trove_of.md](top-stories_article_7_Buckingham_Palace_works_uncover_trove_of.md)
+7. **US confirms for first time it has deployed space weapons**
+   - **Published:** Tue, 15 Sep 2026 01:52:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_US_confirms_for_first_time_it_has_deploy.md](top-stories_article_7_US_confirms_for_first_time_it_has_deploy.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Gloomy forecast for tenants as rent rises set to speed up**
-   - **Published:** Sun, 13 Sep 2026 23:05:45 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Gloomy_forecast_for_tenants_as_rent_rise.md](top-stories_article_8_Gloomy_forecast_for_tenants_as_rent_rise.md)
+8. **Man admits drugging and raping wife over 20 years**
+   - **Published:** Mon, 14 Sep 2026 16:54:26 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Man_admits_drugging_and_raping_wife_over.md](top-stories_article_8_Man_admits_drugging_and_raping_wife_over.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Russia hits Ukrainian train shortly after Boris Johnson and top European officials leave station**
-   - **Published:** Mon, 14 Sep 2026 03:38:13 GMT
-   - **Read Parallel Translation:** [world_article_9_Russia_hits_Ukrainian_train_shortly_afte.md](world_article_9_Russia_hits_Ukrainian_train_shortly_afte.md)
+1. **China criticises idea it is in 'malicious competition' over AI**
+   - **Published:** Mon, 14 Sep 2026 11:31:39 GMT
+   - **Read Parallel Translation:** [world_article_9_China_criticises_idea_it_is_in_malicious.md](world_article_9_China_criticises_idea_it_is_in_malicious.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Trump downplays warnings of AI risks, citing rivalry with China**
-   - **Published:** Sun, 13 Sep 2026 18:49:37 GMT
-   - **Read Parallel Translation:** [world_article_10_Trump_downplays_warnings_of_AI_risks_cit.md](world_article_10_Trump_downplays_warnings_of_AI_risks_cit.md)
+2. **Welsh actor Matthew Rhys makes Emmy Awards history with double win**
+   - **Published:** Tue, 15 Sep 2026 03:50:06 GMT
+   - **Read Parallel Translation:** [world_article_10_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md](world_article_10_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Questions mount over what an AI 'slowdown' would look like**
-   - **Published:** Sun, 13 Sep 2026 18:20:22 GMT
-   - **Read Parallel Translation:** [world_article_11_Questions_mount_over_what_an_AI_slowdown.md](world_article_11_Questions_mount_over_what_an_AI_slowdown.md)
+3. **Nato jets down drone that entered Lithuanian airspace**
+   - **Published:** Tue, 15 Sep 2026 02:22:07 GMT
+   - **Read Parallel Translation:** [world_article_11_Nato_jets_down_drone_that_entered_Lithua.md](world_article_11_Nato_jets_down_drone_that_entered_Lithua.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Swedish left-wing bloc narrowly ahead with election too close to call**
-   - **Published:** Mon, 14 Sep 2026 01:58:59 GMT
-   - **Read Parallel Translation:** [world_article_12_Swedish_left-wing_bloc_narrowly_ahead_wi.md](world_article_12_Swedish_left-wing_bloc_narrowly_ahead_wi.md)
+4. **US confirms for first time it has deployed space weapons**
+   - **Published:** Tue, 15 Sep 2026 01:52:02 GMT
+   - **Read Parallel Translation:** [world_article_12_US_confirms_for_first_time_it_has_deploy.md](world_article_12_US_confirms_for_first_time_it_has_deploy.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Committee calls for bill to address AI threat to human rights**
-   - **Published:** Mon, 14 Sep 2026 03:23:54 GMT
-   - **Read Parallel Translation:** [business_article_13_Committee_calls_for_bill_to_address_AI_t.md](business_article_13_Committee_calls_for_bill_to_address_AI_t.md)
+1. **Trump says AI safety fears a 'hoax' as he rejects calls for greater safeguards**
+   - **Published:** Tue, 15 Sep 2026 03:47:27 GMT
+   - **Read Parallel Translation:** [business_article_13_Trump_says_AI_safety_fears_a_hoax_as_he_.md](business_article_13_Trump_says_AI_safety_fears_a_hoax_as_he_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Gloomy forecast for tenants as rent rises set to speed up**
-   - **Published:** Sun, 13 Sep 2026 23:05:45 GMT
-   - **Read Parallel Translation:** [business_article_14_Gloomy_forecast_for_tenants_as_rent_rise.md](business_article_14_Gloomy_forecast_for_tenants_as_rent_rise.md)
+2. **I got paid $5,000 to move to a place I'd never heard of**
+   - **Published:** Mon, 14 Sep 2026 23:08:28 GMT
+   - **Read Parallel Translation:** [business_article_14_I_got_paid_5000_to_move_to_a_place_Id_ne.md](business_article_14_I_got_paid_5000_to_move_to_a_place_Id_ne.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **'Culture shift' needed in how UK does business, PM urges**
-   - **Published:** Sun, 13 Sep 2026 21:30:21 GMT
-   - **Read Parallel Translation:** [business_article_15_Culture_shift_needed_in_how_UK_does_busi.md](business_article_15_Culture_shift_needed_in_how_UK_does_busi.md)
+3. **AI 'kill switch' may need to be mandatory, Anthropic co-founder tells BBC**
+   - **Published:** Tue, 15 Sep 2026 00:32:21 GMT
+   - **Read Parallel Translation:** [business_article_15_AI_kill_switch_may_need_to_be_mandatory_.md](business_article_15_AI_kill_switch_may_need_to_be_mandatory_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **How to protect your laptop, phone and bike from thieves at uni**
-   - **Published:** Sun, 13 Sep 2026 23:39:32 GMT
-   - **Read Parallel Translation:** [business_article_16_How_to_protect_your_laptop_phone_and_bik.md](business_article_16_How_to_protect_your_laptop_phone_and_bik.md)
+4. **Pubs in England and Wales to allow digital ID apps to prove age**
+   - **Published:** Mon, 14 Sep 2026 23:07:56 GMT
+   - **Read Parallel Translation:** [business_article_16_Pubs_in_England_and_Wales_to_allow_digit.md](business_article_16_Pubs_in_England_and_Wales_to_allow_digit.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Committee calls for bill to address AI threat to human rights**
-   - **Published:** Mon, 14 Sep 2026 03:23:54 GMT
-   - **Read Parallel Translation:** [technology_article_17_Committee_calls_for_bill_to_address_AI_t.md](technology_article_17_Committee_calls_for_bill_to_address_AI_t.md)
+1. **Trump says AI safety fears a 'hoax' as he rejects calls for greater safeguards**
+   - **Published:** Tue, 15 Sep 2026 03:47:27 GMT
+   - **Read Parallel Translation:** [technology_article_17_Trump_says_AI_safety_fears_a_hoax_as_he_.md](technology_article_17_Trump_says_AI_safety_fears_a_hoax_as_he_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Trump downplays warnings of AI risks, citing rivalry with China**
-   - **Published:** Sun, 13 Sep 2026 18:49:37 GMT
-   - **Read Parallel Translation:** [technology_article_18_Trump_downplays_warnings_of_AI_risks_cit.md](technology_article_18_Trump_downplays_warnings_of_AI_risks_cit.md)
+2. **Pubs in England and Wales to allow digital ID apps to prove age**
+   - **Published:** Mon, 14 Sep 2026 23:07:56 GMT
+   - **Read Parallel Translation:** [technology_article_18_Pubs_in_England_and_Wales_to_allow_digit.md](technology_article_18_Pubs_in_England_and_Wales_to_allow_digit.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Questions mount over what an AI 'slowdown' would look like**
-   - **Published:** Sun, 13 Sep 2026 18:20:22 GMT
-   - **Read Parallel Translation:** [technology_article_19_Questions_mount_over_what_an_AI_slowdown.md](technology_article_19_Questions_mount_over_what_an_AI_slowdown.md)
+3. **Valve's Steam Frame is excellent - but at over £1,000 is VR still too expensive?**
+   - **Published:** Mon, 14 Sep 2026 17:05:31 GMT
+   - **Read Parallel Translation:** [technology_article_19_Valves_Steam_Frame_is_excellent_-_but_at.md](technology_article_19_Valves_Steam_Frame_is_excellent_-_but_at.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **AI staff 'genuinely frightened' for humanity's future, ex-Anthropic researcher tells BBC**
-   - **Published:** Sun, 13 Sep 2026 14:53:40 GMT
-   - **Read Parallel Translation:** [technology_article_20_AI_staff_genuinely_frightened_for_humani.md](technology_article_20_AI_staff_genuinely_frightened_for_humani.md)
+4. **What is AI, how does it work and why are some people concerned about it?**
+   - **Published:** Mon, 14 Sep 2026 16:09:56 GMT
+   - **Read Parallel Translation:** [technology_article_20_What_is_AI_how_does_it_work_and_why_are_.md](technology_article_20_What_is_AI_how_does_it_work_and_why_are_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **The Himalayas are melting faster - and India's economy is 'at risk'**
-   - **Published:** Sun, 13 Sep 2026 22:07:22 GMT
-   - **Read Parallel Translation:** [science_article_21_The_Himalayas_are_melting_faster_-_and_I.md](science_article_21_The_Himalayas_are_melting_faster_-_and_I.md)
+1. **Mass nesting brings swarms of turtles to Mexican beach**
+   - **Published:** Tue, 15 Sep 2026 01:08:55 GMT
+   - **Read Parallel Translation:** [science_article_21_Mass_nesting_brings_swarms_of_turtles_to.md](science_article_21_Mass_nesting_brings_swarms_of_turtles_to.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Summer wildfires caused catastrophic hidden damage, scientists warn**
-   - **Published:** Sun, 13 Sep 2026 06:12:26 GMT
-   - **Read Parallel Translation:** [science_article_22_Summer_wildfires_caused_catastrophic_hid.md](science_article_22_Summer_wildfires_caused_catastrophic_hid.md)
+2. **US scraps limits on emissions from coal and gas power plants**
+   - **Published:** Mon, 14 Sep 2026 22:04:14 GMT
+   - **Read Parallel Translation:** [science_article_22_US_scraps_limits_on_emissions_from_coal_.md](science_article_22_US_scraps_limits_on_emissions_from_coal_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Five night sky events to look out for this autumn**
-   - **Published:** Sat, 12 Sep 2026 23:53:07 GMT
-   - **Read Parallel Translation:** [science_article_23_Five_night_sky_events_to_look_out_for_th.md](science_article_23_Five_night_sky_events_to_look_out_for_th.md)
+3. **Giant jellyfish with '40ft tentacles' captured on camera off coast**
+   - **Published:** Mon, 14 Sep 2026 22:03:17 GMT
+   - **Read Parallel Translation:** [science_article_23_Giant_jellyfish_with_40ft_tentacles_capt.md](science_article_23_Giant_jellyfish_with_40ft_tentacles_capt.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Record heatwaves in France set to make champagne stronger**
-   - **Published:** Sat, 12 Sep 2026 13:00:32 GMT
-   - **Read Parallel Translation:** [science_article_24_Record_heatwaves_in_France_set_to_make_c.md](science_article_24_Record_heatwaves_in_France_set_to_make_c.md)
+4. **UK could 'unlock' 100 more oil and gas projects, say North Sea bosses**
+   - **Published:** Mon, 14 Sep 2026 21:59:02 GMT
+   - **Read Parallel Translation:** [science_article_24_UK_could_unlock_100_more_oil_and_gas_pro.md](science_article_24_UK_could_unlock_100_more_oil_and_gas_pro.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
@@ -148,71 +148,71 @@ Scraped Feed Mode: `ALL`
 ### Section: HEALTH
 
 1. **The Pitt is up for 25 Emmys - but the show's biggest fans are real-life doctors**
-   - **Published:** Sun, 13 Sep 2026 23:18:39 GMT
+   - **Published:** Mon, 14 Sep 2026 20:39:48 GMT
    - **Read Parallel Translation:** [health_article_25_The_Pitt_is_up_for_25_Emmys_-_but_the_sh.md](health_article_25_The_Pitt_is_up_for_25_Emmys_-_but_the_sh.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Some dentists say more young people are grinding their teeth - are you one of them?**
-   - **Published:** Sun, 13 Sep 2026 05:55:19 GMT
-   - **Read Parallel Translation:** [health_article_26_Some_dentists_say_more_young_people_are_.md](health_article_26_Some_dentists_say_more_young_people_are_.md)
+2. **Staff slept while patient killed at NHS mental health unit**
+   - **Published:** Mon, 14 Sep 2026 15:19:26 GMT
+   - **Read Parallel Translation:** [health_article_26_Staff_slept_while_patient_killed_at_NHS_.md](health_article_26_Staff_slept_while_patient_killed_at_NHS_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Fire at nursing home in Chile kills 16 residents**
-   - **Published:** Sat, 12 Sep 2026 19:36:50 GMT
-   - **Read Parallel Translation:** [health_article_27_Fire_at_nursing_home_in_Chile_kills_16_r.md](health_article_27_Fire_at_nursing_home_in_Chile_kills_16_r.md)
+3. **Some dentists say more young people are grinding their teeth - are you one of them?**
+   - **Published:** Sun, 13 Sep 2026 05:55:19 GMT
+   - **Read Parallel Translation:** [health_article_27_Some_dentists_say_more_young_people_are_.md](health_article_27_Some_dentists_say_more_young_people_are_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Running costs of vaccine damage scheme more than double amount paid to victims**
-   - **Published:** Fri, 11 Sep 2026 17:45:14 GMT
-   - **Read Parallel Translation:** [health_article_28_Running_costs_of_vaccine_damage_scheme_m.md](health_article_28_Running_costs_of_vaccine_damage_scheme_m.md)
+4. **Fire at nursing home in Chile kills 16 residents**
+   - **Published:** Sat, 12 Sep 2026 19:36:50 GMT
+   - **Read Parallel Translation:** [health_article_28_Fire_at_nursing_home_in_Chile_kills_16_r.md](health_article_28_Fire_at_nursing_home_in_Chile_kills_16_r.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Committee calls for bill to address AI threat to human rights**
-   - **Published:** Mon, 14 Sep 2026 03:23:54 GMT
-   - **Read Parallel Translation:** [politics_article_29_Committee_calls_for_bill_to_address_AI_t.md](politics_article_29_Committee_calls_for_bill_to_address_AI_t.md)
+1. **Farage says £72m donations are compliant 'with the law today'**
+   - **Published:** Mon, 14 Sep 2026 17:50:29 GMT
+   - **Read Parallel Translation:** [politics_article_29_Farage_says_72m_donations_are_compliant_.md](politics_article_29_Farage_says_72m_donations_are_compliant_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **'Culture shift' needed in how UK does business, PM urges**
-   - **Published:** Sun, 13 Sep 2026 21:30:21 GMT
-   - **Read Parallel Translation:** [politics_article_30_Culture_shift_needed_in_how_UK_does_busi.md](politics_article_30_Culture_shift_needed_in_how_UK_does_busi.md)
+2. **Burnham cancels engagements after death of father**
+   - **Published:** Mon, 14 Sep 2026 18:53:38 GMT
+   - **Read Parallel Translation:** [politics_article_30_Burnham_cancels_engagements_after_death_.md](politics_article_30_Burnham_cancels_engagements_after_death_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Peers to debate donations law changes after Reform's £72m windfall**
-   - **Published:** Mon, 14 Sep 2026 04:15:41 GMT
-   - **Read Parallel Translation:** [politics_article_31_Peers_to_debate_donations_law_changes_af.md](politics_article_31_Peers_to_debate_donations_law_changes_af.md)
+3. **MPs and Lords call for new law to address AI threat to human rights**
+   - **Published:** Mon, 14 Sep 2026 08:07:08 GMT
+   - **Read Parallel Translation:** [politics_article_31_MPs_and_Lords_call_for_new_law_to_addres.md](politics_article_31_MPs_and_Lords_call_for_new_law_to_addres.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Reform confident it won't need to repay any of £72m under proposed new donor rules**
-   - **Published:** Sun, 13 Sep 2026 15:40:38 GMT
-   - **Read Parallel Translation:** [politics_article_32_Reform_confident_it_wont_need_to_repay_a.md](politics_article_32_Reform_confident_it_wont_need_to_repay_a.md)
+4. **Former top civil servant received pay-off of nearly £860,000**
+   - **Published:** Mon, 14 Sep 2026 16:35:40 GMT
+   - **Read Parallel Translation:** [politics_article_32_Former_top_civil_servant_received_pay-of.md](politics_article_32_Former_top_civil_servant_received_pay-of.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Diljit Dosanjh makes history under the famous Wembley arch**
-   - **Published:** Sat, 12 Sep 2026 23:06:08 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Diljit_Dosanjh_makes_history_under_the_f.md](entertainment_article_33_Diljit_Dosanjh_makes_history_under_the_f.md)
+1. **Welsh actor Matthew Rhys makes Emmy Awards history with double win**
+   - **Published:** Tue, 15 Sep 2026 03:50:06 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md](entertainment_article_33_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **In pictures: Thousands flock to Radio 2 in the Park in Stirling**
-   - **Published:** Sun, 13 Sep 2026 14:21:01 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_In_pictures_Thousands_flock_to_Radio_2_i.md](entertainment_article_34_In_pictures_Thousands_flock_to_Radio_2_i.md)
+2. **In pictures: Stars on red carpet at Emmy Awards in LA**
+   - **Published:** Tue, 15 Sep 2026 02:56:19 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_In_pictures_Stars_on_red_carpet_at_Emmy_.md](entertainment_article_34_In_pictures_Stars_on_red_carpet_at_Emmy_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Critics celebrate Céline Dion's 'high-stakes' comeback show in Paris**
-   - **Published:** Sun, 13 Sep 2026 02:41:51 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Critics_celebrate_Céline_Dions_high-stak.md](entertainment_article_35_Critics_celebrate_Céline_Dions_high-stak.md)
+3. **Emmys 2026: The winners and nominees in full**
+   - **Published:** Tue, 15 Sep 2026 02:55:07 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Emmys_2026_The_winners_and_nominees_in_f.md](entertainment_article_35_Emmys_2026_The_winners_and_nominees_in_f.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **'Forget Notting Hill - we set our new romcom in the east end of Glasgow'**
-   - **Published:** Sun, 13 Sep 2026 09:41:13 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Forget_Notting_Hill_-_we_set_our_new_rom.md](entertainment_article_36_Forget_Notting_Hill_-_we_set_our_new_rom.md)
+4. **Oasis confirm Knebworth return plus Manchester and Glasgow live 2027 gigs**
+   - **Published:** Mon, 14 Sep 2026 15:04:22 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Oasis_confirm_Knebworth_return_plus_Manc.md](entertainment_article_36_Oasis_confirm_Knebworth_return_plus_Manc.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

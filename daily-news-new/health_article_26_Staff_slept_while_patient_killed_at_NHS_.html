@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff slept while patient killed at NHS mental health unit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>Staff slept while patient killed at NHS mental health unit</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 14 Sep 2026 15:19:26 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c750vqp1wlxo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Inquest hears how Rolando Torres-Pena, 22, was able to strangle and kill Hugo Flint-Cahan on a hospital ward in east London.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.56" data-end="13.44">
+            <p class="french-block">Hugo a été étranglé à mort alors qu'il séjournait dans une unité de santé mentale du NHS.</p>
+            <span class="english-block">Hugo was strangled to death while staying in an NHS mental health unit</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.44" data-end="24.86">
+            <p class="french-block">Le personnel a falsifié des dossiers, dormi et était sur son téléphone la nuit où un patient a été tué par un autre dans une unité de santé mentale du NHS à l'est de Londres, selon une enquête.</p>
+            <span class="english-block">Staff falsified records, slept and were on their phones on the night one patient was killed by another on an NHS mental health unit in east London, an inquest has heard.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.86" data-end="38.64">
+            <p class="french-block">Hugo Flint-Cahan, 34 ans, était traité au Newham Mental Health Centre (NMHC), géré par le NHS Trust de Londres de l'Est (ELFT), quand il a été attaqué mortellement par Rolando Torres-Pena, 22 ans.</p>
+            <span class="english-block">Hugo Flint-Cahan, 34, was being treated at Newham Mental Health Centre (NMHC), run by the East London NHS Trust (ELFT), when he was fatally attacked by 22-year-old Rolando Torres-Pena.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.64" data-end="43.73">
+            <p class="french-block">La famille de Hugo dit avoir été choquée par les " dangereuses " échecs de ses soins.</p>
+            <span class="english-block">Hugo's family say they have been shocked by the "dangerous" failures in his care.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.73" data-end="53.09">
+            <p class="french-block">La Fondation affirme avoir entrepris un programme de travail important pour "améliorer notre culture, nos comportements et nos pratiques de traitement hospitalier".</p>
+            <span class="english-block">The Trust says it has undertaken a significant programme of work to "improve our inpatient culture, behaviours and practice".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.09" data-end="69.7">
+            <p class="french-block">Dans une conclusion narrative, le coroner a constaté que Hugo avait été tué illégalement, ce qui a été contribué par négligence, a recommandé à quatre membres du personnel de se référer à leur régulateur et que la police métropolitaine réexamine leur enquête sur ce qui s'est passé cette nuit-là.</p>
+            <span class="english-block">In a narrative conclusion, the coroner found Hugo was unlawfully killed which was contributed to by neglect, recommended four members of staff be referred to their regulator and that the Metropolitan police review their investigation into what happened that night.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.7" data-end="80.54">
+            <p class="french-block">Hugo, qui était un patient de la NHMC depuis six mois, a été étranglé dans les premières heures du 3 janvier 2023 par Torres-Pena, qui était arrivé au service cinq jours plus tôt.</p>
+            <span class="english-block">Hugo, who had been a patient at the NHMC for six months, was strangled in the early hours of 3 January 2023 by Torres-Pena who had arrived on the ward five days earlier.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.54" data-end="87.26">
+            <p class="french-block">Torres-Pena a plaidé coupable au Old Bailey d'homicide involontaire pour motif de responsabilité réduite.</p>
+            <span class="english-block">Torres-Pena pleaded guilty at the Old Bailey to manslaughter on the grounds of diminished responsibility. He was given a hospital order without time limit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.26" data-end="94.51">
+            <p class="french-block">Un coroner a critiqué les échecs répétés de la Fondation dans un certain nombre de décès de patients - pas seulement Hugo.</p>
+            <span class="english-block">A coroner criticised repeated failures by the Trust in a number of patient deaths - not just Hugo's.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.51" data-end="110.86">
+            <p class="french-block">Graeme Irvine, le coroner principal de l'est de Londres, a déclaré que c'était comme "la journée des cochons de terre" lorsqu'il a entendu des preuves d'"les mêmes" erreurs, "à maintes reprises", y compris la falsification des dossiers d'observation des patients et la lenteur des réponses aux urgences.</p>
+            <span class="english-block">Graeme Irvine, the Senior Coroner for East London, said it was like "ground hog day" as he heard evidence of "the same" errors,  "over and over again," including the falsification of patient observation records and slow emergency responses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.86" data-end="115.22">
+            <p class="french-block">Les images de la caméra montrent la dernière image de Hugo vivant.</p>
+            <span class="english-block">CCTV footage shows the last image of Hugo alive</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.22" data-end="125.93">
+            <p class="french-block">La nuit de la mort d'Hugo, il y avait deux infirmières et une infirmière assistante en service dans le service de Topaz, une unité de traitement pour hommes atteints de problèmes de santé mentale aigus.</p>
+            <span class="english-block">On the night of Hugo's death, there were two nurses and a nursing assistant on duty on Topaz ward – an inpatient unit for men with acute mental health issues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.93" data-end="131.35">
+            <p class="french-block">Torres-Pena faisait des pas dans le couloir croyant qu'il allait partir, a dit l'enquête.</p>
+            <span class="english-block">Torres-Pena was pacing the corridor believing he was about to leave, the inquest was told.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.35" data-end="146.81">
+            <p class="french-block">Hugo était également inquiet. La caméra de surveillance le montre suivant une des infirmières à un moment donné. Après 1h00, Hugo est vu errant seul dans le couloir. La caméra de surveillance le montre vivant à 1h22.</p>
+            <span class="english-block">Hugo was also unsettled. CCTV shows him following one of the nurses at one point. After 01:00, Hugo is seen wandering the corridor on his own. The CCTV last shows him alive at 01:22. It's thought he went into Torres-Pena's room shortly afterwards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="146.81" data-end="155.14">
+            <p class="french-block">À 01:26 Torres-Pena est vu dans le couloir, il est entré dans la chambre vide d'Hugo, avant de disparaître quelques minutes plus tard.</p>
+            <span class="english-block">At 01:26 Torres-Pena is seen walking the corridor. He went into Hugo's empty room, before he disappears out of shot a couple of minutes later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.14" data-end="177.96">
+            <p class="french-block">On ne sait pas exactement quand Hugo a été attaqué, mais à 01:31 le patient dans la pièce à côté de Torres-Pena peut être vu sur les caméras de surveillance sortir de sa chambre. Il semble regarder vers le haut et vers le bas du couloir, apparemment perturbé par quelque chose. Il n'y a pas de personnel à la vue. Le patient est alors vu regarder quelque chose qui est hors de tir.</p>
+            <span class="english-block">It is not known exactly when Hugo was attacked, but at 01:31 the patient in the room next to Torres-Pena can be seen on CCTV coming out of his room. He appears to be looking up and down the corridor, seemingly disturbed by something. There are no staff in sight. The patient is then seen watching something that's out of shot. It is thought this is when Hugo was beaten and strangled.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.96" data-end="187.13">
+            <p class="french-block">Pendant cette période, les deux infirmières, Rosemary Chukwuji-Ohanachum et Raji Olagunju, étaient dans la salle du personnel avec la porte fermée.</p>
+            <span class="english-block">During this period, the two nurses, Rosemary Chukwuji-Ohanachum and Raji Olagunju, were in the staff room with the door shut. Despite three patients having been seen walking around the corridor, no staff are seen. Nursing assistant Anthony Onuh was asleep for two hours in the therapy room.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.13" data-end="194.59">
+            <p class="french-block">Juste avant 2h00, Torres-Pena est de nouveau vu se promener dans le couloir. Il n'avait pas de pantalons.</p>
+            <span class="english-block">Just before 02:00, Torres-Pena is seen walking around the corridor again. He was not wearing any trousers. The coroner at Hugo's inquest said Torres-Pena had taken them off because they were soaked in blood.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.59" data-end="199.82">
+            <p class="french-block">Les patients de la salle de réception devaient être vérifiés par le personnel chaque heure.</p>
+            <span class="english-block">Patients on the ward should have been checked by staff hourly. The observation log for the ward falsely shows that at 02:00 Hugo was in his bed awake.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.82" data-end="206.57">
+            <p class="french-block">Rolando Torres-Pena marche dans l'unité, les jambes couvertes de matériau enveloppé autour de sa taille.</p>
+            <span class="english-block">Rolando Torres-Pena walking in the unit, with his legs covered by material wrapped around his waist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.57" data-end="212.18">
+            <p class="french-block">Onuh a admis au coroner qu'il avait rempli le formulaire sans vérifier où se trouvaient les gens.</p>
+            <span class="english-block">Onuh admitted to the coroner that he filled out the form without checking where people were.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.18" data-end="225.1">
+            <p class="french-block">À cette époque, les caméras de surveillance montrent Onuh sortir de la salle de thérapie en tenant ses vêtements de lit. On peut le voir parler à Torres-Pena alors que l'infirmière Chukwuji-Ohanachum passe avec ses couvertures.</p>
+            <span class="english-block">At about that time, CCTV shows Onuh emerging from the therapy room holding his bedding. He can be seen speaking to Torres-Pena whilst nurse Chukwuji-Ohanachum walks past with her blankets. She told the coroner she was going to the therapy room to sleep during her unauthorised two-hour break.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.1" data-end="231.62">
+            <p class="french-block">Hugo a été découvert à 03:19 par l'infirmière Olagunju, presque deux heures après son attaque.</p>
+            <span class="english-block">Hugo was discovered at 03:19 by nurse Olagunju, almost two hours after he was attacked. He didn't attempt CPR or raise the alarm and went to the find the unit's night manager, Alex Obamwonyi, who was on a neighbouring ward.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="231.62" data-end="240.55">
+            <p class="french-block">Obamwonyi a dit à l'enquête que Hugo ne respirait pas et qu'il ne pouvait pas trouver un pouls. Il a levé l'alarme mais a verrouillé la porte dans la pièce.</p>
+            <span class="english-block">Obamwonyi told the inquest Hugo wasn't breathing and he couldn't find a pulse. He raised the alarm but locked the door into the room. He said he thought it was too late to start CPR, and he wanted to preserve the crime scene.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.55" data-end="248.11">
+            <p class="french-block">Les services d'urgence ont été appelés à 03:37, et la réanimation a finalement commencé à 03:45.</p>
+            <span class="english-block">The emergency services were called at 03:37, and CPR finally started at 03:45.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.11" data-end="269.23">
+            <p class="french-block">Les témoins de l'enquête ont décrit des scènes chaotiques. L'infirmière Chukwuji-Ohanachum criait et se jetait au sol. Selon une déclaration lue devant le tribunal, elle devait être retenue par d'autres membres du personnel. Un membre du personnel a été laissé pour faire des compressions thoraciques sur Hugo jusqu'à ce qu'elle ait dû s'arrêter, épuisée.</p>
+            <span class="english-block">Witnesses at the inquest described chaotic scenes. Nurse Chukwuji-Ohanachum was screaming and throwing herself on the ground. According to a statement read in court, she had to be restrained by other members of staff. One member of staff was left to do chest compressions on Hugo until she had to stop, exhausted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.23" data-end="272.86">
+            <p class="french-block">Hugo a été déclaré mort à 04:41.</p>
+            <span class="english-block">Hugo was declared dead at 04:41.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.86" data-end="283.75">
+            <p class="french-block">Le père d'Hugo, William Flint Cahan, qui a assisté à chaque jour de l'enquête avec d'autres membres de la famille, dit qu'il y avait "complacence" du personnel, ainsi qu'un manque de soins.</p>
+            <span class="english-block">Hugo's father, William Flint Cahan, who has attended each day of the inquest with other family members, says there was "complacency" by staff, as well as a lack of care.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="283.75" data-end="290.3">
+            <p class="french-block">Il affirme que la mort de son fils "était évitable si les soins avaient été aussi efficaces que cela aurait dû être".</p>
+            <span class="english-block">He maintains his son's death was "preventable had the level of care been as it should have been."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.3" data-end="301.58">
+            <p class="french-block">Jolyon, le frère d'Hugo, médecin du NHS, dit que " la multitude d'échecs, tant d'incompétences que de malhonnêteté, qui ont pénétré dans les soins des deux patients, était affreuse ".</p>
+            <span class="english-block">Hugo's brother, Jolyon, who is an NHS doctor, says the "litany of failures, both incompetence and dishonesty, that pervaded the care of both patients was harrowing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="301.58" data-end="310.54">
+            <p class="french-block">Au cours des 12 dernières années, les coroners locaux ont envoyé au moins 29 avis de prévention des décès futurs (PFD) à la fiducie.</p>
+            <span class="english-block">Over the past 12 years, local coroners have sent at least 29 Prevention of Future Deaths (PFD) notices to the Trust. These are sent to an organisation when a coroner identifies problems which, if not dealt with, could lead to further deaths.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.54" data-end="322.32">
+            <p class="french-block">La BBC a analysé les rapports couvrant les services aux patients et à la communauté: plus de la moitié des cas ont été découlant d'une mauvaise évaluation des risques que le patient représente pour lui-même ou pour les autres.</p>
+            <span class="english-block">The BBC has analysed the reports which cover both in patient and community services. In more than half of cases there had been a failure to properly assess the risk the patient posed to themself or to others. Poor communications between staff, other agencies and families were also repeatedly highlighted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.32" data-end="331.42">
+            <p class="french-block">Les avertissements les plus forts étaient sur les observations mal réalisées et les dossiers falsifiés  les soins de base nécessaires pour assurer la sécurité des patients.</p>
+            <span class="english-block">The strongest warnings were about poorly carried out observations and falsified records – basic care needed to keep patients safe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.42" data-end="343.18">
+            <p class="french-block">Un rapport de 2021 du coroner qui a mené l'enquête Flint Cahan a averti que "une culture d'impunité existait" à la fiducie où "l'enregistrement inexact et trompeur des dossiers cliniques était toléré".</p>
+            <span class="english-block">A report in 2021 by the coroner who carried out the Flint Cahan inquest warned that "a culture of impunity existed" at the Trust where "inaccurate and misleading recording of clinical records was tolerated."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.18" data-end="352.01">
+            <p class="french-block">En 2024, deux autres rapports ont mis en évidence les observations manquantes puis les dossiers falsifiés pour suggérer que les patients avaient été vérifiés.</p>
+            <span class="english-block">In 2024, two further reports highlighted observations being missed then records falsified to suggest patients had been checked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.01" data-end="359.81">
+            <p class="french-block">En réponse à l'une des DPF, la fiducie a déclaré que des programmes de formation et des contrôles de qualité étaient mis en place.</p>
+            <span class="english-block">In response to one of the PFD's, the Trust said extensive training programmes and quality checks were introduced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="359.81" data-end="381.34">
+            <p class="french-block">En 2025, un quatrième rapport, sur la mort d'une jeune femme, mettait de nouveau en évidence des enregistrements d'observation falsifiés. " Malgré les assurances " de la Trust dans de nombreux plans d'action ", a déclaré le coroner, l'enquête avait " révélé des préoccupations généralisées " sur la façon dont les observations ont été effectuées dans deux districts. "</p>
+            <span class="english-block">In 2025, a fourth report, into the death of a young woman, again highlighted falsified observation records. The coroner said, "despite assurances" from the Trust in numerous action plans", the inquest had "revealed widespread concerns" about how observations were carried out across two wards."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="381.34" data-end="396.22">
+            <p class="french-block">D'autres préoccupations graves soulevées dans les rapports incluent la façon dont le personnel a réagi en cas d'urgence, avec des retards dans la réanimation et - une fois - le personnel infirmière donnant des compressions thoraciques à l'estomac d'un patient plutôt que de sa poitrine.</p>
+            <span class="english-block">Other serious concerns raised in the reports include, how staff have responded to emergencies, with delays in resuscitation and - on one occasion - nursing staff giving chest compressions to a patient's stomach rather than their chest.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.22" data-end="408.7">
+            <p class="french-block">Brian Dow de l'organisme de bienfaisance de santé mentale, Rethink, appelle à un registre national de la sécurité des patients pour surveiller le type de soins fournis par les unités de santé mentale dans tout le pays.</p>
+            <span class="english-block">Brian Dow of the mental health charity, Rethink, is calling for a national register of patient safety to keep tabs on the type of care mental health units across the country are providing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="408.7" data-end="416.16">
+            <p class="french-block">"Nous y sommes déjà allés" avec de mauvaises observations, des dossiers falsifiés et des soins inacceptables, dit-il.</p>
+            <span class="english-block">"We have been here before" with poor observations, records being falsified and unacceptable care, he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="416.16" data-end="424.37">
+            <p class="french-block">"Nous devons avoir une meilleure approche de la sécurité des patients dans les quartiers les plus difficiles et les plus vulnérables avec les personnes les plus malades".</p>
+            <span class="english-block">"We have got to have a better approach to patient safety in what are the most difficult and most vulnerable wards with the people who are the most unwell."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="424.37" data-end="435.89">
+            <p class="french-block">Dans un communiqué, le Dr David Bridle, directeur médical de l'ELFT, a déclaré que la fiducie était profondément désolée envers la famille de Hugo pour les défaillances de ses soins.</p>
+            <span class="english-block">In a statement, Dr David Bridle, Chief Medical Officer at ELFT, said the Trust is deeply sorry to Hugo's family for the failings in his care.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="435.89" data-end="445.82">
+            <p class="french-block">Il a déclaré que les actions du personnel identifié par le coroner étaient " totalement inacceptables et ne reflètent pas les normes, les valeurs ou les comportements que nous attendons ".</p>
+            <span class="english-block">He said the actions of the staff identified by the coroner were "wholly unacceptable and do not reflect the standards, values or behaviours we expect".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="445.82" data-end="457.78">
+            <p class="french-block">Le Dr Bridle dit que la Fondation a travaillé pour améliorer ses services et " s'assurera que l'apprentissage des résultats du coroner informe notre travail continu pour renforcer la sécurité et les soins aux patients ".</p>
+            <span class="english-block">Dr Bridle says the Trust has worked to improve its services and "will ensure the learning from the coroner's findings informs our continuing work to strengthen patient safety and care."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="457.78" data-end="461.21">
+            <p class="french-block">Le tueur du centre de santé mentale est condamné</p>
+            <span class="english-block">Mental health care centre killer is sentenced</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_26.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pubs in England and Wales to allow digital ID apps to prove age</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Pubs in England and Wales to allow digital ID apps to prove age</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 14 Sep 2026 23:07:56 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm4gl6j53w19o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: New rules introduced on Tuesday mean establishments will be able to accept digital ID apps alongside physical documents.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.87" data-end="17.09">
+            <p class="french-block">Les acheteurs d'alcool pourront utiliser une application numérique d'identification sur leurs téléphones pour prouver leur âge en vertu des nouvelles règles introduites mardi.</p>
+            <span class="english-block">Alcohol buyers will be able to use a digital ID app on their phones to prove their age under new rules introduced on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.09" data-end="31.46">
+            <p class="french-block">Les pubs et les magasins en Angleterre et au Pays de Galles peuvent utiliser la technologie en plus des formes physiques actuelles d'identité - le gouvernement affirmant qu'une option numérique rendra les vérifications d'âge plus rapides et plus sûres pour les clients et le personnel.</p>
+            <span class="english-block">Pubs and shops in England and Wales can use the tech in addition to current physical forms of ID - with the government saying a digital option will make age-checks quicker and more secure for customers and staff.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.46" data-end="43.13">
+            <p class="french-block">Les clients pourront choisir des applications d'identification auprès de divers fournisseurs tels que le bureau de poste, Yoti ou Luciditi, à condition qu'elles figurent sur une liste approuvée par le gouvernement.</p>
+            <span class="english-block">Customers will be able to choose ID apps from a range of suppliers such as the Post Office, Yoti or Luciditi, provided they are on a government-approved list.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.13" data-end="53.28">
+            <p class="french-block">Le changement signifie que les entreprises ne seront plus tenues de laisser les gens utiliser des identifiants physiques, mais le gouvernement affirme que la plupart des établissements le feraient.</p>
+            <span class="english-block">The change means businesses will no longer be required to let people use physical ID, but the government contends most establishments would.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.28" data-end="61.68">
+            <p class="french-block">Le plan sera technologiquement agnostique, ce qui signifie que le gouvernement ne définit pas en détail comment chaque application doit fonctionner.</p>
+            <span class="english-block">The plan will be technology-agnostic, meaning that the government is not setting out in detail how each app must work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.68" data-end="77.45">
+            <p class="french-block">Il soutient que, dans le cadre du régime d'identification numérique volontaire, les buveurs partageraient moins de renseignements personnels avec un lieu ou un magasin - comme cliquer sur leur téléphone sur un lecteur ou afficher un code QR scannable plutôt que de remettre un document officiel.</p>
+            <span class="english-block">It argues that under the voluntary digital ID scheme, drinkers would share fewer personal details with a venue or shop - such as tapping their phone on a reader or displaying a scannable QR code rather than handing over an official document.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.45" data-end="88.34">
+            <p class="french-block">Les applications devront également protéger les clients contre l'emprunt d'appareils d'amis et de parents plus âgés, et s'assurer que l'application d'identification appartient à la personne qui l'utilise.</p>
+            <span class="english-block">The apps will also need to guard against customers borrowing devices from older friends and relatives, and ensure the ID app belongs to the person using it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.34" data-end="100.39">
+            <p class="french-block">L'application d'identification numérique de Yoti, par exemple, ne permettra à un utilisateur de se connecter que si un scan de son visage correspond à celui de la personne qui s'est inscrite à l'application.</p>
+            <span class="english-block">Yoti's digital ID app, for example, will only let a user log in if a scan of their face matches that of the person who signed up for the app.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.39" data-end="109.06">
+            <p class="french-block">L'application génère ensuite un code QR qui peut être scanné par une entreprise avec une application gratuite, qui leur indique l'âge de la personne.</p>
+            <span class="english-block">The app then generates a QR code that can be scanned by a business with a free checker app, which tells them the person's age.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.06" data-end="114.74">
+            <p class="french-block">Ce délai est limité pour rendre plus difficile le duplication ou le partage du code QR.</p>
+            <span class="english-block">This is time-limited to make duping or sharing the QR code more difficult.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.74" data-end="131.14">
+            <p class="french-block">La ministre du gouvernement numérique Stephanie Peacock a déclaré que l'option d'identification numérique "implique que vous n'avez pas besoin de porter une identification physique, ni de remettre des informations personnelles sensibles" ce qui signifie que les gens pourraient "se sentir plus en sécurité une nuit".</p>
+            <span class="english-block">Digital government minister Stephanie Peacock said having the option for digital ID would "mean you do not need to carry a physical ID, nor hand over sensitive personal information" meaning people could "feel safer on a night out'".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.14" data-end="140.14">
+            <p class="french-block">Allen Simpson, directeur général de l'organisme commercial UKHospitality, a déclaré que les nouvelles règles étaient une " étape positive ".</p>
+            <span class="english-block">Allen Simpson, chief executive of trade body UKHospitality, said the new rules were a "positive step".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.14" data-end="148.63">
+            <p class="french-block">Il a ajouté que l'industrie travaillerait avec le gouvernement pour s'assurer que le déploiement du programme ne serait pas "chargé" pour le secteur hôtelier.</p>
+            <span class="english-block">He added the industry would work with government to make sure the scheme's roll-out would not be "burdensome" for the hospitality sector.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.63" data-end="156.02">
+            <p class="french-block">Il s'agirait notamment de s'assurer qu'il y ait plusieurs options pour les fournisseurs et qu'il soit rentable, a déclaré Simpson.</p>
+            <span class="english-block">This would include ensuring there were multiple options for suppliers and that it was cost-efficient, Simpson said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.02" data-end="166.73">
+            <p class="french-block">Le gouvernement veut que les applications d'identification numérique dans le cadre de son programme fonctionnent ensemble afin que les clients n'aient pas besoin d'utiliser différentes applications dans différents lieux.</p>
+            <span class="english-block">The government wants digital ID apps under its scheme to work together so customers do not need to use different apps in different venues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.73" data-end="173.18">
+            <p class="french-block">Il veut également que les services fonctionnent hors ligne et accessibles même sans données mobiles ou sans connexion Wi-Fi.</p>
+            <span class="english-block">It also wants the services to work offline and accessible even without mobile data or a Wi-Fi connection.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.18" data-end="179.3">
+            <p class="french-block">À l'avenir, le régime de preuve numérique de l'âge pourrait être étendu au tabac et aux vapeurs.</p>
+            <span class="english-block">In future, the digital proof of age scheme could be extended to cover tobacco and vapes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.3" data-end="185.64">
+            <p class="french-block">Mais les militants des droits numériques ont déclaré que de telles mesures pourraient conduire à l'exclusion de certains groupes.</p>
+            <span class="english-block">But digital rights campaigners have said such measures could lead to the exclusion of some groups.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.64" data-end="200.45">
+            <p class="french-block">Jasleen Chaggar de Big Brother Watch a déclaré que si elle avait plusieurs façons de prouver que votre identité était utile, le gouvernement devrait s'assurer que l'identification numérique ne devienne pas effectivement obligatoire "car cela exclurait des millions de personnes".</p>
+            <span class="english-block">Jasleen Chaggar of Big Brother Watch said while having multiple ways to prove your identity was helpful, the Government should ensure that digital ID did not become effectively mandatory "as it would shut out millions of people".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.45" data-end="214.27">
+            <p class="french-block">"Beaucoup de gens ont des raisons légitimes de compter sur l'ID physique, que ce soit pour des raisons de choix, de confidentialité et de sécurité, ou parce qu'ils manquent des compétences numériques ou des moyens d'utiliser l'ID numérique", a-t-elle déclaré.</p>
+            <span class="english-block">"Many people have legitimate reasons for relying on physical ID, whether out of choice, privacy and security concerns, or because they lack the digital skills or means to use digital ID," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="214.27" data-end="224.47">
+            <p class="french-block">"Le gouvernement devrait expressément interdire aux entreprises d'exiger des identifiants numériques pour vérifier leur âge sans offrir d'alternatives raisonnables", a-t-elle ajouté.</p>
+            <span class="english-block">"The Government should expressly prohibit businesses from requiring digital IDs for age checks without offering reasonable alternatives," she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="224.47" data-end="235.97">
+            <p class="french-block">Les nouvelles règles sont issues d'un programme d'identification numérique plus large promu par l'ancien Premier ministre Sir Keir Starmer qui s'est révélé controversé et a ensuite été abandonné par Andy Burnham.</p>
+            <span class="english-block">The new rules come after a wider digital ID programme promoted by former Prime Minister Sir Keir Starmer proved controversial, and was later abandoned by Andy Burnham.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.97" data-end="242.42">
+            <p class="french-block">Le plan d'identification numérique sera annulé dans la première promesse politique majeure de Burnham</p>
+            <span class="english-block">Digital ID plan to be scrapped in Burnham's first major policy pledge</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.42" data-end="245.83">
+            <p class="french-block">Comment garder votre enfant en sécurité en ligne?</p>
+            <span class="english-block">How can you keep your child safe online?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_18.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

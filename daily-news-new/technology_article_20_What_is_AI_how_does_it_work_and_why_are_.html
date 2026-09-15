@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is AI, how does it work and why are some people concerned about it?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>What is AI, how does it work and why are some people concerned about it?</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 14 Sep 2026 16:09:56 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c2l799gxjjpo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: AI is transforming modern life, but not without worry for some that it may be abused or have an adverse environmental impact.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.11" data-end="13.44">
+            <p class="french-block">L'IA est devenue de plus en plus partie de la vie quotidienne au cours de la dernière décennie.</p>
+            <span class="english-block">AI has increasingly become part of everyday life over the past decade.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.44" data-end="24.05">
+            <p class="french-block">La technologie prend de nombreuses formes - de la personnalisation des flux de médias sociaux à la repérage des amis sur des photos de smartphones - et accélère les percées médicales.</p>
+            <span class="english-block">The technology takes many forms - from personalising social media feeds to spotting friends in smartphone photos - and accelerating medical breakthroughs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.05" data-end="34.58">
+            <p class="french-block">Mais la montée des chatbots comme le ChatGPT d'OpenAI a suscité des inquiétudes quant à l'impact environnemental de la technologie, aux implications éthiques et à l'utilisation des données.</p>
+            <span class="english-block">But the rise of chatbots like OpenAI's ChatGPT has prompted concern about the tech's environmental impact, ethical implications and data use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.58" data-end="45.07">
+            <p class="french-block">Les récentes affirmations selon lesquelles l'IA pourrait devenir trop puissante et menacer l'humanité ont également déclenché des appels à un développement plus lent et à une réglementation plus stricte.</p>
+            <span class="english-block">Recent claims that AI could become too powerful and threaten humanity have also triggered calls for slower development and tighter regulation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.07" data-end="54.82">
+            <p class="french-block">L'IA permet aux ordinateurs de traiter de grandes quantités de données, d'identifier des modèles et de suivre des instructions détaillées sur ce qu'ils doivent faire avec ces informations.</p>
+            <span class="english-block">AI allows computers to process large amounts of data, identify patterns and follow detailed instructions about what to do with that information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.82" data-end="59.26">
+            <p class="french-block">Les ordinateurs ne peuvent pas penser, empathiser ou raisonner.</p>
+            <span class="english-block">Computers cannot think, empathise or reason.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.26" data-end="71.11">
+            <p class="french-block">Cependant, les scientifiques ont développé des systèmes qui peuvent effectuer des tâches qui nécessitent généralement une intelligence humaine, essayant de reproduire la façon dont les gens acquièrent et utilisent les connaissances.</p>
+            <span class="english-block">However, scientists have developed systems that can perform tasks which usually require human intelligence, trying to replicate how people acquire and use knowledge.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.11" data-end="80.64">
+            <p class="french-block">Cela pourrait être une tentative d'anticiper le produit qu'un acheteur en ligne pourrait acheter, en se basant sur des achats antérieurs, afin de recommander des articles.</p>
+            <span class="english-block">This could be trying to anticipate what product an online shopper might buy, based on previous purchases, in order to recommend items.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.64" data-end="91.42">
+            <p class="french-block">La technologie est également derrière des assistants virtuels contrôlés par la voix comme Siri d'Apple et Alexa d'Amazon, et est utilisée pour développer des systèmes pour les voitures autonomes.</p>
+            <span class="english-block">The technology is also behind voice-controlled virtual assistants like Apple's Siri and Amazon's Alexa, and is being used to develop systems for self-driving cars.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.42" data-end="99.05">
+            <p class="french-block">L'IA aide également les plateformes sociales comme Facebook, TikTok et X à décider quels messages montrer aux utilisateurs.</p>
+            <span class="english-block">AI also helps social platforms like Facebook, TikTok and X decide what posts to show users. Streaming services Spotify and Deezer use AI to suggest music.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.05" data-end="112.34">
+            <p class="french-block">Il existe également un certain nombre d'applications en médecine, car les scientifiques utilisent l'IA pour aider à détecter les cancers, examiner les résultats des rayons X, accélérer les diagnostics et identifier de nouveaux traitements.</p>
+            <span class="english-block">There are also a number of applications in medicine, as scientists use AI to help spot cancers, review X-ray results, speed up diagnoses and identify new treatments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.34" data-end="115.8">
+            <p class="french-block">Un guide simple pour vous aider à comprendre l'IA</p>
+            <span class="english-block">A simple guide to help you understand AI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.8" data-end="119.21">
+            <p class="french-block">Cinq choses que vous devez vraiment savoir sur l'IA</p>
+            <span class="english-block">Five things you really need to know about AI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="119.21" data-end="125.52">
+            <p class="french-block">L'IA générative est utilisée pour créer de nouveaux contenus qui peuvent sembler avoir été créés par un humain.</p>
+            <span class="english-block">Generative AI is used to create new content which can seem like it has been made by a human.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.52" data-end="132.17">
+            <p class="french-block">Il le fait en apprenant à partir de vastes quantités de données existantes telles que des textes et des images en ligne.</p>
+            <span class="english-block">It does this by learning from vast quantities of existing data such as online text and images.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.17" data-end="143.21">
+            <p class="french-block">ChatGPT et le chatbot chinois rival DeepSeek sont des outils génératifs d'IA populaires qui peuvent être utilisés pour produire du texte, des images, du code et plus de matériel.</p>
+            <span class="english-block">ChatGPT and Chinese rival DeepSeek's chatbot are popular generative AI tools that can be used to produce text, images, code and more material.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.21" data-end="149.57">
+            <p class="french-block">Les Gémeaux ou Meta AI de Google peuvent également tenir des conversations texte avec les utilisateurs.</p>
+            <span class="english-block">Google's Gemini or Meta AI can similarly hold text conversations with users.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.57" data-end="157.42">
+            <p class="french-block">Des applications comme Midjourney ou Veo 3 sont dédiées à la création d'images ou de vidéos à partir de simples instructions textuelles.</p>
+            <span class="english-block">Apps like Midjourney or Veo 3 are dedicated to creating images or video from simple text prompts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.42" data-end="162.94">
+            <p class="french-block">L'IA générative peut également être utilisée pour faire de la musique de haute qualité.</p>
+            <span class="english-block">Generative AI can also be used to make high-quality music.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.94" data-end="171.34">
+            <p class="french-block">Des chansons qui imitent le style ou le son de musiciens célèbres sont devenues virales, ce qui laisse parfois les fans confus quant à leur authenticité.</p>
+            <span class="english-block">Songs mimicking the style or sound of famous musicians have gone viral, sometimes leaving fans confused about their authenticity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.34" data-end="175.92">
+            <p class="french-block">Comment savoir si votre nouvel artiste préféré est une personne réelle ?</p>
+            <span class="english-block">How can you tell if your new favourite artist is a real person?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.92" data-end="182.71">
+            <p class="french-block">Tout en reconnaissant le potentiel de l'IA, certains experts s'inquiètent des implications de sa croissance rapide.</p>
+            <span class="english-block">While acknowledging AI's potential, some experts are worried about the implications of its rapid growth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="182.71" data-end="192.24">
+            <p class="french-block">Le Fonds monétaire international (FMI) a suggéré que l'IA pourrait affecter près de 40% des emplois et aggraver l'inégalité financière mondiale.</p>
+            <span class="english-block">The International Monetary Fund (IMF) suggested that AI could affect nearly 40% of jobs, and worsen global financial inequality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.24" data-end="206.74">
+            <p class="french-block">Le professeur Geoffrey Hinton, un informaticien considéré comme le "parrain" du développement de l'IA, a averti que les puissants systèmes d'IA pourraient même faire disparaître les humains - bien que sa peur ait été rejetée par son collègue "parrain de l'IA", Yann LeCun.</p>
+            <span class="english-block">Prof Geoffrey Hinton, a computer scientist regarded as a "godfather" of AI development, warned powerful AI systems could even make humans extinct - although his fear was dismissed by his fellow "AI godfather", Yann LeCun.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.74" data-end="217.1">
+            <p class="french-block">En septembre 2026, des craintes similaires ont été soulevées à nouveau après que certains chercheurs en IA aient averti que la technologie pourrait menacer l'humanité dans un proche avenir.</p>
+            <span class="english-block">In September 2026 similar fears were raised again after some AI researchers warned the tech could threaten humanity in the near future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.1" data-end="223.32">
+            <p class="french-block">Pourquoi y a-t-il des préoccupations que l'IA puisse menacer l'humanité, et à quel point sont-elles réelles?</p>
+            <span class="english-block">Why are there concerns AI could threaten humanity, and how real are they?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.32" data-end="229.25">
+            <p class="french-block">Le patron de l'anthropie, Dario Amodei, appelle à ralentir le développement de l'IA.</p>
+            <span class="english-block">Anthropic boss Dario Amodei calls for AI development to slow down</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.25" data-end="239.78">
+            <p class="french-block">Mais les experts ont exhorté à se concentrer sur les risques actuels et les dangers de l'IA - tels que son potentiel de reproduire des informations biaisées ou de discriminer certains groupes sociaux.</p>
+            <span class="english-block">But experts have urged a focus on present risks and AI dangers - such as its potential to reproduce biased information, or discriminate against some social groups.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.78" data-end="249.0">
+            <p class="french-block">Cela est dû au fait que les données publiques utilisées pour former de nombreux systèmes d'IA peuvent refléter les préjugés sociaux existants tels que le sexisme ou le racisme.</p>
+            <span class="english-block">This is because public data used to train many AI systems can reflect existing societal biases such as sexism or racism.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.0" data-end="254.74">
+            <p class="french-block">Et même si les outils d'IA deviennent de plus en plus compétents, ils sont toujours sujets aux erreurs.</p>
+            <span class="english-block">And while AI tools are growing more adept, they are still prone to errors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.74" data-end="264.86">
+            <p class="french-block">Les systèmes d'IA génératifs sont connus pour leur capacité à "halluciner" et à affirmer des mensonges comme des faits, même parfois en inventing des sources d'informations inexactes.</p>
+            <span class="english-block">Generative AI systems are known for their ability to "hallucinate" and assert falsehoods as fact, even sometimes invent sources for inaccurate information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.86" data-end="278.83">
+            <p class="french-block">Au début de 2025, Apple a retiré une fonctionnalité d'IA après avoir résumé incorrectement les notifications des applications d'information, et Google a également été critiqué pour les inexactitudes produites par ses critiques de recherche d'IA.</p>
+            <span class="english-block">In early 2025 Apple pulled an AI feature after it summarised news app notifications incorrectly, and Google also faced criticism for inaccuracies produced by its AI search overviews.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.83" data-end="292.75">
+            <p class="french-block">Il y a des préoccupations concernant l'utilisation de l'IA dans les écoles et les lieux de travail, les étudiants utilisant des outils d'IA pour " tricher " sur les tâches, étant à tort accusés de l'utiliser et les employés de " contrabande " dans le travail.</p>
+            <span class="english-block">There are concerns about AI use in schools and workplaces, with students using AI tools to "cheat" on assignments, being wrongly accused of using it and employees "smuggling" it into work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.75" data-end="299.52">
+            <p class="french-block">Mais les écrivains, les musiciens et les artistes ont également repoussé la technologie pour des raisons éthiques.</p>
+            <span class="english-block">But writers, musicians and artists have also pushed back against the tech on ethical grounds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="299.52" data-end="309.14">
+            <p class="french-block">Beaucoup ont publié des déclarations ou signé des lettres ouvertes accusant les développeurs d'IA d'utiliser leur travail pour former des systèmes sans consentement ou rémunération.</p>
+            <span class="english-block">Many have issued statements or signed open letters accusing AI developers of using their work to train systems without consent or compensation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.14" data-end="326.14">
+            <p class="french-block">Des milliers de créateurs - dont le chanteur-compositeur d'Abba Björn Ulvaeus, les écrivains Ian Rankin et Joanne Harris, et l'actrice Julianne Moore - ont signé une déclaration, externe en octobre 2024 qualifiant l'IA d'" une menace majeure et injuste " pour leurs moyens de subsistance.</p>
+            <span class="english-block">Thousands of creators - including Abba singer-songwriter Björn Ulvaeus, writers Ian Rankin and Joanne Harris, and actress Julianne Moore - signed a statement, external in October 2024 calling AI a "major, unjust threat" to their livelihoods.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="326.14" data-end="333.31">
+            <p class="french-block">Billie Eilish est l'une des nombreuses artistes qui a appelé à mettre fin à l'utilisation "prédatrice" de l'IA dans la musique</p>
+            <span class="english-block">Billie Eilish is one of many artists who called for an end to "predatory" use of AI in music</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.31" data-end="342.46">
+            <p class="french-block">Il n'est pas clair combien d'énergie les systèmes d'IA utilisent, mais certains chercheurs estiment que l'industrie dans son ensemble pourrait bientôt consommer autant que les Pays-Bas.</p>
+            <span class="english-block">It is not clear how much energy AI systems use, but some researchers estimate the industry as a whole could soon consume as much as the Netherlands.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.46" data-end="349.44">
+            <p class="french-block">Créer les puissants puces informatiques nécessaires pour exécuter des programmes d'IA nécessite beaucoup d'énergie et d'eau.</p>
+            <span class="english-block">Creating the powerful computer chips needed to run AI programmes requires lots of power and water.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="349.44" data-end="356.78">
+            <p class="french-block">La demande de services génératifs d'IA a également entraîné une augmentation du nombre de centres de données qui les alimentent.</p>
+            <span class="english-block">Demand for generative AI services has also meant an increase in the number of data centres which power them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="356.78" data-end="366.84">
+            <p class="french-block">Ces immenses salles, qui contiennent des milliers de serveurs informatiques, consomment souvent une énergie considérable ou nécessitent de grandes quantités d'eau pour les garder fraîches.</p>
+            <span class="english-block">These huge halls - housing thousands of racks of computer servers - often use substantial amounts of energy or require large volumes of water to keep them cool.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.84" data-end="377.35">
+            <p class="french-block">Certaines grandes entreprises technologiques ont investi dans des moyens de réduire ou de réutiliser l'eau nécessaire, ou ont opté pour des méthodes alternatives telles que le refroidissement par air.</p>
+            <span class="english-block">Some large tech companies have invested in ways to reduce or reuse the water needed, or have opted for alternative methods such as air-cooling.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.35" data-end="383.74">
+            <p class="french-block">Cependant, certains experts et militants craignent que l'IA ne fasse empirer les problèmes d'approvisionnement en eau.</p>
+            <span class="english-block">However, some experts and activists fear that AI will worsen water supply problems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="383.74" data-end="394.27">
+            <p class="french-block">La BBC a été informée en février que les plans du gouvernement pour faire du Royaume-Uni un " leader mondial " en IA pourraient mettre en péril les approvisionnements déjà étendus en eau potable.</p>
+            <span class="english-block">The BBC was told in February that government plans to make the UK a "world leader" in AI could put already stretched supplies of drinking water under strain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="394.27" data-end="403.18">
+            <p class="french-block">En septembre 2024, Google a déclaré qu'il reconsidérerait les propositions d'un centre de données au Chili, qui a lutté contre la sécheresse.</p>
+            <span class="english-block">In September 2024, Google said it would reconsider proposals for a data centre in Chile, which has struggled with drought.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.18" data-end="407.78">
+            <p class="french-block">Miliband dit que l'impact climatique des centres de données est incertain</p>
+            <span class="english-block">Miliband says climate impact of data centres is uncertain</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="407.78" data-end="411.29">
+            <p class="french-block">Qu'est-ce qui est si important avec les centres de données d'IA ?</p>
+            <span class="english-block">What's the big deal about AI data centres?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="411.29" data-end="416.35">
+            <p class="french-block">Certains gouvernements ont déjà introduit des règles régissant le fonctionnement de l'IA.</p>
+            <span class="english-block">Some governments have already introduced rules governing how AI operates.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="416.35" data-end="427.32">
+            <p class="french-block">La loi sur l'intelligence artificielle de l'UE impose des contrôles sur les systèmes à haut risque utilisés dans des domaines tels que l'éducation, la santé, l'application de la loi ou les élections.</p>
+            <span class="english-block">The EU's Artificial Intelligence Act places controls on high risk systems used in areas such as education, healthcare, law enforcement or elections. It bans some AI use altogether.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="427.32" data-end="435.79">
+            <p class="french-block">Les développeurs d'IA générative en Chine sont tenus de protéger les données des citoyens et de promouvoir la transparence et la précision des informations.</p>
+            <span class="english-block">Generative AI developers in China are required to safeguard citizens' data, and promote transparency and accuracy of information. But they are also bound by the country's strict censorship laws.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="435.79" data-end="448.22">
+            <p class="french-block">De nombreux pays, y compris le Royaume-Uni, ont cherché à réglementer l'IA par des lois existantes plutôt que par des lois - en raison de la préoccupation qu'elle pourrait rapidement être mise en place à mesure que l'IA se développe.</p>
+            <span class="english-block">Many countries, including the UK, have sought to regulate AI through existing laws rather than legislate - amid concern it could quickly date as AI develops.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="448.22" data-end="459.36">
+            <p class="french-block">Le Royaume-Uni a modifié les lois pour cibler des dangers spécifiques de l'IA, tels que l'interdiction d'outils pouvant créer des images nues de faux profonds ou créer du matériel d'abus sexuels sur les enfants.</p>
+            <span class="english-block">The UK has amended laws to target specific AI dangers, such as banning tools that can create deepfake nude imagery or create child sexual abuse material.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="459.36" data-end="472.25">
+            <p class="french-block">Il a également créé un institut indépendant de sécurité de l'IA pour identifier les risques et évaluer les modèles de l'IA avancés, et a signé des accords avec les États-Unis pour collaborer sur des méthodes de test d'IA "robustes".</p>
+            <span class="english-block">It has also established an independent AI Security Institute to identify risks and evaluate advanced AI models, and signed agreements with the US to collaborate on "robust" AI testing methods.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="472.25" data-end="482.04">
+            <p class="french-block">Mais au début de 2025, aucun des deux pays n'a signé une déclaration mondiale sur l'IA promettant une approche ouverte, inclusive et durable de la technologie.</p>
+            <span class="english-block">But in early 2025, neither country signed a global AI declaration pledging an open, inclusive and sustainable approach to the technology.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_20.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

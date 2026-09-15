@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some dentists say more young people are grinding their teeth - are you one of them?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>Some dentists say more young people are grinding their teeth - are you one of them?</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 13 Sep 2026 05:55:19 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ckgwe8dk6z6o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Millions of us do it, though few of us realise we do - but getting the right treatment can be life-changing.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.25" data-end="13.15">
+            <p class="french-block">On pense qu'un sur quatre souffre de bruxisme, même si la plupart ne savent pas qu'ils grattent leurs dents</p>
+            <span class="english-block">Nearly one in four people are thought to have bruxism, although most are unaware they grind their teeth</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.15" data-end="23.14">
+            <p class="french-block">Elle ne se souvient pas quand elle a commencé à se gratter les dents la nuit, mais elle se souvient vivement de l'angoisse de la mâchoire, des maux de tête et de la nouvelle que ses molars avaient disparu.</p>
+            <span class="english-block">Ella can't remember when she first started grinding her teeth at night, but she can vividly recall the excruciating jaw ache, the headaches, and being told her molars were disappearing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.14" data-end="31.54">
+            <p class="french-block">"J'avais tellement de douleur, dit Ella, mon visage changeait de forme et mes dents risquaient de se casser, je savais que je devais faire quelque chose".</p>
+            <span class="english-block">"I was in so much pain," Ella says. "My face was changing shape and my teeth were at risk of breaking - I knew I had to do something about it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.54" data-end="43.01">
+            <p class="french-block">La femme de 31 ans souffre de bruxisme, une maladie qui peut provoquer des brosses dentaires fréquentes et souvent intenses, mais dit que le traitement qu'elle a récemment subi a "sans aucun doute" changé sa vie.</p>
+            <span class="english-block">The 31-year-old has bruxism, a condition which can cause regular and often intense teeth grinding, but says the treatment she's recently had has "without a doubt" changed her life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.01" data-end="51.55">
+            <p class="french-block">Certains études suggèrent que près d'une personne sur quatre souffre de la maladie, bien que beaucoup ne soient pas au courant jusqu'à ce que les symptômes apparaissent.</p>
+            <span class="english-block">Bruxism affects millions like Ella across the UK, external. Some studies suggest nearly one in four people experience the condition, although many may be unaware until symptoms appear.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.55" data-end="70.03">
+            <p class="french-block">Selon l'Association britannique des dentistes, il existe des preuves anecdotiques que le bruxisme est de plus en plus courant, mais aucun chiffre précis. Cependant, certains dentistes ont dit à la BBC qu'ils étaient préoccupés par le nombre croissant de jeunes qu'ils voient avec des problèmes dentaires causés par des grignotements incessants.</p>
+            <span class="english-block">According to the British Dental Association there is some anecdotal evidence that bruxism is becoming more common, but no specific figures. However, some dentists have told the BBC they are worried about the increasing number of young people they're seeing with dental problems caused by incessant gnashing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.03" data-end="84.58">
+            <p class="french-block">"Cela est certainement en hausse", dit le docteur Aditi Desai, président de la Société britannique de médecine du sommeil dentaire (BSDSM). " Et il n'est pas surprenant, étant donné que la vie elle- même peut être si stressante aujourd'hui".</p>
+            <span class="english-block">"It is definitely on the rise," Dr Aditi Desai, president of the British Society of Dental Sleep Medicine (BSDSM), says. "And it's no surprise given that life itself nowadays can be so stressful."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="84.58" data-end="94.25">
+            <p class="french-block">Ella dit que le grattage constant des dents a élargi ses muscles de masseur et élargi sa mâchoire (à la photo, à gauche, avant le traitement et, à droite, après)</p>
+            <span class="english-block">Ella says constant teeth grinding enlarged her masseter muscles and widened her jaw (pictured, left, before treatment and, right, afterwards)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.25" data-end="106.08">
+            <p class="french-block">Des études, externes suggèrent que beaucoup d'entre nous Bruxers le font à cause du stress - mais pourquoi nos mâchoires portent-elles le fardeau de notre vie quotidienne? Que pouvons-nous faire à ce sujet?</p>
+            <span class="english-block">Studies, external suggest many of us Bruxers do it because of stress - but why do our jaws carry the burden of our everyday lives? What can we do about it? And can it actually be a good thing in some cases?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.08" data-end="114.29">
+            <p class="french-block">Le bruxisme est un terme général qui regroupe quatre mouvements de mâchoire différents: serrer, broyer, appuyer et pousser.</p>
+            <span class="english-block">Bruxism is an umbrella term which groups together four different jaw movements - clenching, grinding, bracing and thrusting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.29" data-end="124.13">
+            <p class="french-block">Certains grincent la nuit, d'autres le jour, certains remarquent à peine, tandis que d'autres peuvent grincer les verrous et réveiller même les partenaires les plus profondément endormis.</p>
+            <span class="english-block">Some people grind at night, others through the day. Some barely notice they're doing it, while others can gnash through mouthguards and wake even the deepest sleeping bed partners.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.13" data-end="129.12">
+            <p class="french-block">Comment savoir si vous le faites? Voici les signes à surveiller:</p>
+            <span class="english-block">So how can you tell if you do it? Here are the signs to look out for:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.12" data-end="132.46">
+            <p class="french-block">Dents usés, déchirés ou aplatis</p>
+            <span class="english-block">Worn, chipped or flattened teeth</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.46" data-end="135.43">
+            <p class="french-block">Maux de tête ou douleurs faciales le matin</p>
+            <span class="english-block">Headaches or facial pain in the morning</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.43" data-end="138.79">
+            <p class="french-block">Troubles du sommeil et fatigue pendant la journée</p>
+            <span class="english-block">Disrupted sleep and daytime tiredness</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.79" data-end="141.53">
+            <p class="french-block">Une sensibilité dentaire accrue</p>
+            <span class="english-block">Increased tooth sensitivity</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.53" data-end="145.34">
+            <p class="french-block">Douleur d'oreille ou douleur près des temples sans infection</p>
+            <span class="english-block">Earache or pain near the temples without infection</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.34" data-end="157.82">
+            <p class="french-block">Selon l'Association britannique de counseling et de psychothérapie, le broyage des dents est également mentionné plus fréquemment dans la thérapie, qui dit que les gens sont plus conscients de l'impact de leur santé mentale sur leur corps.</p>
+            <span class="english-block">Teeth grinding is also mentioned more frequently in therapy according to the British Association for Counselling and Psychotherapy, which says people nowadays are more aware of how their mental health impacts their body.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.82" data-end="173.66">
+            <p class="french-block">Le psychothérapeute Rahi Popat dit que de nombreux clients, en particulier les plus jeunes, disent qu'ils ont remarqué ou que quelqu'un d'autre a fait grincer leurs dents, " et ils peuvent souvent lier cela à un moment vraiment stressant de leur vie et réaliser que c'est quand leur grincer les dents a augmenté ou même commencé ".</p>
+            <span class="english-block">Psychotherapist Rahi Popat says more of his clients - particularly younger ones - say they or someone else have noticed they've been grinding their teeth, "and they can often link that to a really stressful time in their lives and realise that's when their teeth grinding either increased or even started".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.66" data-end="186.05">
+            <p class="french-block">Le traumatisme et le stress peuvent vous mettre en mode " combat ou fuite ", où votre rythme cardiaque augmente, vous libérez de l'adrénaline et vos muscles sont tendus, ce qui prépare le corps à une menace externe, dit- il.</p>
+            <span class="english-block">Trauma and stress can put you in "fight or flight" mode, where your heart rate increases, you release adrenaline, and your muscles tense, preparing the body for an external threat, he says. And because the jaw and the nervous system are so closely linked through the major cranial nerves, our muscles are triggered and we clench and grind our teeth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.05" data-end="195.7">
+            <p class="french-block">"Si nous le faisons pendant la nuit, c'est une façon pour notre corps de libérer une partie du stress et de la tension que nous avons pu ressentir pendant la journée", explique Popat.</p>
+            <span class="english-block">"If we do it overnight, it's a way of our bodies releasing some of the stress and tension we might have felt through the day," Popat explains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.7" data-end="204.12">
+            <p class="french-block">Pour Ella, le grincement de dents nocturne pendant son sommeil était devenu un moyen de libérer la tension qui s'était accumulée pendant qu'elle était éveillée.</p>
+            <span class="english-block">For Ella, nocturnal teeth grinding in her sleep became a way to release tension that had built up while she was awake.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.12" data-end="213.12">
+            <p class="french-block">"Je sais que c'est à cause de mon stress, dit Ella. " J'ai une anxiété physique élevée, et si vous me rencontriez, vous ne le penseriez pas.</p>
+            <span class="english-block">"I know it's to do with my stress levels," Ella says. "I have high functioning anxiety - you wouldn't think it if you met me.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.12" data-end="216.72">
+            <p class="french-block">"Je suis occupé et je sors souvent pour le masquer".</p>
+            <span class="english-block">"I'm busy, and I go out a lot to mask it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.72" data-end="226.85">
+            <p class="french-block">Elle dit qu'à 20 ans, elle "a accepté" la douleur, mais quelques années plus tard, quand son dentiste lui a dit que ses dents étaient en danger, elle a décidé de se faire soigner.</p>
+            <span class="english-block">In her 20s, she says she just "put up" with the pain. But a few years later, when her dentist told her that her teeth were at risk, Ella decided to get treatment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="226.85" data-end="235.15">
+            <p class="french-block">Après que son dentiste lui ait injecté du botox dans les muscles de la mâchoire, Ella dit que son sommeil et sa santé mentale s'est améliorée.</p>
+            <span class="english-block">After her dentist injected her jaw muscles with Botox, Ella says her sleep and mental health improved</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.15" data-end="245.74">
+            <p class="french-block">Même si elle n'est pas habituellement proposée par le NHS, Ella a décidé de payer son dentiste pour injecter du Botox dans ses muscles masseters, ceux qui contrôlent sa mâchoire.</p>
+            <span class="english-block">Even though it's not routinely offered on the NHS, Ella decided to pay her dentist to inject Botox into her masseter muscles - the ones that control her jaw. The procedure relaxed them and reduced the tension in her face, and should last 3 to 4 months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.74" data-end="256.75">
+            <p class="french-block">" Ces derniers mois, dit- elle, je me suis endormie correctement. " Le matin, j'ai tellement plus d'énergie, la douleur a diminué et mon visage n'est plus aussi carré. "</p>
+            <span class="english-block">"Over the past few months I've been able to sleep properly," she says. "I've got so much more energy in the mornings, the pain has reduced and my face is not as square."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.75" data-end="265.78">
+            <p class="french-block">Le Dr Simon Cove, dentiste qui traite des patients privés et du NHS, dit que l'impact physique de la broyage sur nos dents peut être énorme.</p>
+            <span class="english-block">Dr Simon Cove, a dentist who treats both private and NHS patients, says the physical impact of grinding on our teeth can be huge.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.78" data-end="271.75">
+            <p class="french-block">Il utilise un scanner 3D pour évaluer les dents de ses patients, et peut voir l'usure au fil du temps.</p>
+            <span class="english-block">He uses a 3D scanner to assess his patients' teeth, and can see the wear over time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="271.75" data-end="283.61">
+            <p class="french-block">" Souvent, dit- il, les gens ne se rendent même pas compte qu'ils le font, mais nous voyons les dégâts. " Si les dents sont si usées, le traitement peut être extrêmement complexe et coûter des milliers de livres. "</p>
+            <span class="english-block">"Often people are not even aware they are doing it, but then we get to see the damage," he says. "If the teeth have been worn down to such an extent, treatment can be extremely complex and can cost thousands of pounds."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="283.61" data-end="288.74">
+            <p class="french-block">Mais il dit que de tels cas sont relativement rares et peuvent prendre des années à se développer.</p>
+            <span class="english-block">But he says such cases are relatively uncommon and can take years to develop.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.74" data-end="293.74">
+            <p class="french-block">Une analyse 3D peut révéler les dommages causés par les broyeurs dentaires à leurs dents.</p>
+            <span class="english-block">A 3D scan can reveal the damage that teeth grinders are doing to their teeth</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.74" data-end="306.5">
+            <p class="french-block">Si vous pouvez traiter les symptômes - en portant un protecteur buccal, par exemple - il est tout aussi important de trouver la cause de votre grincement des dents, dit le docteur Aditi Desai, spécialiste du sommeil dentaire.</p>
+            <span class="english-block">While you can treat the symptoms - by wearing a mouthguard, for example - getting to the source of what's causing your teeth grinding is just as important, says dental sleep specialist, Dr Aditi Desai.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="306.5" data-end="313.34">
+            <p class="french-block">" Trop souvent, dit- elle, les dentistes donnent des protections buccales sans vérifier pourquoi cela se produit. "</p>
+            <span class="english-block">"Too often," she says, "dentists give out mouthguards without checking why it is happening."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="313.34" data-end="321.17">
+            <p class="french-block">Il est essentiel de prendre en compte des conditions graves sous-jacentes telles que l'apnée obstructive du sommeil (ASN), dit- elle.</p>
+            <span class="english-block">It's vital that serious, underlying conditions like obstructive sleep apnoea (OSA) are considered, she says. OSA is caused by a blocked airway, so a patient may grind their teeth to move the blockage in order to be able to breathe again.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.17" data-end="330.79">
+            <p class="french-block">"C'est un très bon exemple de la raison pour laquelle le bruxisme peut vous garder en vie", explique le professeur Frank Lobbezoo, un des principaux chercheurs sur la maladie.</p>
+            <span class="english-block">"That's a very good example of why bruxism can keep you alive," says Prof Frank Lobbezoo, a leading researcher on the condition.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.79" data-end="342.67">
+            <p class="french-block">Et bien que le bruxisme ait ses effets négatifs (dents endommagés, troubles du sommeil, douleur de mâchoire, pour n'en nommer que quelques-uns), il n'est pas toujours le " méchant ", explique- t- il.</p>
+            <span class="english-block">And even though bruxism has its negatives (tooth damage, sleep disruption, jaw ache, to name but a few), it's not always the "bad guy", he explains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.67" data-end="352.51">
+            <p class="french-block">" Le bruxisme est également important pour la production de salive, dit Lobbezoo. " Le mouvement des muscles de la mâchoire active les grandes glandes salivaires.</p>
+            <span class="english-block">"Bruxism is also important for the production of saliva," Lobbezoo says. "Moving the jaw muscles activates the big salivary glands. It cleans the mouth, it protects the teeth and it's vital for digestion."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.51" data-end="356.98">
+            <p class="french-block">Certaines études suggèrent aussi que mâcher peut aider à la cognition.</p>
+            <span class="english-block">Some studies also suggest that chewing can help with cognition.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="356.98" data-end="368.64">
+            <p class="french-block">"Nous le savons chez les animaux, et nos recherches préliminaires le montrent chez les humains, dit- il. " En travaillant sur les muscles de la mâchoire, nous stimulons le flux sanguin vers le cerveau".</p>
+            <span class="english-block">"We know this in animals, and our preliminary research is showing it in humans," he says. "By working our jaw muscles we are stimulating blood flow to the brain."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="368.64" data-end="375.77">
+            <p class="french-block">Mais le grincement des dents peut aussi causer des douleurs chroniques, ce qui peut avoir un impact énorme sur votre vie quotidienne.</p>
+            <span class="english-block">But teeth grinding can also cause chronic pain, which can have a huge impact on your daily life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.77" data-end="388.58">
+            <p class="french-block">Le dentiste Riaz Yar, spécialiste en prosthodontie, traite des patients qui souffrent des effets d'un bruxisme sévère: des dents usées, fissurées et fracturées, et des travaux dentaires qui ne cessent de s'échouer.</p>
+            <span class="english-block">Dentist Riaz Yar, a specialist in prosthodontics, treats patients struggling with the effects of severe bruxism - worn, cracked and fractured teeth, and dental work that keeps failing. Many also arrive with chronic jaw or facial pain and report poor sleep, all of which need assessing in their own right, he says, rather than simply being blamed on the grinding.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="388.58" data-end="399.34">
+            <p class="french-block">Dans le passé, dit Yar, le grattage des dents était considéré comme un simple problème mécanique de la mâchoire, mais il existe maintenant de solides preuves qu'il est beaucoup plus complexe.</p>
+            <span class="english-block">In the past, Yar says, teeth grinding was considered simply a mechanical problem of the jaw, but now there is strong evidence that it is much more complex. It's a "biopsychosocial issue", he says, driven by the brain and nervous system and shaped by the whole person.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="399.34" data-end="415.85">
+            <p class="french-block">" Nous prenons en compte leur habitude de dormir, leur alimentation, leur poids, leur quantité d'exercice, les médicaments qu'ils prennent et nous évaluons les signes de troubles du sommeil. " De nombreux facteurs peuvent contribuer à ce que le patient grince ses dents, explique- t- il.</p>
+            <span class="english-block">"We take into account their sleep patterns, their diet, their weight, the amount they exercise, what medication they might be taking and we assess for signs of sleep disorders," he says. "Many factors can contribute to a patient grinding their teeth, so addressing the condition requires a multidisciplinary approach."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="415.85" data-end="417.86">
+            <p class="french-block">Comment y remédier?</p>
+            <span class="english-block">How best to tackle it? These things might help:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="417.86" data-end="421.46">
+            <p class="french-block">Garde buccale à porter la nuit pour protéger vos dents</p>
+            <span class="english-block">Mouthguard to wear at night to protect your teeth</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="421.46" data-end="433.06">
+            <p class="french-block">Si elle est associée à l'apnée du sommeil, des dispositifs tels qu'un appareil CPAP ou un dispositif de déploiement mandibulaire (MAD) pour aider à maintenir les voies respiratoires ouvertes</p>
+            <span class="english-block">If linked to sleep apnoea, devices such as a CPAP machine or a mandibular advancement device (MAD) to help keep the airway open</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="433.06" data-end="435.94">
+            <p class="french-block">Thérapies parlant comme la TCC</p>
+            <span class="english-block">Talking therapies such as CBT</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="435.94" data-end="446.74">
+            <p class="french-block">Des changements de mode de vie qui peuvent aider à réduire le stress et à améliorer le sommeil, comme l'exercice, la consommation d'alcool, l'arrêt du tabagisme et une alimentation plus saine.</p>
+            <span class="english-block">Lifestyle changes to help reduce stress and improve sleep such as exercise, cutting down on alcohol, stopping smoking and eating healthier</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="446.74" data-end="452.78">
+            <p class="french-block">Pour les cas graves, le Botox est une option, mais il est rarement disponible sur le NHS.</p>
+            <span class="english-block">For severe cases Botox is an option, but it's rarely available on the NHS</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="452.78" data-end="462.55">
+            <p class="french-block">En plus de lui donner des injections qui détendent les muscles, Ella dit aussi méditer pour essayer de réduire son anxiété et de se libérer de la tension qu'elle porte régulièrement.</p>
+            <span class="english-block">Along with muscle-relaxing injections, Ella says she is also meditating to try to reduce her anxiety and free herself from the tension she regularly carries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="462.55" data-end="465.84">
+            <p class="french-block">Elle dit: " Le traitement a changé ma vie.</p>
+            <span class="english-block">"Having treatment has transformed my life," Ella says, "now I want to try and figure out the root cause."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="465.84" data-end="469.68">
+            <p class="french-block">Les questions abordées dans cet article vous ont- elles touchées?</p>
+            <span class="english-block">Have you been affected by the issues discussed in this story?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="469.68" data-end="475.34">
+            <p class="french-block">Je ronflais, mais je ne savais pas que j'arrêtais de respirer 10 fois par heure pendant mon sommeil.</p>
+            <span class="english-block">I snore - but didn’t know I stop breathing 10 times an hour in my sleep</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="475.34" data-end="479.88">
+            <p class="french-block">Arrête de me dire de baisser mon cortisol, ça me rend stressé !</p>
+            <span class="english-block">Stop telling me to lower my cortisol - it's making me stressed!</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="479.88" data-end="483.26">
+            <p class="french-block">Vous avez déjà senti le besoin de vous éteindre ?</p>
+            <span class="english-block">Ever feel the need to switch off? Your vagus nerve might hold the key</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="483.26" data-end="488.93">
+            <p class="french-block">Le magnésium: Ce "minéral miraculeux" peut- il vraiment nous aider à dormir?</p>
+            <span class="english-block">Magnesium: Can this 'miracle mineral' really help us sleep?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_27.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
