@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prolific shoplifters behind more than 28,000 offences, BBC finds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Prolific shoplifters behind more than 28,000 offences, BBC finds</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 16 Sep 2026 00:11:25 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cvg7231pev5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Just 270 people were linked to 28,415 shoplifting offences across England, a BBC analysis has found.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.1" data-end="15.96">
+            <p class="french-block">Les voleurs de magasins prolifiques doivent "savoir qu'ils vont être punis", a déclaré le ministre de la police</p>
+            <span class="english-block">Prolific shoplifters need to "know that they are going to be punished", the policing minister has said</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.96" data-end="23.69">
+            <p class="french-block">Au plus fort de son crime, Jeff Ashman estime qu'il sortait des magasins avec des marchandises de 400 à 500 livres par jour.</p>
+            <span class="english-block">At the height of his offending, Jeff Ashman estimates he walked out of shops with goods worth £400 to £500 on a daily basis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.69" data-end="33.05">
+            <p class="french-block">"C'est déconcertant", a- t- il dit, décrivant combien il avait volé dans des magasins à Hastings pour alimenter sa dépendance à l'héroïne et à la cocaïne.</p>
+            <span class="english-block">"It's mind-boggling," he said, describing how much he had stolen from stores in Hastings to fuel his addiction to heroin and crack cocaine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.05" data-end="39.62">
+            <p class="french-block">"Je connais la misère, le chagrin et le désespoir que j'ai causés à ces gens pendant une longue période de temps".</p>
+            <span class="english-block">"I know the misery and grief and despair that I have caused these people for a long period of time."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.62" data-end="47.62">
+            <p class="french-block">Le vol en magasin est maintenant un passé pour Ashman, mais des voleurs prolifiques comme lui continuent de ravager les communautés d'Angleterre.</p>
+            <span class="english-block">Shoplifting is now firmly in the past for Ashman, but prolific shoplifters like him continue to plague communities across England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.62" data-end="57.02">
+            <p class="french-block">Nous avons demandé à la police les 10 suspects que leurs forces avaient le plus souvent liés à des délits de vol entre 2020-21 et 2025-26.</p>
+            <span class="english-block">We asked police about the 10 suspects their forces had most often linked to shoplifting offences between 2020-21 and 2025-26.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.02" data-end="66.58">
+            <p class="french-block">Il a révélé que 28 415 infractions enregistrées avaient été liées à seulement 270 suspects par les 27 forces qui nous ont partagé des données.</p>
+            <span class="english-block">It revealed 28,415 recorded offences had been linked to just 270 suspects by the 27 forces who shared data with us.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.58" data-end="76.56">
+            <p class="french-block">Il s'agit en moyenne de 105 infractions par personne - et ce ne sont que les occasions où un vol a été officiellement signalé à la police et où les policiers ont identifié un suspect.</p>
+            <span class="english-block">It is an average of 105 offences per person - and those are just the occasions where a theft was formally reported to police and officers identified a suspect.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.56" data-end="85.94">
+            <p class="french-block">Les suspects identifiés comprennent un au Sussex qui avait été lié à 247 infractions de vol de magasin, l'équivalent d'un crime signalé tous les 10 jours.</p>
+            <span class="english-block">The suspects identified include one in Sussex who had been linked to 247 shoplifting offences, the equivalent of a reported crime every 10 days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.94" data-end="94.32">
+            <p class="french-block">Sarah Jones, ministre de la police, a déclaré que le vol en magasin était un "crime pernicieux qui n'a pas été puni depuis trop longtemps".</p>
+            <span class="english-block">Policing minister Sarah Jones said shoplifting was a "pernicious crime that for too long has gone unpunished".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.32" data-end="98.71">
+            <p class="french-block">Elle a dit: " Ils doivent savoir qu'ils seront punis pour ce qu'ils ont fait. "</p>
+            <span class="english-block">She said: "They need to know that they are going to be punished for what they have done."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.71" data-end="112.42">
+            <p class="french-block">Les données officielles montrent que les forces de police en Angleterre et au Pays de Galles, à l'exclusion de la police britannique des transports, ont enregistré 502 011 infractions de vol d'entrepôt en 2025-26 seulement.</p>
+            <span class="english-block">Official data shows police forces across England and Wales, excluding the British Transport Police, recorded 502,011 shoplifting offences in 2025-26 alone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.42" data-end="117.98">
+            <p class="french-block">Plus de la moitié de ces enquêtes ont été clôturées sans qu'aucun suspect n'ait été identifié.</p>
+            <span class="english-block">More than half of those investigations were closed with no suspect identified.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.98" data-end="132.07">
+            <p class="french-block">Le gouvernement dit qu'il explore d'autres moyens de lutter contre les vols prolifiques dans les magasins, en plus des peines de prison et du traitement de la drogue, comme la technologie ou les ordonnances judiciaires leur interdisant de visiter certains magasins ou zones.</p>
+            <span class="english-block">The government says it is exploring other avenues of tackling prolific shoplifting, in addition to prison sentences and drug treatment, such as technology or court orders preventing them from visiting certain shops or areas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.07" data-end="139.25">
+            <p class="french-block">À Hastings, Ashman a été confronté à un homme qu'il considérait autrefois comme son "ennemi public numéro un".</p>
+            <span class="english-block">Back in Hastings, Ashman was brought face-to-face with a man he once considered his "public enemy number one".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.25" data-end="147.38">
+            <p class="french-block">John Bownas dirige une équipe qui soutient les magasins dans la ville côtière, y compris en travaillant ensemble pour réduire la criminalité.</p>
+            <span class="english-block">John Bownas leads a team that supports shops in the seaside town, including working together to reduce crime.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.38" data-end="152.76">
+            <p class="french-block">"Vous et cette ville et les vols de magasins", lui dit Bownas, "c'est un peu une histoire".</p>
+            <span class="english-block">"You and this town and shoplifting," Bownas said to him, "it's a bit of a history."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="152.76" data-end="160.22">
+            <p class="french-block">John Bownas (à gauche) a dit à Jeff qu'il avait " souvent réussi " à rester un pas devant eux, mais " nous vous avons finalement "</p>
+            <span class="english-block">John Bownas (left) told Jeff he had "often succeeded" in staying one step ahead of them, but "we got you in the end"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.22" data-end="166.8">
+            <p class="french-block">Bownas continue de voir l'impact du vol dans les magasins sur les entreprises locales et sur ceux qui travaillent pour elles.</p>
+            <span class="english-block">Bownas continues to see the impact of shoplifing on local businesses and those who work for them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.8" data-end="180.22">
+            <p class="french-block">"C'est frustrant que le système déçoit tant de gens", a- t- il dit. "Ce qui se termine par des jeunes employés qui ne reçoivent que le salaire minimum pour mettre quelques choses sur l'étagère face à des personnages très souvent très violents.</p>
+            <span class="english-block">"It's a frustration that the system is letting so many people down," he said. "What that ends up with is young members of staff who are just paid minimum wage to put a few things on the shelf faced with quite often really quite violent characters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.22" data-end="186.98">
+            <p class="french-block">"Il y a des menaces d'aiguilles et des menaces de couteaux et ce n'est pas ce à quoi un jeune ouvrier doit faire face jour après jour".</p>
+            <span class="english-block">"There are threats of needles and threats of knives and that's not what a young shopworker should be faced with day in day out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.98" data-end="198.34">
+            <p class="french-block">Le ministère de l'Intérieur a déclaré une agression contre un travailleur de détail en Angleterre et au Pays de Galles une infraction pénale spécifique par le biais de la Crime and Policing Act 2026.</p>
+            <span class="english-block">The Home Office has made assault on a retail worker in England and Wales a specfic criminal offence through the Crime and Policing Act 2026.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.34" data-end="204.74">
+            <p class="french-block">Ceux qui sont reconnus coupables peuvent être emprisonnés jusqu'à six mois et être condamnés à une amende illimitée.</p>
+            <span class="english-block">Those found guilty can be sent to prison for up to six months and face an unlimited fine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.74" data-end="211.78">
+            <p class="french-block">Une gérante de magasin à Canterbury a dit qu'il était "très bouleversant" de voir son personnel attaqué par des voleurs.</p>
+            <span class="english-block">One shop manager in Canterbury said it was "really upsetting" to witness her staff be attacked by shoplifters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.78" data-end="217.99">
+            <p class="french-block">Laurissa Woolgar a déclaré: " Mes collègues ont eu des difficultés à se débarrasser de leurs objets.</p>
+            <span class="english-block">Laurissa Woolgar said: "My colleagues have been wrestled with as they've tried to get items off [them]. We've been sworn at, there's a lot of verbal abuse."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.99" data-end="227.69">
+            <p class="french-block">Si des lois plus strictes peuvent amener certains à réfléchir à deux fois, la capacité d'attraper et de poursuivre les voleurs violents en magasin aura également une importance.</p>
+            <span class="english-block">While tougher laws may make some think twice, the ability to catch and prosecute violent shoplifters will also matter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="227.69" data-end="240.31">
+            <p class="french-block">Environ un vol dans les magasins sur cinq en 2025-26 a conduit à une accusation ou à une convocation, avec 285 667 crimes signalés restant ouverts ou fermés sans aucune action.</p>
+            <span class="english-block">Around one in five shoplifting offences in 2025-26 led to a charge or summons, with 285,667 reported crimes remaining open or being closed without any action.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.31" data-end="246.77">
+            <p class="french-block">Certains détaillants ont dit à la BBC qu'ils avaient dû identifier eux-mêmes les suspects pour assurer une arrestation.</p>
+            <span class="english-block">Some retailers told the BBC they had had to identify suspects themselves to ensure an arrest.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="246.77" data-end="253.85">
+            <p class="french-block">C'est le cas lorsque des voleurs ont emporté des bijoux en or de 1000 livres sterling de l'atelier de Dion Smith l'année dernière.</p>
+            <span class="english-block">That was the case when shoplifters made off with gold jewellery worth £1,000 from Dion Smith's workshop last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.85" data-end="261.41">
+            <p class="french-block">Il dirige l'entreprise à Leeds depuis 16 ans et a dit que les vols de boutiques "s'étaient débordés" au cours des cinq à 10 dernières années.</p>
+            <span class="english-block">He has run the business in Leeds for 16 years and said shoplifting has "got out of control" in the past five to 10 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.41" data-end="274.61">
+            <p class="french-block">Sa femme a pris des photos de voleurs de magasin vendant leurs marchandises volées dans un magasin de marchandises d'occasion, mais la police n'a pas pu les identifier jusqu'à ce que les propriétaires d'entreprise aient partagé les images sur les réseaux sociaux.</p>
+            <span class="english-block">His wife took pictures of shoplifters selling off their stolen merchandise in a second-hand goods store, but police could not identify them until the business-owners shared the images on social media.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.61" data-end="282.82">
+            <p class="french-block">"Nous avons eu tant de commentaires et de gens qui nous ont envoyé des messages nous disant qu'ils savaient qui ils étaient et où ils vivaient", a déclaré Smith.</p>
+            <span class="english-block">"We had so many comments and people messaging us telling us they knew who they were and where they lived," Smith said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="282.82" data-end="292.87">
+            <p class="french-block">Après que les voleurs aient été identifiés sur les réseaux sociaux, Dion Smith a déclaré que la police avait aidé à récupérer les marchandises volées et a procédé à des arrestations.</p>
+            <span class="english-block">After the shoplifters were identified on social media, Dion Smith said the police had helped recover the stolen goods and made arrests</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.87" data-end="304.27">
+            <p class="french-block">Smith a ajouté: "Il doit y avoir des conséquences; nous devons trouver quelque chose pour les dissuader, car en ce moment, ils ont le droit de faire ce qu'ils veulent; ils sont en train de devenir fous".</p>
+            <span class="english-block">Smith added: "There has to be consequences; we've got to come up with something to deter them because at the moment they're being given a green light to do whatever they want; they are running amok."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.27" data-end="314.45">
+            <p class="french-block">Emmeline Taylor, professeur de criminologie à l'Université City St George de Londres, a déclaré que le vol dans les magasins était également motivé par le crime organisé.</p>
+            <span class="english-block">Emmeline Taylor, professor of criminology at City St George's University in London, said shoplifting was also being driven by organised crime.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.45" data-end="322.34">
+            <p class="french-block">" Après la pandémie, nous avons vu ce qui a été décrit comme une épidémie de vol d'entrepôt dans les rues du Royaume-Uni ", a-t-elle déclaré.</p>
+            <span class="english-block">"Post-pandemic, we have seen what's been described as a shoplifting epidemic on the streets of the UK," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.34" data-end="334.92">
+            <p class="french-block">" Ce que nous voyons, c'est des criminels organisés qui volent des objets très spécifiques, qui démontent des étagères entières et les vendent sur d'autres marchés, peut-être en ligne, peut-être aux salles de bagages ", a-t-elle expliqué.</p>
+            <span class="english-block">"What we are seeing is organised criminals stealing very specific items, clearing entire shelves and selling that on to other markets, maybe online, maybe at car boot sales," she explained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="334.92" data-end="343.56">
+            <p class="french-block">"Mais nous avons aussi des délinquants locaux prolifiques, ces individus peut-être affectés par la drogue, ils savent déjà où ils vont vendre les marchandises".</p>
+            <span class="english-block">"But we also have prolific local offenders, these individuals maybe drug affected, they already know where they're going to sell the goods on."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.56" data-end="352.94">
+            <p class="french-block">La professeure Emmeline Taylor a déclaré que le vol de boutiques reste relativement élevé malgré une légère baisse d'une année sur l'autre en 2025-26</p>
+            <span class="english-block">Professor Emmeline Taylor said shoplifting remains relatively high despite a slight year-on-year drop in 2025-26</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="352.94" data-end="361.25">
+            <p class="french-block">L'unité de police spécialisée Opal a créé une équipe de délinquants organisés il y a deux ans, qui couvre souvent plusieurs zones de force.</p>
+            <span class="english-block">Specialist police unit Opal set up an organised retail crime team two years ago, which often spans multiple force areas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.25" data-end="369.96">
+            <p class="french-block">Jim Taylor, ancien inspecteur en chef de l'unité, dit que cela leur permet de relier les gangs du crime organisé aux crimes commis dans tout le pays.</p>
+            <span class="english-block">Jim Taylor, a former detective chief superintendent who previously led the unit, says this allows them to link organised crime gangs to offending across the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.96" data-end="379.44">
+            <p class="french-block">"Il y a des individus qui exploitent le manque de coordination entre les magasins, entre les forces de police et qui gagnent de grandes sommes d'argent", a-t-il déclaré.</p>
+            <span class="english-block">"There are individuals exploiting the lack of coordination between stores, between police forces and making vast sums of money," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="379.44" data-end="387.29">
+            <p class="french-block">Une telle affaire s'est étendue sur 30 forces différentes et l'unité a démasqué des groupes criminels responsables de "millions de livres de vol".</p>
+            <span class="english-block">One such case spanned across 30 different forces and the unit has uncovered crime groups responsible for "millions of pounds of theft".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="387.29" data-end="398.69">
+            <p class="french-block">Le Conseil national des chefs de police (NPCC) a souligné qu'une stratégie lancée l'année dernière a donné des "résultats réels" en unissant la police, les détaillants et le gouvernement.</p>
+            <span class="english-block">The National Police Chiefs' Council (NPCC) emphasised a strategy launched last year has brought "real results" by uniting policing, retailers and the government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="398.69" data-end="410.11">
+            <p class="french-block">Alex Goss, chef adjoint du service de police du CNPC chargé de la délinquance au détail, a ajouté que "la lutte contre la délinquance au détail ne peut être réalisée que par la police".</p>
+            <span class="english-block">Assistant Chief Constable Alex Goss, NPCC lead for retail crime, added that "tackling retail crime cannot be achieved by policing alone".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="410.11" data-end="419.38">
+            <p class="french-block">La stratégie vise à cibler la criminalité organisée au détail, à mettre en œuvre un programme de gestion des délinquants et à établir des mesures préventives.</p>
+            <span class="english-block">The strategy aims to target organised retail crime, implement an offender management programme and to establish preventative measures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="419.38" data-end="429.91">
+            <p class="french-block">Un exemple de cette approche est une nouvelle plateforme de renseignement criminel appelée Auror, qui permet aux détaillants de signaler directement à la police pour lutter contre les vols prolifiques.</p>
+            <span class="english-block">One example of this approach is a new crime intelligence platform named Auror, which allows retailers to report directly to the police to tackle prolific shoplifting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="429.91" data-end="439.82">
+            <p class="french-block">Le Hertfordshire Constabulary, l'une des trois forces utilisant maintenant Auror, a pu arrêter deux voleurs dans un parc de vente au détail à Stevenage grâce à l'outil.</p>
+            <span class="english-block">Hertfordshire Constabulary, one of three forces now using Auror, was able to arrest two shoplifters at a retail park in Stevenage thanks to the tool.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="439.82" data-end="445.13">
+            <p class="french-block">Les hommes ont été liés à des dizaines de vols dans les magasins de Boots à travers le pays.</p>
+            <span class="english-block">The men were linked to dozens of thefts from Boots stores across the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="445.13" data-end="457.27">
+            <p class="french-block">Un partage similaire d'informations est essentiel pour le travail des partenariats contre la criminalité des entreprises dans le Staffordshire, qui fournit des mises à jour sur les délinquants connus aux détaillants enregistrés.</p>
+            <span class="english-block">Similar information sharing is key to the work of Partnerships Against Business Crime in Staffordshire, which provides updates on known offenders to registered retailers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="457.27" data-end="466.37">
+            <p class="french-block">Paul Greenhough, qui dirige le projet, a déclaré: "Je pense que malheureusement, il est partiellement accepté que les magasins vont perdre des choses.</p>
+            <span class="english-block">Paul Greenhough, who manages the scheme, said: "I think unfortunately it has become partly accepted that stores are going to lose things.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="466.37" data-end="473.14">
+            <p class="french-block">" Pour nous, il s'agit de dire: 'Non, ce n'est pas acceptable, nous devons faire quelque chose à ce sujet.'"</p>
+            <span class="english-block">"For us, it's about saying, 'No, that's not acceptable - we need to do something about it'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="473.14" data-end="482.47">
+            <p class="french-block">D'un point de vue du gouvernement, Jones a déclaré qu'une légère baisse d'une année sur l'autre des crimes de vol enregistrés dans les magasins indiquait que le pays avait " tourné le dos ".</p>
+            <span class="english-block">From a government perspective, Jones said a slight year-on-year drop in recorded shoplifting crimes indicated the country had "turned that corner".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="482.47" data-end="487.99">
+            <p class="french-block">Mais elle a ajouté: "Nous savons tous qu'il y a beaucoup plus à faire et beaucoup plus à faire".</p>
+            <span class="english-block">But she added: "We all know there is a lot further that we need to go and a lot more we need to do."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="487.99" data-end="492.34">
+            <p class="french-block">Un vendeur licencié pour avoir pris des risques de vol de bacon</p>
+            <span class="english-block">Shopworker sacked for tackling suspected bacon thief</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="492.34" data-end="496.01">
+            <p class="french-block">Boutiques interdites pour les garçons pour 100 000 livres</p>
+            <span class="english-block">Shops ban for boy for £100,000 shoplifting sprees</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="496.01" data-end="500.76">
+            <p class="french-block">Le vol quotidien d'une "maladie", disent les entreprises londoniennes</p>
+            <span class="english-block">Shoplifting a daily 'curse', say London businesses</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="500.76" data-end="505.75">
+            <p class="french-block">"Il m'a menacé de me cogner la tête" - des ouvriers en magasin sous attaque</p>
+            <span class="english-block">'He threatened to headbutt me' - shopworkers under attack</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_6.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

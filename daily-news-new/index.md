@@ -1,145 +1,138 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-09-15 06:17:01  
+Generated on: 2026-09-16 06:34:45  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Lucy Letby public inquiry findings set to be published**
-   - **Published:** Tue, 15 Sep 2026 01:54:35 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Lucy_Letby_public_inquiry_findings_set_t.md](top-stories_article_1_Lucy_Letby_public_inquiry_findings_set_t.md)
+1. **OpenAI boss says world 'right to be afraid' but 'should trust' AI firms**
+   - **Published:** Wed, 16 Sep 2026 00:59:20 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_OpenAI_boss_says_world_right_to_be_afrai.md](top-stories_article_1_OpenAI_boss_says_world_right_to_be_afrai.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Trump says AI safety fears a 'hoax' as he rejects calls for greater safeguards**
-   - **Published:** Tue, 15 Sep 2026 03:47:27 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Trump_says_AI_safety_fears_a_hoax_as_he_.md](top-stories_article_2_Trump_says_AI_safety_fears_a_hoax_as_he_.md)
-   - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
+2. **All support acts on Ed Sheeran's US tour quit after Macklemore dropped**
+   - **Published:** Wed, 16 Sep 2026 01:29:20 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_All_support_acts_on_Ed_Sheerans_US_tour_.md](top-stories_article_2_All_support_acts_on_Ed_Sheerans_US_tour_.md)
 
-3. **Chris Mason: Row over Reform's mega donations has mileage in it yet**
-   - **Published:** Mon, 14 Sep 2026 23:51:03 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Chris_Mason_Row_over_Reforms_mega_donati.md](top-stories_article_3_Chris_Mason_Row_over_Reforms_mega_donati.md)
+3. **UK in talks about joining global defence bank led by Canada**
+   - **Published:** Tue, 15 Sep 2026 23:50:55 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_UK_in_talks_about_joining_global_defence.md](top-stories_article_3_UK_in_talks_about_joining_global_defence.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Nato jets down drone that entered Lithuanian airspace**
-   - **Published:** Tue, 15 Sep 2026 02:22:07 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Nato_jets_down_drone_that_entered_Lithua.md](top-stories_article_4_Nato_jets_down_drone_that_entered_Lithua.md)
+4. **Letby doctor says inquiry 'grim reading' and he wishes 'we had been brave enough to follow suspicions'**
+   - **Published:** Wed, 16 Sep 2026 00:25:34 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Letby_doctor_says_inquiry_grim_reading_a.md](top-stories_article_4_Letby_doctor_says_inquiry_grim_reading_a.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Welsh actor Matthew Rhys makes Emmy Awards history with double win**
-   - **Published:** Tue, 15 Sep 2026 03:50:06 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md](top-stories_article_5_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md)
+5. **Three dead after LA news helicopter crashes while covering deadly bus collision**
+   - **Published:** Wed, 16 Sep 2026 04:36:11 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Three_dead_after_LA_news_helicopter_cras.md](top-stories_article_5_Three_dead_after_LA_news_helicopter_cras.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Watch: Selena Gomez, Zendaya and other stars light up Emmys red carpet**
-   - **Published:** Tue, 15 Sep 2026 02:00:40 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Watch_Selena_Gomez_Zendaya_and_other_sta.md](top-stories_article_6_Watch_Selena_Gomez_Zendaya_and_other_sta.md)
+6. **Prolific shoplifters behind more than 28,000 offences, BBC finds**
+   - **Published:** Wed, 16 Sep 2026 00:11:25 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Prolific_shoplifters_behind_more_than_28.md](top-stories_article_6_Prolific_shoplifters_behind_more_than_28.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **US confirms for first time it has deployed space weapons**
-   - **Published:** Tue, 15 Sep 2026 01:52:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_US_confirms_for_first_time_it_has_deploy.md](top-stories_article_7_US_confirms_for_first_time_it_has_deploy.md)
+7. **'Luck and timing': Matthew Rhys on his historic Emmy Awards double win**
+   - **Published:** Tue, 15 Sep 2026 22:04:38 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Luck_and_timing_Matthew_Rhys_on_his_hist.md](top-stories_article_7_Luck_and_timing_Matthew_Rhys_on_his_hist.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Man admits drugging and raping wife over 20 years**
-   - **Published:** Mon, 14 Sep 2026 16:54:26 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Man_admits_drugging_and_raping_wife_over.md](top-stories_article_8_Man_admits_drugging_and_raping_wife_over.md)
+8. **Mayors could be given powers to oversee water companies**
+   - **Published:** Wed, 16 Sep 2026 02:09:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Mayors_could_be_given_powers_to_oversee_.md](top-stories_article_8_Mayors_could_be_given_powers_to_oversee_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **China criticises idea it is in 'malicious competition' over AI**
-   - **Published:** Mon, 14 Sep 2026 11:31:39 GMT
-   - **Read Parallel Translation:** [world_article_9_China_criticises_idea_it_is_in_malicious.md](world_article_9_China_criticises_idea_it_is_in_malicious.md)
+1. **All support acts on Ed Sheeran's US tour quit after Macklemore dropped**
+   - **Published:** Wed, 16 Sep 2026 01:29:20 GMT
+   - **Read Parallel Translation:** [world_article_9_All_support_acts_on_Ed_Sheerans_US_tour_.md](world_article_9_All_support_acts_on_Ed_Sheerans_US_tour_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Welsh actor Matthew Rhys makes Emmy Awards history with double win**
-   - **Published:** Tue, 15 Sep 2026 03:50:06 GMT
-   - **Read Parallel Translation:** [world_article_10_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md](world_article_10_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md)
+2. **Denmark says Russian warship fired flares at military helicopter**
+   - **Published:** Tue, 15 Sep 2026 11:40:00 GMT
+   - **Read Parallel Translation:** [world_article_10_Denmark_says_Russian_warship_fired_flare.md](world_article_10_Denmark_says_Russian_warship_fired_flare.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Nato jets down drone that entered Lithuanian airspace**
-   - **Published:** Tue, 15 Sep 2026 02:22:07 GMT
-   - **Read Parallel Translation:** [world_article_11_Nato_jets_down_drone_that_entered_Lithua.md](world_article_11_Nato_jets_down_drone_that_entered_Lithua.md)
+3. **What weapon could the US have put into space?**
+   - **Published:** Tue, 15 Sep 2026 14:23:14 GMT
+   - **Read Parallel Translation:** [world_article_11_What_weapon_could_the_US_have_put_into_s.md](world_article_11_What_weapon_could_the_US_have_put_into_s.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **US confirms for first time it has deployed space weapons**
-   - **Published:** Tue, 15 Sep 2026 01:52:02 GMT
-   - **Read Parallel Translation:** [world_article_12_US_confirms_for_first_time_it_has_deploy.md](world_article_12_US_confirms_for_first_time_it_has_deploy.md)
+4. **South African president vows justice as more women's bodies found near Johannesburg**
+   - **Published:** Tue, 15 Sep 2026 18:01:51 GMT
+   - **Read Parallel Translation:** [world_article_12_South_African_president_vows_justice_as_.md](world_article_12_South_African_president_vows_justice_as_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Trump says AI safety fears a 'hoax' as he rejects calls for greater safeguards**
-   - **Published:** Tue, 15 Sep 2026 03:47:27 GMT
-   - **Read Parallel Translation:** [business_article_13_Trump_says_AI_safety_fears_a_hoax_as_he_.md](business_article_13_Trump_says_AI_safety_fears_a_hoax_as_he_.md)
+1. **Complaints to watchdog about water firms jump 84%**
+   - **Published:** Tue, 15 Sep 2026 23:14:08 GMT
+   - **Read Parallel Translation:** [business_article_13_Complaints_to_watchdog_about_water_firms.md](business_article_13_Complaints_to_watchdog_about_water_firms.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **I got paid $5,000 to move to a place I'd never heard of**
-   - **Published:** Mon, 14 Sep 2026 23:08:28 GMT
-   - **Read Parallel Translation:** [business_article_14_I_got_paid_5000_to_move_to_a_place_Id_ne.md](business_article_14_I_got_paid_5000_to_move_to_a_place_Id_ne.md)
+2. **OpenAI boss says world 'right to be afraid' but 'should trust' AI firms**
+   - **Published:** Wed, 16 Sep 2026 00:59:20 GMT
+   - **Read Parallel Translation:** [business_article_14_OpenAI_boss_says_world_right_to_be_afrai.md](business_article_14_OpenAI_boss_says_world_right_to_be_afrai.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **AI 'kill switch' may need to be mandatory, Anthropic co-founder tells BBC**
-   - **Published:** Tue, 15 Sep 2026 00:32:21 GMT
-   - **Read Parallel Translation:** [business_article_15_AI_kill_switch_may_need_to_be_mandatory_.md](business_article_15_AI_kill_switch_may_need_to_be_mandatory_.md)
+3. **How rising bond yields impact American consumers**
+   - **Published:** Wed, 16 Sep 2026 03:58:32 GMT
+   - **Read Parallel Translation:** [business_article_15_How_rising_bond_yields_impact_American_c.md](business_article_15_How_rising_bond_yields_impact_American_c.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **Pubs in England and Wales to allow digital ID apps to prove age**
-   - **Published:** Mon, 14 Sep 2026 23:07:56 GMT
-   - **Read Parallel Translation:** [business_article_16_Pubs_in_England_and_Wales_to_allow_digit.md](business_article_16_Pubs_in_England_and_Wales_to_allow_digit.md)
-   - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
+4. **Why doomsday warnings are not the only threat to the AI juggernaut**
+   - **Published:** Tue, 15 Sep 2026 23:39:55 GMT
+   - **Read Parallel Translation:** [business_article_16_Why_doomsday_warnings_are_not_the_only_t.md](business_article_16_Why_doomsday_warnings_are_not_the_only_t.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Trump says AI safety fears a 'hoax' as he rejects calls for greater safeguards**
-   - **Published:** Tue, 15 Sep 2026 03:47:27 GMT
-   - **Read Parallel Translation:** [technology_article_17_Trump_says_AI_safety_fears_a_hoax_as_he_.md](technology_article_17_Trump_says_AI_safety_fears_a_hoax_as_he_.md)
+1. **OpenAI boss says world 'right to be afraid' but 'should trust' AI firms**
+   - **Published:** Wed, 16 Sep 2026 00:59:20 GMT
+   - **Read Parallel Translation:** [technology_article_17_OpenAI_boss_says_world_right_to_be_afrai.md](technology_article_17_OpenAI_boss_says_world_right_to_be_afrai.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Pubs in England and Wales to allow digital ID apps to prove age**
-   - **Published:** Mon, 14 Sep 2026 23:07:56 GMT
-   - **Read Parallel Translation:** [technology_article_18_Pubs_in_England_and_Wales_to_allow_digit.md](technology_article_18_Pubs_in_England_and_Wales_to_allow_digit.md)
+2. **AI app ads promoting 'objectification of women' banned by watchdog**
+   - **Published:** Tue, 15 Sep 2026 23:27:17 GMT
+   - **Read Parallel Translation:** [technology_article_18_AI_app_ads_promoting_objectification_of_.md](technology_article_18_AI_app_ads_promoting_objectification_of_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Valve's Steam Frame is excellent - but at over £1,000 is VR still too expensive?**
-   - **Published:** Mon, 14 Sep 2026 17:05:31 GMT
-   - **Read Parallel Translation:** [technology_article_19_Valves_Steam_Frame_is_excellent_-_but_at.md](technology_article_19_Valves_Steam_Frame_is_excellent_-_but_at.md)
+3. **Pubs in England and Wales to allow digital ID apps to prove age**
+   - **Published:** Mon, 14 Sep 2026 23:07:56 GMT
+   - **Read Parallel Translation:** [technology_article_19_Pubs_in_England_and_Wales_to_allow_digit.md](technology_article_19_Pubs_in_England_and_Wales_to_allow_digit.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **What is AI, how does it work and why are some people concerned about it?**
-   - **Published:** Mon, 14 Sep 2026 16:09:56 GMT
-   - **Read Parallel Translation:** [technology_article_20_What_is_AI_how_does_it_work_and_why_are_.md](technology_article_20_What_is_AI_how_does_it_work_and_why_are_.md)
+4. **Valve's Steam Frame is excellent - but at over £1,000 is VR still too expensive?**
+   - **Published:** Mon, 14 Sep 2026 17:05:31 GMT
+   - **Read Parallel Translation:** [technology_article_20_Valves_Steam_Frame_is_excellent_-_but_at.md](technology_article_20_Valves_Steam_Frame_is_excellent_-_but_at.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Mass nesting brings swarms of turtles to Mexican beach**
-   - **Published:** Tue, 15 Sep 2026 01:08:55 GMT
-   - **Read Parallel Translation:** [science_article_21_Mass_nesting_brings_swarms_of_turtles_to.md](science_article_21_Mass_nesting_brings_swarms_of_turtles_to.md)
+1. **Third Heathrow runway should only go ahead if airlines pay for cleaner flying, say advisers**
+   - **Published:** Wed, 16 Sep 2026 00:05:51 GMT
+   - **Read Parallel Translation:** [science_article_21_Third_Heathrow_runway_should_only_go_ahe.md](science_article_21_Third_Heathrow_runway_should_only_go_ahe.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **US scraps limits on emissions from coal and gas power plants**
-   - **Published:** Mon, 14 Sep 2026 22:04:14 GMT
-   - **Read Parallel Translation:** [science_article_22_US_scraps_limits_on_emissions_from_coal_.md](science_article_22_US_scraps_limits_on_emissions_from_coal_.md)
+2. **What weapon could the US have put into space?**
+   - **Published:** Tue, 15 Sep 2026 14:23:14 GMT
+   - **Read Parallel Translation:** [science_article_22_What_weapon_could_the_US_have_put_into_s.md](science_article_22_What_weapon_could_the_US_have_put_into_s.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Giant jellyfish with '40ft tentacles' captured on camera off coast**
-   - **Published:** Mon, 14 Sep 2026 22:03:17 GMT
-   - **Read Parallel Translation:** [science_article_23_Giant_jellyfish_with_40ft_tentacles_capt.md](science_article_23_Giant_jellyfish_with_40ft_tentacles_capt.md)
-   - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
-
-4. **UK could 'unlock' 100 more oil and gas projects, say North Sea bosses**
-   - **Published:** Mon, 14 Sep 2026 21:59:02 GMT
+3. **UK could 'unlock' 100 more oil and gas projects, say North Sea bosses**
+   - **Published:** Tue, 15 Sep 2026 06:45:12 GMT
    - **Read Parallel Translation:** [science_article_24_UK_could_unlock_100_more_oil_and_gas_pro.md](science_article_24_UK_could_unlock_100_more_oil_and_gas_pro.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
@@ -147,72 +140,71 @@ Scraped Feed Mode: `ALL`
 
 ### Section: HEALTH
 
-1. **The Pitt is up for 25 Emmys - but the show's biggest fans are real-life doctors**
-   - **Published:** Mon, 14 Sep 2026 20:39:48 GMT
-   - **Read Parallel Translation:** [health_article_25_The_Pitt_is_up_for_25_Emmys_-_but_the_sh.md](health_article_25_The_Pitt_is_up_for_25_Emmys_-_but_the_sh.md)
+1. **Letby doctor says inquiry 'grim reading' and he wishes 'we had been brave enough to follow suspicions'**
+   - **Published:** Wed, 16 Sep 2026 00:25:34 GMT
+   - **Read Parallel Translation:** [health_article_25_Letby_doctor_says_inquiry_grim_reading_a.md](health_article_25_Letby_doctor_says_inquiry_grim_reading_a.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Staff slept while patient killed at NHS mental health unit**
-   - **Published:** Mon, 14 Sep 2026 15:19:26 GMT
-   - **Read Parallel Translation:** [health_article_26_Staff_slept_while_patient_killed_at_NHS_.md](health_article_26_Staff_slept_while_patient_killed_at_NHS_.md)
-   - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
+2. **Do you feel guilty when calling in sick at work? This might be why...**
+   - **Published:** Tue, 15 Sep 2026 23:40:07 GMT
+   - **Read Parallel Translation:** [health_article_26_Do_you_feel_guilty_when_calling_in_sick_.md](health_article_26_Do_you_feel_guilty_when_calling_in_sick_.md)
 
-3. **Some dentists say more young people are grinding their teeth - are you one of them?**
-   - **Published:** Sun, 13 Sep 2026 05:55:19 GMT
-   - **Read Parallel Translation:** [health_article_27_Some_dentists_say_more_young_people_are_.md](health_article_27_Some_dentists_say_more_young_people_are_.md)
+3. **Letby failings go beyond one hospital - the whole system has been found lacking**
+   - **Published:** Tue, 15 Sep 2026 16:51:43 GMT
+   - **Read Parallel Translation:** [health_article_27_Letby_failings_go_beyond_one_hospital_-_.md](health_article_27_Letby_failings_go_beyond_one_hospital_-_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Fire at nursing home in Chile kills 16 residents**
-   - **Published:** Sat, 12 Sep 2026 19:36:50 GMT
-   - **Read Parallel Translation:** [health_article_28_Fire_at_nursing_home_in_Chile_kills_16_r.md](health_article_28_Fire_at_nursing_home_in_Chile_kills_16_r.md)
+4. **Assisted dying: How laws differ around the world**
+   - **Published:** Tue, 15 Sep 2026 11:29:53 GMT
+   - **Read Parallel Translation:** [health_article_28_Assisted_dying_How_laws_differ_around_th.md](health_article_28_Assisted_dying_How_laws_differ_around_th.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Farage says £72m donations are compliant 'with the law today'**
-   - **Published:** Mon, 14 Sep 2026 17:50:29 GMT
-   - **Read Parallel Translation:** [politics_article_29_Farage_says_72m_donations_are_compliant_.md](politics_article_29_Farage_says_72m_donations_are_compliant_.md)
+1. **UK in talks about joining global defence bank led by Canada**
+   - **Published:** Tue, 15 Sep 2026 23:50:55 GMT
+   - **Read Parallel Translation:** [politics_article_29_UK_in_talks_about_joining_global_defence.md](politics_article_29_UK_in_talks_about_joining_global_defence.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Burnham cancels engagements after death of father**
-   - **Published:** Mon, 14 Sep 2026 18:53:38 GMT
-   - **Read Parallel Translation:** [politics_article_30_Burnham_cancels_engagements_after_death_.md](politics_article_30_Burnham_cancels_engagements_after_death_.md)
+2. **Dan Thomas resigns as Reform Wales leader after arrest on suspicion of assault**
+   - **Published:** Tue, 15 Sep 2026 20:41:35 GMT
+   - **Read Parallel Translation:** [politics_article_30_Dan_Thomas_resigns_as_Reform_Wales_leade.md](politics_article_30_Dan_Thomas_resigns_as_Reform_Wales_leade.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **MPs and Lords call for new law to address AI threat to human rights**
-   - **Published:** Mon, 14 Sep 2026 08:07:08 GMT
-   - **Read Parallel Translation:** [politics_article_31_MPs_and_Lords_call_for_new_law_to_addres.md](politics_article_31_MPs_and_Lords_call_for_new_law_to_addres.md)
+3. **'One in, one out' scheme costs £56,000 per person returned to France, home secretary says**
+   - **Published:** Tue, 15 Sep 2026 20:53:04 GMT
+   - **Read Parallel Translation:** [politics_article_31_One_in_one_out_scheme_costs_56000_per_pe.md](politics_article_31_One_in_one_out_scheme_costs_56000_per_pe.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Former top civil servant received pay-off of nearly £860,000**
-   - **Published:** Mon, 14 Sep 2026 16:35:40 GMT
-   - **Read Parallel Translation:** [politics_article_32_Former_top_civil_servant_received_pay-of.md](politics_article_32_Former_top_civil_servant_received_pay-of.md)
+4. **Political donors could face tougher residency rules**
+   - **Published:** Tue, 15 Sep 2026 13:25:48 GMT
+   - **Read Parallel Translation:** [politics_article_32_Political_donors_could_face_tougher_resi.md](politics_article_32_Political_donors_could_face_tougher_resi.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Welsh actor Matthew Rhys makes Emmy Awards history with double win**
-   - **Published:** Tue, 15 Sep 2026 03:50:06 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md](entertainment_article_33_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md)
+1. **All support acts on Ed Sheeran's US tour quit after Macklemore dropped**
+   - **Published:** Wed, 16 Sep 2026 01:29:20 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_All_support_acts_on_Ed_Sheerans_US_tour_.md](entertainment_article_33_All_support_acts_on_Ed_Sheerans_US_tour_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **In pictures: Stars on red carpet at Emmy Awards in LA**
-   - **Published:** Tue, 15 Sep 2026 02:56:19 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_In_pictures_Stars_on_red_carpet_at_Emmy_.md](entertainment_article_34_In_pictures_Stars_on_red_carpet_at_Emmy_.md)
+2. **Five things you may not know about Emmy history-maker Matthew Rhys**
+   - **Published:** Tue, 15 Sep 2026 12:06:19 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Five_things_you_may_not_know_about_Emmy_.md](entertainment_article_34_Five_things_you_may_not_know_about_Emmy_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Emmys 2026: The winners and nominees in full**
-   - **Published:** Tue, 15 Sep 2026 02:55:07 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Emmys_2026_The_winners_and_nominees_in_f.md](entertainment_article_35_Emmys_2026_The_winners_and_nominees_in_f.md)
+3. **Home Alone and Schitt's Creek stars pay tribute to on-screen 'mom' O'Hara**
+   - **Published:** Tue, 15 Sep 2026 12:00:35 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Home_Alone_and_Schitts_Creek_stars_pay_t.md](entertainment_article_35_Home_Alone_and_Schitts_Creek_stars_pay_t.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Oasis confirm Knebworth return plus Manchester and Glasgow live 2027 gigs**
-   - **Published:** Mon, 14 Sep 2026 15:04:22 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Oasis_confirm_Knebworth_return_plus_Manc.md](entertainment_article_36_Oasis_confirm_Knebworth_return_plus_Manc.md)
+4. **Welsh actor Matthew Rhys makes Emmy Awards history with double win**
+   - **Published:** Tue, 15 Sep 2026 03:50:06 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md](entertainment_article_36_Welsh_actor_Matthew_Rhys_makes_Emmy_Awar.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

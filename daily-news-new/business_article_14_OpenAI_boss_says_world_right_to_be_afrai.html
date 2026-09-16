@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI boss says world 'right to be afraid' but 'should trust' AI firms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>OpenAI boss says world 'right to be afraid' but 'should trust' AI firms</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 16 Sep 2026 00:59:20 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqx2zpj4y525o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Sam Altman and other tech CEOs say there are incentives to limit advancements in AI, as fears grow over the threats it poses to humanity.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.62" data-end="12.67">
+            <p class="french-block">Pourquoi Donald Trump est-il si opposé à réglementer l'IA ?</p>
+            <span class="english-block">Why is Donald Trump so opposed to regulating AI?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.67" data-end="27.86">
+            <p class="french-block">Sam Altman, le chef d'OpenAI, pense que les gens devraient avoir plus de foi dans sa société et d'autres comme elle pour faire la bonne chose en ce qui concerne le développement de l'intelligence artificielle (IA) au milieu de la préoccupation du public croissante sur tous les risques.</p>
+            <span class="english-block">OpenAI boss Sam Altman thinks people should have more faith in his company and others like it to do the right thing when it comes to artificial intelligence (AI) development amid rising public concerns about all the risks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.86" data-end="38.42">
+            <p class="french-block">"Le monde devrait avoir confiance que nous allons faire la bonne chose parce que c'est la bonne chose et nous sentons l'ampleur de cela", a déclaré Altman mardi lors d'une conférence à San Francisco.</p>
+            <span class="english-block">"The world should trust that we are going to do the right thing because it's the right thing and we feel the magnitude of this," Altman said on Tuesday during a conference in San Francisco.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.42" data-end="46.61">
+            <p class="french-block">Cependant, Altman a noté que les gens étaient justifiés dans leurs craintes autour de l'IA, car la capacité des outils a progressé rapidement.</p>
+            <span class="english-block">However, Altman noted that people were justified in their fears around AI, as the capability of the tools has progressed rapidly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.61" data-end="57.46">
+            <p class="french-block">"Il ne faut plus autant d'imagination que d'habitude pour [nous] imaginer comment cela pourrait mal tourner", a- t- il dit. "Je pense que le monde a raison d'avoir peur de cela".</p>
+            <span class="english-block">"It doesn't take as much imagination as it used to for [us] to imagine how this could go wrong," he said. "I think the world is right to be afraid of this."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.46" data-end="65.3">
+            <p class="french-block">Les commentaires d'Altman ont été faits lors d'une apparition lors d'une conférence annuelle organisée par la firme de logiciels Salesforce.</p>
+            <span class="english-block">Altman's comments came during an appearance at an annual conference hosted by software firm Salesforce.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.3" data-end="74.09">
+            <p class="french-block">C'était la première fois qu'il parlait publiquement depuis qu'un article a été rendu viral la semaine dernière par un chercheur qui a quitté la firme d'IA Anthropic.</p>
+            <span class="english-block">It was the first time he had spoken publicly since a post went viral last week by a researcher who quit the AI firm Anthropic. The researcher claimed AI could kill all humans by the end of the decade if left unchecked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.09" data-end="86.52">
+            <p class="french-block">Une poignée d'autres dirigeants et experts de l'IA ont répondu en disant qu'ils étaient d'accord avec l'évaluation, bien qu'ils n'aient pas expliqué comment ils sont arrivés à leurs conclusions ou comment exactement l'IA pouvait accomplir une telle chose.</p>
+            <span class="english-block">A handful of other AI executives and experts responded by saying they agreed with the assessment, though they didn't explain how they came to their conclusions or how exactly AI could accomplish such a thing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.52" data-end="103.87">
+            <p class="french-block">Le ferveur des revendications a conduit à un examen plus approfondi du développement de l'IA ces derniers jours, et en réponse, le directeur général d'Anthropic, Dario Amodei, a appelé à ralentir le rythme de tout le développement de l'IA et a exhorté les gouvernements externes à réglementer l'industrie.</p>
+            <span class="english-block">The fervor over the claims has led to more scrutiny of AI development in recent days, and in response, Anthropic chief executive Dario Amodei called for the pace of all AI development to slow, external and urged governments to regulate the industry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.87" data-end="115.78">
+            <p class="french-block">Le message a été salué par Altman, ainsi que par le cofondateur de DeepMind Demis Hassabis de Google, et par Elon Musk, propriétaire du site de médias sociaux X et assistant d'IA Grok.</p>
+            <span class="english-block">The post was applauded by Altman, as well as co-founder of Google's DeepMind Demis Hassabis, and Elon Musk, owner of social media site X and AI assistant Grok.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.78" data-end="122.95">
+            <p class="french-block">Mardi, plus de leaders de l'IA ont exprimé leur soutien à l'autorégulation plutôt qu'à l'implication du gouvernement.</p>
+            <span class="english-block">By Tuesday, more AI leaders were voicing support for self-regulation rather than government involvement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.95" data-end="128.93">
+            <p class="french-block">Altman a dit qu'il pensait que les entreprises d'IA comme les siennes étaient capables de se réguler elles-mêmes.</p>
+            <span class="english-block">Altman said that he felt AI companies like his own were capable of essentially regulating themselves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.93" data-end="145.06">
+            <p class="french-block">"Nous allons le faire bien, je suis très confiant dans la capacité de notre entreprise et de l'industrie à le faire en toute sécurité", a déclaré Altman, ajoutant qu'il était sûr qu'ils "resteraient l'alignement et la sécurité bien avant les capacités" et si ils ne pouvaient pas, ils "arrêteraient ou ralentiraient".</p>
+            <span class="english-block">"We will get it right, I'm very confident in our company's and industry's ability to do this safely," Altman said, adding that he was sure that they would "keep alignment and safety way ahead of capabilities" and if they couldn't, they would "slow down or stop".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.06" data-end="148.44">
+            <p class="french-block">OpenAI est un leader de l'industrie de l'IA</p>
+            <span class="english-block">OpenAI is an AI industry leader</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.44" data-end="162.53">
+            <p class="french-block">Après les commentaires d'Altman, le patron de Meta, Mark Zuckerberg, a écrit sur X que chaque laboratoire d'IA a la capacité et l'incitation "à prendre ses propres mesures" pour créer des outils et des modèles d'IA conçus pour la sécurité.</p>
+            <span class="english-block">After Altman's comments, Meta boss Mark Zuckerberg wrote on X that every AI lab has the ability and the incentive "to take its own actions" towards making AI tools and models that are designed for safety.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.53" data-end="178.44">
+            <p class="french-block">" Tout laboratoire qui ne se concentre pas sur l'alignement tombera en retard, écrit Zuckerberg. " Les laboratoires doivent être tenus de faire face à une responsabilité importante si leurs modèles causent des dommages, et ils ont donc une forte incitation à prévenir cela aussi. "</p>
+            <span class="english-block">"Any lab that doesn't focus on alignment will fall behind," Zuckerberg wrote. "Labs face significant liability if their models cause harm, so they have a strong incentive to prevent this as well."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.44" data-end="191.42">
+            <p class="french-block">Jensen Huang, chef de Nvidia, a également déclaré lors de la même conférence mardi que les entreprises d'IA devraient décider si de nouvelles versions de la technologie devraient être publiées et non gérées par des forces extérieures.</p>
+            <span class="english-block">Jensen Huang, head of Nvidia, also said at the same Tuesday conference that the AI firms should decide if new versions of the technology should be released and not be managed by outside forces.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.42" data-end="202.32">
+            <p class="french-block">"Nous n'avons pas besoin de nouvelles lois ou réglementations", a déclaré Huang, ajoutant qu'il ne devrait pas y avoir de "faux choix" entre la vitesse de l'innovation et la sécurité des produits AI.</p>
+            <span class="english-block">"We don't need new laws or regulations," Huang said, adding that there should not be a "false choice" between the speed of innovation and the safety of AI products.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.32" data-end="212.14">
+            <p class="french-block">Nvidia est la plus grande entreprise au monde en termes de valeur, avec ses bénéfices ayant explosé en raison de la demande rampante des puces informatiques AI qu'elle fabrique.</p>
+            <span class="english-block">Nvidia is the biggest company in the world by valuation, with its profits having boomed as a result of rampant demand for the AI computing chips it makes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.14" data-end="217.92">
+            <p class="french-block">"La sécurité est primordiale, mais c'est un problème d'ingénierie", a déclaré Huang.</p>
+            <span class="english-block">"Safety is paramount. However, safety is an engineering problem," Huang said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.92" data-end="226.06">
+            <p class="french-block">Il a ajouté que si à tout moment un dirigeant d'une entreprise d'IA manque de confiance dans son produit, il devrait choisir de ne pas le publier.</p>
+            <span class="english-block">He added that if at any time a leader of an AI company lacks confidence in their product they should choose to not release it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="226.06" data-end="237.24">
+            <p class="french-block">"C'est une chose très évidente à faire", a dit Huang. "Conduisez- vous aussi vite que possible, mais si à un moment donné vous sentez que l'institution ne contrôle pas, faites une pause".</p>
+            <span class="english-block">"That's a very obvious thing to do," Huang said. "Run as fast as you can, but if at any time you feel the institution is not in control, take a pause."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.24" data-end="242.98">
+            <p class="french-block">Pourquoi les avertissements du Jour du Jugement dernier ne sont pas la seule menace pour le géant de l'IA</p>
+            <span class="english-block">Why doomsday warnings are not the only threat to the AI juggernaut</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.98" data-end="249.14">
+            <p class="french-block">Trump dit que la sécurité de l'IA craint un " truchement " car il rejette les appels à plus de garanties</p>
+            <span class="english-block">Trump says AI safety fears a 'hoax' as he rejects calls for greater safeguards</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="249.14" data-end="257.66">
+            <p class="french-block">Certains chiffres de l'industrie ont soutenu que les craintes de la résurgence de l'IA étaient exagérées et étaient utilisées pour générer de l'hype pour l'industrie.</p>
+            <span class="english-block">Some industry figures have argued resurgent AI fears were overblown and were being jumped on to generate hype for the industry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="257.66" data-end="272.3">
+            <p class="french-block">Au cours de la conférence, Altman s'est adressé à une foule de centaines de gens d'affaires, leur disant qu'ils devraient utiliser des outils d'IA pour aider dans leur travail, mais aussi pour protéger leurs entreprises contre les cyberattaques potentiellement habilitées par l'IA.</p>
+            <span class="english-block">During the conference, Altman addressed a crowd of hundreds of business people, telling them they should use AI tools to aid in their work, but also needed them in order to protect their businesses from potentially AI-enabled cyber attacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.3" data-end="278.93">
+            <p class="french-block">L'idée que les cadres de l'IA soient laissés se réguler entièrement a frappé certains dans l'industrie comme une mauvaise idée.</p>
+            <span class="english-block">The idea of AI executives being left to entirely regulate themselves has struck some in the industry as a bad idea.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.93" data-end="289.78">
+            <p class="french-block">Jack Clark, un dirigeant et cofondateur d'Anthropic, a déclaré lundi à la BBC que laisser l'IA être une "industrie totalement non réglementée" était "rallant des dés avec d'immenses risques".</p>
+            <span class="english-block">Jack Clark, an Anthropic executive and co-founder, told the BBC on Monday that leaving AI to be a "totally unregulated industry" was "rolling dice with immense risks".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.78" data-end="305.86">
+            <p class="french-block">Patrick Hillman, directeur de l'exploitation de Logical Intelligence, qui est présidé par Yann LeCun, un sage de l'industrie de l'IA, a noté mardi à quel point les gens ont peu de foi dans les entreprises technologiques pour faire quelque chose de vraiment dans l'intérêt public, extérieur.</p>
+            <span class="english-block">Patrick Hillman, the chief operating officer of Logical Intelligence, which is chaired by Yann LeCun, a sage of the AI industry, noted Tuesday how little faith people have in tech companies to do anything truly in the public interest, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.86" data-end="319.51">
+            <p class="french-block">"La seule institution en laquelle les Américains peuvent avoir moins confiance que Washington, c'est la Silicon Valley. J'ai travaillé et vécu dans les deux et je vous assure que vous avez tous les deux gagné ce scepticisme", a déclaré Hillman.</p>
+            <span class="english-block">"The only institution that Americans might trust less than Washington these days is Silicon Valley. I have worked and lived in both and I assure you both have earned this scepticism," Hillman said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.51" data-end="327.29">
+            <p class="french-block">"Si vous pensez que ce que vous construisez est dangereux, montrez- nous ce que vous êtes prêt à arrêter de faire", a- t- il ajouté.</p>
+            <span class="english-block">"If you believe what you are building is dangerous, show us what you are prepared to stop doing," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.29" data-end="335.04">
+            <p class="french-block">Le personnel de l'IA "a vraiment peur" de l'avenir de l'humanité, a déclaré à la BBC un ancien chercheur de l'Anthropic</p>
+            <span class="english-block">AI staff 'genuinely frightened' for humanity's future, ex-Anthropic researcher tells BBC</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.04" data-end="342.02">
+            <p class="french-block">La réglementation de l'IA est confrontée à un impasse politique alors que les appels au Congrès augmentent pour agir</p>
+            <span class="english-block">AI regulation faces political deadlock as calls grow for Congress to act</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.02" data-end="350.47">
+            <p class="french-block">Les dirigeants d'OpenAI et d'Anthropic ont déclaré avoir récemment commencé à travailler sur une sorte d'accord à l'échelle de l'industrie sur la sécurité.</p>
+            <span class="english-block">Leaders of OpenAI and Anthropic have said they have recently started working towards some sort of industry-wide agreement on safety.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.47" data-end="364.22">
+            <p class="french-block">Amodei, lors d'une apparition lors de la conférence mardi, a déclaré qu'Anthropic était maintenant en "dialogue avec le reste de l'industrie" sur l'engagement à améliorer les normes de sécurité et les contrôles sur les outils et le développement de l'IA.</p>
+            <span class="english-block">Amodei, during a cameo at the conference on Tuesday, said Anthropic is now in "a dialogue with the rest of the industry" about committing to better safety standards and checks on AI tools and development.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="364.22" data-end="372.84">
+            <p class="french-block">Il a également dit que l'une des plus grandes surprises du boom de l'IA n'était pas la façon dont la technologie elle-même a progressé, mais son impact plus large.</p>
+            <span class="english-block">He also said that one of the biggest surprises of the AI boom was not how the technology itself has advanced, but its broader impact.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="372.84" data-end="381.96">
+            <p class="french-block">"Nous n'avions pas compris que cela conduirait les entreprises à se développer si rapidement et à devenir si rapidement au centre des choses", a déclaré Amodei.</p>
+            <span class="english-block">"We didn't appreciate that it would lead to companies growing so fast, and how quickly they would become central to things," Amodei said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="381.96" data-end="401.14">
+            <p class="french-block">Chris Lehane, directeur d'OpenAI, a déclaré la semaine dernière que la société travaillait également avec d'autres laboratoires d'IA externes "pour faire avancer les normes d'IA frontalières, en construisant maintenant un effort volontaire, avec ou sans soutien du gouvernement". Ces laboratoires comprennent Anthropic et Google Deepmind.</p>
+            <span class="english-block">OpenAI executive Chris Lehane said last week that the company was also working with other AI labs, external "to advance frontier AI standards, building a voluntary effort now, with or without government support." Those labs include Anthropic and Google Deepmind.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="401.14" data-end="407.62">
+            <p class="french-block">" Avec un enjeu aussi élevé, nous ne pouvons pas laisser le parfait devenir l'ennemi du bien ", écrit Lehane.</p>
+            <span class="english-block">"With stakes this high, we cannot let the perfect become the enemy of the good," Lehane wrote.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_14.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why doomsday warnings are not the only threat to the AI juggernaut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Why doomsday warnings are not the only threat to the AI juggernaut</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 15 Sep 2026 23:39:55 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cv986j48l66ko?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The global AI race is being hit by very localised political and environmental concerns
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Pourquoi les avertissements du Jour du Jugement dernier ne sont pas la seule menace pour le géant de l'IA</p>
+            <span class="english-block">Why doomsday warnings are not the only threat to the AI juggernaut</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Il y a un bruit effrayant qui émane des centres de données, où des dizaines de milliers de puces effectuent des milliards de calculs par seconde pour aider à stimuler la révolution de l'intelligence artificielle (IA).</p>
+            <span class="english-block">There is an eerie low hum that emanates from data centres, where tens of thousands of chips make trillions of computations a second to help drive the artificial intelligence (AI) revolution.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Ces puces alimentent le texte, les images et la vidéo générés par les requêtes faites par le monde des modèles d'IA avancés.</p>
+            <span class="english-block">These chips power the text, images and video generated by the queries made by the world of the advanced AI models.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Leurs calculs, qui sont en fait l'allumage et l'arrêt de transistors microscopiques en silicium qui composent une puce, sont en fait silencieux. Mais, comme pour tous les ordinateurs, presque chaque watt de l'électricité importante alimentant ce processus se dégage sous forme de chaleur, et le son que vous pouvez entendre est le tourbillon lent de milliers de ventilateurs requis pour empêcher la chaleur de frire les étagères des serveurs.</p>
+            <span class="english-block">Their computations, which are in effect the switching on and off of microscopic silicon transistors that make up a chip, are actually silent. But, as with all computers, almost every watt of the significant electricity powering this process leaves as heat, and the sound you can hear is the slow whir of thousands of fans required to prevent the heat from frying the racks of servers. Depending on the size of the site, you may also hear the thrum of transformers in substations channelling electricity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Les centres de données, comme ce site Google en construction dans le Hertfordshire, deviennent de plus en plus courants dans tout le Royaume-Uni.</p>
+            <span class="english-block">Data centres, such as this Google site under construction in Hertfordshire, are becoming increasingly common across the UK</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Ces derniers jours, des avertissements alarmants concernant les menaces à l'humanité ont fait un bruit, mais ce sont ces basses crises qui ont suscité une réaction aux États-Unis qui menacent maintenant d'envelopper ses élections de mi-mandat, et pourraient traverser l'Atlantique pour arriver au Royaume-Uni.</p>
+            <span class="english-block">In recent days, alarming warnings of threats to humanity have created a din, but it is these low hums that have stirred a backlash in the US which now threatens to envelop its mid-term elections, and could cross the Atlantic and come to the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Aux États-Unis, l'opposition aux centres de données est plus manifeste à la gauche politique. Le sénateur démocrate Bernie Sanders a appelé à un moratoire sur toute nouvelle construction. "Les gens regardent autour d'eux préoccupés par la rapidité avec laquelle la technologie se déplace, le peu de contrôle qu'ils ont sur elle, comment les centres de données auront un impact sur leur communauté en termes de tarifs électriques et d'utilisation de l'eau", m'a-t-il dit.</p>
+            <span class="english-block">In the US, the opposition to data centres is most overt on the political left. Democratic Senator Bernie Sanders has called for a moratorium on any new construction. "People are looking around worried about how quickly the technology is moving, how little control they have over it, how will data centres impact their community in terms of electric rates and water utilisation," he told me.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Il est possible qu'une course mondiale d'IA qui se déplace à la plus grande vitesse de la Silicon Valley soit sur le point de frapper les tampons de préoccupations politiques et environnementales très localisées.</p>
+            <span class="english-block">It's possible that a global AI race travelling at Silicon Valley's top speeds could be about to hit the buffers of very localised political and environmental concerns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Aux États-Unis, un sondage Gallup publié en mai a suggéré que l'existence d'un centre de données dans votre région était plus impopulaire que d'avoir une centrale nucléaire. Sur les centres de données, 71% étaient opposés, dont 48% étaient fortement opposés. Pour les centrales nucléaires, 53% étaient opposés, dont 34% étaient fortement opposés. Cette impopularité a augmenté au cours des deux dernières années, avec certains sondages suggérant que la moitié des Américains soutiennent une pause totale sur leur construction.</p>
+            <span class="english-block">In the US, polling by Gallup published in May suggested having a data centre in your area was more unpopular than having a nuclear power station. On data centres, 71% were opposed, including 48% strongly opposed. For nuclear power stations 53% were opposed, including 34% strongly opposed. This unpopularity has grown over the past two years, with some polls suggesting half of Americans support a total pause on their construction.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Il y a eu de l'opposition à certains de ces développements au Royaume-Uni aussi, du Buckinghamshire et du Berkshire à Brick Lane dans l'est de Londres, les habitants craignant que leurs zones ne soient affectées négativement.</p>
+            <span class="english-block">There has been opposition to some of these developments in the UK too, from Buckinghamshire and Berkshire to Brick Lane in east London, with locals fearing their areas will be negatively impacted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Dans Brick Lane, les plans d'un centre de données susceptibles de servir les commerçants de haute fréquence de la ville de Londres font face à une réaction négative de ceux qui préfèrent voir plus de logements sociaux et de développement des entreprises locales dans l'extrémité est de la capitale.</p>
+            <span class="english-block">In Brick Lane, plans for a data centre likely to service the City of London's high frequency traders face a backlash from those who would prefer to see more social housing and local business developments in the capital's east end. Meanwhile in the shires, the sheer demand for data centres sees pressure to expand provision from Slough, into the leafy countryside.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Le Royaume-Uni a le troisième plus grand nombre de centres de données au monde, une place devant la Chine.</p>
+            <span class="english-block">The UK has the third highest number of data centres in the world, one spot ahead of China. The US has the most.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Aux États-Unis, cette réaction négative se reflète dans ce que disent les politiciens présents lors des élections critiques de novembre.</p>
+            <span class="english-block">Back in the US, this backlash  is being reflected in what politicians standing in critical elections in November are saying.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Les pressions sur l'énergie et l'eau ont conduit à des manifestations locales</p>
+            <span class="english-block">Pressures on energy and water have driven local protests</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Les réactions sont nettement plus prononcées chez les démocrates de gauche, mais le sentiment anti-centre de données est clair aussi chez les partisans républicains.</p>
+            <span class="english-block">The backlash is clearly more pronounced among Democrats on the left, but anti-data-centre sentiment is clear among Republican supporters too. City councils have been voted out in response to their policies on data centres, while some whole states - both red and blue - are proposing bans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">L'année dernière, dans le New Jersey et la Virginie, des gouverneurs démocrates ont été élus en partie à cause d'une réaction contre la hausse des prix de l'électricité attribuée à la construction et à l'exploitation des centres de données.</p>
+            <span class="english-block">Last year, in New Jersey and Virginia, Democratic Governors were elected partly because of a backlash against rising electricity prices blamed on data centre construction and operation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Les habitants de la ville voient leurs factures d'énergie augmenter lorsqu'on leur demande de payer pour les infrastructures nécessaires à l'alimentation de nouveaux centres de données ou de constater que leurs approvisionnements en eau déjà épuisés sont encore plus diminués.</p>
+            <span class="english-block">Stories abound of local townspeople seeing energy bills soar when they are asked to foot the bill for the infrastructure needed to power new data centres, or finding their already stretched water supplies further diminished. Because the US energy system functions at a local level, the impact on bills can be immediate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Avec le contrôle des deux chambres du Congrès américain à la portée de la main, l'ampleur de l'opposition hyperlocalement mobilisée pourrait devenir un facteur déterminant dans les élections de mi-mandat et avec elle le destin de la politique américaine et de la présidence de Donald Trump.</p>
+            <span class="english-block">With control of both houses of the US Congress up for grabs, the scale of the hyper-localised opposition could become a defining factor in the midterm elections and with it the fate of US policy and Donald Trump's presidency.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Sept PDG de Big Tech sont apparus avec Trump en mars pour signer le "Promètre de protection des contribuables" disant qu'ils "construiront, apporteront ou achèteront" leurs propres besoins énergétiques et veilleront à ce que les coûts ne soient pas transférés aux " ménages ordinaires".</p>
+            <span class="english-block">Seven Big Tech CEOs appeared with Trump in March to sign the "Ratepayer Protection Pledge" saying they would "build, bring or buy" their own energy needs and ensure costs are not passed to "ordinary households." The pledge was non-binding.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">L'engagement a peu aidé à convaincre les gens qu'ils voulaient des centres de données dans leurs régions locales.</p>
+            <span class="english-block">The pledge did little to persuade people they wanted data centres in their local areas</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Les nouveaux gouverneurs démocrates du New Jersey et de la Virginie (dont la concentration mondiale de centres de données est la plus importante), ont beaucoup plus progressé avec la législation imposant de nouveaux tarifs énergétiques pour les centres de données et la divulgation de l'utilisation de l'énergie et de l'eau.</p>
+            <span class="english-block">This clearly did not go far enough for some. The new Democratic Governors in New Jersey and Virginia (home to the largest global concentration of data centres), went much further with legislation compelling new energy tariffs for data centres, and disclosure of energy and water use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Le symbole le plus puissant de tout cela est peut-être le candidat républicain au Sénat au Texas, Ken Paxton, qui attaque les centres de données, fait campagne contre leurs allégements fiscaux et propose que les opérateurs des installations soient criminellement responsables si la technologie "alimente les chatbots d'IA qui sapent la sécurité des enfants".</p>
+            <span class="english-block">Perhaps the most potent symbol of all of this, is the pro-Trump Republican Senate candidate in Texas, Ken Paxton, attacking data centres, campaigning against their tax breaks and proposing that operators of the facilities should be criminally liable if the technology "empowered AI chatbots that undermine children's safety".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Le Texas était l'État le plus pro-entreprise, pro-centre de données, pro-énergie, en concurrence féroce pour ces installations. Il avait, par exemple, gagné une grande partie des investissements de relocalisation de plusieurs milliards de dollars du géant de l'IA SpaceX d'Elon Musk, pour produire des puces d'IA.</p>
+            <span class="english-block">Texas had been the most pro-business, pro-data centre, pro-energy state, competing ferociously for these facilities. It had, for example, won much of the multi-billion-dollar relocation investment from Elon Musk's SpaceX AI behemoth, to produce AI chips.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Ken Paxton a pris une position forte contre l'IA</p>
+            <span class="english-block">Ken Paxton has taken a strong line against AI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Jensen Huang, chef de la société Nvidia, a fait appel aux médias sociaux en août pour défendre les centres de données comme l'agent essentiel de la réindustrialisation américaine.</p>
+            <span class="english-block">It has been a dizzying flip. Jensen Huang, chief of AI chipmaker Nvidia, took to social media in August to make the case for data centres as the essential agent of US reindustrialisation. Other Big Tech CEOs have not followed, perhaps a sign of the difficult optics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">La leçon tirée des États-Unis, cependant, est que parler des avantages pour l'économie nationale dans son ensemble, ou de la possibilité de guérir le cancer, ne le réduit pas toujours localement.</p>
+            <span class="english-block">The lesson from the US however, has been that talking about benefits to the overall national economy, or potentially curing cancer, does not always cut it locally. Part of the eerie sound surrounding data centres is the relative absence of actual permanent workers coming and going. While there are plenty of construction jobs, a functioning data centre tends to require just a few dozen staff, with a few hundred at the very largest new sites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Demandez aux gens locaux d'accepter le son, l'éclairage de sécurité toute la nuit et la pression sur l'énergie et l'eau dans leurs zones comme étant pour le bien du pays est une chose. Mais c'est plus difficile à vendre quand les entreprises d'IA sont sur le point de gagner plus de trillions de dollars mais attendent aussi des pertes d'emplois massives, et beaucoup se demandent si la technologie pourrait effacer les humains de la surface de la Terre.</p>
+            <span class="english-block">Asking local people to accept the sound, the all night security lighting and the pressure on energy and water supplies in their areas as being for the good of the country is one thing. But it's a harder sell when the AI firms are on the cusp of trillion-dollar-plus valuations but are also expecting massive job losses, and many are asking whether the technology could wipe humans off the face of the Earth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les arguments ont traversé l'Atlantique.A Slough, le plus grand groupe de centres de données d'Europe, plus de 500 personnes ont signé une pétition disant que la ville "ne devrait pas devenir une expérience".</p>
+            <span class="english-block">The arguments have crossed the Atlantic. In Slough, Europe's greatest cluster of data centres, over 500 people signed a petition saying the town "should not become an experiment". They are questioning whether the town has benefited from this, and want a pause on data centre development in the town.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Les habitants se sont plaints que la chaleur générée par les centres ait encore aggravé les températures estivales déjà chaudes.</p>
+            <span class="english-block">Locals have complained that the heat generated by the centres made already sweltering summer temperatures even worse. One scheme was built on a site that had been designated for 1,000 homes, but was sold to a data centre company as part of the council's attempt to clear its debts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">En retour à Brick Lane, l'ancienne baronne travailliste Pola Uddin déclare: "Je comprends le besoin de centres de données, mais il faut tenir compte de la santé et du bien-être de la population locale qui vit, respire, va à l'école. Nous devons envisager l'option d'une plus grande zone industrielle".</p>
+            <span class="english-block">Back in Brick Lane, former Labour peer Baroness Pola Uddin says: "I understand the need for data centres, but there must be proper consideration of the health and wellbeing of the local population that lives, breathes, goes to school. We must  consider the option of more industrial areas."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Les manifestants de Brick Lane sont en colère de ce que leur communauté soit utilisée pour servir la ville</p>
+            <span class="english-block">Brick Lane protesters resent their community being used to serve the City</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Le gouvernement travailliste a désigné l'année dernière les centres de données comme infrastructures nationales critiques, dans le cadre de sa stratégie visant à faciliter leur déploiement.</p>
+            <span class="english-block">The Labour government last year designated data centres as Critical National Infrastructure, part of its strategy to help fast track their roll out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Elle considère que les centres de données sont à la base des services publics et sont essentiels pour attirer des investissements et permettre à la Grande-Bretagne de rivaliser dans l'économie mondiale.</p>
+            <span class="english-block">It views data centres as underpinning public services and crucial to attract investment and allow Britain to compete in the global economy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">L'argument qu'il fait est celui d'un bénéfice économique national, mais le défi politique est de savoir si les habitants vont le supporter.</p>
+            <span class="english-block">The argument it makes is national economic benefit, but the political challenge is whether locals will put up with it. One of the first acts of the new Labour government was to back a Buckinghamshire data centre that had been repeatedly rejected by the local council because it was going to be built on the green belt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">L'autorisation a été accordée par les ministres, mais ensuite contestée par les militants après une affaire judiciaire financée par le public, pour ne pas avoir pris en compte l'impact environnemental. Le gouvernement a reconnu les erreurs, annulé sa propre approbation, et le développeur a finalement admis qu'il était nécessaire d'accepter des obligations contraignantes en matière d'énergie propre avec le conseil. Le groupe de campagne victorieux, Foxglove, a promis de refocaliser ses efforts sur la contestation d'autres systèmes de centres de données à travers le Royaume-Uni.</p>
+            <span class="english-block">Permission was granted by ministers, but then challenged by campaigners after a crowdfunded court case, for failing to consider environmental impact. The Government acknowledged errors, quashed its own approval, and the developer eventually conceded it needed to agree binding clean energy obligations with the council. The victorious campaigning group, Foxglove, vowed to refocus its efforts on challenging other data centre schemes across the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">L'eau est un autre domaine qui inquiète les militants.</p>
+            <span class="english-block">Water is another area of concern for campaigners. The tech industry argues its requirements are not so heavy when you consider how much water is lost to leaks, for example.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Dans une présentation devant un comité des communes, l'organisme commercial Water UK a critiqué "aucune mention de l'eau" dans les stratégies de croissance de l'IA du gouvernement. "Il semble y avoir une hypothèse selon laquelle le pays aura toujours assez d'eau pour ses besoins économiques. Rien ne pourrait être plus loin de la vérité".</p>
+            <span class="english-block">In a submission to a Commons committee the trade body Water UK criticised "not a single mention of water" in Government AI growth strategies. "There appears to be an assumption that the country will always have enough water for its economic needs. Nothing could be further from the truth."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Une grande partie des efforts récents du Royaume-Uni visant à élargir les centres de données visait à cibler des zones stratégiquement choisies en fonction de leur contribution potentielle à l'économie, de la disponibilité de sites de brownfield à développer et de leurs connexions existantes aux réseaux énergétiques et à la production d'électricité.</p>
+            <span class="english-block">Much of the recent UK effort to expand data centres was aimed at areas strategically chosen based on a combination of their potential contribution to the economy, the availability of brownfield sites to develop and their existing connections to energy grids and electricity generation. These areas have been dubbed AI Growth zones.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Mais même dans ces endroits, l'équilibre politique entre la croissance et l'environnement a conduit à des retards au sein du Cabinet.</p>
+            <span class="english-block">But even in these places, the political balance between growth and the environment led to hold-ups within Cabinet. A scheme in Teesside saw a tug of war between ministers over whether it should be used for a low carbon hydrogen energy scheme, or a massive new AI data centre. The data centre won out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Les géants de la technologie de la Silicon Valley ont reconnu que les besoins massifs en énergie des centres de données d'IA entraîneraient des progrès plus lents dans le changement climatique. Huang de Nvidia m'a dit l'année dernière que c'était l'invention et le déploiement de l'IA elle-même qui étaient la priorité initiale, et il a affirmé que la technologie elle-même pourrait aider à résoudre le changement climatique. " C'est la production d'intelligence, qu'est-ce qui pourrait être plus précieux et plus important que cela ? "</p>
+            <span class="english-block">The Silicon Valley tech giants have acknowledged that massive AI data centre energy needs will result in slower progress on climate change. Nvidia's Huang told me last year that it was the invention and deployment of AI itself that was the initial priority, and he claimed the technology itself could help solve climate change. "This is the production of intelligence, what could be more valuable and more important than that?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Au Royaume-Uni, il y a encore une question fondamentale quant à savoir si les besoins en électricité d'un plan visant à tripler la capacité actuelle des centres de données d'ici à 2030 à 6 gigawattes (GW) de capacité continue peuvent être cohérents avec les plans nets zéro.</p>
+            <span class="english-block">In the UK there is still a fundamental question about whether the electricity requirements of a plan to expand current data centre capacity threefold by 2030, to 6 gigawatts (GW) of continuous capacity, can be coherent with net zero plans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Le gouvernement devrait bientôt décrire sa politique pour les centres de données des collectivités locales dans une déclaration de politique nationale (NPS), en identifiant les types qui sont qualifiés de "signifiants au niveau national" et qui peuvent donc être rapidement suivis par le gouvernement.</p>
+            <span class="english-block">The Government is expected to soon outline its policy for local government on data centres in a National Policy Statement (NPS), identifying which types qualify as "nationally significant" and are therefore eligible to be fast-tracked by the Government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Depuis qu'ils ont commencé à rédiger le projet de loi NPS, il y a eu un changement de premier ministre et un changement de température politique sur cette question.</p>
+            <span class="english-block">Since they started drafting the NPS, there has been a change of prime minister, and a change of political temperature on this issue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Le premier ministre Andy Burnham a promis de "croître chaque code postal" et les centres de données pourraient aider à y parvenir. Cependant, le rôle important du gouvernement est également un exemple clair de centralisation nationale du pouvoir, le contraire de la volonté de Burnham de donner plus de pouvoirs aux gouvernements locaux.</p>
+            <span class="english-block">Prime Minister Andy Burnham has pledged "growth in every postcode" and data centres might help deliver this. However the Government's prominent role is also a clear example of national centralisation of power, the opposite of Burnham's desire to give more powers to local government. Might this, plus the challenge of the Green Party's call for a data centre moratorium, alter Burnham's thinking?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Certains à Westminster disent qu'il y a un cas de " cerveau américain " à ce sujet où, juste parce que c'est un problème aux États-Unis, les gens pensent que la même chose est vraie pour le Royaume-Uni.</p>
+            <span class="english-block">Some in Westminster say there is a case of "America brain" about this issue where just because it is an issue in the US, people believe the same is true for the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Alors que le Royaume-Uni tente d'atteindre ce chiffre de 6 GW, aux États-Unis, l'ambition 2030 est au moins 20 fois plus élevée, avec certains méga-projets individuels pour dépasser la capacité totale prévue du Royaume-Uni.</p>
+            <span class="english-block">While the UK is trying to get to that 6GW figure, in the US the 2030 ambition is at least 20 times that, with some individual megaprojects to exceed total planned UK capacity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">L'impact sur les prix locaux de l'électricité n'est pas le même, disent-ils, bien que cela soit en partie dû aux prix déjà plus élevés de l'énergie au Royaume-Uni.</p>
+            <span class="english-block">The impact on local electricity prices is not the same, they say, though that is partly a consequence of the UK's already higher energy prices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Pour le Royaume-Uni, il existe également un argument vital concernant la souveraineté des données et l'évitement de dépendre totalement des États-Unis ou d'autres pays pour l'infrastructure informatique qui sous-tend de grandes parties de notre économie des services.</p>
+            <span class="english-block">For the UK there is also a vital argument about data sovereignty, and avoiding total reliance on either the US or other countries for the IT infrastructure underpinning large swathes of our service economy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Il est question de leçons à tirer sur le fait de ne pas avoir pu saisir l'avantage du pouvoir économique et politique qui a résulté de la croissance des médias sociaux et d'Internet au début du siècle.</p>
+            <span class="english-block">There is talk of lessons needing to be learned about failing to capture the upside of the economic and political power that came from the growth in social media and the internet in the early part of this century. The UK was mainly a customer of these technologies, rather than their maker.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">" Cette fois [sur l'IA] nous devons le faire bien, mais une condition préalable est d'avoir un certain niveau d'infrastructure de données ", m'a dit un ministre.</p>
+            <span class="english-block">"This time [on AI] we have to get it right, but a precondition is having some level of data infrastructure," one minister told me. The UK's ambition is seen as relatively modest in terms of continuous AI usage for the NHS, national security and financial services by 2030.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">L'impact de leurs modèles sur la société sera si profond qu'il affectera fondamentalement la capacité des gouvernements à augmenter les impôts, en particulier sur le travail.</p>
+            <span class="english-block">This "skin in the game" argument is echoed in the AI labs. Some influential voices believe the impact of their models on society will be so profound that it will fundamentally affect the ability of governments to raise taxes, especially on work. Their futurologists muse about vastly disrupted flows of cash around the economy. Physical data centres may become one of the few ways to tax the proceeds of this revolution.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Les États-Unis, où certains des mêmes politiciens qui ont lutté pour accueillir les centres de données, suggèrent maintenant qu'ils se sont tournés contre eux. Les allégements fiscaux se transforment en demandes fiscales.</p>
+            <span class="english-block">In the US some of the same politicians who had fought to welcome data centres now suggest they have turned on them. Tax breaks are turning into tax demands. The small-town US backlash may have specific American context, but it is also having echoes around the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Image de référence: Reuters/AFP via Getty</p>
+            <span class="english-block">Lead image: Reuters/AFP via Getty</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">Pourquoi certains experts craignent de plus en plus que l'IA prenne le relais</p>
+            <span class="english-block">Why some experts increasingly fear AI will take over</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">La Chine gagne une course d'IA, les États-Unis une autre, mais l'un ou l'autre pourrait avancer.</p>
+            <span class="english-block">China is winning one AI race, the US another - but either might pull ahead</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">L'explosion boursière de SpaceX pourrait être le plus grand pari de Musk à ce jour.</p>
+            <span class="english-block">SpaceX's stock market blast-off could be Musk's biggest gamble yet</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Les questions soulevées dans cet article vous touchent- elles personnellement?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

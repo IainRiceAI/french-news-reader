@@ -1,7 +1,7 @@
 # UK could 'unlock' 100 more oil and gas projects, say North Sea bosses
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c65ym93p73xmo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c65ym93p73xmo?at_medium=RSS&at_campaign=rss)  
-**Published:** Mon, 14 Sep 2026 21:59:02 GMT  
+**Published:** Tue, 15 Sep 2026 06:45:12 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](science_article_24.mp3)  
 
 ---
@@ -148,9 +148,9 @@
 
 ### Section 18
 
-**🇬🇧 EN:** In essence, that means supporting the controversial Rosebank and Jackdaw developments which are currently being considered for permitting by the industry regulator.
+**🇬🇧 EN:** In essence, that means approving the controversial Rosebank and Jackdaw developments which are currently being considered for permitting by the industry regulator.
 
-**🇫🇷 FR:** *En substance, cela signifie soutenir les développements controversés de Rosebank et Jackdaw qui sont actuellement envisagés par le régulateur de l'industrie pour être autorisés.*
+**🇫🇷 FR:** *En substance, cela signifie approuver les développements controversés de Rosebank et Jackdaw qui sont actuellement envisagés par le régulateur de l'industrie pour être autorisés.*
 
 ---
 
@@ -164,9 +164,9 @@
 
 ### Section 20
 
-**🇬🇧 EN:** It has meant all other potential projects have essentially been put on hold under the decisions are taken.
+**🇬🇧 EN:** It has meant all other potential projects have essentially been put on hold until the decisions are taken.
 
-**🇫🇷 FR:** *Il a été nécessaire de mettre en place des programmes de formation et de formation dans le cadre de la formation professionnelle.*
+**🇫🇷 FR:** *Il a été nécessaire de mettre en place des mesures de répartition des fonds.*
 
 ---
 
@@ -244,13 +244,37 @@
 
 ### Section 30
 
+**🇬🇧 EN:** Conservative energy spokesperson Andrew Bowie said refusing to approve the Jackdaw and Rosebank fields would be "madness".
+
+**🇫🇷 FR:** *Le porte-parole du conservateur Andrew Bowie a déclaré que refuser d'approuver les champs Jackdaw et Rosebank serait "une folie".*
+
+---
+
+### Section 31
+
+**🇬🇧 EN:** He said: "These figures from OEUK show that scrapping the Energy Profits Levy will protect jobs, safeguard our energy security and stabilise investment.
+
+**🇫🇷 FR:** *Il a déclaré: " Ces chiffres de l'OEUK montrent que l'abolition de la taxe sur les bénéfices énergétiques protégera les emplois, sauvegarde notre sécurité énergétique et stabilise les investissements.*
+
+---
+
+### Section 32
+
+**🇬🇧 EN:** "Ultimately, this report sends a stark message that Labour's absurd North Sea energy policies risk bringing a premature end to our oil and gas sector as we know it."
+
+**🇫🇷 FR:** *"En fin de compte, ce rapport envoie un message fort selon lequel les politiques énergétiques absurdes du Parti travailliste en mer du Nord risquent de mettre fin prématurément à notre secteur pétrolier et gazier tel que nous le connaissons".*
+
+---
+
+### Section 33
+
 **🇬🇧 EN:** Controversial Jackdaw gas field set to be approved in weeks, sources say
 
 **🇫🇷 FR:** *Le champ de gaz controversé de Jackdaw devrait être approuvé dans quelques semaines, disent des sources*
 
 ---
 
-### Section 31
+### Section 34
 
 **🇬🇧 EN:** BP puts North Sea business up for sale
 
@@ -258,7 +282,7 @@
 
 ---
 
-### Section 32
+### Section 35
 
 **🇬🇧 EN:** Is Burnham promising a new dawn for North Sea oil and gas?
 

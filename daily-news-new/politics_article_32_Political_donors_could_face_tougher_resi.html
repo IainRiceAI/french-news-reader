@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political donors could face tougher residency rules</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Political donors could face tougher residency rules</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 15 Sep 2026 13:25:48 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw3d7mv5v72ro?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: It comes after Reform received donations totalling £72m from two British crypto-billionaires who have both recently lived abroad.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.65" data-end="13.9">
+            <p class="french-block">Le chef de la réforme Nigel Farage dit que les dons de Ben Delo et Christopher Harborne sont conformes à la loi actuelle</p>
+            <span class="english-block">Reform leader Nigel Farage says the donations from Ben Delo and Christopher Harborne comply with the current law</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.9" data-end="23.18">
+            <p class="french-block">Le gouvernement prévoit de resserrer les règles de résidence pour les donateurs politiques afin de s'assurer que ceux qui donnent des sommes importantes de fonds résident au Royaume-Uni.</p>
+            <span class="english-block">The government is planning to tighten residency rules for political donors to ensure that those giving significant amounts of money reside in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.18" data-end="33.43">
+            <p class="french-block">L'annonce fait suite à une série de deux dons totalisant 72 millions de livres sterling à Reform UK de deux crypto-milliardaires britanniques qui ont tous deux vécu récemment à l'étranger.</p>
+            <span class="english-block">The announcement follows a row over two donations totalling £72m to Reform UK from two British crypto-billionaires who have both recently lived abroad.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.43" data-end="45.58">
+            <p class="french-block">Le chef de la réforme Nigel Farage a déclaré que les dons de Ben Delo et Christopher Harborne sont "100% conformes à la loi aujourd'hui", mais il n'a pas pu dire qu'ils seraient admissibles en vertu des changements proposés.</p>
+            <span class="english-block">Reform leader Nigel Farage said the donations from Ben Delo and Christopher Harborne are "100% compliant with the law today" but he was unable to say they would be permissible under proposed rule changes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.58" data-end="56.4">
+            <p class="french-block">Le gouvernement veut modifier la loi sur les dons aux partis politiques britanniques des électeurs britanniques vivant à l'étranger, y compris un plafond de 100 000 £ daté du 25 mars.</p>
+            <span class="english-block">The government wants to change the law on donations to UK political parties from British voters living overseas, including a £100,000 cap backdated to 25 March.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.4" data-end="65.26">
+            <p class="french-block">Il souhaite également introduire une période minimale de résidence d'au moins 12 mois pendant laquelle le plafond s'appliquerait toujours à ceux qui reviennent au Royaume-Uni.</p>
+            <span class="english-block">It also wants to introduce a minimum residency period of at least 12 months in which the cap would still apply for those who move back to the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.26" data-end="71.04">
+            <p class="french-block">Il n'est pas clair à l'heure actuelle exactement quand Delo et Harborne sont retournés au Royaume-Uni.</p>
+            <span class="english-block">It is not currently clear exactly when Delo and Harborne returned to the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.04" data-end="81.02">
+            <p class="french-block">Selon les règles actuelles, les dons étrangers sont illégaux au Royaume-Uni, mais les électeurs britanniques vivant à l'étranger peuvent donner autant qu'ils le souhaitent aux partis politiques.</p>
+            <span class="english-block">Under the current rules, foreign donations are illegal in the UK, but British voters living abroad can give as much as they want to political parties.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.02" data-end="85.06">
+            <p class="french-block">Les méga-donations de la Réforme ont encore des kilomètres.</p>
+            <span class="english-block">Row over Reform's mega donations has mileage in it yet</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.06" data-end="90.34">
+            <p class="french-block">Les syndicats mettent en garde contre les dépenses politiques "extérieures à leur contrôle"</p>
+            <span class="english-block">Unions warn against 'out of control' political spending</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.34" data-end="100.49">
+            <p class="french-block">Les députés ont soutenu les propositions du gouvernement en approuvant les amendements au projet de loi sur la représentation du peuple, qui est actuellement examiné à la Chambre des lords.</p>
+            <span class="english-block">MPs have supported the government's proposals by approving amendments to the Representation of the People Bill. The bill is currently being scrutinised in the House of Lords.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.49" data-end="117.12">
+            <p class="french-block">Lorsqu'elle a débattu du projet de loi, la ministre des Communités, la baronne Taylor de Stevenage, a déclaré: "Nous envisageons de renforcer les exigences relatives à la résidence, notamment en veillant à ce que la durée du séjour au Royaume-Uni soit conforme à la politique du gouvernement".</p>
+            <span class="english-block">Speaking as the bill was debated by peers, Communities Minister Baroness Taylor of Stevenage said: "We are considering how we will strengthen the residency requirements, including ensuring that the length of time spent in the UK aligns with broader government policy."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.12" data-end="130.68">
+            <p class="french-block">La baronne Taylor a déclaré que cela était "en plus d'introduire un régime solide qui garantit que les donateurs qui contribuent au-dessus du plafond annuel de 100 000 £ doivent démontrer un lien authentique et continu" avec le Royaume-Uni.</p>
+            <span class="english-block">Baroness Taylor said this was "in addition to introducing a robust regime that ensures that donors contributing above the £100,000 annual cap must demonstrate a genuine and ongoing connection" to the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.68" data-end="139.58">
+            <p class="french-block">Les critères comprennent la déclaration de résident pour les fins fiscales si elle a vécu au Royaume-Uni pendant au moins 183 jours de l'année d'imposition.</p>
+            <span class="english-block">Tax is one area that already has residency requirements. The criteria includes someone being declared resident for tax purposes if they have lived in the UK for at least 183 days in the tax year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.58" data-end="153.26">
+            <p class="french-block">Interrogé sur le fait que le gouvernement s'attaque aux donateurs de la Réforme, le secrétaire aux Affaires, Jonathan Reynolds, a déclaré que la politique des dons "ne concerne jamais un parti politique ou un ensemble de questions particulières".</p>
+            <span class="english-block">Challenged on whether the government was targeting Reform donors, Business Secretary Jonathan Reynolds said policy on donations is "never about one political party or one particular set of issues".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.26" data-end="165.98">
+            <p class="french-block">Il a déclaré à la radio BBC 4: " Fondamentalement, nous devons nous assurer que les gens qui veulent influencer la politique britannique, qui veulent avoir une voix dans la politique britannique ont un intérêt pour la Grande-Bretagne.</p>
+            <span class="english-block">He told BBC Radio 4's Today programme: "Fundamentally we need to make sure that people who want to influence British politics, who want a say in British politics have a stake in Britain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.98" data-end="174.5">
+            <p class="french-block">"Cela devrait s'appliquer à tout le monde et s'appliquera à tout le monde, donc je ne parlerais pas de dons particuliers ou de tout ce qui est dans le domaine public".</p>
+            <span class="english-block">"That should apply to everyone and will apply to everyone, so I wouldn't make it about any particular donations or anything that's been in the public domain."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.5" data-end="184.58">
+            <p class="french-block">Lorsque le gouvernement a présenté ses plans de limiter les dons étrangers en mars et juillet, il n'a pas mentionné l'idée d'un test de résidence renforcé pour les donateurs politiques.</p>
+            <span class="english-block">When the government set out its plans to cap foreign donations in March and July, it did not mention the idea of an enhanced residency test for political donors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.58" data-end="197.52">
+            <p class="french-block">Interrogé à plusieurs reprises par les journalistes si l'idée de resserrer les règles de résidence n'avait été discutée qu'après les récents dons de Delo et Harborne à la Réforme, le porte-parole officiel du premier ministre n'a pas donné de délai.</p>
+            <span class="english-block">Asked repeatedly by reporters whether the idea of tightening residency rules had only been discussed after Delo and Harborne's most recent donations to Reform, the prime minister's official spokesman would not give a timeframe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.52" data-end="209.69">
+            <p class="french-block">Lisa Smart, porte-parole du Cabinet des libéraux-démocrates, a accusé le gouvernement de " jouer à la balle ", car elle a déclaré que les exigences de résidence du Parti travailliste " ne sont pas suffisantes ".</p>
+            <span class="english-block">Liberal Democrat Cabinet Office spokeswoman Lisa Smart accused the government of "playing whack-a-mole", as she said Labour's residency requirements "aren't good enough".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.69" data-end="218.9">
+            <p class="french-block">Elle a déclaré: " Nous devons aller plus loin et introduire un plafond universel de don pour empêcher l'Amérique de Trump de devenir la Grande-Bretagne de Farage. "</p>
+            <span class="english-block">She said: "We must urgently go further and introduce a universal donation cap to stop Trump's America becoming Farage's Britain."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.9" data-end="225.62">
+            <p class="french-block">Lundi, Farage a critiqué les tentatives du gouvernement de déclarer rétrospectivement certaines dons illégaux.</p>
+            <span class="english-block">On Monday, Farage criticised the government's attempts to retrospectively declare some donations illegal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.62" data-end="232.39">
+            <p class="french-block">Il a déclaré à la BBC: "Si le gouvernement était autorisé à faire cela, vous savez ce qui se passerait?</p>
+            <span class="english-block">He told the BBC: "If the government was allowed to do this, you know what would happen? There would be a response the other way.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.39" data-end="240.96">
+            <p class="french-block">"Nous ou les conservateurs dirons 'si vous allez arrêter les donateurs légitimes comme ça, nous dirons aux syndicats, vous ne pouvez pas donner de l'argent'".</p>
+            <span class="english-block">"We or the Conservatives would say 'if you're going to stop legitimate donors like this, we would say to the trade unions, you can't give money'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.96" data-end="253.51">
+            <p class="french-block">Farage a soutenu qu'une telle mesure "effondrerait" le système de financement politique et obligerait les contribuables à financer des partis politiques, un système qui, selon lui, serait opposé par le public britannique.</p>
+            <span class="english-block">Farage argued such a move would "collapse" the system of political funding and lead to taxpayers having to fund political parties, a system he said would be opposed by the British public.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.51" data-end="263.57">
+            <p class="french-block">Depuis 2020, le Labour a reçu près de 43 millions de livres sterling des syndicats, qui rassemblent leur argent par le biais des frais d'adhésion des travailleurs individuels.</p>
+            <span class="english-block">Since 2020, Labour has received almost £43m from trade unions, who raise their money through individual workers' membership fees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="263.57" data-end="284.33">
+            <p class="french-block">Depuis les élections de 2024, le Parti conservateur a recueilli 37 millions de livres sterling, la réforme a recueilli 35 millions de livres sterling avant les grands dons de Delo et Harborne, le Labour a recueilli 21 millions de livres sterling, les libéraux-démocrates 17 millions de livres sterling et le Parti vert 1,9 million de livres sterling.</p>
+            <span class="english-block">Since the 2024 election, the Conservative Party has raised £37m, Reform has raised £35m before Delo and Harborne's large donations, Labour had raised £21m, the Liberal Democrats £17m and the Green Party £1.9m</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.33" data-end="292.78">
+            <p class="french-block">Les dirigeants syndicaux ont convenu mardi d'une déclaration sur les dons politiques, à la suite des discussions au Congrès des syndicats de Brighton.</p>
+            <span class="english-block">Union leaders agreed a statement on political donations on Tuesday, following discussions at the Trades Union Congress in Brighton.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.78" data-end="302.45">
+            <p class="french-block">Il a appelé le gouvernement à " protéger notre démocratie de la prise par les super-riches " et s'est engagé à travailler avec les décideurs pour " nettoyer notre politique ".</p>
+            <span class="english-block">It called on the government to "protect our democracy from being captured by the super-rich" and pledged to work with policymakers to "clean up our politics".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="302.45" data-end="309.46">
+            <p class="french-block">Ils ont également soutenu que le financement syndical est "l'argent le plus propre de la politique" qui est "très réglementé".</p>
+            <span class="english-block">They also argued that trade union funding is the "cleanest money in politics" which is "heavily regulated".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.46" data-end="314.83">
+            <p class="french-block">Mais il n'y avait pas d'appel explicite pour un plafond sur les dons individuels au Royaume-Uni.</p>
+            <span class="english-block">But there was no explicit call for a cap on individual donations in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.83" data-end="322.37">
+            <p class="french-block">Il n'y a actuellement aucune restriction sur le montant de l'argent que les donateurs basés au Royaume-Uni peuvent donner aux partis politiques.</p>
+            <span class="english-block">There are currently no restrictions on the amount of money UK-based donors can give to political parties.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.37" data-end="331.7">
+            <p class="french-block">Le gouvernement a déjà déclaré qu'il était "déterminé à s'attaquer" à la question des "méga-donateurs", et a créé un nouveau groupe de travail pour ce faire.</p>
+            <span class="english-block">The government has previously said it was "determined to tackle" the issue of "mega-donors", and has established a new taskforce to do this.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.7" data-end="342.48">
+            <p class="french-block">Unite, le deuxième plus grand syndicat du pays, a appelé à un plafond de 500 000 à 1 million de livres sterling sur les dons individuels, mais cela ne s'appliquerait pas aux dons syndicaux.</p>
+            <span class="english-block">Unite - the country's second biggest union - has called for a cap of between £500,000 and £1m on individual donations but this would not apply to trade union donations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.48" data-end="350.59">
+            <p class="french-block">D'autres syndicats plus petits favorisent une limite générale, mais certains syndicats plus grands se méfient du fait que cela menace les dons au Labour.</p>
+            <span class="english-block">Other smaller unions favour a cap across the board but some bigger unions are wary in case this would threaten donations to Labour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.59" data-end="363.65">
+            <p class="french-block">Avant la publication de la déclaration commune, la secrétaire générale d'Unite, Sharon Graham, a déclaré à la BBC que " nous parlons de pommes et de poires " lorsqu'on lui a demandé des dons à la Réforme et à ceux des syndicats.</p>
+            <span class="english-block">Before the joint statement was issued, Unite general secretary Sharon Graham told the BBC that "we're talking about apples and pears" when asked about the donations to Reform and those from trade unions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="363.65" data-end="379.27">
+            <p class="french-block">Elle a déclaré à Today: " Les dons individuels de très, très riches, de milliardaires, l'amércanisation de notre démocratie est très, très différente de la vie quotidienne, les travailleurs mettent 10 centimes par semaine dans un fonds politique qui lutte pour une gamme de choses. "</p>
+            <span class="english-block">She told Today: "Individual donations from very, very wealthy people, from billionaires, the Americanisation of our democracy is very, very different from everyday people, workers putting 10p-a-week into a political fund that fights on a whole range of things."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="379.27" data-end="387.55">
+            <p class="french-block">Graham a ajouté: "S'il y a un sentiment dégoûtant, un sentiment dégoûtant à propos de quelque chose, alors c'est probablement mal.</p>
+            <span class="english-block">Graham added: "If there's an ick feeling, a yucky feeling about something then it's probably wrong.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="387.55" data-end="398.59">
+            <p class="french-block">"Je pense que la plupart des gens penseront que deux milliardaires de crypto donnant 72 millions de livres à la réforme en deux jours est un problème pour la politique britannique et si c'est faux, alors traitez-le".</p>
+            <span class="english-block">"I think most people will think two crypto billionaires giving £72m to Reform in two days is a problem for British politics and if it's wrong then deal with it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="398.59" data-end="408.14">
+            <p class="french-block">Delo et Harborne ont chacun donné 36 millions de livres à la réforme en deux jours et partagent maintenant le record du plus grand don jamais fait à un parti politique britannique.</p>
+            <span class="english-block">Delo and Harborne each gave £36m to Reform in two days and now share the record for the largest ever donation given to a UK political party.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="408.14" data-end="414.34">
+            <p class="french-block">Les deux hommes avaient déjà fait un don de millions de livres à la Réforme avant l'annonce de leurs dernières contributions.</p>
+            <span class="english-block">Both men had already donated millions of pounds to Reform ahead of the announcement of their latest contributions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="414.34" data-end="418.68">
+            <p class="french-block">Qui est le donateur de la réforme et le milliardaire de crypto Ben Delo ?</p>
+            <span class="english-block">Who is Reform donor and crypto billionaire Ben Delo?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.68" data-end="424.85">
+            <p class="french-block">Burnham pour lutter contre les "méga-donateurs" dans la politique britannique, le ministre dit</p>
+            <span class="english-block">Burnham to tackle 'mega-donors' in UK politics, minister says</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="424.85" data-end="431.16">
+            <p class="french-block">Nigel Farage dit à la BBC qu'il n'écoutait pas les discussions de donateurs étrangers filmées en secret</p>
+            <span class="english-block">Nigel Farage tells BBC he 'wasn't listening' during foreign donor talks filmed undercover</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_32.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
