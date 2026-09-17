@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Would you buy branded clothing from your favourite tech firm?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Would you buy branded clothing from your favourite tech firm?</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 16 Sep 2026 23:18:47 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cgqd9zkkvlyo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Nvidia, OpenAI and Anthropic are all now selling their own limited edition fashion lines
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.7" data-end="12.96">
+            <p class="french-block">Les lignes de vêtements de Nvidia se vendent rapidement, achetées par les fans du géant de la technologie</p>
+            <span class="english-block">Nvidia's clothing lines quickly sell out, bought by fans of the tech giant</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.96" data-end="21.62">
+            <p class="french-block">Pour Natalie Fratto, porter son jumper vert foncé du géant américain des puces Nvidia, c'est comme porter le kit d'une équipe sportive préférée.</p>
+            <span class="english-block">For Natalie Fratto, putting on her dark green jumper from US microchip giant Nvidia is like wearing the kit from a favourite sports team.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.62" data-end="31.8">
+            <p class="french-block">Sur le devant du vêtement en laine de 178 $ (£132) est une image caricaturiste du patron de la société de technologie Jensen Huang.</p>
+            <span class="english-block">On the front of the $178 (£132) woollen garment is a cartoonish image of the tech company's boss Jensen Huang.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.8" data-end="36.02">
+            <p class="french-block">Fratto ne travaille pas pour Nvidia, mais pour la compagnie.</p>
+            <span class="english-block">Fratto doesn't work for Nvidia. Instead, she's a fan of the company.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.02" data-end="46.61">
+            <p class="french-block">"J'ai un maillot de rugby pour les All Blacks de Nouvelle-Zélande, et je pense à mon pull Jensen de la même façon", dit Fratto, qui dirige une start-up technologique basée à New York.</p>
+            <span class="english-block">"I have a New Zealand All Blacks rugby jersey, and I think of my Jensen sweater in kind of the same way," says New York-based Fratto, who runs a tech start-up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.61" data-end="57.43">
+            <p class="french-block">Elle explique qu'il s'agit d'une représentation d'une équipe et d'un éthique "que j'impressionne et pour laquelle je suis enracinée", et elle porte fièrement le jumper dans les vidéos qu'elle publie sur les réseaux sociaux.</p>
+            <span class="english-block">She explains that it's a representation of a team and ethos "that I am impressed by and root for", and she proudly wears the jumper in videos she posts on social media., external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.43" data-end="70.03">
+            <p class="french-block">Nvidia joue certainement dans la première ligue des entreprises technologiques mondiales. Sous la direction de Huang, elle a capitalisé sur le boom de l'IA pour devenir l'une des entreprises les plus précieuses au monde.</p>
+            <span class="english-block">Nvidia certainly plays in the top league of global tech firms. Under Huang's leadership, it has capitalised on the AI boom to become one of the world's most valuable companies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.03" data-end="76.01">
+            <p class="french-block">Bien qu'il vende des dizaines de millions de ses jetons par an, ses vêtements sont beaucoup plus exclusifs.</p>
+            <span class="english-block">While it sells tens of millions of its chips per year, its clothing is far more exclusive. The lines, which also include t-shirts, hoodies and hats, are typically only available to buy from pop-up stalls at its conferences, and for very limited periods or "drops" via an online store and sell out very quickly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="76.01" data-end="85.39">
+            <p class="french-block">Et bien qu'il puisse sembler étrange qu'une telle entreprise de technologie vende des vêtements, d'autres se lancent dans l'acte aussi  et se concentrent également sur l'exclusivité.</p>
+            <span class="english-block">And while it might seem odd that such a tech company is selling clothing, others are getting in on the act too – and also focusing on exclusivity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.39" data-end="95.54">
+            <p class="french-block">OpenAI, l'opérateur de ChatGPT, propose généralement sa mode de marque aux employés, mais parfois elle est mise en vente générale pendant quelques jours via son site Web.</p>
+            <span class="english-block">OpenAI, the operator of ChatGPT, usually only offers its branded fashion to employees, but occasionally it goes on general sale for a few days via its website.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.54" data-end="104.3">
+            <p class="french-block">Pendant ce temps, Anthropic, le fabricant du chatbot Claude, a ouvert l'année dernière un café temporaire dans le West Village de Manhattan.</p>
+            <span class="english-block">Meanwhile, Anthropic, the maker of the Claude chatbot, last year opened a temporary, pop-up coffee shop in Manhattan's West Village. For just one week it gave away free baseball hats with the word "thinking" embroidered on the front.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.3" data-end="119.45">
+            <p class="french-block">La professeure Hazel Clark, professeure de mode à la Parsons School of Design de New York, dit que les entreprises technologiques ont tiré leur inspiration du monde de la mode en limitant leur disponibilité. " C'est une stratégie très courante pour les marques.</p>
+            <span class="english-block">Professor Hazel Clark, who teaches fashion at Parsons School of Design in New York, says that by limiting availability, tech firms have taken inspiration from the world of fashion. "It's a very common strategy for brands to use. It elevates the desirability," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="119.45" data-end="123.5">
+            <p class="french-block">Mais pourquoi ces entreprises vendent-elles des vêtements en premier lieu?</p>
+            <span class="english-block">But why are such companies selling clothing in the first place? It is not as if they need the supplementary income streams.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.5" data-end="132.41">
+            <p class="french-block">Nvidia, OpenAI et Anthropic ont tous refusé de commenter, mais il semble que ce soit sur la promotion de la marque et la gestion de la réputation.</p>
+            <span class="english-block">Nvidia, OpenAI and Anthropic all declined to comment, but it appears to be about brand promotion and reputation management.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.41" data-end="142.08">
+            <p class="french-block">Prenons la société américaine de logiciels Palantir Technologies, qui a été critiquée pour son travail pour l'armée et la police, tant aux États-Unis qu'à l'étranger.</p>
+            <span class="english-block">Take US software firm Palantir Technologies, which has faced criticism due to it work for the military and police, both in the US and overseas.  Since launching its own clothing range last year, Palantir now calls itself a "lifestyle brand".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.08" data-end="154.63">
+            <p class="french-block">Eliano Younes, responsable de l'engagement stratégique chez Palantir, déclare: " Une marque de style de vie ne se définit pas par ce que vous vendez, mais par ce que vous représentez et si les gens veulent s'y affilier.</p>
+            <span class="english-block">Eliano Younes, Palantir's head of strategic engagement, says: "A lifestyle brand isn't defined by what you sell, it's defined by what you stand for and whether people want to affiliate with it. I believe that the store's success and the enthusiasm from our community proves this."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.63" data-end="165.72">
+            <p class="french-block">Younes ajoute que " les investisseurs, les clients, les employés et les gens ordinaires " de plus de 60 pays ont acheté les équipements de Palantir, qui comprennent une veste en coton.</p>
+            <span class="english-block">Younes adds that "investors, customers, employees, and everyday people" in more than 60 countries have bought Palantir's gear, which includes a cotton jacket.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.72" data-end="170.64">
+            <p class="french-block">Les t-shirts de la firme américaine de défense Anduril ne sont pas subtils.</p>
+            <span class="english-block">US defence firm Anduril's t-shirts are not subtle</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.64" data-end="185.93">
+            <p class="french-block">Un acheteur américain de vêtements Palantir, qui ne voulait pas être nommé, dit qu'il a été attiré par la controverse et "la quantité de personnes qui en parlent". Il ajoute: "C'est la forme la plus pure d'anti-mode... et c'est ce qui le rend si intéressant et unique".</p>
+            <span class="english-block">One US buyer of Palantir clothing, who didn't want to be named, says it was attracted by the controversy and "amount of people talking about it". He adds: "It's the purest form of anti-fashion…and that is what makes it so interesting and unique."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.93" data-end="195.38">
+            <p class="french-block">Les critiques suggèrent que des entreprises comme Palantir utilisent des produits élégants "pour faire entrer leur nom dans des conversations plus positives", comme le dit Clark.</p>
+            <span class="english-block">Critics suggest companies like Palantir are using stylish merch "to get their name into a more positive conversations", as Clark puts it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.38" data-end="204.79">
+            <p class="french-block">Younes déclare: " Nos vêtements, comme notre logiciel, ne sont pas politiques, ils sont conçus pour tous ceux qui soutiennent Palantir et ce qu'il représente. "</p>
+            <span class="english-block">Younes says: "Our clothing, like our software, is not political. It's designed for all people who support Palantir and what it stands for."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.79" data-end="223.27">
+            <p class="french-block">Certaines autres entreprises sont plus ouvertement politiques avec leurs vêtements, comme la firme américaine de défense Anduril, qui fabrique des drones militaires. Elle vend une cape à capuche avec les mots " Reconstruire l'Arsenal ", reflétant son objectif de voir plus de dépenses et de fabrication de défense américaines.</p>
+            <span class="english-block">Some other companies are being more overtly political with their clothing, such as US defence firm Anduril, which makes military drones. It sells a hoodie emblazoned with the words "Rebuild the Arsenal", reflecting its aim of seeing more US defence spending and manufacturing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.27" data-end="239.76">
+            <p class="french-block">Jonathan Sargent, assistant juridique à Albuquerque, au Nouveau-Mexique, a acheté des vêtements à Palantir et à Anduril. " De nos jours, beaucoup de vêtements, que ce soit Nike ou d'autres grandes marques, peuvent se sentir déconnectés de tout ce qui est tangible ", dit- il.</p>
+            <span class="english-block">Jonathan Sargent, a legal assistant in Albuquerque, New Mexico, has bought clothing from both Palantir and Anduril. "A lot of apparel today, whether it's Nike or other large brands, can feel disconnected from anything tangible," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.76" data-end="252.6">
+            <p class="french-block">"Mais Palantir et Anduril sont des entreprises que les gens associent à la construction de choses qui ont un impact visible, que ce soit la défense, l'IA, les infrastructures ou les systèmes de prise de décision", ajoute-t-il.</p>
+            <span class="english-block">"But Palantir and Anduril are companies that people associate with building things that have a visible impact, whether that's defence, AI, infrastructure, or decision-making systems," he adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="252.6" data-end="258.86">
+            <p class="french-block">Jonathan Sargent dit qu'il aime le fait que des entreprises comme Palantir et Anduril ont un "impact visible"</p>
+            <span class="english-block">Jonathan Sargent says he likes the fact firms such as Palantir and Anduril have a 'visible impact'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="258.86" data-end="265.42">
+            <p class="french-block">Encore chez Nvidia, la popularité de son fondateur Huang peut être à l'origine de la vente de ses vêtements.</p>
+            <span class="english-block">Back at Nvidia, the popularity of its founder Huang may be driving the sale of its clothing. He has been known to attract crowds of adoring fans, competing for autographs or selfies with the 63-year-old who is known for his trademark leather jacket.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.42" data-end="272.54">
+            <p class="french-block">Le PDG de Meta, Mark Zuckerberg, a décrit Huang comme " Taylor Swift, mais pour la technologie ".</p>
+            <span class="english-block">Meta CEO Mark Zuckerberg has described Huang as "Taylor Swift, but for tech".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.54" data-end="283.01">
+            <p class="french-block">Le professeur Gianpaolo Vignali, de l'Institut de la mode de Manchester, déclare: " Les gens les considèrent [les grands chefs de la technologie] comme des modèles à suivre.</p>
+            <span class="english-block">Prof Gianpaolo Vignali of the Manchester Fashion Institute says: "People look at them [such big tech bosses] as role models. They want to aspire to them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="283.01" data-end="305.45">
+            <p class="french-block">Pour Greg Epstein, auteur du livre Tech Agnostic, qui décrit l'industrie de la technologie comme une secte ou une nouvelle religion mondiale, porter des produits technologiques est "une façon de symboliser que vous faites partie de l'élite prophétique". Cela peut particulièrement plaire aux initiés de la Silicon Valley qui " cherchent souvent un sens de l'identité, un sens du but, un sens de la communauté ".</p>
+            <span class="english-block">For Greg Epstein, author of the book Tech Agnostic, who describes the tech industry as a cult or new global religion, wearing tech merch is "a way of symbolising that you're one of the prophetic elite". This can particularly appeal to Silicon Valley insiders who are often "searching for a sense of identity, a sense of purpose, a sense of community".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.45" data-end="322.25">
+            <p class="french-block">Epstein, qui est le chaplain humaniste à l'Université de Harvard et à l'Institut de technologie du Massachusetts, ajoute: "Quand les tech-brous se mettent des pulls, c'est plus qu'un simple phénomène de gentillesse, c'est une tentative de vendre un culte dont le but est de modifier radicalement la condition humaine".</p>
+            <span class="english-block">Epstein, who is the humanist chaplain at both Harvard University and the Massachusetts Institute of Technology, adds: "When tech bros put themselves on sweaters, it's more than just a cutesy phenomenon, it's an attempt to sell a cult whose goal is to radically alter the human condition."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.25" data-end="342.74">
+            <p class="french-block">Que vous choisissiez ou non d'acheter votre prochaine chemise ou chapeau auprès d'une entreprise de technologie ou de défense, Vignali affirme que tous les choix de vêtements sont chargés de sens. " La couleur subtile d'une cravate ou d'un bobble de cheveux... tout cela est un signal qui permet au porteur de partager symboliquement ses positions culturelles et idéologiques ", dit-il.</p>
+            <span class="english-block">Whether or not you choose to buy your next shirt or hat from a tech or defence firm, Vignali argues that all clothing choices are loaded with meaning. "The subtle colour of a tie or hair bobble… all of these are signals that allow the wearer to symbolically share their cultural and ideological positions," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.74" data-end="351.26">
+            <p class="french-block">Alors que la mode technologique et de défense semble attirer à la fois des fans ardents et des critiques féroces, tout le monde ne la prend pas si au sérieux.</p>
+            <span class="english-block">While tech and defence fashion seems to draw both ardent fans and fierce critics, not everyone takes it so seriously.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.26" data-end="362.64">
+            <p class="french-block">"C'est un moment unique dans notre esprit collectif de l'époque, dit Fratto, mais elle pense aussi que la décision de Nvidia de mettre Jensen Huang en tête de sa marchandise officielle est aussi "un peu drôle".</p>
+            <span class="english-block">"It's a unique moment in our collective zeitgeist for sure," says Fratto, but she also thinks that Nvidia's decision to put Jensen Huang on the front of its official merch is also "kind of funny".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.64" data-end="368.21">
+            <p class="french-block">Les diplômés d'entreprises achètent des entreprises pour se faire installer en tant que PDG.</p>
+            <span class="english-block">Why wait? Business grads buying firms to install themselves as CEO</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="368.21" data-end="372.62">
+            <p class="french-block">Les Highlands écossais bénéficient de la tendance du "coolcation"</p>
+            <span class="english-block">Scottish Highlands benefiting from 'coolcation' trend</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="372.62" data-end="378.14">
+            <p class="french-block">Les prix du bœuf américain ont grimpé, mais les agriculteurs ne gagnent pas plus d'argent.</p>
+            <span class="english-block">US beef prices have soared but farmers aren't making more money</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="378.14" data-end="384.26">
+            <p class="french-block">Éliminée par un ouragan, cette communauté américaine est maintenant un géant de l'énergie mondiale.</p>
+            <span class="english-block">Wiped out by a hurricane, this US community is now a global energy giant</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_19.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

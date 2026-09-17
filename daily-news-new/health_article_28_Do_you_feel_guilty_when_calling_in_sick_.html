@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you feel guilty when calling in sick at work? This might be why...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>Do you feel guilty when calling in sick at work? This might be why...</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 15 Sep 2026 23:40:07 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ce8e70x3pjzo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: As many as half of people report working when sick. The reasons for this are complex, experts say.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.37" data-end="11.54">
+            <p class="french-block">Tu te réveilles mal mais il y a une grosse journée au travail devant toi.</p>
+            <span class="english-block">You wake up feeling unwell but there's a big day at work ahead.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="11.54" data-end="15.58">
+            <p class="french-block">Si la réponse est de vous connecter, vous n'êtes pas seul.</p>
+            <span class="english-block">What do you do? If the answer is to go in (or log on), you're not alone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.58" data-end="24.86">
+            <p class="french-block">Les recherches suggèrent que, entre un tiers et la moitié des Britanniques travaillent à l'extérieur même quand ils sont malades, ce que les experts appellent le présentéisme.</p>
+            <span class="english-block">Research suggests, external anywhere between a third to a half of people in the UK work even when sick - something experts call presenteeism.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.86" data-end="30.46">
+            <p class="french-block">Et votre approche de la maladie en dit long sur vous en tant qu'individu et sur votre lieu de travail.</p>
+            <span class="english-block">And your approach to sickness says a lot about you as an individual and where you work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.46" data-end="43.3">
+            <p class="french-block">"Les jeunes sont attaqués par des coups de neige, mais ce n'est pas vrai", déclare le professeur Cary Cooper, psychologue de l'université de Manchester, qui est l'un des plus grands experts mondiaux en matière de bien-être au travail.</p>
+            <span class="english-block">"The younger generation get the snowflake tag thrown at them, but it's not true," says University of Manchester psychologist Prof Sir Cary Cooper, who is one of the world's leading experts on workplace wellbeing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.3" data-end="49.2">
+            <p class="french-block">Les données de l'Office national de la statistique, externes, confirment cette opinion.</p>
+            <span class="english-block">Data from the Office for National Statistics, external supports this view.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.2" data-end="59.02">
+            <p class="french-block">Les travailleurs âgés de 16 à 24 ans ont pris en moyenne 2,4 jours de congé maladie l'an dernier, contre 6,2 jours pour les 50 à 64 ans.</p>
+            <span class="english-block">Workers aged 16 to 24 took an average of 2.4 days off sick last year, compared to 6.2 days for those aged 50 to 64.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.02" data-end="66.72">
+            <p class="french-block">Le gouvernement britannique a été conseillé par Sir Cary sur les politiques de l'emploi dans ce domaine, et il y a plusieurs raisons à cela.</p>
+            <span class="english-block">Sir Cary, who has advised the UK government on employment policies in this area, says there are several reasons for this.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.72" data-end="74.21">
+            <p class="french-block">Les jeunes travailleurs sont plus susceptibles de travailler dans des postes où la sécurité est faible, comme les contrats de zéro heure.</p>
+            <span class="english-block">Younger workers are more likely to work in roles where there is little security, such as zero-hours contracts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.21" data-end="83.18">
+            <p class="french-block">Ils sont également moins susceptibles de souffrir de problèmes de santé à long terme et de problèmes articulaires qui contribuent principalement à l'absence de maladie.</p>
+            <span class="english-block">They are also less likely to suffer from long-term health conditions and joint problems that are major contributors to sickness absence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.18" data-end="85.61">
+            <p class="french-block">Quand avez-vous été malade ?</p>
+            <span class="english-block">When was your last sick day?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.61" data-end="94.3">
+            <p class="french-block">Mais Sir Cary ajoute: "Je pense que les jeunes ont des attentes plus élevées quant à la façon dont les employeurs devraient les traiter et considérer leur bien-être.</p>
+            <span class="english-block">But Sir Cary adds: "I think younger generations do have higher expectations about how employers should treat them and consider their wellbeing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.3" data-end="102.02">
+            <p class="french-block">" Les générations plus âgées ont peut-être été plus disposées à supporter les choses, mais cela ne rend pas nécessairement cette approche saine.</p>
+            <span class="english-block">"Older generations have perhaps been more willing to put up with things, but that doesn't necessarily make that approach healthy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.02" data-end="113.98">
+            <p class="french-block">" Quand il s'agit de prendre des congés, les jeunes travailleurs semblent plus disposés à considérer le bien-être mental comme faisant partie de leur santé globale plutôt que comme quelque chose qui devrait simplement être encouragé. "</p>
+            <span class="english-block">"When it comes to taking time off, younger workers seem more willing to view mental wellbeing as part of their overall health rather than something that should simply be pushed through."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="113.98" data-end="120.07">
+            <p class="french-block">Il existe une variété de facteurs qui influencent l'approche de quelqu'un en cas d'absence de maladie.</p>
+            <span class="english-block">There are a variety of factors that influence someone's approach to sickness absence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.07" data-end="133.78">
+            <p class="french-block">Pour certains, le travail est étroitement lié à l'identité. Les psychologues professionnels appellent ce travail la centralité - et la recherche le lie à un engagement, à un engagement et à une volonté accrues d'aller plus loin.</p>
+            <span class="english-block">For some, work is closely tied to identity. Occupational psychologists call this work centrality - and research links this to greater engagement, commitment and willingness to go the extra mile.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.78" data-end="140.62">
+            <p class="french-block">Si le travail est au centre de votre personnalité, vous pouvez vous sentir temporairement dépouillé de votre travail.</p>
+            <span class="english-block">If work is central to who you are, being absent can feel like temporarily losing part of yourself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.62" data-end="148.94">
+            <p class="french-block">" Ces gens ont un fort désir de continuer à se présenter ", dit la docteur Audrey Tang, psychologue qui écrivit sur le bien-être au travail.</p>
+            <span class="english-block">"These people feel a strong desire to keep showing up," says Dr Audrey Tang, a psychologist who writes about workplace wellbeing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.94" data-end="157.06">
+            <p class="french-block">Elle dit que ceux qui travaillent dans des professions de soins comme la médecine, les soins infirmiers et l'enseignement ont une tendance particulière à cela.</p>
+            <span class="english-block">She says those working in caring professions such as medicine, nursing and teaching have a particular tendency towards this.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.06" data-end="164.33">
+            <p class="french-block">Ils déclarent souvent qu'ils préfèrent avoir un accident physique pour ne pas se présenter, plutôt que de prendre leur jour de congé. "</p>
+            <span class="english-block">"They often report they would rather have a physical accident to have a reason not to show up than just take the day off."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.33" data-end="170.71">
+            <p class="french-block">D'autres craignent d'être vus comme faibles ou paresseux, ce qui est particulièrement vrai des jeunes, dit Tang.</p>
+            <span class="english-block">Others fear being seen as weak or lazy. Younger workers are particularly susceptible to this, says Tang.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.71" data-end="176.83">
+            <p class="french-block">" Ils sont plus susceptibles d'être débutants dans leur profession et ne veulent pas laisser une impression négative. "</p>
+            <span class="english-block">"They're more likely to be early in their profession and they don't want to leave a negative impression."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.83" data-end="186.98">
+            <p class="french-block">La culture et le comportement au travail peuvent avoir une influence significative sur la volonté des gens de prendre des congés de maladie, dit la psychologue Tara Quinn-Cirillo.</p>
+            <span class="english-block">Workplace culture and behaviour can have a significant influence on people's willingness to take time off sick, says psychologist Dr Tara Quinn-Cirillo.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.98" data-end="196.22">
+            <p class="french-block">Lorsque les équipes sont étroitement engagées et qu'il y a peu ou pas de couverture, les employés savent que leur absence va augmenter la charge de travail des collègues.</p>
+            <span class="english-block">When teams are stretched and there is little or no cover, employees know their absence will increase the workload for colleagues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.22" data-end="207.46">
+            <p class="french-block">"Le rôle du sentiment de culpabilité et de honte est important dans une organisation toxique qui donne la priorité à la productivité plutôt qu'à la santé et au bien-être", explique Quinn-Cirillo.</p>
+            <span class="english-block">"The role of guilt and shame is significant in a toxic organisation that prioritises productivity over health and wellbeing," says Quinn-Cirillo.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.46" data-end="214.99">
+            <p class="french-block">"Il existe une culture de "portation" dans certains lieux de travail qui encourage les gens à continuer quand ils devraient se reposer".</p>
+            <span class="english-block">"There is a 'carry-on' culture in some workplaces that encourages people to keep going when they should be resting."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="214.99" data-end="226.56">
+            <p class="french-block">Les employés se sentent valorisés pour leur présence, peu importe leur état d'esprit, et le personnel absorbe rapidement le message si les gestionnaires félicitent les gens pour leur travail en cas de maladie.</p>
+            <span class="english-block">Such cultures reward presenteeism. Employees feel valued for turning up regardless of how they are feeling and staff quickly absorb the message if managers praise people for working through illness.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="226.56" data-end="233.57">
+            <p class="french-block">La culture du lieu de travail peut avoir une influence importante sur la volonté des gens de prendre des jours de maladie.</p>
+            <span class="english-block">Workplace culture can have a significant influence on people's willingness to take sick days</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.57" data-end="242.38">
+            <p class="french-block">" Dans un milieu de travail sain, les gens devraient pouvoir avoir des conversations franches et honnêtes sur le bien-être et les jours de maladie ", dit Quinn-Cirillo.</p>
+            <span class="english-block">"In a healthy work environment, people should be able to have open and honest conversations about wellbeing and sick days," says Quinn-Cirillo.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.38" data-end="251.18">
+            <p class="french-block">Si les employés sont régulièrement interrogés ou négatifs sur leur absence, ils peuvent hésiter à prendre des congés légitimes par crainte d'être jugés.</p>
+            <span class="english-block">Trust also matters. If absence is routinely questioned or viewed negatively, workers can become reluctant to take legitimate time off for fear of being judged.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="251.18" data-end="255.91">
+            <p class="french-block">Qu'est-ce que cela, dit Quinn-Cirillo, est un " énorme drapeau rouge ".</p>
+            <span class="english-block">That, says Quinn-Cirillo, is a "huge red flag".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.91" data-end="260.54">
+            <p class="french-block">Il n'est pas toujours facile de décider si vous êtes trop malade pour travailler.</p>
+            <span class="english-block">Deciding whether you are too sick to work is not always straightforward.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.54" data-end="265.46">
+            <p class="french-block">Pour les maladies physiques, Tang dit qu'il existe des règles bien établies.</p>
+            <span class="english-block">For physical illness, Tang says there are some well-established rules of thumb.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.46" data-end="276.24">
+            <p class="french-block">" Si vous vomissez, que vous ayez de la diarrhée ou que vous ayez de la fièvre, restez à la maison pendant 48 heures et 24 heures, respectivement, après la disparition des symptômes.</p>
+            <span class="english-block">"If you're vomiting and have diarrhoea or have a fever, you should stay at home for 48 hours and 24 hours respectively after the symptoms have passed. In those situations, you're unlikely to be able to work effectively anyway."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.24" data-end="281.09">
+            <p class="french-block">Au-delà de cela, la décision devient plus nuancée, selon Tang.</p>
+            <span class="english-block">Beyond that, the decision becomes more nuanced, according to Tang.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.09" data-end="292.58">
+            <p class="french-block">"Là où il y a plus de zones grises, il y a la toux et le rhume. Depuis le Covid, l'étiquette au travail a changé - généralement, il est considéré comme poli de travailler à la maison".</p>
+            <span class="english-block">"Where there is more of a grey area is with coughs and colds. Since Covid, workplace etiquette has changed - generally it's considered polite to work from home."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.58" data-end="299.09">
+            <p class="french-block">Mais elle dit qu'il est absolument nécessaire que la santé mentale ne soit traitée pas différemment de la santé physique.</p>
+            <span class="english-block">But she says an absolute must is that mental health should be treated no differently than physical health.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="299.09" data-end="304.92">
+            <p class="french-block">"Si vous êtes malade et incapable de travailler, vous êtes malade et incapable de travailler".</p>
+            <span class="english-block">"If you're sick and unable to work, you're sick and unable to work."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.92" data-end="313.22">
+            <p class="french-block">Quinn-Cirillo ajoute: "En fin de compte, il s'agit de la capacité de faire un travail, qu'il s'agisse de santé physique ou mentale".</p>
+            <span class="english-block">Quinn-Cirillo adds: "Ultimately it's about capacity to do a job, whether it be physical or mental health."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="313.22" data-end="319.34">
+            <p class="french-block">Un autre signe avant-coureur, dit-elle, est que le travail commence à affecter les soins de base.</p>
+            <span class="english-block">A further warning sign is when work starts affecting basic self-care, she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.34" data-end="328.82">
+            <p class="french-block">" Votre capacité à prendre soin de vous- même change- t- elle? Pouvez- vous vous décompresser du travail? Dormez- vous bien? "</p>
+            <span class="english-block">"Is your ability to look after yourself changing? Are you able to decompress from work? Is your sleep OK?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="328.82" data-end="334.51">
+            <p class="french-block">Si la réponse est non, cela peut indiquer que le repos est exactement ce dont nous avons besoin.</p>
+            <span class="english-block">If the answer is no, it may be a sign that rest is exactly what is needed.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_28.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

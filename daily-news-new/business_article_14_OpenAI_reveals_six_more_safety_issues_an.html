@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI reveals six more safety issues and unveils plan to disclose incidents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>OpenAI reveals six more safety issues and unveils plan to disclose incidents</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 17 Sep 2026 03:09:21 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmpq0wj5g899o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The firm also announced a new system to track, investigate and disclose cases of models misbehaving, or "misalignment".
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.74" data-end="12.48">
+            <p class="french-block">Sam Altman, directeur général d'OpenAI</p>
+            <span class="english-block">OpenAI chief executive Sam Altman</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.48" data-end="23.62">
+            <p class="french-block">OpenAI a révélé six autres incidents de comportement inattendu ou préoccupant de ses modèles d'intelligence (IA) et a annoncé un plan de suivi et de divulgation de tels incidents à l'avenir.</p>
+            <span class="english-block">OpenAI revealed six more incidents of unexpected or concerning behaviour by its intelligence (AI) models, and announced a plan for tracking and disclosing such incidents in the future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.62" data-end="34.27">
+            <p class="french-block">Certains des incidents précédemment non signalés comprenaient des modèles qui cachaient ou fabriquaient des informations, a déclaré le fabricant de ChatGPT dans un article de blog mercredi.</p>
+            <span class="english-block">Some of the previously unreported incidents included models concealing or fabricating information, the ChatGPT-maker said in a blog post on Wednesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.27" data-end="46.56">
+            <p class="french-block">Sam Altman, le patron d'OpenAI, a déclaré plus tôt cette semaine: "Le monde devrait avoir confiance en nous parce que nous allons faire la bonne chose, parce que c'est la bonne chose et que nous ressentons l'ampleur de cela".</p>
+            <span class="english-block">The boss of OpenAI Sam Altman said earlier this week: "The world should trust that we are going to do the right thing because it's the right thing and we feel the magnitude of this."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.56" data-end="54.36">
+            <p class="french-block">L'IA a été soigneusement examinée ces derniers jours après des avertissements sur les risques potentiels graves qu'elle représente pour les humains.</p>
+            <span class="english-block">AI has come under intense scrutiny in recent days following warnings over the serious potential risks it poses to humans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.36" data-end="62.76">
+            <p class="french-block">Dans le blog, OpenAI a détaillé des exemples de ses modèles d'IA se comportant mal pour qu'ils puissent accomplir une tâche ou réussir un test.</p>
+            <span class="english-block">In the blog, OpenAI detailed examples of its AI models misbehaving so they could achieve a task or succeed in a test. The incidents included the models generating instructions to get around restrictions imposed on them, hiding mistakes and fabricating information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.76" data-end="71.4">
+            <p class="french-block">L'entreprise a également annoncé un nouveau système pour suivre, enquêter et révéler les cas de mauvais comportement des modèles, ou "mal alignement".</p>
+            <span class="english-block">The firm also announced a new system to track, investigate and disclose cases of models misbehaving, or "misalignment".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.4" data-end="81.17">
+            <p class="french-block">Dans le cadre de ce cadre, les développeurs pourront désigner les incidents à réexaminer, avec un nouveau ensemble de règles pour décider si la question est rendue publique.</p>
+            <span class="english-block">Under the framework, developers will be able flag incidents for review, with a new set of rules to decide whether the issue is disclosed publicly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.17" data-end="92.18">
+            <p class="french-block">"Parce que nous croyons à la valeur de la transparence autour des désallineements, notre nouveau cadre favorise la divulgation même lorsque la signification est incertaine", a déclaré OpenAI.</p>
+            <span class="english-block">"Because we believe in the value of transparency around misalignment, our new framework favors disclosure even when significance is uncertain," OpenAI said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.18" data-end="106.68">
+            <p class="french-block">OpenAI a fait les gros titres en juillet quand il a révélé que certains de ses modèles d'IA les plus avancés étaient devenus des pirates et ont piraté Hugging Face, l'un des plus grands hubs du monde pour le partage de modèles d'IA, après les avoir perdus lors d'un test de sécurité.</p>
+            <span class="english-block">OpenAI made headlines in July when it revealed that some of its most advanced AI models went rogue and hacked Hugging Face, one of the world's largest hubs for sharing AI models, after it lost control of them during a security test.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="106.68" data-end="114.53">
+            <p class="french-block">Thomas Wolf, cofondateur de Hugging Face, a déclaré à l'époque que l'incident était un "appel d'avertissement" pour l'industrie.</p>
+            <span class="english-block">Hugging Face co-founder Thomas Wolf said at the time that the incident was "a wake-up call" for the industry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.53" data-end="125.18">
+            <p class="french-block">Depuis lors, le débat sur les préoccupations de sécurité de l'IA a augmenté avec des chercheurs en IA, des dirigeants de l'industrie de la technologie et des politiciens qui y ont pris part.</p>
+            <span class="english-block">Since then, the debate over AI safety concerns has escalated with AI researchers, technology industry executives and politicians weighing in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.18" data-end="143.33">
+            <p class="french-block">La semaine dernière, Jacob Coxon, chercheur qui a quitté OpenAI rival Anthropic pour craindre que la technologie puisse anéantir l'humanité, a écrit à propos de sa démission dans un article qui citait les dangers de l'IA et qui est ensuite devenu viral dans le contexte de préoccupations croissantes en matière de sécurité.</p>
+            <span class="english-block">Last week, Jacob Coxon, a researcher who left OpenAI rival Anthropic over concerns the tech could wipe out humanity, wrote about his resignation in a post that cited the dangers of AI and later went viral against the backdrop of growing safety concerns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.33" data-end="154.34">
+            <p class="french-block">En réponse, le scientifique anthropologique Evan Hubinger a déclaré qu'il pensait que la possibilité que l'IA provoque l'extinction humaine "dans la prochaine décennie" était supérieure à 10%.</p>
+            <span class="english-block">In response, Anthropic scientist Evan Hubinger said he thought the possibility of AI causing human extinction "within the next decade" was more than 10%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.34" data-end="164.69">
+            <p class="french-block">Le cofondateur d'Anthropic, Jack Clark, a plus tard déclaré à la BBC qu'un " commutateur de destruction " contrôlé par un tiers pourrait être obligatoire pour l'industrie.</p>
+            <span class="english-block">Anthropic co-founder Jack Clark later told the BBC that a "kill switch" controlled by a third party may need to be mandatory for the industry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.69" data-end="179.3">
+            <p class="french-block">Pendant ce temps, le PDG d'Anthropic, Dario Amodei, a appelé à ralentir le rythme du développement de l'IA et à être plus étroitement surveillé, comme l'a fait l'entreprise auparavant, bien que certains aient remis en question les motivations derrière cela.</p>
+            <span class="english-block">Meanwhile, Anthropic's CEO Dario Amodei called for the pace of AI development to slow and be more closely monitored, as the company has done before, though some have questioned the motivations behind this.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.3" data-end="186.65">
+            <p class="french-block">Amodei a également déclaré que toute action visant à freiner l'IA devrait être faite "sans sacrifier l'avantage commercial".</p>
+            <span class="english-block">Amodei also said that any action to rein in AI should be done "without sacrificing commercial advantage".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.65" data-end="198.43">
+            <p class="french-block">Mais le président américain Donald Trump a déclaré que les craintes concernant la sécurité de l'IA étaient un " truchement " et a critiqué les appels à avoir plus de barreaux en place pour la technologie en évolution rapide.</p>
+            <span class="english-block">But US President Donald Trump has said fears about the safety of AI are a "hoax" and criticised calls to have more guardrails in place for the fast-moving technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.43" data-end="211.01">
+            <p class="french-block">Dans une série de messages sur les réseaux sociaux, le président américain a comparé les avertissements sur l'IA à la " arnaque du réchauffement climatique " qui, selon lui, " est perpétrée par les Dumocrats de gauche radicale ".</p>
+            <span class="english-block">In a series of social media posts, the US president compared warnings about AI to the "Global Warming Scam" which, he said, was "being perpetrated by the Radical Left Dumocrats".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.01" data-end="222.0">
+            <p class="french-block">Trump s'est également appelé " le Buster de la Folie ", comparant les préoccupations concernant la sécurité de la technologie à ce qu'il a appelé " la RUSSIE, la RUSSIE, la RUSSIE HOAX ".</p>
+            <span class="english-block">Trump also called himself "the Hoax Buster", likening concerns about the safety of the technology to what he called "the RUSSIA, RUSSIA, RUSSIA HOAX".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.0" data-end="228.24">
+            <p class="french-block">Le seul "gardien" nécessaire à l'IA était un président "fort et intelligent", a déclaré Trump.</p>
+            <span class="english-block">The only "guardrails" needed for AI was a "strong and smart" president, said Trump.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.24" data-end="232.61">
+            <p class="french-block">Pourquoi certains experts craignent de plus en plus que l'IA prenne le relais</p>
+            <span class="english-block">Why some experts increasingly fear AI will take over</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.61" data-end="237.05">
+            <p class="french-block">Pourquoi Trump est tout-en-à-tout sur l'IA malgré les avertissements</p>
+            <span class="english-block">Why Trump is all-in on AI despite the warnings</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.05" data-end="244.8">
+            <p class="french-block">Le personnel de l'IA "a vraiment peur" de l'avenir de l'humanité, a déclaré à la BBC un ancien chercheur de l'Anthropic</p>
+            <span class="english-block">AI staff 'genuinely frightened' for humanity's future, ex-Anthropic researcher tells BBC</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_14.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
