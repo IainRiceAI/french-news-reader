@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War may be coming. Are we psychologically ready?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>War may be coming. Are we psychologically ready?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 17 Sep 2026 23:22:17 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmn0jke547r5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The military and government say the risk of conflict is growing, but we may not be mentally ready for it
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.98" data-end="9.31">
+            <p class="french-block">La guerre pourrait venir.</p>
+            <span class="english-block">War may be coming. Are we psychologically ready?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="9.31" data-end="14.16">
+            <p class="french-block">Si le Royaume-Uni se retrouvait soudainement en guerre, saurais-tu quoi faire ?</p>
+            <span class="english-block">If the UK suddenly found itself at war, would you know what to do? Do you know what would be expected of you?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.16" data-end="27.02">
+            <p class="french-block">Le gouvernement veut que nous commencions à nous préparer à des perturbations graves de notre vie, qu'on stocke des conserves de nourriture et de l'eau potable, qu'on renforce notre résilience civique et qu'on planifie la possibilité d'une guerre.</p>
+            <span class="english-block">The government wants us all to start preparing for severe disruption to our lives. It wants us to stockpile canned food and drinking water, strengthen our civic resilience, and plan for the possibility of war.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.02" data-end="34.2">
+            <p class="french-block">Les travaux ont commencé sur le soi-disant "livre de guerre" du gouvernement, qui n'a pas été mis à jour depuis des décennies.</p>
+            <span class="english-block">Work has begun on the government's so-called "war book", which hasn't been updated in decades.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.2" data-end="47.52">
+            <p class="french-block">Le chef de l'état-major de la défense, Sir Richard Knighton, a déclaré cette semaine que la menace venant de la Russie signifiait que la Grande-Bretagne vivait la période la plus dangereuse de sa carrière de 35 ans dans les forces armées.</p>
+            <span class="english-block">The UK's most senior soldier has sounded the alarm. The Chief of the Defence Staff Sir Richard Knighton this week said the threat from Russia meant Britain was living through the "most dangerous" period of his 35-year career in the armed forces.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.52" data-end="55.32">
+            <p class="french-block">Mais quelle est la menace ? En 1940, le danger d'une invasion allemande du Royaume-Uni était très réel.</p>
+            <span class="english-block">But what is the threat? In 1940 the danger of a German invasion of the UK was very real. But the chances of Russian tanks rolling up Whitehall are surely negligible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.32" data-end="63.31">
+            <p class="french-block">" Ce ne sont pas les chars qui vous inquiètent ", dit l'historienne Margaret MacMillan, auteure de Guerre: Comment les conflits nous ont façonné.</p>
+            <span class="english-block">"It's not the tanks you need to worry about," says historian Margaret MacMillan, author of War: How Conflict Shaped Us.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.31" data-end="75.29">
+            <p class="french-block">" C'est la coupe de câbles au fond de l'océan, c'est le piratage de systèmes sur lesquels dépendent tant de choses, la possibilité d'une guerre asymétrique, d'une guerre cybernétique, augmente à un rythme exponentiel. "</p>
+            <span class="english-block">"It's the cutting of cables on the ocean floor. It's the hacking into systems on which so many things depend. The possibility for asymmetric war, for cyber war, is growing by leaps and bounds."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.29" data-end="96.43">
+            <p class="french-block">Mais sommes-nous prêts ? Après 80 ans sans guerre sur notre propre sol, sommes-nous, en tant que société, psychologiquement prêts à y faire face ? sommes-nous prêts à approuver de grandes augmentations des dépenses de défense et les sacrifices que cela pourrait entraîner dans d'autres domaines de notre vie nationale ? Ou la menace semble-t-elle trop loin pour être réelle ?</p>
+            <span class="english-block">But are we ready? After 80 years without war on our own soil, are we, as a society, psychologically prepared for it? Are we ready to approve large increases in defence spending, and for the sacrifices that that might entail in other areas of our national life? Or does the threat seem too far-fetched to be real?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.43" data-end="103.49">
+            <p class="french-block">"Je pense que nous sommes habitués à l'idée que la paix est la condition normale des choses, qu'elle durera", dit McMillan.</p>
+            <span class="english-block">"I think we have become used to the idea that peace is the normal state of affairs, that it's going to last," says McMillan.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.49" data-end="111.48">
+            <p class="french-block">"Nous ne sommes pas préparés psychologiquement... mais nous commençons à reconnaître que la guerre est quelque chose qui nous est plus proche que nous ne le croyons".</p>
+            <span class="english-block">"So no, I don't think we are psychologically prepared… but I do think that we are beginning to recognise that war is something that is closer to us than we'd like to think".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.48" data-end="122.71">
+            <p class="french-block">Des images de films d'archives montrant des Britanniques en 1913 jouissant de journées de courses ou regardant le cricket contraste fortement avec ce qui a suivi pendant les horreurs de la Première Guerre mondiale.</p>
+            <span class="english-block">Archive film footage showing Britons in 1913 enjoying days at the races or watching the cricket contrasts sharply with what followed during the horrors of World War One.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.71" data-end="128.35">
+            <p class="french-block">L'été précédant la Première Guerre mondiale a symbolisé un manque de préparation à la guerre.</p>
+            <span class="english-block">The summer before World War One has come to symbolise a lack of readiness for war</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.35" data-end="147.7">
+            <p class="french-block">"En un sens, c'est un peu comme les étés édouardiens avant 1914, quand on parlait beaucoup de guerre, mais que l'idée d'aller à la guerre semblait si fantaisiste qu'on ne pouvait pas la croire, et je pense que c'est là que nous sommes en ce moment", déclare le général britannique à la retraite Sir Richard Shirreff, ancien commandant adjoint suprême allié en Europe.</p>
+            <span class="english-block">"In a sense it's now a bit like those Edwardian summers before 1914, when there was a lot of talk of war but the notion of actually going to war seemed so far-fetched as to be beyond belief and I think that's where we are at the moment," says retired British General Sir Richard Shirreff, a former Deputy Supreme Allied Commander Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.7" data-end="166.99">
+            <p class="french-block">En 1914, les stations de recrutement ont été inondées de volontaires désireux de servir leur pays. En Grande-Bretagne, cette génération a été élevée sur des histoires héroïques de construction d'empire, dans lesquelles la guerre était une glorieuse charge de cavalerie, menant à une victoire rapide et à la rentrée de tous à Noël.</p>
+            <span class="english-block">Europe has not always been so war-averse. In 1914, recruitment stations were flooded with volunteers eager to serve their country. In Britain, that generation was raised on heroic tales of empire-building, in which war was one glorious cavalry charge, leading to swift victory and everyone home by Christmas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.99" data-end="175.56">
+            <p class="french-block">Mais l'expérience de ce qui est devenu connu sous le nom de Grande Guerre s'est enflammée dans la conscience populaire et a survécu dans notre imagination collective.</p>
+            <span class="english-block">But the experience of what came to be known as the Great War seared itself into the popular consciousness and survives in our collective imagination.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.56" data-end="183.53">
+            <p class="french-block">Un homme sur huit qui s'est enrôlé au Royaume-Uni a laissé ses os dans les champs de Flandre et de France, de Mésopotamie et de Gallipoli.</p>
+            <span class="english-block">One in eight of the men who enlisted in the UK left their bones in the fields of Flanders and France, Mesopotamia and Gallipoli. The survivors carved their unspeakable grief into the landscape with the erection of thousands of war memorials. The pain of it touched every community in the land.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.53" data-end="187.63">
+            <p class="french-block">Les horreurs de la guerre ont touché toutes les parties de la société.</p>
+            <span class="english-block">The horrors of the war touched every part of society</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.63" data-end="194.57">
+            <p class="french-block">Ce conflit, dit Margaret MacMillan, a fondamentalement changé la façon dont l'Europe considérait la guerre.</p>
+            <span class="english-block">That conflict, says Margaret MacMillan, changed fundamentally the way Europe thought about war.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.57" data-end="203.4">
+            <p class="french-block">"L'expérience de la Première Guerre mondiale a montré à quel point la guerre moderne est terrible... et l'idée que la guerre puisse être glamour n'est jamais vraiment revenue après".</p>
+            <span class="english-block">"The experience of the First World War showed just how dreadful modern war is… And the idea that war could be glamorous never really came back after that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.4" data-end="220.7">
+            <p class="french-block">Les Européens, et en particulier les élites dirigeantes de l'Europe occidentale, ont succombé à une " crise de l'incrédulité " qui dure depuis des décennies, affirme Andrew Michta, un universitaire américain né en Pologne et professeur d'études stratégiques à l'École Hamilton de l'Université de Floride.</p>
+            <span class="english-block">Europeans, and especially Western Europe's leadership elites, have succumbed to a decades-long "crisis of disbelief", argues Andrew Michta, a Polish-born American academic who is professor of strategic studies at the Hamilton School, University of Florida.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.7" data-end="230.76">
+            <p class="french-block">Il soutient que le Royaume-Uni, comme beaucoup de pays européens, a un niveau de préparation psychologique très faible et que les autorités ne sont pas franches sur les menaces imminentes.</p>
+            <span class="english-block">He argues that the UK, in common with many European nations, has very low levels of psychological preparedness, and that authorities are not being candid about the looming threats.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.76" data-end="248.28">
+            <p class="french-block">"Les Allemands ont complètement désarmé au cours des 30 dernières années.Le Royaume-Uni est également largement désarmé et, surtout, mentalement.Il n'y a pas de préparation à ce qui se passe parce que les élites politiques ne s'adressent pas à leur public d'une manière qui indiquerait honnêtement la gravité de la situation", dit Michta.</p>
+            <span class="english-block">"The Germans have totally disarmed during the last 30 years. The UK is also largely disarmed and, most importantly, mentally. There is no readiness for what's happening because the policy elites are not addressing their publics in a way that would honestly state the gravity of the situation," Michta says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="248.28" data-end="264.0">
+            <p class="french-block">Lorsque l'Union soviétique s'est effondrée au début des années 1990, de nombreux pays européens ont commencé une décennie de réduction de la préparation militaire, réduisant considérablement les dépenses de défense, croyant que la menace de la Russie avait disparu.</p>
+            <span class="english-block">When the Soviet Union collapsed in the early 1990s, many European countries began a decades-long winding down of military preparedness, dramatically cutting defence spending, in the belief that the threat from Russia had disappeared.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.0" data-end="281.74">
+            <p class="french-block">Michta souligne la forte dépendance de l'Allemagne à l'énergie russe via les gazoducs Nord Stream - qui transportaient d'énormes quantités de gaz de la Russie vers l'Allemagne sous la mer Baltique - dans ce qu'il considère comme la croyance erronée que Berlin pourrait gérer ses relations avec Moscou par des moyens politiques et économiques.</p>
+            <span class="english-block">Michta singles out Germany's heavy reliance on Russian energy via the Nord Stream gas pipelines - which transported huge quantities of gas from Russia to Germany under the Baltic Sea - in what he sees as the mistaken belief that Berlin could manage its relationship with Moscow via political and economic means.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.74" data-end="291.29">
+            <p class="french-block">"Vous avez vécu 20 ans de calme en Europe, motivés par le manque de volonté ou de courage des élites... pour expliquer comment la situation changeait et à quelle vitesse".</p>
+            <span class="english-block">"So you've lived through 20 years of appeasement in Europe driven by the elites' lack of willingness or courage… to articulate how the situation was changing and how rapidly."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.29" data-end="303.58">
+            <p class="french-block">Le général Sir Richard Shirreff affirme que l'invasion initiale de l'Ukraine par la Russie en 2014 a été le véritable tournant, le moment où la Russie s'est révélée une menace tenace pour la sécurité occidentale.</p>
+            <span class="english-block">General Sir Richard Shirreff argues that Russia's initial invasion of Ukraine in 2014 was the real turning point, the moment Russia revealed itself as a tenacious threat to western security.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.58" data-end="315.0">
+            <p class="french-block">"La réalité est que la Russie croit avoir été en guerre avec l'OTAN depuis 2014. Pas une guerre conventionnelle, mais une guerre conçue pour saper l'intégrité des États cibles ou des alliances.</p>
+            <span class="english-block">"The reality is that Russia believes it's been at war with Nato since 2014. Not a conventional war, but a war designed to undermine the integrity of target states or alliances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.0" data-end="328.01">
+            <p class="french-block">"Je ne prendrais jamais les Russes pour acquis, car il serait tout à fait possible qu'ils tentent de débrancher l'OTAN en tentant par exemple de prendre le contrôle de Spitsbergen [dans l'archipel norvégien de Svalbard] ou d'autres choses indirectes.</p>
+            <span class="english-block">"I would never take the Russians for granted. It would not be beyond the realms of possibility for them to try to unhinge Nato by, for example, attempting to take over Spitsbergen [in the Norwegian archipelago of Svalbard] or something else indirect.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="328.01" data-end="331.37">
+            <p class="french-block">"C'est donc à cela que nous devons être préparés".</p>
+            <span class="english-block">"So that's what we need to be prepared for".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.37" data-end="335.21">
+            <p class="french-block">Richard Knighton dit que ce moment est chargé de danger</p>
+            <span class="english-block">Richard Knighton says this moment is freighted with danger</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.21" data-end="346.13">
+            <p class="french-block">Les appels croissants à augmenter les dépenses de défense sont enracinés dans la conviction que la meilleure façon d'éviter une guerre est de se préparer - psychologiquement et militairement - à la mener.</p>
+            <span class="english-block">Mounting calls for increases in defence spending are rooted in a belief that the best way to prevent a war is to be ready - psychologically and militarily - to fight one. Not everyone agrees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="346.13" data-end="359.54">
+            <p class="french-block">La croyance que nous sommes menacés est essentielle, dit le psychologue Jim Orford, professeur émérite de psychologie clinique et communautaire à l'Université de Birmingham. " C'est ce que j'appelle la pensée simpliste.</p>
+            <span class="english-block">The belief that we are under threat is key, says psychologist Jim Orford, professor emeritus of clinical and community psychology at the University of Birmingham. "It is what I call simplistic thinking. In order to contemplate the possibility of going to war we've got to think in simplistic terms. In terms of enemies and heroes. We've got to think of Russia as an enemy. The narratives are all simplified.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="359.54" data-end="373.18">
+            <p class="french-block">" Être [psychologiquement] préparé à la guerre est la première étape. " Considérer la guerre est la deuxième étape et ensuite se livrer à la guerre est la troisième. " Je pense que nous sommes bien entrés dans la phase de " contempler la guerre. "</p>
+            <span class="english-block">"Being [psychologically] prepared for war is the first stage. Contemplating war is the second phase and then actually engaging in war is the third. I think we're well into the 'contemplating war' phase."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="373.18" data-end="388.01">
+            <p class="french-block">Cette " crise de l'incrédulité ", comme l'a dit Michta, ne se répand pas de façon uniforme. Plus on va à l'est, plus on se rapproche de la frontière russe, plus les gens d'une nation sont vigilants face à la menace et plus ils sont psychologiquement préparés.</p>
+            <span class="english-block">This "crisis of disbelief", as Michta put it, is not evenly spread. The further east you go, the closer you get to the Russian border, the more alert a nation's people are to the threat, and the more psychologically prepared.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="388.01" data-end="406.06">
+            <p class="french-block">La Suède n'a pas eu de guerre depuis 200 ans. Elle a poursuivi une politique de neutralité pendant des siècles. Mais après l'invasion à grande échelle de l'Ukraine par la Russie en 2022, elle a abandonné cela et s'est fait, en très peu de temps, l'un des pays les plus psychologiquement préparés d'Europe.</p>
+            <span class="english-block">Sweden hasn't had a war in 200 years. It has pursued a policy of neutrality for centuries. But after Russia's full-scale invasion of Ukraine in 2022, it abandoned that and has made itself, in a very short space of time, one of the most psychologically prepared countries in Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="406.06" data-end="414.38">
+            <p class="french-block">"La Russie est évidemment dangereuse", a déclaré le premier ministre suédois Ulf Christersson au magazine The Economist le mois dernier.</p>
+            <span class="english-block">"Russia is self-evidently dangerous", Sweden's Prime Minister Ulf Christersson told The Economist magazine last month.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="414.38" data-end="424.3">
+            <p class="french-block">" Nous ne savons pas quand [la guerre en Ukraine] se terminera, mais comment elle se terminera définira la situation de sécurité dans notre partie du monde pendant au moins une génération "</p>
+            <span class="english-block">"We don't know when it [the war in Ukraine] ends, but how it ends will define the security situation in our part of the world for at least a generation"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="424.3" data-end="435.74">
+            <p class="french-block">La Suède dispose d'un système de conscription partielle, dans lequel tous les diplômés doivent s'inscrire au service militaire. Les forces armées choisissent et conscriptent les meilleurs candidats.</p>
+            <span class="english-block">Sweden has a system of partial conscription, in which all school leavers must register for military service. The armed forces pick - and conscript - the best candidates. The conscripts then do up to 15 months compulsory training before going back into civilian life, in employment or higher education. At the same time, they become part of their country's large reserve force.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="435.74" data-end="450.84">
+            <p class="french-block">"Il y a beaucoup d'engagement des citoyens", déclare Minna Alander, analyste au centre de réflexion de Stockholm pour les études de l'Europe de l'Est. "C'était presque une blague sur Internet en 2022 et 2023 que tout le monde souhaitait un appel.</p>
+            <span class="english-block">"There's a lot of citizen engagement," says Minna Alander, an analyst at the Stockholm Centre for Eastern European Studies think tank. "It was almost an internet joke in 2022 and 2023 that everybody wished for a call up. Sometimes people get frustrated if they haven't been called up for a long time. It's an expectation for sure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="450.84" data-end="462.43">
+            <p class="french-block">" La Suède, par exemple, a identifié des ingénieurs civils possédant des compétences pertinentes dans, disons, l'alimentation en électricité qui pourraient être utilisés en cas de perturbation.</p>
+            <span class="english-block">"Sweden has, for example, been identifying civil engineers with some relevant skills in, say, electricity supply who could be exercised in case of disruption. So Sweden can access this pool of civil engineers [who know] what they could do and how they could be activated."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="462.43" data-end="475.32">
+            <p class="french-block">Quand on lui a demandé si la Russie devait être considérée comme un agresseur potentiel même après la fin de la guerre en Ukraine, il a répondu: "Oui, nous avons quelques centaines d'années d'expérience... nous connaissons bien la Russie".</p>
+            <span class="english-block">When Christersson was asked whether Russia should be seen as a potential aggressor even after the war in Ukraine is over he said, "Yes. We have a few hundred years experience of this… We know Russia pretty well."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="475.32" data-end="486.67">
+            <p class="french-block">Les trois républiques baltes - Lituanie, Estonie et Lettonie - connaissent aussi assez bien la Russie. Elles ne reçoivent leur indépendance de Moscou qu'aux années 1990.</p>
+            <span class="english-block">The three Baltic Republics - Lithuania, Estonia and Latvia - also know Russia pretty well. They only regained their independence from Moscow in the 1990s. German troops invaded Lithuania in the 1940s and are now back on Lithuanian soil, this time by invitation, to bolster that country's defences against the threat from the east. A thousand British troops lead a multi-national force in Estonia for the same reason.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="486.67" data-end="492.05">
+            <p class="french-block">Les troupes finlandaises ont combattu dur contre la Russie pendant la Seconde Guerre mondiale.</p>
+            <span class="english-block">Finnish troops fought hard against Russia during World War Two</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="492.05" data-end="500.04">
+            <p class="french-block">Mais c'est aux Finlandais que la plupart de l'Europe cherche maintenant des leçons en matière de préparation psychologique de masse et de résilience civique.</p>
+            <span class="english-block">But it is to the Finns that much of Europe now looks for lessons in mass psychological preparedness and civic resilience.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="500.04" data-end="525.24">
+            <p class="french-block">La Finlande a également une approche de la défense et de la sécurité qui est enracinée dans l'expérience historique. Sur les 100 000 citoyens nordiques tués pendant la Seconde Guerre mondiale, 90% étaient de Finlande. Ils sont morts dans la soi-disant guerre d'hiver de 1939-1940 contre l'Union soviétique. Ce petit pays a repoussé une attaque de son voisin géant et a conservé son indépendance.</p>
+            <span class="english-block">Finland's approach to defence and security is also rooted in historical experience. Of the 100,000 Nordic citizens who died in the World War Two, 90% were from Finland. They died in the so-called Winter War of 1939-40 against the Soviet Union. This tiny country repelled an attack by its giant neighbour and retained its independence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="525.24" data-end="542.3">
+            <p class="french-block">La Finlande partage aujourd'hui une frontière de 800 milles (1287 km) avec la Russie. Après l'invasion à grande échelle de l'Ukraine en 2022, la Finlande a également rapidement abandonné sa neutralité historique et est devenue membre de l'OTAN avec sa Suède voisine.</p>
+            <span class="english-block">Finland today shares an 800-mile (1,287km) border with Russia. After the full-scale invasion of Ukraine in 2022, Finland also quickly abandoned its historic neutrality and joined Nato along with its neighbour Sweden.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="542.3" data-end="549.0">
+            <p class="french-block">La Finlande a une conscription masculine universelle, et certaines femmes se portent volontaires pour servir.</p>
+            <span class="english-block">Finland has universal male conscription, and some women also volunteer to serve. When their service is complete they then become part of Finland's reserve force. This has the effect of closing the gap between the professional military and the civilian population.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="549.0" data-end="566.62">
+            <p class="french-block">" Si l'enrôlement est bien fait, chaque famille est liée à la pensée de la sécurité nationale. " Dit le général retraité de trois étoiles Arto Raty, ancien secrétaire permanent du ministère de la Défense finlandais, " votre grand-père, votre arrière-grand-père et vos fils font tous le même service militaire.</p>
+            <span class="english-block">"If conscription is done well, it ties every single family into national security thinking. Your grandfather, your great-grandfather and your sons, they all go to the same military service," says the retired three-star General Arto Raty, a former permanent secretary of Finland's Ministry of Defence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="566.62" data-end="586.51">
+            <p class="french-block">" Nous obligons toute la société à soutenir l'armée. Chaque hôpital a sa mission de crise. Chaque agence d'approvisionnement en eau. Et il est intéressant de noter que les organisations les plus fiables en Finlande aujourd'hui sont les militaires, les forces de défense et la police. Ce n'est pas le cas dans la plupart des pays. "</p>
+            <span class="english-block">"We bind the whole of society into supporting the military. Every single hospital has its crisis tasking. Every water supply agency. And interestingly, the most publicly trusted organisations in Finland today are the military, the defence forces and the police. That is not the case in most countries."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="586.51" data-end="601.39">
+            <p class="french-block">L'armée finlandaise organise également chaque année une série de cours pour les dirigeants de la société: députés, ministres du gouvernement, directeurs généraux d'entreprises privées et d'agences publiques, les services de santé, même les ONG et les églises.</p>
+            <span class="english-block">The Finnish military also runs a series of courses annually for leaders of society - MPs, government ministers, the CEOs of private enterprises and public utilities, the health service, even NGOs and the churches.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="601.39" data-end="607.97">
+            <p class="french-block">"Nous les formons à la gestion des crises, afin qu'ils comprennent comment la société fonctionnera en cas de crise.</p>
+            <span class="english-block">"We train them in crisis management, so that they understand how society will work in a crisis. We've been doing it every year since 1960."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="607.97" data-end="628.97">
+            <p class="french-block">La Finlande, qui compte 5,5 millions d'habitants, dispose d'une force de défense professionnelle de 23 000 hommes, contre 70 000 de la Grande-Bretagne, dont la population est de 66 millions d'habitants, mais elle dispose également d'une force de réserve formée de près d'un million d'habitants et peut mobiliser une armée de réserve de 280 000 hommes en peu de temps.</p>
+            <span class="english-block">Finland, with a population of 5.5 million, has a professional defence force of 23,000. That compares to Britain's 70,000 from a population of 66 million. But it also has a trained reserve force of close to 1 million and can mobilise a reserve army of 280,000 at short notice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="628.97" data-end="633.07">
+            <p class="french-block">La Finlande dispose d'une grande force de réserve formée</p>
+            <span class="english-block">Finland has a large trained reserve force</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="633.07" data-end="643.73">
+            <p class="french-block">En 2025, la Finlande a dépensé 2,5% de son PIB en défense, ce qui est comparable à 2,3% dépensé par le Royaume-Uni la même année.</p>
+            <span class="english-block">In 2025, Finland spent 2.5% of its GDP on defence, comparable to the 2.3% spent by the UK the same year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="643.73" data-end="653.14">
+            <p class="french-block">Le reste de l'Europe devrait-il se dépenser pour suivre l'exemple de la Finlande alors que les perspectives d'une guerre conventionnelle avec la Russie semblent extrêmement éloignées?</p>
+            <span class="english-block">Should the rest of Europe go to the expense of following Finland's lead when the prospects of a conventional war with Russia seem vanishingly remote?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="653.14" data-end="666.86">
+            <p class="french-block">"Une armée de 70 000 hommes ne va tout simplement pas nous faire la guerre", dit le général Sir Richard Shirreff. "Je ne vois donc pas comment nous pourrions générer la capacité militaire nécessaire sans une certaine forme de mobilisation".</p>
+            <span class="english-block">"An army of 70,000 is simply not going to cut the mustard in the sort of war we are going to have to face," says Gen Sir Richard Shirreff. "So I don't see how we could generate the military capability needed without some form of call-up."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="666.86" data-end="672.36">
+            <p class="french-block">Il dit que le modèle norvégien pourrait aider à changer l'état d'esprit britannique sur la guerre.</p>
+            <span class="english-block">He says the Norwegian model might be one that helps change the British mindset around war.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="672.36" data-end="689.57">
+            <p class="french-block">"C'est là que chaque diplômé est inscrit pour la conscription... et il va faire une formation d'un an après quoi il va à l'université et quand, plus tard, il se dispose d'un emploi, s'il a un service national sur son CV, il est considéré comme le meilleur candidat... c'est le genre de chose que nous devrions regarder".</p>
+            <span class="english-block">"There, every school leaver is registered for conscription… and they go and do a year's training after which they go on to university and when, later, they are competing for jobs, if they've got national service on their CV, they're seen as the best candidates… That's the sort of thing we should look at."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="689.57" data-end="700.01">
+            <p class="french-block">Il ajoute: "L'affaire doit être traitée honnêtement par des dirigeants politiques qui doivent vraiment regarder la population dans les yeux et dire 'ce doit être fait pour que nous soyons en sécurité'".</p>
+            <span class="english-block">He adds: "The case has to be made honestly by political leaders who must really look the population in the eye and say 'this has got to be done for us to be secure'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="700.01" data-end="702.67">
+            <p class="french-block">Image de plomb: Getty</p>
+            <span class="english-block">Lead image: Getty</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="702.67" data-end="708.38">
+            <p class="french-block">Alors que les États-Unis mettent fin à la guerre avec l'Iran, Trump est-il vraiment à court d'armes ?</p>
+            <span class="english-block">As the US pauses the war with Iran, is Trump really running out of weapons?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="708.38" data-end="713.09">
+            <p class="french-block">Pourquoi Andy Burnham trouvera-t-il si difficile d'unir la Grande-Bretagne ?</p>
+            <span class="english-block">Why Andy Burnham will find it so tricky to unite Britain</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="713.09" data-end="717.43">
+            <p class="french-block">La guerre iranienne a renforcé l'Ukraine de manière surprenante.</p>
+            <span class="english-block">The Iran war has strengthened Ukraine in surprising ways. Could a ceasefire with Russia be closer?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="717.43" data-end="721.7">
+            <p class="french-block">Les questions soulevées dans cet article vous touchent- elles personnellement?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_4.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

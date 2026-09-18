@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New wild cat species discovered - with only one known living member</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>New wild cat species discovered - with only one known living member</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 17 Sep 2026 23:15:55 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6x2zgv9rr4ro?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A spotted wildcat long mistaken for relatives has been identified as a new species in Bolivia.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.16" data-end="12.96">
+            <p class="french-block">Le seul membre vivant de l'espèce est dans un sanctuaire de faune en Bolivie.</p>
+            <span class="english-block">The only known living member of the species is in a wildlife sanctuary in Bolivia</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.96" data-end="17.66">
+            <p class="french-block">Un chat tacheté des forêts boliviennes a été confirmé comme une nouvelle espèce.</p>
+            <span class="english-block">A spotted cat from the forests of Bolivia has been confirmed as a new species.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.66" data-end="27.29">
+            <p class="french-block">Le petit chat, de la taille d'une mogue domestique, a été mis sous le radar parce qu'il a été confondu avec d'autres chats sauvages qui partagent des taches et des bandes similaires.</p>
+            <span class="english-block">The small feline, about the size of a domestic moggy, went under the radar because it was confused with other wild cats that share similar spots and stripes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.29" data-end="37.51">
+            <p class="french-block">Mais les études ADN montrent que le chat est en fait dans une classe propre, ce qui met en évidence combien de choses restent inconnues sur certains des mammifères les plus difficiles à échapper au monde.</p>
+            <span class="english-block">But DNA studies show the cat is actually in a class of its own, highlighting how much remains unknown about some of the world's most elusive mammals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.51" data-end="51.12">
+            <p class="french-block">Les scientifiques espèrent que cette découverte attirera l'attention sur la conservation des chats tigres, un groupe de petits chats sauvages d'Amérique centrale et du Sud qui reçoit beaucoup moins d'attention que leurs cousins plus grands comme les lions, les léopards et les tigres.</p>
+            <span class="english-block">Scientists hope the discovery will draw attention to the conservation of tiger cats, a group of small wild cats found in South and Central America that receives far less public attention than their larger cousins like lions, leopards and tigers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.12" data-end="54.12">
+            <p class="french-block">Le chat a reçu le surnom de Tigrino</p>
+            <span class="english-block">The cat has been given the nickname Tigrino</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.12" data-end="62.09">
+            <p class="french-block">Les tigres sont de petits chats sauvages tachetés qui se trouvent en Amérique centrale et du Sud, du Costa Rica à la Bolivie et en Argentine.</p>
+            <span class="english-block">Tiger cats are small, spotted wild cats found across Central and South America, from Costa Rica to Bolivia and Argentina.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.09" data-end="67.54">
+            <p class="french-block">Ils ont une apparence remarquablement similaire et même les experts ont du mal à les distinguer.</p>
+            <span class="english-block">They look remarkably similar and even experts can struggle to tell them apart.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.54" data-end="79.44">
+            <p class="french-block">"C'est un résultat étonnant que nous ayons une nouvelle espèce pour le monde, le Léopardus tilcayo", a déclaré Paola Nogales-Ascarrunz, de l'Université Mayor de San Andres à La Paz, en Bolivie.</p>
+            <span class="english-block">"It's an amazing result that we have a new species for the world, which is the Leopardus tilcayo," said Paola Nogales-Ascarrunz of Universidad Mayor de San Andres in La Paz, Bolivia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.44" data-end="88.03">
+            <p class="french-block">"Il est étonnant qu'il y ait encore de nouvelles espèces à découvrir: nous n'avons pas besoin d'aller dans un volcan, une île ou dans les profondeurs de la mer".</p>
+            <span class="english-block">"It's amazing that there are still new species waiting to be discovered: we don't have to go to a volcano, an island, or deep into the sea."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.03" data-end="92.88">
+            <p class="french-block">L'oncilla, ou chat tigre du nord, est remarquablement similaire.</p>
+            <span class="english-block">The oncilla, or northern tiger cat, looks remarkably similar</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.88" data-end="101.71">
+            <p class="french-block">On ne connaît qu'un seul membre de cette espèce, un chat vivant dans un sanctuaire de sauvetage en Bolivie, mais les scientifiques pensent qu'il en existe d'autres.</p>
+            <span class="english-block">Only one confirmed member of the species is known - a cat living in a rescue sanctuary in Bolivia - but scientists believe others exist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.71" data-end="108.02">
+            <p class="french-block">C'est ce chat de 10 ans, surnommé "Tigrino", qui a mis les scientifiques sur la voie de la découverte.</p>
+            <span class="english-block">It was this 10-year-old cat, nicknamed 'Tigrino', that set scientists on the path to discovery.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.02" data-end="115.61">
+            <p class="french-block">La scientifique bolivienne Dr Nogales-Ascarrunz était bénévole au sanctuaire quand elle remarqua que le chat avait l'air inhabituel.</p>
+            <span class="english-block">Bolivian scientist Dr Nogales-Ascarrunz was volunteering at the sanctuary when she noticed the cat looked unusual.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.61" data-end="122.06">
+            <p class="french-block">Un habitant de la région avait découvert le chaton dans la forêt, qui pensait que c'était un chaton domestique.</p>
+            <span class="english-block">It had been found in the forest by a local resident, who initially thought it was a domestic kitten. As it grew older, however, it became clear that it did not behave like a house cat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.06" data-end="133.08">
+            <p class="french-block">Le Dr Nogales-Ascarrunz avait entendu parler d'autres observations de petits chats sauvages dans les forêts denses de la région Yungas du pays, mais ces observations n'avaient pas été étudiées par les scientifiques.</p>
+            <span class="english-block">Dr Nogales-Ascarrunz had heard of other sightings of small wild cats in the dense forests of the country's Yungas region, but these had not been investigated by scientists.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.08" data-end="143.93">
+            <p class="french-block">Pour résoudre le mystère, elle a collaboré avec d'autres chercheurs du monde entier pour étudier l'histoire familiale des chats tigres, en utilisant l'ADN d'animaux vivants et des spécimens du musée.</p>
+            <span class="english-block">To solve the mystery, she joined forces with other researchers from around the world to investigate the family history of tiger cats, using DNA from living animals and museum specimens.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.93" data-end="158.98">
+            <p class="french-block">"Il n'y a pas beaucoup d'enregistrements ou de photos, aucun individu dans un musée, alors il se cachait parce que personne ne regardait", a déclaré Eduardo Eizirik, généticien conservateur à l'Université pontificale catholique du Rio Grande do Sul au Brésil.</p>
+            <span class="english-block">"There's so few records or pictures, no individual in a museum, so it was hiding because nobody was looking," said Eduardo Eizirik, a conservation geneticist at the Pontifical Catholic University of Rio Grande do Sul in Brazil.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.98" data-end="173.66">
+            <p class="french-block">L'étude, publiée dans Current Biology, extérieure, a révélé d'autres surprises, suggérant qu'il existe cinq espèces de chats tigres plutôt que trois, y compris le chat Tilcaya (Leopardus tilcayo) de Bolivie, récemment décrit.</p>
+            <span class="english-block">The study, published in Current Biology, external, uncovered further surprises, suggesting there are five rather than three tiger cat species, including the newly described Tilcaya cat (Leopardus tilcayo) of Bolivia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.66" data-end="178.8">
+            <p class="french-block">La Bolivie possède une forêt dense qui nourrit des milliers de plantes et d'animaux rares.</p>
+            <span class="english-block">Bolivia has dense forest that supports thousands of rare plant and animals</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.8" data-end="182.93">
+            <p class="french-block">Cependant, identifier l'espèce n'est que la première étape.</p>
+            <span class="english-block">However, identifying the species is only the first step.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="182.93" data-end="197.98">
+            <p class="french-block">La co-chercheuse Caroline Sartor, de l'Unité de recherche sur la conservation de la faune à l'Université d'Oxford, a déclaré que la découverte était importante pour la conservation car il est impossible de protéger une espèce si nous ne savons pas ce qu'elle est ou où elle vit.</p>
+            <span class="english-block">Co-researcher Dr Caroline Sartor, of the Wildlife Conservation Research Unit at the University of Oxford, said the discovery was important for conservation because it is impossible to protect a species if we don't know what it is or where it lives.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.98" data-end="212.11">
+            <p class="french-block">"Ce sont des animaux de taille similaire à celle d'un chat domestique, vous pourriez donc penser que nous les connaîtrons tous, mais cette découverte montre combien de biodiversité reste à découvrir dans certaines des régions du monde moins étudiées", a- t- elle dit.</p>
+            <span class="english-block">"These are animals similar in size to a domestic cat, so you might think we would know them all by now, but this discovery shows how much biodiversity is still to be uncovered in some of the less-studied regions of the world," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.11" data-end="224.16">
+            <p class="french-block">Les espèces de chats tigres sont considérées comme vulnérables à l'extinction en raison de la déforestation, de la perte d'habitats et de la chasse illégale, bien que les nouvelles espèces manquent d'évaluations antérieures.</p>
+            <span class="english-block">Tiger cat species are considered vulnerable to extinction because of deforestation, habitat loss and illegal hunting, although the new species is missing from previous assessments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="224.16" data-end="234.79">
+            <p class="french-block">La nouvelle découverte suggère que la famille mondiale des chats - tous les chats domestiques et sauvages, grands et petits - passera de 41 espèces connues à 44 ou 45</p>
+            <span class="english-block">The new discovery suggests the world's cat family - all domestic and wild cats, big and small - will expand from 41 known species to 44 or 45</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.79" data-end="240.48">
+            <p class="french-block">Cette découverte pourrait aussi avoir des implications plus larges pour la famille de chats du monde.</p>
+            <span class="english-block">The discovery could also have wider implications for the world's cat family.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.48" data-end="250.15">
+            <p class="french-block">Les chats sauvages et domestiques appartiennent à la famille biologique des Felidae, qui comprend toutes les espèces de chats vivants, des petits animaux domestiques aux tigres massifs.</p>
+            <span class="english-block">Both wild and domestic cats belong to the biological family Felidae, which includes every living cat species from tiny house pets to massive tigers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.15" data-end="260.5">
+            <p class="french-block">Il y a officiellement 41 espèces reconnues, mais la nouvelle découverte, et la découverte qu'il peut y avoir plusieurs espèces de tigres, amène le nombre à 44 ou plus.</p>
+            <span class="english-block">There are officially 41 species recognised but the new discovery, and the finding that there may be several species of tiger cat, brings the number to 44 or more.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.5" data-end="273.17">
+            <p class="french-block">Andrew Kitchener, spécialiste des mammifères des musées nationaux d'Écosse, qui n'a pas participé à la recherche, dit que les petits chats sud-américains tachetés connus sous le nom de chats tigres ont été un " cauchemar taxonomique ".</p>
+            <span class="english-block">Andrew Kitchener, an expert in mammals at National Museums, Scotland, who was not involved with the research, says the small spotted South American cats known as tiger cats have been a "taxonomic nightmare".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="273.17" data-end="285.19">
+            <p class="french-block">" Ces chats sont déroutants parce qu'ils ont l'air si similaires et qu'il y a peu d'exemplaires dans les musées, alors même maintenant, nous apprenons encore à les différencier car la génétique révèle plus d'espèces ", a-t-il déclaré.</p>
+            <span class="english-block">"These cats are confusing because they look so similar and there are few specimens in museums, so even now we are still learning how to tell them apart as genetics reveal more species," he said.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_7.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

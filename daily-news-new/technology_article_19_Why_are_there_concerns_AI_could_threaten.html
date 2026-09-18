@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why are there concerns AI could threaten humanity, and how real are they?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Why are there concerns AI could threaten humanity, and how real are they?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 17 Sep 2026 09:18:57 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c790xvnzgnno?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Existential fears about AI have once again reared their head - here's what you need to know.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.11" data-end="17.45">
+            <p class="french-block">Les appels à la réglementation de l'IA augmentent alors que les chercheurs et les patrons concernés émettent des avertissements déconcertants sur le potentiel de la technologie</p>
+            <span class="english-block">Calls for AI regulation are growing as concerned researchers and bosses issue disconcerting warnings about the tech's potential</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.45" data-end="25.87">
+            <p class="french-block">Une série d'avertissements sur les dangers potentiels de l'IA ont incité à demander une action coordonnée pour ralentir le développement de la technologie.</p>
+            <span class="english-block">A slew of warnings about the potential dangers of AI have spurred calls for coordinated action to slow the technology's development.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.87" data-end="37.82">
+            <p class="french-block">Les affirmations des chercheurs actuels et anciens selon lesquelles la technologie mettra en danger l'humanité - dont l'une suggère qu'il y a plus de 10% de chances qu'elle "morde tous les humains" - ont suscité des alarmes.</p>
+            <span class="english-block">Claims by current and former researchers that the tech will endanger humanity - with one suggesting there is a greater than 10% chance of it "killing all humans" - have raised alarm bells.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.82" data-end="51.84">
+            <p class="french-block">Les principaux développeurs OpenAI et Anthropic exhortent les législateurs à réglementer l'IA, le dernier chef de l'IA de Microsoft disant que des règles sont nécessaires pour empêcher une "espèce de silicium" de finir par rivaliser avec l'humanité.</p>
+            <span class="english-block">Major developers OpenAI and Anthropic are urging lawmakers to regulate AI, with Microsoft's AI boss the latest to say rules are needed to prevent a "silicon species" from eventually competing with humanity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.84" data-end="58.56">
+            <p class="french-block">Mais certains ont rejeté les appels comme un effort des grands développeurs d'IA pour renforcer leur domination sur les rivaux.</p>
+            <span class="english-block">But some have dismissed the calls as an effort by big AI developers to cement their dominance over rivals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.56" data-end="65.76">
+            <p class="french-block">Quoi qu'il en soit, les allégations de haut niveau ont suscité des inquiétudes. Voici ce que nous savons.</p>
+            <span class="english-block">Regardless, the high profile claims have caused concern - here's what we know.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.76" data-end="73.34">
+            <p class="french-block">Certains chercheurs en IA disent qu'il y a des signes inquiétants de systèmes qui se développent dans leurs capacités et leur puissance trop rapidement.</p>
+            <span class="english-block">Some AI researchers say there are worrying signs of systems developing in their capabilities and power too quickly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="73.34" data-end="81.86">
+            <p class="french-block">Evan Hubinger, a fait les gros titres avec sa conviction qu'il y a plus de 10% de chances que l'IA "peut tuer tous les humains" dans la prochaine décennie.</p>
+            <span class="english-block">Evan Hubinger, made headlines with his belief that there is a greater than 10% chance AI "could kill all humans" within the next decade.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.86" data-end="91.92">
+            <p class="french-block">Il travaille dans l'alignement, un domaine qui vise à intégrer les idées et les principes éthiques humains dans l'IA - essentiellement en le maintien sur la bonne voie avec ce que les humains valorisent.</p>
+            <span class="english-block">He works in alignment, a field which aims to build human ethical ideas and principles into AI - essentially keeping it on track with what humans value.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.92" data-end="103.34">
+            <p class="french-block">Bien qu'il ait déclaré que le risque des systèmes actuels était "bas", ses commentaires sont venus alors qu'un autre chercheur quittait Anthropic et a averti ceux qui développaient la technologie qu'ils perdent leur contrôle sur elle.</p>
+            <span class="english-block">While he said the risk from current systems was "low", his comments came as another researcher quit Anthropic and warned those developing the tech were losing their grip on it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.34" data-end="113.04">
+            <p class="french-block">Jacob Coxon a déclaré à la BBC qu'il et d'autres employés étaient "généralement effrayés" par la vitesse des progrès et ce que cela pourrait signifier pour l'humanité.</p>
+            <span class="english-block">Jacob Coxon told the BBC he and other staff were "genuinely frightened" about the speed of advancements and what it could mean for humanity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="113.04" data-end="123.07">
+            <p class="french-block">Ces préoccupations sont les dernières d'une longue série de craintes concernant le potentiel de l'IA pour menacer l'humanité si elle grandit pour correspondre ou dépasser les capacités humaines.</p>
+            <span class="english-block">These concerns are the latest in a long line of fears about AI's potential to threaten humanity should it grow to match or surpass human abilities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.07" data-end="133.37">
+            <p class="french-block">Ces préoccupations remontent à des décennies, avec Alan Turing écrit dans les années 1950 que si des machines intelligentes deviennent possibles, elles pourraient prendre le contrôle.</p>
+            <span class="english-block">Such worries date back decades, with Alan Turing writing in the 1950s that should intelligent machines become possible, they could take control.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.37" data-end="139.46">
+            <p class="french-block">"Il y a une possibilité d'extinction humaine", dit un ancien employé d'Anthropic à propos de l'IA</p>
+            <span class="english-block">'There is a possibility of human extinction,' former Anthropic employee says about AI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.46" data-end="153.84">
+            <p class="french-block">Ces dernières années, les grandes entreprises d'IA ont fait la course pour développer des systèmes de plus en plus capables, à la fois pour des bénéfices et dans la quête de créer ce qu'elles appellent la super intelligence - une technologie théorique qui est plus intelligente que les humains.</p>
+            <span class="english-block">In the last few years, major AI companies have been racing to develop increasingly capable systems, both for profit and in pursuit of creating what they call super intelligence - theoretical tech which is smarter than humans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.84" data-end="166.9">
+            <p class="french-block">Contrairement aux systèmes et aux outils que beaucoup de gens utilisent quotidiennement pour accomplir des tâches comme écrire des courriels ou générer des vidéos, les systèmes d'IA super intelligents devraient être capables de gérer des tâches beaucoup plus complexes.</p>
+            <span class="english-block">Unlike the systems and tools many people use daily to complete tasks like writing emails or generating videos, super intelligent AI systems should be able to handle far more complex tasks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.9" data-end="175.56">
+            <p class="french-block">OpenAI et Anthropic affirment qu'ils visent à faire progresser cette technologie de manière à profiter aux humains et à les protéger de ses risques existentiels.</p>
+            <span class="english-block">OpenAI and Anthropic say they aim to advance such tech in a way which benefits humans and protect them from its existential risks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.56" data-end="187.82">
+            <p class="french-block">Mais certains critiques pensent que les machines ne peuvent jamais vraiment rivaliser avec les humains. Ils disent que les entreprises d'IA exagèrent les capacités de la technologie pour augmenter leur notoriété ou leurs bénéfices.</p>
+            <span class="english-block">But some critics believe machines can never truly match humans. They say AI firms exaggerate the tech's abilities to boost their prominence or profit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.82" data-end="196.18">
+            <p class="french-block">Des militants comme PauseAI ont également exhorté des entreprises comme Google à arrêter leurs efforts pour construire des systèmes d'IA hautement capables.</p>
+            <span class="english-block">Campaigners such as PauseAI have also urged companies like Google to halt efforts to build highly capable AI systems</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.18" data-end="204.74">
+            <p class="french-block">Des chercheurs, des experts et des patrons d'IA inquiets du potentiel de la technologie pour mettre en danger l'humanité ont défini des scénarios inquiétants.</p>
+            <span class="english-block">AI researchers, experts and bosses worried about the technology's potential to endanger humanity have outlined unsettling scenarios.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.74" data-end="215.04">
+            <p class="french-block">Dario Amodei a écrit en septembre que l'extérieur avait progressé "drasticellement plus vite" que prévu, y compris dans sa "capacité de construire la prochaine génération d'IA".</p>
+            <span class="english-block">Dario Amodei wrote in September, external it had advanced "drastically faster" than expected, including in its "ability to build the next generation of AI".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.04" data-end="223.13">
+            <p class="french-block">C'est la préoccupation que l'IA, après avoir atteint un certain point, pourrait théoriquement commencer à s'améliorer sans implication humaine.</p>
+            <span class="english-block">This is the concern that AI, after it has reached a certain point, could theoretically begin improving itself without human involvement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.13" data-end="230.3">
+            <p class="french-block">Ces craintes ont été suscitées après un incident récent où des outils d'IA ont piraté des sites Web, même s'ils ne l'ont pas été.</p>
+            <span class="english-block">Such fears were sparked after a recent incident saw AI tools hack into websites, despite not being asked to.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.3" data-end="239.54">
+            <p class="french-block">Certains chercheurs préoccupés ont déclaré que ceux qui sont au cœur de son développement craignent de plus en plus de perdre le contrôle des systèmes connus sous le nom d'"agents d'IA".</p>
+            <span class="english-block">Some concerned researchers have said those at the heart of its development are increasingly fearful about losing control of systems known as "AI agents".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.54" data-end="244.94">
+            <p class="french-block">Il s'agit d'outils qui permettent d'exécuter des tâches et des actions de manière indépendante.</p>
+            <span class="english-block">These are tools given the ability to execute tasks and actions independently.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.94" data-end="258.0">
+            <p class="french-block">D'autres scénarios ont inclus des systèmes d'IA hautement intelligents utilisés pour amplifier ou diriger l'espionnage, les cyberattaques ou la guerre biologique, ou perturber les économies - que ce soit par accident ou par conception.</p>
+            <span class="english-block">Other scenarios have included highly intelligent AI systems being used to amplify or lead espionage, cyber-attacks or biological warfare, or disrupt economies - whether by accident or design.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="258.0" data-end="265.92">
+            <p class="french-block">Cependant, ces avertissements sont prophétiques, hypothétiques et, pour certains, complètement hyperboliques, extérieurs.</p>
+            <span class="english-block">However, such warnings are prophetic, hypothetical and, for some, complete hyperbole, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.92" data-end="280.66">
+            <p class="french-block">Certains experts ont également critiqué la mise en place de risques existentiels au lieu de ceux qui se produisent déjà - tels que les outils de génération d'images utilisés pour créer des faux profonds de femmes nues non consensuelles, désinformer les gens et amplifier les escroqueries.</p>
+            <span class="english-block">Some experts have also criticised focusing on existential risks instead of those already playing out - such as image generation tools being to used create non-consensual nude deepfakes of women, misinform people and amplify scams.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.66" data-end="293.04">
+            <p class="french-block">Un groupe de députés et de pairs interpartis a publié un rapport qui décrit les risques pour les droits humains posés par l'IA, affirmant que de nouvelles lois sont nécessaires pour " remédier à l'ampleur et à la gravité " de ces menaces.</p>
+            <span class="english-block">A cross-party group of MPs and peers has published a report outlining human rights risks posed by AI, saying new laws are needed to "address the scale and seriousness" of such threats.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.04" data-end="297.41">
+            <p class="french-block">Pourquoi certains experts craignent de plus en plus que l'IA prenne le relais</p>
+            <span class="english-block">Why some experts increasingly fear AI will take over</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.41" data-end="303.02">
+            <p class="french-block">Les avertissements d'informations sur l'IA sont tombés à plat avec certains dans la Silicon Valley</p>
+            <span class="english-block">Dramatic insider warnings over AI fall flat with some in Silicon Valley</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.02" data-end="313.2">
+            <p class="french-block">Dario Amodei d'Anthropic et Sam Altman, directeur général d'OpenAI, ont tous deux appelé à la réglementation et à un " ralentissement " du développement de la technologie.</p>
+            <span class="english-block">Dario Amodei of Anthropic and Sam Altman, chief executive of OpenAI, have both called for regulation and a "slowdown" of the tech's development.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="313.2" data-end="318.7">
+            <p class="french-block">Ce n'est pas la première fois que les patrons ou les voices de l'industrie ont appelé à une telle action.</p>
+            <span class="english-block">It is not the first time bosses or wider industry voices have clamoured for such action.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="318.7" data-end="327.82">
+            <p class="french-block">Mais les questions ont continué à monter sur ce que serait une sorte de " ralentissement " - également soutenu par le patron de SpaceX, Elon Musk - en fait.</p>
+            <span class="english-block">But questions have continued to mount over what any sort of "slowdown" - also backed by SpaceX boss Elon Musk - would actually look like.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.82" data-end="334.1">
+            <p class="french-block">Amodei a déclaré que cela ne signifierait pas "arrêter la formation de modèle ou le progrès technique".</p>
+            <span class="english-block">Amodei said it would not mean "halting model training or technical progress".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="334.1" data-end="343.49">
+            <p class="french-block">Au lieu de cela, il veut que les entreprises "prennent suffisamment de temps" pour protéger l'IA qu'elles développent et demander à des "évaluateurs tiers" de vérifier leur travail.</p>
+            <span class="english-block">Instead, he wants firms to "take adequate time" to safeguard the AI they are developing, and to ask for "third party evaluators" to check their work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.49" data-end="354.77">
+            <p class="french-block">Dans un article sur X, externe, Altman a déclaré qu'il était nécessaire de ralentir le développement, mais a ajouté que "quand nous parlons de " ralentissement", nous ne voulons pas dire "arrêt".</p>
+            <span class="english-block">In a post on X, external, Altman said there was a need to pace development but added "when we talk about 'pacing' we do not mean 'stopping'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="354.77" data-end="359.83">
+            <p class="french-block">"Les progrès ont été rapides et continueront d'être rapides", a-t-il déclaré.</p>
+            <span class="english-block">"Progress has been rapid and will continue to be," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="359.83" data-end="367.75">
+            <p class="french-block">"Mais il devrait être plus lent que cela ne le serait autrement - des interventions comme les cas de sécurité et la surveillance coûtent énormément".</p>
+            <span class="english-block">"But it should be slower than it otherwise could be - interventions like safety cases and monitoring have significant costs."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="367.75" data-end="375.29">
+            <p class="french-block">Le cofondateur d'OpenAI a également déclaré que les entreprises n'attendaient pas - et ne voudront pas - que les gouvernements agissent.</p>
+            <span class="english-block">The OpenAI co-founder also said companies did not - and would not - wait for governments to act.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.29" data-end="384.79">
+            <p class="french-block">Altman a ensuite dit aux participants à une conférence Salesforce que les gens devraient avoir plus de foi dans les entreprises d'IA pour garder la technologie en sécurité.</p>
+            <span class="english-block">Altman later told attendees at a Salesforce conference people should have more faith in AI firms to keep the tech safe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.79" data-end="389.76">
+            <p class="french-block">Les questions se posent sur ce à quoi ressemblerait une " ralentissement " de l'IA</p>
+            <span class="english-block">Questions mount over what an AI 'slowdown' would look like</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="389.76" data-end="396.84">
+            <p class="french-block">Trump, qui publie souvent du contenu sur sa plateforme Truth Social, parle de l'Amérique gagnant la " course à l'IA ".</p>
+            <span class="english-block">Trump, who frequently posts AI content on his platform Truth Social, is all about America winning the "AI race"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.84" data-end="405.62">
+            <p class="french-block">Le président Donald Trump a précédemment salué les avantages de l'IA et a défendu les entreprises américaines qui sont à la pointe de son développement.</p>
+            <span class="english-block">President Donald Trump has previously lauded the benefits of AI and championed US companies leading on its development.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="405.62" data-end="415.01">
+            <p class="french-block">Son administration a signé des ordres exécutifs pour reconnaître l'"importance stratégique" de la technologie pour l'économie et accélérer son développement.</p>
+            <span class="english-block">His administration has signed executive orders to recognise the tech's "strategic importance" to the economy and accelerate its development.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="415.01" data-end="427.27">
+            <p class="french-block">"Nous croyons que nous sommes dans une course à l'IA, et nous voulons que les États-Unis gagnent cette course", a déclaré le chef de la crypto-monnaie de l'administration américaine David Sacks aux journalistes en juillet 2025.</p>
+            <span class="english-block">"We believe we're in an AI race, and we want the United States to win that race," the US administration's crypto head David Sacks told reporters in July 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="427.27" data-end="435.22">
+            <p class="french-block">Mais face aux récents avertissements sur son impact potentiel sur l'humanité, le président Trump a minimisé les risques posés par l'IA.</p>
+            <span class="english-block">But in the face of recent warnings about its potential impact on humanity, President Trump downplayed risks posed by AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="435.22" data-end="445.01">
+            <p class="french-block">"Vous avez beaucoup de forces très négatives qui le soulèvent qui ne devraient pas le soulever et elles soulèvent des choses qui ne se produiront pas", a déclaré Trump lors d'une visite en Irlande.</p>
+            <span class="english-block">"You have a lot of very negative forces that are bringing it up that shouldn't be bringing it up and they're bringing up things that won't happen," Trump said during a visit to Ireland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="445.01" data-end="456.74">
+            <p class="french-block">Il n'a pas directement abordé l'idée d'un ralentissement, mais a dit aux journalistes: "Nous sommes à la tête de la Chine sur l'IA... et, franchement, je veux le garder ainsi parce que qui gagne l'IA, gagne".</p>
+            <span class="english-block">He did not directly address the idea of a slowdown, but told reporters: "We're leading China on AI... and, frankly, I want to keep it that way because whoever wins AI, wins."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="456.74" data-end="467.02">
+            <p class="french-block">Le président a ensuite rejeté les craintes concernant les risques de sécurité de l'IA entièrement - les décrivant dans des messages sur sa plateforme Truth Social comme un " truchement ".</p>
+            <span class="english-block">The president later dismissed fears about AI safety risks entirely - describing them in posts on his platform Truth Social as a "hoax".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="467.02" data-end="472.49">
+            <p class="french-block">Il a dit que les seules "gardiennes" nécessaires à l'IA était un président "forte et intelligent".</p>
+            <span class="english-block">He said the only "guardrails" needed for AI was a "strong and smart" president.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="472.49" data-end="479.38">
+            <p class="french-block">La Chine avait gardé le silence en réponse à la vague d'avertissements terribles de chercheurs des entreprises américaines.</p>
+            <span class="english-block">China had kept quiet in response to the wave of dire warnings from researchers at US companies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="479.38" data-end="491.02">
+            <p class="french-block">Face à une concurrence féroce et aux limitations de l'accès aux composants et aux puces américains utilisés pour construire des infrastructures d'IA, le pays a encouragé le développement local de la technologie.</p>
+            <span class="english-block">In the face of fierce competition and limitations on its access to US components and chips being used to build AI infrastructure, the country has spurred homegrown development of the technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="491.02" data-end="495.72">
+            <p class="french-block">En même temps, il a appelé à une plus grande gouvernance mondiale de l'IA.</p>
+            <span class="english-block">At the same time, it has called for greater global governance of AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="495.72" data-end="504.72">
+            <p class="french-block">Le déploiement de systèmes et d'outils d'IA open source capables par les laboratoires chinois a secoué les marchés et les développeurs occidentaux ces dernières années.</p>
+            <span class="english-block">The roll out of capable, open-source AI systems and tools by Chinese labs has shaken Western markets and developers in recent years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="504.72" data-end="514.63">
+            <p class="french-block">Amodei a averti en appelant à un ralentissement du développement de l'IA que les progrès et la maîtrise de l'IA de la Chine créeraient des risques de sécurité nationale pour les États-Unis.</p>
+            <span class="english-block">Amodei warned in calling for a slowdown of AI development that China's progress and proficiency in AI would create national security risks for the US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="514.63" data-end="525.29">
+            <p class="french-block">Le ministère chinois des Affaires étrangères a critiqué les commentaires, les qualifiant de récits de menaces, de confrontations et de compétitions malveillantes qui ne servaient à personne.</p>
+            <span class="english-block">The Chinese foreign ministry criticised the comments, calling them narratives of threat, confrontation, and malicious competition that served no one's interest.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="525.29" data-end="530.5">
+            <p class="french-block">Qu'est-ce que l'IA, comment fonctionne-t-elle et pourquoi certaines personnes s'en préoccupent-elles ?</p>
+            <span class="english-block">What is AI, how does it work and why are some people concerned about it?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="530.5" data-end="536.06">
+            <p class="french-block">L'IA pourrait-elle représenter une menace pour l'humanité, et peut-elle être réglementée ?</p>
+            <span class="english-block">Could AI pose a threat to humanity, and can it be regulated?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_19.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
