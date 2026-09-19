@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight chaos caused by 'millisecond' software defect, report says</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Flight chaos caused by 'millisecond' software defect, report says</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 18 Sep 2026 15:48:58 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw0kl1571lpmo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The failure led to more than 2,000 flights being cancelled and hundreds of thousands of passengers affected.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.75" data-end="11.83">
+            <p class="french-block">Des milliers de passagers ont été retardés par l'arrêt du NATS</p>
+            <span class="english-block">Thousands of passengers were delayed by the NATS outage</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="11.83" data-end="27.24">
+            <p class="french-block">Une panne de contrôle du trafic aérien qui a déclenché un chaos généralisé des voyages plus tôt ce mois-ci a été causée par un "déficit logiciel" affectant le système qui sous-tend la gestion de l'espace aérien britannique, a déclaré le service national de trafic aérien Nats.</p>
+            <span class="english-block">An air traffic control failure that sparked widespread travel chaos earlier this month was caused by a "software defect" affecting the system underpinning UK air space management, the national air traffic service Nats has said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.24" data-end="35.04">
+            <p class="french-block">Le problème est survenu "en quelques millisecondes", a déclaré Nats, ce qui a conduit le système à produire des données corrompues.</p>
+            <span class="english-block">The problem happened "in the space of a millisecond", Nats said, leading to the system producing corrupted data.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.04" data-end="44.93">
+            <p class="french-block">L'échec a entraîné l'annulation de plus de 2.000 vols et la perte de centaines de milliers de passagers, dont certains dormaient sur les planchers de l'aéroport ou étaient coincés à l'étranger.</p>
+            <span class="english-block">The failure led to more than 2,000 flights being cancelled and hundreds of thousands of passengers affected, with some sleeping on airport floors or getting stuck overseas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="44.93" data-end="55.01">
+            <p class="french-block">Le directeur général de Nats, Martin Rolfe, a déclaré à la BBC qu'il ne démissionnerait pas, affirmant que le défaut logiciel était "très, très obscur".</p>
+            <span class="english-block">Nats chief executive Martin Rolfe told the BBC he would not resign, saying the software defect was "very, very obscure."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.01" data-end="61.58">
+            <p class="french-block">" On peut voler à presque n'importe quel endroit depuis presque n'importe quel aéroport à presque n'importe quel moment.</p>
+            <span class="english-block">"You can fly to almost anywhere from almost any airport at almost any time. If that stops, even for a moment, then you get huge disruption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.58" data-end="67.8">
+            <p class="french-block">"Mon travail est de veiller à ce que cela se produise aussi rarement que possible", a- t- il ajouté.</p>
+            <span class="english-block">"My job is to make sure that we have this happen as infrequently as possible," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.8" data-end="81.7">
+            <p class="french-block">La secrétaire aux Transports, Heidi Alexander, a qualifié la perturbation de "completement inacceptable", tandis que l'organisme de l'industrie Airlines UK écrit à Nats pour exiger une indemnisation immédiate des coûts engagés.</p>
+            <span class="english-block">Transport Secretary Heidi Alexander called the disruption "completely unacceptable", while industry body Airlines UK is writing to Nats to demand immediate compensation for costs incurred.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.7" data-end="90.31">
+            <p class="french-block">L'incident a suscité des questions sur la résilience des systèmes de Nats, et certaines compagnies aériennes ont remis en question la position de M. Rolfe.</p>
+            <span class="english-block">The incident prompted questions over the resilience of Nats' systems, and some airlines questioned the position of Mr Rolfe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.31" data-end="102.41">
+            <p class="french-block">Les passagers ont également été en colère à propos du soutien qu'ils ont reçu des compagnies aériennes et du fait qu'il est peu probable qu'ils aient droit à une indemnisation parce que le régulateur juge que la situation était exceptionnelle.</p>
+            <span class="english-block">There has also been anger from passengers about how much support they got from airlines, and about the fact that they are unlikely to be entitled to compensation because the regulator judges the situation was extraordinary circumstances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.41" data-end="117.0">
+            <p class="french-block">Dans un premier rapport, externe, Nats a déclaré que le défaut logiciel signifiait que les contrôleurs aériens avaient réduit les informations disponibles, donc des restrictions ont été mises en place pour limiter le trafic aérien pour maintenir la sécurité.</p>
+            <span class="english-block">In an initial report, external, Nats said the software defect meant air traffic controllers had reduced information available, so restrictions were put in place to limit air traffic to maintain safety.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.0" data-end="124.63">
+            <p class="french-block">Le défaut s'est produit à 10 h du matin du 8 septembre, mais il n'est pas apparu que ce soit un problème grave pendant deux heures et demie.</p>
+            <span class="english-block">The defect occurred at 10:00am on 8 September, but it did not become apparent this was a serious problem for another two and a half hours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.63" data-end="133.68">
+            <p class="french-block">Le redémarrage du système n'a commencé qu'après 15h30, et les restrictions sur l'espace aérien britannique n'ont été levées qu'à 19h30.</p>
+            <span class="english-block">The system restart did not start until just after 3:15pm, and restrictions on UK airspace were not lifted until 7:30pm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.68" data-end="142.73">
+            <p class="french-block">Les vols à destination et à sortie des principaux aéroports du Royaume-Uni ont été affectés, notamment à Heathrow, Gatwick, Luton et Glasgow.</p>
+            <span class="english-block">Flights in and out of the UK's main airports were affected, including Heathrow, Gatwick, Luton and Glasgow.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.73" data-end="149.76">
+            <p class="french-block">L'interruption a pris des jours pour se résoudre complètement en raison du nombre d'avions et d'équipages laissés en déplacement.</p>
+            <span class="english-block">The disruption took days to completely resolve because of the number of planes and crew left out of place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.76" data-end="156.29">
+            <p class="french-block">M. Rolfe s'est excusé auprès des personnes touchées par l'interruption, affirmant que Nats était "dévastée".</p>
+            <span class="english-block">Mr Rolfe apologised to those affected by the disruption, saying Nats was "devastated".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.29" data-end="161.69">
+            <p class="french-block">" Cependant, notre rôle principal est de protéger nos cieux et tous ceux qui passent par eux.</p>
+            <span class="english-block">"However, our primary role is to keep our skies safe, and everyone who flies through them. At no point last week was safety in question."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.69" data-end="165.77">
+            <p class="french-block">Nats a "testé ces systèmes tellement", a-t-il ajouté.</p>
+            <span class="english-block">Nats has "tested these systems so much," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.77" data-end="178.3">
+            <p class="french-block">"Nous avons passé tellement de temps à nous assurer qu'ils fonctionnent que tout ce qui se passe de cette nature sera, par sa nature même, incroyablement compliqué et probablement difficile à comprendre à l'époque", a-t-il déclaré.</p>
+            <span class="english-block">"We spent so much time making sure they work that anything that does happen of this nature is, by its very nature, going to be incredibly complicated and probably difficult to understand at the time," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.3" data-end="189.43">
+            <p class="french-block">En réponse au rapport Nats, le secrétaire aux transports a qualifié l'interruption de "completement inacceptable" et de "frustrante" pour les passagers, les compagnies aériennes et les aéroports.</p>
+            <span class="english-block">Reacting to the Nats report, the transport secretary described the disruption as "completely unacceptable" and "frustrating" for passengers, airlines and airports.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.43" data-end="201.98">
+            <p class="french-block">"Il est clair que nous devons comprendre d'urgence pourquoi ce problème n'a pas été découvert et résolu avant qu'il ne cause le chaos", a déclaré Alexander, ajoutant qu'une revue de l'Autorité de l'aviation civile était en cours.</p>
+            <span class="english-block">"It's clear we need to urgently understand why this issue was not discovered and fixed before it caused chaos," Alexander said, adding that a Civil Aviation Authority review was underway.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.98" data-end="207.12">
+            <p class="french-block">Il s'agit du troisième incident national de trafic aérien ces trois dernières années.</p>
+            <span class="english-block">This is the third national air traffic incident in the past three years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.12" data-end="214.8">
+            <p class="french-block">En 2023, une panne d'ordinateur pendant le week-end des vacances bancaires d'août a causé le chaos pour 700 000 passagers.</p>
+            <span class="english-block">In 2023, a computer shutdown over the August bank holiday weekend caused chaos for 700,000 passengers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="214.8" data-end="220.92">
+            <p class="french-block">Il y a eu une autre panne de Nats plus petite en 2025, qui a causé 150 annulations.</p>
+            <span class="english-block">There was another, smaller Nats outage in 2025, which caused 150 cancellations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.92" data-end="239.62">
+            <p class="french-block">Tim Alderslade, directeur général de Airlines UK, a déclaré: "Encore une fois, ce sont les passagers qui ont souffert et les compagnies aériennes qui ont pris les morceaux - et le chiffre - d'une panne du système ATC [contrôle de la circulation aérienne], alors que Nats lui-même ne doit pas en subir de conséquences réelles".</p>
+            <span class="english-block">Tim Alderslade, chief executive of Airlines UK, said: "Once again, it is passengers who have suffered and airlines who have picked up the pieces - and the tab - of an ATC [Air Traffic Control] system failure, while Nats itself faces no real consequences."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.62" data-end="245.95">
+            <p class="french-block">Il a ajouté que les passagers méritaient "un engagement et une preuve que le système est en cours de réparation".</p>
+            <span class="english-block">He added that passengers deserved "commitment and proof that the system is being fixed".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.95" data-end="256.2">
+            <p class="french-block">Alderslade a également déclaré que Airlines UK écrivait à la NATS "pour exiger une indemnisation immédiate des coûts engagés et un plan crédible pour améliorer la résilience".</p>
+            <span class="english-block">Alderslade also said Airlines UK was writing to NATS "to demand immediate compensation for the costs incurred and a credible plan to improve resilience."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.2" data-end="263.3">
+            <p class="french-block">Addie Kitson a été touchée avec près de 100 livres en coûts inattendus quand son vol de retour de Chine a été détourné à Stockholm</p>
+            <span class="english-block">Addie Kitson was hit with almost £100 in unexpected costs when her flight back from China was diverted to Stockholm</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="263.3" data-end="269.59">
+            <p class="french-block">Addie Kitson, 26 ans, était en vacances en Chine quand son vol a été détourné pour la Suède.</p>
+            <span class="english-block">Addie Kitson, 26, had been on holiday in China when her flight home was diverted to Sweden.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.59" data-end="278.52">
+            <p class="french-block">"Je pensais que j'avais bien atterri", a- t- elle dit à la BBC, "mais ils ont dit: 'Bienvenue à Stockholm' et j'ai dit: 'Oh, ce n'est pas Londres.'"</p>
+            <span class="english-block">"I thought I landed fine" she told the BBC, "but then they went: 'Welcome to Stockholm' and I went: 'Ooh, that's not London'".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.52" data-end="290.04">
+            <p class="french-block">Après avoir été informés des problèmes affectant l'espace aérien britannique, les passagers ont été retenus dans l'avion pendant quelques heures, puis ont passé 19 heures à l'intérieur de l'aéroport de Stockholm.</p>
+            <span class="english-block">After being told about the issues affecting UK airspace, passengers were kept on the plane for a few hours, and then spent 19 hours inside Stockholm airport.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.04" data-end="298.82">
+            <p class="french-block">Addie a fini par avoir près de 100 livres en coûts inattendus après avoir dû acheter des rafraîchissements, des adaptateurs et payer pour que le Wi-Fi fonctionne.</p>
+            <span class="english-block">Addie ended up with nearly £100 in unexpected costs after having to buy refreshments, adaptors and to pay for Wi-Fi to work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="298.82" data-end="306.41">
+            <p class="french-block">"J'ai eu un bon alimentaire de 11 livres qui ne couvrait même pas le coût d'un sandwich à l'aéroport de Stockholm", a déclaré Addie.</p>
+            <span class="english-block">"I got one £11 food voucher that didn't even cover the cost of a sandwich in Stockholm airport", Addie said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="306.41" data-end="314.09">
+            <p class="french-block">Addie a remis en question les règles relatives à l'indemnisation, disant qu'il y avait eu plusieurs interruptions de la circulation aérienne.</p>
+            <span class="english-block">Addie questioned the rules around compensation, saying there had been multiple air traffic outages.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="314.09" data-end="317.35">
+            <p class="french-block">"Ce n'est pas si extraordinaire", dit-elle.</p>
+            <span class="english-block">"It doesn't seem that extraordinary," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="317.35" data-end="321.14">
+            <p class="french-block">Avez-vous été affecté par cette panne de contrôle aérien?</p>
+            <span class="english-block">Were you affected by this air traffic control failure?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_14.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
