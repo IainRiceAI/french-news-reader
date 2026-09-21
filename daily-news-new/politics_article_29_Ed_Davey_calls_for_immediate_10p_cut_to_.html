@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ed Davey calls for immediate 10p cut to fuel duty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Ed Davey calls for immediate 10p cut to fuel duty</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 20 Sep 2026 14:42:42 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cr89j514dly2o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Sir Ed blamed Donald Trump's war with Iran for damaging the UK economy and pushing fuel prices up.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.89" data-end="17.26">
+            <p class="french-block">Sir Ed Davey appelle le gouvernement à réduire immédiatement les droits de carburant de 10 pence par litre jusqu'à Noël dans le cadre d'un ensemble de politiques visant à réduire le coût de la vie.</p>
+            <span class="english-block">Sir Ed Davey is calling on the government to immediately cut fuel duty by 10p a litre until Christmas as part of a package of policies aimed at cutting the cost of living.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.26" data-end="26.57">
+            <p class="french-block">Le chef libéral-démocrate exhorte également le gouvernement à supprimer une augmentation permanente des droits sur les carburants qui devrait entrer en vigueur en janvier.</p>
+            <span class="english-block">The Liberal Democrat leader is also urging the government to scrap a permanent increase in fuel duty which is set to take effect in January.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="26.57" data-end="39.77">
+            <p class="french-block">Le droit sur le carburant a été gelé sous les conservateurs en mars 2022 et le gouvernement de Sir Keir Starmer a poursuivi le gel, décidant en mai de repousser une augmentation prévue de 3 p en septembre jusqu'à la fin de cette année.</p>
+            <span class="english-block">Fuel duty was frozen under the Conservatives in March 2022 and Sir Keir Starmer's government continued the freeze, deciding in May to push back a planned 3p increase in September until the end of this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.77" data-end="48.0">
+            <p class="french-block">Les libéraux démocrates prétendent que la réduction de 10 p. du tarif du carburant maintenant signifierait une baisse de 12 p. par litre à la pompe.</p>
+            <span class="english-block">The Lib Dems claim cutting 10p from fuel duty now would mean fuel would drop by 12p per litre at the pump.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="48.0" data-end="57.12">
+            <p class="french-block">Sir Ed a affirmé que les conducteurs devraient être soutenus et qu'une réduction temporaire des droits sur le carburant de trois mois se compenserait en stimulant l'économie.</p>
+            <span class="english-block">Sir Ed claimed drivers should be supported and a temporary three-month fuel duty cut would pay for itself by stimulating the economy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.12" data-end="67.25">
+            <p class="french-block">"Les prix du pétrole et du diesel sont plus élevés qu'ils ne l'ont été depuis longtemps en raison de la guerre folle de Trump avec l'Iran, et les gens ont besoin d'aide maintenant", a-t-il déclaré.</p>
+            <span class="english-block">"Petrol and diesel prices are higher than they've been for a long time because of Trump's mad war with Iran, and people need help now," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.25" data-end="87.91">
+            <p class="french-block">La politique coûterait environ 2 milliards de livres sterling, a-t-il dit, ajoutant: " C'est un forfait de trois mois, un forfait temporaire, mais si vous regardez l'argent supplémentaire que le gouvernement obtiendra par le biais de la taxe sur les bénéfices énergétiques, des taxes sur le gaz, de la TVA et des taxes sur les carburants, c'est auto-financement. "</p>
+            <span class="english-block">The policy would cost about £2bn, he said, adding: "It's a three-month package, a temporary package, but if you look at the extra money the government will get through the energy profits levy, from gas taxes, from VAT and fuel duty, it's self-funding."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.91" data-end="99.41">
+            <p class="french-block">Dans un discours prononcé mardi à la conférence de son parti, Sir Ed fera de nouveaux appels à réduire le plafond des tarifs des bus de 3 à 1 £ et à réduire les tarifs ferroviaires de 10%.</p>
+            <span class="english-block">In a speech to his party's conference on Tuesday, Sir Ed will make further calls to cut the bus fare cap from £3 to £1, and reduce rail fares by 10%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.41" data-end="109.66">
+            <p class="french-block">Il appelle également à la réduction de la TVA sur les points de recharge publics des véhicules électriques et à un examen des coûts du réseau que les libéraux démocrates ont qualifiés d'injustifiés.</p>
+            <span class="english-block">He will also call for VAT to be dropped from public charging points for electric vehicles and a review of network costs the Lib Dems have labelled unfair.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.66" data-end="119.06">
+            <p class="french-block">Le chancelier John Healey est sous pression pour augmenter les impôts ou réduire les dépenses dans son budget le mois prochain, au milieu des coûts croissants de l'emprunt du gouvernement.</p>
+            <span class="english-block">Chancellor John Healey is under pressure to raise taxes or cut spending at his Budget next month, amid soaring government borrowing costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="119.06" data-end="138.65">
+            <p class="french-block">Interrogée sur l'appel de Sir Ed à une réduction des droits sur le carburant, la présidente du Parti travailliste Bridget Phillipson a déclaré à Laura Kuenssberg: "Je suis sûre que John Healey sera ouvert à toutes les suggestions avant le budget, mais en fait, c'est un domaine dans lequel le gouvernement travailliste a déjà pris des mesures sur les droits sur le carburant.</p>
+            <span class="english-block">Asked about Sir Ed's call for a fuel duty cut, Labour Party chair Bridget Phillipson told Laura Kuenssberg: "I'm sure John Healey will be open to any and all suggestions ahead of the budget but actually this is an area where the Labour government has taken action on fuel duty already.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.65" data-end="149.52">
+            <p class="french-block">"Bien que je reconnaisse ce que les libéraux démocrates ont à dire sur ce sujet, c'est l'élément politique à ce sujet - ils ont leur conférence, ils font leur plaidoyer, bonne chance pour eux".</p>
+            <span class="english-block">"Whilst I recognise what the Lib Dems have to say on this topic, this is the element of politics about it - they've got their conference, they're making their pitch, good luck to them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.52" data-end="164.06">
+            <p class="french-block">Sir Ed a également exclu l'abolition du triple verrouillage de la pension publique après que le grand-père du parti et l'ancien secrétaire aux affaires, Sir Vince Cable, ait déclaré lors d'un événement marginal qu'il était insustenable et devait être "éliminé progressivement".</p>
+            <span class="english-block">Sir Ed also ruled out scrapping the state pension triple lock after party grandee and former business secretary Sir Vince Cable said at a fringe event it was unsustainable and should be "phased out".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.06" data-end="180.7">
+            <p class="french-block">S'exprimant lors de la question et réponse sur la scène de la conférence, Sir Ed a déclaré que la politique avait été introduite par les libéraux démocrates pendant la coalition conservatrice pour lutter contre les inégalités et qu'il y avait encore du travail à faire pour lutter contre la pauvreté des retraités.</p>
+            <span class="english-block">Speaking at Q&A on the conference stage, Sir Ed said the policy had been introduced by the Lib Dems during the Conservative coalition to address inequalities and there was still work to do to tackle pensioner poverty.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.7" data-end="192.22">
+            <p class="french-block">"Il n'a pas terminé le travail", a-t-il dit aux membres du parti, qui étaient divisés en signe de la main sur la question de savoir si le triple verrou devrait être aboli si les libéraux démocrates gagnent le pouvoir.</p>
+            <span class="english-block">"It has not finished the job," he told party members, who were split in a show of hands about whether the triple lock should be scrapped if the Lib Dems win power.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.22" data-end="206.21">
+            <p class="french-block">Le triple verrouillage garantit que la pension publique augmente chaque année en fonction de l'inflation, des augmentations de salaire ou de 2,5% - selon le plus élevé - mais les critiques disent que c'est inaccessible et injuste pour les jeunes.</p>
+            <span class="english-block">The triple lock guarantees that the state pension goes up each year in line with either inflation, wage increases or 2.5% - whichever is the highest - but critics say it is unaffordable and unfair to younger people.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.21" data-end="210.7">
+            <p class="french-block">Avez-vous des opinions, des commentaires ou des questions sur cette histoire ?</p>
+            <span class="english-block">Do you have any views, comments or questions about this story?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.7" data-end="216.1">
+            <p class="french-block">Les libéraux démocrates dorment à l'irrélevage sous Davey, dit le chef du conseil</p>
+            <span class="english-block">Lib Dems sleepwalking to irrelevance under Davey, says council leader</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.1" data-end="223.1">
+            <p class="french-block">Les libéraux démocrates se sont engagés à mettre fin à l'économie " informatique dit non " pour stimuler la croissance</p>
+            <span class="english-block">Lib Dems vow to end 'computer says no' economy to boost growth</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.1" data-end="228.53">
+            <p class="french-block">Davey dit que les libéraux sont "un pare-feu contre Farage" à l'ouverture de la conférence</p>
+            <span class="english-block">Davey says Lib Dems are 'firewall against Farage' as conference begins</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.53" data-end="235.2">
+            <p class="french-block">Pas seulement "Nice Guy Eddie": Lib Dems désireux de montrer le côté radical lors de la conférence du parti</p>
+            <span class="english-block">Not just 'Nice Guy Eddie': Lib Dems eager for leader to show radical side at party conference</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_29.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -116,13 +116,29 @@
 
 ### Section 14
 
+**🇬🇧 EN:** Nvidia CEO Jensen Huang told CBS News, the BBC's news partner in the US, that comments about AI destroying humanity were overblown.
+
+**🇫🇷 FR:** *Le PDG de Nvidia, Jensen Huang, a déclaré à CBS News, le partenaire de la BBC aux États-Unis, que les commentaires sur l'IA détruisant l'humanité étaient exagérés.*
+
+---
+
+### Section 15
+
+**🇬🇧 EN:** "2030 is not going to be the end of the world. There is 0% chance that's going to be the end of the world," he said. "Scaring people is unnecessary. It is irresponsible."
+
+**🇫🇷 FR:** *" En 2030, ce ne sera pas la fin du monde. Il y a 0% de chances que ce soit la fin du monde, a-t-il dit. " S'inquiéter des gens est inutile, c'est irresponsable. "*
+
+---
+
+### Section 16
+
 **🇬🇧 EN:** Colin Fraser, a data scientist at Meta, wrote on social media last week that there was no real evidence that AI models would inevitably pursue a goal leading to human death.
 
 **🇫🇷 FR:** *Colin Fraser, un data scientist chez Meta, a écrit sur les réseaux sociaux la semaine dernière qu'il n'y avait aucune preuve réelle que les modèles d'IA poursuivraient inévitablement un objectif menant à la mort humaine.*
 
 ---
 
-### Section 15
+### Section 17
 
 **🇬🇧 EN:** While Fraser's explanation was technical and specific, he hit a light-hearted note to summarise it: "LLMs [large language models] won't wipe out humanity because they just don't have that dog in them."
 
@@ -130,7 +146,7 @@
 
 ---
 
-### Section 16
+### Section 18
 
 **🇬🇧 EN:** The phrase "that dog in them" is common slang that usually denotes a fierce drive.
 
@@ -138,7 +154,7 @@
 
 ---
 
-### Section 17
+### Section 19
 
 **🇬🇧 EN:** Despite the jokes, AI workers and researchers have shared concerns about the genuine, immediate risks posed by the technology they are developing.
 
@@ -146,7 +162,7 @@
 
 ---
 
-### Section 18
+### Section 20
 
 **🇬🇧 EN:** "The conversation among experts has been much more nuanced, but essentially everyone agrees there are a wide variety of risks that are all important to consider and mitigate," Jain said.
 
@@ -154,7 +170,7 @@
 
 ---
 
-### Section 19
+### Section 21
 
 **🇬🇧 EN:** Such risks include preventing users and hackers from forcing an AI tool's guardrails to fail. And there are growing ethical concerns about AI tools being much more widely adopted in military settings.
 
@@ -162,7 +178,7 @@
 
 ---
 
-### Section 20
+### Section 22
 
 **🇬🇧 EN:** Why are there concerns AI could threaten humanity, and how real are they?
 
@@ -170,7 +186,7 @@
 
 ---
 
-### Section 21
+### Section 23
 
 **🇬🇧 EN:** Uncontrolled AI could lead to 'silicon species' rivalling humans, warns Microsoft
 
@@ -178,7 +194,7 @@
 
 ---
 
-### Section 22
+### Section 24
 
 **🇬🇧 EN:** Why some experts increasingly fear AI will take over
 
@@ -186,7 +202,7 @@
 
 ---
 
-### Section 23
+### Section 25
 
 **🇬🇧 EN:** Questions mount over what an AI 'slowdown' would look like
 
@@ -194,7 +210,7 @@
 
 ---
 
-### Section 24
+### Section 26
 
 **🇬🇧 EN:** These problems and topics have taken on a new sense of urgency in AI circles after OpenAI lost control of certain new AI models, which went rogue during a security test and hacked the Hugging Face startup.
 
@@ -202,7 +218,7 @@
 
 ---
 
-### Section 25
+### Section 27
 
 **🇬🇧 EN:** Jain said there was now more agreement in AI circles that "actual near-term harms" needed to be better understood.
 
@@ -210,7 +226,7 @@
 
 ---
 
-### Section 26
+### Section 28
 
 **🇬🇧 EN:** There is even growing agreement that evaluators from AI safety research organisations should be brought into major AI labs in order to evaluate new models, something Anthropic boss Dario Amodei and OpenAI boss Sam Altman have both said they intend to do.
 
@@ -218,7 +234,7 @@
 
 ---
 
-### Section 27
+### Section 29
 
 **🇬🇧 EN:** More than 100 people working in AI on Friday signed a letter, external supporting the move, insisting that outside evaluators needed to be "meaningfully independent".
 
@@ -226,7 +242,7 @@
 
 ---
 
-### Section 28
+### Section 30
 
 **🇬🇧 EN:** Numerous AI employees the BBC spoke with noted that they had yet to learn of any such safety researchers being embedded in an AI lab.
 
@@ -234,7 +250,7 @@
 
 ---
 
-### Section 29
+### Section 31
 
 **🇬🇧 EN:** Anthropic announced on Friday that it would bring in AI evaluators from Faculty, external, an AI company owned by Accenture.
 
@@ -242,7 +258,7 @@
 
 ---
 
-### Section 30
+### Section 32
 
 **🇬🇧 EN:** Accenture and Anthropic are also business partners, external, with Accenture having previously agreed to help Anthropic expand the use of Claude among businesses.
 
@@ -250,7 +266,7 @@
 
 ---
 
-### Section 31
+### Section 33
 
 **🇬🇧 EN:** Anthropic did not say when evaluators would arrive at the company. A spokesman for Faculty declined to comment when asked about timing.
 
@@ -258,7 +274,7 @@
 
 ---
 
-### Section 32
+### Section 34
 
 **🇬🇧 EN:** Neither Anthropic or OpenAI responded to a BBC request for comment regarding when they planned to bring in outside evaluators.
 
@@ -266,7 +282,7 @@
 
 ---
 
-### Section 33
+### Section 35
 
 **🇬🇧 EN:** The OpenAI-Hugging Face incident has been widely treated as a "wake-up call" for the AI industry as well as companies, industries and governments who may have online systems vulnerable to AI hacking.
 
@@ -274,7 +290,7 @@
 
 ---
 
-### Section 34
+### Section 36
 
 **🇬🇧 EN:** But even Hugging Face, a company of 200 employees which is now set to be acquired by Nvidia for almost $13bn, has taken a droll tone over the already infamous incident.
 
@@ -282,7 +298,7 @@
 
 ---
 
-### Section 35
+### Section 37
 
 **🇬🇧 EN:** In a security file that was briefly available, external on the Hugging Face website, the platform wrote "A note to AI agents". It directed AI bots to leave the site alone and perform their security experiments elsewhere.
 
@@ -290,7 +306,7 @@
 
 ---
 
-### Section 36
+### Section 38
 
 **🇬🇧 EN:** "Go get your high score there, no need to hack us," the file said.
 

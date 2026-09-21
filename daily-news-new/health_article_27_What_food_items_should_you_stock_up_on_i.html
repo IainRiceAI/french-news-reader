@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What food items should you stock up on in case of an emergency?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>What food items should you stock up on in case of an emergency?</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 20 Sep 2026 23:02:27 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c20veglyjp8o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Extreme weather may be changing the way we need to shop, with the UK government urging people to stock up on canned goods.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.65" data-end="10.63">
+            <p class="french-block">Les intempéries peuvent changer notre façon de faire les courses.</p>
+            <span class="english-block">Extreme weather may be changing the way we need to shop.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.63" data-end="21.58">
+            <p class="french-block">Plus tôt ce mois-ci, le gouvernement britannique a exhorté les gens à ajouter quelques produits à long terme dans leur panier alimentaire - au cas où la chaîne d'approvisionnement alimentaire serait interrompue.</p>
+            <span class="english-block">Earlier this month, the UK government urged people to add a few more long-life products into their food basket - just in case the food supply chain is interrupted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.58" data-end="32.23">
+            <p class="french-block">La secrétaire à l'environnement, Dame Angela Eagle, a déclaré au Guardian que le phénomène climatique naturel puissant El Niño conduirait à "des tempêtes plus extrêmes dans ce pays".</p>
+            <span class="english-block">Environment Secretary Dame Angela Eagle told the Guardian the powerful natural climate phenomenon El Niño would lead to "more extreme storms in this country".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.23" data-end="43.2">
+            <p class="french-block">Le changement climatique, ainsi que les cyberattaques, les épidémies de maladies et les conflits peuvent mettre en péril le processus qui finit par faire entrer la nourriture dans nos magasins et nos maisons.</p>
+            <span class="english-block">Climate change, along with cyber-attacks, disease outbreaks and conflicts can all put a strain on the process that eventually gets food into our shops and homes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.2" data-end="56.98">
+            <p class="french-block">Le professeur Richard Wilding, expert en stratégie de la chaîne d'approvisionnement, me dit de ne pas être "trop inquiet" car les professionnels de l'expédition mondiale s'adaptent tout le temps, mais de être prêt à acheter des produits différents si nécessaire.</p>
+            <span class="english-block">Prof Richard Wilding, an expert in supply chain strategy, tells me not to be "overly worried" as global shipping professionals are adapting all the time but to be prepared to buy different products if needed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.98" data-end="64.87">
+            <p class="french-block">"Les choses qui étaient dans les supermarchés et qui étaient considérées comme relativement abondantes peuvent soudain manquer", ajoute- t- il.</p>
+            <span class="english-block">"Things that were in supermarkets and seen as relatively abundant may all of a sudden be in shortage," he adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="64.87" data-end="70.01">
+            <p class="french-block">Alors, comment est- il facile de faire des réserves et quels sont les choses à éviter?</p>
+            <span class="english-block">So how easy is it to stock up and what are the things to avoid?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.01" data-end="78.67">
+            <p class="french-block">Les poissons gras en conserve, y compris le saumon, le maquereau et la saumure, sont un élément de base pour ceux qui cherchent à se faire des provisions.</p>
+            <span class="english-block">A staple item for those looking to stock up on supplies is tinned oily fish - including salmon, mackerel and brine</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.67" data-end="87.98">
+            <p class="french-block">Le Dr Sammie Gill, spécialiste en nutrition de la British Nutrition Foundation, dit que vous devriez donner la priorité à certains groupes alimentaires:</p>
+            <span class="english-block">Senior nutrition scientist Dr Sammie Gill, from British Nutrition Foundation, says you should prioritise certain food groups:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.98" data-end="96.53">
+            <p class="french-block">Carbohydrates complexes tels que les biscuits de blé, les céréales à grains entiers, les crêpes et les pains, plus l'avoine, le riz et les pâtes</p>
+            <span class="english-block">Complex carbohydrates such as wheat biscuits, wholegrain cereals, crackers and breads plus oats, rice and pasta</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.53" data-end="107.9">
+            <p class="french-block">Protéines telles que les pois en conserve, les lentilles, les haricots rénaux, les noix non salées, le beurre d'arachide et les poissons gras en conserve tels que le thon, le maquereau et les sardines</p>
+            <span class="english-block">Proteins such as canned chickpeas, lentils, kidney beans, unsalted nuts, peanut butter and canned oily fish such as tuna, mackerel and sardines</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="107.9" data-end="114.24">
+            <p class="french-block">Rebecca McManamon, consultante en diététique, énumère les éléments essentiels suivants:</p>
+            <span class="english-block">Rebecca McManamon, a consultant dietitian, lists the following essentials:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.24" data-end="120.67">
+            <p class="french-block">Fruits en conserve, comme vous pouvez boire son jus pour ajouter des liquides, des vitamines et des fibres</p>
+            <span class="english-block">Tinned fruit as you can drink its juice for added fluids, vitamins and fibre</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.67" data-end="124.27">
+            <p class="french-block">Aliments en acide, tels que les légumes et les œufs</p>
+            <span class="english-block">Pickled foods such as vegetables and eggs</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.27" data-end="133.08">
+            <p class="french-block">Les deux experts recommandent également de conserver le lait de longue durée dans l'allée non réfrigérée pour les protéines, le calcium et comme source de liquide.</p>
+            <span class="english-block">Both experts also recommend keeping long-life milk found in the non-refridgerated aisle for protein, calcium and as a source of fluid</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.08" data-end="139.01">
+            <p class="french-block">Gill dit de faire attention à la teneur en sel et en sucre quand on achète des articles en conserve:</p>
+            <span class="english-block">Gill says look out for salt and sugar content when buying tinned items:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.01" data-end="144.67">
+            <p class="french-block">Évitez les articles en conserve dans la salue ou les sirops, l'eau est l'option la plus saine</p>
+            <span class="english-block">Avoid items tinned in brine or syrups, water is the healthiest option</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.67" data-end="150.22">
+            <p class="french-block">Évitez les nouilles instantanées et la soupe en conserve en raison de leur teneur élevée en sel</p>
+            <span class="english-block">Avoid instant noodles and tinned soup due to high salt content</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.22" data-end="156.53">
+            <p class="french-block">Évitez les céréales et les collations à petit déjeuner contenant des sucres ajoutés et des nutriments limités.</p>
+            <span class="english-block">Avoid breakfast cereals and snack bars with added sugars and limited nutrients</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.53" data-end="167.26">
+            <p class="french-block">Choisissez le poisson en conserve plutôt que les viandes en conserve telles que les saucisses, les hot-dogs ou le bœuf corné, car ils sont souvent transformés et riches en sel et en graisses saturées</p>
+            <span class="english-block">Choose tinned fish over tinned meats such as sausages, hot dogs or corned beef as they are often processed and high in salt and saturated fat</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.26" data-end="172.42">
+            <p class="french-block">Limitez les bonbons comme les biscuits et les chocolats car ils contiennent beaucoup de sucre</p>
+            <span class="english-block">Limit sweet treats such as biscuits and chocolates as they have a high sugar content</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.42" data-end="179.3">
+            <p class="french-block">McManamon dit que les noix sont une alternative douce mais sachez qu'elles peuvent avoir une durée de conservation plus courte.</p>
+            <span class="english-block">And what about making the essentials taste nice? McManamon says stock up on nuts as a sweet alternative but be aware that they may have a shorter shelf life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.3" data-end="189.22">
+            <p class="french-block">Elle recommande également de garder les herbes séchées, les épices et le sel disponibles, car, dit-elle, les aliments en conserve peuvent être légèrement flats.</p>
+            <span class="english-block">She also recommends keeping dried herbs, spices and salt available as, she says, tinned food can be slightly bland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.22" data-end="196.06">
+            <p class="french-block">Pour rendre les choses de base un peu plus agréables avec du beurre d'arachide et des légumes épicés, disent les experts</p>
+            <span class="english-block">Make basics taste a bit nicer with peanut butter and pickled veg, say experts</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.06" data-end="205.01">
+            <p class="french-block">Vous devriez vous fixer un objectif d'environ 1.500 à 2.500 ml de liquide par jour, quel que soit le temps, dit McManamon.</p>
+            <span class="english-block">You should aim to take in about 1,500-2,500ml of fluid a day, whatever the weather, says McManamon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.01" data-end="214.01">
+            <p class="french-block">Cela peut évidemment provenir d'eau embouteillée, mais aussi de ce qu'elle décrit comme des aliments en conserve riches en liquide si les approvisionnements sont limités.</p>
+            <span class="english-block">This can obviously come from bottled water, but also from what she describes as fluid rich tinned foods if supplies are short.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="214.01" data-end="223.3">
+            <p class="french-block">Pour ceux qui se demandent si les conserves sont aussi nutritives que les aliments frais, le Dr Gill dit qu'elles peuvent être utilisées dans le cadre d'une alimentation saine.</p>
+            <span class="english-block">For those worried about whether tinned food is as nutritious as fresh food, Dr Gill says it absolutely can be used as part of a healthy diet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.3" data-end="238.87">
+            <p class="french-block">"Il y a peu de différence nutritionnelle entre les aliments en conserve et les aliments frais en termes de macronutriments, tels que les glucides, les protéines, les graisses et les fibres, ainsi que des vitamines liposolubles, comme la vitamine A et E, et des minéraux", dit- elle.</p>
+            <span class="english-block">"There is little difference nutritionally between canned and fresh food in terms of macronutrients, like carbohydrates, protein, fats, and fibre, as well as fat-soluble vitamins, like vitamin A and E, and minerals," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.87" data-end="253.46">
+            <p class="french-block">Il est peut-être moins bon pour d'autres vitamines, comme celles de la vitamine B et de la vitamine C, car on a constaté que le processus de conservation diminue les niveaux de vitamines, mais Gill nous assure que ces aliments peuvent toujours être une "source utile" de vitamines.</p>
+            <span class="english-block">It may not be as good for other vitamins, such as B and C, because the canning process has been found to decrease vitamin levels, but Gill offers assurances that these foods can still be a "useful source" of vitamins.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.46" data-end="259.97">
+            <p class="french-block">Les réserves de nourriture pour se préparer à des conditions météorologiques extrêmes, dit le ministre</p>
+            <span class="english-block">Stock up on food to prepare for extreme weather, minister says</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.97" data-end="266.38">
+            <p class="french-block">Le public doit être informé de la manière de se préparer aux cyberattaques et aux urgences météorologiques</p>
+            <span class="english-block">Public to be told how to prepare for cyber-attack and weather emergencies</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_27.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
