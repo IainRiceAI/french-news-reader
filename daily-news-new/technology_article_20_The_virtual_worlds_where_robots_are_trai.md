@@ -20,7 +20,7 @@
 
 ### Section 2
 
-**🇬🇧 EN:** Freddo the robot walks across the office and takes a plastic bottled offered by a staff member.
+**🇬🇧 EN:** Freddo the robot walks across the office and takes a plastic bottle offered by a staff member.
 
 **🇫🇷 FR:** *Freddo, le robot, passe par le bureau et prend une bouteille en plastique offerte par un membre du personnel.*
 

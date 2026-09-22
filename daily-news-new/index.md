@@ -1,98 +1,98 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-09-21 06:14:20  
+Generated on: 2026-09-22 06:13:40  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Specialist courts for rape cases to be rolled out across England and Wales**
-   - **Published:** Sun, 20 Sep 2026 22:43:31 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Specialist_courts_for_rape_cases_to_be_r.md](top-stories_article_1_Specialist_courts_for_rape_cases_to_be_r.md)
+1. **Burnham expects to find 'common ground' with Trump in first meeting**
+   - **Published:** Tue, 22 Sep 2026 01:31:29 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Burnham_expects_to_find_common_ground_wi.md](top-stories_article_1_Burnham_expects_to_find_common_ground_wi.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on**
-   - **Published:** Mon, 21 Sep 2026 03:22:44 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_German_Chancellor_Merz_calls_state_elect.md](top-stories_article_2_German_Chancellor_Merz_calls_state_elect.md)
+2. **UK to provide Saudi Arabia with 'defensive' military support, says Burnham**
+   - **Published:** Tue, 22 Sep 2026 00:58:52 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_UK_to_provide_Saudi_Arabia_with_defensiv.md](top-stories_article_2_UK_to_provide_Saudi_Arabia_with_defensiv.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Union calls for halt to graded Ofsted inspections over health concerns**
-   - **Published:** Sun, 20 Sep 2026 23:02:05 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Union_calls_for_halt_to_graded_Ofsted_in.md](top-stories_article_3_Union_calls_for_halt_to_graded_Ofsted_in.md)
+3. **Martha's Rule rolled out at every A&E department in England**
+   - **Published:** Mon, 21 Sep 2026 23:38:57 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Marthas_Rule_rolled_out_at_every_AE_depa.md](top-stories_article_3_Marthas_Rule_rolled_out_at_every_AE_depa.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **UK should 'team up' with Canada in new Europe alliance, Canadian minister tells BBC**
-   - **Published:** Mon, 21 Sep 2026 04:00:38 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_UK_should_team_up_with_Canada_in_new_Eur.md](top-stories_article_4_UK_should_team_up_with_Canada_in_new_Eur.md)
+4. **Iran must stop arming Houthis in Yemen, G7 says ahead of UN General Assembly**
+   - **Published:** Tue, 22 Sep 2026 04:21:11 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Iran_must_stop_arming_Houthis_in_Yemen_G.md](top-stories_article_4_Iran_must_stop_arming_Houthis_in_Yemen_G.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Young people aren't snowflakes - mental distress is rising, says head of official review**
-   - **Published:** Mon, 21 Sep 2026 04:00:05 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Young_people_arent_snowflakes_-_mental_d.md](top-stories_article_5_Young_people_arent_snowflakes_-_mental_d.md)
+5. **Lithuania ready to 'fight back' but has evacuation plans in face of Russia threats, PM tells BBC**
+   - **Published:** Tue, 22 Sep 2026 01:04:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Lithuania_ready_to_fight_back_but_has_ev.md](top-stories_article_5_Lithuania_ready_to_fight_back_but_has_ev.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Key takeaways from BBC interview as Earl Spencer defends claims about King**
-   - **Published:** Sun, 20 Sep 2026 15:21:19 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Key_takeaways_from_BBC_interview_as_Earl.md](top-stories_article_6_Key_takeaways_from_BBC_interview_as_Earl.md)
+6. **Airlines criticise air traffic control as second glitch causes more disruption**
+   - **Published:** Mon, 21 Sep 2026 20:21:18 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Airlines_criticise_air_traffic_control_a.md](top-stories_article_6_Airlines_criticise_air_traffic_control_a.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Burnham hails Greenland deal ahead of expected first Trump meeting**
-   - **Published:** Sun, 20 Sep 2026 17:25:49 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Burnham_hails_Greenland_deal_ahead_of_ex.md](top-stories_article_7_Burnham_hails_Greenland_deal_ahead_of_ex.md)
+7. **Watch: Police raid organised crime targets in Teesside**
+   - **Published:** Mon, 21 Sep 2026 20:21:29 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Watch_Police_raid_organised_crime_target.md](top-stories_article_7_Watch_Police_raid_organised_crime_target.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Watch: Dramatic moment a cargo ship crashes into another vessel**
-   - **Published:** Mon, 21 Sep 2026 02:27:52 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Watch_Dramatic_moment_a_cargo_ship_crash.md](top-stories_article_8_Watch_Dramatic_moment_a_cargo_ship_crash.md)
+8. **'My army dream was ended by childhood eye surgery'**
+   - **Published:** Mon, 21 Sep 2026 23:19:10 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_My_army_dream_was_ended_by_childhood_eye.md](top-stories_article_8_My_army_dream_was_ended_by_childhood_eye.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **German Chancellor Merz calls state election a 'disaster' for his party but vows to stay on**
-   - **Published:** Mon, 21 Sep 2026 03:22:44 GMT
-   - **Read Parallel Translation:** [world_article_9_German_Chancellor_Merz_calls_state_elect.md](world_article_9_German_Chancellor_Merz_calls_state_elect.md)
+1. **Yemenis flee across Red Sea as Houthis and Saudi-backed forces escalate war**
+   - **Published:** Mon, 21 Sep 2026 14:14:16 GMT
+   - **Read Parallel Translation:** [world_article_9_Yemenis_flee_across_Red_Sea_as_Houthis_a.md](world_article_9_Yemenis_flee_across_Red_Sea_as_Houthis_a.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Largest attack on Moscow sees Ukraine fire hundreds of drones, mayor says**
-   - **Published:** Sun, 20 Sep 2026 10:45:39 GMT
-   - **Read Parallel Translation:** [world_article_10_Largest_attack_on_Moscow_sees_Ukraine_fi.md](world_article_10_Largest_attack_on_Moscow_sees_Ukraine_fi.md)
+2. **CNN, MS NOW and Politico file lawsuit against Trump's White House ban**
+   - **Published:** Tue, 22 Sep 2026 00:16:06 GMT
+   - **Read Parallel Translation:** [world_article_10_CNN_MS_NOW_and_Politico_file_lawsuit_aga.md](world_article_10_CNN_MS_NOW_and_Politico_file_lawsuit_aga.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Ed Sheeran admits 'mistakes' at first show since Macklemore controversy**
-   - **Published:** Sun, 20 Sep 2026 04:49:11 GMT
-   - **Read Parallel Translation:** [world_article_11_Ed_Sheeran_admits_mistakes_at_first_show.md](world_article_11_Ed_Sheeran_admits_mistakes_at_first_show.md)
+3. **Merz vows to keep coalition together for Germany's 'democratic future'**
+   - **Published:** Mon, 21 Sep 2026 16:54:56 GMT
+   - **Read Parallel Translation:** [world_article_11_Merz_vows_to_keep_coalition_together_for.md](world_article_11_Merz_vows_to_keep_coalition_together_for.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Trump says triumphal arch will be military complex with drones and snipers**
-   - **Published:** Sun, 20 Sep 2026 16:36:43 GMT
-   - **Read Parallel Translation:** [world_article_12_Trump_says_triumphal_arch_will_be_milita.md](world_article_12_Trump_says_triumphal_arch_will_be_milita.md)
+4. **First UK charges brought over 1994 Rwanda genocide**
+   - **Published:** Mon, 21 Sep 2026 17:48:23 GMT
+   - **Read Parallel Translation:** [world_article_12_First_UK_charges_brought_over_1994_Rwand.md](world_article_12_First_UK_charges_brought_over_1994_Rwand.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **UK should 'team up' with Canada in new Europe alliance, Canadian minister tells BBC**
-   - **Published:** Mon, 21 Sep 2026 04:00:38 GMT
-   - **Read Parallel Translation:** [business_article_13_UK_should_team_up_with_Canada_in_new_Eur.md](business_article_13_UK_should_team_up_with_Canada_in_new_Eur.md)
+1. **Vet prescription fees capped under rule changes**
+   - **Published:** Mon, 21 Sep 2026 23:01:18 GMT
+   - **Read Parallel Translation:** [business_article_13_Vet_prescription_fees_capped_under_rule_.md](business_article_13_Vet_prescription_fees_capped_under_rule_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Nvidia boss rejects AI extinction fears as 'doomsday narratives'**
-   - **Published:** Mon, 21 Sep 2026 00:34:53 GMT
-   - **Read Parallel Translation:** [business_article_14_Nvidia_boss_rejects_AI_extinction_fears_.md](business_article_14_Nvidia_boss_rejects_AI_extinction_fears_.md)
+2. **I'd rather pay thousands on a holiday: Meet the pensioners spending the kids' inheritance**
+   - **Published:** Mon, 21 Sep 2026 23:01:26 GMT
+   - **Read Parallel Translation:** [business_article_14_Id_rather_pay_thousands_on_a_holiday_Mee.md](business_article_14_Id_rather_pay_thousands_on_a_holiday_Mee.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Will you get £13,000 a year when you stop working? Here's how to check**
-   - **Published:** Sun, 20 Sep 2026 23:02:45 GMT
-   - **Read Parallel Translation:** [business_article_15_Will_you_get_13000_a_year_when_you_stop_.md](business_article_15_Will_you_get_13000_a_year_when_you_stop_.md)
+3. **Paramount settles lawsuit with US states, clearing way for $110bn merger with Warner Bros**
+   - **Published:** Mon, 21 Sep 2026 21:34:32 GMT
+   - **Read Parallel Translation:** [business_article_15_Paramount_settles_lawsuit_with_US_states.md](business_article_15_Paramount_settles_lawsuit_with_US_states.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **Billionaire Man United owner loses moral high ground after tax exile, Labour chair says**
-   - **Published:** Sun, 20 Sep 2026 11:22:21 GMT
-   - **Read Parallel Translation:** [business_article_16_Billionaire_Man_United_owner_loses_moral.md](business_article_16_Billionaire_Man_United_owner_loses_moral.md)
+4. **Repeated air traffic control failures leave us in worrying territory**
+   - **Published:** Mon, 21 Sep 2026 16:39:01 GMT
+   - **Read Parallel Translation:** [business_article_16_Repeated_air_traffic_control_failures_le.md](business_article_16_Repeated_air_traffic_control_failures_le.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
@@ -123,96 +123,96 @@ Scraped Feed Mode: `ALL`
 
 ### Section: SCIENCE
 
-1. **What food items should you stock up on in case of an emergency?**
-   - **Published:** Sun, 20 Sep 2026 23:02:27 GMT
-   - **Read Parallel Translation:** [science_article_21_What_food_items_should_you_stock_up_on_i.md](science_article_21_What_food_items_should_you_stock_up_on_i.md)
+1. **Typhoon Dujuan tracking close to Tokyo triggers rare evacuation alert**
+   - **Published:** Mon, 21 Sep 2026 14:05:29 GMT
+   - **Read Parallel Translation:** [science_article_21_Typhoon_Dujuan_tracking_close_to_Tokyo_t.md](science_article_21_Typhoon_Dujuan_tracking_close_to_Tokyo_t.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Trump says US will form 'AI Force' and appoint an artificial intelligence tsar**
-   - **Published:** Sat, 19 Sep 2026 21:01:56 GMT
-   - **Read Parallel Translation:** [science_article_22_Trump_says_US_will_form_AI_Force_and_app.md](science_article_22_Trump_says_US_will_form_AI_Force_and_app.md)
+2. **Which emergency foods should you stock up on?**
+   - **Published:** Mon, 21 Sep 2026 05:22:09 GMT
+   - **Read Parallel Translation:** [science_article_22_Which_emergency_foods_should_you_stock_u.md](science_article_22_Which_emergency_foods_should_you_stock_u.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **When a beloved tree began withering away, locals suspected a killer in their midst**
-   - **Published:** Fri, 18 Sep 2026 22:03:40 GMT
-   - **Read Parallel Translation:** [science_article_23_When_a_beloved_tree_began_withering_away.md](science_article_23_When_a_beloved_tree_began_withering_away.md)
+3. **Trump says US will form 'AI Force' and appoint an artificial intelligence tsar**
+   - **Published:** Sat, 19 Sep 2026 21:01:56 GMT
+   - **Read Parallel Translation:** [science_article_23_Trump_says_US_will_form_AI_Force_and_app.md](science_article_23_Trump_says_US_will_form_AI_Force_and_app.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Michael Sheen's 'constructive' meeting with first minister over toxic dumping claims**
-   - **Published:** Fri, 18 Sep 2026 12:01:08 GMT
-   - **Read Parallel Translation:** [science_article_24_Michael_Sheens_constructive_meeting_with.md](science_article_24_Michael_Sheens_constructive_meeting_with.md)
+4. **When a beloved tree began withering away, locals suspected a killer in their midst**
+   - **Published:** Fri, 18 Sep 2026 22:03:40 GMT
+   - **Read Parallel Translation:** [science_article_24_When_a_beloved_tree_began_withering_away.md](science_article_24_When_a_beloved_tree_began_withering_away.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **Young people aren't snowflakes - mental distress is rising, says head of official review**
-   - **Published:** Mon, 21 Sep 2026 04:00:05 GMT
-   - **Read Parallel Translation:** [health_article_25_Young_people_arent_snowflakes_-_mental_d.md](health_article_25_Young_people_arent_snowflakes_-_mental_d.md)
+1. **Scientists discover why Kent meningitis outbreak was so severe**
+   - **Published:** Tue, 22 Sep 2026 00:00:04 GMT
+   - **Read Parallel Translation:** [health_article_25_Scientists_discover_why_Kent_meningitis_.md](health_article_25_Scientists_discover_why_Kent_meningitis_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Smart beds and motion sensors - is this the future of dementia care?**
-   - **Published:** Sun, 20 Sep 2026 23:02:52 GMT
-   - **Read Parallel Translation:** [health_article_26_Smart_beds_and_motion_sensors_-_is_this_.md](health_article_26_Smart_beds_and_motion_sensors_-_is_this_.md)
+2. **Martha's Rule rolled out at every A&E department in England**
+   - **Published:** Mon, 21 Sep 2026 23:38:57 GMT
+   - **Read Parallel Translation:** [health_article_26_Marthas_Rule_rolled_out_at_every_AE_depa.md](health_article_26_Marthas_Rule_rolled_out_at_every_AE_depa.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **What food items should you stock up on in case of an emergency?**
-   - **Published:** Sun, 20 Sep 2026 23:02:27 GMT
-   - **Read Parallel Translation:** [health_article_27_What_food_items_should_you_stock_up_on_i.md](health_article_27_What_food_items_should_you_stock_up_on_i.md)
+3. **The simple skincare routine for teens that actually works - and five expert tips**
+   - **Published:** Mon, 21 Sep 2026 23:28:26 GMT
+   - **Read Parallel Translation:** [health_article_27_The_simple_skincare_routine_for_teens_th.md](health_article_27_The_simple_skincare_routine_for_teens_th.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Lindsay Clancy holdout juror says he had no doubt she deliberately killed her children**
-   - **Published:** Fri, 18 Sep 2026 11:49:46 GMT
-   - **Read Parallel Translation:** [health_article_28_Lindsay_Clancy_holdout_juror_says_he_had.md](health_article_28_Lindsay_Clancy_holdout_juror_says_he_had.md)
+4. **'Other generations just buried it' - Youths share their mental health concerns**
+   - **Published:** Mon, 21 Sep 2026 12:17:42 GMT
+   - **Read Parallel Translation:** [health_article_28_Other_generations_just_buried_it_-_Youth.md](health_article_28_Other_generations_just_buried_it_-_Youth.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Ed Davey calls for immediate 10p cut to fuel duty**
-   - **Published:** Sun, 20 Sep 2026 14:42:42 GMT
-   - **Read Parallel Translation:** [politics_article_29_Ed_Davey_calls_for_immediate_10p_cut_to_.md](politics_article_29_Ed_Davey_calls_for_immediate_10p_cut_to_.md)
+1. **UK to provide Saudi Arabia with 'defensive' military support, says Burnham**
+   - **Published:** Tue, 22 Sep 2026 00:58:52 GMT
+   - **Read Parallel Translation:** [politics_article_29_UK_to_provide_Saudi_Arabia_with_defensiv.md](politics_article_29_UK_to_provide_Saudi_Arabia_with_defensiv.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Lib Dems sleepwalking to irrelevance under Davey, says council leader**
-   - **Published:** Sun, 20 Sep 2026 14:46:18 GMT
-   - **Read Parallel Translation:** [politics_article_30_Lib_Dems_sleepwalking_to_irrelevance_und.md](politics_article_30_Lib_Dems_sleepwalking_to_irrelevance_und.md)
+2. **Manchester to host world leaders at G20 summit in 2027**
+   - **Published:** Mon, 21 Sep 2026 22:39:10 GMT
+   - **Read Parallel Translation:** [politics_article_30_Manchester_to_host_world_leaders_at_G20_.md](politics_article_30_Manchester_to_host_world_leaders_at_G20_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Billionaire Man United owner loses moral high ground after tax exile, Labour chair says**
-   - **Published:** Sun, 20 Sep 2026 11:22:21 GMT
-   - **Read Parallel Translation:** [politics_article_31_Billionaire_Man_United_owner_loses_moral.md](politics_article_31_Billionaire_Man_United_owner_loses_moral.md)
+3. **I've got no ceiling on Lib Dem ambitions, says leader Ed Davey**
+   - **Published:** Mon, 21 Sep 2026 15:59:52 GMT
+   - **Read Parallel Translation:** [politics_article_31_Ive_got_no_ceiling_on_Lib_Dem_ambitions_.md](politics_article_31_Ive_got_no_ceiling_on_Lib_Dem_ambitions_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Lib Dems vow to end 'computer says no' economy to boost growth**
-   - **Published:** Sun, 20 Sep 2026 14:05:15 GMT
-   - **Read Parallel Translation:** [politics_article_32_Lib_Dems_vow_to_end_computer_says_no_eco.md](politics_article_32_Lib_Dems_vow_to_end_computer_says_no_eco.md)
+4. **Helen Jenner unveiled by Nigel Farage as new leader of Reform in Wales**
+   - **Published:** Mon, 21 Sep 2026 13:52:03 GMT
+   - **Read Parallel Translation:** [politics_article_32_Helen_Jenner_unveiled_by_Nigel_Farage_as.md](politics_article_32_Helen_Jenner_unveiled_by_Nigel_Farage_as.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Ed Sheeran admits 'mistakes' at first show since Macklemore controversy**
-   - **Published:** Sun, 20 Sep 2026 04:49:11 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Ed_Sheeran_admits_mistakes_at_first_show.md](entertainment_article_33_Ed_Sheeran_admits_mistakes_at_first_show.md)
+1. **London Fashion Week 2026: The five trends we'll see in spring**
+   - **Published:** Mon, 21 Sep 2026 16:23:25 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_London_Fashion_Week_2026_The_five_trends.md](entertainment_article_33_London_Fashion_Week_2026_The_five_trends.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Strictly returns with new hosting trio as celebrities find out dance pairings**
-   - **Published:** Sun, 20 Sep 2026 13:47:08 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Strictly_returns_with_new_hosting_trio_a.md](entertainment_article_34_Strictly_returns_with_new_hosting_trio_a.md)
+2. **Cate Blanchett asks theatre audience to stop filming during show**
+   - **Published:** Mon, 21 Sep 2026 14:03:20 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Cate_Blanchett_asks_theatre_audience_to_.md](entertainment_article_34_Cate_Blanchett_asks_theatre_audience_to_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Sex and dating for the sandwich generation - Sharon Horgan on her latest comedy Youth**
-   - **Published:** Sat, 19 Sep 2026 23:18:34 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Sex_and_dating_for_the_sandwich_generati.md](entertainment_article_35_Sex_and_dating_for_the_sandwich_generati.md)
+3. **BBC removes 11 Mitchell and Webb comedy sketches from iPlayer**
+   - **Published:** Mon, 21 Sep 2026 11:05:13 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_BBC_removes_11_Mitchell_and_Webb_comedy_.md](entertainment_article_35_BBC_removes_11_Mitchell_and_Webb_comedy_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Matthew Rhys' sister 'so proud of him' after historic Emmy wins**
-   - **Published:** Sun, 20 Sep 2026 06:12:37 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Matthew_Rhys_sister_so_proud_of_him_afte.md](entertainment_article_36_Matthew_Rhys_sister_so_proud_of_him_afte.md)
+4. **CNN, MS NOW and Politico file lawsuit against Trump's White House ban**
+   - **Published:** Tue, 22 Sep 2026 00:16:06 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_CNN_MS_NOW_and_Politico_file_lawsuit_aga.md](entertainment_article_36_CNN_MS_NOW_and_Politico_file_lawsuit_aga.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
