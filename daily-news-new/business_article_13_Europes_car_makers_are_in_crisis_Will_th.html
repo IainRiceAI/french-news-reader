@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe's car makers are in crisis. Will the threat of war rescue them?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Europe's car makers are in crisis. Will the threat of war rescue them?</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 22 Sep 2026 23:11:33 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6vgyq598k9po?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Auto executives across Europe hope rearmament can help them flex their industrial muscles once more.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.23" data-end="12.1">
+            <p class="french-block">Les constructeurs automobiles européens sont en crise.</p>
+            <span class="english-block">Europe's car makers are in crisis. Will the threat of war rescue them?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.1" data-end="33.43">
+            <p class="french-block">Le dernier véhicule de Ford ressemble à un pick-up qui a subi une transformation incroyable Hulk. Basé sur sa série populaire Ranger, ce numéro de boeuf garé devant la porte d'entrée de l'usine de Ford à Dagenham peut transporter une charge de deux tonnes, remorquer jusqu'à quatre tonnes et est également en train de faire confiance aux 2.000 travailleurs qui fabriquent encore des moteurs ici.</p>
+            <span class="english-block">It's green, bulging and intimidating. Ford's latest vehicle looks like a pick-up truck that has been through an Incredible Hulk transformation. Based on its popular Ranger series, this beefy number parked outside the front door of Ford's Dagenham plant can carry a load of two tonnes, tow up to four tonnes and is also shouldering the hopes of the 2,000-strong workforce that still makes engines here.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.43" data-end="47.5">
+            <p class="french-block">À l'intérieur de l'usine, les moteurs diesel de trois litres qui alimentent cette bête peinte en camouflage dérivent vers le bas d'une ligne de production qui a vu la production réduite de 90 000 moteurs par an à environ la moitié au cours de la dernière décennie.</p>
+            <span class="english-block">Inside the factory, the three-litre diesel engines that will power this camo-painted beast drift down a production line that has seen output cut from 90,000 engines a year to about half that over the last decade.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="47.5" data-end="59.35">
+            <p class="french-block">Ford espère que le pivot vers les véhicules militaires pourra contribuer à combler le vide créé par ce que le patron britannique de la société appelle l'environnement le plus difficile depuis l'invention de la voiture automobile.</p>
+            <span class="english-block">Ford is hoping that a pivot towards military vehicles can help fill the void created by what the company's UK boss calls the most challenging environment since the invention of the motor car. Once mighty, the European car industry is starting to look puny and is hoping surging defence budgets as Europe re-arms can help it flex its industrial muscles once more.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="59.35" data-end="66.34">
+            <p class="french-block">Ford fait partie d'une offre pour le programme de véhicules légers de mobilité (LMV) de l'armée britannique</p>
+            <span class="english-block">Ford is part of a bid for the British Army's Light Mobility Vehicle (LMV) programme</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="66.34" data-end="82.39">
+            <p class="french-block">Ford fait partie d'une joint-venture avec les spécialistes de la défense General Dynamics et Ricardo qui proposent un contrat du ministère de la Défense (MoD) pour fournir 9 000 véhicules au cours des cinq à sept prochaines années pour remplacer la flotte Land Rover vieillissante de l'armée.</p>
+            <span class="english-block">Ford is part of a joint venture with defence specialists General Dynamics and Ricardo bidding for a Ministry of Defence (MoD) contract to supply 9,000 vehicles over the next five to seven years to replace the Army's ageing Land Rover-based fleet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.39" data-end="98.14">
+            <p class="french-block">Lisa Brankin, présidente de Ford UK, dit que c'est une occasion de montrer leur capacité à répondre rapidement aux besoins de défense: "En tant que fabricant, vous regardez à chaque opportunité qui vous est offerte et c'est une excellente opportunité que nous aimerions profiter".</p>
+            <span class="english-block">Lisa Brankin, chair of Ford UK, says it is a chance to showcase their abilities to respond quickly to defence needs: "As a manufacturer you look at every opportunity that comes at you and this is a great opportunity that we would love to take advantage of."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.14" data-end="102.02">
+            <p class="french-block">Ce n'est pas la première fois que Ford s'occupe de la défense.</p>
+            <span class="english-block">This is not the first time Ford has busied itself with defence work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.02" data-end="109.99">
+            <p class="french-block">Avant la Seconde Guerre mondiale, l'usine de Ford à Dagenham, à l'est de Londres, était la plus grande usine automobile d'Europe.</p>
+            <span class="english-block">Ahead of World War Two, Ford's factory in Dagenham, east London, was the largest car plant in Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.99" data-end="117.98">
+            <p class="french-block">Quand la guerre éclata, l'assemblage des voitures civiles s'arrêta complètement et l'usine fut entièrement convertie en production militaire.</p>
+            <span class="english-block">When war broke out, civilian car assembly stopped completely, and the factory was converted entirely to military production. Between 1939 and 1945, the Dagenham plant built 360,000 vehicles for the Allied war effort.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.98" data-end="127.49">
+            <p class="french-block">Les travailleurs de Ford à Manchester ont fabriqué 34 000 moteurs Merlin conçus par Rolls-Royce, qui propulsent les avions de chasse Spitfires et Hurricane.</p>
+            <span class="english-block">Ford workers in Manchester manufactured 34,000 Rolls-Royce-designed Merlin engines, which powered Spitfires and Hurricane fighter planes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.49" data-end="139.01">
+            <p class="french-block">Soixante-dix ans plus tard, le Royaume-Uni et les industries automobiles européennes espèrent que les moteurs de guerre peuvent aider à se défendre contre ce qu'un fournisseur a dit à la BBC était un " déclin final ".</p>
+            <span class="english-block">Eighty years later, the UK and European car industries are hoping that the engines of war can help defend against what one supplier told the BBC was a "terminal decline".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.01" data-end="155.04">
+            <p class="french-block">Alors que l'Europe se sent obligée d'engager des centaines de milliards de dollars pour accroître les dépenses de défense face à la menace de la Russie et à la réticence des États-Unis à être le protecteur de l'Europe, les constructeurs automobiles qui sont sous attaque commerciale de leurs rivaux chinois ont pris note.</p>
+            <span class="english-block">As Europe feels compelled to commit hundreds of billions to ramp up defence spending in the face of the menace from Russia and US reluctance to be Europe's protector, car makers that are under commercial attack from Chinese rivals have taken notice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.04" data-end="161.93">
+            <p class="french-block">Le réarmement de l'Europe peut-il donc sauver une industrie automobile et une chaîne d'approvisionnement confrontées à une crise ?</p>
+            <span class="english-block">So can the rearmament of Europe save an auto industry and a supply chain facing crisis?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.93" data-end="172.08">
+            <p class="french-block">Ford n'est pas la seule entreprise automobile à voir la défense comme une industrie en croissance - et à pouvoir exploiter la surcapacité croissante des usines automobiles en Europe.</p>
+            <span class="english-block">Ford is far from the only car company that sees defence as a growth industry - and one that can utilise the growing overcapacity at car plants across Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.08" data-end="183.29">
+            <p class="french-block">La compagnie automobile française Renault a signé un accord stratégique avec le géant de la défense Thales pour produire des drones militaires - visant une production allant jusqu'à 1 000 unités par mois.</p>
+            <span class="english-block">French car maker Renault has signed a strategic agreement with defence giant Thales to produce military drones - targeting an output of up to 1,000 units per month. The French military and Directorate General for Armament want to tap into Renault's mass-production capabilities to bypass traditional, slower defence supply chains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.29" data-end="197.02">
+            <p class="french-block">Pendant ce temps, Volkswagen a accepté de vendre une usine sous-utilisée à Osnabruck, en Allemagne occidentale, qui deviendra un centre de fabrication militaire dans une coentreprise avec un investisseur de défense basé en Israël.</p>
+            <span class="english-block">Meanwhile, Volkswagen has agreed to sell an under-used factory in Osnabruck, western Germany, which will become a military manufacturing hub in a joint venture with an Israeli-based defence investor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.02" data-end="208.3">
+            <p class="french-block">Jaguar Land Rover (JLR), qui fabrique le Land Rover, propose également le même contrat que Ford - l'armée retirant sa flotte Land Rover existante d'ici 2030.</p>
+            <span class="english-block">Jaguar Land Rover (JLR), which makes the Land Rover, is also bidding for the same contract as Ford - as the Army retires its existing Land Rover-based fleet by 2030. JLR has also established a new dedicated business unit to support its global military ambitions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.3" data-end="221.38">
+            <p class="french-block">Il est logique que les capacités de fabrication automobile sous-utilisées soient utilisées pour la défense, explique Mike Hawes de l'association commerciale de la Société des fabricants et des commerçants automobiles (SMMT).</p>
+            <span class="english-block">It makes sense for under-utilised auto manufacturing capacity to switch to defence, says Mike Hawes of the Society for Motor Manufacturers and Traders (SMMT) trade association.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.38" data-end="237.72">
+            <p class="french-block">L'industrie automobile britannique et ses fournisseurs dépendent fortement de quelques grands fabricants  Nissan à Sunderland, Toyota à Derbyshire, BMW à Oxfordshire et le plus grand d'entre eux en termes de valeur de production, JLR à plusieurs sites dans les Midlands et Merseyside.</p>
+            <span class="english-block">The UK car industry and its suppliers are heavily reliant on a few big manufacturers – Nissan in Sunderland, Toyota in Derbyshire, BMW in Oxfordshire and the biggest of them all by value of output, JLR at multiple sites in the Midlands and Merseyside.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.72" data-end="241.54">
+            <p class="french-block">Et Hawes dit que la chaîne d'approvisionnement est très vulnérable.</p>
+            <span class="english-block">And Hawes says the supply chain is very vulnerable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.54" data-end="265.13">
+            <p class="french-block">"La production automobile au Royaume-Uni a diminué au cours des huit ou neuf dernières années, dit- il. " Nous sommes probablement la moitié de ce que nous étions il y a 10 ans. Maintenant, cela va évidemment toucher la chaîne d'approvisionnement parce qu'ils ne fabriquent pas le même nombre de pièces. Ils ont donc une capacité. Ils peuvent également être très dépendants d'un fabricant particulier. "</p>
+            <span class="english-block">"UK automotive output has been in decline over the last eight or nine years," he says. "We're probably half of what we were 10 years ago. Now, that's obviously going to hit the supply chain because they're not making the same number of parts. So they've got capacity. They may be quite dependent on one particular manufacturer as well."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.13" data-end="272.26">
+            <p class="french-block">Ils accueilleront donc "l'occasion d'élargir leur clientèle et de potentiellement se démarquer dans la défense", dit-il.</p>
+            <span class="english-block">So they will welcome "the opportunity to broaden their customer base and potentially move into defence", he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.26" data-end="293.14">
+            <p class="french-block">Il y a seulement deux semaines, JLR a annoncé qu'elle réduisait 4 000 emplois de sa main-d'œuvre britannique de 30 000 personnes afin de réduire les coûts afin de rester compétitive avec les rivaux internationaux  particulièrement chinois . Dave Roberts de la firme Evtec, qui fournit des composants de systèmes de refroidissement à JLR, s'inquiète des implications de cela.</p>
+            <span class="english-block">Just two weeks ago, JLR announced it was cutting 4,000 jobs from its 30,000-strong UK workforce in order to reduce costs to stay competitive with international – particularly Chinese – rivals. Dave Roberts of the firm Evtec, which supplies cooling systems components to JLR, is worried about the implications of this.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.14" data-end="301.75">
+            <p class="french-block">" La JLR est la masse critique de l'industrie automobile britannique, dit-il. " C'est la colle qui maintient le secteur entier en place.</p>
+            <span class="english-block">"JLR is the critical mass in the UK automotive manufacturing space," he says. "It is the glue that holds the whole of the sector together. Because remember, when you're making volumes for JLR, they're significantly higher than any other car maker in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="301.75" data-end="306.65">
+            <p class="french-block">"Si elles souffrent, les ondes vont plus profondément dans la chaîne d'approvisionnement".</p>
+            <span class="english-block">"If they suffer, the ripples run deeper through the supply chain."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="306.65" data-end="321.58">
+            <p class="french-block">Plus tôt cette semaine, les principaux fournisseurs de JLR ont exhorté le gouvernement à aider les constructeurs automobiles à se tourner vers l'aérospatiale et la défense, en mettant en garde contre la chute à long terme de la production de voitures à grande échelle au Royaume-Uni.</p>
+            <span class="english-block">Earlier this week, major JLR suppliers urged the government to help automotive manufacturers move into aerospace and defence, warning that large-scale car production in the UK faces long-term decline.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.58" data-end="328.27">
+            <p class="french-block">Les dirigeants ont mis en garde contre une " fissure visible " dans la chaîne d'approvisionnement automobile britannique</p>
+            <span class="english-block">Executives have warned of a "visible crack" in the UK automotive supply chain</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="328.27" data-end="341.26">
+            <p class="french-block">Dans une lettre ouverte adressée au premier ministre, chancelier et maire des West Midlands, Richard Parker, les chefs de l'industrie ont fait valoir que la chaîne automobile britannique " n'était pas en déclin " mais " dans le mauvais marché ".</p>
+            <span class="english-block">In an open letter to the prime minister, chancellor and West Midlands Mayor Richard Parker, industry leaders argued Britain's automotive supply chain was "not in decline" but "in the wrong market".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="341.26" data-end="354.34">
+            <p class="french-block">La lettre a été signée par des dirigeants représentant des entreprises comptant plus de 8 600 employés directs, aux côtés de la Confédération britannique de la métallurgie, qui représente environ 75 000 travailleurs.</p>
+            <span class="english-block">The letter was signed by executives representing businesses with more than 8,600 direct employees, alongside the Confederation of British Metalforming, which represents about 75,000 workers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="354.34" data-end="365.81">
+            <p class="french-block">Les signataires de la lettre ont déclaré que les licenciements étaient "la première fissure visible" dans une chaîne d'approvisionnement automobile britannique soutenant environ 183 000 emplois dans la fabrication.</p>
+            <span class="english-block">Signatories to the letter said the redundancies were "the first visible crack" in a UK automotive supply chain supporting about 183,000 manufacturing jobs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.81" data-end="376.7">
+            <p class="french-block">Dans toute l'Europe, l'industrie est confrontée à ce que Sigrid de Vries, directrice générale de l'association des fabricants automobiles ACEA, a appelé "une tempête parfaite".</p>
+            <span class="english-block">Across Europe, the industry is facing what Sigrid de Vries, director general of the ACEA auto industry manufacturers' association called "a perfect storm". Car makers are spending billions to shift to electric vehicles and insist that government sales targets for EVs are outpacing consumer demand.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="376.7" data-end="383.28">
+            <p class="french-block">Et les véhicules électriques que les gens achètent sont de plus en plus la plus grande nouvelle menace pour l'industrie  Chine.</p>
+            <span class="english-block">And the EVs people are buying are increasingly from the biggest new threat to the industry – China.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="383.28" data-end="398.83">
+            <p class="french-block">Au début des années 2000, les entreprises occidentales ont vu la Chine comme une terre d'opportunités. La classe moyenne en pleine croissance du pays avait beaucoup d'argent et un appétit apparemment insatiable pour les voitures, y compris les modèles haut de gamme les plus rentables.</p>
+            <span class="english-block">In the early 2000s, Western firms saw China as a land of opportunity. The country's rapidly growing middle class had plenty of money and a seemingly insatiable appetite for cars, including the most profitable upmarket models. It was a lucrative business – the Chinese market once accounted for half of Volkswagen's profits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="398.83" data-end="409.94">
+            <p class="french-block">La Chine voulait une industrie automobile nationale et des fonds étatiques abondants ont été versés pour faire du pays un chef de file dans les entreprises de haute technologie, y compris les voitures électriques.</p>
+            <span class="english-block">However, it didn't last. China wanted a home-grown car industry and lavish state funding was ploughed into making the country a leader in high-tech businesses, including electric cars.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="409.94" data-end="428.42">
+            <p class="french-block">Aujourd'hui, le marché chinois est surchargé de marques, tant étrangères que nationales, et se caractérise par une concurrence féroce. Les constructeurs automobiles chinois ont concentré leur attention sur les marchés étrangers et ont utilisé la transition vers les véhicules électriques comme une voie pour gagner des parts de marché.</p>
+            <span class="english-block">Today, the Chinese market is overloaded with brands, both foreign and domestic, and is characterised by cut-throat competition. Chinese car makers have focused their attention on foreign markets, and have used the transition to electric vehicles as a pathway to gaining market share. The likes of BYD, Chery and Geely are moving aggressively into Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="428.42" data-end="449.42">
+            <p class="french-block">Pour les marques européennes, tout cela n'aurait pas pu arriver à un pire moment. La perte du flux constant de bénéfices de la Chine et l'émergence de rivaux chinois sur leur territoire est venue après qu'ils ont fortement investi dans la production de véhicules électriques (VÉ). Mais les ventes de véhicules électriques n'ont pas augmenté aussi rapidement que prévu.</p>
+            <span class="english-block">For European brands, all of this could not have happened at a worse time. The loss of the steady stream of profits from China, and the emergence of Chinese rivals on their home turf, has come after they invested heavily in producing electric vehicles (EVs). But EV sales have not increased as quickly as expected. Executives admit they have struggled to match the low production costs and development speed of the Chinese insurgents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="449.42" data-end="460.15">
+            <p class="french-block">Les fabricants européens se précipitent donc pour réduire leurs coûts, tout en se demandant ce qu'ils doivent faire des usines coûteuses capables de produire des millions de voitures de plus qu'elles ne le peuvent.</p>
+            <span class="english-block">The result is that European manufacturers are now rushing to cut costs, while wondering what to do with expensive factories capable of producing millions more cars than they are able to sell.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="460.15" data-end="474.1">
+            <p class="french-block">Volkswagen a déjà annoncé son intention de réduire 100 000 emplois au cours des prochaines années. Alors que la fermeture d'usines en Allemagne aurait été impensable, la société a maintenant fermé une à Dresde et pourrait en fermer quatre autres.</p>
+            <span class="english-block">Volkswagen has already announced plans to cut 100,000 jobs over the next few years. Whereas once closing plants in Germany would have been unthinkable, the company has now shuttered one in Dresden and may shut down four more. That includes a site in Zwickau, where VW spent over €1bn (£857m) converting production lines to build electric vehicles - a process that was completed just four years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="474.1" data-end="483.98">
+            <p class="french-block">Les estimations de l'industrie indiquent que les usines automobiles de l'Europe occidentale disposent d'une capacité de stockage annuelle d'environ 2,5 millions de véhicules.</p>
+            <span class="english-block">Industry estimates indicate that western European car plants have roughly 2.5 million vehicles worth of annual spare capacity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="483.98" data-end="490.75">
+            <p class="french-block">Il n'est donc pas étonnant que les constructeurs automobiles regardent avec jalousie les budgets de défense en hausse en Europe.</p>
+            <span class="english-block">Little wonder that car makers are jealously eyeing soaring defence budgets across Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="490.75" data-end="496.94">
+            <p class="french-block">Sigrid de Vries affirme que les constructeurs automobiles sont bien placés pour aider l'Europe à se réarmer.</p>
+            <span class="english-block">Sigrid de Vries says car makers are well placed to help Europe rearm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="496.94" data-end="523.99">
+            <p class="french-block">"Beaucoup des capacités dont la défense a besoin sont nécessaires et également fournies par le secteur automobile", dit-elle. "Les fabricants et fournisseurs automobiles possèdent donc des actifs industriels, des compétences en matière de fabrication, des capacités logistiques, ainsi que des technologies avancées. Ils disposent de vastes chaînes d'approvisionnement et aussi très intégrées qui peuvent être pertinentes pour l'objectif de préparation de la défense en Europe".</p>
+            <span class="english-block">"Many of the capabilities that defence needs are needed for and also delivered by the automotive sector," she says. "So automotive manufacturers and suppliers possess industrial assets, they possess manufacturing expertise, logistics capabilities, also advanced technologies. They have vast and also very integrated supply chains that may be relevant for Europe's broader defence preparedness objective."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="523.99" data-end="538.66">
+            <p class="french-block">Mais ce n'est pas si simple: les protocoles de sécurité, les rivalités politiques et économiques en Europe, plus le fait que, à moins d'être en guerre, les volumes ne remplaceront pas le marché de consommation de masse, ce qui pose tous des défis, dit-elle.</p>
+            <span class="english-block">But it is not that simple – security protocols, political and economic rivalries within Europe plus the fact that unless you're actually at war, the volumes will not replace the mass consumer market, all of which present challenges, she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="538.66" data-end="557.45">
+            <p class="french-block">"Ce sont deux mondes très différents", dit-elle. "Les gouvernements veulent investir dans leurs capacités de défense et c'est pourquoi il est maintenant plus que jamais intéressant pour les fabricants et les fournisseurs de voir ce qui est possible, mais ce ne sera pas suffisant pour remédier à la sous-utilisation des capacités de fabrication que nous voyons actuellement".</p>
+            <span class="english-block">"These are two very different worlds," she says. Governments want to invest in their defence capabilities and that is why it's now, more than ever, interesting for manufacturers and suppliers to see what's possible, but it will not be enough to address the underutilisation of manufacturing capacity we currently see."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="557.45" data-end="566.33">
+            <p class="french-block">Si la défense ne peut pas combler les lacunes croissantes dans la production automobile britannique et européenne, est-il temps que la poule loue une chambre au renard ?</p>
+            <span class="english-block">If defence can't plug the yawning gaps in UK and European car manufacturing production – is it time for the henhouse to rent a room to the fox?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="566.33" data-end="573.24">
+            <p class="french-block">En d'autres termes, laisser les entreprises chinoises se déplacer dans des installations de production européennes ?</p>
+            <span class="english-block">In other words, let Chinese companies move into European production facilities?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="573.24" data-end="584.06">
+            <p class="french-block">Pour compenser les coûts fixes immenses de l'exploitation de lignes d'assemblage en désuétude, les constructeurs automobiles européens et britanniques d'ancienneté ouvrent leurs portes aux concurrents chinois.</p>
+            <span class="english-block">To offset the immense fixed costs of running idle assembly lines, legacy European and UK automakers are opening their doors to Chinese rivals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="584.06" data-end="611.4">
+            <p class="french-block">Stellantis  propriétaires des marques Vauxhall, Fiat, Peugeot et Citroen  a pris une participation de 20% dans le constructeur chinois de véhicules électriques Leapmotor et la production de la marque chinoise a commencé en Pologne il y a deux ans. (Leapmotor a ensuite déplacé la production en Espagne après que la Pologne ait voté pour imposer des droits de douane élevés sur les véhicules électriques chinois alors que l'Espagne s'est abstenue  un exemple de la façon dont la politique commerciale peut se compliquer.)</p>
+            <span class="english-block">Stellantis – owners of the Vauxhall, Fiat, Peugeot and Citroen marques – has taken a 20% stake in Chinese EV maker Leapmotor and production of the Chinese brand started in Poland two years ago. (Leapmotor then moved production to Spain after Poland voted to impose steep tariffs on Chinese EVs while Spain abstained – an example of how trade politics can get complicated.)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="611.4" data-end="621.86">
+            <p class="french-block">Nissan et Chery International UK ont signé un protocole d'accord non contraignant pour l'étude de la fabrication contractuelle de véhicules Chery pour Nissan dans son usine de Sunderland.</p>
+            <span class="english-block">Nissan and Chery International UK have signed a non-binding Memorandum of Understanding for the study of contract manufacturing for Nissan to manufacture Chery vehicles at its Sunderland plant.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="621.86" data-end="633.7">
+            <p class="french-block">Le PDG de Volkswagen, Oliver Blume, a déclaré en avril de cette année que Volkswagen envisageait de partager les capacités d'usine européennes disponibles avec des partenaires chinois de coentreprise.</p>
+            <span class="english-block">VW CEO Oliver Blume said in April of this year that Volkswagen was considering sharing spare European factory capacity with Chinese joint-venture partners.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="633.7" data-end="646.27">
+            <p class="french-block">En effet, les usines européennes auraient un travail supplémentaire, tandis que les fabricants chinois pourraient éviter des tarifs élevés lorsqu'ils vendent aux États-Unis et à l'UE en fabriquant et en exportant les voitures sur ces marchés.</p>
+            <span class="english-block">In one sense it could be a win-win. European factories would have extra work while Chinese manufacturers could avoid high tariffs when selling into the US and the EU by making and exporting the cars in and from those markets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="646.27" data-end="653.3">
+            <p class="french-block">Mais construire des voitures en Europe ne signifie pas automatiquement créer ou sauver des chaînes d'approvisionnement européennes.</p>
+            <span class="english-block">But building cars in Europe does not automatically mean creating or saving European supply chains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="653.3" data-end="661.66">
+            <p class="french-block">Certaines usines ne peuvent effectuer que l'assemblage final alors que de nombreux composants  en particulier les batteries  peuvent continuer à provenir de Chine.</p>
+            <span class="english-block">Some plants may only perform final assembly while many of the components – especially batteries – may continue to come from China.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="661.66" data-end="667.85">
+            <p class="french-block">Les trésors culturels sont détruits dans le monde entier. Pourquoi donc personne n'est puni?</p>
+            <span class="english-block">Cultural treasures are being destroyed worldwide - so why is no-one being punished?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="667.85" data-end="670.18">
+            <p class="french-block">La guerre pourrait venir.</p>
+            <span class="english-block">War may be coming. Are we psychologically ready?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="670.18" data-end="675.6">
+            <p class="french-block">Pourquoi une nouvelle vague de soldats nord-coréens pourrait se battre dans la guerre russe en Ukraine</p>
+            <span class="english-block">Why a fresh wave of North Korean soldiers may fight in Russia's war in Ukraine</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="675.6" data-end="696.29">
+            <p class="french-block">La fabrication automobile est toujours considérée comme un élément central de la capacité de fabrication souveraine des pays. Dans les temps anciens, le mantra était: "Ce qui est bon pour General Motors est bon pour l'Amérique". On pourrait dire la même chose pour Volkswagen, Mercedes et BMW pour l'Allemagne et JLR pour le Royaume-Uni.</p>
+            <span class="english-block">Car making is still seen as central to countries' sovereign manufacturing capability – in the old days the mantra was: "What's good for General Motors is good for America." You could say the same for Volkswagen, Mercedes and BMW for Germany and JLR for the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="696.29" data-end="706.78">
+            <p class="french-block">Les usines automobiles sont souvent le principal employeur de leur région et soutiennent les chaînes d'approvisionnement locales, de sorte que les pertes d'emplois peuvent être particulièrement graves.</p>
+            <span class="english-block">Car plants are often the major employer in their area and support local supply chains, so job losses can hit particularly hard. That's why countries go to great lengths to protect and preserve them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="706.78" data-end="721.99">
+            <p class="french-block">L'Australie en est un exemple: quand sa dernière voiture fabriquée localement a quitté la ligne de production en 2017, elle a non seulement perdu une industrie automobile, mais aussi un état d'esprit d'ingénierie et des compétences clés, explique Dave Roberts d'Evtec.</p>
+            <span class="english-block">Australia is a case in point. When its final locally made car left the production line in 2017, it didn't just lose a car industry, it lost an engineering mindset and key skills, says Dave Roberts of Evtec.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="721.99" data-end="734.74">
+            <p class="french-block">"Au cours de la décennie suivante, dit- il, les effets de la ondulation se sont infiltrés dans toute la fabrication, ce qui a entraîné la perte de la capacité d'infrastructure et de la capacité de fabrication avancée.</p>
+            <span class="english-block">"Over the next decade... ripple effects crept into all manufacturing," he says. "So they lost infrastructure capability. They lost advanced manufacturing capability.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="734.74" data-end="739.8">
+            <p class="french-block">" Ils sont vulnérables. Ils ne sont plus résilients dans ces secteurs. "</p>
+            <span class="english-block">"They're vulnerable. They're not resilient in those sectors anymore."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="739.8" data-end="750.74">
+            <p class="french-block">Lisa Brankin, de Ford UK, reconnaît que 9 000 moteurs sur cinq à sept ans est loin des 90 000 par an que l'usine utilise pour produire  mais elle insiste pour que chaque petit aide.</p>
+            <span class="english-block">Ford UK's Lisa Brankin acknowledges 9,000 engines over five to seven years is a far cry from the 90,000 per year the plant used to produce – but she insists every little helps.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="750.74" data-end="755.18">
+            <p class="french-block">"C'est une goutte dans l'océan mais chaque occasion vaut la peine d'être, n'est-ce pas?"</p>
+            <span class="english-block">"It is a drop in the ocean but every single opportunity is worth having, isn't it?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="755.18" data-end="779.38">
+            <p class="french-block">Un porte-parole du ministère de la Défense affirme vouloir que l'industrie britannique joue un " rôle central " dans la fourniture de milliers de véhicules modernes de mobilité légère. " Nous soutenons les entreprises britanniques et notre base industrielle de défense, avec 85% de nos dépenses de défense actuellement au Royaume-Uni, ce qui favorise la réindustrialisation et fait de la défense un moteur de croissance. "</p>
+            <span class="english-block">A spokesperson for the Ministry of Defence says it wants UK industry to play a "central role" in delivering thousands of modern light mobility vehicles. The spokesperson adds: "We are backing British businesses and supporting our defence industrial base with 85% of our defence spending currently staying in the UK, driving reindustrialisation and making defence an engine for growth."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="779.38" data-end="793.7">
+            <p class="french-block">Il est compréhensible qu'une industrie automobile européenne en déclin veuille réduire les dépenses dépensières dans le secteur de la défense. Mais même si elle le peut, il est difficile de voir comment elle pourra encore exercer le muscle qu'elle a jadis exercé.</p>
+            <span class="english-block">It's understandable why a declining European car industry wants to gatecrash the spending splurge in the defence sector. But even if they can, right now it is hard to see how they'll ever be able to wield the muscle that they once did.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="793.7" data-end="797.98">
+            <p class="french-block">Les questions soulevées dans cet article vous touchent- elles personnellement?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_13.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
