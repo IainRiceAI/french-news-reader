@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pornhub investigated over its age checks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Pornhub investigated over its age checks</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 23 Sep 2026 15:56:44 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6eq8dw3dlyqo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The regulator says it has concerns over how the site is relying on third party checks provided by Apple for some users.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.29" data-end="16.99">
+            <p class="french-block">Ofcom a lancé une enquête sur le propriétaire de Pornhub, Aylo, sur la question de savoir si les contrôles d'âge du site empêchent efficacement les enfants d'accéder au contenu pour adultes.</p>
+            <span class="english-block">Ofcom has launched an investigation into Pornhub owner, Aylo, over whether the site's new age checks are effectively stopping children from accessing adult content.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.99" data-end="27.46">
+            <p class="french-block">Le régulateur a déclaré en mai que Pornhub avait commencé à utiliser un nouveau processus de vérification de l'âge pour certains utilisateurs, qui comptait sur un tiers, Apple.</p>
+            <span class="english-block">The regulator said in May that Pornhub started using a new age verification process for some users, which relied on a third party, Apple.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.46" data-end="40.63">
+            <p class="french-block">Elle a déclaré qu'elle craignait que Aylo "n'ait pas effectué suffisamment de diligence raisonnable et de tests" avant de mettre en œuvre ce nouveau processus, et qu'elle "ne soit donc pas très efficace" pour empêcher les enfants de voir de la pornographie.</p>
+            <span class="english-block">It said it had concerns that Aylo "may not have conducted sufficient due diligence and testing" before implementing this new process, and so it "may not be highly effective" at preventing children from seeing pornography.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.63" data-end="50.11">
+            <p class="french-block">Dans une longue déclaration à la BBC, Aylo a fermement défendu son système de vérification de l'âge tout en soulignant qu'il coopérerait pleinement à l'enquête.</p>
+            <span class="english-block">In a lengthy statement given to the BBC, Aylo strongly defended its system for age verification while stressing it would cooperate fully with the investigation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.11" data-end="67.97">
+            <p class="french-block">En vertu de la Loi sur la sécurité en ligne (OSA) du Royaume-Uni, les sites qui hébergent du matériel pornographique doivent utiliser une garantie d'âge très efficace pour s'assurer que les utilisateurs ont plus de 18 ans, mais il appartient au service de décider de la méthode de vérification de l'âge qu'il utilisera.</p>
+            <span class="english-block">Under the UK's Online Safety Act (OSA), sites that host pornographic material must use highly effective age assurance to ensure users are over 18, but it leaves it up to the service to decide the method of age-checking it will use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.97" data-end="79.37">
+            <p class="french-block">Ofcom dit que dans le cadre de son enquête, il examinera comment Aylo met en œuvre ses processus de vérification de l'âge et si elle a effectué la "diligence raisonnable nécessaire" avant sa mise en œuvre.</p>
+            <span class="english-block">Ofcom says as part of its investigation it will consider how Aylo implements its age verification processes and whether it conducted the "necessary due diligence" before it was implemented.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.37" data-end="84.07">
+            <p class="french-block">Elle ne s'intéressera pas à la manière dont Apple effectue ses contrôles d'âge.</p>
+            <span class="english-block">It will not investigate how Apple operates its age checks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="84.07" data-end="97.51">
+            <p class="french-block">George Lusty, directeur de l'application des lois d'Ofcom, a déclaré: "Les contrôles d'âge en ligne sont une protection vitale pour empêcher les enfants de rencontrer des contenus inappropriés ou nocifs, y compris la pornographie.</p>
+            <span class="english-block">George Lusty, Ofcom's Director of Enforcement, said: "Online age checks are a vital protection to prevent children from encountering inappropriate or harmful material, including pornography.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="97.51" data-end="105.0">
+            <p class="french-block">" Nous nous attendons à ce que les entreprises de technologie s'assurent que les contrôles d'âge sont très efficaces avant de les introduire.</p>
+            <span class="english-block">"We expect tech firms to ensure age checks are highly effective before introducing them. Anything less could leave children at risk."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="119.02">
+            <p class="french-block">Mais Aylo soutient qu'après avoir expérimenté sur plusieurs marchés plusieurs méthodes de vérification de l'âge, le système d'Apple "offre une protection nettement plus forte que toute autre méthode d'assurance de l'âge actuellement disponible sur le marché britannique".</p>
+            <span class="english-block">But Aylo argues that, having experimented in multiple markets with multiple age-check methods, Apple's system "provides significantly stronger protection than any other age assurance method currently available in the UK market".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="119.02" data-end="126.77">
+            <p class="french-block">Il note également que Ofcom avait précédemment salué la technologie d'Apple comme "une véritable victoire pour les enfants et les familles".</p>
+            <span class="english-block">It also notes that Ofcom had previously praised Apple's technology as "a real win for children and families".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.77" data-end="138.67">
+            <p class="french-block">Aylo soutient qu'un système basé sur la demande de sites pornographiques individuels pour vérifier l'âge des utilisateurs, pousse simplement les utilisateurs vers des sites plus risqués qui ne suivent pas les règles d'Ofcom.</p>
+            <span class="english-block">Aylo argues a system based on asking individual pornographic sites to check users ages, simply drives users to riskier sites that aren't following Ofcom's rules.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.67" data-end="153.0">
+            <p class="french-block">Des recherches menées par la Lucy Faithfull Foundation, externes, ont précédemment suggéré que les sites non conformes "pourraient également être plus susceptibles d'héberger du contenu nocif ou illégal, et dans certains cas, des images sexuelles d'enfants".</p>
+            <span class="english-block">Research by the Lucy Faithfull Foundation, external has previously suggested that non-compliant sites "may also be more likely to host harmful or illegal content, and in some cases, sexual images of children".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.0" data-end="171.34">
+            <p class="french-block">Mais Iain Corby, directeur exécutif de l'Association des fournisseurs de vérification de l'âge, a déclaré à la BBC qu'un site limité à l'âge ne pouvait pas compter uniquement sur un système basé sur un appareil mobile à moins qu'il ne puisse démontrer "que les enfants sont en fait empêchés d'accéder à son contenu selon la norme requise".</p>
+            <span class="english-block">But Iain Corby executive director of the Age Verification Providers Association told the BBC  that an age-restricted site could not rely on an mobile device based system alone unless it could demonstrate "that children are in fact prevented from accessing its content to the required standard."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.34" data-end="184.46">
+            <p class="french-block">Il doutait que Apple puisse montrer que "chaque fois que quelqu'un accède à son site, que la personne est la même qui a prouvé son âge pour supprimer le filtre de l'appareil, ou que le filtre d'Apple empêchera toujours l'accès à tous ses sites pour adultes".</p>
+            <span class="english-block">He doubted that Apple could show that "each time someone accesses its site, that the person is the same one who originally proved their age to remove the device's filter, or that Apple's filter will always prevent access to all its adult sites."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.46" data-end="197.38">
+            <p class="french-block">En vertu de l'OSA, Ofcom dispose du pouvoir d'amener des entreprises non conformes à une amende pouvant atteindre 18 millions de livres sterling ou 10% de leur chiffre d'affaires mondial annuel, selon le montant le plus élevé.</p>
+            <span class="english-block">Under the OSA, Ofcom holds the power to fine non-compliant companies up to £18 million or 10% of their annual global turnover, whichever is greater.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.38" data-end="204.26">
+            <p class="french-block">Cette enquête n'est que le dernier affrontement entre le régulateur et l'un des sites pornographiques les plus regardés au monde.</p>
+            <span class="english-block">This probe is just the latest clash between the regulator and what is one of the world's most viewed porn sites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.26" data-end="215.71">
+            <p class="french-block">En octobre 2025, Pornhub a déclaré que le trafic des utilisateurs britanniques avait chuté de plus de 75% suite à l'introduction de contrôles d'âge plus robustes par l'OSA.</p>
+            <span class="english-block">In October 2025 Pornhub said traffic from UK users had plunged by more than 75% following the introduction of more robust age checks by the OSA.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.71" data-end="222.98">
+            <p class="french-block">Certains se demandent si les gens utilisaient simplement des réseaux privés virtuels (VPN) pour contourner les chèques.</p>
+            <span class="english-block">Some have questioned whether people were simply using Virtual Private Networks (VPN) to get around the checks instead.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.98" data-end="235.61">
+            <p class="french-block">En janvier, Pornhub a annoncé qu'il restreindrait l'accès à son site Web au Royaume-Uni, en blâmant les contrôles plus stricts, avec seulement des personnes qui avaient précédemment créé un compte Pornhub pouvant accéder à son contenu.</p>
+            <span class="english-block">In January, Pornhub announced it would restrict access to its website in the UK, blaming the tougher checks, with only people who had previously made a Pornhub account able to access its content.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.61" data-end="243.43">
+            <p class="french-block">Aylo a déclaré que les mises à jour de la Loi exigeant la vérification de l'âge "n'avaient pas atteint son objectif de protéger les mineurs".</p>
+            <span class="english-block">Aylo said that updates to the Act requiring age verification had "not achieved its goal of protecting minors".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="243.43" data-end="257.26">
+            <p class="french-block">Cependant, en mai, il a déclaré qu'il rendrait le site disponible à nouveau pour certains utilisateurs britanniques d'Apple qui avaient confirmé leur âge avec la version la plus récente de l'entreprise d'iOS, son système d'exploitation mobile.</p>
+            <span class="english-block">However, in May, it said it would be making the site available again for some UK Apple users who had confirmed their age with the company's most up-to-date version of iOS, its mobile operating system.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_20.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
