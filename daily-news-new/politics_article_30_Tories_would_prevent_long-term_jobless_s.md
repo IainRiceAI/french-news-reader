@@ -1,7 +1,7 @@
 # Tories would prevent long-term jobless spending benefits on alcohol and cigarettes
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c920vy2jxle8o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c920vy2jxle8o?at_medium=RSS&at_campaign=rss)  
-**Published:** Wed, 23 Sep 2026 21:01:55 GMT  
+**Published:** Thu, 24 Sep 2026 10:25:58 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](politics_article_30.mp3)  
 
 ---
@@ -92,9 +92,9 @@
 
 ### Section 11
 
-**🇬🇧 EN:** Every two years a claimant has previously worked would buy an extra year on the full rate of Universal Credit - but those who have not contributed enough would drop to a new "Subsistence Allowance", worth 70% of the full rate.
+**🇬🇧 EN:** Every two years a claimant has previously worked would buy an extra year on the full rate of Universal Credit - but those who have not contributed enough would drop to a new "subsistence allowance", worth 70% of the full rate.
 
-**🇫🇷 FR:** *Tous les deux ans, un demandeur ayant déjà travaillé achèterait une année supplémentaire sur le taux total du crédit universel, mais ceux qui n'avaient pas contribué suffisamment recevraient une nouvelle " Allocation de subsistance ", qui représente 70% du taux total.*
+**🇫🇷 FR:** *Tous les deux ans, un demandeur ayant déjà travaillé achèterait une année supplémentaire sur le taux total du crédit universel, mais ceux qui n'avaient pas contribué suffisamment recevraient une nouvelle "allocation de subsistance", qui représente 70% du taux total.*
 
 ---
 
@@ -124,13 +124,45 @@
 
 ### Section 15
 
-**🇬🇧 EN:** The Tories said loading the "Subsistence Allowance" onto a pre-paid card, with restrictions on what the money can be spent on, would ensure taxpayers' money supports claimants with essentials like food.
+**🇬🇧 EN:** The Tories said the reduced subsistence allowance would be loaded onto pre-paid card that would not allow cash withdrawals, and would "prevent spending" on alcohol, cigarettes, or gambling.
 
-**🇫🇷 FR:** *Les conservateurs ont déclaré que le chargement de l'" Allocation de subsistance " sur une carte prépayée, avec des restrictions sur ce sur quoi l'argent peut être dépensé, garantirait que l'argent des contribuables soutient les demandeurs avec des choses essentielles comme la nourriture.*
+**🇫🇷 FR:** *Les conservateurs ont déclaré que l'allocation de subsistance réduite serait chargée sur une carte prépayée qui ne permettrait pas de retrait d'argent liquide et "empêcherait de dépenser" sur l'alcool, les cigarettes ou les jeux d'argent.*
 
 ---
 
 ### Section 16
+
+**🇬🇧 EN:** The party is yet to detail how its proposal would work, but shadow welfare secretary Helen Whately said it would be "a version" of the pre-paid Aspen card issued to asylum seekers living in government-funded accommodation.
+
+**🇫🇷 FR:** *Le parti n'a pas encore détaillé comment sa proposition fonctionnerait, mais la secrétaire à l'ombre Helen Whately a déclaré que ce serait une " version " de la carte Aspen prépayée délivrée aux demandeurs d'asile vivant dans des logements financés par le gouvernement.*
+
+---
+
+### Section 17
+
+**🇬🇧 EN:** These cards cannot be used to make contactless, telephone or internet payments, whilst asylum seekers whose applications have failed cannot withdraw cash.
+
+**🇫🇷 FR:** *Ces cartes ne peuvent pas être utilisées pour effectuer des paiements sans contact, par téléphone ou par Internet, tandis que les demandeurs d'asile dont la demande a été rejetée ne peuvent pas retirer de l'argent liquide.*
+
+---
+
+### Section 18
+
+**🇬🇧 EN:** The Home Office confirmed last year it had tightened the list of permitted retailers where the cards can be used, after reports that some asylum seekers had used the cards to gamble in sites such as slot machine arcades.
+
+**🇫🇷 FR:** *L'année dernière, le ministère de l'Intérieur a confirmé avoir resserré la liste des détaillants autorisés à utiliser les cartes, après que des informations ont été publiées selon lesquelles certains demandeurs d'asile avaient utilisé ces cartes pour jouer dans des sites tels que des arcades de machines à sous.*
+
+---
+
+### Section 19
+
+**🇬🇧 EN:** Whately said the party would also look to learn from Australia, where certain claimants are issued with debit cards that restrict purchases, external at shops selling alcohol, tobacco products or pornography.
+
+**🇫🇷 FR:** *Whately a déclaré que la partie chercherait également à tirer des leçons de l'Australie, où certains demandeurs reçoivent des cartes de débit qui restreignent les achats, externes dans les magasins vendant de l'alcool, des produits du tabac ou de la pornographie.*
+
+---
+
+### Section 20
 
 **🇬🇧 EN:** Conservative leader Kemi Badenoch said the current system "where someone who can work chooses not to, and earns more benefits than someone in a job" was "unfair".
 
@@ -138,7 +170,7 @@
 
 ---
 
-### Section 17
+### Section 21
 
 **🇬🇧 EN:** "The best welfare is a well-paid job. So, we will be tough on those who exploit the system because the current system is unfair to workers, taxpayers and those who truly need support," she said.
 
@@ -146,7 +178,7 @@
 
 ---
 
-### Section 18
+### Section 22
 
 **🇬🇧 EN:** "Welfare must be a safety net for those who genuinely need it, not a lifestyle choice for those who can't be bothered."
 
@@ -154,7 +186,7 @@
 
 ---
 
-### Section 19
+### Section 23
 
 **🇬🇧 EN:** However, Helen Barnard, director of policy and research at the anti-poverty charity Trussell, said the proposals were "deeply misguided".
 
@@ -162,7 +194,7 @@
 
 ---
 
-### Section 20
+### Section 24
 
 **🇬🇧 EN:** "Universal Credit already falls well short of what people need to afford the essentials like food and heating, forcing people across the UK to the doors of food banks," she said.
 
@@ -170,7 +202,7 @@
 
 ---
 
-### Section 21
+### Section 25
 
 **🇬🇧 EN:** "We see people's health being damaged and their ability to find and maintain work undermined by the severe hardship so many are facing."
 
@@ -178,7 +210,7 @@
 
 ---
 
-### Section 22
+### Section 26
 
 **🇬🇧 EN:** Reform UK's economy spokesman, Robert Jenrick, said the Tories had left record numbers on long-term benefits and the proposals "won't even put a dent" in the welfare bill.
 
@@ -186,7 +218,7 @@
 
 ---
 
-### Section 23
+### Section 27
 
 **🇬🇧 EN:** The Conservatives have already pledged to scrap Personal Independence Payment, the main disability benefit in England, Wales and Northern Ireland, for "low-level" mental health conditions to help cut the welfare bill.
 
@@ -194,7 +226,7 @@
 
 ---
 
-### Section 24
+### Section 28
 
 **🇬🇧 EN:** The party also wants to make it harder to claim sickness benefits, which it said would mean more people are required to look for work.
 
@@ -202,7 +234,7 @@
 
 ---
 
-### Section 25
+### Section 29
 
 **🇬🇧 EN:** Spending on benefits has ballooned in recent years and is forecast to rise to £408.6bn in 2030/31, according to figures from the Department for Work and Pensions.
 
@@ -210,11 +242,19 @@
 
 ---
 
-### Section 26
+### Section 30
 
-**🇬🇧 EN:** Prime Minister Andy Burnham has insisted he will get the welfare bill down, for example by tackling but number of young people not in education, employment or training, but not through "crude cuts".
+**🇬🇧 EN:** Prime Minister Andy Burnham has insisted he will get the welfare bill down, for example by tackling the number of young people not in education, employment or training, but not through "crude cuts".
 
-**🇫🇷 FR:** *Le Premier ministre Andy Burnham a insisté sur le fait qu'il réduirait le projet de loi sur les soins sociaux, par exemple en s'attaquant à un nombre de jeunes non en éducation, en emploi ou en formation, mais pas par des " coupes brutales ".*
+**🇫🇷 FR:** *Le Premier ministre Andy Burnham a insisté sur le fait qu'il réduirait le projet de loi sur les soins sociaux, par exemple en s'attaquant au nombre de jeunes qui ne sont pas dans l'éducation, l'emploi ou la formation, mais pas par des " coupes brutales ".*
+
+---
+
+### Section 31
+
+**🇬🇧 EN:** Have you been affected by the issues discussed in this story?
+
+**🇫🇷 FR:** *Les questions abordées dans cet article vous ont- elles touchées?*
 
 ---
 

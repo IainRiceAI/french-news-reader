@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elephants use medicinal plants to treat themselves, researchers find</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Elephants use medicinal plants to treat themselves, researchers find</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 24 Sep 2026 11:42:42 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cv1j4yr6j2p0o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: African elephants use dozens of different medicinal plants to treat themselves and their families when they are sick, research reveals.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.99" data-end="16.49">
+            <p class="french-block">Des experts locaux ont révélé que les éléphants sauvages utilisaient plus de 35 plantes, dont beaucoup avaient des utilisations médicinales connues.</p>
+            <span class="english-block">Accounts from local experts revealed that wild elephants used more than 35 plants, many of which have known medicinal uses</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.49" data-end="24.41">
+            <p class="french-block">Les éléphants africains utilisent des dizaines de plantes médicinales différentes pour se soigner eux- mêmes et leurs familles lorsqu'ils sont malades.</p>
+            <span class="english-block">African elephants use dozens of different medicinal plants to treat themselves and their families when they are sick.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.41" data-end="31.82">
+            <p class="french-block">C'est la conclusion d'une étude qui a interrogé des personnes qui vivent et travaillent aux côtés des éléphants dans la région du mont Elgon au Kenya.</p>
+            <span class="english-block">This is the conclusion of a study which interviewed people who live and work alongside the elephants in the Mount Elgon region of Kenya.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.82" data-end="45.74">
+            <p class="french-block">Ces animaux particuliers ont longtemps intrigué les scientifiques par leur comportement extraordinaire - ils sont connus sous le nom d'éléphants extracteurs de sel, car ils vont dans des grottes et grattent la roche avec leurs dents pour extraire des minéraux pour leur alimentation.</p>
+            <span class="english-block">These particular animals have long intrigued scientists with their extraordinary behaviour - they are known as salt-mining elephants, because they go into caves  and scrape the rock with their tusks to extract minerals for their diet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.74" data-end="54.19">
+            <p class="french-block">Cette recherche récemment publiée suggère que les mêmes éléphants utilisent plusieurs espèces végétales différentes dans la forêt à des fins médicinales.</p>
+            <span class="english-block">This newly published research suggests that the same elephants use several different plant species in the forest for medicinal purposes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.19" data-end="62.93">
+            <p class="french-block">Des pièges de caméra mis en place par la Fondation Mount Elgon ont capturé les éléphants qui "minent" du sel dans les grottes, pour compléter leur alimentation</p>
+            <span class="english-block">Camera traps set up by the Mount Elgon Foundation captured the elephants 'mining' for salt in caves, to supplement their diet</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.93" data-end="78.36">
+            <p class="french-block">L'une des principales chercheuses, le Dr Elodie Freymann de l'Université Brown aux États-Unis, a déclaré que l'étude soulève la question de savoir si la destruction de l'habitat forestier prive les animaux - et les humains - des médicaments dont ils ont besoin pour prospérer.</p>
+            <span class="english-block">One of the lead researchers, Dr Elodie Freymann from Brown University in the US, said the study raised the question of whether destruction of forest habitat deprives animals - and humans - of the medicines they need to thrive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.36" data-end="85.87">
+            <p class="french-block">"Cela montre à quel point nos médicaments sont enlisés dans le monde non humain", a déclaré le Dr Freymann à BBC News.</p>
+            <span class="english-block">"This shows just how entangled our medicines are with the non-human world," Dr Freymann told BBC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.87" data-end="90.72">
+            <p class="french-block">Les chercheurs disent que les forêts sont des "pharmacies naturelles" pour les éléphants</p>
+            <span class="english-block">The researchers say the forests are 'natural pharmacies' for the elephants</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.72" data-end="103.46">
+            <p class="french-block">Les scientifiques ont collaboré avec l'organisme de bienfaisance de la Fondation Mount Elgon, en dehors de la communauté, et ont interrogé des habitants, y compris des explorateurs de la faune et des anciens de la communauté.</p>
+            <span class="english-block">The scientists collaborated with the conservation charity the Mount Elgon Foundation, external. They interviewed local people, including wildlife scouts and community elders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.46" data-end="112.15">
+            <p class="french-block">Les récits décrivent des éléphants qui choisissent des plantes particulières lorsqu'elles semblent malades, et des mères qui donnent à leurs petits des plantes médicinales.</p>
+            <span class="english-block">Accounts described elephants selecting particular plants when they seemed unwell, and mothers reportedly giving medicinal plant material to their calves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="112.15" data-end="120.48">
+            <p class="french-block">Les chercheurs ont conclu que les éléphants utilisent 35 espèces végétales différentes, dont 25 sont connues pour leur usage médical.</p>
+            <span class="english-block">From this, the researchers concluded that the elephants use 35 different plant species, and that 25 of those are known locally to have medicinal uses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.48" data-end="123.84">
+            <p class="french-block">Chimpanzés sauvages filmés à l'aide de la forêt</p>
+            <span class="english-block">Wild chimpanzees filmed using forest 'first aid'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="123.84" data-end="128.09">
+            <p class="french-block">Orangutan blessé vu en utilisant des plantes comme médicament</p>
+            <span class="english-block">Wounded orangutan seen using plant as medicine</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.09" data-end="138.7">
+            <p class="french-block">L'étude, publiée dans la revue Scientific Reports, externe, n'a pas nommé les personnes interrogées - les participants ont été anonymes pour pouvoir partager leurs histoires.</p>
+            <span class="english-block">The study, published in the journal Scientific Reports, external, did not name the interviewees - keeping participants anonymous so they felt free to share their stories.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.7" data-end="148.42">
+            <p class="french-block">Leur récit révèle des détails intrigués: un chercheur a décrit dans un témoignage qu'il avait vu des éléphants utiliser une plante appelée Angurweet " comme remède pour les bébés ".</p>
+            <span class="english-block">Their accounts reveal some intriguing details. In one testimony, a wildlife scout described seeing elephants using a plant known as Angurweet "as medicine to give to babies".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.42" data-end="162.72">
+            <p class="french-block">L'angurouet est utilisé comme remède contre les maux d'estomac, dont les douleurs d'estomac. " Les mères d'éléphants le mélangent dans leur bouche, " enlevant les feuilles et en les mâchant jusqu'à ce qu'elles soient douces, ainsi que les racines de certains autres arbres ".</p>
+            <span class="english-block">Angurweet is used as a remedy for ailments including stomach ache. The scout, who  described elephant mothers mixing it in their mouths - "removing the leaves and chewing it until smooth, along with the roots of some other trees".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.72" data-end="172.51">
+            <p class="french-block">Il raconte également avoir vu des mères mélanger ce matériau végétal avec leur propre lait. " Elles le donnent aux bébés, qui le mâchent eux- mêmes et crachent les solides. "</p>
+            <span class="english-block">He also recounted  that he had seen mothers mix this plant material with their own milk. "They give it to the babies, who chew on it themselves and spit out the solids".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.51" data-end="187.8">
+            <p class="french-block">Le professeur Michael Huffman, un primatologue du Japon, actuellement à l'Université de Nagasaki, a déclaré que ce récit en particulier était "tantalisant", mais qu'il faudrait plus de preuves pour prouver que les éléphants offraient des traitements médicaux sur mesure à leurs veaux.</p>
+            <span class="english-block">Professor Michael Huffman, a primatologist based in Japan, currently at Nagasaki University, said this particular account was "tantalising", but more evidence would be needed to prove that elephants provided bespoke medical treatment for their calves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.8" data-end="197.98">
+            <p class="french-block">Les scientifiques ont déjà commencé à recueillir ces preuves - donnant aux experts de la faune locale qu'ils ont travaillé avec des caméras pour enregistrer le comportement qu'ils observent.</p>
+            <span class="english-block">The scientists have already embarked on gathering that evidence - giving the local wildlife experts they worked with cameras to record the behaviour they witness.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.98" data-end="206.33">
+            <p class="french-block">Ils analysent également les plantes utilisées par les éléphants, à la recherche de nouveaux médicaments que les éléphants eux-mêmes ont peut-être découverts.</p>
+            <span class="english-block">They are also analysing plants that the elephants use - looking for new medicines that the elephants themselves may have discovered.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.33" data-end="218.66">
+            <p class="french-block">Un autre chercheur principal du projet, le Dr Fabien Schultz de l'Institut Bernhard Nocht de médecine tropicale à Hambourg, a déclaré à BBC News: "Les connaissances locales nous ont donné une carte".</p>
+            <span class="english-block">Another lead reearcher on the project, Dr Fabien Schultz from the Bernhard Nocht Institute for Tropical Medicine in Hamburg, told BBC News: "Local knowledge has given us a map".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.66" data-end="229.18">
+            <p class="french-block">"Nous [aimons] suivre les éléphants et examiner s'ils choisissent des plantes spécifiques dans des contextes de santé particuliers, et si ces plantes ont une activité biologique pertinente".</p>
+            <span class="english-block">"We [now] want to follow the elephants and investigate whether they select particular plants in particular health contexts, and whether those plants have relevant biological activity."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.18" data-end="234.67">
+            <p class="french-block">L'étude a identifié 35 espèces végétales différentes que les animaux utilisent.</p>
+            <span class="english-block">The study identified 35 different plant species that the animals use</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.67" data-end="239.38">
+            <p class="french-block">De nombreux animaux se traitent avec des plantes et d'autres remèdes naturels.</p>
+            <span class="english-block">Many animals treat themselves with plants and other natural remedies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.38" data-end="246.19">
+            <p class="french-block">Les premiers récits scientifiques sur les éléphants pratiquant l'"auto-médicament" remontent au début du IIIe siècle.</p>
+            <span class="english-block">The earliest scientific accounts of elephants practicing "self-medication" date back to the early third century.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="246.19" data-end="259.27">
+            <p class="french-block">Dans son texte De Natura Animalium (Sur la nature des animaux), l'auteur romain Claudius Aelian décrit un éléphant qui, après avoir été blessé par des lances et des flèches, a consommé des fleurs et de l'huile d'un olivier.</p>
+            <span class="english-block">Roman author Claudius Aelian in his text De Natura Animalium (On the Nature of Animals) described an elephant that, after being wounded by spears and arrows, consumed flowers and oil from an olive tree. The elephant made a full recovery.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.27" data-end="268.25">
+            <p class="french-block">Des siècles plus tard, ces scientifiques étudient ce que nous pouvons apprendre de la faune sur les propriétés des plantes dans les habitats forestiers où elles ont évolué.</p>
+            <span class="english-block">Centuries later, these scientists are delving into what we can learn from wildlife about the properties of plants in the forest habitats they evolved in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.25" data-end="281.02">
+            <p class="french-block">"Il y a des organismes qui produisent des médicaments sur cette planète qui ont cette incroyable capacité", a déclaré le Dr Freymann à BBC News. " Des usines de médecine qui existent partout autour de nous".</p>
+            <span class="english-block">"There are medicine-producing organisms on this planet that have this incredible capability," Dr Freymann told BBC News." Medicine factories that exist all around us."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.02" data-end="287.18">
+            <p class="french-block">Les chercheurs ont travaillé avec des experts locaux pour identifier les plantes utilisées par les éléphants.</p>
+            <span class="english-block">Researchers worked with local experts to identify plants the elephants use</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="287.18" data-end="304.1">
+            <p class="french-block">Le professeur Huffman, qui n'a pas participé à cette étude, a ajouté: "Nous savons maintenant que les moustiques et les drosophiles (mouches) se soignent eux- mêmes, que les abeilles se soignent elles- mêmes, comme beaucoup d'autres espèces, tout au long de l'échelle évolutive des grands singes d'Afrique et d'Asie.</p>
+            <span class="english-block">Prof Huffman, who was not involved in this study, added: "We now know that mosquitoes and drosophila (flies) self-medicate, bees self-medicate, as do many other species all the way up the evolutionary ladder to the great apes of Africa and Asia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.1" data-end="310.56">
+            <p class="french-block">"Avec chaque nouvelle espèce étudiée, nous avons acquis une meilleure compréhension de notre passé médical".</p>
+            <span class="english-block">"WIth each new species studied, we have gained a greater understanding of our medicinal past."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.56" data-end="316.06">
+            <p class="french-block">Pour le Dr Freymann, les résultats contiennent également une leçon pour notre avenir.</p>
+            <span class="english-block">For Dr Freymann, the findings also contain a lesson for our future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="316.06" data-end="324.05">
+            <p class="french-block">"Beaucoup des médicaments que nous achetons en pharmacie proviennent de composés d'arbres, d'algues, de champignons, de récifs coralliens.</p>
+            <span class="english-block">"So many of the medicines we buy in a pharmacy were derived from compounds from trees, algae, from fungi, from coral reefs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="324.05" data-end="334.78">
+            <p class="french-block">"C'est un gain-gagnant pour nous de protéger ces forêts et de garder ces pharmacies naturelles autour... assez longtemps que nous pouvons découvrir de nouveaux produits naturels qui pourraient nous sauver en bas de la ligne".</p>
+            <span class="english-block">"It's a win-win for us to protect these forests and keep those natural pharmacies around... long enough that we can discover new natural products that could save us down the line."</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_24.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

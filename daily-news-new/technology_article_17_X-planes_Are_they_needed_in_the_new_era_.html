@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-planes: Are they needed in the new era of drones?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>X-planes: Are they needed in the new era of drones?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 24 Sep 2026 23:03:53 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c9q92x359xdo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Where do America's X-plane projects fit in an era of cheap drones?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.22" data-end="12.55">
+            <p class="french-block">Le long nez de l'X-59 est conçu pour atténuer le boom sonore de l'avion</p>
+            <span class="english-block">The long nose of the X-59 is designed to damped the plane's sonic boom</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.55" data-end="24.77">
+            <p class="french-block">Il y a un avion étrange et merveilleux qui survole les États-Unis, avec le nez d'un fourmi, des pièces cannibalisées d'autres avions et une cabine de pilotage si loin derrière que le pilote dépend d'une caméra pour voir où il va.</p>
+            <span class="english-block">There's a weird and wonderful jet flying over the US. It has the nose of anteater, parts cannibalised from other planes and a cockpit so far back the pilot depends on a camera to see where he's going.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.77" data-end="30.6">
+            <p class="french-block">Cet appareil, le X-59, pourrait être le futur du transport aérien.</p>
+            <span class="english-block">This contraption, the X-59, might just be the future of air travel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.6" data-end="40.3">
+            <p class="french-block">L'ondée de choc créée par un jet brisant la barrière sonore restreint Concorde aux vols sur la mer et l'empêcha de parcourir des itinéraires lucratifs à travers les États-Unis.</p>
+            <span class="english-block">The X-59's owes its eccentric design to the problem of sonic booms. The shockwave created by a jet breaking the sound barrier restricted Concorde to flights over the sea and barred it from lucrative routes across the US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.3" data-end="49.34">
+            <p class="french-block">La Nasa travaille sur ce problème en utilisant le nez allongé du X-59 pour aplanir les explosions supersoniques en bosses tolérables en arrière-plan.</p>
+            <span class="english-block">Now Nasa is working around that problem using the X-59's elongated snout to flatten supersonic booms into tolerable bumps in the background.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.34" data-end="62.33">
+            <p class="french-block">En plus de son apparence bizarre, le X-59 possède une lignée remarquable, le dernier d'une série d'avions expérimentaux de la NASA datant de 1947 et le premier à briser la barrière sonore, le Bell X-1.</p>
+            <span class="english-block">On top of its bizarre appearance the X-59 boasts a remarkable lineage. It's the latest in a series of experimental Nasa aircraft dating back to 1947 and the first plane to break the sound barrier, the Bell X-1.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="62.33" data-end="78.17">
+            <p class="french-block">Peter Coen, vétéran de 43 ans de la NASA qui dirige le programme, explique la pensée qui a été fondée sur 80 ans d'avions X. " Notre approche consiste à choisir de petits objectifs que nous visons à prouver avec des données de vol et à construire un cadre d'avion pour cette seule tâche. "</p>
+            <span class="english-block">Peter Coen, a 43-year Nasa veteran who manages the programme, explains the thinking behind 80 years of X-planes. "Our approach is to pick small goals we aim to prove with flight data and we construct an airframe for that one task."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.17" data-end="91.22">
+            <p class="french-block">La philosophie du X-plane est de " minimiser les objectifs, plus vous avez d'objectifs, plus il coûte cher. " Pour le X-59 il s'agit de supprimer les explosions sonores sur un budget et rien d'autre.</p>
+            <span class="english-block">The X-plane philosophy is to "minimise goals, the more goals you have the more expensive it gets." For the X-59 it's about suppressing sonic booms on a budget and nothing else.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.22" data-end="102.17">
+            <p class="french-block">Dans le cas du X-1, piloté en 1947 par le légendaire pilote de test Chuck Yeager, la NASA savait qu'une balle de calibre 50 partait plus vite que la vitesse du son.</p>
+            <span class="english-block">In the case of the X-1, flown through the sound barrier in 1947 by the legendary test pilot Chuck Yeager, Nasa knew a .50 calibre bullet travelled faster than the speed of sound. So the stumpy little aircraft was shaped like a bullet with wings added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.17" data-end="120.62">
+            <p class="french-block">Une vingtaine d'années plus tard, l'avion X-15, un cylindre avec de minuscules ailes tombé d'un bombardier B-52, a volé à 6,7 fois la vitesse du son (4,520 mph) et le bord de l'espace, ouvrant la voie à des matériaux résistants à la chaleur vitaux à la navette spatiale.</p>
+            <span class="english-block">A mere 20 years later the X-15 rocket plane, a cylinder with tiny wings dropped from a B-52 bomber, flew to 6.7 times the speed of sound (4,520 mph) and the edge of space, paving the way for heat-resistant materials vital to the Space Shuttle.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.62" data-end="126.41">
+            <p class="french-block">En 1947, le Bell X-1 fut le premier avion à briser la barrière sonore.</p>
+            <span class="english-block">In 1947 the Bell X-1 was the first plane to break the sound barrier</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.41" data-end="136.9">
+            <p class="french-block">La NASA pilote le X-59 en conjonction avec des enquêtes communautaires pour évaluer ce que les gens pensent quand un boom supersonique est plié par les avions étirés le nez et silencieux.</p>
+            <span class="english-block">Nasa is flying the X-59 in conjunction with community surveys to assess what people think when a supersonic boom is bent by the planes stretched nose and hushed up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.9" data-end="154.08">
+            <p class="french-block">"Nous voulons déterminer quel niveau de boom est acceptable pour les gens sur une base régulière", dit Coen, qui estime que sa machine sonnera "comme une porte de voiture fermée de l'autre côté de la rue" lorsqu'elle volera au-delà de Mach 1, à environ 660 miles par heure à une altitude de croisière aérienne.</p>
+            <span class="english-block">"We want to figure out what level of boom is acceptable to people on a regular basis," says Coen, who reckons his machine will sound "like a car door being closed across the street" when it flies past Mach 1, around 660mph at airline cruising altitude.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.08" data-end="167.21">
+            <p class="french-block">Avec son cockpit et son siège éjecteur tirés d'un jet d'entraînement T-38, son engrenage d'atterrissage d'un chasseur F-16 et son moteur grâce au F-18, ce puzzle d'un avion a été assemblé par Lockheed Martin pour la NASA.</p>
+            <span class="english-block">With its cockpit and ejector seat taken from a T-38 training jet, its landing gear from an F-16 fighter and engine courtesy of the F-18 this jigsaw of an aircraft was assembled by Lockheed Martin for Nasa.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="167.21" data-end="175.25">
+            <p class="french-block">Une caméra qui alimente un écran devant le pilote s'appuie sur un traitement informatique instantané pour contourner le manque de vision avancée.</p>
+            <span class="english-block">A camera feeding a screen in front of the pilot relies on instantaneous computer processing to get round the lack of forward vision. It first flew in 2025 and is now breaking the sound barrier over chosen US towns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.25" data-end="184.9">
+            <p class="french-block">Mais y a-t-il encore une place pour les projets X-plane dans un monde où des drones relativement bon marché sont développés rapidement - notamment dans la guerre de l'Ukraine contre la Russie ?</p>
+            <span class="english-block">But is there still a place for X-plane projects in a world where relatively cheap drones are being rapidly developed - not least in Ukraine's war against Russia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.9" data-end="191.93">
+            <p class="french-block">Même la Nasa considérait un X-59 sans équipage, mais les drones ne sont pas toujours une option moins chère.</p>
+            <span class="english-block">Even Nasa considered an uncrewed X-59. But drones are not always a cheaper option.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.93" data-end="199.68">
+            <p class="french-block">Le retrait du pilote aurait ajouté le coût et la complication de certifier un robot jet pour voler rapidement au-dessus des zones urbaines.</p>
+            <span class="english-block">Removing the pilot would have added the cost and complication of certifying a robot jet to fly fast over urban areas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.68" data-end="210.1">
+            <p class="french-block">De plus, le X-59 devait être assez grand pour ressembler à un avion de ligne qui traversait la barrière sonore, ce qui permettait à son tour de laisser place à un cockpit.</p>
+            <span class="english-block">Plus the X-59 had to be big enough to resemble an airliner punching through the sound barrier, which in turn allowed space for a cockpit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.1" data-end="221.88">
+            <p class="french-block">La NASA n'est pas étrange aux drones X-avions. Le X-48, un modèle réduit d'un avion de ligne qui mélange aile et fuselage pour créer un seul corps de levage, a volé en 2007.</p>
+            <span class="english-block">Nasa is no stranger to drone X-planes. The X-48, a scaled down model of an airliner that blends wing and fuselage to create a single lifting body, flew in 2007.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.88" data-end="228.94">
+            <p class="french-block">Petit était beau pour le minuscule X-48 avec sa largeur d'aile de 20 pieds car cela gardait le programme dans le budget.</p>
+            <span class="english-block">Small was beautiful for the tiny X-48 with its 20ft wingspan as this kept the programme within budget.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.94" data-end="240.77">
+            <p class="french-block">"Il est probable que les futurs X-planets ne seront pas équipés", dit Coen, avant d'ajouter les précautions vitales "sauf si la technologie que nous étudions est liée au pilotage ou si l'équipage est plus économique".</p>
+            <span class="english-block">"It's likely that future X-planes will be uncrewed," says Coen, before adding the vital caveats "unless the technology we're researching relates to piloting or if crewing it is more cost-effective".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.77" data-end="245.9">
+            <p class="french-block">Le X-48 était un avion réduit pour tester une aile et un fuselage mixtes.</p>
+            <span class="english-block">The X-48 was a scaled-down plane to test a blended wing and fuselage</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.9" data-end="255.14">
+            <p class="french-block">Guy Gratton, professeur de test et d'évaluation d'avions à l'Université Cranfield, est frustré par la suggestion que les avions d'essai équipés aient eu leur journée.</p>
+            <span class="english-block">Guy Gratton, professor of Aircraft Test and Evaluation at Cranfield University, gets frustrated at the suggestion crewed test planes have had their day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.14" data-end="267.67">
+            <p class="french-block">"Il y a une croyance dans certains endroits que les drones peuvent tout faire. En Ukraine, ils ont fait des choses incroyables avec les drones, mais si vous voulez transporter des gens, vous ne pouvez pas prendre des raccourcis".</p>
+            <span class="english-block">"There's a belief in certain quarters that drones can do everything. In Ukraine they've done amazing things with drones, but if you want to carry people you can't take short-cuts."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.67" data-end="281.11">
+            <p class="french-block">Gratton a testé des avions légers et souligne l'importance d'un humain en orbite. " On perd beaucoup sans pilotes, on manque de leçons qu'un pilote identifie, et il peut prendre quatre fois plus de personnes au sol pour tester un drone. "</p>
+            <span class="english-block">Gratton has tested light aircraft and stresses the importance of a human in the loop. "You lose a huge amount without pilots, you miss lessons a pilot would identify, plus it can take four times as many people on the ground to test a drone."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.11" data-end="289.58">
+            <p class="french-block">Les signaux de surveillance du personnel d'un drone sont un coût indirect qui permet de maintenir certains X-planes pilotés relativement abordables.</p>
+            <span class="english-block">Staff monitoring signals from a drone are an indirect cost that keeps some piloted X-planes relatively affordable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.58" data-end="294.77">
+            <p class="french-block">Le programme d'avions expérimentaux a testé les systèmes pour le chasseur Typhoon.</p>
+            <span class="english-block">The Experimental Aircraft Programme tested systems for the Typhoon fighter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.77" data-end="300.79">
+            <p class="french-block">Le Royaume-Uni a piloté ses propres bancs d'essais technologiques et Chris Yeo était le pilote d'un.</p>
+            <span class="english-block">The UK has flown its own technology testbeds and Chris Yeo was in the pilot's seat of one. The Experimental Aircraft Programme (EAP) flew from Lancashire in 1986 and tried out core systems for the Typhoon fighter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.79" data-end="310.85">
+            <p class="french-block">Yeo reconnaît le patrimoine commun de l'EAP avec les X-planes. " Ils recherchent tous une certaine facette du vol et démontrent que la conception fonctionne correctement.</p>
+            <span class="english-block">Yeo acknowledges the EAP's shared heritage with X-planes. "They all research some facet of flight, and demonstrate the design is working correctly. A lot of people say they can do something, but you only know it works when the design has been tested and certified."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.85" data-end="323.86">
+            <p class="french-block">Quarante ans après les vols EAP de Yeo, un nouveau démonstrateur britannique de technologie prend forme. " Le X-plane de notre génération ", dit Tony Godbold, qui dirige le projet pour BAE Systems.</p>
+            <span class="english-block">Forty years on from Yeo's EAP flights a new UK technology demonstrator is taking shape. It is, says Tony Godbold who runs the project for BAE Systems, "the X-plane of our generation".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="323.86" data-end="337.44">
+            <p class="french-block">Cette initiative BAE Systems rassemble 100 fournisseurs britanniques, dont Rolls-Royce, pour tester des idées qui pourraient faire partie du Global Combat Air Programme (GCAP), un chasseur qui devrait voler dans les années 2030.</p>
+            <span class="english-block">This BAE Systems initiative pulls together 100 UK suppliers including Rolls-Royce to test out ideas that might make it into the Global Combat Air Programme (GCAP), a fighter due to fly in the 2030s. The technology demonstrator will borrow engines from the existing Typhoon and fly sometime in 2028.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.44" data-end="344.93">
+            <p class="french-block">Cela a suscité une grande excitation dans la petite communauté britannique de pilotes de test de jet rapide qualifiés.</p>
+            <span class="english-block">This has triggered great excitement in the UK's small community of qualified fast jet test pilots. Almost every one, around 14 of them says Godbold, has already tried out this plane on a flight simulator.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="344.93" data-end="364.06">
+            <p class="french-block">Pour beaucoup dans l'industrie aérospatiale, l'élément humain est toujours aussi important qu'à l'époque de Yeager. " On peut modéliser beaucoup sur des ordinateurs et des simulateurs, mais l'expérience des pilotes d'essai est que lorsque les choses deviennent réelles, on apprend vraiment des choses seulement quand on reçoit leurs commentaires ", admet Godbold.</p>
+            <span class="english-block">For many in the aerospace industry, the human element still matters as much as it did in Yeager's day. "You can model a lot on computers and simulators, but the experience of test pilots is when stuff gets real, we only really learn things when we get their feedback," Godbold admits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="364.06" data-end="375.26">
+            <p class="french-block">L'avion de Godbold souligne l'engagement du Royaume-Uni à l'égard du GCAP, un effort conjoint avec l'Italie et le Japon. " Cela prouve que nous sommes sérieux dans cet espace. "</p>
+            <span class="english-block">There's a political dimension to such jets too. Godbold says his plane underlines the UK's commitment to GCAP, a joint effort with Italy and Japan. "This proves we are serious in this space."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.26" data-end="381.12">
+            <p class="french-block">L'IA n'est pas intelligente, alors qu'est-ce qui se passe ensuite dans l'intelligence artificielle ?</p>
+            <span class="english-block">AI is 'not smart' so what's next in artificial intelligence?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="381.12" data-end="384.84">
+            <p class="french-block">L'Inde veut rejoindre les superpuissances de la fraise</p>
+            <span class="english-block">India wants to join the strawberry superpowers</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.84" data-end="388.97">
+            <p class="french-block">Il est temps d'arrêter d'utiliser la colle et les étiquettes sur papier ?</p>
+            <span class="english-block">Is it time to stop using glue and labels on paper?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_17.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

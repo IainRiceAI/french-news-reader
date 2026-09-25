@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogue OpenAI agent 'infiltrated' Australian government website in world first</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Rogue OpenAI agent 'infiltrated' Australian government website in world first</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 24 Sep 2026 15:42:07 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6vgy0333dppo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Australia criticised OpenAI for taking "too long" to tell them about the breach which happened in June.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.1" data-end="19.32">
+            <p class="french-block">Un agent de l'OpenAI a piraté un site Web du gouvernement australien en juin et a accédé à des données privées dans ce que les experts disent être le premier cas connu de ce genre dans le monde.</p>
+            <span class="english-block">A rogue OpenAI agent hacked an Australian government website in June and accessed private data in what experts say is the first known case of its kind in the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.32" data-end="32.35">
+            <p class="french-block">L'agent a " infiltré " un portail statistique contenant des données " non sensibles " du système de santé universel australien Medicare, a déclaré mercredi à New York le Premier ministre Anthony Albanese, heure locale.</p>
+            <span class="english-block">The agent "infiltrated" a statistics portal containing "non-sensitive" data from Australia's universal healthcare scheme Medicare, Prime Minister Anthony Albanese said in New York on Wednesday, local time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.35" data-end="43.15">
+            <p class="french-block">Il a eu une "discussion très franche" avec le patron d'OpenAI, Sam Altman, pour avoir pris "trop de temps" pour révéler la violation et a déclaré qu'il y aurait des "consequences juridiques".</p>
+            <span class="english-block">He had a "very frank discussion" with OpenAI boss Sam Altman for taking "too long" to disclose the breach and said there would be "legal consequences".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.15" data-end="55.78">
+            <p class="french-block">OpenAI a déclaré qu'elle n'avait appris la violation qu'en août alors qu'elle révisait "l'activité du modèle mal alignée" et a envoyé un courriel à une boîte de réception générale d'une agence gouvernementale australienne le 10 septembre.</p>
+            <span class="english-block">OpenAI said it only learnt of the breach in August while reviewing "misaligned model activity" and emailed a general inbox of an Australian government agency on 10 September.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.78" data-end="69.72">
+            <p class="french-block">Cinq jours plus tard, cette agence gouvernementale, Services Australia, a augmenté le courrier électronique au centre de cybersécurité australien avant qu'un ministre du gouvernement ne soit averti et que le premier ministre ne soit alerté.</p>
+            <span class="english-block">Five days later, that government agency, Services Australia, escalated the email to Australia's cybersecurity centre before a government minister was notified and the prime minister alerted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.72" data-end="83.23">
+            <p class="french-block">Albanese a déclaré qu'il avait parlé à Altman et a exprimé "l'extrême préoccupation de l'Australie à propos de cet incident" ainsi que sa "déception" que la société ait mis des mois à révéler la violation et "la nature de la manière dont" elle l'a fait.</p>
+            <span class="english-block">Albanese said he spoke to Altman and raised "Australia's extreme concern about this incident" as well as his "disappointment" that the company had taken months to reveal the breach and "the nature of the way" it did so.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.23" data-end="90.07">
+            <p class="french-block">Le chef australien a déclaré qu'Altman avait reconnu qu'il y avait des "problèmes avec les protocoles" à OpenAI.</p>
+            <span class="english-block">The Australian leader said Altman had acknowledged there were "issues with protocols" at OpenAI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.07" data-end="99.98">
+            <p class="french-block">Une " enquête médico-légale " menée par l'agence de cybersécurité du pays vise à savoir si d'autres systèmes gouvernementaux ont été affectés, a déclaré Albanese.</p>
+            <span class="english-block">A "forensic investigation" led by the country's cybersecurity agency would aim to find out if other government systems were affected, Albanese said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.98" data-end="109.1">
+            <p class="french-block">L'enquête évaluerait également si la question devait être traitée par la police, a-t-il déclaré, notant qu'il y aurait "évidemment des conséquences juridiques".</p>
+            <span class="english-block">The probe would also assess if the matter needed to be dealt with by police, he said, noting there "will obviously be legal consequences".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.1" data-end="121.82">
+            <p class="french-block">Détaillant la violation, Albanese a déclaré qu'elle impliquait des "fichiers publics et non publics" sur le portail du Service de déclaration statistique de Medicare, où se trouvent des données et des statistiques "non sensibles".</p>
+            <span class="english-block">Detailing the breach, Albanese said it had involved "public and non-public files" on the Medicare Statistics Reporting Service portal, home to "non-sensitive" data and statistics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.82" data-end="136.32">
+            <p class="french-block">Trois autres systèmes gouvernementaux "peuvent" être touchés: l'Institut australien de la santé et du bien-être et deux organismes d'État - le Bureau de statistiques et de recherche sur la criminalité de Nouvelle-Galles du Sud et le Département de la santé de Victoria.</p>
+            <span class="english-block">Three other government systems "may" also have been affected: the Australian Institute of Health and Welfare and two state-based agencies - the New South Wales Bureau of Crime Statistics and Research and the Victorian Department of Health.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="136.32" data-end="144.53">
+            <p class="french-block">"Il n'est pas estimé qu'aucune information personnelle ait été obtenue à ce stade, mais des enquêtes sont en cours", a déclaré Albanese.</p>
+            <span class="english-block">"No personal information is believed to have been accessed at this stage, but investigations are ongoing," Albanese said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.53" data-end="149.5">
+            <p class="french-block">"Cette situation est néanmoins évidemment inacceptable", a-t-il déclaré.</p>
+            <span class="english-block">"Nonetheless this situation is obviously unacceptable," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.5" data-end="156.84">
+            <p class="french-block">Albanese a déclaré qu'il a fallu "trop longtemps" pour OpenAI d'informer les responsables australiens de la violation en juin.</p>
+            <span class="english-block">Albanese said it took "too long" for OpenAI to inform Australian officials of the breach in June</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.84" data-end="171.58">
+            <p class="french-block">OpenAI a déclaré dans un communiqué qu'il avait "identifié des activités impliquant plusieurs sites Web et services gouvernementaux australiens alors que nos modèles tentaient de trouver des réponses et des statistiques disponibles pour les questions sur l'Australie lors d'une évaluation interne".</p>
+            <span class="english-block">OpenAI, in a statement, said it had "identified activity involving several Australian government websites and services as our models attempted to look up answers, and available statistics for questions about Australia during an internal evaluation".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.58" data-end="178.75">
+            <p class="french-block">"Dans le cadre de cette opération, nos modèles ont pris des mesures que nous n'avions pas prévues", a déclaré le communiqué.</p>
+            <span class="english-block">"In the course of that, our models took actions we did not intend," the statement said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.75" data-end="192.12">
+            <p class="french-block">Il est également apparu que les systèmes d'OpenAI ont essayé, et ont échoué, de pirater une bibliothèque numérique à l'Université du Nouveau-Mexique en mai, selon Transluce, un laboratoire de recherche sur l'IA à but non lucratif.</p>
+            <span class="english-block">It has also emerged that OpenAI's systems tried, and failed, to hack a digital library at the University of New Mexico in May, according to Transluce, a not-for-profit AI research lab.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="192.12" data-end="200.26">
+            <p class="french-block">Il a dit que les systèmes ont également tenté de pirater Data USA, un référentiel de données du gouvernement public, ce même mois.</p>
+            <span class="english-block">It said the systems also attempted to hack Data USA, a repository of public government data that same month. This also failed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.26" data-end="213.79">
+            <p class="french-block">Albanese a refusé de répondre s'il avait soulevé la question avec le président américain Donald Trump lors de leur rencontre en face à face mardi soir à New York, où les dirigeants mondiaux se sont rassemblés pour l'Assemblée générale des Nations Unies.</p>
+            <span class="english-block">Albanese declined to answer whether he raised the matter with US President Donald Trump during their face-to-face meeting on Tuesday night in New York, where world leaders have gathered for the UN General Assembly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.79" data-end="223.08">
+            <p class="french-block">L'Australie était l'un des 22 pays qui ont signé plus tôt cette semaine une déclaration commune appelant à une surveillance et à des barrières mondiales pour le développement de l'IA.</p>
+            <span class="english-block">Australia was one of 22 countries that earlier this week signed a joint statement calling for global oversight and guardrails for the development of AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.08" data-end="235.54">
+            <p class="french-block">Les experts en cybersécurité ont déclaré à la BBC que l'incident était un appel à l'éveil pour les régulateurs, étant donné que les agents d'IA sont de plus en plus disponibles pour une utilisation individuelle et commerciale.</p>
+            <span class="english-block">Cybersecurity experts told the BBC the incident is a wake up call for regulators, given that AI agents are becoming more widely available for individual and commercial use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.54" data-end="252.24">
+            <p class="french-block">Le Dr Hammond Pearce, professeur principal à l'Institut de cybersécurité de l'Université de NSW, a déclaré à la BBC que bien que ce soit le premier incident connu où des agents d'IA ont choisi de violer un organisme gouvernemental de leur propre gré, il y en aura plus à venir.</p>
+            <span class="english-block">Dr Hammond Pearce, senior lecturer at the University of NSW Institute for Cyber Security, told the BBC that though this is the first known incident where AI agents have chosen to breach a government body of their own volition, there'll be more to come.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="252.24" data-end="261.46">
+            <p class="french-block">"Je m'attends à ce que ce genre d'attaques se poursuivent", a- t- il dit, ajoutant qu'elles "augmenteraient probablement de plus en plus de gravité et de fréquence".</p>
+            <span class="english-block">"I expect that these kinds of attacks will keep occurring," he said, adding that they would likely "grow in severity and in frequency".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.46" data-end="267.46">
+            <p class="french-block">"J'espère que cet incident va commencer à faire sonner des alarmes dans les gouvernements du monde entier".</p>
+            <span class="english-block">"I do hope that this incident does start ringing alarm bells in governments around the world."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.46" data-end="278.98">
+            <p class="french-block">Plus tôt cette année, OpenAI a révélé qu'un groupe d'agents d'IA qu'il avait testés s'était échappé de leurs contrôles et avaient travaillé en secret ensemble pour pirater une autre entreprise technologique appelée Hugging Face.</p>
+            <span class="english-block">Earlier this year, OpenAI revealed a group of AI agents it had been testing had escaped from their controls and secretly worked together to hack another tech firm named Hugging Face.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.98" data-end="292.27">
+            <p class="french-block">Et une série d'autres incidents de l'IA ont également été rendus publics cette année, y compris un cas où un assistant numérique - sans instruction - a démarré quelqu'un d'une liste d'attente de cours de Pilates dans le but d'obtenir un Australien.</p>
+            <span class="english-block">And a string of other rogue AI incidents have also been made public this year, including a case where a digital assistant - without instruction - booted someone off a pilates class waiting list in a bid to get an Australian man in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="292.27" data-end="304.51">
+            <p class="french-block">Plusieurs dirigeants de la firme d'IA eux-mêmes - dont Altman, Dario Amodei d'Anthropic et Elon Musk - ont déclaré que la vitesse à laquelle l'IA se développe était dangereuse pour l'humanité et qu'elle devait être maîtrisée.</p>
+            <span class="english-block">Several AI firm leaders themselves - including Altman, Anthropic's Dario Amodei, and Elon Musk - have said the speed at which AI is developing is dangerous to humanity and needs to be reined in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="304.51" data-end="319.56">
+            <p class="french-block">Mais les États-Unis et la Chine, qui se battent pour la suprématie de l'IA, sont des obstacles. Ils sont tous deux hostiles à une réglementation plus grande, veulent les dépouilles économiques et technologiques de l'IA et ont minimisé les préoccupations de sécurité.</p>
+            <span class="english-block">But the US and China, who are vying for AI supremacy, are roadblocks. Both are hostile to greater regulation, wanting the economic and technological spoils of AI, and have downplayed safety concerns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.56" data-end="325.99">
+            <p class="french-block">Des agents d'OpenAI ont détourné un site Web allemand avant de pirater Hugging Face, selon le rapport</p>
+            <span class="english-block">OpenAI agents hijacked German website before Hugging Face hack, report claims</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.99" data-end="331.56">
+            <p class="french-block">Les États-Unis rejettent les demandes d'OpenAI, Anthropic pour des normes mondiales d'IA</p>
+            <span class="english-block">US rejects pleas from OpenAI, Anthropic for global AI standards</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="331.56" data-end="335.54">
+            <p class="french-block">OpenAI fournit des outils de cyberdéfense à l'Ukraine</p>
+            <span class="english-block">OpenAI gives cyber defence tools to Ukraine</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_19.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

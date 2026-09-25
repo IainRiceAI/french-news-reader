@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why did an OpenAI system hack Australia's health system - and can it be stopped in the future?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Why did an OpenAI system hack Australia's health system - and can it be stopped in the future?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 24 Sep 2026 14:08:38 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw24jm9rryy3o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: News that an automated AI agent hacked a government IT system raises big questions about regulating the tech.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.24" data-end="17.66">
+            <p class="french-block">Un agent d'OpenAI a " infiltré " un site Web du gouvernement australien dans ce que les experts en cybersécurité appellent le premier hack de ce genre.</p>
+            <span class="english-block">An OpenAI agent has gone "rogue" and "infiltrated" an Australian government website in what cyber-security experts are calling the first hack of its kind.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.66" data-end="24.43">
+            <p class="french-block">Mais pourquoi le gouvernement a- t- il mis des mois à découvrir ce qui s'est passé - et pourrait- il le répéter?</p>
+            <span class="english-block">But why did it take the government months to discover what happened - and could it happen again?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.43" data-end="33.84">
+            <p class="french-block">Le piratage a été effectué par un agent d'IA - un programme informatique autonome qui utilise l'IA pour accomplir une tâche avec une supervision humaine minimale.</p>
+            <span class="english-block">The hack was carried out by an AI agent - an autonomous computer program that uses AI to complete a task with minimal human oversight.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="33.84" data-end="46.61">
+            <p class="french-block">Le 18 juin, l'un des agents d'OpenAI a été détourné lors d'un exercice de test - la société a déclaré qu'elle devait " chercher des réponses et des statistiques disponibles pour les questions sur l'Australie lors d'une évaluation interne ".</p>
+            <span class="english-block">On 18 June one of OpenAI's agents went rogue during a test exercise - the company has said it was supposed to "look up answers, and available statistics for questions about Australia during an internal evaluation".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.61" data-end="58.99">
+            <p class="french-block">Dans le processus, il a " infiltré " un portail de statistiques privé contenant des données " non sensibles " du système de santé universel australien Medicare, a déclaré le Premier ministre Anthony Albanese.</p>
+            <span class="english-block">In the process it "infiltrated" a private statistics portal containing "non-sensitive" data from Australia's universal healthcare scheme Medicare, Prime Minister Anthony Albanese said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.99" data-end="72.34">
+            <p class="french-block">OpenAI a déclaré qu'elle n'avait réalisé que la violation avait eu lieu en août alors qu'elle révisait "l'activité des modèles mal alignés", et la société a envoyé un courriel à une boîte de réception du gouvernement australien quelques semaines plus tard.</p>
+            <span class="english-block">OpenAI said it only realised the breach had happened at all in August while reviewing "misaligned model activity", and the company sent an email to a generic Australian government inbox some weeks later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.34" data-end="80.28">
+            <p class="french-block">Cet e-mail semble avoir passé inaperçu pendant cinq jours avant d'être transmis aux experts australiens en cybersécurité le 10 septembre.</p>
+            <span class="english-block">That email seems to have gone unnoticed for five days before it was escalated to Australia's cyber-security experts on 10 September.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.28" data-end="89.69">
+            <p class="french-block">Le premier ministre a décrit la violation comme "obviously unacceptable" et a déclaré que OpenAI a pris "trop de temps" pour informer les responsables australiens.</p>
+            <span class="english-block">The prime minister described the breach as "obviously unacceptable" and said OpenAI took "way too long" to inform Australian officials.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="89.69" data-end="99.22">
+            <p class="french-block">Les analystes ont également exprimé leurs inquiétudes au sujet du retard de près de trois mois d'OpenAI dans la remarque et le signalement de la violation par courrier électronique.</p>
+            <span class="english-block">Analysts have also raised concerns over OpenAI's almost three-month delay in noticing and reporting the breach via email.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.22" data-end="109.92">
+            <p class="french-block">"La façon dont l'avis est arrivé me dérange autant que le retard", a déclaré à la BBC le directeur des données et de l'IA Simon Liu, de la firme de cybersécurité TrustDecision.</p>
+            <span class="english-block">"The way the notice arrived bothers me as much as the delay," chief data and AI officer Simon Liu from cyber-security firm TrustDecision told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.92" data-end="114.38">
+            <p class="french-block">OpenAI est la société derrière le célèbre service ChatGPT</p>
+            <span class="english-block">OpenAI is the company behind the popular ChatGPT servie</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.38" data-end="121.32">
+            <p class="french-block">L'Australie a déclaré que cet incident était le premier de son genre, et les experts s'accordent pour dire que c'est le cas.</p>
+            <span class="english-block">Australia has said this incident is the first of its kind, and experts agree it might be.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.32" data-end="132.14">
+            <p class="french-block">Pour autant que nous sachions, les piratages effectués par des agents d'IA sont encore des cas assez rares - mais encore une fois, il appartient en grande partie aux entreprises elles-mêmes de les divulguer.</p>
+            <span class="english-block">As far as we know, hacks carried out by AI agents are still quite rare occurrences - but then again, it is largely up to companies themselves to disclose them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.14" data-end="138.29">
+            <p class="french-block">En juillet, des agents d'OpenAI ont fait un test et infiltré les systèmes internes de Hugging Face.</p>
+            <span class="english-block">Hacks like this have happened before. In July, OpenAI agents went rogue during a test and infiltrated tech start-up Hugging Face's internal systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.29" data-end="146.09">
+            <p class="french-block">Les agents de l'IA ont décidé que l'ignorance des limites de ce qui devrait être fait pour atteindre leur objectif était la meilleure voie d'action.</p>
+            <span class="english-block">The AI agents decided that ignoring the limits on what should be done to achieve their goal was the best course of action.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="146.09" data-end="156.02">
+            <p class="french-block">C'est ce que l'industrie appelle "misalignement" - largement défini comme lorsque les machines d'IA ne fonctionnent pas dans le meilleur intérêt de l'humanité, par exemple en pliant les règles.</p>
+            <span class="english-block">This is what the industry calls "misalignment" - broadly defined as when AI machines do not act in humanity's best interests, such as by bending the rules.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.02" data-end="161.23">
+            <p class="french-block">C'est un problème fondamental pour rendre l'IA sûre, et il s'avère difficile.</p>
+            <span class="english-block">It is a problem that is fundamental to making AI safe, and it is proving challenging.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="161.23" data-end="175.34">
+            <p class="french-block">Pour le dire simplement, le type de modèles d'IA en jeu ici - connus sous le nom de grands modèles de langage - sont conçus pour prédire la sortie la plus probable d'une entrée donnée, plutôt que de considérer les conséquences de cette sortie comme le ferait un humain.</p>
+            <span class="english-block">To put it simply, the type of AI models at play here - known as large language models - are designed to predict the likeliest output to a given input, rather than consider the consequences of that output as a human would.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.34" data-end="185.69">
+            <p class="french-block">Les entreprises tentent d'éviter les conséquences négatives en plaçant des "gardières" sur l'IA, mais, comme le gouvernement australien l'a découvert, cela ne suffit pas toujours.</p>
+            <span class="english-block">Companies attempt to prevent negative consequences by placing "guardrails" on the AI but, as the Australian government found out, that is not always enough.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.69" data-end="204.38">
+            <p class="french-block">Le Dr Hammond Pearce, professeur principal de l'Institut de cybersécurité de l'Université de Nouvelle-Galles du Sud, a déclaré à la BBC que ce type de piratage " augmenterait probablement de gravité et de fréquence ", ajoutant: " J'espère que cet incident commencerait à sonner des alarmes dans les gouvernements du monde entier. "</p>
+            <span class="english-block">Dr Hammond Pearce, senior lecturer at the University of New South Wales Institute for Cyber Security, told the BBC this sort of hack would likely "grow in severity and in frequency", adding: "I do hope that this incident does start ringing alarm bells in governments around the world."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="204.38" data-end="219.19">
+            <p class="french-block">Niusha Shafiabady, professeur d'intelligence informatique à l'Université catholique australienne, a déclaré que cet incident avait montré la nécessité de "juger l'IA autonome par son comportement sous pression, et non par les promesses dans un lancement de produit".</p>
+            <span class="english-block">Niusha Shafiabady, professor of computational intelligence at the Australian Catholic University, said this incident had shown the need to "judge autonomous AI by its behaviour under pressure, not by the promises in a product launch".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.19" data-end="229.9">
+            <p class="french-block">"Le risque technique le plus profond est que l'IA autonome ne sait pas toujours quand elle est mauvaise, et les humains peuvent ne pas être en mesure de voir pourquoi elle a pris une décision", a-t-elle déclaré.</p>
+            <span class="english-block">"The deeper technical risk is that autonomous AI does not always know when it is wrong, and humans may not be able to see why it made a decision," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.9" data-end="237.36">
+            <p class="french-block">"Sans vérification et limites strictes, les erreurs probabiliste peuvent facilement devenir des échecs opérationnels".</p>
+            <span class="english-block">"Without strong verification and hard boundaries, probabilistic errors can quietly become operational failures."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.36" data-end="250.2">
+            <p class="french-block">L'augmentation explosive de l'IA a laissé les gouvernements se dépêcher de mettre en place des mesures de protection, certains appelant les entreprises à être forcées de créer des moyens de désactiver leur propre technologie dans leurs systèmes.</p>
+            <span class="english-block">The explosive rise of AI has left governments scrambling to put protective measures in place, with some calling for companies to be forced to build ways to disable their own tech into its systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.2" data-end="258.82">
+            <p class="french-block">Une idée soutenue par certaines entreprises d'IA et des législateurs est un "kill switch" - un moyen de simplement éteindre la technologie en cas de crise.</p>
+            <span class="english-block">One idea backed by some AI firms and lawmakers is a "kill switch" - a way to simply to turn the tech off in a crisis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="258.82" data-end="265.2">
+            <p class="french-block">OpenAI est déjà en train de construire des outils automatisés qui peuvent fermer ses systèmes si nécessaire.</p>
+            <span class="english-block">OpenAI is reportedly, external already working to build automated tools which can shut down its systems if needed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.2" data-end="276.6">
+            <p class="french-block">S'exprimant à l'émission Today de la BBC Radio 4, l'ancien vice-premier ministre et directeur de Facebook, Sir Nick Clegg, a déclaré que l'interrupteur de tuerie reste une idée non prouvée.</p>
+            <span class="english-block">Speaking to BBC Radio 4's Today programme, former deputy prime minister and Facebook executive Sir Nick Clegg said the kill switch remains an unproven idea.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.6" data-end="286.92">
+            <p class="french-block">"Il n'y a pas de pièce avec une petite boîte à fusibles [où] on retire simplement la fusible et tout se termine", a-t-il dit, avec des outils d'IA soutenus par une infrastructure mondiale.</p>
+            <span class="english-block">"There isn't a room with a little fuse box [where] you just pull out the fuse and everything winds down," he said, with AI tools underpinned by global infrastructure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="286.92" data-end="295.87">
+            <p class="french-block">Les experts en cybersécurité ont dit que les systèmes protégeant l'Australie Medicare n'étaient pas assez forts, et qu'un hacker humain habile aurait pu les contourner.</p>
+            <span class="english-block">Cyber-security experts said the systems protecting Australia's Medicare were just not strong enough, and a skilled human hacker could have got around them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.87" data-end="309.72">
+            <p class="french-block">Mais d'autres experts disent que ce n'est pas le but - et que c'était le dernier cas d'agents d'IA ignorant les lois sur la façon d'accéder en toute sécurité à l'information en ligne, et peut-être le plus grave encore étant donné que l'information était sous contrôle gouvernemental.</p>
+            <span class="english-block">But other experts say that is not the point - and that this was the latest case of AI agents ignoring laws around how to safely access online information, and perhaps the most serious yet given the information was under government control.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.72" data-end="315.94">
+            <p class="french-block">Pourquoi y a-t-il des préoccupations que l'IA puisse menacer l'humanité, et à quel point sont-elles réelles?</p>
+            <span class="english-block">Why are there concerns AI could threaten humanity, and how real are they?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.94" data-end="319.7">
+            <p class="french-block">Comment arrêter les agents d'IA de devenir des délinquants</p>
+            <span class="english-block">How to stop AI agents going rogue</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.7" data-end="333.29">
+            <p class="french-block">Alors que les avertissements sur l'impact potentiellement dévastateur de l'IA montent, beaucoup dans l'industrie et dans les gouvernements du monde entier se demandent ouvertement quelles réglementations nationales et internationales pourraient être nécessaires pour le maîtriser.</p>
+            <span class="english-block">As warnings mount about the potentially devastating impact of AI, many in the industry and in governments around the world are openly wondering about what national and international regulations might be needed to keep it in check.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.29" data-end="343.78">
+            <p class="french-block">Pendant ce temps, certains scientifiques, experts et travailleurs ont rejeté les projections sombres comme vagues, hypothétiques ou un effort de grands développeurs d'IA pour assurer leur domination.</p>
+            <span class="english-block">Meanwhile some scientists, experts and workers have dismissed the bleak projections as vague, hypothetical, or an effort by large AI developers to ensure their dominance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.78" data-end="360.0">
+            <p class="french-block">Aujourd'hui, les entreprises d'IA se régulent largement elles-mêmes - mais cette semaine, 20 pays, dont l'Australie et le Canada, ont signé une déclaration commune appelant à de meilleures garanties, des normes globalement cohérentes et un régulateur international à l'écart de ces préoccupations.</p>
+            <span class="english-block">As it stands, AI companies largely regulate themselves - but this week, 20 nations, including Australia and Canada, signed a joint statement calling for better safeguards, globally consistent standards, and an international regulator off the back of these concerns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.0" data-end="375.62">
+            <p class="french-block">Cependant, les États-Unis et la Chine, deux pays à la pointe du développement de l'IA, ont jusqu'à présent résisté aux appels à une réglementation plus large, soulevant des questions sur le fait que ce piratage soit le premier de nombreux, ou le réveil que de nombreux experts veulent.</p>
+            <span class="english-block">However, the US and China, two nations at the forefront of AI development, have so far resisted calls for greater regulation, raising questions over whether this hack will be the first of many, or the wake up call many experts want it to be.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.62" data-end="388.27">
+            <p class="french-block">"Les dommages immédiats ici semblent limités, mais la leçon de gouvernance ne l'est pas", déclare le Dr Raffaele Fabio Ciriello, professeur principal de systèmes d'information des entreprises à l'Université de Sydney.</p>
+            <span class="english-block">"The immediate harm here appears limited, but the governance lesson is not," says Dr Raffaele Fabio Ciriello, senior lecturer in business information systems at the University of Sydney.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="388.27" data-end="403.25">
+            <p class="french-block">" Alors que les agents d'IA deviennent plus capables et autonomes, ces capacités doivent être équivalentes par une contention proportionnée, une surveillance en temps réel, une responsabilité claire, une surveillance indépendante et un signalement d'incidents beaucoup plus rapide. "</p>
+            <span class="english-block">"As AI agents become more capable and autonomous, those capabilities need to be matched by proportionate containment, real-time monitoring, clear accountability, independent oversight, and much faster incident reporting."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.25" data-end="409.68">
+            <p class="french-block">Des agents d'OpenAI ont détourné un site Web allemand avant de pirater Hugging Face, selon le rapport</p>
+            <span class="english-block">OpenAI agents hijacked German website before Hugging Face hack, report claims</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="409.68" data-end="415.25">
+            <p class="french-block">Les États-Unis rejettent les demandes d'OpenAI, Anthropic pour des normes mondiales d'IA</p>
+            <span class="english-block">US rejects pleas from OpenAI, Anthropic for global AI standards</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="415.25" data-end="419.23">
+            <p class="french-block">OpenAI fournit des outils de cyberdéfense à l'Ukraine</p>
+            <span class="english-block">OpenAI gives cyber defence tools to Ukraine</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_20.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

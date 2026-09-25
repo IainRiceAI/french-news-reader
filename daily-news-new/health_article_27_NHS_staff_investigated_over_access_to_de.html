@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHS staff investigated over access to dead teenager's medical records</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>NHS staff investigated over access to dead teenager's medical records</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 24 Sep 2026 05:00:40 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm207yn1124zo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Oliver McGowan, who died in 2016, may have had his medical records accessed inappropriately after his death by NHS staff in Bristol.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.04" data-end="17.93">
+            <p class="french-block">Oliver McGowan, sur la photo avec sa mère Paula, est décédé en 2016 après avoir reçu des médicaments antipsychotiques à l'hôpital Southmead à Bristol.</p>
+            <span class="english-block">Oliver McGowan, pictured here with his mother Paula, died in 2016 after being prescribed anti-psychotic medication at Southmead Hospital in Bristol</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.93" data-end="29.5">
+            <p class="french-block">La mère d'un adolescent qui est mort à l'hôpital a dit qu'elle était " profondément préoccupée et blessée " après avoir appris que ses dossiers médicaux avaient pu être consultés inappropriément pendant des années après sa mort.</p>
+            <span class="english-block">The mother of a teenage boy who died in hospital has said she is "deeply concerned and hurt" after learning his medical records may have been accessed inappropriately for years after his death.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.5" data-end="43.54">
+            <p class="french-block">Paula McGowan, dont le fils autiste de 18 ans Oliver est mort en 2016, a été informée que au moins cinq membres du personnel de la Fondation Bristol NHS Trust auraient pu accéder à ses dossiers sans autorisation dès récemment cette année.</p>
+            <span class="english-block">Paula McGowan, whose 18-year-old autistic son Oliver died in 2016, was told that at least five members of staff at Bristol Foundation NHS Trust may have accessed his records without permission as recently as this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.54" data-end="51.89">
+            <p class="french-block">Trois infirmières sont officiellement enquêtées, tandis qu'un médecin qui ne travaille plus pour la fiducie s'est présenté au Conseil général médical.</p>
+            <span class="english-block">Three nursing staff are under formal investigation, while a doctor who no longer works for the trust has self-referred to the General Medical Council. Another member of staff is having their case reviewed separately.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.89" data-end="57.7">
+            <p class="french-block">La fiducie a déclaré qu'elle était "profondelement désolée" pour tout stress et anxiété causés.</p>
+            <span class="english-block">The trust said it was "deeply sorry" for any stress and anxiety caused.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.7" data-end="63.07">
+            <p class="french-block">Il a indiqué qu'il s'était volontairement référé au Bureau du commissaire à l'information.</p>
+            <span class="english-block">It said it had voluntarily referred itself to the Information Commissioner's Office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.07" data-end="74.18">
+            <p class="french-block">Le chef du NHS en Angleterre, Sir Jim Mackey, a émis en juillet un "avertissement fort" selon lequel le personnel pourrait être condamné à la mise en prison ou même à la prison pour ce fait.</p>
+            <span class="english-block">It is the latest case involving concerns that NHS staff may have accessed patient records without a legitimate professional reason. In July the head of NHS England, Sir Jim Mackey, issued a "stark warning" that staff could face the sack or even prison for doing so.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="74.18" data-end="83.52">
+            <p class="french-block">Les récents exemples de haut niveau incluent les victimes des attaques de Nottingham et de Southport et un enfant blessé dans une enclosure de crocodiles dans le Cambridgeshire.</p>
+            <span class="english-block">Recent high-profile examples include the victims of the Nottingham and Southport attacks and a child who was injured in a crocodile enclosure in Cambridgeshire.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.52" data-end="96.98">
+            <p class="french-block">Ce mois-ci, une enquête pour le Health Services Journal a révélé que au moins 214 employés du NHS ont perdu leur emploi et environ 2 000 ont été sanctionnés pour avoir fouillé des données sensibles sur les patients au cours des cinq dernières années.</p>
+            <span class="english-block">This month an investigation for the Health Services Journal found that at least 214 NHS staff have lost their jobs and around 2,000 been sanctioned for snooping on sensitive patient data over the past five years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.98" data-end="110.81">
+            <p class="french-block">Oliver, qui souffrait d'un léger handicap d'apprentissage et d'épilepsie, est décédé en 2016 à l'hôpital Southmead à Bristol après avoir reçu des médicaments antipsychotiques que sa famille avait averti à plusieurs reprises de ne pas recevoir.</p>
+            <span class="english-block">Oliver, who had a mild learning disability and epilepsy, died in 2016 at Southmead Hospital in Bristol after being given anti-psychotic medication that his family had repeatedly warned he should not receive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.81" data-end="122.54">
+            <p class="french-block">Après avoir demandé des renseignements sur ses dossiers médicaux, sa mère a appris que 38 personnes avaient accédé aux données depuis sa mort, avec 637 articles consultés et 67 imprimés.</p>
+            <span class="english-block">After requesting information about his medical records, his mother was told that 38 people had accessed the data since his death, with 637 items viewed and 67 printed off.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.54" data-end="130.42">
+            <p class="french-block">Un rapport de 2020 a révélé que la mort d'Oliver était "potentiellement évitable", ses parents blâmant l'"ignorance" des médecins</p>
+            <span class="english-block">A report in 2020 found Oliver's death was "potentially avoidable", with his parents blaming the "ignorance" of medics</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.42" data-end="138.14">
+            <p class="french-block">La plupart des accès étaient appropriés et liés à des plaintes, des procédures judiciaires et à l'enquête du coroner sur sa mort.</p>
+            <span class="english-block">Most access was appropriate and linked to complaints, legal proceedings, and the coroner's inquest into his death.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.14" data-end="149.09">
+            <p class="french-block">Mais trois infirmières qui ne sont pas impliquées dans ses soins sont actuellement sous enquête officielle après que les enquêtes initiales n'ont trouvé aucune preuve qu'elles avaient une raison légitime de voir les dossiers de son fils.</p>
+            <span class="english-block">But three nursing staff not involved in his care are currently under formal investigation after initial inquiries could find no evidence they had a legitimate reason to view her son's records.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.09" data-end="153.6">
+            <p class="french-block">Un quatrième membre du personnel fait examiner son cas séparément.</p>
+            <span class="english-block">A fourth member of staff is having their case reviewed separately.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.6" data-end="164.02">
+            <p class="french-block">McGowan a dit qu'on lui avait dit qu'une infirmière voulait voir les dossiers car elle avait un intérêt général pour les médicaments antipsychotiques et les soins aux patients ayant un handicap d'apprentissage.</p>
+            <span class="english-block">McGowan said she was told that one nurse wanted to view the files as they had a general interest in anti-psychotic drugs and the care of patients with a learning disability.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.02" data-end="175.8">
+            <p class="french-block">La fiducie examine également 13 autres affaires impliquant des anciens employés, y compris des médecins, des infirmières et des employés de bureau, pour déterminer si cet accès était approprié ou non.</p>
+            <span class="english-block">The trust is also looking into 13 other cases involving former staff, including doctors, nurses and clerical workers, to establish if that access was appropriate or not.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.8" data-end="185.54">
+            <p class="french-block">Un médecin, qui ne travaille plus à la fiducie, s'est déjà présenté à la régulateur médical, la GMC, après avoir été approché par l'hôpital.</p>
+            <span class="english-block">One doctor, who no longer works at the trust, has already referred themselves to the medical regulator, the GMC, after being approached by the hospital.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.54" data-end="189.96">
+            <p class="french-block">La mort hospitalière d'un adolescent autiste était "évitable"</p>
+            <span class="english-block">Autistic teen's hospital death was 'avoidable'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="189.96" data-end="201.12">
+            <p class="french-block">Oliver, qui souffrait d'épilepsie, était traité pour une crise cardiaque quand on lui a donné un médicament antipsychotique pour le sédatifier, ce qui a provoqué un effet secondaire rare.</p>
+            <span class="english-block">Oliver, who had epilepsy, was being treated for a seizure when he was given the anti-psychotic drug to sedate him, which caused a rare side effect</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.12" data-end="210.05">
+            <p class="french-block">McGowan a déclaré à la BBC qu'elle était "profondément blessée, profondément déçue" après avoir été informée de l'enquête, qui est en cours.</p>
+            <span class="english-block">McGowan told the BBC she was "deeply hurt, deeply disappointed" after being told about the investigation, which is ongoing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.05" data-end="219.46">
+            <p class="french-block">"J'ai toujours été ouverte et honnête, mais il y a des choses profondément personnelles dans les notes [médicales] d'Oliver que je ne dis à personne", a- t- elle dit.</p>
+            <span class="english-block">"I've always been open and honest but there are deeply personal things in Oliver's [medical] notes that I don't tell anybody," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="219.46" data-end="225.07">
+            <p class="french-block">"Il est mort dans la douleur et il n'est pas agréable si ce côté de la mort d'Oliver a été accédé".</p>
+            <span class="english-block">"He died in pain and it's not pleasant if that side of Oliver's death has been accessed."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.07" data-end="236.64">
+            <p class="french-block">Son mari, Tom McGowan, a déclaré que le risque d'accès non autorisé aux dossiers médicaux avait augmenté à mesure que plus d'informations étaient stockées sur des plateformes numériques basées sur le cloud.</p>
+            <span class="english-block">Her husband, Tom McGowan, said that the risk of unauthorised access to medical records had increased as more information is stored on digital, cloud-based platforms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="236.64" data-end="242.66">
+            <p class="french-block">"C'est une faiblesse du système et il faut agir maintenant pour renforcer les contrôles", a-t-il déclaré.</p>
+            <span class="english-block">"It's a weakness in the system and action needs to be taken now to tighten up controls," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.66" data-end="257.83">
+            <p class="french-block">Paula McGowan, avec son mari Tom, est devenue une prometteuse militante en matière de sécurité des patients après la mort d'Oliver et a reçu un OBE en 2021 pour son travail visant à améliorer les soins aux personnes autistes et aux personnes ayant des troubles de l'apprentissage</p>
+            <span class="english-block">Paula McGowan, with husband Tom, became a prominent patient safety campaigner  following Oliver's death and received an OBE in 2021 for her work to improve care for autistic people and people with learning disabilities</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="257.83" data-end="268.42">
+            <p class="french-block">Le Trust de la Fondation NHS de Bristol a déclaré qu'il entreprenait une "enquête approfondie" et qu'il serait "inapproprié d'en tirer des conclusions avant que ces enquêtes ne soient terminées".</p>
+            <span class="english-block">Bristol NHS Foundation Trust said it was undertaking a "thorough investigation" and it would be "inappropriate to reach conclusions before those enquiries are complete".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.42" data-end="281.9">
+            <p class="french-block">"Chaque patient et chaque famille a le droit d'attendre que leurs informations personnelles soient traitées avec soin, respect et confidentialité", a déclaré le professeur Steve Hams, directeur de la santé et de l'amélioration de la fiducie.</p>
+            <span class="english-block">"Every patient and family has the right to expect that their personal information will be treated with care, respect and confidentiality," said Prof Steve Hams, the trust's chief nursing and improvement officer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.9" data-end="288.12">
+            <p class="french-block">"Tout souci que des archives aient pu être consultées sans raison légitime est quelque chose que nous prenons très au sérieux".</p>
+            <span class="english-block">"Any concern that records may have been accessed without a legitimate reason is something we take extremely seriously."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.12" data-end="296.95">
+            <p class="french-block">La fiducie a déclaré que, si une mauvaise conduite du personnel était identifiée, "des mesures appropriées seraient prises dans les processus pertinents".</p>
+            <span class="english-block">The trust said that, should any staff misconduct be identified, "appropriate action will be taken through the relevant processes".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="296.95" data-end="308.06">
+            <p class="french-block">Les dossiers médicaux du NHS peuvent contenir des informations personnelles très sensibles, allant des résultats des tests et des résumés de la sortie de l'hôpital aux détails des ordonnances et des médicaments.</p>
+            <span class="english-block">NHS medical records can contain highly sensitive personal information, ranging from test results and hospital discharge summaries to details of prescriptions and medications.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="308.06" data-end="322.66">
+            <p class="french-block">Cela va bien au-delà des informations disponibles pour les patients via l'application NHS et peut inclure des préoccupations de protection, des évaluations des risques, la correspondance entre les professionnels de la santé et des notes de consultation détaillées.</p>
+            <span class="english-block">That extends well beyond the information available to patients through the NHS app and may include safeguarding concerns, risk assessments, correspondence between healthcare professionals and detailed consultation notes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.66" data-end="330.34">
+            <p class="french-block">Il n'existe pas de système de dossiers électroniques unique pour l'ensemble du NHS auquel chaque membre du personnel puisse accéder.</p>
+            <span class="english-block">There is no single NHS-wide electronic record system that every member of staff can access.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.34" data-end="343.03">
+            <p class="french-block">Au lieu de cela, les organisations, y compris les cliniques de médecine générale, les hôpitaux et les cliniques spécialisées, tiennent leurs propres dossiers et déterminent qui peut consulter des informations particulières.</p>
+            <span class="english-block">Instead, organisations including GP practices, hospitals and specialist clinics maintain their own records and determine who can view particular information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.03" data-end="350.78">
+            <p class="french-block">Les médecins, les infirmières et le personnel de santé ont souvent besoin d'un accès rapide, en particulier en cas d'urgence.</p>
+            <span class="english-block">Doctors, nurses and other healthcare staff often need fast access, particularly in emergencies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.78" data-end="359.45">
+            <p class="french-block">Toutefois, ils ne devraient consulter les informations confidentielles que lorsqu'ils ont une raison légitime liée au travail et une autorisation appropriée.</p>
+            <span class="english-block">However, they should only view confidential information when they have a legitimate work-related reason and the right authorisation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="359.45" data-end="367.34">
+            <p class="french-block">Les systèmes informatiques tiennent une trace d'audit qui devrait être en mesure de montrer exactement qui a accédé aux dossiers d'un patient et quand.</p>
+            <span class="english-block">IT systems keep an audit trail that should be able to show exactly who accessed a patient's records and when.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="367.34" data-end="378.94">
+            <p class="french-block">Le NHS England a déclaré que toute instance de personnel examinant les dossiers sans raison valable serait "totalement inacceptable, une violation honteuse de la confiance des patients et contraire à la loi".</p>
+            <span class="english-block">NHS England said any instance of staff looking at records without a valid reason would be "wholly unacceptable, a disgraceful breach of patients' trust and against the law".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="378.94" data-end="389.35">
+            <p class="french-block">"Nous avons été clairs que les employés pourraient être disciplinés pour toute violation, y compris la perte de leur emploi et la poursuite pénale potentielle", a ajouté un porte-parole.</p>
+            <span class="english-block">"We have been crystal clear that staff could face disciplinary action for any breaches, including the loss of their job and potential criminal prosecution," added a spokesman.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="389.35" data-end="396.84">
+            <p class="french-block">Le personnel du NHS a accédé aux dossiers des victimes de Southport "inadaptément", admet la fiducie hospitalière</p>
+            <span class="english-block">NHS staff accessed Southport victims' records 'inappropriately', hospital trust admits</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.84" data-end="403.13">
+            <p class="french-block">Un travailleur du NHS a envoyé une capture d'écran de l'enregistrement du patient à son partenaire</p>
+            <span class="english-block">NHS worker sent patient record screenshot to partner</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.13" data-end="408.74">
+            <p class="french-block">La fiducie du NHS licencie le personnel pour les antécédents des victimes d'attaques</p>
+            <span class="english-block">NHS trust sacks staff over attacks victims' records</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_27.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
