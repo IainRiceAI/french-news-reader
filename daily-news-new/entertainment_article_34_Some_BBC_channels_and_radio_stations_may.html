@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some BBC channels and radio stations may well have to close, director general says</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Some BBC channels and radio stations may well have to close, director general says</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 25 Sep 2026 12:00:11 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6grv78d59jpo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The BBC's financial situation "may well mean" some channels and stations close, Matt Brittin says.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.93" data-end="16.3">
+            <p class="french-block">"Nous ne pouvons garantir à jamais aucune émission ou chaîne". - Directeur général de la BBC Matt Brittin</p>
+            <span class="english-block">'We can't guarantee any programme or channel forever'  - BBC Director General Matt Brittin</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.3" data-end="30.6">
+            <p class="french-block">La situation financière de la BBC et les changements de comportements de l'audience " peuvent bien signifier " que certaines chaînes et stations de radio doivent fermer afin que des ressources puissent être investies dans des services à la demande, a déclaré son directeur général.</p>
+            <span class="english-block">The BBC's financial situation and changing audience habits "may well mean" some channels and radio stations have to close so resources can be invested in on-demand services, its director general has said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.6" data-end="43.1">
+            <p class="french-block">Alors que la BBC cherche à économiser 500 millions de livres sterling, Matt Brittin a déclaré à BBC One Sunday With Laura Kuenssberg que "nous ne garantirions pas qu'aucun programme ou chaîne n'existera pour toujours".</p>
+            <span class="english-block">As the BBC seeks £500m savings, Matt Brittin told BBC One's Sunday With Laura Kuenssberg that "we wouldn't guarantee any programme or any channel will exist forever".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.1" data-end="51.24">
+            <p class="french-block">Il a dit: " La situation financière difficile signifie que nous devons revoir certaines de ces décisions un peu plus tôt que nous ne le souhaiterions. "</p>
+            <span class="english-block">He said: "The tight financial situation means that we're having to look at some of those decisions a bit sooner than we might like."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.24" data-end="63.24">
+            <p class="french-block">Le comportement du public change également rapidement, a-t-il déclaré. "Si la plupart des gens obtiennent des choses à la demande, nous devons examiner la valeur et le coût de tous ces différents services".</p>
+            <span class="english-block">Audience behaviour is also rapidly changing, he said. "If most of an audience is getting things on demand, we have to look at the value and the cost of all of those different services."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.24" data-end="68.3">
+            <p class="french-block">Brittin a dit que son objectif était de " minimiser l'impact sur le public ".</p>
+            <span class="english-block">Brittin said his focus when making savings was to "minimise the impact on audience".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.3" data-end="77.95">
+            <p class="french-block">Il a expliqué: " Nous avons peut-être des chaînes et des services où peut-être 100 000 personnes regardent le service de diffusion mais 500 000 obtiennent ces programmes sur iPlayer.</p>
+            <span class="english-block">He explained: "We might have some channels and services where maybe 100,000 people are watching the broadcast service but 500,000 are getting those programmes on iPlayer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.95" data-end="87.84">
+            <p class="french-block">"Quand est le bon moment pour migrer ce service en totalité vers l'on-demand? Et une partie de mon travail est de protéger la valeur pour l'argent pour le payeur des frais de licence".</p>
+            <span class="english-block">"When's the right time to migrate that service fully to being on-demand? And part of my job is to safeguard value for money for the licence fee payer."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.84" data-end="100.82">
+            <p class="french-block">La BBC devrait " prendre différentes façons d'atteindre le public et nous sommes enfermés dans le modèle d'hier de la façon dont les gens consomment du contenu, et en fait le public vit toujours déjà dans le monde de demain ", a-t-il déclaré.</p>
+            <span class="english-block">The BBC should go "in different ways to reach audiences and we're locked into yesterday's model of how people consume content, and actually the audience is always already living in tomorrow's world", he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.82" data-end="113.81">
+            <p class="french-block">Ces derniers mois, la BBC a annoncé une série de fermetures d'emplois et de programmes, dont Blankety Blank, Celebrity Mastermind, Live At The Apollo et Football Focus, et de nouvelles coupes sont attendues.</p>
+            <span class="english-block">In recent months, the BBC has announced a series of closures of jobs and programmes including Blankety Blank, Celebrity Mastermind, Live At The Apollo and Football Focus, and further cuts are expected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="113.81" data-end="122.71">
+            <p class="french-block">Brittin a pris le poste de directeur général de la BBC en mai après une décennie de présidence de Google en Europe, au Moyen-Orient et en Afrique.</p>
+            <span class="english-block">Brittin took over as BBC director general in May after a decade as president of Google in Europe, the Middle East and Africa.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.71" data-end="132.22">
+            <p class="french-block">Interrogé par Kuenssberg s'il permettrait qu'un programme soit réalisé et présenté par l'IA, Brittin a répondu: "Je le ferais, à l'intérieur des barreaux".</p>
+            <span class="english-block">Asked by Kuenssberg if he would allow a programme to be made and presented by AI, Brittin replied: "I would do, within guardrails."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.22" data-end="141.77">
+            <p class="french-block">Il a ajouté: " Nous voulons expérimenter cette technologie et comprendre ce qu'elle peut et ne peut pas faire, mais je suis ici parce que je crois en la créativité humaine.</p>
+            <span class="english-block">He added: "We want to experiment with this technology and understand what it can and can't do, but I'm here because I believe in human creativity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.77" data-end="158.5">
+            <p class="french-block">" Je ne pense pas que tout ce que nous faisons devrait être remplacé par l'IA. Je pense qu'il y a beaucoup d'endroits où l'IA peut nous aider à faire aller plus loin les frais de licence, mais aussi à nous aider dans notre prise de décision et notre créativité. Mais elle n'est pas un substitut pour les humains. "</p>
+            <span class="english-block">"I don't think anything we do should be replaced by AI. I think there are lots of places where AI can help us make the licence fee go further, but also help us in our decision-making and creativity. But it's not a substitute for humans."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.5" data-end="165.62">
+            <p class="french-block">Il a également mis en garde contre le danger que quelques entreprises technologiques aient trop de contrôle sur l'information à l'avenir.</p>
+            <span class="english-block">He also warned of the danger of a handful of tech companies having too much control over information in the future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.62" data-end="179.06">
+            <p class="french-block">"Nous sommes également dans ce moment où l'IA est en décollage. Je pense donc qu'il y a un risque que six entreprises contrôlent l'accès à l'information à l'avenir et la création d'informations et de désinformation", a-t-il déclaré.</p>
+            <span class="english-block">"We're also in this moment where AI is in takeoff. So I think there's a danger that six companies will control access to information in future and the creation of information and misinformation," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.06" data-end="191.76">
+            <p class="french-block">" Six entreprises, aucune d'entre elles européenne, encore moins britannique. Dans ce monde, voici la BBC. C'est l'organisation la plus fiable de plus d'un demi-milliard de personnes. "</p>
+            <span class="english-block">"Six companies, none of them European, let alone British. In that world, here's the BBC. It's the most trusted organisation by over half a billion people."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.76" data-end="202.63">
+            <p class="french-block">Interrogé sur la confiance qu'il avait dans les grandes entreprises de technologie, il a répondu: " Il y a beaucoup de plateformes, donc je ne ferais confiance à aucune plateforme par nature.</p>
+            <span class="english-block">Asked if he trusted big tech companies he replied: "There's a lot of platforms out there, so I wouldn't trust any platform innately.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.63" data-end="211.78">
+            <p class="french-block">"Et je pense que ce que vous faites, c'est de garder un examen de la façon dont ces choses fonctionnent et si votre contenu peut apparaître au bon endroit et accomplir sa mission.</p>
+            <span class="english-block">"And I think what you do is you keep under review how those things work and whether your content can show up in the right place and fulfil its mission.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.78" data-end="217.56">
+            <p class="french-block">"Je pense que la BBC et nos applications et services devraient être l'antidote à l'algorithme.</p>
+            <span class="english-block">"I think the BBC and our apps and services should be the antidote to the algorithm. Everywhere else you go is driven by some commercial interest."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.56" data-end="228.94">
+            <p class="french-block">L'interview sera disponible sur BBC Sounds et YouTube le samedi 26 septembre, puis le dimanche avec Laura Kuenssberg sur BBC One et iPlayer à 09:00 BST le 27 septembre.</p>
+            <span class="english-block">The interview will be available on BBC Sounds and YouTube on Saturday 26 September, then on Sunday with Laura Kuenssberg on BBC One and iPlayer at 09:00 BST on 27 September.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.94" data-end="234.91">
+            <p class="french-block">Le directeur général de la BBC dit ne pas être au courant de la "série" des coupes nécessaires</p>
+            <span class="english-block">BBC director-general says he was not aware of 'severity' of cuts needed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.91" data-end="240.7">
+            <p class="french-block">La BBC annule Blankety Blank, Celebrity Mastermind et Live at the Apollo</p>
+            <span class="english-block">BBC cancels Blankety Blank, Celebrity Mastermind and Live at the Apollo</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.7" data-end="245.88">
+            <p class="french-block">Le nouveau patron de la BBC avertit que " des choix difficiles sont inévitables "</p>
+            <span class="english-block">New BBC boss warns that 'tough choices are unavoidable'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_34.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

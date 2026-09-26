@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relegation? Titles stripped? Appeals? What next for Man City</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Relegation? Titles stripped? Appeals? What next for Man City</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 25 Sep 2026 20:48:18 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/sport/football/articles/cx30540044q0o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: It has taken more than two years, but a judgement finally appears to have been made on the financial rule breaches levelled against the club. Here's what it means.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.5" data-end="12.72">
+            <p class="french-block">Kieran Maguire sur les sanctions potentielles pour Man City</p>
+            <span class="english-block">Kieran Maguire on potential sanctions for Man City</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="12.72" data-end="22.99">
+            <p class="french-block">Il a fallu plus de deux ans, mais un jugement semble enfin avoir été rendu sur les 115 accusations portées contre Manchester City pour violation des règles financières de la Premier League.</p>
+            <span class="english-block">It has taken more than two years, but a judgement finally appears to have been reached on the 115 charges levelled against Manchester City over breaches of Premier League financial rules.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.99" data-end="30.48">
+            <p class="french-block">Après une enquête de quatre ans, City a été inculpé et l'audience a finalement commencé le 16 septembre 2024.</p>
+            <span class="english-block">Following a four-year investigation, City were charged and the hearing finally got under way on 16 September 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.48" data-end="38.35">
+            <p class="french-block">La BBC Sport a appris qu'une décision avait été prise, après que City ait été reconnue coupable de presque toutes les accusations.</p>
+            <span class="english-block">BBC Sport has now learned a decision has been made, after the Athletic reported City had been found guilty on almost all of the charges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.35" data-end="42.19">
+            <p class="french-block">Nous ne sommes pas à la fin de ce processus, cependant.</p>
+            <span class="english-block">We are not at the end of this process, however. Far from it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="42.19" data-end="51.36">
+            <p class="french-block">Mais que signifie cela pour les titres de City, leur statut en Premier League, y aura-t-il un appel et combien de temps cela prendra avant que cette saga ne se termine ?</p>
+            <span class="english-block">But what does this mean for City's titles? What about their Premier League status? Will there be an appeal? And how long will it be before this saga does come to an end?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.36" data-end="56.45">
+            <p class="french-block">Les clubs demandent conseil juridique sur les frais d'indemnisation de Man City</p>
+            <span class="english-block">Clubs seek legal advice over Man City charges compensation</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.45" data-end="61.82">
+            <p class="french-block">Les fans de Man City doivent faire face à la réalité du verdict de culpabilité</p>
+            <span class="english-block">Man City fans face up to reality of guilty verdict</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.82" data-end="69.43">
+            <p class="french-block">Man City a été reconnue coupable de la majorité des 115 violations des règles financières - sources disent à la BBC</p>
+            <span class="english-block">Man City found guilty of majority of 115 financial rule breaches - sources tell BBC</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.43" data-end="79.3">
+            <p class="french-block">En février 2023, City a été inculpé et renvoyé à une commission indépendante pour des violations présumées qui auraient eu lieu entre 2009 et 2018.</p>
+            <span class="english-block">In February 2023, City were charged and referred to an independent commission over alleged breaches that were said to have taken place between 2009 and 2018.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.3" data-end="84.1">
+            <p class="french-block">Les frais - relatifs aux règles financières de la Premier League - sont:</p>
+            <span class="english-block">The charges - relating to Premier League financial rules - are:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="84.1" data-end="92.5">
+            <p class="french-block">54 fois l'incapacité de fournir des informations financières précises de 2009 à 2010 à 2017-2018.</p>
+            <span class="english-block">54 x failure to provide accurate financial information from 2009-10 to 2017-18.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.5" data-end="100.73">
+            <p class="french-block">14 fois l'incapacité de fournir des détails précis sur les paiements des joueurs et des gestionnaires de 2009 à 2017-2018.</p>
+            <span class="english-block">14 x failure to provide accurate details for player and manager payments from 2009-10 to 2017-18.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.73" data-end="109.97">
+            <p class="french-block">5 fois le non-respect des règles de l'UEFA, y compris le fair play financier (FFP) 2013-14 à 2017-18.</p>
+            <span class="english-block">5 x failure to comply with Uefa's rules including financial fair play (FFP) 2013-14 to 2017-18.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.97" data-end="118.82">
+            <p class="french-block">7 fois en violation des règles de profit et de durabilité (PSR) de la Premier League de 2015 à 2017 à 2018.</p>
+            <span class="english-block">7 x breaching Premier League profit and sustainability (PSR) rules from 2015-16 to 2017-18.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.82" data-end="126.5">
+            <p class="french-block">35 fois l'incapacité de coopérer avec les enquêtes de la Premier League de décembre 2018 à février 2023.</p>
+            <span class="english-block">35 x failure to co-operate with Premier League investigations from December 2018 to Feb 2023.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.5" data-end="133.66">
+            <p class="french-block">City a toujours nié avoir commis des fautes et la BBC Sport a été informée qu'elle en appellerait si elle était reconnue coupable.</p>
+            <span class="english-block">City have always denied wrongdoing and BBC Sport has been told they would appeal were they found guilty.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.66" data-end="148.15">
+            <p class="french-block">Le journal allemand Der Spiegel a publié des documents fuyants, y compris des courriels présumés envoyés entre les hauts dirigeants de City (dont certains restent au City Football Group), au cours de plusieurs saisons après la prise de contrôle du club à Abu Dhabi en 2008.</p>
+            <span class="english-block">German newspaper Der Spiegel published leaked documents, including emails purportedly sent between top City executives (some of whom remain at the City Football Group), across several seasons following the club's Abu Dhabi takeover in 2008.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.15" data-end="168.65">
+            <p class="french-block">Il a allégué que ces résultats montrent que le club avait gonflé les revenus de parrainage de la compagnie aérienne éthiad et de la société de télécommunications éthiatique Etisalat en dissimulant des investissements directs de leur holding (Abu Dhabi United Group, du chef Sheik Mansour, ou ADUG) comme revenus de parrainage en canalisant les fonds via les comptes des entreprises.</p>
+            <span class="english-block">It alleged these showed the club had inflated sponsorship revenue from state-owned airline Etihad and state-controlled telecoms firm Etisalat by disguising direct investment from their holding company (Sheik Mansour's Abu Dhabi United Group, or ADUG) as sponsorship income by channelling the funds through the companies' accounts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="168.65" data-end="180.84">
+            <p class="french-block">Il a été allégué que c'était un moyen de respecter les règles de la FFP introduites par l'UEFA en 2011 - et la PSR introduite par la Premier League en 2012 - limitant les pertes autorisées des clubs.</p>
+            <span class="english-block">This, it was alleged, was a means of meeting FFP rules introduced by Uefa in 2011 - and PSR brought in by the Premier League in 2012 - limiting clubs' permitted losses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.84" data-end="193.78">
+            <p class="french-block">Il a ensuite été poursuivi des allégations de fausses informations financières axées sur des documents qui prétendaient montrer des paiements secrets " hors dossiers " à l'ancien directeur Roberto Mancini via des frais de conseil d'un club d'Abou Dhabi.</p>
+            <span class="english-block">There then followed further allegations of misreporting financial information centred on documents that claimed to show secret 'off-the-books' payments to then manager Roberto Mancini via consultancy fees from a club in Abu Dhabi.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.78" data-end="203.4">
+            <p class="french-block">On prétend aussi que le club a donné aux joueurs plus d'argent que ce qu'il avait officiellement passé par les comptes, donc les dépenses enregistrées étaient moins élevées qu'elles ne l'étaient réellement.</p>
+            <span class="english-block">It is also alleged the club gave players more money than was officially going through the accounts so recorded spending was less than it actually was.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.4" data-end="218.02">
+            <p class="french-block">City, qui a toujours soutenu que l'ADUG est un fonds privé plutôt qu'un bras de l'État, a refusé de commenter les révélations de Der Spiegel, affirmant que les courriels fuyés avaient été obtenus illégalement et qu'ils étaient une "tentative de nuire à la réputation du club".</p>
+            <span class="english-block">City, who have always maintained ADUG is a private fund rather than an arm of the state, refused to comment on any of Der Spiegel's revelations, saying the leaked emails were obtained illegally, and they were an "attempt to damage the club's reputation".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.02" data-end="228.17">
+            <p class="french-block">La ville - ainsi que les entreprises impliquées - ont fermement nié avoir enfreint des règles financières, mais cela n'a pas empêché l'UEFA et la Premier League de lancer des enquêtes.</p>
+            <span class="english-block">City - along with the companies involved - strongly denied breaking any financial rules. But that did not stop both Uefa and the Premier League launching investigations as a result.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.17" data-end="234.41">
+            <p class="french-block">Manchester City a remporté sept trophées au sein de la ville durant la période des infractions présumées.</p>
+            <span class="english-block">Manchester City won seven domestic trophies during the period of the alleged offences</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.41" data-end="244.87">
+            <p class="french-block">Novembre 2018: Des allégations de Football Leaks émergent avec Der Spiegel publiant des allégations selon lesquelles Manchester City a enfreint les règles de fair play financier.</p>
+            <span class="english-block">November 2018: Football Leaks allegations emerge with Der Spiegel publishing claims Manchester City breached financial fair play rules.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.87" data-end="250.87">
+            <p class="french-block">Mars 2019: L'UEFA lance une enquête officielle sur les résultats de Der Spiegel.</p>
+            <span class="english-block">March 2019: Uefa launches a formal investigation off the back of Der Spiegel's findings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.87" data-end="256.13">
+            <p class="french-block">Mai 2019: La ville critique l'enquête et lance un processus d'appel.</p>
+            <span class="english-block">May 2019: City criticise the investigation and launch an appeal process.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.13" data-end="263.14">
+            <p class="french-block">Novembre 2019: La Cour d'arbitrage du sport (Cas) juge inadmissible l'appel de City.</p>
+            <span class="english-block">November 2019: The Court of Arbitration for Sport (Cas) deems City's appeal inadmissible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="263.14" data-end="272.04">
+            <p class="french-block">Février 2020: L'UEFA annonce une interdiction de deux ans pour City de participer à des compétitions européennes et une amende de 30 millions d'euros.</p>
+            <span class="english-block">February 2020: Uefa announces a two-year ban for City from European competitions and a €30m fine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="272.04" data-end="277.94">
+            <p class="french-block">Juillet 2020: L'interdiction européenne de City est annulée après un appel auprès de Cas.</p>
+            <span class="english-block">July 2020: City's European ban is overturned after an appeal to Cas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="277.94" data-end="288.29">
+            <p class="french-block">Juillet 2021: City perd une décision de juridiction qui permet aux médias de signaler que la Premier League continue d'enquêter sur les champions pour des violations financières présumées.</p>
+            <span class="english-block">July 2021: City lose a jurisdiction ruling that allows the media to report the Premier League is continuing to investigate the champions for alleged financial breaches.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.29" data-end="297.74">
+            <p class="french-block">Avril 2022: Der Spiegel publie un nouveau rapport affirmant que la Premier League enquête sur le club depuis trois ans, fournissant des affirmations détaillées.</p>
+            <span class="english-block">April 2022: Der Spiegel publishes a fresh report claiming the Premier League has been investigating the club for three years, providing detailed claims.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.74" data-end="303.79">
+            <p class="french-block">Février 2023: La Premier League accuse City de 115 violations financières.</p>
+            <span class="english-block">February 2023: The Premier League charges City with 115 financial breaches.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.79" data-end="310.92">
+            <p class="french-block">Septembre 2024: Début d'une audience de 10 semaines entre la Premier League et City sur les 115 accusations.</p>
+            <span class="english-block">September 2024: The start of a 10-week hearing between the Premier League and City on the 115 charges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.92" data-end="322.73">
+            <p class="french-block">Février 2025: Pep Guardiola, manager de City, dit que le club s'attend à connaître le verdict "dans un mois". Guardiola quitte l'Etihad à la fin de la saison dernière.</p>
+            <span class="english-block">February 2025: City manager Pep Guardiola says the club expect to learn the verdict "within one month". Guardiola left the Etihad at the end of last season.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="322.73" data-end="334.63">
+            <p class="french-block">Septembre 2026: Des informations émergent selon lesquelles un verdict a été rendu, avec des sources disant à la BBC que City a été reconnue coupable d'avoir enfreint la majorité des accusations.</p>
+            <span class="english-block">September 2026: Reports emerge that a verdict has been reached, with sources telling the BBC that City have been found guilty of breaking the majority of the charges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="334.63" data-end="339.12">
+            <p class="french-block">On ne s'attendait jamais à ce que le verdict soit complet avec les sanctions.</p>
+            <span class="english-block">It was never expected the verdict would come complete with the sanctions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="339.12" data-end="346.51">
+            <p class="french-block">Nous sommes maintenant confrontés à un jeu d'attente pour que même ce verdict soit officiellement rendu public par le jury indépendant.</p>
+            <span class="english-block">We now face a waiting game for even that verdict to officially be made public by the independent panel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="346.51" data-end="354.17">
+            <p class="french-block">Nous ne savons pas qui était dans le jury qui a entendu et jugé sur l'affaire, et cela ne viendra qu'une fois un jugement écrit publié.</p>
+            <span class="english-block">We don't know who was on the panel that heard and ruled on the case, and that will only come once a written judgment is released.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="354.17" data-end="358.03">
+            <p class="french-block">Toutes les options sont ouvertes à la commission disciplinaire:</p>
+            <span class="english-block">All options are open to the disciplinary commission:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="358.03" data-end="361.51">
+            <p class="french-block">Déduction de points (immédiat ou suspendu).</p>
+            <span class="english-block">Points deduction (immediate or suspended).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="361.51" data-end="365.26">
+            <p class="french-block">Sanctions financières (immédiates ou suspendues).</p>
+            <span class="english-block">Financial penalties (immediate or suspended).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.26" data-end="367.92">
+            <p class="french-block">- Il est retiré de la Premier League.</p>
+            <span class="english-block">Removal from the Premier League.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="367.92" data-end="375.89">
+            <p class="french-block">Le retrait de la Premier League signifierait que City perdrait son adhésion et serait rétrogradé à une division inférieure à la fin de la saison.</p>
+            <span class="english-block">Being removed from the Premier League would mean City lose their membership and are demoted to a lower division from the end of the season.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.89" data-end="382.37">
+            <p class="french-block">Cela pourrait également se produire par une pénalité de points si sévère qu'ils seraient effectivement rétrogradés.</p>
+            <span class="english-block">That could also happen through a points penalty so severe they would effectively be relegated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="382.37" data-end="386.95">
+            <p class="french-block">"Je ne sais pas vraiment comment me sentir" - Man City fan accusé</p>
+            <span class="english-block">'I don't really know how to feel' - Man City fan on charges</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="386.95" data-end="392.21">
+            <p class="french-block">La Premier League a refusé de commenter l'affaire lors de la consultation vendredi.</p>
+            <span class="english-block">The Premier League declined to comment on the case when approached on Friday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="392.21" data-end="398.09">
+            <p class="french-block">City a publié un communiqué montrant que la nouvelle frustrante du verdict avait été divulguée.</p>
+            <span class="english-block">City issued a statement that showed frustration news of the verdict had leaked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="398.09" data-end="407.21">
+            <p class="french-block">Il disait: "Le processus de Premier League est en cours, avec des éléments importants à compléter, et sous réserve de strict confidentialité.</p>
+            <span class="english-block">It read: "The Premier League process remains ongoing, with significant elements to be completed, and subject to strict confidentiality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="407.21" data-end="414.74">
+            <p class="french-block">"Ainsi, la position du Manchester City FC reste cohérente avec la déclaration du club de février 2023.</p>
+            <span class="english-block">"As such Manchester City FC's position remains consistent with the club's statement of February 2023.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="414.74" data-end="429.77">
+            <p class="french-block">"Le club a respecté avec diligence le droit de procédure pendant huit ans sur la base que le Conseil d'administration et le Conseil exécutif de la Premier League se comporteraient comme un régulateur indépendant, impartial et équitable, exempt d'influence partisane".</p>
+            <span class="english-block">"The club has diligently respected due process for eight years on the basis that the Premier League Board and Executive would behave as an independent, impartial and fair-minded regulator, free from partisan influence."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="429.77" data-end="434.57">
+            <p class="french-block">Lord Pannick QC devrait être à la tête d' un appel contre toute sanction</p>
+            <span class="english-block">Lord Pannick QC is expected to spearhead an appeal against any sanctions</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="434.57" data-end="437.95">
+            <p class="french-block">Un appel de la Ville devrait être une formalité.</p>
+            <span class="english-block">An appeal from City is expected to be a formality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="437.95" data-end="445.54">
+            <p class="french-block">L'équipe juridique de City est dirigée par Lord Pannick KC, qui aurait facturé 5 000 £ l'heure pour ses services.</p>
+            <span class="english-block">City's legal team is being led by Lord Pannick KC, who is reported to charge £5,000 an hour for his services. He helped City overturn their two-year European ban in 2020.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="445.54" data-end="455.69">
+            <p class="french-block">Cependant, étant donné que nous sommes déjà huit ans dans ce processus - et deux ans après le début de l'audience elle-même - il est impossible de spéculer quand cela pourrait se terminer.</p>
+            <span class="english-block">However, considering we are already eight years into this process - and two years beyond the start of the hearing itself - it is impossible to speculate when this could come to an end.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="455.69" data-end="461.9">
+            <p class="french-block">Jusqu'à présent, l'affaire était étanche, sans fuites médiatiques de l'une des parties impliquées.</p>
+            <span class="english-block">Until now, the case has been watertight, with no media leaks from any of the parties involved.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="461.9" data-end="464.5">
+            <p class="french-block">C'est juste le dernier chapitre.</p>
+            <span class="english-block">This is just the latest chapter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="464.5" data-end="472.54">
+            <p class="french-block">Toutefois, bien que l'arrêt de la commission puisse être directement attaqué, il n'est pas possible pour City de le porter devant le tribunal.</p>
+            <span class="english-block">However, while the commission's judgement can be directly appealed against, it is not possible for City to take it to Cas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="472.54" data-end="477.26">
+            <p class="french-block">City a remporté la Premier League trois fois au cours de la période en question.</p>
+            <span class="english-block">City won the Premier League three times during the period in question.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="477.26" data-end="485.5">
+            <p class="french-block">Cela inclut leur première en Premier League en 2011-12, ainsi que 2013-14 et 2017-18.</p>
+            <span class="english-block">That includes their first in the Premier League era in 2011-12, plus 2013-14 and 2017-18.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="485.5" data-end="495.43">
+            <p class="french-block">Ils ont remporté la FA Cup en 2011 et la EFL Cup trois fois - 2013-14, 2015-16 et 2017-18.</p>
+            <span class="english-block">They won the FA Cup in 2011, and the EFL Cup three times - 2013-14, 2015-16 and 2017-18.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="495.43" data-end="505.2">
+            <p class="french-block">Depuis leur prise de contrôle en 2008 par ADUG, City a remporté huit titres de ligue et plusieurs coupes, dont la Ligue des champions dans le cadre d'un Treble en 2023.</p>
+            <span class="english-block">Since their 2008 takeover by ADUG, City have won eight league titles, and multiple cups including the Champions League as part of a Treble in 2023.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="505.2" data-end="511.73">
+            <p class="french-block">Si la commission décide de remettre les titres de City à d'autres clubs, voici qui pourrait en bénéficier:</p>
+            <span class="english-block">If the commission choses to hand City's titles to other clubs, this is who could benefit:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="511.73" data-end="515.66">
+            <p class="french-block">2011-12: Manchester United</p>
+            <span class="english-block">2011-12: Manchester United</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="515.66" data-end="519.34">
+            <p class="french-block">2013-14: Liverpool</p>
+            <span class="english-block">2013-14: Liverpool</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="519.34" data-end="523.58">
+            <p class="french-block">2017-18: Manchester United</p>
+            <span class="english-block">2017-18: Manchester United</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="523.58" data-end="527.09">
+            <p class="french-block">2010-2011: Stoke City</p>
+            <span class="english-block">2010-11: Stoke City</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="527.09" data-end="530.93">
+            <p class="french-block">2013-14: Sunderland</p>
+            <span class="english-block">2013-14: Sunderland</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="530.93" data-end="534.5">
+            <p class="french-block">2015-16: Liverpool</p>
+            <span class="english-block">2015-16: Liverpool</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="534.5" data-end="538.1">
+            <p class="french-block">2017-18: Arsenal</p>
+            <span class="english-block">2017-18: Arsenal</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="538.1" data-end="547.51">
+            <p class="french-block">Les clubs de la Premier League ont déjà demandé conseil juridique sur la question de savoir s'ils auraient un cas pour une indemnisation financière en raison des violations de City.</p>
+            <span class="english-block">Premier League clubs have already sought legal advice over whether they would have a case for financial compensation as a result of City's breaches.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="547.51" data-end="555.98">
+            <p class="french-block">Les clubs qui ont eu leurs positions affectées par les infractions de City pourraient potentiellement réclamer une perte de chance de gagner des honneurs potentiels.</p>
+            <span class="english-block">Clubs who had their league positions impacted by City's offences could potentially claim a loss of chance to win potential honours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="555.98" data-end="561.07">
+            <p class="french-block">Ces questions devront être entendues individuellement par une commission indépendante.</p>
+            <span class="english-block">These would need to be individually heard by an independent commission.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="561.07" data-end="571.01">
+            <p class="french-block">Plus tôt cette année, Everton a été informé qu'il devait payer à Burnley 35 millions de livres sterling pour l'impact d'une violation des règles financières de la Premier League.</p>
+            <span class="english-block">Earlier this year, Everton were told they must pay Burnley £35m over the impact of a breach of the Premier League's financial rules.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="571.01" data-end="583.01">
+            <p class="french-block">L'affaire - examinée par une commission de Premier League - concerne la saison 2021-22, lorsque Everton a été reconnu pour avoir enfreint les règles de PSR sur une période de trois ans.</p>
+            <span class="english-block">The case - heard by a Premier League commission - relates to the 2021-22 season, when Everton were found to have broken PSR regulations over a three-year period.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="583.01" data-end="591.5">
+            <p class="french-block">Burnley a soutenu que la violation avait affecté leurs chances de rester en Premier League et a demandé une compensation pour les pertes associées à la rédemption.</p>
+            <span class="english-block">Burnley argued the breach impacted their chances of staying in the Premier League, and sought compensation for the losses associated with being relegated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="591.5" data-end="597.55">
+            <p class="french-block">Les Clarets ont reçu 26 millions de livres en dommages et 9 millions de livres supplémentaires en intérêts.</p>
+            <span class="english-block">The Clarets were awarded £26m in damages and a further £9m in interest.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="597.55" data-end="602.64">
+            <p class="french-block">Les clubs demandent conseil juridique sur les frais d'indemnisation de Man City</p>
+            <span class="english-block">Clubs seek legal advice over Man City charges compensation</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="602.64" data-end="608.59">
+            <p class="french-block">Everton a été ordonné de payer Burnley 35 millions de livres pour violation de la PSR</p>
+            <span class="english-block">Everton told to pay Burnley £35m over PSR breach</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="608.59" data-end="616.9">
+            <p class="french-block">Cette affaire a duré six ans, et les frais juridiques des deux parties ont été estimés à des dizaines de millions de livres avant même que l'audience ne commence.</p>
+            <span class="english-block">This specific case was six years in the making, so legal fees on both sides were estimated at tens of millions of pounds before the hearing even started.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="616.9" data-end="621.22">
+            <p class="french-block">Quels que soient les "gains" qui peuvent être attendus pour faire valoir des coûts.</p>
+            <span class="english-block">Whichever side 'wins' can be expected to make a claim for costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="621.22" data-end="631.15">
+            <p class="french-block">Pour le contexte, la Premier League voulait que Everton paie les coûts juridiques de 4,9 millions de livres sterling de leur première affaire de déduction de six points PSR.</p>
+            <span class="english-block">For context, the Premier League wanted Everton to pay the full £4.9m legal costs of their first PSR six-point deduction case.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="631.15" data-end="642.58">
+            <p class="french-block">Cependant, un conseil d'appel a décidé que Everton devrait payer 1,7 million de livres sterling et que la Premier League couvrirait les 3,2 millions de livres sterling restants des frais juridiques.</p>
+            <span class="english-block">However, an appeal board ruled Everton should pay £1.7m and the Premier League cover the remaining £3.2m legal fees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="642.58" data-end="649.42">
+            <p class="french-block">Les coûts payés par la Premier League à la fin de l'affaire City devraient être répartis sur les 20 clubs qui composent la ligue.</p>
+            <span class="english-block">Any costs being paid by the Premier League at the end of the City case would have to be spread across the 20 clubs which make up the league.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="649.42" data-end="658.34">
+            <p class="french-block">Des comparaisons ont été faites avec les affaires intentées par la Premier League contre Nottingham Forest et Everton respectivement pour violations de la PSR.</p>
+            <span class="english-block">Comparisons have been drawn to the cases brought by the Premier League against Nottingham Forest and Everton respectively over breaches of PSR.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="658.34" data-end="671.21">
+            <p class="french-block">Au cours de la saison 2023-24, les deux clubs ont été accrochés pour avoir fait plus de pertes que ce qui leur était permis pour la période de trois ans de la saison 2020-21 à 2022-23.</p>
+            <span class="english-block">During the 2023-24 season, both clubs were docked points for making more losses than they were permitted to for the three-year period from the 2020-21 to 2022-23 seasons.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="671.21" data-end="677.16">
+            <p class="french-block">Ces affaires étaient d'une seule charge, plus faciles à déchiffrer et impliquaient beaucoup moins de preuves.</p>
+            <span class="english-block">Those cases were of a single charge, were easier to decipher and involved significantly less evidence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="677.16" data-end="686.4">
+            <p class="french-block">Everton a été déduit deux fois de points. Pour la première accusation, ils ont été accrochés de six points - réduit de 10 points lors de l'appel.</p>
+            <span class="english-block">Everton were twice deducted points. For the first charge, they were docked six points - reduced from 10 points on appeal. The second offence led to them being handed a two-point penalty.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="686.4" data-end="690.22">
+            <p class="french-block">Forest, quant à lui, a perdu quatre points.</p>
+            <span class="english-block">Forest, meanwhile, lost four points.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="690.22" data-end="694.44">
+            <p class="french-block">Toutefois, ces éléments concernent purement la RPS.</p>
+            <span class="english-block">However, these relate purely to PSR.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="694.44" data-end="698.66">
+            <p class="french-block">Everton a gagné deux points pour sa deuxième violation financière.</p>
+            <span class="english-block">Everton docked two points for second financial breach</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="698.66" data-end="703.1">
+            <p class="french-block">Forest a accosté quatre points pour violation des règles financières</p>
+            <span class="english-block">Forest docked four points for financial rules breach</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="703.1" data-end="719.33">
+            <p class="french-block">Chelsea a été accusé de 74 manquements à la règle, mais ceux-ci étaient très différents et se sont principalement concentrés sur les transferts qui se sont produits entre les saisons 2010-11 et 2015-16, y compris les offres pour Eden Hazard, Samuel Eto'o et Willian.</p>
+            <span class="english-block">Chelsea faced 74 charges of rule breaches, but these were quite different and primarily focused on transfers that happened between the 2010-11 and 2015-16 seasons, including deals for Eden Hazard, Samuel Eto'o and Willian.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="719.33" data-end="728.59">
+            <p class="french-block">La Premier League a condamné Chelsea à une amende de 10 millions de livres et a suspendu son transfert après avoir avoué avoir fait 47 millions de livres en paiements secrets.</p>
+            <span class="english-block">The Premier League fined Chelsea £10m and handed out a suspended transfer ban after they admitted making £47m in secret payments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="728.59" data-end="737.42">
+            <p class="french-block">Il est important de noter que Chelsea a conclu un accord avec la Premier League en ce qui concerne les questions réglementaires historiques qui ont été auto-déclarées.</p>
+            <span class="english-block">Importantly, Chelsea reached a settlement with the Premier League in relation to historical regulatory matters that were self-reported.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="737.42" data-end="741.86">
+            <p class="french-block">Ce n'est pas le cas de City, qui a toujours nié avoir commis des fautes.</p>
+            <span class="english-block">This has not been the case with City, who have always denied wrongdoing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="741.86" data-end="747.58">
+            <p class="french-block">Les Blues ont également été condamnés à une amende par l'UEFA et l'Association de football.</p>
+            <span class="english-block">The Blues were also fined by Uefa and the Football Association.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="747.58" data-end="752.33">
+            <p class="french-block">Chelsea condamnée à une amende mais évitée de déduction de points suspendus</p>
+            <span class="english-block">Chelsea fined but avoid suspended points deduction</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="752.33" data-end="755.9">
+            <p class="french-block">Suivez Manchester City sur BBC Sounds</p>
+            <span class="english-block">Follow Manchester City on BBC Sounds</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="755.9" data-end="759.98">
+            <p class="french-block">Contenu pré-match, post-match et actuel de la ville</p>
+            <span class="english-block">Pre-match, post-match and topical City content</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="759.98" data-end="764.18">
+            <p class="french-block">Subscrivez et écoutez tout ce que vous aimez à propos de City</p>
+            <span class="english-block">Subscribe and listen for everything you love about City</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="764.18" data-end="768.36">
+            <p class="french-block">Le football en procès: les charges de Manchester City</p>
+            <span class="english-block">Football on Trial: The Manchester City Charges</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_2.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

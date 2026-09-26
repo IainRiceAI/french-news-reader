@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treadmills to deadlifts: Why Gen Z are swapping cardio for strength training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>Treadmills to deadlifts: Why Gen Z are swapping cardio for strength training</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 24 Sep 2026 23:46:14 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/crlyqg2q3p10o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Gyms are booming, solitary cardio is out - how workouts are changing.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.62" data-end="16.08">
+            <p class="french-block">Quand Antonia Duffin, 34 ans, a commencé à aller à la salle de gym, elle voulait perdre du poids et se détendre.</p>
+            <span class="english-block">When Antonia Duffin, 34, started going to the gym, she wanted to lose weight and tone up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.08" data-end="26.93">
+            <p class="french-block">Elle a décidé de devenir entraîneuse personnelle en plus de son travail de jour dans les opérations d'une chaîne de supermarchés - et dirige maintenant sa propre salle de gym féminine à Manchester.</p>
+            <span class="english-block">It became such a big part of her life that she decided to become a personal trainer alongside her day job in operations for a supermarket chain - and now runs her own women's gym in Manchester.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="26.93" data-end="37.63">
+            <p class="french-block">"Certains de mes clients veulent se sentir plus forts, certains veulent se mettre en forme pour un bébé et certains luttent contre d'autres conditions comme l'endométriose et veulent se sentir mieux", dit- elle.</p>
+            <span class="english-block">"Some of my clients want to feel stronger, some want to get in shape for a baby and some are struggling with other conditions like endometriosis and want to feel better," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="37.63" data-end="49.1">
+            <p class="french-block">L'entraînement hybride, comme Hyrox, qui est sociable et compétitif, semble avoir pris le dessus sur la course sur un tapis roulant ou le cardio général sur un vélo, explique- t- elle.</p>
+            <span class="english-block">Hybrid training, like Hyrox, which is sociable and competitive, seems to have taken over from running on a treadmill or general cardio on a bike, she explains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="49.1" data-end="61.44">
+            <p class="french-block">Antonia note également le désir de faire plus d'entraînements de force chez les jeunes clients, ajoutant: "Je pense que les gens se rendent compte maintenant de l'importance de cela - nous prévenons l'ostéoporose et autres choses comme ça".</p>
+            <span class="english-block">Antonia also notes an appetite for more strength training workouts among younger clients, adding: "I think people are now realising the importance of it - we're preventing osteoporosis and things like that."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.44" data-end="67.37">
+            <p class="french-block">Les chiffres le confirment-ils? Et comment les entraînements changent-ils au Royaume-Uni?</p>
+            <span class="english-block">Do numbers bear that out? And how are workouts across the UK changing?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.37" data-end="71.09">
+            <p class="french-block">Pourquoi de plus en plus de jeunes passent du cardio au poids</p>
+            <span class="english-block">Why more young people are switching from cardio to weights</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.09" data-end="80.54">
+            <p class="french-block">Selon Sport England, plus de jeunes adultes vont à la salle de gym, en utilisant des machines d'exercice et des poids pour rester en forme par rapport à il y a neuf ans.</p>
+            <span class="english-block">According to Sport England, more young adults are going to the gym, using exercise machines and weights to keep fit compared to nine years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.54" data-end="96.82">
+            <p class="french-block">"Les gymnases offrent des types plus vastes d'exercices, comme l'entraînement en résistance, qui peuvent améliorer la composition corporelle et la forme plus rapidement que l'entraînement en exercices aérobiques", explique l'expert en exercice Dr Andrew Scott, de l'Université de Portsmouth.</p>
+            <span class="english-block">"Gyms offer broader types of exercise, like resistance training, which can improve body composition and shape more quickly than aerobic exercise training," explains exercise expert Dr Andrew Scott, from the University of Portsmouth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="96.82" data-end="107.66">
+            <p class="french-block">Il dit que les médias sociaux ont aussi un impact. "Beaucoup de gens apprennent en grande partie des influenceurs, suggérant que 'je peux le faire, c'est ce que j'ai fait et vous aussi'".</p>
+            <span class="english-block">He says social media is having an impact too. "Lots of people are largely learning from influencers, suggesting 'I can do it, this is what I did and so can you'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="107.66" data-end="117.0">
+            <p class="french-block">L'étudiant Will Seward, 19 ans, a commencé à aller à la salle de gym quand il était au lycée parce qu'il voulait " devenir plus fort et construire son physique ".</p>
+            <span class="english-block">Student Will Seward, 19, started going to the gym when he was at secondary school because he wanted to "get stronger and build up his physique".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.0" data-end="130.75">
+            <p class="french-block">Ses séances d'entraînement - généralement trois par semaine - ont changé au fil du temps, passant d'une première utilisation de machines à courir et de vélos d'exercice à une formation plus explosive à l'aide de poids, pour aider à renforcer l'athlétisme.</p>
+            <span class="english-block">His workouts - usually three a week - have changed over time, from using running machines and exercise bikes initially to more explosive training using weights, to help build athleticism.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.75" data-end="138.22">
+            <p class="french-block">Il explique: " Cela a eu un effet réel sur ma vie quotidienne, améliorant mon humeur et me rendant plus en bonne santé. "</p>
+            <span class="english-block">"It's had a real impact on my day to day life," he says, "improving my mood and making me feel generally healthier."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.22" data-end="148.63">
+            <p class="french-block">Les barbelles, les kettlebells, les dumbbells et les câbles font partie de l'entraînement de force que Antonia propose dans son espace de gym, situé dans un conteneur de transport.</p>
+            <span class="english-block">Barbells, kettlebells, dumbbells and cable machines are all part of the strength training Antonia offers in her gym space, located in a shipping container.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="148.63" data-end="166.15">
+            <p class="french-block">Des recherches récentes suggèrent que faire les deux heures de séance d'entraînement recommandées par semaine peut offrir de nombreux avantages semblables à l'exercice aérobique régulier, comme réduire le risque de mourir d'une maladie cardiaque ou d'un accident vasculaire cérébral tout en protégeant le cerveau et en augmentant l'estime de soi.</p>
+            <span class="english-block">Recent research suggests doing the recommended two hours of strength training each week may offer many of the same benefits as regular aerobic exercise, such as lowering the risk of dying from heart disease or stroke while also protecting the brain and boosting self-esteem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.15" data-end="171.05">
+            <p class="french-block">Cependant, ces bienfaits ne sont pas les seuls attirants de l'exercice physique.</p>
+            <span class="english-block">These benefits are not the only appeal of exercise though. Many say they feel a sense of connection when exercising with other people.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.05" data-end="188.71">
+            <p class="french-block">Le Dr Hussain Al-Zubaidi, médecin généraliste, entraîneur personnel et triathlète, dit qu'il existe maintenant "un énorme écosystème" pour ceux qui sont déjà actifs, avec des gymnases, des clubs de course, des applications de fitness, des médias sociaux et des technologies portables.</p>
+            <span class="english-block">Dr Hussain Al-Zubaidi, a GP, personal trainer and triathlete, says there is now "an enormous ecosystem" for those who are already active, featuring gyms, running clubs, fitness apps, social media and wearable tech.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.71" data-end="194.21">
+            <p class="french-block">La façon dont les groupes d'âge différents atteignent les objectifs généraux d'exercice varie.</p>
+            <span class="english-block">How different age groups meet overall exercise targets varies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.21" data-end="209.52">
+            <p class="french-block">Parmi les près de 2 millions de participants à Our Future Health - un questionnaire sur la santé et le mode de vie - les jeunes groupes d'âge étaient plus susceptibles de faire des éruptions plus courtes d'activité vigoureuse chaque semaine comme des cours de fitness, de l'aérobie ou du football.</p>
+            <span class="english-block">Among nearly 2 million participants in Our Future Health - a health and lifestyle questionnaire - younger age groups were more likely to do shorter bursts of vigorous activity every week like fitness classes, aerobics or football.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="209.52" data-end="220.51">
+            <p class="french-block">Bien que la course ait diminué en popularité, elle reste la forme d'exercice la plus courante chez les jeunes hommes et les jeunes femmes, et figure parmi les deux activités les plus populaires chez les adultes.</p>
+            <span class="english-block">While running has fallen in popularity overall, it is still the most common form of exercise for young men and women - and in the top two activities for adults overall.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.51" data-end="234.19">
+            <p class="french-block">Et la course sociale organisée est florissante, avec des enfants, des 20 ans et plus et une part croissante de participants dans les parks, qui sont gratuits pour tous et ont plus de 1400 événements qui ont lieu dans tout le Royaume-Uni chaque week-end.</p>
+            <span class="english-block">And organised, social running is thriving, with children, 20-somethings and over 50s accounting for a growing share of participants in parkruns, which are free to everyone and have over 1,400 events taking place across the UK every weekend.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.19" data-end="244.08">
+            <p class="french-block">Le professeur Esther van Sluijs, professeur d'épidémiologie comportementale à l'Université de Loughborough, dit que l'exercice communautaire offre des liens sociaux.</p>
+            <span class="english-block">Prof Esther van Sluijs, professor of behavioural epidemiology from Loughborough University, says community exercise offers social connection.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.08" data-end="254.5">
+            <p class="french-block">Quand le travail à domicile est si courant, en particulier pour les jeunes, " il est très important d'avoir un accès facile aux clubs communautaires proches de chez soi ", ajoute- t- elle.</p>
+            <span class="english-block">When working from home is so common, particularly for young people, "easy access to community clubs close to home is very important", she adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.5" data-end="261.31">
+            <p class="french-block">Alors, combien coûte le fait de garder les participants à l'exercice actif, alors que le budget est serré ?</p>
+            <span class="english-block">So how much is keeping active costing exercise goers, at a time when budgeting is tight?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.31" data-end="275.71">
+            <p class="french-block">Plus d'un quart des 16-34 ans affirment que payer pour l'adhésion à la salle de gym et rester en forme est une priorité de dépenses, en plus des vacances et de manger dehors, selon les données du UK Active - en hausse par rapport à un cinquième en 2024.</p>
+            <span class="english-block">More than a quarter of 16-34 year olds say paying for gym membership and keeping fit is a top spending priority, over holidays and eating out, data from UK Active shows - up from a fifth in 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.71" data-end="289.15">
+            <p class="french-block">Un sondage réalisé en 2026 par le Gym Group a révélé qu'un tiers de la génération Z dépensait 26 à 50 livres sterling par mois en santé et en forme physique, et qu'un quart en dépensait plus de 50 livres sterling.</p>
+            <span class="english-block">A 2026 survey by the Gym Group found a third of Gen Z spent £26-50 per month on health and fitness, with a quarter spending more than £50.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.15" data-end="303.22">
+            <p class="french-block">La directrice des événements Cordelia Sheridan, 27 ans, qui s'entraîne quatre à cinq fois par semaine dans son gymnase de Battersea, dit qu'elle traite son adhésion à la gym de 45 livres sterling "comme une facture d'utilité essentielle".</p>
+            <span class="english-block">Events manager Cordelia Sheridan, 27, who exercises four to five times a week at her gym in Battersea, says she treats her £45 gym membership "like an essential utility bill".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.22" data-end="311.14">
+            <p class="french-block">"Si vous allez au pub et que vous êtes avec un groupe d'amis, vous pouvez acheter quelques pints et les dépenser facilement pour une soirée", dit- elle.</p>
+            <span class="english-block">"If you go to the pub and you're with a group of mates, you can buy a few pints and easily spend that on a night out," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="311.14" data-end="318.31">
+            <p class="french-block">Vivre à seulement cinq minutes à pied de sa salle de gym permet d'y aller facilement à 6h30 et d'exercer avant le travail.</p>
+            <span class="english-block">Living just five minutes walk from her gym makes it easy to get there for 6.30am and exercise before work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="318.31" data-end="323.64">
+            <p class="french-block">Cordelia a changé sa routine de gym pour incorporer plus d' entraînement en force.</p>
+            <span class="english-block">Cordelia has changed her gym routine to incorporate more strength training</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="323.64" data-end="333.72">
+            <p class="french-block">Au gymnase, elle passe 10 minutes sur une machine à monter les escaliers puis 35 minutes à utiliser des poids et des machines pour renforcer les cuisses, les hanches et le bas du dos.</p>
+            <span class="english-block">At the gym, she spends 10 minutes on a stair-climbing machine then 35 minutes using weights and machines to strengthen the thighs, hips and lower back.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.72" data-end="338.95">
+            <p class="french-block">Avant, elle faisait du cardio, mais elle ne sentait pas qu'elle allait mieux ou qu'elle allait mieux.</p>
+            <span class="english-block">Before, her routine was all about cardio - but she didn't feel she was getting better or stronger. Now, she says, it's really nice being able to hit targets and lift heavier weights. "I want to go into my 30s being strong."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="338.95" data-end="342.6">
+            <p class="french-block">"Et c'est aussi étrangement plus sociable", dit-elle.</p>
+            <span class="english-block">"And it's also weirdly more sociable," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="342.6" data-end="351.86">
+            <p class="french-block">Convaincre les gens de faire de l'exercice consiste à le rendre facile, social et agréable, même si cela coûte cher, dit le Dr Al-Zubaidi.</p>
+            <span class="english-block">Persuading people to exercise is about making it the easy, social and enjoyable thing to do, even if it costs, says Dr Al-Zubaidi.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.86" data-end="363.72">
+            <p class="french-block">" Je pense que c'est pour cela que des activités comme la salle de sport, la course à pied et le padel ont été couronnées de succès - non pas parce qu'elles empêchent les maladies, mais parce qu'elles sont amusantes et sociables. "</p>
+            <span class="english-block">"I think that's why activities like the gym, running clubs and padel have been successful - not because they prevent disease but because they are fun and sociable."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="363.72" data-end="369.53">
+            <p class="french-block">Des habitudes de bien-être que vous pouvez commencer dès maintenant - sans (ou à peu de) frais</p>
+            <span class="english-block">Wellness habits you can start now - at no (or little) cost</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.53" data-end="374.11">
+            <p class="french-block">Les utilisateurs de protéines sont pressés par l'augmentation des prix</p>
+            <span class="english-block">£170 a bag? Protein users squeezed as prices soar</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="374.11" data-end="379.66">
+            <p class="french-block">La forme menstruelle: pourquoi certaines femmes "synchronisent" leurs séances d'entraînement</p>
+            <span class="english-block">Menstrual fitness: Why some women are 'cycle-syncing' their workouts</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_26.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

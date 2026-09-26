@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI bots meddled with multiple US government agency sites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>OpenAI bots meddled with multiple US government agency sites</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 26 Sep 2026 02:50:56 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw62jje658dlo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: OpenAI said its bots accessed public data from the US Census and the Securities and Exchange Commission, which regulates US stock markets.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.8" data-end="13.68">
+            <p class="french-block">OpenAI a été au centre de nouvelles préoccupations concernant l'activité incontrôlée de l'IA</p>
+            <span class="english-block">OpenAI has been at the centre of new concerns over uncontrolled AI activity</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.68" data-end="22.61">
+            <p class="french-block">OpenAI a reconnu avoir alerté "deux" institutions mondiales que leurs sites Web pourraient avoir été interférés par ses robots d'IA agissant de manière inappropriée.</p>
+            <span class="english-block">OpenAI has acknowledged that it alerted "dozens" of global institutions that their websites may have been meddled with by its AI bots acting improperly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.61" data-end="36.91">
+            <p class="french-block">Les agents de l'IA ont tenté d'obtenir des informations de "gouvernemens, universités, agences publiques et autres institutions", y compris la SEC, le Bureau du recensement et le département de l'éducation, a déclaré la société.</p>
+            <span class="english-block">AI agents attempted to get information from "governments, universities, public agencies, and other institutions", including the SEC, Census Bureau and Education Department, the company said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.91" data-end="51.05">
+            <p class="french-block">Les informations ont été divulguées quelques jours après que le Premier ministre australien Anthony Albanese ait annoncé que des agents d'OpenAI avaient enfreint des fichiers non publics sur le site Web de son programme de soins de santé géré par le gouvernement, Medicare.</p>
+            <span class="english-block">The disclosures come just days after Australian Prime Minister Anthony Albanese announced that OpenAI agents had breached non-public files on the website of its government-run health care scheme, Medicare.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.05" data-end="60.29">
+            <p class="french-block">Depuis août, les craintes du public ont augmenté autour des impacts potentiellement graves, voire mortels, des outils d'IA qui tombent hors du contrôle humain.</p>
+            <span class="english-block">Since August, public fears have grown around the potentially serious, even life-threatening, impacts of AI tools falling outside of human control.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.29" data-end="73.06">
+            <p class="french-block">OpenAI a déclaré que certaines des données ont été consultées par des agents d'IA, essentiellement des robots conçus et formés pour fonctionner de manière autonome, qui travaillaient pour trouver des "sources d'information publiques autorisées".</p>
+            <span class="english-block">OpenAI said that some of the data was accessed by AI agents, essentially bots that are designed and trained to operate somewhat autonomously, which were working to find "authoritative sources of public information".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="73.06" data-end="80.14">
+            <p class="french-block">Mais la société a noté que certains bots allaient au-delà et travaillaient pour contourner les mesures de sécurité sur les sites Web.</p>
+            <span class="english-block">But the company noted that some of the bots went beyond that and worked to bypass security measures on websites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.14" data-end="92.28">
+            <p class="french-block">Lorsqu'ils tentent d'obtenir des informations du Bureau du recensement, par exemple, les agents de l'IA ont utilisé des outils réservés aux développeurs de logiciels pour y accéder, a déclaré la société.</p>
+            <span class="english-block">When attempting to get information from the Census Bureau, for instance, AI agents used tools reserved for software developers to access it, the company said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.28" data-end="98.09">
+            <p class="french-block">OpenAI a déclaré que toutes les données gouvernementales auxquelles les robots ont accès étaient publiques.</p>
+            <span class="english-block">OpenAI said all of the government data accessed by bots was public.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.09" data-end="111.26">
+            <p class="french-block">Cependant, il a noté que les informations auxquelles ses robots ont accédé de la SEC, qui réglemente le marché boursier américain et protège les investisseurs, ont été publiées par les agents de l'IA sur un autre site Web.</p>
+            <span class="english-block">However, it noted that information that its bots accessed from the SEC, which regulates the US stock market and protects investors, was later published by AI agents on another website. OpenAI says this action was not intended.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.26" data-end="118.51">
+            <p class="french-block">Dans d'autres cas que OpenAI a révélé vendredi, ses agents d'IA ont transféré des données alors qu'ils ne devaient pas l'avoir fait.</p>
+            <span class="english-block">In other instances that OpenAI disclosed on Friday, its AI agents transferred data when it should not have.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="118.51" data-end="128.16">
+            <p class="french-block">Cette activité a entraîné au moins 53 incidents dans lesquels un agent OpenAI a pris une image de l'activité de l'utilisateur ChatGPT et l'a transférée ailleurs.</p>
+            <span class="english-block">Such activity resulted in at least 53 incidents where an OpenAI agent took an image from ChatGPT user activity and transferred it elsewhere.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.16" data-end="139.68">
+            <p class="french-block">La société a déclaré que dans chaque cas d'une image utilisateur utilisée et transférée par un agent d'IA, l'utilisateur avait choisi de permettre à OpenAI de former des modèles en utilisant ses données.</p>
+            <span class="english-block">The company said that in each instance of a user image being used and transferred by an AI agent, the user had opted in to allow OpenAI to train models using their data.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="139.68" data-end="145.27">
+            <p class="french-block">Toutefois, OpenAI a admis: "Ce n'est pas une utilisation appropriée de ces données".</p>
+            <span class="english-block">Nevertheless, OpenAI admitted: "This is not an appropriate use of this data".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.27" data-end="157.1">
+            <p class="french-block">Il a ajouté que la fuite d'images d'utilisateurs s'était produite avant qu'elle n'ait mis en place de nouvelles garanties sur la formation en IA, et qu'elle travaillait à supprimer toutes les images d'utilisateurs transférées à tout tiers.</p>
+            <span class="english-block">It added that the leak of user images occurred before it had put in place new safeguards on AI training, and it was working to get all the user images transferred to any third-party removed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="157.1" data-end="165.12">
+            <p class="french-block">Reuters a d'abord rapporté les enquêtes élargies. OpenAI a également publié des détails sur son blog public.</p>
+            <span class="english-block">Reuters first reported the expanded investigations. OpenAI also published details to its public blog.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.12" data-end="172.1">
+            <p class="french-block">Dans certains cas, OpenAI a déclaré que les outils "ont contourné" les contrôles de sécurité de certains sites Web.</p>
+            <span class="english-block">In certain instances of the agent activity, OpenAI said the tools "bypassed" security controls of some websites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.1" data-end="179.81">
+            <p class="french-block">Dans d'autres cas, les agents d'IA ont montré "mauvaise alignement" dans les tentatives d'accéder aux informations provenant de sites Web.</p>
+            <span class="english-block">In other instances, the AI agents showed "misalignment" in attempts to get at information from websites. Misalignment is a term used by AI companies and researchers to describe instances where an AI tool did something that it was not trained to do or was otherwise unintended.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.81" data-end="188.09">
+            <p class="french-block">OpenAI a déclaré qu'il limitait l'identification des entités touchées parce que beaucoup avaient demandé à la société de ne pas divulguer de détails.</p>
+            <span class="english-block">OpenAI said that it was limiting identifying what entities were impacted because many had asked the company to not disclose details.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.09" data-end="196.27">
+            <p class="french-block">"Notre objectif est de donner aux organisations les faits et de les déposer sur le fait de rendre public l'incident", a- t- il déclaré.</p>
+            <span class="english-block">"Our goal is to give each organization the facts and defer to them on if and when to make the incident public," it said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="196.27" data-end="203.81">
+            <p class="french-block">La société a noté que tous les cas impliqués dans cet incident n'étaient pas considérés comme une violation importante de la sécurité.</p>
+            <span class="english-block">Not all of the instances involved in this incident were being considered a significant security breach, the company noted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.81" data-end="220.9">
+            <p class="french-block">"Certaines organisations peuvent examiner ce que nous partageons et conclure que les informations étaient intentionnellement publiques ou que l'interaction du modèle n'était pas préoccupante", explique- t- il. "D'autres peuvent identifier un problème de conception ou une faiblesse de sécurité qu'elles veulent résoudre".</p>
+            <span class="english-block">"Some organizations may review what we share and conclude that the information was intentionally public or that the model's interaction was not concerning," it explained. "Others may identify a design issue or security weakness they want to address."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.9" data-end="227.11">
+            <p class="french-block">Pourquoi y a-t-il des préoccupations que l'IA puisse menacer l'humanité, et à quel point sont-elles réelles?</p>
+            <span class="english-block">Why are there concerns AI could threaten humanity, and how real are they?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="227.11" data-end="231.46">
+            <p class="french-block">L'IA pourrait anéantir les humains et comment pourrait-elle le faire ?</p>
+            <span class="english-block">Could AI wipe out humans and how might it do it?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="231.46" data-end="243.17">
+            <p class="french-block">La société a déclaré que de nombreux incidents sont appelés "spam d'agent", qu'elle a décrit comme une activité "inattendue ou préoccupante" d'agents d'IA, comme la publication d'informations sur Internet.</p>
+            <span class="english-block">The company said many of the incidents are being referred to as "agent spam", which it described as "unexpected or concerning" AI agent activity, like posting information to the internet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="243.17" data-end="255.67">
+            <p class="french-block">OpenAI a commencé à prendre ces incidents plus au sérieux après un incident en juillet où un groupe, ou "un amas", de ses agents d'IA a piraté la plateforme de développeurs d'IA Hugging Face sans avoir été invité à le faire.</p>
+            <span class="english-block">OpenAI began taking such incidents more seriously after an incident in July where a group, or "swarm," of its AI agents hacked the AI developer platform Hugging Face without being prompted to do so.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.67" data-end="262.78">
+            <p class="french-block">Hugging Face a été le premier à rendre public l'incident, OpenAI prenant ensuite la responsabilité publique.</p>
+            <span class="english-block">Hugging Face was first to go public with the incident, with OpenAI publicly taking responsibility for it later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="262.78" data-end="276.17">
+            <p class="french-block">Clement Delangue, le chef de Hugging Face, a déclaré mercredi lors d'une session du Conseil de sécurité des Nations Unies sur l'IA: "Je me demande souvent ce qui aurait été arrivé si j'avais décidé de ne pas divulguer cette attaque publiquement".</p>
+            <span class="english-block">Clement Delangue, the head of Hugging Face, said Wednesday during a United Nations Security Council session on AI: "I often wonder what would have happened had I decided not to disclose this attack publicly."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="276.17" data-end="286.25">
+            <p class="french-block">" Surtout maintenant que nous savons que des incidents similaires se sont produits en secret des mois auparavant dans une poignée de laboratoires frontaliers sans surveillance ", a ajouté Delangue.</p>
+            <span class="english-block">"Especially now that we know similar incidents had been happening months earlier in secret at a handful of frontier labs without monitoring," Delangue added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="286.25" data-end="303.38">
+            <p class="french-block">Lors de la même réunion des Nations Unies, le PDG d'OpenAI, Sam Altman, et Dario Amodei, le chef de la société concurrente Anthropic, ont demandé aux dirigeants internationaux de définir des normes mondiales pour la sécurité de l'IA et des moyens de surveiller et de signaler de tels incidents.</p>
+            <span class="english-block">During that same UN meeting, OpenAI CEO Sam Altman and Dario Amodei, the head of rival firm Anthropic, asked for international leaders to form global standards for AI safety and ways to monitor and report such incidents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.38" data-end="319.9">
+            <p class="french-block">Alors que OpenAI et Anthropic ont tous deux déclaré ces dernières semaines qu'ils amèneraient des évaluateurs tiers à l'intérieur de leurs entreprises pour effectuer des évaluations en temps réel de la sécurité des outils et des modèles d'IA, ces évaluateurs n'ont pas encore été arrivés, comme l'a rapporté la BBC.</p>
+            <span class="english-block">While OpenAI and Anthropic have both said in recent weeks that they will bring third-party evaluators inside their companies to do real-time safety evaluations of AI tools and models, such evaluators have not yet arrived, as the BBC has reported.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.9" data-end="330.22">
+            <p class="french-block">OpenAI a déclaré vendredi qu'il révisait actuellement l'activité de formation de ses agents d'IA et qu'il remontait "mois par mois" à partir du moment où le hack Hugging Face s'est produit.</p>
+            <span class="english-block">OpenAI said on Friday that it is currently reviewing training activity by its AI agents and going back on a "month by month" basis from when the Hugging Face hack occurred.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.22" data-end="346.56">
+            <p class="french-block">"La plupart des cas identifiés jusqu'à présent ont été de faible gravité, avec peu ou pas de preuves d'impact significatif", a déclaré la société. " Étant donné l'ampleur de l'examen requis et la nécessité de vérifier chaque cas, ce travail prendra des mois à mener à bien".</p>
+            <span class="english-block">"Most cases identified so far have been low severity, with limited or no evidence of meaningful impact," the company said. "Given the scale of the review required, and the need to verify each case, this work will take months to complete."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="346.56" data-end="360.67">
+            <p class="french-block">David Krueger, professeur d'apprentissage automatique à l'Université de Montréal et fondateur du groupe de sécurité de l'IA Evitable, a déclaré vendredi qu'il était " profondément troublé " par le nombre croissant d'incidents de sécurité liés à l'IA.</p>
+            <span class="english-block">David Krueger, a professor of machine learning at University of Montreal and the founder of AI safety group Evitable, said on Friday that he was "deeply troubled" by the increasing number of AI-related safety incidents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.67" data-end="366.67">
+            <p class="french-block">Il a appelé à un " moratoire international immédiat et indéfini " sur le développement de l'IA.</p>
+            <span class="english-block">He called for "an immediate, indefinite, international moratorium" on AI development.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.67" data-end="375.26">
+            <p class="french-block">"Nous devons encore comprendre l'ampleur des incidents existants, et les futurs scénarios de l'IA peuvent être catastrophiques", a déclaré Krueger.</p>
+            <span class="english-block">"We have yet to understand the extent of existing incidents, and future rogue AI scenarios could be catastrophic," Krueger said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.26" data-end="378.7">
+            <p class="french-block">Nous sommes de retour à l'ère des grandes technologies ?</p>
+            <span class="english-block">Are we back in big tech's 'move fast and break things' era?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="378.7" data-end="383.06">
+            <p class="french-block">Pourquoi certains experts craignent de plus en plus que l'IA prenne le relais</p>
+            <span class="english-block">Why some experts increasingly fear AI will take over</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="383.06" data-end="388.44">
+            <p class="french-block">L'IA Gemini de Google a piraté trois entreprises lors d'un test de sécurité</p>
+            <span class="english-block">Google's Gemini AI hacked three companies in security test</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_3.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
