@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How long can Labour's feel-good factor last?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>How long can Labour's feel-good factor last?</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 26 Sep 2026 11:22:03 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cwn8mn0rzkzlo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The party’s spirits have been transformed since Burnham became PM, but what's coming down the tracks, asks Laura Kuenssberg.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.12" data-end="10.06">
+            <p class="french-block">Combien de temps le facteur de bien-être du Labour peut-il durer ?</p>
+            <span class="english-block">How long can Labour's feel-good factor last?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.06" data-end="14.66">
+            <p class="french-block">"Il aime être premier ministre", observe un informateur du gouvernement.</p>
+            <span class="english-block">"He just loves being prime minister," a government insider observes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.66" data-end="22.39">
+            <p class="french-block">Andy Burnham n'a peut-être pas encore prononcé son discours de conférence important, mais il se prépare à ce moment depuis des années.</p>
+            <span class="english-block">Andy Burnham might not yet have delivered his all-important conference speech, but he has been preparing for this moment for years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.39" data-end="41.45">
+            <p class="french-block">Il va accueillir les cris et les applaudissements inévitables non seulement en tant que chef du Labour, mais aussi en tant que chef qui tient compte du rang du parti, qui place la justice sociale en tête de sa liste, qui n'est pas averse à faire monter les plus grands succès, que ce soit en battant Mme Thatcher, en privatisant ou en divisant le nord et le sud.</p>
+            <span class="english-block">He'll lap up the inevitable whoops and cheers – not just as Labour's leader, but the kind of leader who chimes with the party's rank and file, who puts social justice at the top of his list, who is not averse to cranking up the greatest hits – whether taking a pop at Mrs Thatcher, privatisation, or the divides between north and south.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="41.45" data-end="51.55">
+            <p class="french-block">En parlant aux députés, aux ministres et aux conseillers du parti, il ne fait aucun doute que le Labour est dans un endroit beaucoup, beaucoup plus heureux que cette fois-ci de l'année dernière.</p>
+            <span class="english-block">Speaking to MPs, ministers and advisers inside the party, there is no doubt whatsoever that Labour is in a much, much happier place than this time last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.55" data-end="63.12">
+            <p class="french-block">Il y a une raison très simple, selon un ministre du cabinet, les fans de Sir Keir Starmer, regardent de côté maintenant, "les gens aiment le nouveau premier ministre plus qu'ils n'aiment l'ancien  c'est la vérité".</p>
+            <span class="english-block">There is a very simple reason, according to one cabinet minister, fans of Sir Keir Starmer, look away now, "people like the new prime minister more than they liked the old one – that's the truth of it".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.12" data-end="68.47">
+            <p class="french-block">Un autre ministre me dit: "Il n'y a pas d'appétit pour la destruction  très peu de déni".</p>
+            <span class="english-block">Another minister tells me: "There is no appetite for destruction – very little naysaying."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.47" data-end="79.32">
+            <p class="french-block">Mais le Labour est dans une position qui est trop rare pour tous nos partis politiques ces dernières années. Il n'y a pas de rumeurs sur le renvoi du leader, personne qui provoque une révolte.</p>
+            <span class="english-block">But Labour is in a position that's been all too rare for all our political parties in the last few years – there are no whispers about chucking out the leader, no-one stirring revolt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.32" data-end="87.0">
+            <p class="french-block">Et même ceux qui n'aiment pas la direction des voyages étiquetent leurs opinions comme un désir d'être utile, ils n'essaient pas de critiquer le patron.</p>
+            <span class="english-block">And even those who don't like the direction of travel are labelling their opinions as a desire to be helpful, they're not trying to criticise the boss.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.0" data-end="95.88">
+            <p class="french-block">"L'ambiance est bonne  tout le monde va à la conférence avec les oreilles ouvertes", a déclaré un député, désireux d'en entendre plus du premier ministre.</p>
+            <span class="english-block">"The mood's good – everyone is going into conference with their ears open," one MP said, keen to hear more from the prime minister.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.88" data-end="110.98">
+            <p class="french-block">Le facteur de bien-être est également motivé par le parti qui fait un petit pas en avant dans les sondages  une figure de haut rang dit: "Nous sommes tous témoins du rebond de Burnham  que ce soit comme vous vous sentez quand vous voyez les sondages, ou comme nous nous sentons tous quand nous avons des réunions ensemble".</p>
+            <span class="english-block">The feel-good factor is also driven by the party inching up a little in the polls – one senior figure says: "We're all witnessing the Burnham bounce – whether that's how you feel when you see the polls, or how we all feel when we have meetings together."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.98" data-end="125.33">
+            <p class="french-block">Et ceux qui travaillent au sein du gouvernement attribuent aussi une opération politique plus efficace autour du premier ministre. " Le système est meilleur, on prend des décisions plus claires, on prend de meilleurs conseils quand on en a besoin ", dit un ministre.</p>
+            <span class="english-block">And those who work inside government also credit a more effective political operation around the prime minister. "The system's better, you get clearer decisions, better steers when you need them," says a minister.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.33" data-end="140.35">
+            <p class="french-block">Une autre source gouvernementale attribue également le crédit à la nouvelle opération de Downing Street mais note ironiquement, "il est injuste de comparer la fin d'un régime qui est toujours assez méchant, avec l'arrivée d'un nouveau qui est toujours plus prometteur... ces choses peuvent changer".</p>
+            <span class="english-block">Another government source also credits the new Downing Street operation but notes wryly, "it's unfair to compare the end of a regime which is always pretty nasty, with the arrival of a new one which is always more hopeful… these things can change".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.35" data-end="156.7">
+            <p class="french-block">Il y a des rumeurs d'annonces dans les prochains jours sur le logement et la défense. Certains députés veulent aussi entendre Burnham s'étendre sur des thèmes dont ils, et le pays, ont beaucoup entendu parler mais qui ne sont pas spécifiquement définis  "contrôle public" et "réindustrialisation".</p>
+            <span class="english-block">There are whispers of announcements in the next few days on housing and defence. Some MPs also want to hear Burnham expand on themes they, and the country, have heard plenty about but that aren't specifically defined – "public control" and "re-industrialisation".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="156.7" data-end="164.33">
+            <p class="french-block">Et franchement, le premier ministre heureux serait probablement trop heureux de parler aussi longtemps que nécessaire de ces sujets préférés.</p>
+            <span class="english-block">And frankly, the happy prime minister would probably be only too glad to talk for as long as necessary about those favourite subjects.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.33" data-end="169.22">
+            <p class="french-block">Mais aussi aimé qu'il soit, il doit affronter des réalités moins tentantes.</p>
+            <span class="english-block">But however much he loves being PM there are also less tempting realities he'll have to confront.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.22" data-end="174.12">
+            <p class="french-block">"C'est un nouveau chanteur", dit un ministre, "mais la chanson n'a pas changé".</p>
+            <span class="english-block">"It's a new front man," says a minister, "but the song hasn't changed."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.12" data-end="178.42">
+            <p class="french-block">Et la bande sonore de cet automne pourrait être vraiment misérable.</p>
+            <span class="english-block">And the soundtrack to this autumn might prove to be downright miserable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.42" data-end="190.73">
+            <p class="french-block">Alors qu'Andy Burnham va faire pression sur des dizaines d'événements de parti dans les prochains jours, son chancelier John Healey va passer beaucoup de temps caché dans sa chambre d'hôtel à prendre des décisions sur le budget qui est à seulement un mois.</p>
+            <span class="english-block">While Andy Burnham will be pressing the flesh at dozens of party events in the next few days, his Chancellor John Healey will be spending a lot of time holed up in his hotel room making decisions about the Budget which is only a month away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.73" data-end="202.13">
+            <p class="french-block">La pression sur les liquidités publiques est intense à mesure que le budget approche  le choix pour le chancelier qui fait les tours est de " 10 milliards de coupes ou 10 milliards de hausses d'impôts ", selon un haut responsable.</p>
+            <span class="english-block">The pressure on public cash is intense as the budget approaches – the choice for the chancellor doing the rounds is, "10 billion of cuts or 10 billion of tax rises," according to a well-connected senior figure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="202.13" data-end="211.9">
+            <p class="french-block">Les sources du Trésor disent ne pas reconnaître ce nombre simple, mais les chiffres se détériorent, mais le coût croissant du paiement des intérêts sur la dette du pays pèse fortement.</p>
+            <span class="english-block">Treasury sources say they don't recognise that simple number. However the figures shake down, the increasing cost of paying the interest on the country's debts weighs heavily.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.9" data-end="218.78">
+            <p class="french-block">N'oubliez pas la hausse du projet de loi sur les allocations sociales, les demandes de plus de dépenses de défense.</p>
+            <span class="english-block">Don't forget the rising welfare bill, demands for more defence spending. It's unusual that a party conference is happening with a budget just weeks away, and it looms over the conference, just as the state of the economy looms over Labour's current feel-good factor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.78" data-end="237.29">
+            <p class="french-block">Le Royaume-Uni ne peut forcer les Etats-Unis et l'Iran à trouver la paix, à faire circuler librement le trafic dans le détroit d'Hormuz, à faire baisser le prix du pétrole, ni le premier ministre ne peut faire mettre fin à la guerre de Poutine contre l'Ukraine, avec des pressions sur l'approvisionnement en gaz européen à l'entrée d'un autre hiver.</p>
+            <span class="english-block">The UK can't force the US and Iran to find peace, to get traffic flowing freely through the Strait of Hormuz, to bring the oil price down. Nor can the prime minister make Putin bring his war on Ukraine to an end, with pressure on European gas supply as we enter another winter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.29" data-end="244.51">
+            <p class="french-block">Il y a déjà des prévisions de notre facture annuelle d'énergie augmentant de 500 £ au début de l'année prochaine.</p>
+            <span class="english-block">There are already predictions of our annual energy bills going up by £500 early next year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.51" data-end="250.49">
+            <p class="french-block">Vous savez le scénario  les coûts énergétiques plus élevés augmentent le spectre des hausses de prix partout.</p>
+            <span class="english-block">You know the script – higher energy costs raise the spectre of price rises everywhere.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.49" data-end="254.81">
+            <p class="french-block">"Nous souffrons vraiment des prix de l'énergie", dit un informateur.</p>
+            <span class="english-block">"We're really suffering at the hands of energy prices," says an insider.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.81" data-end="264.72">
+            <p class="french-block">Une figure influente prédit une série de conséquences économiques sombres, ne convaincant pas que Burnham et son équipe ont saisi ce qui pourrait arriver et planifié en conséquence.</p>
+            <span class="english-block">One influential figure predicts an array of grim economic consequences, unconvinced that Burnham and his team have grasped what might be coming down the track and planned accordingly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.72" data-end="279.41">
+            <p class="french-block">"Les grands défis économiques à venir  augmentation des coûts de logement, hausse de l'inflation, pression à la baisse sur les dépenses publiques en raison du coût des emprunts, 500 livres sterling d'énergie à partir de janvier - je ne vois tout simplement pas quel est le plan de jeu".</p>
+            <span class="english-block">"The big economic challenges coming – rising housing costs, rising inflation, downward pressure on public spending because of the cost of borrowing, 500 quid on energy from January  - I just don't see what the game plan is."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.41" data-end="285.34">
+            <p class="french-block">Et il y a des nerfs sur le fait que le nouveau numéro 10 se concentre sur la croissance de l'économie.</p>
+            <span class="english-block">And there are nerves about whether the new No 10 is concentrating on getting the economy growing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.34" data-end="291.62">
+            <p class="french-block">Beaucoup des priorités de Burham jusqu'à présent sont de dépenser de l'argent, pas d'aider les gens à le gagner.</p>
+            <span class="english-block">Many of Burham's priorities so far are about spending money, not helping people make it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="291.62" data-end="300.05">
+            <p class="french-block">Un de ses conseillers a décrit publiquement l'administration comme une "impôt traditionnel et dépenser le gouvernement socialiste avec un meilleur TikTok".</p>
+            <span class="english-block">One of his own advisors publicly described the administration as a "traditional tax and spend socialist government with better TikTok". Ouch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.05" data-end="315.94">
+            <p class="french-block">Il m'a dit: "Nous devons agir avec plus d'urgence, et nous devons ressentir le besoin de croissance économique aussi fortement que nous le faisons de lutter contre des problèmes comme le sommeil et les soins sociaux, et certaines des réformes sociales que nous voulons parce qu'elles sont inextricablement liées".</p>
+            <span class="english-block">He told me: "We must act with more urgency, and we must feel the need for economic growth as acutely as we do about tackling things like rough sleeping and about social care, and some of the social reforms that we want because they are inextricably linked."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.94" data-end="324.89">
+            <p class="french-block">Kyle n'est pas la seule personne du Parti travailliste qui s'inquiète que Burnham et Healey soient plus intéressés à dépenser de l'argent que d'aider les entreprises à le générer.</p>
+            <span class="english-block">Kyle is not the only person in the Labour Party who worries Burnham and Healey are more interested in spending money than helping business generate it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="324.89" data-end="333.1">
+            <p class="french-block">Et la spéculation budgétaire est pleine de bavardages autour de l'augmentation des impôts sur les biens ou d'autres actifs comme les actions et les actions.</p>
+            <span class="english-block">And budget speculation is full of chatter around increasing taxes on property or other assets like stocks and shares.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.1" data-end="341.06">
+            <p class="french-block">À l'autre bout du spectre, il y a des demandes de la gauche pour le premier ministre de réduire la pression sur les travailleurs moins bien rémunérés.</p>
+            <span class="english-block">At the other end of the spectrum there are demands on the left for the prime minister to ease the pressure on less well-paid workers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="341.06" data-end="347.9">
+            <p class="french-block">Un personnage important a déclaré: " Les travailleurs ont une deuxième audience, une seule chance de faire le bien.</p>
+            <span class="english-block">One prominent figure warned: "Labour has a second hearing. One shot to get this right. It is beyond doubt that if they do not keep to the promises made to everyday people - workers and communities will turn their back."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="347.9" data-end="353.4">
+            <p class="french-block">Les dirigeants syndicaux réclament des réductions d'impôts pour les travailleurs et des investissements.</p>
+            <span class="english-block">Expect union leaders to renew calls for tax cuts for workers and more investment. It's a tug of war.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.4" data-end="366.46">
+            <p class="french-block">Dans les prochains jours, le Labour sera probablement une tribu politique heureuse. le nouveau chef est ravi d'être à la tête. le rang et le dossier se sont soulagés d'avoir un leader qu'ils peuvent encourager.</p>
+            <span class="english-block">In the next few days, Labour are likely to look like a happy political tribe. The new chief delighted to be in charge. The rank and file relieved to have a leader they can cheer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.46" data-end="379.51">
+            <p class="french-block">Mais une figure de haut rang prévient que ce qui va arriver pourrait rendre les choses plus agitées. " Le budget ressemble à une catastrophe  d'ici à Halloween, nous allons regarder quelque chose d'autre ", prédisant un grand changement d'humeur.</p>
+            <span class="english-block">But one senior figure warns that what's coming could turn things sour. "The budget looks like a disaster – by Halloween we'll be looking at something else," predicting a big change in mood.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="379.51" data-end="394.56">
+            <p class="french-block">Ce signe de destruction ne correspond pas à l'atmosphère générale du Labour en ce moment, mais il y a une inquiétude silencieuse et creuse quant à savoir si la rhétorique d'espoir et de changement de Burnham, les mantras politiques classiques, peuvent être associés à l'expérience des gens.</p>
+            <span class="english-block">That portent of doom doesn't match the overall atmosphere around Labour right now, but there is a quiet creeping concern about whether Burnham's rhetoric of hope, and change, the classic political mantras, can be matched with people's experience.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="394.56" data-end="403.25">
+            <p class="french-block">Une source de haut rang dit: "Sa volonté politique doit être plus audacieuse que la machine autour de lui  ne pas écrire des chèques que vous ne pouvez pas encaisser".</p>
+            <span class="english-block">A senior source says: "His political will needs to be more bold than the machine around him – don't write cheques you can't cash."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.25" data-end="423.58">
+            <p class="french-block">Un ministre dit qu'il est plus facile de parler en termes généraux de ses ambitions à long terme que de s'attaquer aux problèmes qui affectent les gens aujourd'hui, " il y a du réconfort à traiter certaines des questions les plus importantes possibles parce que c'est un moyen de les éviter. Mais le coût de se rendre au travail, ou de traverser la ville est cher, de sortir ou de rester dans  c'est maintenant. "</p>
+            <span class="english-block">One minister niggles that it's easier to talk in broad terms about your long-term ambitions than to grapple with problems affecting people today, "there is comfort in dealing with some of the largest possible questions because it's a way off delivering them. But the cost of getting to work, or getting across town is expensive, going out or staying in – that's right now".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="423.58" data-end="431.18">
+            <p class="french-block">Les conférences sont une occasion pour les partis politiques de profiter de la compagnie de l'autre, mais aussi de se montrer au pays.</p>
+            <span class="english-block">Conferences are a chance for political parties to enjoy each other's company, but also to show off to the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="431.18" data-end="446.93">
+            <p class="french-block">Mais la réalité du paiement des factures est bien sûr plus présente dans la vie de la plupart des gens, me dit un ministre: "Si vous allez chez Tesco et que les céréales que vous achetez sont nettement plus chères, cela a plus de conséquences que tout clip politique que vous voyez à la télévision ou sur Facebook".</p>
+            <span class="english-block">But the reality of paying the bills is, of course, more present in most people's lives, one minister tells me: "If you go into Tesco and the cereal you buy is noticeably more expensive, that has more cut through than any political clip you see on telly or Facebook."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="446.93" data-end="452.9">
+            <p class="french-block">L'esprit du Labour a été transformé par le coup d'État de Burnham qui a fait disparaître Starmer.</p>
+            <span class="english-block">Labour's spirits have been transformed by Burnham's soft coup that saw off Starmer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="452.9" data-end="460.54">
+            <p class="french-block">Mais le ministre dit: "Le contraste n'est pas entre maintenant et les temps difficiles, mais entre le nouveau régime et l'ancien régime".</p>
+            <span class="english-block">But the minister says: "The contrast is not between now and hard times, but between the new regime and the old regime."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="460.54" data-end="466.85">
+            <p class="french-block">La question qui nous éclaire au-delà de la salle de conférence  peut-elle continuer si les temps difficiles arrivent ?</p>
+            <span class="english-block">The question that beckons beyond the conference hall – can that carry on if hard times hit?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="466.85" data-end="471.12">
+            <p class="french-block">Les questions soulevées dans cet article vous touchent- elles personnellement?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="politics_article_32.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

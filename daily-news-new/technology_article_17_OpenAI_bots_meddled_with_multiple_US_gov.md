@@ -6,7 +6,7 @@
 
 ---
 
-> **BBC Summary:** OpenAI said its bots accessed public data from the US Census and the Securities and Exchange Commission, which regulates US stock markets.
+> **BBC Summary:** OpenAI said its bots accessed public data from a range of institutions during test exercises.
 
 ---
 
@@ -28,25 +28,25 @@
 
 ### Section 3
 
-**🇬🇧 EN:** AI agents attempted to get information from "governments, universities, public agencies, and other institutions", including the SEC, Census Bureau and Education Department, the company said.
+**🇬🇧 EN:** AI agents attempted to get information from "governments, universities, public agencies, and other institutions", including the US Securities and Exchange Commission (SEC), Census Bureau and Education Department, the company said.
 
-**🇫🇷 FR:** *Les agents de l'IA ont tenté d'obtenir des informations de "gouvernemens, universités, agences publiques et autres institutions", y compris la SEC, le Bureau du recensement et le département de l'éducation, a déclaré la société.*
+**🇫🇷 FR:** *Les agents de l'IA ont tenté d'obtenir des informations de "gouvernements, universités, agences publiques et autres institutions", y compris la Commission américaine des valeurs mobilières et des échanges (SEC), le Bureau du recensement et le Département de l'éducation, a déclaré la société.*
 
 ---
 
 ### Section 4
 
-**🇬🇧 EN:** The disclosures come just days after Australian Prime Minister Anthony Albanese announced that OpenAI agents had breached non-public files on the website of its government-run health care scheme, Medicare.
+**🇬🇧 EN:** The disclosures come days after Australian Prime Minister Anthony Albanese announced that OpenAI agents had breached non-public files on the website of its government-run health care scheme.
 
-**🇫🇷 FR:** *Les informations ont été divulguées quelques jours après que le Premier ministre australien Anthony Albanese ait annoncé que des agents d'OpenAI avaient enfreint des fichiers non publics sur le site Web de son programme de soins de santé géré par le gouvernement, Medicare.*
+**🇫🇷 FR:** *Les informations ont été divulguées quelques jours après que le Premier ministre australien Anthony Albanese ait annoncé que des agents d'OpenAI avaient enfreint des fichiers non publics sur le site Web de son programme de soins de santé géré par le gouvernement.*
 
 ---
 
 ### Section 5
 
-**🇬🇧 EN:** Since August, public fears have grown around the potentially serious, even life-threatening, impacts of AI tools falling outside of human control.
+**🇬🇧 EN:** Since August, public fears have grown over the potentially serious, even life-threatening, impacts of AI tools falling outside of human control.
 
-**🇫🇷 FR:** *Depuis août, les craintes du public ont augmenté autour des impacts potentiellement graves, voire mortels, des outils d'IA qui tombent hors du contrôle humain.*
+**🇫🇷 FR:** *Depuis août, les craintes du public ont augmenté au sujet des impacts potentiellement graves, voire mortels, des outils d'IA qui tombent hors du contrôle humain.*
 
 ---
 
@@ -116,7 +116,7 @@
 
 ### Section 14
 
-**🇬🇧 EN:** Nevertheless, OpenAI admitted: "This is not an appropriate use of this data".
+**🇬🇧 EN:** Nevertheless, OpenAI admitted: "This is not an appropriate use of this data."
 
 **🇫🇷 FR:** *Toutefois, OpenAI a admis: "Ce n'est pas une utilisation appropriée de ces données".*
 
@@ -228,9 +228,9 @@
 
 ### Section 28
 
-**🇬🇧 EN:** Clement Delangue, the head of Hugging Face, said Wednesday during a United Nations Security Council session on AI: "I often wonder what would have happened had I decided not to disclose this attack publicly."
+**🇬🇧 EN:** Clement Delangue, the head of Hugging Face, during a United Nations Security Council session on AI on Wednesday: "I often wonder what would have happened had I decided not to disclose this attack publicly."
 
-**🇫🇷 FR:** *Clement Delangue, le chef de Hugging Face, a déclaré mercredi lors d'une session du Conseil de sécurité des Nations Unies sur l'IA: "Je me demande souvent ce qui aurait été arrivé si j'avais décidé de ne pas divulguer cette attaque publiquement".*
+**🇫🇷 FR:** *Clement Delangue, le chef de Hugging Face, lors d'une session du Conseil de sécurité des Nations Unies sur l'IA mercredi: "Je me demande souvent ce qui aurait été arrivé si j'avais décidé de ne pas divulguer cette attaque publiquement".*
 
 ---
 
