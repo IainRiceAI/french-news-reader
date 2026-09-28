@@ -1,98 +1,98 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-09-27 06:16:45  
+Generated on: 2026-09-28 06:15:35  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Controversial Orange Order march to go ahead for first time in nearly 30 years after late night drama**
-   - **Published:** Sun, 27 Sep 2026 04:15:40 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Controversial_Orange_Order_march_to_go_a.md](top-stories_article_1_Controversial_Orange_Order_march_to_go_a.md)
+1. **Five arrested as counter-terror police investigate major incident near RAF Fairford**
+   - **Published:** Sun, 27 Sep 2026 20:10:51 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Five_arrested_as_counter-terror_police_i.md](top-stories_article_1_Five_arrested_as_counter-terror_police_i.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **Burnham announces scheme to help first-time buyers on to housing ladder**
-   - **Published:** Sat, 26 Sep 2026 18:50:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Burnham_announces_scheme_to_help_first-t.md](top-stories_article_2_Burnham_announces_scheme_to_help_first-t.md)
+2. **What we know about RAF Fairford counter-terror probe**
+   - **Published:** Sun, 27 Sep 2026 19:47:44 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_What_we_know_about_RAF_Fairford_counter-.md](top-stories_article_2_What_we_know_about_RAF_Fairford_counter-.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Faisal Islam: The two big calls the chancellor has to make ahead of the Budget**
-   - **Published:** Sat, 26 Sep 2026 23:00:42 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Faisal_Islam_The_two_big_calls_the_chanc.md](top-stories_article_3_Faisal_Islam_The_two_big_calls_the_chanc.md)
+3. **Protesters disperse after blocking contentious Orange Order parade**
+   - **Published:** Mon, 28 Sep 2026 03:27:56 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Protesters_disperse_after_blocking_conte.md](top-stories_article_3_Protesters_disperse_after_blocking_conte.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Iran says it will wait for official US response after Trump rejects Strait of Hormuz proposal**
-   - **Published:** Sun, 27 Sep 2026 02:16:52 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Iran_says_it_will_wait_for_official_US_r.md](top-stories_article_4_Iran_says_it_will_wait_for_official_US_r.md)
+4. **Inside Yemen's front-line city as Houthis battle for control**
+   - **Published:** Sun, 27 Sep 2026 21:16:31 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Inside_Yemens_front-line_city_as_Houthis.md](top-stories_article_4_Inside_Yemens_front-line_city_as_Houthis.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Heathrow Airport warns third runway could be delayed by four years**
-   - **Published:** Sat, 26 Sep 2026 16:32:42 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Heathrow_Airport_warns_third_runway_coul.md](top-stories_article_5_Heathrow_Airport_warns_third_runway_coul.md)
+5. **Watch: BBC reports from the front-line of an escalating war in Yemen**
+   - **Published:** Sun, 27 Sep 2026 21:00:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Watch_BBC_reports_from_the_front-line_of.md](top-stories_article_5_Watch_BBC_reports_from_the_front-line_of.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Republic of Ireland to wear black armbands for Israel game**
-   - **Published:** Sat, 26 Sep 2026 19:59:00 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Republic_of_Ireland_to_wear_black_armban.md](top-stories_article_6_Republic_of_Ireland_to_wear_black_armban.md)
+6. **My hometown shows that high streets have to change or die**
+   - **Published:** Sun, 27 Sep 2026 23:05:53 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_My_hometown_shows_that_high_streets_have.md](top-stories_article_6_My_hometown_shows_that_high_streets_have.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Celebrity Traitors 2 cast: Who are this year's 'big dogs' and dark horses?**
-   - **Published:** Sat, 26 Sep 2026 23:01:47 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Celebrity_Traitors_2_cast_Who_are_this_y.md](top-stories_article_7_Celebrity_Traitors_2_cast_Who_are_this_y.md)
+7. **Republic of Ireland 'raised awareness worldwide' in Israel game**
+   - **Published:** Sun, 27 Sep 2026 22:20:17 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Republic_of_Ireland_raised_awareness_wor.md](top-stories_article_7_Republic_of_Ireland_raised_awareness_wor.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Can you eat ultra-processed foods and still be healthy? A dietitian analysed my weekly shop**
-   - **Published:** Sat, 26 Sep 2026 23:03:39 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Can_you_eat_ultra-processed_foods_and_st.md](top-stories_article_8_Can_you_eat_ultra-processed_foods_and_st.md)
+8. **Healey to promise 'new age of industrialisation' for UK in conference speech**
+   - **Published:** Sun, 27 Sep 2026 23:01:47 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Healey_to_promise_new_age_of_industriali.md](top-stories_article_8_Healey_to_promise_new_age_of_industriali.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Trump rejects Iran deal to reopen Strait of Hormuz in seven days**
-   - **Published:** Sat, 26 Sep 2026 22:15:59 GMT
-   - **Read Parallel Translation:** [world_article_9_Trump_rejects_Iran_deal_to_reopen_Strait.md](world_article_9_Trump_rejects_Iran_deal_to_reopen_Strait.md)
+1. **Inside Yemen's front-line city as Houthis battle for control**
+   - **Published:** Sun, 27 Sep 2026 21:16:31 GMT
+   - **Read Parallel Translation:** [world_article_9_Inside_Yemens_front-line_city_as_Houthis.md](world_article_9_Inside_Yemens_front-line_city_as_Houthis.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Pope praises young people's 'energy and commitment' at huge open-air Mass in Paris**
-   - **Published:** Sat, 26 Sep 2026 19:48:06 GMT
-   - **Read Parallel Translation:** [world_article_10_Pope_praises_young_peoples_energy_and_co.md](world_article_10_Pope_praises_young_peoples_energy_and_co.md)
+2. **Embattled Serbian president resigns, paving way for early elections**
+   - **Published:** Sun, 27 Sep 2026 20:04:21 GMT
+   - **Read Parallel Translation:** [world_article_10_Embattled_Serbian_president_resigns_pavi.md](world_article_10_Embattled_Serbian_president_resigns_pavi.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **British national among six dead in building explosion close to Acropolis in Athens**
-   - **Published:** Sat, 26 Sep 2026 12:47:25 GMT
-   - **Read Parallel Translation:** [world_article_11_British_national_among_six_dead_in_build.md](world_article_11_British_national_among_six_dead_in_build.md)
+3. **Two bodies found after avalanche hits Himalayan climbing group**
+   - **Published:** Sun, 27 Sep 2026 17:05:26 GMT
+   - **Read Parallel Translation:** [world_article_11_Two_bodies_found_after_avalanche_hits_Hi.md](world_article_11_Two_bodies_found_after_avalanche_hits_Hi.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **German town bans 'stumbling stone' memorials to Nazi victims**
-   - **Published:** Sat, 26 Sep 2026 15:48:51 GMT
-   - **Read Parallel Translation:** [world_article_12_German_town_bans_stumbling_stone_memoria.md](world_article_12_German_town_bans_stumbling_stone_memoria.md)
+4. **Two mass shootings in South Africa leave 27 dead**
+   - **Published:** Sun, 27 Sep 2026 14:09:22 GMT
+   - **Read Parallel Translation:** [world_article_12_Two_mass_shootings_in_South_Africa_leave.md](world_article_12_Two_mass_shootings_in_South_Africa_leave.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **OpenAI bots meddled with multiple US government agency sites**
-   - **Published:** Sat, 26 Sep 2026 02:50:56 GMT
-   - **Read Parallel Translation:** [business_article_13_OpenAI_bots_meddled_with_multiple_US_gov.md](business_article_13_OpenAI_bots_meddled_with_multiple_US_gov.md)
+1. **Healey to promise 'new age of industrialisation' for UK in conference speech**
+   - **Published:** Sun, 27 Sep 2026 23:01:47 GMT
+   - **Read Parallel Translation:** [business_article_13_Healey_to_promise_new_age_of_industriali.md](business_article_13_Healey_to_promise_new_age_of_industriali.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Could an iced coffee freeze you out of the job market?**
-   - **Published:** Sat, 26 Sep 2026 10:05:36 GMT
-   - **Read Parallel Translation:** [business_article_14_Could_an_iced_coffee_freeze_you_out_of_t.md](business_article_14_Could_an_iced_coffee_freeze_you_out_of_t.md)
+2. **Avanti West Coast services to be nationalised from March**
+   - **Published:** Mon, 28 Sep 2026 03:05:50 GMT
+   - **Read Parallel Translation:** [business_article_14_Avanti_West_Coast_services_to_be_nationa.md](business_article_14_Avanti_West_Coast_services_to_be_nationa.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Clubs seek legal advice over Man City charges compensation**
-   - **Published:** Fri, 25 Sep 2026 20:13:53 GMT
-   - **Read Parallel Translation:** [business_article_15_Clubs_seek_legal_advice_over_Man_City_ch.md](business_article_15_Clubs_seek_legal_advice_over_Man_City_ch.md)
+3. **You need £17,000 for a first home - here's how to do it**
+   - **Published:** Sun, 27 Sep 2026 23:20:43 GMT
+   - **Read Parallel Translation:** [business_article_15_You_need_17000_for_a_first_home_-_heres_.md](business_article_15_You_need_17000_for_a_first_home_-_heres_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **'We're all broke': Would you chase a friend for £5?**
-   - **Published:** Thu, 24 Sep 2026 23:00:45 GMT
-   - **Read Parallel Translation:** [business_article_16_Were_all_broke_Would_you_chase_a_friend_.md](business_article_16_Were_all_broke_Would_you_chase_a_friend_.md)
+4. **Andy Burnham refuses to back third runway at Heathrow**
+   - **Published:** Sun, 27 Sep 2026 11:22:32 GMT
+   - **Read Parallel Translation:** [business_article_16_Andy_Burnham_refuses_to_back_third_runwa.md](business_article_16_Andy_Burnham_refuses_to_back_third_runwa.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
@@ -123,81 +123,81 @@ Scraped Feed Mode: `ALL`
 
 ### Section: SCIENCE
 
-1. **Bangkok roads submerged as flood disaster declared**
-   - **Published:** Sun, 27 Sep 2026 04:45:08 GMT
-   - **Read Parallel Translation:** [science_article_21_Bangkok_roads_submerged_as_flood_disaste.md](science_article_21_Bangkok_roads_submerged_as_flood_disaste.md)
+1. **Late September warmth before wind and rain returns this week**
+   - **Published:** Mon, 28 Sep 2026 01:46:35 GMT
+   - **Read Parallel Translation:** [science_article_21_Late_September_warmth_before_wind_and_ra.md](science_article_21_Late_September_warmth_before_wind_and_ra.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Nor'easter brings flooding as New York and New Jersey declare emergency**
-   - **Published:** Sun, 27 Sep 2026 04:23:09 GMT
-   - **Read Parallel Translation:** [science_article_22_Noreaster_brings_flooding_as_New_York_an.md](science_article_22_Noreaster_brings_flooding_as_New_York_an.md)
+2. **Shipwreck found on Nantucket beach during storm**
+   - **Published:** Mon, 28 Sep 2026 01:09:57 GMT
+   - **Read Parallel Translation:** [science_article_22_Shipwreck_found_on_Nantucket_beach_durin.md](science_article_22_Shipwreck_found_on_Nantucket_beach_durin.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **The young women guiding tourists through India's night sky**
-   - **Published:** Sat, 26 Sep 2026 23:02:47 GMT
-   - **Read Parallel Translation:** [science_article_23_The_young_women_guiding_tourists_through.md](science_article_23_The_young_women_guiding_tourists_through.md)
+3. **Watch: Shipwreck uncovered on Nantucket island during nor'easter storm**
+   - **Published:** Mon, 28 Sep 2026 00:52:49 GMT
+   - **Read Parallel Translation:** [science_article_23_Watch_Shipwreck_uncovered_on_Nantucket_i.md](science_article_23_Watch_Shipwreck_uncovered_on_Nantucket_i.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **The treasured 'eternal snow' on this tropical island is about to disappear forever**
-   - **Published:** Fri, 25 Sep 2026 22:12:48 GMT
-   - **Read Parallel Translation:** [science_article_24_The_treasured_eternal_snow_on_this_tropi.md](science_article_24_The_treasured_eternal_snow_on_this_tropi.md)
+4. **One dead as nor'easter storm pummels New York and New Jersey**
+   - **Published:** Sun, 27 Sep 2026 23:37:26 GMT
+   - **Read Parallel Translation:** [science_article_24_One_dead_as_noreaster_storm_pummels_New_.md](science_article_24_One_dead_as_noreaster_storm_pummels_New_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **NHS to suspend staff suspected of snooping on patient records**
-   - **Published:** Fri, 25 Sep 2026 12:47:03 GMT
-   - **Read Parallel Translation:** [health_article_25_NHS_to_suspend_staff_suspected_of_snoopi.md](health_article_25_NHS_to_suspend_staff_suspected_of_snoopi.md)
+1. **'Broken social care will in the end break the NHS,' says Burnham**
+   - **Published:** Sun, 27 Sep 2026 09:52:49 GMT
+   - **Read Parallel Translation:** [health_article_25_Broken_social_care_will_in_the_end_break.md](health_article_25_Broken_social_care_will_in_the_end_break.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Treadmills to deadlifts: Why Gen Z are swapping cardio for strength training**
-   - **Published:** Thu, 24 Sep 2026 23:46:14 GMT
-   - **Read Parallel Translation:** [health_article_26_Treadmills_to_deadlifts_Why_Gen_Z_are_sw.md](health_article_26_Treadmills_to_deadlifts_Why_Gen_Z_are_sw.md)
+2. **Ten NHS staff removed over Noah Woods data breach**
+   - **Published:** Sun, 27 Sep 2026 13:25:27 GMT
+   - **Read Parallel Translation:** [health_article_26_Ten_NHS_staff_removed_over_Noah_Woods_da.md](health_article_26_Ten_NHS_staff_removed_over_Noah_Woods_da.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **From weeks to hours - the rapid new test transforming brain tumour diagnosis**
-   - **Published:** Thu, 24 Sep 2026 23:44:00 GMT
-   - **Read Parallel Translation:** [health_article_27_From_weeks_to_hours_-_the_rapid_new_test.md](health_article_27_From_weeks_to_hours_-_the_rapid_new_test.md)
+3. **NHS to suspend staff suspected of snooping on patient records**
+   - **Published:** Fri, 25 Sep 2026 12:47:03 GMT
+   - **Read Parallel Translation:** [health_article_27_NHS_to_suspend_staff_suspected_of_snoopi.md](health_article_27_NHS_to_suspend_staff_suspected_of_snoopi.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **NHS staff investigated over access to dead teenager's medical records**
-   - **Published:** Thu, 24 Sep 2026 05:00:40 GMT
-   - **Read Parallel Translation:** [health_article_28_NHS_staff_investigated_over_access_to_de.md](health_article_28_NHS_staff_investigated_over_access_to_de.md)
+4. **Treadmills to deadlifts: Why Gen Z are swapping cardio for strength training**
+   - **Published:** Thu, 24 Sep 2026 23:46:14 GMT
+   - **Read Parallel Translation:** [health_article_28_Treadmills_to_deadlifts_Why_Gen_Z_are_sw.md](health_article_28_Treadmills_to_deadlifts_Why_Gen_Z_are_sw.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Burnham announces scheme to help first-time buyers on to housing ladder**
-   - **Published:** Sat, 26 Sep 2026 18:50:02 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_announces_scheme_to_help_first-t.md](politics_article_29_Burnham_announces_scheme_to_help_first-t.md)
+1. **Burnham proposes NHS-style social care system for England**
+   - **Published:** Sun, 27 Sep 2026 13:48:05 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_proposes_NHS-style_social_care_s.md](politics_article_29_Burnham_proposes_NHS-style_social_care_s.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Rayner criticises visa rule proposals ahead of Labour conference**
-   - **Published:** Sat, 26 Sep 2026 10:39:33 GMT
-   - **Read Parallel Translation:** [politics_article_30_Rayner_criticises_visa_rule_proposals_ah.md](politics_article_30_Rayner_criticises_visa_rule_proposals_ah.md)
+2. **Social care reform could mean big risks and big rewards for Burnham**
+   - **Published:** Sun, 27 Sep 2026 15:23:10 GMT
+   - **Read Parallel Translation:** [politics_article_30_Social_care_reform_could_mean_big_risks_.md](politics_article_30_Social_care_reform_could_mean_big_risks_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Burnham not doing enough to boost growth, says former business secretary**
-   - **Published:** Sat, 26 Sep 2026 07:59:43 GMT
-   - **Read Parallel Translation:** [politics_article_31_Burnham_not_doing_enough_to_boost_growth.md](politics_article_31_Burnham_not_doing_enough_to_boost_growth.md)
+3. **Burnham announces scheme to help first-time buyers onto housing ladder**
+   - **Published:** Sun, 27 Sep 2026 05:00:42 GMT
+   - **Read Parallel Translation:** [politics_article_31_Burnham_announces_scheme_to_help_first-t.md](politics_article_31_Burnham_announces_scheme_to_help_first-t.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **How long can Labour's feel-good factor last?**
-   - **Published:** Sat, 26 Sep 2026 11:22:03 GMT
-   - **Read Parallel Translation:** [politics_article_32_How_long_can_Labours_feel-good_factor_la.md](politics_article_32_How_long_can_Labours_feel-good_factor_la.md)
+4. **More than 50 arrested at Palestine Action support rally**
+   - **Published:** Sun, 27 Sep 2026 19:54:35 GMT
+   - **Read Parallel Translation:** [politics_article_32_More_than_50_arrested_at_Palestine_Actio.md](politics_article_32_More_than_50_arrested_at_Palestine_Actio.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Ed Sheeran's next US concerts cancelled due to storm warning**
-   - **Published:** Fri, 25 Sep 2026 15:51:52 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Ed_Sheerans_next_US_concerts_cancelled_d.md](entertainment_article_33_Ed_Sheerans_next_US_concerts_cancelled_d.md)
+1. **Celebrity Traitors 2 cast: Who are this year's 'big dogs' and dark horses?**
+   - **Published:** Sat, 26 Sep 2026 23:01:47 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Celebrity_Traitors_2_cast_Who_are_this_y.md](entertainment_article_33_Celebrity_Traitors_2_cast_Who_are_this_y.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
 2. **Some BBC channels and radio stations may well have to close, director general says**
@@ -205,14 +205,14 @@ Scraped Feed Mode: `ALL`
    - **Read Parallel Translation:** [entertainment_article_34_Some_BBC_channels_and_radio_stations_may.md](entertainment_article_34_Some_BBC_channels_and_radio_stations_may.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Jay-Z rape accuser says her allegation was false**
-   - **Published:** Fri, 25 Sep 2026 10:51:28 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Jay-Z_rape_accuser_says_her_allegation_w.md](entertainment_article_35_Jay-Z_rape_accuser_says_her_allegation_w.md)
+3. **Ed Sheeran's next US concerts cancelled due to storm warning**
+   - **Published:** Fri, 25 Sep 2026 15:51:52 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Ed_Sheerans_next_US_concerts_cancelled_d.md](entertainment_article_35_Ed_Sheerans_next_US_concerts_cancelled_d.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **U2 celebrate 50th anniversary at the school where they formed**
-   - **Published:** Fri, 25 Sep 2026 16:52:10 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_U2_celebrate_50th_anniversary_at_the_sch.md](entertainment_article_36_U2_celebrate_50th_anniversary_at_the_sch.md)
+4. **Jay-Z rape accuser says her allegation was false**
+   - **Published:** Fri, 25 Sep 2026 10:51:28 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Jay-Z_rape_accuser_says_her_allegation_w.md](entertainment_article_36_Jay-Z_rape_accuser_says_her_allegation_w.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
