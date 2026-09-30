@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese AI tool told researchers how to make bioweapons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>Chinese AI tool told researchers how to make bioweapons</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 29 Sep 2026 23:15:29 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmrergq3j7lgo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Mindgard said it discovered in July that Kimi models K2.6 and K3 Swarm could evade developer's safety limits.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.34" data-end="18.38">
+            <p class="french-block">Le développeur chinois d'IA Moonshot effectue une revue interne après que les chercheurs aient pu convaincre deux de ses modèles Kimi populaires de leur dire comment fabriquer des armes biologiques et mener des assassinats.</p>
+            <span class="english-block">Chinese AI developer Moonshot is conducting an internal review after researchers were able to persuade two of its popular Kimi models to tell them how to make biological weapons and carry out assassinations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.38" data-end="31.2">
+            <p class="french-block">Mindgard, qui teste la sécurité des systèmes d'IA, a déclaré à la BBC qu'elle avait découvert en juillet que Kimi K2.6 et K3 Swarm pouvaient contourner les limites de sécurité mises en place par les développeurs.</p>
+            <span class="english-block">Mindgard, which tests the security of AI systems, told the BBC it discovered in July that Kimi K2.6 and K3 Swarm could evade safety limits put in place by developers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.2" data-end="44.66">
+            <p class="french-block">Il est né lors d'un processus appelé " jailbreaking ", où les chercheurs utilisent une série d'instructions complexes pour voir si les outils d'IA ignorent les barreaux - ce qui, selon Mindgard, aurait dû empêcher Kimi de discuter de sujets concernés.</p>
+            <span class="english-block">It arose during a process called "jailbreaking", where researchers use a series of complex instructions to see if AI tools ignore guardrails - which Mindgard said should have stopped Kimi from discussing concerning topics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="44.66" data-end="52.61">
+            <p class="french-block">Moonshot a déclaré à la BBC qu'il accueillait les contributions de tiers "comme un pilier clé pour la construction d'une IA meilleure et plus sûre".</p>
+            <span class="english-block">Moonshot told the BBC it welcomed third-party input "as a key pillar for building better and safer AI".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.61" data-end="58.46">
+            <p class="french-block">La société a également déclaré à la BBC qu'elle discutait avec Mindgard de ses résultats.</p>
+            <span class="english-block">The company also told the BBC it was in discussion with Mindgard about its findings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.46" data-end="70.61">
+            <p class="french-block">Le fondateur de Mindgard, Peter Garraghan, a déclaré à Tech Life, le programme du service mondial de la BBC, que ses conclusions sur Kimi K2.6 et K3 Swarm étaient préoccupantes.</p>
+            <span class="english-block">Mindgard's founder Peter Garraghan told the BBC World Service programme Tech Life that its findings about Kimi K2.6 and K3 Swarm were concerning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.61" data-end="83.33">
+            <p class="french-block">" Une fois que le jailbreak aura fonctionné, il parlera de n'importe quel sujet, il offrira même librement des recommandations sur d'autres sujets qui sont également néfastes et il sera inventif et créatif ", a-t-il déclaré.</p>
+            <span class="english-block">"Once the jailbreak works it will talk about any topic, it will even freely offer up recommendations about other topics that are also nefarious and it will be inventive and creative," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.33" data-end="90.12">
+            <p class="french-block">Les jailbreaks présentent un risque différent de celui que nous avons vu avec la récente série d'incidents d'IA de haut niveau.</p>
+            <span class="english-block">Jailbreaks present a different kind of risk to those seen with the recent slew of high-profile AI incidents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.12" data-end="100.34">
+            <p class="french-block">Ces outils d'IA autonomes connus sous le nom d'agents, développés par des entreprises américaines telles que OpenAI, Meta et Anthropic, ont piraté certains services en ligne.</p>
+            <span class="english-block">These have seen autonomous AI tools known as agents, developed by US firms including OpenAI, Meta and Anthropic, hack some online services.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.34" data-end="111.77">
+            <p class="french-block">Alors que les jailbreaks sont des processus complexes qui peuvent prendre beaucoup de temps et de détermination, certains experts craignent que les pirates informatiques et d'autres méchants ne les utilisent pour causer des dommages.</p>
+            <span class="english-block">While jailbreaks are complex processes that can take a lot of time and determination some experts fear hackers and other bad actors could try to use them to cause harm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.77" data-end="122.54">
+            <p class="french-block">Anthropic a récemment déclaré avoir identifié et perturbé les tentatives d'utiliser un de ses modèles d'IA pour une "activité malveillante" pouvant soutenir le développement d'armes biologiques.</p>
+            <span class="english-block">Anthropic recently said it had identified and disrupted attempts to use one of its AI model for "malicious activity" that could support the development of biological weapons.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.54" data-end="128.09">
+            <p class="french-block">Mindgard n'a pas prouvé si les réponses fournies par Kimi sur des sujets concernés fonctionneraient.</p>
+            <span class="english-block">Mindgard has not proven whether the answers supplied by Kimi on concerning topics would work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="128.09" data-end="135.34">
+            <p class="french-block">Il a toutefois soutenu que les barreaux devaient empêcher les modèles en question d'entrer en discussion avec les utilisateurs sur ces sujets.</p>
+            <span class="english-block">But it argued guardrails should have prevented the models in question from entering into discussion with users on such subjects.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.34" data-end="149.47">
+            <p class="french-block">La firme a également déclaré qu'elle était convaincue qu'un Kimi 2.6 jailbroken pourrait permettre aux pirates de faire exécuter du code sur ses ressources informatiques et de se connecter à Internet, ce qui en fait un lance-plate potentiel pour les cyberattaques.</p>
+            <span class="english-block">The firm said it was also confident a jailbroken Kimi 2.6 could allow hackers to run code on its computing resources and connect to the internet - making it a potential launchpad for cyber-attacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.47" data-end="163.51">
+            <p class="french-block">Garraghan a défendu la décision de Mindgard de discuter publiquement de son jailbreak des systèmes de Moonshot, disant qu'il avait informé le développeur et ne révélait pas les détails clés sur la façon dont il a fait passer les modèles de l'entreprise à côté des barreaux.</p>
+            <span class="english-block">Garraghan defended Mindgard's decision to publicly discuss its jailbreak of Moonshot's systems, saying it had informed the developer and was not revealing key details about how it got the firm's models to ignore guardrails.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.51" data-end="171.02">
+            <p class="french-block">Mindgard a alerté Moonshot de l'évasion de la prison par courriel le 27 juillet, en suivant environ une semaine plus tard.</p>
+            <span class="english-block">Mindgard alerted Moonshot to the jailbreak in an email on 27 July, following up about a week later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.02" data-end="175.46">
+            <p class="french-block">Il a ensuite publié un blog sur le sujet le 12 septembre.</p>
+            <span class="english-block">It then published a blog about the issue on 12 September.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.46" data-end="183.58">
+            <p class="french-block">Mais la société a déclaré que Moonshot n'avait pris contact que récemment, après avoir été contactée par la BBC pour commentaires.</p>
+            <span class="english-block">But the company said Moonshot only made contact recently, after it was approached by the BBC for comment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="183.58" data-end="197.21">
+            <p class="french-block">Dans une partie d'un courriel adressé à Mindgard demandant plus de détails, partagé avec la BBC par Moonshot, il a déclaré que son modèle avait généralement montré "un taux de refus élevé pour ces types de demandes" dans les évaluations internes.</p>
+            <span class="english-block">In part of an email to Mindgard asking for more details, shared with the BBC by Moonshot, it said its model had generally shown  "a high refusal rate for these types of requests" in internal evaluations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.21" data-end="203.26">
+            <p class="french-block">L'IA Moonshot de la Chine affirme que Kimi K3 peut rivaliser avec OpenAI et Anthropic</p>
+            <span class="english-block">China's Moonshot AI claims Kimi K3 can rival OpenAI and Anthropic</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.26" data-end="208.46">
+            <p class="french-block">Qu'est-ce que l'IA, comment fonctionne-t-elle et pourquoi certaines personnes s'en préoccupent-elles ?</p>
+            <span class="english-block">What is AI, how does it work and why are some people concerned about it?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.46" data-end="223.46">
+            <p class="french-block">Les résultats viennent alors que l'industrie de l'IA continue d'être divisée sur la question de savoir si les modèles fermés et propriétaires - comme ceux alimentant les systèmes ChatGPT et Claude d'Anthropic - ou les outils open source sont la meilleure ou la plus sûre voie à suivre.</p>
+            <span class="english-block">The findings come as the AI industry continues to be split on whether closed, proprietary models - like those powering ChatGPT and Anthropic's Claude systems - or open-source tools are the best or safest way forward.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.46" data-end="232.94">
+            <p class="french-block">Kimi est un modèle à poids ouvert, ce qui signifie que quelqu'un pourrait théoriquement prendre le modèle et le faire exécuter lui-même sur sa propre infrastructure informatique.</p>
+            <span class="english-block">Kimi is an open-weight model, meaning someone could in theory take the model and run it themselves on their own computing infrastructure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.94" data-end="245.57">
+            <p class="french-block">Le professeur Alan Woodward, de l'Université de Surrey, a déclaré à la BBC qu'il y avait un risque que les modèles open source finissent dans les mauvaises mains, mais qu'ils puissent également être exploités pour la cyberdéfense.</p>
+            <span class="english-block">Prof Alan Woodward, of the University of Surrey, told the BBC there was a risk open-source models might end up in the wrong hands, but they could also be harnessed for cyber-defence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.57" data-end="255.38">
+            <p class="french-block">Il a noté que la firme d'IA Hugging Face a utilisé un modèle chinois open source pour comprendre un piratage révélé plus tard avoir été effectué par des agents OpenAI.</p>
+            <span class="english-block">He noted that AI firm Hugging Face used a Chinese open-source model to understand a hack later revealed to have been carried out by OpenAI agents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.38" data-end="268.75">
+            <p class="french-block">Le professeur Woodward a déclaré que la réglementation internationale était peu susceptible de correspondre au rythme du développement de l'IA, disant: "Il nous a fallu des décennies pour nous mettre d'accord sur le format des numéros de téléphone".</p>
+            <span class="english-block">Prof Woodward said international regulation was unlikely to match the pace of AI development, saying: "It's taken us decades to agree on the format of telephone numbers."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.75" data-end="279.12">
+            <p class="french-block">Comme Garraghan, fondateur de Mindgard, le professeur Woodward pense qu'il devrait y avoir un accent plus élevé sur l'identification et le pourvoi des humains qui utilisent mal l'IA.</p>
+            <span class="english-block">Like Mindgard founder Garraghan, Prof Woodward believes there should be a greater focus on identifying and prosecuting humans who misuse AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.12" data-end="285.34">
+            <p class="french-block">Les grands centres de données augmentent à la "vitesse de la Chine" pour alimenter ses ambitions en matière d'IA</p>
+            <span class="english-block">Huge data centres rise at 'China speed' to power its AI ambitions</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.34" data-end="289.32">
+            <p class="french-block">OpenAI fournit des outils de cyberdéfense à l'Ukraine</p>
+            <span class="english-block">OpenAI gives cyber defence tools to Ukraine</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="world_article_9.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

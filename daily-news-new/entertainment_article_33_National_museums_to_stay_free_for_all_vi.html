@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National museums to stay free for all visitors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>National museums to stay free for all visitors</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 29 Sep 2026 15:04:31 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c68048k1d3ppo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: It follows discussions about whether charging tourists could boost museums' finances.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.84" data-end="11.83">
+            <p class="french-block">Des sculptures égyptiennes figurent dans la collection du British Museum à Londres.</p>
+            <span class="english-block">Egyptian sculptures are among the collection at the British Museum in London</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="11.83" data-end="21.98">
+            <p class="french-block">Les visiteurs étrangers ne seront pas facturés pour entrer dans les musées nationaux de l'Angleterre après que les ministres aient décidé de ne pas modifier la politique universelle d'entrée gratuite.</p>
+            <span class="english-block">Overseas visitors will not be charged to enter England's national museums after ministers decided against changing the universal free admission policy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.98" data-end="34.25">
+            <p class="french-block">Il s'ensuit des discussions mensuelles entre le gouvernement, les musées, le secteur du tourisme et les dirigeants locaux pour examiner si faire payer des touristes venus de l'étranger pourrait stimuler les finances des institutions.</p>
+            <span class="english-block">It comes after months of discussions between the government, museums, the tourism sector and local leaders to examine whether making tourists from abroad pay could boost the institutions' finances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.25" data-end="44.76">
+            <p class="french-block">En mars, le gouvernement a déclaré qu'il envisagerait de facturer les visiteurs internationaux pour entrer dans les musées nationaux en cherchant des moyens de lutter contre les pressions financières.</p>
+            <span class="english-block">In March, the government said it would explore charging international visitors to enter national museums as it looks for ways to tackle funding pressures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="44.76" data-end="58.82">
+            <p class="french-block">Mais le Département du numérique, de la culture, des médias et du sport (DCMS) a maintenant déclaré que cela pourrait dissuader les visiteurs nationaux et que les avantages des frais ne seraient pas ressentis de manière égale dans tout le secteur.</p>
+            <span class="english-block">But the Department for Digital, Culture, Media and Sport (DCMS) has now said this could deter domestic visitors and that any benefits of charging would not be felt equally across the sector.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.82" data-end="65.74">
+            <p class="french-block">Les 15 musées nationaux du Royaume-Uni, dont 12 à Londres, sont ouverts gratuitement à tous depuis 2001.</p>
+            <span class="english-block">The UK's 15 national museums, including 12 in London, have been free for all to enter since 2001.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.74" data-end="79.85">
+            <p class="french-block">Mais une revue publiée l'année dernière par l'ancienne ministre du Travail, la baronne Margaret Hodge, suggérait qu'un modèle de facturation pour les touristes internationaux " alignerait le Royaume-Uni sur d'autres pays, comme la Nouvelle-Zélande et Singapour ".</p>
+            <span class="english-block">But a review published last year by former Labour minister Baroness Margaret Hodge suggested that a charging model for international tourists "would align the UK with other countries, such as New Zealand and Singapore".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="79.85" data-end="86.11">
+            <p class="french-block">Mardi, le DCMS a confirmé que l'entrée gratuite dans ces musées resterait en place pour tous.</p>
+            <span class="english-block">On Tuesday, DCMS confirmed free admission to these museums would remain in place for everyone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.11" data-end="101.38">
+            <p class="french-block">"Le gouvernement estime que les frais de visiteurs étrangers pourraient dissuader les visiteurs nationaux et que les impacts et les avantages de ces frais ne seraient pas ressentis de la même manière dans tout le secteur et ne sera donc pas introduit de frais pour les visiteurs étrangers", a déclaré un porte-parole.</p>
+            <span class="english-block">"The government believes that charging overseas visitors could deter domestic visitors and that the impacts and benefits of charging would not be felt equally across the sector and therefore will not introduce charges for overseas visitors," a spokesperson said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.38" data-end="108.26">
+            <p class="french-block">Lisa Nandy, secrétaire à la culture, a déclaré: "Nos musées sont les lieux qui illuminent le monde.</p>
+            <span class="english-block">Culture secretary Lisa Nandy said: "Our museums are the places that light up the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.26" data-end="114.0">
+            <p class="french-block">"C'est pourquoi ils doivent être gratuits, pour toujours, pour que tout le monde puisse y accéder".</p>
+            <span class="english-block">"That's why they must be free, forever, for everyone to access."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="114.0" data-end="130.97">
+            <p class="french-block">Le DCMS a déclaré que les musées nationaux contribuent à plus de 1 milliard de livres sterling par an à l'économie et attirent des visiteurs du monde entier, le Musée d'Histoire naturelle et le Musée britannique attirant respectivement 7,1 millions et 6,4 millions de visiteurs en 2025.</p>
+            <span class="english-block">The DCMS said national museums contribute more than £1bn a year to the economy and attract visitors from around the world, with the Natural History Museum and the British Museum drawing 7.1 million and 6.4 million visitors respectively in 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.97" data-end="140.52">
+            <p class="french-block">Le directeur du Musée d'Histoire naturelle, le Dr Doug Gurr, a déclaré que si son musée aurait bénéficié des frais, le secteur aurait perdu globalement.</p>
+            <span class="english-block">The Natural History Museum's director Dr Doug Gurr said although his museum would have benefitted from charging, the sector would have lost out overall.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.52" data-end="149.45">
+            <p class="french-block">"Les musées gratuits ne sont pas un coût pour l'économie - ils sont une raison clé pour laquelle l'économie tire parti du tourisme en premier lieu", a-t-il déclaré.</p>
+            <span class="english-block">"Free museums aren't a cost to the economy - they're a key reason the economy benefits from tourism in the first place," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.45" data-end="159.55">
+            <p class="french-block">"Nous sommes heureux de rester libres, mais compte tenu des visiteurs que nous apportons, il est fort probable que des revenus du tourisme soient réinvestis dans les institutions qui les attirent".</p>
+            <span class="english-block">"So, we're delighted to remain free but given the visitors we bring there's a strong case for reinvesting a share of any tourism revenues in the institutions that help attract them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.55" data-end="172.75">
+            <p class="french-block">Nicholas Cullinan, directeur du British Museum, a déclaré: "Lorsque le British Museum a été fondé en 1753 comme premier musée national public au monde, il devait être libre pour 'toutes les personnes'.</p>
+            <span class="english-block">Nicholas Cullinan, director of the British Museum, said: "When the British Museum was founded as the world's first public national museum in 1753 it was to be free for 'all persons'.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.75" data-end="178.15">
+            <p class="french-block">"Nous sommes donc ravis de l'annonce du gouvernement selon laquelle l'entrée est libre pour tous.</p>
+            <span class="english-block">"So, we are delighted by the government's announcement that free entry for all will be maintained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="178.15" data-end="186.12">
+            <p class="french-block">"Cela permettra à tous de profiter et d'accéder à nos grands musées à travers le pays, comme l'une des choses que ce pays fait si brillantement".</p>
+            <span class="english-block">"This will allow everyone to enjoy and have access to our great museums across the nation as one of the things this country does so brilliantly."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.12" data-end="201.31">
+            <p class="french-block">Le gouvernement a également indiqué 760 millions de livres sterling en financement des musées par le biais de son Fonds Arts Everywhere de 1,5 milliard de livres sterling, ainsi que 600 millions de livres sterling en financement des infrastructures pour les musées nationaux.</p>
+            <span class="english-block">The government also pointed to £760m in funding for museums through its £1.5bn Arts Everywhere Fund, as well as £600m in infrastructure funding for national museums.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.31" data-end="218.93">
+            <p class="french-block">Il a déclaré que le programme de transformation des musées de 13,6 millions de livres sterling aiderait les organisations à avancer vers des modèles d'affaires plus durables, tandis que les ministres travailleraient avec le Conseil des Arts et le secteur sur un plan stratégique à long terme pour les musées, avec d'autres détails à annoncer.</p>
+            <span class="english-block">It said the £13.6m museum transformation programme would help organisations move towards more sustainable business models, while ministers would work with the Arts Council and the sector on a long-term strategic plan for museums, with further details to be announced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.93" data-end="235.44">
+            <p class="french-block">Écoutez le meilleur de BBC Radio London sur Sounds et suivez BBC London sur Facebook, externe, X, externe et Instagram, externe. Envoyez vos idées d'histoire à hello.bbclondon@bbc.co.uk, externe</p>
+            <span class="english-block">Listen to the best of BBC Radio London on Sounds and follow BBC London on Facebook, external, X, external and Instagram, external. Send your story ideas to hello.bbclondon@bbc.co.uk, external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.44" data-end="239.62">
+            <p class="french-block">Les musées mettent en garde contre les frais pour les touristes étrangers</p>
+            <span class="english-block">Museums warn against charges for overseas tourists</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="239.62" data-end="244.75">
+            <p class="french-block">Département du numérique, de la culture, des médias et du sport</p>
+            <span class="english-block">Department for Digital, Culture, Media and Sport</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_33.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

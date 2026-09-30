@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Mum sent them £140,000': How to spot the signs a loved one is being scammed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>'Mum sent them £140,000': How to spot the signs a loved one is being scammed</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 29 Sep 2026 23:09:37 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c674evx4p1x1o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Helen discovered her mum was in the grip of a romance scam - here's how she found out and broke her free.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.62" data-end="16.46">
+            <p class="french-block">Helen a remarqué des changements dans le comportement de sa mère et a découvert qu'elle était victime d'une arnaque romantique.</p>
+            <span class="english-block">Helen noticed changes in her mother's behaviour and discovered she had fallen victim to a romance scam</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="16.46" data-end="29.04">
+            <p class="french-block">Enfant de l'homme qu'elle a rencontré en ligne, la mère d'Helen a creusé un livre et y a mis 10 000 livres sterling en espèces. Elle l'a ensuite envoyé à l'hôpital de Shanghai où il attendait une opération de sauvetage.</p>
+            <span class="english-block">Head over heels in love with a man she met online, Helen's mother hollowed out a book and put £10,000 cash inside. She then posted it to a Shanghai Hospital where he awaited a life-saving operation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="29.04" data-end="40.32">
+            <p class="french-block">Une fois qu'il était mieux, ils étaient ensemble, mais les demandes ne cessaient de venir, puis un nouvel homme est venu sur la scène, il avait été enlevé et s'il ne payait pas la rançon, il serait tué.</p>
+            <span class="english-block">Once he was better they would be together -  but the demands kept coming. Then a new man came on the scene - he'd been kidnapped and if she didn't pay the ransom he would be killed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.32" data-end="45.74">
+            <p class="french-block">Au total, elle a envoyé 140 000 £ aux escrocs romantiques.</p>
+            <span class="english-block">In total she sent £140,000 to romance scammers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.74" data-end="53.81">
+            <p class="french-block">La première fois qu'Helen a su que quelque chose n'allait pas, c'était quand sa mère lui a accidentellement envoyé des messages destinés aux criminels.</p>
+            <span class="english-block">The first time Helen knew something was wrong was when her mum accidentally sent messages intended for the criminals to her. Then she became more secretive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.81" data-end="58.75">
+            <p class="french-block">"Je me suis rendu compte que quelque chose se passait à nouveau", dit- elle.</p>
+            <span class="english-block">"It became obvious to me something was going on again," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.75" data-end="63.82">
+            <p class="french-block">Voici comment détecter les signes d'une personne aimée étant trompée et comment l'aider.</p>
+            <span class="english-block">Here's how to spot the signs a loved one is being scammed and how to help them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.82" data-end="67.97">
+            <p class="french-block">Les secrets de la fraude: comment aider quelqu'un qui est trompé</p>
+            <span class="english-block">Scam Secrets: How to Help Someone Who's Being Scammed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.97" data-end="71.21">
+            <p class="french-block">Votre parent est en train de se faire arnaquer.</p>
+            <span class="english-block">Your relative is in the grip of a scam. You can see it - but they can't. Would you know what to do?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.21" data-end="85.27">
+            <p class="french-block">La mère d'Helen, âgée de 80 ans, a rencontré ses escrocs sur Facebook où ils ont utilisé l'intelligence artificielle (IA) pour changer leur apparence dans les photos et les appels vidéo - un type de tromperie connu sous le nom de deepfake.</p>
+            <span class="english-block">Helen's 80-year-old mum met her scammers on Facebook where they used artificial intelligence (AI) to change their appearance in photos and video calls - a type of deception known as deepfake.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.27" data-end="98.21">
+            <p class="french-block">Avec des criminels utilisant des tactiques de plus en plus sophistiquées, les cas de fraude au Royaume-Uni sont en hausse. Plus de 1,3 milliard de livres sterling ont été volés par des escrocs en 2025.</p>
+            <span class="english-block">With criminals employing increasingly sophisticated tactics, cases of fraud in the UK are on the rise. Over £1.3bn was stolen by scammers in 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="98.21" data-end="104.54">
+            <p class="french-block">Helen a remarqué que sa mère prenait beaucoup de téléphones et de vidéos, mais ne voulait pas dire à qui elle parlait.</p>
+            <span class="english-block">Helen noticed her mum taking a lot of phone and video calls but would not say who she was speaking to. Helen says she felt "emotionally drained" trying to work out what was happening.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="104.54" data-end="115.97">
+            <p class="french-block">"Je ne pensais pas pouvoir faire face à l'absence d'outils pour y faire face", explique- t- elle à Scam Secrets de la BBC Radio 4. "Ce n'est pas une expertise que la plupart des familles ont".</p>
+            <span class="english-block">"I didn't feel like I could cope with not having any tool to deal with it," she tells BBC Radio 4's Scam Secrets. "That's not expertise that most families have got."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.97" data-end="121.68">
+            <p class="french-block">Shari Vahl, présentatrice de Scam Secrets, dit que ce sont les signes à surveiller:</p>
+            <span class="english-block">Scam Secrets presenter Shari Vahl says these are the signs to look out for:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.68" data-end="124.68">
+            <p class="french-block">Changement de comportement ou d'humeur</p>
+            <span class="english-block">Change in behaviour or mood</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.68" data-end="127.22">
+            <p class="french-block">Éviter ou garder le secret</p>
+            <span class="english-block">Being evasive or secretive</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.22" data-end="130.56">
+            <p class="french-block">Visite fréquente au bureau de poste/banque</p>
+            <span class="english-block">Frequent post office/bank visits</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.56" data-end="135.17">
+            <p class="french-block">Faire des achats de manière inhabituelle, comme acheter des cartes-cadeaux</p>
+            <span class="english-block">Shopping in unusual ways such as buying gift cards</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.17" data-end="140.83">
+            <p class="french-block">Activités financières inhabituelles comme les virements bancaires et l'ouverture de nouveaux comptes</p>
+            <span class="english-block">Unusual financial activities like bank transfers and opening new accounts</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.83" data-end="145.51">
+            <p class="french-block">Communiquer en ligne ou par téléphone d'une manière qui n'est pas de caractère</p>
+            <span class="english-block">Communicating online or by the phone in a way that's out of character</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.51" data-end="154.27">
+            <p class="french-block">Pour faire en sorte que sa mère s'ouvre, Helen a décidé " d'essayer de rester calme à ce sujet et d'ouvrir la possibilité qu'elle puisse me faire confiance ".</p>
+            <span class="english-block">In a bid to get her mum to open up, Helen decided "to try and be calm about this and open up the possibility she could trust me".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="154.27" data-end="162.7">
+            <p class="french-block">Dale Richardson, un agent de police de protection contre la fraude, encourage les familles à être " curieuses mais pas confrontatives ".</p>
+            <span class="english-block">Dale Richardson, a police fraud protect officer, encourages families to be "curious but not confrontational".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.7" data-end="168.41">
+            <p class="french-block">"J'aime les décomposer... et les écouter et leur dire, "comment vous êtes-vous rencontrés?</p>
+            <span class="english-block">"I like to break it down... and listen to them and say, right, how did you meet? And what have they said?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="168.41" data-end="173.3">
+            <p class="french-block">Helen a convaincu sa mère de lui permettre de parler à l'escroc par vidéo.</p>
+            <span class="english-block">Helen convinced her mum to allow her to speak to the scammer on a video call.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.3" data-end="180.1">
+            <p class="french-block">Elle dit qu'elle a rapidement repéré le faux profond comme l'image était "fous" et sa voix hors synchronisation avec ses mouvements.</p>
+            <span class="english-block">She says she quickly spotted the deepfake as the image was "fuzzy" and his voice out of sync with his movements.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.1" data-end="186.86">
+            <p class="french-block">Helen a essayé de convaincre sa mère que l'homme à qui elle parlait n'était pas celui qu'il disait être, mais elle ne l'a pas cru.</p>
+            <span class="english-block">Helen tried to convince her mum the man she was speaking to was not who he said he was but she did not believe her.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.86" data-end="194.57">
+            <p class="french-block">" Elle disait que je la rendais dégoûtée et honteuse, dit Helen, et que je devais la laisser avoir sa relation et ne pas intervenir. "</p>
+            <span class="english-block">"She was saying I made her feel disgusted and ashamed," says Helen. "And that I should let her have her relationship and not intervene."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.57" data-end="206.4">
+            <p class="french-block">Le docteur Lis Carter, linguiste légiste et membre de l'équipe Scam Secrets, souligne l'importance d'être patient et prudent avec ses mots quand on essaie d'aider des proches qui croient être dans une relation authentique.</p>
+            <span class="english-block">Forensic linguist Dr Lis Carter, who is part of the Scam Secrets team, stresses the importance of being patient and careful with your words when trying to help loved ones who believe they are in a genuine relationship.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.4" data-end="210.84">
+            <p class="french-block">"En étant membre de la famille, vous 'détruisez' ce bonheur".</p>
+            <span class="english-block">"Being a family member coming into that, you are 'destroying' that happiness."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.84" data-end="216.31">
+            <p class="french-block">Incapable de débarrasser sa mère de l'escroquerie, Helen s'est tournée vers sa banque.</p>
+            <span class="english-block">Unable to break her mum away from the scam, Helen turned to her bank.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.31" data-end="223.61">
+            <p class="french-block">Elle avait un mandat permanent, ce qui signifie qu'elle pouvait agir au nom de sa mère et mettre en place des garanties pour ses comptes.</p>
+            <span class="english-block">She had a lasting power of attorney, meaning she could act on behalf of her mum and set up safeguards for her accounts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="223.61" data-end="233.21">
+            <p class="french-block">Jim Winters, chef de la criminalité économique chez Nationwide, dit que toute personne qui croit qu'un membre de sa famille est escroqué devrait contacter sa banque.</p>
+            <span class="english-block">Jim Winters, head of economic crime at Nationwide, says anyone who believes a family member is being scammed should contact their bank.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.21" data-end="242.47">
+            <p class="french-block">" Ils peuvent avoir des limites sur ce qu'ils peuvent vous communiquer pour des raisons de confidentialité, mais ils peuvent prendre des mesures pour protéger ce compte ", dit- il.</p>
+            <span class="english-block">"They might be limited in what they can share with you for data privacy reasons, but they can take steps to safeguard that account," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.47" data-end="250.44">
+            <p class="french-block">" Une fois que nous savons qu'un client est trompé, nous pouvons très vite détecter les signes distinctifs et prendre des mesures pour briser ce sort. "</p>
+            <span class="english-block">"Once we know that a customer is being defrauded we can spot the hallmarks very quickly and take steps to break that spell."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.44" data-end="256.87">
+            <p class="french-block">À ce jour, la banque que la mère d'Helen utilise a remis 45 000 £ sur son compte.</p>
+            <span class="english-block">To date, the bank that Helen's mum uses has returned £45,000 to her account.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.87" data-end="263.74">
+            <p class="french-block">Bien qu'Helen ait changé le numéro de téléphone de sa mère trois fois, elle a continué à donner le nouveau aux escrocs.</p>
+            <span class="english-block">Though Helen changed her mum's phone number three times, she continued to give the new one to the scammers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="263.74" data-end="270.0">
+            <p class="french-block">Helen a fini par remplacer le smartphone de sa mère par un qui ne pouvait faire que des appels et des textos.</p>
+            <span class="english-block">Helen eventually replaced her mum's smartphone with one that could only do calls and texts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="280.13">
+            <p class="french-block">Winters conseille également de "réinitialiser complètement" l'empreinte numérique d'un être cher en changeant les numéros de téléphone, l'adresse e-mail et les comptes de médias sociaux.</p>
+            <span class="english-block">Winters also advises "completely resetting" a loved ones digital footprint by changing telephone numbers, email address and social media accounts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.13" data-end="283.78">
+            <p class="french-block">"C'est ce qui vous rend visible, c'est ce qui vous met là-bas.</p>
+            <span class="english-block">"That's what makes you visible, that's what puts you out there. So taking steps to reset all of that is so important," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="283.78" data-end="289.03">
+            <p class="french-block">Posez des questions ouvertes, soyez calme et patient pour obtenir des renseignements.</p>
+            <span class="english-block">Ask open questions - be calm and patient to gather information</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.03" data-end="293.98">
+            <p class="french-block">Contactez leur banque - ils peuvent mettre en place des mesures de sécurité</p>
+            <span class="english-block">Contact their bank - they can put safeguards in place</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="293.98" data-end="299.09">
+            <p class="french-block">Envoyer quelqu'un qui est impartial - cela peut aider les victimes à s'ouvrir</p>
+            <span class="english-block">Enlist someone impartial - this can help victims open up</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="299.09" data-end="305.21">
+            <p class="french-block">Réservez leur empreinte numérique - les escrocs ne peuvent pas continuer s'ils ne peuvent pas les contacter</p>
+            <span class="english-block">Reset their digital footprint - scammers can't continue if they can't contact them</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.21" data-end="308.06">
+            <p class="french-block">Source: Secrets de la fraude</p>
+            <span class="english-block">Source: Scam Secrets</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="308.06" data-end="315.53">
+            <p class="french-block">Je ne savais pas cuisiner quand je suis parti de chez moi, mais ces recettes faciles de 2,50 livres sont devenues mon go-to</p>
+            <span class="english-block">I couldn't cook when I left home – but these easy £2.50 recipes became my go-to</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.53" data-end="321.22">
+            <p class="french-block">Pourquoi je fais un réinitialisation de septembre et comment vous pouvez créer une nouvelle routine</p>
+            <span class="english-block">Why I'm doing a September reset and how you can create a new routine</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.22" data-end="323.52">
+            <p class="french-block">Comment détecter un faux</p>
+            <span class="english-block">How To Spot A Deepfake</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_6.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

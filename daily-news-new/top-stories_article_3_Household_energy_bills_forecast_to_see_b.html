@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household energy bills forecast to see biggest rise in four years</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Household energy bills forecast to see biggest rise in four years</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 29 Sep 2026 23:03:13 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cwz0zvj4m1myo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A typical household faces an annual gas and electricity bill of £1,999 from January, based on a key forecast.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.8" data-end="19.18">
+            <p class="french-block">Les prix de l'énergie pour les ménages devraient grimper en janvier, avec une facture annuelle typique prévue à grimper de 276 livres sterling, selon des chiffres partagés avec la BBC.</p>
+            <span class="english-block">Household energy prices are set to soar in January, with a typical annual bill forecast to jump by £276, figures shared with the BBC reveal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="19.18" data-end="28.44">
+            <p class="french-block">L'augmentation de 16% prévue toucherait des millions de ménages à la période la plus froide de l'année et marquerait la plus forte augmentation des factures depuis quatre ans.</p>
+            <span class="english-block">The 16% predicted increase would hit millions of households at the coldest time of year, and would mark the biggest rise in bills for four years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="28.44" data-end="40.63">
+            <p class="french-block">La prévision de la consultation Cornwall Insight arrive un jour avant que les prix ne montent sous le plafond de prix d'octobre de Ofgem et met de plus en plus de pression sur le gouvernement pour soutenir ceux qui auront du mal à payer.</p>
+            <span class="english-block">The forecast from consultancy Cornwall Insight comes a day before prices go up under regulator Ofgem's October price cap and puts increased pressure on the government to support those who will struggle to pay.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.63" data-end="54.53">
+            <p class="french-block">Dans le même temps, la chef du fournisseur EDF, Simone Rossi, a averti le Royaume-Uni de " entrer dans une deuxième crise énergétique " et a appelé à une prolongation de la réduction de la TVA sur l'électricité qui entrera en vigueur jeudi.</p>
+            <span class="english-block">Meanwhile, the boss of supplier EDF Simone Rossi has warned the UK is "walking into a second energy crisis" and called for an extension to the VAT cut on electricity which kicks in on Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.53" data-end="67.13">
+            <p class="french-block">Environ 20 millions de ménages en Angleterre, en Écosse et au Pays de Galles bénéficient de tarifs d'énergie variables fixés par le plafond des prix d'Ofgem, qui fixe un prix maximum pour chaque unité de gaz et d'électricité.</p>
+            <span class="english-block">About 20 million households in England, Scotland and Wales are on variable energy tariffs set by Ofgem's price cap, which puts a maximum price on each unit of gas and electricity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.13" data-end="85.63">
+            <p class="french-block">Ces maisons connaîtront une augmentation de 4% des prix jeudi, soit l'équivalent d'environ 60 livres par an  ou 5 livres par mois , ce qui réduira la facture annuelle à 1 723 livres pour le ménage typique qui utilise à la fois de l'électricité et du gaz et qui paiera par débit direct si ce niveau est maintenu pendant un an.</p>
+            <span class="english-block">Those homes will see a 4% increase in prices on Thursday, the equivalent of about £60 per year – or £5 per month –  taking an annual bill to £1,723 for the typical household using both electricity and gas and paying by direct debit if this level was sustained for a year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.63" data-end="95.3">
+            <p class="french-block">Cette hausse aurait été plus élevée sans la réduction de la TVA du gouvernement, ce qui réduit l'équivalent d'environ 45 livres sterling par an d'un projet de loi typique.</p>
+            <span class="english-block">That rise would have been higher without the government's VAT cut, which knocks the equivalent of about £45 a year off a typical bill.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.3" data-end="101.35">
+            <p class="french-block">Mais les prévisions montrent qu'une augmentation beaucoup plus importante est possible pour les factures en janvier.</p>
+            <span class="english-block">But forecasts show a far greater increase is possible for bills in January. Cornwall Insight said its latest forecast suggests the typical annual bill would rise to £1,999.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.35" data-end="109.87">
+            <p class="french-block">La hausse de 16% prévue se produira à la pire période de l'année, selon Craig Lowrey, consultant principal de Cornwall Insight.</p>
+            <span class="english-block">The forecast 16% rise will come at the worst time of year, according to Craig Lowrey, principal consultant at Cornwall Insight.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="109.87" data-end="121.1">
+            <p class="french-block">" Ces prix vont durement toucher les ménages. " Le mois de janvier est déjà difficile pour beaucoup, avec le froid et les soldes bancaires qui se relèvent encore après Noël ", a-t-il déclaré.</p>
+            <span class="english-block">"These prices are going to hit households hard. January is already a difficult month for many, with cold weather and bank balances still recovering from Christmas," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.1" data-end="130.61">
+            <p class="french-block">La hausse prévue est le résultat de la rupture des approvisionnements en gaz en raison du conflit au Moyen-Orient et des faibles niveaux de stockage de gaz en Europe qui en résultent.</p>
+            <span class="english-block">The predicted rise is the result of disruption of gas supplies owing to the conflict in the Middle East, and the resulting low gas storage levels in Europe. Rebuilding those stocks could mean high bills "well beyond the winter", the forecaster said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.61" data-end="137.83">
+            <p class="french-block">Cornwall Insight a une solide expérience en matière de prévisions et est largement respecté dans l'industrie et la politique.</p>
+            <span class="english-block">Cornwall Insight has a strong track record on forecasts and is widely respected across the industry and politics. Similar forecasts have been made by energy suppliers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="137.83" data-end="142.01">
+            <p class="french-block">Que signifient les changements de plafond énergétique pour mes factures ?</p>
+            <span class="english-block">What will the energy cap changes mean for my bills?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.01" data-end="145.54">
+            <p class="french-block">Quatre façons de réduire vos factures d'énergie</p>
+            <span class="english-block">Four ways to keep your energy bills down</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.54" data-end="153.5">
+            <p class="french-block">Il s'agit d'une prédiction à ce stade, car Ofgem n'annoncera la modification effective des prix de janvier qu'à la fin du mois de novembre.</p>
+            <span class="english-block">This remains only a prediction at this stage. Ofgem will not announce the actual January price change until late November.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.5" data-end="163.3">
+            <p class="french-block">Si un allégement des tensions au Moyen-Orient pourrait atténuer la douleur des contribuables, la période de fixation des prix pour le plafond de janvier est déjà à mi-parcours.</p>
+            <span class="english-block">While an easing of tensions in the Middle East could lessen the pain for billpayers, the price setting period for the January cap is already halfway through.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.3" data-end="172.9">
+            <p class="french-block">Avec peu de signes d'une trêve ou de baisse des coûts internationaux de l'énergie, une forte augmentation des prix pour ceux qui ne sont pas soumis à un tarif fixe semble très probable.</p>
+            <span class="english-block">With little sign of a truce or lower international energy costs, a big increase in prices for those not on a fixed tariff looks highly likely. Lowrey said a January rise was "all but certain".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="172.9" data-end="176.64">
+            <p class="french-block">Aaron Richards dit que c'est comme si tous ses coûts étaient en hausse</p>
+            <span class="english-block">Aaron Richards says it feels like all his costs are going up</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.64" data-end="180.65">
+            <p class="french-block">Ça va être dur pour des gens comme Aaron Richards de Maidenhead.</p>
+            <span class="english-block">That will be tough for people like Aaron Richards from Maidenhead.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.65" data-end="191.3">
+            <p class="french-block">"J'essaie de manger moins de choses à prendre, de travailler plus d'heures supplémentaires et d'économiser un peu mieux, mais en même temps, nous ne devrions pas avoir à le faire", a- t- il dit.</p>
+            <span class="english-block">"I try to eat less takeaways, work more overtime, and try to budget a bit better, but at the same time, we shouldn't have to," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="191.3" data-end="197.42">
+            <p class="french-block">Aaron conduit une voiture diesel, et il paie aussi des prix record pour aller et venir travailler.</p>
+            <span class="english-block">Aaron drives a diesel car, and so is paying record high prices to travel to and from work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.42" data-end="201.14">
+            <p class="french-block">"Je pense que tout va bien, mais jusqu'où ça va aller?</p>
+            <span class="english-block">"I just feel like everything's going up. How far is it going to go? Someone's got to step in," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.14" data-end="206.4">
+            <p class="french-block">" Je connais des gens qui n'ont pas les moyens de chauffer leur maison et qui ont du mal à y arriver.</p>
+            <span class="english-block">"I know people who can't afford to heat their house and they're struggling at the moment. Housing and eating are two of life's essentials that everyone should have. It shouldn't be a challenge to have any of those things."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.4" data-end="214.08">
+            <p class="french-block">Des années de factures d'énergie nationales relativement élevées ont laissé certaines personnes à faire face à de grandes sommes de factures non payées.</p>
+            <span class="english-block">Years of relatively high domestic energy bills have left some people facing big sums in unpaid bills.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="214.08" data-end="222.43">
+            <p class="french-block">Les données récentes d'Ofgem montrent que les clients doivent collectivement plus de 5 milliards de livres sterling en factures et frais impayés aux fournisseurs.</p>
+            <span class="english-block">Recent data from Ofgem showed that customers collectively owe more than £5bn in unpaid bills and charges to suppliers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.43" data-end="233.66">
+            <p class="french-block">Le régulateur a proposé un programme de réduction de la dette sur la table, et les militants continuent de leur demander de le faire, en exhortant le gouvernement à fournir des fonds pour sa mise en œuvre.</p>
+            <span class="english-block">The regulator has a proposed debt relief scheme on the table, and campaigners keep telling them to get on with it, urging the government to provide funding for it to be implemented.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.66" data-end="247.97">
+            <p class="french-block">"Cela est insustable, non seulement pour les ménages, mais aussi pour le marché dans son ensemble", a déclaré Adam Scorer, directeur général de l'organisation caritative National Energy Action, charitable pour la pauvreté des carburants.</p>
+            <span class="english-block">"This is unsustainable, not just for households but also for the market as a whole," said Adam Scorer, chief executive of fuel poverty charity National Energy Action.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="247.97" data-end="259.3">
+            <p class="french-block">"Le budget doit fournir un soutien ciblé supplémentaire aux ménages les plus à risque cet hiver, en plus d'actions visant à combattre la dette énergétique et à améliorer les ménages les moins économes en énergie".</p>
+            <span class="english-block">"The Budget must deliver additional targeted support for households most at risk this winter, alongside action to tackle energy debt and improve the least energy-efficient homes."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="259.3" data-end="267.31">
+            <p class="french-block">La chef de EDF, Simone Rossi, dit à Simon Jack de la BBC que le Royaume-Uni "entre dans une deuxième crise énergétique"</p>
+            <span class="english-block">EDF boss Simone Rossi tells the BBC's Simon Jack the UK is "walking into a second energy crisis"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="267.31" data-end="277.13">
+            <p class="french-block">Parmi les autres appelants à l'aide du gouvernement pour les contribuables en difficulté, figure Simone Rossi, directrice générale du fournisseur EDF Energy.</p>
+            <span class="english-block">Among others calling for government help for struggling billpayers is Simone Rossi, chief executive of supplier EDF Energy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="277.13" data-end="289.7">
+            <p class="french-block">S'exprimant exclusivement dans le podcast Big Boss Interview de la BBC, M. Rossi a déclaré: "Nous sommes en train de franchir une deuxième crise énergétique importante après celle que nous avons vécue il y a seulement quatre ans".</p>
+            <span class="english-block">Speaking exclusively to the BBC's Big Boss Interview podcast, Mr Rossi said: "We are actually walking into a second significant energy crisis after the one we experienced just four years ago."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.7" data-end="299.69">
+            <p class="french-block">Il a dit que le gouvernement devrait étendre la réduction de la TVA sur les factures d'électricité de 5% à 0% après avril, date à laquelle elle doit expirer.</p>
+            <span class="english-block">He said that the government should extend the cut in VAT on electricity bills from 5% to 0% beyond April, when it is due to expire.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="299.69" data-end="309.7">
+            <p class="french-block">Il a également exhorté les ministres à donner leur accord sur le nouveau gisement de gaz Jackdaw au large des côtes d'Aberdeen et sur le gisement pétrolier Rosebank au large des Shetlands.</p>
+            <span class="english-block">He also urged ministers to give the go-ahead to the new Jackdaw gas field off the coast of Aberdeen, and the Rosebank oil field off Shetland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.7" data-end="317.62">
+            <p class="french-block">Le gouvernement a toujours dit qu'il envisagerait de trouver des moyens d'offrir de l'espace à respirer aux contribuables sur le coût de la vie.</p>
+            <span class="english-block">The government has consistently said that it will consider ways to offer breathing space to billpayers on the cost of living.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="317.62" data-end="323.5">
+            <p class="french-block">Vous pourriez manquer 150 livres sur votre facture d'énergie - voici comment vérifier</p>
+            <span class="english-block">You could be missing out on £150 off your energy bill - here's how to check</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_3.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

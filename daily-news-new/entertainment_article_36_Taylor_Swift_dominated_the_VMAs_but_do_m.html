@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Swift dominated the VMAs, but do music videos still matter?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Taylor Swift dominated the VMAs, but do music videos still matter?</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 29 Sep 2026 11:38:55 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm750pyz5r0eo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Cinematographer Melissa Cofie says their purpose has evolved with the growth of platforms like TikTok.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.57" data-end="13.63">
+            <p class="french-block">Taylor Swift est devenue l'artiste le plus réussi de l'histoire des VMAs dimanche.</p>
+            <span class="english-block">Taylor Swift became the most successful artist in the history of the VMAs on Sunday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.63" data-end="21.6">
+            <p class="french-block">Nous sommes loin des jours où les vidéos musicales de superbuster se reproduisaient de manière répétée sur des chaînes de télévision comme MTV.</p>
+            <span class="english-block">We're far from the days of blockbuster music videos playing back-to-back on TV channels like MTV.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="21.6" data-end="32.42">
+            <p class="french-block">Des crochets accrocheurs et des routines de danse élégantes dominent désormais les réseaux sociaux, chacun dans l'espoir d'arrêter les gens sur leurs pistes assez longtemps pour leur donner une chance à une nouvelle chanson.</p>
+            <span class="english-block">Catchy hooks and sleek dance routines now dominate social media feeds, each hoping to stop people in their tracks long enough for them to give a new song a chance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.42" data-end="41.21">
+            <p class="french-block">L'évolution de ce paysage a été renforcée l'année dernière lorsque MTV a supprimé cinq chaînes de musique au Royaume-Uni après près de 40 ans de tournages.</p>
+            <span class="english-block">The evolution of this landscape was cemented last year when MTV axed five music channels in the UK after almost 40 years of rolling footage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="41.21" data-end="51.36">
+            <p class="french-block">Mais malgré la réaction de la chaîne à l'évolution des habitudes de vision, ses Video Music Awards (VMA) semblent encore avoir un pouvoir sur les A-listers de musique.</p>
+            <span class="english-block">But despite the broadcaster reacting to the changes in viewing habits, its Video Music Awards (VMAs) still appear to hold power over music A-listers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.36" data-end="61.9">
+            <p class="french-block">Les personnalités de la musique pop, dont Taylor Swift, Madonna et Charli XCX, se sont présentées dimanche pour recevoir des prix et donner des spectacles dramatiques.</p>
+            <span class="english-block">Pop music heavyweights, including Taylor Swift, Madonna and Charli XCX, were among those who turned up on Sunday to accept prizes and deliver dramatic performances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="61.9" data-end="72.84">
+            <p class="french-block">La cinématographe Melissa Cofie dit à BBC Newsbeat que si ces émissions de prix " peuvent sembler très performantes pour les autres ", elles sont " si importantes " pour ceux de l'industrie de la musique.</p>
+            <span class="english-block">Cinematographer Melissa Cofie tells BBC Newsbeat that while these award shows "may seem very performative to others", they are "so important" to those in the music industry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="72.84" data-end="82.68">
+            <p class="french-block">"Les nuits sans sommeil, les mois, les semaines qu'il faut pour mettre en place une vidéo musicale, c'est presque autant de travail que dans un film lui- même", dit- elle.</p>
+            <span class="english-block">"The sleepless nights, the months, the weeks that it takes to put together a music video, it's almost as much work as you would put into a film itself," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.68" data-end="87.5">
+            <p class="french-block">Mais les vidéos musicales ont- elles toujours la même importance pour les fans qu'avant ?</p>
+            <span class="english-block">But do music videos still hold the same importance for fans as they once did?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.5" data-end="94.06">
+            <p class="french-block">Graham Norton et Domhnall Gleeson étaient parmi les stars qui ont joué dans la vidéo Opalite de Taylor Swift</p>
+            <span class="english-block">Graham Norton and Domhnall Gleeson were among the stars who featured in Taylor Swift's Opalite video</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.06" data-end="100.82">
+            <p class="french-block">Cofie, qui a réalisé des vidéos musicales, pense que leur but a évolué au cours des deux dernières décennies.</p>
+            <span class="english-block">Cofie, who has directed music videos, feels their purpose has evolved over the last couple of decades.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.82" data-end="110.81">
+            <p class="french-block">Pour elle, ils sont plus un moyen de " se connecter avec les artistes " et pour eux d'exprimer leur vision, plutôt qu'une partie cruciale de leur carrière de presse comme dans les années 2000.</p>
+            <span class="english-block">For her, they're more of a way to "connect with artists" and for them to express their vision, rather than a crucial part of their press run like they were in the 2000s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.81" data-end="121.56">
+            <p class="french-block">Des stars de la pop comme Swift, Sabrina Carpenter et Olivia Rodrigo font partie de ceux qui s'appuient toujours sur les vidéos pour construire le monde visuel pour chacune de leurs époques d'albums.</p>
+            <span class="english-block">Pop stars like Swift, Sabrina Carpenter and Olivia Rodrigo are among those who still lean on videos heavily to build out the visual world for each of their albums' eras.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.56" data-end="134.78">
+            <p class="french-block">Swift, qui a battu le record de plus de victoires de MTV VMA le week-end dernier, est connue pour ses productions à gros budgets que les fans recherchent pour les œufs de Pâques - des indices qui pourraient indiquer quelque chose d'autre qu'elle a prévu.</p>
+            <span class="english-block">Swift, who broke the record for most MTV VMA wins ever last weekend, is known for big budget productions which fans trawl through for Easter eggs - clues that could point to something else she has planned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.78" data-end="149.3">
+            <p class="french-block">Elle demande aussi souvent l'aide de son livre de contacts rempli de stars, avec sa vidéo récente pour Opalite remplie de visages célèbres, y compris Graham Norton, Lewis Capaldi, Cillian Murphy, Domhnall Gleeson et Jodie Turner-Smith.</p>
+            <span class="english-block">She also often enlists the help of her star-studded contact book, with her recent video for Opalite jam-packed with famous faces, including Graham Norton, Lewis Capaldi, Cillian Murphy, Domhnall Gleeson and Jodie Turner-Smith.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.3" data-end="159.05">
+            <p class="french-block">Cependant, la vidéo musicale a été publiée exclusivement sur Spotify et Apple Music en février, et n'est apparue sur YouTube que 48 heures plus tard.</p>
+            <span class="english-block">However, the music video was released exclusively on Spotify and Apple Music in February, and did not appear on YouTube until 48 hours later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.05" data-end="170.57">
+            <p class="french-block">Les analystes de l'industrie ont spéculé à l'époque que la période d'exclusivité était due à un changement dans les règles des charts américains, où les chansons diffusées sur YouTube ne comptent plus dans le Top 100.</p>
+            <span class="english-block">Industry analysts speculated at the time that the exclusivity period was due to a change in the US chart rules, where songs streamed on YouTube will no longer count towards the Top 100.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.57" data-end="186.79">
+            <p class="french-block">Ce changement est entré en vigueur en janvier, YouTube déclarant qu'il mettait fin à son partenariat de dix ans avec Billboard, en dehors de la liste, car il a affirmé que le graphique utilisait une " formule obsolète qui pèse les flux supportés par abonnement plus élevés que ceux supportés par la publicité ".</p>
+            <span class="english-block">This change came into place in January, with YouTube saying it was ending its decade-long partnership with Billboard, external as it claimed the chart uses an "outdated formula that weights subscription-supported streams higher than ad-supported".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.79" data-end="195.77">
+            <p class="french-block">" Cela ne reflète pas la façon dont les fans s'engagent avec la musique aujourd'hui et ignore le grand engagement des fans qui n'ont pas d'abonnement ", a-t-il ajouté.</p>
+            <span class="english-block">"This doesn't reflect how fans engage with music today and ignores the massive engagement from fans who don't have a subscription," it added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.77" data-end="206.69">
+            <p class="french-block">Et même si la plupart des artistes n'ont pas de budget Swift, ce changement a peut-être encore découragé les artistes américains de dépenser beaucoup d'argent pour créer des vidéos musicales élaborées.</p>
+            <span class="english-block">And while most artists don't have Swift-level budgets to start with, this change may have further discouraged US artists' to throw a lot of money into creating elaborate music videos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="206.69" data-end="212.62">
+            <p class="french-block">Les superstars de K-Pop comme BTS publient souvent plusieurs vidéos musicales pour une chanson.</p>
+            <span class="english-block">K-Pop superstars like BTS often release multiple music videos for one song</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.62" data-end="225.07">
+            <p class="french-block">Cependant, sur les marchés internationaux comme le monde du K-Pop, la création de vidéos musicales visuellement esthétiques avec une chorégraphie polissée est devenue essentielle pour promouvoir l'acte auprès d'un public mondial.</p>
+            <span class="english-block">However, in international markets like the world of K-Pop, creating visually aesthetic music videos featuring polished choreography has become essential when promoting the act to a global audience.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.07" data-end="234.38">
+            <p class="french-block">Les superstars du genre comme BTS et Blackpink publient souvent des vidéos d'entraînement de danse et des clips dans les coulisses aux côtés de vidéos musicales traditionnelles.</p>
+            <span class="english-block">The genre's superstars like BTS and Blackpink often also release dance practice videos and behind-the-scenes clips alongside traditional music videos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="234.38" data-end="243.6">
+            <p class="french-block">Ces variantes leur offrent plus de contenu à cliquer pour les médias sociaux, et aident également à augmenter leurs numéros de diffusion et leurs positions dans les charts mondiaux.</p>
+            <span class="english-block">These variations offer them more content to clip up for social media, and also helps drive up their streaming numbers and global chart positions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="243.6" data-end="254.86">
+            <p class="french-block">Cofie estime que la montée en puissance de plateformes comme TikTok, Instagram et YouTube a " à 100% " changé la façon dont les vidéos sont consommées et donc, la façon dont elles sont créées.</p>
+            <span class="english-block">Cofie feels the rise of platforms like TikTok, Instagram and YouTube has "100%" changed the way videos are consumed and therefore, how they are created.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.86" data-end="260.9">
+            <p class="french-block">Mais elle ne voit pas cela comme un " coup " à l'industrie et n'est pas " découragée que les choses changent si vite ".</p>
+            <span class="english-block">But she doesn't see this as a "blow" to the industry and isn't "discouraged that things are changing so quickly".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.9" data-end="268.51">
+            <p class="french-block">"Cela nous pousse à penser: 'Comment chaque scène, chaque scène, peut-elle toujours attirer l'attention des gens?'", dit- elle.</p>
+            <span class="english-block">"It kind of pushes us to think: 'Okay, how can each scene, each still be the one that captures people's attention?'," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.51" data-end="273.72">
+            <p class="french-block">"Nous n'avons plus cinq minutes, nous avons en fait deux minutes, parfois moins.</p>
+            <span class="english-block">"We don't have five minutes anymore. We've actually got two minutes, sometimes less.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="273.72" data-end="281.33">
+            <p class="french-block">"Je pense que cela nous pousse en tant que créatifs à réfléchir à la façon de faire passer le point rapidement de la meilleure façon possible".</p>
+            <span class="english-block">"I think it pushes us as creatives to think how can we get the point across quickly in the best way possible."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="281.33" data-end="286.82">
+            <p class="french-block">La cinéaste Melissa Cofie n'est pas "découragée par le fait que les choses changent si vite"</p>
+            <span class="english-block">Cinematographer Melissa Cofie isn't "discouraged that things are changing so quickly"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="286.82" data-end="298.37">
+            <p class="french-block">Le clip cinématographique de Gen8ion et du rappeur suédois Yung Lean pour leur chanson de collaboration Storm témoigne de la façon dont un court instant visuel fascinant peut faire viralement une chanson en ligne.</p>
+            <span class="english-block">Gener8ion and Swedish rapper Yung Lean's cinematic music video for their collaboration track Storm is a testament to how a short mesmerising visual moment can make a song go viral online.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="298.37" data-end="312.07">
+            <p class="french-block">La scène de la vidéo complète voit Lean, agissant comme un agresseur adolescent, debout parmi un groupe de danseurs qui sont également vêtus d'uniformes scolaires alors qu'ils effectuent une chorégraphie hypnotique, synchronisée, extérieure.</p>
+            <span class="english-block">The scene from within the full video sees Lean, acting as a teenage bully, stand amongst a group of dancers who are also dressed in school uniforms as they perform hypnotic, synchronised choreography, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.07" data-end="323.69">
+            <p class="french-block">Ils ont recréé la routine aux VMA, et bien qu'elle ait perdu le prix de la vidéo convoitée de l'année à The Fate of Ophelia de Swift, des clips de la performance ont une fois de plus inondé les médias sociaux.</p>
+            <span class="english-block">They recreated the routine at the VMAs, and while it lost out on the coveted video of the year award to Swift's The Fate of Ophelia, clips of the performance once again have flooded social media.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="323.69" data-end="335.98">
+            <p class="french-block">Cofie admet qu'il a été "très difficile" de trouver de "nouvelles idées créatives" comme celle-ci depuis que des clips courts ont connu un boom post-pandémique, mais dit qu'elle est continuellement inspirée par de nouvelles vidéos musicales.</p>
+            <span class="english-block">Cofie admits it has been "really tough" to come up with "new creative ideas" like this since short clips have boomed post-pandemic, but says she is continually inspired by new music videos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.98" data-end="341.16">
+            <p class="french-block">Et ses conseils aux artistes et aux équipes qui veulent encore créer des vidéos musicales ?</p>
+            <span class="english-block">And her advice to artists and crews who still want to create music videos?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="341.16" data-end="350.83">
+            <p class="french-block">" C'est un cliché, mais pour continuer à être créatif et explorer chaque coin de votre esprit, n'importe quelle idée que vous avez, faites-la simplement ", dit- elle.</p>
+            <span class="english-block">"It's cliche, but just to continue being creative and just exploring every corner of your mind, any idea that you have, just do it," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.83" data-end="358.85">
+            <p class="french-block">"Ne vous inquiétez pas que ce soit déjà fait et qu'il ne soit pas original parce que l'interprétation ou la perspective de chaque personne est différente".</p>
+            <span class="english-block">"Don't worry that it's already been done and it's not original because each and every person's interpretation or perspective is different."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="358.85" data-end="365.47">
+            <p class="french-block">Écoutez Newsbeat en direct à 12h45 et 17h45 les jours de semaine ou écoutez ici.</p>
+            <span class="english-block">Listen to Newsbeat live at 12:45 and 17:45 weekdays - or listen back here.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="entertainment_article_36.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

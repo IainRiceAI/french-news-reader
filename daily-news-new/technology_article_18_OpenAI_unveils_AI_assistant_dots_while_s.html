@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI unveils AI assistant 'dots' while safety worries delay new model</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>OpenAI unveils AI assistant 'dots' while safety worries delay new model</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 29 Sep 2026 23:47:10 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw7v42rp083eo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Sam Altman spoke in San Francisco during OpenAI’s annual event for tech developers.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.66" data-end="14.64">
+            <p class="french-block">Sam Altman a parlé à plusieurs reprises ces dernières semaines des risques posés par les agents de l'IA.</p>
+            <span class="english-block">Sam Altman has spoken repeatedly in recent weeks about the risks posed by AI agents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.64" data-end="25.49">
+            <p class="french-block">OpenAI a dévoilé mardi des " points ", un nouvel assistant d'intelligence artificielle (IA) qui, selon eux, peut effectuer de manière proactive des tâches au nom d'un utilisateur.</p>
+            <span class="english-block">OpenAI on Tuesday unveiled "dots," a new artificial intelligence (AI) assistant they say can proactively carry out tasks on a user's behalf.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.49" data-end="38.69">
+            <p class="french-block">Lors de sa journée annuelle de développement à San Francisco, le directeur général Sam Altman a parlé de " points " comme d'agents remarquablement capables, toujours actifs, capables de gérer vraiment tout ce que vous pouvez imaginer.</p>
+            <span class="english-block">At its annual developer day in San Francisco, chief executive Sam Altman referred to "dots" as "remarkably capable, always-on agents that can handle really anything you can think of."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.69" data-end="54.5">
+            <p class="french-block">En même temps, le président d'OpenAI, Greg Brockman, et d'autres leaders technologiques ont tenu une réunion avec le président Donald Trump alors que la firme fait face à un examen intense après que des tests internes de ses agents d'IA ont révélé des actions inattendues et parfois nocives.</p>
+            <span class="english-block">At the same time, OpenAI president Greg Brockman and other tech leaders held a meeting with President Donald Trump as the firm faces intense scrutiny after internal tests of its AI agents revealed unexpected and occasionally harmful actions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.5" data-end="64.1">
+            <p class="french-block">Les points, cependant, ont été présentés comme des dessins animés mignons de couleurs vives destinés à servir d'assistants numériques pour les personnes ayant une vie bien remplie.</p>
+            <span class="english-block">Dots, however, were pitched as brightly coloured cute cartoons meant to function as digital assistants for people with busy lives.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="64.1" data-end="69.17">
+            <p class="french-block">Les points, dit Altman, " peuvent gérer vraiment tout ce que vous pouvez penser. "</p>
+            <span class="english-block">The dots, Altman said, "can handle really anything you can think of."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="69.17" data-end="82.27">
+            <p class="french-block">Une vidéo brillante a été montrée pendant l'événement, avec des personnes qui parlent et nomment des versions animées de leurs " points ", puis leur donnent diverses tâches, comme la création d'un site Web et la réservation d'activités après-école pour leurs enfants.</p>
+            <span class="english-block">A glossy video was shown during the event, with people speaking to and naming animated versions of their "dots," then giving them various tasks, like building a website and booking afterschool activities for their children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.27" data-end="90.79">
+            <p class="french-block">En parlant de " mon point ", Altman a presque complètement évité de se référer à l'outil comme un agent, qui est en usage courant depuis des années.</p>
+            <span class="english-block">Speaking about "my dot," Altman almost entirely eschewed referring to the tool as an agent, which has been in common use for years. AI agents are essentially AI chatbots that are programmed to operate somewhat autonomously.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.79" data-end="99.79">
+            <p class="french-block">"Vous donnez simplement à votre point une responsabilité... et vos points vont juste commencer à travailler et continuer à travailler", a ajouté Altman.</p>
+            <span class="english-block">"You just give your dot a responsibility... and your dots will just get to work and keep working," Altman added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="99.79" data-end="110.04">
+            <p class="french-block">L'événement d'OpenAI a eu lieu mardi alors que le président Donald Trump a tenu un déjeuner à la Maison Blanche avec des leaders technologiques et le président de la Chambre Mike Johnson.</p>
+            <span class="english-block">OpenAI's event on Tuesday took place as President Donald Trump held a White House lunch with tech leaders and House Speaker Mike Johnson.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.04" data-end="115.3">
+            <p class="french-block">Trump a répété sa conviction que les entreprises d'IA devraient se réglementer elles-mêmes.</p>
+            <span class="english-block">Trump repeated his belief that AI companies should regulate themselves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.3" data-end="124.78">
+            <p class="french-block">Il a également dit qu'ils avaient discuté de la création d'un comité de dix personnes pour superviser le secteur, ajoutant qu'il y aurait "une auto-policification énorme".</p>
+            <span class="english-block">He also said they had discussed creating a ten person committee to oversee the sector, adding there would be "tremendous self-policing"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.78" data-end="135.07">
+            <p class="french-block">Certains chercheurs et chefs d'entreprise ont appelé à un ralentissement du développement de l'IA à mesure que de plus en plus de cas de violations par les modèles des entreprises d'IA deviennent publics.</p>
+            <span class="english-block">Some researchers and company heads have called for a slowdown in AI development as more instances of breaches by AI firms' models become public.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.07" data-end="143.69">
+            <p class="french-block">"Nous devons suivre le chemin du centrist", a déclaré Altman à la BBC lors d'une séance de questions et réponses avec des journalistes mardi.</p>
+            <span class="english-block">"We need to navigate the centrist path," Altman told the BBC during a question and answer session with reporters on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.69" data-end="155.47">
+            <p class="french-block">"J'espère que l'industrie prendra une position plus raisonnable et plus pragmatique que celle exprimée par certains membres de notre industrie", a-t-il ajouté, ne voulant pas préciser les noms ou les dirigeants de l'entreprise.</p>
+            <span class="english-block">"I am hopeful that the industry will figure out a more sensible, more pragmatic stance than has been exhibited by some of the members of our industry," he added, declining to specify particular company names or leaders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.47" data-end="165.94">
+            <p class="french-block">La veille de l'événement d'OpenAI, la société a déclaré qu'elle retardait le lancement de son dernier modèle en raison de certains problèmes de sécurité qui ont été détectés lors des tests internes.</p>
+            <span class="english-block">The day prior to OpenAI's event, the company said it was delaying the launch of its latest model due to certain safety issues that showed up during internal testing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.94" data-end="170.26">
+            <p class="french-block">Trois conclusions du sommet de Trump sur la "super intelligence"</p>
+            <span class="english-block">Three takeaways from Trump's 'Super Intelligence' summit</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.26" data-end="175.82">
+            <p class="french-block">OpenAI démantèle le nouveau modèle en raison de préoccupations en matière de sécurité</p>
+            <span class="english-block">OpenAI scraps rollout of new model over safety concerns</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.82" data-end="197.57">
+            <p class="french-block">Depuis juillet, la société traite d'une série de problèmes avec ses agents d'IA agissant de manière inappropriée. Elle a été confrontée à un piratage non averti de la plateforme d'IA Hugging Face, en publiant sur des sites Web tiers des images que les agents d'IA ont prises des chats utilisateurs ChatGPT et en accédant à des informations non publiques maintenues par le gouvernement australien.</p>
+            <span class="english-block">Since July, the company has been dealing with a series of issues with its AI agents acting improperly. It has faced unprompted hacking into the AI platform Hugging Face, posting to third-party websites images that AI agents took from ChatGPT user chats, and accessing non-public information maintained by the Australian government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="197.57" data-end="212.66">
+            <p class="french-block">OpenAI, ainsi que la société d'intelligence artificielle rival Anthropic, ont précédemment retardé la sortie publique de certains modèles d'intelligence artificielle en raison de risques potentiels, principalement liés à la cybersécurité ou aux problèmes de piratage.</p>
+            <span class="english-block">OpenAI, as well as rival AI firm Anthropic, previously delayed public release of certain AI models due to potential risks, mostly pertaining to cybersecurity or hacking concerns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="212.66" data-end="227.69">
+            <p class="french-block">Mardi, Altman a soulevé la possibilité d'une "perte légitime de contrôle" sur un système d'IA, ajoutant "et vous pouvez imaginer où nous avons trop de concentration de pouvoir dans un petit nombre d'entreprises ou une entreprise ou une personne ou un pays ou quoi que ce soit".</p>
+            <span class="english-block">On Tuesday, Altman raised the possibility of "a legitimate loss of control" to an AI system, adding "and you can imagine where we have too much concentration of power in a small number of companies or one company or person or country or whatever".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="227.69" data-end="238.8">
+            <p class="french-block">OpenAI et Anthropic devraient être cotés sur le marché boursier public dans les prochains mois. Anthropic devrait le faire cette année, tandis que OpenAI est prêt pour 2027.</p>
+            <span class="english-block">Both OpenAI and Anthropic are expect to be listed on the public stock market in the coming months. Anthropic likely will do so this year, while OpenAI is poised for 2027.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="238.8" data-end="244.39">
+            <p class="french-block">Altman a dit qu'il était impatient que sa société vende des actions sur les marchés publics.</p>
+            <span class="english-block">Altman said he was eager for his company to sell shares in public markets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="244.39" data-end="255.82">
+            <p class="french-block">"Je pense que c'est mauvais pour le monde si OpenAI attend trop longtemps pour être rendu public", a déclaré Altman aux journalistes. "Je veux que les gens puissent participer aux avantages de l'IA".</p>
+            <span class="english-block">"I think it's bad for the world if OpenAI waits too long to go public," Altman told reporters. "I want people to be able to part in the upside of AI."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.82" data-end="265.66">
+            <p class="french-block">Ces deux entreprises ont récemment clairement indiqué qu'elles croient que l'IA représente un risque réel à grande échelle, que ce soit pour les infrastructures publiques ou la sécurité publique.</p>
+            <span class="english-block">Both companies have lately been clear that they believe AI poses a genuine risk  on a large scale, be it to public infrastructure or public safety.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.66" data-end="279.79">
+            <p class="french-block">En parlant la semaine dernière à l'ONU, Altman a plaidé pour des normes d'IA "nationales et internationales" sur la mesure des capacités d'un outil d'IA, l'évaluation des risques connexes, les garanties d'IA et le degré de surveillance humaine de ces outils.</p>
+            <span class="english-block">Speaking last week to the UN, Altman pleaded for "national and international" AI standards on measuring the capabilities of an AI tool, assessing related risks, AI safeguards, and the degree to which human oversight over such tools is maintained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="279.79" data-end="293.64">
+            <p class="french-block">Dario Amodei, le chef d'Anthropic, a déclaré à l'ONU que si le développement rapide de l'IA n'était pas correctement géré et supervisé, les futures versions de la technologie " pourraient constituer un risque pour l'humanité dans son ensemble ".</p>
+            <span class="english-block">Dario Amodei, the head of Anthropic, told the UN that if the speeding development of AI was not properly managed and overseen, future versions of the technology "could be a risk to humanity as a whole."</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_18.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
