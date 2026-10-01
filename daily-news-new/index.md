@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-09-30 06:17:04  
+Generated on: 2026-10-01 06:21:48  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **One of the five men arrested near RAF Fairford called 999 himself**
-   - **Published:** Wed, 30 Sep 2026 00:12:24 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_One_of_the_five_men_arrested_near_RAF_Fa.md](top-stories_article_1_One_of_the_five_men_arrested_near_RAF_Fa.md)
+1. **US death row inmate Christa Pike taken to hospital after surviving two lethal injections, says lawyer**
+   - **Published:** Thu, 01 Oct 2026 04:35:26 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_US_death_row_inmate_Christa_Pike_taken_t.md](top-stories_article_1_US_death_row_inmate_Christa_Pike_taken_t.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **How did the RAF Fairford incident go from 'suspected bomb plot' to police bail?**
-   - **Published:** Tue, 29 Sep 2026 19:54:07 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_How_did_the_RAF_Fairford_incident_go_fro.md](top-stories_article_2_How_did_the_RAF_Fairford_incident_go_fro.md)
+2. **Veteran broadcaster Dame Esther Rantzen dies aged 86**
+   - **Published:** Thu, 01 Oct 2026 04:46:38 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Veteran_broadcaster_Dame_Esther_Rantzen_.md](top-stories_article_2_Veteran_broadcaster_Dame_Esther_Rantzen_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Household energy bills forecast to see biggest rise in four years**
-   - **Published:** Tue, 29 Sep 2026 23:03:13 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Household_energy_bills_forecast_to_see_b.md](top-stories_article_3_Household_energy_bills_forecast_to_see_b.md)
+3. **AI boom could trigger market shocks, Bank of England boss warns**
+   - **Published:** Thu, 01 Oct 2026 04:03:17 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_AI_boom_could_trigger_market_shocks_Bank.md](top-stories_article_3_AI_boom_could_trigger_market_shocks_Bank.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **Burnham vows to end existing pension triple lock in 2030 to help fund care**
-   - **Published:** Tue, 29 Sep 2026 17:39:06 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Burnham_vows_to_end_existing_pension_tri.md](top-stories_article_4_Burnham_vows_to_end_existing_pension_tri.md)
+4. **Too early to say what motive for Dubai-Tel Aviv flight attack was, Israeli PM says**
+   - **Published:** Thu, 01 Oct 2026 03:43:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Too_early_to_say_what_motive_for_Dubai-T.md](top-stories_article_4_Too_early_to_say_what_motive_for_Dubai-T.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Chris Mason: Burnham delivers deeply political speech with a personal core**
-   - **Published:** Tue, 29 Sep 2026 19:13:14 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Chris_Mason_Burnham_delivers_deeply_poli.md](top-stories_article_5_Chris_Mason_Burnham_delivers_deeply_poli.md)
+5. **Employers should teach primary-age children about work, says Milburn**
+   - **Published:** Wed, 30 Sep 2026 21:40:31 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Employers_should_teach_primary-age_child.md](top-stories_article_5_Employers_should_teach_primary-age_child.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **'Mum sent them £140,000': How to spot the signs a loved one is being scammed**
-   - **Published:** Tue, 29 Sep 2026 23:09:37 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Mum_sent_them_140000_How_to_spot_the_sig.md](top-stories_article_6_Mum_sent_them_140000_How_to_spot_the_sig.md)
+6. **China has cracked down on AI relationships. Is it ahead of the game?**
+   - **Published:** Wed, 30 Sep 2026 23:25:23 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_China_has_cracked_down_on_AI_relationshi.md](top-stories_article_6_China_has_cracked_down_on_AI_relationshi.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Village team triumphs in FA Cup row replay**
-   - **Published:** Tue, 29 Sep 2026 20:51:31 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Village_team_triumphs_in_FA_Cup_row_repl.md](top-stories_article_7_Village_team_triumphs_in_FA_Cup_row_repl.md)
+7. **Celebrity Traitors is back - here's what you need to know ahead of the first show**
+   - **Published:** Thu, 01 Oct 2026 00:09:38 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Celebrity_Traitors_is_back_-_heres_what_.md](top-stories_article_7_Celebrity_Traitors_is_back_-_heres_what_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Chinese AI tool told researchers how to make bioweapons**
-   - **Published:** Tue, 29 Sep 2026 23:15:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Chinese_AI_tool_told_researchers_how_to_.md](top-stories_article_8_Chinese_AI_tool_told_researchers_how_to_.md)
+8. **We fear for our lives after being told our abusive exes will be freed from jail early**
+   - **Published:** Wed, 30 Sep 2026 16:11:32 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_We_fear_for_our_lives_after_being_told_o.md](top-stories_article_8_We_fear_for_our_lives_after_being_told_o.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Chinese AI tool told researchers how to make bioweapons**
-   - **Published:** Tue, 29 Sep 2026 23:15:29 GMT
-   - **Read Parallel Translation:** [world_article_9_Chinese_AI_tool_told_researchers_how_to_.md](world_article_9_Chinese_AI_tool_told_researchers_how_to_.md)
+1. **US death row inmate Christa Pike taken to hospital after surviving two lethal injections, says lawyer**
+   - **Published:** Thu, 01 Oct 2026 04:35:26 GMT
+   - **Read Parallel Translation:** [world_article_9_US_death_row_inmate_Christa_Pike_taken_t.md](world_article_9_US_death_row_inmate_Christa_Pike_taken_t.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Three takeaways from Trump's 'Super Intelligence' summit**
-   - **Published:** Wed, 30 Sep 2026 04:01:52 GMT
-   - **Read Parallel Translation:** [world_article_10_Three_takeaways_from_Trumps_Super_Intell.md](world_article_10_Three_takeaways_from_Trumps_Super_Intell.md)
+2. **Too early to say what motive for Dubai-Tel Aviv flight attack was, Israeli PM says**
+   - **Published:** Thu, 01 Oct 2026 03:43:06 GMT
+   - **Read Parallel Translation:** [world_article_10_Too_early_to_say_what_motive_for_Dubai-T.md](world_article_10_Too_early_to_say_what_motive_for_Dubai-T.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **South Korea demands apology from Pyongyang for landmine blasts that injured three**
-   - **Published:** Wed, 30 Sep 2026 03:38:09 GMT
-   - **Read Parallel Translation:** [world_article_11_South_Korea_demands_apology_from_Pyongya.md](world_article_11_South_Korea_demands_apology_from_Pyongya.md)
+3. **What we know about stabbing on Flydubai flight to Israel**
+   - **Published:** Thu, 01 Oct 2026 02:31:24 GMT
+   - **Read Parallel Translation:** [world_article_11_What_we_know_about_stabbing_on_Flydubai_.md](world_article_11_What_we_know_about_stabbing_on_Flydubai_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **South Africa to clean up high-risk areas after 12 women killed**
-   - **Published:** Tue, 29 Sep 2026 22:33:39 GMT
-   - **Read Parallel Translation:** [world_article_12_South_Africa_to_clean_up_high-risk_areas.md](world_article_12_South_Africa_to_clean_up_high-risk_areas.md)
+4. **Putin shows no sign of stopping the war as Russia doubles down on Ukraine**
+   - **Published:** Wed, 30 Sep 2026 23:10:06 GMT
+   - **Read Parallel Translation:** [world_article_12_Putin_shows_no_sign_of_stopping_the_war_.md](world_article_12_Putin_shows_no_sign_of_stopping_the_war_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Household energy bills forecast to see biggest rise in four years**
-   - **Published:** Tue, 29 Sep 2026 23:03:13 GMT
-   - **Read Parallel Translation:** [business_article_13_Household_energy_bills_forecast_to_see_b.md](business_article_13_Household_energy_bills_forecast_to_see_b.md)
+1. **AI boom could trigger market shocks, Bank of England boss warns**
+   - **Published:** Thu, 01 Oct 2026 04:03:17 GMT
+   - **Read Parallel Translation:** [business_article_13_AI_boom_could_trigger_market_shocks_Bank.md](business_article_13_AI_boom_could_trigger_market_shocks_Bank.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Faisal Islam: Triple lock move is significant, but it's a gamble**
-   - **Published:** Tue, 29 Sep 2026 16:43:39 GMT
-   - **Read Parallel Translation:** [business_article_14_Faisal_Islam_Triple_lock_move_is_signifi.md](business_article_14_Faisal_Islam_Triple_lock_move_is_signifi.md)
+2. **Vape prices to rise as new tax takes effect**
+   - **Published:** Wed, 30 Sep 2026 23:02:11 GMT
+   - **Read Parallel Translation:** [business_article_14_Vape_prices_to_rise_as_new_tax_takes_eff.md](business_article_14_Vape_prices_to_rise_as_new_tax_takes_eff.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Three takeaways from Trump's 'Super Intelligence' summit**
-   - **Published:** Wed, 30 Sep 2026 04:01:52 GMT
-   - **Read Parallel Translation:** [business_article_15_Three_takeaways_from_Trumps_Super_Intell.md](business_article_15_Three_takeaways_from_Trumps_Super_Intell.md)
+3. **Energy bills are going up - here's what you can do about it**
+   - **Published:** Wed, 30 Sep 2026 23:01:32 GMT
+   - **Read Parallel Translation:** [business_article_15_Energy_bills_are_going_up_-_heres_what_y.md](business_article_15_Energy_bills_are_going_up_-_heres_what_y.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **'I like proving people wrong': The women taking up DIY and plumbing**
-   - **Published:** Tue, 29 Sep 2026 23:06:14 GMT
-   - **Read Parallel Translation:** [business_article_16_I_like_proving_people_wrong_The_women_ta.md](business_article_16_I_like_proving_people_wrong_The_women_ta.md)
+4. **Household energy bills forecast to see biggest rise in four years**
+   - **Published:** Wed, 30 Sep 2026 14:36:45 GMT
+   - **Read Parallel Translation:** [business_article_16_Household_energy_bills_forecast_to_see_b.md](business_article_16_Household_energy_bills_forecast_to_see_b.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Three takeaways from Trump's 'Super Intelligence' summit**
-   - **Published:** Wed, 30 Sep 2026 04:01:52 GMT
-   - **Read Parallel Translation:** [technology_article_17_Three_takeaways_from_Trumps_Super_Intell.md](technology_article_17_Three_takeaways_from_Trumps_Super_Intell.md)
+1. **AI boom could trigger market shocks, Bank of England boss warns**
+   - **Published:** Thu, 01 Oct 2026 04:03:17 GMT
+   - **Read Parallel Translation:** [technology_article_17_AI_boom_could_trigger_market_shocks_Bank.md](technology_article_17_AI_boom_could_trigger_market_shocks_Bank.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **OpenAI unveils AI assistant 'dots' while safety worries delay new model**
-   - **Published:** Tue, 29 Sep 2026 23:47:10 GMT
-   - **Read Parallel Translation:** [technology_article_18_OpenAI_unveils_AI_assistant_dots_while_s.md](technology_article_18_OpenAI_unveils_AI_assistant_dots_while_s.md)
+2. **Tiny image sparks big backlash in Nikon photo contest**
+   - **Published:** Wed, 30 Sep 2026 23:10:19 GMT
+   - **Read Parallel Translation:** [technology_article_18_Tiny_image_sparks_big_backlash_in_Nikon_.md](technology_article_18_Tiny_image_sparks_big_backlash_in_Nikon_.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **Chinese AI tool told researchers how to make bioweapons**
-   - **Published:** Tue, 29 Sep 2026 23:15:29 GMT
-   - **Read Parallel Translation:** [technology_article_19_Chinese_AI_tool_told_researchers_how_to_.md](technology_article_19_Chinese_AI_tool_told_researchers_how_to_.md)
+3. **The AI telling farmers when to harvest**
+   - **Published:** Wed, 30 Sep 2026 23:02:21 GMT
+   - **Read Parallel Translation:** [technology_article_19_The_AI_telling_farmers_when_to_harvest.md](technology_article_19_The_AI_telling_farmers_when_to_harvest.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **The start-ups hoping to return battery making to the US**
-   - **Published:** Tue, 29 Sep 2026 23:06:50 GMT
-   - **Read Parallel Translation:** [technology_article_20_The_start-ups_hoping_to_return_battery_m.md](technology_article_20_The_start-ups_hoping_to_return_battery_m.md)
+4. **Regulating AI 'not the right place to start' says Bailey**
+   - **Published:** Wed, 30 Sep 2026 14:00:33 GMT
+   - **Read Parallel Translation:** [technology_article_20_Regulating_AI_not_the_right_place_to_sta.md](technology_article_20_Regulating_AI_not_the_right_place_to_sta.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Watch: Moment a government building collapses into a river in Nepal amid floods**
-   - **Published:** Wed, 30 Sep 2026 03:21:28 GMT
-   - **Read Parallel Translation:** [science_article_21_Watch_Moment_a_government_building_colla.md](science_article_21_Watch_Moment_a_government_building_colla.md)
+1. **Swiss glaciers suffer 'disastrous' year of ice loss, threatening water supplies**
+   - **Published:** Thu, 01 Oct 2026 00:08:23 GMT
+   - **Read Parallel Translation:** [science_article_21_Swiss_glaciers_suffer_disastrous_year_of.md](science_article_21_Swiss_glaciers_suffer_disastrous_year_of.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **How AI is creating a UK super-museum and revealing our planet's history**
-   - **Published:** Wed, 30 Sep 2026 00:46:29 GMT
-   - **Read Parallel Translation:** [science_article_22_How_AI_is_creating_a_UK_super-museum_and.md](science_article_22_How_AI_is_creating_a_UK_super-museum_and.md)
+2. **Tiny image sparks big backlash in Nikon photo contest**
+   - **Published:** Wed, 30 Sep 2026 23:10:19 GMT
+   - **Read Parallel Translation:** [science_article_22_Tiny_image_sparks_big_backlash_in_Nikon_.md](science_article_22_Tiny_image_sparks_big_backlash_in_Nikon_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **Oura pulls $15bn stock market listing days after announcement**
-   - **Published:** Tue, 29 Sep 2026 17:17:07 GMT
-   - **Read Parallel Translation:** [science_article_23_Oura_pulls_15bn_stock_market_listing_day.md](science_article_23_Oura_pulls_15bn_stock_market_listing_day.md)
+3. **The AI telling farmers when to harvest**
+   - **Published:** Wed, 30 Sep 2026 23:02:21 GMT
+   - **Read Parallel Translation:** [science_article_23_The_AI_telling_farmers_when_to_harvest.md](science_article_23_The_AI_telling_farmers_when_to_harvest.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **Hurricane Polo makes landfall on Mexico's Pacific coast**
-   - **Published:** Tue, 29 Sep 2026 10:34:53 GMT
-   - **Read Parallel Translation:** [science_article_24_Hurricane_Polo_makes_landfall_on_Mexicos.md](science_article_24_Hurricane_Polo_makes_landfall_on_Mexicos.md)
+4. **Trekkers helicoptered off mountains as more deadly landslides hit Nepal**
+   - **Published:** Wed, 30 Sep 2026 22:01:16 GMT
+   - **Read Parallel Translation:** [science_article_24_Trekkers_helicoptered_off_mountains_as_m.md](science_article_24_Trekkers_helicoptered_off_mountains_as_m.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **Family told to call locksmith over mental health fears**
-   - **Published:** Wed, 30 Sep 2026 04:57:25 GMT
-   - **Read Parallel Translation:** [health_article_25_Family_told_to_call_locksmith_over_menta.md](health_article_25_Family_told_to_call_locksmith_over_menta.md)
+1. **The children dying in India's remote tribal heartland**
+   - **Published:** Wed, 30 Sep 2026 23:41:34 GMT
+   - **Read Parallel Translation:** [health_article_25_The_children_dying_in_Indias_remote_trib.md](health_article_25_The_children_dying_in_Indias_remote_trib.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **Hidden habits that make your social anxiety worse - and how to break them**
-   - **Published:** Wed, 30 Sep 2026 00:44:50 GMT
-   - **Read Parallel Translation:** [health_article_26_Hidden_habits_that_make_your_social_anxi.md](health_article_26_Hidden_habits_that_make_your_social_anxi.md)
+2. **Family told to call locksmith over mental health fears**
+   - **Published:** Wed, 30 Sep 2026 04:57:25 GMT
+   - **Read Parallel Translation:** [health_article_26_Family_told_to_call_locksmith_over_menta.md](health_article_26_Family_told_to_call_locksmith_over_menta.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Burnham vows to end existing pension triple lock in 2030 to help fund care**
-   - **Published:** Tue, 29 Sep 2026 17:39:06 GMT
-   - **Read Parallel Translation:** [health_article_27_Burnham_vows_to_end_existing_pension_tri.md](health_article_27_Burnham_vows_to_end_existing_pension_tri.md)
+3. **Hidden habits that make your social anxiety worse - and how to break them**
+   - **Published:** Wed, 30 Sep 2026 00:44:50 GMT
+   - **Read Parallel Translation:** [health_article_27_Hidden_habits_that_make_your_social_anxi.md](health_article_27_Hidden_habits_that_make_your_social_anxi.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **Scrapping pensions triple lock 'morally wrong', says union boss**
-   - **Published:** Tue, 29 Sep 2026 09:10:03 GMT
-   - **Read Parallel Translation:** [health_article_28_Scrapping_pensions_triple_lock_morally_w.md](health_article_28_Scrapping_pensions_triple_lock_morally_w.md)
+4. **Burnham vows to end existing pension triple lock in 2030 to help fund care**
+   - **Published:** Tue, 29 Sep 2026 17:39:06 GMT
+   - **Read Parallel Translation:** [health_article_28_Burnham_vows_to_end_existing_pension_tri.md](health_article_28_Burnham_vows_to_end_existing_pension_tri.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Burnham vows to end existing pension triple lock in 2030 to help fund care**
-   - **Published:** Tue, 29 Sep 2026 17:39:06 GMT
-   - **Read Parallel Translation:** [politics_article_29_Burnham_vows_to_end_existing_pension_tri.md](politics_article_29_Burnham_vows_to_end_existing_pension_tri.md)
+1. **Employers should teach primary-age children about work, says Milburn**
+   - **Published:** Wed, 30 Sep 2026 21:40:31 GMT
+   - **Read Parallel Translation:** [politics_article_29_Employers_should_teach_primary-age_child.md](politics_article_29_Employers_should_teach_primary-age_child.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Chris Mason: Burnham delivers deeply political speech with a personal core**
-   - **Published:** Tue, 29 Sep 2026 19:13:14 GMT
-   - **Read Parallel Translation:** [politics_article_30_Chris_Mason_Burnham_delivers_deeply_poli.md](politics_article_30_Chris_Mason_Burnham_delivers_deeply_poli.md)
+2. **Conservatives pledge 'tough love' benefit rules for under-25s**
+   - **Published:** Wed, 30 Sep 2026 22:38:33 GMT
+   - **Read Parallel Translation:** [politics_article_30_Conservatives_pledge_tough_love_benefit_.md](politics_article_30_Conservatives_pledge_tough_love_benefit_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Five takeaways from Andy Burnham's Labour conference speech**
-   - **Published:** Tue, 29 Sep 2026 16:07:50 GMT
-   - **Read Parallel Translation:** [politics_article_31_Five_takeaways_from_Andy_Burnhams_Labour.md](politics_article_31_Five_takeaways_from_Andy_Burnhams_Labour.md)
+3. **BBC should not overspend on shows such as Suits and Schitt's Creek, MPs say**
+   - **Published:** Thu, 01 Oct 2026 00:20:51 GMT
+   - **Read Parallel Translation:** [politics_article_31_BBC_should_not_overspend_on_shows_such_a.md](politics_article_31_BBC_should_not_overspend_on_shows_such_a.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **Watch: How did Burnham's speech go down in the conference hall?**
-   - **Published:** Tue, 29 Sep 2026 15:31:27 GMT
-   - **Read Parallel Translation:** [politics_article_32_Watch_How_did_Burnhams_speech_go_down_in.md](politics_article_32_Watch_How_did_Burnhams_speech_go_down_in.md)
+4. **Brexit referendum 'possible' in Labour election manifesto, says Burnham**
+   - **Published:** Wed, 30 Sep 2026 16:06:23 GMT
+   - **Read Parallel Translation:** [politics_article_32_Brexit_referendum_possible_in_Labour_ele.md](politics_article_32_Brexit_referendum_possible_in_Labour_ele.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **National museums to stay free for all visitors**
-   - **Published:** Tue, 29 Sep 2026 15:04:31 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_National_museums_to_stay_free_for_all_vi.md](entertainment_article_33_National_museums_to_stay_free_for_all_vi.md)
+1. **Veteran broadcaster Dame Esther Rantzen dies aged 86**
+   - **Published:** Thu, 01 Oct 2026 04:46:38 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Veteran_broadcaster_Dame_Esther_Rantzen_.md](entertainment_article_33_Veteran_broadcaster_Dame_Esther_Rantzen_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **Celine Dion kicks off Paris Fashion Week with surprise performance**
-   - **Published:** Tue, 29 Sep 2026 10:20:14 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Celine_Dion_kicks_off_Paris_Fashion_Week.md](entertainment_article_34_Celine_Dion_kicks_off_Paris_Fashion_Week.md)
+2. **Dame Esther Rantzen: That's Life! presenter, Childline founder and campaigner for assisted dying**
+   - **Published:** Wed, 30 Sep 2026 18:10:14 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Dame_Esther_Rantzen_Thats_Life_presenter.md](entertainment_article_34_Dame_Esther_Rantzen_Thats_Life_presenter.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **Close-up look at Turner's '£50m' Rome painting on show in the city**
-   - **Published:** Tue, 29 Sep 2026 14:10:38 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Close-up_look_at_Turners_50m_Rome_painti.md](entertainment_article_35_Close-up_look_at_Turners_50m_Rome_painti.md)
+3. **Sussexes condemn 'reckless intrusion' after photographer spotted near Archie and Lilibet's school**
+   - **Published:** Wed, 30 Sep 2026 12:50:51 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Sussexes_condemn_reckless_intrusion_afte.md](entertainment_article_35_Sussexes_condemn_reckless_intrusion_afte.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Taylor Swift dominated the VMAs, but do music videos still matter?**
-   - **Published:** Tue, 29 Sep 2026 11:38:55 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Taylor_Swift_dominated_the_VMAs_but_do_m.md](entertainment_article_36_Taylor_Swift_dominated_the_VMAs_but_do_m.md)
+4. **US actor Chad Lowe 'heartbroken' by death of daughter Fiona aged 13**
+   - **Published:** Wed, 30 Sep 2026 08:59:38 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_US_actor_Chad_Lowe_heartbroken_by_death_.md](entertainment_article_36_US_actor_Chad_Lowe_heartbroken_by_death_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---
