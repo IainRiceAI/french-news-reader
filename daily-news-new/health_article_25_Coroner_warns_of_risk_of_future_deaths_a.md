@@ -12,9 +12,9 @@
 
 ### Section 1
 
-**🇬🇧 EN:** Hugo Flint-Cahan, 34, was fatally attacked by Rolando Torres-Pena, 22, at a mental health trust in east London
+**🇬🇧 EN:** Hugo Flint Cahan, 34, was fatally attacked by Rolando Torres-Pena, 22, at a mental health trust in east London
 
-**🇫🇷 FR:** *Hugo Flint-Cahan, 34 ans, a été tué par Rolando Torres-Pena, 22 ans, dans une maison de santé mentale à Londres-Est.*
+**🇫🇷 FR:** *Hugo Flint Cahan, 34 ans, a été tué par Rolando Torres-Pena, 22 ans, dans une maison de santé mentale à Londres-Est.*
 
 ---
 
@@ -44,17 +44,17 @@
 
 ### Section 5
 
-**🇬🇧 EN:** It follows a six-day inquest in September during which the senior coroner for east London, Graeme Irvine, concluded that neglect had more than trivially contributed to Cahan's death.
+**🇬🇧 EN:** It follows a six-day inquest in September during which the senior coroner for east London, Graeme Irvine, concluded that neglect had more than trivially contributed to Flint Cahan's death.
 
-**🇫🇷 FR:** *Il suit une enquête de six jours en septembre au cours de laquelle le médecin légiste du sud de Londres, Graeme Irvine, a conclu que la négligence avait contribué plus que de manière triviale à la mort de Cahan.*
+**🇫🇷 FR:** *Il suit une enquête de six jours en septembre au cours de laquelle le médecin légiste du sud de Londres, Graeme Irvine, a conclu que la négligence avait contribué plus que de manière triviale à la mort de Flint Cahan.*
 
 ---
 
 ### Section 6
 
-**🇬🇧 EN:** On the night of Cahan's death, staff on the ward were found to have been asleep on the job and on their phones for long periods.
+**🇬🇧 EN:** On the night of Flint Cahan's death, staff on the ward were found to have been asleep on the job and on their phones for long periods.
 
-**🇫🇷 FR:** *La nuit de la mort de Cahan, le personnel de la garde a été trouvé endormi au travail et sur leurs téléphones pendant de longues périodes.*
+**🇫🇷 FR:** *La nuit de la mort de Flint Cahan, le personnel de la garde a été trouvé endormi au travail et sur leurs téléphones pendant de longues périodes.*
 
 ---
 
@@ -76,9 +76,9 @@
 
 ### Section 9
 
-**🇬🇧 EN:** The document also says there were delays in starting CPR on Cahan when he was discovered, that staff misled the police as to what the patients had been doing on the night of the incident, and that staff colluded with each other to take two-hour unauthorised breaks.
+**🇬🇧 EN:** The document also says there were delays in starting CPR on Flint Cahan when he was discovered, that staff misled the police as to what the patients had been doing on the night of the incident, and that staff colluded with each other to take two-hour unauthorised breaks.
 
-**🇫🇷 FR:** *Le document indique également qu'il y avait des retards dans le démarrage de la RCP sur Cahan quand il a été découvert, que le personnel a induit en erreur la police quant à ce que les patients faisaient la nuit de l'incident, et que le personnel a collumé entre eux pour prendre des pauses non autorisées de deux heures.*
+**🇫🇷 FR:** *Le document dit aussi qu'il y avait des retards dans le démarrage de la RCP sur Flint Cahan quand il a été découvert, que le personnel a induit en erreur la police quant à ce que les patients avaient fait la nuit de l'incident, et que le personnel a collumé avec l'autre pour prendre des pauses non autorisées de deux heures.*
 
 ---
 
@@ -124,9 +124,9 @@
 
 ### Section 15
 
-**🇬🇧 EN:** The inquest heard that a report commissioned after Cahan's death identified some of the serious failings investigated by the coroner.
+**🇬🇧 EN:** The inquest heard that a report commissioned after Flint Cahan's death identified some of the serious failings investigated by the coroner.
 
-**🇫🇷 FR:** *L'enquête a appris qu'un rapport commandé après la mort de Cahan a identifié certaines des graves défaillances enquêté par le coroner.*
+**🇫🇷 FR:** *L'enquête a appris qu'un rapport commandé après la mort de Flint Cahan a identifié certaines des graves défaillances enquêté par le coroner.*
 
 ---
 
@@ -140,9 +140,9 @@
 
 ### Section 17
 
-**🇬🇧 EN:** In a statement, Dr David Bridle, Chief Medical Officer for ELFT, apologised to Cahan's family for the failings in his care.
+**🇬🇧 EN:** In a statement, Dr David Bridle, Chief Medical Officer for ELFT, apologised to Flint Cahan's family for the failings in his care.
 
-**🇫🇷 FR:** *Dans un communiqué, le Dr David Bridle, directeur médical de l'ELFT, s'est excusé auprès de la famille de Cahan pour les défaillances de ses soins.*
+**🇫🇷 FR:** *Dans un communiqué, le Dr David Bridle, directeur médical de l'ELFT, s'est excusé auprès de la famille de Flint Cahan pour les défaillances de ses soins.*
 
 ---
 

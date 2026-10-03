@@ -1,7 +1,7 @@
-# OpenAI fires workers for mishandling 'sensitive information'
+# OpenAI fires workers for 'mishandling sensitive information'
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c6y9z9r4ejzwo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c6y9z9r4ejzwo?at_medium=RSS&at_campaign=rss)  
-**Published:** Fri, 02 Oct 2026 01:34:56 GMT  
+**Published:** Fri, 02 Oct 2026 08:20:32 GMT  
 **Audio Narration:** [🔊 Listen to French Translation](technology_article_17.mp3)  
 
 ---
@@ -20,9 +20,9 @@
 
 ### Section 2
 
-**🇬🇧 EN:** OpenAI has fired three researchers for allegedly mishandling information, including work that involved an external organisation that analyses artificial intelligence (AI) models.
+**🇬🇧 EN:** OpenAI has fired three researchers for allegedly mishandling information, including work which involved an external organisation analysing AI models.
 
-**🇫🇷 FR:** *OpenAI a licencié trois chercheurs pour avoir présumé mal géré les informations, y compris des travaux impliquant une organisation externe qui analyse des modèles d'intelligence artificielle (IA).*
+**🇫🇷 FR:** *OpenAI a licencié trois chercheurs pour avoir présumé mal géré les informations, y compris des travaux impliquant une organisation externe analysant des modèles d'IA.*
 
 ---
 
@@ -44,15 +44,15 @@
 
 ### Section 5
 
-**🇬🇧 EN:** The firings come as the debate over AI safety and the risks the technology may pose to humanity has intensified in recent weeks.
+**🇬🇧 EN:** The firings come as the debate over AI safety and the risks the technology may pose to humanity intensified in recent months.
 
-**🇫🇷 FR:** *Les licenciements se produisent alors que le débat sur la sécurité de l'IA et les risques que la technologie peut représenter pour l'humanité s'est intensifié ces dernières semaines.*
+**🇫🇷 FR:** *Les tirs sont survenus alors que le débat sur la sécurité de l'IA et les risques que la technologie peut représenter pour l'humanité s'intensifiait ces derniers mois.*
 
 ---
 
 ### Section 6
 
-**🇬🇧 EN:** "We have parted ways with three individuals for violating our policies on accessing and handling sensitive company information," OpenAI's spokesperson said.
+**🇬🇧 EN:** "We have parted ways with three individuals for violating our policies on accessing and handling sensitive company information," a spokesperson for OpenAI said.
 
 **🇫🇷 FR:** *" Nous avons séparé trois individus pour avoir violé nos politiques d'accès et de traitement des informations sensibles de l'entreprise ", a déclaré un porte-parole d'OpenAI.*
 
@@ -60,21 +60,13 @@
 
 ### Section 7
 
-**🇬🇧 EN:** The BBC understands the former employees were not let go for raising safety concerns but for allegedly mishandling sensitive information.
-
-**🇫🇷 FR:** *La BBC comprend que les anciens employés n'ont pas été relâchés pour avoir soulevé des préoccupations en matière de sécurité mais pour avoir présumé mal géré des informations sensibles.*
-
----
-
-### Section 8
-
 **🇬🇧 EN:** Concerns over AI safety have made headlines after some researchers and industry executives called for more guardrails around the technology.
 
 **🇫🇷 FR:** *Les préoccupations concernant la sécurité de l'IA ont fait les gros titres après que certains chercheurs et dirigeants de l'industrie ont appelé à plus de barrières autour de la technologie.*
 
 ---
 
-### Section 9
+### Section 8
 
 **🇬🇧 EN:** OpenAI has come under under intense scrutiny after its models went rogue and hacked several platforms, including Australian government websites.
 
@@ -82,39 +74,39 @@
 
 ---
 
+### Section 9
+
+**🇬🇧 EN:** In an incident in July, one of the firm's AI models accessed the internet and breached the open-source developer platform Hugging Face.
+
+**🇫🇷 FR:** *Dans un incident en juillet, l'un des modèles d'IA de l'entreprise a accédé à Internet et a enfreint la plateforme de développement open source Hugging Face.*
+
+---
+
 ### Section 10
 
-**🇬🇧 EN:** In an earlier incident an OpenAI system accessed the internet and breached the open-source developer platform Hugging Face.
+**🇬🇧 EN:** That incident led OpenAI to review the activities of its AI agents, which are designed to execute tasks autonomously based on simple instructions.
 
-**🇫🇷 FR:** *Dans un précédent incident, un système OpenAI a accédé à Internet et a violé la plateforme de développement open source Hugging Face.*
+**🇫🇷 FR:** *Cet incident a conduit OpenAI à revoir les activités de ses agents d'IA, qui sont conçus pour exécuter des tâches de manière autonome sur la base d'instructions simples.*
 
 ---
 
 ### Section 11
 
-**🇬🇧 EN:** That incident led OpenAI to conduct a broad review of the activities of its AI models - called agents, which are designed to execute tasks autonomously based on simple instructions.
+**🇬🇧 EN:** The firm said this week it has notified more than 100 organisations about incidents involving unauthoritised activity linked to its systems.
 
-**🇫🇷 FR:** *Cet incident a conduit OpenAI à mener un examen général des activités de ses modèles d'IA - appelés agents, qui sont conçus pour exécuter des tâches de manière autonome sur la base d'instructions simples.*
+**🇫🇷 FR:** *La société a déclaré cette semaine qu'elle avait notifié à plus de 100 organisations des incidents impliquant des activités non autorisées liées à ses systèmes.*
 
 ---
 
 ### Section 12
 
-**🇬🇧 EN:** The AI lab said this week that it has notified more than 100 organisations about incidents involving unauthoritised activity linked to its AI systems.
+**🇬🇧 EN:** Being notified "does not mean that any private information was accessed" or that a system was compromised, it said.
 
-**🇫🇷 FR:** *Le laboratoire d'IA a déclaré cette semaine qu'il avait notifié à plus de 100 organisations des incidents impliquant des activités non autorisées liées à ses systèmes d'IA.*
+**🇫🇷 FR:** *Le fait d'être informé " ne signifie pas que des informations privées ont été consultées " ou qu'un système a été compromis, a- t- il déclaré.*
 
 ---
 
 ### Section 13
-
-**🇬🇧 EN:** Being notified "does not mean that any private information was accessed" or that a system was compromised, OpenAI said.
-
-**🇫🇷 FR:** *Une notification "ne signifie pas que des informations privées ont été consultées" ou qu'un système a été compromis, a déclaré OpenAI.*
-
----
-
-### Section 14
 
 **🇬🇧 EN:** Three takeaways from Trump's 'Super Intelligence' summit
 
@@ -122,7 +114,7 @@
 
 ---
 
-### Section 15
+### Section 14
 
 **🇬🇧 EN:** OpenAI says its rogue AI tried to hack other companies
 
@@ -130,7 +122,7 @@
 
 ---
 
-### Section 16
+### Section 15
 
 **🇬🇧 EN:** OpenAI scraps rollout of new model over safety concerns
 
@@ -138,7 +130,7 @@
 
 ---
 
-### Section 17
+### Section 16
 
 **🇬🇧 EN:** In September, researcher Jacob Coxon, who left Anthropic, called for AI development to slow down so its potential risks could be properly assessed.
 
@@ -146,7 +138,7 @@
 
 ---
 
-### Section 18
+### Section 17
 
 **🇬🇧 EN:** Anthropic boss Dario Amodei and OpenAI chief executive Sam Altman have also called for measures to address concerns over AI.
 
@@ -154,7 +146,7 @@
 
 ---
 
-### Section 19
+### Section 18
 
 **🇬🇧 EN:** On Tuesday, US President Donald Trump hosted a meeting of top technology bosses - including leaders from OpenAI, Anthropic, Nvidia, SpaceX, Meta and Google - to discuss AI.
 
@@ -162,7 +154,7 @@
 
 ---
 
-### Section 20
+### Section 19
 
 **🇬🇧 EN:** After the gathering at the White House, Trump posted a document that he called a "morally binding" agreement that would serve as a "form of protection" from AI's potential risks.
 
@@ -170,7 +162,7 @@
 
 ---
 
-### Section 21
+### Section 20
 
 **🇬🇧 EN:** Some technology experts criticised the pact, pointing out that it allowed AI companies to regulate themselves.
 
@@ -178,7 +170,7 @@
 
 ---
 
-### Section 22
+### Section 21
 
 **🇬🇧 EN:** Trump has repeatedly downplayed concerns about AI's risks in response to calls from some industry figures for tighter oversight of the technology.
 

@@ -388,21 +388,29 @@
 
 ### Section 48
 
-**🇬🇧 EN:** The traditional Baiga diet was diverse, drawing on forest produce, millets, locally grown foods, fish and other animal protein. But reduced access to forests and land, changing cultivation practices and greater reliance on farm labour have narrowed that food base, leaving families increasingly dependent on staples.
+**🇬🇧 EN:** The traditional Baiga diet was diverse, drawing on forest produce, millets, locally grown foods, fish and other animal protein, according to P Shirisha, a public health researcher.
 
-**🇫🇷 FR:** *Le régime traditionnel de Baiga était diversifié, s'appuyant sur les produits forestiers, les millets, les aliments cultivés localement, le poisson et d'autres protéines animales.*
+**🇫🇷 FR:** *Le régime traditionnel de Baiga était diversifié, s'appuyant sur les produits forestiers, les millets, les aliments cultivés localement, le poisson et d'autres protéines animales, selon P Shirisha, chercheur en santé publique.*
 
 ---
 
 ### Section 49
 
-**🇬🇧 EN:** "This diet lacks adequate pulses, vegetables, fruits and animal-source foods, resulting in insufficient protein and micronutrients for optimal child growth," P Shirisha, a public health researcher, told me.
+**🇬🇧 EN:** "But reduced access to forests and land, changing cultivation practices and greater reliance on farm labour have narrowed that food base, leaving families increasingly dependent on staples," Shirisha told me.
 
-**🇫🇷 FR:** *"Cette alimentation ne contient pas suffisamment de légumes, de légumes, de fruits et d'aliments d'origine animale, ce qui en fait insuffisamment de protéines et de micronutriments pour une croissance optimale de l'enfant", m'a dit P Shirisha, chercheur en santé publique.*
+**🇫🇷 FR:** *"Mais la réduction de l'accès aux forêts et aux terres, les pratiques de culture changeantes et la dépendance accrue à la main-d'œuvre agricole ont réduit cette base alimentaire, laissant les familles de plus en plus dépendantes des produits de base", a déclaré Shirisha.*
 
 ---
 
 ### Section 50
+
+**🇬🇧 EN:** "This diet lacks adequate pulses, vegetables, fruits and animal-source foods, resulting in insufficient protein and micronutrients for optimal child growth." .
+
+**🇫🇷 FR:** *"Cette alimentation ne contient pas suffisamment de légumes, de légumes, de fruits et d'aliments d'origine animale, ce qui entraîne une insuffisance de protéines et de micronutriments pour une croissance optimale de l'enfant".*
+
+---
+
+### Section 51
 
 **🇬🇧 EN:** Studies of Baiga households suggest that these nutritional deficiencies are compounded by poor uptake, external of public health and welfare services.
 
@@ -410,7 +418,7 @@
 
 ---
 
-### Section 51
+### Section 52
 
 **🇬🇧 EN:** The gap between services on paper and on the ground was stark: the state response came weeks after deaths began, while health teams struggled to reach and persuade families.
 
@@ -418,7 +426,7 @@
 
 ---
 
-### Section 52
+### Section 53
 
 **🇬🇧 EN:** Malnutrition remains widespread among children in Balaghat's Baiga community
 
@@ -426,7 +434,7 @@
 
 ---
 
-### Section 53
+### Section 54
 
 **🇬🇧 EN:** Once the outbreak was recognised, health workers began door-to-door screening in affected villages. Mobile medical units carrying oxygen, nebulisers, suction equipment, malaria tests and medicines visited more than 20 affected villages.
 
@@ -434,7 +442,7 @@
 
 ---
 
-### Section 54
+### Section 55
 
 **🇬🇧 EN:** One mobile doctor, Neeraj Sharma, says teams routinely saw more than 50 patients a day, about half of them children. They conducted 10 or more malaria tests daily, sometimes finding two positive cases a day.
 
@@ -442,7 +450,7 @@
 
 ---
 
-### Section 55
+### Section 56
 
 **🇬🇧 EN:** More than 6,200 patients - mostly children - were eventually treated at home, according to Gautam. More than 630 were referred to district hospitals. About 600 returned home, while around 30 remain admitted.
 
@@ -450,7 +458,7 @@
 
 ---
 
-### Section 56
+### Section 57
 
 **🇬🇧 EN:** Vaccination became an emergency response. Although official records suggested 90-95% coverage in some areas, health workers found children without records and families reluctant to vaccinate.
 
@@ -458,7 +466,7 @@
 
 ---
 
-### Section 57
+### Section 58
 
 **🇬🇧 EN:** Authorities therefore offered the measles-rubella (MR) vaccine to all children under 15, regardless of recorded status. Of about 40,000 children identified in Birsa, roughly 27,000 had been vaccinated, Gautam said. Of the area's 180 villages, some 67 are predominantly Baiga and among the most vulnerable.
 
@@ -466,7 +474,7 @@
 
 ---
 
-### Section 58
+### Section 59
 
 **🇬🇧 EN:** But vaccination is only one part of the protection children need. There are wider questions about whether basic nutrition and other health services are reaching those most at risk.
 
@@ -474,7 +482,7 @@
 
 ---
 
-### Section 59
+### Section 60
 
 **🇬🇧 EN:** A 2024 audit by India's Comptroller and Auditor General found "serious irregularities", external in Madhya Pradesh's distribution of take-home rations meant to supplement the diets of children aged six months to three years, pregnant women and lactating mothers, including problems with beneficiary identification, production, transport and distribution.
 
@@ -482,7 +490,7 @@
 
 ---
 
-### Section 60
+### Section 61
 
 **🇬🇧 EN:** The outbreak has now subsided. Officials say the last child death was more than two weeks before their late-September assessment, while teams continue visiting villages. In Kundekasa, a medical camp that once saw about 120 children a day was seeing fewer than 10.
 
@@ -490,7 +498,7 @@
 
 ---
 
-### Section 61
+### Section 62
 
 **🇬🇧 EN:** Back in Matla, Bamita's mother speaks about the child who would ask for money for snacks, play with her sister and run inside whenever cars approached because vehicles frightened her.
 
@@ -498,7 +506,7 @@
 
 ---
 
-### Section 62
+### Section 63
 
 **🇬🇧 EN:** "I had hope she'd study and make something of herself. I never regretted I didn't have a boy," Koushila says.
 
@@ -506,7 +514,7 @@
 
 ---
 
-### Section 63
+### Section 64
 
 **🇬🇧 EN:** Then she looks at Ankita, the surviving sister.
 
@@ -514,7 +522,7 @@
 
 ---
 
-### Section 64
+### Section 65
 
 **🇬🇧 EN:** "I want more kids," she says. "I feel alone. Ankita is alone. She keeps crying for her sister."
 

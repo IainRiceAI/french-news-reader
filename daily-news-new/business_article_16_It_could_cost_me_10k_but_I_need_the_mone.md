@@ -132,37 +132,13 @@
 
 ### Section 16
 
-**🇬🇧 EN:** According to DWP data, external:
-
-**🇫🇷 FR:** *Selon les données du DWP, externes:*
-
----
-
-### Section 17
-
-**🇬🇧 EN:** In the three months to December last year, 11.5% of eligible 22 to 29-year-olds who recently started a job opted out of their pensions. That's up from 6.6% in the same period of 2020.
-
-**🇫🇷 FR:** *Au cours des trois mois qui ont précédé décembre dernier, 11,5% des jeunes de 22 à 29 ans éligibles qui ont récemment commencé un emploi ont choisi de ne plus recevoir de retraite, contre 6,6% au cours de la même période de 2020.*
-
----
-
-### Section 18
-
-**🇬🇧 EN:** For 30 to 39-year-olds it's gone from 7.4% to 12.7%.
-
-**🇫🇷 FR:** *Pour les 30 à 39 ans, il est passé de 7,4% à 12,7%.*
-
----
-
-### Section 19
-
 **🇬🇧 EN:** Evie, 22, from Cornwall, says she opted out of entering the workplace pension at the London events company she works for.
 
 **🇫🇷 FR:** *Evie, 22 ans, de Cornouailles, dit qu'elle a choisi de ne pas prendre sa retraite au travail dans la société londonienne pour laquelle elle travaille.*
 
 ---
 
-### Section 20
+### Section 17
 
 **🇬🇧 EN:** A recent drama school graduate, she says she would have struggled to cover her outgoings, including food, travel and the £800 she pays in rent.
 
@@ -170,7 +146,7 @@
 
 ---
 
-### Section 21
+### Section 18
 
 **🇬🇧 EN:** Evie is conscious about missing out on saving for retirement, but there are other things she needs money for that make it impractical right now.
 
@@ -178,7 +154,7 @@
 
 ---
 
-### Section 22
+### Section 19
 
 **🇬🇧 EN:** "How can I save for a house, how can I save for a car and afford my outgoings? I don't want to just work day in, day out to live, I want to work to have a life."
 
@@ -186,7 +162,7 @@
 
 ---
 
-### Section 23
+### Section 20
 
 **🇬🇧 EN:** April Leeson, from The Private Office, a chartered financial advice firm, says she would always advise people to not stop paying into their pensions if they can help it, even if that means reducing their contributions, which many employers allow you to do.
 
@@ -194,7 +170,7 @@
 
 ---
 
-### Section 24
+### Section 21
 
 **🇬🇧 EN:** This is partly because of the free employer contributions they will miss out on but also the lost compound interest.
 
@@ -202,7 +178,7 @@
 
 ---
 
-### Section 25
+### Section 22
 
 **🇬🇧 EN:** "The current minimum pension age is 57, so any money you save in your 20s will have at least 30 years to compound and grow.
 
@@ -210,7 +186,7 @@
 
 ---
 
-### Section 26
+### Section 23
 
 **🇬🇧 EN:** "£100 saved now, compounded at 4% a year over 30 years, is going to be worth a lot more than £100 saved in 15 to 20 years' time."
 
@@ -218,7 +194,7 @@
 
 ---
 
-### Section 27
+### Section 24
 
 **🇬🇧 EN:** She also urges younger people to think ahead. "You really need to think of your future self and what that person will need to retire comfortably."
 
@@ -226,7 +202,7 @@
 
 ---
 
-### Section 28
+### Section 25
 
 **🇬🇧 EN:** Kharlee, 47, a teacher from South East London, can certainly relate to this. She stopped her contributions to a workplace pension twice over the last five years for financial reasons.
 
@@ -234,7 +210,7 @@
 
 ---
 
-### Section 29
+### Section 26
 
 **🇬🇧 EN:** Kharlee worries she won't have a comfortable retirement
 
@@ -242,7 +218,7 @@
 
 ---
 
-### Section 30
+### Section 27
 
 **🇬🇧 EN:** And she thinks she missed out on saving about £5,000 into her pension pot.
 
@@ -250,7 +226,7 @@
 
 ---
 
-### Section 31
+### Section 28
 
 **🇬🇧 EN:** She's in a better place financially now, but recently became self-employed and is no longer part of a private pension scheme, something she hopes to change.
 
@@ -258,7 +234,7 @@
 
 ---
 
-### Section 32
+### Section 29
 
 **🇬🇧 EN:** "I would like to feel my pension is secure, and I don't feel like that. I worry I'm not going to be able to live comfortably at the age of retirement."
 
@@ -266,7 +242,7 @@
 
 ---
 
-### Section 33
+### Section 30
 
 **🇬🇧 EN:** Are you able to save money every month? Share your tips with us on how you do it.
 
