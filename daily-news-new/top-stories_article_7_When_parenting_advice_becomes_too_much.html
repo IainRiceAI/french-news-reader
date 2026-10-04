@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When parenting advice becomes too much</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>When parenting advice becomes too much</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 04 Oct 2026 01:24:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cv4g5267jk8yo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Many parents feel overwhelmed by the amount of parenting information available
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.34" data-end="9.67">
+            <p class="french-block">Quand les conseils parentaux deviennent trop nombreux</p>
+            <span class="english-block">When parenting advice becomes too much</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="9.67" data-end="15.14">
+            <p class="french-block">Avant de devenir maman, Rosie Whitfield s'imaginait avoir des enfants très calmes.</p>
+            <span class="english-block">Before Rosie Whitfield became a mum, she imagined herself parenting very calm children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.14" data-end="18.98">
+            <p class="french-block">"Alors j'ai eu deux garçons sauvages", dit- elle en riant.</p>
+            <span class="english-block">"Then I had two wild boys," she says with a laugh.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.98" data-end="34.99">
+            <p class="french-block">Après la naissance de ses enfants, Rosie a passé des heures en ligne à chercher les meilleurs conseils et a été attirée par une approche particulière de l'éducation: l'éducation douce, qui se concentre sur l'empathie et le respect mutuel avec peu d'accent sur la punition, bien que avec des limites.</p>
+            <span class="english-block">Following the birth of her kids, Rosie spent hours online looking for the best advice and was drawn to one particular approach to parenting: Gentle parenting, which focuses on empathy and mutual respect with little emphasis on punishment, albeit with boundaries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.99" data-end="43.25">
+            <p class="french-block">Mais elle s'inquiétait constamment de savoir si ses choix, des horaires de sommeil aux crises de colère des enfants, " leur ruinaient la vie pour toujours ".</p>
+            <span class="english-block">But she constantly worried her choices, from sleep schedules to handling toddler tantrums, were "ruining their lives forever".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.25" data-end="55.51">
+            <p class="french-block">Rosie ne reproche pas la philosophie de la douceur parentale elle- même, mais dit que la quantité globale de conseils parentaux sur Internet était " écrasante " et que " les choix de la vie parentale mondaine ont fait sentir la fin du monde ".</p>
+            <span class="english-block">Rosie does not blame the gentle parenting philosophy itself but instead says the overall amount of parenting advice online was "overwhelming" and "made mundane parenting choices feel like the absolute end of the world."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.51" data-end="70.37">
+            <p class="french-block">"Je me sentais comme si, pendant que je lave les plats ou que je buvais un café, je choisissais de mettre la télévision allumée pendant 20 minutes, je choisissais de détruire le cerveau de mes enfants", dit Rosie, originaire de Birmingham et qui vit maintenant à Dubaï.</p>
+            <span class="english-block">"I felt like if I was choosing to put the TV on for 20 minutes while I did the dishes or had a coffee, I was choosing to destroy my children's brains," says Rosie, who is originally from Birmingham and now lives in Dubai.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.37" data-end="77.21">
+            <p class="french-block">Rosie pense que sa confiance et son intuition ont été dépouillées quand elle a remis en question toutes les décisions parentales.</p>
+            <span class="english-block">Rosie believes her confidence and intuition were stripped away as she questioned every parenting decision. And she is not alone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.21" data-end="91.46">
+            <p class="french-block">Des recherches gouvernementales suggèrent qu'environ les deux tiers des parents avec de jeunes enfants se sentent dépassés par la quantité d'informations parentales disponibles et luttent contre des conseils contradictoires, beaucoup se tournant vers les médias sociaux pour obtenir de l'aide.</p>
+            <span class="english-block">Government research suggests that around two-thirds of parents with young children feel overwhelmed by the amount of parenting information available and struggle with conflicting advice, with many turning to social media for support.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.46" data-end="100.01">
+            <p class="french-block">Rosie Whitfield dit qu'elle s'est sentie dépassée par la quantité de conseils parentaux en ligne lorsqu'elle cherchait des conseils sur l'éducation de ses deux fils.</p>
+            <span class="english-block">Rosie Whitfield says she felt overwhelmed by the amount of parenting advice online when looking for guidance on raising her two sons.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.01" data-end="102.91">
+            <p class="french-block">Et ce ne sont pas seulement les premières années.</p>
+            <span class="english-block">And it's not just the early years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.91" data-end="124.37">
+            <p class="french-block">Des recherches menées par l'organisation caritative Action for Children ont révélé que de nombreux parents d'adolescents qui ont d'abord contacté l'organisme caritatif pour obtenir de l'aide pour éviter l'école, le TDAH ou la santé mentale, ont souvent décrit leur propre anxiété, épuisement et incertitude quant à la façon de partager avec empathie et patience quand ils étaient proches de l'épuisement.</p>
+            <span class="english-block">Research from the charity Action for Children found that many parents of teenagers who initially contacted the charity for help with school avoidance, ADHD or mental health, often went on to describe their own anxiety, exhaustion and uncertainty of how to parent with empathy and patience when close to burnout.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.37" data-end="132.17">
+            <p class="french-block">Face à une multitude de philosophies parentales ou de " marques " à choisir, ces conseils aident- ils les parents ou les rendent- ils plus anxieux?</p>
+            <span class="english-block">Faced with an array of parenting philosophies, or "brands" to choose from, is all of this advice helping parents or making them more anxious? And is there really a best way to parent? Or, as we strive to become the perfect parent, are we losing our intuition?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="132.17" data-end="147.7">
+            <p class="french-block">Les parents sont confrontés aujourd'hui à des styles de parentalité tels que "parentalité en hélicoptère", qui se concentre sur la surveillance et la protection des enfants des dommages, et "parentalité tigre", qui implique une parentalité stricte et des attentes élevées pour les résultats.</p>
+            <span class="english-block">Parents today are confronted by parenting styles including "helicopter parenting", which is focused on closely monitoring and protecting children from harm, and "tiger parenting", which involves strict parenting and high expectations for achievement. There are also "snowplough parents", who try to remove obstacles from their child's path, and "dolphin parents", who aim to be firm but flexible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.7" data-end="158.88">
+            <p class="french-block">L'auteure Matilda Gosling, qui a écrit Éducation parentale fondée sur des preuves, dit que de nombreuses tendances parentales compliquent ce qui devrait être une relation directe entre un parent et son enfant.</p>
+            <span class="english-block">Author Matilda Gosling, who wrote Evidence‑Based Parenting, says many of the parenting fads or trends complicate what should be a straightforward relationship between a parent and child.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.88" data-end="164.83">
+            <p class="french-block">" Certains parents pensent: 'Je dois être un parent de plongeur de neige et éliminer tous ces obstacles.' "</p>
+            <span class="english-block">"Some parents think 'I need to be a snowplough parent and plough all of these obstacles out of the way'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="164.83" data-end="174.0">
+            <p class="french-block">Mais cela complique vraiment ce qui est en fait une partie fondamentale de l'être humain, qui est que vous êtes chaleureux et que vous aimez vos enfants et que vous mettez des limites autour d'eux. "</p>
+            <span class="english-block">"But it really complicates what is actually a fairly fundamental part of being human, which is that you are warm and you love your children and you put in place some boundaries around them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.0" data-end="180.1">
+            <p class="french-block">Matilda Gosling dit que les tendances parentales peuvent compliquer la relation entre les parents et leurs enfants</p>
+            <span class="english-block">Matilda Gosling says parenting trends can complicate the relationship between parents and their children</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.1" data-end="190.1">
+            <p class="french-block">Gosling pense que les tendances parentales représentent souvent un swing de pédale, avec une génération essayant de corriger ce qu'elle croit que la génération précédente a mal compris.</p>
+            <span class="english-block">Gosling believes parenting trends often represent a pendulum swing, with one generation trying to correct what it believes the previous one got wrong.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.1" data-end="194.9">
+            <p class="french-block">"Dans l'histoire, on a fait ces mouvements d'un extrême à l'autre", dit- elle.</p>
+            <span class="english-block">"Throughout history, you get these swings from one extreme to the other," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="194.9" data-end="208.42">
+            <p class="french-block">La parentalité douce est considérée par certains comme le dernier changement d'un style de parentalité strict et détaché populaire dans les années 1990, qui reposait souvent sur des pleurs contrôlés, le pas malin et le temps de sortie.</p>
+            <span class="english-block">Gentle parenting is seen by some as the latest swing away from a strict, detached parenting style popular in the 1990s, which often relied on controlled crying, the naughty step and time out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.42" data-end="215.54">
+            <p class="french-block">Il est construit autour de la compréhension, de l'empathie et du respect, mais souligne également l'importance des limites.</p>
+            <span class="english-block">It is built around understanding, empathy and respect but also emphasises the importance of boundaries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.54" data-end="222.0">
+            <p class="french-block">L'un des modèles les plus étudiés de l'éducation des enfants vient de la psychologue du développement Diana Baumrind.</p>
+            <span class="english-block">One of the most widely studied models of parenting comes from developmental psychologist Diana Baumrind.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.0" data-end="237.79">
+            <p class="french-block">Baumrind a identifié trois styles de parentalité, qui ont ensuite été étendus à quatre: autoritaire (haute chaleur et haut contrôle), autoritaire (basse chaleur et haut contrôle), permissif (haute chaleur et bas contrôle) et négligent (bas chaleur et bas contrôle).</p>
+            <span class="english-block">Baumrind identified three parenting styles, later expanded to four: authoritative (high warmth and high control), authoritarian (low warmth and high control), permissive (high warmth and low control), and neglectful (low warmth and low control).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.79" data-end="243.22">
+            <p class="french-block">"L'authenticité est la norme", dit Gosling, qui a examiné plus de 1.000 études.</p>
+            <span class="english-block">"Authoritative is the gold standard," says Gosling who has looked at more than 1,000 studies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="243.22" data-end="256.75">
+            <p class="french-block">Des recherches ont montré que les enfants élevés avec une approche autoritaire, combinant chaleur et limites claires, ont tendance à obtenir de meilleurs résultats scolaires, à avoir une plus grande estime de soi et des compétences sociales plus fortes.</p>
+            <span class="english-block">Research has found that children raised with an authoritative approach, combining warmth with clear boundaries, tend to achieve better academic results, have higher self-esteem and stronger social skills.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="256.75" data-end="260.86">
+            <p class="french-block">Mais où l'éducation douce s'inscrit dans ce cadre est contestée.</p>
+            <span class="english-block">But where gentle parenting fits within that framework is disputed. Gosling believes that it falls on the permissive side.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.86" data-end="269.57">
+            <p class="french-block">"C'est très dirigé par des enfants. L'enfant finit par avoir tellement de contrôle qu'il n'y a pas de sentiment de sécurité venant de l'extérieur".</p>
+            <span class="english-block">"It's very much child-led. The child ends up having so much control that there's no sense of safety coming from the outside."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="269.57" data-end="278.95">
+            <p class="french-block">Cependant, Sarah Ockwell-Smith, qui est largement reconnue pour avoir inventé et popularisé le terme "parenthood doux", est fortement en désaccord.</p>
+            <span class="english-block">However, Sarah Ockwell-Smith, who is widely credited with coining and popularising the term 'gentle parenting', strongly disagrees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.95" data-end="285.43">
+            <p class="french-block">"Ce n'est pas une façon de laisser tomber", dit- elle, et elle le place fermement dans la catégorie de Baumrind.</p>
+            <span class="english-block">"It [gentle parenting] is not remotely permissive," she says, putting it firmly in Baumrind's authoritative category. Clear boundaries are "super important".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.43" data-end="296.62">
+            <p class="french-block">Les médias sociaux, cependant, sont inondés de mèmes de parents épuisés qui négocient calmement avec un enfant qui a une crise du supermarché, ce qui est profondément frustrant pour Ockwell-Smith.</p>
+            <span class="english-block">Social media, however, is flooded with memes of exhausted parents calmly negotiating with a child having a supermarket meltdown, something Ockwell-Smith finds deeply frustrating.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="296.62" data-end="303.96">
+            <p class="french-block">"Je dois me détourner des rouleaux d'Instagram et des TikToks parce que je veux juste commenter, 'Ce n'est pas une éducation douce'".</p>
+            <span class="english-block">"I have to step away from the Instagram reels and the TikToks because I just want to comment, 'This is not gentle parenting'".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.96" data-end="315.6">
+            <p class="french-block">"Vous avez des règles de la maison, des limites familiales, la discipline et les conséquences, mais la différence est que nous considérons la discipline comme l'apprentissage et l'enseignement plutôt que comme une punition".</p>
+            <span class="english-block">"You have house rules, family limits, discipline and consequences. But the difference is we look at discipline as learning and teaching rather than punishing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.6" data-end="328.01">
+            <p class="french-block">Les crises de colère chez les enfants et le comportement des adolescents, affirme-t-elle, doivent être considérés à travers une lentille de développement continu du cerveau, et non pas "ils sont méchants" ou "ils me détestent".</p>
+            <span class="english-block">Toddler tantrums and teenage behaviour, she argues, should be viewed through a lens of ongoing brain development, not 'they're being naughty' or 'they hate me'.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="328.01" data-end="337.51">
+            <p class="french-block">Mais malgré le fait que le terme soit populaire, Ockwell-Smith pense que l'éducation douce est toujours un mouvement marginal et que l'éducation autoritaire reste le style dominant.</p>
+            <span class="english-block">But despite the term being popular, Ockwell-Smith believes that gentle parenting is still a fringe movement and that authoritarian parenting remains the dominant style.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.51" data-end="351.05">
+            <p class="french-block">Il y a environ 80 ans, le pédiatre américain Benjamin Spock a publié un livre intitulé Baby and Child Care, qui a ensuite vendu des millions d'exemplaires et est devenu la principale source de conseils pour les mères pendant des générations.</p>
+            <span class="english-block">Around 80 years ago, American paediatrician Dr Benjamin Spock published a book called Baby and Child Care, which went on to sell millions of copies and became the main source of advice for mothers for generations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.05" data-end="355.85">
+            <p class="french-block">La première phrase était "Confiez-vous, vous savez plus que vous ne le pensez"...</p>
+            <span class="english-block">The opening line was "Trust yourself. You know more than you think..."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.85" data-end="365.45">
+            <p class="french-block">Le livre conteste les normes strictes de l'époque et, dans les décennies suivantes, les parents reçoivent de plus en plus de conseils de la part de voix de plus en plus nombreuses.</p>
+            <span class="english-block">The book challenged strict parenting norms of the time and in the following decades parents were offered more advice from an increasing range of voices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.45" data-end="377.3">
+            <p class="french-block">Les recherches sur l'éducation des enfants se sont de plus en plus concentrées sur les premières années de la vie, de la grossesse à l'âge de deux ans, lorsque les fondements de la santé émotionnelle et physique à long terme sont posés.</p>
+            <span class="english-block">Research into parenting has increasingly focused on the early years - from pregnancy to the age of two when the building blocks for lifelong emotional and physical health are laid down. For parents, that means more advice to navigate competing messages about what is best for their children.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.3" data-end="390.6">
+            <p class="french-block">La professeure Ellie Lee, directrice du Centre d'études sur la culture parentale, étudie la parentalité depuis plus de deux décennies, notamment en étudiant la confiance et l'incertitude des mères en matière d'alimentation des nourrissons.</p>
+            <span class="english-block">Professor Ellie Lee, the director of the Centre for Parenting Culture Studies, has studied parenting for more than two decades, including research into mothers' confidence and uncertainty around infant feeding.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.6" data-end="400.75">
+            <p class="french-block">Elle dit qu'un changement majeur s'est produit dans les années 1990, lorsque l'éducation des enfants est devenue un objectif de plus en plus important de la politique publique.</p>
+            <span class="english-block">She says a major shift occurred in the 1990s when parenting became an increasing focus of public policy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="400.75" data-end="418.3">
+            <p class="french-block">"Les politiciens ont commencé à dire: 'Les parents sont le travail le plus difficile au monde. Les enfants ne viennent pas avec un manuel. Nous devons donner des conseils aux parents. Les parents ont besoin de plus de soutien. Nous avons besoin d'éducation parentale'".</p>
+            <span class="english-block">"Politicians started to say 'Parenting's the hardest job in the world. Children don't come with a manual. We need to give parents guidance. Parents need more support. We need parent education'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.3" data-end="427.27">
+            <p class="french-block">Elle explique que des conseils sur presque tous les aspects de la vie familiale ont commencé à émerger, du temps de ventre, de l'alimentation, au bon buggy.</p>
+            <span class="english-block">Advice began to emerge on almost every aspect of family life, from tummy time, to feeding, to the right buggy, she explains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="427.27" data-end="441.62">
+            <p class="french-block">Le professeur Lee soutient que si certaines campagnes de santé publique étaient nécessaires, comme le conseil de ne pas mettre les bébés au lit sur leur front après avoir étudié les décès dans les lits, la culture croissante des conseils a commencé à rendre les parents paranoïaques.</p>
+            <span class="english-block">Prof Lee argues that while some public health campaigns were necessary, such as advice not to put babies to sleep on their front after research into cot deaths, the growing culture of advice began to make parents paranoid.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="441.62" data-end="448.42">
+            <p class="french-block">"La philosophie du Dr Spock de "confiez-vous" est maintenant un conseil très contre-culturel, dit-elle.</p>
+            <span class="english-block">"Dr Spock's 'trust yourself' philosophy is now a very counter-cultural piece of advice," she says. "What we say instead is 'always seek help',"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="448.42" data-end="454.9">
+            <p class="french-block">Sarah Ockwell-Smith est largement reconnue pour avoir inventé et popularisé le terme "parenthood doux".</p>
+            <span class="english-block">Sarah Ockwell-Smith is widely credited with coining and popularising the term 'gentle parenting'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="454.9" data-end="459.77">
+            <p class="french-block">Elle pense que cela a rendu les parents plus inquiets de faire les choses " correctement ".</p>
+            <span class="english-block">She believes this has made parents more anxious about doing things "right".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="459.77" data-end="471.29">
+            <p class="french-block">"Certaines choses qui sont présentées comme des enjeux vraiment élevés ne le sont pas", dit- elle, en utilisant des exemples comme l'allaitement exclusif pendant six mois ou le temps de grossesse dont un enfant a besoin.</p>
+            <span class="english-block">"Some of the things that are now presented as really high stakes are not," she says, using examples like breastfeeding exclusively for six months or how much tummy time a child needs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="471.29" data-end="475.08">
+            <p class="french-block">"C'est terrible parce que les parents sont complètement épuisés".</p>
+            <span class="english-block">"It's terrible because parents become completely exhausted."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="475.08" data-end="479.88">
+            <p class="french-block">Ockwell-Smith dit que le volume de conseils peut être "sourdissant et confus".</p>
+            <span class="english-block">Ockwell-Smith says the volume of advice can be "deafening and confusing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="479.88" data-end="485.38">
+            <p class="french-block">"En fait, les parents devraient apprendre eux- mêmes et suivre leur intuition", dit- elle.</p>
+            <span class="english-block">"Actually, parents should just learn themselves and go on intuition," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="485.38" data-end="499.75">
+            <p class="french-block">D'autres soulignent qu'il existe également un problème de conseils qui sont complètement erronés. Ruth Watts est une visiteuse de santé qui a commencé à partager du contenu sur les réseaux sociaux après avoir été préoccupée par la désinformation en ligne.</p>
+            <span class="english-block">Others point out that there is also a problem of advice being given that is altogether wrong. Ruth Watts is a health visitor who began sharing content on social media after becoming concerned about misinformation online.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="499.75" data-end="514.01">
+            <p class="french-block">Elle avait vu des "experts" conseiller aux parents de sevrer les bébés sur des matières solides tôt, de leur donner des conseils sur le traitement des maladies liées à la langue ou aux allergies sans formation médicale, et de leur dire de les mettre dans leur propre chambre avant les six mois.</p>
+            <span class="english-block">She had seen "experts" advise parents to wean babies onto solids early, offer treatment advice for tongue tie or allergies without medical training, and tell parents to put babies in their own rooms before six months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="514.01" data-end="526.22">
+            <p class="french-block">De nombreuses familles, affirme-t-elle, travaillent plus longtemps alors que les services de santé sont retirés, ce qui laisse de plus en plus de parents à la recherche en ligne d'aide à l'allaitement, au comportement et au sommeil.</p>
+            <span class="english-block">Many families, she argues, are working longer hours while at the same time health services are being stripped back, leaving more parents looking online for breastfeeding, behaviour and sleep support.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="526.22" data-end="531.98">
+            <p class="french-block">" Nous cherchons ce genre de conversation agréable chez les gens, plutôt que de lire un site Web. "</p>
+            <span class="english-block">"We are looking for that kind of personable, conversational approach from people, rather than reading a website."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="531.98" data-end="537.19">
+            <p class="french-block">De nombreux facteurs qui influencent la vie familiale restent hors du contrôle des parents.</p>
+            <span class="english-block">Many factors shaping family life remain outside parents' control. A child's temperament, special educational needs, family support, finances and their own upbringing can all influence family life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="537.19" data-end="553.25">
+            <p class="french-block">Alors que certains disent que l'éducation des enfants n'a pas été plus difficile, mais que les attentes l'ont été, d'autres affirment que les parents d'aujourd'hui sont confrontés à des défis plus complexes que les générations précédentes, avec des préoccupations croissantes concernant la santé mentale des jeunes.</p>
+            <span class="english-block">While some say parenting hasn't got harder but expectations have, others argue that parents today are facing more complex challenges than in previous generations with growing concerns around young people's mental health.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="553.25" data-end="563.45">
+            <p class="french-block">Les enfants passent plus de temps sur les écrans et moins de temps à l'extérieur, tandis que les écoles signalent des défis comportementaux croissants et un respect moindre des règles et de l'autorité.</p>
+            <span class="english-block">There are also debates around children spending more time on screens and less time outdoors, while schools are reporting increasing behavioural challenges and lower respect for rules and authority. Prof Lee believes parental confidence is at an all-time low.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="563.45" data-end="572.59">
+            <p class="french-block">"Je pense que les parents sont très nerveux à l'idée de discipliner leurs enfants maintenant parce qu'ils s'inquiètent de ce que cela va leur faire ressentir", explique- t- elle.</p>
+            <span class="english-block">"I think parents feel very nervous about disciplining children now because they're worried about how it's going to make them feel," she argues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="572.59" data-end="580.13">
+            <p class="french-block">La confusion autour de la "correcte" voie de l'adoption a conduit certains parents à se tourner vers des cours pour obtenir de l'aide.</p>
+            <span class="english-block">The confusion around the "right" way to parent has led some parents to turn to courses for help.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="580.13" data-end="591.36">
+            <p class="french-block">Aymara Lamche-Brennan, qui a une fille de 22 ans, un fils de quatre ans et une fille de six mois, s'est inscrite à un cours pendant l'été quand une autre mère à la porte de l'école a mentionné qu'elle y assistait.</p>
+            <span class="english-block">Aymara Lamche-Brennan, who has a 22-year-old daughter, four-year-old son and six-month-old daughter, signed up for a course during the summer when another mother at the school gate mentioned she was attending.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="591.36" data-end="599.3">
+            <p class="french-block">Aymara Lamche-Brennan, sur la photo avec ses trois enfants, s'est inscrite à un cours de parentalité du Cercle de la Sécurité</p>
+            <span class="english-block">Aymara Lamche-Brennan, pictured with her three children, signed up for a Circle of Security parenting course</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="599.3" data-end="608.66">
+            <p class="french-block">"Le flyer disait: 'C'est le travail le plus difficile du monde', et je me suis dit oui, comment pouvez- vous m'aider?'" dit Aymara, dans sa maison à Londres.</p>
+            <span class="english-block">"The flyer said 'it's the toughest job in the world' and I thought yes it is, how can you help?'" Aymara says from her home in London.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="608.66" data-end="622.39">
+            <p class="french-block">"Quand j'ai eu ma fille, j'avais 19 ans et je n'ai pas vraiment beaucoup pensé aux styles de parenté, elle était avec moi partout et je me suis juste fait rouler avec elle, mais ce que je veux vraiment savoir maintenant, c'est quelles sont les victoires simples avec la parentalité?"</p>
+            <span class="english-block">"When I had my daughter, I was 19 and I didn't really think much about parenting styles, she was with me everywhere and I just kind of rolled with it, but what I really want to know now is what simple wins are there with parenting?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="622.39" data-end="634.73">
+            <p class="french-block">Aymara a dit que le cours du cercle de sécurité auquel elle a assisté lui a donné des outils pratiques pour aider ses enfants à organiser leurs sentiments, à prendre en charge quand elle en a besoin et à reconnaître quand elle est stressée.</p>
+            <span class="english-block">Aymara said the Circle of Security course she attended gave her practical tools so she could help her children organise their feelings, take charge when she needs to and recognise when she was becoming stressed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="634.73" data-end="649.06">
+            <p class="french-block">"Ce n'est pas vous dire comment être parent, mais vous aider à réfléchir", dit Jennifer Peters, ancienne travailleuse sociale et directrice de l'organisme caritatif Connected Lives qui organise des cours à travers Londres, Derbyshire et Cambridgeshire.</p>
+            <span class="english-block">"It's not telling you how to parent. It's helping you think," says Jennifer Peters, a former social worker and director of the charity Connected Lives which runs courses across London, Derbyshire and Cambridgeshire.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="649.06" data-end="657.19">
+            <p class="french-block">Elle dit que la plupart des parents veulent le meilleur pour leurs enfants mais qu'ils ne savent pas toujours comment y arriver, et que cette orientation peut être utile.</p>
+            <span class="english-block">She says most parents want the best for their kids but they don't always know how to get there, and that guidance can be helpful.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="657.19" data-end="668.83">
+            <p class="french-block">"Je ne pense pas que les gens aient besoin d'être bombardés d'informations, mais l'expérience de groupe vous aide à penser: 'Oh, ce n'est pas seulement moi', et vous permet de vous détourner de tout cela", dit Peters.</p>
+            <span class="english-block">"I don't think people need to be bombarded with information but the group experience helps you think, 'oh, it's not just me' and lets you take a step back from it all," Peters says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="668.83" data-end="678.29">
+            <p class="french-block">De retour à Dubaï, Rosie dit que l'arrivée de son deuxième enfant a tout changé car elle a réalisé que ses fils étaient "opposés polaires" et qu'il n'y a pas de solution unique.</p>
+            <span class="english-block">Back in Dubai, Rosie says the arrival of her second child changed everything as she realised her sons were "polar opposites" and there is no one-size-fits-all solution.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="678.29" data-end="687.31">
+            <p class="french-block">Un récent voyage à Birmingham lui a aussi donné une perspective: son fils aîné était en colère et Rosie se trouvait à lutter contre une inquiétude familière.</p>
+            <span class="english-block">A recent trip home to Birmingham also provided some perspective. Her eldest son was throwing a tantrum, and Rosie found herself wrestling with a familiar worry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="687.31" data-end="691.49">
+            <p class="french-block">" Si je l'envoie en haut, le blesse- t- il émotionnellement?</p>
+            <span class="english-block">"If I send him upstairs, am I damaging him emotionally? Is he going to develop an attachment disorder because of this?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="691.49" data-end="698.04">
+            <p class="french-block">Mais sa mère lui dit: "Envoyez-le à l'étage, car il ne peut pas frapper son frère à la tête avec un cheval.</p>
+            <span class="english-block">But her mum said, 'Just send him upstairs. He can't hit his brother over the head with a horse [if he is upstairs]. Follow through with your actions.'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="698.04" data-end="706.7">
+            <p class="french-block">Rosie prend à cœur ces " conseils générationnels " et a commencé à " se faire entendre sur les réseaux sociaux " pour montrer aux autres mères qu'elles ne sont pas seules.</p>
+            <span class="english-block">Rosie is taking this "generational advice" on board and has started "venting on social media" to show other mums that they are not alone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="706.7" data-end="711.74">
+            <p class="french-block">En se rappelant ses premières années de maman, elle a dit qu'elle aimerait savoir une chose.</p>
+            <span class="english-block">Looking back on her first few years of being a mum, she said she wished she had known one thing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="711.74" data-end="714.02">
+            <p class="french-block">"Il n'y a pas de parent parfait".</p>
+            <span class="english-block">"There isn't the perfect parent."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="714.02" data-end="717.55">
+            <p class="french-block">Crédit de la première photo: Getty Images</p>
+            <span class="english-block">Top picture credit: Getty Images</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="717.55" data-end="723.82">
+            <p class="french-block">Il y a une raison pour laquelle les taux de vaccination des enfants diminuent - et ce ne sont pas les médias sociaux</p>
+            <span class="english-block">There's a reason child vaccination rates are falling - and it's not social media</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="723.82" data-end="728.66">
+            <p class="french-block">Comment les caméras sont utilisées pour lutter contre les abus dans les pépinières</p>
+            <span class="english-block">How cameras are being used to tackle abuse in nurseries</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="728.66" data-end="733.66">
+            <p class="french-block">Comment la " loterie par code postal " des parents affecte réellement les jeunes enfants</p>
+            <span class="english-block">How the 'postcode lottery' of parenting really impacts young children</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="733.66" data-end="737.93">
+            <p class="french-block">Les questions soulevées dans cet article vous touchent- elles personnellement?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_7.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
