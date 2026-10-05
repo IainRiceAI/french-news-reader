@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brazil election goes to run-off as right-wing Flávio Bolsonaro wins first round</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>Brazil election goes to run-off as right-wing Flávio Bolsonaro wins first round</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 05 Oct 2026 03:16:16 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ck1l34ed592no?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: With neither candidate getting more than 50% of the vote, the election will go to a run-off on 25 October.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.98" data-end="13.18">
+            <p class="french-block">Flávio Bolsonaro vote à un bureau de vote à Rio de Janeiro</p>
+            <span class="english-block">Flávio Bolsonaro casts his vote at a polling station in Rio de Janeiro</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.18" data-end="22.7">
+            <p class="french-block">Le dirigeant de droite Flávio Bolsonaro a remporté le premier tour des élections présidentielles brésiliennes, battant le président de gauche actuel Lula da Silva.</p>
+            <span class="english-block">The right-wing Flávio Bolsonaro has won the first round of Brazil's presidential election, beating the incumbent left-wing President Lula da Silva. But he did not obtain more than 50% of the votes required to win outright.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.7" data-end="27.74">
+            <p class="french-block">Le vote de seconde ligne entre ces deux candidats aura lieu le 25 octobre.</p>
+            <span class="english-block">There will be a run-off vote between these two candidates on 25 October.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="27.74" data-end="39.38">
+            <p class="french-block">Flávio Bolsonaro est le fils de l'ancien président de droite Jair Bolsonaro, qui purge une peine de 27 ans de prison pour avoir orchestré une tentative de coup d'État ratée après avoir perdu les dernières élections.</p>
+            <span class="english-block">Flávio Bolsonaro is the son of the former right-wing president Jair Bolsonaro, who is serving a 27-year prison sentence for masterminding a failed coup attempt after losing the last election.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.38" data-end="54.05">
+            <p class="french-block">Les élections étaient proches, le président Lula étant légèrement en avance pendant la campagne. Avec 99% des voix comptées, Bolsonaro avait 47,03% contre 45,16% des voix de Lula.</p>
+            <span class="english-block">The election was close, with President Lula polling slightly ahead during the campaign. With 99% of the votes counted, Bolsonaro had 47.03% to Lula's 45.16% of the vote.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="54.05" data-end="68.11">
+            <p class="french-block">Le résultat de Bolsonaro a dépassé les attentes, ce qui signifie que le second tour semble maintenant être le sien à perdre, étant donné que certains des autres candidats à la présidence qui ont été éliminés au premier tour étaient des alternatives de droite.</p>
+            <span class="english-block">Bolsonaro's result exceeded expectations, meaning the second round now looks like his to lose, given some of the other presidential candidates who were knocked out in the first round were right-wing alternatives.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.11" data-end="81.48">
+            <p class="french-block">Le Parti libéral de Bolsonaro (PL) a également eu le plus de gouverneurs, de sénateurs et de députés fédéraux élus dans les résultats jusqu'à présent, ce qui signifie que le parti devrait avoir le plus d'influence au Congrès.</p>
+            <span class="english-block">Bolsonaro's Liberal Party (PL) also had the most governors, senators and federal deputies elected in the results so far, meaning the party is expected to have the most influence in Congress.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.48" data-end="94.78">
+            <p class="french-block">La majorité de l'Amérique latine a maintenant élu des présidents de droite, alignés sur l'administration Trump, et la deuxième édition déterminera si le Brésil  le plus grand pays et l'économie d'Amérique latine  suivra l'exemple ou non.</p>
+            <span class="english-block">The majority of Latin America has now elected right-wing presidents, aligned to the Trump administration, and the run-off will determine whether Brazil – Latin America's largest country and economy – will follow suit or not.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="94.78" data-end="102.22">
+            <p class="french-block">Après avoir voté, Lula, 80 ans, a averti que le choix était entre la démocratie et le "barbarisme".</p>
+            <span class="english-block">After casting his ballot, Lula, 80, warned that the choice was between democracy and "barbarism".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.22" data-end="108.07">
+            <p class="french-block">Bolsonaro, 45 ans, a déclaré vouloir "liberter le peuple brésilien".</p>
+            <span class="english-block">Bolsonaro, 45, said he wanted to "free the Brazilian people".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.07" data-end="113.59">
+            <p class="french-block">Luiz Inácio Lula da Silva vote aux élections générales de Sao Bernardo do Campo</p>
+            <span class="english-block">Luiz Inácio Lula da Silva votes in the general election in Sao Bernardo do Campo</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="113.59" data-end="129.53">
+            <p class="french-block">Lula et Bolsonaro sont les deux plus grands noms de la politique brésilienne, à gauche et à droite, et cette campagne a polarisé le Brésil une fois de plus: les thèmes de souveraineté, de criminalité, d'économie et de corruption sont les principales préoccupations des électeurs.</p>
+            <span class="english-block">Lula and Bolsonaro are the two biggest names in Brazilian politics, on the left and right, and this campaign has polarised Brazil yet again: with themes of sovereignty, crime, the economy and corruption being top concerns for voters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="129.53" data-end="137.35">
+            <p class="french-block">Lula est plus populaire dans le nord-est du Brésil, où les électeurs à faible revenu, les catholiques et les femmes sont plus pauvres.</p>
+            <span class="english-block">Lula is more popular in Brazil's poorer northeast, among low-income voters, Catholics, and women.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="137.35" data-end="146.04">
+            <p class="french-block">Il cherche un quatrième mandat, après avoir été élu en 2002, 2006 et ensuite un mandat non consécutif ultérieur en 2022.</p>
+            <span class="english-block">He is seeking a fourth term in office, after being elected in 2002, 2006 and then a later non-consecutive term in 2022. In that election, he beat Jair Bolsonaro by less than 2% of the vote, the closest presidential election result in Brazil's history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="146.04" data-end="153.5">
+            <p class="french-block">Après cette élection, les partisans de Bolsonaro ont vandalisé des bâtiments gouvernementaux le 8 janvier 2023.</p>
+            <span class="english-block">After that election, Bolsonaro's supporters vandalised government buildings on 8 January 2023.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.5" data-end="162.91">
+            <p class="french-block">Jair Bolsonaro a été interdit de se présenter à la réélection avant même sa peine de prison, mais a approuvé son fils aîné Flávio pour se présenter à sa place.</p>
+            <span class="english-block">Jair Bolsonaro was banned from running for re-election even before his prison sentence, but endorsed his eldest son Flávio to run in his place. Jair Bolsonaro's wife, Michelle, was elected to the Senate on Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="162.91" data-end="171.1">
+            <p class="french-block">Flávio Bolsonaro s'est engagé à accorder à son père et à ses partisans responsables des émeutes du 8 janvier une amnistie si elle était élue.</p>
+            <span class="english-block">Flávio Bolsonaro has pledged to grant his father, and his supporters responsible for the January 8th riots, amnesty if elected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.1" data-end="176.93">
+            <p class="french-block">Il est plus populaire dans le sud, et parmi les électeurs plus riches et les chrétiens évangéliques.</p>
+            <span class="english-block">He is more popular in the south, and among wealthier voters and evangelical Christians.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.93" data-end="187.61">
+            <p class="french-block">Bolsonaro a déclaré dimanche qu'il était "très heureux" d'avoir mené Lula au premier tour du scrutin et a exprimé sa confiance qu'il obtiendrait une victoire en deuxième ligne dans trois semaines.</p>
+            <span class="english-block">Bolsonaro said on Sunday he was "very happy" to have led Lula in the first-round vote, and expressed confidence that he would clinch a run-off victory in three weeks' time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="187.61" data-end="198.36">
+            <p class="french-block">"Je suis très heureux de la vraie possibilité que, dans trois semaines, le Brésil donne une réponse définitive en choisissant un gouvernement moderne", a-t-il déclaré, selon l'AFP.</p>
+            <span class="english-block">"I am very happy with the real possibility that, three weeks from now, Brazil will give a definitive answer by choosing a modern government," he said, according to AFP.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="198.36" data-end="205.34">
+            <p class="french-block">Lula a admis que le résultat du vote était "inattendu", mais a insisté sur le fait que la course n'était pas terminée.</p>
+            <span class="english-block">Lula admitted the outcome of the vote was "unexpected", but insisted that the race was not over.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.34" data-end="216.7">
+            <p class="french-block">"Je dois admettre que j'étais convaincu que je gagnerais au premier tour, a- t- il dit dimanche. " Le match est sur le point de commencer. Nous sommes en temps supplémentaire.</p>
+            <span class="english-block">"I admit I was convinced I would win in the first round," he said on Sunday. "The game is about to start. We are in extra time. In extra time, we will win over the Brazilian people."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="216.7" data-end="221.47">
+            <p class="french-block">Pourquoi le Brésil a-t-il accusé les États-Unis d'ingérence dans les élections ?</p>
+            <span class="english-block">Why has Brazil accused the US of election interference?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.47" data-end="230.11">
+            <p class="french-block">Le président de la Cour électorale suprême du Brésil a déclaré dimanche qu'aucune preuve d'ingérence internationale n'avait été trouvée dans les élections.</p>
+            <span class="english-block">The president of Brazil's supreme electoral court said on Sunday that no evidence of international interference was found in the election.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.11" data-end="241.1">
+            <p class="french-block">Pendant la campagne, le président Lula a fait de la "souveraineté" un pilier clé de sa campagne et a parfois accusé les États-Unis d'essayer d'interférer et d'influencer les élections brésiliennes.</p>
+            <span class="english-block">During the campaign, President Lula made "sovereignty" a key pillar of his campaign and at times accused the United States of trying to interfere in and influence Brazil's elections. He has pledged to increase defence spending.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.1" data-end="250.9">
+            <p class="french-block">Plus tôt cette année, Flávio Bolsonaro a fait pression avec succès sur les États-Unis pour qu'ils désignent les deux plus grandes gangs brésiliennes comme des organisations terroristes.</p>
+            <span class="english-block">Earlier this year, Flávio Bolsonaro successfully lobbied the United States to designate the two biggest Brazilian gangs as terrorist organisations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.9" data-end="274.58">
+            <p class="french-block">En juillet, le Brésil a refusé de visas à deux responsables du département d'État américain qui, selon le Brésil, essayaient de semer des doutes sur le système électoral brésilien, que les États-Unis ont qualifié de "infondé". Cela est arrivé après que Flávio Bolsonaro aurait dit à un groupe de diplomates étrangers que les machines à vote du Brésil partageaient la même origine que celle du Venezuela, ce qui est faux.</p>
+            <span class="english-block">In July, Brazil refused visas for two US State Department officials who Brazil alleged were attempting to sow doubt in Brazil's electoral system, which the US called "baseless." It came after Flávio Bolsonaro reportedly told a group of foreign diplomats that Brazil's voting machines share the same origin as Venezuela's, which is false.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.58" data-end="285.67">
+            <p class="french-block">L'année dernière, Donald Trump a utilisé le procès du coup d'État de Jair Bolsonaro comme justification pour imposer des droits de douane au Brésil et sanctionner certains hauts fonctionnaires et juges.</p>
+            <span class="english-block">Last year, Donald Trump used the coup trial of Jair Bolsonaro as justification for imposing tariffs on Brazil and sanctioning some top officials and judges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.67" data-end="297.82">
+            <p class="french-block">Une victoire de Flávio Bolsonaro permettrait probablement au Brésil de rejoindre la coalition américaine "Shield of Americas" contre le trafic de stupéfiants et de s'aligner plus étroitement avec les États-Unis.</p>
+            <span class="english-block">A win for Flávio Bolsonaro would likely see Brazil join the US's "Shield of Americas" coalition against narco-trafficking and align more closely with the US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="297.82" data-end="312.7">
+            <p class="french-block">Bolsonaro s'est cependant engagé à maintenir une relation "économiquement pragmatique" avec la Chine, qui a dépassé les États-Unis en tant que plus grand partenaire commercial du Brésil et est un client crucial pour les exportations de soja et de viande bovine du Brésil.</p>
+            <span class="english-block">Bolsonaro has pledged though to maintain an "economically pragmatic" relationship with China, which has overtaken the US as Brazil's biggest trading partner and is a crucial customer for Brazil's soy and beef exports.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.7" data-end="319.49">
+            <p class="french-block">Une femme vote au bureau de vote lors des élections générales au Brésil à Barra de Guaratiba, Rio de Janeiro</p>
+            <span class="english-block">A woman votes at a polling station during Brazil's general election in Barra de Guaratiba, Rio de Janeiro</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="319.49" data-end="333.74">
+            <p class="french-block">La corruption est devenue un problème clé de cette campagne après un scandale impliquant un banquier emprisonné, Daniel Vorcaro, qui a orchestré l'une des plus grandes fraudes financières du Brésil, impliquant de hautes personnalités de tout le spectre politique.</p>
+            <span class="english-block">Corruption became a key issue in this campaign after a scandal involving a jailed banker, Daniel Vorcaro, who orchestrated one of Brazil's largest financial frauds, embroiled senior figures across the political spectrum.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="333.74" data-end="350.59">
+            <p class="french-block">Flávio Bolsonaro a reconnu avoir demandé à Vorcaro de financer un biopic sur son père après que des enregistrements vocaux ont été publiés dans lesquels on pouvait l'entendre demander 134 millions de réais (25,9 millions de dollars; 19,5 millions de livres sterling).</p>
+            <span class="english-block">Flávio Bolsonaro acknowledged that he'd asked Vorcaro to bankroll a biopic about his father after voice recordings emerged in which he could be heard asking for 134 million reais ($25.9m; £19.5m).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.59" data-end="362.93">
+            <p class="french-block">Lula a également été indirectement touché par le scandale, après que la police a suggéré que Vorcaro avait contacté le juge de la Cour suprême Alexandre de Moraes pour lui demander de l'aide pour éviter l'arrestation.</p>
+            <span class="english-block">Lula was also impacted by the scandal indirectly, after police suggested Vorcaro had reached out to the Supreme Court judge Alexandre de Moraes to ask for help avoiding arrest. Moraes denies any wrongdoing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="362.93" data-end="371.59">
+            <p class="french-block">Moraes n'a pas été nommé par Lula mais est considéré comme son allié, étant donné que Moraes présidait le procès du coup d'État de Jair Bolsonaro.</p>
+            <span class="english-block">Moraes was not appointed by Lula but is seen as his ally, given Moraes presided over Jair Bolsonaro's coup trial.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="371.59" data-end="384.05">
+            <p class="french-block">Le taux d'homicides au Brésil a diminué, mais les crimes de rue tels que les vols de téléphones, qui sont très visibles pour les électeurs, ont augmenté - et la violence et le trafic de drogue sont toujours des problèmes majeurs.</p>
+            <span class="english-block">Crime and insecurity were also top concerns for voters. Brazil's homicide rate has fallen, but street crime such as phone thefts, that are highly visible to voters, have increased - and violence and drug trafficking are still major problems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="384.05" data-end="393.36">
+            <p class="french-block">Flávio Bolsonaro s'est engagé à désigner les gangs brésiliens comme terroristes et à construire des prisons de sécurité maximale similaires à celles du Salvador.</p>
+            <span class="english-block">Flávio Bolsonaro has pledged to designate Brazilian gangs as terrorists and build maximum-security prisons akin to those in El Salvador. His father, during his presidency, loosened gun ownership restrictions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="393.36" data-end="403.78">
+            <p class="french-block">Flavio Bolsonaro, fils de l'ex-président d'extrême droite Jair Bolsonaro, est en tête du président en exercice Luiz Inacio Lula da Silva dans des résultats partiels</p>
+            <span class="english-block">Flavio Bolsonaro, son of the far-right former president Jair Bolsonaro, is leading incumbent Luiz Inacio Lula da Silva in partial results</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.78" data-end="418.03">
+            <p class="french-block">Lula a critiqué la désignation terroriste des gangs brésiliens par les États-Unis, mais a lancé diverses réformes pour lutter contre les réseaux financiers de réseaux de criminalité organisée, améliorer les enquêtes sur les homicides et investir dans les prisons.</p>
+            <span class="english-block">Lula has criticised the US terrorist designation of Brazilian gangs but has launched various reforms to tackle the financial networks of organised crime networks, improve homicide investigations, and invest in prisons.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.03" data-end="425.64">
+            <p class="french-block">L'économie a également été au cœur de cette campagne: le pays a des niveaux élevés de dette personnelle et une croissance ralentie.</p>
+            <span class="english-block">The economy has been central to this campaign, too: the country has high levels of personal debt and slowing growth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="425.64" data-end="440.64">
+            <p class="french-block">Lula a défini son héritage à travers une série de programmes de bien-être social, notamment Bolsa Família, qui paient les familles pour que les enfants restent dans l'éducation et reçoivent des soins de santé tels que les vaccins, ainsi que la construction de plus d'universités.</p>
+            <span class="english-block">Lula has defined his legacy through a series of social welfare programmes, mostly notably Bolsa Família, that pays families to ensure children stay in education and receive healthcare such as vaccines, as well as building more universities. The programmes have been credited with lifting millions of Brazilians out of poverty.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="440.64" data-end="451.82">
+            <p class="french-block">Il a soutenu un investissement accru dans les centres de données et les minéraux de terres rares, dont le Brésil est riche, avec une forte participation de l'État pour s'assurer que le Brésil en bénéficie.</p>
+            <span class="english-block">He has backed more investment in data centres and rare earth minerals, which Brazil is rich in, with strong state involvement to ensure that Brazil benefits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="451.82" data-end="466.49">
+            <p class="french-block">Il a également soutenu l'exploration de forages de pétrole près de la bouche de la rivière Amazonie, qui s'est avérée controversée auprès des écologistes, mais il a un bilan de renforcement des protections environnementales et de réduction du taux de déforestation en Amazonie.</p>
+            <span class="english-block">He has also backed oil drilling exploration near the mouth of the Amazon River, which has proved controversial with environmentalists, but he has a record of tightening environmental protections and reducing the rate of deforestation in the Amazon. Deforestation increased significantly under Jair Bolsonaro's presidency.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="466.49" data-end="476.59">
+            <p class="french-block">Flávio Bolsonaro s'est engagé à réduire le plafond de la dette publique et les dépenses publiques, à réviser la protection sociale et à renforcer le secteur des minéraux essentiels.</p>
+            <span class="english-block">Flávio Bolsonaro has pledged a public debt ceiling and government spending cuts, a revision of social welfare, and to bolster the critical minerals sector.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="476.59" data-end="482.52">
+            <p class="french-block">Ce qu'il faut savoir sur l'élection brésilienne alors que Lula et Flávio Bolsonaro se rencontrent</p>
+            <span class="english-block">What to know about Brazil's election as Lula and Flávio Bolsonaro face off</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="482.52" data-end="487.3">
+            <p class="french-block">Pourquoi le Brésil a-t-il accusé les États-Unis d'ingérence dans les élections ?</p>
+            <span class="english-block">Why has Brazil accused the US of election interference?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="487.3" data-end="492.77">
+            <p class="french-block">Lula, au Brésil, interdit les jeux en ligne avant les élections présidentielles</p>
+            <span class="english-block">Brazil's Lula bans online gambling ahead of presidential election</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="world_article_10.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
