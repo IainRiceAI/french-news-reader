@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Could El Niño mean there are no Atlantic hurricanes this year?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Could El Niño mean there are no Atlantic hurricanes this year?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 02 Oct 2026 23:37:13 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/cwgkvyyg8115o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: For the first time in three decades there has not been a single Atlantic hurricane in September, normally the most active month.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.03" data-end="17.21">
+            <p class="french-block">Pour la première fois depuis plus de 30 ans, aucun ouragan n'est formé dans l'Atlantique tout au long du mois de septembre, qui est normalement le mois le plus actif pour l'activité des ouragans.</p>
+            <span class="english-block">For the first time in more than 30 years, a hurricane has not formed in the Atlantic throughout September - normally the most active month for hurricane activity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="17.21" data-end="24.07">
+            <p class="french-block">Avec seulement deux mois de la saison des ouragans définies, il est de plus en plus probable qu'aucun ouragan ne se développe.</p>
+            <span class="english-block">With just two months left of the defined hurricane season, there is an increasing possibility that no hurricanes will develop at all.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.07" data-end="30.1">
+            <p class="french-block">Cela ferait de la saison des ouragans de l'Atlantique 2026 la seule à ne pas avoir d'ouragan.</p>
+            <span class="english-block">This would make the 2026 Atlantic hurricane season the only one in the satellite era without a hurricane.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.1" data-end="38.95">
+            <p class="french-block">La plus grande raison en est El Niño, qui étouffe traditionnellement l'activité dans l'Atlantique mais qui apporte une saison très active dans l'est du Pacifique Nord.</p>
+            <span class="english-block">The biggest reason for this is El Niño, which traditionally stifles activity in the Atlantic but brings a very active season in the eastern North Pacific.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="38.95" data-end="43.75">
+            <p class="french-block">La saison des ouragans de l'Atlantique devrait être plus calme que d'habitude.</p>
+            <span class="english-block">The Atlantic hurricane season was predicted to be quieter than normal as a result of this.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.75" data-end="52.3">
+            <p class="french-block">Avec une très forte prévision d'El Niño, le Centre national des ouragans des États-Unis a prédit en mai un total de huit à 14 tempêtes nommées.</p>
+            <span class="english-block">With a very strong El Niño forecast, the US National Hurricane Center in May predicted a total of eight to 14 named storms. Of those, three to six were predicted to become hurricanes, with one to three becoming major hurricanes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.3" data-end="58.87">
+            <p class="french-block">Le mois de septembre est généralement le mois le plus actif pour l'activité des tempêtes tropicales et des ouragans.</p>
+            <span class="english-block">September is typically the most active month for tropical storm and hurricane activity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="58.87" data-end="68.98">
+            <p class="french-block">Mais cette année marque la dernière date enregistrée depuis le début de l'ère des satellites (depuis les années 1960), où aucun ouragan n'a été formé dans l'Atlantique Nord.</p>
+            <span class="english-block">But, this year marks the latest date on record since the start of the satellite era (1960s onward) where no hurricane has formed in the North Atlantic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.98" data-end="78.79">
+            <p class="french-block">Bien qu'aucun ouragan ne se soit formé dans l'Atlantique Nord jusqu'à présent cette saison, l'est du Pacifique Nord a été très actif avec des tempêtes supérieures à la moyenne</p>
+            <span class="english-block">While there have been no hurricanes forming in the North Atlantic so far this season, the Eastern North Pacific has been very active with above-average storms</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="78.79" data-end="86.78">
+            <p class="french-block">Cependant, il y avait quatre tempêtes tropicales nommées qui se sont formées en septembre: Edouard, Fay, Gonzalo et Hanna.</p>
+            <span class="english-block">There were, however, four named tropical storms that formed in September: Edouard, Fay, Gonzalo and Hanna.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.78" data-end="91.92">
+            <p class="french-block">Tout le monde, sauf Edouard, est resté dans les eaux ouvertes de l'Atlantique.</p>
+            <span class="english-block">All but Edouard stayed out in the open waters of the Atlantic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="91.92" data-end="100.46">
+            <p class="french-block">Le Centre national des ouragans suggère qu'il n'y a aucun signe d'activité d'une tempête tropicale ou d'un ouragan au moins au cours de la semaine prochaine.</p>
+            <span class="english-block">The National Hurricane Center suggests there is no sign of any tropical storm activity or hurricane over the next week at least.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.46" data-end="115.82">
+            <p class="french-block">Les prévisionnistes de l'Université d'État du Colorado, qui surveillent également l'activité, suggèrent que le fort El Niño perturbera probablement les vents à travers l'Atlantique et "aura probablement pour conséquence une activité inférieure à la normale" au cours des deux prochaines semaines.</p>
+            <span class="english-block">Forecasters at Colorado State University, who also monitor activity, suggest the strong El Niño is likely to disrupt wind patterns across the Atlantic and "likely result in below-normal activity" over the next two-weeks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.82" data-end="124.94">
+            <p class="french-block">Alors que le pic typique de la saison a passé et qu'il est maintenant en baisse jusqu'au 30 novembre, une saison sans un seul ouragan semble de plus en plus possible.</p>
+            <span class="english-block">As the typical peak of the season has passed and is now on a downward trend until 30 November, a season without a single hurricane is looking increasingly possible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="124.94" data-end="141.02">
+            <p class="french-block">Dans la base de données historique des ouragans de l'Atlantique, il n'y a pas eu d'année où un ouragan n'ait pas été enregistré depuis 1914. Cependant, il s'agissait d'une surveillance pré-satellite, il est donc impossible de dire avec certitude qu'aucun ne s'est formé.</p>
+            <span class="english-block">In the historical Atlantic hurricane database,  there has not been a year without a hurricane recorded since 1914. However, this was pre-satellite monitoring so it is impossible to say with certainty that none formed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.02" data-end="149.14">
+            <p class="french-block">Bien qu'El Niño soit le réchauffement naturel du Pacifique tropical, il peut perturber les conditions météorologiques dans le monde entier.</p>
+            <span class="english-block">While El Niño is the natural warming of the tropical Pacific, it can disrupt weather patterns around the globe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="149.14" data-end="159.38">
+            <p class="french-block">Au fur et à mesure que les vents changent pendant un El Niño, les vents supérieurs sur l'Atlantique augmentent et cela conduit à plus de coupures de vent, où le vent change rapidement avec la hauteur.</p>
+            <span class="english-block">As wind patterns shift during an El Niño, upper winds over the Atlantic increase and this leads to more wind shear, where wind changes rapidly with height.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.38" data-end="169.03">
+            <p class="french-block">Des vents forts soufflant à différentes vitesses et directions à des altitudes plus élevées déchirent les orages, les empêchant de se transformer en tempêtes tropicales ou en ouragans.</p>
+            <span class="english-block">Strong winds blowing at different speeds and directions at higher altitudes rip apart thunderstorms, preventing them from growing into tropical storms or hurricanes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.03" data-end="180.24">
+            <p class="french-block">Pendant ce temps, le Pacifique devient généralement plus actif pendant El Niño parce que les températures de surface de la mer ici sont beaucoup plus élevées, combinées à des modèles de vent plus favorables.</p>
+            <span class="english-block">Meanwhile, the Pacific typically becomes more active during El Niño because the sea surface temperatures here are much higher, combined with more favourable wind patterns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.24" data-end="186.22">
+            <p class="french-block">Les eaux plus chaudes donnent aux tempêtes plus d'énergie pour devenir des tempêtes tropicales et des ouragans.</p>
+            <span class="english-block">The warmer waters give storms more energy to grow into tropical storms and hurricanes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="186.22" data-end="200.3">
+            <p class="french-block">Cette année, des records de température ont déjà été brisés dans une région clé du Pacifique central-est, avec des températures quotidiennes de la surface de la mer dépassant désormais le record précédent établi lors de la très forte El Niño de 2015.</p>
+            <span class="english-block">This year, temperature records have already been broken in a key region of the central-eastern Pacific, with daily sea surface temperatures now exceeding the previous record set during the very strong El Niño of 2015.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.3" data-end="207.46">
+            <p class="french-block">Jusqu'à présent, 17 tempêtes ont été nommées dans le bassin, dont neuf ouragans, dont sept ont été majeurs.</p>
+            <span class="english-block">There have so far been 17 named storms in the basin including nine hurricanes, seven of which were major.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="207.46" data-end="217.75">
+            <p class="french-block">En termes d'énergie produite par ces tempêtes - connues sous le nom d'énergie accumulée des cyclones - cette saison est environ deux fois et demie plus active que la normale à ce stade.</p>
+            <span class="english-block">In terms of the amount of energy these storms have produced - known as the Accumulated Cyclone Energy - this season is around two and half times more active than normal at this point.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="217.75" data-end="224.88">
+            <p class="french-block">El Niño devrait continuer à se renforcer, les prévisions suggérant qu'il atteindra son apogée en novembre ou décembre.</p>
+            <span class="english-block">El Niño is predicted to continue to strengthen with forecasts suggesting it will reach its peak in November or December.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="224.88" data-end="230.98">
+            <p class="french-block">Le nouveau record de la saison des ouragans comme "historique" El Niño laisse l'Atlantique effrayant calme</p>
+            <span class="english-block">New hurricane season record as 'historic' El Niño leaves Atlantic eerily quiet</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.98" data-end="236.59">
+            <p class="french-block">Le développement d'El Niño devient le plus fort jamais enregistré des semaines avant le pic attendu</p>
+            <span class="english-block">Developing El Niño becomes strongest on record weeks before expected peak</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="236.59" data-end="241.7">
+            <p class="french-block">Comment un El Niño en développement affectera la saison des ouragans de l'Atlantique</p>
+            <span class="english-block">How a developing El Niño will impact the Atlantic hurricane season</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_24.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
