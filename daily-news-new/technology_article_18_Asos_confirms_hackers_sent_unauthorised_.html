@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asos confirms hackers sent 'unauthorised' notification to app users</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Asos confirms hackers sent 'unauthorised' notification to app users</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 06 Oct 2026 17:50:19 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj62ylzpr6d3o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Asos confirmed an "unauthorised customer notification" was sent out via its app on Tuesday, after users raised alarm.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.33" data-end="18.98">
+            <p class="french-block">Asos dit qu'elle enquête sur des "activités non autorisées" impliquant des plateformes tierces qu'elle utilise après que les clients aient reçu une notification de son application envoyée par des pirates.</p>
+            <span class="english-block">Asos says it is investigating "unauthorised activity" involving third-party platforms it uses after customers received a notification from its app sent by hackers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="18.98" data-end="31.73">
+            <p class="french-block">Des dizaines de personnes ont déclaré à la BBC qu'elles avaient reçu le message "ASOS HACKED" de l'application de l'établissement de vêtements et de beauté mardi matin - certains disant qu'il les avait laissés "effrayés" d'ouvrir l'application.</p>
+            <span class="english-block">Dozens of people told the BBC they received the strange "ASOS HACKED" message from the clothing and beauty store's app on Tuesday morning - with some saying it left them "scared" to open the app.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.73" data-end="43.54">
+            <p class="french-block">La notification a été adressée à l'agent de protection des données de la société et aux équipes informatiques dans ce que les experts en cybersécurité ont déclaré ressembler à une tentative d'extorsion "brazen".</p>
+            <span class="english-block">The notification was addressed to the company's data protection officer and IT teams in what cyber security experts said looked like a "brazen" extortion attempt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.54" data-end="53.52">
+            <p class="french-block">Asos a reconnu la " notification non autorisée du client " mardi après-midi, affirmant que certaines " informations personnelles de base " pourraient avoir été consultées.</p>
+            <span class="english-block">Asos acknowledged the "unauthorised customer notification" on Tuesday afternoon, saying some "basic personal information" may have been accessed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="53.52" data-end="71.54">
+            <p class="french-block">Dans un courriel adressé aux clients mardi soir, la société s'est excusée et a exhorté les clients à ne pas s'engager dans la notification. Et il a déclaré que le site Web et l'application " fonctionnent comme d'habitude " promettant aux clients qu'ils pourraient " faire leurs achats avec confiance " pendant qu'elle enquêterait sur l'incident.</p>
+            <span class="english-block">In an email to customers on Tuesday night, the company apologised and urged customers not to engage with the notification. And it said the website and app are "operating as usual" promising customers they can "shop with confidence" while it investigates the incident.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.54" data-end="81.07">
+            <p class="french-block">La société n'a pas encore informé l'organisme de surveillance des données du Royaume-Uni, le Bureau de la Commission de l'information (ICO), de toute violation.</p>
+            <span class="english-block">The company has not as of yet informed the UK's data watchdog, the Information Commission's Office (ICO), about any breach.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="81.07" data-end="92.5">
+            <p class="french-block">On ne sait pas exactement combien de clients d'Asos ont reçu la notification mardi, mais le Play Store de Google dit que l'application ASOS a été téléchargée sur les appareils Android plus de 10 millions de fois.</p>
+            <span class="english-block">Exactly how many Asos customers received the notification on Tuesday remains unclear, but Google's Play store says the ASOS app has been downloaded to android devices more than 10 million times.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.5" data-end="101.16">
+            <p class="french-block">Le détaillant britannique a une présence mondiale considérable - il dessert environ 17 millions de clients chaque année sur plus de 150 marchés.</p>
+            <span class="english-block">The British retailer has a substantial global footprint - serving around 17 million customers each year across more than 150 markets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="101.16" data-end="111.82">
+            <p class="french-block">Certains utilisateurs de l'application Asos en Australie, en France, en Suède et en République d'Irlande ont également reçu la notification, selon des rapports locaux mardi.</p>
+            <span class="english-block">Some Asos app users in Australia, France, Sweden and the Republic of Ireland had also received the notification, according to local reports on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="111.82" data-end="125.83">
+            <p class="french-block">Les pirates informatiques qui cherchent à faire pression sur les victimes potentielles en informant leurs clients est rare, car la plupart des extorsions se produisent en privé, donc cet incident peut être considéré comme un moment important dans l'histoire des cyberattaques.</p>
+            <span class="english-block">Hackers seeking to pile pressure on potential victims by informing their customers is rare, as most extortions happen in private, so this incident may go down as a significant moment in cyber-attack history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.83" data-end="130.18">
+            <p class="french-block">Les actions de la société ont chuté de près de la dixième le mardi.</p>
+            <span class="english-block">Shares in the company fell by around a tenth on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.18" data-end="143.78">
+            <p class="french-block">Charlotte Wilson, chef d'entreprise de la firme de cybersécurité Check Point, a qualifié cette attaque de " très grave " et " décourageante " par laquelle les pirates avaient apparemment " transformé l'application Asos en leur note de rançon ".</p>
+            <span class="english-block">Charlotte Wilson, head of enterprise at cyber-security firm Check Point, called it a "deeply serious" and "brazen" attack whereby the hackers had apparently "turned Asos' own app into their ransom note".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="143.78" data-end="158.86">
+            <p class="french-block">Mais elle a dit à la BBC que les clients d'Asos ne devraient pas être " effrayés et effrayés " - en encourageant ceux qui sont inquiets à changer leurs mots de passe, à éviter de cliquer sur le lien de la notification et à être prudents face à d'éventuels courriels ou messages texte frauduleux.</p>
+            <span class="english-block">But she told the BBC that Asos customers should not be "scared and frightened" - encouraging those worried to change their passwords, avoid clicking on the notification's link and be cautious about possible scam emails or texts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.86" data-end="163.01">
+            <p class="french-block">Que puis-je faire pour me protéger après le message "Asos piraté"?</p>
+            <span class="english-block">What can I do to protect myself after 'Asos hacked' message?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.01" data-end="169.42">
+            <p class="french-block">Le message est apparu sur les écrans d'accueil de nombreux utilisateurs de l'application Asos mardi matin</p>
+            <span class="english-block">The message popped up on many Asos app users' home screens on Tuesday morning</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.42" data-end="176.76">
+            <p class="french-block">Les utilisateurs de l'application Asos ont apparemment reçu la notification alarmante vers 10h00 BST mardi.</p>
+            <span class="english-block">Users of the Asos app appeared to have received the alarming notification at around 10:00 BST on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.76" data-end="188.16">
+            <p class="french-block">Titré "ASOS HACKED" et adressé au responsable de la protection des données de la société et aux équipes informatiques, il a déclaré: "Nous avons complètement compromis l'instance Snowflake".</p>
+            <span class="english-block">Headlined "ASOS HACKED" and addressed to the company's data protection officer and IT teams, it said: "We have fully compromised the Snowflake instance."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.16" data-end="195.41">
+            <p class="french-block">"Mettez-vous avec nous, ou nous allons le divulguer", a-t-il ajouté, avant de se connecter à une chaîne Telegram.</p>
+            <span class="english-block">"Engage with us, or we will leak it," it added, before linking to a Telegram channel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.41" data-end="199.2">
+            <p class="french-block">Le message a laissé de nombreux clients d'ASOS confus.</p>
+            <span class="english-block">The message left many ASOS  customers confused.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.2" data-end="211.49">
+            <p class="french-block">"Au début, je pensais que c'était une annonce ou une promotion amusante comme 'ASOS HACKED obtient 50% de réduction sur tout pour un temps limité seulement', a déclaré à la BBC Jodie, analyste d'Édimbourg.</p>
+            <span class="english-block">"At first I thought it was an ad or a fun promotion like 'ASOS HACKED get 50% off everything for a limited time only'," Jodie, an analyst from Edinburgh, told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.49" data-end="218.5">
+            <p class="french-block">"J'ai lu le reste du message qui montrait clairement que ce n'était pas une annonce, mais plutôt un message à l'informatique".</p>
+            <span class="english-block">"Then I read the rest of the message which clearly showed that it wasn't an ad and instead a message to IT."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="218.5" data-end="229.1">
+            <p class="french-block">Les préoccupations de Jodie sur ce que l'incident d'Asos pourrait signifier pour les données qu'elle a partagées avec la plateforme, comme son adresse, sont partagées par d'autres utilisateurs</p>
+            <span class="english-block">Jodie's concerns about what the Asos incident might mean for data she has shared with the platform, like her address, are shared by other users</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.1" data-end="242.06">
+            <p class="french-block">"Ma principale préoccupation est que mes renseignements, tels que mes renseignements bancaires, mon adresse, mon numéro de téléphone, aient été compromis", a déclaré Erin, étudiante à l'université de Sheffield.</p>
+            <span class="english-block">"My main concern is that my information, such as bank information, home address, telephone number, has been compromised," said Erin, a student at the University of Sheffield.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.06" data-end="252.94">
+            <p class="french-block">Elle a déclaré à la BBC que si ses amis ont exprimé des préoccupations similaires au sujet d'une fuite de données potentielle, sa sœur n'a pas reçu la notification sur l'application Asos.</p>
+            <span class="english-block">She told the BBC that while her friends have expressed similar concerns about a potential data leak, her sister did not receive the notification on the Asos app.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="252.94" data-end="260.71">
+            <p class="french-block">"La question est donc de savoir dans quelle mesure? Tous les clients sont-ils touchés même s'ils n'ont pas reçu la notification?</p>
+            <span class="english-block">"So the question is what is the extent? Are all customers affected even if they didn't get the notification? It's poor from Asos on all fronts."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.71" data-end="275.62">
+            <p class="french-block">Asos a déclaré dans sa déclaration qu'elle avait pris "des mesures immédiates pour restreindre l'accès aux plateformes de notification" mardi - ajoutant qu'elle travaillait avec des spécialistes à l'intérieur et à l'extérieur de l'entreprise, ainsi que des autorités compétentes.</p>
+            <span class="english-block">Asos said in its statement that it took "immediate action to restrict access to the notification platforms" on Tuesday - adding it was working with specialists within and outside the company, as well as relevant authorities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.62" data-end="285.17">
+            <p class="french-block">Il a déclaré qu'il ne croyait pas que les informations de carte de paiement ou les mots de passe de son compte aient été affectés et que son site et son application " fonctionnaient normalement ".</p>
+            <span class="english-block">It said it does not believe payment-card information or account passwords were impacted, and that its site and app are "operating as normal".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.17" data-end="294.07">
+            <p class="french-block">"La confiance des clients est extrêmement importante pour nous et si la situation change, une mise à jour sera fournie au besoin", a-t-il déclaré.</p>
+            <span class="english-block">"Customer trust is incredibly important to us, and if the situation changes an update will be provided as appropriate," it said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.07" data-end="300.0">
+            <p class="french-block">La BBC sait que le Centre national de cybersécurité a offert une assistance à Asos.</p>
+            <span class="english-block">The BBC understands the National Cyber Security Centre has offered assistance to Asos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="315.1">
+            <p class="french-block">Pendant ce temps, Snowflake - dont les outils sont utilisés par des dizaines d'entreprises pour collecter, analyser et stocker des données - a déclaré à la BBC que son enquête était en cours, mais qu'il n'avait jusqu'à présent trouvé "aucun compromis" avec sa plateforme.</p>
+            <span class="english-block">Meanwhile Snowflake - whose tools are used by dozens of firms to collect, analyse and store data - told the BBC its investigation was ongoing, but it had so far found "no compromise" of its platform.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.1" data-end="321.67">
+            <p class="french-block">Les services de la société ont toutefois fait l'objet de nombreuses violations de données de haut niveau ces dernières années.</p>
+            <span class="english-block">The company's services have, however, been the subject of many high profile data breaches in recent years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.67" data-end="327.26">
+            <p class="french-block">Snowflake a déjà été lié à des cyberincidents ciblant Ticketmaster et Santander.</p>
+            <span class="english-block">Snowflake has previously been linked to cyber incidents targeting Ticketmaster and Santander.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.26" data-end="340.25">
+            <p class="french-block">Selon l'expert en cybersécurité Jen Ellis, Snowflake recueille des données de multiples sources pour l'analyse, et une entreprise " énorme " comme Asos aura beaucoup de données sur la façon dont les gens font leurs achats dans le monde entier.</p>
+            <span class="english-block">According to cybersecurity expert Jen Ellis, Snowflake collects data from multiple sources for analysis, and an "enormous" firm like Asos will have lots of data about how people shop globally.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.25" data-end="351.05">
+            <p class="french-block">Cependant, Dan Bird, de la firme de cybersécurité Horizon3, a déclaré que le message impliquait que l'accès des pirates apparemment avait dépassé la base de données Snowflake.</p>
+            <span class="english-block">However Dan Bird, from cybersecurity firm Horizon3, said the message implied the apparent hackers' access had gone beyond the Snowflake database.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="351.05" data-end="365.3">
+            <p class="french-block">"Envoyer une notification push aux utilisateurs de l'application Asos nécessiterait un accès au système de notification de la société, qui est séparé de la plateforme de données Snowflake que les attaquants prétendent avoir compromise", a-t-il déclaré.</p>
+            <span class="english-block">"Sending a push notification to Asos's app users would require access to the company's notification system, which is separate from the Snowflake data platform the attackers claim to have compromised," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.3" data-end="373.61">
+            <p class="french-block">"Si les deux affirmations sont vraies, cela suggère que les assaillants ont obtenu des informations de crédibilité qui ont ouvert plus d'une porte".</p>
+            <span class="english-block">"If both claims hold up, it suggests the attackers got hold of credentials that opened more than one door."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="373.61" data-end="383.16">
+            <p class="french-block">La société a également publié un communiqué, en dehors du Service de presse réglementaire de la Bourse de Londres, qui fournit des mises à jour aux investisseurs.</p>
+            <span class="english-block">The company has also shared a statement, external to the London Stock Exchange's Regulatory News Service, which provides updates to investors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="383.16" data-end="395.45">
+            <p class="french-block">Des experts en cybersécurité, dont Ellis, ont dit à la BBC que ceux qui sont derrière cet incident essaient probablement de " exercer une pression " sur Asos pour répondre à leurs demandes, plutôt que de cibler ses clients.</p>
+            <span class="english-block">Cybersecurity experts, including Ellis, have told the BBC those behind those behind this incident are most likely trying to "apply pressure" to Asos to meet their demands, rather than target its customers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="395.45" data-end="404.88">
+            <p class="french-block">Bien que ceux qui ont reçu cette notification soient sans aucun doute préoccupés, il est important de savoir que cela ne signifie pas que votre téléphone a été piraté.</p>
+            <span class="english-block">While those who received this notification will undoubtedly be concerned, it is  important to know that it does not mean your phone has been hacked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="404.88" data-end="412.73">
+            <p class="french-block">Nous attendons encore de savoir exactement quelles "informations personnelles de base" ont pu être affectées dans cet incident, le cas échéant.</p>
+            <span class="english-block">We are still waiting to find out exactly what "basic personal information" may have been impacted in this incident, if any.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="412.73" data-end="415.58">
+            <p class="french-block">Mais pour l'instant, le conseil est:</p>
+            <span class="english-block">But for now, the advice is:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="415.58" data-end="418.9">
+            <p class="french-block">Ne cliquez pas sur les liens de la notification</p>
+            <span class="english-block">Do not click on links in the notification</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="418.9" data-end="423.36">
+            <p class="french-block">Visitez directement le site officiel d'Asos pour les mises à jour</p>
+            <span class="english-block">Visit Asos's official website directly for updates</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="423.36" data-end="435.38">
+            <p class="french-block">Attention aux courriels, aux textos ou aux appels proposant des remboursements, des indemnisations ou de l'aide avec votre compte - les escrocs exploiteront ce type d'incident lorsqu'ils sauront que les gens sont inquiets</p>
+            <span class="english-block">Watch out for emails, texts or calls offering refunds, compensation or help with your account - scammers will exploit this type of incident when they know people are worried</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="435.38" data-end="439.63">
+            <p class="french-block">Essayez d'utiliser différents mots de passe pour vos services en ligne</p>
+            <span class="english-block">Try and use different passwords for your online services</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="439.63" data-end="444.74">
+            <p class="french-block">Activer la vérification en deux étapes sur les comptes bancaires et de messagerie</p>
+            <span class="english-block">Enable two-step verification on email and banking accounts</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="444.74" data-end="449.42">
+            <p class="french-block">Gardez un œil sur vos transactions en ligne pour tout ce qui est inhabituel</p>
+            <span class="english-block">Keep an eye on your online transactions for anything unusual</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="449.42" data-end="452.3">
+            <p class="french-block">Vous avez été affecté par ce hack ?</p>
+            <span class="english-block">Have you been affected by this hack?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="452.3" data-end="456.72">
+            <p class="french-block">Pourquoi l'épuisement est un problème croissant dans la cybersécurité</p>
+            <span class="english-block">Why burnout is a growing problem in cyber-security</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_18.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

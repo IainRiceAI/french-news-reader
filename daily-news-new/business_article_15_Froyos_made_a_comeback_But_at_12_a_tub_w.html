@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froyo's made a comeback. But at £12 a tub will it last?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Froyo's made a comeback. But at £12 a tub will it last?</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 06 Oct 2026 23:01:31 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cxly57v78yv7o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Frozen yoghurt, which was a huge craze in the 2000s and 2010s, has made its return with multiple chains popping up across the wider UK.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.61" data-end="13.22">
+            <p class="french-block">Froyo a fait un retour avec plusieurs magasins ouverts à travers le Royaume-Uni cette année</p>
+            <span class="english-block">Froyo has made a return with several stores opening across the UK this year</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.22" data-end="20.45">
+            <p class="french-block">Kiersten Paterno était l'une des nombreuses personnes disposées à faire la queue pendant une heure pour se servir du yaourt surgelé.</p>
+            <span class="english-block">Kiersten Paterno was one of the many people willing to queue up to an hour to treat herself to some frozen yoghurt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.45" data-end="31.99">
+            <p class="french-block">"J'ai attendu 45 minutes pour mon tour, mais l'expérience de choisir vos saveurs et de les personnaliser avec des couleurs différentes a été une grande partie de l'attrait pour moi", dit l'étudiante de 19 ans.</p>
+            <span class="english-block">"It was a 45-minute wait for my turn but the whole experience of choosing your flavours and customising it with different toppings was a big part of the appeal for me," the 19-year-old student says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="31.99" data-end="39.72">
+            <p class="french-block">Froyo était une tendance énorme au Royaume-Uni à la fin des années 2000 et au début des années 2010 et était la plus populaire à Londres.</p>
+            <span class="english-block">Froyo was a huge trend in the UK in the late 2000s and early 2010s and was most popular in London.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="39.72" data-end="48.02">
+            <p class="french-block">Des chaînes comme Snog avaient 10 magasins dans la capitale à son apogée et d'autres marques comme AngelBerry avaient des magasins à Bristol et Brighton.</p>
+            <span class="english-block">Chains like Snog had 10 stores in the capital at its peak and other brands like AngelBerry had shops in Bristol and Brighton.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="48.02" data-end="55.92">
+            <p class="french-block">Et cette année, il est revenu, motivé par la nostalgie, les médias sociaux et sa perception comme un choix de dessert plus sain.</p>
+            <span class="english-block">And this year it's made a comeback, driven by nostalgia, social media and its perception as a healthier dessert choice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.92" data-end="68.98">
+            <p class="french-block">Plusieurs marques telles que Go Greek, Myka et Yo-Chi ont été lancées à Londres, tandis que Frurt, qui opère principalement dans le nord-ouest de l'Angleterre et Yorkshire, a ouvert de nouveaux magasins, dont un à Leicester.</p>
+            <span class="english-block">Several brands such as Go Greek, Myka and Yo-Chi launched in London, while Frurt, which operates mainly in the north west of England and Yorkshire, has opened new stores, including one in Leicester.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="68.98" data-end="80.83">
+            <p class="french-block">Ces entreprises ont vu des centaines de clients faire la queue pour créer leur propre pot à dessert, même si ce n'était pas une friandise particulièrement bon marché, avec des baignoires coûtant jusqu'à 12 livres sterling.</p>
+            <span class="english-block">These companies saw hundreds of customers queueing to create their own dessert pot, despite it not being a particularly cheap treat, with tubs costing as much as £12.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.83" data-end="86.88">
+            <p class="french-block">Kiersten Paterno, 19 ans, apprécie le froyo car il est nostalgique et peut être sain</p>
+            <span class="english-block">Kiersten Paterno, 19, values froyo as it's nostalgic and can be healthy</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="86.88" data-end="93.82">
+            <p class="french-block">Kiersten dit qu'elle a été attirée par le dessert, car elle pouvait gérer la taille de la portion et le niveau de douceur.</p>
+            <span class="english-block">Kiersten says she was initially attracted to the dessert as she could manage portion size and sweetness level.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="93.82" data-end="103.61">
+            <p class="french-block">"Je pouvais contrôler la douceur de mes goûts à travers les topping, mais je me sentais plus en bonne santé, car c'est un dessert que je peux apprécier sans me sentir trop excité".</p>
+            <span class="english-block">"I could control how sweet I wanted it to be through the toppings. It feels healthier overall as it's a dessert I can enjoy without feeling like I've overindulged."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.61" data-end="110.26">
+            <p class="french-block">Elle admet que ça peut être coûteux mais elle dit qu'elle ne se soucie pas de dépenser un peu plus pour une friandise occasionnelle.</p>
+            <span class="english-block">She admits it can be pricey but says she doesn't mind spending a little more as an occasional treat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.26" data-end="115.68">
+            <p class="french-block">Les études suggèrent que le marché du yaourt surgelé est en constante croissance.</p>
+            <span class="english-block">Research suggests the froyo market is steadily growing. Market Data Forecast estimates that the European frozen yoghurt market is worth £434m in 2026, up from £419m last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.68" data-end="125.59">
+            <p class="french-block">La marque australienne Yo-Chi a ouvert une succursale à Notting Hill en août et a explosé rapidement sur les réseaux sociaux pour sa gamme de topping et son sentiment de "troisième espace".</p>
+            <span class="english-block">Australian brand Yo-Chi opened a Notting Hill branch in August and blew up quickly on social media for its range of toppings and "third space" feel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.59" data-end="138.07">
+            <p class="french-block">" La culture des friandises est énorme. Les gens ne dépensent pas une fortune pour de grandes choses, mais ils sont heureux de faire une petite chose comme ça ", dit Bethan Clarke, responsable de campagne Yo-Chi.</p>
+            <span class="english-block">"Sweet treat culture is huge. People aren't spending a fortune on big things, but a little thing like that, they're happy to," says Bethan Clarke, Yo-Chi campaign manager.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.07" data-end="142.56">
+            <p class="french-block">Il y avait de longues files d'attente devant Yo-Chi le jour de son lancement.</p>
+            <span class="english-block">There were long queues outside Yo-Chi on its launch day</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.56" data-end="159.91">
+            <p class="french-block">Bien que Yo-Chi ne se dise " jamais en bonne santé " - le froyo contient généralement moins de calories et de graisses que la crème glacée, mais peut également contenir plus de sucre ajouté - Clarke dit que le fait qu'il soit personnalisable signifie que les gens ont le contrôle de leur propre taille de portion et de leur propre taux de sucre.</p>
+            <span class="english-block">While Yo-Chi would "never call ourselves healthy" - froyo is usually lower in calories and fat than ice cream, but may also contain more added sugar - Clarke says the fact that it is customisable means that people are in control of their own portion sizes and sugar levels.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="159.91" data-end="166.42">
+            <p class="french-block">Les tendances des médias sociaux comme "2026 est le nouveau 2016" aident à la viralité de Froyo.</p>
+            <span class="english-block">Social media trends like "2026 is the new 2016" are helping froyo's virality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.42" data-end="170.47">
+            <p class="french-block">"Les gens reviennent un peu à la petite enfance", dit Clarke.</p>
+            <span class="english-block">"People are coming back to re-experience childhood a little bit," says Clarke.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.47" data-end="177.65">
+            <p class="french-block">Ella Light, qui travaille aussi pour Yo-Chi, dit qu'elle a été surprise par le mélange de gens qui entrent dans le magasin.</p>
+            <span class="english-block">Ella Light, who also works for Yo-Chi, says she's been surprised by the mix of people coming into the store.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="177.65" data-end="184.73">
+            <p class="french-block">"Je m'attendais à voir les filles de la génération Z arriver, [mais] ce matin, il y avait un groupe de constructeurs!"</p>
+            <span class="english-block">"I was kind of expecting to see the Gen Z girlies coming in, [but] this morning there was a group of builders!"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.73" data-end="188.76">
+            <p class="french-block">Snog était le grand nom de la froyo dans les années 2010.</p>
+            <span class="english-block">Snog was the big name in froyo in the 2010s</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="188.76" data-end="199.01">
+            <p class="french-block">Mais quelle est la probabilité que la folie froyo actuelle survie ? Après tout, elle était énorme dans les années 2010 mais à la fin de cette décennie était presque morte.</p>
+            <span class="english-block">But how likely is the current froyo craze to survive? After all, it was huge in the 2010s but by the end of that decade was all but dead.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="199.01" data-end="211.3">
+            <p class="french-block">Vhari Russell, fondateur de Food Marketing Experts, déclare: " La sur saturation du marché a contribué à la disparition initiale du froyo, ainsi qu'au cycle naturel des tendances mourantes. "</p>
+            <span class="english-block">Vhari Russell, founder of Food Marketing Experts, says: "Market over-saturation played a role in the initial disappearance of froyo, as well as the natural cycle of dying trends."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.3" data-end="224.59">
+            <p class="french-block">Le leader du marché Snog a fait face à une concurrence croissante de la part de groupes comme Yog, Yoomoo et Pinkberry, tandis que les consommateurs ont également réalisé que le dessert n'était peut-être pas l'option la plus saine qu'ils pensaient initialement.</p>
+            <span class="english-block">Market leader Snog faced increasing competition from the likes of Yog, Yoomoo and Pinkberry, while consumers also realised that the dessert may not have been the healthier option they initially thought it was.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="224.59" data-end="232.78">
+            <p class="french-block">"Mais maintenant, les remises en arrière des années 2010 et une reprise moderne sont très appréciées sur le marché", explique Russell.</p>
+            <span class="english-block">"But now 2010s throwbacks coupled with a modern twist are seeing huge appetite across the market," says Russell.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.78" data-end="237.43">
+            <p class="french-block">Les 12 livres pour une baignoire vont-ils finir par décourager les gens ?</p>
+            <span class="english-block">Will £12 for a tub eventually start to put people off though?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="237.43" data-end="241.73">
+            <p class="french-block">Russell ne le croit pas, comme elle l'appelle un " luxe abordable ".</p>
+            <span class="english-block">Russell doesn't believe so, as she calls it an "affordable luxury".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="241.73" data-end="246.86">
+            <p class="french-block">Elle ajoute que sortir pour un frisson peut être "un moment d'expérience" autant que tout.</p>
+            <span class="english-block">Going out for a froyo can be "an experiential moment" as much as anything, she adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="246.86" data-end="255.82">
+            <p class="french-block">" Pour beaucoup de gens, ils ne fument pas ou n'ont pas de mode de vie coûteux, donc le froyo n'est pas considéré comme de la nourriture, mais comme une expérience. "</p>
+            <span class="english-block">"For many people, they don't smoke or have expensive lifestyles, so froyo isn't viewed as food, it's viewed as an experience."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.82" data-end="266.86">
+            <p class="french-block">Si le prix du froyo semble déraisonnable ou si vous ne pouvez pas justifier de faire la queue pendant des heures, BBC Food propose cinq variantes différentes de froyo que vous pouvez faire à la maison.</p>
+            <span class="english-block">If the price of froyo seems unreasonable or if you can’t justify queueing for hours, BBC Food have five different froyo variations you can make at home.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_15.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
