@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry says he 'slipped into depression' after leaving UK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>Harry says he 'slipped into depression' after leaving UK</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 08 Oct 2026 18:55:41 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c623dv9n93evo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The Duke of Sussex says he had an "adrenaline crash" while visiting Vancouver Island to "get some space".
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.6" data-end="14.26">
+            <p class="french-block">Le duc de Sussex s'est installé temporairement au Canada avec sa femme, la duchesse de Sussex, en 2019</p>
+            <span class="english-block">The Duke of Sussex moved to Canada temporarily with his wife, the Duchess of Sussex, in 2019</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.26" data-end="24.34">
+            <p class="french-block">Le duc de Sussex a déclaré qu'il "est tombé dans la dépression pendant environ deux semaines" après avoir déménagé au Canada en 2019 avant de déménager aux États-Unis.</p>
+            <span class="english-block">The Duke of Sussex has said he "slipped into depression for about two weeks" after relocating to Canada in 2019 ahead of his move to the US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="24.34" data-end="34.13">
+            <p class="french-block">Le prince Harry, récemment revenu au Royaume-Uni avec sa femme Meghan et leurs deux enfants, a déclaré qu'il avait initialement quitté le pays pour " trouver un peu d'espace ".</p>
+            <span class="english-block">Prince Harry, who recently returned to the UK with his wife Meghan and their two children, said he had originally left the country to "get some space."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.13" data-end="46.13">
+            <p class="french-block">Le duc a également parlé de se sentir "démorré émotionnellement" après la mort de sa mère Diana, princesse de Galles, parce qu'il se sentait "infidèle et coupable de la possibilité d'être heureux et joyeux sans elle".</p>
+            <span class="english-block">The duke also discussed feeling "emotionally numb" after the death of his mother Diana, Princess of Wales, because he felt "disloyal and guilty for the possibility of being happy and joyful without her".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="46.13" data-end="52.85">
+            <p class="french-block">Il a parlé de sa santé mentale à un neuroscientifique lors d'une session pour une plateforme d'apprentissage vidéo.</p>
+            <span class="english-block">He opened up about his mental health with a neuroscientist in a session for a video learning platform.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="52.85" data-end="64.94">
+            <p class="french-block">Lui et son frère, le Prince de Galles, ont déjà été francs sur leurs luttes pour la santé mentale, y compris sur la mort de leur mère, et ils sont tous les deux impliqués dans des organismes de bienfaisance de santé mentale.</p>
+            <span class="english-block">He and his brother, the Prince of Wales, have previously been candid about their mental health struggles, including over their mother's death, and both are involved in mental health charities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="64.94" data-end="75.07">
+            <p class="french-block">Le prince Harry, qui a quitté ses fonctions royales pour s'installer en Californie avec Meghan, a fait ces derniers commentaires dans le cadre d'un cours en ligne sur la gestion du deuil.</p>
+            <span class="english-block">Prince Harry, who stepped back from royal duties to move to California with Meghan, made the latest comments as part of a paid-for online masterclass on dealing with grief.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.07" data-end="88.08">
+            <p class="french-block">"En Canada, loin de l'environnement stressant où mon corps était probablement rempli d'adrénaline, en deux ou trois jours, j'ai connu un accident d'adrénaline, quelque chose que je n'avais jamais connu auparavant", se souvient- il.</p>
+            <span class="english-block">"Being in Canada, away from the stressful environment where presumably my body was just pumped full of adrenaline, within two or three days, I experienced this adrenaline crash, something that I'd never experienced before," he recalled.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.08" data-end="95.93">
+            <p class="french-block">" C'était comme si j'avais besoin de stress pour obtenir de l'adrénaline pour faire fonctionner mon cerveau, car je devenais inutile à la maison.</p>
+            <span class="english-block">"It was as if I needed stress in order to get the adrenaline to make my brain function because I became useless around the house.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.93" data-end="103.15">
+            <p class="french-block">"J'ai en fait glissé dans la dépression pendant environ deux semaines et j'ai eu l'impression de ne pas pouvoir fonctionner sans l'adrénaline".</p>
+            <span class="english-block">"I actually slipped into depression for about two weeks and I felt like I couldn't function without adrenaline."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.15" data-end="108.86">
+            <p class="french-block">Le prince Harry dit que c'est "super" de revenir en Grande-Bretagne après six ans aux États-Unis</p>
+            <span class="english-block">Prince Harry says it is 'great' to be back in Britain after six years in US</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.86" data-end="113.38">
+            <p class="french-block">Le retour de Harry va-t-il guérir une rupture profonde avec William ?</p>
+            <span class="english-block">Will Harry's return heal deep-rooted rift with William?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="113.38" data-end="126.82">
+            <p class="french-block">Il a annoncé avec sa femme, le mois dernier, qu'ils retourneraient au Royaume-Uni avec leurs enfants, le prince Archie, âgé de sept ans, et la princesse Lilibet, âgé de cinq ans, après avoir passé six ans aux États-Unis.</p>
+            <span class="english-block">He and his wife unexpectedly announced last month that they were returning to the UK with their children Prince Archie, seven, and Princess Lilibet, five, after spending six years in the US. They are now thought to be living in the Cotswolds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="126.82" data-end="135.17">
+            <p class="french-block">Dans la vidéo, le prince Harry a également révélé qu'il avait une règle selon laquelle il ne serait jamais loin de sa famille pendant plus de 10 jours.</p>
+            <span class="english-block">In the video, Prince Harry also revealed that he had a rule that he would never be away from his family for more than 10 days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.17" data-end="141.74">
+            <p class="french-block">Il a parlé de la difficulté à gérer son chagrin dans les années qui ont suivi la mort de sa mère quand il avait 12 ans.</p>
+            <span class="english-block">He talked about struggling to process his grief in the years after the death of his mother when he was 12.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.74" data-end="153.94">
+            <p class="french-block">"À l'âge de 20 ans, je suis allé à la guerre deux fois en pensant pouvoir me dépasser", a dit le duc, se référant à ses séjours en Afghanistan en tant que membre de l'armée. " Mais ce n'est pas ce qui s'est passé.</p>
+            <span class="english-block">"In my 20s, I went to war twice thinking I could outrun my feelings," the duke said, referring to his stints in Afghanistan as a member of the Army. "But that's not what happened.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.94" data-end="163.1">
+            <p class="french-block">"J'avais passé tant de temps émotionnellement engourdie, en grande partie parce que je me sentais infidèle et coupable de la possibilité d'être heureuse et joyeuse sans elle.</p>
+            <span class="english-block">"I'd spent so long emotionally numb, to a large extent, because I felt disloyal and guilty for the possibility of being happy and joyful without her.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="163.1" data-end="169.1">
+            <p class="french-block">"J'avais l'impression d'être triste et d'être émotionnellement engourdi pour lui prouver que je me sentais à lui".</p>
+            <span class="english-block">"I felt like I had to be sad and I had to be emotionally numb in order to prove to her that I missed her."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.1" data-end="176.47">
+            <p class="french-block">Le prince Harry a dit qu'il a eu du mal à traiter son chagrin pendant des années après la mort de sa mère Diana, princesse de Galles.</p>
+            <span class="english-block">Prince Harry said he struggled to process his grief for years after the death of his mother Diana, Princess of Wales</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="176.47" data-end="184.92">
+            <p class="french-block">Le prince Harry a dit dans la discussion qu'après avoir pleuré aux funérailles de Diana, il n'a pas pleuré pendant près de deux décennies, selon les médias.</p>
+            <span class="english-block">Prince Harry said in the discussion that after crying at Diana's funeral, he did not cry for nearly two decades, according to news outlets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="184.92" data-end="195.46">
+            <p class="french-block">Il a dit que c'était un thérapeute qui lui avait suggéré de lui pulvériser son parfum pour "débloquer tout", ajoutant que cela lui avait permis de découvrir que "elle voulait juste que je sois heureux".</p>
+            <span class="english-block">He said it was a therapist who suggested he spray her perfume to "unlock everything", adding that this allowed him to discover that "she just wanted me to be happy".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.46" data-end="208.92">
+            <p class="french-block">Mary-Frances O'Connor, neuroscientifique et professeur à l'Université de l'Arizona, qui a également participé à la formation en ligne, a expliqué: " Votre cerveau ne reconnaît pas que votre proche est mort, mais qu'il l'a perdu.</p>
+            <span class="english-block">Mary-Frances O'Connor, a neuroscientist and University of Arizona professor who also featured in the online class, explained: "Your brain doesn't register your loved one as gone - it registers them as lost.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.92" data-end="213.34">
+            <p class="french-block">"Et il continuera à chercher jusqu'à ce que vous lui appreniez le contraire.</p>
+            <span class="english-block">"And it will keep searching until you teach it otherwise. We still expect that they're going to walk through the door."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="213.34" data-end="221.9">
+            <p class="french-block">MasterClass a demandé à Harry de participer à l'émission l'année dernière et elle a été filmée en Californie pendant l'été, selon le magazine People.</p>
+            <span class="english-block">MasterClass approached Harry about appearing in the programme last year and it was filmed in California over the summer, according to People magazine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.9" data-end="225.05">
+            <p class="french-block">Interview de Harry "à l'exemple de Diana"</p>
+            <span class="english-block">Harry interview 'following Diana's example'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.05" data-end="228.58">
+            <p class="french-block">William révèle les pressions sur la santé mentale</p>
+            <span class="english-block">William reveals mental health pressures</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.58" data-end="233.3">
+            <p class="french-block">William: La parentalité a "récupéré les souvenirs de Diana"</p>
+            <span class="english-block">William: Parenthood 'resurfaced Diana memories'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="233.3" data-end="237.79">
+            <p class="french-block">Catherine rejoint William et dit que le sport peut sauver des vies du suicide.</p>
+            <span class="english-block">Catherine joins William as he says sport can save lives from suicide</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="health_article_27.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
