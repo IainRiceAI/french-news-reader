@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screams, haunting scenes and deadly hide-and-seek, as Celebrity Traitors heats up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Screams, haunting scenes and deadly hide-and-seek, as Celebrity Traitors heats up</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 09 Oct 2026 22:51:57 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cwr5y3m59027o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Episode four saw another contestant killed off, a ghoulish mission near a graveyard and a spooky twist.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="9.62" data-end="15.84">
+            <p class="french-block">Romesh Ranganathan fait un cri alors qu'il tient la robe de mariée d'une femme morte dans une cabane hantée</p>
+            <span class="english-block">Romesh Ranganathan lets out a scream while holding a dead woman's wedding dress in a haunted cabin</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.84" data-end="23.52">
+            <p class="french-block">Attention aux spoilers: Cet article révèle des détails de la quatrième épisode de The Celebrity Traitors, série deux.</p>
+            <span class="english-block">Spoiler warning: This article reveals details from the fourth episode of The Celebrity Traitors, series two.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.52" data-end="26.38">
+            <p class="french-block">Être un traître doit être un cauchemar.</p>
+            <span class="english-block">Being a Traitor must be a nightmare.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="26.38" data-end="32.69">
+            <p class="french-block">Alors que d'autres personnes sont dehors en train de profiter de leur vie, ils doivent la tuer, nuit après nuit.</p>
+            <span class="english-block">While other people are out enjoying their lives, they have to kill it, night after night. Even on the weekend, there is no rest for the wicked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="32.69" data-end="44.64">
+            <p class="french-block">L'épisode du vendredi a vu les Traîtres à nouveau, assassinant l'actrice de Last of Us Bella Ramsey, avant que les fidèles ne fassent leur sale travail pour eux en bannissant une autre de leurs, Julie Hesmondhalgh.</p>
+            <span class="english-block">Friday's episode saw the the Traitors at it again, murdering Last of Us actor Bella Ramsey, before the faithfuls did their dirty work for them by banishing another of their own, Julie Hesmondhalgh.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="44.64" data-end="55.13">
+            <p class="french-block">L'épisode précédent - vu jeudi par 10 millions de personnes - a vu une autre star fidèle et malheureuse de l'industrie, Myha'la, suivre le traître Richard E Grant hors du château.</p>
+            <span class="english-block">The previous episode - watched on Thursday by 10 million people - saw another faithful, unlucky Industry star Myha'la, follow self-sabotaging traitor Richard E Grant out of the castle.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.13" data-end="71.5">
+            <p class="french-block">Les téléspectateurs sont entrés dans l'émission de vendredi sachant que les traîtres Maya Jama, James Acaster et leur plus récente recrue, la professeure Hannah Fry, avaient débattu du meurtre d'un des trois Bs: Bella (Ramsey), (James) Blunt et Bash (Sebastian Croft).</p>
+            <span class="english-block">And so viewers went into Friday's show knowing that traitors Maya Jama, James Acaster and their newest recruit, Prof Hannah Fry, had been debating murdering one of three Bs: Bella (Ramsey), (James) Blunt and Bash (Sebastian Croft).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.5" data-end="77.62">
+            <p class="french-block">Quand Ramsey n'est pas arrivé pour le petit déjeuner, il est vite devenu évident ce qui s'était passé la nuit.</p>
+            <span class="english-block">When Ramsey failed to arrive for breakfast it soon became apparent what wickedness had taken place overnight.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="77.62" data-end="83.35">
+            <p class="french-block">Les émotions sont élevées à la table ronde alors que les traîtres de célébrités banissent deux joueurs</p>
+            <span class="english-block">Emotions run high at the round table as Celebrity Traitors banish two players</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="83.35" data-end="88.85">
+            <p class="french-block">Cast des traîtres de célébrités: Qui sont les "grands chiens" et les chevaux noirs de cette année ?</p>
+            <span class="english-block">Celebrity Traitors cast: Who are this year's 'big dogs' and dark horses</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.85" data-end="92.35">
+            <p class="french-block">Où est le château des Traîtres, et pouvez-vous le visiter ?</p>
+            <span class="english-block">Where is the Traitors castle, and can you visit it?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="92.35" data-end="103.18">
+            <p class="french-block">"C'est notre plus grande menace", explique Jama, dans un flashback des scènes de la nuit précédente dans la tour des traîtres. "Faites-les sortir, ce groupe se disperse".</p>
+            <span class="english-block">"That's our biggest threat," explained Jama, in a flashback from the previous night's scenes in the traitors turret. "Get them out the way, that group disperses."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="103.18" data-end="110.28">
+            <p class="french-block">"Les gens doutent de leur instinct après cette table ronde, et si Bella s'est montrée fidèle, ils seront encore plus déçus".</p>
+            <span class="english-block">Acaster agreed: "People are doubting their instincts after that roundtable. If Bella's proven to be a faithful, they're going to be even more spun out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.28" data-end="117.65">
+            <p class="french-block">Jama a continué: "Chaos, peu importe... Bella, tu es un génie, mais tu dois y aller".</p>
+            <span class="english-block">Jama continued: "Chaos, regardless... Bella, you're a genius, but you gotta go."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="117.65" data-end="122.23">
+            <p class="french-block">Lorsqu'il a reçu la nouvelle, Ramsey a été choqué mais pas surpris.</p>
+            <span class="english-block">On receiving the news, Ramsey was shocked but not surprised.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="122.23" data-end="127.58">
+            <p class="french-block">"Je pense que c'est un geste intelligent des traîtres", répondirent-ils dans la salle de journaux.</p>
+            <span class="english-block">"I think this is a clever move by the traitors," they responded in the diary room.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="127.58" data-end="133.15">
+            <p class="french-block">"J'allais revoir et recommencer à partir du début parce que j'ai tellement mal compris avec Myha'la.</p>
+            <span class="english-block">"I was going to re-set and start from the beginning because I got it so wrong with Myha'la.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.15" data-end="138.12">
+            <p class="french-block">"Je pense qu'ils avaient raison de me tuer parce que je pense que je l'aurais peut-être compris".</p>
+            <span class="english-block">"So I think that they were right to murder me because I think I would have maybe figured it out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.12" data-end="141.65">
+            <p class="french-block">Je suppose que maintenant, nous ne saurons jamais.</p>
+            <span class="english-block">I guess now we'll never know.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="141.65" data-end="147.05">
+            <p class="french-block">Bella Ramsey était considérée comme la "plus grande menace" des Traîtres et devait partir.</p>
+            <span class="english-block">Bella Ramsey was considered to be the Traitors' "biggest threat" and so had to go</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="147.05" data-end="155.86">
+            <p class="french-block">À l'heure du petit déjeuner, la réaction apparemment sérieuse mais excessive d'Hesmondhalgh à la déportation de Ramsey a immédiatement suscité des soupçons.</p>
+            <span class="english-block">Back at breakfast, Hesmondhalgh's apparently earnest but over-the-top reaction to Ramsey's removal immediately raised suspicions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.86" data-end="166.92">
+            <p class="french-block">L'ancienne star de Coronation Street avait été votée comme la plus digne de confiance du groupe par ses pairs dans l'épisode un et a reçu un bouclier, mais cela n'a pas compté pour beaucoup par l'épisode quatre.</p>
+            <span class="english-block">The former Coronation Street star had been voted as the most trustworthy of the group by her peers in episode one and given a shield, but that counted for little by episode four.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="166.92" data-end="174.29">
+            <p class="french-block">Le plus intelligent du groupe, sur le papier au moins, Fry, a trouvé des questions lui aussi posées au fil de la journée.</p>
+            <span class="english-block">The cleverest among the group, on paper at least, Fry, found questions being asked of her too as the day rolled on.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="174.29" data-end="185.88">
+            <p class="french-block">"Je n'ai pas choisi la vie traîtresse, la vie traîtresse m'a choisi", a dit le dernier recru du côté sombre. "Je sais qu'il y a des gens qui me soupçonnent, mais je vais profiter de chaque dernier moment".</p>
+            <span class="english-block">"I did not choose the traitor life, the traitor life chose me," said the latest recruit to the dark side. "I know there are people who are suspicious of me but I'm going to enjoy every last moment."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.88" data-end="201.02">
+            <p class="french-block">Miranda Hart, comédienne et imitatrice de Miss Marple, en est l'une. " Hannah nous a menti ", a- t- elle à juste titre noté, en référence à l'histoire confuse du bouclier du professeur qui avait aidé à dégager Myha'la la nuit précédente.</p>
+            <span class="english-block">Comedian and Miss Marple impersonator Miranda Hart is one of them. "Hannah lied to us," she rightly noted, with reference to the professor's confusing shield story that helped to see off Myha'la the night before.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="201.02" data-end="211.92">
+            <p class="french-block">Le chanteur et ancien militaire James Blunt, cependant, avait d'autres idées, intensifiant sa campagne contre Hesmondhalgh, qu'il croyait un peu trop digne de confiance pour être vrai.</p>
+            <span class="english-block">Singer and ex-military man James Blunt, however, had other ideas, ramping up his campaign against Hesmondhalgh, whom he believed to be a little too trustworthy to be true.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.92" data-end="215.35">
+            <p class="french-block">Le groupe qui discute avec les morts reconnaissants</p>
+            <span class="english-block">The group conversing with the grateful dead</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.35" data-end="222.43">
+            <p class="french-block">La mission de vendredi a amassé plus d'argent pour la charité et a aussi suscité l'esprit, mais pas de bonne façon.</p>
+            <span class="english-block">Friday's mission raised more money for charity and also raised spirits, but not in a good way.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.43" data-end="229.9">
+            <p class="french-block">Il impliquait que le groupe fasse une visite dans une cabane hantée près de la tombe pour discuter avec les morts sur des questions non résolues.</p>
+            <span class="english-block">It involved the group paying a visit to a graveside haunted cabin to converse with the dead about matters unresolved.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="229.9" data-end="235.58">
+            <p class="french-block">"C'est effrayant, c'est un meurtre", a noté l'actrice Barbie Sharon Rooney à son arrivée.</p>
+            <span class="english-block">"It's creepy, it's giving murder," noted Barbie actress Sharon Rooney on arrival.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.58" data-end="247.68">
+            <p class="french-block">Le comédien Romesh Ranganathan a plaisanté en disant que sa mère allait "absolument détester cela", alors que le groupe s'était rassemblé dans un chant à la tombe dirigé par la voix en plein essor de l'acteur Michael Sheen.</p>
+            <span class="english-block">Comedian Romesh Ranganathan joked that his mum was going to "absolutely hate this", as the the group gathered in a graveside chant led by the booming voice of big dog actor Michael Sheen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="247.68" data-end="264.77">
+            <p class="french-block">La tâche effrayante a fait que Ranganathan lui-même a crié et a vu Hart se retrouver face à face avec une créature en capuche masquée, avant que le joueur d'équipe Croft ne se rende volontaire pour aller en tête-à-tête dans une vieille toilette puanteuse dans des scènes ressemblant à celle de la série ITV Je suis une célébrité...</p>
+            <span class="english-block">The spooky task made Ranganathan himself let out a hellish scream and saw Hart come face-to face with a masked hooded creature, before team-player Croft volunteered to go head-first into a stinky old toilet in scenes resembling ITV's I'm a Celebrity... Get Me Out of Here.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="264.77" data-end="273.5">
+            <p class="french-block">"Les gars, c'est un peu de caca", a noté le dur Ross Kemp, alors que tout autour de lui étouffé. "Ce n'est pas gonna vous tuer".</p>
+            <span class="english-block">"Guys, it's a little bit of poo," noted hardman Ross Kemp, as all around him gagged. "It's not gonna kill you."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="273.5" data-end="284.42">
+            <p class="french-block">Croft a reçu un bouclier de protection pour ses problèmes, du moins. " Si j'avais mis mes mains et ma tête dans une toilette pour rien, j'aurais fumé ", a- t- il remarqué.</p>
+            <span class="english-block">Croft received a protective shield for his troubles, at least. "If I'd have put my hands and head down a toilet for nothing, I would've been fuming," he fairly noted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.42" data-end="289.49">
+            <p class="french-block">Regardez sur iPlayer avec de nouveaux épisodes tous les jeudi et vendredi</p>
+            <span class="english-block">Watch on iPlayer with new episodes every Thursday and Friday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="289.49" data-end="294.96">
+            <p class="french-block">Les dernières célébrités expulsées et assassinées ont leur mot à dire dans Uncloaked</p>
+            <span class="english-block">The latest banished and murdered celebs have their say in Uncloaked</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="294.96" data-end="302.47">
+            <p class="french-block">James Blunt a dirigé l'accusation contre la fidèle Julie Hesmondhalgh et semble maintenant se mettre dans le cadre en conséquence</p>
+            <span class="english-block">James Blunt led the charge against faithful Julie Hesmondhalgh and has seemingly now put himself in the frame as a result</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="302.47" data-end="309.96">
+            <p class="french-block">Le groupe, avec un peu d'aide des morts-vivants, a dû trouver des jouets d'un enfant et une robe de mariée et des chaussures de femme.</p>
+            <span class="english-block">The group, with a little help from the undead, had to find a child's toys and a woman's wedding dress and shoes. This later prompted model Jerry Hall to reminisce about her own wedding to Rolling Stones frontman Mick Jagger.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="309.96" data-end="321.12">
+            <p class="french-block">" Avant de me marier avec Mick, nous étions ensemble depuis sept ans et avions deux enfants, explique- t- elle, je portais une robe de mariée tous les jours jusqu'à ce qu'il accepte notre mariage.</p>
+            <span class="english-block">"Before I got married to Mick - we'd already been together seven years, had two children - I put on a wedding dress every day until he agreed that we get married," she revealed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.12" data-end="329.93">
+            <p class="french-block">Un vin rancissant qui avait le goût de " jus de canne à sel ", selon la comédienne Joanne McNally, a peut-être rempli la tâche la plus répugnante encore.</p>
+            <span class="english-block">Some rancid wine that tasted like "salty bin juice", according to comedian Joanne McNally, topped off possibly the most revolting task yet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="329.93" data-end="343.15">
+            <p class="french-block">En retournant au château, le YouTuber King Kenny a suscité davantage de soupçons sur Fry qui lui avait permis de saisir un bouclier. " Elle s'est retenue pour se faire paraître un peu innocente ", a-t-il dit à ses compagnons de foi.</p>
+            <span class="english-block">On the way back to the castle, YouTuber King Kenny raised more suspicions about Fry having allowed him to grab a shield. "She held off to make herself look a bit innocent," he told his fellow faithfuls.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="343.15" data-end="349.8">
+            <p class="french-block">La traîtresse Jama a détourné l'attention de elle en se fixant sur les soupçons croissants autour de Hesmondhalgh.</p>
+            <span class="english-block">Traitor Jama smartly deflected attention away from herself by latching on to the growing suspicions around Hesmondhalgh.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="349.8" data-end="356.35">
+            <p class="french-block">Hesmondhalgh dit au revoir à ses compagnons fidèles, décrivant la révélation de l'émission comme "iconique"</p>
+            <span class="english-block">Hesmondhalgh bade farewell to her fellow faithfuls, describing the show's reveal as "iconic"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="356.35" data-end="366.46">
+            <p class="french-block">En face de la table ronde, Fry a dit aux producteurs qu'elle savait qu'elle devait se battre comme si sa vie en dépendait - parce que c'était le cas - et essayer de se déguiser en fidèle.</p>
+            <span class="english-block">Ahead of the roundtable, Fry told producers she knew she would have to fight like her life depended on it - because it did - and try to disguise herself as still being a faithful.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.46" data-end="376.44">
+            <p class="french-block">Une fois les discussions en cours, elle a joué la carte de sympathie, affirmant qu'elle s'était sentie "vulnérable" car elle savait que sa réputation de cerveau la ferait une cible.</p>
+            <span class="english-block">Once discussions were under way, she played the sympathy card, claiming she had been left feeling "vulnerable" as she knew her reputation as a brain box would make her a target.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="376.44" data-end="389.14">
+            <p class="french-block">Mme Marple alias Hart ne allait pas la laisser sortir de la corde si facilement, cependant, notant comment l'argument de Fry la nuit précédente avait contredit celui de l'innocent mais maintenant malheureusement maintenant Myha'la a quitté.</p>
+            <span class="english-block">Miss Marple aka Hart wasn't going to let her off the hook that easily, however, noting how Fry's argument the previous night had contradicted that of the innocent but now sadly now departed Myha'la.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="389.14" data-end="403.54">
+            <p class="french-block">Dans un moment de légèreté dans un autre débat tendu, le comédien Joe Lycett a rappelé aux traîtres - et précisément à Hesmondhalgh - qu'il aimerait être recruté à un moment donné. " Je suis encore très disponible ", a- t- il souligné.</p>
+            <span class="english-block">In a nice moment of levity in another tense debate, comedian Joe Lycett reminded the traitors - and pointedly, Hesmondhalgh - that he would "like to be recruited at some stage". He stressed: "I'm still very much available."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="403.54" data-end="409.78">
+            <p class="french-block">Hesmondhalgh a ri de la façon dont "se tenir la bouche sèche" tout en se défendant ne aidait pas sa cause.</p>
+            <span class="english-block">Hesmondhalgh laughed about how "going all dry mouthed" while defending herself was not helping her cause.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="409.78" data-end="416.64">
+            <p class="french-block">"Ce serait une décision cruelle de prendre le membre le plus digne de confiance de notre groupe", a déclaré Sheen.</p>
+            <span class="english-block">"It would be a cruel move taking the most trusted member of our group," noted Sheen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="416.64" data-end="420.05">
+            <p class="french-block">"Cruel mais intelligent", a ajouté Hart.</p>
+            <span class="english-block">"Cruel but clever," added Hart.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="420.05" data-end="428.71">
+            <p class="french-block">Ranganathan a proposé: "La personne que nous avons nommée comme notre personne la plus digne de confiance, nous l'avons complètement dépassée".</p>
+            <span class="english-block">Ranganathan offered: "The person that we nominated as our most trustworthy person, we have now completely flipped on."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="428.71" data-end="432.94">
+            <p class="french-block">La traîtresse Hannah Fry a survécu à un épisode stressant.</p>
+            <span class="english-block">Newfound Traitor Hannah Fry survived a stressful episode</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="432.94" data-end="440.21">
+            <p class="french-block">La conclusion était de bannir Hesmondhalgh, qui, dans ses mots d'adieu, a dit que c'était une "immense expérience".</p>
+            <span class="english-block">The conclusion was to banish Hesmondhalgh, who, in her parting words, said it had been an "immense experience".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="440.21" data-end="450.98">
+            <p class="french-block">"Malheureusement", a-t-elle poursuivi, confirmant sa fidélité alors que des larmes se déversaient dans les yeux autour de la table: "Cela peut signifier que je ne suis pas un acteur phénoménal".</p>
+            <span class="english-block">"Alas," she continued, confirming her fidelity as tears appeared in eyes around the table: "It may mean I am not a phenomenal actor."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="450.98" data-end="461.42">
+            <p class="french-block">Le chanteur Blunt, qui avait dirigé l'accusation contre elle, semble s'être mis à l'épreuve. " Je suis désolé, c'est ma faute ", a- t- il dit au groupe.</p>
+            <span class="english-block">Singer Blunt, who had led the charge against her, appears to have now put himself in the frame. He told the group: "I'm so sorry, that's my fault."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="461.42" data-end="466.13">
+            <p class="french-block">"Il a eu tort sur toutes les théories qu'il a élaborées", a déclaré Rooney.</p>
+            <span class="english-block">"He's been wrong about every theory he's came up with," said Rooney.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="466.13" data-end="469.66">
+            <p class="french-block">"Je l'ai aussi", ajoute un Croft frustré.</p>
+            <span class="english-block">"So have I," added a frustrated Croft.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="469.66" data-end="478.87">
+            <p class="french-block">Hart a déclaré que "tout est en l'air" maintenant, après l'expulsion de Hesmondhalgh, que le roi Kenny a appelé la "plus grande perte" de l'équipe jusqu'à présent.</p>
+            <span class="english-block">Hart declared that "everything is up in the air" now, following Hesmondhalgh's eviction, which King Kenny called the team's "biggest loss" so far.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="478.87" data-end="481.34">
+            <p class="french-block">Mais qu'en est- il des traîtres ?</p>
+            <span class="english-block">But what of the traitors?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="481.34" data-end="486.43">
+            <p class="french-block">Il a dit que la stratégie de l'acteur est de continuer à jouer comme s'il était fidèle.</p>
+            <span class="english-block">First recruit, Acaster's strategy is to continue playing the game as if he is a faithful, he said. Jama is clearly loving life on the dark side while Fry, it's fair to say, is not.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="486.43" data-end="493.75">
+            <p class="french-block">"Vous m'avez sauvé", dit Fry aux deux autres de sa journée stressante, alors qu'ils étaient de retour dans la tourelle en leur manteau.</p>
+            <span class="english-block">"You two saved me," Fry told the other two of her stressful day, while back in the turret in their cloaks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="493.75" data-end="502.01">
+            <p class="french-block">L'épisode ne s'est pas terminé par un meurtre mais par une nouvelle tournure: la promesse d'un jeu mortel de cachette pour quatre concurrents choisis.</p>
+            <span class="english-block">The episode ended not with a murder but a fresh twist - the promise of a deathly game of hide-and-seek for four chosen contestants.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="502.01" data-end="510.02">
+            <p class="french-block">Ross Kemp, Rob Beckett, Leigh-Anne Pinnock et Romesh Ranganathan semblent ravis d'avoir été choisis pour un jeu de cachette meurtrière</p>
+            <span class="english-block">Ross Kemp, Rob Beckett, Leigh-Anne Pinnock and Romesh Ranganathan looking delighted to have been chosen for a game of killer hide-and-seek</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="510.02" data-end="520.34">
+            <p class="french-block">Les traîtres ont choisi de rester hors du jeu eux-mêmes, avant de s'arrêter sur Kemp, Ranganathan, son ami de comédie Rob Beckett et Little Mix et la chanteuse solo Leigh-Anne Pinnock.</p>
+            <span class="english-block">The traitors opted to stay out of the game themselves, before settling on Kemp, Ranganathan, his comic pal Rob Beckett and Little Mix and solo singer Leigh-Anne Pinnock.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="520.34" data-end="524.52">
+            <p class="french-block">"Je pense que ça va gâcher la tête de tout le monde", dit Fry.</p>
+            <span class="english-block">"I think this is gonna mess with everybody's heads," said Fry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="524.52" data-end="530.52">
+            <p class="french-block">La présentatrice Claudia Winkleman les a accueillis à l'extérieur du château au milieu de la nuit.</p>
+            <span class="english-block">Presenter Claudia Winkleman greeted the four of them outside the castle in the dead of night.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="530.52" data-end="533.95">
+            <p class="french-block">"Avez-vous gagné?" a plaisanté Ranganathan.</p>
+            <span class="english-block">"Have we won?", quipped Ranganathan.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="533.95" data-end="544.99">
+            <p class="french-block">"Si seulement c'était aussi facile Romesh", répondit l'hôte, expliquant comment quand ils descendront dans la forêt ce soir ils seront dans pour une grande surprise: l'un d'eux sera tué face à face.</p>
+            <span class="english-block">"If only it was that easy Romesh," replied the host, explaining how when they go down to the woods tonight they'll be in for a big surprise: one of them will be killed face-to-face.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="544.99" data-end="552.53">
+            <p class="french-block">Seul Pinnock, on a décidé, sera immunisé contre les meurtres dans le jeu, même si les Traîtres ne doivent pas le savoir.</p>
+            <span class="english-block">Only Pinnock, it was decided, will be immune from murder in the game within a game, though the Traitors aren't to know that.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="552.53" data-end="556.75">
+            <p class="french-block">Tout ce terreur et ce malheur et ce n'est pas Halloween depuis des semaines.</p>
+            <span class="english-block">This much terror and mischief and it's not Halloween for weeks yet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="556.75" data-end="562.32">
+            <p class="french-block">Celebrity Traitors se poursuit jeudi à 20h00 BST sur BBC One et iPlayer.</p>
+            <span class="english-block">Celebrity Traitors continues on Thursday at 20:00 BST on BBC One and iPlayer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="562.32" data-end="568.56">
+            <p class="french-block">Avez-vous déjà joué à une version des Traîtres ou à un autre jeu de déduction sociale à la maison ou socialement ?</p>
+            <span class="english-block">Have you played a version of the Traitors or another social deduction game at home or socially? Share your experience.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="568.56" data-end="574.3">
+            <p class="french-block">Les émotions sont élevées à la table ronde alors que les traîtres de célébrités banissent deux joueurs</p>
+            <span class="english-block">Emotions run high at the round table as Celebrity Traitors banish two players</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="574.3" data-end="580.13">
+            <p class="french-block">Les traîtres prétendent avoir leur première victime alors que Richard E. Grant tente de sauver sa peau</p>
+            <span class="english-block">Traitors claim their first victim as Richard E Grant tries to save his skin</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="580.13" data-end="585.94">
+            <p class="french-block">Le chaos, les cercueil et "Claudiapatra" volent le spectacle dans Celebrity Traitors</p>
+            <span class="english-block">Chaos, coffins and 'Claudiapatra' steal the show in Celebrity Traitors</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="585.94" data-end="591.7">
+            <p class="french-block">Les traîtres de célébrités 2 casting: Qui sont les "grands chiens" et les chevaux noirs de cette année ?</p>
+            <span class="english-block">Celebrity Traitors 2 cast: Who are this year's 'big dogs' and dark horses?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="591.7" data-end="594.7">
+            <p class="french-block">Quel rôle jouerais-tu dans le château des Traîtres ?</p>
+            <span class="english-block">What role would you play in the Traitors castle? Take our quiz to find out</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="594.7" data-end="601.27">
+            <p class="french-block">Les traîtres de célébrités: Puis-je visiter le château, prendre le train et voir le monument inhabituel ?</p>
+            <span class="english-block">Celebrity Traitors: Can I visit the castle, ride the train and see the unusual monument?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="top-stories_article_5.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

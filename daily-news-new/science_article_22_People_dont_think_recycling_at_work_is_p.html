@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'People don't think recycling at work is part of their job description'</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>'People don't think recycling at work is part of their job description'</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 09 Oct 2026 19:11:27 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqe8rn65yj2ko?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Unclear labelling as well as a lack of recycling facilities at work or in public-facing businesses is an issue.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="7.3" data-end="13.87">
+            <p class="french-block">Les entreprises du Pays de Galles sont tenues de trier les déchets dans les mêmes catégories de recyclage que les ménages</p>
+            <span class="english-block">Businesses in Wales are required to sort waste into the same recycling categories that households are expected to do</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="13.87" data-end="23.9">
+            <p class="french-block">Selon un spécialiste, il y avait encore " beaucoup de place à améliorer " en ce qui concerne la quantité de recyclage que nous faisons au travail par rapport à nos habitudes à la maison.</p>
+            <span class="english-block">There was still "lots of room for improvement" when it comes to how much we recycle at work compared with our habits at home, according to an expert.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="23.9" data-end="34.99">
+            <p class="french-block">Les chiffres suggèrent que seulement 61% des personnes au Pays de Galles recyclent souvent sur leur lieu de travail, et qu'un sur cinq ne se souvient pas avoir vu les installations appropriées pour le faire.</p>
+            <span class="english-block">Figures suggest only 61% of people in Wales recycle often at their workplace, with one in five saying they do not recall seeing the appropriate facilities to do so.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="34.99" data-end="45.48">
+            <p class="french-block">La mise à disposition de plus de poubelles ou d'une étiquetage plus clair sont quelques-unes des façons dont les entreprises pourraient faire la différence, a déclaré l'organisme de bienfaisance Wrap.</p>
+            <span class="english-block">Providing more bins or clearer labelling are some of the ways in which businesses could make a difference, said waste reduction charity Wrap.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.48" data-end="57.1">
+            <p class="french-block">Mais une entreprise avait déjà constaté une "amélioration significative" dans ses bureaux après avoir supprimé les poubelles personnelles du personnel, une décision qui a d'abord été appréciée par la résistance.</p>
+            <span class="english-block">But one business had already seen a "significant improvement" at their offices after removing staff's personal bins, a move that was initially met with resistance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="57.1" data-end="67.99">
+            <p class="french-block">Lorsque l'entreprise de recrutement Acorn by Synergie a déménagé pour la première fois dans ses bureaux à la périphérie de Newport en 2003, ils produisaient six grandes poubelles de déchets par semaine.</p>
+            <span class="english-block">When recruitment firm Acorn by Synergie first moved into their offices on the outskirts of Newport in 2003, they were producing six large wheelie bins' worth of rubbish a week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="67.99" data-end="82.87">
+            <p class="french-block">Il ne compte désormais qu'une seule collecte hebdomadaire grâce à un recyclage accru, y compris les déchets alimentaires, qui a été leur plus grande adaptation, à la suite de l'introduction de la loi sur le recyclage du lieu de travail du gouvernement gallois en 2024.</p>
+            <span class="english-block">It now has just one weekly collection thanks to increased recycling, including food waste, which was their biggest adaptation, following the introduction of the Welsh government's Workplace Recycling Law in 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.87" data-end="88.82">
+            <p class="french-block">Mark Rudge dit que les coûts de recyclage augmentés sont compensés par moins de déchets allant aux décharges</p>
+            <span class="english-block">Mark Rudge says increased recycling costs are offset by less rubbish going to landfill collections</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="88.82" data-end="97.51">
+            <p class="french-block">"La principale chose que nous avons changée, c'est de retirer les poubelles de bureau et les poubelles individuelles", a déclaré le directeur Mark Rudge.</p>
+            <span class="english-block">"The main thing that we changed was removing desk bins and individual bins," said director Mark Rudge.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="97.51" data-end="100.82">
+            <p class="french-block">"Nous avons eu une certaine résistance à cela.</p>
+            <span class="english-block">"We had quite a bit of resistance to that. Individuals liked having their own little waster station.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.82" data-end="108.48">
+            <p class="french-block">"Mais nous avons mis des zones de recyclage centrales dans chaque zone de l'entreprise, et finalement, les gens se sont habitués à cela.</p>
+            <span class="english-block">"But we put central recycling areas within each zone of the business, and eventually, people get the hang of that.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="108.48" data-end="115.46">
+            <p class="french-block">" Beaucoup de recyclage domestique est extrêmement similaire, donc les gens ont apporté ces bonnes habitudes au travail. "</p>
+            <span class="english-block">"A lot of home recycling is extremely similar, so people brought those good habits to the workplace."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.46" data-end="121.9">
+            <p class="french-block">Ann-Marie Derrick dit qu'elle est surprise quand elle va dans d'autres bureaux qui n'ont pas de poubelles de recyclage séparées</p>
+            <span class="english-block">Ann-Marie Derrick says she is now surprised when she goes to other offices who don't have separate recycling bins</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="121.9" data-end="130.54">
+            <p class="french-block">Ann-Marie Derrick, employée de bureau, a admis que les collègues avaient d'abord trouvé cela douloureux, mais qu'il était devenu "une seconde nature".</p>
+            <span class="english-block">Office worker Ann-Marie Derrick admitted fellow staff members had found it a pain to begin with, but it had now become "second nature".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.54" data-end="138.53">
+            <p class="french-block">"Quiconque vient à l'office est tout de suite à bord et je pense que nous sommes probablement très fiers en tant qu'équipe de la quantité de recyclage que nous faisons".</p>
+            <span class="english-block">"Anybody new coming to the office is just straight away onboard and I think we're probably quite proud as a team about how much recycling we do."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="138.53" data-end="153.65">
+            <p class="french-block">Anthony Lee, directeur environnemental de l'entreprise, a déclaré qu'il avait fallu quelques mois pour que le personnel reflète pleinement ses habitudes de recyclage à la maison sur le lieu de travail, et qu'il y avait eu une "amélioration significative de la conformité".</p>
+            <span class="english-block">The company's environmental manager Anthony Lee said it had taken a few months for staff to fully mirror their home recycling habits at the workplace, and that there had been a "significant improvement in compliance".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.65" data-end="158.09">
+            <p class="french-block">Tous les travailleurs et les entreprises ne se sont pas adaptés au même degré.</p>
+            <span class="english-block">Not all workers and business have adapted to the same degree.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.09" data-end="173.59">
+            <p class="french-block">L'enquête annuelle du WRAP sur les traqueurs a indiqué que, bien que 94% des personnes au Pays de Galles disent recycler à la maison, seulement 61% le font "très souvent au travail" et que ce chiffre tombe à moins de la moitié pour les étudiants de collège ou d'université.</p>
+            <span class="english-block">WRAP's annual tracker survey indicated that although 94% of people in Wales say they recycle at home, only 61% do so "very often at work" with that figure dropping to below half for students at college or university.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.59" data-end="185.71">
+            <p class="french-block">Seuls 30% des répondants ont déclaré avoir vu beaucoup d'installations de recyclage sur leur lieu de travail, malgré les nouvelles exigences, tandis que 20% ont déclaré ne pas se souvenir d'en avoir vu un.</p>
+            <span class="english-block">Only 30% of respondents said they had seen lots of recycling facilities at their workplace, despite the new requirements, while 20% said they could not recall seeing any.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.71" data-end="193.85">
+            <p class="french-block">L'installation de recyclage du Conseil Vale of Glamorgan a été conçue pour faire face à l'augmentation anticipée du volume de recyclage.</p>
+            <span class="english-block">Vale of Glamorgan Council's recycling facility was designed to deal with the anticipated increase in the volume of recycling</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="193.85" data-end="203.62">
+            <p class="french-block">"C'est encore relativement nouveau d'avoir des poubelles de recyclage quand on est loin de chez soi", a déclaré Angela Spiteri, directrice générale du marketing chez WRAP.</p>
+            <span class="english-block">"It's still a relatively new thing to have recycling bins when we're away from home," said Angela Spiteri, senior marketing manager at WRAP.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="203.62" data-end="211.99">
+            <p class="french-block">"C'est un pas très positif dans la bonne direction pour le Pays de Galles, mais il n'est pas parfait et il y a beaucoup de choses que nous pouvons faire pour améliorer".</p>
+            <span class="english-block">"It's a very positive step in the right direction for Wales, but it's not perfect and there's a lot of things we can do to improve."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="211.99" data-end="221.83">
+            <p class="french-block">Elle a dit qu'il y avait une responsabilité sur les entreprises de s'assurer que cela était possible, "en fournissant les bons sacs et les installations pour que les gens le fassent plus facile".</p>
+            <span class="english-block">She said there was a responsibility on businesses to ensure that was possible, "providing the right bins and facilities for people to make that easier".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="221.83" data-end="228.58">
+            <p class="french-block">Angela dit que les signaux non clairs des entreprises peuvent être un facteur qui rend difficile le recyclage correctement</p>
+            <span class="english-block">Angela says unclear signage from businesses can be a factor in making it more difficult for people recycle correctly</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="228.58" data-end="236.4">
+            <p class="french-block">"Je ne recycle pas autant quand je suis dehors, je ne fais que le gâcher", reconnaît Gerwyn Pugh, 56 ans, de Barry.</p>
+            <span class="english-block">"I don't recycle as much when I am out and about, I just bin it," admits Gerwyn Pugh, 56, from Barry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="236.4" data-end="242.28">
+            <p class="french-block">"C'est une routine [à la maison], mais il faut un peu plus de temps pour se préparer à chaque décharge".</p>
+            <span class="english-block">"It's routine [at home], but out and about every bin takes a bit more time to work out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="242.28" data-end="250.1">
+            <p class="french-block">James Jenkins, 30 ans, a dit qu'il portait souvent des ordures chez lui, étant donné les options limitées où il travaille.</p>
+            <span class="english-block">James Jenkins, 30, said he often took rubbish home with him given the limited options where he works.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.1" data-end="254.14">
+            <p class="french-block">"Nous ne recyclons que du carton parce que c'est notre seul déchet.</p>
+            <span class="english-block">"We only recycle cardboard because that's our only waste.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="254.14" data-end="260.83">
+            <p class="french-block">"Les entreprises plus industrialisées doivent faire plus, car elles auront plus d'impact que les petites entreprises".</p>
+            <span class="english-block">"The more industrialised businesses need to do more, because they'll have more of an impact than smaller businesses."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.83" data-end="268.2">
+            <p class="french-block">Natalie James, 47 ans, a déclaré qu'elle recyclait "probablement la même chose" au travail et à la maison.</p>
+            <span class="english-block">Natalie James, 47, said she recycled "probably about the same" at work and at home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="268.2" data-end="275.18">
+            <p class="french-block">"Parce que je travaille dans un hôpital, nous avons les catégories de recyclage partout, alors nous devons le faire".</p>
+            <span class="english-block">"Because I work at a hospital we've got the recycling categories everywhere, so we have to."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.18" data-end="284.02">
+            <p class="french-block">Bien que les entreprises du Pays de Galles soient désormais tenues de trier leurs déchets en six catégories, les modalités de collecte peuvent varier d'une zone à l'autre.</p>
+            <span class="english-block">Although businesses in Wales are now required to sort their waste into six categories, collection arrangements can vary from area to area.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="284.02" data-end="295.46">
+            <p class="french-block">Dans la vallée de Glamorgan, les entreprises utilisent un mélange de services municipaux et privés, et l'autorité locale a déclaré que le changement avait entraîné une "qualité de recyclage plus élevée".</p>
+            <span class="english-block">In the Vale of Glamorgan, businesses use a mix of council and private services, and the local authority said the change has resulted in a "higher quality of recycling".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.46" data-end="303.79">
+            <p class="french-block">Carys Stephens, responsable du projet de déchets du conseil, a déclaré qu'il y avait eu une "réponse fantastique des entreprises".</p>
+            <span class="english-block">Carys Stephens, the council's waste project officer, said there had been a "fantastic response from businesses."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.79" data-end="312.05">
+            <p class="french-block">"Il y aura évidemment des gens qui critiqueront l'idée et qui s'inquiètent des coûts et des efforts supplémentaires qui seront consacrés au recyclage séparé.</p>
+            <span class="english-block">"There's obviously going to be some that are critical of the idea, and they're worried about extra costs and effort that goes into segregated recycling.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="312.05" data-end="318.5">
+            <p class="french-block">"Mais nous faisons le recyclage séparé depuis quelques années maintenant, et la plupart des gens le font à leur rythme".</p>
+            <span class="english-block">"But we've been doing segregated recycling for a couple of years now, and most people just take it in their stride."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="318.5" data-end="327.07">
+            <p class="french-block">Un centre de recyclage à Barry traite des déchets ménagers recyclés, ainsi que des entreprises locales qui paient le service de collecte du conseil</p>
+            <span class="english-block">A recycling centre in Barry deals with recycled household waste, as well as local businesses who pay for the council's collection service</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="327.07" data-end="337.32">
+            <p class="french-block">Bien que les taux de recyclage au travail au Pays de Galles soient " raisonnablement élevés ", a déclaré Rebecca Colley-Jones, consultante, " il y a beaucoup de place à améliorer ".</p>
+            <span class="english-block">Although Wales' workplace recycling rates are "reasonably high", said consultant Rebecca Colley-Jones, "there's lots of room for improvement".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="337.32" data-end="341.9">
+            <p class="french-block">"C'est un nouveau système, il y a donc toujours une période de calme".</p>
+            <span class="english-block">"It is a new system, so there's always a period of settling down."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="341.9" data-end="346.25">
+            <p class="french-block">Elle a dit qu'elle était sûre que "nous verrons cette hausse de 61%".</p>
+            <span class="english-block">She said that she was sure "we would see that 61% rise".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="346.25" data-end="353.4">
+            <p class="french-block">" Souvent, ce sont des entreprises touristiques ou hôtelières, elles doivent donc apprendre à leurs clients ce qu'ils doivent faire. "</p>
+            <span class="english-block">"Often they can be tourism or hospitality businesses, so they're having to educate their customers what to do."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="353.4" data-end="358.32">
+            <p class="french-block">Colley-Jones a dit que les individus avaient aussi besoin de prendre plus de soin.</p>
+            <span class="english-block">Colley-Jones said individuals also needed to personally take more care.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="358.32" data-end="366.84">
+            <p class="french-block">"Notre maison est notre château, nous sommes responsables des déchets et les gens sont sous une pression, peut-être de leurs voisins pour qu'ils semblent recycler.</p>
+            <span class="english-block">"Our home is our castle, we're responsible for the waste and people are under a little bit of pressure, perhaps from their neighbours to look like they're recycling.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="366.84" data-end="369.74">
+            <p class="french-block">"Alors que vous n'avez pas ça au travail.</p>
+            <span class="english-block">"Whereas you don't have that in the workplace.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="369.74" data-end="377.74">
+            <p class="french-block">"Quand les gens viennent travailler, ils viennent travailler, ils ne pensent pas nécessairement que le recyclage fait partie de leur description de travail.</p>
+            <span class="english-block">"When people come to work, they come to work, they don't necessarily thing recycling is part of their job description.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="377.74" data-end="387.89">
+            <p class="french-block">Elle a ajouté: "Cela tente de faire comprendre aux gens qu'ils doivent aussi faire l'acquisition de la culture d'une organisation, et aussi de la culture du Pays de Galles en tant que pays.</p>
+            <span class="english-block">She added: "It's trying to get people to understand that they also need to be buying into the culture of an organisation, and also the culture of Wales as a country. We are the second-best recycler in the world."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="387.89" data-end="396.46">
+            <p class="french-block">Elle a ajouté que les changements avaient inévitablement entraîné des coûts pour les entreprises et que les arrangements de collecte variés pouvaient parfois être "confuses".</p>
+            <span class="english-block">She added that the changes had inevitably led to some costs for businesses, and varying collection arrangements can sometimes be "confusing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="396.46" data-end="406.46">
+            <p class="french-block">Le conseil de Vale of Glamorgan a déclaré qu'il offre trois niveaux de services de collecte pour les entreprises, selon leur taille et le volume de déchets recyclables qu'ils produisent</p>
+            <span class="english-block">Vale of Glamorgan council say they offer three tiers of collection service for businesses, depending on their size and the volume of recyclable waste they produce</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="406.46" data-end="417.19">
+            <p class="french-block">Natural Resources Wales, qui surveille la conformité au titre du gouvernement gallois, a déclaré qu'aucun lieu de travail n'avait été poursuivi pour non-respect des nouvelles réglementations.</p>
+            <span class="english-block">Natural Resources Wales, which monitors compliance on behalf of the Welsh government, said so far no workplace had been prosecuted for failing to follow the new regulations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="417.19" data-end="432.84">
+            <p class="french-block">Un porte-parole a ajouté que 56% des entreprises avaient été reconnues comme conformes au cours des deux premières années de la nouvelle réglementation, mais qu'elle avait fourni "conseils et soutien" et que la majorité des entreprises non conformes "avaient pris des mesures" pour résoudre leurs problèmes.</p>
+            <span class="english-block">A spokesperson added that 56% of businesses were found to be compliant in the first two years of the new rules, but it had provided "advice and support" and the majority of non-compliant companies "had taken steps" to address their issues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="432.84" data-end="438.17">
+            <p class="french-block">Des millions de punaises de lit se glissent dans les matelas et les murs lors d'une épidémie massive</p>
+            <span class="english-block">Millions of bedbugs crawl out of mattresses and walls in huge outbreak</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="438.17" data-end="444.67">
+            <p class="french-block">"Les gens utilisent l'IA pour éviter de payer pour les photos scolaires, mais ils ne réalisent pas les conséquences"</p>
+            <span class="english-block">'People use AI to avoid paying for school photos, but they don't realise the consequences'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="444.67" data-end="450.5">
+            <p class="french-block">Un compte "banner" d'Instagram uni sous le feu pour "perpétuation de la culture du viol"</p>
+            <span class="english-block">Uni Instagram 'banter' account under fire for 'perpetuation of rape culture'</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="science_article_22.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

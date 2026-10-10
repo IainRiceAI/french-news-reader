@@ -1,218 +1,218 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-09 06:18:15  
+Generated on: 2026-10-10 06:16:13  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Polanski defends leadership after Zionism row and by-election loss**
-   - **Published:** Fri, 09 Oct 2026 04:38:19 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Polanski_defends_leadership_after_Zionis.md](top-stories_article_1_Polanski_defends_leadership_after_Zionis.md)
+1. **Trump announces deal for Russian diesel as Zelensky calls it a gift to Putin**
+   - **Published:** Sat, 10 Oct 2026 04:38:20 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Trump_announces_deal_for_Russian_diesel_.md](top-stories_article_1_Trump_announces_deal_for_Russian_diesel_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_1.mp3)
 
-2. **ADHD and autism at risk of over-diagnosis, says government review**
-   - **Published:** Thu, 08 Oct 2026 23:01:30 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_ADHD_and_autism_at_risk_of_over-diagnosi.md](top-stories_article_2_ADHD_and_autism_at_risk_of_over-diagnosi.md)
+2. **Analysis: Trump's shock Russia deal highlights mounting pressure to curb fuel prices**
+   - **Published:** Fri, 09 Oct 2026 22:30:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Analysis_Trumps_shock_Russia_deal_highli.md](top-stories_article_2_Analysis_Trumps_shock_Russia_deal_highli.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_2.mp3)
 
-3. **Fort Hood attacker's execution by firing squad will be livestreamed, Pentagon says**
-   - **Published:** Fri, 09 Oct 2026 03:36:12 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Fort_Hood_attackers_execution_by_firing_.md](top-stories_article_3_Fort_Hood_attackers_execution_by_firing_.md)
+3. **NI secretary to ban the Drumcree parade**
+   - **Published:** Fri, 09 Oct 2026 21:46:19 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_NI_secretary_to_ban_the_Drumcree_parade.md](top-stories_article_3_NI_secretary_to_ban_the_Drumcree_parade.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_3.mp3)
 
-4. **ICE agent shoots man in New York City**
-   - **Published:** Fri, 09 Oct 2026 04:26:19 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_ICE_agent_shoots_man_in_New_York_City.md](top-stories_article_4_ICE_agent_shoots_man_in_New_York_City.md)
+4. **Flydubai attacker began a 'drift towards extremism and terrorism' in Australia, UAE says**
+   - **Published:** Sat, 10 Oct 2026 04:34:55 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Flydubai_attacker_began_a_drift_towards_.md](top-stories_article_4_Flydubai_attacker_began_a_drift_towards_.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_4.mp3)
 
-5. **Suspect linked to Monaco bomb attack on millionaire speaks to BBC from Ukrainian prison**
-   - **Published:** Thu, 08 Oct 2026 23:11:10 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Suspect_linked_to_Monaco_bomb_attack_on_.md](top-stories_article_5_Suspect_linked_to_Monaco_bomb_attack_on_.md)
+5. **Screams, haunting scenes and deadly hide-and-seek, as Celebrity Traitors heats up**
+   - **Published:** Fri, 09 Oct 2026 22:51:57 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Screams_haunting_scenes_and_deadly_hide-.md](top-stories_article_5_Screams_haunting_scenes_and_deadly_hide-.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_5.mp3)
 
-6. **Emotions run high at the round table as Celebrity Traitors banish two players**
-   - **Published:** Thu, 08 Oct 2026 23:08:09 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Emotions_run_high_at_the_round_table_as_.md](top-stories_article_6_Emotions_run_high_at_the_round_table_as_.md)
+6. **Polanski vows to stay on as Green leader as he faces criticism after by-election defeat**
+   - **Published:** Fri, 09 Oct 2026 19:26:53 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Polanski_vows_to_stay_on_as_Green_leader.md](top-stories_article_6_Polanski_vows_to_stay_on_as_Green_leader.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_6.mp3)
 
-7. **Warrants used to search Andrew Mountbatten-Windsor's homes were unlawful, court says**
-   - **Published:** Thu, 08 Oct 2026 16:33:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Warrants_used_to_search_Andrew_Mountbatt.md](top-stories_article_7_Warrants_used_to_search_Andrew_Mountbatt.md)
+7. **Weekend showers and sunshine for UK ahead of warmer temperatures next week**
+   - **Published:** Fri, 09 Oct 2026 23:00:53 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Weekend_showers_and_sunshine_for_UK_ahea.md](top-stories_article_7_Weekend_showers_and_sunshine_for_UK_ahea.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Mark Zuckerberg has an image problem - so why is Meta's business booming?**
-   - **Published:** Thu, 08 Oct 2026 23:14:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Mark_Zuckerberg_has_an_image_problem_-_s.md](top-stories_article_8_Mark_Zuckerberg_has_an_image_problem_-_s.md)
+8. **JD Vance casts doubt on firing squad execution and says he will not watch it**
+   - **Published:** Fri, 09 Oct 2026 21:50:47 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_JD_Vance_casts_doubt_on_firing_squad_exe.md](top-stories_article_8_JD_Vance_casts_doubt_on_firing_squad_exe.md)
    - **French Audio Narration:** [🔊 Listen](top-stories_article_8.mp3)
 
 ---
 
 ### Section: WORLD
 
-1. **Suspect linked to Monaco bomb attack on millionaire speaks to BBC from Ukrainian prison**
-   - **Published:** Thu, 08 Oct 2026 23:11:10 GMT
-   - **Read Parallel Translation:** [world_article_9_Suspect_linked_to_Monaco_bomb_attack_on_.md](world_article_9_Suspect_linked_to_Monaco_bomb_attack_on_.md)
+1. **Trump announces deal for Russian diesel as Zelensky calls it a gift to Putin**
+   - **Published:** Sat, 10 Oct 2026 04:38:20 GMT
+   - **Read Parallel Translation:** [world_article_9_Trump_announces_deal_for_Russian_diesel_.md](world_article_9_Trump_announces_deal_for_Russian_diesel_.md)
    - **French Audio Narration:** [🔊 Listen](world_article_9.mp3)
 
-2. **Fort Hood attacker's execution by firing squad will be livestreamed, Pentagon says**
-   - **Published:** Fri, 09 Oct 2026 03:36:12 GMT
-   - **Read Parallel Translation:** [world_article_10_Fort_Hood_attackers_execution_by_firing_.md](world_article_10_Fort_Hood_attackers_execution_by_firing_.md)
+2. **Analysis: Trump's shock Russia deal highlights mounting pressure to curb fuel prices**
+   - **Published:** Fri, 09 Oct 2026 22:30:22 GMT
+   - **Read Parallel Translation:** [world_article_10_Analysis_Trumps_shock_Russia_deal_highli.md](world_article_10_Analysis_Trumps_shock_Russia_deal_highli.md)
    - **French Audio Narration:** [🔊 Listen](world_article_10.mp3)
 
-3. **Russian strike on buses kills at least 30, say officials, as deadly attacks on Ukraine surge**
-   - **Published:** Thu, 08 Oct 2026 16:31:29 GMT
-   - **Read Parallel Translation:** [world_article_11_Russian_strike_on_buses_kills_at_least_3.md](world_article_11_Russian_strike_on_buses_kills_at_least_3.md)
+3. **US unveils sanctions on ICC in move court condemns as 'assault on rule of law'**
+   - **Published:** Fri, 09 Oct 2026 18:40:10 GMT
+   - **Read Parallel Translation:** [world_article_11_US_unveils_sanctions_on_ICC_in_move_cour.md](world_article_11_US_unveils_sanctions_on_ICC_in_move_cour.md)
    - **French Audio Narration:** [🔊 Listen](world_article_11.mp3)
 
-4. **Christa Pike now walking after failed US execution, lawyer tells BBC**
-   - **Published:** Thu, 08 Oct 2026 15:02:32 GMT
-   - **Read Parallel Translation:** [world_article_12_Christa_Pike_now_walking_after_failed_US.md](world_article_12_Christa_Pike_now_walking_after_failed_US.md)
+4. **Thousands of security personnel deployed as Delhi braces for ‘cockroach’ protest**
+   - **Published:** Sat, 10 Oct 2026 03:29:50 GMT
+   - **Read Parallel Translation:** [world_article_12_Thousands_of_security_personnel_deployed.md](world_article_12_Thousands_of_security_personnel_deployed.md)
    - **French Audio Narration:** [🔊 Listen](world_article_12.mp3)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Trump wants to reduce the cost of fuel as the midterms loom - will it work?**
-   - **Published:** Fri, 09 Oct 2026 04:55:14 GMT
-   - **Read Parallel Translation:** [business_article_13_Trump_wants_to_reduce_the_cost_of_fuel_a.md](business_article_13_Trump_wants_to_reduce_the_cost_of_fuel_a.md)
+1. **Trump announces deal for Russian diesel as Zelensky calls it a gift to Putin**
+   - **Published:** Sat, 10 Oct 2026 04:38:20 GMT
+   - **Read Parallel Translation:** [business_article_13_Trump_announces_deal_for_Russian_diesel_.md](business_article_13_Trump_announces_deal_for_Russian_diesel_.md)
    - **French Audio Narration:** [🔊 Listen](business_article_13.mp3)
 
-2. **Mark Zuckerberg has an image problem - so why is Meta's business booming?**
-   - **Published:** Thu, 08 Oct 2026 23:14:02 GMT
-   - **Read Parallel Translation:** [business_article_14_Mark_Zuckerberg_has_an_image_problem_-_s.md](business_article_14_Mark_Zuckerberg_has_an_image_problem_-_s.md)
+2. **Analysis: Trump's shock Russia deal highlights mounting pressure to curb fuel prices**
+   - **Published:** Fri, 09 Oct 2026 22:30:22 GMT
+   - **Read Parallel Translation:** [business_article_14_Analysis_Trumps_shock_Russia_deal_highli.md](business_article_14_Analysis_Trumps_shock_Russia_deal_highli.md)
    - **French Audio Narration:** [🔊 Listen](business_article_14.mp3)
 
-3. **Nvidia-backed AI data centre firm scraps landmark listing over market fears**
-   - **Published:** Fri, 09 Oct 2026 04:06:23 GMT
-   - **Read Parallel Translation:** [business_article_15_Nvidia-backed_AI_data_centre_firm_scraps.md](business_article_15_Nvidia-backed_AI_data_centre_firm_scraps.md)
+3. **Boots has a new owner: Three ways it could affect you**
+   - **Published:** Fri, 09 Oct 2026 23:01:14 GMT
+   - **Read Parallel Translation:** [business_article_15_Boots_has_a_new_owner_Three_ways_it_coul.md](business_article_15_Boots_has_a_new_owner_Three_ways_it_coul.md)
    - **French Audio Narration:** [🔊 Listen](business_article_15.mp3)
 
-4. **'Add me to WhatsApp' scam calls to be investigated**
-   - **Published:** Thu, 08 Oct 2026 23:05:09 GMT
-   - **Read Parallel Translation:** [business_article_16_Add_me_to_WhatsApp_scam_calls_to_be_inve.md](business_article_16_Add_me_to_WhatsApp_scam_calls_to_be_inve.md)
+4. **Burnham promises to curb non-compete rules in job contracts**
+   - **Published:** Fri, 09 Oct 2026 16:15:30 GMT
+   - **Read Parallel Translation:** [business_article_16_Burnham_promises_to_curb_non-compete_rul.md](business_article_16_Burnham_promises_to_curb_non-compete_rul.md)
    - **French Audio Narration:** [🔊 Listen](business_article_16.mp3)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Nvidia-backed AI data centre firm scraps landmark listing over market fears**
-   - **Published:** Fri, 09 Oct 2026 04:06:23 GMT
-   - **Read Parallel Translation:** [technology_article_17_Nvidia-backed_AI_data_centre_firm_scraps.md](technology_article_17_Nvidia-backed_AI_data_centre_firm_scraps.md)
+1. **Prize-winning image which sparked backlash was AI-generated, Nikon rules**
+   - **Published:** Fri, 09 Oct 2026 15:32:30 GMT
+   - **Read Parallel Translation:** [technology_article_17_Prize-winning_image_which_sparked_backla.md](technology_article_17_Prize-winning_image_which_sparked_backla.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_17.mp3)
 
-2. **Why are more roofs not made of solar tiles?**
-   - **Published:** Thu, 08 Oct 2026 23:09:56 GMT
-   - **Read Parallel Translation:** [technology_article_18_Why_are_more_roofs_not_made_of_solar_til.md](technology_article_18_Why_are_more_roofs_not_made_of_solar_til.md)
+2. **Anthropic bans users from being 'cruel' to its AI systems**
+   - **Published:** Fri, 09 Oct 2026 12:34:27 GMT
+   - **Read Parallel Translation:** [technology_article_18_Anthropic_bans_users_from_being_cruel_to.md](technology_article_18_Anthropic_bans_users_from_being_cruel_to.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_18.mp3)
 
-3. **White House blocks Microsoft from foreign worker hiring program**
-   - **Published:** Thu, 08 Oct 2026 21:37:35 GMT
-   - **Read Parallel Translation:** [technology_article_19_White_House_blocks_Microsoft_from_foreig.md](technology_article_19_White_House_blocks_Microsoft_from_foreig.md)
+3. **Fired OpenAI researchers say they were let go for 'prioritising safety'**
+   - **Published:** Fri, 09 Oct 2026 09:30:49 GMT
+   - **Read Parallel Translation:** [technology_article_19_Fired_OpenAI_researchers_say_they_were_l.md](technology_article_19_Fired_OpenAI_researchers_say_they_were_l.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_19.mp3)
 
-4. **Asos hackers took more personal details than first revealed, BBC finds**
-   - **Published:** Thu, 08 Oct 2026 16:29:33 GMT
-   - **Read Parallel Translation:** [technology_article_20_Asos_hackers_took_more_personal_details_.md](technology_article_20_Asos_hackers_took_more_personal_details_.md)
+4. **Nvidia-backed data centre firm scraps IPO as AI valuation concerns deepen**
+   - **Published:** Fri, 09 Oct 2026 07:14:30 GMT
+   - **Read Parallel Translation:** [technology_article_20_Nvidia-backed_data_centre_firm_scraps_IP.md](technology_article_20_Nvidia-backed_data_centre_firm_scraps_IP.md)
    - **French Audio Narration:** [🔊 Listen](technology_article_20.mp3)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Why are more roofs not made of solar tiles?**
-   - **Published:** Thu, 08 Oct 2026 23:09:56 GMT
-   - **Read Parallel Translation:** [science_article_21_Why_are_more_roofs_not_made_of_solar_til.md](science_article_21_Why_are_more_roofs_not_made_of_solar_til.md)
+1. **Life-threatening Hurricane Isaias makes landfall in Florida**
+   - **Published:** Sat, 10 Oct 2026 01:58:56 GMT
+   - **Read Parallel Translation:** [science_article_21_Life-threatening_Hurricane_Isaias_makes_.md](science_article_21_Life-threatening_Hurricane_Isaias_makes_.md)
    - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Will El Niño and the polar vortex bring snow to the UK this winter?**
-   - **Published:** Thu, 08 Oct 2026 23:03:33 GMT
-   - **Read Parallel Translation:** [science_article_22_Will_El_Niño_and_the_polar_vortex_bring_.md](science_article_22_Will_El_Niño_and_the_polar_vortex_bring_.md)
+2. **'People don't think recycling at work is part of their job description'**
+   - **Published:** Fri, 09 Oct 2026 19:11:27 GMT
+   - **Read Parallel Translation:** [science_article_22_People_dont_think_recycling_at_work_is_p.md](science_article_22_People_dont_think_recycling_at_work_is_p.md)
    - **French Audio Narration:** [🔊 Listen](science_article_22.mp3)
 
-3. **BBC on Hurricane Isaias and its expected Gulf Coast landfall**
-   - **Published:** Thu, 08 Oct 2026 19:39:32 GMT
-   - **Read Parallel Translation:** [science_article_23_BBC_on_Hurricane_Isaias_and_its_expected.md](science_article_23_BBC_on_Hurricane_Isaias_and_its_expected.md)
+3. **Isaias becomes major category three storm before landfall**
+   - **Published:** Fri, 09 Oct 2026 16:46:32 GMT
+   - **Read Parallel Translation:** [science_article_23_Isaias_becomes_major_category_three_stor.md](science_article_23_Isaias_becomes_major_category_three_stor.md)
    - **French Audio Narration:** [🔊 Listen](science_article_23.mp3)
 
-4. **More than 800,000 hours of sewage spills in Wales last year, report claims**
-   - **Published:** Thu, 08 Oct 2026 18:05:35 GMT
-   - **Read Parallel Translation:** [science_article_24_More_than_800000_hours_of_sewage_spills_.md](science_article_24_More_than_800000_hours_of_sewage_spills_.md)
+4. **Prize-winning image which sparked backlash was AI-generated, Nikon rules**
+   - **Published:** Fri, 09 Oct 2026 15:32:30 GMT
+   - **Read Parallel Translation:** [science_article_24_Prize-winning_image_which_sparked_backla.md](science_article_24_Prize-winning_image_which_sparked_backla.md)
    - **French Audio Narration:** [🔊 Listen](science_article_24.mp3)
 
 ---
 
 ### Section: HEALTH
 
-1. **'I rage and I don't care': Why women are reclaiming their anger**
-   - **Published:** Thu, 08 Oct 2026 23:48:05 GMT
-   - **Read Parallel Translation:** [health_article_25_I_rage_and_I_dont_care_Why_women_are_rec.md](health_article_25_I_rage_and_I_dont_care_Why_women_are_rec.md)
+1. **Autism, ADHD and mental health review: What you need to know**
+   - **Published:** Fri, 09 Oct 2026 12:16:11 GMT
+   - **Read Parallel Translation:** [health_article_25_Autism_ADHD_and_mental_health_review_Wha.md](health_article_25_Autism_ADHD_and_mental_health_review_Wha.md)
    - **French Audio Narration:** [🔊 Listen](health_article_25.mp3)
 
-2. **ADHD and autism at risk of over-diagnosis, says government review**
-   - **Published:** Thu, 08 Oct 2026 23:01:30 GMT
-   - **Read Parallel Translation:** [health_article_26_ADHD_and_autism_at_risk_of_over-diagnosi.md](health_article_26_ADHD_and_autism_at_risk_of_over-diagnosi.md)
+2. **From the workplace to pop culture - why how we view women's anger is changing**
+   - **Published:** Fri, 09 Oct 2026 11:40:22 GMT
+   - **Read Parallel Translation:** [health_article_26_From_the_workplace_to_pop_culture_-_why_.md](health_article_26_From_the_workplace_to_pop_culture_-_why_.md)
    - **French Audio Narration:** [🔊 Listen](health_article_26.mp3)
 
-3. **Harry says he 'slipped into depression' after leaving UK**
-   - **Published:** Thu, 08 Oct 2026 18:55:41 GMT
-   - **Read Parallel Translation:** [health_article_27_Harry_says_he_slipped_into_depression_af.md](health_article_27_Harry_says_he_slipped_into_depression_af.md)
+3. **ADHD and autism at risk of over-diagnosis, says government review**
+   - **Published:** Thu, 08 Oct 2026 23:01:30 GMT
+   - **Read Parallel Translation:** [health_article_27_ADHD_and_autism_at_risk_of_over-diagnosi.md](health_article_27_ADHD_and_autism_at_risk_of_over-diagnosi.md)
    - **French Audio Narration:** [🔊 Listen](health_article_27.mp3)
 
-4. **'Ominous signs' of winter pressures as NHS waiting list grows**
-   - **Published:** Thu, 08 Oct 2026 12:42:56 GMT
-   - **Read Parallel Translation:** [health_article_28_Ominous_signs_of_winter_pressures_as_NHS.md](health_article_28_Ominous_signs_of_winter_pressures_as_NHS.md)
+4. **Harry says he 'slipped into depression' after leaving UK**
+   - **Published:** Thu, 08 Oct 2026 18:55:41 GMT
+   - **Read Parallel Translation:** [health_article_28_Harry_says_he_slipped_into_depression_af.md](health_article_28_Harry_says_he_slipped_into_depression_af.md)
    - **French Audio Narration:** [🔊 Listen](health_article_28.mp3)
 
 ---
 
 ### Section: POLITICS
 
-1. **Polanski defends leadership after Zionism row and by-election loss**
-   - **Published:** Fri, 09 Oct 2026 04:38:19 GMT
-   - **Read Parallel Translation:** [politics_article_29_Polanski_defends_leadership_after_Zionis.md](politics_article_29_Polanski_defends_leadership_after_Zionis.md)
+1. **Lib Dem MP quits frontbench job over Ed Davey's leadership**
+   - **Published:** Fri, 09 Oct 2026 17:14:16 GMT
+   - **Read Parallel Translation:** [politics_article_29_Lib_Dem_MP_quits_frontbench_job_over_Ed_.md](politics_article_29_Lib_Dem_MP_quits_frontbench_job_over_Ed_.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_29.mp3)
 
-2. **Labour sees off Green challenge to win Holborn by-election**
-   - **Published:** Fri, 09 Oct 2026 04:23:54 GMT
-   - **Read Parallel Translation:** [politics_article_30_Labour_sees_off_Green_challenge_to_win_H.md](politics_article_30_Labour_sees_off_Green_challenge_to_win_H.md)
+2. **Polanski vows to stay as Green leader as he faces criticism after by-election defeat**
+   - **Published:** Fri, 09 Oct 2026 19:26:53 GMT
+   - **Read Parallel Translation:** [politics_article_30_Polanski_vows_to_stay_as_Green_leader_as.md](politics_article_30_Polanski_vows_to_stay_as_Green_leader_as.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_30.mp3)
 
-3. **Chris Mason: Polanski faces greatest crisis of his leadership so far**
-   - **Published:** Fri, 09 Oct 2026 04:54:25 GMT
-   - **Read Parallel Translation:** [politics_article_31_Chris_Mason_Polanski_faces_greatest_cris.md](politics_article_31_Chris_Mason_Polanski_faces_greatest_cris.md)
+3. **Labour sees off Green challenge to win Holborn by-election**
+   - **Published:** Fri, 09 Oct 2026 10:31:29 GMT
+   - **Read Parallel Translation:** [politics_article_31_Labour_sees_off_Green_challenge_to_win_H.md](politics_article_31_Labour_sees_off_Green_challenge_to_win_H.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_31.mp3)
 
-4. **UK and Germany will face threats together, says Burnham in Berlin**
-   - **Published:** Thu, 08 Oct 2026 15:25:08 GMT
-   - **Read Parallel Translation:** [politics_article_32_UK_and_Germany_will_face_threats_togethe.md](politics_article_32_UK_and_Germany_will_face_threats_togethe.md)
+4. **Widdecombe suspect had 'particular hostility to Reform', court told**
+   - **Published:** Fri, 09 Oct 2026 14:35:31 GMT
+   - **Read Parallel Translation:** [politics_article_32_Widdecombe_suspect_had_particular_hostil.md](politics_article_32_Widdecombe_suspect_had_particular_hostil.md)
    - **French Audio Narration:** [🔊 Listen](politics_article_32.mp3)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Emotions run high at the round table as Celebrity Traitors banish two players**
-   - **Published:** Thu, 08 Oct 2026 23:08:09 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Emotions_run_high_at_the_round_table_as_.md](entertainment_article_33_Emotions_run_high_at_the_round_table_as_.md)
+1. **Screams, haunting scenes and deadly hide-and-seek, as Celebrity Traitors heats up**
+   - **Published:** Fri, 09 Oct 2026 22:51:57 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Screams_haunting_scenes_and_deadly_hide-.md](entertainment_article_33_Screams_haunting_scenes_and_deadly_hide-.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_33.mp3)
 
-2. **'Bold and inventive' Canadian poet Anne Carson wins Nobel Literature Prize**
-   - **Published:** Thu, 08 Oct 2026 14:33:23 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Bold_and_inventive_Canadian_poet_Anne_Ca.md](entertainment_article_34_Bold_and_inventive_Canadian_poet_Anne_Ca.md)
+2. **Alison Hammond: 'I thought I was having heart attack on air'**
+   - **Published:** Fri, 09 Oct 2026 10:52:34 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Alison_Hammond_I_thought_I_was_having_he.md](entertainment_article_34_Alison_Hammond_I_thought_I_was_having_he.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_34.mp3)
 
-3. **BBC to cut raft of Radio 4 programmes including You and Yours**
-   - **Published:** Thu, 08 Oct 2026 08:30:10 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_BBC_to_cut_raft_of_Radio_4_programmes_in.md](entertainment_article_35_BBC_to_cut_raft_of_Radio_4_programmes_in.md)
+3. **Emotions run high at the round table as Celebrity Traitors banish two players**
+   - **Published:** Thu, 08 Oct 2026 23:08:09 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Emotions_run_high_at_the_round_table_as_.md](entertainment_article_35_Emotions_run_high_at_the_round_table_as_.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_35.mp3)
 
-4. **Actor Simon Pegg reveals ADHD diagnosis: 'It's just who I am'**
-   - **Published:** Thu, 08 Oct 2026 09:35:30 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Actor_Simon_Pegg_reveals_ADHD_diagnosis_.md](entertainment_article_36_Actor_Simon_Pegg_reveals_ADHD_diagnosis_.md)
+4. **Olivia Colman on viral Wicker memes: 'This has never happened to me before'**
+   - **Published:** Thu, 08 Oct 2026 23:08:49 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Olivia_Colman_on_viral_Wicker_memes_This.md](entertainment_article_36_Olivia_Colman_on_viral_Wicker_memes_This.md)
    - **French Audio Narration:** [🔊 Listen](entertainment_article_36.mp3)
 
 ---

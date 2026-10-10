@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boots has a new owner: Three ways it could affect you</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Boots has a new owner: Three ways it could affect you</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 09 Oct 2026 23:01:14 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c63djxry8124o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The stalwart of Britain's High Street has been sold to a Canadian billionaire family. What will that mean for you?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="6.82" data-end="14.3">
+            <p class="french-block">Si vous cherchez à acheter un produit de santé ou de beauté, il est probable que vous ayez acheté chez Boots quelque part au Royaume-Uni.</p>
+            <span class="english-block">If you have been looking to buy a health or beauty product, the chances are you will have shopped at a Boots somewhere in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="14.3" data-end="22.15">
+            <p class="french-block">La pharmacie et le détaillant sont un des piliers de la vie privée britannique, où ils servent des générations de clients depuis des décennies.</p>
+            <span class="english-block">The pharmacy and retailer is a stalwart of Britain's high streets, where it has served generations of customers for decades.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="22.15" data-end="35.57">
+            <p class="french-block">Mais maintenant, il est entré dans sa 178e année sous la nouvelle propriété après un accord de 7 milliards de livres sterling a été convenu cette semaine - voici trois façons que cela pourrait affecter votre expérience de magasinage.</p>
+            <span class="english-block">But now it is set to enter its 178th year under new ownership after an £7bn deal was agreed this week - here's three ways it could affect your shopping experience.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.57" data-end="43.82">
+            <p class="french-block">La mise à niveau de son portefeuille de 1 800 magasins figure en tête de la liste des nouveaux propriétaires de Boots, Wittington Investments.</p>
+            <span class="english-block">Upgrading its portfolio of 1,800 stores is high on the list of Boots' new owners, Wittington Investments. This is the holding company of the Westons -  a wealthy and retail-steeped Canadian family who used to own Selfridges and currently own several large retailers across the Atlantic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="43.82" data-end="51.74">
+            <p class="french-block">La branche britannique de la famille contrôle également le propriétaire de Primark, Associated British Foods (ABF).</p>
+            <span class="english-block">The UK branch of the family also controls the owner of Primark, Associated British Foods (ABF).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="51.74" data-end="56.47">
+            <p class="french-block">À quoi ressembleraient les magasins de Boots à l'avenir n'a pas été révélé.</p>
+            <span class="english-block">What Boots stores might look like in the future has not been disclosed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="56.47" data-end="71.11">
+            <p class="french-block">Les affaires ont été bonnes pour Boots ces dernières années, et les zones de beauté neuves dans certains de ses plus grands magasins ont donné aux acheteurs une expérience plus grande de magasin, selon Sofie Willmott, directeur associé et analyste chez GlobalData Retail.</p>
+            <span class="english-block">Business has been good for Boots in recent years, and new-look beauty areas in some of its bigger shops have given shoppers more of a department store experience, according to Sofie Willmott, an associate director and analyst at GlobalData Retail.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="71.11" data-end="87.84">
+            <p class="french-block">Depuis l'ouverture de son premier magasin exclusivement pour la beauté en 2023 dans le développement de la centrale électrique de Battersea, il dit avoir redessiné plus de 180 salles de beauté, tout en ouvrant son premier magasin de concept de parfum et un Opticians dédié aux lunettes de luxe.</p>
+            <span class="english-block">Since the opening of its first beauty-only store in 2023 in the Battersea Power Station development, it says it has redesigned over 180 beauty halls, while also opening its first fragrance concept store and an Opticians dedicated to luxury eyewear.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="87.84" data-end="102.12">
+            <p class="french-block">"Ils devraient investir dans le reste de la chaîne parce qu'ils ont un portefeuille de magasins si grand que je pense que certains des plus petits magasins ont vraiment manqué d'investissement au fil du temps, et je pense que c'est quelque chose qu'ils doivent en quelque sorte rattraper", dit Willmott.</p>
+            <span class="english-block">"They should invest in the rest of the chain because they've got such a big store portfolio that I think some of the smaller stores have really lacked investment over time, and I think that is something that they need to kind of catch up with," Willmott says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.12" data-end="110.21">
+            <p class="french-block">Un look plus " cohérent " serait également une amélioration, ajoute Willmott. " Il y a un peu de déconnexion en ce moment. "</p>
+            <span class="english-block">A more "consistent" look would also be an improvement, Willmott adds. "At the moment there is a bit of a disconnect."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.21" data-end="125.3">
+            <p class="french-block">Jackie Naghten, une vétéran du secteur de la vente au détail qui a travaillé pour des entreprises comme Top Shop, Marks & Spencer et Debenhams, pense que les magasins de Boots doivent être rendus "plus fonctionnels" en ne pas avoir leurs centres de santé "encombrés dans un coin".</p>
+            <span class="english-block">Jackie Naghten, a retail industry veteran who has worked for the likes of Top Shop, Marks & Spencer and Debenhams, thinks Boots' stores need to be made "more functional" by not having their health hubs "squeezed in the corner".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.3" data-end="133.32">
+            <p class="french-block">Mais Yasmin Trimble, 22 ans, qui achète des produits de beauté chez Boots, aime la facilité de navigation des magasins.</p>
+            <span class="english-block">But Yasmin Trimble, 22, who buys beauty products from Boots, likes how the easy stores are to navigate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="133.32" data-end="140.57">
+            <p class="french-block">"Vous pouvez obtenir tout ce dont vous avez besoin... il n'est pas déroutant. Il a aussi une esthétique plus propre".</p>
+            <span class="english-block">"You can get everything you need...it is not confusing. It has got a cleaner aesthetic to it as well."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.57" data-end="144.84">
+            <p class="french-block">Katie Burrows et Yasmin Trimble achètent régulièrement chez Boots.</p>
+            <span class="english-block">Katie Burrows and Yasmin Trimble both shop at Boots regularly</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="144.84" data-end="153.62">
+            <p class="french-block">Boots a été un des premiers à adopter les cartes de fidélité communément offertes aujourd'hui par les entreprises offrant des points et des rabais aux clients qui s'inscrivent.</p>
+            <span class="english-block">Boots was an early adopter of the loyalty cards commonly offered today by companies offering points and discounts to customers who sign up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="153.62" data-end="160.87">
+            <p class="french-block">Sa carte Advantage, lancée en 1997, est peu probable qu'elle disparaisse et reste populaire.</p>
+            <span class="english-block">Its Advantage card, launched in 1997, is unlikely to go away and remains popular.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.87" data-end="169.54">
+            <p class="french-block">Naghten ne pense pas qu'ils pourraient se débarrasser de lui. "C'est la carte de magasin de meilleure valeur en termes de bang pour votre argent".</p>
+            <span class="english-block">Naghten doesn't think they would get rid of it. "It's the best-value store card in terms of bang for your buck."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="169.54" data-end="173.78">
+            <p class="french-block">La carte offre aux acheteurs trois points pour chaque livre qu'ils dépensent.</p>
+            <span class="english-block">The card offers shoppers three points for every pound they spend. Each point is worth 1p.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="173.78" data-end="179.18">
+            <p class="french-block">Katie Burrows, 23 ans, est fan de gagner des points pour gagner de l'argent.</p>
+            <span class="english-block">Katie Burrows, 23, is a fan of building up the points to get money off.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="179.18" data-end="190.51">
+            <p class="french-block">Elle achète principalement chez Boots des soins de la peau, des premiers soins et des médicaments, mais pense que les prix des produits sanitaires sont "ridiculement chers" - ce que son amie Yasmin est d'accord avec.</p>
+            <span class="english-block">She mainly shops at Boots for skincare, first aid and medicine, but thinks prices for its sanitary products are "ridiculously expensive" - something her friend Yasmin agrees with.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.51" data-end="200.74">
+            <p class="french-block">Lewis Harrison estime que la carte de fidélité est également une bonne valeur, mais trouve qu'elle "frustrant la façon dont les points de récompense ne couvrent qu'une transaction complète".</p>
+            <span class="english-block">Lewis Harrison believes the loyalty card is also good value, but finds it "frustrating how the rewards points only cover a full transaction".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.74" data-end="208.82">
+            <p class="french-block">"Je souhaite que vous puissiez utiliser vos points pour une transaction partielle comme vous le pouvez à Hollande et à Barrett, dit le jeune homme de 25 ans.</p>
+            <span class="english-block">"I wish you could use your points for a partial transaction like you can in Holland and Barrett," the 25-year-old says. "It would be good to use the points towards more expensive transactions."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="208.82" data-end="222.6">
+            <p class="french-block">Natalie Berg, experte en vente au détail et fondatrice de la société de conseil NBK Retail, suggère que la carte Advantage donne à Boots "une compréhension unique de leurs clients" et est un atout que les nouveaux propriétaires "voulont doubler".</p>
+            <span class="english-block">Natalie Berg, retail expert and founder of consultancy NBK Retail, suggests the Advantage card gives Boots "a unique understanding of their customers" and is an asset the new owners "will want to double down on".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="222.6" data-end="232.1">
+            <p class="french-block">"Alors que l'IA et les médias sociaux changent la façon dont les gens découvrent et achètent des produits, cette relation directe avec les clients ne fera que devenir plus importante".</p>
+            <span class="english-block">"As AI and social media change how people discover and buy products, that direct relationship with customers will only become more important."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="232.1" data-end="240.17">
+            <p class="french-block">Les nouveaux propriétaires ont déjà indiqué qu'ils prévoyaient d'étendre le service de santé de Boots, une industrie en plein essor pour le moment.</p>
+            <span class="english-block">The new owners have already signalled they plan to expand Boots' healthcare service, a booming industry at the moment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.17" data-end="253.92">
+            <p class="french-block">Le détaillant a commencé comme pharmacien, donc la santé est en son sein. Aujourd'hui, il offre une large gamme de services de santé et de bien-être ainsi que des ordonnances et des vaccins par l'intermédiaire de ses pharmacies en magasin.</p>
+            <span class="english-block">The retailer started out as an apothecary, so health is in its roots. Today, it offers a wide range of health and wellbeing services as well as prescriptions and vaccinations through its in-store pharmacies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="253.92" data-end="261.82">
+            <p class="french-block">Il a également annoncé plus tôt cet été qu'il élargissait ses services pour les médicaments de perte de poids, qui ont gagné en popularité.</p>
+            <span class="english-block">It also announced earlier this summer it was expanding services for weight loss drugs, which have surged in popularity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="261.82" data-end="274.85">
+            <p class="french-block">Naghten souligne que l'achat de Boots par la famille Weston intervient à un moment où les pharmacies vont de plus en plus prescrire des médicaments et des services de santé, dans le but de réduire la pression sur les chirurgies de GP et les hôpitaux.</p>
+            <span class="english-block">Naghten points out that the Weston family's purchase of Boots comes at a time when pharmacies are increasingly going to prescribe more medications and health services, in a bid to ease pressure on GP surgeries and hospitals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="274.85" data-end="278.71">
+            <p class="french-block">"Ils n'ont pas acheté cette chose sans raison, dit- elle.</p>
+            <span class="english-block">"They didn't buy this thing for no reason. They have got the blueprint," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="278.71" data-end="288.67">
+            <p class="french-block">Bien que la santé reste une partie essentielle de son activité, Boots a d'autres atouts, ajoute Naghten, dans ses produits de maquillage et de soins de la peau n ° 7.</p>
+            <span class="english-block">While health will remain a core part of its business, Boots has other strengths, Naghten adds, in its No7 make-up and skincare products.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="288.67" data-end="296.52">
+            <p class="french-block">"Quand vous avez toutes ces personnes qui viennent pour des services de santé et de bien-être, elles vont aussi prendre du rouge à lèvres", dit- elle.</p>
+            <span class="english-block">"When you have all these people coming in for health and wellbeing services, they will also be picking up a lipstick," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="296.52" data-end="303.96">
+            <p class="french-block">Willmott suggère que Boots a un "avantage" sur ses rivaux du côté de la santé, étant donné sa réputation d'expert.</p>
+            <span class="english-block">Willmott suggests Boots has an "edge" over its rivals on the health side, given its reputation as an expert.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="303.96" data-end="311.3">
+            <p class="french-block">Mais la société est confrontée à une concurrence féroce, ce qui a affecté les revenus dans ses derniers résultats financiers.</p>
+            <span class="english-block">But the company is facing tough competition, which Boots acknowledged affected revenues in its latest financial results.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="311.3" data-end="321.65">
+            <p class="french-block">Les acheteurs, en particulier les plus jeunes, recherchent de plus en plus des produits en ligne par le biais de publicités d'influence plutôt que de se rendre dans des magasins ordinaires.</p>
+            <span class="english-block">Shoppers, particularly younger ones, are increasingly seeking products online through influencer ads rather than heading to brick-and-mortar shops.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="321.65" data-end="335.16">
+            <p class="french-block">Il y a aussi d'autres grands acteurs, comme Superdrug. Et M&S a annoncé cette semaine un nouveau partenariat avec Sephora, disant qu'il remplacerait une centaine de ses propres départements de beauté avec la marque l'année prochaine.</p>
+            <span class="english-block">There are also other big players, such as Superdrug. And M&S this week announced a new partnership with Sephora, saying it would replace a hundred of its own beauty departments with the brand next year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.16" data-end="345.86">
+            <p class="french-block">Pour Schekina Bourne, 18 ans, Boots n'est pas un "boutique" pour elle. " Bien que je puisse aller à Boots même dans mon quartier... la superdrogue est comme la plus proche de moi.</p>
+            <span class="english-block">For 18-year-old Schekina Bourne, Boots is not a "go-to shop" for her. "Even though I can go to Boots even in my area....Superdrug is like closest to me. So, I'll prefer the convenience," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="345.86" data-end="350.83">
+            <p class="french-block">Des bottes vendues pour 7 milliards de livres à la famille de milliardaires canadiens</p>
+            <span class="english-block">Boots sold in £7bn deal to Canadian billionaire family</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="business_article_15.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

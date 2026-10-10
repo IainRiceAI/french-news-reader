@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fired OpenAI researchers say they were let go for 'prioritising safety'</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Fired OpenAI researchers say they were let go for 'prioritising safety'</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 09 Oct 2026 09:30:49 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cvlydn8d3lkjo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The AI firm instead claims the researchers were fired for mishandling sensitive information.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="8.5" data-end="20.78">
+            <p class="french-block">Trois anciens chercheurs d'OpenAI ont été licenciés pour avoir prétendument mal géré l'information, affirmant qu'ils ont été relâchés parce qu'ils ont soulevé des préoccupations en matière de sécurité dans la société de technologie.</p>
+            <span class="english-block">Three former OpenAI researchers sacked for allegedly mishandling information claim they were instead let go because they raised safety concerns at the tech firm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.78" data-end="36.7">
+            <p class="french-block">"Je pense que nous avons été licenciés pour avoir donné la priorité à la sécurité sur les intérêts à court terme d'OpenAI en tant que société", a posté Mikita Balesni sur X, en dehors, aux côtés d'une lettre ouverte à la créatrice de ChatGPT, écrite avec ses anciens collègues.</p>
+            <span class="english-block">"I believe we were fired for prioritising safety over the near-term interests of OpenAI as a corporation," Mikita Balesni posted on X, external alongside an open letter to the ChatGPT-maker, written with fellow ex-employees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="36.7" data-end="48.58">
+            <p class="french-block">Le 2 octobre, un porte-parole de la firme d'IA a déclaré à la BBC que son enquête "confirmait que ces individus avaient mal géré des informations sensibles en dehors des procédures établies par l'entreprise".</p>
+            <span class="english-block">On 2 October, a spokesperson for the AI firm told the BBC its investigation "confirmed that these individuals mishandled sensitive information outside established company procedures".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="48.58" data-end="55.22">
+            <p class="french-block">OpenAI a répété ces affirmations, extérieures vendredi matin dans une note des dirigeants de la recherche.</p>
+            <span class="english-block">OpenAI repeated these claims, external on Friday morning in a note from research leaders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.22" data-end="63.46">
+            <p class="french-block">"Nous voulons être très clairs que ces décisions ne visaient pas à soulever des préoccupations en matière de sécurité ou à parler", indique la note.</p>
+            <span class="english-block">"We want to be very clear that these decisions were not about raising safety concerns or speaking out," the note said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="63.46" data-end="73.75">
+            <p class="french-block">"Notre enquête interne a révélé une violation significative de la confiance au-delà de ce qui est décrit dans la lettre qu'ils ont publiée et nous soutenons la décision de ne pas continuer leur emploi".</p>
+            <span class="english-block">"Our internal investigation uncovered a significant breach of trust beyond what's outlined in the letter they published and we stand by the decision to not continue their employment."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="73.75" data-end="82.9">
+            <p class="french-block">Les licenciements interviennent au milieu d'un débat croissant sur la sécurité de l'IA et les risques potentiels que les systèmes d'IA avancés pourraient présenter à la société.</p>
+            <span class="english-block">The dismissals come amid a growing debate over AI safety and the potential risks advanced AI systems could pose to society.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="82.9" data-end="95.71">
+            <p class="french-block">La lettre commune adressée aux dirigeants d'OpenAI a été écrite par Balesni, Tomek Korbak et Jasmine Wang, qui disent qu'ils étaient tous, jusqu'à récemment, des employés de sécurité ou d'alignement de l'entreprise.</p>
+            <span class="english-block">The joint letter to OpenAI leadership was written by Balesni, Tomek Korbak and Jasmine Wang, who say they were all, until recently, safety or alignment employees at the company.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.71" data-end="102.07">
+            <p class="french-block">L'alignement est la pratique consistant à intégrer des idées et des principes éthiques humains dans la technologie.</p>
+            <span class="english-block">Alignment is the practice of building human ethical ideas and principles into the technology. In other words, it aims to keep it on track with what humans value.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="102.07" data-end="116.57">
+            <p class="french-block">Les anciens membres du personnel ont exprimé leur inquiétude que leurs licenciements aient fait que les employés de la société technologique "aient peur de parler et d'opérer de manière à ce que, jusqu'à la semaine dernière, ils fassent partie intégrante du travail chez OpenAI".</p>
+            <span class="english-block">The former staff members raised concerns that their firings had made employees at the tech company "afraid to speak and operate in ways that, until last week, were an integral part of working at OpenAI".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="116.57" data-end="131.59">
+            <p class="french-block">En réécrivant la lettre, Korbak a écrit, en dehors: " Pendant des mois, j'ai soulevé des préoccupations de sécurité selon lesquelles nous perdons la capacité de surveiller ce que pensent les agents de l'IA, l'un de nos meilleurs outils pour attraper quand ils se comportent mal.</p>
+            <span class="english-block">Reposting the letter, Korbak wrote, external: "For months, I'd been raising safety concerns that we're losing the ability to monitor what AI agents think, one of our best tools for catching when they misbehave.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="131.59" data-end="134.69">
+            <p class="french-block">"Je crois que c'est pour ça que j'ai été viré".</p>
+            <span class="english-block">"I believe that was why I was fired."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="134.69" data-end="142.7">
+            <p class="french-block">OpenAI a déclaré qu'il finaliserait des contrats avec des évaluateurs de sécurité tiers et qu'il annoncerait des détails dans les prochaines semaines.</p>
+            <span class="english-block">OpenAI said it was finalising contracts with third-party safety assessors and would announce details in the coming weeks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="142.7" data-end="151.7">
+            <p class="french-block">"Nous n'étions pas les premiers à être expulsés d'OpenAI dans des circonstances suspectes", a déclaré Wang dans un article publié sur X, External.</p>
+            <span class="english-block">"We were not the first to be pushed out of OpenAI under suspicious circumstances," Wang said in a post on X, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="151.7" data-end="158.11">
+            <p class="french-block">"Si les employés ne prennent pas position contre ce type de manœuvre, je crains que nous ne soyons pas les derniers".</p>
+            <span class="english-block">"Unless the employees take a stand now against this kind of manoeuvre, I am concerned we will not be the last."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="158.11" data-end="165.43">
+            <p class="french-block">OpenAI dit que l'utilisation de ChatGPT par les adolescents est limitée mais que la recherche le trouve un " risque inacceptable "</p>
+            <span class="english-block">OpenAI says teen ChatGPT use limited but research finds it an 'unacceptable risk'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.43" data-end="171.65">
+            <p class="french-block">Pourquoi y a-t-il des préoccupations que l'IA puisse menacer l'humanité, et à quel point sont-elles réelles?</p>
+            <span class="english-block">Why are there concerns AI could threaten humanity, and how real are they?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="171.65" data-end="179.4">
+            <p class="french-block">Le personnel de l'IA "a vraiment peur" de l'avenir de l'humanité, a déclaré à la BBC un ancien chercheur de l'Anthropic</p>
+            <span class="english-block">AI staff 'genuinely frightened' for humanity's future, ex-Anthropic researcher tells BBC</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src="technology_article_19.mp3"></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
