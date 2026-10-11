@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three friends on their student debt: one paid off, one chipping away and one creeping up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Three friends on their student debt: one paid off, one chipping away and one creeping up</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 10 Oct 2026 23:17:03 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c9rk3k25vmxko?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Lizzy, Charlotte and Libby studied at the same time, but their student debt now looks very different.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Lizzy, Charlotte et Libby ont étudié à l'Université de Newcastle entre 2012 et 2015.</p>
+            <span class="english-block">Lizzy, Charlotte and Libby studied at the University of Newcastle between 2012 and 2015</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Lorsque Lizzy, Libby et Charlotte se sont rencontrées en 2012 à l'école secondaire, leur principale responsabilité était de se rendre à temps aux conférences après les entraînements sportifs matins.</p>
+            <span class="english-block">When Lizzy, Libby and Charlotte met as freshers in 2012, their main responsibility was making it to lectures on time after early morning sports practice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Leur dette étudiante, qui augmentait avec intérêt depuis le jour où ils prenaient leurs prêts, était la dernière chose qui leur venait à l'esprit.</p>
+            <span class="english-block">Their student debt, growing with interest from the day they took out their loans, was the last thing on their minds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">" La conversation était tellement moins pertinente à l'époque, dit Charlotte. " Au fur et à mesure que nos carrières se sont poursuivies et que nos chemins se sont de plus en plus divergés, ces conversations ont commencé à prendre de l'importance. "</p>
+            <span class="english-block">"The conversation was just so much less relevant at that time," says Charlotte. "As our careers have gone on and our paths have diverged more and more... those conversations start to come more to the forefront."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Les amis, maintenant âgés de 30 ans, sont allés à l'Université de Newcastle la même année, les frais de scolarité ont triplé à 9 000 £ par an en Angleterre et au Pays de Galles, et de nouveaux prêts appelés Plan 2 ont été introduits. Chacun a emprunté environ 37 500 £ pour couvrir trois ans de frais de scolarité et de subsistance.</p>
+            <span class="english-block">The friends, now in their early 30s, went to the University of Newcastle in the same year tuition fees tripled to £9,000 a year in England and Wales, and new loans called Plan 2 were introduced. Each borrowed about £37,500 to cover three years of tuition and living costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Cette année, nous célébrons la décennie de la réintégration des premiers étudiants.</p>
+            <span class="english-block">This year marks a decade since the first students in their year started repaying.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Ils ont peut-être commencé dans la même position, mais au fil du temps, leurs trajectoires de carrière, leurs choix de vie et leurs revenus ont façonné leur remboursement, leur intérêt accumulé et leur dette, avec des résultats très différents.</p>
+            <span class="english-block">They may have started out in the same position, but over that time their career trajectories, life choices and earnings have shaped how much they've repaid, how much interest they've racked up, and how much they owe - with very different outcomes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Les prêts étudiants ont été examinés cette année et il y a eu une réaction particulière sur les prêts du Plan 2. Le gouvernement a dit qu'il voulait rendre l'ensemble du système plus équitable et les militants attendent de voir ce qui, si quelque chose, change dans le budget de ce mois.</p>
+            <span class="english-block">Student loans have come under scrutiny this year and there's been a particular backlash over Plan 2 loans. The government has said it wants to make the whole system fairer and campaigners are waiting to see what, if anything, changes in this month's Budget.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">La colère contre le Plan 2 a augmenté après que le gouvernement a annoncé des conditions mises à jour en novembre.</p>
+            <span class="english-block">The anger about Plan 2 grew after the government announced updated terms in November. The income at which graduates start repaying is set to be frozen for three years, meaning graduates would start making payments sooner and pay more each month.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Mais elle s'est aussi accrue parce que le taux d'intérêt est plus élevé que la plupart des autres prêts étudiants, et que beaucoup ont vu leurs dettes augmenter malgré des remboursements mensuels.</p>
+            <span class="english-block">But it has also been brewing because the interest rate is higher than most other student loan plans, and many have seen their debts rise despite making monthly repayments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">" Depuis avril de cette année, j'ai payé près de 450 livres sterling et j'ai accumulé plus de 500 livres sterling en intérêts ", dit Charlotte, physiothérapeute à Bristol.</p>
+            <span class="english-block">"Since April this year, I've paid off in the region of £450 and I've accrued over £500 in interest," says Charlotte, a physiotherapist in Bristol.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Elle a obtenu une maîtrise après l'université et a travaillé dans le NHS avant de passer au secteur privé.</p>
+            <span class="english-block">She did a master's degree after uni and worked in the NHS before moving to the private sector. She earns about £50,000, but her loan is still going up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" Ça me rend en colère... c'est décourageant. "</p>
+            <span class="english-block">"It makes me angry... it's just disheartening."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Les trois amis gagnent plus que la moyenne nationale de 39 039 livres sterling. Mais une étude de l'Institut d'études fiscales, externe en février, suggère que les diplômés du Plan 2 doivent gagner environ 63 000 livres sterling ou plus pour un solde de prêt de 50 000 livres sterling pour commencer à baisser.</p>
+            <span class="english-block">All three friends earn above the national average of £39,039. But research from the Institute for Fiscal Studies, external in February suggests Plan 2 graduates need to earn about £63,000 or more for a loan balance of £50,000 to start going down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">"Je n'avais aucune idée que la dette allait augmenter", dit Libby, qui se souvient avoir pleuré quand elle a reçu sa première lettre de prêt étudiant après avoir obtenu son diplôme.</p>
+            <span class="english-block">"I just had no concept that the debt was going to go up," says Libby, who remembers being in tears when her first student loan letter came through after graduating.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Elle travaille actuellement dans une association de logements et vit à Worcester, elle gagne 72 000 livres sterling et dit que son solde de prêt étudiant a fluctué d'environ 47 000 livres sterling depuis plusieurs années.</p>
+            <span class="english-block">Now a project manager in a housing association and living in Worcester, she earns £72,000 and says her student loan balance has hovered at about £47,000 for a number of years. But she is currently on maternity leave and knows the interest will continue to accrue while her earnings - and therefore monthly repayments - drop.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">"Je me sens comme si je ne paierais jamais, alors c'est quelque chose que je suce jusqu'à ce que le prêt soit annulé", dit-elle.</p>
+            <span class="english-block">"It feels like I will never pay it off, so it's something that I'm kind of just sucking up until the loan is written off," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Son partenaire a suivi le même cours, en commençant un an avant elle et avant que les frais de scolarité ne soient presque triplés avec l'introduction de prêts du Plan 2.</p>
+            <span class="english-block">Her partner did the same course, starting a year before her and before tuition fees near tripled with the introduction of Plan 2 loans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Elle dit qu'il est " si frustrant " qu'elle doive payer des milliers de livres de plus par an pour sa dette étudiante.</p>
+            <span class="english-block">She says it is "so frustrating" that she has to pay out thousands of pounds a year more on her student debt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Les étudiants actuels et anciens ont des plans de prêts étudiants différents selon leur lieu de résidence au Royaume-Uni et leur âge d'entrée à l'université.</p>
+            <span class="english-block">Current and former students have different student loan plans depending on where they live in the UK and when they went to university. Plan 2 loans were given out in England for a little more than a decade from 2012 and are still issued in Wales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">La dette est remboursée après 30 ans.</p>
+            <span class="english-block">The debt is written off after 30 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Lizzy, qui a étudié l'économie et travaille maintenant dans les services financiers et vit à Bristol, est la meilleure payée des amies, qui se sont liées à l'université pour rouler.</p>
+            <span class="english-block">Lizzy, who studied economics and now works in financial services and lives in Bristol, is the highest paid of the friends, who bonded over rowing at university. She earns £85,000 a year and decided last year to clear her student debt by borrowing money from her family instead.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Elle avait estimé que, sur la base de son salaire actuel, elle rembourserait son prêt en 11 ans.</p>
+            <span class="english-block">She had estimated that, based on her current earnings trajectory, she would repay her loan in 11 years. By paying off her debt in full early she has accrued less interest and hopes to repay her family in four years - saving about £20,000.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Le montant que les diplômés remboursent volontairement pour leurs prêts étudiants a augmenté. Le fondateur de MoneySavingExpert.com, Martin Lewis, a averti que seuls les plus hauts salaires pourraient bénéficier de remboursements volontaires et que la plupart ne devraient pas être "paniqués de surpaiement".</p>
+            <span class="english-block">The amount graduates are voluntarily repaying towards their student loans has been growing. MoneySavingExpert.com founder Martin Lewis has warned that only higher earners could benefit from making voluntary repayments and most should not be "panicked into overpaying".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Holly Mead, journaliste financière, a déclaré à la BBC que cela pourrait avoir du sens pour ceux qui sont confiants qu'ils vont éliminer la dette et peuvent faire "un surpaiement vraiment important" de dizaines de milliers de livres, comme Lizzy.</p>
+            <span class="english-block">Finance journalist Holly Mead told the BBC it could make sense for those who are confident they will clear the debt and can make "a really significant overpayment" of tens of thousands of pounds, like Lizzy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Mais des remboursements volontaires plus petits pourraient signifier "que vous payez volontairement plus d'intérêts que vous n'avez pas besoin de payer", a- t- elle ajouté.</p>
+            <span class="english-block">But smaller voluntary repayments could mean "you're just voluntarily paying more interest that you don't need to pay", she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Lizzy, Charlotte et Libby disent qu'ils sont reconnaissants de se rencontrer à l'université et qu'ils reviendraient s'ils avaient encore du temps.</p>
+            <span class="english-block">Lizzy, Charlotte and Libby say they are grateful they met at university and would go back if they had their time again</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les trois amis en photo le jour du mariage de Charlotte</p>
+            <span class="english-block">The three friends pictured on Charlotte's wedding day</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Lizzy dit qu'elle sait qu'il y a beaucoup de "sénarios dans lesquels cela ne paie pas" pour que les gens le remboursent plus tôt.</p>
+            <span class="english-block">Lizzy says she knows there are many "scenarios in which it doesn't pay off" for people to repay it early.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">" J'ai mis mon futur moi au jeu pour le rembourser, dit- elle. " Je suis dans une position très privilégiée de pouvoir le faire... acheter la sortie du système ou ne pas y être est en soi un luxe.</p>
+            <span class="english-block">"I made a gamble on my future self to actually repay it," she says. "I'm in a very privileged position to be able to do that... Buying your way out of the system or not being in at all is in itself a luxury. It buys you freedom."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Elle et Libby ont terminé leurs notes A en 2011 mais ont pris un an avant d'aller à l'université - Libby en année de rupture, et Lizzy pour réinitialiser l'économie après avoir raté la note qu'elle avait espéré par une seule note.</p>
+            <span class="english-block">She and Libby finished their A-levels in 2011 but took a year out before going to university - Libby on a gap year, and Lizzy to resit economics after missing the grade she'd hoped for by a single mark.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Lizzy dit qu'elle savait que le retard signifierait que ses frais seraient plus élevés, mais " on n'a jamais expliqué " que les conditions de remboursement " auraient un aspect et un sentiment très différents ".</p>
+            <span class="english-block">Lizzy says she knew the delay would mean her fees would be higher, but "it was never explained" that the repayment terms would "look and feel very different".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">"Je pense que c'est quelque chose qui m'a probablement pris la meilleure partie de 10 ans pour comprendre", ajoute- t- elle, notant que sa sœur jumelle a commencé l'université en 2011 et avait moins de dettes en conséquence.</p>
+            <span class="english-block">"I think that's something that took me probably the best part of 10 years to understand," she adds, noting that her twin sister did start university in 2011 and had less debt as a result.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">"Que vous soyez allé à l'université en 2012 ou en 2011 a en fait un impact financier énorme, et il ne devrait pas", dit-elle.</p>
+            <span class="english-block">"Whether you went to uni in 2012 or 2011 actually financially has a huge impact, and it shouldn't," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">En mars, une enquête de la BBC a révélé que le Département de l'Éducation (DfE) avait comparé les remboursements mensuels aux contrats téléphoniques de 30 livres par mois dans les présentations des écoles en Angleterre il y a une décennie.</p>
+            <span class="english-block">There's been lots of discussion about what teenagers were told about Plan 2 loans before they took them out. In March, a BBC investigation found the Department for Education (DfE) had compared monthly repayments to £30-a-month phone contracts in presentations at schools in England a decade ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Une enquête menée par des députés a ensuite conclu que cela équivalait à une "mal-vente" parce qu'elle était inexacte pour les personnes à revenu élevé.</p>
+            <span class="english-block">An inquiry by MPs then concluded that this amounted to "mis-selling" because it was inaccurate for higher earners.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Le mois dernier, le gouvernement a déclaré que les candidats à l'université en Angleterre recevraient des informations plus claires sur les prêts étudiants avant de les prendre.</p>
+            <span class="english-block">Last month, the government said university applicants in England would be given clearer information about student loans before they take them out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">On va jamais rembourser nos prêts étudiants ?</p>
+            <span class="english-block">Will we ever pay back our student loans?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Les controversés prêts étudiants du Plan 2 de l'Angleterre ont laissé de nombreux diplômés frustrés.</p>
+            <span class="english-block">England's controversial Plan 2 student loans have left many graduates frustrated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Les trois amis suivent la campagne Rethink Repayment sur les réseaux sociaux, créée par Oliver Gardner, qui dit que les premiers emprunteurs du Plan 2 font face à des pressions financières concurrentes telles que monter sur l'échelle immobilière et fonder des familles.</p>
+            <span class="english-block">All three friends follow the Rethink Repayment campaign on social media. It was set up by Oliver Gardner, who says the first Plan 2 borrowers are grappling with competing financial pressures such as getting on the property ladder and starting families.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">" Peut-être que dans vos 20 ans, vous pouvez vous en sortir sans économiser autant, potentiellement. Mais maintenant, les gens disent: 'Nous avons besoin de l'épargne pour faire ces grandes choses que nous voulons faire de notre vie' ", dit-il.</p>
+            <span class="english-block">"Maybe in your 20s, you can get away without saving as much, potentially. But now people are like, 'we need the savings to do these big things that we want to do with our lives'," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">La campagne veut un taux d'intérêt plus bas du Plan 2, un taux de remboursement plus bas et que le gouvernement annule cette décision de geler le seuil de 29 385 livres sterling en Angleterre pour trois ans à partir de 2027 - ce qui, bien que ce ne soit pas le premier gel, a déclenché le débat de cette année.</p>
+            <span class="english-block">The campaign wants a lower Plan 2 interest rate, a lower repayment rate and for the government to reverse that decision to freeze the threshold at £29,385 in England for three years from 2027 - which, while it is not the first freeze, sparked this year's debate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Gardner a déclaré que le gouvernement " s'engageait beaucoup plus ouvertement et honnêtement " mais que " la responsabilité est très grande sur eux dans le budget d'octobre à venir de prendre les rênes " parce que les diplômés n'accepteraient pas " de petites manœuvres aux bords ".</p>
+            <span class="english-block">Gardner said the government was "engaging much more openly and honestly" but the "the onus is very much on them in the upcoming October budget to take this by the reins" because graduates would not accept "minor tinkering around the edges".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Le DfE a déclaré qu'il " prenait des mesures décisives pour améliorer le système de financement étudiant et briser les obstacles à l'accès à l'université " en augmentant les prêts de maintenance maximaux, en réintroduisant des subventions de maintenance ciblées et en ayant " augmenté le seuil de remboursement des prêts du Plan 2 pour la première fois depuis 2021 ".</p>
+            <span class="english-block">The DfE said it was "taking decisive action to improve the student finance system and break down barriers to accessing university"  by increasing maximum maintenance loans, reintroducing targeted maintenance grants and having "raised the repayment threshold for Plan 2 loans for the first time since 2021".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">"Nous continuerons à chercher des moyens de rendre le système plus équitable pour les étudiants, les diplômés et les contribuables de manière financièrement durable", a-t-il déclaré.</p>
+            <span class="english-block">"We will continue to look for ways to make the system fairer for students, graduates and taxpayers in a financially sustainable way," it said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Lizzy, Libby et Charlotte sont reconnaissants de se rencontrer en 2012 et disent que s'ils avaient encore du temps, ils retourneraient à l'université.</p>
+            <span class="english-block">Lizzy, Libby and Charlotte feel grateful they met back in 2012, and say that if they had their time again they would go back to university.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">"Je ne changerais pas mon expérience universitaire, dit Charlotte, mais je reviendrais et ferais quelque chose de différent dans le sens de mon cours et de ma carrière.</p>
+            <span class="english-block">"I still wouldn't change my university experience," says Charlotte, "but would go back and do something different in the sense of my course and my career trajectory? Probably."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Comment fonctionnent les prêts étudiants pour les frais de scolarité et les frais de subsistance</p>
+            <span class="english-block">How student loans work for tuition fees and living costs</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Tout ce que vous devez savoir sur les frais universitaires</p>
+            <span class="english-block">Everything you need to know about university costs</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Les conditions des prêts étudiants doivent être clarifiées en Angleterre</p>
+            <span class="english-block">Student loan terms to be made clearer in England</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Les comparaisons de contrats téléphoniques "sont à la hauteur de la vente erronée" des prêts étudiants, selon les députés</p>
+            <span class="english-block">Phone contract comparisons 'amounted to mis-selling' student loans, MPs say</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Les discussions scolaires "profondément trompeuses" comparent les prêts aux étudiants à des contrats téléphoniques de 30 £</p>
+            <span class="english-block">'Deeply misleading' school talks compared student loans to £30 phone contracts</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

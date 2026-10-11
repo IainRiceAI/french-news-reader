@@ -1,8 +1,7 @@
 # Trump announces deal for Russian diesel as Zelensky calls it a gift to Putin
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cm1dwgr666wno?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cm1dwgr666wno?at_medium=RSS&at_campaign=rss)  
-**Published:** Sat, 10 Oct 2026 04:38:20 GMT  
-**Audio Narration:** [🔊 Listen to French Translation](business_article_13.mp3)  
+**Published:** Sat, 10 Oct 2026 14:24:14 GMT  
 
 ---
 
@@ -12,21 +11,29 @@
 
 ### Section 1
 
-**🇬🇧 EN:** Ukraine's President Volodymr Zelensky has condemned Donald Trump's announcement of a deal to import Russian diesel into the US.
+**🇬🇧 EN:** Donald Trump and Vladimir Putin met in Alaska last year
 
-**🇫🇷 FR:** *Le président ukrainien Volodymr Zelensky a condamné l'annonce de Donald Trump d'un accord pour importer du diesel russe aux États-Unis.*
+**🇫🇷 FR:** *Donald Trump et Vladimir Poutine se sont rencontrés en Alaska l'année dernière*
 
 ---
 
 ### Section 2
 
-**🇬🇧 EN:** Zelensky called it a gift to Russian President Vladimir Putin that amounts to "an investment in a war that must be ended, not prolonged".
+**🇬🇧 EN:** Ukraine's President Volodymyr Zelensky has condemned Donald Trump's announcement of a deal to import Russian diesel into the US.
 
-**🇫🇷 FR:** *Zelensky l'a qualifié de cadeau au président russe Vladimir Poutine qui équivaut à "un investissement dans une guerre qui doit être terminée, pas prolongée".*
+**🇫🇷 FR:** *Le président ukrainien Volodymyr Zelensky a condamné l'annonce de Donald Trump d'un accord pour importer du diesel russe aux États-Unis.*
 
 ---
 
 ### Section 3
+
+**🇬🇧 EN:** Zelensky called it a gift to Russian President Vladimir Putin that amounts to "an investment in a war that must be ended, not prolonged", a position quickly backed by Ukraine's European allies.
+
+**🇫🇷 FR:** *Zelensky l'a qualifié de cadeau au président russe Vladimir Poutine qui équivaut à "un investissement dans une guerre qui doit être terminée, pas prolongée", position rapidement soutenue par les alliés européens de l'Ukraine.*
+
+---
+
+### Section 4
 
 **🇬🇧 EN:** Trump said Putin had agreed to release 300,000 tonnes of diesel immediately "to the American and global marketplace" followed by 500,000 tonnes in November and another million after that.
 
@@ -34,7 +41,7 @@
 
 ---
 
-### Section 4
+### Section 5
 
 **🇬🇧 EN:** It is understood the US Treasury is suspending sanctions on Russian diesel exports until 7 April as part of the deal, but other assets like those in American banks are still frozen.
 
@@ -42,15 +49,15 @@
 
 ---
 
-### Section 5
+### Section 6
 
-**🇬🇧 EN:** In his Truth Social post, Trump added that a further three million tonnes of Russian diesel would be delivered "within a short period", dependent on the condition of its refineries, which have been attacked by Ukraine.
+**🇬🇧 EN:** Trump wrote on his Truth Social platform that a further three million tonnes of Russian diesel would be delivered "within a short period", dependent on the condition of its refineries, which have been attacked by Ukraine.
 
-**🇫🇷 FR:** *Dans son message Truth Social, Trump a ajouté qu'un autre trois millions de tonnes de diesel russe seraient livrées "dans une courte période", selon l'état de ses raffineries, qui ont été attaquées par l'Ukraine.*
+**🇫🇷 FR:** *Trump a écrit sur sa plateforme Truth Social qu'un autre trois millions de tonnes de diesel russe seraient livrées "dans une courte période", selon l'état de ses raffineries, qui ont été attaquées par l'Ukraine.*
 
 ---
 
-### Section 6
+### Section 7
 
 **🇬🇧 EN:** Putin later said Russia, which introduced a ban on diesel exports earlier this year, was willing to supply both the US and global markets with oil and petroleum products, but his statement did not specify amounts.
 
@@ -58,15 +65,15 @@
 
 ---
 
-### Section 7
+### Section 8
 
-**🇬🇧 EN:** In a post on social media, Zelensky said Russia would repay the diesel with "further terror".
+**🇬🇧 EN:** Zelensky said Russia would repay the diesel with "further terror".
 
-**🇫🇷 FR:** *Dans un message sur les réseaux sociaux, Zelensky a déclaré que la Russie rembourserait le diesel avec "d'autres terreurs".*
+**🇫🇷 FR:** *Zelensky a dit que la Russie rembourserait le diesel avec "d'autres terreurs".*
 
 ---
 
-### Section 8
+### Section 9
 
 **🇬🇧 EN:** "We count on America's fair support for our defence of life, for our defence of people in Ukraine – and on the United States having a correspondingly strong conversation with Russia. A strong one, not a weak one," he wrote.
 
@@ -74,15 +81,23 @@
 
 ---
 
-### Section 9
+### Section 10
 
-**🇬🇧 EN:** Analysts, however, have questioned whether Russia is capable of providing that quantity of diesel and the extent to which doing so will ease prices for American consumers.
+**🇬🇧 EN:** He later pointed to deadly overnight strikes on Zaporizhzhia and Kyiv as Russia expressing "its thanks" for the agreement.
 
-**🇫🇷 FR:** *Les analystes se demandent toutefois si la Russie est capable de fournir cette quantité de diesel et dans quelle mesure cela permettra de réduire les prix pour les consommateurs américains.*
+**🇫🇷 FR:** *Il a ensuite souligné les frappes mortelles de nuit sur Zaporizhzhia et Kiev alors que la Russie exprimait "sa gratitude" pour l'accord.*
 
 ---
 
-### Section 10
+### Section 11
+
+**🇬🇧 EN:** Analysts have questioned whether Russia is capable of providing that quantity of diesel and the extent to which doing so will ease prices for American consumers.
+
+**🇫🇷 FR:** *Les analystes se demandent si la Russie est capable de fournir cette quantité de diesel et dans quelle mesure cela permettra de réduire les prix pour les consommateurs américains.*
+
+---
+
+### Section 12
 
 **🇬🇧 EN:** Analysis: Trump's shock Russia deal highlights mounting pressure to curb fuel prices
 
@@ -90,23 +105,31 @@
 
 ---
 
-### Section 11
+### Section 13
 
-**🇬🇧 EN:** Tim Armitage, investment strategist at Quilter Cheviot, said the numbers mentioned by Trump were "relatively small".
+**🇬🇧 EN:** Russian glide bomb attack on Zaporizhzhia kills at least 15 people
 
-**🇫🇷 FR:** *Tim Armitage, stratège d'investissement chez Quilter Cheviot, a déclaré que les chiffres mentionnés par Trump étaient "relativement petits".*
+**🇫🇷 FR:** *Une bombe russe a tué au moins 15 personnes à Zaporizhzhia*
 
 ---
 
-### Section 12
+### Section 14
 
-**🇬🇧 EN:** He said the first tranche equated to approximately 2.25m barrels, and daily US consumption was around 3.8m barrels, "so it won't make a material difference to pump prices in the US".
+**🇬🇧 EN:** Tim Armitage, an investment strategist at Quilter Cheviot, said the numbers mentioned by Trump were "relatively small".
+
+**🇫🇷 FR:** *Tim Armitage, un stratège d'investissement chez Quilter Cheviot, a déclaré que les chiffres mentionnés par Trump étaient "relativement petits".*
+
+---
+
+### Section 15
+
+**🇬🇧 EN:** He said the first tranche equated to approximately 2.25 million barrels, and daily US consumption was around 3.8 million barrels, "so it won't make a material difference to pump prices in the US".
 
 **🇫🇷 FR:** *Il a déclaré que la première tranche équivalait à environ 2,25 millions de barils, et que la consommation quotidienne américaine était d'environ 3,8 millions de barils, "ce qui ne fera donc pas de différence importante pour les prix des pompes aux États-Unis".*
 
 ---
 
-### Section 13
+### Section 16
 
 **🇬🇧 EN:** "Granted, there are then two more releases to come, but it does appear to be a slightly desperate move by President Trump to try to lower inflation ahead of the midterms."
 
@@ -114,7 +137,7 @@
 
 ---
 
-### Section 14
+### Section 17
 
 **🇬🇧 EN:** The BBC has asked the White House what Russia will get from the US in return for the commitment.
 
@@ -122,15 +145,39 @@
 
 ---
 
-### Section 15
+### Section 18
 
-**🇬🇧 EN:** Meanwhile, the UK government spokesperson said its position "could not be clearer" and it would continue working with international partners to support Ukraine and bring about sustained peace.
+**🇬🇧 EN:** The agreement with Russia also opens Trump up to criticism from European allies and pro-Ukraine politicians in the US that the American president is now helping to fund Moscow's war machine.
 
-**🇫🇷 FR:** *Pendant ce temps, le porte-parole du gouvernement britannique a déclaré que sa position " ne pouvait pas être plus claire " et qu'il continuerait de travailler avec des partenaires internationaux pour soutenir l'Ukraine et instaurer une paix durable.*
+**🇫🇷 FR:** *L'accord avec la Russie ouvre également Trump aux critiques des alliés européens et des politiciens pro-Ukraine aux États-Unis selon lesquelles le président américain aide maintenant à financer la machine de guerre de Moscou.*
 
 ---
 
-### Section 16
+### Section 19
+
+**🇬🇧 EN:** The EU's foreign affairs chief Kaja Kallas said suspending sanctions "provides Moscow with more revenues to wage war", adding: "This is not the time to ease pressure on Russia, and Europe won't."
+
+**🇫🇷 FR:** *Le chef des affaires étrangères de l'UE, Kaja Kallas, a déclaré que la suspension des sanctions "offrait à Moscou plus de revenus pour mener la guerre", ajoutant: "Ce n'est pas le moment de soulager la pression sur la Russie, et l'Europe ne le fera pas".*
+
+---
+
+### Section 20
+
+**🇬🇧 EN:** She said European foreign ministers intended to approve the biggest set of sanctions on Russia since the start of its full-scale invasion on Monday.
+
+**🇫🇷 FR:** *Elle a déclaré que les ministres européens des Affaires étrangères avaient l'intention d'approuver le plus grand ensemble de sanctions contre la Russie depuis le début de son invasion à grande échelle lundi.*
+
+---
+
+### Section 21
+
+**🇬🇧 EN:** Meanwhile, a UK government spokesperson said its position "could not be clearer" and that it would continue working with international partners to support Ukraine and bring about sustained peace.
+
+**🇫🇷 FR:** *Pendant ce temps, un porte-parole du gouvernement britannique a déclaré que sa position " ne pouvait pas être plus claire " et qu'il continuerait de travailler avec des partenaires internationaux pour soutenir l'Ukraine et instaurer une paix durable.*
+
+---
+
+### Section 22
 
 **🇬🇧 EN:** "We will also maintain pressure on Russia through the toughest sanctions regime ever imposed by the UK, increasing the cost of Putin's aggression and supporting efforts to secure a just and lasting peace."
 
@@ -138,23 +185,31 @@
 
 ---
 
-### Section 17
+### Section 23
 
-**🇬🇧 EN:** Friday's announcement is the latest effort from Trump to lower fuel prices in the US, as he has spent months grappling with the political consequences of the Iran war, which began in February, and its impact on global energy prices.
+**🇬🇧 EN:** Friday's announcement is the latest effort from Trump to lower fuel prices in the US ahead of the midterm elections, after months spent grappling with the political consequences of the Iran war.
 
-**🇫🇷 FR:** *L'annonce de vendredi est le dernier effort de Trump pour abaisser les prix des carburants aux États-Unis, car il a passé des mois à s'attaquer aux conséquences politiques de la guerre en Iran, qui a commencé en février, et à son impact sur les prix mondiaux de l'énergie.*
-
----
-
-### Section 18
-
-**🇬🇧 EN:** That conflict has sent the cost of petrol and, in particular diesel, skyrocketing in America in recent months, which has soured his standing with the public who have been stung by the higher pump prices and knock-on effects that led to across-the board inflation.
-
-**🇫🇷 FR:** *Ce conflit a fait grimper le coût de l'essence et, en particulier, du diesel en Amérique ces derniers mois, ce qui a aggravé sa position auprès du public qui a été piqué par les prix plus élevés des pompes et les effets de la pression qui ont conduit à une inflation globale.*
+**🇫🇷 FR:** *L'annonce de vendredi est le dernier effort de Trump pour abaisser les prix du carburant aux États-Unis avant les élections de mi-mandat, après des mois passés à lutter contre les conséquences politiques de la guerre en Iran.*
 
 ---
 
-### Section 19
+### Section 24
+
+**🇬🇧 EN:** That conflict, which began in February, has sent the cost of petrol and in particular diesel skyrocketing, which has soured his standing with the American public who have been stung by the higher pump prices and knock-on effects that led to across-the-board inflation.
+
+**🇫🇷 FR:** *Ce conflit, qui a commencé en février, a fait grimper le coût de l'essence et en particulier du diesel, ce qui a aggravé sa position auprès du public américain, qui a été piqué par les prix plus élevés des pompes et les effets de la pression qui ont conduit à une inflation globale.*
+
+---
+
+### Section 25
+
+**🇬🇧 EN:** Ukraine's President Volodymr Zelensky said Russia would repay the diesel with "further terror"
+
+**🇫🇷 FR:** *Le président ukrainien Volodymr Zelensky a déclaré que la Russie rembourserait le diesel avec "d'autres terreurs"*
+
+---
+
+### Section 26
 
 **🇬🇧 EN:** The average diesel price in the US is currently $6.28 (£4.74) a gallon, according to the AAA, down from the record high of $6.53 recorded at the end of September.
 
@@ -162,7 +217,7 @@
 
 ---
 
-### Section 20
+### Section 27
 
 **🇬🇧 EN:** Shortly after Trump's announcement, the US Treasury formally issued a temporary licence allowing Russian diesel into the market.
 
@@ -170,15 +225,15 @@
 
 ---
 
-### Section 21
+### Section 28
 
-**🇬🇧 EN:** Putin said in a statement that he had spoken to Trump about the global energy situation on Friday, adding: "The Russian side confirmed its willingness to supply oil and petroleum products to the US market and global markets at large."
+**🇬🇧 EN:** Putin said he had spoken to Trump about the global energy situation on Friday, adding: "The Russian side confirmed its willingness to supply oil and petroleum products to the US market and global markets at large."
 
-**🇫🇷 FR:** *Poutine a déclaré dans un communiqué qu'il avait parlé à Trump de la situation énergétique mondiale vendredi, ajoutant: "La partie russe a confirmé sa volonté de fournir du pétrole et des produits pétroliers au marché américain et aux marchés mondiaux en général".*
+**🇫🇷 FR:** *Poutine a déclaré avoir parlé à Trump de la situation énergétique mondiale vendredi, ajoutant: "La partie russe a confirmé sa volonté de fournir du pétrole et des produits pétroliers au marché américain et aux marchés mondiaux en général".*
 
 ---
 
-### Section 22
+### Section 29
 
 **🇬🇧 EN:** An envoy for Putin, Kirill Dmitriev, welcomed the deal on social media, saying: "Russia-US co-operation on diesel and energy will benefit the world."
 
@@ -186,47 +241,15 @@
 
 ---
 
-### Section 23
+### Section 30
 
-**🇬🇧 EN:** A spokesperson for the UK government said: "The UK's position could not be clearer. We will continue working closely with international partners to ensure Ukraine has the military and financial support it needs to defend itself."
+**🇬🇧 EN:** Russia has this year experienced two waves of severe fuel shortages across the country as a result of Ukrainian drone strikes on Russian oil refineries. Its diesel production has fallen by nearly 30%, according to International Energy Agency estimates.
 
-**🇫🇷 FR:** *Un porte-parole du gouvernement britannique a déclaré: " La position du Royaume-Uni ne pourrait pas être plus claire. Nous continuerons de travailler en étroite collaboration avec les partenaires internationaux pour que l'Ukraine ait le soutien militaire et financier dont elle a besoin pour se défendre. "*
-
----
-
-### Section 24
-
-**🇬🇧 EN:** They added that the government would continue to "maintain pressure on Russia through the toughest sanctions regime ever imposed by UK".
-
-**🇫🇷 FR:** *Ils ont ajouté que le gouvernement continuerait à " maintenir la pression sur la Russie grâce au régime de sanctions le plus dur jamais imposé par le Royaume-Uni ".*
+**🇫🇷 FR:** *La Russie a connu cette année deux vagues de pénurie de carburant dans tout le pays en raison des frappes de drones ukrainiens sur les raffineries pétrolières russes.*
 
 ---
 
-### Section 25
-
-**🇬🇧 EN:** "Russia could end this war today. We remain committed to supporting Ukraine for as long as it takes and to working with partners to bring about a durable peace."
-
-**🇫🇷 FR:** *"La Russie pourrait mettre fin à cette guerre aujourd'hui. Nous restons engagés à soutenir l'Ukraine aussi longtemps que cela le faudra et à travailler avec nos partenaires pour instaurer une paix durable".*
-
----
-
-### Section 26
-
-**🇬🇧 EN:** Russia has this year experienced two waves of severe fuel shortages across the country as a result of Ukrainian drone strikes on Russian oil refineries.
-
-**🇫🇷 FR:** *La Russie a connu cette année deux vagues de pénurie de carburant dans tout le pays à la suite des frappes ukrainiennes de drones sur les raffineries pétrolières russes.*
-
----
-
-### Section 27
-
-**🇬🇧 EN:** According to the International Energy Agency, its diesel production is estimated to have fallen by nearly 30%.
-
-**🇫🇷 FR:** *Selon l'Agence internationale de l'énergie, sa production de diesel est estimée à avoir chuté de près de 30%.*
-
----
-
-### Section 28
+### Section 31
 
 **🇬🇧 EN:** Trump has expressed his displeasure over those attacks, blaming them for rising fuel prices.
 
@@ -234,15 +257,15 @@
 
 ---
 
-### Section 29
+### Section 32
 
-**🇬🇧 EN:** But Zelensky defended the strikes on Friday, saying there were in response to "Russia's years-long campaign of terror against Ukraine's energy sector".
+**🇬🇧 EN:** But Zelensky defended the strikes on Friday, saying they were in response to "Russia's years-long campaign of terror against Ukraine's energy sector".
 
 **🇫🇷 FR:** *Mais Zelensky a défendu les frappes vendredi, disant qu'elles étaient en réponse à "la campagne de terreur de longue date de la Russie contre le secteur énergétique ukrainien".*
 
 ---
 
-### Section 30
+### Section 33
 
 **🇬🇧 EN:** "Ukraine will not set Russian oil refineries on fire if Russia does not destroy our energy infrastructure," he said.
 
@@ -250,7 +273,7 @@
 
 ---
 
-### Section 31
+### Section 34
 
 **🇬🇧 EN:** Trump wants to reduce the cost of fuel as the midterms loom - will it work?
 
@@ -258,15 +281,15 @@
 
 ---
 
-### Section 32
+### Section 35
 
-**🇬🇧 EN:** Trump's Truth Social posts often provide incomplete information and the details of exactly how Russia is supplying this fuel to the global market, and what they might get for in return is unclear.
+**🇬🇧 EN:** Trump's Truth Social posts often provide incomplete information, and the details of exactly how Russia will supply this fuel to the global market is unclear.
 
-**🇫🇷 FR:** *Les messages sociaux de Trump fournissent souvent des informations incomplètes et des détails sur la façon exacte dont la Russie fournit ce carburant au marché mondial, et ce qu'ils pourraient obtenir en retour n'est pas clair.*
+**🇫🇷 FR:** *Les messages sociaux de Trump fournissent souvent des informations incomplètes, et les détails sur la manière exacte dont la Russie fournira ce carburant au marché mondial ne sont pas clairs.*
 
 ---
 
-### Section 33
+### Section 36
 
 **🇬🇧 EN:** But the announced deal represents a remarkable about-face, as the US Congress recently enacted legislation - signed by the president - to authorise new American sanctions and tariffs on nations that import Russian oil and gas.
 
@@ -274,15 +297,7 @@
 
 ---
 
-### Section 34
-
-**🇬🇧 EN:** The agreement with Russia also opens Trump up to criticism from European allies and pro-Ukraine politicians in the US, that the American president is now helping to fund Moscow's war machine.
-
-**🇫🇷 FR:** *L'accord avec la Russie ouvre également Trump aux critiques des alliés européens et des politiciens pro-Ukraine aux États-Unis, selon lesquelles le président américain aide maintenant à financer la machine de guerre de Moscou.*
-
----
-
-### Section 35
+### Section 37
 
 **🇬🇧 EN:** What impact the deal with Russia will have on fuel prices also remains unclear. The global benchmark for crude oil, Brent, remains above $103 a barrel. Before the war with Iran, Brent crude was trading at about $73 a barrel.
 
@@ -290,15 +305,15 @@
 
 ---
 
-### Section 36
+### Section 38
 
-**🇬🇧 EN:** With the looming US midterm congressional elections - which will determine if Republicans maintain control of Congress - Trump has been searching for ways to ease his Republican party's political pain.
+**🇬🇧 EN:** With the looming US elections - which will determine whether Republicans maintain control of Congress - Trump has been searching for ways to ease his Republican party's political pain.
 
-**🇫🇷 FR:** *Avec les élections américaines à mi-mandat qui approchent - qui détermineront si les républicains maîtriseront le Congrès - Trump cherche des moyens d'apaiser la douleur politique de son parti républicain.*
+**🇫🇷 FR:** *Avec les élections américaines qui approchent - qui détermineront si les républicains maintiennent le contrôle du Congrès - Trump cherche des moyens d'apaiser la douleur politique de son parti républicain.*
 
 ---
 
-### Section 37
+### Section 39
 
 **🇬🇧 EN:** Earlier this week, he said he was "thinking about" suspending the federal tax on gasoline and also announced that he would allow so-called red dye diesel to be used on US highways without facing federal tax.
 
@@ -306,11 +321,11 @@
 
 ---
 
-### Section 38
+### Section 40
 
-**🇬🇧 EN:** Trump has also successfully pressured G7 nations into releasing 100 million barrels of oil and diesel from stockpiles to help ease supply concerns, and previously supported calls for a ban on diesel exports from the US.
+**🇬🇧 EN:** Trump has also successfully pressured G7 nations into releasing 100 million barrels of oil and diesel from stockpiles to help ease supply concerns and previously supported calls for a ban on diesel exports from the US.
 
-**🇫🇷 FR:** *Trump a également fait pression avec succès sur les pays du G7 pour qu'ils libèrent 100 millions de barils de pétrole et de diesel des stocks pour aider à soulager les inquiétudes liées à l'offre, et a précédemment soutenu les appels à une interdiction des exportations de diesel des États-Unis.*
+**🇫🇷 FR:** *Trump a également fait pression avec succès sur les pays du G7 pour qu'ils libèrent 100 millions de barils de pétrole et de diesel des stocks afin d'aider à soulager les inquiétudes liées à l'offre et a précédemment soutenu des appels à l'interdiction des exportations de diesel des États-Unis.*
 
 ---
 

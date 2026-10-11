@@ -2,7 +2,6 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c63djxry8124o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c63djxry8124o?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 09 Oct 2026 23:01:14 GMT  
-**Audio Narration:** [🔊 Listen to French Translation](business_article_15.mp3)  
 
 ---
 
@@ -100,7 +99,7 @@
 
 ### Section 12
 
-**🇬🇧 EN:** But Yasmin Trimble, 22, who buys beauty products from Boots, likes how the easy stores are to navigate.
+**🇬🇧 EN:** But Yasmin Trimble, 22, who buys beauty products from Boots, likes how easy the stores are to navigate.
 
 **🇫🇷 FR:** *Mais Yasmin Trimble, 22 ans, qui achète des produits de beauté chez Boots, aime la facilité de navigation des magasins.*
 

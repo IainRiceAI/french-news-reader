@@ -2,7 +2,6 @@
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/crn8wyl4n42yo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/crn8wyl4n42yo?at_medium=RSS&at_campaign=rss)  
 **Published:** Fri, 09 Oct 2026 12:16:11 GMT  
-**Audio Narration:** [🔊 Listen to French Translation](health_article_25.mp3)  
 
 ---
 
