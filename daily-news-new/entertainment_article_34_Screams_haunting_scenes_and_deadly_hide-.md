@@ -11,13 +11,21 @@
 
 ### Section 1
 
+**🇬🇧 EN:** Friday's episode drew in a peak audience of 9.6 million viewers
+
+**🇫🇷 FR:** *L'épisode de vendredi a attiré un public de 9,6 millions de téléspectateurs*
+
+---
+
+### Section 2
+
 **🇬🇧 EN:** Spoiler warning: This article reveals details from the fourth episode of The Celebrity Traitors, series two.
 
 **🇫🇷 FR:** *Attention aux spoilers: Cet article révèle des détails de la quatrième épisode de The Celebrity Traitors, série deux.*
 
 ---
 
-### Section 2
+### Section 3
 
 **🇬🇧 EN:** Being a Traitor must be a right nightmare.
 
@@ -25,7 +33,7 @@
 
 ---
 
-### Section 3
+### Section 4
 
 **🇬🇧 EN:** While other people are out enjoying their lives, they have to kill it, night after night. Even on the weekend, there is no rest for the wicked.
 
@@ -33,23 +41,23 @@
 
 ---
 
-### Section 4
-
-**🇬🇧 EN:** Friday's episode saw the Traitors at it again, murdering Last of Us actor Bella Ramsey, before the faithfuls did their dirty work for them by banishing another of their own, Julie Hesmondhalgh.
-
-**🇫🇷 FR:** *L'épisode du vendredi a vu les traîtres à nouveau, assassinant l'actrice de Last of Us Bella Ramsey, avant que les fidèles ne fassent leur sale travail pour eux en bannissant une autre de leurs propres, Julie Hesmondhalgh.*
-
----
-
 ### Section 5
 
-**🇬🇧 EN:** The previous episode - watched on Thursday by 10 million people - saw another faithful, unlucky Industry star Myha'la, follow self-sabotaging traitor Richard E Grant out of the castle.
+**🇬🇧 EN:** Friday evening's episode saw the Traitors at it again, murdering Last of Us actor Bella Ramsey, before the faithfuls did their dirty work for them by banishing another of their own, Julie Hesmondhalgh.
 
-**🇫🇷 FR:** *L'épisode précédent - vu jeudi par 10 millions de personnes - a vu une autre star fidèle et malheureuse de l'industrie, Myha'la, suivre le traître Richard E Grant hors du château.*
+**🇫🇷 FR:** *L'épisode du vendredi soir a vu les Traîtres à nouveau, assassinant l'actrice de Last of Us Bella Ramsey, avant que les fidèles ne fassent leur sale travail pour eux en bannissant une autre de leurs, Julie Hesmondhalgh.*
 
 ---
 
 ### Section 6
+
+**🇬🇧 EN:** The previous night, another faithful, unlucky Industry star Myha'la, had followed self-sabotaging traitor Richard E Grant out of the castle.
+
+**🇫🇷 FR:** *La nuit précédente, une autre star fidèle et malchanceuse de l'industrie, Myha'la, avait suivi le traître Richard E Grant hors du château.*
+
+---
+
+### Section 7
 
 **🇬🇧 EN:** And so viewers went into Friday's show knowing that traitors Maya Jama, James Acaster and their newest recruit, Prof Hannah Fry, had been debating murdering one of three Bs: Bella (Ramsey), (James) Blunt and Bash (Sebastian Croft).
 
@@ -57,7 +65,7 @@
 
 ---
 
-### Section 7
+### Section 8
 
 **🇬🇧 EN:** When Ramsey failed to arrive for breakfast it soon became apparent what wickedness had taken place overnight.
 
@@ -65,7 +73,7 @@
 
 ---
 
-### Section 8
+### Section 9
 
 **🇬🇧 EN:** Emotions run high at the round table as Celebrity Traitors banish two players
 
@@ -73,7 +81,7 @@
 
 ---
 
-### Section 9
+### Section 10
 
 **🇬🇧 EN:** Celebrity Traitors cast: Who are this year's 'big dogs' and dark horses
 
@@ -81,7 +89,7 @@
 
 ---
 
-### Section 10
+### Section 11
 
 **🇬🇧 EN:** Where is the Traitors castle, and can you visit it?
 
@@ -89,7 +97,7 @@
 
 ---
 
-### Section 11
+### Section 12
 
 **🇬🇧 EN:** "That's our biggest threat," explained Jama, in a flashback from the previous night's scenes in the traitors turret. "Get them out the way, that group disperses."
 
@@ -97,7 +105,7 @@
 
 ---
 
-### Section 12
+### Section 13
 
 **🇬🇧 EN:** Acaster agreed: "People are doubting their instincts after that roundtable. If Bella's proven to be a faithful, they're going to be even more spun out."
 
@@ -105,7 +113,7 @@
 
 ---
 
-### Section 13
+### Section 14
 
 **🇬🇧 EN:** Jama continued: "Chaos, regardless... Bella, you're a genius, but you gotta go."
 
@@ -113,7 +121,7 @@
 
 ---
 
-### Section 14
+### Section 15
 
 **🇬🇧 EN:** On receiving the news, Ramsey was shocked but not surprised.
 
@@ -121,7 +129,7 @@
 
 ---
 
-### Section 15
+### Section 16
 
 **🇬🇧 EN:** "I think this is a clever move by the traitors," they responded in the diary room.
 
@@ -129,7 +137,7 @@
 
 ---
 
-### Section 16
+### Section 17
 
 **🇬🇧 EN:** "I was going to re-set and start from the beginning because I got it so wrong with Myha'la.
 
@@ -137,7 +145,7 @@
 
 ---
 
-### Section 17
+### Section 18
 
 **🇬🇧 EN:** "So I think that they were right to murder me because I think I would have maybe figured it out."
 
@@ -145,7 +153,7 @@
 
 ---
 
-### Section 18
+### Section 19
 
 **🇬🇧 EN:** I guess now we'll never know.
 
@@ -153,7 +161,7 @@
 
 ---
 
-### Section 19
+### Section 20
 
 **🇬🇧 EN:** Bella Ramsey was considered to be the Traitors' "biggest threat" and so had to go
 
@@ -161,7 +169,7 @@
 
 ---
 
-### Section 20
+### Section 21
 
 **🇬🇧 EN:** Back at breakfast, Hesmondhalgh's apparently earnest but over-the-top reaction to Ramsey's removal immediately raised suspicions.
 
@@ -169,7 +177,7 @@
 
 ---
 
-### Section 21
+### Section 22
 
 **🇬🇧 EN:** The former Coronation Street star had been voted as the most trustworthy of the group by her peers in episode one and given a shield, but that counted for little by episode four.
 
@@ -177,7 +185,7 @@
 
 ---
 
-### Section 22
+### Section 23
 
 **🇬🇧 EN:** The cleverest among the group, on paper at least, Fry, found questions being asked of her again too as the day rolled on.
 
@@ -185,7 +193,7 @@
 
 ---
 
-### Section 23
+### Section 24
 
 **🇬🇧 EN:** "I did not choose the traitor life, the traitor life chose me," said the latest recruit to the dark side. "I know there are people who are suspicious of me but I'm going to enjoy every last moment."
 
@@ -193,7 +201,7 @@
 
 ---
 
-### Section 24
+### Section 25
 
 **🇬🇧 EN:** Comedian and Miss Marple impersonator Miranda Hart is one of them. "Hannah lied to us," she rightly noted, with reference to the professor's confusing shield story that helped to see off Myha'la the night before.
 
@@ -201,7 +209,7 @@
 
 ---
 
-### Section 25
+### Section 26
 
 **🇬🇧 EN:** Singer and ex-military man James Blunt, however, had other ideas, ramping up his campaign against Hesmondhalgh, whom he believed to be a little too trustworthy to be true.
 
@@ -209,7 +217,7 @@
 
 ---
 
-### Section 26
+### Section 27
 
 **🇬🇧 EN:** The group conversing with the grateful dead inside the haunted cabin
 
@@ -217,7 +225,7 @@
 
 ---
 
-### Section 27
+### Section 28
 
 **🇬🇧 EN:** Romesh Ranganathan lets out a scream while salvaging a dead woman's wedding dress
 
@@ -225,7 +233,7 @@
 
 ---
 
-### Section 28
+### Section 29
 
 **🇬🇧 EN:** Friday's mission raised more money for charity and also raised spirits, but not in a good way.
 
@@ -233,7 +241,7 @@
 
 ---
 
-### Section 29
+### Section 30
 
 **🇬🇧 EN:** It involved the group paying a visit to a graveside haunted cabin to converse with the dead about unresolved matters.
 
@@ -241,7 +249,7 @@
 
 ---
 
-### Section 30
+### Section 31
 
 **🇬🇧 EN:** "It's creepy, it's giving murder," noted Barbie actress Sharon Rooney on arrival.
 
@@ -249,7 +257,7 @@
 
 ---
 
-### Section 31
+### Section 32
 
 **🇬🇧 EN:** Comedian Romesh Ranganathan joked that his mum was going to "absolutely hate this", as the group gathered in a graveside chant led by the booming voice of big dog actor Michael Sheen.
 
@@ -257,7 +265,7 @@
 
 ---
 
-### Section 32
+### Section 33
 
 **🇬🇧 EN:** The spooky task made Ranganathan himself let out a hellish scream and saw Hart come face-to face with a masked hooded creature, before team-player Croft volunteered to go head-first into a stinky old toilet in scenes resembling ITV's I'm a Celebrity... Get Me Out of Here.
 
@@ -265,7 +273,7 @@
 
 ---
 
-### Section 33
+### Section 34
 
 **🇬🇧 EN:** "Guys, it's a little bit of poo," noted hardman Ross Kemp, as all around him gagged. "It's not gonna kill you."
 
@@ -273,7 +281,7 @@
 
 ---
 
-### Section 34
+### Section 35
 
 **🇬🇧 EN:** Actor Croft received a protective shield for his troubles, at least. "If I'd have put my hands and head down a toilet for nothing, I would've been fuming," he fairly noted.
 
@@ -281,7 +289,7 @@
 
 ---
 
-### Section 35
+### Section 36
 
 **🇬🇧 EN:** Watch on iPlayer with new episodes every Thursday and Friday
 
@@ -289,19 +297,11 @@
 
 ---
 
-### Section 36
+### Section 37
 
 **🇬🇧 EN:** The latest banished and murdered celebs have their say in Uncloaked
 
 **🇫🇷 FR:** *Les dernières célébrités expulsées et assassinées ont leur mot à dire dans Uncloaked*
-
----
-
-### Section 37
-
-**🇬🇧 EN:** James Blunt led the charge against faithful Julie Hesmondhalgh and has seemingly now put himself in the frame as a result
-
-**🇫🇷 FR:** *James Blunt a dirigé l'accusation contre la fidèle Julie Hesmondhalgh et semble maintenant se mettre dans le cadre en conséquence*
 
 ---
 
@@ -347,9 +347,9 @@
 
 ### Section 43
 
-**🇬🇧 EN:** Hesmondhalgh bade farewell to her fellow faithfuls, describing the show's reveal as "iconic"
+**🇬🇧 EN:** James Blunt led the charge against faithful Julie Hesmondhalgh and has seemingly now put himself in the frame as a result
 
-**🇫🇷 FR:** *Hesmondhalgh dit au revoir à ses compagnons fidèles, décrivant la révélation de l'émission comme "iconique"*
+**🇫🇷 FR:** *James Blunt a dirigé l'accusation contre la fidèle Julie Hesmondhalgh et semble maintenant se mettre dans le cadre en conséquence*
 
 ---
 
@@ -419,9 +419,9 @@
 
 ### Section 52
 
-**🇬🇧 EN:** Newfound Traitor Hannah Fry survived a stressful episode
+**🇬🇧 EN:** Hesmondhalgh bade farewell to her fellow faithfuls, describing the show's reveal as "iconic"
 
-**🇫🇷 FR:** *La traîtresse Hannah Fry a survécu à un épisode stressant.*
+**🇫🇷 FR:** *Hesmondhalgh dit au revoir à ses compagnons fidèles, décrivant la révélation de l'émission comme "iconique"*
 
 ---
 
@@ -459,9 +459,9 @@
 
 ### Section 57
 
-**🇬🇧 EN:** "So have I," replied a frustrated McNally.
+**🇬🇧 EN:** "So have I!" replied a frustrated McNally.
 
-**🇫🇷 FR:** *"Je le suis aussi", répondit un McNally frustré.*
+**🇫🇷 FR:** *"C'est moi aussi!" répondit un McNally frustré.*
 
 ---
 
@@ -547,37 +547,53 @@
 
 ### Section 68
 
-**🇬🇧 EN:** "Have we won?", quipped Ranganathan.
+**🇬🇧 EN:** "Have we won?" quipped Ranganathan.
 
-**🇫🇷 FR:** *"Avez-vous gagné?" a plaisanté Ranganathan.*
+**🇫🇷 FR:** *"Nous avons gagné?" a plaisanté Ranganathan.*
 
 ---
 
 ### Section 69
 
-**🇬🇧 EN:** "If only it was that easy Romesh," replied the host, explaining how when they go down to the woods tonight they'll be in for a big surprise: one of them will be killed face-to-face.
+**🇬🇧 EN:** "If only it was that easy Romesh," replied the host, explaining how when they go down to the woods tonight they'll be sure of a big surprise: one of them will be killed face-to-face.
 
-**🇫🇷 FR:** *"Si seulement c'était aussi facile Romesh", répondit l'hôte, expliquant comment quand ils descendront dans la forêt ce soir ils seront dans pour une grande surprise: l'un d'eux sera tué face à face.*
+**🇫🇷 FR:** *"Si seulement c'était aussi facile Romesh", répondit l'hôte, expliquant comment quand ils vont dans la forêt ce soir ils seront sûrs d'une grande surprise: l'un d'eux sera tué face à face.*
 
 ---
 
 ### Section 70
 
-**🇬🇧 EN:** Only Pinnock, it was decided, will be immune from murder in the game within a game, though the Traitors aren't to know that.
+**🇬🇧 EN:** Only Pinnock, it was decided democratically, will be immune from murder in the castle crypt game within a game thanks to a special key, though the Traitors aren't to know it.
 
-**🇫🇷 FR:** *Seul Pinnock, on a décidé, sera immunisé contre les meurtres dans le jeu, même si les Traîtres ne doivent pas le savoir.*
+**🇫🇷 FR:** *Seul Pinnock, c'est décidé démocratiquement, sera immunisé contre le meurtre dans le jeu de cryptes du château grâce à une clé spéciale, bien que les Traîtres ne le sachent pas.*
 
 ---
 
 ### Section 71
 
-**🇬🇧 EN:** This much terror and mischief and it's not Halloween for weeks yet.
+**🇬🇧 EN:** All this mischief and terror and it's not Halloween for weeks yet.
 
-**🇫🇷 FR:** *Tout ce terreur et ce malheur et ce n'est pas Halloween depuis des semaines.*
+**🇫🇷 FR:** *Tout ce malheur et la terreur et ce n'est pas Halloween depuis des semaines.*
 
 ---
 
 ### Section 72
+
+**🇬🇧 EN:** Newfound Traitor Hannah Fry survived a stressful episode
+
+**🇫🇷 FR:** *La traîtresse Hannah Fry a survécu à un épisode stressant.*
+
+---
+
+### Section 73
+
+**🇬🇧 EN:** The public appetite for treachery is strong, it seems.
+
+**🇫🇷 FR:** *Le désir public de trahison semble fort.*
+
+---
+
+### Section 74
 
 **🇬🇧 EN:** Friday's episode drew in a peak audience of 9.6 million viewers, just short of the 10.3 million people who tuned in for Thursday's offering.
 
@@ -585,7 +601,7 @@
 
 ---
 
-### Section 73
+### Section 75
 
 **🇬🇧 EN:** It comes after the opening episode of the Celebrity Traitors' second season became the most-watched debut of any series of the programme in the UK to date, attracting 8.9 million viewers.
 
@@ -593,7 +609,7 @@
 
 ---
 
-### Section 74
+### Section 76
 
 **🇬🇧 EN:** Celebrity Traitors continues on Thursday at 20:00 BST on BBC One and iPlayer.
 
@@ -601,7 +617,7 @@
 
 ---
 
-### Section 75
+### Section 77
 
 **🇬🇧 EN:** Have you played a version of the Traitors or another social deduction game at home or socially? Share your experience.
 
@@ -609,7 +625,7 @@
 
 ---
 
-### Section 76
+### Section 78
 
 **🇬🇧 EN:** Emotions run high at the round table as Celebrity Traitors banish two players
 
@@ -617,7 +633,7 @@
 
 ---
 
-### Section 77
+### Section 79
 
 **🇬🇧 EN:** Traitors claim their first victim as Richard E Grant tries to save his skin
 
@@ -625,7 +641,7 @@
 
 ---
 
-### Section 78
+### Section 80
 
 **🇬🇧 EN:** Chaos, coffins and 'Claudiapatra' steal the show in Celebrity Traitors
 
@@ -633,7 +649,7 @@
 
 ---
 
-### Section 79
+### Section 81
 
 **🇬🇧 EN:** Celebrity Traitors 2 cast: Who are this year's 'big dogs' and dark horses?
 
@@ -641,7 +657,7 @@
 
 ---
 
-### Section 80
+### Section 82
 
 **🇬🇧 EN:** What role would you play in the Traitors castle? Take our quiz to find out
 
@@ -649,7 +665,7 @@
 
 ---
 
-### Section 81
+### Section 83
 
 **🇬🇧 EN:** Celebrity Traitors: Can I visit the castle, ride the train and see the unusual monument?
 

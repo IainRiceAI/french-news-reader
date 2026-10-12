@@ -1,163 +1,165 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-11 06:02:38  
+Generated on: 2026-10-12 06:03:12  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Twelve killed and 300 injured in attack on airport in Saudi capital Riyadh**
-   - **Published:** Sun, 11 Oct 2026 03:57:22 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Twelve_killed_and_300_injured_in_attack_.md](top-stories_article_1_Twelve_killed_and_300_injured_in_attack_.md)
+1. **Trump's 'energy ceasefire' claim welcomed by Zelensky but Russia silent**
+   - **Published:** Sun, 11 Oct 2026 21:36:40 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Trumps_energy_ceasefire_claim_welcomed_b.md](top-stories_article_1_Trumps_energy_ceasefire_claim_welcomed_b.md)
 
-2. **'Time for Ukraine to get new president,' says Trump after Zelensky condemns diesel deal**
-   - **Published:** Sun, 11 Oct 2026 01:41:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Time_for_Ukraine_to_get_new_president_sa.md](top-stories_article_2_Time_for_Ukraine_to_get_new_president_sa.md)
+2. **One killed, 11 injured in second Houthi strike on Riyadh airport in two days**
+   - **Published:** Sun, 11 Oct 2026 22:45:58 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_One_killed_11_injured_in_second_Houthi_s.md](top-stories_article_2_One_killed_11_injured_in_second_Houthi_s.md)
 
-3. **Man dies after tiger attack at wildlife park**
-   - **Published:** Sun, 11 Oct 2026 01:05:37 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Man_dies_after_tiger_attack_at_wildlife_.md](top-stories_article_3_Man_dies_after_tiger_attack_at_wildlife_.md)
+3. **PM says it is 'clear' Russia interfered with Brexit vote**
+   - **Published:** Mon, 12 Oct 2026 04:15:03 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_PM_says_it_is_clear_Russia_interfered_wi.md](top-stories_article_3_PM_says_it_is_clear_Russia_interfered_wi.md)
 
-4. **US justice department investigates TV networks over Trump pool coverage**
-   - **Published:** Sun, 11 Oct 2026 00:49:17 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_US_justice_department_investigates_TV_ne.md](top-stories_article_4_US_justice_department_investigates_TV_ne.md)
+4. **Wildlife park remains closed after fatal tiger attack**
+   - **Published:** Sun, 11 Oct 2026 12:38:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Wildlife_park_remains_closed_after_fatal.md](top-stories_article_4_Wildlife_park_remains_closed_after_fatal.md)
 
-5. **UK launch flood taskforce to prepare for extreme winter weather**
-   - **Published:** Sun, 11 Oct 2026 00:44:37 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_UK_launch_flood_taskforce_to_prepare_for.md](top-stories_article_5_UK_launch_flood_taskforce_to_prepare_for.md)
+5. **Iran war threatens Healey's Budget plans, think tank warns**
+   - **Published:** Sun, 11 Oct 2026 23:04:07 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Iran_war_threatens_Healeys_Budget_plans_.md](top-stories_article_5_Iran_war_threatens_Healeys_Budget_plans_.md)
 
-6. **Bid to overturn ruling which stops police being sued for failings**
-   - **Published:** Sat, 10 Oct 2026 23:04:37 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Bid_to_overturn_ruling_which_stops_polic.md](top-stories_article_6_Bid_to_overturn_ruling_which_stops_polic.md)
+6. **Reform would suspend asylum system for parliamentary term if in government**
+   - **Published:** Sun, 11 Oct 2026 21:18:15 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Reform_would_suspend_asylum_system_for_p.md](top-stories_article_6_Reform_would_suspend_asylum_system_for_p.md)
 
-7. **Northern Lights stun UK down to England's south coast**
-   - **Published:** Sat, 10 Oct 2026 20:57:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Northern_Lights_stun_UK_down_to_Englands.md](top-stories_article_7_Northern_Lights_stun_UK_down_to_Englands.md)
+7. **Watch: Endangered orangutans released back into the wild after Borneo fires**
+   - **Published:** Sun, 11 Oct 2026 23:48:25 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Watch_Endangered_orangutans_released_bac.md](top-stories_article_7_Watch_Endangered_orangutans_released_bac.md)
+   - **French Audio Narration:** [🔊 Listen](top-stories_article_7.mp3)
 
-8. **Three friends on their student debt: one paid off, one chipping away and one creeping up**
-   - **Published:** Sat, 10 Oct 2026 23:17:03 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Three_friends_on_their_student_debt_one_.md](top-stories_article_8_Three_friends_on_their_student_debt_one_.md)
+8. **AI is less regulated than milk, says Microsoft president**
+   - **Published:** Sun, 11 Oct 2026 23:07:35 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_AI_is_less_regulated_than_milk_says_Micr.md](top-stories_article_8_AI_is_less_regulated_than_milk_says_Micr.md)
 
 ---
 
 ### Section: WORLD
 
-1. **'Time for Ukraine to get new president,' says Trump after Zelensky condemns diesel deal**
-   - **Published:** Sun, 11 Oct 2026 01:41:29 GMT
-   - **Read Parallel Translation:** [world_article_9_Time_for_Ukraine_to_get_new_president_sa.md](world_article_9_Time_for_Ukraine_to_get_new_president_sa.md)
+1. **Trump's 'energy ceasefire' claim welcomed by Zelensky but Russia silent**
+   - **Published:** Sun, 11 Oct 2026 21:36:40 GMT
+   - **Read Parallel Translation:** [world_article_9_Trumps_energy_ceasefire_claim_welcomed_b.md](world_article_9_Trumps_energy_ceasefire_claim_welcomed_b.md)
 
-2. **Twelve killed and 300 injured in attack on airport in Saudi capital Riyadh**
-   - **Published:** Sun, 11 Oct 2026 03:57:22 GMT
-   - **Read Parallel Translation:** [world_article_10_Twelve_killed_and_300_injured_in_attack_.md](world_article_10_Twelve_killed_and_300_injured_in_attack_.md)
+2. **Trump faces growing backlash over plans to import diesel from Russia**
+   - **Published:** Sun, 11 Oct 2026 23:18:45 GMT
+   - **Read Parallel Translation:** [world_article_10_Trump_faces_growing_backlash_over_plans_.md](world_article_10_Trump_faces_growing_backlash_over_plans_.md)
 
-3. **Young men live in fear of being snatched off the streets and sold to Myanmar's army**
-   - **Published:** Sat, 10 Oct 2026 22:13:08 GMT
-   - **Read Parallel Translation:** [world_article_11_Young_men_live_in_fear_of_being_snatched.md](world_article_11_Young_men_live_in_fear_of_being_snatched.md)
+3. **One killed, 11 injured in second Houthi strike on Riyadh airport in two days**
+   - **Published:** Sun, 11 Oct 2026 22:45:58 GMT
+   - **Read Parallel Translation:** [world_article_11_One_killed_11_injured_in_second_Houthi_s.md](world_article_11_One_killed_11_injured_in_second_Houthi_s.md)
 
-4. **Russian glide bomb attack on Zaporizhzhia kills at least 20 people**
-   - **Published:** Sat, 10 Oct 2026 20:51:12 GMT
-   - **Read Parallel Translation:** [world_article_12_Russian_glide_bomb_attack_on_Zaporizhzhi.md](world_article_12_Russian_glide_bomb_attack_on_Zaporizhzhi.md)
+4. **Poland detains man suspected of planning assassination of PM Tusk**
+   - **Published:** Sun, 11 Oct 2026 17:27:24 GMT
+   - **Read Parallel Translation:** [world_article_12_Poland_detains_man_suspected_of_planning.md](world_article_12_Poland_detains_man_suspected_of_planning.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Trump announces deal for Russian diesel as Zelensky calls it a gift to Putin**
-   - **Published:** Sat, 10 Oct 2026 14:24:14 GMT
-   - **Read Parallel Translation:** [business_article_13_Trump_announces_deal_for_Russian_diesel_.md](business_article_13_Trump_announces_deal_for_Russian_diesel_.md)
+1. **Iran war threatens Healey's Budget plans, think tank warns**
+   - **Published:** Sun, 11 Oct 2026 23:04:07 GMT
+   - **Read Parallel Translation:** [business_article_13_Iran_war_threatens_Healeys_Budget_plans_.md](business_article_13_Iran_war_threatens_Healeys_Budget_plans_.md)
 
-2. **Analysis: Trump's shock Russia deal highlights mounting pressure to curb fuel prices**
-   - **Published:** Fri, 09 Oct 2026 22:30:22 GMT
-   - **Read Parallel Translation:** [business_article_14_Analysis_Trumps_shock_Russia_deal_highli.md](business_article_14_Analysis_Trumps_shock_Russia_deal_highli.md)
+2. **Trump faces growing backlash over plans to import diesel from Russia**
+   - **Published:** Sun, 11 Oct 2026 23:18:45 GMT
+   - **Read Parallel Translation:** [business_article_14_Trump_faces_growing_backlash_over_plans_.md](business_article_14_Trump_faces_growing_backlash_over_plans_.md)
 
-3. **Boots has a new owner: Three ways it could affect you**
-   - **Published:** Fri, 09 Oct 2026 23:01:14 GMT
-   - **Read Parallel Translation:** [business_article_15_Boots_has_a_new_owner_Three_ways_it_coul.md](business_article_15_Boots_has_a_new_owner_Three_ways_it_coul.md)
+3. **Debt advice that may leave you owing even more money**
+   - **Published:** Sun, 11 Oct 2026 23:19:07 GMT
+   - **Read Parallel Translation:** [business_article_15_Debt_advice_that_may_leave_you_owing_eve.md](business_article_15_Debt_advice_that_may_leave_you_owing_eve.md)
 
-4. **Burnham promises to curb non-compete rules in job contracts**
-   - **Published:** Fri, 09 Oct 2026 16:15:30 GMT
-   - **Read Parallel Translation:** [business_article_16_Burnham_promises_to_curb_non-compete_rul.md](business_article_16_Burnham_promises_to_curb_non-compete_rul.md)
+4. **Roofing scammers con homeowners out of thousands of pounds**
+   - **Published:** Sun, 11 Oct 2026 23:19:49 GMT
+   - **Read Parallel Translation:** [business_article_16_Roofing_scammers_con_homeowners_out_of_t.md](business_article_16_Roofing_scammers_con_homeowners_out_of_t.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **King warns malicious online actors are evolving tactics**
+1. **AI is less regulated than milk, says Microsoft president**
+   - **Published:** Sun, 11 Oct 2026 23:07:35 GMT
+   - **Read Parallel Translation:** [technology_article_17_AI_is_less_regulated_than_milk_says_Micr.md](technology_article_17_AI_is_less_regulated_than_milk_says_Micr.md)
+
+2. **King warns malicious online actors are evolving tactics**
    - **Published:** Sat, 10 Oct 2026 15:56:32 GMT
-   - **Read Parallel Translation:** [technology_article_17_King_warns_malicious_online_actors_are_e.md](technology_article_17_King_warns_malicious_online_actors_are_e.md)
+   - **Read Parallel Translation:** [technology_article_18_King_warns_malicious_online_actors_are_e.md](technology_article_18_King_warns_malicious_online_actors_are_e.md)
 
-2. **Rogue Anthropic AI agent gave police fake tip in unsolved murder case**
+3. **Rogue Anthropic AI agent gave police fake tip in unsolved murder case**
    - **Published:** Sat, 10 Oct 2026 10:06:23 GMT
-   - **Read Parallel Translation:** [technology_article_18_Rogue_Anthropic_AI_agent_gave_police_fak.md](technology_article_18_Rogue_Anthropic_AI_agent_gave_police_fak.md)
+   - **Read Parallel Translation:** [technology_article_19_Rogue_Anthropic_AI_agent_gave_police_fak.md](technology_article_19_Rogue_Anthropic_AI_agent_gave_police_fak.md)
 
-3. **How drones are hunting fires hidden beneath the Cairngorms**
+4. **How drones are hunting fires hidden beneath the Cairngorms**
    - **Published:** Sat, 10 Oct 2026 09:31:14 GMT
-   - **Read Parallel Translation:** [technology_article_19_How_drones_are_hunting_fires_hidden_bene.md](technology_article_19_How_drones_are_hunting_fires_hidden_bene.md)
-
-4. **Prize-winning image which sparked backlash was AI-generated, Nikon rules**
-   - **Published:** Fri, 09 Oct 2026 15:32:30 GMT
-   - **Read Parallel Translation:** [technology_article_20_Prize-winning_image_which_sparked_backla.md](technology_article_20_Prize-winning_image_which_sparked_backla.md)
+   - **Read Parallel Translation:** [technology_article_20_How_drones_are_hunting_fires_hidden_bene.md](technology_article_20_How_drones_are_hunting_fires_hidden_bene.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Four dead and thousands without power after Hurricane Isaias lashes US**
-   - **Published:** Sat, 10 Oct 2026 23:19:55 GMT
-   - **Read Parallel Translation:** [science_article_21_Four_dead_and_thousands_without_power_af.md](science_article_21_Four_dead_and_thousands_without_power_af.md)
+1. **Watch: Endangered orangutans released back into the wild after Borneo fires**
+   - **Published:** Sun, 11 Oct 2026 23:48:25 GMT
+   - **Read Parallel Translation:** [science_article_21_Watch_Endangered_orangutans_released_bac.md](science_article_21_Watch_Endangered_orangutans_released_bac.md)
+   - **French Audio Narration:** [🔊 Listen](science_article_21.mp3)
 
-2. **Hundreds protest over data centre plans**
-   - **Published:** Sat, 10 Oct 2026 13:40:03 GMT
-   - **Read Parallel Translation:** [science_article_22_Hundreds_protest_over_data_centre_plans.md](science_article_22_Hundreds_protest_over_data_centre_plans.md)
+2. **American ranchers wrestle with soaring costs - and their loyalty to Trump**
+   - **Published:** Sun, 11 Oct 2026 23:13:51 GMT
+   - **Read Parallel Translation:** [science_article_22_American_ranchers_wrestle_with_soaring_c.md](science_article_22_American_ranchers_wrestle_with_soaring_c.md)
 
-3. **Hurricane Isaias downgraded after making landfall in Florida**
-   - **Published:** Sat, 10 Oct 2026 11:55:12 GMT
-   - **Read Parallel Translation:** [science_article_23_Hurricane_Isaias_downgraded_after_making.md](science_article_23_Hurricane_Isaias_downgraded_after_making.md)
+3. **'Prepare for the unthinkable' warning over autumn flooding**
+   - **Published:** Sun, 11 Oct 2026 20:51:30 GMT
+   - **Read Parallel Translation:** [science_article_23_Prepare_for_the_unthinkable_warning_over.md](science_article_23_Prepare_for_the_unthinkable_warning_over.md)
 
-4. **How drones are hunting fires hidden beneath the Cairngorms**
-   - **Published:** Sat, 10 Oct 2026 09:31:14 GMT
-   - **Read Parallel Translation:** [science_article_24_How_drones_are_hunting_fires_hidden_bene.md](science_article_24_How_drones_are_hunting_fires_hidden_bene.md)
+4. **Orangutans released back into Borneo forest after devastating fires**
+   - **Published:** Sun, 11 Oct 2026 19:08:04 GMT
+   - **Read Parallel Translation:** [science_article_24_Orangutans_released_back_into_Borneo_for.md](science_article_24_Orangutans_released_back_into_Borneo_for.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Autism, ADHD and mental health review: What you need to know**
+1. **Childhood cancer symptoms can be easily missed - here's what to look out for**
+   - **Published:** Sun, 11 Oct 2026 23:03:45 GMT
+   - **Read Parallel Translation:** [health_article_25_Childhood_cancer_symptoms_can_be_easily_.md](health_article_25_Childhood_cancer_symptoms_can_be_easily_.md)
+
+2. **Autism, ADHD and mental health review: What you need to know**
    - **Published:** Fri, 09 Oct 2026 12:16:11 GMT
-   - **Read Parallel Translation:** [health_article_25_Autism_ADHD_and_mental_health_review_Wha.md](health_article_25_Autism_ADHD_and_mental_health_review_Wha.md)
+   - **Read Parallel Translation:** [health_article_26_Autism_ADHD_and_mental_health_review_Wha.md](health_article_26_Autism_ADHD_and_mental_health_review_Wha.md)
 
-2. **From the workplace to pop culture - why how we view women's anger is changing**
+3. **From the workplace to pop culture - why how we view women's anger is changing**
    - **Published:** Fri, 09 Oct 2026 11:40:22 GMT
-   - **Read Parallel Translation:** [health_article_26_From_the_workplace_to_pop_culture_-_why_.md](health_article_26_From_the_workplace_to_pop_culture_-_why_.md)
+   - **Read Parallel Translation:** [health_article_27_From_the_workplace_to_pop_culture_-_why_.md](health_article_27_From_the_workplace_to_pop_culture_-_why_.md)
 
-3. **ADHD and autism at risk of over-diagnosis, says government review**
+4. **ADHD and autism at risk of over-diagnosis, says government review**
    - **Published:** Thu, 08 Oct 2026 23:01:30 GMT
-   - **Read Parallel Translation:** [health_article_27_ADHD_and_autism_at_risk_of_over-diagnosi.md](health_article_27_ADHD_and_autism_at_risk_of_over-diagnosi.md)
-
-4. **Harry says he 'slipped into depression' after leaving UK**
-   - **Published:** Thu, 08 Oct 2026 18:55:41 GMT
-   - **Read Parallel Translation:** [health_article_28_Harry_says_he_slipped_into_depression_af.md](health_article_28_Harry_says_he_slipped_into_depression_af.md)
+   - **Read Parallel Translation:** [health_article_28_ADHD_and_autism_at_risk_of_over-diagnosi.md](health_article_28_ADHD_and_autism_at_risk_of_over-diagnosi.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **Green Party MP wants to make sure it is 'not vulnerable to extremists'**
-   - **Published:** Sat, 10 Oct 2026 11:09:16 GMT
-   - **Read Parallel Translation:** [politics_article_29_Green_Party_MP_wants_to_make_sure_it_is_.md](politics_article_29_Green_Party_MP_wants_to_make_sure_it_is_.md)
+1. **PM says it is 'clear' Russia interfered with Brexit vote**
+   - **Published:** Mon, 12 Oct 2026 04:15:03 GMT
+   - **Read Parallel Translation:** [politics_article_29_PM_says_it_is_clear_Russia_interfered_wi.md](politics_article_29_PM_says_it_is_clear_Russia_interfered_wi.md)
 
-2. **Lib Dem MP quits frontbench job over Ed Davey's leadership**
-   - **Published:** Fri, 09 Oct 2026 17:14:16 GMT
-   - **Read Parallel Translation:** [politics_article_30_Lib_Dem_MP_quits_frontbench_job_over_Ed_.md](politics_article_30_Lib_Dem_MP_quits_frontbench_job_over_Ed_.md)
+2. **Reform would suspend asylum system for parliamentary term if in government**
+   - **Published:** Sun, 11 Oct 2026 21:18:15 GMT
+   - **Read Parallel Translation:** [politics_article_30_Reform_would_suspend_asylum_system_for_p.md](politics_article_30_Reform_would_suspend_asylum_system_for_p.md)
 
-3. **Polanski vows to stay as Green leader as he faces criticism after by-election defeat**
-   - **Published:** Fri, 09 Oct 2026 19:26:53 GMT
-   - **Read Parallel Translation:** [politics_article_31_Polanski_vows_to_stay_as_Green_leader_as.md](politics_article_31_Polanski_vows_to_stay_as_Green_leader_as.md)
+3. **UK does not support Trump's Russia diesel deal, says Streeting**
+   - **Published:** Sun, 11 Oct 2026 11:00:49 GMT
+   - **Read Parallel Translation:** [politics_article_31_UK_does_not_support_Trumps_Russia_diesel.md](politics_article_31_UK_does_not_support_Trumps_Russia_diesel.md)
 
-4. **Labour sees off Green challenge to win Holborn by-election**
-   - **Published:** Fri, 09 Oct 2026 10:31:29 GMT
-   - **Read Parallel Translation:** [politics_article_32_Labour_sees_off_Green_challenge_to_win_H.md](politics_article_32_Labour_sees_off_Green_challenge_to_win_H.md)
+4. **UK launches flood taskforce to prepare for extreme winter weather**
+   - **Published:** Sun, 11 Oct 2026 00:44:37 GMT
+   - **Read Parallel Translation:** [politics_article_32_UK_launches_flood_taskforce_to_prepare_f.md](politics_article_32_UK_launches_flood_taskforce_to_prepare_f.md)
 
 ---
 

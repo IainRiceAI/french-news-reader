@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt advice that may leave you owing even more money</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Debt advice that may leave you owing even more money</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 11 Oct 2026 23:19:07 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c84g1xz1l9ddo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: People are increasingly falling behind on credit card repayments, so here's the best way to get debt advice.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">De plus en plus de personnes manquent de rembourser leurs factures par carte de crédit, car les factures augmentent et les finances sont épuisées.</p>
+            <span class="english-block">An increasing number of people are missing credit card repayments as finances are stretched by rising bills.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Les prêteurs ont dit à la Banque d'Angleterre qu'ils s'attendent à ce que le nombre de dettes non remboursées de cartes de crédit continue d'augmenter cet automne.</p>
+            <span class="english-block">Lenders have told the Bank of England they expect the number of unpaid credit card debts to keep going up this autumn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Cela pourrait entraîner une demande accrue de conseils sur la façon de gérer les dettes  mais, si vous avez des difficultés et avez besoin d'aide, il y a quelques pièges à éviter.</p>
+            <span class="english-block">This could lead to more demand for advice on how to deal with debts – but, if you are struggling and need help, there are some traps to avoid.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Et il est important de se rappeler que des conseils impartiaux sont disponibles gratuitement auprès des organismes de bienfaisance.</p>
+            <span class="english-block">And it is worth remembering that impartial advice is available free of charge from debt charities. So here's what to think about.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Si vous rencontrez des problèmes d'argent, il peut être tentant de saisir toute occasion de remettre les choses en ordre.</p>
+            <span class="english-block">If you find yourself with money troubles, it can be tempting to seize any opportunity to get things back on track.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les réseaux sociaux et les pages de recherche sur Internet sont pleines de solutions supposées pour corriger rapidement les dettes.</p>
+            <span class="english-block">Social media and internet search pages are full of supposed quick-fix debt solutions. Cold calls and WhatsApp messages also promise debt help.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Mais ils peuvent bien vouloir payer des frais à l'avance, prétendre qu'ils ne peuvent pas rembourser leurs dettes et être pressés de prendre une décision rapide.</p>
+            <span class="english-block">But they may well come with upfront fees, unrealistic claims about writing off debt, and pressure to make a quick decision.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Les suggestions sur la meilleure façon de trouver de l'aide comprennent:</p>
+            <span class="english-block">Suggestions on the best way to find help include:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les conseils en matière de dette sont gratuits et autorisés.</p>
+            <span class="english-block">Impartial, authorised debt advice comes free. You can find a provider on the government-backed Moneyhelper website, external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Vérifiez si une entreprise offrant une aide à la dette est autorisée par le régulateur, l'Autorité de conduite financière (FCA).</p>
+            <span class="english-block">Check whether a firm offering debt help is authorised by the regulator, the Financial Conduct Authority (FCA). You should cross-check the authorisation details they give with the FCA's register, external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Toute personne insatisfaite du service d'une entreprise agréée peut déposer une plainte et, si elle n'est toujours pas satisfaite, se tourner vers le service de l'Ombudsman financier indépendant.</p>
+            <span class="english-block">Anyone unhappy with the service from an authorised firm can complain and, if you are still not happy, go to the independent Financial Ombudsman Service.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Alison Walters, directrice des finances de la FCA, a déclaré: "Quiconque a des problèmes de dette mérite un conseil qui met ses intérêts en premier.</p>
+            <span class="english-block">Alison Walters, director of consumer finance at the FCA, said: "Anyone struggling with debt deserves advice that puts their interests first.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" Tous peuvent recevoir des conseils gratuits et impartiaux sur la dette, et personne ne devrait être contraint ou induit en erreur à payer pour une solution de dette qui ne leur convient pas. "</p>
+            <span class="english-block">"Free, impartial debt advice is available to everyone, and no one should be pressured or misled into paying for a debt solution that may not be right for them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">La FCA dit que certaines entreprises non réglementées collectent les données des gens, par des appels ou des publicités en ligne, parfois en se faisant passer pour des organismes de bienfaisance ou des collecteurs de dettes, et transmettent ces informations aux entreprises offrant des solutions de dette que vous payez.</p>
+            <span class="english-block">The FCA says that some unregulated firms collect people's details, through cold calling or online adverts, sometimes impersonating debt advice charities or debt collectors, and pass this information on to firms offering debt solutions that you pay for.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Une recherche rapide en ligne va donner lieu à de nombreuses entreprises offrant des moyens de vous rembourser vos dettes, qui ne sont pas toutes dignes de confiance, selon les organismes de bienfaisance.</p>
+            <span class="english-block">A quick search online will throw up lots of businesses offering ways to clear your debt, not all of which are trustworthy, according to charities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Les signes d'avertissement des entreprises sans scrupules comprennent des tactiques de pression, telles que des contacts répétés, souvent par SMS et par téléphone, poussant les gens à accepter une solution de la dette, dit la FCA.</p>
+            <span class="english-block">Warning signs of unscrupulous firms include pressure tactics, such as repeated contact, often in messages and on the phone, pushing people to agree to a debt solution, the FCA says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Certains ont été encouragés à modifier les détails financiers des documents des prêteurs ou à être "entraînés" dans la façon de les répondre.</p>
+            <span class="english-block">Some people have been encouraged to change financial details on lenders' paperwork, or are "coached" in ways to respond.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Parfois, les gens sont dirigés vers une solution de dette à frais, comme des arrangements volontaires individuels (AVI) ou certains plans de gestion de la dette, sans que des options alternatives soient expliquées ou proposées en premier lieu.</p>
+            <span class="english-block">Sometimes people are steered towards a fee-charging debt solution, such as Individual Voluntary Arrangements (IVAs) or some debt management plans, without alternative options being properly explained or offered first.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Demandez-leur pour qui ils travaillent et voyez si leurs détails correspondent aux détails officiels de l'entreprise.</p>
+            <span class="english-block">And, do you know who you are talking to? Ask them who they work for, and check if their details match the firm's official details.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">" Avant de prendre des décisions sur la façon de gérer vos dettes, il est toujours utile d'obtenir d'abord un conseil complet, gratuit et impartial sur la dette, en explorant toutes les options pour éliminer votre dette de la manière la plus sûre et la plus durable ", a déclaré Vikki Brownridge, directrice générale de l'organisme caritatif StepChange.</p>
+            <span class="english-block">"Before making any decisions around how to deal with your debts, it's always worth getting full, free and impartial debt advice first, exploring all options to clear your debt in the safest and most sustainable way," said Vikki Brownridge, chief executive at debt charity StepChange.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Comment les changements à l'achat maintenant et au paiement ultérieur vous affecteront- ils?</p>
+            <span class="english-block">How will Buy Now Pay Later changes affect you?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">La dette de Bill augmente, mais beaucoup ne savent pas qu'il y a de l'aide.</p>
+            <span class="english-block">Bill debt soars but many don't know help is available</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
