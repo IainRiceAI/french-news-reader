@@ -123,9 +123,9 @@
 
 ### Section 15
 
-**🇬🇧 EN:** Experts like Phillips at CCLG, the Children and Young People's Cancer Association, are urging people to follow a national campaign aiming to raise awareness and improve diagnosis times.
+**🇬🇧 EN:** Experts like Phillips at CCLG: The Children & Young People's Cancer Association, are urging people to follow a national campaign aiming to raise awareness and improve diagnosis times.
 
-**🇫🇷 FR:** *Des experts comme Phillips au CCLG, l'Association pour le cancer des enfants et des jeunes, exhortent les gens à suivre une campagne nationale visant à sensibiliser et à améliorer les délais de diagnostic.*
+**🇫🇷 FR:** *Des experts comme Phillips au CCLG: l'Association du cancer des enfants et des jeunes, exhortent les gens à suivre une campagne nationale visant à sensibiliser et à améliorer les délais de diagnostic.*
 
 ---
 
@@ -259,9 +259,9 @@
 
 ### Section 32
 
-**🇬🇧 EN:** Jake Swinscoe died of soft tissue cancer at the age of 13 after opting out of treatment
+**🇬🇧 EN:** Jake Swinscoe died of soft tissue cancer at the age of 13
 
-**🇫🇷 FR:** *Jake Swinscoe est mort d'un cancer des tissus mous à l'âge de 13 ans après avoir refusé de subir un traitement.*
+**🇫🇷 FR:** *Jake Swinscoe est mort d'un cancer des tissus mous à l'âge de 13 ans.*
 
 ---
 

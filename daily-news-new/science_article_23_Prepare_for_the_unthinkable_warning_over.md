@@ -1,7 +1,7 @@
 # 'Prepare for the unthinkable' warning over autumn flooding
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cm4g1pqyqzqwo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cm4g1pqyqzqwo?at_medium=RSS&at_campaign=rss)  
-**Published:** Sun, 11 Oct 2026 20:51:30 GMT  
+**Published:** Mon, 12 Oct 2026 05:24:10 GMT  
 
 ---
 
