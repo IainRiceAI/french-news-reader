@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How long will humans be needed for translation?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>How long will humans be needed for translation?</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 13 Oct 2026 23:05:29 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c1wxdjx27ypo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: AI dominates the translation business, but for high-stakes work, humans are still needed.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le service de traduction de Google traite un milliard de mots par mois</p>
+            <span class="english-block">Google's translation service handles one trillion words per month</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">"Il pleut des cordes", disent les Français quand il pleut fort.</p>
+            <span class="english-block">"Il pleut des cordes," say the French when it's raining hard.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">"Il pleut des cordes", c'est la traduction directe. C'est le genre d'idiome qui peut faire trébucher un traducteur d'IA.</p>
+            <span class="english-block">"It's raining ropes," is the direct translation. It's the kind of idiom which can trip up an AI translator.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">"Vous pouvez imaginer le dilemme dans lequel se trouve l'IA", déclare François Yvon, directeur de recherche spécialisé dans la traduction automatique au CNRS.</p>
+            <span class="english-block">"You can imagine the dilemma this throws AI into," says François Yvon, a research director specialised in automatic translation with the French National Centre for Scientific Research CNRS.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Il dit qu'un système bien formé saura que les cordes ne tombent pas du ciel et utilisera la phrase anglaise "il pleut des chats et des chiens".</p>
+            <span class="english-block">He says a well-trained system will know that ropes are not literally falling from the sky and use the English phrase "it's raining cats and dogs".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">"Mais est- ce que ce livre trouvera son équivalent quand il sera traduit en indonésien?" demande Yvon.</p>
+            <span class="english-block">"But is it going to find the equivalent when it's translating into Indonesian?" asks Yvon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Un commentaire sur la météo est assez risqué, mais de plus en plus de traductions sont faites par des machines, et sur des sujets avec des enjeux plus élevés que la météo.</p>
+            <span class="english-block">A comment on the weather is pretty low-risk, but more and more translation is being done by machines, and on topics with higher stakes than the weather.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">En avril, Google a déclaré que les gens traduisaient maintenant un milliard de mots par mois avec Google Translate.</p>
+            <span class="english-block">In April, Google said people are now translating, external one trillion words a month with Google Translate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Cela ne compte pas les autres: DeepL, Microsoft, Claude, ChatCGT et Gemini, sans parler des systèmes de traduction corporatifs sur mesure.</p>
+            <span class="english-block">That doesn't count the others: DeepL, Microsoft, Claude, ChatCGT and Gemini, not to mention made-to-measure corporate translation systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les ventes directes de traduction automatique, externes (c'est-à-dire en dehors des abonnements généraux à l'IA) ont été estimées à 1,4 milliard de dollars l'année dernière.</p>
+            <span class="english-block">Direct sales of machine translation, external (i.e. outside general AI subscriptions) were worth an estimated $1.4bn (£1bn) last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">La traduction par IA est le " bon appel " dans de nombreux cas, dit John Zimmerman</p>
+            <span class="english-block">AI translation is the "right call" in many cases says John Zimmerman</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">" Pour de nombreux cas d'utilisation, la traduction en IA est maintenant la bonne option: multiplier vos coûts par 100 pour capturer les quelques dernières% d'erreurs n'est pas rationnel si vous traduisez des documents internes ou des annonces de produits ", déclare John Zimmerman, fondateur d'OKA (Open Knowledge Association), une organisation suisse à but non lucratif qui traduit des articles de Wikipédia dans d'autres langues.</p>
+            <span class="english-block">"For plenty of use cases, raw AI translation is now the right call: multiplying your costs by 100 to catch the last few percent of errors isn't rational if you're translating internal documents or product listings," says John Zimmerman, founder of OKA (Open Knowledge Association), a Swiss non-profit that translates Wikipedia articles into other languages.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" Pour une encyclopédie, c'est différent. Wikipédia repose sur la confiance. Un fait erroné peut rester là pendant des années et être cité par des journalistes et des systèmes d'IA ", dit-il.</p>
+            <span class="english-block">"For an encyclopedia it's different. Wikipedia runs on trust. A wrong fact can sit there for years and get cited by journalists and AI systems," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Avec plus de 10 000 articles publiés, principalement en espagnol, en portugais et en anglais, OKA est, dit Zimmerman, le plus grand contributeur unique d'articles traduits à l'encyclopédie en ligne collaborative.</p>
+            <span class="english-block">With more than 10,000 published pieces, mostly into Spanish, Portuguese and English, OKA is, Zimmerman says, the single largest contributor of translated articles to the collaborative online encyclopedia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Ce qui n'aurait pas pu se faire sans l'IA.</p>
+            <span class="english-block">Which is something it absolutely could not have become without AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"La traduction de 10 000 articles de la manière traditionnelle coûterait des millions.</p>
+            <span class="english-block">"Translating 10,000 articles the traditional way would cost millions. In our process, the AI produces the draft, then a human translator checks every sentence," he explains.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Mais cette contribution humaine est de moins en moins requise.</p>
+            <span class="english-block">But that human input is required less and less.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">" La machine est maintenant assez bonne pour que le fait de ne pas utiliser l'homme en totalité soit devenu une option sérieuse et une véritable tentation dans l'industrie.</p>
+            <span class="english-block">"The machine output is now good enough that skipping the human entirely has become a serious option, and a real temptation across the industry. Two or three years ago, with tools like DeepL, our translators still rewrote a good chunk of every draft.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">" Aujourd'hui, la prose n'a souvent pas besoin d'être corrigée du tout. La question n'est donc plus de savoir si la traduction par l'IA est bonne, c'est évidemment le cas, mais si elle est suffisamment bonne pour enlever l'humain ", dit Zimmerman.</p>
+            <span class="english-block">"Today the prose often doesn't need fixing at all. So, the question is no longer whether AI translation is good, it clearly is, but whether it's good enough to remove the human," says Zimmerman.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Pas encore, disent les traducteurs.</p>
+            <span class="english-block">Not yet, translators argue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Ariella Baltié est traducteur et juriste spécialisée dans la traduction des documents judiciaires de l'anglais au français.</p>
+            <span class="english-block">Ariella Baltié is a translator and legal expert specialised in translating court documents from English into French.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Elle a été contactée récemment par quelqu'un qui avait déjà traduit ses documents avec l'IA, lui demandant de les vérifier.</p>
+            <span class="english-block">She was contacted recently by someone who'd already translated his documents with AI, asking her to check them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"Au début, il y avait deux erreurs majeures", a- t- elle dit.</p>
+            <span class="english-block">"There were two major errors right at the beginning," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">L'IA avait traduit "Le demandeur" (le plaignant) comme "le demandeur". "Toute chose est maladroite pour les documents juridiques", dit Baltié.</p>
+            <span class="english-block">The AI had translated "Le demandeur" (the plaintiff) as "the requester". "Totally awkward for legal papers," says Baltié.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Quand l'IA a vu "Madame X épouse Y" (Mrs X, épouse de Y'), elle a pensé "Mrs X épouse Y".</p>
+            <span class="english-block">When the AI saw "Madame X, épouse Y" (Ms X, wife of Y'), it came up with "Ms X marries Y".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">En d'autres termes, il confondit un nom avec un verbe, perdant complètement le sens de la phrase.</p>
+            <span class="english-block">In other words, it mistook a noun for a verb, completely losing the meaning of the phrase.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Les conséquences d'une mauvaise traduction dans le domaine juridique peuvent être graves. Aux États-Unis, par exemple, des erreurs dans les demandes d'asile traduites par machine ont entraîné des retards dans la libération des détenus.</p>
+            <span class="english-block">The consequences of mistranslation in the legal sphere can be serious. In the US, for example, errors in machine-translated asylum applications have led to delays in the release of detainees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Ariella Baltié est spécialisée dans le travail de traduction juridique</p>
+            <span class="english-block">Ariella Baltié specialises in legal translation work</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">La précision est une question de vie ou de mort dans le domaine médical.</p>
+            <span class="english-block">Accuracy is a matter of life and death in the medical field.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">"Les unités de dosage et de test sanguin contiennent souvent des lettres grecques", explique Carol Bereuter, spécialiste des traductions médicales.</p>
+            <span class="english-block">"The units for dosages and blood tests often include Greek letters," says Carol Bereuter, who is a specialist in medical translations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Elle a trouvé un texte automatiquement traduit qui avait traduit la lettre grecque μ en millième (un millième) au lieu de micro (un millième).</p>
+            <span class="english-block">She came across one automatically-translated text that had translated the greek letter μ as milli (one thousandth) instead of micro (one millionth).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">" C'est une erreur grave. " Si vous donnez à quelqu'un un milligramme alors qu'il est censé être un microgramme, vous lui donnez mille fois la dose ", souligne Bereuter.</p>
+            <span class="english-block">"That's a serious error. If you give someone a milligram when it's meant to be a microgram, you are giving them a thousand times the dose," points out Bereuter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Elle souligne aussi que, à mesure que les traducteurs de l'IA sont devenus meilleurs, il est devenu plus difficile de détecter les erreurs.</p>
+            <span class="english-block">She also makes the point that, as AI translators have got better, catching errors has got more difficult.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">" Alors qu'autrefois, avec des choses comme Google Translate, la phrase sautait à vous parce qu'il y avait une erreur grammaticale ou qu'elle sonnait maladroitement, aujourd'hui, elle semble parfaitement légitime. Elle semble fluide. Elle semble naturelle. Donc les erreurs sont beaucoup plus difficiles à repérer. "</p>
+            <span class="english-block">"Whereas in the past, with things like Google Translate, the sentence would jump out at you because there'd be a grammatical error or it would sound clunky, today it sounds perfectly legitimate. It sounds fluid. It sounds natural. So the errors are a lot harder to spot."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Carol Bereuter est spécialiste des traductions médicales.</p>
+            <span class="english-block">Carol Bereuter is a specialist in medical translations</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">"Si c'est quelque chose qui porte votre signature, il y a un risque pour votre réputation. Et si des décisions sont prises sur la base d'une traduction concernant une procédure médicale, un contrat que vous pouvez signer ou un achat majeur que vous pouvez faire, le risque est encore plus grand", prévient François Yvon.</p>
+            <span class="english-block">"If it's something that will bear your signature, there's a risk for your reputation. And if decisions are going to be taken on the basis of a translation concerning a medical procedure, a contract you might sign or a major purchase you might make, the risk is even greater," warns François Yvon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Même des phrases qui semblent assez claires à un humain peuvent faire trébucher un service d'IA, dit-il.</p>
+            <span class="english-block">Even sentences that seem quite clear to a human can trip up an AI service, he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">"Quand on a des mots avec des significations différentes, il est généralement très clair pour un humain qu'on applique parce qu'il comprend le contexte, mais quand un traducteur automatique rencontre la phrase 'traducer en polonais', par exemple, il est tout à fait capable de décider que cela doit être tout sur la crème de chaussures, dit Yvon.</p>
+            <span class="english-block">"When you have words with different meanings, it's usually very clear for a human which one applies because they understand the context, but when a machine translator comes across the sentence 'translate into Polish', for example, it is quite capable of deciding it must be all about shoe cream, says Yvon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Le contexte est souvent crucial. Si un traducteur d'IA n'a pas compris que nous parlions d'un match de football, il est susceptible de traduire mal " prendre un virage ".</p>
+            <span class="english-block">Context is often crucial. If an AI translator hasn't grasped that we're talking about a football match it is liable to mis-translate "taking a corner".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">L'année dernière, OKA a mené une étude, financée par Wikimedia. Elle a étudié 119 articles, 10 paires de langues et plus de 1000 heures de travail de traducteur.</p>
+            <span class="english-block">Last year OKA ran a study, funded by Wikimedia. It studied 119 articles, 10 language pairs and more than 1,000 hours of translator work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">" 27% du texte généré par l'IA a toujours été corrigé avant publication.</p>
+            <span class="english-block">"27% of the AI-generated text still got corrected before publication. Three quarters of those corrections were errors the AI introduced, and 5 to 6% of errors changed the meaning of the original text," says Zimmerman.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Il est probable que l'élimination de ces erreurs soit difficile.</p>
+            <span class="english-block">Eradicating those errors is likely to be challenging.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">"Dans l'état actuel, je pense que la façon fondamentale dont ces systèmes fonctionnent rend difficile d'imaginer comment ils pourraient devenir 100% fiables", déclare François Yvon.</p>
+            <span class="english-block">"As things stand, I think the fundamental way these systems function makes it quite hard to imagine how they could become 100% reliable," says François Yvon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">C'est parce que la probabilité est une partie cruciale de la façon dont l'IA traduit chaque mot plutôt que l'autre et ce qui est probablement correct n'est pas la même chose que ce qui est correct. Surtout dans le domaine de quelque chose d'aussi subtil et surprenant que le langage.</p>
+            <span class="english-block">This is because probability is a crucial part of the way AI translates each word rather than another and what is probably correct is not the same as what is correct. Especially in the realm of something as subtle and surprising as language.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Il pense qu'une nouvelle génération de technologie sera une amélioration.</p>
+            <span class="english-block">He thinks a new generation of tech will be an improvement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">" Nous verrons des systèmes de traduction qui sont de plus en plus capables d'évaluer ce qu'ils font et de se corriger en utilisant différents outils d'IA simultanément: un pour faire la traduction, un second pour la critiquer et un troisième pour produire une nouvelle version, par exemple. "</p>
+            <span class="english-block">"We will see translation systems that are increasingly capable of evaluating what they do and correcting themselves using different AI tools simultaneously: one to do the translation, a second to criticize it and a third to produce a new version, for example."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Mais peut-être que le grand moment sera quand l'IA pourra montrer le doute.</p>
+            <span class="english-block">But perhaps the big moment will be when AI can show doubt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">"La véritable avancée ne se fera que si ces systèmes sont capables non seulement de traduire, mais aussi de nous dire quand ils ne sont pas sûrs", dit Yvon.</p>
+            <span class="english-block">"The real breakthrough won't come until these systems are not merely capable of translating but also of telling us when they're not sure," Yvon says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">La technologie critique reste en sécurité en allant sous terre</p>
+            <span class="english-block">The critical tech staying safe by going underground</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Tokenomique: Pourquoi faire payer l'IA est difficile</p>
+            <span class="english-block">Tokenomics: Why making AI pay is tricky</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Pourquoi les compagnies aériennes mettent en garde contre les batteries lithium-ion</p>
+            <span class="english-block">Why airlines are warning over lithium-ion batteries</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
