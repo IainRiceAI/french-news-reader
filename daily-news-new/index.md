@@ -1,123 +1,123 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-14 06:00:47  
+Generated on: 2026-10-15 06:01:07  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Family pays tribute to 'warm and engaging' man killed in tiger attack**
-   - **Published:** Tue, 13 Oct 2026 23:58:56 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Family_pays_tribute_to_warm_and_engaging.md](top-stories_article_1_Family_pays_tribute_to_warm_and_engaging.md)
+1. **Musk says US government may be behind slowdown of Ukraine drone speeds**
+   - **Published:** Thu, 15 Oct 2026 04:30:08 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Musk_says_US_government_may_be_behind_sl.md](top-stories_article_1_Musk_says_US_government_may_be_behind_sl.md)
 
-2. **Pope diagnosed with lung cancer but had successful surgery, Vatican says**
-   - **Published:** Wed, 14 Oct 2026 00:17:00 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Pope_diagnosed_with_lung_cancer_but_had_.md](top-stories_article_2_Pope_diagnosed_with_lung_cancer_but_had_.md)
+2. **Why Zelensky's meeting with Burnham matters**
+   - **Published:** Wed, 14 Oct 2026 20:41:03 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Why_Zelenskys_meeting_with_Burnham_matte.md](top-stories_article_2_Why_Zelenskys_meeting_with_Burnham_matte.md)
 
-3. **Saudi man charged with planting 'sophisticated' recording device in OpenAI office**
-   - **Published:** Tue, 13 Oct 2026 21:42:49 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Saudi_man_charged_with_planting_sophisti.md](top-stories_article_3_Saudi_man_charged_with_planting_sophisti.md)
+3. **UK threatens to ban Eritreans over migrant return policy**
+   - **Published:** Wed, 14 Oct 2026 21:30:13 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_UK_threatens_to_ban_Eritreans_over_migra.md](top-stories_article_3_UK_threatens_to_ban_Eritreans_over_migra.md)
 
-4. **Zelensky and Burnham to meet in Downing Street**
-   - **Published:** Tue, 13 Oct 2026 21:31:30 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Zelensky_and_Burnham_to_meet_in_Downing_.md](top-stories_article_4_Zelensky_and_Burnham_to_meet_in_Downing_.md)
+4. **Retired US generals call on Pentagon to cancel 'barbaric' execution livestream**
+   - **Published:** Thu, 15 Oct 2026 02:26:07 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Retired_US_generals_call_on_Pentagon_to_.md](top-stories_article_4_Retired_US_generals_call_on_Pentagon_to_.md)
 
-5. **Royal Mail losing 400 postal workers a week, says union**
-   - **Published:** Tue, 13 Oct 2026 23:03:59 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Royal_Mail_losing_400_postal_workers_a_w.md](top-stories_article_5_Royal_Mail_losing_400_postal_workers_a_w.md)
+5. **Reform faces criticism after councillors filmed making racist comments**
+   - **Published:** Wed, 14 Oct 2026 22:34:47 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Reform_faces_criticism_after_councillors.md](top-stories_article_5_Reform_faces_criticism_after_councillors.md)
 
-6. **Ex-gang boss sentenced to 40 years for orchestrating Tupac Shakur's murder**
-   - **Published:** Tue, 13 Oct 2026 19:51:14 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Ex-gang_boss_sentenced_to_40_years_for_o.md](top-stories_article_6_Ex-gang_boss_sentenced_to_40_years_for_o.md)
+6. **White House defends new press secretary amid questions about her legal credentials**
+   - **Published:** Thu, 15 Oct 2026 03:03:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_White_House_defends_new_press_secretary_.md](top-stories_article_6_White_House_defends_new_press_secretary_.md)
 
-7. **Cornell bans all fraternity parties over gang sex assault allegations**
-   - **Published:** Tue, 13 Oct 2026 18:25:28 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Cornell_bans_all_fraternity_parties_over.md](top-stories_article_7_Cornell_bans_all_fraternity_parties_over.md)
+7. **Brooklyn novelty shop reeling from 'surreal' row with Kelly Clarkson over mechanical bird**
+   - **Published:** Wed, 14 Oct 2026 22:19:13 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Brooklyn_novelty_shop_reeling_from_surre.md](top-stories_article_7_Brooklyn_novelty_shop_reeling_from_surre.md)
 
-8. **'If we don't scream, they won't listen to us': Student protesters speak to BBC in Paris**
-   - **Published:** Tue, 13 Oct 2026 18:23:22 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_If_we_dont_scream_they_wont_listen_to_us.md](top-stories_article_8_If_we_dont_scream_they_wont_listen_to_us.md)
+8. **Drop-off charges at UK airports to be reviewed after sharp increase**
+   - **Published:** Wed, 14 Oct 2026 17:46:30 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Drop-off_charges_at_UK_airports_to_be_re.md](top-stories_article_8_Drop-off_charges_at_UK_airports_to_be_re.md)
 
 ---
 
 ### Section: WORLD
 
-1. **Pope diagnosed with lung cancer but had successful surgery, Vatican says**
-   - **Published:** Wed, 14 Oct 2026 00:17:00 GMT
-   - **Read Parallel Translation:** [world_article_9_Pope_diagnosed_with_lung_cancer_but_had_.md](world_article_9_Pope_diagnosed_with_lung_cancer_but_had_.md)
+1. **Musk says US government may be behind slowdown of Ukraine drone speeds**
+   - **Published:** Thu, 15 Oct 2026 04:30:08 GMT
+   - **Read Parallel Translation:** [world_article_9_Musk_says_US_government_may_be_behind_sl.md](world_article_9_Musk_says_US_government_may_be_behind_sl.md)
 
-2. **Saudi man charged with planting 'sophisticated' recording device in OpenAI office**
-   - **Published:** Tue, 13 Oct 2026 21:42:49 GMT
-   - **Read Parallel Translation:** [world_article_10_Saudi_man_charged_with_planting_sophisti.md](world_article_10_Saudi_man_charged_with_planting_sophisti.md)
+2. **Student protesters attack government buildings in Albania**
+   - **Published:** Wed, 14 Oct 2026 20:29:05 GMT
+   - **Read Parallel Translation:** [world_article_10_Student_protesters_attack_government_bui.md](world_article_10_Student_protesters_attack_government_bui.md)
 
-3. **Germany puts Ukrainian on trial accused of blowing up Nord Stream pipelines**
-   - **Published:** Tue, 13 Oct 2026 23:42:22 GMT
-   - **Read Parallel Translation:** [world_article_11_Germany_puts_Ukrainian_on_trial_accused_.md](world_article_11_Germany_puts_Ukrainian_on_trial_accused_.md)
+3. **Retired US generals call on Pentagon to cancel 'barbaric' execution livestream**
+   - **Published:** Thu, 15 Oct 2026 02:26:07 GMT
+   - **Read Parallel Translation:** [world_article_11_Retired_US_generals_call_on_Pentagon_to_.md](world_article_11_Retired_US_generals_call_on_Pentagon_to_.md)
 
-4. **MI5 chief warns of threats to UK from Russia, Iran and AI**
-   - **Published:** Tue, 13 Oct 2026 15:52:15 GMT
-   - **Read Parallel Translation:** [world_article_12_MI5_chief_warns_of_threats_to_UK_from_Ru.md](world_article_12_MI5_chief_warns_of_threats_to_UK_from_Ru.md)
+4. **White House defends new press secretary amid questions about her legal credentials**
+   - **Published:** Thu, 15 Oct 2026 03:03:16 GMT
+   - **Read Parallel Translation:** [world_article_12_White_House_defends_new_press_secretary_.md](world_article_12_White_House_defends_new_press_secretary_.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Royal Mail losing 400 postal workers a week, says union**
-   - **Published:** Tue, 13 Oct 2026 23:03:59 GMT
-   - **Read Parallel Translation:** [business_article_13_Royal_Mail_losing_400_postal_workers_a_w.md](business_article_13_Royal_Mail_losing_400_postal_workers_a_w.md)
+1. **Drop-off charges at UK airports to be reviewed after sharp increase**
+   - **Published:** Wed, 14 Oct 2026 17:46:30 GMT
+   - **Read Parallel Translation:** [business_article_13_Drop-off_charges_at_UK_airports_to_be_re.md](business_article_13_Drop-off_charges_at_UK_airports_to_be_re.md)
 
-2. **Is it OK for jobseekers or employers to use AI?**
-   - **Published:** Tue, 13 Oct 2026 23:04:39 GMT
-   - **Read Parallel Translation:** [business_article_14_Is_it_OK_for_jobseekers_or_employers_to_.md](business_article_14_Is_it_OK_for_jobseekers_or_employers_to_.md)
+2. **Anthropic flags revenue surge to investors ahead of stock market debut**
+   - **Published:** Thu, 15 Oct 2026 04:19:17 GMT
+   - **Read Parallel Translation:** [business_article_14_Anthropic_flags_revenue_surge_to_investo.md](business_article_14_Anthropic_flags_revenue_surge_to_investo.md)
 
-3. **Bank of America hit with $1.2bn fine for money laundering failings**
-   - **Published:** Wed, 14 Oct 2026 02:05:32 GMT
-   - **Read Parallel Translation:** [business_article_15_Bank_of_America_hit_with_12bn_fine_for_m.md](business_article_15_Bank_of_America_hit_with_12bn_fine_for_m.md)
+3. **Netflix to shed 1,000 jobs in steepest cuts since 2022**
+   - **Published:** Wed, 14 Oct 2026 16:47:32 GMT
+   - **Read Parallel Translation:** [business_article_15_Netflix_to_shed_1000_jobs_in_steepest_cu.md](business_article_15_Netflix_to_shed_1000_jobs_in_steepest_cu.md)
 
-4. **Three things we've learnt about the UK economy from the IMF**
-   - **Published:** Tue, 13 Oct 2026 11:58:43 GMT
-   - **Read Parallel Translation:** [business_article_16_Three_things_weve_learnt_about_the_UK_ec.md](business_article_16_Three_things_weve_learnt_about_the_UK_ec.md)
+4. **How backlash against data centres could shape the US midterm elections**
+   - **Published:** Wed, 14 Oct 2026 23:02:57 GMT
+   - **Read Parallel Translation:** [business_article_16_How_backlash_against_data_centres_could_.md](business_article_16_How_backlash_against_data_centres_could_.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **How long will humans be needed for translation?**
+1. **Anthropic flags revenue surge to investors ahead of stock market debut**
+   - **Published:** Thu, 15 Oct 2026 04:19:17 GMT
+   - **Read Parallel Translation:** [technology_article_17_Anthropic_flags_revenue_surge_to_investo.md](technology_article_17_Anthropic_flags_revenue_surge_to_investo.md)
+
+2. **Toilet paper and secret recorders: What we know about the arrest of the Saudi OpenAI engineer**
+   - **Published:** Wed, 14 Oct 2026 15:54:04 GMT
+   - **Read Parallel Translation:** [technology_article_18_Toilet_paper_and_secret_recorders_What_w.md](technology_article_18_Toilet_paper_and_secret_recorders_What_w.md)
+
+3. **'I applied for 200 jobs' - How 'spray and pray' AI job applications can backfire**
+   - **Published:** Wed, 14 Oct 2026 08:27:17 GMT
+   - **Read Parallel Translation:** [technology_article_19_I_applied_for_200_jobs_-_How_spray_and_p.md](technology_article_19_I_applied_for_200_jobs_-_How_spray_and_p.md)
+
+4. **How long will humans be needed for translation?**
    - **Published:** Tue, 13 Oct 2026 23:05:29 GMT
-   - **Read Parallel Translation:** [technology_article_17_How_long_will_humans_be_needed_for_trans.md](technology_article_17_How_long_will_humans_be_needed_for_trans.md)
-
-2. **Is it OK for jobseekers or employers to use AI?**
-   - **Published:** Tue, 13 Oct 2026 23:04:39 GMT
-   - **Read Parallel Translation:** [technology_article_18_Is_it_OK_for_jobseekers_or_employers_to_.md](technology_article_18_Is_it_OK_for_jobseekers_or_employers_to_.md)
-
-3. **Bumble bought for $1.3bn in 'bet on the future of humanity'**
-   - **Published:** Tue, 13 Oct 2026 15:59:07 GMT
-   - **Read Parallel Translation:** [technology_article_19_Bumble_bought_for_13bn_in_bet_on_the_fut.md](technology_article_19_Bumble_bought_for_13bn_in_bet_on_the_fut.md)
-
-4. **Phase Eight and Hobbs owner hit by cyber-attack, as H&M probes separate hack claim**
-   - **Published:** Tue, 13 Oct 2026 09:34:43 GMT
-   - **Read Parallel Translation:** [technology_article_20_Phase_Eight_and_Hobbs_owner_hit_by_cyber.md](technology_article_20_Phase_Eight_and_Hobbs_owner_hit_by_cyber.md)
+   - **Read Parallel Translation:** [technology_article_20_How_long_will_humans_be_needed_for_trans.md](technology_article_20_How_long_will_humans_be_needed_for_trans.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Gales and heavy rain to impact UK as yellow wind warning issued**
-   - **Published:** Tue, 13 Oct 2026 23:55:49 GMT
-   - **Read Parallel Translation:** [science_article_21_Gales_and_heavy_rain_to_impact_UK_as_yel.md](science_article_21_Gales_and_heavy_rain_to_impact_UK_as_yel.md)
+1. **'Nowhere to escape' - Indonesians share footage of orange haze blanketing towns**
+   - **Published:** Thu, 15 Oct 2026 03:26:36 GMT
+   - **Read Parallel Translation:** [science_article_21_Nowhere_to_escape_-_Indonesians_share_fo.md](science_article_21_Nowhere_to_escape_-_Indonesians_share_fo.md)
 
-2. **Pictured: Winning entries for Wildlife Photographer of the Year 2026**
-   - **Published:** Tue, 13 Oct 2026 23:26:54 GMT
-   - **Read Parallel Translation:** [science_article_22_Pictured_Winning_entries_for_Wildlife_Ph.md](science_article_22_Pictured_Winning_entries_for_Wildlife_Ph.md)
+2. **Dog that hunts invasive 'sea vomit' honoured as animal of the year**
+   - **Published:** Wed, 14 Oct 2026 23:35:40 GMT
+   - **Read Parallel Translation:** [science_article_22_Dog_that_hunts_invasive_sea_vomit_honour.md](science_article_22_Dog_that_hunts_invasive_sea_vomit_honour.md)
 
-3. **More tea? How Scotland's crops of the future could be set to change**
-   - **Published:** Tue, 13 Oct 2026 21:57:25 GMT
-   - **Read Parallel Translation:** [science_article_23_More_tea_How_Scotlands_crops_of_the_futu.md](science_article_23_More_tea_How_Scotlands_crops_of_the_futu.md)
+3. **India and China aren't friends - but Nepal wants to unite them against climate threats**
+   - **Published:** Wed, 14 Oct 2026 23:32:11 GMT
+   - **Read Parallel Translation:** [science_article_23_India_and_China_arent_friends_-_but_Nepa.md](science_article_23_India_and_China_arent_friends_-_but_Nepa.md)
 
-4. **Super El Niño sets another record as it strengthens to 'unprecedented levels'**
-   - **Published:** Tue, 13 Oct 2026 11:18:44 GMT
-   - **Read Parallel Translation:** [science_article_24_Super_El_Niño_sets_another_record_as_it_.md](science_article_24_Super_El_Niño_sets_another_record_as_it_.md)
+4. **Burnham - Rosebank and Jackdaw oil and gas decisions coming 'shortly'**
+   - **Published:** Wed, 14 Oct 2026 14:13:37 GMT
+   - **Read Parallel Translation:** [science_article_24_Burnham_-_Rosebank_and_Jackdaw_oil_and_g.md](science_article_24_Burnham_-_Rosebank_and_Jackdaw_oil_and_g.md)
 
 ---
 
@@ -143,41 +143,41 @@ Scraped Feed Mode: `ALL`
 
 ### Section: POLITICS
 
-1. **MI5 chief warns against overstating Russian interference in Brexit vote**
-   - **Published:** Tue, 13 Oct 2026 17:06:18 GMT
-   - **Read Parallel Translation:** [politics_article_29_MI5_chief_warns_against_overstating_Russ.md](politics_article_29_MI5_chief_warns_against_overstating_Russ.md)
+1. **We are behind you and that will not change, PM tells Zelensky**
+   - **Published:** Wed, 14 Oct 2026 19:22:28 GMT
+   - **Read Parallel Translation:** [politics_article_29_We_are_behind_you_and_that_will_not_chan.md](politics_article_29_We_are_behind_you_and_that_will_not_chan.md)
 
-2. **Argentina targets UK in legal claim over Falklands oil exploration**
-   - **Published:** Tue, 13 Oct 2026 17:36:43 GMT
-   - **Read Parallel Translation:** [politics_article_30_Argentina_targets_UK_in_legal_claim_over.md](politics_article_30_Argentina_targets_UK_in_legal_claim_over.md)
+2. **Reform faces criticism after councillors filmed making racist comments**
+   - **Published:** Wed, 14 Oct 2026 22:34:47 GMT
+   - **Read Parallel Translation:** [politics_article_30_Reform_faces_criticism_after_councillors.md](politics_article_30_Reform_faces_criticism_after_councillors.md)
 
-3. **Zelensky and Burnham to meet in Downing Street**
-   - **Published:** Tue, 13 Oct 2026 21:31:30 GMT
-   - **Read Parallel Translation:** [politics_article_31_Zelensky_and_Burnham_to_meet_in_Downing_.md](politics_article_31_Zelensky_and_Burnham_to_meet_in_Downing_.md)
+3. **Burnham had two hospitality dinners with Man City chairman, deleted records show**
+   - **Published:** Thu, 15 Oct 2026 01:07:59 GMT
+   - **Read Parallel Translation:** [politics_article_31_Burnham_had_two_hospitality_dinners_with.md](politics_article_31_Burnham_had_two_hospitality_dinners_with.md)
 
-4. **Hundreds more prisoners being freed in second phase of early release scheme**
-   - **Published:** Tue, 13 Oct 2026 12:48:51 GMT
-   - **Read Parallel Translation:** [politics_article_32_Hundreds_more_prisoners_being_freed_in_s.md](politics_article_32_Hundreds_more_prisoners_being_freed_in_s.md)
+4. **UK threatens to ban Eritreans over migrant return policy**
+   - **Published:** Wed, 14 Oct 2026 21:30:13 GMT
+   - **Read Parallel Translation:** [politics_article_32_UK_threatens_to_ban_Eritreans_over_migra.md](politics_article_32_UK_threatens_to_ban_Eritreans_over_migra.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Ex-gang boss sentenced to 40 years for orchestrating Tupac Shakur's murder**
-   - **Published:** Tue, 13 Oct 2026 19:51:14 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Ex-gang_boss_sentenced_to_40_years_for_o.md](entertainment_article_33_Ex-gang_boss_sentenced_to_40_years_for_o.md)
+1. **Russell Brand was a 'sexual predator', prosecution alleges as rape trial begins**
+   - **Published:** Wed, 14 Oct 2026 17:55:53 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Russell_Brand_was_a_sexual_predator_pros.md](entertainment_article_33_Russell_Brand_was_a_sexual_predator_pros.md)
 
-2. **How Breaking Bad's RJ Mitte changed the way we see cerebral palsy**
-   - **Published:** Tue, 13 Oct 2026 14:07:33 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_How_Breaking_Bads_RJ_Mitte_changed_the_w.md](entertainment_article_34_How_Breaking_Bads_RJ_Mitte_changed_the_w.md)
+2. **Sally Rooney books withdrawn in UK over Palestine Action support**
+   - **Published:** Wed, 14 Oct 2026 16:56:21 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Sally_Rooney_books_withdrawn_in_UK_over_.md](entertainment_article_34_Sally_Rooney_books_withdrawn_in_UK_over_.md)
 
-3. **Raye hits back at ticket touts who 'overwhelmed' sign-up for Albert Hall show**
-   - **Published:** Tue, 13 Oct 2026 11:25:43 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Raye_hits_back_at_ticket_touts_who_overw.md](entertainment_article_35_Raye_hits_back_at_ticket_touts_who_overw.md)
+3. **Davina McCall says memory loss after brain surgery was like 'advanced Alzheimer's'**
+   - **Published:** Wed, 14 Oct 2026 10:48:29 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Davina_McCall_says_memory_loss_after_bra.md](entertainment_article_35_Davina_McCall_says_memory_loss_after_bra.md)
 
-4. **Katie Price denies 'any venom' against ex at his rape trial**
-   - **Published:** Tue, 13 Oct 2026 16:36:01 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Katie_Price_denies_any_venom_against_ex_.md](entertainment_article_36_Katie_Price_denies_any_venom_against_ex_.md)
+4. **Russell T Davies criticises BBC boss's 'clumsy' AI Doctor Who comments**
+   - **Published:** Wed, 14 Oct 2026 04:58:47 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Russell_T_Davies_criticises_BBC_bosss_cl.md](entertainment_article_36_Russell_T_Davies_criticises_BBC_bosss_cl.md)
 
 ---
 
