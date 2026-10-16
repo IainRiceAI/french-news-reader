@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was Neanderthal life violent? This wound suggests lethal fighting was more common</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Was Neanderthal life violent? This wound suggests lethal fighting was more common</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 15 Oct 2026 15:00:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6jrwn3y3xe9o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A 75,000-year-old Neanderthal spear wound may be evidence violence shaped human life far earlier than thought.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Une lance en bois a provoqué le trou dans cette lame de l'épaule néandertalienne, disent les scientifiques</p>
+            <span class="english-block">A wooden spear caused the hole in this Neanderthal shoulder blade, scientists say</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Selon les archéologues, un Néandertalien mort il y a 75 000 ans a peut-être été frappé à travers la poitrine par une lance en bois tranchante.</p>
+            <span class="english-block">A Neanderthal who died 75,000 years ago may have been struck through the chest by a sharpened wooden spear, archaeologists say.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Ils disent qu'un trou de 15 mm trouvé dans une lame d'épaule dans une grotte du Kurdistan irakien pourrait être la première preuve de violence mortelle impliquant une telle arme.</p>
+            <span class="english-block">They say a 15mm hole found in a shoulder blade in a cave in Iraqi Kurdistan could be the earliest evidence of lethal violence involving such a weapon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">D'après l'angle de la plaie et d'autres preuves, les chercheurs pensent que la lance est entrée dans la poitrine de l'individu et a traversé le corps - probablement endommagant un poumon et les principaux vaisseaux sanguins - et est sortie par la lame gauche pour laisser un trou presque parfait.</p>
+            <span class="english-block">From the angle of the wound and other evidence, the researchers believe the spear entered the individual's chest and passed through the body - probably damaging a lung and major blood vessels - and exited through the left shoulder blade to leave a near-perfect hole.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Cette recherche est la dernière des preuves émergentes qui suggèrent que les sociétés néandertaliennes ont connu plus de violence que prévu.</p>
+            <span class="english-block">The research is the latest in emerging evidence that suggests Neanderthal societies experienced more violence than previously thought.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les Néandertaliens étaient une espèce humaine distincte qui a disparu il y a environ 40 000 ans. Ils vivaient dans une grande partie de l'Europe et de l'Asie occidentale et centrale, et parfois se chevauchaient avec notre espèce, l'Homo sapiens.</p>
+            <span class="english-block">Neanderthals were a separate species of humans that went extinct around 40,000 years ago. They lived across a large expanse of Europe and western and central Asia, and sometimes overlapped with our species, Homo sapiens.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Les restes du néandertalien blessé ont été retrouvés dans une grotte du Kurdistan irakien.</p>
+            <span class="english-block">The wounded Neanderthal's remains were found in a cave in Iraqi Kurdistan. As well as the left shoulder blade, the individual's right hand, three ribs and some teeth were also found.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Un trou dans la lame d'épaule pourrait être la première preuve de " violence interpersonnelle mortelle " d'une lance en bois, selon le Dr Emma Pomeroy, auteur principal de l'étude du Département d'archéologie de Cambridge.</p>
+            <span class="english-block">A hole in the shoulder blade may be the earliest evidence of "lethal interpersonal violence" from a wooden spear, according to Dr Emma Pomeroy, study lead author from Cambridge's Department of Archaeology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">"L'attaque fatale a peut-être été un coup de cœur prévu", a- t- elle déclaré à BBC News.</p>
+            <span class="english-block">"The fatal strike may have been an intended heart shot," she told BBC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les scientifiques ont utilisé les restes de Néanderthal pour imaginer à quoi ils auraient pu ressembler.</p>
+            <span class="english-block">Scientists have used Neanderthal remains to imagine what they could have looked like</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les archéologues appellent les restes Shanidar A, nommé d'après la grotte dans laquelle ils ont été trouvés.</p>
+            <span class="english-block">Archaeologists call the remains Shanidar A, named after the cave in which they were found. Remains of at least 10 Neanderthals were discovered in excavations in the cave in the 1950s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Selon Pomeroy, la blessure est considérée comme la première preuve de l'utilisation de lances en bois aiguisées au Moyen-Orient préhistorique.</p>
+            <span class="english-block">The wound is thought to be the first evidence for use of sharpened wooden spears in the prehistoric Middle East, according to Pomeroy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" Ce n'est pas le genre de rupture que l'on obtiendrait naturellement, car elle est si circulaire, dit- elle. " Les expériences avec des lances en bois reconstruites produisent des trous ronds très similaires dans les os. "</p>
+            <span class="english-block">"It is not the kind of break that you would get naturally, because it is so circular," she said. "Experiments with reconstructed wooden spears produce very similar round holes in bone."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Mais la violence interpersonnelle n'est pas certaine, dit- elle, elle peut être un cas de tirs amicaux, une blessure causée par un accident de chasse.</p>
+            <span class="english-block">But the interpersonal violence is by no means certain, she says. It may be a case of friendly fire, a wound caused as a result of a hunting accident.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Mais le professeur Chris Stringer du Natural History Museum de Londres, qui n'était pas impliqué dans la recherche, a déclaré à BBC News qu'une attaque par un rival était l'explication la plus plausible.</p>
+            <span class="english-block">But Prof Chris Stringer of the Natural History Museum in London, who was not involved in the research, told BBC News that an attack by a rival was the more plausible explanation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"Les chercheurs laissent ouvert si cela résulte d'un accident de chasse ou de violence interpersonnelle, mais à mon avis, ce dernier semble plus probable, compte tenu de la position et de l'étendue de la plaie", a- t- il déclaré.</p>
+            <span class="english-block">"The researchers leave it open whether this resulted from a hunting accident or interpersonal violence, but in my view the latter seems more likely, given the positioning and extent of the wound," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Cette découverte fait écho à une découverte antérieure dans la même grotte, en 1957. Ces restes impliquent un autre Néandertalien qui a vécu plus récemment, il y a environ 50 000 ans.</p>
+            <span class="english-block">This discovery has echoes of an earlier find in the same cave, in 1957. Those remains involved another Neanderthal who lived more recently, around 50, 000 years ago. Their ribs had evidence of a partly healed wound, which archaeologists believe was probably caused by a stone-tipped spear.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Nous ne pouvons pas dire avec certitude si ces Néandertaliens ont été blessés par un compagnon pendant une chasse ou assassinés par un rival, mais ils rejoignent un petit but croissant qui indique que la violence humaine contre humaine était plus fréquente et remonte plus loin que le consensus scientifique actuel ne le suggère.</p>
+            <span class="english-block">We can't tell for sure whether these Neanderthals were hurt by a companion during a hunt or murdered by a rival. But they join a small but growing body of evidence which point to the possibility that human-on-human violence was more common and goes back further than the current scientific consensus would suggest.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">" Malheureusement, je vois le nombre croissant de preuves comme une indication que la violence interpersonnelle est profondément ancrée dans la préhistoire humaine ", a déclaré Stringer à BBC News.</p>
+            <span class="english-block">"I unfortunately see the growing body of evidence as an indication that interpersonal violence goes deep into human prehistory," Stringer told BBC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Une preuve clé de cette preuve est une étude publiée en 2022 sur les crânes des premiers Néandertaliens du nord de l'Espagne sur un site archéologique appelé " la fosse des os ". Elle suggère que la violence mortelle a eu lieu il y a environ 430.000 ans.</p>
+            <span class="english-block">A key piece of that evidence is a study published in 2022 of very early Neanderthal skulls from northern Spain at an archaeological site called "the Pit of Bones". It suggests that deadly violence was taking place about 430,000 years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Les chercheurs ont trouvé 57 blessures à la tête guéries chez 20 individus. Neuf individus avaient des fractures au crâne potentiellement mortelles. Six avaient des blessures de perforation similaires à l'arrière-gauche de la tête.</p>
+            <span class="english-block">Researchers found 57 healed head injuries among 20 individuals. Nine individuals had potentially fatal skull fractures. Six had similar puncture wounds at the back-left of the head. Because the wounds repeatedly occurred in almost the same place, the researchers concluded that deliberate blows were more likely than accidental damage. One skull had two wounds that had probably been inflicted with the same object.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Les découvertes de Pit of Bones ne montrent pas que tous ces habitants étaient habituellement violents, mais elles fournissent de solides preuves que des meurtres répétés ont eu lieu parmi ces personnes il y a des centaines de milliers d'années.</p>
+            <span class="english-block">The Pit of Bones findings do not show that everyone in this population was habitually violent, but they provide strong evidence that repeated killing occurred among these people hundreds of thousands of years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Pendant des décennies, de nombreux archéologues ont lié les débuts de la guerre organisée à l'agriculture, lorsque les gens ont commencé à vivre dans des colonies permanentes et à rivaliser pour la terre, le bétail et les magasins de nourriture.</p>
+            <span class="english-block">For decades, many archaeologists linked the beginnings of organised warfare to farming, when people began living in permanent settlements and competing over land, livestock and food stores.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Mais les preuves provenant de chasseurs-cueilleurs plus anciens et de parents humains encore plus âgés ont depuis montré que les meurtres individuels précèdent l'agriculture de manière très longue.</p>
+            <span class="english-block">But evidence from earlier hunter-gatherers and still older human relatives has since shown that individual killings pre-date farming by a very long way.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Le débat scientifique en direct porte sur la fréquence de ces violences et sur la façon dont les attaques sporadiques sont devenues des conflits organisés et des guerres entre groupes.</p>
+            <span class="english-block">The live scientific debate is over how common such violence was, and when sporadic attacks became organised conflict and wars between groups.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">La recherche a été publiée dans la revue Scientific Reports.</p>
+            <span class="english-block">The research has been published in the journal Scientific Reports.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

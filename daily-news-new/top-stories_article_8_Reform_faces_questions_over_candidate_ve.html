@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reform faces questions over candidate vetting after undercover filming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Reform faces questions over candidate vetting after undercover filming</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 15 Oct 2026 23:52:27 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqm26yr42ezko?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Reform UK says the party has "improved and prioritised its vetting procedures".
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Reform UK est confronté à d'autres questions sur ses procédures de vérification des candidats, après des tournages clandestins diffusés par ITV News, externes.</p>
+            <span class="english-block">Reform UK is facing further questions about its vetting procedures for candidates, after undercover filming broadcast by ITV News, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Dans le film, recueilli au cours d'un an, un journaliste clandestin est conseillé par un président local du parti de supprimer des messages sur les réseaux sociaux en faveur de l'activiste d'extrême droite Tommy Robinson, avant d'être encouragé à postuler pour être conseiller du parti.</p>
+            <span class="english-block">In the film, gathered over the course of a year, an undercover reporter is advised by a local party chairman to delete social media posts supportive of far-right activist Tommy Robinson, before being encouraged to apply to stand to be a councillor for the party.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Il montre également un ancien candidat à la réforme affirmant avoir échoué deux fois dans le processus de vérification du parti mais avoir toujours été autorisé à se présenter pour être conseiller.</p>
+            <span class="english-block">It also shows a former Reform candidate claiming he failed the party's vetting process twice but was still allowed to stand to be a councillor. Reform denies the individual failed vetting in the first place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">La réforme a déclaré que le parti avait "amélioré et priorisé ses procédures de vérification".</p>
+            <span class="english-block">Reform said the party had "improved and prioritised its vetting procedures".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Dans un communiqué, la réforme a déclaré que "de temps à autre, une poignée de personnes qui ne partagent pas nos valeurs réussiront d'abord à passer par la vérification" mais a ajouté: "Cela est le même pour toutes les organisations".</p>
+            <span class="english-block">In a statement, Reform said that "from time to time, a handful of individuals who do not share our values will initially make it through vetting" but added: "This is the same for all organisations."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Il suit la diffusion de films clandestins diffusés mercredi soir, qui ont montré certains conseillers et candidats de la réforme utilisant un langage raciste, violent et sexiste.</p>
+            <span class="english-block">It follows undercover filming broadcast on Wednesday night, which showed some of Reform's councillors and candidates using racist, violent and sexist language.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Le parti a déclaré: "Il n'y a pas de place pour le racisme dans le Royaume-Uni de Réforme. Nous respectons toujours le processus d'enquête et, tant qu'il est en cours, il ne serait pas approprié de commenter les cas individuels".</p>
+            <span class="english-block">The party said: "There is no room for racism in Reform UK. We always respect due process of investigations and whilst these are ongoing it would not be appropriate to comment on individual cases."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Reform a également accusé l'enquête ITV de "méthodes extrêmes de tromperie" et d'utiliser de fausses informations pour obtenir un rôle clandestin au siège de Reform.</p>
+            <span class="english-block">Reform also accused the ITV investigation of "extreme methods of deception" and using false information to obtain an undercover role in Reform's headquarters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il y a deux ans, le chef de la réforme Nigel Farage a promis de vérifier les candidats de manière plus " rigoureuse ", après que le parti ait abandonné une série de candidats à la suite de rapports selon lesquels ils avaient fait des commentaires offensants ou racistes.</p>
+            <span class="english-block">Two years ago, Reform leader Nigel Farage vowed to vet candidates more "rigorously", after the party dropped a series of candidates following reports they had made offensive or racist comments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Toutefois, le parti continue de faire face à des questions sur la force de ses processus de vérification.</p>
+            <span class="english-block">However, the party has continued to face questions over the strength of its vetting processes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Parlant jeudi, avant la dernière séquence de tournage, Farage a déclaré à la BBC Look East que son parti avait été examiné "à un niveau beaucoup plus élevé que les autres partis" mais "on ne peut pas vérifier les commentaires futurs".</p>
+            <span class="english-block">Speaking on Thursday, before the latest filming was broadcast, Farage told BBC Look East his party vetted "to a much higher standard than other parties" but "you can't vet for future comments".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Farage défend la vérification de la réforme après que des conseillers aient été filmés faisant des commentaires racistes</p>
+            <span class="english-block">Farage defends Reform's vetting after councillors filmed making racist comments</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Conseiller de réforme suspendu de son poste de prison après des commentaires " méprisables "</p>
+            <span class="english-block">Reform councillor suspended from prison job after 'despicable' comments</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">ITV News dit qu'un de ses journalistes sous couverture a été demandé s'il envisagerait de devenir conseiller, après avoir passé du temps à brocher avec des militants de la réforme.</p>
+            <span class="english-block">ITV News says one of its undercover reporters was asked if he would consider standing to be a councillor, after spending time leafleting with Reform activists.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Il rencontre Ian Frost, président d'une filiale de la Réforme locale de Chester, qui décrit la réunion comme "la première étape" du processus de vérification.</p>
+            <span class="english-block">He meets with the chairman of a local Reform branch in Chester, Ian Frost, who describes the meeting as "the first stage" of the vetting process.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Après que le journaliste ait dit avoir publié précédemment en soutien à Robinson sur les réseaux sociaux, Frost lui conseille de supprimer les messages.</p>
+            <span class="english-block">After the reporter says he has previously posted in support of Robinson on social media, Frost advises him to delete the posts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">"Tout ce que vous avez, des choses, Tommy Robinson ou quelque chose comme ça, ok, je supprimerais le compte et je recommencerais", ajoute Frost.</p>
+            <span class="english-block">"Anything where you've got, things, Tommy Robinson or anything like that, okay, I would delete the account and I'd start again," Frost adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Farage a dit que Robinson ne serait pas autorisé à rejoindre la Réforme.</p>
+            <span class="english-block">Farage has said Robinson would not be allowed to join Reform.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Frost suggère plus tard que le journaliste sous couverture pourrait postuler pour se présenter au parti, en disant: " Vous pourriez devenir conseiller. Vous pourriez alors vouloir aller à la route du député. Alors, les médias sociaux, oui. Et postuler. "</p>
+            <span class="english-block">Frost later suggests the undercover reporter could apply to stand for the party, saying: "You might become a councillor. You might then want to go to the MP route. So, social media, yeah. And apply."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Frost a dit à ITV News qu'il pensait que le journaliste était un candidat authentique et lui a donné le bénéfice du doute.</p>
+            <span class="english-block">Frost told ITV News he thought the reporter was a genuine candidate and gave him the benefit of the doubt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Il a ajouté qu'il n'était pas juste de juger les gens sur une seule conversation et qu'il avait depuis quitté la Réforme pour des raisons non liées.</p>
+            <span class="english-block">He added that it was not fair to judge people on a single conversation and he had since left Reform for unrelated reasons.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Dans une autre partie du film, un ancien candidat à la réforme - Alex Lomas - affirme avoir échoué deux fois dans le processus de vérification du parti, y compris pour avoir partagé des messages sur les réseaux sociaux de Robinson.</p>
+            <span class="english-block">In another part of the film, a former Reform candidate - Alex Lomas - claims he failed the party's vetting process twice, including for sharing social media posts from Robinson.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Cependant, Lomas dit que quelques jours après avoir échoué pour la deuxième fois, il a été invité à se présenter au parti.</p>
+            <span class="english-block">However, Lomas says a few days after he failed for the second time he was asked to stand for the party.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">"A la deuxième demande, j'ai été rejeté vendredi, j'ai reçu un e-mail de leur part mardi disant que vous avez passé le contrôle", a-t-il déclaré.</p>
+            <span class="english-block">"On my second application, I got declined on the Friday, I got an email from them on the Tuesday saying you've passed vetting," he is recorded as saying.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Je vous ai dit que vous devriez vérifier vos papiers, parce que je viens d'échouer vendredi.</p>
+            <span class="english-block">"I said, well, I think you better check with your paperwork, mate, because I've just failed on Friday. Now, you're saying I've passed it, I've not changed anything.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">"Et puis j'ai reçu un appel quelques jours plus tard. Salut, vous voulez vous présenter pour la Réforme britannique ?</p>
+            <span class="english-block">"And then I got a phone call a few days later. Hi, will you stand for Reform UK? I'm like, yeah okay."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Il se présenta pour la Réforme aux élections locales d'Oldham en mai mais ne remporta pas de siège au conseil.</p>
+            <span class="english-block">He stood for Reform in local elections in Oldham in May but did not win a seat on the council.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">La BBC n'a pas pu contacter Lomas et il n'a pas répondu aux demandes de commentaires de ITV News.</p>
+            <span class="english-block">The BBC has not been able to contact Lomas and he did not respond to requests for comment from ITV News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">La réforme nie que Lomas ait échoué à la vérification.</p>
+            <span class="english-block">Reform denies Lomas failed vetting in the first place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Le rapport clandestin de l'ITV montre également que Farage a statué sur un candidat controversé au maire, le Dr Chris Parry, qui a déclaré que le vice-premier ministre David Lammy devrait rentrer chez lui dans les Caraïbes, et qu'il devrait s'excuser, mais ne pas se retirer.</p>
+            <span class="english-block">ITV's undercover report also shows Farage ruling a controversial mayoral candidate Dr Chris Parry – who said the then Deputy Prime Minister David Lammy should go home to the Caribbean – should be made to apologise, but not stand down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Dans une conversation au siège de la réforme, le directeur des communications du parti, Ed Sumner, suggère que Farage " protège " Parry.</p>
+            <span class="english-block">In a conversation at Reform's headquarters, the party's director of communications Ed Sumner suggests Farage is "protecting" Parry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">En réponse, Farage dit: "C'est un peu triste".</p>
+            <span class="english-block">In response Farage says: "It's showing a bit of sorrow."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Dans une conversation séparée plusieurs semaines plus tôt, où Farage n'était pas présent, Sumner est enregistré disant que Parry est " clairement un raciste " et " doit partir ".</p>
+            <span class="english-block">In a separate conversation several weeks earlier, where Farage was not present, Sumner is recorded saying Parry is "clearly a racist" and "needs to go".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Après s'être excusé auprès de Lammy en janvier, Parry a été autorisé à rester candidat à la mairie de Reform dans le Hampshire et le Solent jusqu'à ce qu'il soit plus tard suspendu en mars " en attente d'enquête ", à la suite de commentaires sur un service de patrouille volontaire juif.</p>
+            <span class="english-block">After apologising to Lammy in January, Parry was allowed to remain Reform's mayoral candidate in Hampshire and the Solent until he was later suspended in March "pending investigation", following comments about a Jewish voluntary patrol service.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Parry a dit à la BBC qu'il n'y avait jamais eu d'enquête et qu'il a quitté le parti depuis.</p>
+            <span class="english-block">Parry told the BBC there was never an investigation and he has since left the party.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Il a déclaré: "Je voudrais exhorter les gens à revenir aux contextes et tweets originaux pour voir ce qui a été dit et pourquoi.</p>
+            <span class="english-block">He said: "I would urge people to go back to the original contexts and tweets to see what was said and why. They related to reparations and failures by the police and government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">"Ils verront que je fais toujours usage de mon droit de critiquer quiconque est au pouvoir ou à l'œil du public, que je juge agir contre les intérêts du peuple britannique".</p>
+            <span class="english-block">"They will see I always exercise my right to criticise anyone in power or the public eye, whom I judge to be acting against the interests of the British people."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">La présidente du Parti travailliste Bridget Phillipson a déclaré: " Ces dernières révélations choquantes et profondément inquiétantes vont directement au sommet de la Réforme britannique.</p>
+            <span class="english-block">Labour Party chairwoman Bridget Phillipson said: "These latest shocking and deeply disturbing revelations go right to the top of Reform UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">"Nigel Farage doit se réveiller et réaliser que le prix s'arrête avec lui, et il doit aussi expliquer pourquoi il aurait soutenu un raciste flagrant au lieu de le chasser de son parti.</p>
+            <span class="english-block">"Nigel Farage needs to wake up and realise the buck stops with him. He also must urgently explain why he allegedly stood by a blatant racist instead of kicking him out of his party.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">"Même une fois, Farage a eu toutes les occasions de démontrer son leadership et de mettre en ordre la maison de la Réforme et chaque fois il a échoué".</p>
+            <span class="english-block">"Time and again Farage has had every opportunity to demonstrate leadership and get Reform's house in order and every single time he has failed."</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

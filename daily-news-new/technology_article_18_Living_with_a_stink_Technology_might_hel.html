@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living with a stink? Technology might help</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Living with a stink? Technology might help</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 15 Oct 2026 23:18:21 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cr6240q1w136o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Smells from rubbish dumps and industrial facilities are being more carefully monitored.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les exploitants de la décharge de Newby Island ont reçu l'ordre de prendre des mesures pour les odeurs.</p>
+            <span class="english-block">The operators of Newby Island landfill have been ordered to take action over odours</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Milpitas, une ville riche dans le centre technologique de la Silicon Valley en Californie, a un problème d'odeur.</p>
+            <span class="english-block">Milpitas, an affluent city in California's Silicon Valley tech hub, has an odour problem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Depuis des décennies, les résidents doivent supporter les odeurs de rangs qui viennent des sites industriels, parmi lesquels un dépotoir de 342 hectares.</p>
+            <span class="english-block">For decades, residents have had to endure rank smells wafting from industrial sites, among them a 342-acre landfill.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">"Quand je suis arrivé ici, j'ai été incapable d'ouvrir ma fenêtre pendant plus de dix ans", explique Chia-Ling Kong, ingénieur d'une entreprise de technologie qui vit à environ un kilomètre de la décharge.</p>
+            <span class="english-block">"When I first moved here, I could not open my window for over 10 years," says Chia-Ling Kong, an engineer for a tech firm who lives around half a mile from the dump.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Bien que les choses aient été meilleures ces dernières années, Kong dit qu'elle et ses voisins doivent encore faire face à environ "deux ou trois heures de mauvaises odeurs par jour".</p>
+            <span class="english-block">While things have got better in recent years, Kong says she and her neighbours must still contend with around "two or three hours of bad smells a day".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Peut-être qu'il convient à la Silicon Valley, la communauté met ses espoirs dans la technologie.</p>
+            <span class="english-block">Perhaps befitting Silicon Valley, the community is putting its hopes in technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Les autorités locales ont ordonné aux exploitants de la décharge de Newby Island d'utiliser des drones et d'installer des moniteurs pour suivre et mesurer systématiquement les produits chimiques responsables des mauvaises odeurs.</p>
+            <span class="english-block">The operators of Newby Island landfill have been ordered by local authorities to use drones and install monitors to systematically track and measure the chemicals responsible for bad odours. They have also been told to automate the collection of landfill gases responsible for smells.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Kong est optimiste qu'une approche basée sur les données fera une différence. " J'espère que, grâce à cette surveillance continue, il sera plus facile de repérer les problèmes dès leur démarrage. "</p>
+            <span class="english-block">Kong is optimistic a data-driven approach will make a difference. "Hopefully with this continuous monitoring, it makes it easier to pinpoint problems at the moment it starts."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les exploitants de la décharge affirment s'engager à la gérer en toute sécurité et à protéger la qualité de l'air.</p>
+            <span class="english-block">The operators of the landfill say they are committed to operating it safely and protecting air quality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Comme à Milpitas, où Kong fait partie d'une campagne citoyenne contre les odeurs, les communautés du monde entier se plaignent des mauvaises odeurs qui rendent la vie quotidienne misérable.</p>
+            <span class="english-block">Just like in Milpitas, where Kong is part of a citizen's campaign against the odours, communities around the world are raising a stink about bad smells making day-to-day life miserable. Sometimes a rubbish dump is to blame, or it might be a sewage treatment works, or a reeking factory.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Quand les plaintes se multiplient, leur résolution n'est pas toujours simple.</p>
+            <span class="english-block">When the complaints start stacking up, resolving them is not always simple. Many countries have no regulations in place dictating how to manage smells.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Aux États-Unis, par exemple, l'Agence de protection de l'environnement ne réglemente pas les odeurs environnementales comme polluant, ce qui laisse les États et les gouvernements locaux à s'en occuper.</p>
+            <span class="english-block">In the US, for example, the Environmental Protection Agency does not regulate environmental odours as a pollutant. This leaves states and local governments to take charge of the issue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">L'expansion urbaine est souvent une partie du problème, rapprochant les communautés des installations puantes qui ont pu être historiquement maintenues à distance.</p>
+            <span class="english-block">Urban sprawl is often part of the problem, bringing communities closer to stinky facilities that may historically have been kept at a distance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Le consultant en odor, Michael Bull, affirme que les gens sont de plus en plus préoccupés par les odeurs de quartier.</p>
+            <span class="english-block">This is creating more demand for technologies to monitor and prevent smells. Odour consultant Micheal Bull says people are increasingly concerned about neighbourhood stinks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">"Les développements sont plus proches des processus odorants... à mesure que la terre devient plus précieuse, il y a aussi de l'infiltration", dit Bull.</p>
+            <span class="english-block">"You're getting developments being built nearer to odorous processes… as land has become more valuable, there is also infilling," Bull says. He is speaking about his experiences in the UK, but it's a similar story in many parts of the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Les mauvaises odeurs provenant des sites de déchets sont parmi les plus difficiles à résoudre.</p>
+            <span class="english-block">Bad smells from waste sites are among the most difficult to resolve</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Les technologies utilisées pour lutter contre les pongs industriels se classent généralement en trois catégories: elles absorbent les odeurs; elles les transforment en quelque chose de moins odorant par une réaction chimique; ou elles les brûlent.</p>
+            <span class="english-block">The technologies used to tackle industrial pongs generally fall into three categories: they absorb odours; convert them into something less smelly through a chemical reaction; or burn them away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Les experts en résolution des odeurs industrielles affirment que les meilleures technologies, lorsqu'elles sont utilisées correctement, peuvent éliminer 90% ou plus des composés cibles responsables des odeurs.</p>
+            <span class="english-block">Experts on fixing industrial odours say that the best technologies, when used correctly, can remove 90% or more of the target compounds responsible for smells.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Mais cela peut coûter cher et certains opérateurs optent pour des solutions plus simples et moins chères, notamment pour masquer les odeurs provenant de la décharge ou du traitement des eaux usées en pulvérisant des quantités énormes de désodorisants.</p>
+            <span class="english-block">But this can be expensive and some operators opt for simpler and cheaper solutions. These include masking odours from landfill or sewage processing by spraying giant quantities of deodorisers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Les experts en odeurs consultés pour cet article étaient sceptiques quant à l'efficacité de ces rafraîchissants d'air à l'échelle industrielle. " À mon avis, ils ne changent pas les odeurs ", dit Bull, qui les compare à un rafraîchissant de tissu.</p>
+            <span class="english-block">Odour experts contacted for this article were dubious about the effectiveness of such industrial scale air fresheners. "In my view they're not likely to change the odours," says Bull, who likens them to fabric conditioner.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Les mauvaises odeurs provenant des déchets  une cause commune de plaintes  sont parmi les plus puissantes et les plus difficiles à résoudre, selon Carlos Diaz, consultant environnemental basé en Espagne. " Les décharges sont difficiles à traiter parce qu'elles ont une très grande surface ", dit- il.</p>
+            <span class="english-block">Bad smells from waste sites – a common cause of complaints – are among the stinkiest and most difficult to resolve, according to Carlos Diaz, an environmental consultant based in Spain. "Landfill is difficult to treat because you have a very large surface," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Les habitants de Des Moines (Iowa) se plaignent depuis longtemps du soi-disant Eastside Funk, un parfum putréfait qui dérive dans certaines parties de la ville.</p>
+            <span class="english-block">In some places at least, technology is making a real difference. Residents in Des Moines, Iowa, have long complained of the so-called Eastside Funk, a putrid scent that residents report drifts over parts of the city.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Une étude commandée par les autorités municipales a montré qu'un trio de sociétés de viande industrielles étaient parmi les coupables.</p>
+            <span class="english-block">A study commissioned by city authorities showed that a trio of industrial meat companies were among culprits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">" Dans les 10 miles, il y a environ un demi-million de personnes, dit Dalton Jacobus, du département des services du voisinage. " Si les vents ne vont pas dans la bonne direction, 100.000 personnes peuvent être au milieu de cette plume d'odeur. "</p>
+            <span class="english-block">"Within 10 miles, there's about half a million people," says Dalton Jacobus, who works in the Department of Neighborhood Services. "If the winds are out of the wrong direction, 100,000 people can be in the middle of that odour plume."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Les autorités paient maintenant environ 240 000 dollars par an pour la technologie permettant de suivre l'odeur, afin qu'elles puissent prendre des mesures. " Ce que nous voulions faire, dit Jacobus, c'est construire un anneau de moniteurs d'odeur autour des installations que nous soupçonnions d'émettre des odeurs.</p>
+            <span class="english-block">The authorities are now paying around $240,000 (£182,000) a year on technology to track the stink, so they can take action. "What we wanted to do was build a ring of odour monitors around the facilities that we suspected of emitting odours," says Jacobus.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Les moniteurs, qui mesurent les niveaux de composés chimiques dans l'air, travaillent en combinaison avec une station météorologique pour fournir des données en temps réel sur les concentrations provenant de chaque installation en fonction des modèles de vent.</p>
+            <span class="english-block">The monitors, which measure levels of chemical compounds in the air, work in combination with a weather station to provide real-time data on the concentrations that are coming from each facility based off the wind patterns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Cela a mis fin à la question de savoir qui est responsable de chaque fois qu'une odeur suscite des plaintes, dit Jacobus. " Nous pouvons maintenant dire avec une certitude raisonnable que ' cet événement d'odeur est venu de votre installation, qu'est- ce qui se passait ? ' "</p>
+            <span class="english-block">This has put an end to finger pointing about who's to blame each time a smell sparks complaints, says Jacobus. "Now we can say with reasonable certainty that 'this odour event did originate from your facility, what was going on'?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Dans Des Moines, les autorités ont mis en place des "nos électroniques" pour détecter les mauvaises odeurs.</p>
+            <span class="english-block">In Des Moines, authorities have set up "electronic noses" to pinpoint bad smells</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Pendant ce temps, certains sites qui ont été accusés de provoquer des odeurs désagréables à Des Moines ont dépensé des millions de dollars pour améliorer leurs propres systèmes de contrôle des odeurs.</p>
+            <span class="english-block">Meanwhile, some of the sites that have been blamed for causing unpleasant smells in Des Moines have spent millions of dollars to upgrade their own odour control systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Smithfield Foods, qui exploite une usine de transformation de viande à Des Moines, a déclaré avoir investi 2 millions de dollars pour installer un oxydant thermique régénérateur qui détruit les produits chimiques associés aux mauvaises odeurs.</p>
+            <span class="english-block">Smithfield Foods, which operates a meat processing in Des Moines, says it has invested $2m to install a regenerative thermal oxidiser that destroys the chemicals associated with bad smells. Even so, the company says it does not believe it is the source of odour complaints.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Avant d'installer les moniteurs  que certaines entreprises locales aident à payer  les fonctionnaires de Des Moines conduisaient vers la source d'une plainte pour sentir l'air.</p>
+            <span class="english-block">Before installing the monitors – which some local companies help pay for – officials in Des Moines would drive out to the source of a complaint to sniff the air.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">La présence de l'odeur dans le nez humain est encore courante. " En ce moment, les villes contrôlent ou mesurent les odeurs par l'olfactométrie: un panneau humain mesure et donne une opinion sur l'odeur.</p>
+            <span class="english-block">Relying on the human nose to sniff out industrial smells is still commonplace. Claudia Barrios Obregón from Kunak, the company behind the monitors in Des Moines, says: "Right now, the way that cities control or measure odours is olfactometry: a human panel measures and gives an opinion of what the odour is like. But that's not that realistic."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Les moniteurs de la société espagnole sont un exemple de soi-disant nez électronique qui facilitent la détection des odeurs.</p>
+            <span class="english-block">The Spanish company's monitors are an example of so-called electronic noses that make it easier to detect smells.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Quelle que soit la technologie utilisée, il peut être difficile de rendre tout le monde heureux, car les odeurs sont si subjectives. " Malheureusement, la règle générale est que plus nous percevons l'odeur comme étant mauvaise, plus nous en sommes sensibles ", explique Johan Lundström, professeur de science de l'odorat à l'Institut Karolinska à Stockholm (Suède).</p>
+            <span class="english-block">Whatever technology is used, it can be hard to keep everyone happy, as smells are so subjective. "Unfortunately, the general rule is that the nastier we perceive the odour to be, the more sensitive towards it we are," says Johan Lundström, a professor in the science of smell at the Karolinska Institute in Stockholm, Sweden.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">L'ingénierie extrême des fenêtres d'avions</p>
+            <span class="english-block">The extreme engineering of aircraft windows</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">La promotion devrait-elle dépendre de la façon dont les travailleurs utilisent l'IA ?</p>
+            <span class="english-block">Should promotion depend on how workers use AI?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Les avions volants vont- ils transformer le ciel?</p>
+            <span class="english-block">Will self-flying planes transform the skies?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

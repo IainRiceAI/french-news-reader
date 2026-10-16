@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC News channel launches on YouTube for viewers in UK and US</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>BBC News channel launches on YouTube for viewers in UK and US</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 15 Oct 2026 11:26:30 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c60merk2je80o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The move forms part of the BBC's wider strategy to reach digitally-native new and younger audiences.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">La chaîne est allée en direct sur YouTube jeudi (présentatrice de BBC News Maryam Moshiri sur la photo)</p>
+            <span class="english-block">The channel went live on YouTube on Thursday (BBC News presenter Maryam Moshiri pictured)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">La chaîne BBC News a été mise à disposition pour la diffusion en direct sur YouTube pour les téléspectateurs du Royaume-Uni et des États-Unis.</p>
+            <span class="english-block">The BBC News channel has been made available to stream live on YouTube for viewers in the UK and USA.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le procès, qui a débuté jeudi, en dehors, a été décrit par les chefs de la BBC comme "une étape importante" dans l'élargissement de l'accès à "un journalisme fiable et impartial dans plus d'endroits que les gens utilisent chaque jour".</p>
+            <span class="english-block">The trial, which began on Thursday, external, has been described by BBC bosses as "a significant step" in expanding access to "trusted, impartial journalism in more places people use every day".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Cette décision est une extension de ce que la BBC a déjà fait dans d'autres pays, la chaîne d'information étant également disponible pour les téléspectateurs de YouTube en Australie, au Kenya, au Nigeria et en Pologne.</p>
+            <span class="english-block">The move is an expansion of what the BBC has already done in other countries, with the news channel also available to YouTube viewers in Australia, Kenya, Nigeria, and Poland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">L'élargissement de l'accès au service fait partie de la stratégie plus large de la BBC visant à atteindre un public numérique nouveau et plus jeune.</p>
+            <span class="english-block">Broadening access to the service forms part of the BBC's wider strategy to reach digitally-native new and younger audiences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">La chaîne offre une couverture continue des nouvelles internationales et nationales, ainsi que des actualités et des derniers développements dans les mondes de la politique, des affaires, de la technologie, de la culture et du sport.</p>
+            <span class="english-block">The channel offers rolling coverage of international and domestic news, as well as breaking news and the latest developments in the worlds of politics, business, technology, culture and sport.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">La stratégie YouTube de la BBC est largement considérée comme une réponse à la fragmentation croissante du public.</p>
+            <span class="english-block">The BBC's YouTube strategy is widely seen a response to the increasing fragmentation of audiences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Les garanties que les téléspectateurs s'assoient et allument leur chaîne préférée, quelle qu'elle soit, sont déjà épuisées.</p>
+            <span class="english-block">The guarantees that viewers sit down and turn on their favourite channel - whatever is on it - are long gone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Maintenant, leurs téléviseurs les emmènent dans un monde de choix infinis et la BBC (avec les autres radiodiffuseurs de service public du Royaume-Uni) sait qu'elle doit aller là où le public est - et essayer de les attirer sur ses propres plateformes.</p>
+            <span class="english-block">Now, their TV sets take them into a world of infinite choice and the BBC (along with the UK's other public service broadcasters) knows it needs to go to where audiences are - as well as trying to entice them to its own platforms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Le géant du streaming YouTube appartient à Google</p>
+            <span class="english-block">Streaming giant YouTube is owned by Google</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Le développement de jeudi fait partie de la campagne spécifique de la BBC pour faire connaître ses nouvelles fiables aux publics qui ne suivent pas directement la chaîne de nouvelles ou via l'iPlayer.</p>
+            <span class="english-block">Thursday's development is part of the specific drive by the BBC to take its trusted news to audiences who aren't tuning in to the news channel directly or via the iPlayer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Anjali Kapoor, directrice de l'IA, de l'innovation et de la croissance de BBC News, a déclaré dans un communiqué que le public "attend de plus en plus que les nouvelles soient disponibles partout où ils se trouvent, sur les plateformes qu'ils utilisent tout au long de leur journée.</p>
+            <span class="english-block">BBC News's director of AI, innovation and growth, Anjali Kapoor, said in a statement that audiences "increasingly expect news to be available wherever they are, on the platforms they use throughout their day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" Le lancement de la chaîne BBC News sur YouTube au Royaume-Uni et aux États-Unis est une étape importante pour faire connaître notre journalisme de confiance à encore plus de personnes. "</p>
+            <span class="english-block">"Launching the BBC News channel on YouTube in the UK and US is an important step in bringing our trusted journalism to even more people."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Elle a ajouté: " Cela facilitera l'accès du public aux nouvelles nouvelles qui façonnent notre monde, tout en nous aidant à atteindre de nouveaux publics dans les lieux et à l'heure qui leur conviennent le mieux. "</p>
+            <span class="english-block">She added: "It will make it easier for audiences to access live coverage of the stories shaping our world, while helping us reach new audiences in the places and at the times that work best for them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Cette mesure fait partie intégrante de la lutte contre la désinformation qui s'étend sur les réseaux sociaux et au-delà.</p>
+            <span class="english-block">The move is all part of the fight to combat the disinformation taking hold across social media and beyond.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Mais cela ne fera pas non plus de mal dans les négociations en cours sur la charte de la BBC et son financement futur après 2027.</p>
+            <span class="english-block">But it also won't hurt in the continuing negotiations over the BBC's charter and its future funding after 2027.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">C'est un autre signal au gouvernement que la BBC prend sa mission au sérieux, qu'elle est le lieu de nouvelles fiables et impartiales et qu'elle comprend qu'elle doit rendre ces nouvelles aussi largement disponibles que possible.</p>
+            <span class="english-block">This is another signal to the government that the BBC takes its mission seriously; that it is the place for trusted, impartial news and that it understands it must make that news available as widely as possible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Cependant, les téléspectateurs britanniques, qui regardent la chaîne en direct sur YouTube, ne réalisent peut-être pas qu'ils ont encore besoin d'une licence de télévision pour le faire.</p>
+            <span class="english-block">However, viewers in the UK, watching the channel live on YouTube, may not realise they still need a TV licence to do that.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Mais sans barrières autour de qui regarde, sans capacité - pour l'instant de toute façon - pour la BBC d'insister pour que vous prouviez que vous avez payé le prix avant d'accéder à ses chaînes YouTube (ou ses propres chaînes de streaming), il va être difficile de faire respecter.</p>
+            <span class="english-block">But with no guardrails around who's watching, no ability - for now anyway - for the BBC to insist you prove you've paid the fee before you can access its YouTube channels (or its own streaming channels), it's going to be hard to enforce.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Rachel Jupp, directrice de BBC News et des affaires courantes, a commencé son nouveau rôle cette semaine.</p>
+            <span class="english-block">Director of BBC News and Current Affairs Rachel Jupp began her new role this week</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Lancé pour la première fois à la télévision britannique en 1997 sous le nom de BBC News 24, le service est devenu la chaîne de nouvelles de la BBC en 2008.</p>
+            <span class="english-block">First launched on UK TV in 1997 under the name BBC News 24, the service became the BBC News Channel in 2008.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">En 2023, il a fusionné avec BBC World News en une chaîne appelée BBC News, qui est également disponible via le programme iPlayer, le site Web et l'application de la radiodiffuseur.</p>
+            <span class="english-block">In 2023, it merged with BBC World News into one channel called BBC News, which is also available via the broadcaster's iPlayer, website and app.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">L'année dernière, le régulateur de la radiodiffusion Ofcom a révélé dans son rapport annuel que YouTube était devenu le deuxième service de médias le plus regardé au Royaume-Uni, derrière la BBC.</p>
+            <span class="english-block">Last year, broadcast regulator Ofcom revealed in its annual report that YouTube had become the UK's second most-watched media service, behind only the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Un jeune spectateur sur cinq se rendait sur la plateforme de partage de vidéos en premier lorsque son téléviseur intelligent était allumé, selon le centre de surveillance des médias du pays, tandis que les personnes âgées regardaient également plus de contenu.</p>
+            <span class="english-block">One in five young viewers were going to the video sharing platform first when they turn on their smart TVs, the country's media watchdog found, while older people were also watching more of its content.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Plus tôt cette année, la BBC a annoncé un accord historique avec YouTube, qui permettra à la société de créer du contenu sur mesure pour le service de streaming vidéo.</p>
+            <span class="english-block">Earlier this year, the BBC announced a landmark deal with YouTube, which will see the corporation make content that is tailor-made for the video streaming service.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Les nouveaux programmes seront présentés en publicité en dehors du Royaume-Uni, ce qui générera des fonds supplémentaires pour la société au moment où son futur modèle de financement est en cours de débat.</p>
+            <span class="english-block">The new programmes will feature adverts when viewed from outside the UK, generating extra funds for the corporation at a time when its future funding model is being debated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Matt Brittin, directeur général de la BBC, a rejoint la BBC cette année après près de deux décennies de travail pour la société de technologie Google.</p>
+            <span class="english-block">BBC director general Matt Brittin joined the BBC this year after nearly two decades working for leading tech company Google</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">En juillet, le nouveau directeur général de la société a décrit le modèle traditionnel de licence de télévision comme "un flush cassé" et "non plus adapté à son but".</p>
+            <span class="english-block">In July, the corporation's new director general described the traditional TV licence model as "a busted flush" and "no longer fit for purpose".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">L'ancien directeur de Google, Matt Brittin, a déclaré aux députés que les frais de licence étaient "le modèle d'hier".</p>
+            <span class="english-block">Former Google executive Matt Brittin told MPs that the licence fee is "yesterday's model".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Il n'a pas précisé ce qu'il souhaite remplacer, mais lui et le président de la BBC, Samir Shah, ont suggéré que le gouvernement reconsidère une taxe obligatoire sur les ménages, qu'il avait précédemment exclue.</p>
+            <span class="english-block">He did not specify what he wants to replace it, but he and BBC chair Samir Shah suggested the government should reconsider a compulsory household levy, which it previously ruled out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">La BBC reçoit la majeure partie de son financement de la licence de télévision de 180 £ par an, mais le nombre de ménages payants a diminué ces dernières années, et la chaîne de télévision discute avec le gouvernement de la réforme du système.</p>
+            <span class="english-block">The BBC receives most of its funding from the £180-a-year TV licence, but the number of households paying has declined in recent years, and the broadcaster is discussing reform of the system with the government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">La BBC va faire des émissions pour YouTube dans un nouveau contrat historique</p>
+            <span class="english-block">BBC to make shows for YouTube in landmark new deal</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Les droits de licence de télévision sont "le modèle d'hier", dit le nouveau directeur général de la BBC</p>
+            <span class="english-block">TV licence fee is 'yesterday's model', new BBC director general says</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">YouTube est désormais le deuxième seul à suivre la BBC en tant que destination médiatique</p>
+            <span class="english-block">YouTube now second only to BBC as media destination</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Comment la télévision britannique traditionnelle peut-elle survivre aux géants américains de la diffusion ?</p>
+            <span class="english-block">How can traditional British TV survive the US streaming giants?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

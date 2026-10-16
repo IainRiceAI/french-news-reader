@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I find it quite demoralising in store - why I do all my shopping online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>I find it quite demoralising in store - why I do all my shopping online</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 15 Oct 2026 23:16:12 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c36lk280kd1o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: After Primark announced plans for home delivery, we hear from women who never go into clothes stores.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Jess dit que rendre des achats en ligne est moins gênant que de faire des courses en personne</p>
+            <span class="english-block">Jess says returning online purchases is less hassle than shopping in person</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Jess Bacon fait ses courses de vêtements en ligne.</p>
+            <span class="english-block">Jess Bacon does all her clothes shopping online.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">En tant que femme de taille plus, elle trouve les rangées de taille disponibles dans les magasins peu fiables. " Les dimensions dans les magasins sont notoirement mauvaises.</p>
+            <span class="english-block">As a plus-size woman, she finds the size ranges available in stores unreliable. "The sizing in store is notoriously bad. I find it quite demoralising in store," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">"La taille moyenne d'une femme au Royaume-Uni est de 14 ou 16 pouces, je pense que beaucoup de gens ne se sentent pas vus ou représentés", dit la jeune femme de 29 ans de Peterborough.</p>
+            <span class="english-block">"The average size woman in the UK is a size 14 or a size 16. I think a lot of people just don't feel seen or represented," says the 29-year-old from Peterborough.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Jess, journaliste et auteure de culture, trouve que faire des achats en ligne "est beaucoup plus rapide que d'aller dans un magasin, payer pour le parking, essayer des choses".</p>
+            <span class="english-block">Jess, a culture journalist and author, finds shopping online "much quicker than going into a store, paying for parking, trying things on".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Elle pense que la publication de choses qui ne correspondent pas à son contenu est moins gênante que de retourner en magasin, alors que les visites fréquentes à son bureau de poste lui donnent "plus de connexion communautaire".</p>
+            <span class="english-block">And she feels posting back items that don't fit is less hassle than returning in store, while frequent visits to her local post office give her "more of a community connection".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Jess note que Primark est l'un des rares détaillants de High Street où les gens de taille plus peuvent faire leurs courses.</p>
+            <span class="english-block">Jess notes Primark is one of the few High Street retailers where plus-size people can shop. In her experience, Primark stores usually stock up to a size 22.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Mais bientôt, elle aura la possibilité de rester à la maison même pour cela - puisque, après des années de réticence, Primark prévoit maintenant de lancer un service de livraison à domicile en Grande-Bretagne.</p>
+            <span class="english-block">But soon she'll have the option of staying home even for this - as, after years of holding out, Primark now plans to launch a home delivery service in Britain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Même pendant la pandémie de Covid-19, lorsque les magasins étaient fermés, Primark n'a pas offert la possibilité de faire des achats en ligne. En 2022, il a lancé un service de clic et de collecte, mais les acheteurs devaient toujours voyager pour leurs achats.</p>
+            <span class="english-block">Even throughout the Covid-19 pandemic, when shops were closed, Primark didn't offer the ability to shop online. In 2022 it launched a click-and-collect service, but shoppers still had to travel for their purchases.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Le détaillant n'a pas précisé quand il prévoit de lancer le service, mais a acheté un entrepôt à Sheffield pour lui permettre d'envoyer des produits dans les foyers.</p>
+            <span class="english-block">The retailer has not said when it expects to launch the service, but has bought a warehouse in Sheffield to enable it to ship products to homes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les analystes disent que la décision montre que Primark est confronté à de grands défis de marques ultra-rapides comme Shein.</p>
+            <span class="english-block">Analysts say the decision shows Primark is facing major challenges from ultra-fast-fashion brands such as Shein.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Les achats en ligne étaient en hausse avant même l'augmentation observée pendant la pandémie.</p>
+            <span class="english-block">Online shopping had been on the rise even before the surge seen during the pandemic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Selon l'Office national des statistiques, le commerce en ligne représentait 27,3% de toutes les ventes au détail en août de cette année, contre 18,1% en août 2019.</p>
+            <span class="english-block">Online accounted for 27.3% of all retail sales in August this year, according to the Office for National Statistics, up from 18.1% in August 2019.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Les achats sur Internet ont également été stimulés par le déclin de la High Street dans de nombreuses régions du pays, ce que Jess a remarqué à Peterborough. " Nous n'avons plus John Lewis.</p>
+            <span class="english-block">Internet shopping has also been boosted by the decline of the High Street in many parts of the country, something which Jess has noticed in Peterborough. "We don't have John Lewis [anymore]. There's kind of not that much of a reason to go into town."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Comme Jess, Julia Mitchell, qui vit près de Chichester, n'aime pas faire des courses de vêtements en personne, elle trouve cela surestimant et pense qu'il y a de meilleures offres à faire en ligne.</p>
+            <span class="english-block">Like Jess, Julia Mitchell, who lives near Chichester, doesn't enjoy in-person clothes shopping. She finds it overstimulating and thinks there are better bargains to be had online.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">" Je ne vais pas dans ces [boutiques de vêtements] ", dit la jeune femme de 32 ans.</p>
+            <span class="english-block">"I basically never go into them [clothes shops]. It's not really something I enjoy," the 32-year-old says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">"Je suppose que certaines personnes peuvent voir des choses et les ramasser et les regarder, mais pour moi, être en mesure d'obtenir le meilleur prix est plus important".</p>
+            <span class="english-block">"I guess some people might be able to see stuff and pick it up and look at it, but for me, being able to get the best price is more important."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Julia fait la plupart de ses courses en ligne, mais aime aller dans les librairies</p>
+            <span class="english-block">Julia does most of her shopping online, but likes going into book stores</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Julia, créatrice de contenu, essaie de faire des achats éthiques et la plupart de ses achats sont faits à la main par Vinted.</p>
+            <span class="english-block">Julia, a content creator, tries to shop ethically and most of her purchases are second hand from Vinted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Mais elle ne fait jamais de courses en ligne pour des livres. " Le problème avec les librairies, c'est qu'elles sont des espaces culturels et des espaces communautaires. "</p>
+            <span class="english-block">The one thing she never shops online for, though, is books. "The thing about bookshops is that they are cultural spaces and community spaces."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Sandra Davies fait ses courses en ligne, a eu trois accidents vasculaires cérébraux et trouve qu'elle se promène trop physiquement dans les magasins.</p>
+            <span class="english-block">Sandra Davies does all her shopping online. She has had three strokes and finds walking to and around stores too much physically.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">"J'ai essayé deux fois, mais à chaque fois, rester en file d'attente pendant plus de 10 minutes était trop pour moi et j'ai échoué".</p>
+            <span class="english-block">"I've tried it on two occasions but on both times, standing in a queue for over 10 minutes was too much for me and I collapsed."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">La femme de 61 ans de Sheffield dit que l'attente des livraisons peut être aussi pénible, car elle s'inquiète de manquer la poste et de devoir reporter.</p>
+            <span class="english-block">The 61-year-old from Sheffield says waiting for deliveries can be taxing as well, as she worries about missing the postie and having to reschedule.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Julie Palmer, analyste du commerce de détail, ne s'étonne pas que Primark ait finalement commencé à livrer à domicile, car elle a manifestement reconnu que "les ventes en ligne apportent de l'ampleur".</p>
+            <span class="english-block">Julie Palmer, a retail analyst, is not surprised that Primark has finally moved into home deliveries as it has evidently recognised that "online sales bring scale".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Cependant, elle dit que la politique de retour d'un magasin pour les achats en ligne peut "faire ou casser" cela.</p>
+            <span class="english-block">However, she says a shop's returns policy for online purchases can "make or break" it. Many brands offer hassle-free returns, which Palmer says Primark must match in order to compete.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">"Les acheteurs veulent qu'elles soient gratuites, simples et rapides, ce qui signifie une fenêtre généreuse, beaucoup d'options de dépôt et de remboursements qui arrivent en quelques jours, pas en quelques semaines.</p>
+            <span class="english-block">"Shoppers want them to be free, simple and quick. That means a generous window, lots of drop-off options and refunds that land within days, not weeks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">"Quand une police est maladroite ou lente, les clients se souviennent de cette politique et achètent ailleurs la prochaine fois".</p>
+            <span class="english-block">"When a policy is clunky or slow, customers remember it and shop elsewhere next time."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Mais les retours sont chers pour les détaillants. Certains, comme Asos, ont commencé à facturer des frais si les clients rendent fréquemment.</p>
+            <span class="english-block">But returns are expensive for retailers. Some, like Asos, have started charging a fee if customers make frequent returns.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">C'est un équilibre, dit Palmer, "car une commission peut facilement pousser un client vers un concurrent".</p>
+            <span class="english-block">This is a balancing act, Palmer says, "because a fee can easily push a customer to a competitor".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">"La plupart des détaillants qui facturent encore offrent des retours gratuits dans les magasins, ce qui est un moyen délibéré de faire passer les gens à la porte et espérons dépenser à nouveau".</p>
+            <span class="english-block">"Most retailers that charge still offer free returns in store, which is a deliberate way to get people through the door and hopefully spending again."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Ma ville montre que les rues doivent changer ou mourir.</p>
+            <span class="english-block">My hometown shows that High Streets have to change or die</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Primark est enfin prêt à lancer des livraisons à domicile</p>
+            <span class="english-block">Primark finally set to launch home deliveries</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Comment la rue a été une fenêtre sur notre instabilité politique</p>
+            <span class="english-block">How the High Street became a window on our political instability</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
