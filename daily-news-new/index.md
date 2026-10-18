@@ -1,63 +1,63 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-17 06:01:15  
+Generated on: 2026-10-18 06:00:58  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Oregon teacher fought school attacker before armed dad shot suspect 'multiple times'**
-   - **Published:** Sat, 17 Oct 2026 01:19:04 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Oregon_teacher_fought_school_attacker_be.md](top-stories_article_1_Oregon_teacher_fought_school_attacker_be.md)
+1. **Violent clashes, looting and buildings ablaze in France as over 1,000 arrested after protests**
+   - **Published:** Sat, 17 Oct 2026 20:52:17 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Violent_clashes_looting_and_buildings_ab.md](top-stories_article_1_Violent_clashes_looting_and_buildings_ab.md)
 
-2. **Trump waives several Russia sanctions as new US law takes effect**
-   - **Published:** Sat, 17 Oct 2026 02:48:36 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Trump_waives_several_Russia_sanctions_as.md](top-stories_article_2_Trump_waives_several_Russia_sanctions_as.md)
+2. **Watch: Moment historic French town hall spire collapses in flames amid protests**
+   - **Published:** Sun, 18 Oct 2026 00:49:42 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Watch_Moment_historic_French_town_hall_s.md](top-stories_article_2_Watch_Moment_historic_French_town_hall_s.md)
 
-3. **Third runway at Heathrow Airport would drive growth, Healey says**
-   - **Published:** Sat, 17 Oct 2026 03:57:16 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Third_runway_at_Heathrow_Airport_would_d.md](top-stories_article_3_Third_runway_at_Heathrow_Airport_would_d.md)
+3. **More NHS staff sacked over attacks victims' records**
+   - **Published:** Sat, 17 Oct 2026 16:34:39 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_More_NHS_staff_sacked_over_attacks_victi.md](top-stories_article_3_More_NHS_staff_sacked_over_attacks_victi.md)
 
-4. **Analysis: Zacharia was thrown into a whirlwind - and failed at a critical time for Trump**
-   - **Published:** Fri, 16 Oct 2026 21:02:18 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Analysis_Zacharia_was_thrown_into_a_whir.md](top-stories_article_4_Analysis_Zacharia_was_thrown_into_a_whir.md)
+4. **Deaths confirmed in major fire at Canada military base**
+   - **Published:** Sun, 18 Oct 2026 04:00:50 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Deaths_confirmed_in_major_fire_at_Canada.md](top-stories_article_4_Deaths_confirmed_in_major_fire_at_Canada.md)
 
-5. **Five days, one briefing: How Katie Zacharia’s short tenure unfolded**
-   - **Published:** Fri, 16 Oct 2026 20:28:59 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Five_days_one_briefing_How_Katie_Zachari.md](top-stories_article_5_Five_days_one_briefing_How_Katie_Zachari.md)
+5. **European diplomats attacked by Israeli settlers in West Bank**
+   - **Published:** Sat, 17 Oct 2026 23:52:38 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_European_diplomats_attacked_by_Israeli_s.md](top-stories_article_5_European_diplomats_attacked_by_Israeli_s.md)
 
-6. **Chris Mason: Burnham and Swinney tussle over where power lies in Scotland**
-   - **Published:** Fri, 16 Oct 2026 20:08:07 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Chris_Mason_Burnham_and_Swinney_tussle_o.md](top-stories_article_6_Chris_Mason_Burnham_and_Swinney_tussle_o.md)
+6. **Anti-government protesters battle with police in Albania**
+   - **Published:** Sat, 17 Oct 2026 20:53:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Anti-government_protesters_battle_with_p.md](top-stories_article_6_Anti-government_protesters_battle_with_p.md)
 
-7. **Miranda's tears, joy and dance moves steal show as deadly boredom sets in on The Celebrity Traitors**
-   - **Published:** Sat, 17 Oct 2026 01:34:52 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Mirandas_tears_joy_and_dance_moves_steal.md](top-stories_article_7_Mirandas_tears_joy_and_dance_moves_steal.md)
+7. **Swinney's emotional explanation for his commitment to independence**
+   - **Published:** Sat, 17 Oct 2026 18:11:42 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Swinneys_emotional_explanation_for_his_c.md](top-stories_article_7_Swinneys_emotional_explanation_for_his_c.md)
 
-8. **Faisal Islam: What I learned from a week with the world's top finance leaders**
-   - **Published:** Sat, 17 Oct 2026 01:59:48 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Faisal_Islam_What_I_learned_from_a_week_.md](top-stories_article_8_Faisal_Islam_What_I_learned_from_a_week_.md)
+8. **Photos show luxury boat with 50m pool and water slides near Kim Jong Un's summer retreat**
+   - **Published:** Sat, 17 Oct 2026 22:09:50 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Photos_show_luxury_boat_with_50m_pool_an.md](top-stories_article_8_Photos_show_luxury_boat_with_50m_pool_an.md)
 
 ---
 
 ### Section: WORLD
 
-1. **Brazil sees record fall in Amazon deforestation as key election looms**
-   - **Published:** Sat, 17 Oct 2026 02:33:09 GMT
-   - **Read Parallel Translation:** [world_article_9_Brazil_sees_record_fall_in_Amazon_defore.md](world_article_9_Brazil_sees_record_fall_in_Amazon_defore.md)
+1. **Violent clashes, looting and buildings ablaze in France as over 1,000 arrested after protests**
+   - **Published:** Sat, 17 Oct 2026 20:52:17 GMT
+   - **Read Parallel Translation:** [world_article_9_Violent_clashes_looting_and_buildings_ab.md](world_article_9_Violent_clashes_looting_and_buildings_ab.md)
 
-2. **Oregon teacher fought school attacker before armed dad shot suspect 'multiple times'**
-   - **Published:** Sat, 17 Oct 2026 01:19:04 GMT
-   - **Read Parallel Translation:** [world_article_10_Oregon_teacher_fought_school_attacker_be.md](world_article_10_Oregon_teacher_fought_school_attacker_be.md)
+2. **European diplomats attacked by Israeli settlers in West Bank**
+   - **Published:** Sat, 17 Oct 2026 23:52:38 GMT
+   - **Read Parallel Translation:** [world_article_10_European_diplomats_attacked_by_Israeli_s.md](world_article_10_European_diplomats_attacked_by_Israeli_s.md)
 
-3. **Trump waives several Russia sanctions as new US law takes effect**
-   - **Published:** Sat, 17 Oct 2026 02:48:36 GMT
-   - **Read Parallel Translation:** [world_article_11_Trump_waives_several_Russia_sanctions_as.md](world_article_11_Trump_waives_several_Russia_sanctions_as.md)
+3. **Deaths confirmed in major fire at Canada military base**
+   - **Published:** Sun, 18 Oct 2026 04:00:50 GMT
+   - **Read Parallel Translation:** [world_article_11_Deaths_confirmed_in_major_fire_at_Canada.md](world_article_11_Deaths_confirmed_in_major_fire_at_Canada.md)
 
-4. **Three men jailed for 158 years each for murdering Australian and US surfers in Mexico**
-   - **Published:** Sat, 17 Oct 2026 03:11:10 GMT
-   - **Read Parallel Translation:** [world_article_12_Three_men_jailed_for_158_years_each_for_.md](world_article_12_Three_men_jailed_for_158_years_each_for_.md)
+4. **Trump waives several Russia sanctions as row with Zelensky intensifies**
+   - **Published:** Sun, 18 Oct 2026 01:10:25 GMT
+   - **Read Parallel Translation:** [world_article_12_Trump_waives_several_Russia_sanctions_as.md](world_article_12_Trump_waives_several_Russia_sanctions_as.md)
 
 ---
 
@@ -83,61 +83,61 @@ Scraped Feed Mode: `ALL`
 
 ### Section: TECHNOLOGY
 
-1. **Toxic algorithms wouldn't let them go - now Australia wants an off switch**
+1. **No further action against government adviser's wife over Palestine Action post, police say**
+   - **Published:** Sat, 17 Oct 2026 20:24:32 GMT
+   - **Read Parallel Translation:** [technology_article_17_No_further_action_against_government_adv.md](technology_article_17_No_further_action_against_government_adv.md)
+
+2. **Toxic algorithms wouldn't let them go - now Australia wants an off switch**
    - **Published:** Fri, 16 Oct 2026 18:11:29 GMT
-   - **Read Parallel Translation:** [technology_article_17_Toxic_algorithms_wouldnt_let_them_go_-_n.md](technology_article_17_Toxic_algorithms_wouldnt_let_them_go_-_n.md)
+   - **Read Parallel Translation:** [technology_article_18_Toxic_algorithms_wouldnt_let_them_go_-_n.md](technology_article_18_Toxic_algorithms_wouldnt_let_them_go_-_n.md)
 
-2. **Russian man linked to deadly London hospitals hack arrested**
+3. **Russian man linked to deadly London hospitals hack arrested**
    - **Published:** Fri, 16 Oct 2026 15:31:33 GMT
-   - **Read Parallel Translation:** [technology_article_18_Russian_man_linked_to_deadly_London_hosp.md](technology_article_18_Russian_man_linked_to_deadly_London_hosp.md)
+   - **Read Parallel Translation:** [technology_article_19_Russian_man_linked_to_deadly_London_hosp.md](technology_article_19_Russian_man_linked_to_deadly_London_hosp.md)
 
-3. **Snapchat and Instagram grooming becoming 'easier'**
+4. **Snapchat and Instagram grooming becoming 'easier'**
    - **Published:** Fri, 16 Oct 2026 05:12:48 GMT
-   - **Read Parallel Translation:** [technology_article_19_Snapchat_and_Instagram_grooming_becoming.md](technology_article_19_Snapchat_and_Instagram_grooming_becoming.md)
-
-4. **Porn showing choking or incest to be banned from early November, government says**
-   - **Published:** Thu, 15 Oct 2026 23:27:57 GMT
-   - **Read Parallel Translation:** [technology_article_20_Porn_showing_choking_or_incest_to_be_ban.md](technology_article_20_Porn_showing_choking_or_incest_to_be_ban.md)
+   - **Read Parallel Translation:** [technology_article_20_Snapchat_and_Instagram_grooming_becoming.md](technology_article_20_Snapchat_and_Instagram_grooming_becoming.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Brazil sees record fall in Amazon deforestation as key election looms**
+1. **Fast-moving California wildfire burns homes as people are ordered to leave**
+   - **Published:** Sat, 17 Oct 2026 19:13:21 GMT
+   - **Read Parallel Translation:** [science_article_21_Fast-moving_California_wildfire_burns_ho.md](science_article_21_Fast-moving_California_wildfire_burns_ho.md)
+
+2. **Avian flu and costs among reasons for loss of captive birds at Castle Espie**
+   - **Published:** Sat, 17 Oct 2026 05:10:33 GMT
+   - **Read Parallel Translation:** [science_article_22_Avian_flu_and_costs_among_reasons_for_lo.md](science_article_22_Avian_flu_and_costs_among_reasons_for_lo.md)
+
+3. **Brazil sees record fall in Amazon deforestation as key election looms**
    - **Published:** Sat, 17 Oct 2026 02:33:09 GMT
-   - **Read Parallel Translation:** [science_article_21_Brazil_sees_record_fall_in_Amazon_defore.md](science_article_21_Brazil_sees_record_fall_in_Amazon_defore.md)
+   - **Read Parallel Translation:** [science_article_23_Brazil_sees_record_fall_in_Amazon_defore.md](science_article_23_Brazil_sees_record_fall_in_Amazon_defore.md)
 
-2. **Why hasn't the UK had any named storms yet?**
+4. **Why hasn't the UK had any named storms yet?**
    - **Published:** Sat, 17 Oct 2026 01:53:34 GMT
-   - **Read Parallel Translation:** [science_article_22_Why_hasnt_the_UK_had_any_named_storms_ye.md](science_article_22_Why_hasnt_the_UK_had_any_named_storms_ye.md)
-
-3. **Evacuation orders as fast-moving California wildfire burns homes**
-   - **Published:** Sat, 17 Oct 2026 01:36:39 GMT
-   - **Read Parallel Translation:** [science_article_23_Evacuation_orders_as_fast-moving_Califor.md](science_article_23_Evacuation_orders_as_fast-moving_Califor.md)
-
-4. **Living with a stink? Technology might help**
-   - **Published:** Thu, 15 Oct 2026 23:18:21 GMT
-   - **Read Parallel Translation:** [science_article_24_Living_with_a_stink_Technology_might_hel.md](science_article_24_Living_with_a_stink_Technology_might_hel.md)
+   - **Read Parallel Translation:** [science_article_24_Why_hasnt_the_UK_had_any_named_storms_ye.md](science_article_24_Why_hasnt_the_UK_had_any_named_storms_ye.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Pope pictured for first time since surgery and cancer diagnosis**
+1. **Pope discharged from hospital days after lung cancer surgery**
+   - **Published:** Sat, 17 Oct 2026 13:51:36 GMT
+   - **Read Parallel Translation:** [health_article_25_Pope_discharged_from_hospital_days_after.md](health_article_25_Pope_discharged_from_hospital_days_after.md)
+
+2. **Pope pictured for first time since surgery and cancer diagnosis**
    - **Published:** Fri, 16 Oct 2026 23:20:37 GMT
-   - **Read Parallel Translation:** [health_article_25_Pope_pictured_for_first_time_since_surge.md](health_article_25_Pope_pictured_for_first_time_since_surge.md)
+   - **Read Parallel Translation:** [health_article_26_Pope_pictured_for_first_time_since_surge.md](health_article_26_Pope_pictured_for_first_time_since_surge.md)
 
-2. **Russian man linked to deadly London hospitals hack arrested**
+3. **Russian man linked to deadly London hospitals hack arrested**
    - **Published:** Fri, 16 Oct 2026 15:31:33 GMT
-   - **Read Parallel Translation:** [health_article_26_Russian_man_linked_to_deadly_London_hosp.md](health_article_26_Russian_man_linked_to_deadly_London_hosp.md)
+   - **Read Parallel Translation:** [health_article_27_Russian_man_linked_to_deadly_London_hosp.md](health_article_27_Russian_man_linked_to_deadly_London_hosp.md)
 
-3. **Covid vaccine compensation scheme set for overhaul after Inquiry criticism**
+4. **Covid vaccine compensation scheme set for overhaul after Inquiry criticism**
    - **Published:** Fri, 16 Oct 2026 15:02:46 GMT
-   - **Read Parallel Translation:** [health_article_27_Covid_vaccine_compensation_scheme_set_fo.md](health_article_27_Covid_vaccine_compensation_scheme_set_fo.md)
-
-4. **Ten-year-old Willow among children to benefit from pioneering same-day test to spot infections**
-   - **Published:** Fri, 16 Oct 2026 00:34:45 GMT
-   - **Read Parallel Translation:** [health_article_28_Ten-year-old_Willow_among_children_to_be.md](health_article_28_Ten-year-old_Willow_among_children_to_be.md)
+   - **Read Parallel Translation:** [health_article_28_Covid_vaccine_compensation_scheme_set_fo.md](health_article_28_Covid_vaccine_compensation_scheme_set_fo.md)
 
 ---
 
@@ -171,13 +171,13 @@ Scraped Feed Mode: `ALL`
    - **Published:** Fri, 16 Oct 2026 14:06:59 GMT
    - **Read Parallel Translation:** [entertainment_article_34_Woman_says_she_was_left_bewildered_and_c.md](entertainment_article_34_Woman_says_she_was_left_bewildered_and_c.md)
 
-3. **Judge throws out child sex abuse charges against actor Timothy Busfield**
-   - **Published:** Sat, 17 Oct 2026 00:38:34 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Judge_throws_out_child_sex_abuse_charges.md](entertainment_article_35_Judge_throws_out_child_sex_abuse_charges.md)
+3. **Actress Selma Blair says she 'did not intend to harm anyone' in plane altercation**
+   - **Published:** Sat, 17 Oct 2026 01:55:45 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Actress_Selma_Blair_says_she_did_not_int.md](entertainment_article_35_Actress_Selma_Blair_says_she_did_not_int.md)
 
-4. **Not sure what to wear for Halloween? These outfits are set to be the most popular this year**
-   - **Published:** Fri, 16 Oct 2026 23:27:01 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Not_sure_what_to_wear_for_Halloween_Thes.md](entertainment_article_36_Not_sure_what_to_wear_for_Halloween_Thes.md)
+4. **Judge throws out child sex abuse charges against actor Timothy Busfield**
+   - **Published:** Sat, 17 Oct 2026 00:38:34 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Judge_throws_out_child_sex_abuse_charges.md](entertainment_article_36_Judge_throws_out_child_sex_abuse_charges.md)
 
 ---
 

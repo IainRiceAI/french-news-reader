@@ -227,7 +227,7 @@
 
 ### Section 28
 
-**🇬🇧 EN:** "I sort of laid my own trap, and now I'm in it," Lycett conceded ruefully before he headed to the round table. He received 11 of the 14 votes.
+**🇬🇧 EN:** "I sort of laid my own trap, and now I'm in it," Lycett conceded ruefully before he headed to the round table. He was banished with 11 of the 14 votes.
 
 **🇫🇷 FR:** *"J'ai mis mon propre piège, et maintenant je suis dans le piège", a admis Lycett avec regret avant de se diriger vers la table ronde.*
 

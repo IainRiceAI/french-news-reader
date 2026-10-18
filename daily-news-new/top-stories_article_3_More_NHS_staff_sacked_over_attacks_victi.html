@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More NHS staff sacked over attacks victims' records</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>More NHS staff sacked over attacks victims' records</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 17 Oct 2026 16:34:39 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmd7q8ld3dd3o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Nottingham University Hospitals NHS Trust says a new system will be brought in to protect records.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Barnaby Webber, Grace O'Malley-Kumar et Ian Coates ont été poignardés à mort par Valdo Calocane</p>
+            <span class="english-block">Barnaby Webber, Grace O'Malley-Kumar and Ian Coates were stabbed to death by Valdo Calocane</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">D'autres membres du personnel ont été licenciés par une fiducie du NHS pour avoir eu un accès inapproprié aux dossiers médicaux des victimes des attaques de Nottingham.</p>
+            <span class="english-block">Further members of staff have been sacked by an NHS trust for inappropriately accessing medical records of the Nottingham attacks victims.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Les étudiants de Nottingham Barnaby Webber et Grace O'Malley-Kumar, ainsi que leur grand-père Ian Coates, ont été poignardés à mort le 13 juin 2023 par Valdo Calocane, qui avait été diagnostiqué avec une schizophrénie paranoïaque en 2020.</p>
+            <span class="english-block">Nottingham students Barnaby Webber and Grace O'Malley-Kumar, and grandfather Ian Coates, were stabbed to death on 13 June 2023 by Valdo Calocane, who was diagnosed with paranoid schizophrenia in 2020.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">En mai, le NHS Trust des hôpitaux de l'Université de Nottingham (NUH) a confirmé avoir licencié 11 membres du personnel et, dans une mise à jour vendredi, a déclaré qu'un total de 15 personnes avaient maintenant été licenciées dans le cadre de son enquête.</p>
+            <span class="english-block">In May, Nottingham University Hospitals (NUH) NHS Trust confirmed it had dismissed 11 members of staff and, in an update on Friday, said a total of 15 people had now been sacked as part of its investigation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le Dr Sanjoy Kumar, le père de Grace, a dit: "Je suis horrifié, il est temps de prendre les devants sur ces échecs".</p>
+            <span class="english-block">Dr Sanjoy Kumar, Grace's father, said: "I am appalled, it's time to get a handle on these failures."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Il a ajouté: "Il est clair que la façon dont les données les plus confidentielles, qui sont les données médicales, sont examinées par des personnes voyeuristes dans le NHS est honteuse".</p>
+            <span class="english-block">He added: "Clearly, the way that the highest confidential data, which is medical data, is being looked at by voyeuristic people in the NHS is disgraceful."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Le Dr Manjeet Shehmar, directeur médical de la NUH, a déclaré: "Il n'y a tout simplement aucune excuse pour accéder aux dossiers d'un patient sans raison légitime et j'espère que cela envoie un message vraiment clair  nous allons enquêter et nous agirons.</p>
+            <span class="english-block">Dr Manjeet Shehmar, medical director at NUH, said: "There is simply no excuse for accessing the records of a patient without a legitimate reason and I hope this sends a really clear message – we will investigate and we will take action.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">"Perdre un être cher comme les familles d'Ian, Grace et Barnaby est assez déchirant.</p>
+            <span class="english-block">"To lose a loved one in the way that the families of Ian, Grace and Barnaby have is heartbreaking enough.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">"Je suis désolé qu'ils aient encore aggravé cette situation par les actions de ces membres du personnel".</p>
+            <span class="english-block">"I am so sorry that they have had this further compounded by the actions of these staff members."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Valdo Calocane est actuellement en service pour une durée indéterminée dans un établissement de haute sécurité</p>
+            <span class="english-block">Valdo Calocane is currently serving an indefinite hospital order in a high security facility</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Outre les licenciements, le NUH a indiqué qu'au total, 15 avertissements écrits définitifs et deux premiers avertissements écrits avaient été émis.</p>
+            <span class="english-block">As well as the dismissals, NUH said 15 final written warnings and two first written warnings have also been issued in total.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Deux affaires ont été jugées sans réponse et aucune action n'a été prise.</p>
+            <span class="english-block">Two cases were found to have no case to answer and no action was taken.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">La fiducie a déclaré que des mesures avaient été prises contre "médecins, infirmières, professionnels de la santé inscrits et autres employés" et que des organismes de réglementation indépendants tels que le Conseil des infirmières et des sages-femmes et le Conseil médical général, le bureau du commissaire à l'information et la police du Nottinghamshire avaient été informés.</p>
+            <span class="english-block">The trust said action had been taken against "doctors, nurses, registered healthcare professionals and other staff" and that independent regulators such as the Nursing and Midwifery Council and General Medical Council, the Information Commissioner's Office, and Nottinghamshire Police had been informed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Un nouveau système, actuellement en cours d'essai, est mis en œuvre pour protéger les dossiers des patients à l'avenir et alerter la confiance des violations potentielles.</p>
+            <span class="english-block">A new system, currently under testing, is being implemented to protect patient records in future and alert the trust of potential breaches.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Une campagne "Votre responsabilité, vos actions, leur vie privée" a également été menée pour sensibiliser le personnel à la protection des données et aux "sérieuses conséquences" du non-respect des règles, a-t-il ajouté.</p>
+            <span class="english-block">A Your Responsibility, Your Actions, Their Privacy campaign has also been carried out to educate staff about data protection and the "serious consequences" of not following the rules, it added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Shehmar a déclaré: "Nous continuerons à enquêter sur l'accès inapproprié à ces documents et à prendre des mesures au besoin.</p>
+            <span class="english-block">Shehmar said: "We will continue to investigate inappropriate access to these records and take action as and where necessary.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">"En plus de cela, nous faisons tout notre possible pour informer notre personnel sur l'accès approprié et sur la façon de protéger les dossiers de nos patients.</p>
+            <span class="english-block">"Alongside this, we are doing all we can to educate our staff on appropriate access and how to keep the records of our patients safe. We are also introducing a new system which acts to detect possible data breaches.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">"Bien que les actions de ces membres du personnel soient décevantes, nous savons que cela représente un petit nombre de notre main-d'œuvre plus large.</p>
+            <span class="english-block">"While the actions of these staff members are disappointing, we know that this represents a small number of our wider workforce.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"Nous savons que le personnel de la fiducie écoute, apprend et fait ce qu'il peut pour que seul l'accès légal et justifié ait lieu dans nos hôpitaux".</p>
+            <span class="english-block">"We know staff across the trust are listening, learning and doing what they can to ensure that only lawful and justified access takes place in our hospitals."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">L'ONU a déclaré que les enquêtes continuaient, y compris sur l'accès inapproprié aux dossiers des victimes des attentats - Wayne Birkett, Sharon Miller et Marcin Gawronski.</p>
+            <span class="english-block">NUH said investigations were continuing, including into inappropriate access of the files of the surviving victims of the attacks - Wayne Birkett, Sharon Miller and Marcin Gawronski.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">L'enquête de Nottingham a examiné les décisions prises avant les attentats mortels du 13 juin 2023 et les conséquences</p>
+            <span class="english-block">The Nottingham Inquiry examined decisions made in the lead-up to fatal attacks on 13 June 2023 and the aftermath</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Les premiers licenciements ont été rendus publics au cours d'une enquête publique statutaire examinant les antécédents des attaques et les décisions et actions prises à la suite.</p>
+            <span class="english-block">The first dismissals were made public amid a statutory public inquiry examining the lead-up to the attacks and decisions and actions taken in the aftermath.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">L'enquête de Nottingham, dirigée par le juge, a été entendue par 164 témoins externes pendant 14 semaines de preuves effrayantes entre février et juin 2026, ainsi que deux jours de déclarations de clôture des participants principaux en septembre.</p>
+            <span class="english-block">The judge-led Nottingham Inquiry, external heard from 164 witnesses during 14 weeks of harrowing evidence between February and June 2026, as well as two days of closing statements from core participants in September.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Les résultats de l'enquête, qui est dirigée par la juge Deborah Taylor KC, sera publié d'ici mai 2027.</p>
+            <span class="english-block">The findings of the inquiry, which is being led by retired senior judge Deborah Taylor KC, will be published by May 2027.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Les audiences ont examiné les autorités qui avaient eu des interactions avec Calocane dans les années précédant les attaques, révélant les échecs et les opportunités manquées par les organismes, y compris le NHS et la police.</p>
+            <span class="english-block">The hearings scrutinised authorities that had interactions with Calocane in the years before the attacks, laying bare failures and missed opportunities by agencies, including the NHS and police.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">L'enquête a appris que Calocane avait été divisé quatre fois en vertu de la Loi sur la santé mentale et avait un historique d'interactions policières liées à des incidents violents avant les meurtres.</p>
+            <span class="english-block">The inquiry heard Calocane had been sectioned four times under the Mental Health Act and had a history of police interactions linked to violent incidents before the killings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Calocane est en prison à l'hôpital pour une durée indéterminée, après s'être plaint de meurtre involontaire en raison d'une responsabilité réduite, en raison de sa schizophrénie paranoïaque, en janvier 2024.</p>
+            <span class="english-block">Calocane is serving an indefinite hospital order, after pleading guilty to manslaughter on the grounds of diminished responsibility, due to his paranoid schizophrenia, in January 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Barnaby et Grace rentraient chez eux après une sortie nocturne, tôt le 13 juin 2023, quand ils furent tués.</p>
+            <span class="english-block">Barnaby and Grace were walking home from a night out in the early hours of 13 June 2023 when they were killed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">La NUH fait partie d'un certain nombre d'organisations dans lesquelles le personnel a consulté de manière inappropriée les dossiers ou les informations liés aux attaques mortelles.</p>
+            <span class="english-block">NUH is among a number of organisations in which staff inappropriately viewed records or information related to the fatal attacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">En décembre 2024, une enquête a été ouverte sur les allégations selon lesquelles le personnel du ministère de la Justice (MoJ) avait accédé illégalement à des fichiers informatiques liés aux attaques de Nottingham.</p>
+            <span class="english-block">In December 2024, an investigation opened into allegations Ministry of Justice (MoJ) staff illegally accessed computer files related to the Nottingham attacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">L'enquête publique a depuis entendu des agents de justice accéder de manière inappropriée à des informations sur l'affaire en janvier 2024.</p>
+            <span class="english-block">The public inquiry has since heard court workers also inappropriately accessed information about the case in January 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Amy Holmes, directrice générale provisoire du groupe opérationnel en chef du ministère de la Justice (MoJ), a déclaré à l'enquête qu'elle ne pouvait pas détailler les informations auxquelles elle avait accès en raison de l'enquête en cours de la police.</p>
+            <span class="english-block">Amy Holmes, the interim director general for the chief operating group of the Ministry of Justice (MoJ), told the inquiry she could not detail what information was accessed due to the ongoing police investigation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">L'enquête a également entendu dire que sept agents du service de probation avaient eu accès à l'information.</p>
+            <span class="english-block">The inquiry also heard seven probation service officers were identified as having accessed the information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Le service de prison et de probation de HM a trouvé que quatre de ces agents avaient accès aux dossiers légitimement, mais trois n'avaient pas de raison légitime de le faire.</p>
+            <span class="english-block">HM Prison and Probation Service found four of those officers accessed files legitimately, but three did not have a legitimate reason to do so.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Toutefois, le service de probation et l'unité de protection des données du ministère de la Justice ont estimé que les atteintes n'étaient pas suffisamment graves pour justifier de nouvelles mesures.</p>
+            <span class="english-block">However, it was deemed by the probation service and the Ministry of Justice's data protection unit that the breaches were not serious enough to warrant further action.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Des images et des images liées aux attaques ont également été vues à plusieurs reprises par le personnel de la police du Nottinghamshire sans but légitime de police.</p>
+            <span class="english-block">Footage and images related to the attacks were also viewed numerous times by Nottinghamshire Police staff without a legitimate policing purpose.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">La force a confirmé qu'elle effectuerait un audit du nombre de fois où l'information a été consultée et si elle était appropriée, à la suite d'une plainte de la mère de Barnaby, Emma Webber, en mars.</p>
+            <span class="english-block">The force confirmed it would carry out an audit of how many times the information was viewed and whether it was appropriate, following a complaint by Barnaby's mother, Emma Webber, in March.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Dites-nous quelles histoires nous devrions couvrir à Nottingham</p>
+            <span class="english-block">Tell us which stories we should cover in Nottingham</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Écoutez la radio BBC Nottingham sur Sounds et suivez la BBC Nottingham sur Facebook, externe, sur X, externe ou sur Instagram, externe. Envoyez vos idées d'histoire à eastmidsnews@bbc.co.uk, externe ou via WhatsApp, externe au 0808 100 2210.</p>
+            <span class="english-block">Listen to BBC Radio Nottingham on Sounds and follow BBC Nottingham on Facebook, external, on X, external, or on Instagram, external. Send your story ideas to eastmidsnews@bbc.co.uk, external or via WhatsApp, external on 0808 100 2210.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Que se passe ensuite pour les attaques de Nottingham sur le NHS en enquête pénale ?</p>
+            <span class="english-block">What next for the Nottingham attacks NHS trust under criminal investigation?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Nottingham attaque NHS confiance fait face à l'enquête de meurtre involontaire</p>
+            <span class="english-block">Nottingham attacks NHS trust faces manslaughter probe</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">L'enquête sur les attaques a révélé une erreur de justice, dit la mère de la victime</p>
+            <span class="english-block">Attacks inquiry revealed miscarriage of justice, victim's mother says</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Ce que nous avons appris de l'enquête publique sur les attaques de Nottingham</p>
+            <span class="english-block">What we learned from the Nottingham attacks public inquiry</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Le NHS a refusé de rencontrer les familles des victimes d'attaques - enquête</p>
+            <span class="english-block">NHS declined to meet attacks victims' families - inquiry</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Le NHS fait confiance à "trop tard" pour apprendre avant les attaques mortelles</p>
+            <span class="english-block">NHS trust 'too late' to learn before fatal attacks</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Le chef du NHS nie avoir été "noyé" de l'enquête sur les attaques</p>
+            <span class="english-block">NHS boss denies he was 'fed up' of attacks inquiry</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">"Le système est tellement cassé", dit la mère du tueur à l'enquête</p>
+            <span class="english-block">'The system is so broken', killer's mum tells inquiry</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">La maladie mentale du tueur "non gérée ni traitée"</p>
+            <span class="english-block">Killer's mental illness 'unmanaged and untreated'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">L'assassin a été renvoyé car le personnel du NHS "n'a pas pu le trouver"</p>
+            <span class="english-block">Killer discharged as NHS staff 'could not find him'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Le personnel médical " trompé et manœuvré "</p>
+            <span class="english-block">Killer 'deceived and out-manoeuvred' medical staff</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">L'infirmière de santé mentale admet des erreurs dans les dossiers du tueur</p>
+            <span class="english-block">Mental health nurse admits errors in killer's records</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Le médecin a averti Valdo Calocane qu'il " finirait par tuer quelqu'un ", a déclaré l'enquête sur les attentats de Nottingham</p>
+            <span class="english-block">Doctor warned Valdo Calocane he 'would end up killing someone', Nottingham attacks inquiry told</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Hôpitaux de l'université de Nottingham NHS Trust</p>
+            <span class="english-block">Nottingham University Hospitals NHS Trust</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">L'enquête de Nottingham</p>
+            <span class="english-block">Nottingham Inquiry</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
