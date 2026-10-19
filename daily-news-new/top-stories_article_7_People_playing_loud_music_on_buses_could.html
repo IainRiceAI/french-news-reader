@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People playing loud music on buses could face £100 fine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>People playing loud music on buses could face £100 fine</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 19 Oct 2026 00:22:20 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm89z008x7xdo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Antisocial behaviour on buses in England could lead to fines while a new campaign is also being launched for trains.
+A national campaign asking rail passengers "share the carriage, not the noise" is being launched.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les passagers qui jouent de la musique forte dans les bus en Angleterre pourraient être condamnés à une amende de 100 livres sterling pour une tentative du gouvernement de réprimer le comportement antisocial.</p>
+            <span class="english-block">Passengers who play loud music on buses in England could be fined up to £100 under an attempt by the government to crack down on antisocial behaviour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Les mesures visent également à lutter contre le déversement de déchets, le vapotage et les comportements menaçants afin d'améliorer les déplacements sur toutes les formes de transport public.</p>
+            <span class="english-block">The measures also seek to tackle littering, vaping and threatening behaviour to help improve journeys on all forms of public transport.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Les délinquants en bus pourraient être condamnés à des amendes en vertu de nouveaux pouvoirs des autorités locales.</p>
+            <span class="english-block">Offenders on buses could be issued with the fines under new powers for local authorities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Une campagne nationale demandant aux passagers ferroviaires de "partager le chariot, pas le bruit" est également lancée.</p>
+            <span class="english-block">A national campaign asking rail passengers "share the carriage, not the noise" is also being launched. The proposed crackdown has been welcomed by campaigners, but some have questioned how it can be enforced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">"Nous avons tous été dans un train quand quelqu'un commence à faire sauter de la musique ou des vidéos à partir de son téléphone. Cela vous met sur les nerfs et peut rapidement gâcher le voyage", a déclaré le Premier ministre Andy Burnham.</p>
+            <span class="english-block">"We've all been on the train when someone starts blasting music or videos from their phone. It gets on your nerves and can quickly spoil the journey," said Prime Minister Andy Burnham.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">En vertu des pouvoirs actuels, ceux qui sont invités à s'arrêter et à refuser pourraient être retirés d'un train ou condamnés à une amende pouvant aller jusqu'à 1 000 livres sterling.</p>
+            <span class="english-block">Under existing powers, those who are asked to stop and refuse could be removed from a train or fined up to £1,000.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Le phénomène a été défini sous de nombreux termes - y compris le son de radio ou le son de sodcasting - et ces dernières années, Ofcom, YouGov et Transport for London (TfL) ont tous publié des sondages montrant que la grande majorité des gens ne l'aiment pas.</p>
+            <span class="english-block">The phenomenon has been given many terms - including loudcasting or sodcasting - and in recent years, Ofcom, YouGov and Transport for London (TfL) have all published polls showing the vast majority of people dislike it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">La secrétaire aux Transports, Heidi Alexander, a déclaré que de petits changements de comportement "peuvent faire une énorme différence dans l'expérience des gens dans les transports en commun".</p>
+            <span class="english-block">Transport Secretary Heidi Alexander said small changes in behaviour "can make a massive difference to people's experience on public transport".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Le gouvernement a déclaré avoir publié de nouvelles directives aux autorités locales sur les pouvoirs - qui ont été introduits plus tôt cette année - pour les aider à réprimer la musique forte et d'autres comportements antisociaux dans les bus en Angleterre.</p>
+            <span class="english-block">The government said it had issued new guidance to local authorities on powers - which were introduced earlier this year - to help them crackdown on loud music and other antisocial behaviour on buses in England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Ces nouveaux pouvoirs leur permettent d'imposer de nouvelles règles aux bus, mais doivent toujours être signés par le secrétaire aux Transports.</p>
+            <span class="english-block">These new powers allow them to impose new rules on buses, but still need to be signed off by the Transport Secretary</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Ceux qui commettent des infractions pourraient être condamnés à une amende fixe pouvant aller jusqu'à 100 livres sterling.</p>
+            <span class="english-block">Those who commit offences could face fixed penalties of up to £100.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Le gouvernement dit que les chauffeurs de bus ne seront pas responsables de l'application des nouvelles règles.</p>
+            <span class="english-block">The government says bus drivers will not be responsible for enforcing the new rules. It says authorised officers, including Transport Safety Officers and the Police, will  deal with the incidents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Dans le même temps, une nouvelle campagne nationale vise à rappeler aux passagers du train de "partager le carrosserie, pas le bruit", afin d'améliorer les voyages pour tous</p>
+            <span class="english-block">Meanwhile a new national campaign aims to remind rail passengers to "share the carriage, not the noise", to improve journeys for everyone</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">La campagne sera lancée sur les sites Web des opérateurs, sur les réseaux sociaux et dans les wagons. Le gouvernement a déclaré que cela mettrait fin au " patchwork " actuel des approches entre les différents opérateurs ferroviaires et aiderait à créer " un message clair et cohérent sur le réseau ".</p>
+            <span class="english-block">The campaign will be launched across operator websites, social media, and in carriages. The government said this would end the current "patchwork" of approaches across different rail operators, and help create "a clear, consistent message across the network".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">La secrétaire générale du syndicat des transports de la TSSA, Maryam Eslamdoust, a déclaré que lutter contre le comportement antisocial dans les transports publics était "un pas dans la bonne direction".</p>
+            <span class="english-block">The general secretary of the TSSA transport union, Maryam Eslamdoust, said tackling antisocial behaviour on public transport was "a step in the right direction".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Elle a toutefois ajouté que le gouvernement doit également "affronter de toute urgence la violence, les menaces et les abus auxquels sont confrontés les passagers et les travailleurs du transport".</p>
+            <span class="english-block">However, she added that the government must also "urgently confront the violence, threats and abuse faced by passengers and transport workers".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">"L'augmentation du budget de la police britannique des transports est essentielle pour protéger les gens, répondre aux incidents et traduire les délinquants violents en justice", a-t-elle déclaré.</p>
+            <span class="english-block">"Increasing the budget for British Transport Police is vital to protect people, respond to incidents and bring violent offenders to justice," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Michael Solomon Williams de la Campagne pour un meilleur transport a déclaré à la BBC que le comportement antisocial pourrait être un " réel dissuasion " pour les personnes qui utilisent les transports en commun, en particulier celles qui ont des besoins d'accessibilité différents.</p>
+            <span class="english-block">Michael Solomon Williams from the Campaign for Better Transport told the BBC antisocial behaviour could be a "real deterrent" to people using public transport, especially those with  different accessibility needs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Il a également demandé comment les nouvelles mesures seraient appliquées. "Quand les autorités locales sont tenues de faire appliquer ces mesures, il y a peut-être des signes de doute sur la façon dont une police locale pourrait être appelée sur les services de bus, par exemple, où nous n'avons pas tendance à voir la police britannique des transports".</p>
+            <span class="english-block">He also questioned how the new measures will be enforced. "When local authorities are required to do the enforcement there are perhaps some question marks about how a local police force might be called upon on bus services, for example, where we don't tend to see British Transport Police."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Le député Richard Holden, secrétaire aux Transports de l'ombre, a déclaré: "Après avoir porté l'accusation de comportement antisocial dans les transports publics l'été dernier, les ministres ont compris que personne ne veut supporter de la techno ou du hip hop bruyant dans un train ou un bus bondé.</p>
+            <span class="english-block">Richard Holden MP, Shadow Transport Secretary, said: "After we led the charge against antisocial behaviour on public transport last summer, Ministers have worked out that nobody wants to endure pounding techno or blaring hip hop on a packed train or bus.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">"Mais les passagers et le personnel ferroviaire sont confrontés à des problèmes beaucoup plus graves. Les attaques contre le personnel ferroviaire ont augmenté de 68%, tandis que les poursuites ont chuté sous le Labour. Il est temps pour Andy Burnham de prendre au sérieux l'application de la loi, de lutter contre la violence et de protéger ceux qui travaillent sur nos chemins de fer".</p>
+            <span class="english-block">"But passengers and railway staff face far more serious problems. Assaults against rail staff have risen by 68%, while prosecutions have slumped under Labour. It's time for Andy Burnham to get serious about enforcement, tackling violence and protecting those who work on our railways."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Le porte-parole du député Olly Glover, député des transports libéraux-démocrates, a déclaré: "Les paroles dures ne signifient rien sans application.</p>
+            <span class="english-block">Liberal Democrat Transport spokesperson, Olly Glover MP said: "Tough talk means nothing without enforcement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"Si le gouvernement ne finance pas les agents de sécurité des transports sur le terrain, ces nouvelles règles ne valent pas le papier sur lequel elles sont imprimées".</p>
+            <span class="english-block">"Unless the Government funds transport safety officers on the ground, these new rules won't be worth the paper they're printed on."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">L'organisation indépendante de surveillance Transport Focus a déclaré que des recherches publiées en juin montrent que la sécurité et la sécurité personnelles sont désormais fondamentales pour la confiance des passagers dans le chemin de fer.</p>
+            <span class="english-block">Independent watchdog Transport Focus said research it had published in June showed personal safety and security was now fundamental to passengers' confidence in the railway.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">" Quatre passagers sur dix disent que le comportement anti-social les a rendus vulnérables lors de leurs déplacements ", a déclaré Alex Campbell, directeur des politiques et des informations de Transport Focus.</p>
+            <span class="english-block">"Four in 10 passengers say that anti-social behaviour has made them feel vulnerable when travelling," said Alex Campbell, Transport Focus's director of policy and insight.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">"Les mesures visant à réduire les comportements nuisibles, comme la musique bruyante et le vapotage, peuvent aider à améliorer l'expérience des gens et encourager davantage de gens à choisir les transports en commun".</p>
+            <span class="english-block">"Measures that reduce nuisance behaviour, such as playing loud music and vaping, can help improve people's experience and encourage more people to choose public transport."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Pourquoi les téléphones haut-parleurs peuvent devenir un autre bruit</p>
+            <span class="english-block">Why phones on loudspeaker may become just another noise</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les attaques signalées contre les services ferroviaires britanniques augmentent de plus d'un tiers</p>
+            <span class="english-block">Reported assaults on Britain's rail services rise by more than a third</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Les conservateurs disent que les problèmes de sécurité ont fait descendre les Londoniens des bus.</p>
+            <span class="english-block">Safety concerns put Londoners off buses, say Tories</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
