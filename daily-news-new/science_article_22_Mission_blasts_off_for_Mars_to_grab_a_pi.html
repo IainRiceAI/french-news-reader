@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission blasts off for Mars to grab a piece of its moon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Mission blasts off for Mars to grab a piece of its moon</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 19 Oct 2026 19:45:46 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmvgxvkv54w1o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A spacecraft is set to launch on an ambitious mission to bring 10g of Martian moon dust back to Earth.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Un vaisseau spatial a été lancé depuis le Japon pour la lune de Mars, Phobos, où il tentera d'attraper de la poussière de la Lune et de la ramener sur Terre.</p>
+            <span class="english-block">A spacecraft has launched from Japan headed for Mars' moon Phobos, where it will attempt to grab some moondust and bring it back to Earth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Si elle réussit, ce sera la première fois qu'un échantillon est retourné de Mars ou de ses lunes pour être analysé dans des laboratoires ici sur Terre.</p>
+            <span class="english-block">If it is successful, this will become the first time a sample has been returned from Mars or its moons to be analysed in laboratories here on Earth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le vaisseau spatial devrait arriver à Phobos en août 2027.</p>
+            <span class="english-block">The spacecraft is scheduled to arrive at Phobos in August 2027.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">On espère que la mission Mars Moons Exploration (MMX), dirigée par l'Agence spatiale japonaise, résoudra le mystère de la formation des lunes de Mars.</p>
+            <span class="english-block">It is hoped that the Mars Moons Exploration (MMX) mission, which is led by the Japanese Space Agency, will solve the mystery of how Mars's moons formed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">La professeure Sara Russell, du Musée d'Histoire naturelle, qui est la députée de la mission MMX pour l'analyse des échantillons, a déclaré: "Il n'y a pas encore eu de mission réussie pour aller à Phobos et ramener un peu de choses sur Terre.</p>
+            <span class="english-block">Prof Sara Russell, from the Natural History Museum, who is the MMX mission's deputy for sample analysis, said: "There hasn't yet been a successful mission to go to Phobos and bring a bit back to Earth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">"Je pense que c'est une mission incroyablement ambitieuse et amusante", a-t-elle déclaré.</p>
+            <span class="english-block">"I think this is an incredibly ambitious and fun mission," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Il n'y a que trois lunes dans le système solaire intérieur: notre propre Lune, et deux autour de Mars, qui sont appelés Phobos et Deimos.</p>
+            <span class="english-block">There are only three moons in the inner Solar System: our own Moon, and two around Mars, which are called Phobos and Deimos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Les deux sont minuscules: Phobos est d'environ 20 km de diamètre et Deimos est d'environ 10 km de diamètre.</p>
+            <span class="english-block">Both of these are tiny - Phobos is about 20km (12 miles) across and Deimos is about 10km (six miles) across. They are also irregularly shaped, looking a bit like space potatoes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Le vaisseau spatial MMX étudiera Deimos à son arrivée dans le quartier de Mars, puis se concentrera sur Phobos.</p>
+            <span class="english-block">The MMX spacecraft will study Deimos as it arrives in the Mars neighbourhood, and then will focus on Phobos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Il prévoit de déposer un petit rover pour explorer le terrain, bien que ce ne soit pas une tâche facile.</p>
+            <span class="english-block">It plans to set down a small rover to explore the terrain, though this will be no easy feat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Sara Russell dit que personne n'a jamais atterri sur une aussi petite lune.</p>
+            <span class="english-block">Sara Russell says no one has ever landed a rover on such a small moon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"La lune elle-même n'a pas beaucoup de gravité", a- t- elle expliqué.</p>
+            <span class="english-block">"The moon itself doesn't have very much of its own gravity," she explained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">"Mais c'est à côté d'une planète énorme qui a une gravité beaucoup plus élevée, et cela rend beaucoup plus difficile d'obtenir un rover à la surface".</p>
+            <span class="english-block">"But it's next to an enormous planet that's got a much higher gravity,  and that makes it much harder to get a rover onto the surface."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Mars a eu ses lunes il y a environ 4,5 milliards d'années, mais personne ne sait comment elles se sont formées.</p>
+            <span class="english-block">Mars got its moons about 4.5bn years ago - but no one knows how they formed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Le rover va trouver un site d'atterrissage pour que le vaisseau spatial MMX puisse ensuite atterrir sur Phobos.</p>
+            <span class="english-block">The rover will scout out a landing site so that the MMX spacecraft itself can later touch down on Phobos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Une fois à la surface, il déploie un bras robotisé et deux échantillonnateurs pour attraper de la poussière lunaire.</p>
+            <span class="english-block">Once on the surface, it will deploy a robotic arm and two samplers to grab some moon dust.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Ce matériau sera emballé dans une petite capsule qui retournera sur Terre en 2031, atterrissant dans le désert de Woomera en Australie du Sud.</p>
+            <span class="english-block">This material will be packed into a small capsule that will return to Earth in 2031, landing in the Woomera desert of South Australia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">La quantité de matériel qui reviendra est minuscule - seulement 10 g.</p>
+            <span class="english-block">The amount of material that will come back is tiny - just 10g.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"C'est en fait une très petite somme", a déclaré la docteur Chrysa Avdellidou, de l'université de Leicester, qui travaille avec la mission japonaise.</p>
+            <span class="english-block">"It's a very small [amount] actually," said Dr Chrysa Avdellidou, from Leicester University, who is working with the Japanese mission.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">"Nous pouvons faire plusieurs études même sur des grains individuels... vous n'avez pas besoin d'avoir des kilos de terre pour faire des sciences.</p>
+            <span class="english-block">"However we can do several studies even on individual grains… You don't need to have kilos back from a surface in order to do science.  So it's worth every gram," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Le vaisseau va recueillir 10g de poussière de la lune de la surface de Phobos</p>
+            <span class="english-block">The spacecraft will collect 10g of moon dust from the surface of Phobos</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Les scientifiques croient que l'échantillon va enfin éclairer le puzzle de l'origine des lunes de Mars.</p>
+            <span class="english-block">Scientists believe the sample will finally shed light on the puzzle of where Mars's moons came from.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Il y a deux idées en compétition.</p>
+            <span class="english-block">There are two competing ideas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Ou une roche spatiale s'est écrasée sur Mars au début de son histoire, et Phobos et Deimos ont été créés à partir des débris.</p>
+            <span class="english-block">Either a space rock smashed into Mars early in its history, and Phobos and Deimos were created from the debris.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Ou bien les lunes sont deux astéroïdes errants du système solaire extérieur, qui ont été capturés par la gravité de la planète rouge.</p>
+            <span class="english-block">Or the moons are two wandering asteroids from the outer Solar System, which were grabbed by the Red Planet's gravity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">"Quand nous aurons récupéré l'échantillon, nous pourrons examiner en détail sa chimie et sa composition minérale - et les deux hypothèses produiront des résultats très différents", a déclaré Sara Russell.</p>
+            <span class="english-block">"When we get the sample back, we'll be able to look in detail at its chemistry and its mineral composition - and the two hypotheses will produce very distinct results," said Sara Russell.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">"Il devrait être presque immédiatement évident... si c'est le produit de cet impact dramatique ou si c'est un astéroïde capturé.</p>
+            <span class="english-block">"It should be pretty much immediately obvious.. whether it's the product of this dramatic impact or whether it's a captured asteroid. So we'll find that out really quickly."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">L'équipe espère aussi qu'il y aura un bonus supplémentaire en revenant à leurs laboratoires.</p>
+            <span class="english-block">The team is also hoping there might be an extra bonus coming back to their labs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"L'une des choses vraiment passionnantes est que Phobos est si proche de la surface de Mars que chaque fois qu'il y a un impact sur la surface de Mars, de petits grains peuvent en fait être implantés dans Phobos lui- même", a déclaré Russell.</p>
+            <span class="english-block">"One of the really exciting things is that Phobos is so close to the Mars surface that whenever there's an impact into the Mars surface, little grains might actually become implanted into Phobos itself," said Russell.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">"Et cela signifie que l'échantillon que nous récupérons peut contenir des grains de Mars aussi bien. Donc il peut nous donner des informations vraiment directes sur la composition et l'histoire de Mars".</p>
+            <span class="english-block">"And that means that the sample we get back may actually contain grains of Mars as well. So it can give us really direct information about the composition and history of Mars."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Les météorites martiaines sont rares. Celui-ci est exposé au Musée d'Histoire Naturelle.</p>
+            <span class="english-block">Martian meteorites are rare - this one is on display at the Natural History Museum</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Rendre du matériel de Mars à la Terre a longtemps été l'ambition des scientifiques spatiaux.</p>
+            <span class="english-block">Bringing material from Mars back to Earth has long been an ambition of space scientists.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Le rover de la NASA Perseverance, qui explore Mars depuis 2021, a soigneusement recueilli des échantillons sur Mars et les a stockés dans des canisters.</p>
+            <span class="english-block">The Nasa Perseverance rover, which has been exploring Mars since 2021, has been carefully collecting samples on Mars and storing them in canisters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Mais une deuxième mission de la Nasa/ESA, appelée Mars Sample Return, qui aurait récupéré et renvoyé ces canisters, a été effectivement annulée, après que son financement ait été arrêté par le Congrès américain.</p>
+            <span class="english-block">But a second Nasa/ESA mission, called Mars Sample Return, that would have picked up and returned these canisters, has been effectively cancelled, after its funding was halted by the US Congress.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">La Chine prévoit sa propre mission d'échantillonnage sur Mars, qui devrait être lancée en 2028.</p>
+            <span class="english-block">China is planning its own sampling mission to Mars, set to launch in 2028. It will attempt to return Martian material to Earth in 2031.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Nous avons déjà des fragments de la planète rouge ici sur Terre sous la forme de météorites martiaines.</p>
+            <span class="english-block">We do already have some fragments of the Red Planet here on Earth in the form of Martian meteorites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Ce sont des morceaux de Mars qui ont été écrasés par des astéroïdes et ont été jetés vers la Terre.</p>
+            <span class="english-block">These are pieces of Mars that were blasted off the surface by asteroid strikes, and ended up being hurled towards the Earth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Les météorites martiaines sont extrêmement rares, mais comme toutes les roches spatiales qui tombent sur notre planète, elles deviennent contaminées dès leur arrivée, se mélangant à l'air, à la poussière, au sol et à l'eau.</p>
+            <span class="english-block">Martian meteorites are extremely rare, but like all space rocks that fall to our planet, they become contaminated as soon as they get here, mixing with the air, dust, soil and water.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Les scientifiques sont tellement désespérés de trouver un échantillon directement de Mars et de ses lunes parce qu'il serait vierge.</p>
+            <span class="english-block">Scientists are so desperate to get their gloved hands on a direct sample from Mars and its moons because it would be pristine.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

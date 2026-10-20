@@ -1,183 +1,183 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-19 06:01:06  
+Generated on: 2026-10-20 06:01:12  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Macron calls for 'calm and order' after riots across France**
-   - **Published:** Sun, 18 Oct 2026 20:33:21 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Macron_calls_for_calm_and_order_after_ri.md](top-stories_article_1_Macron_calls_for_calm_and_order_after_ri.md)
+1. **Chancellor rejects calls to raise Capital Gains Tax in Budget**
+   - **Published:** Tue, 20 Oct 2026 01:31:09 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Chancellor_rejects_calls_to_raise_Capita.md](top-stories_article_1_Chancellor_rejects_calls_to_raise_Capita.md)
 
-2. **Inside the shadowy world of anti-Putin sabotage from within Russia**
-   - **Published:** Mon, 19 Oct 2026 00:06:25 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Inside_the_shadowy_world_of_anti-Putin_s.md](top-stories_article_2_Inside_the_shadowy_world_of_anti-Putin_s.md)
+2. **Curfew imposed in parts of central Paris and other cities after rioting across France**
+   - **Published:** Mon, 19 Oct 2026 21:14:53 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Curfew_imposed_in_parts_of_central_Paris.md](top-stories_article_2_Curfew_imposed_in_parts_of_central_Paris.md)
 
-3. **Watch: Russian saboteur working for Ukraine shares reconnaissance videos**
-   - **Published:** Mon, 19 Oct 2026 00:28:44 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Watch_Russian_saboteur_working_for_Ukrai.md](top-stories_article_3_Watch_Russian_saboteur_working_for_Ukrai.md)
+3. **Watch: Clean up begins after French riots but police remain**
+   - **Published:** Mon, 19 Oct 2026 21:30:08 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Watch_Clean_up_begins_after_French_riots.md](top-stories_article_3_Watch_Clean_up_begins_after_French_riots.md)
 
-4. **'Postcode lottery' driving children's inequality in England, commissioner warns**
-   - **Published:** Mon, 19 Oct 2026 04:37:06 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Postcode_lottery_driving_childrens_inequ.md](top-stories_article_4_Postcode_lottery_driving_childrens_inequ.md)
+4. **Criminals detained in hospital set to lose benefits**
+   - **Published:** Mon, 19 Oct 2026 23:21:38 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Criminals_detained_in_hospital_set_to_lo.md](top-stories_article_4_Criminals_detained_in_hospital_set_to_lo.md)
 
-5. **Home sellers cut asking prices on 3,000 properties a day**
-   - **Published:** Sun, 18 Oct 2026 23:00:45 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Home_sellers_cut_asking_prices_on_3000_p.md](top-stories_article_5_Home_sellers_cut_asking_prices_on_3000_p.md)
+5. **Burnham vows end to 'rip-off parking charges' under new rules**
+   - **Published:** Mon, 19 Oct 2026 21:30:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Burnham_vows_end_to_rip-off_parking_char.md](top-stories_article_5_Burnham_vows_end_to_rip-off_parking_char.md)
 
-6. **Major fire at Canada military base leaves four dead, dozens injured**
-   - **Published:** Sun, 18 Oct 2026 23:06:09 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Major_fire_at_Canada_military_base_leave.md](top-stories_article_6_Major_fire_at_Canada_military_base_leave.md)
+6. **US church on frontline of battle against drug known as 'tranq'**
+   - **Published:** Tue, 20 Oct 2026 00:02:32 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_US_church_on_frontline_of_battle_against.md](top-stories_article_6_US_church_on_frontline_of_battle_against.md)
 
-7. **People playing loud music on buses could face £100 fine**
-   - **Published:** Mon, 19 Oct 2026 00:22:20 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_People_playing_loud_music_on_buses_could.md](top-stories_article_7_People_playing_loud_music_on_buses_could.md)
+7. **Ukrainians dying because US restricting intelligence sharing, Zelensky adviser tells BBC**
+   - **Published:** Mon, 19 Oct 2026 20:49:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Ukrainians_dying_because_US_restricting_.md](top-stories_article_7_Ukrainians_dying_because_US_restricting_.md)
 
-8. **Burnham says youth employment and training crisis is a 'moral failure'**
-   - **Published:** Mon, 19 Oct 2026 01:40:53 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Burnham_says_youth_employment_and_traini.md](top-stories_article_8_Burnham_says_youth_employment_and_traini.md)
+8. **Woman says she 'closed eyes and tried not to be there' during alleged Russell Brand rape**
+   - **Published:** Mon, 19 Oct 2026 18:22:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Woman_says_she_closed_eyes_and_tried_not.md](top-stories_article_8_Woman_says_she_closed_eyes_and_tried_not.md)
 
 ---
 
 ### Section: WORLD
 
-1. **Macron calls for 'calm and order' after riots across France**
-   - **Published:** Sun, 18 Oct 2026 20:33:21 GMT
-   - **Read Parallel Translation:** [world_article_9_Macron_calls_for_calm_and_order_after_ri.md](world_article_9_Macron_calls_for_calm_and_order_after_ri.md)
+1. **Curfew imposed in parts of central Paris and other cities after rioting across France**
+   - **Published:** Mon, 19 Oct 2026 21:14:53 GMT
+   - **Read Parallel Translation:** [world_article_9_Curfew_imposed_in_parts_of_central_Paris.md](world_article_9_Curfew_imposed_in_parts_of_central_Paris.md)
 
-2. **France's government under pressure after weekend of widespread violence**
-   - **Published:** Mon, 19 Oct 2026 04:16:46 GMT
-   - **Read Parallel Translation:** [world_article_10_Frances_government_under_pressure_after_.md](world_article_10_Frances_government_under_pressure_after_.md)
+2. **Ukrainians dying because US restricting intelligence sharing, Zelensky adviser tells BBC**
+   - **Published:** Mon, 19 Oct 2026 20:49:00 GMT
+   - **Read Parallel Translation:** [world_article_10_Ukrainians_dying_because_US_restricting_.md](world_article_10_Ukrainians_dying_because_US_restricting_.md)
 
-3. **Major fire at Canada military base leaves four dead, dozens injured**
-   - **Published:** Sun, 18 Oct 2026 23:06:09 GMT
-   - **Read Parallel Translation:** [world_article_11_Major_fire_at_Canada_military_base_leave.md](world_article_11_Major_fire_at_Canada_military_base_leave.md)
+3. **Kenya cult leader who told parents to starve children guilty of 191 murders**
+   - **Published:** Mon, 19 Oct 2026 17:18:04 GMT
+   - **Read Parallel Translation:** [world_article_11_Kenya_cult_leader_who_told_parents_to_st.md](world_article_11_Kenya_cult_leader_who_told_parents_to_st.md)
 
-4. **Inside the shadowy world of anti-Putin sabotage from within Russia**
-   - **Published:** Mon, 19 Oct 2026 00:06:25 GMT
-   - **Read Parallel Translation:** [world_article_12_Inside_the_shadowy_world_of_anti-Putin_s.md](world_article_12_Inside_the_shadowy_world_of_anti-Putin_s.md)
+4. **Tennis star Svitolina says emotional toll of Ukraine war led to Monfils separation**
+   - **Published:** Mon, 19 Oct 2026 21:02:33 GMT
+   - **Read Parallel Translation:** [world_article_12_Tennis_star_Svitolina_says_emotional_tol.md](world_article_12_Tennis_star_Svitolina_says_emotional_tol.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Microsoft pulls out of UK's largest AI data centre**
-   - **Published:** Sun, 18 Oct 2026 16:46:42 GMT
-   - **Read Parallel Translation:** [business_article_13_Microsoft_pulls_out_of_UKs_largest_AI_da.md](business_article_13_Microsoft_pulls_out_of_UKs_largest_AI_da.md)
+1. **Burnham vows end to 'rip-off parking charges' under new rules**
+   - **Published:** Mon, 19 Oct 2026 21:30:06 GMT
+   - **Read Parallel Translation:** [business_article_13_Burnham_vows_end_to_rip-off_parking_char.md](business_article_13_Burnham_vows_end_to_rip-off_parking_char.md)
 
-2. **Home sellers cut asking prices on 3,000 properties a day**
-   - **Published:** Sun, 18 Oct 2026 23:00:45 GMT
-   - **Read Parallel Translation:** [business_article_14_Home_sellers_cut_asking_prices_on_3000_p.md](business_article_14_Home_sellers_cut_asking_prices_on_3000_p.md)
+2. **'I'm fed up of swiping': Why singles now want to meet IRL**
+   - **Published:** Mon, 19 Oct 2026 23:00:21 GMT
+   - **Read Parallel Translation:** [business_article_14_Im_fed_up_of_swiping_Why_singles_now_wan.md](business_article_14_Im_fed_up_of_swiping_Why_singles_now_wan.md)
 
-3. **China's growth accelerates as AI export boom outweighs domestic weakness**
-   - **Published:** Mon, 19 Oct 2026 03:17:46 GMT
-   - **Read Parallel Translation:** [business_article_15_Chinas_growth_accelerates_as_AI_export_b.md](business_article_15_Chinas_growth_accelerates_as_AI_export_b.md)
+3. **US bans DeepSeek AI from government use as tech tension with China continues**
+   - **Published:** Mon, 19 Oct 2026 18:21:54 GMT
+   - **Read Parallel Translation:** [business_article_15_US_bans_DeepSeek_AI_from_government_use_.md](business_article_15_US_bans_DeepSeek_AI_from_government_use_.md)
 
-4. **Anthropic says it will commit 5% of its shares to 'public benefit fund'**
-   - **Published:** Mon, 19 Oct 2026 04:30:59 GMT
-   - **Read Parallel Translation:** [business_article_16_Anthropic_says_it_will_commit_5_of_its_s.md](business_article_16_Anthropic_says_it_will_commit_5_of_its_s.md)
+4. **Ex-OpenAI worker accused of planting device had Saudi support, says court filing**
+   - **Published:** Mon, 19 Oct 2026 21:12:30 GMT
+   - **Read Parallel Translation:** [business_article_16_Ex-OpenAI_worker_accused_of_planting_dev.md](business_article_16_Ex-OpenAI_worker_accused_of_planting_dev.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Anthropic says it will commit 5% of its shares to 'public benefit fund'**
-   - **Published:** Mon, 19 Oct 2026 04:30:59 GMT
-   - **Read Parallel Translation:** [technology_article_17_Anthropic_says_it_will_commit_5_of_its_s.md](technology_article_17_Anthropic_says_it_will_commit_5_of_its_s.md)
+1. **Ex-OpenAI worker accused of planting device had Saudi support, says court filing**
+   - **Published:** Mon, 19 Oct 2026 21:12:30 GMT
+   - **Read Parallel Translation:** [technology_article_17_Ex-OpenAI_worker_accused_of_planting_dev.md](technology_article_17_Ex-OpenAI_worker_accused_of_planting_dev.md)
 
-2. **China's growth accelerates as AI export boom outweighs domestic weakness**
-   - **Published:** Mon, 19 Oct 2026 03:17:46 GMT
-   - **Read Parallel Translation:** [technology_article_18_Chinas_growth_accelerates_as_AI_export_b.md](technology_article_18_Chinas_growth_accelerates_as_AI_export_b.md)
+2. **US bans DeepSeek AI from government use as tech tension with China continues**
+   - **Published:** Mon, 19 Oct 2026 18:21:54 GMT
+   - **Read Parallel Translation:** [technology_article_18_US_bans_DeepSeek_AI_from_government_use_.md](technology_article_18_US_bans_DeepSeek_AI_from_government_use_.md)
 
-3. **Don't fall for this - how to protect yourself from AI scams**
-   - **Published:** Sun, 18 Oct 2026 23:24:59 GMT
-   - **Read Parallel Translation:** [technology_article_19_Dont_fall_for_this_-_how_to_protect_your.md](technology_article_19_Dont_fall_for_this_-_how_to_protect_your.md)
+3. **Uber wins bid to throw out £200m black cab claims**
+   - **Published:** Mon, 19 Oct 2026 12:58:39 GMT
+   - **Read Parallel Translation:** [technology_article_19_Uber_wins_bid_to_throw_out_200m_black_ca.md](technology_article_19_Uber_wins_bid_to_throw_out_200m_black_ca.md)
 
-4. **No further action against government adviser's wife over Palestine Action post, police say**
-   - **Published:** Sat, 17 Oct 2026 20:24:32 GMT
-   - **Read Parallel Translation:** [technology_article_20_No_further_action_against_government_adv.md](technology_article_20_No_further_action_against_government_adv.md)
+4. **Musk and Anthropic pledge public share giveaways**
+   - **Published:** Mon, 19 Oct 2026 09:38:25 GMT
+   - **Read Parallel Translation:** [technology_article_20_Musk_and_Anthropic_pledge_public_share_g.md](technology_article_20_Musk_and_Anthropic_pledge_public_share_g.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **BBC visits wildfire front in haze-choked Indonesia**
+1. **Five ways El Niño is affecting the weather around the world**
+   - **Published:** Mon, 19 Oct 2026 23:08:25 GMT
+   - **Read Parallel Translation:** [science_article_21_Five_ways_El_Niño_is_affecting_the_weath.md](science_article_21_Five_ways_El_Niño_is_affecting_the_weath.md)
+
+2. **Mission blasts off for Mars to grab a piece of its moon**
+   - **Published:** Mon, 19 Oct 2026 19:45:46 GMT
+   - **Read Parallel Translation:** [science_article_22_Mission_blasts_off_for_Mars_to_grab_a_pi.md](science_article_22_Mission_blasts_off_for_Mars_to_grab_a_pi.md)
+
+3. **BBC visits wildfire front in haze-choked Indonesia**
    - **Published:** Mon, 19 Oct 2026 01:57:02 GMT
-   - **Read Parallel Translation:** [science_article_21_BBC_visits_wildfire_front_in_haze-choked.md](science_article_21_BBC_visits_wildfire_front_in_haze-choked.md)
+   - **Read Parallel Translation:** [science_article_23_BBC_visits_wildfire_front_in_haze-choked.md](science_article_23_BBC_visits_wildfire_front_in_haze-choked.md)
 
-2. **Mission set to blast off for Mars to grab a piece of its moon**
-   - **Published:** Sun, 18 Oct 2026 23:00:48 GMT
-   - **Read Parallel Translation:** [science_article_22_Mission_set_to_blast_off_for_Mars_to_gra.md](science_article_22_Mission_set_to_blast_off_for_Mars_to_gra.md)
-
-3. **Fuel leak spreads more than two miles along River Taff**
-   - **Published:** Sun, 18 Oct 2026 19:20:57 GMT
-   - **Read Parallel Translation:** [science_article_23_Fuel_leak_spreads_more_than_two_miles_al.md](science_article_23_Fuel_leak_spreads_more_than_two_miles_al.md)
-
-4. **How to see the Orionid meteor shower**
-   - **Published:** Sun, 18 Oct 2026 08:54:07 GMT
-   - **Read Parallel Translation:** [science_article_24_How_to_see_the_Orionid_meteor_shower.md](science_article_24_How_to_see_the_Orionid_meteor_shower.md)
+4. **Fears for protected bats if glamping pod plans are approved**
+   - **Published:** Sun, 18 Oct 2026 19:22:31 GMT
+   - **Read Parallel Translation:** [science_article_24_Fears_for_protected_bats_if_glamping_pod.md](science_article_24_Fears_for_protected_bats_if_glamping_pod.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Inside Chicago's battle against the synthetic drugs flooding the US**
+1. **NHS bosses say smaller maternity units may have to close**
+   - **Published:** Mon, 19 Oct 2026 06:24:25 GMT
+   - **Read Parallel Translation:** [health_article_25_NHS_bosses_say_smaller_maternity_units_m.md](health_article_25_NHS_bosses_say_smaller_maternity_units_m.md)
+
+2. **Companies exploiting welfare system by using residents as 'cash cows', BBC finds**
+   - **Published:** Mon, 19 Oct 2026 04:59:47 GMT
+   - **Read Parallel Translation:** [health_article_26_Companies_exploiting_welfare_system_by_u.md](health_article_26_Companies_exploiting_welfare_system_by_u.md)
+
+3. **Inside Chicago's battle against the synthetic drugs flooding the US**
    - **Published:** Sun, 18 Oct 2026 21:00:22 GMT
-   - **Read Parallel Translation:** [health_article_25_Inside_Chicagos_battle_against_the_synth.md](health_article_25_Inside_Chicagos_battle_against_the_synth.md)
+   - **Read Parallel Translation:** [health_article_27_Inside_Chicagos_battle_against_the_synth.md](health_article_27_Inside_Chicagos_battle_against_the_synth.md)
 
-2. **Ending corridor care in hospitals for children a priority, says health secretary**
+4. **Ending corridor care in hospitals for children a priority, says health secretary**
    - **Published:** Sun, 18 Oct 2026 12:09:04 GMT
-   - **Read Parallel Translation:** [health_article_26_Ending_corridor_care_in_hospitals_for_ch.md](health_article_26_Ending_corridor_care_in_hospitals_for_ch.md)
-
-3. **Pope discharged from hospital days after lung cancer surgery**
-   - **Published:** Sat, 17 Oct 2026 13:51:36 GMT
-   - **Read Parallel Translation:** [health_article_27_Pope_discharged_from_hospital_days_after.md](health_article_27_Pope_discharged_from_hospital_days_after.md)
-
-4. **Pope pictured for first time since surgery and cancer diagnosis**
-   - **Published:** Fri, 16 Oct 2026 23:20:37 GMT
-   - **Read Parallel Translation:** [health_article_28_Pope_pictured_for_first_time_since_surge.md](health_article_28_Pope_pictured_for_first_time_since_surge.md)
+   - **Read Parallel Translation:** [health_article_28_Ending_corridor_care_in_hospitals_for_ch.md](health_article_28_Ending_corridor_care_in_hospitals_for_ch.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **Polanski says he will not overturn Green Party's 'Zionism is racism' motion**
-   - **Published:** Sun, 18 Oct 2026 14:57:19 GMT
-   - **Read Parallel Translation:** [politics_article_29_Polanski_says_he_will_not_overturn_Green.md](politics_article_29_Polanski_says_he_will_not_overturn_Green.md)
+1. **Burnham vows end to 'rip-off parking charges' under new rules**
+   - **Published:** Mon, 19 Oct 2026 21:30:06 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_vows_end_to_rip-off_parking_char.md](politics_article_29_Burnham_vows_end_to_rip-off_parking_char.md)
 
-2. **Ending corridor care in hospitals for children a priority, says health secretary**
-   - **Published:** Sun, 18 Oct 2026 12:09:04 GMT
-   - **Read Parallel Translation:** [politics_article_30_Ending_corridor_care_in_hospitals_for_ch.md](politics_article_30_Ending_corridor_care_in_hospitals_for_ch.md)
+2. **PM says youth unemployment is a 'catastrophe and a moral failure'**
+   - **Published:** Mon, 19 Oct 2026 14:59:32 GMT
+   - **Read Parallel Translation:** [politics_article_30_PM_says_youth_unemployment_is_a_catastro.md](politics_article_30_PM_says_youth_unemployment_is_a_catastro.md)
 
-3. **Ex-top official Robbins reaches settlement with government over sacking**
-   - **Published:** Fri, 16 Oct 2026 16:38:18 GMT
-   - **Read Parallel Translation:** [politics_article_31_Ex-top_official_Robbins_reaches_settleme.md](politics_article_31_Ex-top_official_Robbins_reaches_settleme.md)
+3. **Troubles legacy bill is not an amnesty for soldiers - NI secretary**
+   - **Published:** Mon, 19 Oct 2026 18:05:14 GMT
+   - **Read Parallel Translation:** [politics_article_31_Troubles_legacy_bill_is_not_an_amnesty_f.md](politics_article_31_Troubles_legacy_bill_is_not_an_amnesty_f.md)
 
-4. **Burnham invites Swinney to work together on 'deeper Scottish devolution'**
-   - **Published:** Fri, 16 Oct 2026 14:36:27 GMT
-   - **Read Parallel Translation:** [politics_article_32_Burnham_invites_Swinney_to_work_together.md](politics_article_32_Burnham_invites_Swinney_to_work_together.md)
+4. **First minister promises to look at Welsh council powers**
+   - **Published:** Mon, 19 Oct 2026 20:53:30 GMT
+   - **Read Parallel Translation:** [politics_article_32_First_minister_promises_to_look_at_Welsh.md](politics_article_32_First_minister_promises_to_look_at_Welsh.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Cindy Crawford 'beyond heartbroken' after death of son Presley at 27**
-   - **Published:** Sun, 18 Oct 2026 19:53:27 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Cindy_Crawford_beyond_heartbroken_after_.md](entertainment_article_33_Cindy_Crawford_beyond_heartbroken_after_.md)
+1. **Woman says she 'closed eyes and tried not to be there' during alleged Russell Brand rape**
+   - **Published:** Mon, 19 Oct 2026 18:22:06 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Woman_says_she_closed_eyes_and_tried_not.md](entertainment_article_33_Woman_says_she_closed_eyes_and_tried_not.md)
 
-2. **Making murder fun: How the Traitors' soundtrack sets the tone**
-   - **Published:** Sun, 18 Oct 2026 00:29:58 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Making_murder_fun_How_the_Traitors_sound.md](entertainment_article_34_Making_murder_fun_How_the_Traitors_sound.md)
+2. **CNN anchor Christiane Amanpour to leave network after 43 years**
+   - **Published:** Mon, 19 Oct 2026 16:48:36 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_CNN_anchor_Christiane_Amanpour_to_leave_.md](entertainment_article_34_CNN_anchor_Christiane_Amanpour_to_leave_.md)
 
-3. **Manifest: From reality TV to Wembley Arena in one turbulent year**
-   - **Published:** Sat, 17 Oct 2026 23:07:57 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Manifest_From_reality_TV_to_Wembley_Aren.md](entertainment_article_35_Manifest_From_reality_TV_to_Wembley_Aren.md)
+3. **Selena Gomez says vaping has affected her voice**
+   - **Published:** Mon, 19 Oct 2026 08:57:40 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Selena_Gomez_says_vaping_has_affected_he.md](entertainment_article_35_Selena_Gomez_says_vaping_has_affected_he.md)
 
-4. **Comedian Paul Whitehouse mugged at London cash machine**
-   - **Published:** Sun, 18 Oct 2026 00:06:36 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Comedian_Paul_Whitehouse_mugged_at_Londo.md](entertainment_article_36_Comedian_Paul_Whitehouse_mugged_at_Londo.md)
+4. **Kylie Jenner's debut at Victoria's Secret Fashion Show in $50m bra sparks mixed reaction**
+   - **Published:** Mon, 19 Oct 2026 13:16:22 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Kylie_Jenners_debut_at_Victorias_Secret_.md](entertainment_article_36_Kylie_Jenners_debut_at_Victorias_Secret_.md)
 
 ---
 
