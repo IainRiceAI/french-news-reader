@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The tech helping crack decades-old cold cases</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>The tech helping crack decades-old cold cases</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 20 Oct 2026 23:13:24 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c370pzdkw77jo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Investigative genetic genealogy can help hunt down criminals but raises worries over privacy.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les preuves de la scène du crime ne suffisent souvent pas à identifier les suspects.</p>
+            <span class="english-block">Crime scene evidence is often not enough to identify suspects</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Randy Gail Sperino a été vu vivant pour la dernière fois le soir du 9 novembre 1993, alors qu'elle montait dans un camion à Granite City, Illinois.</p>
+            <span class="english-block">Randy Gail Sperino was last seen alive on the evening of 9 November 1993, as she was getting into a pickup truck in Granite City, Illinois.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le corps de la 34-year-old a été trouvé quelques heures plus tard dans un champ à proximité, la victime d'un traumatisme par force brutale.</p>
+            <span class="english-block">The 34-year-old's body was found hours later in a field nearby, the victim of blunt force trauma.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">L'identité de son tueur était un mystère. les preuves ADN trouvées sur la scène du crime ont été testées contre des bases de données standard, mais aucune correspondance n'a été trouvée.</p>
+            <span class="english-block">The identity of her killer was a mystery. DNA evidence found at the crime scene was tested against standard law enforcement databases, but no matches were found.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Pendant trois décennies, des enquêteurs du bureau du shérif du comté de Madison ont poursuivi des pistes et interrogé des centaines de personnes pour identifier l'auteur.</p>
+            <span class="english-block">For three decades, investigators from the Madison County Sheriff's Office chased leads and interviewed hundreds of people as they attempted to identify the perpetrator.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">L'affaire semblait rester l'un des plus de 250 000 homicides non résolus aux États-Unis.</p>
+            <span class="english-block">The case looked like it would remain one of more than 250,000 unsolved homicides in the US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">L'année dernière, les détectives ont essayé une nouvelle approche: ils ont envoyé des preuves génétiques à Othram, une entreprise basée à Houston qui utilise la technologie ADN pour aider à identifier les auteurs dans des affaires criminelles froides et actuelles.</p>
+            <span class="english-block">Then, last year, detectives tried a fresh approach. They sent genetic evidence to Othram, a Houston-based company that uses DNA technology to help identify the perpetrators in cold and current crime cases.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Les détectives du comté de Madison ont été inspirés par des techniques d'enquête génétique utilisées pour identifier le tueur de l'État d'or, Joseph James DeAngelo, en 2018. Dans ce cas, une équipe d'enquête a construit un arbre généalogique pour aider à identifier le tueur.</p>
+            <span class="english-block">The Madison County detectives had been inspired by investigative genetic genealogy techniques used to identify the Golden State Killer, Joseph James DeAngelo, back in 2018. In that case, an investigative team constructed a family tree to help identify the killer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Ils ont pu le faire grâce aux données ADN fournies par des parents à des bases de données commerciales, similaires aux plateformes d'ascendance des consommateurs.</p>
+            <span class="english-block">They were able to do so thanks to DNA data that relatives had provided to commercial databases, similar to consumer ancestry platforms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Contrairement aux tests ADN forensiques traditionnels, qui reposent généralement sur une comparaison directe entre des preuves et une personne connue, la généalogie génétique d'enquête peut identifier des parents génétiques éloignés d'un individu inconnu.</p>
+            <span class="english-block">Unlike traditional forensic DNA testing, which generally relies on a direct comparison between evidence and a known person, investigative genetic genealogy can identify distant genetic relatives of an unknown individual.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Othram a commencé à appliquer cette technique pour retrouver le tueur de Sperino. alors que le profil ADN du tueur n'était pas disponible, les profils soumis par ses proches ont permis à la société d'identifier un membre de la famille masculin.</p>
+            <span class="english-block">Othram set about applying this technique to track down Sperino's killer. While the killer's own DNA profile wasn't available, profiles submitted by his extended relatives allowed the company to identify a male family member.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"Cette piste a ouvert l'affaire", a déclaré le capitaine Tim Lawrence du bureau du shérif du comté de Madison, qui était responsable de l'enquête sur le crime.</p>
+            <span class="english-block">"That lead broke the case open," said Captain Tim Lawrence of Madison County Sheriff's Office, which was responsible for investigating the crime.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">C'était un indice crucial qui a conduit les détectives à Albert "Buddy" Zigler, 70 ans, qui a ensuite avoué le meurtre.</p>
+            <span class="english-block">It was a crucial clue that led the detectives to Albert "Buddy" Zigler, 70, who then confessed to the murder. He was charged in May this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Wes Sperino, le fils de Gail, a déclaré lors d'une conférence de presse: "Je suis enfin arrivé à la conclusion et je sais enfin qui a fait cela".</p>
+            <span class="english-block">Wes Sperino, Gail's son, said at a press conference: "I finally get closure and I finally know who did this."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Albert Zigler a été accusé de meurtre en mai.</p>
+            <span class="english-block">Albert Zigler was charged with murder in May</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">La technique qui a conduit les détectives à Zigler est crédité d'avoir révolutionné la façon dont les affaires judiciaires sont résolues.</p>
+            <span class="english-block">The technique that led detectives to Zigler is credited with revolutionising how forensic cases are solved.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Il a été très efficace pour aider à résoudre des cas impliquant des restes humains non identifiés et à identifier les suspects dans des enquêtes de longue date.</p>
+            <span class="english-block">It has been highly successful in helping solve cases involving unidentified human remains and identifying suspects in longstanding investigations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Autram affirme qu'il a aidé à résoudre des milliers de cas. Le directeur général de la société, David Mittelman, compare la généalogie génétique d'enquête à un système GPS: " Le profil ADN est le signal GPS et il dit ' tu es ici. ' Mais pour comprendre où est ' ici ', il faut une carte. "</p>
+            <span class="english-block">Othram claims it has helped solve thousands of cases. The company's chief executive David Mittelman likens investigative genetic genealogy to a GPS system: "The DNA profile is the GPS signal and it says 'you belong here.' But to understand where 'here' is, you need a map."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Les archives publiques, les nécrologies et les données du recensement construisent cette carte pour que les scientifiques d'Othram puissent établir comment les différents arbres généalogiques se connectent.</p>
+            <span class="english-block">Public records, obituaries, and census data build that map so Othram's scientists can establish how different family trees connect.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Cependant, Mittelman souligne rapidement que la technologie de l'ADN ne peut aller que jusqu'à ce qu'une "cascade d'étapes d'enquête" soit nécessaire.</p>
+            <span class="english-block">However, Mittelman is quick to point out that DNA technology can only go so far before "a cascade of investigative steps" are needed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Un scientifique d'Othram prépare un os pour l'extraction de l'ADN</p>
+            <span class="english-block">An Othram scientist prepares a bone for DNA extraction</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">La science de l'ADN n'est pas la seule technologie qui aide les détectives à résoudre des affaires froides.</p>
+            <span class="english-block">DNA science isn't the only technology that are helping detectives solve cold cases.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">L'un des défis auxquels sont confrontés les détectives dans des enquêtes importantes comme la chasse au tueur de Sperino est la quantité de preuves qu'ils dégagent.</p>
+            <span class="english-block">One of the challenges facing detectives on major cases investigations like the hunt for Sperino's killer is the sheer amount of evidence they dig up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Les agents enquêtant sur le meurtre de Sperino ont réalisé que l'IA pouvait les aider à parcourir les montagnes de preuves qu'ils avaient accumulées depuis 1993.</p>
+            <span class="english-block">Officers investigating Sperino's murder realised AI could help them wade through the mountains of evidence they had accumulated since 1993.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Ils ont utilisé une plateforme appelée Centerline AI, de la société de logiciels de Floride CentralSquare, pour analyser plus de 2 000 pages d'enregistrements et identifier les preuves des tests ADN qui ont contribué à briser l'affaire.</p>
+            <span class="english-block">They used a platform called Centerline AI, from Florida software company CentralSquare, to analyse more than 2,000 pages of records and identify evidence for the DNA testing that helped to break the case.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">L'IA les a aidés à reconstruire les calendriers et à organiser les informations des témoins. " C'est beaucoup plus facile que de faire lire 2000 pages par un détective ", dit Lawrence.</p>
+            <span class="english-block">The AI helped them reconstruct timelines and organise witness information. "It's so much easier than having a detective have to read through 2,000 pages," Lawrence says. His team could interact with the AI like a chat bot.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Les détectives ont pu poser des questions à l'IA pour " déterminer si Zigler disait la vérité ", dit Lawrence.</p>
+            <span class="english-block">This also helped when it came to interviewing Zigler after they had tracked him down. Detectives were able to ask questions of the AI to help "figure out if Zigler was being truthful", says Lawrence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Mais la technologie est " seulement aussi bonne que l'enquêteur ", dit le capitaine. " Il arrive un moment où on laisse la technologie derrière lui et qu'on doit aller trouver des gens et leur parler. "</p>
+            <span class="english-block">But the technology is "only as good as the investigator," says the captain. There comes a point, he says, "where you leave the technology behind and you have to go track people down and talk to them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">La généalogie génétique d'investigation a aussi ses limites. " Elle ne peut pas résoudre tous les cas, dit Mittelman.</p>
+            <span class="english-block">Investigative genetic genealogy has its limitations too. Mittelman says: "It can't solve every case. If you have no DNA, you can't really use this technique."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">"Mais cette technique est beaucoup plus puissante et beaucoup plus susceptible de donner des identités que de devoir compter sur la chance de trouver un match quelque part dans une base de données", ajoute-t-il.</p>
+            <span class="english-block">"But this technique is a lot more powerful and a lot more likely to yield identities than having to rely on the chance that you find a match somewhere in a database," he adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Alors que des entreprises comme Othram utilisent uniquement des plateformes ancestrales où les utilisateurs ont donné leur consentement pour une correspondance des forces de l'ordre, il reste des préoccupations quant aux implications éthiques de l'utilisation de ces données.</p>
+            <span class="english-block">While firms like Othram only use ancestry platforms where users have provided consent for law enforcement matching, there remain some concerns about the ethical implications of using this data.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">" Il y a des préoccupations importantes concernant la vie privée ", déclare Denise Syndercombe Court, professeur de génétique judiciaire au King's College de Londres. " Bien qu'une personne ait peut-être accepté d'utiliser son ADN, ses parents génétiques n'ont peut-être pas donné leur consentement.</p>
+            <span class="english-block">"There are significant privacy concerns," says Denise Syndercombe Court, professor of forensic genetics at King's College London. While one person may have opted in to their DNA being used, genetic relatives may not have given consent.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Un autre obstacle est le manque de financement. "Toutes les forces de l'ordre veulent le faire, dit Mittelman, mais il n'y a pas beaucoup de financement".</p>
+            <span class="english-block">A lack of funding is another hurdle. Mittelman says: "Every law enforcement agency wants to do it. There's just not a lot of funding for it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Autram exploite un site Web qui répertorie des cas que les membres du public peuvent aider à financer.</p>
+            <span class="english-block">Sometimes cases are funded through donations or crowdfunding. Othram operates a website listing cases that members of the public can help fund.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Si la généalogie génétique d'enquête a été adoptée dans des pays comme la Suède, le Danemark et l'Australie, elle n'est pas encore utilisée au Royaume-Uni.</p>
+            <span class="english-block">While investigative genetic genealogy has been adopted in countries such as Sweden, Denmark and Australia, it is not yet used in the UK. The Home Office is conducting a study to consider whether it should be adopted in the UK but did not respond to a request for comment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Le Royaume-Uni est déjà dans une position forte, dit Syndercombe Court. "Nous avons une base de données d'ADN si efficace que si vous pouvez extraire de l'ADN d'une scène de crime, vous avez plus de 65% de chances de donner un nom à cette personne, ce qui est extrêmement puissant", dit-elle.</p>
+            <span class="english-block">The UK is already in a strong position, says Syndercombe Court. "We have such an efficient DNA database that if you can get any DNA out of a crime scene, you've got over a 65% chance of putting a name to that person, which is enormously powerful," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Les X-planes: sont-ils nécessaires à la nouvelle ère des drones ?</p>
+            <span class="english-block">X-planes: Are they needed in the new era of drones?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">L'IA dit aux agriculteurs quand ils doivent récolter</p>
+            <span class="english-block">The AI telling farmers when to harvest</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Les start-ups espèrent retourner la fabrication de batteries aux États-Unis</p>
+            <span class="english-block">The start-ups hoping to return battery making to the US</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
