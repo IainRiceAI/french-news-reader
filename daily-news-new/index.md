@@ -1,183 +1,183 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-21 06:01:13  
+Generated on: 2026-10-22 06:01:00  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Two men re-arrested on suspicion of assisting Iran intelligence after RAF Fairford incident**
-   - **Published:** Tue, 20 Oct 2026 18:32:14 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Two_men_re-arrested_on_suspicion_of_assi.md](top-stories_article_1_Two_men_re-arrested_on_suspicion_of_assi.md)
+1. **UK working to identify exposure after global cyber-security warning**
+   - **Published:** Thu, 22 Oct 2026 04:38:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_UK_working_to_identify_exposure_after_gl.md](top-stories_article_1_UK_working_to_identify_exposure_after_gl.md)
 
-2. **US envoy to meet Putin in Russia as Zelensky says intelligence sharing 'works now'**
-   - **Published:** Wed, 21 Oct 2026 03:59:18 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_US_envoy_to_meet_Putin_in_Russia_as_Zele.md](top-stories_article_2_US_envoy_to_meet_Putin_in_Russia_as_Zele.md)
+2. **Rosenberg: US diplomatic push offers little hope for imminent Ukraine peace**
+   - **Published:** Wed, 21 Oct 2026 19:58:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Rosenberg_US_diplomatic_push_offers_litt.md](top-stories_article_2_Rosenberg_US_diplomatic_push_offers_litt.md)
 
-3. **UK government expected to approve Jackdaw gas field**
-   - **Published:** Wed, 21 Oct 2026 04:41:04 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_UK_government_expected_to_approve_Jackda.md](top-stories_article_3_UK_government_expected_to_approve_Jackda.md)
+3. **Criminals who skip sentencing will face solitary confinement or lose social visits**
+   - **Published:** Thu, 22 Oct 2026 01:17:25 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Criminals_who_skip_sentencing_will_face_.md](top-stories_article_3_Criminals_who_skip_sentencing_will_face_.md)
 
-4. **Tory MP questions government advisor's position after wife's Palestine Action post**
-   - **Published:** Tue, 20 Oct 2026 22:29:24 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Tory_MP_questions_government_advisors_po.md](top-stories_article_4_Tory_MP_questions_government_advisors_po.md)
+4. **Diabetes and ADHD drugs to be tested on Alzheimer's patients in new study**
+   - **Published:** Wed, 21 Oct 2026 23:02:30 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Diabetes_and_ADHD_drugs_to_be_tested_on_.md](top-stories_article_4_Diabetes_and_ADHD_drugs_to_be_tested_on_.md)
 
-5. **King praises Strait of Hormuz peace efforts at glittering banquet**
-   - **Published:** Wed, 21 Oct 2026 01:28:16 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_King_praises_Strait_of_Hormuz_peace_effo.md](top-stories_article_5_King_praises_Strait_of_Hormuz_peace_effo.md)
+5. **UK's gaps in Arctic defence leave it open to Russian attacks, committee warns**
+   - **Published:** Thu, 22 Oct 2026 02:09:21 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_UKs_gaps_in_Arctic_defence_leave_it_open.md](top-stories_article_5_UKs_gaps_in_Arctic_defence_leave_it_open.md)
 
-6. **Why does Elon Musk want to merge Tesla and SpaceX?**
-   - **Published:** Wed, 21 Oct 2026 04:13:14 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Why_does_Elon_Musk_want_to_merge_Tesla_a.md](top-stories_article_6_Why_does_Elon_Musk_want_to_merge_Tesla_a.md)
+6. **The real reasons US politicians are getting older**
+   - **Published:** Wed, 21 Oct 2026 23:52:12 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_The_real_reasons_US_politicians_are_gett.md](top-stories_article_6_The_real_reasons_US_politicians_are_gett.md)
 
-7. **Watch: BBC reports from Australian court as man charged with attacking MP stays silent in first hearing**
-   - **Published:** Wed, 21 Oct 2026 03:58:16 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Watch_BBC_reports_from_Australian_court_.md](top-stories_article_7_Watch_BBC_reports_from_Australian_court_.md)
+7. **The 'trillion pound' oil fund the government believes Britain could have built**
+   - **Published:** Wed, 21 Oct 2026 23:27:05 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_The_trillion_pound_oil_fund_the_governme.md](top-stories_article_7_The_trillion_pound_oil_fund_the_governme.md)
 
-8. **France is divided over who to blame for weekend riots and what to learn from them**
-   - **Published:** Wed, 21 Oct 2026 01:22:51 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_France_is_divided_over_who_to_blame_for_.md](top-stories_article_8_France_is_divided_over_who_to_blame_for_.md)
+8. **Burnham defends Jackdaw decision as Badenoch urges PM to overturn ban on new oil and gas licences**
+   - **Published:** Wed, 21 Oct 2026 15:36:31 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Burnham_defends_Jackdaw_decision_as_Bade.md](top-stories_article_8_Burnham_defends_Jackdaw_decision_as_Bade.md)
 
 ---
 
 ### Section: WORLD
 
-1. **US envoy to meet Putin in Russia as Zelensky says intelligence sharing 'works now'**
-   - **Published:** Wed, 21 Oct 2026 03:59:18 GMT
-   - **Read Parallel Translation:** [world_article_9_US_envoy_to_meet_Putin_in_Russia_as_Zele.md](world_article_9_US_envoy_to_meet_Putin_in_Russia_as_Zele.md)
+1. **Websites taken down worldwide as critical cyber-security update issued**
+   - **Published:** Wed, 21 Oct 2026 19:54:57 GMT
+   - **Read Parallel Translation:** [world_article_9_Websites_taken_down_worldwide_as_critica.md](world_article_9_Websites_taken_down_worldwide_as_critica.md)
 
-2. **France is divided over who to blame for weekend riots and what to learn from them**
-   - **Published:** Wed, 21 Oct 2026 01:22:51 GMT
-   - **Read Parallel Translation:** [world_article_10_France_is_divided_over_who_to_blame_for_.md](world_article_10_France_is_divided_over_who_to_blame_for_.md)
+2. **What is PHP and why did it spark a global cyber-security scramble?**
+   - **Published:** Thu, 22 Oct 2026 03:48:50 GMT
+   - **Read Parallel Translation:** [world_article_10_What_is_PHP_and_why_did_it_spark_a_globa.md](world_article_10_What_is_PHP_and_why_did_it_spark_a_globa.md)
 
-3. **Elon Musk says Tesla-SpaceX merger being considered**
-   - **Published:** Tue, 20 Oct 2026 23:24:47 GMT
-   - **Read Parallel Translation:** [world_article_11_Elon_Musk_says_Tesla-SpaceX_merger_being.md](world_article_11_Elon_Musk_says_Tesla-SpaceX_merger_being.md)
+3. **Missiles hit Kyiv after Russia agrees to US call to resume Ukraine peace talks**
+   - **Published:** Wed, 21 Oct 2026 21:27:41 GMT
+   - **Read Parallel Translation:** [world_article_11_Missiles_hit_Kyiv_after_Russia_agrees_to.md](world_article_11_Missiles_hit_Kyiv_after_Russia_agrees_to.md)
 
-4. **Man charged with attack on Australia MP to face court**
-   - **Published:** Tue, 20 Oct 2026 11:25:35 GMT
-   - **Read Parallel Translation:** [world_article_12_Man_charged_with_attack_on_Australia_MP_.md](world_article_12_Man_charged_with_attack_on_Australia_MP_.md)
+4. **Rosenberg: US diplomatic push offers little hope for imminent Ukraine peace**
+   - **Published:** Wed, 21 Oct 2026 19:58:06 GMT
+   - **Read Parallel Translation:** [world_article_12_Rosenberg_US_diplomatic_push_offers_litt.md](world_article_12_Rosenberg_US_diplomatic_push_offers_litt.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Elon Musk says Tesla-SpaceX merger being considered**
-   - **Published:** Tue, 20 Oct 2026 23:24:47 GMT
-   - **Read Parallel Translation:** [business_article_13_Elon_Musk_says_Tesla-SpaceX_merger_being.md](business_article_13_Elon_Musk_says_Tesla-SpaceX_merger_being.md)
+1. **The 'trillion pound' oil fund the government believes Britain could have built**
+   - **Published:** Wed, 21 Oct 2026 23:27:05 GMT
+   - **Read Parallel Translation:** [business_article_13_The_trillion_pound_oil_fund_the_governme.md](business_article_13_The_trillion_pound_oil_fund_the_governme.md)
 
-2. **Why does Elon Musk want to merge Tesla and SpaceX?**
-   - **Published:** Wed, 21 Oct 2026 04:13:14 GMT
-   - **Read Parallel Translation:** [business_article_14_Why_does_Elon_Musk_want_to_merge_Tesla_a.md](business_article_14_Why_does_Elon_Musk_want_to_merge_Tesla_a.md)
+2. **Websites taken down worldwide as critical cyber-security update issued**
+   - **Published:** Wed, 21 Oct 2026 19:54:57 GMT
+   - **Read Parallel Translation:** [business_article_14_Websites_taken_down_worldwide_as_critica.md](business_article_14_Websites_taken_down_worldwide_as_critica.md)
 
-3. **Google resolves cloud outage affecting UK banks and websites**
-   - **Published:** Tue, 20 Oct 2026 18:03:19 GMT
-   - **Read Parallel Translation:** [business_article_15_Google_resolves_cloud_outage_affecting_U.md](business_article_15_Google_resolves_cloud_outage_affecting_U.md)
+3. **What is PHP and why did it spark a global cyber-security scramble?**
+   - **Published:** Thu, 22 Oct 2026 03:48:50 GMT
+   - **Read Parallel Translation:** [business_article_15_What_is_PHP_and_why_did_it_spark_a_globa.md](business_article_15_What_is_PHP_and_why_did_it_spark_a_globa.md)
 
-4. **UK government expected to approve Jackdaw gas field**
-   - **Published:** Wed, 21 Oct 2026 04:41:04 GMT
-   - **Read Parallel Translation:** [business_article_16_UK_government_expected_to_approve_Jackda.md](business_article_16_UK_government_expected_to_approve_Jackda.md)
+4. **No purchase, no seats: Starbucks China rolls out new policy**
+   - **Published:** Thu, 22 Oct 2026 04:02:29 GMT
+   - **Read Parallel Translation:** [business_article_16_No_purchase_no_seats_Starbucks_China_rol.md](business_article_16_No_purchase_no_seats_Starbucks_China_rol.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Why does Elon Musk want to merge Tesla and SpaceX?**
-   - **Published:** Wed, 21 Oct 2026 04:13:14 GMT
-   - **Read Parallel Translation:** [technology_article_17_Why_does_Elon_Musk_want_to_merge_Tesla_a.md](technology_article_17_Why_does_Elon_Musk_want_to_merge_Tesla_a.md)
+1. **UK working to identify exposure after global cyber-security warning**
+   - **Published:** Thu, 22 Oct 2026 04:38:16 GMT
+   - **Read Parallel Translation:** [technology_article_17_UK_working_to_identify_exposure_after_gl.md](technology_article_17_UK_working_to_identify_exposure_after_gl.md)
 
-2. **Elon Musk says Tesla-SpaceX merger being considered**
-   - **Published:** Tue, 20 Oct 2026 23:24:47 GMT
-   - **Read Parallel Translation:** [technology_article_18_Elon_Musk_says_Tesla-SpaceX_merger_being.md](technology_article_18_Elon_Musk_says_Tesla-SpaceX_merger_being.md)
+2. **What is PHP and why did it spark a global cyber-security scramble?**
+   - **Published:** Thu, 22 Oct 2026 03:48:50 GMT
+   - **Read Parallel Translation:** [technology_article_18_What_is_PHP_and_why_did_it_spark_a_globa.md](technology_article_18_What_is_PHP_and_why_did_it_spark_a_globa.md)
 
-3. **The tech helping crack decades-old cold cases**
-   - **Published:** Tue, 20 Oct 2026 23:13:24 GMT
-   - **Read Parallel Translation:** [technology_article_19_The_tech_helping_crack_decades-old_cold_.md](technology_article_19_The_tech_helping_crack_decades-old_cold_.md)
+3. **Trump's green card curbs test Indian tech workers' American dream**
+   - **Published:** Wed, 21 Oct 2026 23:06:37 GMT
+   - **Read Parallel Translation:** [technology_article_19_Trumps_green_card_curbs_test_Indian_tech.md](technology_article_19_Trumps_green_card_curbs_test_Indian_tech.md)
 
-4. **OpenAI CEO Sam Altman wins dismissal of sister's lawsuit**
-   - **Published:** Tue, 20 Oct 2026 19:42:32 GMT
-   - **Read Parallel Translation:** [technology_article_20_OpenAI_CEO_Sam_Altman_wins_dismissal_of_.md](technology_article_20_OpenAI_CEO_Sam_Altman_wins_dismissal_of_.md)
+4. **Why is Elon Musk plotting a mega-merger of SpaceX and Tesla?**
+   - **Published:** Wed, 21 Oct 2026 23:04:03 GMT
+   - **Read Parallel Translation:** [technology_article_20_Why_is_Elon_Musk_plotting_a_mega-merger_.md](technology_article_20_Why_is_Elon_Musk_plotting_a_mega-merger_.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Giant tunnel proposed to clean up Windermere's sewage problem**
-   - **Published:** Wed, 21 Oct 2026 04:44:56 GMT
-   - **Read Parallel Translation:** [science_article_21_Giant_tunnel_proposed_to_clean_up_Winder.md](science_article_21_Giant_tunnel_proposed_to_clean_up_Winder.md)
+1. **Why is a peat fire so bad? BBC is in Indonesia to find out**
+   - **Published:** Wed, 21 Oct 2026 22:02:18 GMT
+   - **Read Parallel Translation:** [science_article_21_Why_is_a_peat_fire_so_bad_BBC_is_in_Indo.md](science_article_21_Why_is_a_peat_fire_so_bad_BBC_is_in_Indo.md)
 
-2. **Huge fin whale filmed off Welsh coast**
-   - **Published:** Tue, 20 Oct 2026 13:42:22 GMT
-   - **Read Parallel Translation:** [science_article_22_Huge_fin_whale_filmed_off_Welsh_coast.md](science_article_22_Huge_fin_whale_filmed_off_Welsh_coast.md)
+2. **Pupils who designed a badge sent to space meet NASA astronaut**
+   - **Published:** Wed, 21 Oct 2026 19:39:38 GMT
+   - **Read Parallel Translation:** [science_article_22_Pupils_who_designed_a_badge_sent_to_spac.md](science_article_22_Pupils_who_designed_a_badge_sent_to_spac.md)
 
-3. **Moment giant fin whale's huge mouth engulfs thousands of gallons of water**
-   - **Published:** Tue, 20 Oct 2026 12:03:28 GMT
-   - **Read Parallel Translation:** [science_article_23_Moment_giant_fin_whales_huge_mouth_engul.md](science_article_23_Moment_giant_fin_whales_huge_mouth_engul.md)
+3. **Fuel leak which killed fish in River Taff stopped**
+   - **Published:** Wed, 21 Oct 2026 18:28:06 GMT
+   - **Read Parallel Translation:** [science_article_23_Fuel_leak_which_killed_fish_in_River_Taf.md](science_article_23_Fuel_leak_which_killed_fish_in_River_Taf.md)
 
-4. **Storm Austen to bring severe gales to UK as weather warning issued**
-   - **Published:** Tue, 20 Oct 2026 09:42:56 GMT
-   - **Read Parallel Translation:** [science_article_24_Storm_Austen_to_bring_severe_gales_to_UK.md](science_article_24_Storm_Austen_to_bring_severe_gales_to_UK.md)
+4. **Will Jackdaw cut your energy bills?**
+   - **Published:** Wed, 21 Oct 2026 16:17:49 GMT
+   - **Read Parallel Translation:** [science_article_24_Will_Jackdaw_cut_your_energy_bills.md](science_article_24_Will_Jackdaw_cut_your_energy_bills.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Tighter rules planned to protect people from cosmetic surgery that goes badly wrong**
+1. **'Betrayed by my body': The taboo health issue women are talking about on social media**
+   - **Published:** Wed, 21 Oct 2026 23:03:59 GMT
+   - **Read Parallel Translation:** [health_article_25_Betrayed_by_my_body_The_taboo_health_iss.md](health_article_25_Betrayed_by_my_body_The_taboo_health_iss.md)
+
+2. **Diabetes and ADHD drugs to be tested on Alzheimer's patients in new study**
+   - **Published:** Wed, 21 Oct 2026 23:02:30 GMT
+   - **Read Parallel Translation:** [health_article_26_Diabetes_and_ADHD_drugs_to_be_tested_on_.md](health_article_26_Diabetes_and_ADHD_drugs_to_be_tested_on_.md)
+
+3. **Pope does not need further treatment after lung cancer surgery**
+   - **Published:** Wed, 21 Oct 2026 20:09:10 GMT
+   - **Read Parallel Translation:** [health_article_27_Pope_does_not_need_further_treatment_aft.md](health_article_27_Pope_does_not_need_further_treatment_aft.md)
+
+4. **Tighter rules planned to protect people from cosmetic surgery that goes badly wrong**
    - **Published:** Tue, 20 Oct 2026 23:06:07 GMT
-   - **Read Parallel Translation:** [health_article_25_Tighter_rules_planned_to_protect_people_.md](health_article_25_Tighter_rules_planned_to_protect_people_.md)
-
-2. **Second Labour MP suspended over Covid loan repayments**
-   - **Published:** Tue, 20 Oct 2026 21:20:28 GMT
-   - **Read Parallel Translation:** [health_article_26_Second_Labour_MP_suspended_over_Covid_lo.md](health_article_26_Second_Labour_MP_suspended_over_Covid_lo.md)
-
-3. **Government failings allowed Covid 'to spread like wildfire' in care homes, inquiry finds**
-   - **Published:** Tue, 20 Oct 2026 15:32:36 GMT
-   - **Read Parallel Translation:** [health_article_27_Government_failings_allowed_Covid_to_spr.md](health_article_27_Government_failings_allowed_Covid_to_spr.md)
-
-4. **Covid failings in care homes: What the inquiry says**
-   - **Published:** Tue, 20 Oct 2026 12:16:38 GMT
-   - **Read Parallel Translation:** [health_article_28_Covid_failings_in_care_homes_What_the_in.md](health_article_28_Covid_failings_in_care_homes_What_the_in.md)
+   - **Read Parallel Translation:** [health_article_28_Tighter_rules_planned_to_protect_people_.md](health_article_28_Tighter_rules_planned_to_protect_people_.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **UK government expected to approve Jackdaw gas field**
-   - **Published:** Wed, 21 Oct 2026 04:41:04 GMT
-   - **Read Parallel Translation:** [politics_article_29_UK_government_expected_to_approve_Jackda.md](politics_article_29_UK_government_expected_to_approve_Jackda.md)
+1. **Burnham defends Jackdaw decision as Badenoch urges PM to overturn ban on new oil and gas licences**
+   - **Published:** Wed, 21 Oct 2026 15:36:31 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_defends_Jackdaw_decision_as_Bade.md](politics_article_29_Burnham_defends_Jackdaw_decision_as_Bade.md)
 
-2. **Second Labour MP suspended over Covid loan repayments**
-   - **Published:** Tue, 20 Oct 2026 21:20:28 GMT
-   - **Read Parallel Translation:** [politics_article_30_Second_Labour_MP_suspended_over_Covid_lo.md](politics_article_30_Second_Labour_MP_suspended_over_Covid_lo.md)
+2. **Jailed former DUP leader Jeffrey Donaldson being investigated over alleged rape inside Parliament**
+   - **Published:** Wed, 21 Oct 2026 14:26:24 GMT
+   - **Read Parallel Translation:** [politics_article_30_Jailed_former_DUP_leader_Jeffrey_Donalds.md](politics_article_30_Jailed_former_DUP_leader_Jeffrey_Donalds.md)
 
-3. **Labour will not have the courage to cut spending, says Badenoch**
-   - **Published:** Tue, 20 Oct 2026 14:46:46 GMT
-   - **Read Parallel Translation:** [politics_article_31_Labour_will_not_have_the_courage_to_cut_.md](politics_article_31_Labour_will_not_have_the_courage_to_cut_.md)
+3. **Burnham proposes plan to cut standing charges from gas bills**
+   - **Published:** Wed, 21 Oct 2026 17:06:16 GMT
+   - **Read Parallel Translation:** [politics_article_31_Burnham_proposes_plan_to_cut_standing_ch.md](politics_article_31_Burnham_proposes_plan_to_cut_standing_ch.md)
 
-4. **Farage vows to scrap tax on armed forces reserves**
-   - **Published:** Tue, 20 Oct 2026 17:59:23 GMT
-   - **Read Parallel Translation:** [politics_article_32_Farage_vows_to_scrap_tax_on_armed_forces.md](politics_article_32_Farage_vows_to_scrap_tax_on_armed_forces.md)
+4. **'Mindset shift' needed within government on No10 North, says deputy**
+   - **Published:** Wed, 21 Oct 2026 17:05:09 GMT
+   - **Read Parallel Translation:** [politics_article_32_Mindset_shift_needed_within_government_o.md](politics_article_32_Mindset_shift_needed_within_government_o.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **BBC Three, BBC Scotland and Radio 4 Extra broadcast channels to close**
-   - **Published:** Tue, 20 Oct 2026 13:10:43 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_BBC_Three_BBC_Scotland_and_Radio_4_Extra.md](entertainment_article_33_BBC_Three_BBC_Scotland_and_Radio_4_Extra.md)
+1. **Don't Stop Believin'! - high school musical Glee set for reboot**
+   - **Published:** Wed, 21 Oct 2026 14:38:22 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Dont_Stop_Believin_-_high_school_musical.md](entertainment_article_33_Dont_Stop_Believin_-_high_school_musical.md)
 
-2. **Christina Applegate says she was wrongly diagnosed with MS**
-   - **Published:** Tue, 20 Oct 2026 20:00:10 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Christina_Applegate_says_she_was_wrongly.md](entertainment_article_34_Christina_Applegate_says_she_was_wrongly.md)
+2. **Ali G is back. But is the character past its sell-by date?**
+   - **Published:** Wed, 21 Oct 2026 06:43:31 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Ali_G_is_back_But_is_the_character_past_.md](entertainment_article_34_Ali_G_is_back_But_is_the_character_past_.md)
 
-3. **Woman says she 'couldn't speak or breathe' during alleged rape by Russell Brand**
-   - **Published:** Tue, 20 Oct 2026 16:02:03 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Woman_says_she_couldnt_speak_or_breathe_.md](entertainment_article_35_Woman_says_she_couldnt_speak_or_breathe_.md)
+3. **Actor Noel Clarke pleads not guilty to sexual offence charges**
+   - **Published:** Wed, 21 Oct 2026 09:35:31 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Actor_Noel_Clarke_pleads_not_guilty_to_s.md](entertainment_article_35_Actor_Noel_Clarke_pleads_not_guilty_to_s.md)
 
-4. **Katie Razzall: BBC closures make business sense, but far more savings are needed**
-   - **Published:** Tue, 20 Oct 2026 15:14:58 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Katie_Razzall_BBC_closures_make_business.md](entertainment_article_36_Katie_Razzall_BBC_closures_make_business.md)
+4. **Author Helen Fielding launches award to find the next Bridget Jones's Diary**
+   - **Published:** Wed, 21 Oct 2026 10:45:06 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Author_Helen_Fielding_launches_award_to_.md](entertainment_article_36_Author_Helen_Fielding_launches_award_to_.md)
 
 ---
 
