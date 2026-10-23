@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoe Kleinman: PHP is the cyber equivalent of an unexploded bomb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Zoe Kleinman: PHP is the cyber equivalent of an unexploded bomb</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 22 Oct 2026 10:17:26 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw98z6qlyvg3o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: It has been a dramatic, public and global response, but the cyber event hasn't happened yet.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Comment l'IA a-t-elle découvert le risque massif de cybersécurité d'Internet ?</p>
+            <span class="english-block">How did AI discover the internet's massive cyber-security risk?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">J'ai travaillé un jour en face d'un site où se construisait un centre commercial.</p>
+            <span class="english-block">I once worked opposite a site where a shopping centre was being built.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">On nous a prévenu qu'il pourrait y avoir des bombes non explosées de la Seconde Guerre mondiale déterrées pendant la construction.</p>
+            <span class="english-block">We were warned there might be unexploded bombs from World War Two unearthed during the construction.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Finalement, il n'y en avait pas, mais des procédures ont été mises en place comme précaution et nous avons tous dû pratiquer le dépôt dans des zones de sécurité désignées à l'intérieur de notre bâtiment.</p>
+            <span class="english-block">In the end, there were none, but procedures were put in place as a precaution and we all had to practice filing into designated safe zones inside our building.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">L'histoire de PHP ressemble à un cyberéquivalent d'une bombe non explosée - je n'ai jamais vu une réponse aussi dramatique, publique et mondiale à un cyberévénement qui n'a pas encore eu lieu.</p>
+            <span class="english-block">The PHP story feels like the cyber equivalent of an unexploded bomb - I have never seen such a dramatic, public and global response to a cyber event that hasn't happened yet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Il n'y a pas eu d'attaque aussi douloureuse que le ransomware que nous avons vu éliminer M&S et JLR en 2025.</p>
+            <span class="english-block">There has been no painful attack like the ransomware we saw knock out M&S and JLR in 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Mais la menace potentielle est si grave que des sites Web dans le monde entier ont été supprimés en tant que précaution.</p>
+            <span class="english-block">But the potential threat is so serious that websites around the world have been taken down as a precaution.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Il y a moins de deux mois, 100 entreprises de technologie ont écrit une lettre ouverte en mettant en garde le monde contre l'adoption d'un nouveau niveau de résilience cybernétique à l'ère de l'IA.</p>
+            <span class="english-block">Less than two months ago, 100 tech companies wrote an open letter warning the world to adopt a new level of cyber resilience in the age of AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il s'avère que nous n'avons pas eu à attendre longtemps pour savoir ce qu'ils voulaient dire.</p>
+            <span class="english-block">It turns out we didn't have to wait very long to find out what they meant.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les faiblesses du langage de programmation PHP, utilisé par des millions de sites Web, y reposent depuis des années et ne sont pas faciles à exploiter.</p>
+            <span class="english-block">The weaknesses found in the PHP programming language, which is used by millions of websites, had been quietly resting there for years and are not easy to exploit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Un chercheur en cybersécurité m'a dit qu'il avait été éveillé toute la nuit pour essayer de le faire comme une expérience, mais il s'est avéré très difficile.</p>
+            <span class="english-block">One cyber security researcher told me he'd been up all night trying to do it as an experiment, but it was proving very difficult.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Cependant, les choses qui sont très difficiles pour les humains sont de plus en plus très peu de problèmes pour l'IA.</p>
+            <span class="english-block">However, things that are very difficult for humans are increasingly very little trouble for AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">La technologie est très appréciée pour avoir aidé les chercheurs à trouver les bugs, et la fondation PHP, qui supervise le langage de programmation, a été sur l'affaire et a émis une correction.</p>
+            <span class="english-block">The tech is getting a lot of credit here for assisting researchers in finding the bugs, and the PHP foundation, which oversees the programming language, was on the case and issued a fix.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Il était censé être gardé silencieux jusqu'à ce que tout le monde ait eu la chance de réparer leurs sites - mais la nouvelle a été divulguée.</p>
+            <span class="english-block">It was supposed to be kept quiet until everyone had a chance to fix their sites - but the news was leaked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">À partir de ce moment, l'horloge a commencé à faire tic.</p>
+            <span class="english-block">From that point the clock started ticking.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Comme je l'écris, il n'y a aucun rapport que personne ou quoi que ce soit ait réussi à utiliser les défauts pour attaquer un site.</p>
+            <span class="english-block">As I write this, there are no reports that anyone or anything has succeeded in using the flaws to attack a site.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">"Il y a un vrai dilemme", a déclaré le professeur Alan Woodward de l'université de Surrey.</p>
+            <span class="english-block">"There's a real dilemma," said Prof Alan Woodward from Surrey University.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">"Comment avertir les gens qu'ils doivent être prêts, et qu'un correctif est urgent, sans avertir les attaquants?</p>
+            <span class="english-block">"How do you alert people they need to be ready, and then that a patch is urgently required, whilst not alerting attackers?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"En fait, vous parlez à tout le monde du problème en même temps et espérez que les défenseurs ne sont pas assez éveillés pour agir dès que le patch est sorti".</p>
+            <span class="english-block">"Basically you're telling everyone about the problem at the same time and hoping the defenders aren't awake enough to act as soon as the patch is out."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Mais nous savons des grandes sociétés web comme Cloudflare et Palo Alto Networks que des millions de tentatives ont été faites.</p>
+            <span class="english-block">But we do know from large web companies like Cloudflare and Palo Alto Networks that millions of attempts have been made.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Nous ne saurons probablement pas pendant un certain temps si cela a fonctionné pour des criminels, parce que les entreprises touchées pourraient ne pas être au courant encore.</p>
+            <span class="english-block">We probably won't know for a while whether it has worked for any criminals, because the companies affected might not be aware yet either.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Pour l'instant, la bombe non explosée reste intacte, et pour certains experts, c'est un succès.</p>
+            <span class="english-block">As far as we know the unexploded bomb remains intact for now, and for some experts this is a success.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Gina Neff, professeur d'IA responsable à l'Université Queen Mary, a décrit cela comme une bonne nouvelle.</p>
+            <span class="english-block">Gina Neff, Professor of Responsible AI at Queen Mary University, described this as a good news story.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">" Nous avons vu comment une équipe de personnes soutenue par la grande entreprise d'IA a utilisé l'IA pour trouver le problème, travailler ensemble pendant des mois pour le résoudre et préparer tout le monde à être en sécurité ", a-t-elle déclaré au programme Today de la BBC Radio 4.</p>
+            <span class="english-block">"We've seen how a team of people supported by the large AI company have used AI to find the problem, work for months together to solve it and get everybody ready to be safe and secure," she told the Today Programme on BBC Radio 4.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Nous avons une énorme capacité à gérer ces risques".</p>
+            <span class="english-block">"We have enormous capability to handle these risks."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Mais les méchants peuvent aussi utiliser l'IA, et ces mêmes outils sont probablement en train de se déchaîner en ce moment en essayant d'y entrer.</p>
+            <span class="english-block">But the baddies can use AI too, and those same tools are probably churning away right now trying to get in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Les autorités de cybersécurité mettent en garde les propriétaires de sites Web de corriger immédiatement les faiblesses, mais le correctif ne fonctionne que sur la dernière version de PHP, donc les sites plus anciens devront d'abord mettre à niveau.</p>
+            <span class="english-block">Cyber security authorities are warning website owners to fix the weaknesses immediately, but the patch only works on the latest version of PHP, so older sites will need to upgrade first.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Pour beaucoup, c'est peut-être un travail de réparation important, donc si vous avez un développeur Web dans votre vie, vous voudrez peut-être leur envoyer des pensées, des prières et peut-être un café fort.</p>
+            <span class="english-block">For many it may be a significant repair job, so if there's a web developer in your life you may want to send them thoughts, prayers and maybe a strong coffee.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Les sites Web supprimés dans le monde entier à la suite de la mise à jour critique de la cybersécurité</p>
+            <span class="english-block">Websites taken down worldwide as critical cyber-security update issued</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Qu'est-ce que PHP et pourquoi a-t-il déclenché une crise mondiale de cybersécurité ?</p>
+            <span class="english-block">What is PHP and why did it spark a global cyber-security scramble?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Qu'est-ce que l'IA et comment fonctionne-t-elle ?</p>
+            <span class="english-block">What is AI and how does it work?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

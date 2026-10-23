@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid operator says lights will stay on this winter after concerns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Grid operator says lights will stay on this winter after concerns</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 22 Oct 2026 23:04:38 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmy56q2n1veqo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The assurance from the National Energy System Operator comes amid concern from its engineers about their ability to ensure adequate supply.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">L'organisme chargé du réseau électrique britannique a assuré que les lumières resteraient allumées cet hiver après que certains de ses ingénieurs aient fait part de leurs inquiétudes.</p>
+            <span class="english-block">The body in charge of Britain's electricity network has given assurances that the lights will stay on this winter after concerns were raised by some of its engineers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Le NESO a déclaré que le système électrique du pays était préparé et "résilient aux défis auxquels il pourrait faire face" pendant les mois plus froids.</p>
+            <span class="english-block">The National Energy System Operator (NESO) said the country's electricity system was prepared and "resilient to the challenges it may face" during the colder months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Cependant, son rapport sur les perspectives d'hiver vient après une enquête indépendante qui a révélé que les ingénieurs étaient "extrêmement stressés et inquiets" quant à leur capacité à assurer une alimentation adéquate en raison des différences entre la production d'électricité à partir de sources renouvelables et à gaz.</p>
+            <span class="english-block">However, its winter outlook report comes after an independent investigation found engineers had "high levels of stress and concern" about their ability to ensure adequate supply due to differences between renewable and gas-fired power generation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le NESO a déclaré que les approvisionnements devraient rester sûrs tout au long de l'hiver, bien qu'il ait averti qu'il pourrait y avoir des "jours serrés".</p>
+            <span class="english-block">NESO said supplies were expected to remain secure throughout the winter, though warned there could be "tight days".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Il a ajouté que ces jours-là, il aurait pour effet de déployer des avis aux producteurs d'électricité selon lesquels une production supplémentaire d'électricité pourrait être nécessaire.</p>
+            <span class="english-block">It added that such days would result in it deploying notices to power producers that additional electricity generation may be needed. It said such an announcement was not a warning of power cuts and was routine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">" Bien que nous ne prenons jamais la résilience pour acquise, les ménages et les entreprises peuvent être sûrs que le système électrique de Grande-Bretagne reste sûr, fiable et parmi les plus résilients au monde ", a déclaré Deborah Petterson, directrice de la résilience de l'ensemble des systèmes énergétiques à NESO.</p>
+            <span class="english-block">"While we never take resilience for granted, households and businesses can be confident that Great Britain's electricity system remains secure, reliable and among the most resilient in the world," said Deborah Petterson, director of whole energy system resilience at NESO.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Dans un rapport séparé, National Gas, une société privée qui possède et exploite le réseau gazier du pays, et qui est séparée de NESO, a déclaré qu'elle s'attendait à avoir une offre suffisante pour répondre à la demande cet hiver, mais prévoit que le gaz pour la production d'électricité augmentera à la demande maximale en raison de la nature "intermittente" des énergies renouvelables.</p>
+            <span class="english-block">In a separate report, National Gas, a private company that owns and runs the country's gas network, and is separate from NESO, said it expected to have sufficient supply to meet demand this winter, but forecast gas for power generation to increase at peak demand due to the "intermittent" nature of renewables.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">La publication des deux rapports intervient alors que la production d'énergie et la sécurité britanniques sont de plus en plus surveillées, étant donné que les guerres au Moyen-Orient et en Europe de l'Est ont fait grimper les prix et suscité des craintes d'offre.</p>
+            <span class="english-block">The release of the two reports comes as Britain's energy generation and security falls under increasing scrutiny, given the wars in the Middle East and eastern Europe have pushed prices up and sparked supply fears.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">L'électricité du pays est produite à partir d'un large éventail de sources, y compris des énergies renouvelables telles que le solaire et l'éolien, ainsi que des centrales nucléaires et à gaz plus traditionnelles.</p>
+            <span class="english-block">The country's electricity is generated from a wide range of sources, including renewables such as solar and wind, as well as more traditional gas-fired and nuclear power stations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">L'énergie éolienne a été le plus grand générateur d'électricité en Grande-Bretagne l'an dernier, représentant près de 30% de l'énergie totale, légèrement au-dessus du gaz.</p>
+            <span class="english-block">Wind power was the largest generator of electricity in Britain last year, accounting for almost 30% of all power, marginally above gas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Toutefois, il semble y avoir des défis dans la transition vers les énergies renouvelables pour assurer la continuité de l'offre avec la demande, selon les conclusions d'une enquête sur les pratiques de NESO, qui a été mise en œuvre à la suite d'allégations concernant la prise de décision opérationnelle et la tenue de dossiers auprès du gestionnaire du réseau.</p>
+            <span class="english-block">However, there appear to be challenges in the transition to renewables in ensuring supply keeps up with demand, according to findings from an investigation into practices at NESO, which was commissioned following allegations over operational decision making and record keeping at the grid operator.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Le cabinet d'avocats Eversheds Sutherland, qui a mené l'enquête indépendante, a déclaré qu'il y avait "un niveau élevé de stress et d'inquiétude" au sein du Centre national de contrôle de l'électricité de NESO au sujet de "l'état actuel de l'industrie de l'énergie en général" et de la capacité à plus long terme à la maintenir en équilibre.</p>
+            <span class="english-block">Law firm Eversheds Sutherland, which carried out the independent investigation, said there were "high levels of stress and concern" within NESO's Electricity National Control Centre over the "current state of the energy industry generally" and the longer-term ability to keep it balanced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Selon les données recueillies auprès du personnel, cela était dû au fait que les méthodes traditionnelles de production d'électricité telles que le gaz étaient "plus faciles à gérer", par rapport aux énergies renouvelables, qui étaient "moins flexibles" et rendaient le travail de s'assurer que l'offre répond à la demande "plus difficile".</p>
+            <span class="english-block">It said this was, according to evidence gathered from staff, due to the fact that traditional methods of electricity generation such as gas were "easier to manage", compared to renewables, which were "less flexible", and were making the job of ensuring supply meets demand "more difficult".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">L'enquête a également révélé qu'il y avait un "écart significatif" entre ceux qui travaillent dans la salle de contrôle et la direction de la NESO.</p>
+            <span class="english-block">The probe also found there to be a "significant disconnect" between those working in the control room and NESO's leadership.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Plusieurs témoins ont exprimé l'opinion que les personnes occupant des postes de direction et de direction "ne comprennent pas pleinement le fonctionnement de la salle de contrôle ni la réalité des pressions auxquelles sont confrontés ceux qui sont en première ligne et qui sont responsables de " maintenir les lumières allumées", indique le rapport d'Eversheds.</p>
+            <span class="english-block">Multiple witnesses expressed the view that those in senior leadership and executive positions "do not fully appreciate or understand either the way in which the control room works, or the reality of the pressures faced by those on the frontline who are responsible for 'keeping the lights on'", Eversheds' report said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">L'enquête a été lancée après que la secrétaire conservatrice à l'énergie de l'ombre, Clare Coutinho, ait déclaré en juillet qu'elle avait été contactée par un dénonciateur alléguant que NESO avait " caché des informations sur la sécurité avec laquelle notre réseau est géré ".</p>
+            <span class="english-block">The investigation was prompted after Conservative shadow energy secretary Clare Coutinho said in July she had been contacted by a whistle-blower alleging that NESO had been "hiding information about how securely our grid is being run".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">L'une des allégations était que le personnel de la salle de contrôle a été encouragé à cacher ou à modifier les enregistrements afin d'éviter de laisser une trace papier liée aux efforts visant à stabiliser le réseau pendant une période de chaleur extrême en juin.</p>
+            <span class="english-block">One of the claims was that control room staff were encouraged to conceal or alter records to avoid leaving a paper trail linked to efforts to stabilise the grid during a period of extreme heat in June.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Il a été fait pour que NESO, qui appartient au gouvernement, échappe à un contrôle public ou à un dommage à sa réputation, selon l'allégation.</p>
+            <span class="english-block">This was done in order for NESO, which is owned by the government, to avoid public scrutiny or reputational damage, according to the allegation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Eversheds a déclaré que son enquête n'a fondé aucune des allégations des dénonciateurs, mais a identifié "des problèmes culturels, de gouvernance et de contrôle" qu'elle a déclaré être des "découvertes significatives en leur propre droit".</p>
+            <span class="english-block">Eversheds said its investigation did not substantiate any of the allegations from whistle-blowers but did identify "cultural, governance and control issues" that it said were "significant findings in their own right".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Fintan Slye, directeur général de NESO, a déclaré que l'enquête avait identifié "des domaines où nous pouvions améliorer la façon dont les collègues peuvent soulever des préoccupations et comment nous y réagissons".</p>
+            <span class="english-block">Fintan Slye, chief executive of NESO, said the investigation identified "areas where we could improve how colleagues can raise concerns and how we respond to them".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">"Je souhaite que tous les collègues de NESO se sentent entendus, nous agirons en fonction des recommandations, en travaillant en étroite collaboration avec nos syndicats et en étant ouverts avec les collègues sur les progrès que nous réalisons", a-t-il ajouté.</p>
+            <span class="english-block">"I want all colleagues at NESO to feel heard. We will act on the recommendations, working closely with our trade unions, and be open with colleagues about the progress we make," he added.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
