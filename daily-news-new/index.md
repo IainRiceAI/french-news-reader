@@ -1,183 +1,183 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-23 06:01:00  
+Generated on: 2026-10-24 06:01:03  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Prepare for supply chain disruption from cyber or climate emergencies, Streeting warns public**
-   - **Published:** Thu, 22 Oct 2026 21:29:44 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Prepare_for_supply_chain_disruption_from.md](top-stories_article_1_Prepare_for_supply_chain_disruption_from.md)
+1. **Second storm to hit UK with more wind and rain as thousands remain without power**
+   - **Published:** Sat, 24 Oct 2026 02:25:54 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Second_storm_to_hit_UK_with_more_wind_an.md](top-stories_article_1_Second_storm_to_hit_UK_with_more_wind_an.md)
 
-2. **Race to update services' computer systems after cyber-security flaw found**
-   - **Published:** Thu, 22 Oct 2026 17:12:51 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Race_to_update_services_computer_systems.md](top-stories_article_2_Race_to_update_services_computer_systems.md)
+2. **France prepares for day of protest a week after nationwide riots**
+   - **Published:** Sat, 24 Oct 2026 04:03:46 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_France_prepares_for_day_of_protest_a_wee.md](top-stories_article_2_France_prepares_for_day_of_protest_a_wee.md)
 
-3. **Musk has restored access to Ukraine's Starlink network, Trump says**
-   - **Published:** Thu, 22 Oct 2026 21:42:39 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Musk_has_restored_access_to_Ukraines_Sta.md](top-stories_article_3_Musk_has_restored_access_to_Ukraines_Sta.md)
+3. **UK to invest £100m in 'world first' AI Biosecurity Lab**
+   - **Published:** Sat, 24 Oct 2026 00:05:45 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_UK_to_invest_100m_in_world_first_AI_Bios.md](top-stories_article_3_UK_to_invest_100m_in_world_first_AI_Bios.md)
 
-4. **Raye wins the Mercury Prize with This Music May Contain Hope**
-   - **Published:** Fri, 23 Oct 2026 00:14:08 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Raye_wins_the_Mercury_Prize_with_This_Mu.md](top-stories_article_4_Raye_wins_the_Mercury_Prize_with_This_Mu.md)
+4. **Australian MP's condition improves after alleged car attack**
+   - **Published:** Sat, 24 Oct 2026 01:55:15 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Australian_MPs_condition_improves_after_.md](top-stories_article_4_Australian_MPs_condition_improves_after_.md)
 
-5. **Hospitals deliberately targeted by Sudan's RSF fighters, BBC investigation finds**
-   - **Published:** Thu, 22 Oct 2026 23:16:16 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Hospitals_deliberately_targeted_by_Sudan.md](top-stories_article_5_Hospitals_deliberately_targeted_by_Sudan.md)
+5. **Met investigates reports of letter detailing claims about Meghan's father**
+   - **Published:** Sat, 24 Oct 2026 03:17:24 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Met_investigates_reports_of_letter_detai.md](top-stories_article_5_Met_investigates_reports_of_letter_detai.md)
 
-6. **Amber warning in place as Storm Austen hits parts of UK**
-   - **Published:** Fri, 23 Oct 2026 00:08:43 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Amber_warning_in_place_as_Storm_Austen_h.md](top-stories_article_6_Amber_warning_in_place_as_Storm_Austen_h.md)
+6. **Father who killed Oregon school shooter describes anguish over children he couldn't save**
+   - **Published:** Fri, 23 Oct 2026 22:47:07 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Father_who_killed_Oregon_school_shooter_.md](top-stories_article_6_Father_who_killed_Oregon_school_shooter_.md)
 
-7. **Celebrity Traitors - paranoia deepens as traitor behaviour splits opinion**
-   - **Published:** Thu, 22 Oct 2026 22:48:44 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Celebrity_Traitors_-_paranoia_deepens_as.md](top-stories_article_7_Celebrity_Traitors_-_paranoia_deepens_as.md)
+7. **Celebrity Traitors left on a knife edge after a trip to the field of screams**
+   - **Published:** Fri, 23 Oct 2026 22:52:40 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Celebrity_Traitors_left_on_a_knife_edge_.md](top-stories_article_7_Celebrity_Traitors_left_on_a_knife_edge_.md)
 
-8. **Trump ordered to answer questions under oath in BBC lawsuit**
-   - **Published:** Fri, 23 Oct 2026 01:38:44 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Trump_ordered_to_answer_questions_under_.md](top-stories_article_8_Trump_ordered_to_answer_questions_under_.md)
+8. **Why is John Travolta's old luxury jet in a small Australian town?**
+   - **Published:** Fri, 23 Oct 2026 21:19:17 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Why_is_John_Travoltas_old_luxury_jet_in_.md](top-stories_article_8_Why_is_John_Travoltas_old_luxury_jet_in_.md)
 
 ---
 
 ### Section: WORLD
 
-1. **Hospitals deliberately targeted by Sudan's RSF fighters, BBC investigation finds**
-   - **Published:** Thu, 22 Oct 2026 23:16:16 GMT
-   - **Read Parallel Translation:** [world_article_9_Hospitals_deliberately_targeted_by_Sudan.md](world_article_9_Hospitals_deliberately_targeted_by_Sudan.md)
+1. **France prepares for day of protest a week after nationwide riots**
+   - **Published:** Sat, 24 Oct 2026 04:03:46 GMT
+   - **Read Parallel Translation:** [world_article_9_France_prepares_for_day_of_protest_a_wee.md](world_article_9_France_prepares_for_day_of_protest_a_wee.md)
 
-2. **Trump says Musk has restored access to Ukraine's Starlink network**
-   - **Published:** Thu, 22 Oct 2026 21:42:39 GMT
-   - **Read Parallel Translation:** [world_article_10_Trump_says_Musk_has_restored_access_to_U.md](world_article_10_Trump_says_Musk_has_restored_access_to_U.md)
+2. **Woman, 65, becomes second patient to die of Ebola in Kenya**
+   - **Published:** Sat, 24 Oct 2026 00:05:43 GMT
+   - **Read Parallel Translation:** [world_article_10_Woman_65_becomes_second_patient_to_die_o.md](world_article_10_Woman_65_becomes_second_patient_to_die_o.md)
 
-3. **Newborn twins fight for survival as conflict fuels Yemen's hunger crisis**
-   - **Published:** Thu, 22 Oct 2026 15:56:36 GMT
-   - **Read Parallel Translation:** [world_article_11_Newborn_twins_fight_for_survival_as_conf.md](world_article_11_Newborn_twins_fight_for_survival_as_conf.md)
+3. **Arrest made after fire at Hitler's Eagle's Nest retreat**
+   - **Published:** Sat, 24 Oct 2026 03:51:25 GMT
+   - **Read Parallel Translation:** [world_article_11_Arrest_made_after_fire_at_Hitlers_Eagles.md](world_article_11_Arrest_made_after_fire_at_Hitlers_Eagles.md)
 
-4. **L'Oreal says weight loss drugs are impacting beauty and skin care sales**
-   - **Published:** Thu, 22 Oct 2026 22:27:53 GMT
-   - **Read Parallel Translation:** [world_article_12_LOreal_says_weight_loss_drugs_are_impact.md](world_article_12_LOreal_says_weight_loss_drugs_are_impact.md)
+4. **Student movement takes Serbia's Vučić to the wire in neck-and-neck election**
+   - **Published:** Fri, 23 Oct 2026 23:08:23 GMT
+   - **Read Parallel Translation:** [world_article_12_Student_movement_takes_Serbias_Vučić_to_.md](world_article_12_Student_movement_takes_Serbias_Vučić_to_.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Grid operator says lights will stay on this winter after concerns**
-   - **Published:** Thu, 22 Oct 2026 23:04:38 GMT
-   - **Read Parallel Translation:** [business_article_13_Grid_operator_says_lights_will_stay_on_t.md](business_article_13_Grid_operator_says_lights_will_stay_on_t.md)
+1. **How does the UK state pension compare with other countries?**
+   - **Published:** Sat, 24 Oct 2026 00:09:12 GMT
+   - **Read Parallel Translation:** [business_article_13_How_does_the_UK_state_pension_compare_wi.md](business_article_13_How_does_the_UK_state_pension_compare_wi.md)
 
-2. **Zuckerberg wins Meta deal to help him foot bill for possible California billionaire tax**
-   - **Published:** Thu, 22 Oct 2026 18:26:56 GMT
-   - **Read Parallel Translation:** [business_article_14_Zuckerberg_wins_Meta_deal_to_help_him_fo.md](business_article_14_Zuckerberg_wins_Meta_deal_to_help_him_fo.md)
+2. **UK to invest £100m in 'world first' AI Biosecurity Lab**
+   - **Published:** Sat, 24 Oct 2026 00:05:45 GMT
+   - **Read Parallel Translation:** [business_article_14_UK_to_invest_100m_in_world_first_AI_Bios.md](business_article_14_UK_to_invest_100m_in_world_first_AI_Bios.md)
 
-3. **L'Oreal says weight loss drugs are impacting beauty and skin care sales**
-   - **Published:** Thu, 22 Oct 2026 22:27:53 GMT
-   - **Read Parallel Translation:** [business_article_15_LOreal_says_weight_loss_drugs_are_impact.md](business_article_15_LOreal_says_weight_loss_drugs_are_impact.md)
+3. **Civil servant who juggled five jobs says he was 'surprised' to be charged with fraud**
+   - **Published:** Fri, 23 Oct 2026 15:15:13 GMT
+   - **Read Parallel Translation:** [business_article_15_Civil_servant_who_juggled_five_jobs_says.md](business_article_15_Civil_servant_who_juggled_five_jobs_says.md)
 
-4. **'I wasn't thinking straight' says five jobs civil servant**
-   - **Published:** Thu, 22 Oct 2026 15:05:47 GMT
-   - **Read Parallel Translation:** [business_article_16_I_wasnt_thinking_straight_says_five_jobs.md](business_article_16_I_wasnt_thinking_straight_says_five_jobs.md)
+4. **White House lifts tariffs on some Canadian goods as midterm elections loom**
+   - **Published:** Sat, 24 Oct 2026 00:36:47 GMT
+   - **Read Parallel Translation:** [business_article_16_White_House_lifts_tariffs_on_some_Canadi.md](business_article_16_White_House_lifts_tariffs_on_some_Canadi.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Zuckerberg wins Meta deal to help him foot bill for possible California billionaire tax**
-   - **Published:** Thu, 22 Oct 2026 18:26:56 GMT
-   - **Read Parallel Translation:** [technology_article_17_Zuckerberg_wins_Meta_deal_to_help_him_fo.md](technology_article_17_Zuckerberg_wins_Meta_deal_to_help_him_fo.md)
+1. **UK to invest £100m in 'world first' AI Biosecurity Lab**
+   - **Published:** Sat, 24 Oct 2026 00:05:45 GMT
+   - **Read Parallel Translation:** [technology_article_17_UK_to_invest_100m_in_world_first_AI_Bios.md](technology_article_17_UK_to_invest_100m_in_world_first_AI_Bios.md)
 
-2. **Race to update services' computer systems after cyber-security flaw found**
-   - **Published:** Thu, 22 Oct 2026 17:12:51 GMT
-   - **Read Parallel Translation:** [technology_article_18_Race_to_update_services_computer_systems.md](technology_article_18_Race_to_update_services_computer_systems.md)
+2. **What is PHP and why did it spark a global cyber-security scramble?**
+   - **Published:** Fri, 23 Oct 2026 12:24:17 GMT
+   - **Read Parallel Translation:** [technology_article_18_What_is_PHP_and_why_did_it_spark_a_globa.md](technology_article_18_What_is_PHP_and_why_did_it_spark_a_globa.md)
 
-3. **What is PHP and why did it spark a global cyber-security scramble?**
-   - **Published:** Thu, 22 Oct 2026 11:15:58 GMT
-   - **Read Parallel Translation:** [technology_article_19_What_is_PHP_and_why_did_it_spark_a_globa.md](technology_article_19_What_is_PHP_and_why_did_it_spark_a_globa.md)
+3. **'It's been relentless' say IT workers on frontline of PHP cyber-security scramble**
+   - **Published:** Fri, 23 Oct 2026 12:00:25 GMT
+   - **Read Parallel Translation:** [technology_article_19_Its_been_relentless_say_IT_workers_on_fr.md](technology_article_19_Its_been_relentless_say_IT_workers_on_fr.md)
 
-4. **Zoe Kleinman: PHP is the cyber equivalent of an unexploded bomb**
-   - **Published:** Thu, 22 Oct 2026 10:17:26 GMT
-   - **Read Parallel Translation:** [technology_article_20_Zoe_Kleinman_PHP_is_the_cyber_equivalent.md](technology_article_20_Zoe_Kleinman_PHP_is_the_cyber_equivalent.md)
+4. **The Indian workers filming their work to train AI**
+   - **Published:** Fri, 23 Oct 2026 08:04:17 GMT
+   - **Read Parallel Translation:** [technology_article_20_The_Indian_workers_filming_their_work_to.md](technology_article_20_The_Indian_workers_filming_their_work_to.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Amber warning in place as Storm Austen hits parts of UK**
-   - **Published:** Fri, 23 Oct 2026 00:08:43 GMT
-   - **Read Parallel Translation:** [science_article_21_Amber_warning_in_place_as_Storm_Austen_h.md](science_article_21_Amber_warning_in_place_as_Storm_Austen_h.md)
+1. **Second storm to hit UK with more wind and rain as thousands remain without power**
+   - **Published:** Sat, 24 Oct 2026 02:25:54 GMT
+   - **Read Parallel Translation:** [science_article_21_Second_storm_to_hit_UK_with_more_wind_an.md](science_article_21_Second_storm_to_hit_UK_with_more_wind_an.md)
 
-2. **Grid operator says lights will stay on this winter after concerns**
-   - **Published:** Thu, 22 Oct 2026 23:04:38 GMT
-   - **Read Parallel Translation:** [science_article_22_Grid_operator_says_lights_will_stay_on_t.md](science_article_22_Grid_operator_says_lights_will_stay_on_t.md)
+2. **Storm Austen brings power cuts and travel disruption as more wind and rain forecast**
+   - **Published:** Fri, 23 Oct 2026 21:10:47 GMT
+   - **Read Parallel Translation:** [science_article_22_Storm_Austen_brings_power_cuts_and_trave.md](science_article_22_Storm_Austen_brings_power_cuts_and_trave.md)
 
-3. **Heavy rain warning as Storm Austen sweeps across Scotland**
-   - **Published:** Thu, 22 Oct 2026 21:59:43 GMT
-   - **Read Parallel Translation:** [science_article_23_Heavy_rain_warning_as_Storm_Austen_sweep.md](science_article_23_Heavy_rain_warning_as_Storm_Austen_sweep.md)
+3. **Trains cancelled and roads warnings as Scotland prepares for Storm Boelo**
+   - **Published:** Fri, 23 Oct 2026 19:31:02 GMT
+   - **Read Parallel Translation:** [science_article_23_Trains_cancelled_and_roads_warnings_as_S.md](science_article_23_Trains_cancelled_and_roads_warnings_as_S.md)
 
-4. **Gasps as Prince William makes surprise appearance on Graham Norton Show**
-   - **Published:** Thu, 22 Oct 2026 21:21:22 GMT
-   - **Read Parallel Translation:** [science_article_24_Gasps_as_Prince_William_makes_surprise_a.md](science_article_24_Gasps_as_Prince_William_makes_surprise_a.md)
+4. **Wales plans to ban steel pylons as government launches consultation**
+   - **Published:** Fri, 23 Oct 2026 16:44:13 GMT
+   - **Read Parallel Translation:** [science_article_24_Wales_plans_to_ban_steel_pylons_as_gover.md](science_article_24_Wales_plans_to_ban_steel_pylons_as_gover.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Private care home investment needs monitoring, regulator says**
+1. **GP says she was forced out of job after raising concerns about gender treatment**
+   - **Published:** Fri, 23 Oct 2026 19:23:10 GMT
+   - **Read Parallel Translation:** [health_article_25_GP_says_she_was_forced_out_of_job_after_.md](health_article_25_GP_says_she_was_forced_out_of_job_after_.md)
+
+2. **First personalised cancer vaccine cuts risk of disease returning in major trial**
+   - **Published:** Fri, 23 Oct 2026 07:49:02 GMT
+   - **Read Parallel Translation:** [health_article_26_First_personalised_cancer_vaccine_cuts_r.md](health_article_26_First_personalised_cancer_vaccine_cuts_r.md)
+
+3. **Rapid changes to care market risk to National Care Service, regulator says**
    - **Published:** Thu, 22 Oct 2026 23:20:05 GMT
-   - **Read Parallel Translation:** [health_article_25_Private_care_home_investment_needs_monit.md](health_article_25_Private_care_home_investment_needs_monit.md)
+   - **Read Parallel Translation:** [health_article_27_Rapid_changes_to_care_market_risk_to_Nat.md](health_article_27_Rapid_changes_to_care_market_risk_to_Nat.md)
 
-2. **Give more people weight-loss jabs on the NHS, say MPs**
+4. **Give more people weight-loss jabs on the NHS, say MPs**
    - **Published:** Thu, 22 Oct 2026 23:06:04 GMT
-   - **Read Parallel Translation:** [health_article_26_Give_more_people_weight-loss_jabs_on_the.md](health_article_26_Give_more_people_weight-loss_jabs_on_the.md)
-
-3. **First human case of Shamonda virus detected in France, officials say**
-   - **Published:** Thu, 22 Oct 2026 13:53:32 GMT
-   - **Read Parallel Translation:** [health_article_27_First_human_case_of_Shamonda_virus_detec.md](health_article_27_First_human_case_of_Shamonda_virus_detec.md)
-
-4. **Chronic UTIs affect millions in the UK - these women are out to end the stigma**
-   - **Published:** Wed, 21 Oct 2026 23:03:59 GMT
-   - **Read Parallel Translation:** [health_article_28_Chronic_UTIs_affect_millions_in_the_UK_-.md](health_article_28_Chronic_UTIs_affect_millions_in_the_UK_-.md)
+   - **Read Parallel Translation:** [health_article_28_Give_more_people_weight-loss_jabs_on_the.md](health_article_28_Give_more_people_weight-loss_jabs_on_the.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **UK to draft in military aircraft to fight wildfires, Burnham says**
-   - **Published:** Thu, 22 Oct 2026 21:35:21 GMT
-   - **Read Parallel Translation:** [politics_article_29_UK_to_draft_in_military_aircraft_to_figh.md](politics_article_29_UK_to_draft_in_military_aircraft_to_figh.md)
+1. **UK to invest £100m in 'world first' AI Biosecurity Lab**
+   - **Published:** Sat, 24 Oct 2026 00:05:45 GMT
+   - **Read Parallel Translation:** [politics_article_29_UK_to_invest_100m_in_world_first_AI_Bios.md](politics_article_29_UK_to_invest_100m_in_world_first_AI_Bios.md)
 
-2. **Prepare for supply chain disruption from cyber or climate emergencies, Streeting warns**
-   - **Published:** Thu, 22 Oct 2026 21:29:44 GMT
-   - **Read Parallel Translation:** [politics_article_30_Prepare_for_supply_chain_disruption_from.md](politics_article_30_Prepare_for_supply_chain_disruption_from.md)
+2. **Burnham suggests stocking up on tinned food and bottled water**
+   - **Published:** Fri, 23 Oct 2026 12:41:10 GMT
+   - **Read Parallel Translation:** [politics_article_30_Burnham_suggests_stocking_up_on_tinned_f.md](politics_article_30_Burnham_suggests_stocking_up_on_tinned_f.md)
 
-3. **Fahnbulleh says she backs home secretary on migration after comments to journalists**
-   - **Published:** Thu, 22 Oct 2026 17:54:51 GMT
-   - **Read Parallel Translation:** [politics_article_31_Fahnbulleh_says_she_backs_home_secretary.md](politics_article_31_Fahnbulleh_says_she_backs_home_secretary.md)
+3. **Trump says Burnham 'getting it done' after Jackdaw decision**
+   - **Published:** Fri, 23 Oct 2026 17:27:20 GMT
+   - **Read Parallel Translation:** [politics_article_31_Trump_says_Burnham_getting_it_done_after.md](politics_article_31_Trump_says_Burnham_getting_it_done_after.md)
 
-4. **Police should not be scared to wade in to stop wrongdoing, says Badenoch**
-   - **Published:** Thu, 22 Oct 2026 14:55:50 GMT
-   - **Read Parallel Translation:** [politics_article_32_Police_should_not_be_scared_to_wade_in_t.md](politics_article_32_Police_should_not_be_scared_to_wade_in_t.md)
+4. **Tory activist in 'contract killing broker' claim had worked for party HQ**
+   - **Published:** Sat, 24 Oct 2026 02:52:10 GMT
+   - **Read Parallel Translation:** [politics_article_32_Tory_activist_in_contract_killing_broker.md](politics_article_32_Tory_activist_in_contract_killing_broker.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Raye wins the Mercury Prize with This Music May Contain Hope**
-   - **Published:** Fri, 23 Oct 2026 00:14:08 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Raye_wins_the_Mercury_Prize_with_This_Mu.md](entertainment_article_33_Raye_wins_the_Mercury_Prize_with_This_Mu.md)
+1. **Celebrity Traitors left on a knife edge after a trip to the field of screams**
+   - **Published:** Fri, 23 Oct 2026 22:52:40 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Celebrity_Traitors_left_on_a_knife_edge_.md](entertainment_article_33_Celebrity_Traitors_left_on_a_knife_edge_.md)
 
-2. **Trump ordered to answer questions under oath in BBC lawsuit**
-   - **Published:** Fri, 23 Oct 2026 01:38:44 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Trump_ordered_to_answer_questions_under_.md](entertainment_article_34_Trump_ordered_to_answer_questions_under_.md)
+2. **Strictly's new presenters - after frosty reviews have they warmed up?**
+   - **Published:** Fri, 23 Oct 2026 23:15:47 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Strictlys_new_presenters_-_after_frosty_.md](entertainment_article_34_Strictlys_new_presenters_-_after_frosty_.md)
 
-3. **Russell Brand accuser said alleged rape 'really hurt', court hears**
-   - **Published:** Thu, 22 Oct 2026 16:45:09 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Russell_Brand_accuser_said_alleged_rape_.md](entertainment_article_35_Russell_Brand_accuser_said_alleged_rape_.md)
+3. **The artist dropping her debut album after a billion streams**
+   - **Published:** Fri, 23 Oct 2026 23:08:55 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_The_artist_dropping_her_debut_album_afte.md](entertainment_article_35_The_artist_dropping_her_debut_album_afte.md)
 
-4. **Police investigate Married at First Sight Australia after 'inappropriate' allegations**
-   - **Published:** Thu, 22 Oct 2026 09:47:54 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Police_investigate_Married_at_First_Sigh.md](entertainment_article_36_Police_investigate_Married_at_First_Sigh.md)
+4. **Babydoll singer gives Wales its first UK number one in 15 years**
+   - **Published:** Fri, 23 Oct 2026 17:03:09 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Babydoll_singer_gives_Wales_its_first_UK.md](entertainment_article_36_Babydoll_singer_gives_Wales_its_first_UK.md)
 
 ---
 

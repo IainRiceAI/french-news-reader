@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is PHP and why did it spark a global cyber-security scramble?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>What is PHP and why did it spark a global cyber-security scramble?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 23 Oct 2026 12:24:17 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c3qjnwye0ep5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: AI uncovered long-hidden programming flaws, triggering a rare global cyber-security response.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Comment l'IA a-t-elle découvert le risque massif de cybersécurité d'Internet ?</p>
+            <span class="english-block">How did AI discover the internet's massive cyber-security risk?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Pendant plus d'une décennie, de graves défauts étaient restés invisibles dans la technologie qui sous-tend une grande partie de l'Internet.</p>
+            <span class="english-block">For more than a decade, serious flaws had gone undetected in the technology underpinning much of the internet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Il a fallu de l'IA pour les mettre en lumière et a provoqué une alerte mondiale de cybersécurité.</p>
+            <span class="english-block">It took AI to bring them to light and caused a global cyber-security alert.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les chercheurs qui ont aidé à détecter les vulnérabilités du PHP - un langage de programmation de côté serveur populaire utilisé dans le développement Web depuis des décennies - ont averti les plateformes qui l'utilisent pourraient être exposées à des piratages potentiels.</p>
+            <span class="english-block">Researchers who helped surface the vulnerabilities in PHP - a popular server-side programming language used in web development for decades - warned platforms which use it could be exposed to potential hacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Les gouvernements et les agences de cybersécurité se sont précipités pour contenir les retombées, exhortant les propriétaires de sites Web à vérifier si leurs sites ont été affectés et, si oui, à installer des mises à jour pour corriger le problème ou envisager de se désactiver.</p>
+            <span class="english-block">Governments and cyber-security agencies rushed to contain the fallout, urging website owners to check if their sites were affected and, if so, install updates to patch the issue or consider going offline.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Il n'y a pas eu de rapports de réussite de l'exploitation de la faille, inventée php2shell, jusqu'à présent.</p>
+            <span class="english-block">There have been no reports of any successful exploits of the flaw, coined php2shell, so far.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Mais depuis que les problèmes sont apparus, les perturbations des sites et des services ont continué à se répandre dans le monde entier.</p>
+            <span class="english-block">But in the days since the issues came to light, disruption to sites and services has continued to ripple around the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">La plupart des gens n'ont peut-être pas entendu parler de PHP, mais ils interagissent probablement avec lui quotidiennement.</p>
+            <span class="english-block">Most people may not have heard of PHP, but they probably interact with it daily.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il est synonyme de PHP: Hypertext Preprocessor, un langage de programmation open source et back-end qui fonctionne sur un serveur Web.</p>
+            <span class="english-block">It stands for PHP: Hypertext Preprocessor, an open-source, back-end programming language which runs on a web server.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Développé au début des années 1990 pour aider à servir les pages Web dynamiques et les applications, PHP alimente encore beaucoup de plateformes aujourd'hui, y compris Wikipédia, les boutiques en ligne et WordPress  le système derrière de nombreux sites Web.</p>
+            <span class="english-block">Developed in the early 1990s to help serve dynamic web pages and applications, PHP still powers lots of platforms today, including Wikipedia, online shops and WordPress – the system behind many websites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Lorsque vous visitez un site, PHP est le code qui collecte des données et les transforme efficacement en une page que vous pouvez lire.</p>
+            <span class="english-block">When you visit a site, PHP is the code which collects data and effectively turns it into a page you can read.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Il a également été utilisé pour écrire un certain nombre d'outils pour créer ou accélérer la création d'applications Web, Laravel, Symfony et Drupal étant parmi les frameworks PHP populaires.</p>
+            <span class="english-block">It has also been used to write a number of tools for building or speeding up the creation of web apps, with Laravel, Symfony and Drupal among popular PHP frameworks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Selon la firme de cybersécurité Wiz, qui a aidé à découvrir les vulnérabilités critiques de PHP qui ont fait surface cette semaine, PHP alimente 70% des sites Web du monde.</p>
+            <span class="english-block">According to cyber-security firm Wiz, which helped uncover the critical PHP vulnerabilities surfaced this week, PHP powers 70% of the world's websites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Il est maintenu par une organisation à but non lucratif appelée PHP Foundation, externe, composée de particuliers et d'entreprises qui dépendent de la langue et visent à assurer sa "prosperité à long terme".</p>
+            <span class="english-block">It is maintained by a non-profit called the PHP Foundation, external, composed of individuals and companies which depend on the language and aim to ensure its "long-term prosperity".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Un groupe de chercheurs et d'organisations en cybersécurité a révélé deux vulnérabilités dans PHP cette semaine, qu'ils ont mis en garde contre le potentiel de perturber les sites sur Internet.</p>
+            <span class="english-block">A group of cyber-security researchers and organisations disclosed two vulnerabilities within PHP this week, which they warned could have the potential to upend sites across the internet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Les entreprises de cyber-hébergement Wiz et Calif ont déclaré que les défauts étaient inhérents au langage lui-même, affectant les versions de PHP publiées au cours de la dernière décennie.</p>
+            <span class="english-block">Cyber firms Wiz and Calif said the flaws were inherent in the language itself, affecting versions of PHP released over the last decade.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Les bugs techniques, étant donné les identifiants techniques CVE-2026-109618 et CVE-2026-109619, ont été classés à 9,2 sur 10 par les chercheurs en termes de gravité.</p>
+            <span class="english-block">The technical bugs, given the technical IDs CVE-2026-109618 and CVE-2026-109619, were ranked a 9.2 out of 10 in severity by researchers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Le chercheur Ryan Austin, qui a aidé à le découvrir, a déclaré à la BBC que c'était " la vulnérabilité la plus grave que j'ai jamais trouvée ".</p>
+            <span class="english-block">Calif researcher Ryan Austin, who helped uncover it, told the BBC it was "the most serious vulnerability I've ever found".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Wiz a écrit dans un article de blog, externe, sur ses découvertes selon lesquelles, dans les bonnes conditions, les pirates informatiques pourraient exploiter les bugs pour prendre le contrôle des serveurs Web touchés et voler des données sensibles - en disant que tout ce qui est construit sur PHP était laissé exposé.</p>
+            <span class="english-block">Wiz wrote in a blog post, external about its findings that, under the right conditions, hackers could exploit the bugs to take control of affected web servers and steal sensitive data - saying everything built on PHP was left exposed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">L'IA pourrait également faciliter et accélérer ces attaques, a déclaré à la BBC Paul Spain, directeur général de Gorilla Cyber Security.</p>
+            <span class="english-block">AI could also make such attacks easier and faster, Paul Spain, chief executive of Gorilla Cyber Security, told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Il estime que cette faille pourrait affecter "des millions et des millions" de sites Web.</p>
+            <span class="english-block">He estimated the flaw could affect "millions and millions" of websites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Jill Slay, chercheuse en cybersécurité à l'Université d'Adélaïde, a déclaré que ce serait " désastreux " si des pirates ou des pays utilisaient la faille et saisissaient des données privées sur des sites Web.</p>
+            <span class="english-block">Jill Slay, a cyber-security researcher at the University of Adelaide, said it would be "disastrous" if hackers or countries weaponised the flaw and seized private data from websites.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">PHP est l'équivalent cyber d'une bombe non explosée</p>
+            <span class="english-block">Zoe Kleinman: PHP is the cyber equivalent of an unexploded bomb</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">L'alerte du 21 octobre a perturbé les services dans le monde entier, des plateformes de jeux aux portails gouvernementaux et aux forums en ligne.</p>
+            <span class="english-block">The alert on 21 October disrupted services globally, from gaming platforms to government portals and online forums.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Il comprenait Wikimedia - l'organisation derrière l'encyclopédie en ligne Wikipedia - qui a supprimé un certain nombre de ses systèmes comme mesure de précaution.</p>
+            <span class="english-block">It included Wikimedia - the organisation behind the online encyclopaedia Wikipedia - which took down a number of its systems as a precautionary measure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Les sites et les pages ont également été retirés du réseau par le gouvernement finlandais, le conseil d'Édimbourg et certaines pages de la BBC, et l'agence néerlandaise de cybersécurité a également retiré son site web mercredi.</p>
+            <span class="english-block">Sites and pages were also taken offline by the Finnish government, Edinburgh council and some BBC pages, with the Netherlands' cyber-security agency also pulling its website on Wednesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Mais alors que de nombreux sites étaient de retour en service d'ici jeudi, d'autres étaient encore temporairement retirés ailleurs alors que les gens et les entreprises vérifient l'exposition potentielle.</p>
+            <span class="english-block">But while many sites were back up by Thursday, others were still being taken down temporarily elsewhere as people and businesses check for potential exposure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Des sites comme l'Université de Genève ont été retirés mercredi.</p>
+            <span class="english-block">Websites like the University of Geneva's were taken offline on Wednesday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Le gouvernement britannique a révélé jeudi que certains services "limités" pourraient être temporairement hors ligne.</p>
+            <span class="english-block">The UK Government revealed on Thursday some "limited" services may be  offline temporarily.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Il a déclaré que 32 sites avaient été démolies en tant que mesure de précaution, aucun d'entre eux étant de grands services publics.</p>
+            <span class="english-block">It said 32 sites had been taken down as a precaution, none of them large public-facing services.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">En France, la société de télécommunications Orange a également déclaré avoir suspendu l'accès à certains services dans le monde entier alors qu'elle déployait des correctifs de sécurité.</p>
+            <span class="english-block">In France, telecommunications company Orange also said it had suspended access to certain services globally while it deployed security fixes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Vendredi, les médias locaux au Japon ont rapporté que l'opérateur de télécommunications SoftBank Corp avait temporairement suspendu les alertes d'urgence pour les tremblements de terre, les tsunamis et d'autres catastrophes.</p>
+            <span class="english-block">On Friday, local media in Japan reported telecom operator SoftBank Corp had temporarily suspended emergency alerts for earthquakes, tsunamis and other disasters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Selon le journal Mainichi, les clients externes de SoftBank ont été exhortés à s'assurer qu'ils disposent d'autres moyens d'obtenir des alertes sur les catastrophes naturelles - les alertes de téléphone mobile ne sonnant pas même en cas de séisme.</p>
+            <span class="english-block">According to the Mainichi newspaper, external, SoftBank customers have been urged to make sure they have other ways to get alerts about natural disasters - with its mobile phone alerts not set to sound even in the event of a strong earthquake.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Le service devrait reprendre lundi.</p>
+            <span class="english-block">The service is reportedly set to resume on Monday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Certains experts mettent en garde contre le risque que cette question puisse entraîner une augmentation des sites Web mal entretenus, en particulier ceux appartenant à des organisations plus petites disposant de ressources de sécurité limitées.</p>
+            <span class="english-block">Some experts warn the issue could leave poorly maintained websites, particularly those belonging to smaller organisations with limited security resources, at greater risk.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">D'autres tentatives pour exploiter ces défauts sont probablement dans les prochaines semaines puisque les détails techniques sont maintenant rendus publics, a déclaré Salil Kanhere, chercheur en cybersécurité à l'UNSW Sydney.</p>
+            <span class="english-block">More attempts to exploit these flaws are likely in the coming weeks since the technical details are now being made public, said cyber-security researcher Salil Kanhere of UNSW Sydney.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">La Fondation PHP a lancé des correctifs mercredi pour corriger les vulnérabilités qui se cachaient dans leur logiciel depuis des années.</p>
+            <span class="english-block">The PHP Foundation rolled out patches on Wednesday to fix the vulnerabilities that had been lurking in their software for years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">" Tous les utilisateurs de PHP sont vivement encouragés à mettre à jour immédiatement ", a déclaré la société.</p>
+            <span class="english-block">"All PHP users are strongly encouraged to update immediately," the company said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Les autorités et les organisations de sécurité du monde entier ont fait écho à ces avertissements adressés aux opérateurs de sites Web pour sécuriser leurs plateformes.</p>
+            <span class="english-block">Authorities and security organisations around the world have echoed those warnings to website operators to secure their platforms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">L'Agence de sécurité nationale américaine a dit à toutes les organisations externes qui utilisent PHP de mettre leurs systèmes hors ligne si elles ne pouvaient pas les corriger immédiatement, ajoutant que la faille pourrait fournir un " chemin direct " pour exploiter la base de données d'un système.</p>
+            <span class="english-block">The US National Security Agency told all organisations, external that use PHP to take their systems offline if they were unable to patch them immediately, adding that the flaw could provide a "direct path" to exploit a system's database.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">" Ces risques sont suffisamment graves pour nécessiter une correction immédiate dans les départements et agences du gouvernement des États-Unis ", a déclaré l'agence.</p>
+            <span class="english-block">"These risks are serious enough to require immediate patching across United States Government departments and agencies," the agency said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Ses homologues dans l'UE, Singapour et Australie ont également émis des alertes similaires.</p>
+            <span class="english-block">Its counterparts in the EU, Singapore and Australia have also issued similar alerts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Le Premier ministre japonais Sanae Takaichi a exhorté les gens à vérifier si leurs sites Web publics fonctionnaient sur PHP dans les messages sur X.</p>
+            <span class="english-block">Japanese Prime Minister Sanae Takaichi urged people to check if their publicly available websites ran on PHP in posts on X.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Le Premier ministre Takaichi a publié mercredi dans les médias sociaux une "demand urgente de tout le monde pour qu'il prenne des mesures ce soir".</p>
+            <span class="english-block">Prime Minister Takaichi issued an "urgent request for everyone to take action tonight" in social media posts on Wednesday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Les entreprises technologiques ont également cherché à sécuriser rapidement leurs systèmes.</p>
+            <span class="english-block">Tech companies also sought to quickly secure their systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Le géant du commerce électronique Amazon a déclaré qu'il avait été ciblé dans plusieurs tentatives quelques jours avant la divulgation publique du problème PHP, mais que ses sites Web fonctionnaient normalement.</p>
+            <span class="english-block">E-commerce giant Amazon said it was targeted in multiple attempts days before the public disclosure of the PHP issue, but its websites were operating as normal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Matthew Prince, le chef de la société d'infrastructure Internet Cloudflare, a également déclaré avoir vu "des milliers" de tentatives d'exploitation des vulnérabilités de PHP dans son réseau au cours des 10 heures précédant son annonce publique.</p>
+            <span class="english-block">Matthew Prince, the boss of internet infrastructure firm Cloudflare, also said it had seen "thousands" of attempts to exploit the PHP vulnerabilities across its network in the 10 hours before it was publicly announced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">"Cela a grimpé à des dizaines de milliers en 45 minutes après l'annonce, à des centaines de milliers en deux heures, et à des millions maintenant", a-t-il écrit sur X, externe.</p>
+            <span class="english-block">"That jumped to tens of thousands in the 45 minutes post announcement, hundreds of thousands within two hours, and millions now," he wrote on X, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Dès vendredi matin, aucune attaque réussie n'avait été signalée.</p>
+            <span class="english-block">As of Friday morning, no successful attacks had been reported.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Mais les experts ont mis en garde contre le fait que les effets pourraient prendre du temps pour être pleinement évidents.</p>
+            <span class="english-block">But experts have warned any impact may take time to become fully apparent.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Et les opérateurs de plusieurs services où PHP a pu être utilisé - pas seulement dans le développement Web - sont toujours invités à vérifier leurs systèmes et à mettre en œuvre des mises à jour, le cas échéant.</p>
+            <span class="english-block">And operators of a number of services where PHP may have been used - not just in web development - are still being urged to check their systems and implement updates, where necessary.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">"Il est important de se rappeler que PHP ne se limite pas aux applications Web", a déclaré Daniel Stewart, responsable du renseignement sur les menaces chez LRQA, responsable mondial des risques.</p>
+            <span class="english-block">"It is important to remember that PHP is not limited to web applications," said Daniel Stewart, head of threat intelligence at global risk manager LRQA.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">" On le trouve généralement dans les interfaces de gestion des appareils de réseau, des équilibrateurs de charge et des appareils intégrés, qui sont souvent négligés lors de ces incidents. "</p>
+            <span class="english-block">"It is commonly found in the management interfaces of network appliances, load balancers, and embedded devices, which are often overlooked during these incidents."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">Selon certains chercheurs en cybersécurité qui utilisent des scans pour vérifier les serveurs exposés au risque de vulnérabilité PHP, le taux d'organisations mettant en œuvre des correctifs a augmenté - mais pas aussi rapidement que l'on pourrait espérer à l'échelle mondiale.</p>
+            <span class="english-block">According to some cyber-security researchers using scans to check servers at risk of the PHP vulnerability, the rate of organisations implementing patches has climbed - but not as quickly as might be hoped globally.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Les chercheurs de Calif et Wiz qui ont localisé les vulnérabilités ont utilisé des outils d'IA avancés, développés par le développeur de ChatGPT OpenAI, qui peuvent analyser le code et trouver des défauts beaucoup plus rapidement que les humains ou les systèmes plus anciens.</p>
+            <span class="english-block">Researchers at Calif and Wiz who located the vulnerabilities used advanced AI tools, developed by ChatGPT-developer OpenAI, which can analyse code and find flaws much faster than humans or older systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">"Le logiciel moderne est incroyablement complexe et certaines vulnérabilités peuvent rester indétectées pendant des années", a déclaré Kanhere.</p>
+            <span class="english-block">"Modern software is incredibly complex, and some vulnerabilities can remain undetected for years," Kanhere said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">" Les insectes sous-jacents n'étaient pas nouveaux; ce qui a changé, c'est notre capacité à les trouver ", a déclaré Kanhere.</p>
+            <span class="english-block">"The underlying bugs weren't new; what changed was our ability to find them," Kanhere said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">Les détails de la découverte ont été divulgués en ligne cette semaine, forçant les développeurs de la plateforme PHP à annoncer rapidement la faille de sécurité et son énorme échelle.</p>
+            <span class="english-block">Details of the discovery leaked online this week, forcing the PHP platform's developers to rush out its announcement of the security flaw and its huge scale.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">L'incident " met en évidence comment l'IA peut détecter des failles de sécurité " mais aussi comment elle peut " aider les attaquants à développer rapidement des outils et des exploits offensifs ", a déclaré OpenAI dans un article de blog.</p>
+            <span class="english-block">The incident "highlights how AI can uncover security flaws" but also how it can "help attackers rapidly develop offensive tools and exploits," OpenAI said in a blog post.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">Il a également dit avoir publié un programme qui pouvait vérifier si la plateforme PHP était sécurisée.</p>
+            <span class="english-block">It said it had also released a program that could check if the PHP platform was secure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">"Beaucoup de ces défauts proviennent de la façon dont les logiciels ont été construits dans le passé, qui ont été construits pour fonctionner et non pour la sécurité", a déclaré Ryan Ko, du Centre de recherche sur le cyberespace de l'Université du Queensland.</p>
+            <span class="english-block">"Many of these flaws stem from the way software were built in the past, which were built for functionality and not with security in mind," said Ryan Ko, at the University of Queensland's Cyber Research Centre.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.0" data-end="310.0">
+            <p class="french-block">Le problème affecte les processus de développement de sites Web et de back-end qui seront invisibles pour de nombreux utilisateurs - ce qui signifie que la plupart des gens n'auront pas besoin de prendre des mesures.</p>
+            <span class="english-block">The issue affects back-end website and web development processes that will be invisible to many users - meaning most people won't need to take any action.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.0" data-end="315.0">
+            <p class="french-block">Mais les petites entreprises avec des sites, y compris ceux construits à l'aide de WordPress, peuvent se demander comment se protéger.</p>
+            <span class="english-block">But small businesses with sites, including those built using WordPress, may be wondering how to protect themselves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.0" data-end="320.0">
+            <p class="french-block">Ceux qui possèdent des sites Web ou gèrent des infrastructures fonctionnant sur PHP ont été invités à sécuriser leurs sites Web en les mettant à jour vers la dernière version.</p>
+            <span class="english-block">Those who own websites or manage infrastructure running PHP have been urged to secure their websites by updating to the latest version.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.0" data-end="325.0">
+            <p class="french-block">Ken Munro, un pirate éthique qui a passé des années à rechercher des failles de sécurité dans les systèmes informatiques, dit que l'installation des correctifs - appelés correctifs - est "un peu comme l'exécution d'une mise à jour de Windows".</p>
+            <span class="english-block">Ethical hacker Ken Munro, who has spent years finding security flaws in computer systems, says installing the fixes - known as patching - is "a bit like running a Windows update".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.0" data-end="330.0">
+            <p class="french-block">Si une société d'hébergement ou un développeur Web gère votre site Web, contactez-les et demandez-leur si les corrections de sécurité PHP ont été appliquées - quelque chose qui doit être appliqué à PHP lui-même et qui ne peut pas être résolu en mettant à jour WordPress ou ses plugins.</p>
+            <span class="english-block">If a hosting company or web developer manages your website, contact them and ask whether the PHP security fixes have been applied - something that must be applied to PHP itself and cannot be resolved by updating WordPress or its plugins.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.0" data-end="335.0">
+            <p class="french-block">Si vous vous occupez vous-même de votre site Web, Munro dit que "c'est à vous de vous assurer que les corrections sont appliquées".</p>
+            <span class="english-block">If you look after your website yourself, Munro says "it is your own responsibility to make sure fixes are applied".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.0" data-end="340.0">
+            <p class="french-block">Le Centre national de cybersécurité du Royaume-Uni recommande, en outre, de considérer la mise hors service temporaire des sites si les mises à jour ou les protections temporaires ne peuvent pas être appliquées assez rapidement.</p>
+            <span class="english-block">The UK's National Cyber Security Centre recommends, external considering temporarily taking sites offline if updates or temporary protections cannot be applied quickly enough.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.0" data-end="345.0">
+            <p class="french-block">L'Agence américaine de sécurité nationale a également appelé à une "conscience accrue" dans les prochaines semaines, en disant aux gens de surveiller de près les mises à jour des fournisseurs de logiciels.</p>
+            <span class="english-block">The US National Security Agency has also urged "heightened awareness" in the coming weeks, telling people to closely monitor updates from software vendors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="345.0" data-end="350.0">
+            <p class="french-block">"La vigilance dans l'application des correctifs liés à ces systèmes est primordiale", a-t-il déclaré.</p>
+            <span class="english-block">"Vigilance in applying patches related to those systems is paramount," it said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.0" data-end="355.0">
+            <p class="french-block">Et bien que la responsabilité incombe principalement aux opérateurs de sites Web, les utilisateurs devraient rester vigilants pour tout avis de sécurité émis par les services concernés, tels que les demandes de modification de mots de passe, a déclaré Kanhere.</p>
+            <span class="english-block">And while the onus lies mainly on website operators, users should stay alert for any security advice issued by affected services, such as requests to change passwords, Kanhere said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.0" data-end="360.0">
+            <p class="french-block">Il a averti les gens d'être vigilants contre les messages de phishing qui exploitent la publicité autour de l'incident.</p>
+            <span class="english-block">He warned people to be alert to any phishing messages exploiting the publicity around the incident too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.0" data-end="365.0">
+            <p class="french-block">King met en garde contre les acteurs malveillants en ligne</p>
+            <span class="english-block">King warns malicious online actors are evolving tactics</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.0" data-end="370.0">
+            <p class="french-block">Assurez-vous que l'utilisation de l'IA est sûre, prévient le garde-d'informations</p>
+            <span class="english-block">Make sure use of AI is safe, data watchdog warns</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
