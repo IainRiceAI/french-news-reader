@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosebank: Life on the oil field at the centre of a political storm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Rosebank: Life on the oil field at the centre of a political storm</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 24 Oct 2026 23:15:18 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqy8ljkle97ro?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Scotland editor James Cook finds out what life is like on board a ship in an untapped oil field awaiting its fate.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Lorsque nous avons atterri en hélicoptère à Rosebank, ce champ pétrolier était au centre d'une tempête politique - et allait être sur le chemin d'une véritable.</p>
+            <span class="english-block">When we landed by helicopter at Rosebank, this oil field was at the centre of a political storm - and set to be in the path of a real one.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Nous sommes arrivés mercredi matin, quelques heures seulement après que le gouvernement britannique eut accordé son accord pour la production de gaz à partir du champ Jackdaw en mer du Nord.</p>
+            <span class="english-block">We arrived on Wednesday morning, just a few hours after the UK government had granted consent for the production of gas from the Jackdaw field in the North Sea.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Mais déjà l'attention se déplace vers cette partie sauvage et venteuse de l'Atlantique Nord  la prochaine grande décision pour le secrétaire à l'Energie Miatta Fahnbulleh.</p>
+            <span class="english-block">But already attention was shifting to this wild and windy patch of the North Atlantic – the next big decision for Energy Secretary Miatta Fahnbulleh.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Rosebank est plus grand que Jackdaw, elle générerait des émissions de gaz à effet de serre plus élevées, et elle pourrait être beaucoup plus lucrative pour ses propriétaires, Adura et Ithaca.</p>
+            <span class="english-block">Rosebank is bigger than Jackdaw, it would generate higher greenhouse gas emissions, and it could be far more lucrative for its owners, Adura and Ithaca.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Nicola Boyd aime son travail sur le navire Petrojarl Rosebank.</p>
+            <span class="english-block">Nicola Boyd loves her job on the Petrojarl Rosebank vessel</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Cet été, avec une équipe de caméras, j'ai voyagé à Jackdaw, à 150 miles à l'est d'Aberdeen.</p>
+            <span class="english-block">This summer, along with a camera crew, I travelled to Jackdaw, 150 miles east of Aberdeen.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Nous étions les premiers journalistes à visiter Rosebank.</p>
+            <span class="english-block">Now we were the first journalists to visit Rosebank.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Nous sommes venus ici - quelques jours avant l'arrivée de la tempête Boelo avec des vents forts et de fortes pluies - pour examiner un projet controversé qui est au cœur d'un débat national sur le changement climatique, la politique énergétique et l'économie.</p>
+            <span class="english-block">We came here - days before Storm Boelo arrived with strong winds and heavy rain - to scrutinise a controversial project which is at the heart of a national debate about climate change, energy policy and the economy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Mais nous espérions aussi voir une vie rare au large.</p>
+            <span class="english-block">But we also hoped for a rare glimpse into life offshore.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">"C'est amusant, c'est intéressant, chaque jour peut changer", a dit Nicola Boyd, qui dirige le hélicoptère, et nous a salués alors que nous nous battions pour sortir nos gilets de sauvetage et nos costumes de survie.</p>
+            <span class="english-block">"It's good fun, it's interesting, every day can change," said Nicola Boyd, who runs the helideck, and greeted us as we struggled out of our lifejackets and survival suits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Boyd a travaillé en mer pendant près d'une décennie, y compris un an à Rosebank - où elle passe deux semaines à la fois suivie d'un congé de trois semaines.</p>
+            <span class="english-block">Boyd has worked offshore for nearly a decade, including a year on Rosebank - where she spends two weeks at a time followed by three weeks' leave.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"C'est un travail que j'aime", a- t- elle ajouté.</p>
+            <span class="english-block">"It's a job I love," she added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">La Petrojarl Rosebank est amarrée dans l'Atlantique Nord en attendant de voir si la production obtient l'approbation du gouvernement britannique</p>
+            <span class="english-block">The Petrojarl Rosebank is moored in the North Atlantic waiting to see if production gets the go-ahead from the UK government</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">C'est aussi un travail qui demande des jambes stables et un estomac fort.</p>
+            <span class="english-block">It's also a job that calls for steady legs and a strong stomach.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Contrairement à la plateforme Jackdaw fixe, cette installation  80 miles au nord-ouest des Shetland  est un grand navire, un navire flottant de production, de stockage et de déchargement (FPSO) nommé Petrojarl Rosebank.</p>
+            <span class="english-block">Unlike the fixed Jackdaw platform, this installation – 80 miles north west of Shetland – is a large ship, a floating production, storage and offloading vessel (FPSO) named the Petrojarl Rosebank.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Il a été loué par les propriétaires du champ d'Altera, à Aberdeen, et pendant mes 48 heures à bord, il roulait constamment mais doucement sur les vagues de l'Atlantique Nord.</p>
+            <span class="english-block">It's been chartered by the field's owners from Aberdeen-based Altera and, during my 48 hours on board, it was constantly but gently rolling on the North Atlantic swell.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Ces conditions peuvent être trompeuses.</p>
+            <span class="english-block">Those conditions may be misleading.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Avec le sous-estimation typique d'un insulaire des Orcades, le technicien en chef de la mécanique Ewan Leonard m'a dit que le temps hivernal pourrait être "un peu difficile".</p>
+            <span class="english-block">With the understatement typical of an Orkney islander, lead mechanical technician Ewan Leonard told me the winter weather could be "a bit of a challenge."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"La semaine dernière, nous avons eu une élévation de 30 mètres", a-t-il dit, se référant à l'orage, "donc nous en souffrirons probablement davantage à mesure que l'hiver se poursuit".</p>
+            <span class="english-block">"Last week we had a 30m heave coming through," he said, referring to the swell, "so we'll probably suffer more of that as the winter goes on."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Chris Brett, PDG d'Altera, m'a dit que dans l'industrie, l'environnement à l'ouest des Shetland est considéré comme " aussi dur que partout dans le monde ".</p>
+            <span class="english-block">Altera CEO Chris Brett told me that in the industry the environment west of Shetland is considered "as harsh as you get anywhere in the world."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Quelle que soit votre opinion sur cette industrie, l'ampleur des réalisations humaines dans de telles conditions est impressionnante.</p>
+            <span class="english-block">Whatever your view on that industry, the sheer scale of what humans have achieved in such conditions is impressive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Ewan Leonard dit que le temps d'hiver peut être "un peu difficile"</p>
+            <span class="english-block">Ewan Leonard says the winter weather can be "a bit of a challenge"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Les profondes réserves de compétences, d'ingéniosité et d'ingénierie parmi les 122 personnes à bord sont évidentes.</p>
+            <span class="english-block">The deep reserves of skill, ingenuity and engineering prowess among the 122 people on board are obvious.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Les emplois sont bien rémunérés et, selon Ewan Leonard, les installations sont excellentes.</p>
+            <span class="english-block">The jobs are well-paid and, according to Ewan Leonard, the facilities are excellent.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Nous avons des cabines pour célibataires, de bonnes installations de gymnase, et beaucoup de salles de loisirs".</p>
+            <span class="english-block">"We have single-man cabins, there's good gym facilities, there's a lot of rec rooms here."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Douglas Hogge, directeur de la production et responsable de l'équipe chargée de l'extraction sûre de pétrole et de gaz, est d'accord.</p>
+            <span class="english-block">Douglas Hogge, a production supervisor in charge of a team responsible for the safe extraction of oil and gas, agrees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">"Il y a la salle de gym, le sauna", a- t- il dit, ajoutant "vous pouvez évidemment aller prendre de l'air frais. Il y a beaucoup d'air frais là-bas".</p>
+            <span class="english-block">"There's the gym, the sauna," he said, adding "you can obviously go and get some fresh air. There's plenty of fresh air out there."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Il y a même un cinéma.</p>
+            <span class="english-block">There's even a cinema.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">La nourriture à bord du navire a été décrit comme " fantastique "</p>
+            <span class="english-block">Food on board the ship was described as "fantastic"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">" Comme vous l'avez vu, la nourriture à bord est fantastique, donc pas de plaintes. " a ajouté Leonard.</p>
+            <span class="english-block">"As you've seen yourself, the food is fantastic on board, so no complaints." added Leonard.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Tout le monde était d'accord avec cela, louant les chefs talentueux qui envoyaient toutes sortes de plats délicieux, de la joue de bœuf au maquereau au fémur de porc, jour et nuit.</p>
+            <span class="english-block">Everyone we spoke to agreed with that, praising the talented chefs who sent out all sorts of delicious dishes, from braised ox cheek to mackerel to pork loin, day and night.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Alors que le crépuscule se réalise et que le quart de nuit se prépare au travail avec un étrange petit déjeuner de filet et de pudding au chocolat, le vaisseau commence à briller dans l'obscurité.</p>
+            <span class="english-block">As dusk gathers and the nightshift get ready for work with a strange breakfast of fillet steak and chocolate brownie pudding, the vessel begins to glow in the gloom.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">C'est un spectacle étrange, les ponts sont traversés par une gamme de tuyaux, de soupapes et d'acier jaune.</p>
+            <span class="english-block">It is a strange sight, the decks criss-crossed by a bewilderingly complex array of pipes, valves and bright yellow steelwork.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Le navire est une série de tuyaux, de soupapes et d'acier jaune brillant</p>
+            <span class="english-block">The ship is an array of pipes, valves and bright yellow steelwork</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Le navire ne se déplace pas loin, tourne autour d'un point central fixe appelé la tourelle pour faire face au temps, ce qui facilite la vie un peu pour ceux à bord.</p>
+            <span class="english-block">The ship doesn't move far, rotating around a fixed central point called the turret to face into the weather, making life a little easier for those on board.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Si la production est approuvée, le pétrole et le gaz seront pompés à travers la tourelle à partir de puits dans le champ ci-dessous, qui contient environ 300 à 500 millions de barils, suffisant peut-être pour 25 ans.</p>
+            <span class="english-block">If production is approved, oil and gas will be pumped up through the turret from wells in the field below, which contains an estimated 300m to 500m barrels, enough for perhaps 25 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">"Pour moi et beaucoup de gars, cela nous mènerait à la retraite", a déclaré Douglas Hogge.</p>
+            <span class="english-block">"For myself and a lot of the guys, that would see us out to retirement," said Douglas Hogge.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">"Nous devons voir que cela soit approuvé", a- t- il ajouté.</p>
+            <span class="english-block">"We need to see this approved," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Les militants écologistes sont en désaccord, ils tentent de stopper la Rosebank depuis des années, avec un certain succès.</p>
+            <span class="english-block">Environmental campaigners strongly disagree. They've been trying to stop Rosebank for years, with some success.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">"L'avenir du secteur énergétique au Royaume-Uni est l'énergie renouvelable", a déclaré Tessa Khan, directrice exécutive du groupe de campagne Uplift.</p>
+            <span class="english-block">"The future of the energy sector in the UK is renewable energy," said Tessa Khan, executive director of the campaigning group Uplift.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Le consentement à la production à Rosebank a été accordé pour la première fois sous le gouvernement conservateur en 2023.</p>
+            <span class="english-block">Consent for production at Rosebank was first granted under the Conservative government in 2023.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Mais en 2025, après un défi de Greenpeace et Uplift, la Cour de session d'Édimbourg a statué que les approbations du plus grand champ pétrolier connu non exploité du Royaume-Uni et Jackdaw étaient illégales parce qu'elles n'avaient pas pris en compte l'impact climatique de la combustion réelle des combustibles fossiles dans les voitures, les maisons et les usines.</p>
+            <span class="english-block">But in 2025, after a challenge by Greenpeace and Uplift, the Court of Session in Edinburgh ruled the approvals of the UK's largest known untapped oil field and Jackdaw were unlawful because they had failed to take into account the climate impact of actually burning the fossil fuels in cars, homes and factories.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Le juge, Lord Ericht, a déclaré que les développeurs des champs pourraient poursuivre le travail en dehors de la production de pétrole et de gaz tout en fournissant des évaluations environnementales plus détaillées au gouvernement et aux régulateurs pour les examiner.</p>
+            <span class="english-block">The judge, Lord Ericht, said the fields' developers could carry on with work short of producing oil and gas while they provided more detailed environmental assessments for the government and regulators to consider.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">"Nous pensons que Rosebank serait une décision désastreuse et un terrible accord pour les gens ordinaires de tout le pays", a déclaré Khan, exhortant le premier ministre Andy Burnham à donner la priorité aux énergies renouvelables dans sa quête de réindustrialiser la nation.</p>
+            <span class="english-block">"We think Rosebank would be a disastrous decision and a terrible deal for ordinary people across this country," said Khan, urging prime minister Andy Burnham to prioritise renewables in his quest to re-industrialise the nation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">"Si le gouvernement est intéressé à renforcer la confiance des investisseurs, donner le feu vert à un nouveau champ pétrolier majeur va faire le contraire", a-t-elle soutenu.</p>
+            <span class="english-block">"If the government's interested in building investor confidence, giving the green light to a major new oil field is going to do the opposite," she argued.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Quoi qu'il arrive avec Rosebank et Jackdaw, la tendance à long terme pour l'industrie est claire et elle est en déclin.</p>
+            <span class="english-block">Whatever happens with Rosebank and Jackdaw, the long-term trend for the industry is clear and it is one of decline.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Il y a un quart de siècle, la production pétrolière a atteint son apogée et ces dernières années, les emplois dans le pétrole et le gaz ont disparu beaucoup plus rapidement que ceux créés dans les énergies renouvelables comme l'énergie éolienne et solaire.</p>
+            <span class="english-block">It's a quarter of a century since oil production peaked and in recent years jobs in oil and gas have been disappearing much faster than they're being created in renewable energy such as wind and solar power.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">L'huile de Rosebank serait chargée sur les pétroliers par un tuyau et une buse gigantesques, qui ressemblent à la pompe super-dimension d'une énorme station de ravitaillement flottante.</p>
+            <span class="english-block">The oil from Rosebank would be loaded onto tankers via a gigantic hose and nozzle, which looks like the super-sized pump of an enormous floating filling station.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">De là, il serait vendu sur le marché international et, très probablement, transporté en Europe continentale pour le raffinage.</p>
+            <span class="english-block">From there it would be sold on the international market and, most likely, taken to continental Europe for refining.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Les opposants affirment que cela prouve que le projet est peu bénéfique pour le Royaume-Uni et devrait être rejeté.</p>
+            <span class="english-block">Opponents say that proves the project is of little benefit to the UK and should be rejected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Les partisans affirment que ce n'est pas le cas parce que les marchés énergétiques britanniques et européens sont co-dépendants, ajoutant que Rosebank générera des millions d'impôts pour le Trésor.</p>
+            <span class="english-block">Supporters argue that's not the case because UK and European energy markets are co-dependent, adding that Rosebank will generate millions in tax for the Treasury.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Neil McCulloch, directeur général d'Adura  qui détient 80% de Rosebank et est une joint-venture entre Shell et la société d'énergie d'État norvégienne, Equinor  est optimiste.</p>
+            <span class="english-block">Neil McCulloch, chief executive of Adura – which owns 80% of Rosebank and is a joint venture between Shell and the Norwegian state energy firm, Equinor – is optimistic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Il souligne que Rosebank ne contient pas seulement du pétrole mais aussi du gaz qui serait conduit vers les Shetland et le terminal St Fergus dans le Aberdeenshire, avec le potentiel de chauffer 500 000 foyers britanniques à un pic de production.</p>
+            <span class="english-block">He points out that Rosebank contains not just oil but gas which would be piped to Shetland and on to the St Fergus terminal in Aberdeenshire, with the potential to heat 500,000 British homes at peak production.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">L'approbation de ce projet, soutient McCulloch, pourrait ouvrir la voie à quatre autres évolutions de gaz de la taille de Jackdaw dans les eaux à l'ouest des Shetland  Tornado, Tornado East, Tobermory et Suilven.</p>
+            <span class="english-block">Approval of this project, argues McCulloch, could pave the way for four more Jackdaw-sized gas developments in the waters west of Shetland – Tornado, Tornado East, Tobermory and Suilven.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">"Nous aimerions poursuivre avec eux", a- t- il dit.</p>
+            <span class="english-block">"We would like to proceed with them," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">Une augmentation de la production de combustibles fossiles si la Banque Rosebank est approuvée est exactement ce que les militants craignent.</p>
+            <span class="english-block">A surge in fossil fuel production if Rosebank is approved is exactly what campaigners fear.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Tessa Khan soutient que cela exacerberait les effets mortels et néfastes du changement climatique pour les enseignants, les infirmières, les pompiers et les familles britanniques inquiètes pour leurs enfants tout en faisant " d'énormes profits pour les entreprises qui sont déjà incroyablement rentables ".</p>
+            <span class="english-block">It would, argues Tessa Khan, exacerbate the deadly and damaging impact of climate change for British teachers, nurses, firefighters and families worried about their children while making "huge profits for companies that are already incredibly profitable".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">L'huile de Rosebank serait chargée sur les pétroliers par un tuyau et une buse gigantesques</p>
+            <span class="english-block">The oil from Rosebank would be loaded onto tankers via a gigantic hose and nozzle</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">En ce qui concerne la décision imminente du gouvernement britannique  qui a dit à BBC News qu'elle devait arriver avant Noël  il y a une étrange humeur à Rosebank.</p>
+            <span class="english-block">When it comes to the impending UK government decision – which sources have told BBC News should come before Christmas – there is a strange mood at Rosebank.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">La décision en faveur de Jackdaw a clairement encouragé de nombreux membres de l'équipage, mais elle a également mis en évidence le danger auquel ils sont confrontés.</p>
+            <span class="english-block">The decision in favour of Jackdaw has clearly encouraged many on board but it has also highlighted the jeopardy they are facing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">Pour l'instant, la plupart des travailleurs avec qui nous avons parlé ont dit qu'ils se concentraient sur le travail, avec ses rythmes étranges et ses restrictions inhabituelles, aucune capacité à aller aux magasins, aucune consommation d'alcool, beaucoup d'occasions spéciales manquées.</p>
+            <span class="english-block">For now, most workers we spoke to said they were just focusing on the job, with its strange rhythms and unusual restrictions – no ability to pop to the shops, no alcohol, a lot of special occasions missed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.0" data-end="310.0">
+            <p class="french-block">Et pour certains à bord, des envies très particulières.</p>
+            <span class="english-block">And for some on board, very particular cravings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.0" data-end="315.0">
+            <p class="french-block">Pour le commissaire Liam Davidson, c'est un désir de voir son bouldog français, Bailey, à la fin de sa quinquennée à bord.</p>
+            <span class="english-block">For steward Liam Davidson, it is a desire to see his French bulldog, Bailey, at the end of his fortnight on board.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.0" data-end="320.0">
+            <p class="french-block">"Mon petit chien est à l'héliport quand je suis arrivé", dit-il, "elle me manque".</p>
+            <span class="english-block">"My wee dog's at the heliport when I arrive," he said, "I do miss her."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.0" data-end="325.0">
+            <p class="french-block">Il est espéré que la décision sur la Banque Rosebank sera prise dans les prochaines semaines.</p>
+            <span class="english-block">It is hoped the decision on Rosebank will be made in the next few weeks</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.0" data-end="330.0">
+            <p class="french-block">Pour Nicola Boyd, c'est son lit double et une livraison de pizza.</p>
+            <span class="english-block">For Nicola Boyd, it's her double bed and a pizza delivery.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.0" data-end="335.0">
+            <p class="french-block">"J'aime voir la famille, mais pour moi, c'est la pizza", m'a-t-elle dit.</p>
+            <span class="english-block">"I love seeing the family, but for me, it's the pizza," she told me.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.0" data-end="340.0">
+            <p class="french-block">Mais cette fois, il pourrait y avoir un retard dans la livraison de Boyd elle-même.</p>
+            <span class="english-block">But this time there might be a delay in delivering Boyd herself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.0" data-end="345.0">
+            <p class="french-block">Elle est à la fin de sa quinzaine, mais, comme elle nous a aidés dans nos costumes de survie, le bureau de météo a émis un avertissement météo ambre pour une grande partie de l'Écosse.</p>
+            <span class="english-block">She is coming to the end of her fortnight but, as she helped us into our survival suits, the Met Office issued an amber weather warning for much of Scotland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="345.0" data-end="350.0">
+            <p class="french-block">Pour Rosebank, il semble qu'il y ait des mers tempérées devant nous, d'une façon ou d'une autre.</p>
+            <span class="english-block">For Rosebank, it seems, there are stormy seas ahead, one way or the another.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.0" data-end="355.0">
+            <p class="french-block">Je prendrai la décision finale sur le champ pétrolier de Rosebank, insiste le secrétaire à l'énergie</p>
+            <span class="english-block">I will make final decision on Rosebank oil field, energy secretary insists</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.0" data-end="360.0">
+            <p class="french-block">Burnham défend la décision de Jackdaw alors que Badenoch demande au Premier ministre d'annuler l'interdiction de nouvelles licences pétrolières et gazières</p>
+            <span class="english-block">Burnham defends Jackdaw decision as Badenoch urges PM to overturn ban on new oil and gas licences</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

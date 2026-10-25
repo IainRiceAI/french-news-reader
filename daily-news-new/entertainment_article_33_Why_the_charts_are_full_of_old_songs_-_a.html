@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why the charts are full of old songs - and so are your playlists</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Why the charts are full of old songs - and so are your playlists</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 24 Oct 2026 23:05:41 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6kg50nnj0x4o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The chart is full is full of old music and classic songs are dominating streaming services. But why?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">L'un des plus grands succès de 2026 est Lush Life de Zara Larsson, sorti à l'origine en 2015.</p>
+            <span class="english-block">One of 2026's biggest hits is Zara Larsson's Lush Life, originally released in 2015</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Chaque jour, plus de 100.000 chansons externes sont soumises aux services de streaming.</p>
+            <span class="english-block">More music is being created than at any other time in human history. Every day, more than 100,000 songs, external are being submitted to streaming services.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Et malgré le débordement de musique d'IA, externe - Spotify dit qu'il a supprimé 75 millions de "spam tracks" de son catalogue - la musique réelle constitue toujours la plupart de notre écoute.</p>
+            <span class="english-block">And despite the deluge of AI music, external - Spotify says it has removed 75 million "spammy tracks" from its catalogue - real music still makes up most of our listening. The streaming service Deezer says AI accounts for just 0.5% of streams on its platform.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le problème pour tous ces artistes qui créent de la musique nouvelle est que nos habitudes d'écoute montrent de plus en plus un amour pour la nostalgie.</p>
+            <span class="english-block">The problem for all those artists creating new music is that our listening habits increasingly show a love for nostalgia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Luminate, une société indépendante de données et d'analyse de divertissement qui suit la consommation de musique, de films et de télévision, a commencé à suivre le streaming de musique en 2008.</p>
+            <span class="english-block">Luminate, an independent entertainment data and analytics company that tracks music, film, and television consumption first started tracking music streaming in 2008.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Cette année, il a enregistré que le streaming de musique actuelle (publié il y a moins de 18 mois) a été considérablement réduit par la musique plus ancienne au Royaume-Uni et aux États-Unis.</p>
+            <span class="english-block">This year, it recorded that the streaming of current music (released less than 18 months ago) was significantly dwarfed by older music in both the UK and US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Au premier semestre 2026, près des deux tiers de la musique jouée (environ 60%) a été publiée il y a cinq ans ou plus.</p>
+            <span class="english-block">In the first half of 2026, almost two thirds of the music played (about 60%) was released five or more years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Donc, si nous sommes coincés dans une routine de streaming, à quoi est-ce la faute ?</p>
+            <span class="english-block">So, if we're stuck in a streaming rut, what's to blame?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Au Royaume-Uni, la plupart d'entre nous semblent éviter de nouvelles chansons.</p>
+            <span class="english-block">In the UK, most of us seem to be shunning new songs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Dix-huit des 20 meilleures chansons de l'année, externes ont été publiées il y a 12 mois, ou plus tôt.</p>
+            <span class="english-block">Eighteen of the year's top 20 bestselling songs, external were released 12 months ago, or earlier.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Le huitième plus grand succès de l'année est Lush Life de Zara Larsson, qui sort en juin 2015. Billie Jean (1983) de Michael Jackson est à la 22e place.</p>
+            <span class="english-block">The year's eighth biggest hit is Zara Larsson's Lush Life, which originally came out in June 2015. Michael Jackson's Billie Jean (1983) is in 22nd place. Fleetwood Mac's Dreams (1977) is 30th.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">C'est un signe que, avec pratiquement toutes les chansons enregistrées disponibles en appuyant sur un bouton, les gens recherchent de plus en plus les classiques - ou ce que l'industrie musicale classe comme "un catalogue profond".</p>
+            <span class="english-block">It's a sign that, with practically every song ever recorded available at the press of a button, people are increasingly seeking out the classics - or what the music industry categorises as "deep catalogue".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">C'est une histoire similaire aux États-Unis.</p>
+            <span class="english-block">It's a similar story in the US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Là, dans les deux genres les plus joués, R&B et Hip-Hop, externes, environ 60% des flux sont des hits de catalogue de l'ancienne école.</p>
+            <span class="english-block">There, in the two most-played genres, R&B and Hip-Hop, external, about 60% of streams are old-school catalogue hits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Même quand les chansons actuelles sont diffusées, elles dominent elles- mêmes le streaming pendant des semaines et même des mois.</p>
+            <span class="english-block">Even when current songs do break out, they themselves dominate streaming for weeks and even months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Le duo de Sam Fender et Olivia Dean Rein Me In a récemment fait l'histoire des charts britanniques, passant un record de 23 semaines non consécutives au numéro un.</p>
+            <span class="english-block">Sam Fender and Olivia Dean's duet Rein Me In recently made UK chart history, spending a record-breaking 23 non-consecutive weeks at number one.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Olivia Dean et Sam Fender ont brisé l'histoire des charts avec Rein Me In, après 19 semaines non consécutives au sommet du UK singles chart</p>
+            <span class="english-block">Olivia Dean and Sam Fender have broken chart history with Rein Me In, after 19 non-consecutive weeks at the top of the UK singles chart</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">De même, en Amérique, Choosin' Texas d'Ella Langley est devenu le numéro un le plus long de l'histoire des charts américains.</p>
+            <span class="english-block">Likewise, in America, Ella Langley's Choosin' Texas has become the longest-running number one in US chart history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">La réalité, bien sûr, est que les hits doivent atteindre "des millions de flux par jour, externes" pour atteindre le sommet des charts.</p>
+            <span class="english-block">The reality, of course, is that hits need to achieve "millions of streams a day, external" to reach the top of the charts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Mais selon l'Autorité britannique de la concurrence et des marchés, près des deux tiers des flux sont de musique enregistrée par "seuls 0,4% des artistes les plus performants, externes".</p>
+            <span class="english-block">But according to the UK's Competition and Markets Authority, nearly two thirds of streams are of music recorded by "only the top 0.4% of artists, external".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Alors que nous nous accrochons de plus en plus à nos favoris, les artistes aspirants peuvent souffrir.</p>
+            <span class="english-block">As we increasingly cling on to our favourites, aspiring artists may be suffering.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Même après qu'une chanson soit devenue virale, certains musiciens disent qu'il peut être difficile de promouvoir des sorties ultérieures et de maintenir une carrière.</p>
+            <span class="english-block">Even after a song has gone viral, some musicians say it can be hard to promote subsequent releases and sustain a career. A platform like TikTok isn't set up to boost artists, it's there to create viral moments around a single song.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"Il est plus facile [aujourd'hui] pour les gens d'être des fans passifs", a noté J Erving, fondateur de la société de distribution de Raye, Human Re Sources, dans une récente interview avec Billboard, externe.</p>
+            <span class="english-block">"It's easier [today] for folks to be passive fans," noted J Erving, the founder of Raye's distribution company, Human Re Sources, in a recent interview with Billboard, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">" Pour que vous vous considérez comme brisé [en tant qu'artiste principal], les gens doivent se soucier de vous au-delà de la chanson.</p>
+            <span class="english-block">"For you to consider yourself broken [as a mainstream artist], people need to care about you beyond the song. Where is the connectivity? Are people really dialled in in a deeper way?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">C'est un problème que l'industrie musicale est impatiente de résoudre.</p>
+            <span class="english-block">It's a problem the music industry is keen to tackle.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Oliver Schusser, directeur d'Apple Music, dit que son service de streaming travaille à défendre les "artistes de demain" dans sa conservation.</p>
+            <span class="english-block">Oliver Schusser, the Head of Apple Music, says his streaming service is working to champion "tomorrow's artists" in its curation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">" Vous savez, nous faisons le spectacle de demi-temps du Super Bowl, nous devons nous assurer que nous avons encore des artistes dans 10, 20, 30 ans, " il dit à BBC News.</p>
+            <span class="english-block">"You know, we do the Super Bowl halftime show, we need to make sure that we still have performers in 10, 20, 30 years," he tells BBC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">"Si vous regardez les artistes que nous avons eu au cours des quatre dernières années, ils ont tous commencé quelque part avant d'atteindre la plus grande scène du monde".</p>
+            <span class="english-block">"Because if you look back at the performers we had in the last four years, they all started somewhere before they got to the world's biggest stage."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">D'autres organisations comme Sofar Sounds travaillent exclusivement avec des musiciens de base, donnant des concerts pop-up intimes dans des villes du monde entier.</p>
+            <span class="english-block">Other organisations like Sofar Sounds work exclusively with grassroots musicians, putting on intimate pop-up gigs in cities across the globe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">En octobre dernier, son festival Shoreditch Sofar Fringe a présenté une foule d'artistes comme le rappeur J Casa.</p>
+            <span class="english-block">This October, its Shoreditch Sofar Fringe festival showcased a whole host of artists like East London rapper J Casa.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Le rappeur J Casa est l'un des milliers d'artistes de base qui essaient de réduire le bruit sur les plateformes de streaming</p>
+            <span class="english-block">Rapper J Casa is one of thousands of grassroots artists trying to cut through the noise on streaming platforms</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">À une époque de surabondance de contenu, Casa pense qu'il y a quelque chose de unique dans une performance en direct.</p>
+            <span class="english-block">In an age of content oversaturation, Casa thinks there's something unique about a live performance.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Au lieu d'entendre plus de ce qu'ils savent déjà, Casa dit que le public forme "un lien durable" avec un nouvel artiste et sa musique.</p>
+            <span class="english-block">Rather than hearing more of what they already know, Casa says audiences form "a lasting connection" with a new artist and their music.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Sofar lance également son mouvement de découverte humaine, une campagne externe visant à remettre la conservation et la découverte de la musique "en mains humaines".</p>
+            <span class="english-block">Sofar is also launching its Human Discovery Movement, external campaign that aims to put music curation and discovery "back into human hands."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Les amateurs de musique peuvent désormais envoyer un "numéro mystérieux" et recevoir des notes vocales des gourmets de Sofar avec des recommandations pour de la nouvelle musique dans le monde entier.</p>
+            <span class="english-block">Music lovers can now text a "mystery number" and receive voice notes from Sofar's tastemakers with recommendations for new music worldwide.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">L'intelligence artificielle (IA) peut aussi jouer son rôle dans la soi-disant mort de la nouvelle musique.</p>
+            <span class="english-block">Artificial intelligence (AI) may also be playing its part in the so-called death of new music.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Spotify et ses concurrents comme Apple Music et Amazon Music, sont à la pointe de la tendance de la conservation assistée par l'IA, permettant aux abonnés premium de générer automatiquement des listes de lecture à travers des instructions texte pour s'adapter à une humeur, à une ambiance ou à une occasion.</p>
+            <span class="english-block">Spotify, and its competitors like Apple Music and Amazon Music, are driving the trend in AI-assisted curation, allowing premium subscribers to automatically generate playlists through text prompts to fit a mood, vibe or occasion.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">La musicologue Anna-Kaisa Kaila pense qu'il y a "absolument un potentiel de biais" avec la technologie génératrice de playlist AI.</p>
+            <span class="english-block">Musicologist Anna-Kaisa Kaila thinks "there absolutely is potential for bias" with AI-generative playlist technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">" Avec les systèmes d'IA, le biais peut provenir des données ou du système lui-même. S'il n'y a pas assez de données de formation dans un style particulier qui n'est peut-être pas si dominant commercialement, il sera beaucoup plus difficile pour le système de tirer des pistes dans ce style. "</p>
+            <span class="english-block">"With AI systems, the bias can either come from the data or from the system itself. If there's not enough training data in a particular style that is perhaps not so commercially dominant, it will be that much harder for the system to pull up tracks in that style."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">D'autres craignent qu'une bulle de streaming algorithmique soit à l'encontre de la musique authentique, de sa découverte et des moyens de subsistance des créatifs.</p>
+            <span class="english-block">Others fear an algorithmic streaming bubble is to the detriment of genuine music, its discovery and creatives' livelihoods.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Comme le dit Tim Garcia, DJ et conservateur basé à Londres: " Ils sont basés sur le comportement et les données d'écoute de chacun, non ? Donc, vous allez probablement recevoir une recommandation très similaire à un artiste que vous écoutez déjà. "</p>
+            <span class="english-block">As Tim Garcia, London-based DJ and curator puts it: "They're based on everyone's listening behaviour and data, right? So, you're probably going to get given a very similar recommendation to an artist you're already listening to."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Dan Mackta, directeur général de Qobuz, une plateforme de musique en ligne qui maintient une approche stricte de la conservation, qui est la première à être utilisée par l'homme, est d'accord que la technologie "ne va jamais vouloir vous lancer une balle à la courbe".</p>
+            <span class="english-block">Dan Mackta, managing director at Qobuz, an online music platform that maintains a strict human-first approach to curation, agrees the technology "is never going to want to throw a curve ball at you".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">L'artiste londonien Chiminyo se produit dans son projet en cours de jazz-électronique NRG</p>
+            <span class="english-block">London-based artist Chiminyo performs at his ongoing jazz-electronic NRG project</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Chiminyo, un artiste indépendant basé à Londres, estime que les listes de lecture générées automatiquement induisent également les gens en erreur en pensant qu'ils écoutent des chansons " sélectionnées à la main " d'artistes fidèles - contrairement aux allies sonores numériquement produits en masse créés pour capturer les flux.</p>
+            <span class="english-block">Chiminyo, a London-based independent artist, believes that auto-generated playlists are also misleading people into thinking they're listening to "hand-picked" tunes from bona fide artists - as opposed to digitally mass-produced sound-alikes created to catch streams.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">En parcourant une "liste de lecture de piano de jazz relaxante" avec plus de 370 000 enregistrements sur Spotify, il remarque que les artistes les plus populaires qui accumulent des centaines de milliers d'écoute mensuelle ont des comptes non vérifiés.</p>
+            <span class="english-block">Scrolling through a "relaxing jazz piano playlist" with over 370,000 saves on Spotify, he spots that top featured artists that rack up hundreds of thousands of monthly listens have unverified accounts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">On ne trouve pas beaucoup de choses sur eux en ligne, dit- il.</p>
+            <span class="english-block">Little - if anything - can be found about them online, he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Pour son oreille bien formée, Chiminyo dit aussi que les traces des différents artistes sonnent presque identiques, raison suffisante pour conclure que les compositions ont été produites en masse synthétiquement.</p>
+            <span class="english-block">To his trained ear, Chiminyo also says the different artists' tracks sound near identical, reason enough to conclude the compositions have been synthetically mass-produced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">"C'est tout le même: le même piano, le même microphone, la même cassette, ont été utilisés sur chacun de ces morceaux".</p>
+            <span class="english-block">"Its all the same: the same piano feel, the same microphone placement, the same tape machine, has been used on every single one of these tracks."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Interrogé, Spotify a déclaré qu'il avait mis en place des politiques à l'échelle de la plateforme, externes contre l'impersonnalisation et travaille à améliorer le filtrage des problèmes liés à l'IA sur sa plateforme.</p>
+            <span class="english-block">When asked, Spotify said it had rolled out platform-wide policies, external against impersonation and is working to the improve filtering out of AI-related issues on its platform. But it acknowledges AI's use in music production sits on a spectrum with some artists choosing to use it to varying degrees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">La nouvelle musique ne disparaîtra peut-être pas, mais il est clair qu'elle a beaucoup à combattre en 2026.</p>
+            <span class="english-block">New music may not be dying out, but it's clear it has a lot to contend with in 2026.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">TikTok a fait que les chansons se rattrapent, mais les artistes repoussent</p>
+            <span class="english-block">TikTok made songs shrink, but artists are pushing back</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">L'Écosse est folle d'Oasis, Newcastle aime Sam Fender: les goûts musicaux de votre pays sont révélés</p>
+            <span class="english-block">Scotland's mad for Oasis, Newcastle loves Sam Fender: Music tastes where you live revealed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Les années 2010 ont perdu des classiques qui sont devenus des hits endormis une décennie plus tard.</p>
+            <span class="english-block">The 2010s lost classics that became sleeper hits a decade on</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

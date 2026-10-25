@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trains cancelled and road warnings as Storm Boelo sweeps into Scotland</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Trains cancelled and road warnings as Storm Boelo sweeps into Scotland</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 24 Oct 2026 22:39:52 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c60qk5lw1z8wo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Heavy rain and strong winds are expected during the second named storm to hit in two days, with gusts of up to 80mph forecast.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les trains et les ferries ont été annulés et la police a mis en garde contre les déplacements inutiles en route alors que la tempête Boelo fait tomber de fortes pluies et des vents violents en Écosse.</p>
+            <span class="english-block">Train and ferry services have been cancelled and police have warned against unnecessary road journeys as Storm Boelo brings heavy rain and strong winds to Scotland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Un avertissement météo extérieur de l'ambre a été mis en place à 21h le samedi, couvrant le continent et les îles occidentales jusqu'à 21h le dimanche.</p>
+            <span class="english-block">An amber Met Office weather warning, external came into effect at 21:00 on Saturday, covering the mainland and Western Isles until 21:00 on Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Des vagues de plus de 80 mph sont prévues alors que la deuxième tempête nommée en deux jours frappe le pays.</p>
+            <span class="english-block">Gusts of up to 80mph are forecast as the second named storm in two days hits the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les météorologues disent que les vents forts pourraient entraîner des blessures, des débris volants, des coupures d'électricité et des dommages aux arbres et aux bâtiments.</p>
+            <span class="english-block">Forecasters say the strong winds could result in injury, flying debris, power cuts and damage to trees and buildings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Des dizaines d'avertissements d'inondations et d'alertes externes ont été mis en place dans tout le pays et les inondations ont également fermé un certain nombre de routes, y compris l'A78 Inverkip Road à Greenock; l'A77 à Lendalfoot dans le Ayrshire; et plusieurs à Dumfries et Galloway.</p>
+            <span class="english-block">Dozens of flood warnings and alerts, external were in place across the country and flooding also closed a number of roads, including the A78 Inverkip Road in Greenock; the A77 at Lendalfoot in Ayrshire; and several in Dumfries and Galloway.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">L'Écosse sera touchée par des vents de 80 mph alors que l'alerte de tempête Boelo est passée à l'ambre</p>
+            <span class="english-block">Scotland to be hit with 80mph wind gusts as Storm Boelo alert upgraded to amber</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Des déplacements perturbés et des milliers sans électricité alors que la tempête Austen frappe le Royaume-Uni</p>
+            <span class="english-block">Major travel disruption and thousands without power as Storm Austen hits UK</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Bien que l'avertissement de 24 heures en bambre ne soit pas sans précédent, il est inhabituel en raison de la durée de son application sur une zone géographique aussi vaste.</p>
+            <span class="english-block">Although the 24-hour amber warning is not unprecedented, it is unusual because of the length of time it will be in place over such a wide geographical area.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Vendredi, la prévision a déclenché une réunion de la salle de résilience du gouvernement écossais qui garantit que le pays est prêt pour les événements météorologiques sévères.</p>
+            <span class="english-block">On Friday the forecast triggered a meeting of the Scottish government's resilience room which ensures the country is prepared for severe weather events.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">L' avertissement de l'ambre prend effet à partir de 21h le samedi</p>
+            <span class="english-block">The amber warning takes effect from 21:00 on Saturday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Des vents de 76 mph sur le sud de l'Uist, 74 mph à Inverbervie et 68 mph à Tiree ont déjà été enregistrés.</p>
+            <span class="english-block">Wind gusts of 76mph on South Uist, 74mph in Inverbervie and 68mph in Tiree have already been recorded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Les vents les plus forts frapperont d'abord l'ouest de l'Écosse et l'extrême nord de l'Irlande du Nord samedi soir, puis se propageront vers l'est pendant la nuit et jusqu'au dimanche.</p>
+            <span class="english-block">The strongest winds will initially affect western Scotland and the far north of Northern Ireland on Saturday evening and then spread eastwards overnight and through Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Cela sera accompagné de périodes de fortes pluies et de pluies fréquentes.</p>
+            <span class="english-block">This will be accompanied by periods of heavy rain and frequent showers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Les météorologues ont averti que les débris volants pourraient causer des blessures et des dangers pour la vie, avec de bonnes chances de coupures d'électricité et d'impact sur la couverture téléphonique.</p>
+            <span class="english-block">Forecasters warned that flying debris could cause injuries and danger to life, with a good chance of power cuts and an impact on phone coverage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Un certain nombre de coupures d'électricité dans les régions de Glasgow et d'Édimbourg ont déjà été signalées à SP Energy Networks.</p>
+            <span class="english-block">A number of power cuts in the Glasgow and Edinburgh areas have already been reported to SP Energy Networks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Le bureau de la ville a également mis en garde contre les dommages aux arbres et aux bâtiments, la fermeture des ponts et les perturbations des transports.</p>
+            <span class="english-block">The Met Office also warned of damage to trees and buildings, bridge closures and transport disruption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Le pont Erskine a été fermé à des véhicules à haut niveau samedi soir.</p>
+            <span class="english-block">The Erskine Bridge was closed to high sided vehicles on Saturday evening.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Les vents vont s'apaiser de l'ouest jusqu'au dimanche.</p>
+            <span class="english-block">Winds will gradually ease from the west through Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Certains trains seront annulés pendant la tempête Boelo .</p>
+            <span class="english-block">Some train services will be cancelled during Storm Boelo</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Les services sur la ligne Frontières ont été suspendus en raison de l'absence.</p>
+            <span class="english-block">Services on the Borders line have been suspended due to subsidence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Network Rail a confirmé que plusieurs lignes feront leur chemin de fer en tant que mesure de précaution, tandis que des restrictions de vitesse seront introduites sur la plupart des chemins de fer écossais.</p>
+            <span class="english-block">Network Rail has confirmed that a number of routes will close as a precaution, while speed restrictions will be introduced across much of Scotland's railways.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Fermetures prévues de la ligne:</p>
+            <span class="english-block">Planned line closures:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Glasgow Central  Ayr fermera ses portes entre Kilwinning et Ayr à partir de 21h le samedi. Après 21h, un service de navette à demi-heure sera mis en service entre Glasgow Central et Kilwinning dans les deux directions;</p>
+            <span class="english-block">Glasgow Central – Ayr will close between Kilwinning and Ayr from 21:00 on Saturday.  After 21:00, a half hourly shuttle service will operate between Glasgow Central and Kilwinning in both directions;</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">À partir de 21h00, les services entre Kilmarnock et Stranraer et entre Ayr et Girvan seront suspendus;</p>
+            <span class="english-block">From 21:00, services between Kilmarnock and Stranraer and between Ayr and Girvan will be suspended;</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Glasgow Queen Street  Oban / Mallaig fermera entre Fort William et Mallaig et entre Crianlarich et Oban à partir de 22h00 le samedi;</p>
+            <span class="english-block">Glasgow Queen Street – Oban / Mallaig will close between Fort William and Mallaig and between Crianlarich and Oban from about 22:00 on Saturday;</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Inverness  Kyle de Lochalsh fermera entre Kyle de Lochalsh et Achnashellach à partir du début du service dimanche;</p>
+            <span class="english-block">Inverness – Kyle of Lochalsh will close between Kyle of Lochalsh and Achnashellach from the start of service on Sunday;</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Inverness  Wick / Thurso fermera entre Helmsdale et Wick / Thurso à partir du début du service dimanche.</p>
+            <span class="english-block">Inverness – Wick / Thurso will close between Helmsdale and Wick / Thurso from the start of service on Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les passagers sont invités à s'attendre à des interruptions importantes et à des voyages plus longs et à vérifier les services avant de voyager.</p>
+            <span class="english-block">Passengers are advised to expect significant disruption and longer journeys, and are should check services before they travel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Le suppléant Andy Barclay, chef adjoint de la police routière de la police écossaise, a averti les conducteurs que les conditions pouvaient être dangereuses et les a exhortés à considérer si les voyages étaient "réellement nécessaires" le week-end.</p>
+            <span class="english-block">Supt Andy Barclay, deputy head of road policing for Police Scotland, warned drivers that conditions may be hazardous and urged them to consider whether journeys were "really necessary" over the weekend.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Les distances d'arrêt peuvent être au moins deux fois plus élevées sur les routes humides que dans les conditions sèches, et le spray peut réduire la visibilité du conducteur</p>
+            <span class="english-block">Stopping distances can be at least double on wet roads compared to dry conditions, and spray can reduce driver visibility</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Les chauffeurs de bus et de véhicules doivent conduire avec une extrême prudence et être conscients que la police peut vous demander de vous garer dans une position appropriée.</p>
+            <span class="english-block">HGV and bus drivers should drive with extreme caution and be aware you may be asked to park at a suitable position by the police</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Si vous avez besoin de voyager, veuillez conduire dans les conditions et laisser plus de temps pour votre voyage</p>
+            <span class="english-block">If you need to travel, please drive to the conditions and allow extra time for your journey</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Restez à l'écoute des médias pour plus de mises à jour et consultez le site Internet Traffic Scotland et les canaux de médias sociaux pour obtenir des informations sur les routes touchées</p>
+            <span class="english-block">Stay tuned to media outlets for further updates and consult the Traffic Scotland website and social media channels for information relating to affected roads</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">L'Institut royal national des bateaux de sauvetage (RNLI) a déclaré que les conditions météorologiques posaient un risque de sécurité dans les zones côtières et a conseillé une " extrême prudence " si les gens étaient près de la côte, en particulier le long des falaises exposées, des faces de mer et des quais.</p>
+            <span class="english-block">The Royal National Lifeboat Institution (RNLI) said weather conditions posed a safety risk in coastal areas and advised "extreme caution" if people were near the shoreline, especially along exposed cliffs, seafronts and piers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Le responsable de la sécurité de l'eau de l'organisme de bienfaisance, Michael Avril, a exhorté les gens à garder une distance sûre de l'eau, car les conditions "peut vous faire tomber ou vous laver dans la mer".</p>
+            <span class="english-block">The charity's water safety lead, Michael Avril, urged people to keep a safe distance from the water as conditions "could knock you off your feet or wash you into the sea".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Tous les 30 traversiers de CalMac, extérieurs sur la côte ouest de l'Écosse ont été annulés pour le reste du week-end à cause de la tempête.</p>
+            <span class="english-block">All of CalMac's 30 ferry services, external on the west coast of Scotland have been cancelled for the rest of the weekend because of the storm.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Certaines routes pourraient être perturbées jusqu'au lundi et annulées à court terme, a déclaré l'opérateur de ferry.</p>
+            <span class="english-block">Some routes could face disruption until Monday and cancellation at short notice, the ferry operator said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Les passagers des NorthLink Ferries sont informés qu'il y a une "possibilité d'interruption" des services du samedi au jeudi en raison de la météo, extérieure.</p>
+            <span class="english-block">Passengers on NorthLink Ferries are advised that there is the "possibility of disruption" to services from Saturday to Thursday because of the weather, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Avertissement météo en amber alors que la tempête Boelo frappe l'Écosse</p>
+            <span class="english-block">Amber weather warning as Storm Boelo hits Scotland</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Le festival d'Halloween de Paisley, qui avait lieu ce week-end, a été annulé, avec un défilé, un théâtre de rue et des installations de lumière extérieure.</p>
+            <span class="english-block">Paisley's popular Halloween festival which was taking place this weekend has been cancelled. It included a parade, street theatre and outdoor light installations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Le conseil du Renfrewshire a déclaré que, bien que l'événement du vendredi ait été mené comme prévu, il était "très regrettable" que les événements du samedi aient été annulés en raison de la prévision météorologique sévère.</p>
+            <span class="english-block">Renfrewshire Council said that while Friday's event had gone ahead as planned, it was "really sorry" that Saturday's events had been cancelled because of the severe weather forecast.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">L'événement de la Forêt Enchantée à Pitlochry samedi a été annulé et les organisateurs ont dit qu'il était possible que l'événement de dimanche puisse également être annulé.</p>
+            <span class="english-block">The Enchanted Forest event at Pitlochry on Saturday was cancelled and organisers said it was possible Sunday's event may also be cancelled.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Une fête familiale d'Halloween au château de Dean Park et au parc de campagne de Kilmarnock, prévue pour dimanche, a été reportée en raison de l'avertissement météo.</p>
+            <span class="english-block">A Halloween family fun day at Dean Park Castle and Country Park in Kilmarnock, scheduled for Sunday, has been postponed due to the weather warning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">La coupe d'Écosse de vendredi entre Penicuik Athletic et Clyde a été l'une des premières à être retardée en raison de fortes pluies.</p>
+            <span class="english-block">Some other events may be postponed during the stormy conditions. Friday's Scottish Cup tie between Penicuik Athletic and Clyde was among the first to be delayed because of heavy rain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Le conseil municipal d'Édimbourg a annoncé que les jardins de Princes Street, les terrains du château de Lauriston et les jardins d'hiver de Saughton seront fermés le samedi soir et le dimanche.</p>
+            <span class="english-block">Edinburgh City Council has said Princes Street Gardens, Lauriston Castle grounds, and Saughton Winter Gardens will be closed On Saturday evening and on Sunday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">L'Environnement historique Écosse a indiqué qu'ils avaient fermé de nombreuses propriétés à travers le pays, extérieures, y compris les châteaux d'Édimbourg, de Stirling, d'Aberdour et de Caerlaverock, et d'autres monuments tels que Skara Brae à Orkney et Inchmahome Priory à Port de Monteith.</p>
+            <span class="english-block">Historic Environment Scotland advised that they have closed many of their properties across the country, external, including castles at Edinburgh, Stirling, Aberdour and Caerlaverock, and other landmarks such as Skara Brae in Orkney and Inchmahome Priory in Port of Monteith.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">La National Trust for Scotland a déclaré que certains des lieux qu'elle gère seront fermés en raison du " temps défavorable " et que les visiteurs devraient vérifier les canaux de médias sociaux pour les propriétés avant de voyager.</p>
+            <span class="english-block">The National Trust for Scotland said some of the locations it manages will be closed because of the "adverse weather" and visitors should check social media channels for the properties before travelling.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Le Conseil des îles occidentales a déclaré que les événements, y compris les services religieux, devraient être conscients des vents forts tout au long de la journée de dimanche et a conseillé de " planifier en conséquence ".</p>
+            <span class="english-block">Western Isles Council said events including church services should be aware of strong winds throughout Sunday and advised they "plan accordingly".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Avez-vous été affecté par la tempête ?</p>
+            <span class="english-block">Have you been affected by the storm?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Les nouveaux noms de tempêtes pour 2026-2027 publiés par le Met Office</p>
+            <span class="english-block">New storm names for 2026-2027 released by Met Office</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Deux tempêtes en deux jours alors que Austen et Boelo ciblent le Royaume-Uni</p>
+            <span class="english-block">Two storms in two days as Austen and Boelo target UK</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

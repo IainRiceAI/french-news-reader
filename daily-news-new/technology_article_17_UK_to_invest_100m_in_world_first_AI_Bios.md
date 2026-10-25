@@ -187,13 +187,21 @@
 
 ### Section 23
 
+**🇬🇧 EN:** Do you have any views, comments or questions about this story?
+
+**🇫🇷 FR:** *Avez-vous des opinions, des commentaires ou des questions sur cette histoire ?*
+
+---
+
+### Section 24
+
 **🇬🇧 EN:** AI minister warns 'likely' UK's cyber defences will be breached
 
 **🇫🇷 FR:** *Le ministre de l'IA avertit que les cyberdéfense britanniques seront "probablement" violées*
 
 ---
 
-### Section 24
+### Section 25
 
 **🇬🇧 EN:** Anthropic blocks possible attempt to use AI to make biological weapons
 
@@ -201,7 +209,7 @@
 
 ---
 
-### Section 25
+### Section 26
 
 **🇬🇧 EN:** Chinese AI tool told researchers how to make bioweapons
 

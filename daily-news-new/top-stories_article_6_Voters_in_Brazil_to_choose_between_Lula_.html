@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voters in Brazil to choose between Lula and Bolsonaro's son</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Voters in Brazil to choose between Lula and Bolsonaro's son</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 24 Oct 2026 23:50:02 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cxp8g21j4648o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Flávio Bolsonaro, the son of Brazil's imprisoned former president, is presenting a strong challenge to Lula, 80, who is seeking a fourth term in office.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les Brésiliens vont aux urnes dimanche pour élire leur nouveau président lors d'une élection étroitement contestée.</p>
+            <span class="english-block">Brazilians go to the polls on Sunday to elect their new president in a closely fought run-off election.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Le choix est entre le sénateur de gauche de 80 ans, Luiz Inácio Lula da Silva, qui cherche un quatrième mandat non consécutif, et le sénateur de droite Flávio Bolsonaro, 45 ans.</p>
+            <span class="english-block">The choice is between the 80-year-old incumbent, left-winger Luiz Inácio Lula da Silva, who is seeking a fourth non-consecutive term in office, and right-wing senator Flávio Bolsonaro, 45.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Bolsonaro est le fils de l'ancien président de droite Jair Bolsonaro, qui purge une peine de 27 ans de prison pour avoir conspiré pour un coup d'État après avoir perdu les dernières élections en 2022.</p>
+            <span class="english-block">Bolsonaro is the son of former right-wing president Jair Bolsonaro, who is serving a 27-year prison sentence for plotting a coup after losing the last election in 2022.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">C'est l'élection à perdre pour Bolsonaro après avoir pris le premier rang lors du premier tour de vote le 4 octobre, que le président américain Donald Trump a qualifié de "très grande" victoire.</p>
+            <span class="english-block">This is Bolsonaro's election to lose after he came top in the first round of voting on 4 October, which US President Donald Trump called a "very big" victory.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Les partisans de Bolsonaro se sont rassemblés à Rio à la veille des élections</p>
+            <span class="english-block">Bolsonaro supporters rallied in Rio on the eve of the election</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Jamais auparavant un candidat qui a été retardé après le premier tour n'a réussi à renverser le déficit et à gagner le second tour.</p>
+            <span class="english-block">Never before has a candidate who trailed after the first round managed to overturn the deficit and win in the second round.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Les partisans de Bolsonaro étaient joyeux lors de ses derniers rassemblements de campagne, confiants qu'il apporterait un changement au Brésil grâce à sa répression sévère contre la criminalité organisée, ainsi qu'à des réductions d'impôts et de dépenses publiques.</p>
+            <span class="english-block">Bolsonaro's supporters were jubilant at his final campaign rallies, confident that he would bring change to Brazil through his promised tough crackdown on organised crime, as well as tax and public spending cuts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Il a fait campagne à la veille des sondages à Belo Horizonte, la capitale du Minas Gerais, qui est un état incontournable pour tout candidat à la présidence depuis les années 1980.</p>
+            <span class="english-block">He campaigned on the eve of polls in Belo Horizonte, the capital of Minas Gerais, which has been a must-win state for any presidential hopeful since the 1980s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">"Le temps est presque arrivé", a déclaré Bolsonaro à ses partisans dans une vidéo sur les réseaux sociaux.</p>
+            <span class="english-block">"The time is almost here," Bolsonaro told supporters in a social media video.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">"Il ne nous reste que quelques heures avant de façonner l'avenir de notre nation pour les 30 ou 40 prochaines années".</p>
+            <span class="english-block">"There are only a few hours left before we shape the future of our nation for the next 30 or 40 years."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Il a également promis de libérer son père, qui purge actuellement sa peine en résidence surveillée en raison de sa mauvaise santé.</p>
+            <span class="english-block">He has also pledged to release his father, who is currently serving his sentence under house arrest due to ill health.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">À Barra de Tijuca, Rio de Janeiro, où Jair Bolsonaro a une maison, les partisans de Bolsonaro se sont rassemblés pour le soutenir vêtu des couleurs nationales.</p>
+            <span class="english-block">In Barra de Tijuca, Rio de Janeiro, where Jair Bolsonaro has a home, Bolsonaro supporters rallied in support of him dressed in the national colours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">"Le Brésil a besoin de changement, et Flávio est la personne qui représente aujourd'hui, après tant d'années de gauche détruisant l'économie et le pays", a déclaré un homme à BBC News.</p>
+            <span class="english-block">"Brazil needs change, and Flávio is the person that represents that today, after so many years of the Left destroying the economy and the country," one told BBC News.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Une autre a dit que ce qu'elle aimait le plus chez Flávio Bolsonaro, c'était sa promesse de " mettre fin à la violence au Brésil, à la terreur, au trafic de stupéfiants et à la réduction des taux d'intérêt ".</p>
+            <span class="english-block">Another said that what she most liked about Flávio Bolsonaro was his promise to "end violence in Brazil, end terrorism, narco-trafficking, and to reduce interest rates".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Les partisans de Lula se sont aussi présentés à Rio .</p>
+            <span class="english-block">Lula supporters also turned out in Rio</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Depuis la victoire de Bolsonaro au premier tour, les partisans de Lula ont organisé de grands rassemblements pour le soutenir afin d'augmenter la participation après que 33 millions de personnes n'aient pas voté plus tôt ce mois-ci.</p>
+            <span class="english-block">Since Bolsonaro's first-round victory, supporters of Lula have arranged huge rallies in support of him to try to boost turnout after 33 million people did not cast a vote earlier this month.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Samedi, Lula a dit à une foule immense sur la plage de Copacabana à Rio de Janeiro que cette élection était une question de "souveraineté" et que les gens choisiront entre celui qui embrassait le drapeau brésilien ou le drapeau américain.</p>
+            <span class="english-block">On Saturday, Lula told a huge crowd on Rio de Janeiro's Copacabana beach that this election was a matter of "sovereignty" and people would choose between the one who kissed the Brazilian flag or the American flag.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">L'administration de Lula a accusé les États-Unis d'interférer dans les élections brésiliennes, une allégation que Washington a qualifiée d'" infaillible ".</p>
+            <span class="english-block">Lula's administration has accused the US of interfering in Brazil's election, an allegation Washington has called "baseless".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"Nous allons gagner les élections pour une simple raison: c'est vrai que les gens veulent du changement [mais] ils veulent aller de l'avant, dit- il.</p>
+            <span class="english-block">"We're going to win the election for one simple reason: it's true that the people want change [but] they want to move forward," he said. "They don't want to go backward."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Une supporterine nommée Roberta a déclaré à BBC News: " Ce mouvement est pour montrer que nous avons de la force. Nous nous sommes réveillés, nous venons dans la rue pour faire la différence et renverser le vote. "</p>
+            <span class="english-block">A supporter called Roberta told BBC News: "This movement is to show we have strength. We've woken up, we're coming to the street to make a difference and turn the vote around."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Un homme portant le maillot de football national jaune et vert du Brésil a déclaré que les partisans de Bolsonaro avaient "approprié" le maillot mais que les partisans de Lula le reprenaient.</p>
+            <span class="english-block">A man wearing Brazil's national yellow and green football shirt said Bolsonaro supporters had "appropriated" the jersey but Lula supporters were taking it back.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Comment la classe ouvrière brésilienne change et remodèle la course à la présidence</p>
+            <span class="english-block">How Brazil's changing working class is reshaping the presidential race</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Ce qu'il faut savoir sur la fuite du Brésil alors que Lula et Flávio Bolsonaro se rencontrent</p>
+            <span class="english-block">What to know about Brazil's run-off as Lula and Flávio Bolsonaro face off</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Lula dit que son rival devrait être disqualifié pour une supposée ingérence de Meta avant le vote au Brésil</p>
+            <span class="english-block">Lula says rival should be disqualified over alleged Meta interference ahead of Brazil vote</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Des attaques personnelles déclenchent un débat avant le vote de la seconde ligne au Brésil</p>
+            <span class="english-block">Personal attacks fire up debate before Brazil's run-off vote</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Lula et son Parti des Travailleurs ont qualifié cette élection de " bataille pour la démocratie ", affirmant que la condamnation de Jair Bolsonaro pour coupe d'État est une preuve que le " bolsonarisme " constitue une menace pour les institutions démocratiques du Brésil.</p>
+            <span class="english-block">Lula and his Workers' Party have cast this election as a "battle for democracy", arguing that Jair Bolsonaro's conviction for coup-plotting is evidence that "Bolsonarismo" constitutes a threat to Brazil's democratic institutions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Pendant le dernier mandat de Lula, les relations avec Trump ont été difficiles.</p>
+            <span class="english-block">During Lula's latest term in office, relations with Trump have been rocky.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Lula a insisté sur le fait que le Brésil " ne s'inscrit dans le jardin de personne ", une référence apparente à ce que Trump a surnommé la " Doctrine Donroe " - la stratégie de sécurité nationale de son administration qui affirme que la domination américaine dans l'hémisphère occidental ne devrait pas être interférée.</p>
+            <span class="english-block">Lula has insisted that Brazil "does not fit into anyone's backyard", an apparent reference to what Trump has dubbed the "Donroe Doctrine" - his administration's national security strategy which asserts that US dominance in the Western hemisphere should not be interfered with.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Bolsonaro, quant à lui, affirme que travailler avec Washington pour combattre les puissants gangs criminels - qui exercent un pouvoir immense dans certaines parties du Brésil - rétablira la souveraineté de l'État dans les zones contrôlées par les gangs.</p>
+            <span class="english-block">Bolsonaro, on the other hand, argues that working with Washington to combat powerful criminal gangs - which wield immense power in parts of Brazil - will restore the state's sovereignty to gang-controlled areas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Il a également qualifié le Parti des travailleurs de corrompu, rappelant aux électeurs les scandales financiers massifs qui ont affligé le parti depuis des années et qui ont incité de nombreux électeurs à s'y opposer.</p>
+            <span class="english-block">He has also been labelling the Workers' Party as corrupt, reminding voters of the massive financial scandals which plagued the party for years and which have turned many voters against it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Lula prévoit d'être à São Paulo pour regarder les résultats dimanche soir, tandis que Bolsonaro devrait être à la capitale Brasília - où son père est également en résidence surveillée.</p>
+            <span class="english-block">Lula plans to be in São Paulo to watch the results on Sunday evening while  Bolsonaro is set to be in the capital Brasília - which is also where his father is under house arrest.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

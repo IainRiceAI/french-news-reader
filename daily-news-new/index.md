@@ -1,83 +1,83 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-24 06:01:03  
+Generated on: 2026-10-25 06:00:59  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Second storm to hit UK with more wind and rain as thousands remain without power**
-   - **Published:** Sat, 24 Oct 2026 02:25:54 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Second_storm_to_hit_UK_with_more_wind_an.md](top-stories_article_1_Second_storm_to_hit_UK_with_more_wind_an.md)
+1. **Storm Boelo amber warnings kick in as parts of UK brace for 80mph gusts**
+   - **Published:** Sun, 25 Oct 2026 01:32:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Storm_Boelo_amber_warnings_kick_in_as_pa.md](top-stories_article_1_Storm_Boelo_amber_warnings_kick_in_as_pa.md)
 
-2. **France prepares for day of protest a week after nationwide riots**
-   - **Published:** Sat, 24 Oct 2026 04:03:46 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_France_prepares_for_day_of_protest_a_wee.md](top-stories_article_2_France_prepares_for_day_of_protest_a_wee.md)
+2. **Meghan broke contact with father in letter citing abuse claims**
+   - **Published:** Sun, 25 Oct 2026 01:44:19 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Meghan_broke_contact_with_father_in_lett.md](top-stories_article_2_Meghan_broke_contact_with_father_in_lett.md)
 
-3. **UK to invest £100m in 'world first' AI Biosecurity Lab**
-   - **Published:** Sat, 24 Oct 2026 00:05:45 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_UK_to_invest_100m_in_world_first_AI_Bios.md](top-stories_article_3_UK_to_invest_100m_in_world_first_AI_Bios.md)
+3. **Burnham open to 'honest discussion' on EU free movement**
+   - **Published:** Sun, 25 Oct 2026 00:33:19 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Burnham_open_to_honest_discussion_on_EU_.md](top-stories_article_3_Burnham_open_to_honest_discussion_on_EU_.md)
 
-4. **Australian MP's condition improves after alleged car attack**
-   - **Published:** Sat, 24 Oct 2026 01:55:15 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Australian_MPs_condition_improves_after_.md](top-stories_article_4_Australian_MPs_condition_improves_after_.md)
+4. **Ukraine depends on Starlink - can Europe plug the gap?**
+   - **Published:** Sun, 25 Oct 2026 05:45:31 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Ukraine_depends_on_Starlink_-_can_Europe.md](top-stories_article_4_Ukraine_depends_on_Starlink_-_can_Europe.md)
 
-5. **Met investigates reports of letter detailing claims about Meghan's father**
-   - **Published:** Sat, 24 Oct 2026 03:17:24 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Met_investigates_reports_of_letter_detai.md](top-stories_article_5_Met_investigates_reports_of_letter_detai.md)
+5. **Israel to close West Bank crossings on election day as crackdown escalates**
+   - **Published:** Sun, 25 Oct 2026 05:15:52 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Israel_to_close_West_Bank_crossings_on_e.md](top-stories_article_5_Israel_to_close_West_Bank_crossings_on_e.md)
 
-6. **Father who killed Oregon school shooter describes anguish over children he couldn't save**
-   - **Published:** Fri, 23 Oct 2026 22:47:07 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Father_who_killed_Oregon_school_shooter_.md](top-stories_article_6_Father_who_killed_Oregon_school_shooter_.md)
+6. **Voters in Brazil to choose between Lula and Bolsonaro's son**
+   - **Published:** Sat, 24 Oct 2026 23:50:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Voters_in_Brazil_to_choose_between_Lula_.md](top-stories_article_6_Voters_in_Brazil_to_choose_between_Lula_.md)
 
-7. **Celebrity Traitors left on a knife edge after a trip to the field of screams**
-   - **Published:** Fri, 23 Oct 2026 22:52:40 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Celebrity_Traitors_left_on_a_knife_edge_.md](top-stories_article_7_Celebrity_Traitors_left_on_a_knife_edge_.md)
+7. **Budget to include £1bn for social and affordable housing**
+   - **Published:** Sun, 25 Oct 2026 02:57:30 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Budget_to_include_1bn_for_social_and_aff.md](top-stories_article_7_Budget_to_include_1bn_for_social_and_aff.md)
 
-8. **Why is John Travolta's old luxury jet in a small Australian town?**
-   - **Published:** Fri, 23 Oct 2026 21:19:17 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Why_is_John_Travoltas_old_luxury_jet_in_.md](top-stories_article_8_Why_is_John_Travoltas_old_luxury_jet_in_.md)
+8. **Rosebank: Life on the oil field at the centre of a political storm**
+   - **Published:** Sat, 24 Oct 2026 23:15:18 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Rosebank_Life_on_the_oil_field_at_the_ce.md](top-stories_article_8_Rosebank_Life_on_the_oil_field_at_the_ce.md)
 
 ---
 
 ### Section: WORLD
 
-1. **France prepares for day of protest a week after nationwide riots**
-   - **Published:** Sat, 24 Oct 2026 04:03:46 GMT
-   - **Read Parallel Translation:** [world_article_9_France_prepares_for_day_of_protest_a_wee.md](world_article_9_France_prepares_for_day_of_protest_a_wee.md)
+1. **Almost 1,000 arrested as clashes follow another day of mass protests across France**
+   - **Published:** Sun, 25 Oct 2026 04:16:52 GMT
+   - **Read Parallel Translation:** [world_article_9_Almost_1000_arrested_as_clashes_follow_a.md](world_article_9_Almost_1000_arrested_as_clashes_follow_a.md)
 
-2. **Woman, 65, becomes second patient to die of Ebola in Kenya**
-   - **Published:** Sat, 24 Oct 2026 00:05:43 GMT
-   - **Read Parallel Translation:** [world_article_10_Woman_65_becomes_second_patient_to_die_o.md](world_article_10_Woman_65_becomes_second_patient_to_die_o.md)
+2. **Ukraine says Starlink connection 'now stable' after network limits**
+   - **Published:** Sat, 24 Oct 2026 12:12:40 GMT
+   - **Read Parallel Translation:** [world_article_10_Ukraine_says_Starlink_connection_now_sta.md](world_article_10_Ukraine_says_Starlink_connection_now_sta.md)
 
-3. **Arrest made after fire at Hitler's Eagle's Nest retreat**
-   - **Published:** Sat, 24 Oct 2026 03:51:25 GMT
-   - **Read Parallel Translation:** [world_article_11_Arrest_made_after_fire_at_Hitlers_Eagles.md](world_article_11_Arrest_made_after_fire_at_Hitlers_Eagles.md)
+3. **Palestinian families displaced as Israeli forces demolish Hebron homes**
+   - **Published:** Sat, 24 Oct 2026 23:02:06 GMT
+   - **Read Parallel Translation:** [world_article_11_Palestinian_families_displaced_as_Israel.md](world_article_11_Palestinian_families_displaced_as_Israel.md)
 
-4. **Student movement takes Serbia's Vučić to the wire in neck-and-neck election**
-   - **Published:** Fri, 23 Oct 2026 23:08:23 GMT
-   - **Read Parallel Translation:** [world_article_12_Student_movement_takes_Serbias_Vučić_to_.md](world_article_12_Student_movement_takes_Serbias_Vučić_to_.md)
+4. **Man arrested after fire at Hitler's mountaintop Eagle's Nest retreat**
+   - **Published:** Sat, 24 Oct 2026 15:21:44 GMT
+   - **Read Parallel Translation:** [world_article_12_Man_arrested_after_fire_at_Hitlers_mount.md](world_article_12_Man_arrested_after_fire_at_Hitlers_mount.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **How does the UK state pension compare with other countries?**
+1. **Budget to include £1bn for social and affordable housing**
+   - **Published:** Sun, 25 Oct 2026 02:57:30 GMT
+   - **Read Parallel Translation:** [business_article_13_Budget_to_include_1bn_for_social_and_aff.md](business_article_13_Budget_to_include_1bn_for_social_and_aff.md)
+
+2. **Rosebank: Life on the oil field at the centre of a political storm**
+   - **Published:** Sat, 24 Oct 2026 23:15:18 GMT
+   - **Read Parallel Translation:** [business_article_14_Rosebank_Life_on_the_oil_field_at_the_ce.md](business_article_14_Rosebank_Life_on_the_oil_field_at_the_ce.md)
+
+3. **How does the UK state pension compare with other countries?**
    - **Published:** Sat, 24 Oct 2026 00:09:12 GMT
-   - **Read Parallel Translation:** [business_article_13_How_does_the_UK_state_pension_compare_wi.md](business_article_13_How_does_the_UK_state_pension_compare_wi.md)
+   - **Read Parallel Translation:** [business_article_15_How_does_the_UK_state_pension_compare_wi.md](business_article_15_How_does_the_UK_state_pension_compare_wi.md)
 
-2. **UK to invest £100m in 'world first' AI Biosecurity Lab**
+4. **UK to invest £100m in 'world first' AI Biosecurity Lab**
    - **Published:** Sat, 24 Oct 2026 00:05:45 GMT
-   - **Read Parallel Translation:** [business_article_14_UK_to_invest_100m_in_world_first_AI_Bios.md](business_article_14_UK_to_invest_100m_in_world_first_AI_Bios.md)
-
-3. **Civil servant who juggled five jobs says he was 'surprised' to be charged with fraud**
-   - **Published:** Fri, 23 Oct 2026 15:15:13 GMT
-   - **Read Parallel Translation:** [business_article_15_Civil_servant_who_juggled_five_jobs_says.md](business_article_15_Civil_servant_who_juggled_five_jobs_says.md)
-
-4. **White House lifts tariffs on some Canadian goods as midterm elections loom**
-   - **Published:** Sat, 24 Oct 2026 00:36:47 GMT
-   - **Read Parallel Translation:** [business_article_16_White_House_lifts_tariffs_on_some_Canadi.md](business_article_16_White_House_lifts_tariffs_on_some_Canadi.md)
+   - **Read Parallel Translation:** [business_article_16_UK_to_invest_100m_in_world_first_AI_Bios.md](business_article_16_UK_to_invest_100m_in_world_first_AI_Bios.md)
 
 ---
 
@@ -103,21 +103,21 @@ Scraped Feed Mode: `ALL`
 
 ### Section: SCIENCE
 
-1. **Second storm to hit UK with more wind and rain as thousands remain without power**
-   - **Published:** Sat, 24 Oct 2026 02:25:54 GMT
-   - **Read Parallel Translation:** [science_article_21_Second_storm_to_hit_UK_with_more_wind_an.md](science_article_21_Second_storm_to_hit_UK_with_more_wind_an.md)
+1. **Rosebank: Life on the oil field at the centre of a political storm**
+   - **Published:** Sat, 24 Oct 2026 23:15:18 GMT
+   - **Read Parallel Translation:** [science_article_21_Rosebank_Life_on_the_oil_field_at_the_ce.md](science_article_21_Rosebank_Life_on_the_oil_field_at_the_ce.md)
 
-2. **Storm Austen brings power cuts and travel disruption as more wind and rain forecast**
-   - **Published:** Fri, 23 Oct 2026 21:10:47 GMT
-   - **Read Parallel Translation:** [science_article_22_Storm_Austen_brings_power_cuts_and_trave.md](science_article_22_Storm_Austen_brings_power_cuts_and_trave.md)
+2. **From Russian cages to Irish sanctuary: The five-year rescue journey of Bu and Tyapa**
+   - **Published:** Sat, 24 Oct 2026 23:02:51 GMT
+   - **Read Parallel Translation:** [science_article_22_From_Russian_cages_to_Irish_sanctuary_Th.md](science_article_22_From_Russian_cages_to_Irish_sanctuary_Th.md)
 
-3. **Trains cancelled and roads warnings as Scotland prepares for Storm Boelo**
-   - **Published:** Fri, 23 Oct 2026 19:31:02 GMT
-   - **Read Parallel Translation:** [science_article_23_Trains_cancelled_and_roads_warnings_as_S.md](science_article_23_Trains_cancelled_and_roads_warnings_as_S.md)
+3. **Trains cancelled and road warnings as Storm Boelo sweeps into Scotland**
+   - **Published:** Sat, 24 Oct 2026 22:39:52 GMT
+   - **Read Parallel Translation:** [science_article_23_Trains_cancelled_and_road_warnings_as_St.md](science_article_23_Trains_cancelled_and_road_warnings_as_St.md)
 
-4. **Wales plans to ban steel pylons as government launches consultation**
-   - **Published:** Fri, 23 Oct 2026 16:44:13 GMT
-   - **Read Parallel Translation:** [science_article_24_Wales_plans_to_ban_steel_pylons_as_gover.md](science_article_24_Wales_plans_to_ban_steel_pylons_as_gover.md)
+4. **Amber weather warning as Storm Boelo hits Scotland**
+   - **Published:** Sat, 24 Oct 2026 14:40:18 GMT
+   - **Read Parallel Translation:** [science_article_24_Amber_weather_warning_as_Storm_Boelo_hit.md](science_article_24_Amber_weather_warning_as_Storm_Boelo_hit.md)
 
 ---
 
@@ -143,41 +143,41 @@ Scraped Feed Mode: `ALL`
 
 ### Section: POLITICS
 
-1. **UK to invest £100m in 'world first' AI Biosecurity Lab**
+1. **Burnham open to 'honest discussion' on EU free movement**
+   - **Published:** Sun, 25 Oct 2026 00:33:19 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_open_to_honest_discussion_on_EU_.md](politics_article_29_Burnham_open_to_honest_discussion_on_EU_.md)
+
+2. **Students like new tenancy freedoms - but landlords warn of higher rents**
+   - **Published:** Sun, 25 Oct 2026 01:35:40 GMT
+   - **Read Parallel Translation:** [politics_article_30_Students_like_new_tenancy_freedoms_-_but.md](politics_article_30_Students_like_new_tenancy_freedoms_-_but.md)
+
+3. **Budget to include £1bn for social and affordable housing**
+   - **Published:** Sun, 25 Oct 2026 02:57:30 GMT
+   - **Read Parallel Translation:** [politics_article_31_Budget_to_include_1bn_for_social_and_aff.md](politics_article_31_Budget_to_include_1bn_for_social_and_aff.md)
+
+4. **UK to invest £100m in 'world first' AI Biosecurity Lab**
    - **Published:** Sat, 24 Oct 2026 00:05:45 GMT
-   - **Read Parallel Translation:** [politics_article_29_UK_to_invest_100m_in_world_first_AI_Bios.md](politics_article_29_UK_to_invest_100m_in_world_first_AI_Bios.md)
-
-2. **Burnham suggests stocking up on tinned food and bottled water**
-   - **Published:** Fri, 23 Oct 2026 12:41:10 GMT
-   - **Read Parallel Translation:** [politics_article_30_Burnham_suggests_stocking_up_on_tinned_f.md](politics_article_30_Burnham_suggests_stocking_up_on_tinned_f.md)
-
-3. **Trump says Burnham 'getting it done' after Jackdaw decision**
-   - **Published:** Fri, 23 Oct 2026 17:27:20 GMT
-   - **Read Parallel Translation:** [politics_article_31_Trump_says_Burnham_getting_it_done_after.md](politics_article_31_Trump_says_Burnham_getting_it_done_after.md)
-
-4. **Tory activist in 'contract killing broker' claim had worked for party HQ**
-   - **Published:** Sat, 24 Oct 2026 02:52:10 GMT
-   - **Read Parallel Translation:** [politics_article_32_Tory_activist_in_contract_killing_broker.md](politics_article_32_Tory_activist_in_contract_killing_broker.md)
+   - **Read Parallel Translation:** [politics_article_32_UK_to_invest_100m_in_world_first_AI_Bios.md](politics_article_32_UK_to_invest_100m_in_world_first_AI_Bios.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Celebrity Traitors left on a knife edge after a trip to the field of screams**
+1. **Why the charts are full of old songs - and so are your playlists**
+   - **Published:** Sat, 24 Oct 2026 23:05:41 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Why_the_charts_are_full_of_old_songs_-_a.md](entertainment_article_33_Why_the_charts_are_full_of_old_songs_-_a.md)
+
+2. **Sam Fender calls out ticket prices ahead of tour**
+   - **Published:** Sat, 24 Oct 2026 12:15:29 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Sam_Fender_calls_out_ticket_prices_ahead.md](entertainment_article_34_Sam_Fender_calls_out_ticket_prices_ahead.md)
+
+3. **Celebrity Traitors left on a knife edge after a trip to the field of screams**
    - **Published:** Fri, 23 Oct 2026 22:52:40 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Celebrity_Traitors_left_on_a_knife_edge_.md](entertainment_article_33_Celebrity_Traitors_left_on_a_knife_edge_.md)
+   - **Read Parallel Translation:** [entertainment_article_35_Celebrity_Traitors_left_on_a_knife_edge_.md](entertainment_article_35_Celebrity_Traitors_left_on_a_knife_edge_.md)
 
-2. **Strictly's new presenters - after frosty reviews have they warmed up?**
+4. **Strictly's new presenters - after frosty reviews have they warmed up?**
    - **Published:** Fri, 23 Oct 2026 23:15:47 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Strictlys_new_presenters_-_after_frosty_.md](entertainment_article_34_Strictlys_new_presenters_-_after_frosty_.md)
-
-3. **The artist dropping her debut album after a billion streams**
-   - **Published:** Fri, 23 Oct 2026 23:08:55 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_The_artist_dropping_her_debut_album_afte.md](entertainment_article_35_The_artist_dropping_her_debut_album_afte.md)
-
-4. **Babydoll singer gives Wales its first UK number one in 15 years**
-   - **Published:** Fri, 23 Oct 2026 17:03:09 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Babydoll_singer_gives_Wales_its_first_UK.md](entertainment_article_36_Babydoll_singer_gives_Wales_its_first_UK.md)
+   - **Read Parallel Translation:** [entertainment_article_36_Strictlys_new_presenters_-_after_frosty_.md](entertainment_article_36_Strictlys_new_presenters_-_after_frosty_.md)
 
 ---
 
