@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From agriculture to AI-griculture: How tech is changing farming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>From agriculture to AI-griculture: How tech is changing farming</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 26 Oct 2026 00:13:09 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw80zk9k51j1o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: From remote monitoring of cattle to automation of processes that took up valuable time, farmers in NI are rapidly becoming skilled in technology.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">George McMaster utilise la technologie pour l'aider à travailler dans sa ferme.</p>
+            <span class="english-block">George McMaster uses technology to help him with work on his farm</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">La carrière agricole de George McMaster a commencé par la production de lait de huit vaches dans un coin, en comptant sur ses yeux pour détecter les problèmes de santé de son bétail.</p>
+            <span class="english-block">George McMaster's farming career started with milking eight cows in a byre, relying on his eyes to spot any health issues in his cattle.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Il surveille toujours son troupeau de 300 personnes, mais par l'intermédiaire d'une caméra d'IA dans le salon de lactosérum de la ferme près d'Islandmagee dans le comté d'Antrim.</p>
+            <span class="english-block">He still watches his now-300-strong herd, but via a feed from an AI camera in the milking parlour at the farm near Islandmagee in County Antrim.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">L'appareil utilise un algorithme qui attribue à chaque vache sa propre identité, enregistre une courte vidéo de l'animal chaque jour, l'analyse et marque tous les changements - souvent avant qu'ils ne soient visibles à l'œil humain.</p>
+            <span class="english-block">The device uses an algorithm which assigns each cow its own ID, records a short video of the animal every day, analyses it and flags any changes - often before they are visible to the human eye.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Pour la troisième génération d'agriculteurs, "il est absolument incroyable de passer de tout faire à la main à s'asseoir au téléphone, à regarder ce qui se passe dehors".</p>
+            <span class="english-block">For the third generation farmer, it is "absolutely incredible to move from all hand-done to sitting on the phone, watching what's happening outside".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Jack et son père George dans leur ferme Islandmagee</p>
+            <span class="english-block">Jack and his father George on their Islandmagee farm</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Il s'agit d'un exemple de la façon dont la technologie change la profession traditionnelle.</p>
+            <span class="english-block">It is just one example of how technology is changing the traditional profession.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Jack, le fils de George, qui reprend la ferme, a sauté sur l'occasion de s'impliquer dans l'application CattleEye quand un développeur local l'a approché.</p>
+            <span class="english-block">George's son Jack, who is taking over the farm, jumped at the chance to get involved with the CattleEye app when a local developer approached him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il est également étonné par le potentiel.</p>
+            <span class="english-block">He, too, is astonished by the potential.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">"Il y a des vaches là-bas que nous n'aurions jamais pensé être infirmes quand nous les regardons tous les jours, mais chaque fois que la caméra les regarde, elles les prennent beaucoup plus tôt, toutes les urgences que nous avons, pour vérifier les vaches avant qu'elles ne perdent leur état et ne tombent malades", a-t-il dit.</p>
+            <span class="english-block">"There's cows there we would never have thought of as lame when we were just watching them every day, but whenever the camera's watching they're picking them up so much earlier, any emergencies that we have, to check cows before they lose condition and get sick," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">"Et si les vaches sont en meilleure santé, nous obtenons plus de lait et elles sont plus heureuses - les vaches heureuses font des fermiers heureux".</p>
+            <span class="english-block">"And if cows are in better health, we get more milk and they're happier - happy cows make happy farmers."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">L'IA aide les agriculteurs à surveiller la santé de leurs troupeaux</p>
+            <span class="english-block">AI is helping farmers monitor the health of their herds</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Caleb Howard utilise la technologie pour gérer ses 90 vaches de Jersey dans une ferme près de Coagh dans le comté de Tyrone.</p>
+            <span class="english-block">Caleb Howard is using technology to manage his 90 Jersey cows on the farm near Coagh in County Tyrone.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Ils filtrent dans et hors d'une machine à traiter le lait robotique quand ils le veulent, plutôt que d'être rassemblés à des moments fixés.</p>
+            <span class="english-block">They filter in and out of a robotic milking machine when they want to, rather than being herded in at set times.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Comme les McMasters, il pense que "tout va par la voie robotique" pour améliorer l'efficacité.</p>
+            <span class="english-block">Like the McMasters, he thinks "everything is going down the robotic route" to improve efficiency.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Mais historiquement, dans un endroit comme le rural Tyrone, cela a ses propres défis.</p>
+            <span class="english-block">But historically in a place like rural Tyrone, that has come with its own challenges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">L'obtention d'une bande large à grande vitesse a changé sa vie: il a pu ouvrir une ferme avec un système de paiement électronique.</p>
+            <span class="english-block">Getting high-speed broadband was a game-changer for him - he has been able to open a farm shop with an electronic payment system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Caleb Howard est un fermier dans le comté de Tyrone.</p>
+            <span class="english-block">Caleb Howard is a farmer in County Tyrone</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"Il y a dix ans, dans notre région, le signal téléphonique était un déchet, la bande large n'était pas bonne, c'était comme un appel légèrement plus rapide", a-t-il dit.</p>
+            <span class="english-block">"Ten years ago, in our area, phone signal was rubbish, the broadband wasn't great, it was just like a slightly faster dial-up," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">"Maintenant, tout est beaucoup plus simple et beaucoup plus facile à utiliser quand vous avez une bonne connexion Internet".</p>
+            <span class="english-block">"So now everything is much simpler and much easier-used when you've got a good internet connection."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Le projet Stratum a été mis en place pour fournir une bande large à grande vitesse dans des zones comme celle où Howard vit.</p>
+            <span class="english-block">Project Stratum was set up to deliver high-speed broadband to areas like the one Howard lives in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Colin Hutchinson de Fibrus, qui a réalisé le projet, a déclaré qu'il avait eu un impact économique "massif".</p>
+            <span class="english-block">Colin Hutchinson from Fibrus, which delivered the project, said it had had a "massive" economic impact.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"L'accès à Internet et à un bon accès à la large bande est vraiment crucial maintenant", a-t-il déclaré.</p>
+            <span class="english-block">"Being online and having good broadband access is really crucial now," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">"Et cela permet à des entreprises comme celle-ci de prospérer dans des zones vraiment rurales".</p>
+            <span class="english-block">"And it's enabling businesses like this to thrive in really rural locations."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Une écran de machine à traiter le lait est utilisée sur la ferme de Caleb Howard</p>
+            <span class="english-block">A milking machine screen is used on Caleb Howard's farm</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Robert Smyth dirige un troupeau de 100 vaches laitières dans un autre endroit rural, près de Randalstown, dans le comté d'Antrim.</p>
+            <span class="english-block">Robert Smyth runs a herd of 100 dairy cows in another rural location, near Randalstown in County Antrim.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Depuis quatre ans, il utilise l'application FarmDrive pour gérer son entreprise.</p>
+            <span class="english-block">For four years now, he has used the FarmDrive app to run the business.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">"C'est tellement plus pratique - avant, vous écrivez des choses, des pièces de papier dans la maison de bétail et les écrivez dans le bureau, alors que maintenant vous le faites juste à ce moment-là", a-t-il dit.</p>
+            <span class="english-block">"It's so much handier - beforehand you're writing things down, bits of paperwork in the cattle house and writing them down in the office, whereas now you just do it at that time," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Et quand vous avez des inspections à venir, tout ce que vous avez à faire est d'aller dans votre section de conformité, sélectionner des rapports, et il y a vos rapports pour votre médicament, pour vos dossiers de repas, pour tout.</p>
+            <span class="english-block">"And then whenever you have inspections coming up, all you have to do is go into your compliance section, select reports, and there's your reports for your medicine, for your meal records, for everything.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">"L'IA devrait vraiment chercher à mieux gérer votre ferme et à réduire vos intrants et augmenter vos sorties".</p>
+            <span class="english-block">"The AI really should be looking towards how to manage your farm better and how to reduce your inputs and increase your outputs."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Gareth McDonald a développé l'application FarmDrive</p>
+            <span class="english-block">Gareth McDonald developed the FarmDrive app</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Le développeur Gareth McDonald décrit FarmDrive comme "Facebook pour les vaches". Chaque animal obtient un profil avec tous ses enregistrements en un seul endroit et une photo peut être ajoutée.</p>
+            <span class="english-block">Developer Gareth McDonald describes FarmDrive as "Facebook for cows". Each animal gets a profile with all her records in one place and a photo can be added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Il est issu d'une famille agricole et a étudié l'informatique.</p>
+            <span class="english-block">He comes from a farming background and studied computer science.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Bien qu'il soit passionné par la technologie, il ne pense pas qu'elle remplacera les humains.</p>
+            <span class="english-block">Although he is passionate about the technology, he does not believe it will replace humans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">" Cela nous permet de travailler beaucoup plus rapidement et efficacement, et du côté agricole, cela permet essentiellement au fermier de voir les bonnes informations au bon moment, où il est en quelque sorte un conseiller pour le fermier ", a-t-il dit.</p>
+            <span class="english-block">"It's allowing us to work a lot more quickly and efficiently, and on the farming side, it's basically allowing the farmer to see the right information at the right time, where it's kind of that adviser to the farmer," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">"Nous sommes très d'accord pour dire que nous ne voulons pas que l'IA prenne la décision pour l'agriculteur".</p>
+            <span class="english-block">"We're very much of the opinion we don't want the AI making the decision for the farmer."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Il y a près d'un siècle, l'inventeur né dans le comté de Down, Harry Ferguson, a transformé l'industrie agricole en développant le système de liaison encore utilisé dans les tracteurs aujourd'hui.</p>
+            <span class="english-block">Almost a century ago, County Down-born inventor Harry Ferguson transformed the farming industry when he developed the linkage system still used in tractors today.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">L'ancien président de l'Union des agriculteurs d'Ulster, Ian Marshall, dit que l'IA est également révolutionnaire.</p>
+            <span class="english-block">Former president of the Ulster Farmers' Union Ian Marshall says AI is similarly revolutionary.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Bien que l'industrie ait toujours fait confiance aux données, il pense que la technologie va guider la façon dont l'information est utilisée.</p>
+            <span class="english-block">While the industry has always relied on data, he believes technology will drive how information is used.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">"Quand nous prendrons tous les ensembles de données, je pense que nous pourrons réaliser les trois piliers de la durabilité - économique, environnementale et sociale", a-t-il déclaré.</p>
+            <span class="english-block">"When we take all the datasets, then I think we can deliver on the three pillars of sustainability - economic, environmental and social," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">"Je pense donc que, comme nous avons tellement de données et tellement de numérisation dans l'industrie, les agriculteurs vont certainement en tirer profit et pouvoir atteindre leurs objectifs, atteindre leurs objectifs et remplir leurs obligations tout en fournissant des aliments de bonne qualité et durables".</p>
+            <span class="english-block">"So I think that because we've got so much data and so much digitalisation in the industry, that farmers will certainly use this to their advantage and can meet their targets, meet their objectives and meet the obligations whilst delivering good quality, sustainable food."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">L'IA dit aux agriculteurs quand ils doivent récolter</p>
+            <span class="english-block">The AI telling farmers when to harvest</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Les robots humanoïdes la " prochaine étape " dans l'agriculture</p>
+            <span class="english-block">Humanoid robots the 'next stage' in farming</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">L'entrepreneur adolescent transforme la gestion agricole</p>
+            <span class="english-block">The teen entrepreneur transforming farm management</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

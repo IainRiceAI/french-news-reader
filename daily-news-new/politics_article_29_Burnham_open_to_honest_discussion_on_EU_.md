@@ -1,11 +1,11 @@
 # Burnham open to 'honest discussion' on EU free movement
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c8e36kyk1qx5o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c8e36kyk1qx5o?at_medium=RSS&at_campaign=rss)  
-**Published:** Sun, 25 Oct 2026 00:33:19 GMT  
+**Published:** Sun, 25 Oct 2026 12:11:23 GMT  
 
 ---
 
-> **BBC Summary:** The PM said he wants a "factual" and "evidence-based debate" about returning to free movement between Britain and Europe.
+> **BBC Summary:** The PM says he wants a "factual" and "evidence-based debate" about returning to free movement between Britain and Europe.
 
 ---
 
@@ -27,189 +27,205 @@
 
 ### Section 3
 
-**🇬🇧 EN:** Speaking to the Sunday Times, Andy Burnham said he wants pursue a new type of relationship with Brussels, potentially including full EU membership or joining the single market, which would require free movement.
+**🇬🇧 EN:** Speaking to the Sunday Times, Andy Burnham said a new relationship with Brussels could include full EU membership or joining the single market, requiring free movement.
 
-**🇫🇷 FR:** *Dans un entretien avec le Sunday Times, Andy Burnham a déclaré qu'il souhaitait poursuivre un nouveau type de relation avec Bruxelles, qui pourrait inclure l'adhésion à l'UE ou l'adhésion au marché unique, ce qui exigerait la libre circulation.*
+**🇫🇷 FR:** *Dans un entretien avec le Sunday Times, Andy Burnham a déclaré qu'une nouvelle relation avec Bruxelles pourrait inclure l'adhésion à l'UE ou l'adhésion au marché unique, ce qui nécessite la libre circulation.*
 
 ---
 
 ### Section 4
 
-**🇬🇧 EN:** "I think you have to have a very factual, quite evidence-based debate about this," he told the newspaper.
+**🇬🇧 EN:** Asked about Burnham's remarks, Angela Rayner told the BBC's Sunday with Laura Kuenssberg "you can't take anything off the table", adding the prime minister was saying "we've got to be pragmatic to get the best deal for Britain and he wants to have the conversation."
 
-**🇫🇷 FR:** *"Je pense que vous devez avoir un débat très factuel, assez fondé sur des preuves à ce sujet", a- t- il dit au journal.*
+**🇫🇷 FR:** *Interrogée sur les remarques de Burnham, Angela Rayner a déclaré à la BBC dimanche avec Laura Kuenssberg "vous ne pouvez rien retirer de la table", ajoutant que le premier ministre disait "nous devons être pragmatiques pour obtenir la meilleure affaire pour la Grande-Bretagne et il veut avoir la conversation".*
 
 ---
 
 ### Section 5
 
-**🇬🇧 EN:** Shadow home secretary Chris Philp said there could be "no return" to free movement after the 2016 EU referendum, while Reform UK leader Nigel Farage said the prime minister's comments were a betrayal of voters who supported Brexit.
+**🇬🇧 EN:** Conservative leader Kemi Badenoch responded that the prime minister "hasn't thought this through", while Reform UK's Robert Jenrick dismissed the idea as "mad".
 
-**🇫🇷 FR:** *Le secrétaire à l'Intérieur de l'ombre, Chris Philp, a déclaré qu'il pourrait y avoir "aucun retour" à la libre circulation après le référendum de l'UE de 2016, tandis que le chef de la réforme britannique, Nigel Farage, a déclaré que les commentaires du premier ministre étaient une trahison des électeurs qui soutenaient le Brexit.*
+**🇫🇷 FR:** *Le leader conservateur Kemi Badenoch a répondu que le premier ministre "n'avait pas réfléchi à cela", tandis que Robert Jenrick de Reform UK a rejeté l'idée comme "fous".*
 
 ---
 
 ### Section 6
 
-**🇬🇧 EN:** Burnham has previously committed to Labour's 2024 election manifesto, which ruled out the return of free movement, single market membership or a customs union.
+**🇬🇧 EN:** Migration dominated debate during the 2016 Brexit campaign, with the Leave campaign raising issues about rules allowing any EU citizen to move to the UK.
 
-**🇫🇷 FR:** *Burnham s'est déjà engagé à adopter le manifeste électoral du Parti travailliste de 2024, qui exclut le retour de la libre circulation, l'adhésion au marché unique ou une union douanière.*
+**🇫🇷 FR:** *La migration a dominé le débat pendant la campagne Brexit de 2016, la campagne Leave soulèvant des questions sur les règles permettant à tout citoyen de l'UE de déménager au Royaume-Uni.*
 
 ---
 
 ### Section 7
 
-**🇬🇧 EN:** He has said that any fundamental changes would require a mandate at a general election, which is due by 2029.
+**🇬🇧 EN:** Burnham has previously committed to Labour's 2024 election manifesto which ruled out a return of free movement, single market membership or a customs union.
 
-**🇫🇷 FR:** *Il a déclaré que tout changement fondamental nécessiterait un mandat aux élections générales, qui devraient avoir lieu d'ici 2029.*
+**🇫🇷 FR:** *Burnham s'est déjà engagé à adopter le manifeste électoral du Parti travailliste de 2024 qui exclut le retour à la libre circulation, l'adhésion au marché unique ou une union douanière.*
 
 ---
 
 ### Section 8
 
-**🇬🇧 EN:** Migration dominated debate during the 2016 Brexit campaign, with the "leave" campaign raising issues about rules allowing any EU citizen to move to the UK.
+**🇬🇧 EN:** He has said that any changes would require a mandate at a general election, would is due by 2029.
 
-**🇫🇷 FR:** *La migration a dominé le débat lors de la campagne Brexit de 2016, la campagne "laissez" soulèvant des questions sur les règles permettant à tout citoyen de l'UE de déménager au Royaume-Uni.*
+**🇫🇷 FR:** *Il a dit que tout changement nécessiterait un mandat à une élection générale, qui devrait avoir lieu d'ici 2029.*
 
 ---
 
 ### Section 9
 
-**🇬🇧 EN:** But the prime minister suggested the type of migration experienced during the years of EU membership was "different" from the challenges faced now.
+**🇬🇧 EN:** "I think you have to have a very factual, quite evidence-based debate about this," he told the Sunday Times, external, adding he believed the type of migration had changed from revolving door movement of young people.
 
-**🇫🇷 FR:** *Mais le premier ministre a suggéré que le type de migration vécu pendant les années d'adhésion à l'UE était "diférieur" aux défis auxquels nous sommes confrontés maintenant.*
+**🇫🇷 FR:** *"Je pense que vous devez avoir un débat très factuel, assez fondé sur des preuves à ce sujet", a-t-il déclaré au Sunday Times, en dehors, ajoutant qu'il croyait que le type de migration avait changé du mouvement de porte tournante des jeunes.*
 
 ---
 
 ### Section 10
 
-**🇬🇧 EN:** "It was generally younger people, not always, but spending a few years, then going back," he said in his told the Sunday Times., external
+**🇬🇧 EN:** "Revolving door migration where people would come and then go back is different," he said. "The balance of migration has changed, hasn't it, since then? I think we've just got to have an honest discussion about those things."
 
-**🇫🇷 FR:** *"Il était généralement des jeunes, pas toujours, mais de passer quelques années, puis de retour", a-t-il dit dans son a dit au Sunday Times., extérieur*
+**🇫🇷 FR:** *"La migration à la porte, où les gens venaient et revenaient, est différente, a- t- il dit. "L'équilibre de la migration a changé depuis lors, n'est-ce pas?*
 
 ---
 
 ### Section 11
 
-**🇬🇧 EN:** "And obviously the ease of that worked for British people as well."
+**🇬🇧 EN:** But he stressed: "I can't see myself ever recommending anything that would involve joining the euro or Schengen."
 
-**🇫🇷 FR:** *"Et évidemment, la facilité de cela a fonctionné pour les Britanniques aussi bien".*
+**🇫🇷 FR:** *Mais il a souligné: "Je ne me vois jamais recommander quoi que ce soit qui impliquerait l'adhésion à l'euro ou à Schengen".*
 
 ---
 
 ### Section 12
 
-**🇬🇧 EN:** He acknowledged that freedom of movement "had very significant challenges associated with it".
+**🇬🇧 EN:** The Schengen Agreement allows passport-free travel across EU countries. The UK was able to keep the pound when it was an EU member, but the bloc has pushed new members to adopt the Euro.
 
-**🇫🇷 FR:** *Il a reconnu que la liberté de mouvement "avait des défis très importants à relever".*
+**🇫🇷 FR:** *L'accord de Schengen permet de voyager sans passeport à travers les pays de l'UE.Le Royaume-Uni a pu garder la livre sterling lorsqu'il était membre de l'UE, mais le bloc a poussé de nouveaux membres à adopter l'euro.*
 
 ---
 
 ### Section 13
 
-**🇬🇧 EN:** "Revolving door migration where people would come and then go back is different," he said.
+**🇬🇧 EN:** His remarks were made ahead of an EU summit on 20 November in Brussels, where the prime minister is expected to pitch options for a reset of relations with the bloc.
 
-**🇫🇷 FR:** *"La migration en porte tournante où les gens venaient et revenaient est différente", a-t-il déclaré.*
+**🇫🇷 FR:** *Il a fait cette remarque avant un sommet de l'UE le 20 novembre à Bruxelles, où le premier ministre devrait présenter des options pour rétablir les relations avec le bloc.*
 
 ---
 
 ### Section 14
 
-**🇬🇧 EN:** "The balance of migration has changed, hasn't it, since then? I think we've just got to have an honest discussion about those things."
+**🇬🇧 EN:** On Sunday with Laura Kuenssberg, Rayner said she wanted to see the best possible deal with the European Union, which may well involve concessions.
 
-**🇫🇷 FR:** *"L'équilibre de la migration a changé depuis, n'est-ce pas? Je pense que nous devons juste avoir une discussion honnête à ce sujet".*
+**🇫🇷 FR:** *Le dimanche avec Laura Kuenssberg, Rayner a déclaré vouloir voir le meilleur accord possible avec l'Union européenne, ce qui pourrait bien impliquer des concessions.*
 
 ---
 
 ### Section 15
 
-**🇬🇧 EN:** Burnham's willingness to re-open some of the most sensitive debates in British politics has been a feature of his first months in power.
+**🇬🇧 EN:** "What the prime minister is saying now, and what I want, is that we have an honest conversation about the facts of what the trade-offs are to get the best deal for Britain going forward," she said.
 
-**🇫🇷 FR:** *La volonté de Burnham de réouvrir certains des débats les plus sensibles de la politique britannique a été une caractéristique de ses premiers mois au pouvoir.*
+**🇫🇷 FR:** *"Ce que le premier ministre dit maintenant, et ce que je veux, c'est que nous ayons une conversation honnête sur les faits de ce que sont les compromis pour obtenir la meilleure affaire pour la Grande-Bretagne à l'avenir", a-t-elle dit.*
 
 ---
 
 ### Section 16
 
-**🇬🇧 EN:** In an interview with the BBC in September, Burnham said Britain could go "all the way" towards rejoining the European Union.
+**🇬🇧 EN:** "The frustration for me in the previous debate we had when we had the referendum is that a lot of those facts didn't get the airtime... So I would like us to have an honest conversation about what the trade-offs could be and then put that to the people at a general election."
 
-**🇫🇷 FR:** *Dans une interview accordée à la BBC en septembre, Burnham a déclaré que la Grande-Bretagne pourrait aller "tout le long" vers la réintégration de l'Union européenne.*
+**🇫🇷 FR:** *"La frustration pour moi dans le débat précédent que nous avons eu lors du référendum est que beaucoup de ces faits n'ont pas été diffusés... alors je voudrais que nous ayons une conversation honnête sur ce que les compromis pourraient être et que nous le mettions ensuite au courant des élections générales".*
 
 ---
 
 ### Section 17
 
-**🇬🇧 EN:** However, in his latest remarks, the prime minister stressed: "I can't see myself ever recommending anything that would involve joining the euro or Schengen."
+**🇬🇧 EN:** Writing on X, Badenoch dismissed it as "yet another example of Burnham's foot in mouth syndrome".
 
-**🇫🇷 FR:** *Toutefois, dans ses dernières remarques, le premier ministre a souligné: "Je ne me vois jamais recommander quoi que ce soit qui impliquerait l'adhésion à l'euro ou à Schengen".*
+**🇫🇷 FR:** *Dans son article sur X, Badenoch a rejeté le syndrome comme "un autre exemple du syndrome de Burnham".*
 
 ---
 
 ### Section 18
 
-**🇬🇧 EN:** The Schengen Agreement allows passport-free travel across EU countries. While the UK did not previously abandon the pound while it was an EU member, the bloc has pushed new members to adopt the single currency.
+**🇬🇧 EN:** She added: "Most people who voted for Brexit did so because they didn't want free movement. Too many politicians have failed to understand the significance and impact of immigration on communities."
 
-**🇫🇷 FR:** *L'accord de Schengen permet de voyager sans passeport à travers les pays de l'UE.*
+**🇫🇷 FR:** *Elle a ajouté: "La plupart des gens qui ont voté pour le Brexit l'ont fait parce qu'ils ne voulaient pas de libre circulation. Trop de politiciens n'ont pas compris l'importance et l'impact de l'immigration sur les communautés".*
 
 ---
 
 ### Section 19
 
-**🇬🇧 EN:** The remarks were made ahead of his meeting with EU chiefs at a summit on 20 November in Brussels, where he is expected to pitch options for a reset of relations with the bloc.
+**🇬🇧 EN:** Conservative MP and former chancellor Jeremy Hunt, who backed Remain, warned the Brexit debate was "incredibly divisive" and insisted the current Brexit deal can still be made to work.
 
-**🇫🇷 FR:** *Il a fait cette remarque avant sa rencontre avec les chefs de l'UE lors d'un sommet qui aura lieu le 20 novembre à Bruxelles, où il devrait présenter des options pour rétablir les relations avec le bloc.*
+**🇫🇷 FR:** *Le député conservateur et ancien chancelier Jeremy Hunt, qui a soutenu Remain, a averti que le débat sur le Brexit était "incroyablement divisant" et a insisté sur le fait que l'accord actuel sur le Brexit puisse encore fonctionner.*
 
 ---
 
 ### Section 20
 
-**🇬🇧 EN:** The shadow home secretary said EU free movement would amount to "handing back control of our borders and allowing uncontrolled migration from across Europe".
+**🇬🇧 EN:** "I was at the top of a government that was paralysed for several years while we were trying to wrestle with the implications of that vote and I think, having made the decision, we should stick with it and make the most of it - I think we can make it a success," he told Kuenssberg.
 
-**🇫🇷 FR:** *Le secrétaire à l'Intérieur de l'ombre a déclaré que la libre circulation de l'UE équivaudrait à "rendre le contrôle de nos frontières et permettre une migration incontrôlée de toute l'Europe".*
+**🇫🇷 FR:** *"J'étais au sommet d'un gouvernement qui était paralysé pendant plusieurs années alors que nous essayons de lutter contre les conséquences de ce vote et je pense qu'après avoir pris la décision, nous devrions nous y tenir et en tirer le meilleur parti - je pense que nous pouvons en faire un succès", a-t-il dit à Kuenssberg.*
 
 ---
 
 ### Section 21
 
-**🇬🇧 EN:** Philp said: "The British people voted to end free movement, and there can be no return to it."
+**🇬🇧 EN:** Pointing to the one million young people not in work or training, he added: "Surely our priority in that situation is to get those jobs filled by the young people we have here instead of parking them on welfare.
 
-**🇫🇷 FR:** *Philp a déclaré: "Le peuple britannique a voté pour mettre fin à la libre circulation, et il n'y a pas de retour à cela".*
+**🇫🇷 FR:** *Il a souligné le nombre de jeunes qui ne travaillent pas ou ne sont pas formés: "Certes, notre priorité dans cette situation est de faire en sorte que ces emplois soient occupés par les jeunes qui sont ici au lieu de les faire payer des allocations sociales.*
 
 ---
 
 ### Section 22
 
-**🇬🇧 EN:** Burnham won the Greater Manchester seat of Makerfield at a by-election in June, ahead of him becoming prime minister the following month. The constituency voted to leave the European Union in 2016.
+**🇬🇧 EN:** "Which is why I think it's astonishing to lead on the issue of free movement... Something that is actually going to stop young people here getting jobs."
 
-**🇫🇷 FR:** *Burnham a remporté le siège de Makerfield dans le Grand Manchester lors d'une élection partielle en juin, avant de devenir premier ministre le mois suivant.*
+**🇫🇷 FR:** *"C'est pourquoi je trouve étonnant de mener à bien la question de la libre circulation... quelque chose qui va en fait empêcher les jeunes d'y trouver un emploi".*
 
 ---
 
 ### Section 23
 
-**🇬🇧 EN:** As a candidate in the by-election, Burnham had promised not to "re-run" Brexit arguments and said he was "not proposing that the UK considers rejoining the EU".
+**🇬🇧 EN:** But Liberal Democrat deputy leader Daisy Cooper told Kuenssberg she believed allowing freedom of movement would be "a really good thing for growth" and pushed for the UK to rejoin the single market, the customs union, and also be involved in the bloc's defence pact.
 
-**🇫🇷 FR:** *En tant que candidat aux élections partielles, Burnham avait promis de ne pas "répondre" les arguments sur le Brexit et a déclaré qu'il "ne proposait pas que le Royaume-Uni envisage de rejoindre l'UE".*
+**🇫🇷 FR:** *Mais la vice-présidente des libéraux-démocrates Daisy Cooper a déclaré à Kuenssberg qu'elle croyait que permettre la liberté de mouvement serait "une chose vraiment bonne pour la croissance" et a poussé le Royaume-Uni à rejoindre le marché unique, l'union douanière, et également à participer au pacte de défense du bloc.*
 
 ---
 
 ### Section 24
 
-**🇬🇧 EN:** In response to the Sunday Times interview, Farage said: "This is a total betrayal of Brexit Britain and his Makerfield pitch".
+**🇬🇧 EN:** The UK currently has "the worst of both worlds" on immigration, she said, as it was excluded from the EU's "new asylum pact with biometric data" that could be used to "tackle the small boats crisis".
 
-**🇫🇷 FR:** *Dans une interview accordée au Sunday Times, Farage a déclaré: "C'est une trahison totale du Brexit en Grande-Bretagne et de son discours de Makerfield".*
+**🇫🇷 FR:** *Le Royaume-Uni a actuellement "le pire des deux mondes" en matière d'immigration, a-t-elle dit, car il a été exclu du "nouveau pacte d'asile de l'UE avec des données biométriques" qui pourrait être utilisé pour "atténuer la crise des petits bateaux".*
 
 ---
 
 ### Section 25
 
-**🇬🇧 EN:** "He is also deluded to say immigration was different when we were members of the EU. We will fight this dishonesty," the Reform UK leader added.
+**🇬🇧 EN:** Reform UK's economy spokesperson Robert Jenrick told Kuenssberg he had never believed freedom of movement "was a good thing", despite supporting the Remain position before the 2016 referendum when he was a Conservative MP.
 
-**🇫🇷 FR:** *"Il est également trompé en disant que l'immigration était différente quand nous étions membres de l'UE.*
+**🇫🇷 FR:** *Le porte-parole de l'économie de la Réforme britannique, Robert Jenrick, a déclaré à Kuenssberg qu'il n'avait jamais cru que la liberté de mouvement "était une bonne chose", malgré avoir soutenu la position Remain avant le référendum de 2016 quand il était député conservateur.*
 
 ---
 
 ### Section 26
+
+**🇬🇧 EN:** "I think it's completely mad, the idea that this country needs more immigration," he said, claiming data shows mass migration "has been a disaster for working people, for Brits".
+
+**🇫🇷 FR:** *"Je pense que c'est complètement fou, l'idée que ce pays a besoin de plus d'immigration", a-t-il déclaré, affirmant que les données montrent que l'immigration de masse "a été un désastre pour les travailleurs, pour les Britanniques".*
+
+---
+
+### Section 27
+
+**🇬🇧 EN:** "The last thing they want is their wages being undercut by a load of low wage, low-skilled migrants from overseas," he added.
+
+**🇫🇷 FR:** *"La dernière chose qu'ils veulent, c'est que leurs salaires soient réduits par une charge de migrants peu qualifiés et peu payés venant d'outre-mer", a-t-il ajouté.*
+
+---
+
+### Section 28
 
 **🇬🇧 EN:** Burnham to push for new post-Brexit deals at EU summit
 
@@ -217,7 +233,7 @@
 
 ---
 
-### Section 27
+### Section 29
 
 **🇬🇧 EN:** Brexit referendum 'possible' in Labour election manifesto, says Burnham
 
@@ -225,11 +241,19 @@
 
 ---
 
-### Section 28
+### Section 30
 
 **🇬🇧 EN:** Burnham says it is 'clear' Russia interfered with Brexit vote
 
 **🇫🇷 FR:** *Burnham dit qu'il est " clair " que la Russie s'est mêlée au vote sur le Brexit*
+
+---
+
+### Section 31
+
+**🇬🇧 EN:** Do you have any views, comments or questions about this story?
+
+**🇫🇷 FR:** *Avez-vous des opinions, des commentaires ou des questions sur cette histoire ?*
 
 ---
 
