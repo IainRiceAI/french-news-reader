@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thick fog to create dangerous driving conditions for UK commuters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Thick fog to create dangerous driving conditions for UK commuters</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 28 Oct 2026 03:29:29 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/c6x2wr0dwzx1o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: After storms across the UK, the weather is set to turn calmer with mist and fog at times over the coming week.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Une mauvaise visibilité pourrait affecter les déplacements des personnes qui font du matin cette semaine et la semaine prochaine.</p>
+            <span class="english-block">Poor visibility could affect journeys for morning commuters this week and next</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Des brouillardides sont prévues pour certaines parties du Royaume-Uni cette semaine, créant des conditions dangereuses pour les automobilistes, en particulier autour du trajet du matin.</p>
+            <span class="english-block">Thick fog is forecast for parts of the UK this week, creating dangerous conditions for motorists, particularly around the morning commute.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le mercredi sera un jour de quelques coups de soleil et de pluies, mais à mesure que les vents deviennent plus légers en jeudi, un brouillard étendu devrait se former.</p>
+            <span class="english-block">Wednesday will be a day of some sunny spells and showers but as winds turn lighter into Thursday, extensive fog is expected to form.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le brouillard entraînera des conditions de conduite difficiles jusqu'à l'heure de pointe du jeudi matin.</p>
+            <span class="english-block">The fog will lead to difficult driving conditions through the Thursday morning rush hour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Alors que la pluie est également prévue pour la fin de cette semaine, à mesure que la pression élevée s'accumule en novembre, plus de brouillard et de brouillard se formeront la semaine prochaine.</p>
+            <span class="english-block">While rain is also in the forecast for the end of this week, as high pressure builds into November, more mist and fog will form next week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Après la tempête récente qui a frappé le Royaume-Uni, les choses vont se calmer dans les prochains jours.</p>
+            <span class="english-block">After the recent stormy weather across the United Kingdom, things will turn calmer in the coming days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">La tempête a été causée par un jet très actif - le vent qui bouge rapidement dans l'atmosphère - qui envoie des zones profondes de basse pression vers le Royaume-Uni.</p>
+            <span class="english-block">The stormy spell of weather was caused by a very active jet stream - the fast moving wind high in the atmosphere - sending deep areas of low pressure toward the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Cela va maintenant s'affaiblir et au lieu d'apporter des systèmes à basse pression, la pression élevée commencera à se développer.</p>
+            <span class="english-block">This is now going to weaken and instead of bringing low pressure systems, high pressure will start to develop.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">La pression élevée entraîne une température plus stable avec des vents plus légers, mais aussi le risque de brouillard, de brouillard, de nuages bas, de journées plus froides et de nuits plus froides.</p>
+            <span class="english-block">High pressure brings more settled weather with lighter winds. In late autumn, it also brings the risk of mist, fog, low cloud, chillier days and frosty nights.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Le mercredi commencera à être plus frais que les derniers matins et, bien que sec pour la plupart, il y aura beaucoup de nuages et de pluie pluvieuse principalement dans le sud de l'Écosse, le nord de l'Angleterre et le nord du Pays de Galles.</p>
+            <span class="english-block">Wednesday will start off chillier compared to recent mornings and while dry for most, there will be lots of cloud and showery rain mainly across southern Scotland, northern England and north Wales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Cette zone de pluie se déplacera plus au sud-est à travers le Pays de Galles et dans les Midlands au cours de la matinée avant de disparaître.</p>
+            <span class="english-block">This area of rain will move further south-east across Wales and into the Midlands during the morning before fading away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">L'après-midi sera alors largement sec avec des coups de soleil dans la plupart des régions du Royaume-Uni avec des températures légèrement supérieures à la moyenne de 12 à 16°C.</p>
+            <span class="english-block">The afternoon will then be largely dry with sunny spells across most areas of the UK with temperatures slightly above average at 12 to 16C.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Une pression élevée s'installe dans tout le Royaume-Uni de dimanche à la semaine prochaine</p>
+            <span class="english-block">High pressure becomes established across the UK from Sunday into next week</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">La nuit du jeudi au jeudi, les vents se dégagent et la brume et le brouillard se développent, en particulier dans l'est du Pays de Galles, le centre et le sud de l'Angleterre.</p>
+            <span class="english-block">During the night into Thursday, winds will lighten and mist and fog will develop, particularly in east Wales, central and southern England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Cela pourrait être dense dans certains endroits et entraîner des conditions de conduite difficiles pour le trajet de jeudi matin.</p>
+            <span class="english-block">This could be dense in places and lead to some tricky driving conditions for the Thursday morning commute.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Dans certaines régions, le brouillard peut même persister jusqu'à l'heure du déjeuner.</p>
+            <span class="english-block">The fog may even linger in some parts until lunchtime.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Dès vendredi et samedi, il est probable qu'il pleuve en Écosse, en Irlande du Nord et dans les régions du nord de l'Angleterre et du Pays de Galles.</p>
+            <span class="english-block">By Friday and Saturday, some rain is likely across Scotland, Northern Ireland and northern areas of England and Wales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Mais la brume et le brouillard peuvent se former à nouveau dans l'est et le sud de l'Angleterre.</p>
+            <span class="english-block">But mist and fog may once again form across eastern and southern England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">La pression élevée sera plus répandue au cours du week-end et jusqu'à la semaine prochaine.</p>
+            <span class="english-block">High pressure will become more widely established over the weekend and into next week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Avec des vents légers, il est probable que plus de brume et de brouillard se forment pendant les périodes de nuit et persistent jusqu'au matin.</p>
+            <span class="english-block">With light winds, more mist and fog is likely to form during the overnight periods and linger through the mornings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Dans certains endroits, la brume, le brouillard et le nuage bas ne peuvent pas être clairs et peuvent faire un peu froid.</p>
+            <span class="english-block">In some places, the mist, fog and low cloud may not clear at all and make it feel quite chilly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">La pluie dont nous avons besoin sera également en pénurie.</p>
+            <span class="english-block">Much needed rain will also be in short supply.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Bien que la sécheresse et la sécheresse sévère de l'Angleterre et du Pays de Galles aient été observées en octobre, certaines réservoirs sont encore exceptionnellement faibles.</p>
+            <span class="english-block">Despite October giving the drought and severe drought areas of England and Wales around the average amount of October rainfall, some reservoirs are still exceptionally low.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Ce modèle météo plus stable semble actuellement continuer pendant la première semaine de novembre.</p>
+            <span class="english-block">This more settled weather pattern currently looks like it might continue for much of the first week of November.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Vous pouvez aussi lire notre dernier rapport mensuel.</p>
+            <span class="english-block">Beyond that, you can read our latest monthly outlook.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Comment se forme le brouillard ?</p>
+            <span class="english-block">How does fog form?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Selon les recherches, au moins sept mois de pluie implacable étaient nécessaires pour mettre fin à la sécheresse.</p>
+            <span class="english-block">At least seven months of relentless rain needed to end drought, research shows</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Une tempête d'automne, un hiver froid: comment El Niño pourrait- il affecter le temps au Royaume-Uni?</p>
+            <span class="english-block">Stormy autumn, cold winter - how might El Niño affect the UK weather?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
