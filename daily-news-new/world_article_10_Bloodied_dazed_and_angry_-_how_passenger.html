@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloodied, dazed and angry - how passengers' rail journey turned to disaster in Spain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>Bloodied, dazed and angry - how passengers' rail journey turned to disaster in Spain</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 28 Oct 2026 21:24:41 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm9qzd47ng98o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Survivors of the train crash in Spain have spoken of their shock, panic and anger at the accident in Toledo province on Wednesday.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Survivants décrit être à bord quand les trains ont heurté</p>
+            <span class="english-block">Survivor describes being onboard when trains collided</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Il était environ 08h30 (07h30 GMT) un mercredi normal.</p>
+            <span class="english-block">It was approaching 08:30 (07:30 GMT) on a normal Wednesday. Two high-speed trains were travelling south from the Spanish capital, Madrid, to Seville.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Un train de l'opérateur privé Iryo avec 147 passagers était en face de lui sur la même ligne. Un problème signalé avec le système de signalisation automatique - une panne informatique - avait obligé tous les trains à s'arrêter sur la bande affectée.</p>
+            <span class="english-block">One, run by state-owned operator Renfe had 397 passengers on board. Ahead of it on the same line was a train of Iryo private operator with 147 passengers. A reported issue with the automatic signalling system - a computer failure - had forced all trains to halt on the affected stretch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Puis l'impossible s'est produit, a déclaré le ministre espagnol des Transports, alors que le train Renfe avait reçu l'ordre de procéder "en erreur".</p>
+            <span class="english-block">Then the impossible happened, Spain's transport minister said, as the Renfe train was ordered to proceed in "error".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Il s'est écrasé dans le dos de l'autre train entre les municipalités de Mora et Orgaz, à environ 140 km au sud de Madrid.</p>
+            <span class="english-block">It crashed into the back of the other train between municipalities Mora and Orgaz, about 140km (87 miles) south of Madrid.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Certains passagers dormaient, certains avaient déjà commencé leur journée de travail sur ordinateur portable, et d'autres parcouraient leurs applications sur leur téléphone.</p>
+            <span class="english-block">Some of the passengers were asleep, some had already started their working day on laptops - and others scrolled through their apps on their phones.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Le voyage a été interrompu par l'annonce qu'il y avait une congestion sur les voies ferrées.</p>
+            <span class="english-block">The journey was interrupted with an announcement that there was congestion on the tracks. This lasted a few minutes - for some, a bit longer for others.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Tangui Binier, 22 ans, était dans le train Iryo, le premier wagon, numéro 8.</p>
+            <span class="english-block">Tangui Binier, 22, was in the Iryo train, the front carriage, number eight. His father was in number seven.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Leur train était l'un des six qui avaient reçu l'ordre de s'arrêter à 8h30. Quelques minutes plus tard, "le train a commencé à accélérer", a déclaré Binier à la BBC, "et il s'est arrêté soudainement".</p>
+            <span class="english-block">Their train was one of six to have been ordered to stop at 08:30. A few minutes later, "the train started speeding", Binier told the BBC, "then it came to a sudden halt".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Déconcerté, il a regardé par la fenêtre et a vu "des fils de gauche descendre, et il y avait juste beaucoup de fumée derrière nous".</p>
+            <span class="english-block">Baffled, he looked out of the window and saw "wires on the left side come down, and then there being just a lot of smoke behind us."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Le journaliste espagnol Roberto Gómez dormait dans le train à grande vitesse Renfe qui s'était arrêté à plus de 25 km de Binier.</p>
+            <span class="english-block">Spanish journalist Roberto Gómez was dozing on the high-speed Renfe train which had stopped more than 25km (16 miles) away from Binier's.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Quelques minutes plus tard, le train a repris sa marche, a- t- il expliqué, et l'accident s'est produit.</p>
+            <span class="english-block">It was a brief stop. A few minutes later, the train began to move again, he explained, and then the crash happened.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Il ne savait pas que à 08h36 son train avait reçu l'ordre de poursuivre le voyage et que quelque 17 minutes plus tard, le "très incroyable" s'était produit, a déclaré le ministre espagnol des Transports, Óscar Puente.</p>
+            <span class="english-block">He did not know that at 08:36 his train had been ordered to proceed with the journey and some 17 minutes later the "truly unbelievable" happened, Spain's Transport Minister Óscar Puente said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">" L'impact a été terrible, a déclaré Gómez à la radio Onda Cero. " Vous pouvez vous imaginer, la voiture est complètement détruite.</p>
+            <span class="english-block">"The impact was terrible," Gómez told Onda Cero radio. "You can imagine, the carriage is completely destroyed. All the suitcases are all over the wrecked carriage."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Gómez n'a subi que des blessures mineures mais a décrit un autre passager tombant sur lui et soutenant une profonde fissure sur sa tête.</p>
+            <span class="english-block">Gómez suffered only minor injuries but described another passenger falling on top of him and sustaining a deep gash on his head.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"Nous avons pu aider des personnes qui avaient subi de graves coups à la poitrine et aux côtes", a- t- il dit.</p>
+            <span class="english-block">"We were able to help people who had suffered severe blows to their chest and ribs," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Rafael Barcelo était dans l'une des voitures les plus touchées. Une ecchymose sur le front fait de lui un des chanceux survivants.</p>
+            <span class="english-block">Rafael Barcelo was in one of the worst-affected carriages. A bruise on his forehead makes him one of the lucky survivors. He was having a coffee at the time of the crash and "felt a huge impact".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">"Nous avons tous été jetés en l'air", a-t-il déclaré à l'agence de presse Reuters sur le site de l'accident.</p>
+            <span class="english-block">"We were all thrown into the air," he told Reuters news agency at the site of the crash.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"Je suis raisonnablement bien, mon ami est bien pire".</p>
+            <span class="english-block">"I am reasonably OK, my friend is quite worse."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">"Je voyageais dans le coach 7, qui est celui qui a le plus de victimes et le plus détruit.</p>
+            <span class="english-block">"I was travelling in coach seven, which is the one with more victims and the one most destroyed. I at least counted eight victims in that coach," he said, visibly shocked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Rafael Barcelo: "J'ai compté huit victimes dans cet entraîneur"</p>
+            <span class="english-block">Rafael Barcelo: "I counted eight victims in that coach"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Même dans les wagons les plus éloignés de l'impact sur le train Renfe, "tout a été complètement détruit - les sièges ont été détachés et la plupart des personnes qui voyageaient dans la même direction que le train ont été jetées en l'air", selon Salvador Arriza.</p>
+            <span class="english-block">Even in the carriages farthest away from the impact on the Renfe train "everything was completely destroyed - the seats were detached, and most of the people who were travelling facing the same direction as the train were thrown into the air", according to Salvador Arriza.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"C'était brutal", a- t- il dit, décrivant comment certaines personnes "étaient piégées entre les sièges".</p>
+            <span class="english-block">"It was something brutal," he said, describing how some people "were trapped between the seats".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Une fois sorti, il a vu à quel point la situation était mauvaise.</p>
+            <span class="english-block">Once out, he saw how bad the situation was.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">" Ce qui m'a attiré l'attention, c'est qu'il y avait dans l'un des trains un tronçon de piste qui traversait le toit du train, et je pense que cela aurait pu aider à arrêter ou à réduire l'inertie du train. "</p>
+            <span class="english-block">"What caught my attention is that in one of the coaches there was a piece of train track that went through the roof of the coach, and I think that might have helped to stop or reduce the inertia of the train."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Salvador Arriza dit qu' une longue piste qui a traversé le toit de la voiture a peut-être ralenti le train</p>
+            <span class="english-block">Salvador Arriza says a long piece of track that speared through the carriage roof may have slowed the train down</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">En Espagne, le train a été transformé en catastrophe.</p>
+            <span class="english-block">Bloodied, dazed and angry - how passengers' rail journey turned to disaster in Spain</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Accident de train à grande vitesse tue au moins 68 personnes en Espagne</p>
+            <span class="english-block">High-speed train crash kills at least 68 people in Spain</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Sebastián Herrero voyageait dans le train qui a été heurté de l'arrière et l'impact "terrible, terrible" l'a jeté sur les sièges en face.</p>
+            <span class="english-block">Sebastián Herrero was travelling in the train which was hit from the rear and the "terrible, terrible impact" threw him on to the seats in front.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">" Après notre chute, il y avait beaucoup de gens avec des nez cassés, des bras cassés... on a commencé à voir de la fumée partout. "</p>
+            <span class="english-block">"After we fell, there were many people with broken noses, broken arms... We started seeing smoke everywhere."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">L'accident de la gare d'Urda est le pire accident ferroviaire d'Espagne depuis 2013</p>
+            <span class="english-block">The crash near Urda is Spain's worst rail disaster since 2013</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Une fois l'impact initial terminé, les passagers du chariot de Binier ont débattu de la sécurité de la sortie en raison des câbles électriques dispersés à l'extérieur du train.</p>
+            <span class="english-block">Once the initial impact was over, passengers in Binier's carriage debated whether it was safe to leave because of the electrical wires strewn outside the train.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Certains s'inquiétaient du risque qu'un autre train se heurte et décidèrent de sortir.</p>
+            <span class="english-block">Some were worried about the risk of another train colliding and decided to exit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">"Nous ne savions pas ce qui s'était passé avant d'avoir fait un pas dehors, et il y avait des preuves de ce qui s'était passé.</p>
+            <span class="english-block">"We did not know what had happened until we took a step outside, and there there was evidence of what had happened.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">"Nous avons vu l'autre train derrière le nôtre et nous avons vu notre train complètement renversé et le côté arrière plein de débris", a-t-il déclaré à la BBC.</p>
+            <span class="english-block">"We saw the other train behind ours and we saw our train completely flipped over and the back side full of debris," he told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">"Quand je suis descendu du train j'étais dans un choc total, une terreur totale.</p>
+            <span class="english-block">"When I got out of the train I was in complete shock, complete awe. There were people in danger, it was very hard to see, there was dead bodies, there was missing limbs. "</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Je ne sais pas si je vais jamais me remettre de ça.</p>
+            <span class="english-block">"I don't know if that is something I will ever recover from."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Mais l'adrénaline a commencé à monter, a- t- il dit, et ceux comme lui qui n'avaient subi aucune blessure sont allés aider.</p>
+            <span class="english-block">But the adrenaline kicked in, he said, and those like him who had not suffered any injuries went to help.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Parmi eux se trouvait son père, qui, selon lui, "était capable de transporter une fille en toute sécurité, avec une hanche cassée".</p>
+            <span class="english-block">Among them was his dad, who he explained was "able to carry a girl to safety, with a broken hip".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Peu après, les habitants arrivent, suivis de la police et des ambulances de la Guardia Civil.</p>
+            <span class="english-block">It was not long before local people arrived, followed by the police and ambulance services of the Guardia Civil.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">"Je suis vraiment l'une des personnes les plus chanceuses et les plus chanceuses. Je me sens tellement chanceuse et je vois d'autres personnes qui ne sont pas aussi chanceuses, et je les vois très de près.</p>
+            <span class="english-block">"I'm really one of the most fortunate people and the luckiest person. I feel like just I'm so fortunate and I see other people who are not so fortunate, and I see them very close up. Sometimes you just ask yourself 'Why me?'," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">L'Espagne était déjà en proie à la catastrophe ferroviaire à grande vitesse d'Adamoz, qui a coûté la vie à 46 personnes en janvier, à l'extérieur de Córdoba.</p>
+            <span class="english-block">Spain was already reeling from the Adamuz high-speed rail disaster outside Córdoba in January, in which 46 people died.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">L'accident de mercredi a soulevé de nombreuses questions pour les autorités.</p>
+            <span class="english-block">It happened on the same high-speed rail line, but much further south. So Wednesday's accident has raised many questions for the authorities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Les passagers touchés étaient visiblement en colère.</p>
+            <span class="english-block">Affected passengers were visibly angry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">"Il n'est pas possible que notre train ait été arrêté pendant cinq ou dix minutes et que l'autre train n'ait pas été dit d'arrêter", a déclaré l'un d'eux.</p>
+            <span class="english-block">"It isn't possible that our train was stopped for five or 10 minutes and that the other train wasn't told to stop," one of them said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">"Comment cela peut-il arriver avec la technologie dont nous disposons?", ont- ils ajouté. "C'est pas normal. On ne nous a rien dit. La personne à qui on aurait dû dire quelque chose était le conducteur de l'autre train. On ne s'en soucierait pas tant que l'autre train aurait été averti. Je ne comprends pas cela".</p>
+            <span class="english-block">"How can this happen with the technology we have?," they added. "It's not normal. We weren't told anything. The person who should have been told something was the driver of the other train. We wouldn't have cared as long as the other train had been warned. I don't understand this."</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

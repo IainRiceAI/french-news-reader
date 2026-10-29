@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What we now know about the UK economy in four charts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>What we now know about the UK economy in four charts</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 28 Oct 2026 20:08:45 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c9x28350ly07o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The Office for Budget Responsibility says higher energy prices will impact everything from prices and living standards to economic growth.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le Royaume-Uni n'a peut-être pas participé à la guerre entre les États-Unis et l'Iran, mais le pays ressent la force totale du conflit sur son économie.</p>
+            <span class="english-block">The UK may have no involvement in the US-Iran war, but the country is feeling the full force of the conflict on its economy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">L'augmentation des prix de l'énergie devrait faire obstacle à la croissance à court terme, faire monter l'inflation et laisser le niveau de vie dans un " sombre " état, selon les dernières prévisions officielles de l'Office for Budget Responsibility (OBR).</p>
+            <span class="english-block">Soaring energy prices are set to dent growth in the short term, push up inflation and leave living standards in a "grim" place, according to the latest official forecast from the Office for Budget Responsibility (OBR).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Les taux d'intérêt devraient également augmenter, ce qui rendra les emprunts plus chers, ainsi que les remboursements de dettes gouvernementales.</p>
+            <span class="english-block">Interest rates are also predicted to rise, making borrowing more expensive, along with government debt repayments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le chancelier John Healey a averti que la nation était confrontée à de "réels défis à venir" alors qu'il annonçait des politiques qui, selon lui, offriraient "l'espace de respiration" aux ménages dans les mois à venir.</p>
+            <span class="english-block">Chancellor John Healey warned the nation faces "real challenges ahead" as he announced policies that he said would offer "breathing space" for households in the coming months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Votre salaire, vos factures d'énergie et vos économies: comment le budget vous affecte</p>
+            <span class="english-block">Your pay, energy bills and savings: How the Budget affects you</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">" Ce à quoi nous sommes confrontés aujourd'hui, dit- il, sont des tempêtes économiques mondiales.</p>
+            <span class="english-block">"What we face today are global economic storms," he said. "We can't wish them away. We must choose the course we steer through them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Dans sa première évaluation de l'économie britannique depuis le début du conflit au Moyen-Orient, le REB a déclaré que la hausse des prix de l'énergie représentait le plus grand risque pour l'économie dans un avenir proche.</p>
+            <span class="english-block">In its first assessment of the UK economy since the Middle East conflict started, the OBR said rising energy prices were the biggest risk to the economy in the near future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Malgré une hausse de ses prévisions de croissance pour cette année, elle a fortement réduit ses prévisions pour l'année prochaine de 1,6% à 1%.</p>
+            <span class="english-block">Despite raising its growth forecast for this year, it sharply cut its prediction for next year from 1.6% to 1%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">La croissance devrait alors revenir en flèche dans les années suivantes.</p>
+            <span class="english-block">Growth is then set to rebound in the following years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Lorsque l'économie grandit, les entreprises ont tendance à investir davantage, à créer plus d'emplois et à augmenter les salaires des travailleurs, ce qui permet aux gens de se sentir mieux en moyenne, bien que cela puisse prendre du temps et que tout le monde ne bénéficie pas nécessairement.</p>
+            <span class="english-block">When an economy grows, businesses tend to invest more, create more jobs and give pay rises to workers, which leaves people feeling better off on average, though it can take time and not everyone necessarily benefits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les entreprises qui réalisent des bénéfices plus élevés paient également plus d'impôts, ce qui permet au gouvernement de dépenser davantage pour les services publics.</p>
+            <span class="english-block">Companies making higher profits also pay more in tax, which can enable the government to spend more on public services. When there is slow economic growth, or the economy shrinks, the opposite can occur.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">L'inflation peut peser sur la croissance et le REB a prévu que les prix devraient augmenter plus rapidement à mesure que les factures d'énergie plus élevées se filtrent à travers les chaînes d'approvisionnement et vers les consommateurs, en particulier en 2027.</p>
+            <span class="english-block">Inflation can weigh on growth and the OBR has forecast that prices are set to rise at a faster pace as higher energy bills filter through supply chains and to consumers, especially in 2027.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Les prix mondiaux élevés du pétrole ont déjà frappé les conducteurs des pompes, l'essence étant à 1,73 livres par litre en moyenne, tandis que le diesel est à 1,99 livres.</p>
+            <span class="english-block">High global oil prices have already hit drivers at the pumps, with petrol priced at almost £1.73 per litre on average, while diesel is near £1.99.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">L'augmentation des prix du pétrole au fil du temps peut entraîner une hausse des prix sur une multitude de biens, tels que les aliments, car les entreprises passent les dépenses plus élevées aux consommateurs.</p>
+            <span class="english-block">Elevated oil prices over time can lead to prices edging upwards across a host of goods, such as food, as companies pass on the higher expenses they face to consumers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Les marchandises sont généralement transportées vers les destinations par camions et camions, de sorte que les prix élevés du carburant peuvent avoir des conséquences de grande ampleur.</p>
+            <span class="english-block">Goods are typically transported to destinations by lorries and vans, so high fuel prices can have far-reaching consequences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">L'OBR estime maintenant que l'inflation restera plus élevée que prévu précédemment, atteignant un pic de 3,8% en 2027.</p>
+            <span class="english-block">The OBR now thinks inflation will stay higher for longer than previously forecast, peaking at 3.8% in 2027.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Malgré le soutien au coût de la vie annoncé par le gouvernement, les économistes de Pantheon Macroeconomics ont déclaré que les mesures étaient "de petites bières compte tenu de l'augmentation de l'inflation que nous attendons pendant l'hiver".</p>
+            <span class="english-block">Despite the cost-of-living support announced by the government, economists at Pantheon Macroeconomics said the measures were "small beer given the surge in inflation we expect over the winter".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">L'inflation élevée donne une image sombre en ce qui concerne le niveau de vie et le REB a prévu une baisse l'année prochaine, alors que les factures d'énergie frappent le pouvoir de dépenses des ménages.</p>
+            <span class="english-block">High inflation paints a bleak picture when it comes to living standards and the OBR has forecast a dip next year as energy bills hit the spending power of households.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Les personnes à revenu inférieur seront toutefois plus touchées, car les coûts énergétiques consomment une part plus importante de leur budget mensuel et de leur revenu disponible.</p>
+            <span class="english-block">Those on lower incomes are set to be hit harder, however, because energy costs eat up a bigger share of their monthly budget and disposable income.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Le revenu disponible réel des ménages, une mesure du niveau de vie, devrait croître à partir de 2027, mais pas autant qu'on le pensait auparavant.</p>
+            <span class="english-block">Real household disposable income, a measure of living standards, is forecast to grow from 2027, but not by as much as previously thought.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">"C'est une image assez sombre", selon David Miles de l'OBR, qui dit qu'il n'y a "pratiquement pas eu de croissance" pour les individus depuis avant la pandémie de Covid.</p>
+            <span class="english-block">"It's a pretty grim picture," according to the OBR's David Miles, who says there has been "virtually no growth" for individuals since before the Covid pandemic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">"C'est une période sombre dans l'histoire économique britannique".</p>
+            <span class="english-block">"It's been a dismal period in British economic history."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Ce que le budget offre aux moins de 25 ans et ce qu'il ne propose pas</p>
+            <span class="english-block">What the Budget offers for under 25s - and what it leaves out</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">L'inflation devrait atteindre en moyenne 3,4% l'année prochaine, avant de tomber à l'objectif de 2% fixé par la Banque d'Angleterre vers la fin de la décennie.</p>
+            <span class="english-block">Inflation is expected to average 3.4% next year, before falling to the Bank of England's 2% target towards the end of the decade.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">La Banque devrait augmenter ses taux d'intérêt la semaine prochaine en raison de l'inflation plus élevée des derniers mois.</p>
+            <span class="english-block">The Bank is widely expected to raise interest rates next week due to higher inflation in recent months. Rates are currently at 3.75%, but the OBR now forecasts they could rise to as high as 4.5% in the coming years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Il avait précédemment prévu deux réductions de taux d'intérêt cette année.</p>
+            <span class="english-block">It had previously forecast two interest rate cuts this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Des taux plus élevés rendent l'emprunt plus coûteux, mais peuvent augmenter les rendements des économies.</p>
+            <span class="english-block">Higher rates makes borrowing money more expensive but can boost returns on savings.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">L'inflation augmente également le coût des prêts pour le gouvernement, et les dépenses d'intérêt sur la dette devraient augmenter.</p>
+            <span class="english-block">Inflation also raises the cost of borrowing for the government, with spending on debt interest set to rise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Ces remboursements devraient également augmenter le montant global des emprunts du gouvernement, qui devrait augmenter chaque année de plus que prévu par le REB.</p>
+            <span class="english-block">Such repayments are also predicted to increase the overall amount the government borrows, which is set to increase every year by more than had been previously forecast by the OBR.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Les dépenses plus élevées en matière de bien-être et de retraite dues à l'inflation devraient également accroître l'emprunt, bien qu'il soit prévu qu'il baisse en proportion de l'économie au cours des cinq prochaines années.</p>
+            <span class="english-block">Higher spending on welfare and pensions due to inflation is also expected to increase borrowing, though it is forecast to fall as a share of the economy over the next five years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Toutefois, les prévisions ne sont qu'une meilleure devinette de ce qui pourrait arriver à l'avenir.</p>
+            <span class="english-block">However, forecasts are only a best guess at what might happen in the future. Given the way the conflict in the Middle East has upended previous predictions, the future of the war could alter inflation expectations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Le président américain Donald Trump a suggéré que la guerre finirait après les élections de mi-mandat le mois prochain.</p>
+            <span class="english-block">US President Donald Trump has suggested the war will end after the mid-term elections next month.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">L'OBR a admis qu'il restait une "incertitude significative" concernant ses prévisions en raison de la situation changeante au Moyen-Orient.</p>
+            <span class="english-block">The OBR admitted there remained "significant uncertainty" around its predictions due to the changing situation in the Middle East.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Je vais recevoir le paiement de 100 £ d'énergie et quand je le recevrai ?</p>
+            <span class="english-block">Will I get the £100 energy payment and when will I receive it?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-speed train crash kills at least 68 people in Spain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>High-speed train crash kills at least 68 people in Spain</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 28 Oct 2026 21:38:54 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6p3g84kjqjlo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The crash, between a moving train and another that was stopped further up the track, was caused by an "inexplicable" error, the transport minister said.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Un accident de train à grande vitesse a fait au moins 68 morts et des dizaines de blessés dans le centre de l'Espagne.</p>
+            <span class="english-block">A high-speed train crash has killed at least 68 people and injured dozens more in central Spain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Le mercredi matin, un train qui se rendait de Madrid à Séville a heurté un autre train stationnaire sur les rails.</p>
+            <span class="english-block">It occurred when a train travelling from Madrid to Seville barrelled into another train - which was stationary on the tracks - on Wednesday morning. The force saw several carriages fall down an embankment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le ministre des Transports a déclaré qu'une panne informatique suivie d'une erreur humaine a causé l'accident, qui est l'un des pires de l'histoire moderne de l'Europe, et la catastrophe ferroviaire la plus meurtrière d'Espagne en 13 ans.</p>
+            <span class="english-block">The transport minister said a computer failure followed by human error caused the crash, which is one of the worst in Europe's modern history, and Spain's deadliest train disaster in 13 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les survivants ont décrit des scènes effrayantes de passagers jetés en l'air, piégés dans les décombres et brisant les fenêtres pour s'en sortir.</p>
+            <span class="english-block">Survivors described harrowing scenes of passengers being thrown into the air, trapped in the wreckage and smashing windows to get out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">L'accident s'est produit juste après 09h (08:00 GMT) à environ 140 km au sud de Madrid, entre les municipalités de Mora et Orgaz.</p>
+            <span class="english-block">The crash happened just after 09:00 (08:00 GMT) around 140km (87 miles) south of Madrid, between the municipalities of Mora and Orgaz.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Le train stationnaire, géré par l'opérateur ferroviaire privé Iryo, avait 147 passagers à bord et s'était arrêté sur les voies à cause d'une panne informatique, a déclaré le ministre espagnol des Transports, Óscar Puente.</p>
+            <span class="english-block">The stationary train, run by private rail operator Iryo, had 147 passengers on board, and had stopped on the tracks because of a computer failure, Spain's Transport Minister Óscar Puente said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Il a expliqué que, lorsqu'il y a une panne du système, un centre de contrôle 24 heures sur 24 à Madrid prend la relève, mais qu'il avait pris une décision "inexpliquable" d'informer les trains de se déplacer à nouveau, sans aucune restriction de vitesse.</p>
+            <span class="english-block">He explained that when there is a system failure, a 24-hour control centre in Madrid takes over, but it had made an "inexplicable" decision to instruct the trains to move again, without any speed restrictions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Iryo a déclaré que son train avait été " heurté par derrière " par un autre train, dirigé par la compagnie ferroviaire d'État espagnole Renfe, qui transportait 397 passagers.</p>
+            <span class="english-block">Iryo said its train was "struck from behind" by another train, run by Spain's state-owned railway company, Renfe, which was carrying 397 passengers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">La force de l'accident était "brutale", a déclaré Salvador Arriza, un passager de 62 ans qui était assis dans le train de Renfe.</p>
+            <span class="english-block">The force of the crash was "brutal", said 62-year-old passenger Salvador Arriza who was sitting in the Renfe-operated train.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les passagers ont commencé à casser les fenêtres pour sortir, a-t-il dit à Reuters, ajoutant que " certaines personnes ne pouvaient pas bouger parce qu'elles étaient piégées entre les sièges ".</p>
+            <span class="english-block">Passengers started breaking the windows to get out, he told Reuters, adding that "some people couldn't move because they were trapped amongst the seats."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">L'un des chariots a pris feu, et les passagers ont décrit des scènes dévastatrices de personnes piégées en pleurs et en sang, dont certaines sont enterrées sous les décombres.</p>
+            <span class="english-block">One of the carriages caught fire, and passengers described devastating scenes of trapped people crying and bleeding, with some buried under debris.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Les images montrent qu'un long tronçon de chemin de fer avait traversé l'une des voitures.</p>
+            <span class="english-block">Pictures show that a long piece of railway track had speared through one of the carriages.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">La force de l'accident a vu plusieurs chariots tomber sur un contreplaqué</p>
+            <span class="english-block">The force of the crash saw several carriage fall down an embankment</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Tangui Binier, 22 ans, était dans le train Iryo et a déclaré à la BBC que "les valises ont commencé à voler et que les gens criaient" quand le train s'est finalement arrêté.</p>
+            <span class="english-block">Tangui Binier, 22, was on the Iryo train and told the BBC that "suitcases started flying and people were screaming" when the train finally came to a halt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Il a dit qu'il y avait beaucoup de fumée et de confusion, et a décrit le train " complètement détourné " quand il est sorti.</p>
+            <span class="english-block">There was a lot of smoke and confusion, he said, and described seeing the train "completely flipped over" when he stepped outside.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"C'était difficile à voir", a déclaré Binier, ajoutant que son père avait emporté une fille qui avait une hanche cassée dans les décombres.</p>
+            <span class="english-block">"It was hard to witness", Binier said, adding that his father carried a girl who had a broken hip out of the wreckage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Il a également décrit avoir vu des cadavres et des membres manquants: "Je ne sais pas si je vais jamais guérir".</p>
+            <span class="english-block">He also described seeing dead bodies and missing limbs: "I don't know if I'll ever recover."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Certains passagers ont dit que la piste du train qui a traversé une voiture a peut-être ralenti le train</p>
+            <span class="english-block">Some passengers said the piece of train track that speared through a carriage may have slowed the train down</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Le journaliste espagnol Antonio Jiménez Barca, qui travaille pour le journal El Pais, se dirigeait vers la cafétéria du train Renfe quand l'accident s'est produit.</p>
+            <span class="english-block">Spanish journalist Antonio Jiménez Barca, who works for El Pais newspaper, was walking to the Renfe train's cafeteria when the crash happened.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">"Je me sentais comme si on me poussait par derrière, comme si on me jetait à terre", déclare- t- il.</p>
+            <span class="english-block">"I felt like I was being pushed from behind, like I was being thrown to the ground," he described.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">"J'ai eu une terrible blessure à la tête... j'étais couvert de sang. Il y avait des gens au-dessus de moi.</p>
+            <span class="english-block">"I hit my head horribly... I was covered in blood. There were people on top of me. One person had an injured arm, and another had a head injury."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Un autre passager, Sebastián Herrero, 46 ans, a déclaré au journal El Mundo qu'il avait vu "de nombreuses personnes avec des nez et des bras cassés".</p>
+            <span class="english-block">Another passenger, 46-year-old Sebastián Herrero, told El Mundo newspaper that he saw "many people with broken noses, broken arms."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"C'était un terrible impact", a- t- il dit, ajoutant qu'il était "en plein air pendant environ quatre ou cinq secondes", ce qui se sentait comme une vie entière.</p>
+            <span class="english-block">"It was a terrible, terrible impact," he said, adding that he was "in the air for about four or five seconds," which felt like a lifetime.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Beaucoup de passagers ont dit être dans le choc, et l'un a pleuré pendant une interview avec une chaîne de télévision locale en décrivant une femme mourante dans ses bras.</p>
+            <span class="english-block">Many of the passengers said they were in shock, and one sobbed during an interview with a local television station as he described a woman dying in his arms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Elle était très froide et elle était toute seule", a-t-il dit, à laquelle le présentateur de l'émission a également commencé à pleurer.</p>
+            <span class="english-block">"She was very cold and she was all alone," he said, to which the show's presenter also started to cry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Des dizaines d'ambulances se sont précipitées sur les lieux et un hélicoptère a évacué les personnes les plus gravement blessées.</p>
+            <span class="english-block">Dozens of ambulances rushed to the scene, and a helicopter evacuated those with the most serious injuries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">La Garde civile espagnole a dit qu'elle aurait besoin d'échantillons d'ADN de parents pour identifier certaines victimes.</p>
+            <span class="english-block">Spain's Civil Guard said it would need DNA samples from relatives to identify some victims.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">"L'Espagne entière est en deuil", a déclaré le Premier ministre Pedro Sánchez lors d'une visite au site de l'accident. "Des vies ont été brisées, des familles ont été déchirées, la douleur est immense".</p>
+            <span class="english-block">"The whole of Spain is grieving", Prime Minister Pedro Sánchez said during a visit to the crash site. "Lives have been shattered, families have been torn apart, the pain is immense."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">La plupart des partis politiques espagnols ont annulé leurs événements de campagne prévus pour mercredi.</p>
+            <span class="english-block">Most political parties in Spain cancelled their campaign events scheduled for Wednesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">L'exception est faite du parti d'extrême droite Vox, dont le chef, Santiago Abascal, a déclaré que son parti ne prendrait pas part à ce qu'il a décrit comme des tentatives d'" utiliser le deuil pour réduire au silence les critiques " de l'infrastructure ferroviaire du pays.</p>
+            <span class="english-block">The exception was the far-right party Vox. Its leader, Santiago Abascal, said his party would not take part in what he described as attempts to "use mourning to silence criticism" of the country's rail infrastructure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">L'Espagne était déjà en proie à une catastrophe ferroviaire à grande vitesse près de Córdoba en janvier qui a fait 46 morts.</p>
+            <span class="english-block">Spain was already reeling from a high-speed rail disaster near Córdoba in January that killed 46 people. It happened on the same rail line, but much further south.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Le premier ministre a déclaré qu'il était "inacceptable" que l'Espagne ait deux accidents de train graves en un an, et a promis de "venir au fond de cela" et de déterminer s'il y avait eu une négligence.</p>
+            <span class="english-block">The prime minister said it was "unacceptable" for Spain to have two serious train crashes in one year, and vowed to "get to the bottom of this" and determine if there was any negligence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">"L'Espagne a le droit de savoir ce qui se passe avec ses infrastructures", a déclaré Alberto Núñez Feijóo, chef du principal parti populaire d'opposition.</p>
+            <span class="english-block">"Spain has the right to know what is happening with its infrastructure," said Alberto Núñez Feijóo, leader of the the main opposition People's Party.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">"S'il y a eu des défaillances dans le système de sécurité, elles seront traitées avec la plus grande fermeté".</p>
+            <span class="english-block">"If there have been failures in the security system, they will be addressed with the utmost firmness."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Le syndicat espagnol CSIF a demandé à la démission du ministre des Transports, l'accusant de "scapegoating" un gestionnaire de la circulation, en accusant une erreur humaine dans la salle de contrôle, au lieu de "prendre la responsabilité".</p>
+            <span class="english-block">Spanish trade union CSIF has demanded the transport minister resign, accusing him of "scapegoating" a traffic manager, by blaming human error in the control room, instead of "taking responsibility".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">L'accident de mercredi est le pire que le pays ait connu depuis 2013, lorsque 80 personnes sont mortes à la périphérie de Santiago de Compostela, dans le nord-ouest de l'Espagne.</p>
+            <span class="english-block">Wednesday's crash is the worst the country has seen since 2013, when when 80 people died on the outskirts of Santiago de Compostela in north-west Spain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">En Espagne, le train a été transformé en catastrophe.</p>
+            <span class="english-block">Bloodied, dazed and angry - how passengers' rail journey turned to disaster in Spain</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Ce que nous savons jusqu'à présent sur l'accident de train mortel en Espagne</p>
+            <span class="english-block">What we know so far about deadly Spain train crash</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

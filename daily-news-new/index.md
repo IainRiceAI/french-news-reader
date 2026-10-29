@@ -1,123 +1,123 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-28 06:01:07  
+Generated on: 2026-10-29 06:01:08  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Israeli exit polls suggest no clear winner in pivotal general election**
-   - **Published:** Wed, 28 Oct 2026 02:09:11 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Israeli_exit_polls_suggest_no_clear_winn.md](top-stories_article_1_Israeli_exit_polls_suggest_no_clear_winn.md)
+1. **Healey promises reduction in welfare bill before next election**
+   - **Published:** Thu, 29 Oct 2026 05:57:01 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Healey_promises_reduction_in_welfare_bil.md](top-stories_article_1_Healey_promises_reduction_in_welfare_bil.md)
 
-2. **Watch: What happens now after close vote in Israeli election?**
-   - **Published:** Wed, 28 Oct 2026 04:22:59 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Watch_What_happens_now_after_close_vote_.md](top-stories_article_2_Watch_What_happens_now_after_close_vote_.md)
+2. **I earn £30,000. I'm angry there was no fuel duty cut in the Budget**
+   - **Published:** Thu, 29 Oct 2026 00:00:25 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_I_earn_30000_Im_angry_there_was_no_fuel_.md](top-stories_article_2_I_earn_30000_Im_angry_there_was_no_fuel_.md)
 
-3. **Chris Mason: Budget needs to go some way towards delivering PM's promises**
-   - **Published:** Tue, 27 Oct 2026 22:30:09 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Chris_Mason_Budget_needs_to_go_some_way_.md](top-stories_article_3_Chris_Mason_Budget_needs_to_go_some_way_.md)
+3. **Spain begins three days of mourning after train crash kills dozens**
+   - **Published:** Thu, 29 Oct 2026 03:51:05 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Spain_begins_three_days_of_mourning_afte.md](top-stories_article_3_Spain_begins_three_days_of_mourning_afte.md)
 
-4. **Defeated presidential candidate Flávio Bolsonaro arrives in US after Brazil cancels his passports**
-   - **Published:** Wed, 28 Oct 2026 02:47:45 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Defeated_presidential_candidate_Flávio_B.md](top-stories_article_4_Defeated_presidential_candidate_Flávio_B.md)
+4. **Ofcom outlines ways social media can verify ages of users**
+   - **Published:** Thu, 29 Oct 2026 05:57:15 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Ofcom_outlines_ways_social_media_can_ver.md](top-stories_article_4_Ofcom_outlines_ways_social_media_can_ver.md)
 
-5. **King acknowledges 'suffering of the past' as Caribbean tour begins**
-   - **Published:** Wed, 28 Oct 2026 04:32:36 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_King_acknowledges_suffering_of_the_past_.md](top-stories_article_5_King_acknowledges_suffering_of_the_past_.md)
+5. **Flávio Bolsonaro denies fleeing Brazil after landing in Miami**
+   - **Published:** Thu, 29 Oct 2026 01:14:01 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Flávio_Bolsonaro_denies_fleeing_Brazil_a.md](top-stories_article_5_Flávio_Bolsonaro_denies_fleeing_Brazil_a.md)
 
-6. **Thick fog to create dangerous driving conditions for UK commuters**
-   - **Published:** Wed, 28 Oct 2026 03:29:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Thick_fog_to_create_dangerous_driving_co.md](top-stories_article_6_Thick_fog_to_create_dangerous_driving_co.md)
+6. **Death of US actress Hayden Panettiere ruled accidental, ending local police probe**
+   - **Published:** Wed, 28 Oct 2026 21:16:30 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Death_of_US_actress_Hayden_Panettiere_ru.md](top-stories_article_6_Death_of_US_actress_Hayden_Panettiere_ru.md)
 
-7. **Neil Young again sues Trump campaign for playing Rockin' in the Free World at rally**
-   - **Published:** Wed, 28 Oct 2026 02:44:50 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Neil_Young_again_sues_Trump_campaign_for.md](top-stories_article_7_Neil_Young_again_sues_Trump_campaign_for.md)
+7. **Family row over George Michael items up for auction - including Faith guitar**
+   - **Published:** Thu, 29 Oct 2026 00:01:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Family_row_over_George_Michael_items_up_.md](top-stories_article_7_Family_row_over_George_Michael_items_up_.md)
 
-8. **Landline switchover could cut people off in emergency, minister warned**
-   - **Published:** Tue, 27 Oct 2026 20:54:48 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Landline_switchover_could_cut_people_off.md](top-stories_article_8_Landline_switchover_could_cut_people_off.md)
+8. **King Charles shows off dance moves on second day of Caribbean tour**
+   - **Published:** Thu, 29 Oct 2026 01:41:36 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_King_Charles_shows_off_dance_moves_on_se.md](top-stories_article_8_King_Charles_shows_off_dance_moves_on_se.md)
 
 ---
 
 ### Section: WORLD
 
-1. **Norway and Finland leaders hold rare call with Putin**
-   - **Published:** Tue, 27 Oct 2026 18:28:23 GMT
-   - **Read Parallel Translation:** [world_article_9_Norway_and_Finland_leaders_hold_rare_cal.md](world_article_9_Norway_and_Finland_leaders_hold_rare_cal.md)
+1. **High-speed train crash kills at least 68 people in Spain**
+   - **Published:** Wed, 28 Oct 2026 21:38:54 GMT
+   - **Read Parallel Translation:** [world_article_9_High-speed_train_crash_kills_at_least_68.md](world_article_9_High-speed_train_crash_kills_at_least_68.md)
 
-2. **Ceasefire extended across Ukraine's Kherson region, officials say**
-   - **Published:** Tue, 27 Oct 2026 22:11:08 GMT
-   - **Read Parallel Translation:** [world_article_10_Ceasefire_extended_across_Ukraines_Khers.md](world_article_10_Ceasefire_extended_across_Ukraines_Khers.md)
+2. **Bloodied, dazed and angry - how passengers' rail journey turned to disaster in Spain**
+   - **Published:** Wed, 28 Oct 2026 21:24:41 GMT
+   - **Read Parallel Translation:** [world_article_10_Bloodied_dazed_and_angry_-_how_passenger.md](world_article_10_Bloodied_dazed_and_angry_-_how_passenger.md)
 
-3. **Mbappé sorry for 'ill-judged' Mao remark after backlash in China**
-   - **Published:** Tue, 27 Oct 2026 13:25:54 GMT
-   - **Read Parallel Translation:** [world_article_11_Mbappé_sorry_for_ill-judged_Mao_remark_a.md](world_article_11_Mbappé_sorry_for_ill-judged_Mao_remark_a.md)
+3. **Flávio Bolsonaro denies fleeing Brazil after landing in Miami**
+   - **Published:** Thu, 29 Oct 2026 01:14:01 GMT
+   - **Read Parallel Translation:** [world_article_11_Flávio_Bolsonaro_denies_fleeing_Brazil_a.md](world_article_11_Flávio_Bolsonaro_denies_fleeing_Brazil_a.md)
 
-4. **Lula's comeback in Brazil dents Trump's ambitions for Latin America**
-   - **Published:** Tue, 27 Oct 2026 01:46:38 GMT
-   - **Read Parallel Translation:** [world_article_12_Lulas_comeback_in_Brazil_dents_Trumps_am.md](world_article_12_Lulas_comeback_in_Brazil_dents_Trumps_am.md)
+4. **Netanyahu's bloc leading Israel election but short of majority, partial results show**
+   - **Published:** Wed, 28 Oct 2026 20:24:39 GMT
+   - **Read Parallel Translation:** [world_article_12_Netanyahus_bloc_leading_Israel_election_.md](world_article_12_Netanyahus_bloc_leading_Israel_election_.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **I get £4,062 a year and am trying my best - here's what I want from the Budget**
-   - **Published:** Wed, 28 Oct 2026 00:03:05 GMT
-   - **Read Parallel Translation:** [business_article_13_I_get_4062_a_year_and_am_trying_my_best_.md](business_article_13_I_get_4062_a_year_and_am_trying_my_best_.md)
+1. **I earn £30,000. I'm angry there was no fuel duty cut in the Budget**
+   - **Published:** Thu, 29 Oct 2026 00:00:25 GMT
+   - **Read Parallel Translation:** [business_article_13_I_earn_30000_Im_angry_there_was_no_fuel_.md](business_article_13_I_earn_30000_Im_angry_there_was_no_fuel_.md)
 
-2. **Minimum wage set to rise but 18-20 year-olds will not get bigger increase**
-   - **Published:** Tue, 27 Oct 2026 15:01:27 GMT
-   - **Read Parallel Translation:** [business_article_14_Minimum_wage_set_to_rise_but_18-20_year-.md](business_article_14_Minimum_wage_set_to_rise_but_18-20_year-.md)
+2. **Healey unveils £100 for energy bills and bank tax in first Budget**
+   - **Published:** Wed, 28 Oct 2026 18:45:09 GMT
+   - **Read Parallel Translation:** [business_article_14_Healey_unveils_100_for_energy_bills_and_.md](business_article_14_Healey_unveils_100_for_energy_bills_and_.md)
 
-3. **Luxury cruise passengers stranded in Cambodia due to soaring fuel costs**
-   - **Published:** Wed, 28 Oct 2026 03:43:38 GMT
-   - **Read Parallel Translation:** [business_article_15_Luxury_cruise_passengers_stranded_in_Cam.md](business_article_15_Luxury_cruise_passengers_stranded_in_Cam.md)
+3. **What we now know about the UK economy in four charts**
+   - **Published:** Wed, 28 Oct 2026 20:08:45 GMT
+   - **Read Parallel Translation:** [business_article_15_What_we_now_know_about_the_UK_economy_in.md](business_article_15_What_we_now_know_about_the_UK_economy_in.md)
 
-4. **China's families are now supporting more old people than kids**
-   - **Published:** Tue, 27 Oct 2026 23:16:08 GMT
-   - **Read Parallel Translation:** [business_article_16_Chinas_families_are_now_supporting_more_.md](business_article_16_Chinas_families_are_now_supporting_more_.md)
+4. **What the Budget offers for under 25s - and what it leaves out**
+   - **Published:** Wed, 28 Oct 2026 20:02:38 GMT
+   - **Read Parallel Translation:** [business_article_16_What_the_Budget_offers_for_under_25s_-_a.md](business_article_16_What_the_Budget_offers_for_under_25s_-_a.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **'An annoying buzz': The search for stealthier drones**
-   - **Published:** Wed, 28 Oct 2026 00:01:10 GMT
-   - **Read Parallel Translation:** [technology_article_17_An_annoying_buzz_The_search_for_stealthi.md](technology_article_17_An_annoying_buzz_The_search_for_stealthi.md)
+1. **Ofcom outlines ways social media can verify ages of users**
+   - **Published:** Thu, 29 Oct 2026 05:57:15 GMT
+   - **Read Parallel Translation:** [technology_article_17_Ofcom_outlines_ways_social_media_can_ver.md](technology_article_17_Ofcom_outlines_ways_social_media_can_ver.md)
 
-2. **Apple to replace iPhone Duos affected by screen problem**
-   - **Published:** Tue, 27 Oct 2026 09:37:55 GMT
-   - **Read Parallel Translation:** [technology_article_18_Apple_to_replace_iPhone_Duos_affected_by.md](technology_article_18_Apple_to_replace_iPhone_Duos_affected_by.md)
+2. **Details of thousands of US immigration agents leaked in major hack**
+   - **Published:** Thu, 29 Oct 2026 01:30:43 GMT
+   - **Read Parallel Translation:** [technology_article_18_Details_of_thousands_of_US_immigration_a.md](technology_article_18_Details_of_thousands_of_US_immigration_a.md)
 
-3. **Anthropic's blockbuster share listing - 5 surprising things we now know**
-   - **Published:** Mon, 26 Oct 2026 19:57:23 GMT
-   - **Read Parallel Translation:** [technology_article_19_Anthropics_blockbuster_share_listing_-_5.md](technology_article_19_Anthropics_blockbuster_share_listing_-_5.md)
+3. **Microsoft profits soar days after announcing thousands of layoffs**
+   - **Published:** Thu, 29 Oct 2026 01:27:40 GMT
+   - **Read Parallel Translation:** [technology_article_19_Microsoft_profits_soar_days_after_announ.md](technology_article_19_Microsoft_profits_soar_days_after_announ.md)
 
-4. **Anthropic warns of 'catastrophic risk' to humankind ahead of blockbuster share listing**
-   - **Published:** Mon, 26 Oct 2026 16:27:17 GMT
-   - **Read Parallel Translation:** [technology_article_20_Anthropic_warns_of_catastrophic_risk_to_.md](technology_article_20_Anthropic_warns_of_catastrophic_risk_to_.md)
+4. **Elon Musk is a 'real genius', Putin says after satellite talks with SpaceX boss**
+   - **Published:** Wed, 28 Oct 2026 19:15:58 GMT
+   - **Read Parallel Translation:** [technology_article_20_Elon_Musk_is_a_real_genius_Putin_says_af.md](technology_article_20_Elon_Musk_is_a_real_genius_Putin_says_af.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Weather warning lifted as third storm to hit Scotland eases off**
+1. **Building boom puts 300,000 people in the path of potential Himalayan disasters**
+   - **Published:** Wed, 28 Oct 2026 23:11:59 GMT
+   - **Read Parallel Translation:** [science_article_21_Building_boom_puts_300000_people_in_the_.md](science_article_21_Building_boom_puts_300000_people_in_the_.md)
+
+2. **Weather warning lifted as third storm to hit Scotland eases off**
    - **Published:** Tue, 27 Oct 2026 21:20:52 GMT
-   - **Read Parallel Translation:** [science_article_21_Weather_warning_lifted_as_third_storm_to.md](science_article_21_Weather_warning_lifted_as_third_storm_to.md)
+   - **Read Parallel Translation:** [science_article_22_Weather_warning_lifted_as_third_storm_to.md](science_article_22_Weather_warning_lifted_as_third_storm_to.md)
 
-2. **Will a new strategy help protect Northern Ireland's nature?**
+3. **Will a new strategy help protect Northern Ireland's nature?**
    - **Published:** Tue, 27 Oct 2026 17:51:13 GMT
-   - **Read Parallel Translation:** [science_article_22_Will_a_new_strategy_help_protect_Norther.md](science_article_22_Will_a_new_strategy_help_protect_Norther.md)
+   - **Read Parallel Translation:** [science_article_23_Will_a_new_strategy_help_protect_Norther.md](science_article_23_Will_a_new_strategy_help_protect_Norther.md)
 
-3. **Nanotyrannus skeleton sells for $47.3m in New York auction**
+4. **Nanotyrannus skeleton sells for $47.3m in New York auction**
    - **Published:** Tue, 27 Oct 2026 17:10:15 GMT
-   - **Read Parallel Translation:** [science_article_23_Nanotyrannus_skeleton_sells_for_473m_in_.md](science_article_23_Nanotyrannus_skeleton_sells_for_473m_in_.md)
-
-4. **Scotland's recycling rates at five-year low. How is your area doing?**
-   - **Published:** Tue, 27 Oct 2026 15:32:40 GMT
-   - **Read Parallel Translation:** [science_article_24_Scotlands_recycling_rates_at_five-year_l.md](science_article_24_Scotlands_recycling_rates_at_five-year_l.md)
+   - **Read Parallel Translation:** [science_article_24_Nanotyrannus_skeleton_sells_for_473m_in_.md](science_article_24_Nanotyrannus_skeleton_sells_for_473m_in_.md)
 
 ---
 
@@ -143,41 +143,41 @@ Scraped Feed Mode: `ALL`
 
 ### Section: POLITICS
 
-1. **Chris Mason: Budget needs to go some way towards delivering PM's promises**
-   - **Published:** Tue, 27 Oct 2026 22:30:09 GMT
-   - **Read Parallel Translation:** [politics_article_29_Chris_Mason_Budget_needs_to_go_some_way_.md](politics_article_29_Chris_Mason_Budget_needs_to_go_some_way_.md)
+1. **Healey unveils £100 for energy bills and bank tax in first Budget**
+   - **Published:** Wed, 28 Oct 2026 18:45:09 GMT
+   - **Read Parallel Translation:** [politics_article_29_Healey_unveils_100_for_energy_bills_and_.md](politics_article_29_Healey_unveils_100_for_energy_bills_and_.md)
 
-2. **Minimum wage set to rise but 18-20 year-olds will not get bigger increase**
-   - **Published:** Tue, 27 Oct 2026 15:01:27 GMT
-   - **Read Parallel Translation:** [politics_article_30_Minimum_wage_set_to_rise_but_18-20_year-.md](politics_article_30_Minimum_wage_set_to_rise_but_18-20_year-.md)
+2. **Chris Mason: Budget felt cautious despite its range of small measures**
+   - **Published:** Wed, 28 Oct 2026 16:52:16 GMT
+   - **Read Parallel Translation:** [politics_article_30_Chris_Mason_Budget_felt_cautious_despite.md](politics_article_30_Chris_Mason_Budget_felt_cautious_despite.md)
 
-3. **UK and EU officials to discuss freedom of movement**
-   - **Published:** Tue, 27 Oct 2026 17:20:40 GMT
-   - **Read Parallel Translation:** [politics_article_31_UK_and_EU_officials_to_discuss_freedom_o.md](politics_article_31_UK_and_EU_officials_to_discuss_freedom_o.md)
+3. **Budget 2026: Key points at a glance**
+   - **Published:** Wed, 28 Oct 2026 16:55:27 GMT
+   - **Read Parallel Translation:** [politics_article_31_Budget_2026_Key_points_at_a_glance.md](politics_article_31_Budget_2026_Key_points_at_a_glance.md)
 
-4. **Landline switchover could cut people off in emergency, minister warned**
-   - **Published:** Tue, 27 Oct 2026 20:54:48 GMT
-   - **Read Parallel Translation:** [politics_article_32_Landline_switchover_could_cut_people_off.md](politics_article_32_Landline_switchover_could_cut_people_off.md)
+4. **Watch: What are the key points from the Budget and how will they be funded?**
+   - **Published:** Wed, 28 Oct 2026 16:12:57 GMT
+   - **Read Parallel Translation:** [politics_article_32_Watch_What_are_the_key_points_from_the_B.md](politics_article_32_Watch_What_are_the_key_points_from_the_B.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Meghan to co-host Junior MasterChef Australia**
-   - **Published:** Tue, 27 Oct 2026 04:43:56 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Meghan_to_co-host_Junior_MasterChef_Aust.md](entertainment_article_33_Meghan_to_co-host_Junior_MasterChef_Aust.md)
+1. **Family row over George Michael items up for auction - including Faith guitar**
+   - **Published:** Thu, 29 Oct 2026 00:01:16 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Family_row_over_George_Michael_items_up_.md](entertainment_article_33_Family_row_over_George_Michael_items_up_.md)
 
-2. **Netherlands pulls out of Eurovision again over Israel participation**
-   - **Published:** Tue, 27 Oct 2026 11:23:19 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Netherlands_pulls_out_of_Eurovision_agai.md](entertainment_article_34_Netherlands_pulls_out_of_Eurovision_agai.md)
+2. **Russell Brand tells trial sexual consent is 'fundamental'**
+   - **Published:** Wed, 28 Oct 2026 17:42:10 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Russell_Brand_tells_trial_sexual_consent.md](entertainment_article_34_Russell_Brand_tells_trial_sexual_consent.md)
 
-3. **Unnamed celebrity accused of 'inappropriate sexual activities', court hears**
-   - **Published:** Tue, 27 Oct 2026 16:59:23 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Unnamed_celebrity_accused_of_inappropria.md](entertainment_article_35_Unnamed_celebrity_accused_of_inappropria.md)
+3. **Death of US actress Hayden Panettiere ruled accidental, ending local police probe**
+   - **Published:** Wed, 28 Oct 2026 21:16:30 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Death_of_US_actress_Hayden_Panettiere_ru.md](entertainment_article_35_Death_of_US_actress_Hayden_Panettiere_ru.md)
 
-4. **Russell Brand told police he never had non-consensual sex**
-   - **Published:** Tue, 27 Oct 2026 16:46:03 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Russell_Brand_told_police_he_never_had_n.md](entertainment_article_36_Russell_Brand_told_police_he_never_had_n.md)
+4. **Sam Fender pre-sale moved after 'bot attack'**
+   - **Published:** Wed, 28 Oct 2026 18:08:56 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Sam_Fender_pre-sale_moved_after_bot_atta.md](entertainment_article_36_Sam_Fender_pre-sale_moved_after_bot_atta.md)
 
 ---
 
