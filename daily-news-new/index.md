@@ -1,183 +1,183 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-10-29 06:01:08  
+Generated on: 2026-10-30 06:01:14  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Healey promises reduction in welfare bill before next election**
-   - **Published:** Thu, 29 Oct 2026 05:57:01 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Healey_promises_reduction_in_welfare_bil.md](top-stories_article_1_Healey_promises_reduction_in_welfare_bil.md)
+1. **Crypto giant Binance hit by hack suspected to be largest in history**
+   - **Published:** Fri, 30 Oct 2026 05:15:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Crypto_giant_Binance_hit_by_hack_suspect.md](top-stories_article_1_Crypto_giant_Binance_hit_by_hack_suspect.md)
 
-2. **I earn £30,000. I'm angry there was no fuel duty cut in the Budget**
-   - **Published:** Thu, 29 Oct 2026 00:00:25 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_I_earn_30000_Im_angry_there_was_no_fuel_.md](top-stories_article_2_I_earn_30000_Im_angry_there_was_no_fuel_.md)
+2. **Australian mushroom murderer loses appeal to overturn convictions**
+   - **Published:** Fri, 30 Oct 2026 01:35:40 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Australian_mushroom_murderer_loses_appea.md](top-stories_article_2_Australian_mushroom_murderer_loses_appea.md)
 
-3. **Spain begins three days of mourning after train crash kills dozens**
-   - **Published:** Thu, 29 Oct 2026 03:51:05 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Spain_begins_three_days_of_mourning_afte.md](top-stories_article_3_Spain_begins_three_days_of_mourning_afte.md)
+3. **Hyrox athlete who soiled herself in race says she put others at risk**
+   - **Published:** Thu, 29 Oct 2026 23:03:39 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Hyrox_athlete_who_soiled_herself_in_race.md](top-stories_article_3_Hyrox_athlete_who_soiled_herself_in_race.md)
 
-4. **Ofcom outlines ways social media can verify ages of users**
-   - **Published:** Thu, 29 Oct 2026 05:57:15 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Ofcom_outlines_ways_social_media_can_ver.md](top-stories_article_4_Ofcom_outlines_ways_social_media_can_ver.md)
+4. **Democrats have an identity crisis - it won't be an easy fix**
+   - **Published:** Fri, 30 Oct 2026 02:14:41 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Democrats_have_an_identity_crisis_-_it_w.md](top-stories_article_4_Democrats_have_an_identity_crisis_-_it_w.md)
 
-5. **Flávio Bolsonaro denies fleeing Brazil after landing in Miami**
-   - **Published:** Thu, 29 Oct 2026 01:14:01 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Flávio_Bolsonaro_denies_fleeing_Brazil_a.md](top-stories_article_5_Flávio_Bolsonaro_denies_fleeing_Brazil_a.md)
+5. **Google value plunges by $500bn as AI fears rattle Wall Street**
+   - **Published:** Thu, 29 Oct 2026 22:17:52 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Google_value_plunges_by_500bn_as_AI_fear.md](top-stories_article_5_Google_value_plunges_by_500bn_as_AI_fear.md)
 
-6. **Death of US actress Hayden Panettiere ruled accidental, ending local police probe**
-   - **Published:** Wed, 28 Oct 2026 21:16:30 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Death_of_US_actress_Hayden_Panettiere_ru.md](top-stories_article_6_Death_of_US_actress_Hayden_Panettiere_ru.md)
+6. **Bombshell confession in The Traitors as faithfuls finally turn the screw**
+   - **Published:** Fri, 30 Oct 2026 00:16:59 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Bombshell_confession_in_The_Traitors_as_.md](top-stories_article_6_Bombshell_confession_in_The_Traitors_as_.md)
 
-7. **Family row over George Michael items up for auction - including Faith guitar**
-   - **Published:** Thu, 29 Oct 2026 00:01:16 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Family_row_over_George_Michael_items_up_.md](top-stories_article_7_Family_row_over_George_Michael_items_up_.md)
+7. **'Continue your journey': Key moments of leaked Spain train crash audio**
+   - **Published:** Thu, 29 Oct 2026 20:50:25 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Continue_your_journey_Key_moments_of_lea.md](top-stories_article_7_Continue_your_journey_Key_moments_of_lea.md)
 
-8. **King Charles shows off dance moves on second day of Caribbean tour**
-   - **Published:** Thu, 29 Oct 2026 01:41:36 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_King_Charles_shows_off_dance_moves_on_se.md](top-stories_article_8_King_Charles_shows_off_dance_moves_on_se.md)
+8. **What are the government's options for reducing welfare spending?**
+   - **Published:** Thu, 29 Oct 2026 17:59:57 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_What_are_the_governments_options_for_red.md](top-stories_article_8_What_are_the_governments_options_for_red.md)
 
 ---
 
 ### Section: WORLD
 
-1. **High-speed train crash kills at least 68 people in Spain**
-   - **Published:** Wed, 28 Oct 2026 21:38:54 GMT
-   - **Read Parallel Translation:** [world_article_9_High-speed_train_crash_kills_at_least_68.md](world_article_9_High-speed_train_crash_kills_at_least_68.md)
+1. **Crypto giant Binance hit by hack suspected to be largest in history**
+   - **Published:** Fri, 30 Oct 2026 05:15:16 GMT
+   - **Read Parallel Translation:** [world_article_9_Crypto_giant_Binance_hit_by_hack_suspect.md](world_article_9_Crypto_giant_Binance_hit_by_hack_suspect.md)
 
-2. **Bloodied, dazed and angry - how passengers' rail journey turned to disaster in Spain**
-   - **Published:** Wed, 28 Oct 2026 21:24:41 GMT
-   - **Read Parallel Translation:** [world_article_10_Bloodied_dazed_and_angry_-_how_passenger.md](world_article_10_Bloodied_dazed_and_angry_-_how_passenger.md)
+2. **Mushroom murderer fails to overturn convictions in Australian court challenge**
+   - **Published:** Fri, 30 Oct 2026 01:35:40 GMT
+   - **Read Parallel Translation:** [world_article_10_Mushroom_murderer_fails_to_overturn_conv.md](world_article_10_Mushroom_murderer_fails_to_overturn_conv.md)
 
-3. **Flávio Bolsonaro denies fleeing Brazil after landing in Miami**
-   - **Published:** Thu, 29 Oct 2026 01:14:01 GMT
-   - **Read Parallel Translation:** [world_article_11_Flávio_Bolsonaro_denies_fleeing_Brazil_a.md](world_article_11_Flávio_Bolsonaro_denies_fleeing_Brazil_a.md)
+3. **Israeli opposition accuses Netanyahu of trying to 'delegitimise' election**
+   - **Published:** Thu, 29 Oct 2026 20:21:54 GMT
+   - **Read Parallel Translation:** [world_article_11_Israeli_opposition_accuses_Netanyahu_of_.md](world_article_11_Israeli_opposition_accuses_Netanyahu_of_.md)
 
-4. **Netanyahu's bloc leading Israel election but short of majority, partial results show**
-   - **Published:** Wed, 28 Oct 2026 20:24:39 GMT
-   - **Read Parallel Translation:** [world_article_12_Netanyahus_bloc_leading_Israel_election_.md](world_article_12_Netanyahus_bloc_leading_Israel_election_.md)
+4. **Three dead after two helicopters collide midair near Oregon airport**
+   - **Published:** Fri, 30 Oct 2026 03:05:17 GMT
+   - **Read Parallel Translation:** [world_article_12_Three_dead_after_two_helicopters_collide.md](world_article_12_Three_dead_after_two_helicopters_collide.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **I earn £30,000. I'm angry there was no fuel duty cut in the Budget**
-   - **Published:** Thu, 29 Oct 2026 00:00:25 GMT
-   - **Read Parallel Translation:** [business_article_13_I_earn_30000_Im_angry_there_was_no_fuel_.md](business_article_13_I_earn_30000_Im_angry_there_was_no_fuel_.md)
+1. **Crypto giant Binance hit by hack suspected to be largest in history**
+   - **Published:** Fri, 30 Oct 2026 05:15:16 GMT
+   - **Read Parallel Translation:** [business_article_13_Crypto_giant_Binance_hit_by_hack_suspect.md](business_article_13_Crypto_giant_Binance_hit_by_hack_suspect.md)
 
-2. **Healey unveils £100 for energy bills and bank tax in first Budget**
-   - **Published:** Wed, 28 Oct 2026 18:45:09 GMT
-   - **Read Parallel Translation:** [business_article_14_Healey_unveils_100_for_energy_bills_and_.md](business_article_14_Healey_unveils_100_for_energy_bills_and_.md)
+2. **Google value plunges by $500bn as AI fears rattle Wall Street**
+   - **Published:** Thu, 29 Oct 2026 22:17:52 GMT
+   - **Read Parallel Translation:** [business_article_14_Google_value_plunges_by_500bn_as_AI_fear.md](business_article_14_Google_value_plunges_by_500bn_as_AI_fear.md)
 
-3. **What we now know about the UK economy in four charts**
-   - **Published:** Wed, 28 Oct 2026 20:08:45 GMT
-   - **Read Parallel Translation:** [business_article_15_What_we_now_know_about_the_UK_economy_in.md](business_article_15_What_we_now_know_about_the_UK_economy_in.md)
+3. **Burnham 'ready to support' Poundland staff as retailer faces collapse**
+   - **Published:** Thu, 29 Oct 2026 19:11:10 GMT
+   - **Read Parallel Translation:** [business_article_15_Burnham_ready_to_support_Poundland_staff.md](business_article_15_Burnham_ready_to_support_Poundland_staff.md)
 
-4. **What the Budget offers for under 25s - and what it leaves out**
-   - **Published:** Wed, 28 Oct 2026 20:02:38 GMT
-   - **Read Parallel Translation:** [business_article_16_What_the_Budget_offers_for_under_25s_-_a.md](business_article_16_What_the_Budget_offers_for_under_25s_-_a.md)
+4. **US interest rates held steady and economy grows - what it means for you**
+   - **Published:** Thu, 29 Oct 2026 17:15:05 GMT
+   - **Read Parallel Translation:** [business_article_16_US_interest_rates_held_steady_and_econom.md](business_article_16_US_interest_rates_held_steady_and_econom.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Ofcom outlines ways social media can verify ages of users**
-   - **Published:** Thu, 29 Oct 2026 05:57:15 GMT
-   - **Read Parallel Translation:** [technology_article_17_Ofcom_outlines_ways_social_media_can_ver.md](technology_article_17_Ofcom_outlines_ways_social_media_can_ver.md)
+1. **Crypto giant Binance hit by hack suspected to be largest in history**
+   - **Published:** Fri, 30 Oct 2026 05:15:16 GMT
+   - **Read Parallel Translation:** [technology_article_17_Crypto_giant_Binance_hit_by_hack_suspect.md](technology_article_17_Crypto_giant_Binance_hit_by_hack_suspect.md)
 
-2. **Details of thousands of US immigration agents leaked in major hack**
+2. **Google value plunges by $500bn as AI fears rattle Wall Street**
+   - **Published:** Thu, 29 Oct 2026 22:17:52 GMT
+   - **Read Parallel Translation:** [technology_article_18_Google_value_plunges_by_500bn_as_AI_fear.md](technology_article_18_Google_value_plunges_by_500bn_as_AI_fear.md)
+
+3. **Ofcom outlines age check methods ahead of social media ban for under-16s**
+   - **Published:** Thu, 29 Oct 2026 09:31:44 GMT
+   - **Read Parallel Translation:** [technology_article_19_Ofcom_outlines_age_check_methods_ahead_o.md](technology_article_19_Ofcom_outlines_age_check_methods_ahead_o.md)
+
+4. **Details of thousands of US immigration agents leaked in major hack**
    - **Published:** Thu, 29 Oct 2026 01:30:43 GMT
-   - **Read Parallel Translation:** [technology_article_18_Details_of_thousands_of_US_immigration_a.md](technology_article_18_Details_of_thousands_of_US_immigration_a.md)
-
-3. **Microsoft profits soar days after announcing thousands of layoffs**
-   - **Published:** Thu, 29 Oct 2026 01:27:40 GMT
-   - **Read Parallel Translation:** [technology_article_19_Microsoft_profits_soar_days_after_announ.md](technology_article_19_Microsoft_profits_soar_days_after_announ.md)
-
-4. **Elon Musk is a 'real genius', Putin says after satellite talks with SpaceX boss**
-   - **Published:** Wed, 28 Oct 2026 19:15:58 GMT
-   - **Read Parallel Translation:** [technology_article_20_Elon_Musk_is_a_real_genius_Putin_says_af.md](technology_article_20_Elon_Musk_is_a_real_genius_Putin_says_af.md)
+   - **Read Parallel Translation:** [technology_article_20_Details_of_thousands_of_US_immigration_a.md](technology_article_20_Details_of_thousands_of_US_immigration_a.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Building boom puts 300,000 people in the path of potential Himalayan disasters**
+1. **From workshops to the catwalk - why mended clothes are going mainstream**
+   - **Published:** Fri, 30 Oct 2026 00:00:35 GMT
+   - **Read Parallel Translation:** [science_article_21_From_workshops_to_the_catwalk_-_why_mend.md](science_article_21_From_workshops_to_the_catwalk_-_why_mend.md)
+
+2. **Firefighters celebrate rain during Indonesia wildfires**
+   - **Published:** Thu, 29 Oct 2026 18:31:27 GMT
+   - **Read Parallel Translation:** [science_article_22_Firefighters_celebrate_rain_during_Indon.md](science_article_22_Firefighters_celebrate_rain_during_Indon.md)
+
+3. **Serious pollution by water industry remains high despite £5bn investment**
+   - **Published:** Thu, 29 Oct 2026 12:08:01 GMT
+   - **Read Parallel Translation:** [science_article_23_Serious_pollution_by_water_industry_rema.md](science_article_23_Serious_pollution_by_water_industry_rema.md)
+
+4. **Building boom puts 300,000 people in the path of potential Himalayan disasters**
    - **Published:** Wed, 28 Oct 2026 23:11:59 GMT
-   - **Read Parallel Translation:** [science_article_21_Building_boom_puts_300000_people_in_the_.md](science_article_21_Building_boom_puts_300000_people_in_the_.md)
-
-2. **Weather warning lifted as third storm to hit Scotland eases off**
-   - **Published:** Tue, 27 Oct 2026 21:20:52 GMT
-   - **Read Parallel Translation:** [science_article_22_Weather_warning_lifted_as_third_storm_to.md](science_article_22_Weather_warning_lifted_as_third_storm_to.md)
-
-3. **Will a new strategy help protect Northern Ireland's nature?**
-   - **Published:** Tue, 27 Oct 2026 17:51:13 GMT
-   - **Read Parallel Translation:** [science_article_23_Will_a_new_strategy_help_protect_Norther.md](science_article_23_Will_a_new_strategy_help_protect_Norther.md)
-
-4. **Nanotyrannus skeleton sells for $47.3m in New York auction**
-   - **Published:** Tue, 27 Oct 2026 17:10:15 GMT
-   - **Read Parallel Translation:** [science_article_24_Nanotyrannus_skeleton_sells_for_473m_in_.md](science_article_24_Nanotyrannus_skeleton_sells_for_473m_in_.md)
+   - **Read Parallel Translation:** [science_article_24_Building_boom_puts_300000_people_in_the_.md](science_article_24_Building_boom_puts_300000_people_in_the_.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Consultant doctors in England to strike next month**
+1. **Biggest fibre boost could be scraps in your bin, experts say**
+   - **Published:** Fri, 30 Oct 2026 00:40:30 GMT
+   - **Read Parallel Translation:** [health_article_25_Biggest_fibre_boost_could_be_scraps_in_y.md](health_article_25_Biggest_fibre_boost_could_be_scraps_in_y.md)
+
+2. **I didn't know I was lacking in vitamin D until I collapsed at work**
+   - **Published:** Fri, 30 Oct 2026 00:29:05 GMT
+   - **Read Parallel Translation:** [health_article_26_I_didnt_know_I_was_lacking_in_vitamin_D_.md](health_article_26_I_didnt_know_I_was_lacking_in_vitamin_D_.md)
+
+3. **Hundreds of GP practices lose online services after collapse of tech firm**
+   - **Published:** Thu, 29 Oct 2026 17:13:40 GMT
+   - **Read Parallel Translation:** [health_article_27_Hundreds_of_GP_practices_lose_online_ser.md](health_article_27_Hundreds_of_GP_practices_lose_online_ser.md)
+
+4. **Consultant doctors in England to strike next month**
    - **Published:** Mon, 26 Oct 2026 11:45:48 GMT
-   - **Read Parallel Translation:** [health_article_25_Consultant_doctors_in_England_to_strike_.md](health_article_25_Consultant_doctors_in_England_to_strike_.md)
-
-2. **Can you tell ferritin levels from your face?**
-   - **Published:** Mon, 26 Oct 2026 10:29:34 GMT
-   - **Read Parallel Translation:** [health_article_26_Can_you_tell_ferritin_levels_from_your_f.md](health_article_26_Can_you_tell_ferritin_levels_from_your_f.md)
-
-3. **Is 'ferritin face' a real thing - and can you really spot low iron from looks?**
-   - **Published:** Mon, 26 Oct 2026 01:43:55 GMT
-   - **Read Parallel Translation:** [health_article_27_Is_ferritin_face_a_real_thing_-_and_can_.md](health_article_27_Is_ferritin_face_a_real_thing_-_and_can_.md)
-
-4. **GP says she was forced out of job after raising concerns about gender treatment**
-   - **Published:** Fri, 23 Oct 2026 19:23:10 GMT
-   - **Read Parallel Translation:** [health_article_28_GP_says_she_was_forced_out_of_job_after_.md](health_article_28_GP_says_she_was_forced_out_of_job_after_.md)
+   - **Read Parallel Translation:** [health_article_28_Consultant_doctors_in_England_to_strike_.md](health_article_28_Consultant_doctors_in_England_to_strike_.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **Healey unveils £100 for energy bills and bank tax in first Budget**
-   - **Published:** Wed, 28 Oct 2026 18:45:09 GMT
-   - **Read Parallel Translation:** [politics_article_29_Healey_unveils_100_for_energy_bills_and_.md](politics_article_29_Healey_unveils_100_for_energy_bills_and_.md)
+1. **Burnham says he wants to cut welfare bill 'as soon as we possibly can'**
+   - **Published:** Thu, 29 Oct 2026 15:42:56 GMT
+   - **Read Parallel Translation:** [politics_article_29_Burnham_says_he_wants_to_cut_welfare_bil.md](politics_article_29_Burnham_says_he_wants_to_cut_welfare_bil.md)
 
-2. **Chris Mason: Budget felt cautious despite its range of small measures**
-   - **Published:** Wed, 28 Oct 2026 16:52:16 GMT
-   - **Read Parallel Translation:** [politics_article_30_Chris_Mason_Budget_felt_cautious_despite.md](politics_article_30_Chris_Mason_Budget_felt_cautious_despite.md)
+2. **DUP blocks Michelle O'Neill's engagements over Drumcree**
+   - **Published:** Thu, 29 Oct 2026 18:08:15 GMT
+   - **Read Parallel Translation:** [politics_article_30_DUP_blocks_Michelle_ONeills_engagements_.md](politics_article_30_DUP_blocks_Michelle_ONeills_engagements_.md)
 
-3. **Budget 2026: Key points at a glance**
-   - **Published:** Wed, 28 Oct 2026 16:55:27 GMT
-   - **Read Parallel Translation:** [politics_article_31_Budget_2026_Key_points_at_a_glance.md](politics_article_31_Budget_2026_Key_points_at_a_glance.md)
+3. **Lib Dems and Reform UK in war of words over alleged shove**
+   - **Published:** Thu, 29 Oct 2026 17:46:15 GMT
+   - **Read Parallel Translation:** [politics_article_31_Lib_Dems_and_Reform_UK_in_war_of_words_o.md](politics_article_31_Lib_Dems_and_Reform_UK_in_war_of_words_o.md)
 
-4. **Watch: What are the key points from the Budget and how will they be funded?**
-   - **Published:** Wed, 28 Oct 2026 16:12:57 GMT
-   - **Read Parallel Translation:** [politics_article_32_Watch_What_are_the_key_points_from_the_B.md](politics_article_32_Watch_What_are_the_key_points_from_the_B.md)
+4. **'Painful' years ahead, think tanks warn, as living standards set to fall**
+   - **Published:** Thu, 29 Oct 2026 13:19:24 GMT
+   - **Read Parallel Translation:** [politics_article_32_Painful_years_ahead_think_tanks_warn_as_.md](politics_article_32_Painful_years_ahead_think_tanks_warn_as_.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Family row over George Michael items up for auction - including Faith guitar**
-   - **Published:** Thu, 29 Oct 2026 00:01:16 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Family_row_over_George_Michael_items_up_.md](entertainment_article_33_Family_row_over_George_Michael_items_up_.md)
+1. **Sir Patrick Stewart: Actor who moved effortlessly between Star Trek and Shakespeare**
+   - **Published:** Fri, 30 Oct 2026 03:57:06 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Sir_Patrick_Stewart_Actor_who_moved_effo.md](entertainment_article_33_Sir_Patrick_Stewart_Actor_who_moved_effo.md)
 
-2. **Russell Brand tells trial sexual consent is 'fundamental'**
-   - **Published:** Wed, 28 Oct 2026 17:42:10 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Russell_Brand_tells_trial_sexual_consent.md](entertainment_article_34_Russell_Brand_tells_trial_sexual_consent.md)
+2. **Bombshell confession in The Traitors as faithfuls finally turn the screw**
+   - **Published:** Fri, 30 Oct 2026 00:16:59 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Bombshell_confession_in_The_Traitors_as_.md](entertainment_article_34_Bombshell_confession_in_The_Traitors_as_.md)
 
-3. **Death of US actress Hayden Panettiere ruled accidental, ending local police probe**
-   - **Published:** Wed, 28 Oct 2026 21:16:30 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Death_of_US_actress_Hayden_Panettiere_ru.md](entertainment_article_35_Death_of_US_actress_Hayden_Panettiere_ru.md)
+3. **Russell Brand's wife tells his rape trial he is 'kind and a wonderful father'**
+   - **Published:** Thu, 29 Oct 2026 12:52:50 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Russell_Brands_wife_tells_his_rape_trial.md](entertainment_article_35_Russell_Brands_wife_tells_his_rape_trial.md)
 
-4. **Sam Fender pre-sale moved after 'bot attack'**
-   - **Published:** Wed, 28 Oct 2026 18:08:56 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Sam_Fender_pre-sale_moved_after_bot_atta.md](entertainment_article_36_Sam_Fender_pre-sale_moved_after_bot_atta.md)
+4. **George Michael's Faith guitar sells for £180k after auction row**
+   - **Published:** Thu, 29 Oct 2026 18:26:42 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_George_Michaels_Faith_guitar_sells_for_1.md](entertainment_article_36_George_Michaels_Faith_guitar_sells_for_1.md)
 
 ---
 

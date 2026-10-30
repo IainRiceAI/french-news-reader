@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sir Patrick Stewart: Actor who moved effortlessly between Star Trek and Shakespeare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Sir Patrick Stewart: Actor who moved effortlessly between Star Trek and Shakespeare</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 30 Oct 2026 03:57:06 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cye0l23lx15o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The English actor began his career on stage before finding fame as the captain of the USS Enterprise.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Sir Patrick Stewart, décédé à l'âge de 86 ans, était un grand acteur de cinéma et de théâtre qui a équilibré la stardom d'Hollywood avec une carrière tout aussi stellaire dans le théâtre classique.</p>
+            <span class="english-block">Sir Patrick Stewart, who has died at the age of 86, was a stage and screen great who balanced Hollywood stardom with an equally stellar career in classical theatre.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Alors que de nombreux acteurs sont des types, il a passé sans effort de Shakespeare et Dickens au commandement de l'USS Enterprise et de sa célèbre fauteuil roulant dans X-Men.</p>
+            <span class="english-block">While many actors are typecast, he moved effortlessly from Shakespeare and Dickens to the command of the USS Enterprise and his famous wheelchair in X-Men.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Au cours d'une carrière qui a duré sept décennies, Sir Patrick a reçu de nombreux prix, une étoile sur le Hollywood Walk of Fame et un titre de chevalier de la reine Elizabeth II.</p>
+            <span class="english-block">In a career that spanned seven decades, Sir Patrick received multiple awards, a star on the Hollywood Walk of Fame and a knighthood from Queen Elizabeth II.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">L'un des acteurs les plus polyvalents au monde, il maîtrisait à la fois la comédie et la tragédie, la science-fiction et le drame historique - malgré le dégoût traditionnel de l'industrie du divertissement pour les têtes chauves.</p>
+            <span class="english-block">One of the world's most versatile actors, he mastered both comedy and tragedy, science-fiction and historical drama - despite the entertainment industry's traditional dislike of bald heads.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">L'acteur de Star Trek, Sir Patrick Stewart, meurt à l'âge de 86 ans.</p>
+            <span class="english-block">Star Trek actor Sir Patrick Stewart dies aged 86</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les mises à jour suivantes: Les tributs versés à Sir Patrick Stewart</p>
+            <span class="english-block">Follow updates: Tributes paid to Sir Patrick Stewart</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">"Une grande perte" - Les fans réagissent à la mort de Sir Patrick Stewart</p>
+            <span class="english-block">'A big loss' - Fans react to death of Sir Patrick Stewart</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Sir Patrick Stewart: Une vie dans les photos</p>
+            <span class="english-block">Sir Patrick Stewart: A life in pictures</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Patrick Hewes Stewart est né à Mirfield, dans le West Riding du Yorkshire, le 13 juillet 1940.</p>
+            <span class="english-block">Patrick Hewes Stewart was born in Mirfield in the West Riding of Yorkshire on 13 July 1940.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Sa mère, Gladys, travaillait dans le textile, elle était active dans le théâtre amateur et encourageait ses trois fils à y participer.</p>
+            <span class="english-block">His mother Gladys was a textile worker. She was active in amateur dramatics and encouraged her three sons to take part.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Son père était un ancien sergent-major du régiment de parachutistes dont l'expérience lors de l'évacuation de Dunkerque en temps de guerre avait réduit sa santé mentale.</p>
+            <span class="english-block">His father was a former Sergeant Major in the Parachute Regiment whose experience during the wartime evacuation of Dunkirk had shredded his mental health.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"Mon père était un homme très puissant, se souvient Stewart plus tard. " On disait que, lorsqu'il passait sur le terrain de défilé, les oiseaux cessaient de chanter".</p>
+            <span class="english-block">"My father was a very potent individual," Stewart later recalled. "It was said that when he strode on to the parade ground, birds stopped singing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Mais Alfred Stewart était devenu un homme de colère rapide, souffrant de ce qu'on appellerait maintenant un stress post-traumatique.</p>
+            <span class="english-block">But Alfred Stewart had become a quick-tempered man, suffering from what would now be called post traumatic stress.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Il était enclin à boire et il exprimait souvent sa frustration à sa famille, bien que Patrick lui- même n'ait jamais été la cible de ses coups de poing.</p>
+            <span class="english-block">He was prone to drink and often took out his frustrations on his family - although Patrick himself was never the target of his fists.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Patrick Stewart dans la production de 1970 de La Compagnie royale de Shakespeare des deux messieurs de Vérone</p>
+            <span class="english-block">Patrick Stewart in the Royal Shakespeare Company's 1970 production of The Two Gentlemen of Verona</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">L'amour du jeune Patrick pour le drame s'est développé à l'école quand un de ses enseignants l'a présenté à Shakespeare et l'a encouragé à jouer.</p>
+            <span class="english-block">Young Patrick's love of drama developed at school when one of his teachers introduced him to Shakespeare and encouraged him to perform.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Sa première performance publique a été dans une production de l'église locale de Cendrillon.</p>
+            <span class="english-block">His first public performance was in a local church production of Cinderella.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Il a trouvé la prévisibilité des spectacles dramatiques un changement bienvenu de la tourmente de sa vie de famille.</p>
+            <span class="english-block">He found the predictability of dramatic performances a welcome change from the turmoil of his home life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Il quitte l'école à 15 ans et finit par trouver un emploi de journaliste et de rédacteur d'obituaries au Dewsbury Reporter.</p>
+            <span class="english-block">He left school at 15 and eventually got a job as a journalist and obituary writer on the Dewsbury Reporter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Il s'est aussi lancé avec enthousiasme dans le théâtre local florissant. " J'avais l'habitude de réciter Shakespeare par mémoire, " dit- il. " J'ai appris tout ce genre de grands discours. "</p>
+            <span class="english-block">He also threw himself enthusiastically into the flourishing local theatre. "I used to recite Shakespeare from memory," he said. "I just learned all these big speeches."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Il a joué un soldat romain conspirateur dans le I, Claudius de la BBC en 1976</p>
+            <span class="english-block">He played a conspiratorial Roman soldier in the BBC's I, Claudius in 1976</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Mais il a trouvé impossible de se concentrer sur son travail et son acteur, et son rédacteur en chef lui a finalement demandé de choisir entre le journalisme et l'acteur " stupide ".</p>
+            <span class="english-block">But he found it impossible to concentrate on both his job and his acting. Eventually his editor told him to choose between journalism and the "foolhardy" acting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Stewart a pris sa machine à écrire et est sorti.</p>
+            <span class="english-block">Stewart picked up his typewriter and walked out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">À 18 ans, il a eu l'expérience traumatisante de perdre tous ses cheveux, un coup énorme à un aspirant acteur et adolescent conscient de lui- même - qui craignait que les filles ne le trouvent plus attrayant.</p>
+            <span class="english-block">At the age of 18, he had the traumatic experience of losing all his hair, a huge blow to an aspiring actor and self-conscious teenager - who worried that girls would no longer find him attractive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Il a gagné une bourse au Bristol Old Vic et a ensuite rejoint la Royal Shakespeare Company - jouant une variété de rôles dans le répertoire de la compagnie.</p>
+            <span class="english-block">He won a scholarship to the Bristol Old Vic and later joined the Royal Shakespeare Company - playing a variety of roles across the company's repertoire.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Et quand il n'apparaît pas comme Oberon ou Enobarbus, il fait ses débuts télévisés en tant que pompier dans un épisode de l'opéra de 1967 Coronation Street.</p>
+            <span class="english-block">And when not appearing as Oberon or Enobarbus, he made his TV debut as a fireman in a 1967 episode of soap opera Coronation Street.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Patrick Stewart en tant qu'espion russe dans la série de la BBC Smiley's People de 1982</p>
+            <span class="english-block">Patrick Stewart as a Russian spy in 1982 BBC series Smiley's People</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Il a fait ses débuts à Broadway en 1970 avec le rôle de Snout dans la production acclamée par la critique de Peter Brook, A Midsummer Night's Dream.</p>
+            <span class="english-block">His Broadway debut came in 1970 as Snout in Peter Brook's critically acclaimed production of A Midsummer Night's Dream.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Au cours des deux décennies suivantes, Stewart a joué une variété de rôles télévisés sans menacer de devenir une star majeure.</p>
+            <span class="english-block">Over the next two decades, Stewart appeared in a variety of television roles without threatening to become a major star.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">En 1974, il joue le rôle de Lénine dans la série dramatique de 13 parties de la BBC La chute des aigles.</p>
+            <span class="english-block">In 1974, he played Lenin in the BBC's 13-part drama series The Fall of Eagles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Il était un soldat romain conspirateur dans le très populaire I, Claudius et un espion soviétique dans Tinker, Tailor, Soldier, Spy and Smiley's People.</p>
+            <span class="english-block">He was a conspiratorial Roman soldier in the hugely popular I, Claudius and a Soviet spy in Tinker, Tailor, Soldier, Spy and Smiley's People.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">En 1984, Stewart quitte le RSC et déménage au Théâtre National.</p>
+            <span class="english-block">In 1984, Stewart left the RSC and moved to the National Theatre. By then in his mid-40s, he had only ever been unemployed for three weeks, but was rarely cast as a main character.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Il avait obtenu un certain nombre de rôles de soutien dans des films: notamment jouer le père de Guinevere à Excalibur, un minstrel à Dune et un instructeur de course à cheval à Little Lord Fauntleroy.</p>
+            <span class="english-block">He had landed a number of supporting film roles: including playing Guinevere's father in Excalibur, a minstrel in Dune, and a riding instructor in Little Lord Fauntleroy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Il était la voix d'un petit personnage dans le film d'animation du roman de Richard Adams, Les chiens de la peste.</p>
+            <span class="english-block">And he was the voice of a small character in the animated film of Richard Adams' novel The Plague Dogs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Mais même lui a décrit la première moitié de sa carrière comme "bonne mais jamais spectaculaire".</p>
+            <span class="english-block">But even he described the first half of his career as "sound but never spectacular".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Sa carrière a vraiment décollé à bord de l' USS Enterprise comme le capitaine Jean-Luc Picard dans Star Trek: La prochaine génération</p>
+            <span class="english-block">His career really took off aboard the USS Enterprise as Captain Jean-Luc Picard in Star Trek: The Next Generation</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Puis il a joué le rôle du capitaine Jean-Luc Picard.</p>
+            <span class="english-block">Then came the role of Captain Jean-Luc Picard.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Un producteur nommé Robert L Justman avait l'intention de relancer la franchise Star Trek et cherchait un successeur du légendaire James T Kirk de William Shatner.</p>
+            <span class="english-block">A producer named Robert L Justman was intent on reviving the Star Trek franchise, and was looking for a successor to William Shatner's legendary James T Kirk.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Il avait espéré trouver un Français sexy et engagé pour jouer le rôle - mais il a eu le hasard de rencontrer Stewart en donnant une conférence à la classe de Shakespeare de sa femme à Los Angeles.</p>
+            <span class="english-block">He had hoped to find a sexy, hirsute Frenchman to play the role - but chanced upon Stewart giving a lecture to his wife's Shakespeare class in Los Angeles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Justman s'est tourné vers sa femme. "J'ai dit que je pensais avoir trouvé notre nouveau capitaine", a-t-il dit.</p>
+            <span class="english-block">Justman turned to his wife. "I said I think I've found our new captain," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Stewart était intrigué mais sceptique.</p>
+            <span class="english-block">Stewart was intrigued but sceptical.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Il ne savait rien de Star Trek et son grand ami, Sir Ian McKellen, lui a dit de ne pas jeter sa carrière de scénariste dans une chasse à l'espace.</p>
+            <span class="english-block">He knew nothing about the original Star Trek and his great friend, Sir Ian McKellen, told him not to throw his stage career away on a wild goose chase into space.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Mais en ayant besoin d'un coup de pouce pour ses finances, Stewart a signé un contrat de six ans, fermement croyant que le spectacle ne durerait pas et qu'il serait de retour sur les conseils d'administration bientôt.</p>
+            <span class="english-block">But in need of a boost to his finances, Stewart signed a six-year contract, firmly believing the show wouldn't last and he'd be back on the boards before long.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Patrick Stewart et le casting de Star Trek: La prochaine génération</p>
+            <span class="english-block">Patrick Stewart and the cast of Star Trek: The Next Generation</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">"Tout le monde me disait que ce serait un échec, raconte- t- il.</p>
+            <span class="english-block">"Everybody told me it would be a flop," he recalled. "A friend of mine said, 'Get a suntan, make some money, go home.'"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Il était toutefois heureux que les producteurs ne se soient pas souciés de sa calvitie.</p>
+            <span class="english-block">He was, however, pleased that the producers didn't mind his baldness.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Il avait essayé de porter une perruque lors des premiers tests d'écran, mais elle semblait dégueulasse et - à la fin - le fondateur de Star Trek, Gene Roddenberry, lui a dit de la jeter.</p>
+            <span class="english-block">He'd tried wearing a wig in early screen tests, but it looked ratty and - in the end - Star Trek's founder Gene Roddenberry told him to ditch it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">"Au 24e siècle, ils ne se souciaient pas si Picard était chauve", dit-il.</p>
+            <span class="english-block">"In the 24th Century, they wouldn't care if Picard was bald," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Stewart, qui a été qualifié par le New York Times de "acteur britannique Shakespearean inconnu", a eu du mal à s'adapter à son nouveau travail.</p>
+            <span class="english-block">Stewart, who was billed by the New York Times as "an unknown British Shakespearean actor", found it hard adapting to his new job.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Après ses expériences sur scène, il a trouvé les 20 heures par jour sur le plateau fatigantes, et il a également eu du mal à travailler avec un casting américain assez détendu et amusant.</p>
+            <span class="english-block">After his stage experiences, he found the 20 hours a day on set tiring, and he also struggled to work with a fairly laid-back and fun-loving US cast.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Sa décision d'appeler ses collègues et de leur donner une conférence sur le comportement plus sérieux ne lui a pas valu de popularité.</p>
+            <span class="english-block">His decision to call his fellow actors together and give them a lecture about behaving more seriously failed to gain him popularity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Sir Ian McKellen et Sir Patrick Stewart étaient les meilleurs amis et co-étoiles.</p>
+            <span class="english-block">Sir Ian McKellen and Sir Patrick Stewart were the best of friends as well as co-stars</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">"C'était vraiment horrible d'être déguisé par le capitaine", a déclaré Brent Spiner, qui jouait Data, l'android. "Nous avons vraiment pensé: "Eh bien, s'il vous plaît, dépassons-le".</p>
+            <span class="english-block">"It was really awful, being dressed down by the captain," said Brent Spiner, who played Data, the android. "We really thought, 'Well, please, get over it'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">Finalement, Stewart s'est amégi, insistant sur le fait que chaque membre du casting raconte au moins une blague par jour.</p>
+            <span class="english-block">Eventually Stewart softened, insisting that every member of the cast told at least one joke a day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Malgré ses réserves initiales, Star Trek: The Next Generation a survécu et prospéré, ce qui en fait une star très riche.</p>
+            <span class="english-block">Despite his initial reservations, Star Trek: The Next Generation both survived and prospered - making its star a very wealthy man.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">Le capitaine Picard était censé être français, mais il avait un respect étonnamment anglais pour Shakespeare et Earl Grey.</p>
+            <span class="english-block">Captain Picard was supposed to be French, but displayed a surprisingly English regard for both Shakespeare and Earl Grey tea.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Et, après avoir joué tous ces princes et dukes shakespeariens sur la scène londonienne, Stewart est devenu fier de lui, et de la capacité de l'émission à se connecter avec un public plus jeune.</p>
+            <span class="english-block">And, after playing all those Shakespearean princes and dukes on the London stage, Stewart became fiercely proud of him, and of the show's ability to connect with younger audiences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">Sir Patrick a joué le professeur télépathique Charles Xavier dans la franchise de films X-Men</p>
+            <span class="english-block">Sir Patrick starred as the telepathic Professor Charles Xavier in the X-Men film franchise</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">En plus de la série télévisée, Stewart a joué Picard dans quatre films de Star Trek.</p>
+            <span class="english-block">In addition to the television series, Stewart played Picard in four Star Trek films. But while commanding the Enterprise, he managed to not neglect the theatre.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">Avec sa nouvelle célébrité, les rôles qu'on lui offrait s'améliorèrent considérablement.</p>
+            <span class="english-block">With his new-found celebrity, the parts he was offered improved greatly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">Pendant des années, il a interprété une version à un seul homme de Charles Dickens' A Christmas Carol à Broadway - jouant les 40 personnages.</p>
+            <span class="english-block">For years, he performed a one-man version of Charles Dickens' A Christmas Carol on Broadway - playing all 40 characters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.0" data-end="310.0">
+            <p class="french-block">En 1995, il apparaît comme Prospero dans une performance mémorable de The Tempest et, deux ans plus tard, il joue le rôle d'Othello - qu'il présente comme un mercenaire blanc dans une nation africaine noire.</p>
+            <span class="english-block">In 1995, he appeared as Prospero in a memorable performance of The Tempest and, two years later, he starred as Othello - who he presented as a white mercenary in a black African nation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.0" data-end="315.0">
+            <p class="french-block">Mais son succès dans Star Trek a limité les rôles que Hollywood était prêt à lui offrir.</p>
+            <span class="english-block">But his Star Trek success limited the roles that Hollywood was prepared to offer him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.0" data-end="320.0">
+            <p class="french-block">"Aucun réalisateur n'a voulu mettre en scène ce grand, fort, chauve Anglais, parce que tout le monde savait qu'il était Picard et qu'il ne pouvait être personne d'autre".</p>
+            <span class="english-block">"No director wanted to cast this grand, deep-voiced, bald English guy," he told the Times. "Because everybody knew he was Picard and couldn't possibly be anybody else."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.0" data-end="325.0">
+            <p class="french-block">Sir Ian et Sir Patrick sont apparus ensemble dans " Attendre Godot "</p>
+            <span class="english-block">Sir Ian and Sir Patrick appeared together in Waiting for Godot</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.0" data-end="330.0">
+            <p class="french-block">Finalement, il a repris le rôle du professeur Charles Xavier dans la franchise de films X-Men, jouant essentiellement un Picard télépatique en fauteuil roulant.</p>
+            <span class="english-block">Eventually, he took the role of Professor Charles Xavier in the X-Men film franchise, essentially playing a telepathic Picard in a wheelchair.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.0" data-end="335.0">
+            <p class="french-block">Son co-star était Sir Ian McKellen - l'ami qui l'avait averti d'éviter Hollywood - dans le rôle de Magneto.</p>
+            <span class="english-block">His co-star was Sir Ian McKellen - the friend who'd warned him to avoid Hollywood -  in the metal-bending role of Magneto.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.0" data-end="340.0">
+            <p class="french-block">En plus de son travail en Amérique, il a gagné l'éloge de la critique en face de Harriet Walter dans Antony and Cleopatra en 2007.</p>
+            <span class="english-block">Alongside his work in America, he won critical acclaim opposite Harriet Walter in Antony and Cleopatra in 2007.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.0" data-end="345.0">
+            <p class="french-block">Et, dans la même année, il a joué Macbeth pour la première fois - malgré un écart d'âge de 30 ans entre lui et Kate Fleetwood, jouant Lady Macbeth.</p>
+            <span class="english-block">And, in the same year, he played Macbeth for the first time - despite a 30-year age gap between him and Kate Fleetwood, playing Lady Macbeth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="345.0" data-end="350.0">
+            <p class="french-block">Mais les critiques ont refusé de se plaindre.</p>
+            <span class="english-block">But the critics refused to complain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.0" data-end="355.0">
+            <p class="french-block">Le critique Nicholas de Jongh a décidé que c'était "le meilleur Macbeth que j'ai jamais vu", et l'a salué comme "un de nos meilleurs acteurs shakespeariens".</p>
+            <span class="english-block">Critic Nicholas de Jongh decided it was "the best Macbeth I have ever seen", and hailed him as "one of our finest Shakespearean actors".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.0" data-end="360.0">
+            <p class="french-block">En 2010, Stewart a été décerné un titre de chevalier pour ses services au drame.</p>
+            <span class="english-block">In 2010, Stewart was awarded a knighthood for his services to drama.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.0" data-end="365.0">
+            <p class="french-block">Sir Patrick Stewart a reçu son titre de chevalier en 2010</p>
+            <span class="english-block">Sir Patrick Stewart received his knighthood in 2010</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.0" data-end="370.0">
+            <p class="french-block">En 2009, il rejoint Sir Ian dans Waiting For Godot.</p>
+            <span class="english-block">In 2009, he again teamed up with Sir Ian in Waiting For Godot.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="370.0" data-end="375.0">
+            <p class="french-block">C'était un moment d'accomplissement personnel pour Sir Patrick qui, en tant qu'adolescent étonné, se souvenait d'avoir vu Peter O'Toole dans la pièce au Bristol Old Vic.</p>
+            <span class="english-block">It was a moment of personal fulfilment for Sir Patrick who, as an awed teenager, remembered watching Peter O'Toole in the play at the Bristol Old Vic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="375.0" data-end="380.0">
+            <p class="french-block">Sa voix profonde et autoritaire lui a valu de nombreux rôles de voix-over, y compris une répétition de son rôle de capitaine Jean-Luc Picard dans les jeux vidéo Star Trek.</p>
+            <span class="english-block">His deep and authoritative voice made him much in demand for voice-over roles - including a reprise of his role as Captain Jean-Luc Picard on Star Trek video games.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="380.0" data-end="385.0">
+            <p class="french-block">Une femme qui a interviewé a dit une fois que "le simple fait de l'entendre commander le petit déjeuner est plutôt excitant".</p>
+            <span class="english-block">One female interviewer once gushed that "just hearing him order breakfast is rather thrilling".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="385.0" data-end="390.0">
+            <p class="french-block">Il a également fait la voix d'une foule de publicités télévisées tant en Grande-Bretagne qu'aux États-Unis.</p>
+            <span class="english-block">He also voiced a host of TV commercials both in Britain and the US.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="390.0" data-end="395.0">
+            <p class="french-block">En dehors de l'acteur, il était un militant politique passionné et un partisan du Parti travailliste depuis longtemps, ainsi qu'un militant pour les victimes de violence domestique.</p>
+            <span class="english-block">Away from acting, he was a passionate political activist and a long-time supporter of the Labour Party, as well as a campaigner for victims of domestic abuse.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="395.0" data-end="400.0">
+            <p class="french-block">Sir Patrick Stewart et son épouse Sunny Ozell photographiés en 2024</p>
+            <span class="english-block">Sir Patrick Stewart and his wife Sunny Ozell photographed in 2024</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="400.0" data-end="405.0">
+            <p class="french-block">En 2013, il épouse sa troisième femme - la chanteuse et compositrice Sunny Ozell - au Nevada.</p>
+            <span class="english-block">In 2013, he married his third wife - singer-songwriter Sunny Ozell - in Nevada.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="405.0" data-end="410.0">
+            <p class="french-block">Sir Ian McKellen a officié la cérémonie, qui a dû être réédité dans un restaurant de Los Angeles quand quelqu'un a découvert que son pouvoir légal de le faire ne s'étend pas à l'État Silver.</p>
+            <span class="english-block">Sir Ian McKellen officiated at the ceremony, which had to be restaged at a Los Angeles restaurant when someone discovered that his legal power to do so did not extend to the Silver State.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="410.0" data-end="415.0">
+            <p class="french-block">Un an plus tard, les deux chevaliers ont emmené leurs talents à Broadway, alternant des représentations d'Waiting for Godot avec No Man's Land de Harold Pinter.</p>
+            <span class="english-block">A year later, the two knights took their talents to Broadway, alternating performances of Waiting for Godot with Harold Pinter's No Man's Land.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="415.0" data-end="420.0">
+            <p class="french-block">Sir Patrick a fait une vidéo pour Amnesty International sur le sujet de la violence domestique, faisant référence à la brutalité de son père envers sa mère.</p>
+            <span class="english-block">Sir Patrick made a video for Amnesty International on the subject of domestic violence, referencing his father's brutality towards his mother.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="420.0" data-end="425.0">
+            <p class="french-block">Une fois nommé le troisième plus grand Yorkshireman après Michael Palin et Sean Bean, il ne perdit jamais le contact avec ses racines - gardant une maison dans le propre pays de Dieu, et restant un supporter à vie du club de football de Huddersfield Town.</p>
+            <span class="english-block">Once named the third greatest Yorkshireman after Michael Palin and Sean Bean, he never lost touch with his roots - keeping a house in God's Own Country, and remaining a lifelong supporter of Huddersfield Town football club.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="425.0" data-end="430.0">
+            <p class="french-block">Les projets futurs comprenaient une dernière représentation du professeur Charles Xavier dans Avengers: Doomsday de Marvel, qui sortira ce Noël.</p>
+            <span class="english-block">Forthcoming projects had included a final performance as Professor Charles Xavier in Marvel's Avengers: Doomsday, which will be released this Christmas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="430.0" data-end="435.0">
+            <p class="french-block">Et si des millions de personnes se souviennent de lui seulement comme étant le commandant quelque peu taciturne de l'USS Enterprise, cette perspective ne l'a pas inquiété.</p>
+            <span class="english-block">And, if millions remember him only as the somewhat taciturn commander of the USS Enterprise, that prospect was not something that worried him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="435.0" data-end="440.0">
+            <p class="french-block">"Pour un grand nombre de personnes, je serai toujours Jean-Luc Picard, et c'est bien, dit- il.</p>
+            <span class="english-block">"For huge numbers of people I will always be Jean-Luc Picard, and that's fine," he said. "I really believe we created an admirable individual."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="440.0" data-end="445.0">
+            <p class="french-block">L'acteur légendaire de Star Trek, Sir Patrick Stewart, meurt à l'âge de 86 ans.</p>
+            <span class="english-block">Legendary Star Trek actor Sir Patrick Stewart dies aged 86</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="445.0" data-end="450.0">
+            <p class="french-block">L'acteur de Star Trek, Sir Patrick Stewart, meurt à l'âge de 86 ans.</p>
+            <span class="english-block">Star Trek actor Sir Patrick Stewart dies aged 86</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
