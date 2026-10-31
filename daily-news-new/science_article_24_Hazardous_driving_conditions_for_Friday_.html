@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazardous driving conditions for Friday as fog warning issued by Met Office</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Hazardous driving conditions for Friday as fog warning issued by Met Office</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 30 Oct 2026 06:18:35 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/c6ly075l742ro?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Foggy conditions likely to bring tricky conditions for the Friday morning commute as severe weather warning issued.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Un brouillard épais s'est formé vendredi matin dans certaines régions du Royaume-Uni, ce qui pourrait entraîner des conditions de conduite dangereuses.</p>
+            <span class="english-block">Thick fog has formed on Friday morning across parts of the United Kingdom which could lead to hazardous driving conditions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Le bureau de la météo a émis un avertissement jaune pour la brume du Lincolnshire, des Midlands orientales, des comtés de la maison dans certaines parties du Grand Londres.</p>
+            <span class="english-block">The Met Office has issued a yellow severe weather warning for fog from Lincolnshire, the East Midlands, the Home Counties into parts of Greater London.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">La brume sera dense dans les endroits où la visibilité est parfois inférieure à 100 mètres et sera la plus étendue et perturbatrice pendant les heures de pointe du matin.</p>
+            <span class="english-block">Fog will be dense in places with visibility below 100 metres at times and it will be most extensive and disruptive during the morning rush hour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Il commencera lentement à s'allonger, à se soulever et à se dégager plus tard ce matin mais dans certaines zones rurales de l'est de l'Angleterre, il ne sera peut-être pas clair avant cet après-midi.</p>
+            <span class="english-block">It will slowly begin to thin, lift and clear later this morning but in some rural spots in eastern England it may not clear until this afternoon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">L'avertissement météo sévère pour la brume publié vendredi matin</p>
+            <span class="english-block">Met Office severe weather warning for fog issued on Friday morning</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les brumes et les emplacements de brouillard du samedi matin peuvent se dérouler en basse nuée, qui pourrait rester toute la journée.</p>
+            <span class="english-block">Early morning mist and fog patches on Saturday may lift into low cloud, which could hang around all day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Certaines zones vont mieux avec quelques temps de soleil et beaucoup de zones restent sèches.</p>
+            <span class="english-block">Some areas will fare better with some spells of sunshine with many areas staying dry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">L'exception à ce thème sera le nord-ouest de l'Écosse, où un front météorologique faible apportera pendant un certain temps des nuages plus épais et de la pluie.</p>
+            <span class="english-block">The exception to this theme will be north-west Scotland, where a weak weather front will bring thicker cloud and rain for a time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les températures seront proches de la moyenne et globales, similaires aux derniers jours.</p>
+            <span class="english-block">Temperatures will be close to average and will be overall, similar to recent days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Dès dimanche, ce front météorologique mourant apportera un nuage plus épais au Pays de Galles et au centre de l'Angleterre menaçant quelques points de pluie légère ou de pluie, mais pas beaucoup.</p>
+            <span class="english-block">By Sunday this dying weather front will bring some thicker cloud to Wales and central England threatening a few patches of light rain or drizzle, but not much.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Le reste du Royaume-Uni aura une journée sèche le dimanche avec des nuages variables et des coups de soleil parfois.</p>
+            <span class="english-block">The rest of the UK will have a dry day on Sunday with variable cloud and some spells of sunshine at times.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Avec un temps plus sec , les gens devraient pouvoir sortir et profiter des couleurs de l' automne .</p>
+            <span class="english-block">With drier weather people will should be able to get out and enjoy the autumn colours</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">La pression élevée s'est accrue et devrait dominer le Royaume-Uni dans les prochains jours.</p>
+            <span class="english-block">High pressure has been building and is set to dominate across the UK in the coming days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Cela contraste nettement avec la semaine dernière, où des zones ont été frappées par un groupe de tempêtes développées par un puissant jet d'Atlantique.</p>
+            <span class="english-block">This is in stark contrast to last week which saw areas buffeted by a cluster of storms developed by a powerful Atlantic jet stream.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Le jet stream, toujours en route près du Royaume-Uni, avec la zone de construction à haute pression nous apportant un temps beaucoup plus calme.</p>
+            <span class="english-block">The jet stream, still running close to the UK, with the building area of high pressure bringing us much quieter weather.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Alors que les tempêtes Austen et Boelo ont apporté des avantages hydrologiques à court terme, 82% de l'Angleterre reste en état de sécheresse selon l'Agence de l'environnement.</p>
+            <span class="english-block">Whilst Storms Austen and Boelo provided some short-term hydrological benefit, 82% of England remains in drought status according to the Environment Agency.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">La zone de haute pression restera au-dessus ou près du Royaume-Uni pendant au moins dix jours en raison d'un "métrage de blocage des flux de diffusion" qui se forme dans le courant aérien atlantique à travers le Royaume-Uni et l'Europe occidentale, ce qui empêchera les systèmes météorologiques d'atteindre nos côtes.</p>
+            <span class="english-block">The area of high pressure will stay over or close to the UK for at least ten days as a result of a 'diffluent blocking pattern' forming in the Atlantic jet stream across the UK and western Europe, which will prevent weather systems reaching our shores.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Il est donc possible que des nuages et des pluies faibles soient associés à la brume et au brouillard du matin, mais les précipitations seront négligeables.</p>
+            <span class="english-block">It means we are heading into a long stretch of mostly dry weather. There could still be some patches of low cloud and drizzle associated with early morning mist and fog, however, rainfall amounts will be negligible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Un jet de courant bloqué crée une zone quasi-stationnaire de haute pression la semaine prochaine</p>
+            <span class="english-block">A blocked jet stream pattern creates a near-stationary area of high pressure next week</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Avec aucune tempête à l'horizon bientôt, il faudra probablement un certain temps avant d'apercevoir l'arrivée de Chloe, le prochain nom sur la liste des tempêtes de cette année.</p>
+            <span class="english-block">With no storms on the horizon any time soon, it is likely to be a while before we see the arrival of Chloe, the next name on this year's storm list.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">À court terme, ce manque de pluie suscitera des inquiétudes au sujet de la sécheresse et des faibles niveaux d'eau dans les réservoirs anglais.</p>
+            <span class="english-block">In the short-term this lack of rainfall will raise concerns about the drought and low water levels in England's reservoirs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">À la suite de la dernière réunion du Groupe national de la sécheresse, les entreprises d'eau sont invitées à accélérer la fixation des fuites et au public à prendre des douches plus courtes et à éteindre le robinet lorsqu'ils se brosserent les dents.</p>
+            <span class="english-block">Following the latest meeting of the National Drought Group, water companies are being urged to speed up the fixing of leaks and members of the public to take shorter showers and turn off the tap when brushing their teeth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">L'Agence de l'environnement (EA) affirme que 20% de pluie supérieure à la moyenne est nécessaire au cours des six prochains mois, en dehors de la fin de la sécheresse.</p>
+            <span class="english-block">The Environment Agency (EA) says that 20% more rain than average is needed over the next six months, external for the drought to end.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Philip Duffy, directeur général de l'Agence pour l'environnement, a déclaré: " La pluie récente est la bienvenue, mais la sécheresse n'est pas terminée.</p>
+            <span class="english-block">Philip Duffy, Chief Executive of the Environment Agency, said: "The recent rain is welcome, but the drought isn't over. A few wet days cannot reverse months of hot, dry weather.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Les rivières, les réservoirs et les eaux souterraines ont besoin d'une pluie continue pour se remettre, et les effets sur la nature peuvent durer bien plus longtemps".</p>
+            <span class="english-block">"Our rivers, reservoirs and groundwater need sustained rainfall to recover, and the effects on nature can last much longer."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Le météo El Niño a été lié à des conditions météorologiques plus humides et plus tempérées à la fin de l'automne et au début de l'hiver.</p>
+            <span class="english-block">El Niño has been linked to wetter and stormier weather in late autumn and early winter. The current three month outlook from the Met Office forecasts that there is double the chance of it being wetter than normal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Les nouveaux noms de tempêtes pour 2026-2027 publiés par le Met Office</p>
+            <span class="english-block">New storm names for 2026-2027 released by Met Office</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Météo pour la semaine à venir</p>
+            <span class="english-block">Weather for the week ahead</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Une tempête d'automne, un hiver froid: comment El Niño pourrait- il affecter le temps au Royaume-Uni?</p>
+            <span class="english-block">Stormy autumn, cold winter - how might El Niño affect the UK weather?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

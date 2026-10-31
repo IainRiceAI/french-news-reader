@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google value plunges by $500bn as its own AI search hits ad sales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Google value plunges by $500bn as its own AI search hits ad sales</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 30 Oct 2026 12:04:02 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm9qzdqpxy48o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Google spooked investors so badly that its stock hit a six-month low, after it revealed its AI own search summaries were affecting ad revenue.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le PDG de Google, Sundar Pichai, a soutenu les dépenses massives de l'entreprise en IA.</p>
+            <span class="english-block">Google CEO Sundar Pichai has backed the company's massive spending on AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Alphabet, propriétaire de Google, a perdu quelque 500 milliards de dollars de valeur jeudi après avoir révélé que ses propres résumés sur l'intelligence artificielle (IA) avaient atteint les revenus de la publicité de recherche.</p>
+            <span class="english-block">Google-owner Alphabet lost just over $500bn (£374bn) in value on Thursday after it revealed its own artificial intelligence (AI) summaries were hitting search advertising revenue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le directeur des affaires Philipp Schindler a déclaré que le "modus IA" de Google, où il répond aux questions par conversation, consomme l'argent qu'il gagne des annonces qui apparaissent à côté des résultats des questions de recherche traditionnelles.</p>
+            <span class="english-block">Chief business officer Philipp Schindler said Google's "AI mode", where it answers questions conversationally, was eating into the money it makes from ads which appear next to results to traditional search questions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Pourtant, Schindler a dit qu'il se sentait "très bien sur notre trajectoire" avec une version axée sur l'IA du moteur de recherche.</p>
+            <span class="english-block">Yet, Schindler said he felt "very good about our trajectory" with an AI-focused version of the search engine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le rôle de Google dans la réponse aux questions du monde a été remis en question par le boom de l'IA, avec des millions de personnes utilisant des programmes comme ChatGPT et Claude à la place.</p>
+            <span class="english-block">Google's role in answering the world's questions has been challenged by the AI boom, with millions of people using programs such as ChatGPT and Claude instead.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Kim Scott, qui dirigeait auparavant l'activité publicitaire de Google, a déclaré à la BBC Today que la société " préfèrerait manger son propre déjeuner plutôt que de laisser quelqu'un d'autre manger son déjeuner " en faisant en sorte que ses propres résumés d'IA touchent ses revenus de recherche.</p>
+            <span class="english-block">Kim Scott, who formerly led Google's advertising business, told the BBC's Today programme that the company would "rather eat its own lunch than allow someone else to eat their lunch" by having its own AI summaries hit its search revenue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Elle a dit que Google a été fondée sur l'idée de faire des paris à long terme sur la technologie  même si cela nuit à l'entreprise à court terme.</p>
+            <span class="english-block">She said that Google was founded on the idea of making long-term bets on technology – even if they hurt the firm in the short term.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">"Je pense qu'ils parient sur l'IA à long terme", a-t-elle dit.</p>
+            <span class="english-block">"I think they're making a long-term bet on AI," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Dans ses résultats publiés mercredi, Alphabet a révélé que les revenus totaux ont augmenté de 25% dans les trois mois qui ont suivi la fin septembre, par rapport à la même période de l'année dernière, atteignant 127,6 milliards de dollars.</p>
+            <span class="english-block">In its results published on Wednesday, Alphabet revealed that total revenue grew 25% in the three months to the end of September, compared to the same period last year, hitting $127.6bn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Cependant, l'entreprise n'a pas gagné autant d'argent que les analystes l'avaient prédit, en particulier dans son secteur publicitaire, ce qui a effrayé de nombreux investisseurs.</p>
+            <span class="english-block">However, the firm did not make as much money as analysts had predicted, particularly in its advertising arm, which spooked many investors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les actions de la société ont chuté de plus de 12% à un niveau le plus bas depuis six mois après la publication des résultats.</p>
+            <span class="english-block">Shares in the company plummeted over 12% to a six-month low following the release of the results.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">À la fin de jeudi, la valeur boursière totale de la société était tombée à 3,46 billions de dollars, contre 3,97 billions le jour précédent.</p>
+            <span class="english-block">By the end of Thursday,  the company's total stock market value had fallen to $3.46 trillion from $3.97 trillion the day before.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Tracy Woo, analyste principal chez Forrester, a déclaré que les résultats décevants de l'activité Search d'Alphabet " mettent en évidence le défi de financer des investissements massifs en IA tout en maintenant la force des entreprises établies ".</p>
+            <span class="english-block">Tracy Woo, a principal analyst at Forrester, said Alphabet's disappointing Search business results "highlights the challenge of funding massive AI investments while maintaining the strength of established businesses."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Microsoft et Amazon ont également publié des mises à jour cette semaine, et ont rejoint Google dans le projet de continuer à dépenser d'énormes sommes d'argent dans la course en cours d'IA.</p>
+            <span class="english-block">Microsoft and Amazon also issued updates this week, and joined Google in plans to keep spending huge sums of cash in the ongoing AI race.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Mais les investisseurs semblent consternés par les impacts que ces plans ont sur la capacité de chacun de continuer à développer leurs activités de base.</p>
+            <span class="english-block">But investors appeared dismayed at the impacts these plans are having on the ability of each to keep growing their core lines of business.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Les actions d'Amazon ont connu un coup de pied jeudi, avec une baisse de 6% dans les échanges après-midi.</p>
+            <span class="english-block">Amazon's stock took a hit on Thursday , with its shares falling 6% in after-hours  trading.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">En plus de la croissance trimestrielle des ventes de 11%, atteignant 201 milliards de dollars, la société a partagé un chiffre de trésorerie stupéfiant de 42 milliards de dollars négatifs.</p>
+            <span class="english-block">Alongside quarterly sales growth of 11%, hitting $201bn, the company shared a staggering cash flow figure of negative $42bn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Ce chiffre montre qu'Amazon ne dépense pas seulement plus d'argent qu'il ne gagne, mais que les dépenses ont augmenté de six fois au cours des trois derniers mois.</p>
+            <span class="english-block">That number shows that Amazon is not only spending more money than it makes, but that spending has increased six-fold over the span of three months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Le directeur général Andy Jassy a affirmé que l'entreprise dépensait en partie parce qu'elle avait la chance, non pas d'une, mais de deux entreprises qui pourraient finir par rapporter 1 000 milliards de dollars à Amazon dans l'avenir.</p>
+            <span class="english-block">Chief executive Andy Jassy claimed the business was spending in part because it had the chance at, not one, but two businesses that could end up bringing in $1 trillion for Amazon the future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Jassy a noté que les activités de services cloud d'Amazon, ainsi que les magasins de détail, pourraient être ces entreprises. Lors d'une conversation avec des analystes financiers, il a également mentionné à plusieurs reprises l'opportunité financière offerte par Amazon de fabriquer et de vendre ses propres puces informatiques, ainsi que sa plateforme de développement d'IA Bedrock, qui offre aux utilisateurs payants un accès à la plupart des principaux modèles et outils d'IA.</p>
+            <span class="english-block">Jassy noted that Amazon's cloud services business, as well as retail stores, may be those businesses. During a call with financial analysts he also repeatedly mentioned the financial opportunity presented by Amazon making and selling its own computer chips, as well as its AI developer platform Bedrock, which offers paying users access to most major AI models and tools.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">" L'une des leçons que nous avons apprises au cours de ces vingt ans et plus est qu'il n'y a pas d'outil unique pour gouverner le monde, dit Jassy. " Les gens supposent toujours que ce qui est en tête dès le début sera la seule chose que les gens utilisent - ce n'est jamais vrai. "</p>
+            <span class="english-block">"One of the lessons we've learned over 20-plus years is that there is not one tool to rule the world," Jassy said. "People always assume whatever is in the lead early on will be the only thing that people use - it's never true."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Lorsque Jassy a été demandé à plusieurs reprises d'expliquer les dépenses de la société, il a admis que cela " serait plus pratique " si elle était diffusée au cours des 25 prochaines années. " Ce n'est pas le monde dans lequel nous vivons ", a- t- il ajouté.</p>
+            <span class="english-block">As Jassy was asked several times to explain the company's spending, he admitted it "would be more convenient" if it were spread over the next 25 years. "That's not the world we live in," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"Nous pouvons financer ce plan, et je pense que cela changera à jamais la taille, les revenus, le flux de trésorerie libre d'Amazon".</p>
+            <span class="english-block">"We can fund this plan, and I think it will forever change the size, the revenue, the free cash flow of Amazon."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">La réaction de Wall Street à la mise à jour de Microsoft a été plus silencieuse, les actions ayant chuté de moins de 1% jeudi.</p>
+            <span class="english-block">Wall Street's reaction to Microsoft's update was more muted, with shares falling by less than 1% on Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">La société, qui est également l'un des plus grands investisseurs d'OpenAI, a dépensé environ 5 milliards de dollars de moins dans des investissements dédiés à l'IA.</p>
+            <span class="english-block">The company, which is also one of OpenAI's largest investors, spent around $5bn less on investments dedicated to AI. It also revealed earlier this week plans to cut thousands of workers, which will further reduce the company's costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Pendant ce temps, ses revenus ont augmenté de 19% par rapport à un an plus tôt, atteignant 92,3 milliards de dollars pour le trimestre.</p>
+            <span class="english-block">Meanwhile, its revenue grew 19% from a year earlier, hitting $92.3bn for the quarter. Its crucial cloud business grew by 30% to $63bn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Le directeur général Satya Nadella a déclaré que l'utilisation de Copilot, le chatbot et l'outil d'IA de Microsoft, a vu "les tâches automatisées presque doubleres depuis juillet" alors que les utilisateurs quotidiens ont augmenté de 500% par rapport à il y a un an.</p>
+            <span class="english-block">Chief executive Satya Nadella said the use of Copilot, Microsoft's AI chatbot and tool, has seen "automated tasks nearly double since July" as daily users grew by 500% from a year ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">En général, une baisse des dépenses et une augmentation des ventes génèrent une réaction positive des investisseurs.</p>
+            <span class="english-block">Usually lower spending and growing sales earns a positive reaction from investors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Mais Woo a dit que Wall Street essaie de regarder plus loin dans l'avenir quand il s'agit de savoir quelles entreprises vont vraiment tenir leurs grandes promesses en matière d'IA.</p>
+            <span class="english-block">But Woo said Wall Street is trying to look farther into the future when it comes to which businesses will truly make good on their big promises around AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">"Les résultats de Microsoft confirment que la demande des entreprises pour l'IA reste forte, mais ils mettent également en évidence une question beaucoup plus importante qui est confrontée à l'industrie technologique, où la valeur de l'IA sera finalement capturée", a déclaré Woo.</p>
+            <span class="english-block">"Microsoft's results reinforce that enterprise demand for AI remains strong, but they also highlight a much bigger question facing the technology industry, where AI value will ultimately be captured," Woo said.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

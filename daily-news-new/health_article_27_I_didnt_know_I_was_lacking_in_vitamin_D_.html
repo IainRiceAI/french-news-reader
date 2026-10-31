@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I didn't know I was lacking in vitamin D until I collapsed at work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>I didn't know I was lacking in vitamin D until I collapsed at work</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 30 Oct 2026 00:29:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm78pxxe55v0o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Doctors are finding vitamin D deficiency is increasingly widespread in the UK, especially in young people. But the symptoms are difficult to spot and can be missed.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Saskia Reeves-Priestley, 23 ans, était au travail quand elle s'est soudainement effondrée.</p>
+            <span class="english-block">Twenty-three-year-old Saskia Reeves-Priestley was at work when she suddenly collapsed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">"Je me sentais juste vraiment étourdie, vraiment nausée, j'avais des battements cardiaques et j'étais vraiment chaude", dit- elle.</p>
+            <span class="english-block">"I just felt really dizzy, really nauseous, was having heart palpitations and was really hot," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Saskia, professeur spécialisé dans l'éducation, était un gardien de but passionné qui jouait au football quatre fois par semaine et se sentait en forme et en bonne santé.</p>
+            <span class="english-block">Saskia, a special educational needs teacher, was a keen goalkeeper who played football four times a week and felt fit and healthy. While her symptoms are not directly linked to vitamin D deficiency - she realised something was wrong.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Des analyses de sang ont ensuite montré que son taux était si bas qu'il était "près de rien".</p>
+            <span class="english-block">Blood tests later showed her level was so low - it was "next to nothing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Au Royaume-Uni, les taux de vitamine D faibles augmentent dans certains groupes d'âge, en particulier chez les filles et les jeunes femmes.</p>
+            <span class="english-block">In the UK, low vitamin D rates are increasing in some age groups, external - particularly in girls and young women.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Selon les données de l'Enquête nationale sur la diète et la nutrition, l'année dernière, près d'un quart des enfants âgés de 11 à 18 ans étaient classés comme déficients.</p>
+            <span class="english-block">According to data from the National Diet and Nutrition Survey, last year nearly a quarter of 11- to 18-year-olds were classed as deficient.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">La vitamine D peut provenir de notre alimentation, dans des aliments tels que le poisson gras et la viande, ou des suppléments.</p>
+            <span class="english-block">Vitamin D can come from our diet, in foods such as oily fish and meat, or supplements.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Mais la plupart sont produites par notre corps lorsque la lumière UV du soleil touche la peau.</p>
+            <span class="english-block">But most is made by our body when UV light in sunlight hits the skin. Lower levels of sunlight - depending on where in the world you live or the time of year - decrease the body's ability to produce it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il est également bénéfique de couvrir certaines parties du corps et de porter des crèmes solaires, malgré leurs avantages protecteurs.</p>
+            <span class="english-block">Covering parts of the body and wearing sunscreen also has an impact - despite their protective advantages.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les personnes ayant une peau plus sombre ont besoin d'une lumière plus forte pour produire la même quantité de vitamine D que la peau plus claire.</p>
+            <span class="english-block">Those with darker skin need exposure to stronger light to produce the same amount of vitamin D as lighter skin.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les médecins ne proposent pas de tests sanguins pour vérifier la carence en vitamine D, mais offrent un supplément si un patient craint qu'il soit à haut risque.</p>
+            <span class="english-block">Doctors don't routinely offer blood tests to check for vitamin D deficiency, but will offer a supplement if a patient is concerned they might be high risk.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">La carence en vitamine D est liée au rachitisme des maladies osseuses chez les bébés et les nourrissons. chez les adultes, elle provoque un affaiblissement similaire de l'os appelé ostéomalacie, externe.</p>
+            <span class="english-block">Vitamin D deficiency is linked to the bone disease rickets in babies and infants. In adults it causes a similar weakening of the bone called osteomalacia, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" Ils appellent cela la maladie du silence ", dit le Dr Suma Uday, endocrinologue pédiatrique qui veut sensibiliser le public à ce problème.</p>
+            <span class="english-block">"They call it the silent disease," says Dr Suma Uday, a paediatric endocrinologist who wants to raise awareness of the problem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Elle prévient que la carence en vitamine D chez les jeunes et les adultes est difficile à détecter et peut être manquée ou mal diagnostiquée.</p>
+            <span class="english-block">She warns that vitamin D deficiency in young people and adults is difficult to spot and can be missed or misdiagnosed. Symptoms include fatigue and joint and bone pain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Uday dit: "C'est en silence qu'il dévore les os, les laissant tendus et tendus à se casser".</p>
+            <span class="english-block">Uday says: "It's basically silently eating away at the bones, leaving them softened and prone to breaks."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Amaka Osu dit qu'elle ne pense pas que beaucoup de ses amis réalisent quels sont les symptômes</p>
+            <span class="english-block">Amaka Osu says she doesn't think many of her friends realise what the symptoms are</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Amaka était en train de préparer un dîner à son université à Liverpool quand elle a commencé à trembler.</p>
+            <span class="english-block">Amaka was in the middle of making dinner at her university house in Liverpool when she started shaking.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Elle a été conduite à l'A&E, où elle a été diagnostiquée plus tard comme étant déficiente en vitamine D.</p>
+            <span class="english-block">"I couldn't really see in front of me," she says. Her housemate took her to A&E - later she too would be diagnosed as vitamin D deficient.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">En plus de se sentir fatiguée, elle dit ne pas avoir de symptômes: " Je suis étudiante de 21 ans, j'ai du travail et j'ai l'université, je me sens toujours fatiguée. "</p>
+            <span class="english-block">Other than feeling tired, she says she had no symptoms: "I'm a 21-year-old student. I've got work and uni - I'm always feeling tired."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Elle se souvient que sa mère souffrait d'une faible teneur en vitamine D, mais elle dit ne pas avoir réalisé que cela pouvait lui arriver.</p>
+            <span class="english-block">She remembers her mother suffering from low vitamin D but says she did not realise it could happen to her.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Après avoir pris des suppléments, Amaka se sent beaucoup mieux, mais elle est inquiète si cela se reproduit. " C'était effrayant et je ne veux pas refaire cela. "</p>
+            <span class="english-block">After taking supplements, Amaka feels a lot better, but she is anxious in case it happens again. "It was scary and I don't want to experience that again."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Uday rejoint d'autres cliniciens et universitaires qui ont formé un groupe - ACT NOW Vitamine D - appelant à augmenter le seuil auquel vous êtes classé comme déficient.</p>
+            <span class="english-block">Uday joins other clinicians and academics who have formed a group - ACT NOW Vitamin D - calling for the threshold at which you are classified as deficient to be raised.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Elle dit que cela permettrait de " attraper " davantage de personnes avec un faible taux de vitamine D et de donner une image plus précise de la répandre du problème.</p>
+            <span class="english-block">She says that would "catch" more people with low vitamin D and give a more accurate picture of how widespread the issue is. It would also mean they can treat the deficiency earlier, she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Uday prévient qu'une femme est "déficiente tout au long de sa vie", à l'adolescence, puis à la grossesse, puis au nouveau-né.</p>
+            <span class="english-block">Uday warns of "a lifelong deficit" in women - in adolescence, then pregnancy, and then the newborn is affected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Si vous ne le corrigez pas dès le début, dit- elle, cela va affecter plusieurs générations".</p>
+            <span class="english-block">"If you don't correct it from the very beginning," she says, "this is going to affect multiple generations."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Saskia Reeves-Priestley joue au football quatre fois par semaine et n'a pas eu de symptômes antérieurs.</p>
+            <span class="english-block">Saskia Reeves-Priestley plays football four times a week - and had no previous symptoms</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">"C'est choquant", dit le professeur Martin Hewison, de l'université de Birmingham.</p>
+            <span class="english-block">"It's shocking," says Prof Martin Hewison, from the University of Birmingham.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Il me dit que malgré 100 ans de découverte de la vitamine D, "les raquettes ne sont pas disparues".</p>
+            <span class="english-block">He tells me that despite being 100 years on from the discovery of vitamin D "rickets hasn't gone away".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Si nous avons le rachitisme dans la communauté, il y aura beaucoup plus de gens qui sont déficients de vitamine D".</p>
+            <span class="english-block">"If we have rickets in the community, there are going to be many more people who are vitamin D deficient."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Il a déclaré que le gouvernement devrait examiner plus largement l'enrichissement des aliments dans lesquels les vitamines sont ajoutées aux aliments pendant la production.</p>
+            <span class="english-block">He says the government should look into wider fortification of food in which vitamins are added to foods during production. Countries like Canada and Sweden have mandatory policies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Au Royaume-Uni, certains aliments tels que les céréales de petit déjeuner et les épinards sont déjà enrichis de vitamine D, mais c'est volontaire.</p>
+            <span class="english-block">In the UK, some foods such as breakfast cereals and spreads are already fortified with vitamin D, but it is voluntary.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Pendant les mois d'hiver, les gens commencent à perdre leur taux de vitamine D.</p>
+            <span class="english-block">During the winter months, people start to lose their vitamin D levels.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">"Il faut peut-être accepter que pour certains groupes, la supplémentation en vitamine D est une question naturelle", explique Hewison.</p>
+            <span class="english-block">"We might have to accept that for certain groups vitamin D supplementation is a matter of course," says Hewison.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Saskia prend régulièrement des suppléments de vitamine D et reprend son objectif.</p>
+            <span class="english-block">Saskia is now taking vitamin D supplements regularly - and is back in goal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Avez- vous été touché par les questions soulevées dans cet article?</p>
+            <span class="english-block">Have you been affected by the issues raised in this story?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Les médecins m'ont dit que j'étais trop jeune pour avoir l'endométriose à 13 ans .</p>
+            <span class="english-block">Doctors said I was too young to have endometriosis at 13 - I had to take morphine to cope</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">La "féritine du visage" est- elle réelle et peut-on vraiment détecter le faible taux de fer à partir de l'apparence?</p>
+            <span class="english-block">Is 'ferritin face' a real thing - and can you really spot low iron from looks?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">L'hypermobilité - la "maladie de Bendy" peu connue qui provoque la douleur et la fatigue</p>
+            <span class="english-block">Hypermobility - the little-known 'bendy disease' that causes pain and fatigue</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who could be behind the Binance hack and what we know so far</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Who could be behind the Binance hack and what we know so far</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 30 Oct 2026 11:57:33 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm5yn8eqg3npo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Binance has been hit by what could be the biggest crypto hack ever - here's what we know so far
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Binance, le plus grand échange de crypto au monde, a été touché par ce qui est considéré comme le plus grand piratage de crypto jamais réalisé à 6,3 milliards de dollars (4,7 milliards de livres sterling).</p>
+            <span class="english-block">Binance, the world's largest crypto exchange, has been hit by what is believed to be the largest crypto hack ever at $6.3bn (£4.7bn).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">La crypto est un type d'actif numérique qui n'existe pas physiquement comme l'argent liquide ou les pièces de monnaie.</p>
+            <span class="english-block">Crypto is a type of digital asset which does not exist physically like cash or coins. Instead, people use digital wallets on their smartphones or computers to access and manage it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Richard Teng, co-directeur général de Binance, a déclaré qu'il travaillait avec les autorités pour déterminer ce qui s'est passé et qu'il couvrirait toutes les pertes.</p>
+            <span class="english-block">Richard Teng, Binance's co-chief executive officer, said it is working with the authorities to work out what has happened and it will cover all losses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Voici ce que nous savons jusqu'à présent.</p>
+            <span class="english-block">Here's what we know so far.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Binance dit qu'il commence à récupérer des fonds cryptographiques après un piratage de 6,3 milliards de dollars considéré comme le plus grand jamais</p>
+            <span class="english-block">Binance says it is beginning to recover crypto funds after $6.3bn hack thought to be largest ever</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Binance est le plus grand échange de crypto-monnaie au monde en termes de volume de négociation, où les gens peuvent acheter, vendre et échanger des monnaies numériques, comme Bitcoin, ainsi que les déposer et les retirer.</p>
+            <span class="english-block">Binance is the world's largest cryptocurrency exchange by trading volume, where people can buy, sell and trade digital currencies, like Bitcoin, as well as deposit and withdraw them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Il a été fondé en Chine en 2017 et compte des centaines de millions d'utilisateurs enregistrés dans le monde entier.</p>
+            <span class="english-block">It was founded in China in 2017 and has hundreds of millions of registered users worldwide.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">L'échange a été examiné au cours des dernières années - notamment en 2023, lorsque son ex-chef exécutif, Changpeng Zhao, a démissionné après avoir plaidé coupable de violations de blanchiment d'argent.</p>
+            <span class="english-block">The exchange has come under scrutiny over the past few years - notably in 2023, when its then-chief executive, Changpeng Zhao, resigned after pleading guilty to money laundering violations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">L'année dernière, une plainte aux États-Unis a accusé la société d'aider à envoyer des millions de dollars aux organisations terroristes désignées par les États-Unis.</p>
+            <span class="english-block">Last year, a lawsuit in the US accused the company of helping send millions of dollars to US-designated terrorist organisations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">En 2024, la société a déclaré avoir plus de 160 milliards de dollars en actifs.</p>
+            <span class="english-block">In 2024, the company said it has more than $160bn in assets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Du Bitcoin à la blockchain: les termes clés de la crypto-monnaie et leur signification</p>
+            <span class="english-block">From Bitcoin to blockchain: Key cryptocurrency terms and what they mean</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Le piratage est arrivé à l'échange mondial centralisé de Binance, Binance.com.</p>
+            <span class="english-block">The hack happened to Binance's global centralised exchange, Binance.com.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Binance.us, qui fournit des services de trading spécifiquement pour les résidents américains, a déclaré qu'il n'était pas affecté par la question.</p>
+            <span class="english-block">Binance.us, which provides trading services specifically for US residents, said it has not been affected by the issue.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Dans une annonce initiale, Teng a déclaré: "Notre enquête initiale suggère que cet incident de sécurité a pu commencer avec un ordinateur portable compromis par un ingénieur DevOps.</p>
+            <span class="english-block">In an initial announcement, Teng said: "Our initial investigation suggests this security incident may have started with a compromised DevOps engineer's laptop.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">"Cela a permis à un attaquant d'accéder à un conteneur de service, où il a soumis des transactions de retrait non autorisées".</p>
+            <span class="english-block">"That gave an attacker access to a service container, where they submitted unauthorised withdrawal transactions."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Il a dit que le piratage " n'était pas une simple action " en un clic " mais un " processus d'attaque plus complexe ".</p>
+            <span class="english-block">He said the hack "was not a simple 'one-click' action" but a "more complex attack process".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Raghu Nandakumara, vice-président de la stratégie de l'industrie de la plateforme de cybersécurité Illumio, a déclaré que cela pourrait signifier qu'un ingénieur a été "convoqué pour faire un test" et que le logiciel malveillant  "est arrivé sur son ordinateur portable pendant qu'il le faisait".</p>
+            <span class="english-block">Raghu Nandakumara, vice president of industry strategy at cybersecurity platform Illumio, said this could mean an engineer was "talked into taking a test" and malware - malicious software – "landed on their laptop while they did it".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Comme l'ordinateur portable avait déjà suffisamment de privilèges de sécurité, Nandakumara a déclaré que les premiers rapports suggèrent qu'il est devenu "le chemin de l'attaquant directement vers la production, et de là vers les portefeuilles".</p>
+            <span class="english-block">Because the laptop already had sufficient security privileges, Nandakumara said early reports suggest it became "the attacker's route straight into production, and from there to the wallets".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Teng a depuis déclaré que le piratage n'avait pas été effectué par une seule personne et que les pirates avaient utilisé des méthodes sophistiquées pour cacher leurs traces, comme un " mécanisme d'autodestruction ".</p>
+            <span class="english-block">Teng has since said the hack was "not carried out by one person" and the hackers used sophisticated methods to hide their tracks, such as a "self-destruct mechanism".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">"Vous pouvez construire une caisse avec des pare-feu mathématiques, mais si l'individu qui tient les clés peut être dupé, la caisse est ouverte", a déclaré le Dr Clive Summerfield, responsable de FARx, une société de sécurité de l'IA.</p>
+            <span class="english-block">"You can build a vault with mathematical firewalls, but if the individual holding the keys can be duped, the vault is opened," said Dr Clive Summerfield, head of FARx, a biometrics in AI security company.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Le co-chef de la direction de Binance, Richard Teng, parle à une conférence</p>
+            <span class="english-block">Binance co-chief executive officer Richard Teng speaks at a conference</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">On ne sait pas encore qui est derrière l'attaque, mais certaines sociétés d'analyse ont indiqué la Corée du Nord - bien que cela n'ait pas été confirmé.</p>
+            <span class="english-block">It is not yet known who is behind the attack, but some analytics firms have pointed to North Korea - though this has not been confirmed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">La société d'investigation basée sur l'IA TRM Labs a déclaré dans un rapport que plusieurs éléments de l'attaque de Binance ressemblaient à des incidents antérieurs liés au territoire, y compris un piratage de 1,5 milliard de dollars (£ 1,1 milliard) sur l'échange ByBit en 2025.</p>
+            <span class="english-block">AI-powered investigations company TRM Labs said in a report several elements of the Binance attack resembled earlier incidents linked to the territory, including a $1.5bn (£1.1bn) hack on the ByBit exchange in 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Ces attaques précédentes ont été liées à un groupe de cybercriminels accusés de travailler directement pour le régime appelé le Lazarus Group - également connu sous le nom de TraderTraitor.</p>
+            <span class="english-block">These previous attacks have been linked to a cluster of cyber-criminals accused of working directly for the regime called the Lazarus Group - also known as TraderTraitor.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Le Dr Edward Howell, expert en politique étrangère nord-coréenne de l'Université d'Oxford, a déclaré à la BBC que Pyongyang "a une longue histoire d'utilisation de la cyberguerre pour extraire de l'argent".</p>
+            <span class="english-block">North Korean foreign policy expert Dr Edward Howell, from the University of Oxford, has told the BBC that Pyongyang "has a long history of using cyber warfare to extract cash".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Howell a déclaré que la Corée du Nord "a essentiellement une agence de cyber-guerre gérée par l'État", qu'elle utilise "pour financer ses programmes d'armes de destruction massive" et comme "fonds de débauche" pour le régime de son chef Kim Jong Un.</p>
+            <span class="english-block">Howell said North Korea "basically has a state-run cyber warfare agency", which it uses "to fund its weapons of mass destruction programmes" and as a "slush fund" for its leader Kim Jong Un's regime.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Howell a ajouté qu'à ce jour "environ 40  50% des programmes d'armes de destruction massive de la Corée du Nord sont financés par la cyber-guerre et la crypto-monnaie".</p>
+            <span class="english-block">Howell added that as of the current day "about 40 – 50% of North Korea's weapons of mass destruction programmes are funded by cyber and crypto-currency warfare".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">La Corée du Nord a toujours nié toute implication dans ces attaques; Binance n'a pas répondu directement aux questions de la BBC sur les liens potentiels de l'incident avec la région.</p>
+            <span class="english-block">North Korea has always denied any involvement in these attacks; Binance has not directly responded to BBC queries about the incident's potential links to the area.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Dans sa déclaration antérieure, Teng a déclaré que les fonds des utilisateurs de Binance étaient en sécurité et, en tant que mesure de précaution, tous les dépôts et retraits avaient été temporairement suspendus.</p>
+            <span class="english-block">In his earlier statement, Teng said Binance users' funds are safe and, as a precaution, all deposits and withdrawals had been temporarily suspended.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Il a dit que l'entreprise couvrirait toutes les pertes de sa réserve d'urgence mise en place pour de telles situations, et compléterait le reste avec des fonds de l'entreprise.</p>
+            <span class="english-block">He said the firm would cover all losses from its emergency reserve set up for such situations, and make up the rest with company funds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Binance a déclaré qu'il travaillait avec des partenaires pour geler les actifs touchés, avec environ 3 milliards de dollars selon les informations jusqu'à présent.</p>
+            <span class="english-block">Binance said it had been working with partners to freeze the affected assets, with around $3bn reportedly located so far.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Teng a déclaré que les utilisateurs concernés peuvent vérifier les fonds sur leurs comptes Binance. Les experts suggèrent de le faire via l'application officielle et le site Web, et de contacter le service clientèle de la société avec toutes questions.</p>
+            <span class="english-block">Teng said concerned users can check funds on their Binance accounts. Experts suggest doing so through the official app and website, and to reach out to the company's customer service with any questions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Les utilisateurs d'autres plateformes de cryptage ont également été avertis de faire attention aux pirates qui cherchent à exploiter la situation.</p>
+            <span class="english-block">Users from other crypto platforms have also been warned to be wary of hackers seeking to exploit the situation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Marijus Briedis, directeur technique de NordVPN, a déclaré que les gens devraient être à l'affût de choses comme "un e-mail affirmant que vos fonds sont en danger", "un faux compte de support offrant de l'aide" ou "un message vous exhortant à déplacer votre crypto-monnaie vers un portefeuille "sécurisé".</p>
+            <span class="english-block">Marijus Briedis, NordVPN's chief technology officer, said people should be on the lookout for things such as "an email claiming your funds are at risk", "a fake support account offering help" or "a message urging you to move your cryptocurrency to a 'safe' wallet".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">" Vérifiez les mises à jour via l'application Binance ou une adresse de site Web en laquelle vous avez déjà confiance ", a-t-il déclaré.</p>
+            <span class="english-block">"Check updates through the Binance app or a website address you already trust," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">"Évitez les liens dans les messages non sollicités, et ne donnez jamais à personne votre mot de passe, codes de vérification ou phrase de récupération de portefeuille".</p>
+            <span class="english-block">"Avoid links in unsolicited messages, and never give anyone your password, verification codes or wallet recovery phrase."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Binance.us a déclaré qu'il n'avait pas été affecté par la question</p>
+            <span class="english-block">Binance.us said it had not been affected by the issue</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Jennifer Craven, experte en fraude commerciale internationale au cabinet d'avocats Pinsent Masons, a déclaré que les répercussions du piratage pourraient " s'étendre bien au-delà de Binance ".</p>
+            <span class="english-block">Jennifer Craven, an international commercial fraud expert at the law firm Pinsent Masons, said the repercussions of the hack could "extend well beyond Binance".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">" Plus généralement, l'incident expose la fragilité de certaines parties de l'écosystème des crypto-monnaies ", a-t-elle déclaré.</p>
+            <span class="english-block">"More broadly, the incident exposes the fragility of parts of the crypto ecosystem," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">"Si une plateforme aussi sophistiquée que Binance peut subir une attaque grave, les régulateurs se demanderont inévitablement ce que cela signifie pour les plateformes et les devises plus petites et moins mûres".</p>
+            <span class="english-block">"If a platform as sophisticated as Binance can suffer a serious attack, regulators will inevitably ask what that means for smaller, less mature platforms and currencies."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Elle a déclaré que l'attaque accélérerait probablement l'examen de la façon dont le secteur protège à la fois ses infrastructures et ses clients.</p>
+            <span class="english-block">She said the attack would likely accelerate scrutiny of how the sector protects both its infrastructure and its customers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Bien qu'il n'y ait pas encore de preuves que l'IA ait été utilisée dans cette attaque, elle s'inscrit dans une préoccupation beaucoup plus large dans l'industrie financière quant à savoir si les agents d'IA pourraient potentiellement identifier les faiblesses du logiciel et trouver comment les exploiter beaucoup plus rapidement que les pirates informatiques humains.</p>
+            <span class="english-block">Although there is no evidence yet that AI was used in this attack, it fits into a much wider concern in the financial industry of whether AI agents could potentially identify weaknesses in software and work out how to exploit them much faster than human hackers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">La Banque d'Angleterre a averti que cela pourrait laisser les institutions à la recherche de solutions avant que les attaquants ne s'en servent.</p>
+            <span class="english-block">The Bank of England has warned, external this could leave institutions struggling to fix vulnerabilities before attackers take advantage of them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">La crypto est devenue une façon de plus en plus populaire d'investir et de transférer de l'argent en ligne, en partie parce que, contrairement aux devises traditionnelles, elle n'est pas contrôlée par les banques centrales ou les gouvernements.</p>
+            <span class="english-block">Crypto has become an increasingly popular way of investing and transferring money online, partly because, unlike traditional currencies, it is not controlled by central banks or governments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Cela rend populaire pour les personnes qui pensent que la décentralisation peut apporter la liberté financière.</p>
+            <span class="english-block">This makes it popular for people who think decentralisation can bring financial freedom.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Mais elle le rend aussi extrêmement volatil, sa valeur augmentant et diminuant à la demande des acheteurs et des vendeurs.</p>
+            <span class="english-block">But it also makes it extremely volatile, with it rising and falling in value at the whim of buyers and sellers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Selon Solcard, une plateforme de paiement prépayé et de cartes virtuelles financée par la cryptographie, entre 560 et 741 millions de personnes possèdent des cryptos dans le monde en 2026.</p>
+            <span class="english-block">According to Solcard, a crypto-funded prepaid payment and virtual card platform, somewhere between 560 million and 741 million people own crypto worldwide in 2026.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Le "King Crypto" canadien reconnu coupable de fraude</p>
+            <span class="english-block">Canadian 'Crypto King' found guilty of fraud</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Le vol de crypto-monnaie de 1,1 milliard de livres sterling pourrait être le plus grand jamais</p>
+            <span class="english-block">Cryptocurrency theft of £1.1bn could be biggest ever</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Des voleurs de cryptos attaquent un homme à la maison et menacent de tuer le bébé de sa femme enceinte dans un vol "horrible"</p>
+            <span class="english-block">Crypto thieves attack man in home and threaten to kill pregnant wife's baby in 'horrific' robbery</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
