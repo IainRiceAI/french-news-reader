@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reeves says UK's future should be inside the EU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>Reeves says UK's future should be inside the EU</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 01 Nov 2026 02:57:34 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c62l4yz0eexpo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: In her first major intervention since leaving the Treasury, Rachel Reeves says Brexit has made the UK "poorer, weaker and less secure".
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">L'ancienne chancelière Rachel Reeves a soutenu que l'avenir du Royaume-Uni devrait être à l'intérieur de l'UE et que le Brexit a rendu le pays "plus pauvre, plus faible et moins sûr".</p>
+            <span class="english-block">Former Chancellor Rachel Reeves has argued the UK's future should be inside the EU, and that Brexit has made the country "poorer, weaker and less secure".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Dans sa première intervention majeure depuis son départ du Trésor, Reeves a déclaré qu'elle accueillit le débat sur les relations du Royaume-Uni avec l'Europe.</p>
+            <span class="english-block">In her first major intervention since leaving the Treasury, Reeves said she welcomed debate around the UK's relationship with Europe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Lors des dernières élections, le manifeste du Parti travailliste a déclaré qu'un gouvernement travailliste resterait hors de l'UE et ferait fonctionner le Brexit.</p>
+            <span class="english-block">At the last election, Labour's manifesto said a Labour government would stay outside the EU and make Brexit work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Mais le Premier ministre Andy Burnham a dit qu'il fallait discuter honnêtement de l'apparence de la future relation.</p>
+            <span class="english-block">But Prime Minister Andy Burnham has said there needs to be an honest discussion about what the future relationship looks like.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Les conservateurs ont déclaré qu'il n'y avait pas de désir de reprendre le débat sur le Brexit et Nigel Farage, de Reform UK, a déclaré qu'il n'y avait pas de mandat pour poursuivre des liens plus étroits avec l'UE.</p>
+            <span class="english-block">The Conservatives have said there is no desire to rerun the Brexit debate and Reform UK's Nigel Farage has said there is no mandate to pursue closer EU ties.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Le manifeste électoral du Parti travailliste de 2024 exclut le retour à la libre circulation, à l'adhésion au marché unique ou à une union douanière.</p>
+            <span class="english-block">Labour's 2024 election manifesto ruled out a return of free movement, single market membership or a customs union.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Burnham a déclaré que tout changement nécessiterait un mandat aux élections générales, qui doivent avoir lieu d'ici 2029.</p>
+            <span class="english-block">Burnham has said that any changes would require a mandate at a general election, which is next due by 2029.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Dans le Sunday Times, un article de presse, Reeves écrit: "Personne au Trésor n'a jamais douté de ce que mes instincts étaient.</p>
+            <span class="english-block">In the Sunday Times, external, Reeves wrote: "No-one in the Treasury ever doubted where my instincts were. I do believe Britain's future lies in the European Union."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Elle a déclaré que les partisans de la réadhésion à l'UE devaient "faire la preuve, démontrer des avantages tangibles et faire les prochaines étapes correctement".</p>
+            <span class="english-block">She said supporters of rejoining the EU had to "make the argument, demonstrate tangible benefits and to get the next steps right".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Elle a ajouté que lors du prochain sommet Royaume-Uni-UE, elle espérait que le programme de mobilité des jeunes qu'elle a mis en avant depuis son entrée en fonction serait confirmé.</p>
+            <span class="english-block">Reeves added that at the forthcoming UK-EU summit, she hoped for confirmation of the youth mobility scheme she has been pushing for since she was in office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Elle a également déclaré qu'elle espérait "progresser vers l'entrée" dans le programme d'action en matière de sécurité pour l'Europe (SAFE).</p>
+            <span class="english-block">She also said she was hoping for "progress towards entry" into the Security Action for Europe (SAFE) scheme.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">L'objectif de la SAFE, annoncé en mars dernier, fait partie d'un effort de réarmement à l'échelle de l'UE après l'invasion russe de l'Ukraine.</p>
+            <span class="english-block">Announced last March, SAFE is part of an EU-wide effort to rearm after Russia's full-scale invasion of Ukraine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Un pacte de défense conclu avec l'UE en mai dernier a ouvert la voie aux entreprises britanniques de défense pour faire partie de projets financés par SAFE.</p>
+            <span class="english-block">A defence pact agreed with the EU last May paved the way for UK-based defence companies to be part of projects funded by SAFE.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Dans son article pour le Sunday Times, Reeves a également cherché à défendre son dossier au poste.</p>
+            <span class="english-block">In her piece for the Sunday Times, Reeves also sought to defend her record in office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Elle a écrit sur la nécessité pour les gouvernements d'être " plus courageux " dans la construction de grands projets d'infrastructure et " clairvoyants " sur les risques et les avantages que l'IA entraînerait dans les économies avancées.</p>
+            <span class="english-block">She wrote about the need for governments to be "braver" in building big infrastructure projects and "clear eyed" about the risks and benefits AI would drive in advanced economies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Le n°10 semble se rétracter de la proposition du premier ministre de référendum sur la liberté de mouvement</p>
+            <span class="english-block">No 10 appears to backtrack on PM's freedom of movement referendum suggestion</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Des représentants du Royaume-Uni et de l'UE pour discuter de la liberté de circulation</p>
+            <span class="english-block">UK and EU officials to discuss freedom of movement</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Le référendum sur le Brexit est "possible" dans le manifeste électoral travailliste, dit Burnham</p>
+            <span class="english-block">Brexit referendum 'possible' in Labour election manifesto, says Burnham</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
