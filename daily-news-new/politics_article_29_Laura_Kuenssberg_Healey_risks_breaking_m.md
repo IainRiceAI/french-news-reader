@@ -1,7 +1,7 @@
 # Laura Kuenssberg: Healey risks breaking minimum wage promise for younger workers
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cv369266644lo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cv369266644lo?at_medium=RSS&at_campaign=rss)  
-**Published:** Sat, 31 Oct 2026 17:26:29 GMT  
+**Published:** Sun, 01 Nov 2026 11:05:40 GMT  
 
 ---
 
@@ -51,9 +51,9 @@
 
 ### Section 6
 
-**🇬🇧 EN:** In a BBC interview to be broadcast on Sunday, Healey was asked if younger workers would be paid the same as older workers, when it comes to the minimum wage, by the time of the next election?
+**🇬🇧 EN:** In a BBC interview broadcast on Sunday, Healey was asked if younger workers would be paid the same as older workers, when it comes to the minimum wage, by the time of the next election?
 
-**🇫🇷 FR:** *Dans une interview de la BBC qui sera diffusée dimanche, On a demandé à Healey si les jeunes travailleurs seraient payés de la même façon que les travailleurs âgés, en ce qui concerne le salaire minimum, au moment des prochaines élections.*
+**🇫🇷 FR:** *Dans une interview de la BBC diffusée dimanche, On a demandé à Healey si les jeunes travailleurs seraient payés de la même façon que les travailleurs âgés, en ce qui concerne le salaire minimum, au moment des prochaines élections.*
 
 ---
 
@@ -155,13 +155,69 @@
 
 ### Section 19
 
+**🇬🇧 EN:** Conservative Party leader Kemi Badenoch said the "bulk" of spending cuts should be from the welfare budget, describing it as containing "astronomical sums".
+
+**🇫🇷 FR:** *Le chef du Parti conservateur Kemi Badenoch a déclaré que la " masse " des coupes de dépenses devrait provenir du budget social, le décrivant comme contenant des " sommes astronomiques ".*
+
+---
+
+### Section 20
+
+**🇬🇧 EN:** She also proposed reducing the size of the civil service and reducing budgets in departments such as the Department for Digital, Culture, Media and Sport.
+
+**🇫🇷 FR:** *Elle a également proposé de réduire la taille de la fonction publique et de réduire les budgets dans des ministères tels que le Département du numérique, de la culture, des médias et du sport.*
+
+---
+
+### Section 21
+
+**🇬🇧 EN:** On whether she would support cuts pencilled in by the government, Badenoch told the same programme: "What exactly are they cutting? I'm not against what they're doing but there's no detail."
+
+**🇫🇷 FR:** *Sur le fait qu'elle soutiendrait les coupes prévues par le gouvernement, Badenoch a dit au même programme: "Qu'est-ce qu'ils coupent exactement?*
+
+---
+
+### Section 22
+
+**🇬🇧 EN:** Badenoch said she did not want to see cuts in frontline services but said there was a need to "bring down the cost of government".
+
+**🇫🇷 FR:** *Badenoch a déclaré qu'elle ne voulait pas voir de coupes dans les services de première ligne, mais a déclaré qu'il était nécessaire de "abaisser le coût du gouvernement".*
+
+---
+
+### Section 23
+
+**🇬🇧 EN:** Reflecting on the Budget, she said: "The chancellor had 98 different measures, a lot of them very piecemeal, none will make a difference.
+
+**🇫🇷 FR:** *Elle a fait cette remarque: "Le chancelier avait 98 mesures différentes, dont beaucoup très fragmentées, aucune ne fera de différence.*
+
+---
+
+### Section 24
+
+**🇬🇧 EN:** "So living within our means, absolutely, we've got to do that. That will require cuts to government, but we are setting out the things very clearly that we're going to change, the bulk of which is in welfare. Other departments will have changes too."
+
+**🇫🇷 FR:** *" Donc, vivre dans nos moyens, absolument, nous devons le faire. Cela nécessitera des coupes au gouvernement, mais nous exposons très clairement les choses que nous allons changer, dont la majeure partie est dans la protection sociale.*
+
+---
+
+### Section 25
+
+**🇬🇧 EN:** Are you affected by the issues raised in this story?
+
+**🇫🇷 FR:** *Les questions soulevées dans cet article vous touchent- elles?*
+
+---
+
+### Section 26
+
 **🇬🇧 EN:** Budget 2026: Key points at a glance
 
 **🇫🇷 FR:** *Budget 2026: points clés à un coup d'œil*
 
 ---
 
-### Section 20
+### Section 27
 
 **🇬🇧 EN:** What are the government's options for reducing welfare spending?
 
@@ -169,7 +225,7 @@
 
 ---
 
-### Section 21
+### Section 28
 
 **🇬🇧 EN:** Chancellor says government has 'moral duty' to help young people who are out of work
 

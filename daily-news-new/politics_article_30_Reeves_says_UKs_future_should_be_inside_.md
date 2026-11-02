@@ -1,7 +1,7 @@
 # Reeves says UK's future should be inside the EU
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/c62l4yz0eexpo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/c62l4yz0eexpo?at_medium=RSS&at_campaign=rss)  
-**Published:** Sun, 01 Nov 2026 02:57:34 GMT  
+**Published:** Sun, 01 Nov 2026 10:47:03 GMT  
 
 ---
 
@@ -131,13 +131,69 @@
 
 ### Section 16
 
+**🇬🇧 EN:** Conservative Party leader Kemi Badenoch said she "can't even believe we are reopening" the Brexit debate.
+
+**🇫🇷 FR:** *La dirigeante du Parti conservateur Kemi Badenoch a déclaré qu'elle "ne pouvait même pas croire que nous rouvrons" le débat sur le Brexit.*
+
+---
+
+### Section 17
+
+**🇬🇧 EN:** She told BBC One's Sunday with Laura Kuenssberg: "This is not something that is needed in order to cut welfare, in order to spend money on defence.
+
+**🇫🇷 FR:** *Elle a déclaré à la BBC One dimanche avec Laura Kuenssberg: "Ce n'est pas quelque chose qui est nécessaire pour réduire les allocations sociales, pour dépenser de l'argent pour la défense.*
+
+---
+
+### Section 18
+
+**🇬🇧 EN:** "We are having yet another Westminster bubble argument about the EU when it is time for us to actually start using the opportunities, fix mistakes that have been made and go into the future."
+
+**🇫🇷 FR:** *"Nous avons encore une autre discussion sur l'UE, quand il est temps de commencer à utiliser les opportunités, à corriger les erreurs commises et à aller vers l'avenir".*
+
+---
+
+### Section 19
+
+**🇬🇧 EN:** Badenoch added: "I do not want to indulge Andy Burnham's fantasies about redoing the referendum because he doesn't have a plan for what to do today."
+
+**🇫🇷 FR:** *Badenoch a ajouté: "Je ne veux pas laisser Andy Burnham rêver de réorganiser le référendum parce qu'il n'a pas de plan pour ce qu'il va faire aujourd'hui".*
+
+---
+
+### Section 20
+
+**🇬🇧 EN:** Burnham told Badenoch during the most recent session of Prime Minister's Questions that he was focused on "getting a better deal for Britain, that is my responsibility".
+
+**🇫🇷 FR:** *Burnham a dit à Badenoch lors de la dernière session des questions du Premier ministre qu'il était concentré sur "obtenir un meilleur accord pour la Grande-Bretagne, c'est ma responsabilité".*
+
+---
+
+### Section 21
+
+**🇬🇧 EN:** The next UK-EU summit will take place in Brussels on 20 November.
+
+**🇫🇷 FR:** *Le prochain sommet Royaume-Uni-UE aura lieu à Bruxelles le 20 novembre.*
+
+---
+
+### Section 22
+
+**🇬🇧 EN:** Do you have any views, comments or questions about this story?
+
+**🇫🇷 FR:** *Avez-vous des opinions, des commentaires ou des questions sur cette histoire ?*
+
+---
+
+### Section 23
+
 **🇬🇧 EN:** No 10 appears to backtrack on PM's freedom of movement referendum suggestion
 
 **🇫🇷 FR:** *Le n°10 semble se rétracter de la proposition du premier ministre de référendum sur la liberté de mouvement*
 
 ---
 
-### Section 17
+### Section 24
 
 **🇬🇧 EN:** UK and EU officials to discuss freedom of movement
 
@@ -145,7 +201,7 @@
 
 ---
 
-### Section 18
+### Section 25
 
 **🇬🇧 EN:** Brexit referendum 'possible' in Labour election manifesto, says Burnham
 

@@ -1,7 +1,7 @@
 # 'Fascinating' rare beetle found in Wales again after 60 years
 
 **BBC Original Link:** [https://www.bbc.co.uk/news/articles/cry8317pdp5yo?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cry8317pdp5yo?at_medium=RSS&at_campaign=rss)  
-**Published:** Sat, 31 Oct 2026 22:07:56 GMT  
+**Published:** Sun, 01 Nov 2026 18:04:52 GMT  
 
 ---
 
@@ -11,25 +11,25 @@
 
 ### Section 1
 
-**🇬🇧 EN:** Experts praised the discovery as a positive sign for the species future
+**🇬🇧 EN:** Oil beetle is a general group name for beetles in the family
 
-**🇫🇷 FR:** *Les experts ont salué la découverte comme un signe positif pour l'avenir de l'espèce.*
+**🇫🇷 FR:** *Le coléoptère à huile est un nom général de groupe pour les coléoptères de la famille*
 
 ---
 
 ### Section 2
 
-**🇬🇧 EN:** A rare species of beetle has been found in Pembrokeshire after being missing from Wales for 60 years.
+**🇬🇧 EN:** A rare species of beetle has been found in Pembrokeshire after not being seen in Wales for 60 years.
 
-**🇫🇷 FR:** *Une espèce rare d'épineuse a été retrouvée dans le Pembrokeshire après avoir été disparu du Pays de Galles pendant 60 ans.*
+**🇫🇷 FR:** *Une espèce rare d'épineuse a été découverte dans le Pembrokeshire après avoir été inexistante au Pays de Galles pendant 60 ans.*
 
 ---
 
 ### Section 3
 
-**🇬🇧 EN:** The Short-Necked Oil Beetle are dependent on solitary bees for its lifecycle and need a particular habitat to survive, with thick vegetation for shelter and dense flower coverage both essential.
+**🇬🇧 EN:** The Short-Necked Oil Beetle is named after the adult beetles' stubby shape and its ability to secrete an oily yellow-orange substance from its knee joints when alarmed.
 
-**🇫🇷 FR:** *Le chardon à cou court dépend des abeilles solitaires pour son cycle de vie et a besoin d'un habitat particulier pour survivre, avec une végétation épaisse pour se loger et une couverture floraleuse dense.*
+**🇫🇷 FR:** *Le charabouil à cou court porte le nom de la forme étouffée des charabouilles adultes et de sa capacité à sécréter une substance jaune-orange grasse de ses articulations du genou lorsqu'elles sont alarmées.*
 
 ---
 
@@ -51,29 +51,13 @@
 
 ### Section 6
 
-**🇬🇧 EN:** Last year, the survey at Castlemartin found only dead adults of this particular beetle, raising concerns about the future of this species and its continued presence on the site.
+**🇬🇧 EN:** Experts praised the discovery as a positive sign for the species future
 
-**🇫🇷 FR:** *L'année dernière, l'enquête de Castlemartin n'a révélé que des adultes morts de ce coléoptère particulier, ce qui soulève des inquiétudes quant à l'avenir de cette espèce et à sa présence continue sur le site.*
+**🇫🇷 FR:** *Les experts ont salué la découverte comme un signe positif pour l'avenir de l'espèce.*
 
 ---
 
 ### Section 7
-
-**🇬🇧 EN:** But this year, after three years of searching, experts discovered larvae of the beetle on a small area of the site, suggesting that surveyors had managed to find some of the hatchlings from a larger batch of immature beetles.
-
-**🇫🇷 FR:** *Mais cette année, après trois ans de recherche, des experts ont découvert des larves de ce scarabée sur une petite zone du site, ce qui suggère que les géologues ont réussi à trouver certains des petits d'un lot plus grand d'insectes immatures.*
-
----
-
-### Section 8
-
-**🇬🇧 EN:** The number and distribution of the beetle larvae seen also supported this, according to Natural Resources Wales (NRW).
-
-**🇫🇷 FR:** *Le nombre et la distribution des larves des insectes observées ont également soutenu cette conclusion, selon Natural Resources Wales (NRW).*
-
----
-
-### Section 9
 
 **🇬🇧 EN:** The Short-Necked Oil Beetle is classed as nationally rare within Great Britain and listed as vulnerable on the IUCN Red List, external.
 
@@ -81,15 +65,47 @@
 
 ---
 
+### Section 8
+
+**🇬🇧 EN:** It is dependent on solitary bees for its lifecycle and needs a particular habitat to survive, with thick vegetation for shelter and dense flower coverage both essential.
+
+**🇫🇷 FR:** *Il dépend des abeilles solitaires pour son cycle de vie et a besoin d'un habitat particulier pour survivre, avec une végétation épaisse pour se loger et une couverture florale dense.*
+
+---
+
+### Section 9
+
+**🇬🇧 EN:** The larvae of Short-Necked Oil Beetles lurk among flowers, waiting for a passing bee to carry them back to its nest, where they feed on the pollen the bee has collected.
+
+**🇫🇷 FR:** *Les larves des chardons à cou court se cachent parmi les fleurs, en attendant qu'une abeille les ramène à son nid, où elles se nourrissent du pollen qu'elle a recueilli.*
+
+---
+
 ### Section 10
 
-**🇬🇧 EN:** Oil beetle is a general group name for beetles in the family
+**🇬🇧 EN:** Last year, the survey at Castlemartin found only dead adults of this particular beetle, raising concerns about the future of this species and its continued presence on the site.
 
-**🇫🇷 FR:** *Le coléoptère à huile est un nom général de groupe pour les coléoptères de la famille*
+**🇫🇷 FR:** *L'année dernière, l'enquête de Castlemartin n'a révélé que des adultes morts de ce coléoptère particulier, ce qui soulève des inquiétudes quant à l'avenir de cette espèce et à sa présence continue sur le site.*
 
 ---
 
 ### Section 11
+
+**🇬🇧 EN:** But this year, after three years of searching, experts discovered larvae of the beetle on a small area of the site, suggesting that surveyors had managed to find some of the hatchlings from a larger batch of immature beetles.
+
+**🇫🇷 FR:** *Mais cette année, après trois ans de recherche, des experts ont découvert des larves de ce scarabée sur une petite zone du site, ce qui suggère que les géologues ont réussi à trouver certains des petits d'un lot plus grand d'insectes immatures.*
+
+---
+
+### Section 12
+
+**🇬🇧 EN:** The number and distribution of the beetle larvae seen also supported this, according to Natural Resources Wales (NRW).
+
+**🇫🇷 FR:** *Le nombre et la distribution des larves des insectes observées ont également soutenu cette conclusion, selon Natural Resources Wales (NRW).*
+
+---
+
+### Section 13
 
 **🇬🇧 EN:** They can typically be found from March to June in flower-rich coastal grassland and sand dune habitat, and are most active on warm, sunny days.
 
@@ -97,15 +113,15 @@
 
 ---
 
-### Section 12
+### Section 14
 
-**🇬🇧 EN:** Adults can grow up toe 24mm (0.9in) in length and the life span of an adult is approximately one year.
+**🇬🇧 EN:** Adults can grow up to 24mm (0.9in) in length and the life span of an adult is approximately one year.
 
-**🇫🇷 FR:** *Les adultes peuvent atteindre 24 mm de longueur et la durée de vie d'un adulte est d'environ un an.*
+**🇫🇷 FR:** *Les adultes peuvent atteindre 24 mm (0,9 pouces) de longueur et la durée de vie d'un adulte est d'environ un an.*
 
 ---
 
-### Section 13
+### Section 15
 
 **🇬🇧 EN:** NRW said these conditions mean there are only a handful of suitable sites in the UK.
 
@@ -113,7 +129,7 @@
 
 ---
 
-### Section 14
+### Section 16
 
 **🇬🇧 EN:** They were rediscovered in Devon in 2006 and on the Isle of Coll, in Scotland, in 2009. Since then, populations have been found on Tiree, Islay, Barra and Uist.
 
@@ -121,7 +137,7 @@
 
 ---
 
-### Section 15
+### Section 17
 
 **🇬🇧 EN:** Castlemartin Range, in Pembrokeshire, is currently the only place in Wales where the species can be found and it is being consistently surveyed by conservationists.
 
@@ -129,7 +145,7 @@
 
 ---
 
-### Section 16
+### Section 18
 
 **🇬🇧 EN:** The project is part of Wales's "flagship species recovery programme", said NRW, which works to conserve the Short-Necked Oil Beetle Sand other species that share similar habitats.
 
@@ -137,7 +153,7 @@
 
 ---
 
-### Section 17
+### Section 19
 
 **🇬🇧 EN:** Hobbs described the Short-Necked Oil Beetle as an "amazing creature" and said their work needed to consider the "needs of several species to be effective".
 
@@ -145,7 +161,7 @@
 
 ---
 
-### Section 18
+### Section 20
 
 **🇬🇧 EN:** She thanked their partners and volunteers for their continued support, despite having two years without a larval sighting.
 
@@ -153,7 +169,7 @@
 
 ---
 
-### Section 19
+### Section 21
 
 **🇬🇧 EN:** "We look forward to the continued management of the site so that this amazing species can survive now and into the future."
 
@@ -161,7 +177,7 @@
 
 ---
 
-### Section 20
+### Section 22
 
 **🇬🇧 EN:** Ex-Top Gear host Richard Hammond's 'brave' new Welsh life wild swimming and running
 
@@ -169,7 +185,7 @@
 
 ---
 
-### Section 21
+### Section 23
 
 **🇬🇧 EN:** Toddler heads to US for cancer treatment as family given 'glimmer of hope'
 
@@ -177,7 +193,7 @@
 
 ---
 
-### Section 22
+### Section 24
 
 **🇬🇧 EN:** Man, 38, found with 'homemade petrol bomb' charged
 

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>'Rok' solid recognition for Slovenian space scientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>'Rok' solid recognition for Slovenian space scientist</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 01 Nov 2026 06:35:37 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqx283v54zd6o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Two men from the Armagh Planetarium and Observatory have had asteroids named in their honour in recognition of their work.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le Dr Rok Nežič dit qu'il ne peut pas croire qu'il ait été choisi pour un astéroïde qui porte son nom.</p>
+            <span class="english-block">Dr Rok Nežič says he can't believe that he's been chosen to have an asteroid named after him</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">En tant qu'enfant grandissant en Slovénie en 1999, le Dr Rok Nežič ne pouvait pas savoir qu'un astéroïde découvert au Nouveau-Mexique cette année-là serait nommé en son honneur près de trois décennies plus tard.</p>
+            <span class="english-block">As a child growing up in Slovenia in 1999, Dr Rok Nežič couldn't have known that an asteroid that was discovered in New Mexico that year would be named after him almost three decades later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le comté d'Orchard est peut-être le plus connu pour ses pommes, mais pour Nežič, la véritable attraction était l'astronomie.</p>
+            <span class="english-block">The Orchard County may be best known for its apples, but for Nežič the real attraction was astronomy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Il est arrivé pour la première fois à l'observatoire et au planétarium d'Armagh (AOP) en 2015 pour compléter son doctorat en physique spatiale et climatique, et il y est resté depuis.</p>
+            <span class="english-block">He first arrived at Armagh Observatory and Planetarium (AOP) in 2015 to complete his doctorate in space and climate physics, and has remained there ever since.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Plus d'une décennie plus tard, il est l'un des deux employés de l'AOP à avoir récemment été choisi pour avoir un corps céleste nommé d'après eux.</p>
+            <span class="english-block">More than a decade on, he is one of two AOP employees to have recently been chosen to have a celestial body named after them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Nežič, qui travaille au planétarium en tant qu'agent de visites et de sensibilisation, a déclaré qu'il pensait que c'était " si cool " quand il a appris que les astéroïdes peuvent être nommés d'après les gens.</p>
+            <span class="english-block">Nežič, who works at the planetarium as a tours and outreach officer, said he thought it was "so cool" when he learned that asteroids can be named after people.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">S'adressant à BBC News NI, Nežič a déclaré qu'il souhaitait " pouvoir y arriver un jour " et, maintenant qu'il l'a fait, il l'a décrit comme un " rêve devenu réalité ".</p>
+            <span class="english-block">Speaking to BBC News NI, Nežič said he wished he "could get there some day" and, now that he has, he described it as "a dream come true".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">"Je ne sais pas comment le croire moi-même", a-t-il admis.</p>
+            <span class="english-block">"I'm not sure how to believe it myself,” he admitted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il explique qu'un astéroïde est "un petit rocher dans l'espace" par rapport aux planètes, et que son nom est (20560) Nežič., extérieur</p>
+            <span class="english-block">He explains that an asteroid is "a smallish rock in space" compared to planets, and that his one is named (20560) Nežič., external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">"C'est son nom officiel, donc le numéro qui y est dit vous indique essentiellement l'ordre de découverte".</p>
+            <span class="english-block">"That's its official name, so the number there tells you basically the order of discovery."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Il a expliqué que l'aspect de la planète est actuellement " assise en toute sécurité dans la ceinture d'astéroïdes et tourne autour du Soleil, tout comme nous le faisons actuellement ".</p>
+            <span class="english-block">It is currently "sitting safely out in the asteroid belt and just going around the Sun, just like we are", he explained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Les gens peuvent visiter le planétarium pour apprendre sur l'espace</p>
+            <span class="english-block">People can visit the planetarium to learn about space</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Le processus de nommage des petits corps du système solaire est régi par l'Union astronomique internationale, externe.</p>
+            <span class="english-block">The naming process for small bodies in the solar system is governed by the International Astronomical Union, external. Asteroids can be named by their discoverers once their orbits are sufficiently known.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">L'astéroïde de Nežič est de 10,9 km de diamètre, tandis que celui de son collègue Shane Kelly est de 15,6 km.</p>
+            <span class="english-block">Nežič's asteroid is 10.9km across, while that belonging to his colleague Shane Kelly is 15.6km.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">"Les deux sont en fait assez grands pour autant que ces astéroïdes qui portent le nom des gens ont tendance à l'être, parce que la plupart des très grands ont été découverts en premier", a déclaré Nežič.</p>
+            <span class="english-block">"They're both actually quite large as far as these asteroids that are named after people tend to be, because most of the really large ones were discovered first," Nežič said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"Ils ont donc été nommés il y a longtemps, et maintenant nous en trouvons de plus en plus petits".</p>
+            <span class="english-block">"So they were named a long time ago, and now we're finding smaller and smaller ones."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">L'astéroïde de Nežič a été découvert par "l'une des grandes missions", a-t-il déclaré.</p>
+            <span class="english-block">Nežič's asteroid was discovered by "one of the big missions", he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">"C'est une mission terrestre dans ce cas, qui cherche beaucoup d'astéroïdes, essentiellement, parce que plus nous en savons sur eux, plus nous savons où ils vont, plus nous savons lesquels ne nous frappent pas, y compris le mien et Shane".</p>
+            <span class="english-block">"This is an Earth-based mission in this case, which is looking for lots of asteroids, essentially, because the more we know about them, the more we know where they're going, the more we know which ones are not hitting us, including mine and Shane's."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Le météorite du Campo del Cielo exposé au planétarium</p>
+            <span class="english-block">The Campo del Cielo Meteorite on display at the planetarium</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Pour être considéré comme un astéroïde homonyme, quelqu'un doit vous nommer, et dans le cas de Nežič, deux personnes ont mis son nom devant.</p>
+            <span class="english-block">To be considered for an asteroid namesake, someone must nominate you, and in Nežič's case, two people put his name forward.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Il ne sait pas qui l'a choisi pour l'honneur, mais son superviseur de doctorat et un ancien astronomie de l'observatoire l'ont nommé.</p>
+            <span class="english-block">He doesn't know who chose him for the honour - but his PhD supervisor, and a former astronomer from the observatory nominated him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Nežič se concentrait sur les comètes avec une lumière polarisée pour ses études et des années plus tard parle encore de l'espace.</p>
+            <span class="english-block">Nežič focused on comets with polarised light for his studies and years later is "still" talking about space.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Le planétarium et l'observatoire " dépassent notre poids ", a- t- il déclaré.</p>
+            <span class="english-block">The planetarium and observatory is "punching well above our weight", he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">" Même si nous sommes une petite institution, les gens qui travaillent ici peuvent se concentrer sur la recherche si bien que nous avons vraiment des chercheurs de premier plan dans le domaine. "</p>
+            <span class="english-block">"Even though we're a small institution, people who work here can just focus on the research so much that we have really top researchers in the field."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Shane Kelly fait des lectures à l'observatoire d'Armagh depuis 27 ans.</p>
+            <span class="english-block">Shane Kelly has been taking readings at Armagh Observatory for 27 years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">L'observatoire voisin du planétarium surveille la météo depuis plus de 230 ans.</p>
+            <span class="english-block">The planetarium's neighbouring observatory has monitored the weather for more than than 230 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Shane Kelly, qui est l'observateur météorologique principal de l'Observatoire d'Armagh, a été nommé par le directeur émérite.</p>
+            <span class="english-block">Shane Kelly, who is the principal meteorological observer at Armagh Observatory, was nominated by the emeritus director.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Depuis 1999, son rôle consiste à ouvrir ce que l'on appelle l'écran Stevenson qui contient des thermomètres sensibles, avant d'enregistrer ses lectures pour la journée dans le livre à la main.</p>
+            <span class="english-block">Since 1999, his role involves opening what is known as the Stevenson screen which holds sensitive thermometers, before noting down his readings for the day into the handwritten ledger.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Sa main a introduit beaucoup plus de lignes de données que l'une de ses 17 prédécesseurs et son astéroïde s'appelle (7050) Shanekelly.</p>
+            <span class="english-block">His hand has entered far more lines of data than any of his 17 predecessors and his asteroid is called (7050) Shanekelly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">L'observatoire d'Armagh détient des données météorologiques datant de 1795</p>
+            <span class="english-block">Armagh Observatory holds weather records dating back to 1795</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Kelly " fait cela depuis 27 ans ", a déclaré le directeur de l'institut.</p>
+            <span class="english-block">Kelly has been "doing this for 27 years", the institute's director said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">"Il a probablement observé la météo plus que quiconque dans le monde, je le soupçonne", a déclaré le professeur Michael Burton.</p>
+            <span class="english-block">"He's probably observed the weather more than anyone else in the world, I suspect,"  Prof Michael Burton said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">"C'est donc en reconnaissance de la contribution de Shane à l'observatoire et à la mesure du temps".</p>
+            <span class="english-block">"So this is in recognition of Shane's contribution to the observatory and to the measuring of the weather."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Le professeur Michael Burton a dit que c'était " fantastique " que ces deux hommes aient été choisis</p>
+            <span class="english-block">Prof Michael Burton said it's "fantastic" that the two men have been chosen</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">L'astéroïde de Kelly a été découvert au Chili, en dehors en 1982.</p>
+            <span class="english-block">Kelly's asteroid was discovered in Chile, external in 1982.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Burton a dit que c'était " fantastique " que les deux membres de l'équipe aient été récompensés de cette façon.</p>
+            <span class="english-block">Burton said it's "fantastic" that the two members of the team have been awarded in this way.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">"Il y a maintenant 29 astéroïdes qui ont une certaine connexion avec l'observatoire et le planétarium ici à Armagh".</p>
+            <span class="english-block">"There are now 29 asteroids which have some connection with the observatory and planetarium here in Armagh."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">L'AOP prévoit maintenant de reconnaître leurs réalisations avec un nouveau dôme LED, qui montrera les astéroïdes et leurs orbites.</p>
+            <span class="english-block">The AOP now plans on recognising their achievements with a new LED dome, which will show the asteroids and their orbits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">L'observatoire marque 230 ans de météo enregistrée</p>
+            <span class="english-block">Observatory marks 230 years of  recording weather</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">"J'ai été étonné" - les fans qui ont entendu l'album inédit de Phoebe Bridgers dans un planétarium</p>
+            <span class="english-block">'I was blown away' - the fans who heard Phoebe Bridgers' unreleased album in a planetarium</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Le scientifique qui a fui l'Armée rouge, transformant le déplacement en découverte</p>
+            <span class="english-block">The scientist who fled the Red Army, turning displacement into discovery</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

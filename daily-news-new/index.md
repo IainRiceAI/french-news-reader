@@ -1,179 +1,179 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-11-01 06:00:55  
+Generated on: 2026-11-02 06:00:58  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Shops looted as German cost of living protests turn violent**
-   - **Published:** Sun, 01 Nov 2026 01:59:57 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Shops_looted_as_German_cost_of_living_pr.md](top-stories_article_1_Shops_looted_as_German_cost_of_living_pr.md)
+1. **Five teenagers stabbed at Halloween party**
+   - **Published:** Sun, 01 Nov 2026 15:01:31 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Five_teenagers_stabbed_at_Halloween_part.md](top-stories_article_1_Five_teenagers_stabbed_at_Halloween_part.md)
 
-2. **Laura Kuenssberg: Healey risks breaking minimum wage promise for younger workers**
-   - **Published:** Sat, 31 Oct 2026 17:26:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Laura_Kuenssberg_Healey_risks_breaking_m.md](top-stories_article_2_Laura_Kuenssberg_Healey_risks_breaking_m.md)
+2. **'Like a missile coming down' - Nine killed in fiery Florida jet crash**
+   - **Published:** Mon, 02 Nov 2026 02:59:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Like_a_missile_coming_down_-_Nine_killed.md](top-stories_article_2_Like_a_missile_coming_down_-_Nine_killed.md)
 
-3. **'We came back from hell', say Ukrainians after years in Russia-occupied front-line city**
-   - **Published:** Sat, 31 Oct 2026 19:22:26 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_We_came_back_from_hell_say_Ukrainians_af.md](top-stories_article_3_We_came_back_from_hell_say_Ukrainians_af.md)
+3. **How a Democrat in Michigan rocked the party days before the US midterms**
+   - **Published:** Mon, 02 Nov 2026 04:40:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_How_a_Democrat_in_Michigan_rocked_the_pa.md](top-stories_article_3_How_a_Democrat_in_Michigan_rocked_the_pa.md)
 
-4. **Reeves says UK's future should be inside the EU**
-   - **Published:** Sun, 01 Nov 2026 02:57:34 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Reeves_says_UKs_future_should_be_inside_.md](top-stories_article_4_Reeves_says_UKs_future_should_be_inside_.md)
+4. **Democrats have high hopes for midterms, but polls have let them down before**
+   - **Published:** Mon, 02 Nov 2026 00:25:12 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Democrats_have_high_hopes_for_midterms_b.md](top-stories_article_4_Democrats_have_high_hopes_for_midterms_b.md)
 
-5. **Who are the real winners of Celebrity Traitors?**
-   - **Published:** Sun, 01 Nov 2026 00:06:01 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Who_are_the_real_winners_of_Celebrity_Tr.md](top-stories_article_5_Who_are_the_real_winners_of_Celebrity_Tr.md)
+5. **Binance users withdraw $3.6bn after record crypto hack**
+   - **Published:** Mon, 02 Nov 2026 03:32:14 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Binance_users_withdraw_36bn_after_record.md](top-stories_article_5_Binance_users_withdraw_36bn_after_record.md)
 
-6. **Watch: Heidi Klum as giant severed hand for Halloween bash**
-   - **Published:** Sun, 01 Nov 2026 05:26:02 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Watch_Heidi_Klum_as_giant_severed_hand_f.md](top-stories_article_6_Watch_Heidi_Klum_as_giant_severed_hand_f.md)
+6. **Antonelli becomes world champion as Verstappen wins in Mexico**
+   - **Published:** Sun, 01 Nov 2026 23:20:54 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Antonelli_becomes_world_champion_as_Vers.md](top-stories_article_6_Antonelli_becomes_world_champion_as_Vers.md)
 
-7. **Hamilton takes first pole for Ferrari at Mexico City Grand Prix**
-   - **Published:** Sun, 01 Nov 2026 01:37:50 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Hamilton_takes_first_pole_for_Ferrari_at.md](top-stories_article_7_Hamilton_takes_first_pole_for_Ferrari_at.md)
+7. **A&E warning system to flag sick children deteriorating quickly**
+   - **Published:** Mon, 02 Nov 2026 00:51:24 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_AE_warning_system_to_flag_sick_children_.md](top-stories_article_7_AE_warning_system_to_flag_sick_children_.md)
 
-8. **No more washing up: How Airbnb's new house rules have divided hosts and guests**
-   - **Published:** Sun, 01 Nov 2026 00:17:05 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_No_more_washing_up_How_Airbnbs_new_house.md](top-stories_article_8_No_more_washing_up_How_Airbnbs_new_house.md)
+8. **King to address slavery in Antigua as PM says he is open to possible UK apology**
+   - **Published:** Mon, 02 Nov 2026 02:46:55 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_King_to_address_slavery_in_Antigua_as_PM.md](top-stories_article_8_King_to_address_slavery_in_Antigua_as_PM.md)
 
 ---
 
 ### Section: WORLD
 
-1. **Shops looted as German cost of living protests turn violent**
-   - **Published:** Sun, 01 Nov 2026 01:59:57 GMT
-   - **Read Parallel Translation:** [world_article_9_Shops_looted_as_German_cost_of_living_pr.md](world_article_9_Shops_looted_as_German_cost_of_living_pr.md)
+1. **Ukraine air raid app apparently hacked as users receive false radiation threat, Air Force says**
+   - **Published:** Mon, 02 Nov 2026 01:18:27 GMT
+   - **Read Parallel Translation:** [world_article_9_Ukraine_air_raid_app_apparently_hacked_a.md](world_article_9_Ukraine_air_raid_app_apparently_hacked_a.md)
 
-2. **'We came back from hell', say Ukrainians after years in Russia-occupied front-line city**
-   - **Published:** Sat, 31 Oct 2026 19:22:26 GMT
-   - **Read Parallel Translation:** [world_article_10_We_came_back_from_hell_say_Ukrainians_af.md](world_article_10_We_came_back_from_hell_say_Ukrainians_af.md)
+2. **Russian strikes cut power to thousands in Ukraine as Kherson ceasefire ends**
+   - **Published:** Sun, 01 Nov 2026 21:55:01 GMT
+   - **Read Parallel Translation:** [world_article_10_Russian_strikes_cut_power_to_thousands_i.md](world_article_10_Russian_strikes_cut_power_to_thousands_i.md)
 
-3. **Ukrainian evacuees reunite with family after years trapped in Russia-occupied city**
-   - **Published:** Sat, 31 Oct 2026 17:53:35 GMT
-   - **Read Parallel Translation:** [world_article_11_Ukrainian_evacuees_reunite_with_family_a.md](world_article_11_Ukrainian_evacuees_reunite_with_family_a.md)
+3. **Democrat endorses Republican candidate in key Michigan Senate race as party spat erupts**
+   - **Published:** Mon, 02 Nov 2026 01:45:42 GMT
+   - **Read Parallel Translation:** [world_article_11_Democrat_endorses_Republican_candidate_i.md](world_article_11_Democrat_endorses_Republican_candidate_i.md)
 
-4. **Crypto firm Binance covers 90% of losses after $6.3bn hack**
-   - **Published:** Sat, 31 Oct 2026 22:11:45 GMT
-   - **Read Parallel Translation:** [world_article_12_Crypto_firm_Binance_covers_90_of_losses_.md](world_article_12_Crypto_firm_Binance_covers_90_of_losses_.md)
+4. **Israeli strikes in Gaza kill eight including child, hospitals say**
+   - **Published:** Sun, 01 Nov 2026 17:06:32 GMT
+   - **Read Parallel Translation:** [world_article_12_Israeli_strikes_in_Gaza_kill_eight_inclu.md](world_article_12_Israeli_strikes_in_Gaza_kill_eight_inclu.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Crypto giant Binance attempting to recover $6.3bn stolen in hack linked to North Korea**
-   - **Published:** Fri, 30 Oct 2026 21:13:14 GMT
-   - **Read Parallel Translation:** [business_article_13_Crypto_giant_Binance_attempting_to_recov.md](business_article_13_Crypto_giant_Binance_attempting_to_recov.md)
+1. **Binance users withdraw $3.6bn after record crypto hack**
+   - **Published:** Mon, 02 Nov 2026 03:32:14 GMT
+   - **Read Parallel Translation:** [business_article_13_Binance_users_withdraw_36bn_after_record.md](business_article_13_Binance_users_withdraw_36bn_after_record.md)
 
-2. **US tech stocks see sharp falls as AI spending nears $1tn**
-   - **Published:** Fri, 30 Oct 2026 20:34:46 GMT
-   - **Read Parallel Translation:** [business_article_14_US_tech_stocks_see_sharp_falls_as_AI_spe.md](business_article_14_US_tech_stocks_see_sharp_falls_as_AI_spe.md)
+2. **Don't get caught out by new Buy Now Pay Later rules**
+   - **Published:** Sun, 01 Nov 2026 23:34:49 GMT
+   - **Read Parallel Translation:** [business_article_14_Dont_get_caught_out_by_new_Buy_Now_Pay_L.md](business_article_14_Dont_get_caught_out_by_new_Buy_Now_Pay_L.md)
 
-3. **What we know about Binance's $6.3bn hack**
-   - **Published:** Fri, 30 Oct 2026 12:27:28 GMT
-   - **Read Parallel Translation:** [business_article_15_What_we_know_about_Binances_63bn_hack.md](business_article_15_What_we_know_about_Binances_63bn_hack.md)
+3. **Thousands of jobs at Virgin Media O2 to be cut**
+   - **Published:** Sun, 01 Nov 2026 16:57:14 GMT
+   - **Read Parallel Translation:** [business_article_15_Thousands_of_jobs_at_Virgin_Media_O2_to_.md](business_article_15_Thousands_of_jobs_at_Virgin_Media_O2_to_.md)
 
-4. **City of London chief tops UK Black Powerlist**
-   - **Published:** Fri, 30 Oct 2026 18:00:24 GMT
-   - **Read Parallel Translation:** [business_article_16_City_of_London_chief_tops_UK_Black_Power.md](business_article_16_City_of_London_chief_tops_UK_Black_Power.md)
+4. **No more washing up: How Airbnb's new house rules have divided hosts and guests**
+   - **Published:** Sun, 01 Nov 2026 00:17:05 GMT
+   - **Read Parallel Translation:** [business_article_16_No_more_washing_up_How_Airbnbs_new_house.md](business_article_16_No_more_washing_up_How_Airbnbs_new_house.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **These firms you've never heard of are feeding fears the AI bubble could burst**
+1. **Binance users withdraw $3.6bn after record crypto hack**
+   - **Published:** Mon, 02 Nov 2026 03:32:14 GMT
+   - **Read Parallel Translation:** [technology_article_17_Binance_users_withdraw_36bn_after_record.md](technology_article_17_Binance_users_withdraw_36bn_after_record.md)
+
+2. **These firms you've never heard of are feeding fears the AI bubble could burst**
    - **Published:** Sun, 01 Nov 2026 01:37:26 GMT
-   - **Read Parallel Translation:** [technology_article_17_These_firms_youve_never_heard_of_are_fee.md](technology_article_17_These_firms_youve_never_heard_of_are_fee.md)
+   - **Read Parallel Translation:** [technology_article_18_These_firms_youve_never_heard_of_are_fee.md](technology_article_18_These_firms_youve_never_heard_of_are_fee.md)
 
-2. **Why North Korea's 'elite' hackers are the prime suspect in major Binance hack**
+3. **Why North Korea's 'elite' hackers are the prime suspect in major Binance hack**
    - **Published:** Sat, 31 Oct 2026 02:12:19 GMT
-   - **Read Parallel Translation:** [technology_article_18_Why_North_Koreas_elite_hackers_are_the_p.md](technology_article_18_Why_North_Koreas_elite_hackers_are_the_p.md)
+   - **Read Parallel Translation:** [technology_article_19_Why_North_Koreas_elite_hackers_are_the_p.md](technology_article_19_Why_North_Koreas_elite_hackers_are_the_p.md)
 
-3. **US tech stocks see sharp falls as AI spending nears $1tn**
+4. **US tech stocks see sharp falls as AI spending nears $1tn**
    - **Published:** Fri, 30 Oct 2026 20:34:46 GMT
-   - **Read Parallel Translation:** [technology_article_19_US_tech_stocks_see_sharp_falls_as_AI_spe.md](technology_article_19_US_tech_stocks_see_sharp_falls_as_AI_spe.md)
-
-4. **Google value plunges by $500bn as its own AI search hits ad sales**
-   - **Published:** Fri, 30 Oct 2026 12:04:02 GMT
-   - **Read Parallel Translation:** [technology_article_20_Google_value_plunges_by_500bn_as_its_own.md](technology_article_20_Google_value_plunges_by_500bn_as_its_own.md)
+   - **Read Parallel Translation:** [technology_article_20_US_tech_stocks_see_sharp_falls_as_AI_spe.md](technology_article_20_US_tech_stocks_see_sharp_falls_as_AI_spe.md)
 
 ---
 
 ### Section: SCIENCE
 
 1. **'Fascinating' rare beetle found in Wales again after 60 years**
-   - **Published:** Sat, 31 Oct 2026 22:07:56 GMT
+   - **Published:** Sun, 01 Nov 2026 18:04:52 GMT
    - **Read Parallel Translation:** [science_article_21_Fascinating_rare_beetle_found_in_Wales_a.md](science_article_21_Fascinating_rare_beetle_found_in_Wales_a.md)
 
-2. **Bute House protested by environmental campaigners**
-   - **Published:** Sat, 31 Oct 2026 13:41:07 GMT
-   - **Read Parallel Translation:** [science_article_22_Bute_House_protested_by_environmental_ca.md](science_article_22_Bute_House_protested_by_environmental_ca.md)
+2. **Spill from vandalised home oil tank kills 13 birds**
+   - **Published:** Sun, 01 Nov 2026 08:57:56 GMT
+   - **Read Parallel Translation:** [science_article_22_Spill_from_vandalised_home_oil_tank_kill.md](science_article_22_Spill_from_vandalised_home_oil_tank_kill.md)
 
-3. **Global nature talks reach deal but money remains an issue**
-   - **Published:** Sat, 31 Oct 2026 01:27:05 GMT
-   - **Read Parallel Translation:** [science_article_23_Global_nature_talks_reach_deal_but_money.md](science_article_23_Global_nature_talks_reach_deal_but_money.md)
+3. **Oil tank vandalism results in waterfowl park 'nightmare'**
+   - **Published:** Sun, 01 Nov 2026 06:42:13 GMT
+   - **Read Parallel Translation:** [science_article_23_Oil_tank_vandalism_results_in_waterfowl_.md](science_article_23_Oil_tank_vandalism_results_in_waterfowl_.md)
 
-4. **UK could see 10 days without rain after 'wettest week in two years'**
-   - **Published:** Sat, 31 Oct 2026 00:06:31 GMT
-   - **Read Parallel Translation:** [science_article_24_UK_could_see_10_days_without_rain_after_.md](science_article_24_UK_could_see_10_days_without_rain_after_.md)
+4. **'Rok' solid recognition for Slovenian space scientist**
+   - **Published:** Sun, 01 Nov 2026 06:35:37 GMT
+   - **Read Parallel Translation:** [science_article_24_Rok_solid_recognition_for_Slovenian_spac.md](science_article_24_Rok_solid_recognition_for_Slovenian_spac.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Biggest fibre boost could be scraps in your bin, experts say**
+1. **A&E warning system to flag sick children deteriorating quickly**
+   - **Published:** Mon, 02 Nov 2026 00:51:24 GMT
+   - **Read Parallel Translation:** [health_article_25_AE_warning_system_to_flag_sick_children_.md](health_article_25_AE_warning_system_to_flag_sick_children_.md)
+
+2. **Biggest fibre boost could be scraps in your bin, experts say**
    - **Published:** Fri, 30 Oct 2026 00:40:30 GMT
-   - **Read Parallel Translation:** [health_article_26_Biggest_fibre_boost_could_be_scraps_in_y.md](health_article_26_Biggest_fibre_boost_could_be_scraps_in_y.md)
+   - **Read Parallel Translation:** [health_article_27_Biggest_fibre_boost_could_be_scraps_in_y.md](health_article_27_Biggest_fibre_boost_could_be_scraps_in_y.md)
 
-2. **I didn't know I was lacking in vitamin D until I collapsed at work**
+3. **I didn't know I was lacking in vitamin D until I collapsed at work**
    - **Published:** Fri, 30 Oct 2026 00:29:05 GMT
-   - **Read Parallel Translation:** [health_article_27_I_didnt_know_I_was_lacking_in_vitamin_D_.md](health_article_27_I_didnt_know_I_was_lacking_in_vitamin_D_.md)
-
-3. **Hundreds of GP practices lose online services after collapse of tech firm**
-   - **Published:** Thu, 29 Oct 2026 17:13:40 GMT
-   - **Read Parallel Translation:** [health_article_28_Hundreds_of_GP_practices_lose_online_ser.md](health_article_28_Hundreds_of_GP_practices_lose_online_ser.md)
+   - **Read Parallel Translation:** [health_article_28_I_didnt_know_I_was_lacking_in_vitamin_D_.md](health_article_28_I_didnt_know_I_was_lacking_in_vitamin_D_.md)
 
 ---
 
 ### Section: POLITICS
 
 1. **Laura Kuenssberg: Healey risks breaking minimum wage promise for younger workers**
-   - **Published:** Sat, 31 Oct 2026 17:26:29 GMT
+   - **Published:** Sun, 01 Nov 2026 11:05:40 GMT
    - **Read Parallel Translation:** [politics_article_29_Laura_Kuenssberg_Healey_risks_breaking_m.md](politics_article_29_Laura_Kuenssberg_Healey_risks_breaking_m.md)
 
 2. **Reeves says UK's future should be inside the EU**
-   - **Published:** Sun, 01 Nov 2026 02:57:34 GMT
+   - **Published:** Sun, 01 Nov 2026 10:47:03 GMT
    - **Read Parallel Translation:** [politics_article_30_Reeves_says_UKs_future_should_be_inside_.md](politics_article_30_Reeves_says_UKs_future_should_be_inside_.md)
 
-3. **Burnham 'open' to calls for slavery apology but not reparations**
-   - **Published:** Sat, 31 Oct 2026 13:28:40 GMT
-   - **Read Parallel Translation:** [politics_article_31_Burnham_open_to_calls_for_slavery_apolog.md](politics_article_31_Burnham_open_to_calls_for_slavery_apolog.md)
+3. **Green Party at 'crossroads', says former co-leader**
+   - **Published:** Sun, 01 Nov 2026 15:52:51 GMT
+   - **Read Parallel Translation:** [politics_article_31_Green_Party_at_crossroads_says_former_co.md](politics_article_31_Green_Party_at_crossroads_says_former_co.md)
 
-4. **Mahmood expected to announce changes to rules around indefinite leave to remain**
-   - **Published:** Sat, 31 Oct 2026 05:16:01 GMT
-   - **Read Parallel Translation:** [politics_article_32_Mahmood_expected_to_announce_changes_to_.md](politics_article_32_Mahmood_expected_to_announce_changes_to_.md)
+4. **Burnham 'open' to calls for slavery apology but not reparations**
+   - **Published:** Sat, 31 Oct 2026 13:28:40 GMT
+   - **Read Parallel Translation:** [politics_article_32_Burnham_open_to_calls_for_slavery_apolog.md](politics_article_32_Burnham_open_to_calls_for_slavery_apolog.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **'It's been killing me!' Celebrity Traitors winners relieved the secret is out**
-   - **Published:** Sat, 31 Oct 2026 16:49:18 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Its_been_killing_me_Celebrity_Traitors_w.md](entertainment_article_33_Its_been_killing_me_Celebrity_Traitors_w.md)
+1. **Who are the real winners of Celebrity Traitors?**
+   - **Published:** Sun, 01 Nov 2026 00:06:01 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Who_are_the_real_winners_of_Celebrity_Tr.md](entertainment_article_33_Who_are_the_real_winners_of_Celebrity_Tr.md)
 
-2. **The final reveal of the Celebrity Traitors**
-   - **Published:** Sat, 31 Oct 2026 02:20:46 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_The_final_reveal_of_the_Celebrity_Traito.md](entertainment_article_34_The_final_reveal_of_the_Celebrity_Traito.md)
+2. **From Maya as Sir Mo Farah to Heidi as her own left hand: The best Halloween looks**
+   - **Published:** Sun, 01 Nov 2026 08:09:26 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_From_Maya_as_Sir_Mo_Farah_to_Heidi_as_he.md](entertainment_article_34_From_Maya_as_Sir_Mo_Farah_to_Heidi_as_he.md)
 
-3. **Russell Brand accusers 'haunted' for years by alleged crimes, court hears**
+3. **Celebrity Traitors comes to a climax in nail-biting final**
+   - **Published:** Sat, 31 Oct 2026 10:54:56 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Celebrity_Traitors_comes_to_a_climax_in_.md](entertainment_article_35_Celebrity_Traitors_comes_to_a_climax_in_.md)
+
+4. **Russell Brand accusers 'haunted' for years by alleged crimes, court hears**
    - **Published:** Fri, 30 Oct 2026 15:49:25 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Russell_Brand_accusers_haunted_for_years.md](entertainment_article_35_Russell_Brand_accusers_haunted_for_years.md)
-
-4. **Sir Ian McKellen leads tributes to 'beloved actor' Sir Patrick Stewart after his death at 86**
-   - **Published:** Fri, 30 Oct 2026 12:43:46 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Sir_Ian_McKellen_leads_tributes_to_belov.md](entertainment_article_36_Sir_Ian_McKellen_leads_tributes_to_belov.md)
+   - **Read Parallel Translation:** [entertainment_article_36_Russell_Brand_accusers_haunted_for_years.md](entertainment_article_36_Russell_Brand_accusers_haunted_for_years.md)
 
 ---
 
