@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If hackers can take control of a supermarket freezer, how vulnerable is other tech?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>If hackers can take control of a supermarket freezer, how vulnerable is other tech?</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 02 Nov 2026 18:25:01 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ckpqg8lve73go?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Dozens of shops across European countries have been hit by a cyber-attack affecting their fridges.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les supermarchés européens ont été touchés par une cyberattaque présumée qui a affecté leurs réfrigérateurs et congélateurs, et a suscité des inquiétudes quant aux vulnérabilités du matériel connecté à Internet, des machines industrielles aux humble appareils ménagers.</p>
+            <span class="english-block">Supermarkets across Europe have been hit by a suspected cyber-attack affecting their fridges and freezers, and raising concern about the vulnerabilities of internet-connected hardware from industrial machinery to humble domestic appliances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Les appareils intelligents connectés à Internet peuvent inclure des réfrigérateurs, un chauffage central et même des machines à laver.</p>
+            <span class="english-block">Smart devices which are connected to the internet can include fridges, central heating, and even washing machines.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Et bien que cela les facilite à contrôler à distance, en théorie, tout appareil qui se connecte peut potentiellement être exploité par des acteurs malveillants.</p>
+            <span class="english-block">And while that makes them easier to control remotely, in theory, any device which goes online can potentially be exploited by malicious actors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Cependant, cela ne signifie pas que les pirates peuvent facilement prendre le contrôle de la technologie, et les grandes marques font généralement de grands efforts pour s'assurer que leur technologie est sécurisée.</p>
+            <span class="english-block">However, that doesn't mean hackers can easily take control of it, and big brands generally go to great lengths to make sure their tech is secure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Des exploits ont déjà été trouvés dans certains appareils. En 2015, des chercheurs ont démontré comment une vulnérabilité dans un réfrigérateur intelligent Samsung pourrait leur permettre d'intercepter le trafic Internet.</p>
+            <span class="english-block">Exploits have been found before in some devices. In 2015, researchers demonstrated how a vulnerability in a Samsung smart fridge could allow them to intercept internet traffic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Mais il n'y a aucune preuve que les appareils domestiques soient visés dans les cyberattaques qui ont ciblé les supermarchés en novembre.</p>
+            <span class="english-block">But there's no evidence domestic appliances are being targeted in the cyber-attacks which targeted supermarkets in November.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Ciaran Martin, ancien directeur général du Centre national de cybersécurité (NCSC) du Royaume-Uni, affirme que les fabricants doivent faire plus pour rendre les appareils connectés sécurisés.</p>
+            <span class="english-block">Ciaran Martin, former chief executive of the UK's National Cyber Security Centre (NCSC) says manufacturers needed to do more to make connected devices secure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">"Il y a beaucoup plus à demander aux grandes entreprises pour nous fournir des appareils et des produits plus sûrs en premier lieu", a-t-il déclaré.</p>
+            <span class="english-block">"There's a lot more that we need to demand of big tech to give us safer devices and products in the first place," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il a conseillé aux consommateurs de garder les appareils à jour et de permettre l'authentification multifactorielle chaque fois que possible.</p>
+            <span class="english-block">He advised consumers to keep devices updated and enable multi-factor authentication wherever possible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">"Je sais que c'est une douleur, mais ça ne prend que quelques secondes", a-t-il dit.</p>
+            <span class="english-block">"I know it's a pain, but it only takes a few seconds," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Depuis avril 2024, la loi britannique exige que les fabricants de certains appareils intelligents de consommation respectent des normes minimales de cybersécurité, y compris les exigences relatives aux mots de passe et aux mises à jour de sécurité.</p>
+            <span class="english-block">Since April 2024, UK law has required manufacturers of certain consumer smart devices to meet minimum cyber security standards, including requirements around passwords and security updates.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Le NCSC a déclaré qu'il travaillait avec des partenaires internationaux et l'industrie pour comprendre les incidents de supermarchés, mais qu'il ignorait l'impact sur le Royaume-Uni.</p>
+            <span class="english-block">The NCSC said it was working with international partners and industry to understand the supermarket incidents, but it was unaware of any impact on the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Cependant, des chercheurs de la cyberdéfense britannique ont identifié plus de 800 interfaces de réfrigération et de contrôle des bâtiments associées à des détaillants britanniques qui peuvent être accessibles via Internet public.</p>
+            <span class="english-block">However, researchers from UK Cyber Defence have identified more than 800 refrigeration and building-control interfaces associated with British retailers that can be accessed over the public internet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Cela ne signifie pas nécessairement qu'ils peuvent être piratés, mais cela pourrait les exposer à des attaquants qui exploitent des mots de passe faibles ou des vulnérabilités logicielles.</p>
+            <span class="english-block">That doesn't necessarily mean they can be hacked, but it could leave them exposed to attackers exploiting weak passwords or software vulnerabilities.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Le gouvernement a déjà tenu des discussions avec les grands détaillants alimentaires sur la résilience cybernétique, à la suite d'attaques antérieures contre les supermarchés.</p>
+            <span class="english-block">The government has already held talks with senior food retailers about cyber resilience, following earlier attacks on supermarkets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Helen Dickinson, directrice générale du Consortium britannique de détail, a déclaré que les cyberincidents sont une préoccupation majeure pour les détaillants, les entreprises travaillant aux côtés du NCSC pour partager des renseignements et renforcer leurs défenses.</p>
+            <span class="english-block">Helen Dickinson, chief executive of the British Retail Consortium, has said cyber incidents are a major concern for retailers, with businesses working alongside the NCSC to share intelligence and strengthen their defences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Ce n'est pas la première fois que des pirates ont soulevé des inquiétudes au sujet de l'impact sur l'approvisionnement alimentaire.</p>
+            <span class="english-block">It would not be the first time that hacks have raised concern about impact on food supply.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Lorsque les supermarchés britanniques M&S et la Co-op ont été ciblés par des pirates ransomware en mai 2025, les détaillants ont eu du mal à stocker certaines étagères de magasins avec des livraisons fraîches.</p>
+            <span class="english-block">When UK supermarkets M&S and the Co-op were targeted by ransomware hackers in May 2025, the retailers struggled to stock some shop shelves with fresh deliveries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Les clients du Royaume-Uni se sont plaints de rayons vides dans les jours qui ont suivi l'attaque.</p>
+            <span class="english-block">Customers across the UK complained of empty shelves in the days following the attack.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Tom Hegel, chercheur de la firme de cybersécurité SentinelOne, a déclaré que les détaillants doivent être plus clairs sur la responsabilité.</p>
+            <span class="english-block">Tom Hegel, a researcher at cyber-security firm SentinelOne, said retailers must be clearer about responsibility.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">"La question auxquelles les détaillants doivent répondre est de savoir qui possède la sécurité de cet équipement, et non seulement qui le répare", a- t- il dit.</p>
+            <span class="english-block">"The question retailers need to answer is who owns the security of that equipment, not just who repairs it," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Il a dit que la connectivité Internet peut rendre la technologie quotidienne plus pratique, mais la sécurité est nécessaire pour suivre le rythme.</p>
+            <span class="english-block">He said internet connectivity can make everyday technology more convenient, but security needed to keep pace.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">" Une fois qu'un attaquant peut utiliser ces contrôles, des fonctions légitimes telles que la défrostation deviennent des outils de perturbation ", a-t-il déclaré.</p>
+            <span class="english-block">"Once an attacker can operate those controls, legitimate functions such as defrosting become tools for disruption," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">"Changer un paramètre peut détruire des stocks physiques, pas seulement interrompre un système informatique".</p>
+            <span class="english-block">"Changing a setting can destroy physical stock, not just interrupt a computer system."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">En dehors de la maison, la technologie connectée est utilisée pour gérer à distance les machines et les véhicules industriels.</p>
+            <span class="english-block">Outside of the home, connected tech is used to remotely manage industrial machinery and vehicles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">L'expert en cybersécurité Ken Munro a souligné une démonstration de 2015 dans laquelle des chercheurs ont piraté à distance une Jeep à travers son système de divertissement connecté à Internet, ce qui a conduit à des améliorations de la sécurité des véhicules.</p>
+            <span class="english-block">Cyber security expert Ken Munro pointed to a 2015 demonstration in which researchers remotely hacked a Jeep through its internet-connected entertainment system, prompting improvements in vehicle security.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">" Heureusement, l'industrie automobile s'est réveillée à ce sujet et a résolu le problème ", a-t-il déclaré.</p>
+            <span class="english-block">"Fortunately, the vehicle industry woke up to this and fixed the problem," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les connexions mobiles sont également largement utilisées pour surveiller les équipements des centrales électriques et des réseaux d'eau, permettant aux ingénieurs de gérer les systèmes à distance.</p>
+            <span class="english-block">Mobile connections are also widely used to monitor equipment in power plants and water networks, allowing engineers to manage systems remotely.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Munro a déclaré que les services publics britanniques étaient généralement bons pour sécuriser ces connexions, mais que les normes variaient dans le monde entier.</p>
+            <span class="english-block">Munro said UK utilities were generally good at securing these connections, but standards varied around the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Sa plus grande préoccupation était de plus petites entreprises de services publics peu financées qui peuvent encore compter sur des équipements plus anciens et vulnérables.</p>
+            <span class="english-block">His biggest concern was smaller, poorly funded utility companies which may still be relying on older, vulnerable equipment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Sans une protection appropriée, " n'importe quelle usine ou équipement " connecté à Internet - des constructeurs automobiles aux infrastructures électriques ou de transport - pourrait être confronté à des risques similaires, a déclaré Olivier Daloy, expert en cybersécurité chez Zscaler.</p>
+            <span class="english-block">Without proper protections, "any factory or equipment" connected to the internet - ranging from carmakers to electricity or transport infrastructure - could face similar risks, said Olivier Daloy, a cybersecurity expert at Zscaler.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Des congélateurs de magasins dans sept pays européens touchés par une cyberattaque</p>
+            <span class="english-block">Shop freezers in seven European countries hit by cyber-attack</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Les utilisateurs de Binance ont retiré 3,6 milliards de dollars après le plus grand piratage de crypto de l'histoire</p>
+            <span class="english-block">Binance users withdraw $3.6bn after largest-ever crypto hack</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
