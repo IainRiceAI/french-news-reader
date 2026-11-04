@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK meat industry hit by cyber-attack which targeted European supermarket freezers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>UK meat industry hit by cyber-attack which targeted European supermarket freezers</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 03 Nov 2026 13:07:00 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ckq6ndq8l6v0o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Supermarkets in countries including Ireland, Sweden  and Belgium reported fridges being hiked in temperature on Monday.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">La Suède a été l'un des pays à signaler un cyber-incident dans lequel certaines des réfrigératrices des supermarchés avaient été augmentées en température</p>
+            <span class="english-block">Sweden was among countries to report a cyber incident in which some supermarket fridge units had been hiked up in temperature</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Les entreprises de la chaîne alimentaire britannique ont été touchées par l'attaque cybernétique qui a frappé lundi les réfrigérateurs et les congélateurs des supermarchés en Europe.</p>
+            <span class="english-block">Businesses in the UK's food supply chain have been impacted by the cyber-attack which hit supermarket fridges and freezers across Europe on Monday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le Centre national de cybersécurité (CNSC) dit être au courant de " quelques cas où des technologies vulnérables ont été exploitées au Royaume-Uni ".</p>
+            <span class="english-block">The National Cyber Security Centre (NCSC) says it is aware of "a couple of instances where vulnerable technology had been exploited in the UK."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le directeur général du NCSC, le Dr Richard Horne, a déclaré à la radio BBC Radio Four que le programme Today avait "travaillé toute la nuit" pour alerter les organisations potentiellement touchées au Royaume-Uni.</p>
+            <span class="english-block">The NCSC's chief executive Dr Richard Horne told the Today programme, on BBC Radio Four, that it had "worked through the night" to alert potentially affected organisations in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">L'Association britannique des fournisseurs de viande indépendants (AIMS) a déclaré à la BBC que certains de ses plus de 300 membres étaient devenus inattendus ce qu'elle appelait " collatéraux " dans le cadre des piratages.</p>
+            <span class="english-block">The British Association of Independent Meat Suppliers (AIMS) told the BBC some of its more than 300 members had unexpectedly become what it called "collateral" as part of the hacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Deux membres ont vu leurs réfrigérateurs commencer à se dégelder, a déclaré l'AIMS, tandis qu'un autre a vu leurs unités de froid monter à 100 ° C (212 ° F) de température.</p>
+            <span class="english-block">Two members saw their fridges begin to defrost, AIMS said, while another saw their cold units rise up to 100C (212F) in temperature.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Le porte-parole de l'AIMS, Tony Goodger, a déclaré que les appareils touchés étaient vides à l'époque, de sorte qu'aucun produit n'a été perdu - mais a exhorté les entreprises à être vigilantes.</p>
+            <span class="english-block">AIMS spokesman Tony Goodger said the affected devices were empty at the time so no produce was lost - but urged businesses to be vigilant.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">L'incident " doit rappeler à tous les travailleurs de l'industrie alimentaire, quel que soit leur niveau de la chaîne d'approvisionnement, que leurs entreprises peuvent être vues comme des cibles ", a-t-il déclaré.</p>
+            <span class="english-block">The incident "must act as a reminder to all in the food industry at whatever point in the supply chain they are that their businesses may be seen by some as targets," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Lundi, des supermarchés de pays comme l'Irlande, la Suède, l'Estonie et la Belgique ont signalé des températures élevées dans les réfrigérateurs et les congélateurs.</p>
+            <span class="english-block">On Monday, supermarkets in countries including Ireland, Sweden, Estonia, and Belgium reported fridges and freezers being hiked in temperature.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les événements ont suivi des attaques visant des supermarchés et des fournisseurs d'aliments à travers la France au début d'octobre.</p>
+            <span class="english-block">The events followed attacks targeting supermarkets and food suppliers across France in early October.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Des centaines de magasins ont été pris pour cible par le piratage, qui a gâché des aliments frais et congelés d'une valeur estimée à des millions d'euros.</p>
+            <span class="english-block">Hundreds of stores were targeted by the overnight hack, which spoiled fresh and frozen food estimated to be worth millions of euros.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Ces attaques ont exploité des vulnérabilités dans certains systèmes utilisés pour contrôler et gérer à distance les unités de réfrigération froide qui avaient été découvertes par des chercheurs en cybersécurité des mois précédents.</p>
+            <span class="english-block">Those attacks exploited vulnerabilities in some systems used to remotely control and manage cold refrigeration units that had been surfaced by cyber-security researchers months prior.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Horne a déclaré à la BBC mardi qu'il était encore "trop tôt pour dire" qui était derrière les pirates.</p>
+            <span class="english-block">Horne told the BBC on Tuesday that it was still "too early to say" who was behind the hacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Il a toutefois souligné qu'il était urgent que les organisations et les entreprises veillent à ce que la technologie qui sous-tend toute une gamme d'applications que nous utilisons et dont nous avons besoin quotidiennement soit sûre et à jour.</p>
+            <span class="english-block">But he said it pointed to an urgent need for organisations and businesses to ensure the technology underpinning a whole range of applications we use and need daily was secure and up-to-date.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">"La base technologique sur laquelle nous comptons en tant que société n'a pas été investie dans la mesure où elle doit l'être", a déclaré Horne, notant que de nombreuses entreprises avaient étendu les systèmes au-delà de leur fin de vie, ne les ont pas améliorés ni les ont gardés dans des compartiments sécurisés déconnectés d'Internet.</p>
+            <span class="english-block">"That technology base we rely on as a society has not been invested on to the extent it needs to be," Horne said, noting many firms had extended systems beyond their end of life, not upgraded them nor kept them in secure compartments  disconnected from the internet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">De telles actions peuvent créer des vulnérabilités que de nombreux experts en cybersécurité disent être des fruits à court terme pour les pirates informatiques, et peuvent être facilement exploitées.</p>
+            <span class="english-block">Such actions can create vulnerabilities that many cyber-security experts say amounts to low-hanging fruit for hackers, and can be easily exploited.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Mais le chef du cyber du Royaume-Uni a déclaré qu'ils pouvaient être trouvés et exploités plus rapidement et plus facilement via "l'IA entre les mains de nos adversaires".</p>
+            <span class="english-block">But the UK's cyber chief said that they could be found and exploited more quickly and easily via "AI in the hands of our adversaries".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">"Nous avons besoin que toutes les organisations regardent sur ce sur quoi elles comptent, pour investir dans le renouvellement", a-t-il déclaré.</p>
+            <span class="english-block">"We do need all organisations to look at what they rely on, to invest in renewal," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"Nous interviendrons là où nous pouvons, mais, à la fin de la journée, c'est votre affaire, c'est votre charité, c'est votre vie, vous devez faire le choix et choisir judicieusement".</p>
+            <span class="english-block">"We intervene where we can. But, at the end of the day, it's your business. It's your charity. It's your life. You need to make the choice and choose wisely."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Environ 40 supermarchés Delhaize en Belgique et au Luxembourg ont été touchés par l'incident cybernétique de lundi, tandis qu'un nombre moindre de magasins ont été touchés en Suède, en Irlande, aux Pays-Bas, en Estonie et en Finlande.</p>
+            <span class="english-block">Around 40 Delhaize supermarkets in Belgium and Luxembourg were affected in Monday's cyber incident, while a smaller number of shops were hit in Sweden, Ireland, the Netherlands, Estonia and Finland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Sabcobel, une entreprise belge qui fabrique certains réfrigérateurs touchés, a déclaré que les évaporateurs des unités avaient été mis en mode dégel, ce qui les a fait se réchauffer.</p>
+            <span class="english-block">Sabcobel, a Belgian company that manufactures some of the affected refrigerators, said the units' evaporators were switched to defrost mode, causing them to warm up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">On pensait que la même méthode avait été utilisée lors de l'incident du mois dernier qui a frappé des centaines de supermarchés français.</p>
+            <span class="english-block">The same method was thought to have been used in last month's incident that hit hundreds of French supermarkets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Comme pour cet incident, de nombreux détaillants touchés ont déclaré lundi qu'ils n'avaient pas d'autre choix que de jeter de la nourriture gâchée - certains disent que cela représentait des centaines de milliers d'euros de produits perdus.</p>
+            <span class="english-block">As with that incident, many of the retailers affected on Monday said they had no choice but to throw away spoiled food - some saying this amounted to hundreds of thousands of euro in lost produce.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Mathieu Tilman, qui dirige un supermarché Delhaize en Belgique, a déclaré à la BBC qu'il trouvait cela "très décourageant".</p>
+            <span class="english-block">Mathieu Tilman, who runs a Delhaize supermarket in Belgium, told the BBC he found it "truly distressing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Il y a tellement de gens qui meurent de faim, de gens qui n'ont pas assez à manger. Comment pouvons-nous finir par jeter autant de nourriture?"</p>
+            <span class="english-block">"There's so many people starving, people who don't have enough to eat. How can we end up throwing away so much food?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">" Dans de tels moments, tu as envie de quitter ton emploi. "</p>
+            <span class="english-block">"In moments like these, you just feel like quitting your job."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Jusqu'à présent, il n'y a eu que peu ou pas de signes de tels effets au Royaume-Uni.</p>
+            <span class="english-block">So far, there have been little to no signs of any such impact in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Mais la BBC a contacté les grands supermarchés britanniques pour des commentaires et a demandé quelles mesures, le cas échéant, ils prennent pour se protéger contre des tentatives de piratage similaires.</p>
+            <span class="english-block">But the BBC has approached major UK supermarkets for comment and asked what action, if any, they are taking to safeguard against any similar hacks attempts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Les détaillants investissent fortement dans leur cybersécurité et travaillent actuellement avec le NCSC pour s'assurer que leurs réfrigérateurs et congélateurs sont aussi sûrs que possible contre des attaques potentielles", a déclaré Graham Wynn, directeur adjoint des affaires réglementaires au British Retail Consortium.</p>
+            <span class="english-block">"Retailers invest heavily in their cybersecurity and are currently working with the NCSC to ensure their fridges and freezers are secure as possible against potential attacks," said Graham Wynn, assistant director of regulatory affairs at the British Retail Consortium.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Asda, Lidl, M&S, Sainsbury's et Tesco sont parmi les membres de l'association de commerce de détail.</p>
+            <span class="english-block">Asda, Lidl, M&S, Sainsbury's and Tesco are among the retail trade association's members.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Paul Chichester, directeur des opérations du NCSC, a déclaré mardi lors du lancement de son rapport annuel qu'il continuait de travailler avec les organisations britanniques touchées et de les surveiller.</p>
+            <span class="english-block">Paul Chichester, director of operations at the NCSC, said at the launch of its annual report on Tuesday it was continuing to work with and monitor UK organisations affected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">" Pour le moment, l'impact est minime ", a-t-il ajouté.</p>
+            <span class="english-block">"At the moment, the impact is minimal," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">"Nous travaillons avec des organisations qui identifient les vulnérabilités existantes au Royaume-Uni et essayons de les fermer avant que quelqu'un ne les exploite".</p>
+            <span class="english-block">"We're working with organisations identifying existing vulnerabilities in the UK and trying to get those closed before somebody exploits them."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Si les pirates peuvent prendre le contrôle d'un congélateur de supermarché, à quel point les autres technologies sont vulnérables ?</p>
+            <span class="english-block">If hackers can take control of a supermarket freezer, how vulnerable is other tech?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Des congélateurs de magasins dans sept pays européens touchés par une cyberattaque</p>
+            <span class="english-block">Shop freezers in seven European countries hit by cyber-attack</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Qu'est-ce que l'IA et comment fonctionne-t-elle ?</p>
+            <span class="english-block">What is AI and how does it work?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

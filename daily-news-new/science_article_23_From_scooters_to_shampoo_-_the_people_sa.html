@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From scooters to shampoo - the people saving hundreds from dumpster diving</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>From scooters to shampoo - the people saving hundreds from dumpster diving</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 03 Nov 2026 07:50:14 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm86zdp2ygqno?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The men and women who rummage through commercial bins to take clothes and other items.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">"J'ai toujours cherché des vêtements dans les poubelles"</p>
+            <span class="english-block">'I've always looked in bins for clothes'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Darryl Baker a été choqué de voir des tas de vêtements jetés à côté des poubelles de recyclage devant son supermarché local.</p>
+            <span class="english-block">Darryl Baker was shocked to see piles of clothes dumped beside the recycling bins outside her local supermarket.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Lors de plusieurs voyages dans les poubelles, elle a également trouvé une foule d'autres objets, tels qu'un cadre d'image "perfectement décent" d'Ikea et des scooters pour enfants.</p>
+            <span class="english-block">On several trips to the dumpsters she has also found a host of other items, such as "a perfectly decent" Ikea picture frame and children's scooters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Toujours à la recherche de moyens d'économiser de l'argent et épouvantée par les déchets, la mère économe de deux enfants du nord de Londres a demandé au personnel du supermarché s'il pouvait en prendre un peu.</p>
+            <span class="english-block">Always on the lookout for ways to save money and appalled by the waste, the thrifty mother-of-two from north London asked supermarket staff if she could take some of it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">"J'ai acheté à mes enfants de nouvelles armoires", dit Darryl, 39 ans, ajoutant qu'elle a des choses qui seront conservées pendant des années.</p>
+            <span class="english-block">Permission granted, "I got my children entire new wardrobes," says Darryl, 39, adding that she's stuff put away for years to come.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">"J'ai probablement économisé des centaines de livres pendant six mois cette année", dit le journaliste indépendant.</p>
+            <span class="english-block">During a six-month stint this year, "I have probably saved hundreds of pounds," says the freelance journalist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Darryl se souvient des noms de marques qu'elle a sauvées: Ralph Lauren, Nike et The North Face, entre autres. " J'étais bouleversée, dit- elle. " Ces choses sont répandues partout. "</p>
+            <span class="english-block">Darryl reels off the names of brands she has salvaged - Ralph Lauren, Nike and The North Face, among others. "My mind was blown," she says. "This stuff is just strewn all over the floor."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Darryl Baker prend les vêtements pour elle et ses enfants, et pour vendre</p>
+            <span class="english-block">Darryl Baker takes the clothes for herself and her children, and to sell</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">En plus de trouver des vêtements pour ses enfants, ses neveux et ses nièces, elle en garde pour elle-même, en donne ou en vend, notamment en achetant récemment 30 livres sterling pour une veste Barbour pour hommes.</p>
+            <span class="english-block">In addition to finding clothing for her children and her nephews and nieces, she keeps some for herself. Others she donates or sells, including recently getting £30 for a men's Barbour jacket.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Darryl s'est joint aux rangs des soi-disant plongeurs dans les poubelles de déchets  qui fouillent dans les poubelles commerciales à la recherche de trésors.</p>
+            <span class="english-block">Darryl has joined the ranks of so-called dumpster divers – people who rummage through commercial bins for treasures. Motivations include saving money, giving items to charity and disgust at how often perfectly usable items are being consigned to waste - or a combination of all three.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Jeff Ferrell, du Texas, est en train de se débarrasser des ordures depuis plus de 50 ans.</p>
+            <span class="english-block">Texan Jeff Ferrell has been rooting around in trash for more than 50 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">" Je plonge toujours tous les jours dans les ordures à vélo, dit le vieux de 72 ans, qui vit à Fort Worth et a écrit des livres sur le sujet. " J'apprécie encore plus que jamais. "</p>
+            <span class="english-block">"I still dumpster dive every day by bicycle," says the 72-year old, who lives in Fort Worth, and has written books on the topic. "I still enjoy it as much, or more, than ever."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Jeff se considère comme un "bit de Robin Hood mélangé à l'action directe anarchiste", ne se détournant que dans des quartiers plus aisés et donnant de nombreuses de ses découvertes.</p>
+            <span class="english-block">Jeff considers himself a "bit of Robin Hood mixed with anarchist direct action", only scrounging in more affluent neighbourhoods and giving away many of his finds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">"Tout ce qui se trouve chez nous est presque déroulé, dit- il, et je n'achète jamais, par exemple, de savon, d'articles de toilette ou de fournitures médicales, de chaussures, de vêtements, d'outils et de fournitures de jardinage".</p>
+            <span class="english-block">"Almost everything in our home is scrounged, and I never buy, for example, soap or toiletries or medical supplies, or shoes and clothes and tools and garden supplies," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Jeff Ferrell vend une partie de ce qu'il trouve, et donne d'autres objets</p>
+            <span class="english-block">Jeff Ferrell sells some of what he finds, and gives away other items</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Jeff cherche du métal jeté pour le vendre dans un chantier d'épuration qui, dit-il, lui fait gagner environ 150 dollars toutes les deux semaines.</p>
+            <span class="english-block">Jeff looks for discarded metal to sell at a scrapyard which, he says, earns him around $150 (£110) every two weeks. His wife sells his other finds, such as "an antique or piece of jewellery", on eBay.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">En économisant et en vendant les objets les plus précieux, il estime que ses découvertes valent "de dizaines de milliers de dollars par an".</p>
+            <span class="english-block">Through savings and selling the more valuable items, he estimates his finds are worth "tens of thousands of dollars a year".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Bien que le plongée dans les poubelles ait été considérée comme un taboo dans le passé, c'est maintenant quelque chose que beaucoup de gens sont fiers de faire et de poster en ligne.</p>
+            <span class="english-block">While dumpster diving may have been considered taboo in the past, it's now something many people are proud to do and post about online.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Millie Diamond, styliste londonienne, publie sur Instagram des vidéos de son fouetage dans les poubelles. Mais elle a un objectif très spécifique: découvrir des tissus et des vêtements qu'elle peut récupérer et refaire en nouveaux objets, dont certains elle vend ensuite.</p>
+            <span class="english-block">Millie Diamond, a London-based stylist, posts videos on Instagram of her rummaging through bins. But she has a very specific aim - to unearth fabrics and clothing that she can salvage and refashion into new items, some of which she then sells.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Millie Diamond transforme les textiles et les vêtements déposés en nouveaux vêtements</p>
+            <span class="english-block">Millie Diamond turns dumped textiles and clothes into new outfits</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Elle estime qu'une robe qu'elle a trouvée vaut 600 livres.</p>
+            <span class="english-block">She estimates that one dress she found was worth £600.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">"Je suis un peu un magpie, j'aime rassembler des choses dans la rue ou partout où il y a un freebie. Si je vois quelque chose qui me tient à l'œil, alors je le saisirai".</p>
+            <span class="english-block">"I'm a bit of a magpie. I like collecting things off the street or anywhere that there's a freebie. If I see something that catches my eye, then I'll grab it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Millie, 36 ans, a commencé à plonger dans la poubelle après avoir remarqué des tissus jetés par une entreprise qui avait fermé. " Je suis littéralement montée dans la poubelle.</p>
+            <span class="english-block">Millie, 36, began bin diving after spotting some fabrics discarded by a business that had shut down. "I literally clambered into the bin. It turned out it was loads of vintage clothes."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Pour Charlotte Bayford, c'est le timing, et ses meilleures découvertes viennent quand les étudiants de l'université d'Essex rentrent chez eux pour l'été et abandonnent tout ce qu'ils ne veulent pas emporter.</p>
+            <span class="english-block">For Charlotte Bayford in Essex it's all about timing. Her best finds come when students at Essex University head home for the summer and ditch anything they don't want to take with them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Cela inclut les articles de toilette à moitié remplis. " Je n'ai pas acheté de shampooing depuis huit ans, dit l'assistante commerciale de 44 ans. " Je dirais que cela m'a permis d'économiser de l'argent. "</p>
+            <span class="english-block">This includes half-filled toiletries. "I haven't bought shampoo for eight years," says the 44-year-old sales assistant. "I'd say that has saved me some money."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Comme les autres plongeurs dans les poubelles, Charlotte donne beaucoup de ses découvertes à des œuvres caritatives, mais elle a aussi rempli sa maison de biens récupérés et vend des objets précieux.</p>
+            <span class="english-block">Like other dumpster divers, Charlotte gives a lot of her finds to charity. But she has also filled her house with salvaged objects, and sells on some valuable items.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">La nourriture, tant qu'elle reste scellée, est également une bonne chose. " J'ai trouvé des boîtes de haricots cuits Heinz, parfaitement bien.</p>
+            <span class="english-block">Food, as long as it remains sealed, is fair game too. "I've found tins of Heinz baked beans, perfectly fine. I'm quite happy to eat those," Charlotte says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Charlotte Bayford donne une partie de ses découvertes à des œuvres caritatives</p>
+            <span class="english-block">Charlotte Bayford gives some of her finds to charity</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Mais est- il acceptable de retirer des choses de la poubelle et de les garder aux yeux de la loi?</p>
+            <span class="english-block">But is taking things out of bins and keeping them acceptable in the eyes of the law?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Jeff, professeur émérite de sociologie à l'Université chrétienne du Texas, dit que de nombreuses villes américaines ont rendu cette pratique illégale, y compris New York, Cleveland et Wichita.</p>
+            <span class="english-block">Jeff, who is professor emeritus of sociology at Texas Christian University, says many US cities have made the practice illegal, including New York, Cleveland and Wichita.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">"Le plongeon dans les ordures est considéré comme illégal [dans ces endroits] parce que ce qui est jeté appartient maintenant à la ville... ou à la société privée qui fournit des services de décharge", explique- t- il.</p>
+            <span class="english-block">"Dumpster diving is considered illegal [in such places] because that which is thrown away now belongs to the city... or to the private company that provided trash services," he explains. Any dumpster diver also risks trespass charges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">À Fort Worth, où Jeff vit, les objets ne peuvent être retirés des poubelles que s'ils sont sur des terres publiques, extérieures.</p>
+            <span class="english-block">In Fort Worth, where Jeff lives, items can only be removed from bins if they are on public land, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Au Royaume-Uni, Sunjay Versani de Duncan Lewis Solicitors dit que cela dépend des circonstances.</p>
+            <span class="english-block">In the UK, Sunjay Versani of Duncan Lewis Solicitors says it depends on the circumstances.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">" Dans de nombreux cas où des biens ont été jetés, il est peu probable qu'ils soient poursuivis ", dit- il.</p>
+            <span class="english-block">"In many cases involving genuinely discarded goods, prosecution is unlikely," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">" Mais il n'existe pas de règle générale selon laquelle on puisse prendre quelque chose librement simplement parce qu'on l'a mis dans une poubelle. " En cas de doute, la meilleure façon de le faire est de demander la permission au propriétaire ou à l'entreprise. "</p>
+            <span class="english-block">"But there is no general rule that something is free to take simply because it has been put in a skip or bin. If in doubt, the safest approach is to ask the owner or business for permission."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">"Je vis avec un fantôme" - à l'intérieur des maisons hantées attirant les chasseurs d'affaires</p>
+            <span class="english-block">'I live with a ghost' - inside the haunted homes attracting bargain hunters</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Le clip de Sabrina Carpenter qui a aidé une jeune femme de 22 ans à gagner 120 000 livres par an</p>
+            <span class="english-block">The Sabrina Carpenter clip that helped a 22-year-old make £120,000 a year</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">J'ai payé 30 000 £ pour un diplôme d'influenceur.</p>
+            <span class="english-block">I paid £30,000 for an 'influencer' degree. Here's why</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Nous économisons 100 livres par mois pour nos enfants mais ils n'en auront pas avant les 57 ans.</p>
+            <span class="english-block">We're saving £100 a month for our kids but they won't get it until they're 57</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
