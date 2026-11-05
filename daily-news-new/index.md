@@ -1,179 +1,179 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-11-04 06:01:07  
+Generated on: 2026-11-05 06:01:09  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Ecstatic scenes and historic moments: What's happened so far in the midterms**
-   - **Published:** Wed, 04 Nov 2026 05:52:05 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Ecstatic_scenes_and_historic_moments_Wha.md](top-stories_article_1_Ecstatic_scenes_and_historic_moments_Wha.md)
+1. **Vance walks Trump tightrope with scathing election critique blaming Iran war**
+   - **Published:** Thu, 05 Nov 2026 03:47:56 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Vance_walks_Trump_tightrope_with_scathin.md](top-stories_article_1_Vance_walks_Trump_tightrope_with_scathin.md)
 
-2. **How America voted in maps and charts**
-   - **Published:** Wed, 04 Nov 2026 04:47:08 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_How_America_voted_in_maps_and_charts.md](top-stories_article_2_How_America_voted_in_maps_and_charts.md)
+2. **UK commits to 'time-bound' talks on slavery apology**
+   - **Published:** Thu, 05 Nov 2026 02:17:18 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_UK_commits_to_time-bound_talks_on_slaver.md](top-stories_article_2_UK_commits_to_time-bound_talks_on_slaver.md)
 
-3. **Anthony Zurcher: Democrats push deep into Republican territory with historic wins**
-   - **Published:** Wed, 04 Nov 2026 03:34:58 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Anthony_Zurcher_Democrats_push_deep_into.md](top-stories_article_3_Anthony_Zurcher_Democrats_push_deep_into.md)
+3. **The NHS is relying more on charities - and that might be creating problems for patients**
+   - **Published:** Thu, 05 Nov 2026 00:12:30 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_The_NHS_is_relying_more_on_charities_-_a.md](top-stories_article_3_The_NHS_is_relying_more_on_charities_-_a.md)
 
-4. **James Talarico becomes first Democrat to win Texas Senate seat since 1988**
-   - **Published:** Wed, 04 Nov 2026 05:39:36 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_James_Talarico_becomes_first_Democrat_to.md](top-stories_article_4_James_Talarico_becomes_first_Democrat_to.md)
+4. **Joshua Wong, face of Hong Kong's pro-democracy protests, jailed for 10 years**
+   - **Published:** Thu, 05 Nov 2026 03:56:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Joshua_Wong_face_of_Hong_Kongs_pro-democ.md](top-stories_article_4_Joshua_Wong_face_of_Hong_Kongs_pro-democ.md)
 
-5. **Miliband says slavery apology will not bring cost for UK taxpayers**
-   - **Published:** Wed, 04 Nov 2026 02:14:45 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Miliband_says_slavery_apology_will_not_b.md](top-stories_article_5_Miliband_says_slavery_apology_will_not_b.md)
+5. **Interest rates expected to rise for first time in over three years**
+   - **Published:** Thu, 05 Nov 2026 00:00:09 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Interest_rates_expected_to_rise_for_firs.md](top-stories_article_5_Interest_rates_expected_to_rise_for_firs.md)
 
-6. **'Multi-cancer' blood tests coming to some GP surgeries soon**
-   - **Published:** Wed, 04 Nov 2026 00:04:28 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Multi-cancer_blood_tests_coming_to_some_.md](top-stories_article_6_Multi-cancer_blood_tests_coming_to_some_.md)
+6. **Typhoons batter East Asia as El Niño makes Pacific 'burn with fever'**
+   - **Published:** Wed, 04 Nov 2026 23:12:47 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Typhoons_batter_East_Asia_as_El_Niño_mak.md](top-stories_article_6_Typhoons_batter_East_Asia_as_El_Niño_mak.md)
 
-7. **Poundland supplier 'will lose millions' if retailer collapses**
-   - **Published:** Wed, 04 Nov 2026 00:03:17 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Poundland_supplier_will_lose_millions_if.md](top-stories_article_7_Poundland_supplier_will_lose_millions_if.md)
+7. **British man infected with Ebola in DR Congo to be flown back to UK**
+   - **Published:** Wed, 04 Nov 2026 18:34:19 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_British_man_infected_with_Ebola_in_DR_Co.md](top-stories_article_7_British_man_infected_with_Ebola_in_DR_Co.md)
 
-8. **Scammers using AI-generated images of missing pets to demand reward money**
-   - **Published:** Wed, 04 Nov 2026 00:44:44 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Scammers_using_AI-generated_images_of_mi.md](top-stories_article_8_Scammers_using_AI-generated_images_of_mi.md)
+8. **Pound rises to its highest level since the Brexit referendum**
+   - **Published:** Thu, 05 Nov 2026 04:21:35 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Pound_rises_to_its_highest_level_since_t.md](top-stories_article_8_Pound_rises_to_its_highest_level_since_t.md)
 
 ---
 
 ### Section: WORLD
 
-1. **South Carolina elects Democratic senator for first time in almost three decades**
-   - **Published:** Wed, 04 Nov 2026 03:24:34 GMT
-   - **Read Parallel Translation:** [world_article_9_South_Carolina_elects_Democratic_senator.md](world_article_9_South_Carolina_elects_Democratic_senator.md)
+1. **Vance walks Trump tightrope with scathing election critique blaming Iran war**
+   - **Published:** Thu, 05 Nov 2026 03:47:56 GMT
+   - **Read Parallel Translation:** [world_article_9_Vance_walks_Trump_tightrope_with_scathin.md](world_article_9_Vance_walks_Trump_tightrope_with_scathin.md)
 
-2. **Democratic rising star Ossoff projected to hold Georgia seat**
-   - **Published:** Wed, 04 Nov 2026 02:38:07 GMT
-   - **Read Parallel Translation:** [world_article_10_Democratic_rising_star_Ossoff_projected_.md](world_article_10_Democratic_rising_star_Ossoff_projected_.md)
+2. **What Democrats can and can't do with their new power after taking Congress**
+   - **Published:** Wed, 04 Nov 2026 18:01:27 GMT
+   - **Read Parallel Translation:** [world_article_10_What_Democrats_can_and_cant_do_with_thei.md](world_article_10_What_Democrats_can_and_cant_do_with_thei.md)
 
-3. **Spanish transport minister resigns days after deadly train crash**
-   - **Published:** Tue, 03 Nov 2026 22:45:59 GMT
-   - **Read Parallel Translation:** [world_article_11_Spanish_transport_minister_resigns_days_.md](world_article_11_Spanish_transport_minister_resigns_days_.md)
+3. **Joshua Wong, face of Hong Kong's pro-democracy protests, jailed for 10 years**
+   - **Published:** Thu, 05 Nov 2026 03:56:16 GMT
+   - **Read Parallel Translation:** [world_article_11_Joshua_Wong_face_of_Hong_Kongs_pro-democ.md](world_article_11_Joshua_Wong_face_of_Hong_Kongs_pro-democ.md)
 
-4. **Seven flights across Europe targeted by suspected bomb threats**
-   - **Published:** Tue, 03 Nov 2026 20:42:47 GMT
-   - **Read Parallel Translation:** [world_article_12_Seven_flights_across_Europe_targeted_by_.md](world_article_12_Seven_flights_across_Europe_targeted_by_.md)
+4. **French blood storage impacted by freezer hacks as theories swirl about culprits**
+   - **Published:** Wed, 04 Nov 2026 16:26:15 GMT
+   - **Read Parallel Translation:** [world_article_12_French_blood_storage_impacted_by_freezer.md](world_article_12_French_blood_storage_impacted_by_freezer.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Poundland supplier 'will lose millions' if retailer collapses**
-   - **Published:** Wed, 04 Nov 2026 00:03:17 GMT
-   - **Read Parallel Translation:** [business_article_13_Poundland_supplier_will_lose_millions_if.md](business_article_13_Poundland_supplier_will_lose_millions_if.md)
+1. **Interest rates expected to rise for first time in over three years**
+   - **Published:** Thu, 05 Nov 2026 00:00:09 GMT
+   - **Read Parallel Translation:** [business_article_13_Interest_rates_expected_to_rise_for_firs.md](business_article_13_Interest_rates_expected_to_rise_for_firs.md)
 
-2. **UK and EU agree draft deal to scrap Brexit red tape over food exports**
-   - **Published:** Tue, 03 Nov 2026 20:53:03 GMT
-   - **Read Parallel Translation:** [business_article_14_UK_and_EU_agree_draft_deal_to_scrap_Brex.md](business_article_14_UK_and_EU_agree_draft_deal_to_scrap_Brex.md)
+2. **Pound rises to its highest level since the Brexit referendum**
+   - **Published:** Thu, 05 Nov 2026 04:21:35 GMT
+   - **Read Parallel Translation:** [business_article_14_Pound_rises_to_its_highest_level_since_t.md](business_article_14_Pound_rises_to_its_highest_level_since_t.md)
 
-3. **No more rice grains in Kellogg's Rice Krispies due to changing weather**
-   - **Published:** Wed, 04 Nov 2026 01:36:06 GMT
-   - **Read Parallel Translation:** [business_article_15_No_more_rice_grains_in_Kelloggs_Rice_Kri.md](business_article_15_No_more_rice_grains_in_Kelloggs_Rice_Kri.md)
+3. **Elon Musk's millions failed to deliver Republican wins in fierce midterms**
+   - **Published:** Wed, 04 Nov 2026 21:41:15 GMT
+   - **Read Parallel Translation:** [business_article_15_Elon_Musks_millions_failed_to_deliver_Re.md](business_article_15_Elon_Musks_millions_failed_to_deliver_Re.md)
 
-4. **Binance says fake job interviews used as part of $6.3bn crypto hack**
-   - **Published:** Tue, 03 Nov 2026 16:19:29 GMT
-   - **Read Parallel Translation:** [business_article_16_Binance_says_fake_job_interviews_used_as.md](business_article_16_Binance_says_fake_job_interviews_used_as.md)
+4. **Poundland owner in crunch talks as retailer's collapse looms**
+   - **Published:** Wed, 04 Nov 2026 19:44:46 GMT
+   - **Read Parallel Translation:** [business_article_16_Poundland_owner_in_crunch_talks_as_retai.md](business_article_16_Poundland_owner_in_crunch_talks_as_retai.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Graduates are managing AI - but are they learning much else?**
+1. **Elon Musk's millions failed to deliver Republican wins in fierce midterms**
+   - **Published:** Wed, 04 Nov 2026 21:41:15 GMT
+   - **Read Parallel Translation:** [technology_article_17_Elon_Musks_millions_failed_to_deliver_Re.md](technology_article_17_Elon_Musks_millions_failed_to_deliver_Re.md)
+
+2. **French blood storage impacted by freezer hacks as theories swirl about culprits**
+   - **Published:** Wed, 04 Nov 2026 16:26:15 GMT
+   - **Read Parallel Translation:** [technology_article_18_French_blood_storage_impacted_by_freezer.md](technology_article_18_French_blood_storage_impacted_by_freezer.md)
+
+3. **Graduates are managing AI - but are they learning much else?**
    - **Published:** Wed, 04 Nov 2026 00:04:35 GMT
-   - **Read Parallel Translation:** [technology_article_17_Graduates_are_managing_AI_-_but_are_they.md](technology_article_17_Graduates_are_managing_AI_-_but_are_they.md)
+   - **Read Parallel Translation:** [technology_article_19_Graduates_are_managing_AI_-_but_are_they.md](technology_article_19_Graduates_are_managing_AI_-_but_are_they.md)
 
-2. **Binance says fake job interviews used as part of $6.3bn crypto hack**
+4. **Binance says fake job interviews used as part of $6.3bn crypto hack**
    - **Published:** Tue, 03 Nov 2026 16:19:29 GMT
-   - **Read Parallel Translation:** [technology_article_18_Binance_says_fake_job_interviews_used_as.md](technology_article_18_Binance_says_fake_job_interviews_used_as.md)
-
-3. **UK meat industry hit by cyber-attack which targeted European supermarket freezers**
-   - **Published:** Tue, 03 Nov 2026 13:07:00 GMT
-   - **Read Parallel Translation:** [technology_article_19_UK_meat_industry_hit_by_cyber-attack_whi.md](technology_article_19_UK_meat_industry_hit_by_cyber-attack_whi.md)
-
-4. **Apple unsure when it will get more foldable iPhones ahead of Christmas**
-   - **Published:** Tue, 03 Nov 2026 11:10:37 GMT
-   - **Read Parallel Translation:** [technology_article_20_Apple_unsure_when_it_will_get_more_folda.md](technology_article_20_Apple_unsure_when_it_will_get_more_folda.md)
+   - **Read Parallel Translation:** [technology_article_20_Binance_says_fake_job_interviews_used_as.md](technology_article_20_Binance_says_fake_job_interviews_used_as.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Prince William says UK faces terrifying risk of more wildfires due to climate change**
-   - **Published:** Tue, 03 Nov 2026 23:00:14 GMT
-   - **Read Parallel Translation:** [science_article_21_Prince_William_says_UK_faces_terrifying_.md](science_article_21_Prince_William_says_UK_faces_terrifying_.md)
+1. **Typhoons batter East Asia as El Niño makes Pacific 'burn with fever'**
+   - **Published:** Wed, 04 Nov 2026 23:12:47 GMT
+   - **Read Parallel Translation:** [science_article_21_Typhoons_batter_East_Asia_as_El_Niño_mak.md](science_article_21_Typhoons_batter_East_Asia_as_El_Niño_mak.md)
 
-2. **Welsh public sector unlikely to meet net zero plans by 2030, say auditors**
-   - **Published:** Tue, 03 Nov 2026 08:57:20 GMT
-   - **Read Parallel Translation:** [science_article_22_Welsh_public_sector_unlikely_to_meet_net.md](science_article_22_Welsh_public_sector_unlikely_to_meet_net.md)
+2. **William meets firefighters who tackled summer blazes**
+   - **Published:** Wed, 04 Nov 2026 11:35:08 GMT
+   - **Read Parallel Translation:** [science_article_22_William_meets_firefighters_who_tackled_s.md](science_article_22_William_meets_firefighters_who_tackled_s.md)
 
-3. **From scooters to shampoo - the people saving hundreds from dumpster diving**
-   - **Published:** Tue, 03 Nov 2026 07:50:14 GMT
-   - **Read Parallel Translation:** [science_article_23_From_scooters_to_shampoo_-_the_people_sa.md](science_article_23_From_scooters_to_shampoo_-_the_people_sa.md)
+3. **Delhi air quality worsens ahead of Diwali as firework restrictions enter force**
+   - **Published:** Wed, 04 Nov 2026 07:39:38 GMT
+   - **Read Parallel Translation:** [science_article_23_Delhi_air_quality_worsens_ahead_of_Diwal.md](science_article_23_Delhi_air_quality_worsens_ahead_of_Diwal.md)
 
-4. **Major study into 'forever chemicals' in people's bodies launched in UK**
-   - **Published:** Tue, 03 Nov 2026 07:19:27 GMT
-   - **Read Parallel Translation:** [science_article_24_Major_study_into_forever_chemicals_in_pe.md](science_article_24_Major_study_into_forever_chemicals_in_pe.md)
+4. **Prince William says UK faces terrifying risk of more wildfires due to climate change**
+   - **Published:** Wed, 04 Nov 2026 06:11:43 GMT
+   - **Read Parallel Translation:** [science_article_24_Prince_William_says_UK_faces_terrifying_.md](science_article_24_Prince_William_says_UK_faces_terrifying_.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **'Multi-cancer' blood tests coming to some GP surgeries soon**
+1. **Cocaine overtakes heroin as leading cause of drug deaths in England and Wales**
+   - **Published:** Wed, 04 Nov 2026 17:58:59 GMT
+   - **Read Parallel Translation:** [health_article_25_Cocaine_overtakes_heroin_as_leading_caus.md](health_article_25_Cocaine_overtakes_heroin_as_leading_caus.md)
+
+2. **'Multi-cancer' blood tests coming to some GP surgeries soon**
    - **Published:** Wed, 04 Nov 2026 00:04:28 GMT
-   - **Read Parallel Translation:** [health_article_25_Multi-cancer_blood_tests_coming_to_some_.md](health_article_25_Multi-cancer_blood_tests_coming_to_some_.md)
+   - **Read Parallel Translation:** [health_article_26_Multi-cancer_blood_tests_coming_to_some_.md](health_article_26_Multi-cancer_blood_tests_coming_to_some_.md)
 
-2. **Parents' concerns to trigger urgent checks in A&E**
+3. **Parents' concerns to trigger urgent checks in A&E**
    - **Published:** Mon, 02 Nov 2026 08:52:08 GMT
-   - **Read Parallel Translation:** [health_article_26_Parents_concerns_to_trigger_urgent_check.md](health_article_26_Parents_concerns_to_trigger_urgent_check.md)
-
-3. **Biggest fibre boost could be scraps in your bin, experts say**
-   - **Published:** Fri, 30 Oct 2026 00:40:30 GMT
-   - **Read Parallel Translation:** [health_article_28_Biggest_fibre_boost_could_be_scraps_in_y.md](health_article_28_Biggest_fibre_boost_could_be_scraps_in_y.md)
+   - **Read Parallel Translation:** [health_article_27_Parents_concerns_to_trigger_urgent_check.md](health_article_27_Parents_concerns_to_trigger_urgent_check.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **Miliband says slavery apology will not bring cost for UK taxpayers**
-   - **Published:** Wed, 04 Nov 2026 02:14:45 GMT
-   - **Read Parallel Translation:** [politics_article_29_Miliband_says_slavery_apology_will_not_b.md](politics_article_29_Miliband_says_slavery_apology_will_not_b.md)
+1. **UK commits to 'time-bound' talks on slavery apology**
+   - **Published:** Thu, 05 Nov 2026 02:17:18 GMT
+   - **Read Parallel Translation:** [politics_article_29_UK_commits_to_time-bound_talks_on_slaver.md](politics_article_29_UK_commits_to_time-bound_talks_on_slaver.md)
 
-2. **Mahmood refuses to put cost on care worker settlement climbdown**
-   - **Published:** Tue, 03 Nov 2026 11:03:45 GMT
-   - **Read Parallel Translation:** [politics_article_30_Mahmood_refuses_to_put_cost_on_care_work.md](politics_article_30_Mahmood_refuses_to_put_cost_on_care_work.md)
+2. **Chris Mason: The US elections will change Trump - how will Burnham react?**
+   - **Published:** Wed, 04 Nov 2026 21:02:58 GMT
+   - **Read Parallel Translation:** [politics_article_30_Chris_Mason_The_US_elections_will_change.md](politics_article_30_Chris_Mason_The_US_elections_will_change.md)
 
-3. **Labour MPs pull their punches on immigration changes**
-   - **Published:** Tue, 03 Nov 2026 09:16:36 GMT
-   - **Read Parallel Translation:** [politics_article_31_Labour_MPs_pull_their_punches_on_immigra.md](politics_article_31_Labour_MPs_pull_their_punches_on_immigra.md)
+3. **Time to focus on cost of living, says PM after US election results**
+   - **Published:** Wed, 04 Nov 2026 15:35:09 GMT
+   - **Read Parallel Translation:** [politics_article_31_Time_to_focus_on_cost_of_living_says_PM_.md](politics_article_31_Time_to_focus_on_cost_of_living_says_PM_.md)
 
-4. **Reform UK councillor charged with rape and sexual assault**
-   - **Published:** Tue, 03 Nov 2026 19:09:56 GMT
-   - **Read Parallel Translation:** [politics_article_32_Reform_UK_councillor_charged_with_rape_a.md](politics_article_32_Reform_UK_councillor_charged_with_rape_a.md)
+4. **More asbestos found in Parliament, as MPs urged to get on with revamp**
+   - **Published:** Thu, 05 Nov 2026 03:05:34 GMT
+   - **Read Parallel Translation:** [politics_article_32_More_asbestos_found_in_Parliament_as_MPs.md](politics_article_32_More_asbestos_found_in_Parliament_as_MPs.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Why Kim Kardashian came back to 'the worst TV drama ever'**
+1. **Celebrity hairstylist John Frieda dies aged 75**
+   - **Published:** Wed, 04 Nov 2026 10:52:39 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Celebrity_hairstylist_John_Frieda_dies_a.md](entertainment_article_33_Celebrity_hairstylist_John_Frieda_dies_a.md)
+
+2. **Why Kim Kardashian came back to 'the worst TV drama ever'**
    - **Published:** Wed, 04 Nov 2026 00:52:19 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Why_Kim_Kardashian_came_back_to_the_wors.md](entertainment_article_33_Why_Kim_Kardashian_came_back_to_the_wors.md)
+   - **Read Parallel Translation:** [entertainment_article_34_Why_Kim_Kardashian_came_back_to_the_wors.md](entertainment_article_34_Why_Kim_Kardashian_came_back_to_the_wors.md)
 
-2. **Celebrity loses injunction bid but will stay anonymous pending appeal**
-   - **Published:** Tue, 03 Nov 2026 16:34:33 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Celebrity_loses_injunction_bid_but_will_.md](entertainment_article_34_Celebrity_loses_injunction_bid_but_will_.md)
+3. **Fleabag star offers rent-free flat to new writers**
+   - **Published:** Wed, 04 Nov 2026 10:48:11 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Fleabag_star_offers_rent-free_flat_to_ne.md](entertainment_article_35_Fleabag_star_offers_rent-free_flat_to_ne.md)
 
-3. **Jury in Russell Brand rape trial begins considering verdicts**
-   - **Published:** Tue, 03 Nov 2026 14:50:06 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Jury_in_Russell_Brand_rape_trial_begins_.md](entertainment_article_35_Jury_in_Russell_Brand_rape_trial_begins_.md)
-
-4. **James Blunt on Traitors: I tried - and failed - to get banished**
-   - **Published:** Tue, 03 Nov 2026 06:33:25 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_James_Blunt_on_Traitors_I_tried_-_and_fa.md](entertainment_article_36_James_Blunt_on_Traitors_I_tried_-_and_fa.md)
+4. **Tributes paid to drummer with dozens of number ones**
+   - **Published:** Wed, 04 Nov 2026 17:23:26 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Tributes_paid_to_drummer_with_dozens_of_.md](entertainment_article_36_Tributes_paid_to_drummer_with_dozens_of_.md)
 
 ---
 
