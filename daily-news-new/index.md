@@ -1,179 +1,183 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-11-05 06:01:09  
+Generated on: 2026-11-06 06:01:07  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Vance walks Trump tightrope with scathing election critique blaming Iran war**
-   - **Published:** Thu, 05 Nov 2026 03:47:56 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Vance_walks_Trump_tightrope_with_scathin.md](top-stories_article_1_Vance_walks_Trump_tightrope_with_scathin.md)
+1. **Global tech stocks plunge as US midterms add to AI slowdown fears**
+   - **Published:** Fri, 06 Nov 2026 05:51:16 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Global_tech_stocks_plunge_as_US_midterms.md](top-stories_article_1_Global_tech_stocks_plunge_as_US_midterms.md)
 
-2. **UK commits to 'time-bound' talks on slavery apology**
-   - **Published:** Thu, 05 Nov 2026 02:17:18 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_UK_commits_to_time-bound_talks_on_slaver.md](top-stories_article_2_UK_commits_to_time-bound_talks_on_slaver.md)
+2. **Met chief warns policing 'heading for failure' without reform**
+   - **Published:** Fri, 06 Nov 2026 01:13:53 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Met_chief_warns_policing_heading_for_fai.md](top-stories_article_2_Met_chief_warns_policing_heading_for_fai.md)
 
-3. **The NHS is relying more on charities - and that might be creating problems for patients**
-   - **Published:** Thu, 05 Nov 2026 00:12:30 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_The_NHS_is_relying_more_on_charities_-_a.md](top-stories_article_3_The_NHS_is_relying_more_on_charities_-_a.md)
+3. **White House denies Hegseth and Rubio to leave jobs after Republican election losses**
+   - **Published:** Fri, 06 Nov 2026 02:08:57 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_White_House_denies_Hegseth_and_Rubio_to_.md](top-stories_article_3_White_House_denies_Hegseth_and_Rubio_to_.md)
 
-4. **Joshua Wong, face of Hong Kong's pro-democracy protests, jailed for 10 years**
-   - **Published:** Thu, 05 Nov 2026 03:56:16 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Joshua_Wong_face_of_Hong_Kongs_pro-democ.md](top-stories_article_4_Joshua_Wong_face_of_Hong_Kongs_pro-democ.md)
+4. **Firms told to publish salaries in job adverts ahead of new law**
+   - **Published:** Thu, 05 Nov 2026 22:32:02 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Firms_told_to_publish_salaries_in_job_ad.md](top-stories_article_4_Firms_told_to_publish_salaries_in_job_ad.md)
 
-5. **Interest rates expected to rise for first time in over three years**
-   - **Published:** Thu, 05 Nov 2026 00:00:09 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Interest_rates_expected_to_rise_for_firs.md](top-stories_article_5_Interest_rates_expected_to_rise_for_firs.md)
+5. **Thatcher's Right to Buy split my estate. Now its days could be numbered**
+   - **Published:** Fri, 06 Nov 2026 00:09:56 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Thatchers_Right_to_Buy_split_my_estate_N.md](top-stories_article_5_Thatchers_Right_to_Buy_split_my_estate_N.md)
 
-6. **Typhoons batter East Asia as El Niño makes Pacific 'burn with fever'**
-   - **Published:** Wed, 04 Nov 2026 23:12:47 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Typhoons_batter_East_Asia_as_El_Niño_mak.md](top-stories_article_6_Typhoons_batter_East_Asia_as_El_Niño_mak.md)
+6. **Trump signs order preventing future presidents from changing Oval Office**
+   - **Published:** Fri, 06 Nov 2026 04:29:25 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Trump_signs_order_preventing_future_pres.md](top-stories_article_6_Trump_signs_order_preventing_future_pres.md)
 
-7. **British man infected with Ebola in DR Congo to be flown back to UK**
-   - **Published:** Wed, 04 Nov 2026 18:34:19 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_British_man_infected_with_Ebola_in_DR_Co.md](top-stories_article_7_British_man_infected_with_Ebola_in_DR_Co.md)
+7. **Russell Brand is being investigated over two new rape complaints, police say**
+   - **Published:** Thu, 05 Nov 2026 15:44:49 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Russell_Brand_is_being_investigated_over.md](top-stories_article_7_Russell_Brand_is_being_investigated_over.md)
 
-8. **Pound rises to its highest level since the Brexit referendum**
-   - **Published:** Thu, 05 Nov 2026 04:21:35 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Pound_rises_to_its_highest_level_since_t.md](top-stories_article_8_Pound_rises_to_its_highest_level_since_t.md)
+8. **Watch: Met Police release Brand interview footage**
+   - **Published:** Thu, 05 Nov 2026 16:01:56 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Watch_Met_Police_release_Brand_interview.md](top-stories_article_8_Watch_Met_Police_release_Brand_interview.md)
 
 ---
 
 ### Section: WORLD
 
-1. **Vance walks Trump tightrope with scathing election critique blaming Iran war**
-   - **Published:** Thu, 05 Nov 2026 03:47:56 GMT
-   - **Read Parallel Translation:** [world_article_9_Vance_walks_Trump_tightrope_with_scathin.md](world_article_9_Vance_walks_Trump_tightrope_with_scathin.md)
+1. **Global tech stocks plunge as US midterms add to AI slowdown fears**
+   - **Published:** Fri, 06 Nov 2026 05:51:16 GMT
+   - **Read Parallel Translation:** [world_article_9_Global_tech_stocks_plunge_as_US_midterms.md](world_article_9_Global_tech_stocks_plunge_as_US_midterms.md)
 
-2. **What Democrats can and can't do with their new power after taking Congress**
-   - **Published:** Wed, 04 Nov 2026 18:01:27 GMT
-   - **Read Parallel Translation:** [world_article_10_What_Democrats_can_and_cant_do_with_thei.md](world_article_10_What_Democrats_can_and_cant_do_with_thei.md)
+2. **Trump signs order preventing future presidents from changing Oval Office**
+   - **Published:** Fri, 06 Nov 2026 04:29:25 GMT
+   - **Read Parallel Translation:** [world_article_10_Trump_signs_order_preventing_future_pres.md](world_article_10_Trump_signs_order_preventing_future_pres.md)
 
-3. **Joshua Wong, face of Hong Kong's pro-democracy protests, jailed for 10 years**
-   - **Published:** Thu, 05 Nov 2026 03:56:16 GMT
-   - **Read Parallel Translation:** [world_article_11_Joshua_Wong_face_of_Hong_Kongs_pro-democ.md](world_article_11_Joshua_Wong_face_of_Hong_Kongs_pro-democ.md)
+3. **White House denies Hegseth and Rubio to leave jobs after Republican election losses**
+   - **Published:** Fri, 06 Nov 2026 02:08:57 GMT
+   - **Read Parallel Translation:** [world_article_11_White_House_denies_Hegseth_and_Rubio_to_.md](world_article_11_White_House_denies_Hegseth_and_Rubio_to_.md)
 
-4. **French blood storage impacted by freezer hacks as theories swirl about culprits**
-   - **Published:** Wed, 04 Nov 2026 16:26:15 GMT
-   - **Read Parallel Translation:** [world_article_12_French_blood_storage_impacted_by_freezer.md](world_article_12_French_blood_storage_impacted_by_freezer.md)
+4. **Pope begins lengthy trip to Latin America weeks after lung cancer surgery**
+   - **Published:** Fri, 06 Nov 2026 00:02:57 GMT
+   - **Read Parallel Translation:** [world_article_12_Pope_begins_lengthy_trip_to_Latin_Americ.md](world_article_12_Pope_begins_lengthy_trip_to_Latin_Americ.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Interest rates expected to rise for first time in over three years**
-   - **Published:** Thu, 05 Nov 2026 00:00:09 GMT
-   - **Read Parallel Translation:** [business_article_13_Interest_rates_expected_to_rise_for_firs.md](business_article_13_Interest_rates_expected_to_rise_for_firs.md)
+1. **Global tech stocks plunge as US midterms add to AI slowdown fears**
+   - **Published:** Fri, 06 Nov 2026 05:51:16 GMT
+   - **Read Parallel Translation:** [business_article_13_Global_tech_stocks_plunge_as_US_midterms.md](business_article_13_Global_tech_stocks_plunge_as_US_midterms.md)
 
-2. **Pound rises to its highest level since the Brexit referendum**
-   - **Published:** Thu, 05 Nov 2026 04:21:35 GMT
-   - **Read Parallel Translation:** [business_article_14_Pound_rises_to_its_highest_level_since_t.md](business_article_14_Pound_rises_to_its_highest_level_since_t.md)
+2. **Firms told to publish salaries in job adverts ahead of new law**
+   - **Published:** Thu, 05 Nov 2026 22:32:02 GMT
+   - **Read Parallel Translation:** [business_article_14_Firms_told_to_publish_salaries_in_job_ad.md](business_article_14_Firms_told_to_publish_salaries_in_job_ad.md)
 
-3. **Elon Musk's millions failed to deliver Republican wins in fierce midterms**
-   - **Published:** Wed, 04 Nov 2026 21:41:15 GMT
-   - **Read Parallel Translation:** [business_article_15_Elon_Musks_millions_failed_to_deliver_Re.md](business_article_15_Elon_Musks_millions_failed_to_deliver_Re.md)
+3. **'I was asked if I was a crier': Your worst job interviews revealed**
+   - **Published:** Fri, 06 Nov 2026 00:02:52 GMT
+   - **Read Parallel Translation:** [business_article_15_I_was_asked_if_I_was_a_crier_Your_worst_.md](business_article_15_I_was_asked_if_I_was_a_crier_Your_worst_.md)
 
-4. **Poundland owner in crunch talks as retailer's collapse looms**
-   - **Published:** Wed, 04 Nov 2026 19:44:46 GMT
-   - **Read Parallel Translation:** [business_article_16_Poundland_owner_in_crunch_talks_as_retai.md](business_article_16_Poundland_owner_in_crunch_talks_as_retai.md)
+4. **Interest rates hiked to 4% in first increase in over three years**
+   - **Published:** Thu, 05 Nov 2026 17:09:55 GMT
+   - **Read Parallel Translation:** [business_article_16_Interest_rates_hiked_to_4_in_first_incre.md](business_article_16_Interest_rates_hiked_to_4_in_first_incre.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Elon Musk's millions failed to deliver Republican wins in fierce midterms**
+1. **Global tech stocks plunge as US midterms add to AI slowdown fears**
+   - **Published:** Fri, 06 Nov 2026 05:51:16 GMT
+   - **Read Parallel Translation:** [technology_article_17_Global_tech_stocks_plunge_as_US_midterms.md](technology_article_17_Global_tech_stocks_plunge_as_US_midterms.md)
+
+2. **The engine parts that 'fight the laws of the universe'**
+   - **Published:** Fri, 06 Nov 2026 00:06:06 GMT
+   - **Read Parallel Translation:** [technology_article_18_The_engine_parts_that_fight_the_laws_of_.md](technology_article_18_The_engine_parts_that_fight_the_laws_of_.md)
+
+3. **Elon Musk's millions failed to deliver Republican wins in fierce midterms**
    - **Published:** Wed, 04 Nov 2026 21:41:15 GMT
-   - **Read Parallel Translation:** [technology_article_17_Elon_Musks_millions_failed_to_deliver_Re.md](technology_article_17_Elon_Musks_millions_failed_to_deliver_Re.md)
+   - **Read Parallel Translation:** [technology_article_19_Elon_Musks_millions_failed_to_deliver_Re.md](technology_article_19_Elon_Musks_millions_failed_to_deliver_Re.md)
 
-2. **French blood storage impacted by freezer hacks as theories swirl about culprits**
+4. **French blood storage impacted by freezer hacks as theories swirl about culprits**
    - **Published:** Wed, 04 Nov 2026 16:26:15 GMT
-   - **Read Parallel Translation:** [technology_article_18_French_blood_storage_impacted_by_freezer.md](technology_article_18_French_blood_storage_impacted_by_freezer.md)
-
-3. **Graduates are managing AI - but are they learning much else?**
-   - **Published:** Wed, 04 Nov 2026 00:04:35 GMT
-   - **Read Parallel Translation:** [technology_article_19_Graduates_are_managing_AI_-_but_are_they.md](technology_article_19_Graduates_are_managing_AI_-_but_are_they.md)
-
-4. **Binance says fake job interviews used as part of $6.3bn crypto hack**
-   - **Published:** Tue, 03 Nov 2026 16:19:29 GMT
-   - **Read Parallel Translation:** [technology_article_20_Binance_says_fake_job_interviews_used_as.md](technology_article_20_Binance_says_fake_job_interviews_used_as.md)
+   - **Read Parallel Translation:** [technology_article_20_French_blood_storage_impacted_by_freezer.md](technology_article_20_French_blood_storage_impacted_by_freezer.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Typhoons batter East Asia as El Niño makes Pacific 'burn with fever'**
+1. **Could the earliest weakening of the polar vortex on record bring UK snow?**
+   - **Published:** Fri, 06 Nov 2026 01:22:39 GMT
+   - **Read Parallel Translation:** [science_article_21_Could_the_earliest_weakening_of_the_pola.md](science_article_21_Could_the_earliest_weakening_of_the_pola.md)
+
+2. **Delhi's toxic winter air is back - is the Indian capital prepared for pollution?**
+   - **Published:** Thu, 05 Nov 2026 23:16:53 GMT
+   - **Read Parallel Translation:** [science_article_22_Delhis_toxic_winter_air_is_back_-_is_the.md](science_article_22_Delhis_toxic_winter_air_is_back_-_is_the.md)
+
+3. **Investigation into 'major fish kill' after pollution incident**
+   - **Published:** Thu, 05 Nov 2026 14:51:45 GMT
+   - **Read Parallel Translation:** [science_article_23_Investigation_into_major_fish_kill_after.md](science_article_23_Investigation_into_major_fish_kill_after.md)
+
+4. **Typhoons batter East Asia as El Niño makes Pacific 'burn with fever'**
    - **Published:** Wed, 04 Nov 2026 23:12:47 GMT
-   - **Read Parallel Translation:** [science_article_21_Typhoons_batter_East_Asia_as_El_Niño_mak.md](science_article_21_Typhoons_batter_East_Asia_as_El_Niño_mak.md)
-
-2. **William meets firefighters who tackled summer blazes**
-   - **Published:** Wed, 04 Nov 2026 11:35:08 GMT
-   - **Read Parallel Translation:** [science_article_22_William_meets_firefighters_who_tackled_s.md](science_article_22_William_meets_firefighters_who_tackled_s.md)
-
-3. **Delhi air quality worsens ahead of Diwali as firework restrictions enter force**
-   - **Published:** Wed, 04 Nov 2026 07:39:38 GMT
-   - **Read Parallel Translation:** [science_article_23_Delhi_air_quality_worsens_ahead_of_Diwal.md](science_article_23_Delhi_air_quality_worsens_ahead_of_Diwal.md)
-
-4. **Prince William says UK faces terrifying risk of more wildfires due to climate change**
-   - **Published:** Wed, 04 Nov 2026 06:11:43 GMT
-   - **Read Parallel Translation:** [science_article_24_Prince_William_says_UK_faces_terrifying_.md](science_article_24_Prince_William_says_UK_faces_terrifying_.md)
+   - **Read Parallel Translation:** [science_article_24_Typhoons_batter_East_Asia_as_El_Niño_mak.md](science_article_24_Typhoons_batter_East_Asia_as_El_Niño_mak.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Cocaine overtakes heroin as leading cause of drug deaths in England and Wales**
+1. **Tempted by snacks before bed? Here's why - and what you can do about it**
+   - **Published:** Fri, 06 Nov 2026 00:42:05 GMT
+   - **Read Parallel Translation:** [health_article_25_Tempted_by_snacks_before_bed_Heres_why_-.md](health_article_25_Tempted_by_snacks_before_bed_Heres_why_-.md)
+
+2. **UK doctor infected with Ebola being treated at London hospital**
+   - **Published:** Thu, 05 Nov 2026 21:26:09 GMT
+   - **Read Parallel Translation:** [health_article_26_UK_doctor_infected_with_Ebola_being_trea.md](health_article_26_UK_doctor_infected_with_Ebola_being_trea.md)
+
+3. **Cocaine overtakes heroin as leading cause of drug deaths in England and Wales**
    - **Published:** Wed, 04 Nov 2026 17:58:59 GMT
-   - **Read Parallel Translation:** [health_article_25_Cocaine_overtakes_heroin_as_leading_caus.md](health_article_25_Cocaine_overtakes_heroin_as_leading_caus.md)
+   - **Read Parallel Translation:** [health_article_27_Cocaine_overtakes_heroin_as_leading_caus.md](health_article_27_Cocaine_overtakes_heroin_as_leading_caus.md)
 
-2. **'Multi-cancer' blood tests coming to some GP surgeries soon**
+4. **'Multi-cancer' blood tests coming to some GP surgeries soon**
    - **Published:** Wed, 04 Nov 2026 00:04:28 GMT
-   - **Read Parallel Translation:** [health_article_26_Multi-cancer_blood_tests_coming_to_some_.md](health_article_26_Multi-cancer_blood_tests_coming_to_some_.md)
-
-3. **Parents' concerns to trigger urgent checks in A&E**
-   - **Published:** Mon, 02 Nov 2026 08:52:08 GMT
-   - **Read Parallel Translation:** [health_article_27_Parents_concerns_to_trigger_urgent_check.md](health_article_27_Parents_concerns_to_trigger_urgent_check.md)
+   - **Read Parallel Translation:** [health_article_28_Multi-cancer_blood_tests_coming_to_some_.md](health_article_28_Multi-cancer_blood_tests_coming_to_some_.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **UK commits to 'time-bound' talks on slavery apology**
-   - **Published:** Thu, 05 Nov 2026 02:17:18 GMT
-   - **Read Parallel Translation:** [politics_article_29_UK_commits_to_time-bound_talks_on_slaver.md](politics_article_29_UK_commits_to_time-bound_talks_on_slaver.md)
+1. **Firms told to publish salaries in job adverts ahead of new law**
+   - **Published:** Thu, 05 Nov 2026 22:32:02 GMT
+   - **Read Parallel Translation:** [politics_article_29_Firms_told_to_publish_salaries_in_job_ad.md](politics_article_29_Firms_told_to_publish_salaries_in_job_ad.md)
 
-2. **Chris Mason: The US elections will change Trump - how will Burnham react?**
-   - **Published:** Wed, 04 Nov 2026 21:02:58 GMT
-   - **Read Parallel Translation:** [politics_article_30_Chris_Mason_The_US_elections_will_change.md](politics_article_30_Chris_Mason_The_US_elections_will_change.md)
+2. **Interest rates hiked to 4% in first increase in over three years**
+   - **Published:** Thu, 05 Nov 2026 17:09:55 GMT
+   - **Read Parallel Translation:** [politics_article_30_Interest_rates_hiked_to_4_in_first_incre.md](politics_article_30_Interest_rates_hiked_to_4_in_first_incre.md)
 
-3. **Time to focus on cost of living, says PM after US election results**
-   - **Published:** Wed, 04 Nov 2026 15:35:09 GMT
-   - **Read Parallel Translation:** [politics_article_31_Time_to_focus_on_cost_of_living_says_PM_.md](politics_article_31_Time_to_focus_on_cost_of_living_says_PM_.md)
+3. **More Mandelson papers set to be published before Christmas**
+   - **Published:** Thu, 05 Nov 2026 20:15:56 GMT
+   - **Read Parallel Translation:** [politics_article_31_More_Mandelson_papers_set_to_be_publishe.md](politics_article_31_More_Mandelson_papers_set_to_be_publishe.md)
 
-4. **More asbestos found in Parliament, as MPs urged to get on with revamp**
-   - **Published:** Thu, 05 Nov 2026 03:05:34 GMT
-   - **Read Parallel Translation:** [politics_article_32_More_asbestos_found_in_Parliament_as_MPs.md](politics_article_32_More_asbestos_found_in_Parliament_as_MPs.md)
+4. **Putin not invited to G20 summit in Manchester, says Burnham**
+   - **Published:** Thu, 05 Nov 2026 13:35:03 GMT
+   - **Read Parallel Translation:** [politics_article_32_Putin_not_invited_to_G20_summit_in_Manch.md](politics_article_32_Putin_not_invited_to_G20_summit_in_Manch.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Celebrity hairstylist John Frieda dies aged 75**
-   - **Published:** Wed, 04 Nov 2026 10:52:39 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Celebrity_hairstylist_John_Frieda_dies_a.md](entertainment_article_33_Celebrity_hairstylist_John_Frieda_dies_a.md)
+1. **Russell Brand found guilty of rape and sexual assault**
+   - **Published:** Fri, 06 Nov 2026 02:21:20 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Russell_Brand_found_guilty_of_rape_and_s.md](entertainment_article_33_Russell_Brand_found_guilty_of_rape_and_s.md)
 
-2. **Why Kim Kardashian came back to 'the worst TV drama ever'**
-   - **Published:** Wed, 04 Nov 2026 00:52:19 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Why_Kim_Kardashian_came_back_to_the_wors.md](entertainment_article_34_Why_Kim_Kardashian_came_back_to_the_wors.md)
+2. **Married at First Sight UK cancelled after BBC revealed rape allegations**
+   - **Published:** Thu, 05 Nov 2026 12:26:24 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Married_at_First_Sight_UK_cancelled_afte.md](entertainment_article_34_Married_at_First_Sight_UK_cancelled_afte.md)
 
-3. **Fleabag star offers rent-free flat to new writers**
-   - **Published:** Wed, 04 Nov 2026 10:48:11 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Fleabag_star_offers_rent-free_flat_to_ne.md](entertainment_article_35_Fleabag_star_offers_rent-free_flat_to_ne.md)
+3. **The Russell Brand I saw in court was not the flamboyant character most people will know**
+   - **Published:** Thu, 05 Nov 2026 14:37:14 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_The_Russell_Brand_I_saw_in_court_was_not.md](entertainment_article_35_The_Russell_Brand_I_saw_in_court_was_not.md)
 
-4. **Tributes paid to drummer with dozens of number ones**
-   - **Published:** Wed, 04 Nov 2026 17:23:26 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Tributes_paid_to_drummer_with_dozens_of_.md](entertainment_article_36_Tributes_paid_to_drummer_with_dozens_of_.md)
+4. **The Pitt and ER are similar enough for lawsuit to proceed, judge rules**
+   - **Published:** Thu, 05 Nov 2026 11:21:35 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_The_Pitt_and_ER_are_similar_enough_for_l.md](entertainment_article_36_The_Pitt_and_ER_are_similar_enough_for_l.md)
 
 ---
 

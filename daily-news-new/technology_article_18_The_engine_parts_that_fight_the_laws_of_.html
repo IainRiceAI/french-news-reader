@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The engine parts that 'fight the laws of the universe'</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>The engine parts that 'fight the laws of the universe'</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 06 Nov 2026 00:06:06 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cwe9lmp1pyyxo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Investment has surged into the making of jet turbine blades - an extremely difficult component to make.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Un moteur à réaction aura des centaines de lames de turbine.</p>
+            <span class="english-block">A jet engine will have hundreds of turbine blades</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Chaque fois que vous volerez, une exploitation d'endurance extraordinaire se produit à l'intérieur des moteurs de l'avion.</p>
+            <span class="english-block">Every time you fly, an extraordinary feat of endurance occurs inside the aircraft's engines.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Dans la nacelle extérieure, des centaines de petites lames de turbine sont cachées à l'œil nu. Elles peuvent éviter d'énormes contraintes mécaniques et des températures supérieures à 1 500°C.</p>
+            <span class="english-block">Hidden from view inside the sleek outer nacelle are hundreds of little turbine blades that can shrug off enormous mechanical stresses and temperatures exceeding 1,500C.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">C'est une véritable merveille d'ingénierie.</p>
+            <span class="english-block">It is a true engineering marvel. And these hardy blades are not sculpted or cut from their material – they are grown.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Au cours des années 1960, les ingénieurs ont découvert comment prendre un alliage métallique fondu, le jeter en forme de lame de turbine, puis le refroidir très soigneusement d'un bout à l'autre sur une question d'heures.</p>
+            <span class="english-block">During the 1960s, engineers worked out how to take a molten metal alloy, cast it into the shape of a turbine blade, and then cool it very carefully from one end to the other over a matter of hours. A single crystal or grain of metal alloy forms during this process of gradual, delicate solidification.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Comme si vous transformiez une tasse d'eau en un seul flocon de neige, de votre propre conception, plutôt qu'une mini-boue de neige de beaucoup de petits flocons de neige.</p>
+            <span class="english-block">Like turning a cup of water into one big snowflake, of your own design, rather than a mini blizzard of many smaller snowflakes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">" C'est aussi compliqué que la fabrication, dit Ben Fifoot, ingénieur de la fabrication chez Rolls-Royce, une société britannique de fabrication de lames à turbine. " C'est une véritable motivation pour se lever le matin. "</p>
+            <span class="english-block">"It's about as complicated as manufacturing gets," says Ben Fifoot, manufacturing engineer at Rolls-Royce, which makes turbine blades in the UK. "It's a real motivator to get out of bed in the morning."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Seules une poignée d'entreprises dans le monde peuvent produire ces lames de turbine en cristal unique, et le processus a été perfectionné de bout en bout dans seulement cinq pays, dont les États-Unis et le Royaume-Uni.</p>
+            <span class="english-block">Only a handful of companies around the world can produce these single crystal turbine blades, and the process has been perfected end-to-end in just five countries, including the US and UK. Engine-makers continually vie for access to the technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Rolls-Royce, GE et Safran sont parmi les rares entreprises qui ont perfectionné le processus.</p>
+            <span class="english-block">Rolls-Royce, GE and France's Safran are among the few firms that have perfected the process.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">En septembre, GE Aerospace a annoncé qu'elle achèterait son fournisseur de lames de turbine pour 11,75 milliards de dollars. Aucune des deux entreprises n'a répondu aux demandes de commentaires de BBC News, mais la décision a été décrite comme un effort pour assurer l'approvisionnement en ces composants critiques.</p>
+            <span class="english-block">In September, GE Aerospace announced, external it would acquire its turbine blade supplier for $11.75bn (£8.78bn). Neither company responded to BBC News' requests for comment but the move has been described as an effort to ensure supply of these critical components.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">En mars, Rolls-Royce a annoncé qu'elle investirait plus de 19 millions de livres sterling dans son usine de coulée de lame de Rotherham.</p>
+            <span class="english-block">Separately, in March, Rolls-Royce said it would invest more than £19m in its Rotherham blade casting facility.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Les spécialistes de la lame de turbine continuent de travailler à améliorer les capacités de cette technologie peu connue. Pendant ce temps, la Chine est désespérée de prouver que ses ingénieurs peuvent produire des lames de turbine de la même qualité que celles de l'Ouest. Qui sera le premier ?</p>
+            <span class="english-block">Turbine blade specialists continue to work on improving the capabilities of this little-known technology. All the while, China is desperate to prove that its engineers can produce turbine blades of the same quality as those in the West. Who will come out on top?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" La demande pour [les lames de turbine] est énorme, dit Bill Sweetman, écrivain et consultant de l'industrie aéronautique.</p>
+            <span class="english-block">"Demand for [turbine blades] is huge. So few companies have managed to do it, which does give it this kind of magical aura," says Bill Sweetman, an aviation industry writer and consultant.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Il soupçonne que la récente décision de GE Aerospace vise à assurer la fiabilité et la prévisibilité de la chaîne d'approvisionnement de fabrication d'avions notoirement volatil.</p>
+            <span class="english-block">He suspects GE Aerospace's recent move is about securing reliability and predictability in the notoriously volatile aircraft manufacturing supply chain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Les jets jouent un rôle crucial dans le processus de refroidissement</p>
+            <span class="english-block">The casts play a crucial part in the cooling process</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Mais pourquoi le processus de coulée de cristal unique, qui existe depuis des décennies, est-il toujours si spécialisé?</p>
+            <span class="english-block">But why is the single crystal casting process, which has been around for decades now, still so specialist?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Pour cultiver une de ces lames, affirme Fifoot, il faut " combattre les lois de l'univers ".</p>
+            <span class="english-block">To grow one of these blades, asserts Fifoot, is to "fight the laws of the universe".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Parce que chaque lame fondue refroidirait naturellement en un objet solide composé de nombreux petits grains de métal mélangé ensemble. Mais vous ne voulez pas un cube de sucre démolis, vous voulez un diamant parfait.</p>
+            <span class="english-block">This is because each molten blade would naturally cool into a solid object consisting of many small grains of metal alloy, all jumbled together. But you don't want a crumbly sugar cube, you want a perfect diamond.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Pour que le cristal se forme comme une lame, il ne s'agit pas seulement de refroidir lentement la version fondue, le processus utilise également un truc bizarre appelé coque de porc.</p>
+            <span class="english-block">Getting a single crystal to grow into the shape of the blade instead isn't just a matter of cooling the molten version down slowly, the process also uses a bizarre trick called a pigtail.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">La queue de cochon est une petite spirale à une extrémité de la lame. Fifoot dit que, au début du processus de refroidissement, cette spirale " choque " le flux de cristaux solidifiants de sorte que seul un prend le relais. Un peu comme un coin de pinceau dans une course de F1 juste avant la ligne d'arrivée  un pilote peut prendre l'avance ici et aller à la victoire.</p>
+            <span class="english-block">The pigtail is a small spiral at one end of the blade. Fifoot says that, at the beginning of the cooling process, this spiral "chokes" the flow of solidifying crystals so that just one takes over. A bit like a hairpin corner in an F1 race right before the finish line – one driver can take the lead here and go on to win.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">" Parfois, nous devons jouer avec le nombre de virages ou les angles de la queue de porc pour essayer d'obtenir un grain plus favorable ", ajoute Fifoot. " Une fois la lame formée, cette spirale cruciale mais sacrificielle est coupée.</p>
+            <span class="english-block">"Sometimes we need to play around with the number of turns or the angles on [the pigtail] to try and get more favourable grain," adds Fifoot. Once the blade is formed, this crucial but sacrificial spiral is cut off.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Safran, en France, est l'une des rares entreprises à pouvoir fabriquer des lames en cristal unique.</p>
+            <span class="english-block">France's Safran is among the few companies that can make single crystal blades</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Les lames fabriquées par Rolls-Royce sont utilisées dans les moteurs d'avions, y compris le Trent XWB-84, qui alimente l'Airbus A350-900, et le Trent 1000 XE, pour le Boeing 787.</p>
+            <span class="english-block">Blades made by Rolls-Royce are used in aircraft engines including the Trent XWB-84, which powers the Airbus A350-900, and the Trent 1000 XE, for the Boeing 787.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Le cristal unique est essentiel pour assurer les performances de chaque lame. Parfois, une lame ne refroidit pas tout à fait comme prévu, par exemple, deux cristaux se forment à l'intérieur au lieu d'un seul, et l'alliage métallique doit être recyclé afin que le fabricant puisse réutiliser le matériau.</p>
+            <span class="english-block">The single crystal is essential to ensure each blade's performance. Sometimes a blade doesn't cool quite as planned, for example two crystals form within it instead of just one, and the metal alloy must be reprocessed so that the manufacturer may re-use the material.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Des revêtements céramiques spéciaux protègent également les lames des températures extrêmes à l'intérieur des moteurs.</p>
+            <span class="english-block">Special ceramic coatings also protect blades from extreme temperatures inside engines. And another important feature is that blades are cast with tiny channels that allow a flow of cooler air to coat them in a kind of film while the aircraft engine is working.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">" Le but [de l'industrie] est actuellement de rendre ces passages de refroidissement vraiment complexes ", explique Paul Withey, de l'Université de Birmingham, qui auparavant travaillait pour Rolls-Royce. " Plus ces petits flux d'air frais sont turbulents, explique- t- il, plus ils éliminent la chaleur de l'air environnant, beaucoup plus chaud.</p>
+            <span class="english-block">"The drive at the moment [across the industry] is currently to make those cooling passages really intricate," says Paul Withey, at the University of Birmingham, who formerly worked for Rolls-Royce. The more turbulent those little flows of cool air are, he explains, the more they will knock heat out of the surrounding, much hotter air.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Les fabricants de lames cherchent aussi à réduire la masse de ces composants autant que possible.</p>
+            <span class="english-block">And blade-makers also seek to reduce the mass of these components as much as possible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">"Si nous pouvons en retirer un poids, vous pouvez faire fonctionner le moteur plus efficacement en utilisant moins de carburant  vous pouvez le faire tourner plus vite et plus chaud", dit Fifoot.</p>
+            <span class="english-block">"If we can take any weight out of it, you can run that engine more efficiently using less fuel – you can spin it faster and hotter," says Fifoot.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Les lames de turbine sont utilisées dans le moteur Trent 1000 entre autres</p>
+            <span class="english-block">The turbine blades are used in the Trent 1000 engine among others</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Pendant ce temps, la Chine espère devenir le sixième pays à maîtriser toute la chaîne technologique de la coulée de lame en cristal unique.</p>
+            <span class="english-block">Meanwhile, China hopes to become only the sixth country to master the whole technology chain for single crystal blade casting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Un rapport publié en mai par l'externe citait un ingénieur de l'Institut de matériaux aéronautiques de l'AECC à Pékin affirmant que la Chine possédait désormais un seul alliage de cristal "supérieur ou équivalent aux superalliages de cristal unique de deuxième génération largement utilisés en Europe et aux États-Unis".</p>
+            <span class="english-block">A report in May, external quoted one engineer at the AECC Beijing Institute of Aeronautical Materials claiming that China now had a single crystal alloy "superior to or equivalent to the second-generation single-crystal superalloys widely used in Europe and the US". It costs less to make, too, apparently.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Mais l'Occident a un " énorme avantage " par rapport à la Chine, étant donné que la majorité de la production d'avions de ligne commerciale se produit là-bas, dit Sweetman.</p>
+            <span class="english-block">But the West has a "huge advantage" over China given that the majority of commercial airliner production happens there, says Sweetman. Supply chains and the latest innovations are generally clustered in the West. Plus, Western manufacturers also have lengthy safety records under their belts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">La Chine doit rivaliser sur pratiquement tous les aspects de la fabrication d'avions, pas seulement sur les lames de turbine, pour faire de sérieuses avancées. " Vous pouvez certainement voir cela se produire, mais c'est une longue lutte difficile ", ajoute Sweetman.</p>
+            <span class="english-block">China must compete on practically every aspect of aircraft manufacturing, external – by no means just on turbine blades – in order to make serious in-roads. "You can definitely see that happening but it's a long, uphill struggle," adds Sweetman.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">La demande d'avions est actuellement élevée, ce qui tend déjà à affecter diverses chaînes d'approvisionnement de l'industrie.</p>
+            <span class="english-block">Demand for aircraft is currently high, which is already straining various supply chains in the industry. That demand could grow higher still, suggests Withey.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Il a ajouté que, dans les prochaines années, l'un des deux principaux constructeurs d'avions, Airbus et Boeing, pourrait lancer un nouvel avion de courte distance, externe, puis l'autre devrait suivre son exemple pour rester compétitif.</p>
+            <span class="english-block">During the next few years, one of the two main aircraft manufacturers, Airbus and Boeing, could launch a new short-haul plane, external, he says. Then, the other would have to follow suit in order to remain competitive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">"Il y aura une bataille de pain", dit Withey, sur qui va fournir les moteurs et, par extension, ces toutes-importantes lames de turbine de cristal unique.</p>
+            <span class="english-block">"There'll be a bun fight," says Withey, over who gets to supply the engines and, by extension, those all-important single crystal turbine blades.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">"Un bruit ennuyeux": la recherche de drones plus furtifs</p>
+            <span class="english-block">'An annoying buzz': The search for stealthier drones</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Les travailleurs indiens filment leur travail pour former l'IA</p>
+            <span class="english-block">The Indian workers filming their work to train AI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Pourquoi plus de toits ne sont pas faits de tuiles solaires?</p>
+            <span class="english-block">Why are more roofs not made of solar tiles?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
