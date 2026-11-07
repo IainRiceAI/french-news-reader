@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global stocks plunge as fears over US AI slowdown spread to Asia and Europe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Global stocks plunge as fears over US AI slowdown spread to Asia and Europe</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 06 Nov 2026 13:25:50 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmn04705rd8jo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Investors have reacted to possible tougher scrutiny of data centre construction and the AI industry.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les marchés boursiers mondiaux ont chuté après que les investisseurs aient vendu des actions technologiques par crainte que les élections de mi-mandat aux États-Unis ralentissent le développement de l'intelligence artificielle (IA).</p>
+            <span class="english-block">Global stock markets have tumbled after investors sold tech shares on fears that the US midterm elections would slow the development of artificial intelligence (AI).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">La vente, qui a commencé aux États-Unis et s'est ensuite propagée en Asie et en Europe, a fait disparaître des milliards de dollars de la valeur des actions des grandes entreprises technologiques.</p>
+            <span class="english-block">The sell-off, which started in the US and then spread to Asia and Europe, has seen trillions of dollars wiped off the stock value of major tech firms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Aux États-Unis, l'indice boursier technologique Nasdaq a chuté de 5,5% jeudi.</p>
+            <span class="english-block">In the US, the tech-heavy Nasdaq share index sank 5.5% on Thursday. Asian markets also saw hefty falls on Friday and European markets opened lower.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les investisseurs s'inquiètent d'une réglementation plus stricte de l'IA, après que les candidats démocrates se soient opposés aux centres de données nécessaires à la technologie.</p>
+            <span class="english-block">Investors are worried about tougher regulation of AI, after Democrat candidates opposed the data centres needed by the technology. The share falls also come on top of concerns about whether the huge amounts being spent on AI will pay off.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">La vente des actions américaines a signifié que les sept grandes entreprises technologiques, dont Apple, Nvidia et Tesla, ont perdu un milliard de dollars en une seule journée de négociation, les actions de Nvidia ayant chuté de plus de 9%.</p>
+            <span class="english-block">The sell-off in US stocks meant the so-called magnificent seven tech companies, including Apple, Nvidia and Tesla, shed a trillion dollars in value in a single trading day, with Nvidia shares sliding more than 9%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les actions des sociétés de Musk SpaceX et Tesla ont également chuté, en baisse de 8% et de près de 11% respectivement et en réduction de plus de 300 milliards de dollars de la valeur marchande des entreprises.</p>
+            <span class="english-block">Shares in Elon Musk's companies SpaceX and Tesla also plunged, falling 8% and nearly 11% respectively and shaving more than $300bn off the firms' market value.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Musk avait dépensé près de 450 millions de dollars pour soutenir les campagnes républicaines, dont au moins 45 millions de dollars pour soutenir Ken Paxton pour le siège au Sénat du Texas, mais le Texas est devenu bleu dans le tsunami démocrate mardi.</p>
+            <span class="english-block">Musk had spent nearly $450m backing Republican campaigns, including at least $45m in support of Ken Paxton for the Texas senate seat, but Texas turned blue in the Democratic tsunami on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">La forte baisse du Nasdaq a entraîné une perte estimée à 2,5 milliards de dollars de valeur de marché. L'indice se trouve maintenant dans ce que les observateurs de marché appellent un territoire de correction, où un indice ou une valeur de société tombe au moins 10% en dessous de son niveau le plus élevé récent.</p>
+            <span class="english-block">The sharp fall in the Nasdaq meant it lost an estimated $2.5tn (£1.9tn) in market value. The index is now in what market watchers call correction territory, which is where an index or company value falls at least 10% below its recent high.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Cependant, les gains énormes observés par les actions technologiques ces derniers temps - motivés par l'enthousiasme pour l'IA - signifient que même après la chute de jeudi, le Nasdaq est toujours plus élevé qu'il y a un an, et en hausse d'environ 4,6% par rapport à l'emplacement qu'il était au début de cette année.</p>
+            <span class="english-block">However, the huge gains seen by tech stocks in recent times - driven by the enthusiasm for AI - mean that even after Thursday's fall, the Nasdaq is still higher than it was a year ago, and up about 4.6% from where it was at the start of this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Le Nikkei au Japon a fermé ses actions de 6% alors que les actions des fabricants de puces de mémoire Kioxia et Tokyo Electron ont connu de grandes baisses.</p>
+            <span class="english-block">The US sell-off spread into Asia on Friday. The Nikkei share index in Japan closed down 6% as shares in memory chip makers Kioxia and Tokyo Electron saw big falls.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">En Corée du Sud, l'indice Kospi a chuté de plus de 8% à un moment donné, déclenchant un soi-disant disjoncteur, un mécanisme qui arrête temporairement les échanges pour freiner la panique des ventes.</p>
+            <span class="english-block">In South Korea, the Kospi index plunged more than 8% at one point, triggering a so-called circuit breaker, a mechanism that temporarily halts trading to curb panic selling.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Kospi a finalement fermé ses portes à 6%, les actions du fabricant de puces SK Hynix tombant de plus de 10%.</p>
+            <span class="english-block">The Kospi eventually closed down 6%, with shares in chipmaker SK Hynix falling more than 10%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Les marchés européens ont chuté vendredi, bien que les baisses ne soient pas aussi importantes que les indices qui contiennent moins de stocks technologiques.</p>
+            <span class="english-block">European markets fell on Friday, although the declines were not as severe as the indexes contain fewer tech stocks. The UK's FTSE 100 index fell nearly 2% while Germany's Dax index was down 2.4%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Dan Coatsworth, directeur des marchés d'AJ Bell, a déclaré que les investisseurs étaient préoccupés par les énormes sommes d'argent dépensées en IA sans " aucune idée claire de quand, ou s'il y aura une rétribution ".</p>
+            <span class="english-block">Dan Coatsworth, head of markets at AJ Bell, said investors were worried about the huge amounts of money being spent on AI with "no clear idea of when, or whether, there will be payback".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">"Le résultat des élections de mi-mandat a bouleversé les eaux car les démocrates ont maintenant plus d'influence et pourraient ralentir le rythme des déploiements de centres de données et envisager de nouvelles façons de réglementer le secteur", a-t-il ajouté.</p>
+            <span class="english-block">"The midterm election result muddied the waters as the Democrats now have more influence and could slow down the pace of data centre roll-outs and look at new ways to regulate the sector," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"L'histoire de l'IA a tout été sur la vitesse, et maintenant il y a le danger de se déplacer vers une vitesse inférieure, et certaines des roues tombent".</p>
+            <span class="english-block">"The AI story has all been about speed, and now there is a danger of it moving to a lower gear, and some of the wheels falling off."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Les démocrates de courses à travers les États-Unis ont fait campagne pour ralentir la croissance des centres de données et de l'IA, et il y avait des dizaines de mesures sur les bulletins de vote dans tout le pays visant à restreindre le développement des hubs cruciaux pour alimenter la technologie.</p>
+            <span class="english-block">Democrats in races across the US campaigned to slow the growth of data centres and AI, and there were dozens of measures on ballots around the country aimed at restricting the development of the hubs crucial for powering the technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Ils ont remporté à la fois le Sénat et la Chambre des représentants des États-Unis aux mi-parlementaires, prenant le contrôle du Congrès pour le reste de la présidence du président Donald Trump.</p>
+            <span class="english-block">They won both the US Senate and House of Representatives in the midterms, taking control of Congress for the rest of President Donald Trump's presidency.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"Les Américains ne veulent pas que les grandes oligarques de la technologie détruisent l'environnement, détruisent les emplois et menacent l'avenir de l'humanité.</p>
+            <span class="english-block">"Americans don't want Big Tech oligarchs wrecking the environment, gutting jobs and threatening humanity's future. NATIONAL DATA CENTER MORATORIUM NOW," Democrat Senator Bernie Sanders said in a post on X on Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Comment ça m'affecte si les prix des actions chutent ?</p>
+            <span class="english-block">How does it affect me if share prices fall?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Ces entreprises dont vous n'avez jamais entendu parler alimentent les craintes que la bulle d'IA ne s'écrase</p>
+            <span class="english-block">These firms you've never heard of are feeding fears the AI bubble could burst</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">La nourriture, le carburant et les impôts  les démocrates peuvent-ils vraiment rendre la vie moins chère ?</p>
+            <span class="english-block">Food, fuel and taxes – can the Democrats actually make life cheaper?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Trump a accusé ses opposants politiques de la chute des actions.</p>
+            <span class="english-block">Trump blamed the stock slide on his political opponents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">"Le marché boursier a connu l'un des pires jours de l'histoire en fonction des résultats des élections", a-t-il déclaré jeudi dans un message sur les réseaux sociaux.</p>
+            <span class="english-block">"The Stock Market suffered one of the Worst Days in History based on the results of the Election," he said in a social media post on Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Rappelle-toi, ce n'étaient pas les républicains, c'étaient les Dumocrates".</p>
+            <span class="english-block">"Remember, it wasn't Republicans, it was Dumocrats."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Il semble aussi viser les électeurs.</p>
+            <span class="english-block">He also appeared to take aim at voters too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">"Le marché boursier s'est effondré aujourd'hui parce que les Dumocrates ont eu un grand mardi  C'est triste de voir que vous n'avez que vous-mêmes à blâmer!" a-t-il écrit sur Truth Social.</p>
+            <span class="english-block">"The Stock Market crashed today because the Dumocrats had a big Tuesday — So sad to see, you only have yourselves to blame!" he wrote on Truth Social.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Vendredi, Trump a réitéré son soutien au secteur de l'IA, disant que seuls "les dirigeants stupides" "diront non aux richesses qu'ils apportent".</p>
+            <span class="english-block">On Friday, Trump restated his support for the AI sector, saying only "foolish leadership" would "say no to the riches they bring".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Une réaction contre les centres de données est une autre menace pour le géant de l'IA</p>
+            <span class="english-block">A backlash over data centres is another threat to the AI juggernaut</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Grand, bruyant et venant dans une ville proche de chez vous - pourquoi la réaction du centre de données est en augmentation</p>
+            <span class="english-block">Big, noisy and coming to a town near you - why the data centre backlash is growing</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Certains leaders technologiques ont dit qu'ils avaient été pris au dépourvu par les réactions contre les centres de données au milieu des élections.</p>
+            <span class="english-block">Some tech leaders have said they were caught off guard by the backlash against data centres in the midterms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Greg Brockman, président et cofondateur d'OpenAI, a déclaré qu'il croyait que tout le monde avait été surpris par la réaction des centres de données et qu'il fallait faire plus de travail pour s'assurer que les communautés étaient à bord.</p>
+            <span class="english-block">OpenAI president and co-founder Greg Brockman said he believed everyone had been surprised by the reaction to data centres, and more work needed to be done to ensure communities were on board.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">" Une grande partie de notre changement au cours de cette année a été de réaliser que depuis San Francisco, qui tente de construire des infrastructures au Texas, en Géorgie et ailleurs, vous ne pouvez pas simplement tweeter et dire: 'Cela va être bon.' Vous devez être dans ces communautés", a déclaré Brockman lors de la conférence WSJ Tech à Napa, en Californie.</p>
+            <span class="english-block">"A lot of our shift over the course of this year has really been to realise that from San Francisco trying to build infrastructure in Texas, Georgia, and other places, you can't just tweet and say: 'This is going to be good.' You need to be in those communities," Brockman said at the WSJ Tech conference in Napa, California.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Avec des informations supplémentaires de Lily Jamali</p>
+            <span class="english-block">With additional reporting from Lily Jamali</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

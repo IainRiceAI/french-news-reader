@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What happens if all the lights go out? This is the plan for a 'Black Sky' event</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>What happens if all the lights go out? This is the plan for a 'Black Sky' event</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 07 Nov 2026 00:31:54 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ck5ynnj05z8no?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A Black Sky event could leave millions without power, water and communications. So how prepared is the UK?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">La campagne " Soyez prêts " des gouvernements met en garde contre les intempéries et les cyberattaques qui pourraient perturber les services essentiels</p>
+            <span class="english-block">The governments "Be Ready" campaign warns that severe weather and cyber-attacks could disrupt essential services</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">C'était un samedi soir au début de décembre quand Roger Kemp a réalisé que quelque chose n'allait pas.</p>
+            <span class="english-block">It was a Saturday night in early December when Roger Kemp realised something was very wrong.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">" J'étais à mi-chemin d'un drame criminel Scandi quand tout a explosé, a déclaré à la BBC un professeur de l'université de Lancaster. " Les lumières de rue étaient éteintes, et la lueur de sodium que l'on peut voir à l'horizon depuis Morecambe était éteinte. "</p>
+            <span class="english-block">"I was halfway through a Scandi crime drama when everything went off," the professor at Lancaster University told the BBC. "Streetlights were off. The sodium glow that we can see over the horizon from Morecambe was off."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le lendemain, il est parti faire une promenade.</p>
+            <span class="english-block">The next day he went for a walk.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">"C'était presque comme un film sur les zombies", a- t- il dit. "Les gens cherchaient une réception téléphonique, se demandant où étaient les choses, et il y avait une énorme file d'attente à l'une des boîtes téléphoniques qui fonctionnait".</p>
+            <span class="english-block">"[It was] almost like a zombie movie," he said. "People trying to find phone reception, wondering where things were, and there was a huge queue at the one working telephone box."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">À 22h45 le 5 décembre 2015, la rivière Lune - qui coule directement à travers Lancaster - a été inondée, et l'alimentation en électricité de 61 500 personnes dans la ville a disparu.</p>
+            <span class="english-block">At 22:45 on 5 December 2015, the River Lune - which flows directly through Lancaster - had flooded, and the electricity supply to 61,500 people in the city went.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Les ménages ont perdu de l'électricité et de la chaleur, certains approvisionnements en eau ont également commencé à s'éteindre parce qu'ils dépendaient de pompes électriques. La gare a fermé. Les stations-service et les magasins ont également fermé. La plupart des machines à sous ne fonctionnaient pas. Les feux de circulation ont échoué.</p>
+            <span class="english-block">Households lost light and heat, some water supplies also began to fail because they relied on electric pumps. The railway station closed. So too petrol stations and shops. Most cash machines didn't work. Traffic lights failed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Envie de rencontrer des gens qui se préparent déjà à la crise ?</p>
+            <span class="english-block">Responsible or panicked? Meet the people around the world already preparing for crisis</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Pourquoi devrais-je faire des réserves et de quoi ai-je besoin ?</p>
+            <span class="english-block">Why should I stockpile and what will I need?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les deux systèmes de communication qui ont survécu étaient les téléphones fixes en cuivre et la radio FM.</p>
+            <span class="english-block">The two communication systems that survived were copper wire landline telephones and FM radio. The local commercial radio station The Bay had an emergency generator and one landline and a reporter was sent outside the affected area to ring in with information.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Trois mois plus tard, Kemp, professeur d'ingénierie spécialisé dans la sécurité et les systèmes électriques, a rassemblé des gens pour voir tout ce qui était mal tourné.</p>
+            <span class="english-block">Three months later, Kemp, a professor of engineering with a specialism in safety and electrical systems, gathered people together to look at everything that had gone wrong.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"Il est peut-être ironique que, dans une société avec un énorme engagement envers l'infrastructure numérique, la source d'information la plus fiable soit une station commerciale utilisant une technologie qui aurait été familière aux ingénieurs du navire de radio pirate Radio Caroline des années 1960", conclut le rapport ultérieur.</p>
+            <span class="english-block">"It is perhaps ironic that, in a society with huge commitment to digital infrastructure, the most reliable source of news was a commercial station using technology that would have been familiar to the engineers on the 1960s Radio Caroline pirate radio ship," the subsequent report concluded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Pour Kemp et d'autres dans le domaine des urgences civiles, Lancaster était un avertissement. Quand une ville perd son électricité pendant plusieurs jours, notre monde connecté s'effondre.</p>
+            <span class="english-block">For Kemp and others in the field of civil contingency, Lancaster was a warning. When a town loses power for several days, our connected world falls apart. This kind of disruption has been given a name: a Black Sky event.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Lors d'un récent sommet sur la résilience du Royaume-Uni, la conversation a porté sur la nécessité pour le Royaume-Uni de pouvoir résister à un événement Black Sky pendant au moins 72 heures.</p>
+            <span class="english-block">At a recent summit on UK resilience, the conversation focused on the need for the UK to be able to withstand a Black Sky event for a minimum of 72 hours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">"Nous sommes neuf repas de l'anarchie" est une phrase souvent entendue dans le monde des urgences civiles. Un rappel brutal de la peur que trois jours sans nourriture seraient suffisants pour transformer une crise en chaos. Si un événement du Ciel Noir enlève l'électricité, l'eau, les magasins et les communications, il y a une bonne raison pour que le gouvernement nous demande de disposer de nos propres fournitures.</p>
+            <span class="english-block">"We are nine meals from anarchy" is a phrase often heard in the civil contingency world. A brutal reminder of the fear that three days without food would be enough to turn a crisis into chaos. If a Black Sky event takes out electricity, water, shops and communications, there is a good reason the government wants us to have our own supplies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">La campagne " Soyez préparés " est conçue pour nous aider à nous préparer à toutes sortes de crises possibles, mais le gouvernement dit qu'il n'y a pas de menace spécifique pour le réseau.</p>
+            <span class="english-block">The much talked about "Be Prepared" campaign is designed to help ready us for all sorts of possible crises, but the government says there is no specific threat to the grid. Regardless, a Black Sky event is definitely at the backs of people's minds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Dans une situation d'urgence majeure, on nous dit de nous accrocher et d'allumer une radio FM, comme le faisaient des milliers de personnes à Lancaster.</p>
+            <span class="english-block">In a major emergency, we are being told to hunker down and turn on an FM radio, as thousands did in Lancaster. This is why the BBC has its own Black Sky plan.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">David Sillito tourne la manette à son radio horlogère pour une puissance d'urgence instantanée</p>
+            <span class="english-block">David Sillito turns the hand crank on his clockwork radio for instant emergency power</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Seuls un petit nombre de membres du personnel connaissent les détails, mais d'après ce que j'ai appris, environ 100 personnes de la BBC géreront un studio de radio d'urgence spécial.</p>
+            <span class="english-block">Only a small number of staff know the full details, but from what I have gleaned, about 100 people in the BBC will run a special emergency radio studio.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Il disposera de lignes de communication sécurisées non dépendantes d'Internet, ainsi que de carburant, d'eau et de nourriture pour assurer sa fonctionnement sans approvisionnement pendant au moins trois jours.</p>
+            <span class="english-block">It will have secure lines of communication not dependent on the internet, and fuel, water and food to ensure it can operate without resupply for at least three days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Ce service d'urgence diffusera des messages pré-arrangés du gouvernement.</p>
+            <span class="english-block">This emergency service will broadcast pre-arranged government messaging. The scripts have already been published online., external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Ils contiennent des instructions sur la quantité de boisson que les gens devraient boire chaque jour et sur la façon de se débarrasser des déchets de toilette sans les laver.</p>
+            <span class="english-block">They include instructions on how much people should be drinking each day and how to dispose of toilet waste without flushing the toilet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">D'autres informations seront diffusées par satellite par un certain nombre de journalistes dans les centres d'urgence du Royaume-Uni, ce qui se poursuivra aussi longtemps que le diesel durera.</p>
+            <span class="english-block">Other information will be broadcast via satellite vehicles from a select number of journalists at emergency centres around the UK, which will carry on as long as the diesel lasts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Les émissions de la BBC seront diffusées par des tours de radiodiffusion isolées de l'Internet et équipées de réservoirs de diesel de 5 à 40 000 litres (8,800 gallons) pour maintenir leurs générateurs en marche pendant trois jours - la radio FM est affamée d'énergie.</p>
+            <span class="english-block">The BBC's broadcasts will be sent via radio transmission towers, isolated from the internet and equipped with tanks of between five and 40,000 litres (8,800 gallons) of diesel to keep their generators going for three days - FM radio is power hungry. The teams will be using satellite phones to keep in touch and if these stop working there are pre-agreed protocols and meet-up points.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Parce qu'il fonctionne presque partout, même dans un blackout ou une cyberattaque paralysante.</p>
+            <span class="english-block">Why FM? Because it works almost everywhere, even in a blackout or a crippling cyber-attack.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">" On pensait à l'origine que nous devions planifier cinq à sept jours, m'a confié un informateur de la BBC. " Les derniers conseils de Neso [Nationnel opérateur du système énergétique] sont qu'ils seront probablement en mesure de rétablir l'électricité en deux ou trois jours. "</p>
+            <span class="english-block">"It was originally thought we should plan for five to seven days," I was told quietly by one BBC insider. "The latest advice from Neso [National Energy System Operator] is that they will probably be able to get the power back on in two to three days."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Bien sûr, les craintes d'une panne de réseau ne sont pas nouvelles, mais les récents événements comme la panne de courant massive en Espagne, au Portugal et dans le sud-ouest de la France en avril 2025 l'ont poussé à l'ordre du jour.</p>
+            <span class="english-block">Of course, fears of a grid failure are not new, but recent events such as the mass blackout in Spain, Portugal and south-western France in April 2025 have pushed it up the agenda. And the more it happens, the more it reveals the problems it can create in our networked world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les gens doivent savoir que les coupures d'électricité ne sont pas seulement des éteintes de lumière, dit Lord Harris, président de la Commission nationale britannique de préparation. "Cela risque de mettre fin à l'approvisionnement en eau, car à moins d'être bien situé en aval d'un réservoir, cela nécessite de l'électricité", m'a- t- il dit.</p>
+            <span class="english-block">People need to know power cuts are about more than just the lights going out, says Lord Harris, chair of the UK's National Preparedness Commission. ''It's likely to stop the water supply because unless you happen to be located neatly downstream of a reservoir, that requires electricity," he told me.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Plus important encore, les eaux usées ont tendance à se solidifier à moins que l'eau ne puisse se déplacer à travers elles, ajoute- t- il, "et cela provoque ensuite des blocages, le tout se remet en marche, vous obtenez des eaux usées qui circulent, qui circulent de nouveau dans le système".</p>
+            <span class="english-block">More importantly, sewage tends to solidify unless water can move through it, he adds, "and that then causes blockages, the whole thing backs up, you get sewage flowing out, flowing back up the system".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Il est courant que les gouvernements européens conseillent régulièrement aux ménages de mettre de l'approvisionnement en cas d'urgence nationale, mais le Royaume-Uni est en retard dans ses avertissements à la population.</p>
+            <span class="english-block">It's common for governments in Europe to regularly advise households to stock up on supplies in case of a national emergency - but the UK is behind in its warnings to the population.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Cependant, des travaux ont été entrepris sur certains systèmes de sauvegarde, tels que les pseudo-satellites de haute altitude (HAPS). Le gouvernement dépense 70 millions de livres sterling pour développer des avions qui peuvent faire le tour du Royaume-Uni et fournir au moins une semaine de connectivité mobile d'urgence et d'Internet en temps de crise.</p>
+            <span class="english-block">However, work has begun on some backup systems, such as High Altitude Pseudo-Satellites (HAPS). The government is spending £70m developing planes that can circle over the UK and provide at least a week of emergency mobile phone and internet connectivity at times of crisis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">"Quand les réseaux terrestres échouent, il y a des limites à ce que les satellites peuvent fournir en cas de chute", a déclaré Rico Chandra, directeur du programme de Enduring Atmospheric Platforms, la société qui développe des plans HAPS.</p>
+            <span class="english-block">"When ground networks fail, there are limits to what satellites can provide as a fallback," said Rico Chandra, programme director for Enduring Atmospheric Platforms, the company developing HAPS plans.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Les experts pensent que trois jours seraient suffisants pour que les choses fonctionnent à nouveau si un événement Black Sky se produisait au Royaume-Uni</p>
+            <span class="english-block">Experts believe three days would probably be enough to get things working again if a Black Sky event happened in the UK</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Nous vivons dans un monde complexe et électrique, mais plus tout est connecté, plus il est catastrophique quand cela échoue.</p>
+            <span class="english-block">We live in a complex, electrically powered world - but the more connected everything becomes the more catastrophic it is when that fails.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Dans le but d'améliorer l'efficacité au cours des cinq dernières décennies, nous avons perdu des systèmes de sauvegarde, dit Lord Harris.</p>
+            <span class="english-block">In the drive towards efficiency over the last five decades, we've lost backup systems, says Lord Harris.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Un exemple de cela est le nouveau système de communication adopté par les services d'urgence, qui remplacera les communications radio par la technologie du réseau de téléphonie mobile, dit Lord Harris, "donc si le téléphone mobile tombe en panne, cela aura également des répercussions sur les communications des services d'urgence".</p>
+            <span class="english-block">An example of this is the new communication system being adopted by the emergency services, which will replace radio comms with mobile phone network technology, says Lord Harris, "so if the mobile phone goes down it will also impact on emergency services communications".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Cependant, le gouvernement insiste sur le fait que "mettre les services d'urgence sur les technologies 4G et 5G modernes" est "résilient et fiable".</p>
+            <span class="english-block">However, the government insists "moving emergency services onto modern 4G and 5G technologies" is "resilient and reliable".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">L'enthousiasme du gouvernement pour la résilience n'est pas nouveau. Oliver Dowden, le vice-premier ministre de l'époque, a lancé la dernière initiative de planification des catastrophes du gouvernement conservateur en mai 2024.</p>
+            <span class="english-block">Government enthusiasm for resilience is nothing new. Oliver Dowden, the then deputy prime minister, launched the last Conservative government's disaster planning initiative in May 2024. The launch was somewhat overshadowed by Sunak announcing an election on the same day but, two years on, calls for at least three days of resilience have only grown stronger.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Au début de mes recherches, j'ai parlé à un ingénieur des masts de télévision et de radio du Royaume-Uni, leur isolement solitaire du reste du paysage numérique semblait un échec.</p>
+            <span class="english-block">At the beginning of researching this article I spoke to an engineer about the UK's TV and radio transmission masts, their lonely isolation from the rest of the digital landscape sounded like a failing. It now feels like an argument in their favour.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">L'urgence actuelle de la planification des catastrophes arrive à un moment intéressant pour la technologie sur laquelle nous nous appuyions. Le système fixe de câbles en cuivre du Royaume-Uni - qui fonctionnerait même en cas de coupure d'électricité - sera éteint le 31 janvier 2027.</p>
+            <span class="english-block">The current urgency for disaster planning is coming at an interesting moment for technology we used to rely on. The UK's copper wire landline system - which would work even in a power cut - will be switched off on 31 January 2027. The future of FM radio is also under government review.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">La réponse du gouvernement était que, bien que les lignes fixes en cuivre aient été un avantageux décalage pendant les coupures d'électricité, elles étaient désormais peu fiables et difficiles à réparer.</p>
+            <span class="english-block">The response from the government was that while  copper landlines had been a useful fallback during power cuts, they were now unreliable and difficult to repair.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">En terminant mon appel avec Kemp, je lui ai demandé si son rapport avait amélioré notre préparation à un ciel noir.</p>
+            <span class="english-block">As I ended my call with Kemp, I asked him if his report had helped improve our readiness for a Black Sky. He paused.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">"Si quelque chose, nous avons fait le contraire, dit- il. " En coupant le réseau téléphonique public, je pense que cela montre qu'il n'y a vraiment pas eu de réflexion du tout sur la façon dont vous communiquez quand vous n'avez plus de courant".</p>
+            <span class="english-block">"If anything, we've gone backwards," he said. "Switching off the public switch telephone network, I think shows that there has been really no thought at all about how you communicate when you've no longer got power."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Pendant que j'écrivais ce texte samedi dernier, j'ai dû m'arrêter pendant une heure parce que ma rue était subitement plongée dans l'obscurité.</p>
+            <span class="english-block">While writing this piece last Saturday I had to break off for an hour because my street was suddenly plunged into darkness. We had a power cut.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">J'ai trouvé ma torche d'urgence, mais les piles avaient fui, mes bougies avaient été poussées vers le fond d'un placard et je ne savais pas où j'avais mis ma radio de pointe avec sa torche d'urgence.</p>
+            <span class="english-block">I found my emergency torch, but the batteries had leaked. My candles had been pushed to the back of a cupboard and I had no idea where I had put my wind-up radio with its emergency torch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Ça me semblait un présage.</p>
+            <span class="english-block">It felt like an omen.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

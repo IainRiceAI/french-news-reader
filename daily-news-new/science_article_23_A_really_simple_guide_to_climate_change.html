@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A really simple guide to climate change</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>A really simple guide to climate change</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 06 Nov 2026 16:40:51 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c9w15nggj58o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Human activities are causing the world to heat up, posing serious threats to people and nature.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le changement climatique augmente la fréquence et l'intensité des événements de chaleur extrême</p>
+            <span class="english-block">Climate change is increasing the frequency and intensity of extreme heat events</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Les activités humaines provoquent une hausse des températures mondiales, ce qui constitue une menace sérieuse pour les humains et la nature.</p>
+            <span class="english-block">Human activities are causing world temperatures to rise, posing serious threats to people and nature.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Les choses vont probablement empirer dans les décennies à venir, mais les scientifiques affirment que des mesures urgentes peuvent encore limiter les pires effets du changement climatique.</p>
+            <span class="english-block">Things are likely to worsen in the coming decades, but scientists argue urgent action can still limit the worst effects of climate change.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le changement climatique est le changement à long terme des températures moyennes et des conditions météorologiques de la Terre.</p>
+            <span class="english-block">Climate change is the long-term shift in the Earth's average temperatures and weather conditions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le monde se réchauffe rapidement depuis environ un siècle, ce qui provoque des changements climatiques.</p>
+            <span class="english-block">The world has been rapidly warming for around a century, causing weather patterns to change.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Depuis les années 80, chaque décennie a été plus chaude que la précédente, dit le bureau de la météo.</p>
+            <span class="english-block">Since the 1980s, each decade has been warmer than the previous one, the Met Office says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">2024 a été l'année la plus chaude de l'histoire de la Terre, le changement climatique étant principalement responsable des températures élevées.</p>
+            <span class="english-block">2024 was Earth's hottest year on record, with climate change mainly responsible for the high temperatures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">C'était aussi la première année civile à dépasser 1,5°C de réchauffement par rapport aux niveaux "préindustriels" de la fin du XIXe siècle, selon le service climatique Copernic, externe.</p>
+            <span class="english-block">It was also the first calendar year to surpass 1.5C of warming compared to "pre-industrial" levels of the late 1800s, according to the Copernicus climate service, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les températures sont restées élevées en 2025, malgré un léger refroidissement par un modèle météorologique naturel appelé La Niña.</p>
+            <span class="english-block">Temperatures remained high in 2025, despite a slight cooling from a natural weather pattern called La Niña.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Le modèle d'El Niño opposé, combiné au changement climatique, laisse penser que 2026 sera également l'année la plus chaude jamais enregistrée.</p>
+            <span class="english-block">The opposite El Niño pattern, combined with climate change, makes it likely that 2026 will also rank among the hottest years ever recorded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Le climat a naturellement changé tout au long de l'histoire de la Terre.</p>
+            <span class="english-block">The climate has changed naturally throughout the Earth's history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Mais les causes naturelles ne peuvent expliquer le réchauffement particulièrement rapide observé au cours du siècle dernier, selon l'organisme climatique des Nations unies, le Groupe intergouvernemental sur le changement climatique (GIEC).</p>
+            <span class="english-block">But natural causes cannot explain the particularly rapid warming seen over the last century, according to the UN's climate body, the Intergovernmental Panel on Climate Change (IPCC).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Cela a sans aucun doute été causé par les activités humaines, en particulier par l'utilisation généralisée des combustibles fossiles - charbon, pétrole et gaz - dans les maisons, les usines et les systèmes de transport.</p>
+            <span class="english-block">This has been without doubt caused by human activities, especially the widespread use of fossil fuels - coal, oil and gas - in homes, factories and transport systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Lorsque les combustibles fossiles brûlent, ils libèrent des gaz à effet de serre, principalement le dioxyde de carbone (CO2).</p>
+            <span class="english-block">When fossil fuels burn, they release greenhouse gases - mostly carbon dioxide (CO2). This CO2 acts like a blanket, trapping extra energy in the atmosphere near the Earth's surface. This causes the planet to heat up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Depuis le début de la révolution industrielle, lorsque les humains ont commencé à brûler de grandes quantités de combustibles fossiles, le niveau de CO2 dans l'atmosphère a augmenté de plus de 50%.</p>
+            <span class="english-block">Since the start of the Industrial Revolution - when humans began burning large amounts of fossil fuels - the level of CO2 in the atmosphere has risen by more than 50%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Le CO2 libéré par la combustion de combustibles fossiles, externe, a une empreinte chimique distinctive.</p>
+            <span class="english-block">The CO2 released from burning fossil fuels, external has a distinctive chemical fingerprint. This matches the type of CO2 increasingly found in the atmosphere.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Le changement climatique a déjà eu un impact énorme, notamment:</p>
+            <span class="english-block">Climate change has already had a huge effect, including:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">des conditions météorologiques extrêmes plus fréquentes et intenses, telles que les vagues de chaleur et les fortes pluies</p>
+            <span class="english-block">more frequent and intense extreme weather, such as heatwaves and heavy rainfall</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">la fonte rapide des glaciers et des calottes glaciaires, contribuant à l'élévation du niveau de la mer</p>
+            <span class="english-block">rapid melting of glaciers and ice sheets, contributing to sea-level rises</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">la rétrécition de la glace de mer arctique</p>
+            <span class="english-block">the shrinking of Arctic sea-ice</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">les océans plus chauds, qui peuvent alimenter des tempêtes plus intenses et nuire à la vie marine</p>
+            <span class="english-block">warmer oceans, which can fuel more intense storms and harm sea life</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Ces changements ont déjà des conséquences graves pour les gens et les économies du monde entier.</p>
+            <span class="english-block">These changes are already having serious consequences for people and economies around the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">En août 2026, l'effondrement partiel d'un glacier a provoqué une avalanche de glace et de roche qui a déversé le Népal et le Tibet.</p>
+            <span class="english-block">In August 2026, the partial collapse of a glacier caused an avalanche of ice and rock to descend on Nepal and Tibet</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Les inondations inattendues au Népal ont fait plus de 1.400 morts en août 2026. Le ministre des Finances du Népal, Swarnim Wagle, a déclaré que la reconstruction pourrait coûter jusqu'à un dixième de l'économie.</p>
+            <span class="english-block">Flash floods in Nepal killed more than 1,400 people in August 2026. Nepal's Finance Minister, Swarnim Wagle, said it could cost up to a tenth of the economy to rebuild.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Le changement climatique a augmenté les chances de l'effondrement des glaciers qui a déclenché l'inondation, ont déclaré des scientifiques du groupe World Weather Attribution.</p>
+            <span class="english-block">Climate change increased the chances of the glacier collapse which triggered the flood, World Weather Attribution group scientists said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Plus le monde se réchauffe, plus les effets du changement climatique sont graves.</p>
+            <span class="english-block">The more the world warms, the worse the impacts of climate change become.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Près de 200 pays se sont engagés à tenter de limiter le réchauffement climatique à 1,5°C au-dessus des niveaux préindustriels dans l'accord de Paris de 2015.</p>
+            <span class="english-block">Nearly 200 countries pledged to try to limit global warming to 1.5C above pre-industrial levels in the 2015 Paris agreement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Cet objectif est généralement compris comme signifiant une augmentation annuelle moyenne de 1,5 °C sur 20 ans plutôt qu'une augmentation unique en une seule année.</p>
+            <span class="english-block">That target is generally understood to mean an average annual increase of 1.5C over 20 years rather than a one-off rise in a single year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Le réchauffement à long terme de 1,5°C entraînerait de graves conséquences pour de nombreuses populations.</p>
+            <span class="english-block">Long-term warming of 1.5C would bring serious consequences for many populations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Mais une augmentation de 2°C ou plus apporterait des effets encore plus importants, selon le GIEC.</p>
+            <span class="english-block">But an increase of 2C or more would bring even greater impacts, the IPCC says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Plus de personnes exposées à la chaleur extrême</p>
+            <span class="english-block">more people exposed to extreme heat</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">augmentation des risques pour la sécurité alimentaire dans certaines régions en raison de conditions météorologiques plus extrêmes</p>
+            <span class="english-block">increased risks to food security in some regions due to more extreme weather</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">une augmentation des risques de propagation de certaines maladies sensibles au climat, telles que la dengue</p>
+            <span class="english-block">greater chances of some climate-sensitive diseases spreading, such as dengue</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Plus d'espèces menacées d'extinction</p>
+            <span class="english-block">more species being threatened with extinction</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">L'appel à limiter la hausse de la température à 1,5°C a été en partie conçu pour éviter de traverser les soi-disant "point de basculement".</p>
+            <span class="english-block">The call to restrict temperature rise to 1.5C was partly designed to avoid crossing so-called "tipping points".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">On ne sait pas exactement où elles se trouvent, mais une fois ces seuils dépassés, les changements pourraient s'accélérer et devenir irréversibles.</p>
+            <span class="english-block">It is not clear exactly where they sit, but once these thresholds are passed, changes could accelerate and become irreversible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Il pourrait s'agir de l'effondrement de la calotte glaciaire du Groenland, des courants chauds de l'océan Atlantique ou d'une perte supplémentaire de la forêt amazonienne.</p>
+            <span class="english-block">These could include the collapse of the Greenland Ice Sheet, warm Atlantic Ocean currents or further loss of the Amazon rainforest.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Les pôles de la Terre sont particulièrement vulnérables à l'augmentation des températures</p>
+            <span class="english-block">The Earth's poles are especially vulnerable to rising temperatures</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Selon le GIEC, entre 3,3 et 3,6 milliards de personnes sont très vulnérables aux changements climatiques.</p>
+            <span class="english-block">About 3.3 to 3.6 billion people are highly vulnerable to climate change, the IPCC says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Les personnes vivant dans les pays les plus pauvres devraient souffrir le plus car elles ont moins de ressources pour s'adapter.</p>
+            <span class="english-block">People living in poorer countries are expected to suffer most as they have fewer resources to adapt.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Cela a suscité des questions sur l'équité, extérieure, car ces lieux n'ont généralement été responsables qu'un petit pourcentage des émissions de gaz à effet de serre.</p>
+            <span class="english-block">This has led to questions about fairness, external, because these places have typically only been responsible for a small percentage of greenhouse gas emissions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Toutefois, les effets de la récolte pourraient être ressentis sur de vastes étendues, par exemple, les défaillances des récoltes liées à des conditions météorologiques extrêmes pourraient faire monter les prix des denrées alimentaires à l'échelle mondiale.</p>
+            <span class="english-block">However, knock-on impacts could be felt over wide areas. For example, crop failures linked to extreme weather could raise food prices globally.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">L'atteinte de zéro émission nette de CO2 est essentielle pour limiter le réchauffement climatique, selon le GIEC.</p>
+            <span class="english-block">Reaching net zero CO2 emissions is essential to limit global warming, the IPCC says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Cela signifie réduire les émissions autant que possible et éliminer activement les émissions restantes de l'atmosphère.</p>
+            <span class="english-block">This means reducing emissions as much as possible and actively removing any remaining emissions from the atmosphere.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">La plupart des pays ont ou envisagent de fixer des objectifs externes à zéro.</p>
+            <span class="english-block">Most countries have, or are considering, net zero targets, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Des progrès encourageants ont été réalisés dans certains domaines, tels que les énergies renouvelables et les véhicules électriques.</p>
+            <span class="english-block">There has been encouraging progress in some areas, such as renewable energy and electric vehicles.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Mais les émissions de CO2 de l'humanité sont toujours à des niveaux record, provoquant un réchauffement à long terme qui atteindra 1,4°C en 2025.</p>
+            <span class="english-block">But humanity's CO2 emissions are still at record highs, causing long-term warming to reach 1.4C in 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Le dernier rapport de l'ONU sur les émissions, External, a déclaré que la limite de 1,5°C serait probablement violée dans les années à venir.</p>
+            <span class="english-block">The latest UN Emissions Gap Report, external said the 1.5C limit was likely to be breached in the coming years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Un retour à 1,5°C d'ici 2100 était possible, mais cela nécessiterait "des réductions urgentes et rigoureuses des émissions de gaz à effet de serre", ajoute le rapport.</p>
+            <span class="english-block">A return to 1.5C by 2100 was possible, but it would require "urgent and stringent cuts to greenhouse emissions", the report added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Sinon, le réchauffement climatique pourrait atteindre près de 3°C d'ici la fin du siècle, a déclaré l'ONU.</p>
+            <span class="english-block">Otherwise, global warming could reach nearly 3C by the end of the century, the UN said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Les dirigeants mondiaux se réunissent chaque année pour discuter de leurs engagements en matière de climat.</p>
+            <span class="english-block">World leaders meet every year to discuss their climate commitments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">En 2025, la conférence sur le climat COP30 a pris fin sans aucun nouvel accord sur les combustibles fossiles ou la déforestation dans l'accord final.</p>
+            <span class="english-block">In 2025, the COP30 climate conference ended without any new agreements on fossil fuels or deforestation in the final deal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Les pays avaient précédemment convenu de la nécessité de "se détourner des combustibles fossiles dans les systèmes énergétiques" lors des négociations de la COP28 en 2023.</p>
+            <span class="english-block">Countries had previously agreed on the need to "transition away from fossil fuels in energy systems" at the COP28 talks in 2023.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">Lors de la COP29 en 2024, les pays les plus riches se sont engagés à donner aux pays en développement au moins 300 milliards de dollars par an d'ici 2035 pour les aider à lutter contre le changement climatique.</p>
+            <span class="english-block">At COP29 in 2024, richer countries committed to giving developing nations at least $300bn (£223bn) a year by 2035 to help them tackle climate change. But this is far less than poorer countries say they need.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Les gouvernements se réunissent en Turquie pour la prochaine série de négociations, la COP31, en novembre 2026.</p>
+            <span class="english-block">Governments are gathering in Turkey for the next round of talks, COP31, in November 2026.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">Les grands changements doivent venir des gouvernements et des entreprises, mais les individus peuvent aider par des actions telles que:</p>
+            <span class="english-block">Major changes need to come from governments and businesses, but individuals can help through actions like:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">prendre moins de vols</p>
+            <span class="english-block">taking fewer flights</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">moins d'énergie</p>
+            <span class="english-block">using less energy</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">améliorer l'isolation et l'efficacité énergétique de leur maison</p>
+            <span class="english-block">improving their home's insulation and energy efficiency</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">passer à des véhicules électriques ou vivre sans voiture</p>
+            <span class="english-block">switching to electric vehicles or living car-free</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">le remplacement des chaudières à gaz par des systèmes électriques tels que des pompes à chaleur</p>
+            <span class="english-block">replacing gas boilers with electric systems like heat pumps</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.0" data-end="310.0">
+            <p class="french-block">manger moins de viande rouge</p>
+            <span class="english-block">eating less red meat</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
