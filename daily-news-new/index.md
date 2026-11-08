@@ -1,103 +1,103 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-11-07 06:01:10  
+Generated on: 2026-11-08 06:01:01  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Meghan's father Thomas Markle appears in court over child sex abuse material**
-   - **Published:** Fri, 06 Nov 2026 21:26:56 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Meghans_father_Thomas_Markle_appears_in_.md](top-stories_article_1_Meghans_father_Thomas_Markle_appears_in_.md)
+1. **Briton among six killed in 'far-right' shooting in Krakow**
+   - **Published:** Sun, 08 Nov 2026 00:55:17 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Briton_among_six_killed_in_far-right_sho.md](top-stories_article_1_Briton_among_six_killed_in_far-right_sho.md)
 
-2. **With Stephen Miller pick, Trump readies for a battle**
-   - **Published:** Fri, 06 Nov 2026 23:24:15 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_With_Stephen_Miller_pick_Trump_readies_f.md](top-stories_article_2_With_Stephen_Miller_pick_Trump_readies_f.md)
+2. **Germans wrestle with what to do with Hitler's destroyed Eagle's Nest retreat**
+   - **Published:** Sun, 08 Nov 2026 00:48:59 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Germans_wrestle_with_what_to_do_with_Hit.md](top-stories_article_2_Germans_wrestle_with_what_to_do_with_Hit.md)
 
-3. **Texas mayor instructs police to limit cooperation with ICE**
-   - **Published:** Sat, 07 Nov 2026 03:31:54 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Texas_mayor_instructs_police_to_limit_co.md](top-stories_article_3_Texas_mayor_instructs_police_to_limit_co.md)
+3. **Veterans shouldn't sleep rough this Christmas, Burnham says**
+   - **Published:** Sun, 08 Nov 2026 03:34:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Veterans_shouldnt_sleep_rough_this_Chris.md](top-stories_article_3_Veterans_shouldnt_sleep_rough_this_Chris.md)
 
-4. **Brand's barrister refers himself to regulator after report he confronted journalist**
-   - **Published:** Fri, 06 Nov 2026 16:49:31 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Brands_barrister_refers_himself_to_regul.md](top-stories_article_4_Brands_barrister_refers_himself_to_regul.md)
+4. **Royal Family join veterans and families at Festival of Remembrance**
+   - **Published:** Sun, 08 Nov 2026 01:24:58 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Royal_Family_join_veterans_and_families_.md](top-stories_article_4_Royal_Family_join_veterans_and_families_.md)
 
-5. **What happens if all the lights go out? This is the plan for a 'Black Sky' event**
-   - **Published:** Sat, 07 Nov 2026 00:31:54 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_What_happens_if_all_the_lights_go_out_Th.md](top-stories_article_5_What_happens_if_all_the_lights_go_out_Th.md)
+5. **Two seriously injured after M20 crash involving more than 30 vehicles in Kent**
+   - **Published:** Sun, 08 Nov 2026 04:09:21 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Two_seriously_injured_after_M20_crash_in.md](top-stories_article_5_Two_seriously_injured_after_M20_crash_in.md)
 
-6. **Relief, tears and sadness: Married at First Sight UK cast react to show being axed**
-   - **Published:** Sat, 07 Nov 2026 05:12:52 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Relief_tears_and_sadness_Married_at_Firs.md](top-stories_article_6_Relief_tears_and_sadness_Married_at_Firs.md)
+6. **Andy Burnham wants to get closer to the EU - but he shouldn't expect a smooth ride**
+   - **Published:** Sat, 07 Nov 2026 17:32:42 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Andy_Burnham_wants_to_get_closer_to_the_.md](top-stories_article_6_Andy_Burnham_wants_to_get_closer_to_the_.md)
 
-7. **England 'disappointment' fuels Dewsbury-Hall's Everton heroics**
-   - **Published:** Fri, 06 Nov 2026 23:53:06 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_England_disappointment_fuels_Dewsbury-Ha.md](top-stories_article_7_England_disappointment_fuels_Dewsbury-Ha.md)
+7. **'Dana, please take the job!' - Trump asks UFC boss to be White House press secretary**
+   - **Published:** Sun, 08 Nov 2026 00:31:53 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Dana_please_take_the_job_-_Trump_asks_UF.md](top-stories_article_7_Dana_please_take_the_job_-_Trump_asks_UF.md)
 
-8. **Gladiator II stuntman sues over injuries from on-set explosion**
-   - **Published:** Sat, 07 Nov 2026 01:38:49 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Gladiator_II_stuntman_sues_over_injuries.md](top-stories_article_8_Gladiator_II_stuntman_sues_over_injuries.md)
+8. **My parents chose to die together and I was left to grieve alone**
+   - **Published:** Sun, 08 Nov 2026 01:10:21 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_My_parents_chose_to_die_together_and_I_w.md](top-stories_article_8_My_parents_chose_to_die_together_and_I_w.md)
 
 ---
 
 ### Section: WORLD
 
-1. **AI stocks climb after trillions wiped from market values**
-   - **Published:** Fri, 06 Nov 2026 21:06:25 GMT
-   - **Read Parallel Translation:** [world_article_9_AI_stocks_climb_after_trillions_wiped_fr.md](world_article_9_AI_stocks_climb_after_trillions_wiped_fr.md)
+1. **What we know so far after Krakow gun attack**
+   - **Published:** Sun, 08 Nov 2026 01:47:41 GMT
+   - **Read Parallel Translation:** [world_article_9_What_we_know_so_far_after_Krakow_gun_att.md](world_article_9_What_we_know_so_far_after_Krakow_gun_att.md)
 
-2. **Four midterms takeaways for 2028 White House race**
-   - **Published:** Fri, 06 Nov 2026 16:12:22 GMT
-   - **Read Parallel Translation:** [world_article_10_Four_midterms_takeaways_for_2028_White_H.md](world_article_10_Four_midterms_takeaways_for_2028_White_H.md)
+2. **Israel's president tasks opposition leader Eisenkot with forming government**
+   - **Published:** Sat, 07 Nov 2026 22:19:59 GMT
+   - **Read Parallel Translation:** [world_article_10_Israels_president_tasks_opposition_leade.md](world_article_10_Israels_president_tasks_opposition_leade.md)
 
-3. **Two dead after bus crashes in France, officials say**
-   - **Published:** Fri, 06 Nov 2026 15:33:52 GMT
-   - **Read Parallel Translation:** [world_article_11_Two_dead_after_bus_crashes_in_France_off.md](world_article_11_Two_dead_after_bus_crashes_in_France_off.md)
+3. **No clear winner after tight New Zealand general election**
+   - **Published:** Sat, 07 Nov 2026 15:56:28 GMT
+   - **Read Parallel Translation:** [world_article_11_No_clear_winner_after_tight_New_Zealand_.md](world_article_11_No_clear_winner_after_tight_New_Zealand_.md)
 
-4. **New wave of bomb threats hit European airlines**
-   - **Published:** Fri, 06 Nov 2026 15:25:35 GMT
-   - **Read Parallel Translation:** [world_article_12_New_wave_of_bomb_threats_hit_European_ai.md](world_article_12_New_wave_of_bomb_threats_hit_European_ai.md)
+4. **US offers $20m reward for information about Iran's nuclear programme**
+   - **Published:** Sat, 07 Nov 2026 18:14:38 GMT
+   - **Read Parallel Translation:** [world_article_12_US_offers_20m_reward_for_information_abo.md](world_article_12_US_offers_20m_reward_for_information_abo.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **AI stocks climb after trillions wiped from market values**
+1. **Labubu hype seemed unstoppable, now the fluffy monster mania is dying**
+   - **Published:** Sat, 07 Nov 2026 23:02:35 GMT
+   - **Read Parallel Translation:** [business_article_13_Labubu_hype_seemed_unstoppable_now_the_f.md](business_article_13_Labubu_hype_seemed_unstoppable_now_the_f.md)
+
+2. **AI stocks climb after trillions wiped from market values**
    - **Published:** Fri, 06 Nov 2026 21:06:25 GMT
-   - **Read Parallel Translation:** [business_article_13_AI_stocks_climb_after_trillions_wiped_fr.md](business_article_13_AI_stocks_climb_after_trillions_wiped_fr.md)
+   - **Read Parallel Translation:** [business_article_14_AI_stocks_climb_after_trillions_wiped_fr.md](business_article_14_AI_stocks_climb_after_trillions_wiped_fr.md)
 
-2. **Why the US midterms sparked an AI stock selloff**
+3. **Why the US midterms sparked an AI stock selloff**
    - **Published:** Fri, 06 Nov 2026 18:32:16 GMT
-   - **Read Parallel Translation:** [business_article_14_Why_the_US_midterms_sparked_an_AI_stock_.md](business_article_14_Why_the_US_midterms_sparked_an_AI_stock_.md)
+   - **Read Parallel Translation:** [business_article_15_Why_the_US_midterms_sparked_an_AI_stock_.md](business_article_15_Why_the_US_midterms_sparked_an_AI_stock_.md)
 
-3. **How does it affect me if share prices fall?**
+4. **How does it affect me if share prices fall?**
    - **Published:** Fri, 06 Nov 2026 09:21:50 GMT
-   - **Read Parallel Translation:** [business_article_15_How_does_it_affect_me_if_share_prices_fa.md](business_article_15_How_does_it_affect_me_if_share_prices_fa.md)
-
-4. **Why smoky bacon crisps threaten to reignite rows over EU rules**
-   - **Published:** Fri, 06 Nov 2026 17:19:38 GMT
-   - **Read Parallel Translation:** [business_article_16_Why_smoky_bacon_crisps_threaten_to_reign.md](business_article_16_Why_smoky_bacon_crisps_threaten_to_reign.md)
+   - **Read Parallel Translation:** [business_article_16_How_does_it_affect_me_if_share_prices_fa.md](business_article_16_How_does_it_affect_me_if_share_prices_fa.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Elon Musk appears to signal the end of the road for Cybertruck**
+1. **Can the Zelda remake capture the magic of the original?**
+   - **Published:** Sun, 08 Nov 2026 00:37:45 GMT
+   - **Read Parallel Translation:** [technology_article_17_Can_the_Zelda_remake_capture_the_magic_o.md](technology_article_17_Can_the_Zelda_remake_capture_the_magic_o.md)
+
+2. **Elon Musk appears to signal the end of the road for Cybertruck**
    - **Published:** Fri, 06 Nov 2026 21:49:50 GMT
-   - **Read Parallel Translation:** [technology_article_17_Elon_Musk_appears_to_signal_the_end_of_t.md](technology_article_17_Elon_Musk_appears_to_signal_the_end_of_t.md)
+   - **Read Parallel Translation:** [technology_article_18_Elon_Musk_appears_to_signal_the_end_of_t.md](technology_article_18_Elon_Musk_appears_to_signal_the_end_of_t.md)
 
-2. **AI stocks climb after trillions wiped from market values**
+3. **AI stocks climb after trillions wiped from market values**
    - **Published:** Fri, 06 Nov 2026 21:06:25 GMT
-   - **Read Parallel Translation:** [technology_article_18_AI_stocks_climb_after_trillions_wiped_fr.md](technology_article_18_AI_stocks_climb_after_trillions_wiped_fr.md)
+   - **Read Parallel Translation:** [technology_article_19_AI_stocks_climb_after_trillions_wiped_fr.md](technology_article_19_AI_stocks_climb_after_trillions_wiped_fr.md)
 
-3. **Why the US midterms sparked an AI stock selloff**
+4. **Why the US midterms sparked an AI stock selloff**
    - **Published:** Fri, 06 Nov 2026 18:32:16 GMT
-   - **Read Parallel Translation:** [technology_article_19_Why_the_US_midterms_sparked_an_AI_stock_.md](technology_article_19_Why_the_US_midterms_sparked_an_AI_stock_.md)
-
-4. **Global stocks plunge as fears over US AI slowdown spread to Asia and Europe**
-   - **Published:** Fri, 06 Nov 2026 13:25:50 GMT
-   - **Read Parallel Translation:** [technology_article_20_Global_stocks_plunge_as_fears_over_US_AI.md](technology_article_20_Global_stocks_plunge_as_fears_over_US_AI.md)
+   - **Read Parallel Translation:** [technology_article_20_Why_the_US_midterms_sparked_an_AI_stock_.md](technology_article_20_Why_the_US_midterms_sparked_an_AI_stock_.md)
 
 ---
 
@@ -143,41 +143,41 @@ Scraped Feed Mode: `ALL`
 
 ### Section: POLITICS
 
-1. **PM tells firms to publish salaries in job adverts ahead of new law**
+1. **Parliament restoration delays 'frustrating', says Commons Speaker**
+   - **Published:** Sat, 07 Nov 2026 06:04:32 GMT
+   - **Read Parallel Translation:** [politics_article_29_Parliament_restoration_delays_frustratin.md](politics_article_29_Parliament_restoration_delays_frustratin.md)
+
+2. **PM tells firms to publish salaries in job adverts ahead of new law**
    - **Published:** Fri, 06 Nov 2026 15:25:43 GMT
-   - **Read Parallel Translation:** [politics_article_29_PM_tells_firms_to_publish_salaries_in_jo.md](politics_article_29_PM_tells_firms_to_publish_salaries_in_jo.md)
+   - **Read Parallel Translation:** [politics_article_30_PM_tells_firms_to_publish_salaries_in_jo.md](politics_article_30_PM_tells_firms_to_publish_salaries_in_jo.md)
 
-2. **Burnham responds to BBC question over Labour's past links to Brand**
+3. **Burnham responds to BBC question over Labour's past links to Brand**
    - **Published:** Fri, 06 Nov 2026 16:14:40 GMT
-   - **Read Parallel Translation:** [politics_article_30_Burnham_responds_to_BBC_question_over_La.md](politics_article_30_Burnham_responds_to_BBC_question_over_La.md)
+   - **Read Parallel Translation:** [politics_article_31_Burnham_responds_to_BBC_question_over_La.md](politics_article_31_Burnham_responds_to_BBC_question_over_La.md)
 
-3. **Policing needs reform to cope with modern criminals, Met Police chief warns**
+4. **Policing needs reform to cope with modern criminals, Met Police chief warns**
    - **Published:** Fri, 06 Nov 2026 14:44:57 GMT
-   - **Read Parallel Translation:** [politics_article_31_Policing_needs_reform_to_cope_with_moder.md](politics_article_31_Policing_needs_reform_to_cope_with_moder.md)
-
-4. **Why smoky bacon crisps threaten to reignite rows over EU rules**
-   - **Published:** Fri, 06 Nov 2026 17:19:38 GMT
-   - **Read Parallel Translation:** [politics_article_32_Why_smoky_bacon_crisps_threaten_to_reign.md](politics_article_32_Why_smoky_bacon_crisps_threaten_to_reign.md)
+   - **Read Parallel Translation:** [politics_article_32_Policing_needs_reform_to_cope_with_moder.md](politics_article_32_Policing_needs_reform_to_cope_with_moder.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Relief, tears and sadness: Married at First Sight UK cast react to show being axed**
-   - **Published:** Sat, 07 Nov 2026 05:12:52 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Relief_tears_and_sadness_Married_at_Firs.md](entertainment_article_33_Relief_tears_and_sadness_Married_at_Firs.md)
+1. **Monty Don bids 'final goodbye' to Gardeners' World after two decades**
+   - **Published:** Sat, 07 Nov 2026 10:44:38 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Monty_Don_bids_final_goodbye_to_Gardener.md](entertainment_article_33_Monty_Don_bids_final_goodbye_to_Gardener.md)
 
-2. **Katherine Ryan says she feels 'grief and relief' after Russell Brand conviction**
-   - **Published:** Fri, 06 Nov 2026 13:12:20 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Katherine_Ryan_says_she_feels_grief_and_.md](entertainment_article_34_Katherine_Ryan_says_she_feels_grief_and_.md)
+2. **Relief, tears and sadness: Married at First Sight UK cast react to show being axed**
+   - **Published:** Sat, 07 Nov 2026 11:31:10 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Relief_tears_and_sadness_Married_at_Firs.md](entertainment_article_34_Relief_tears_and_sadness_Married_at_Firs.md)
 
-3. **Brand's barrister refers himself to regulator after report he confronted journalist**
-   - **Published:** Fri, 06 Nov 2026 16:49:31 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Brands_barrister_refers_himself_to_regul.md](entertainment_article_35_Brands_barrister_refers_himself_to_regul.md)
+3. **Gladiator II stuntman sues over injuries from on-set explosion**
+   - **Published:** Sat, 07 Nov 2026 01:38:49 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Gladiator_II_stuntman_sues_over_injuries.md](entertainment_article_35_Gladiator_II_stuntman_sues_over_injuries.md)
 
-4. **How 2000s lad culture helped Russell Brand to hide in plain sight**
-   - **Published:** Fri, 06 Nov 2026 12:16:44 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_How_2000s_lad_culture_helped_Russell_Bra.md](entertainment_article_36_How_2000s_lad_culture_helped_Russell_Bra.md)
+4. **Knicks defend Taylor Swift after players name her 'fakest celebrity fan'**
+   - **Published:** Sat, 07 Nov 2026 13:03:57 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Knicks_defend_Taylor_Swift_after_players.md](entertainment_article_36_Knicks_defend_Taylor_Swift_after_players.md)
 
 ---
 
