@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The superpower battle over energy – and what it means for your bills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">top-stories</div>
+        <h1>The superpower battle over energy – and what it means for your bills</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 10 Nov 2026 00:08:28 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw62y2z53pg1o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: A tug-of-war between China and the US could have a big impact on energy costs, but who will win?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">La bataille de la superpuissance pour l'énergie et ce que cela signifie pour vos factures</p>
+            <span class="english-block">The superpower battle over energy – and what it means for your bills</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Une plateforme de gaz dans la mer du Nord, un champ pétrolier au Texas, une usine de panneaux solaires en Chine, ils peuvent se sentir loin, mais votre facture d'énergie dit le contraire.</p>
+            <span class="english-block">A gas rig in the North Sea. An oil field in Texas. A solar panel factory in China. They can feel a world away, but your energy bill says otherwise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">En janvier, il pourrait augmenter de plus d'un quart  environ 460 £ de plus par an pour le ménage typique britannique  selon les dernières prévisions des grands fournisseurs British Gas, EDF et E.ON.</p>
+            <span class="english-block">In January, it could jump by more than a quarter – around £460 extra a year for the typical UK household – according to the latest forecasts from the big suppliers British Gas, EDF and E.ON.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Pour la deuxième fois en quatre ans, une guerre à des milliers de kilomètres de là arrive dans les boîtes de réception britanniques.</p>
+            <span class="english-block">For the second time in four years, a war thousands of miles away is landing in British inboxes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Depuis que les attaques américaines et israéliennes contre l'Iran en février ont effectivement fermé le détroit d'Hormuz, les prix du pétrole et du gaz ont grimpé en flèche.</p>
+            <span class="english-block">Since US and Israeli strikes on Iran in February effectively closed the Strait of Hormuz, oil and gas prices have soared.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">L'hiver devrait les pousser encore plus haut: la demande de gaz augmente alors que les réserves d'essence d'hiver en Europe sont à leur niveau le plus bas depuis le début des records en 2011.</p>
+            <span class="english-block">Winter is expected to push them higher still: demand for gas is rising just as Europe's winter gas stores are at their lowest since records began in 2011.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Et il y a une menace plus grande qui se cache derrière tout cela: le réchauffement climatique. La réduction des émissions de carbone est essentielle pour limiter le réchauffement futur et éviter les effets les plus dommageables du changement climatique. Mais garder les factures basses tout en réduisant les émissions s'avère difficile  et pas seulement pour le Royaume-Uni.</p>
+            <span class="english-block">And there's a bigger threat looming over all of this: the warming climate. Cutting carbon emissions is essential to limit future warming and avoid the most damaging effects of climate change. But keeping bills down while cutting emissions is proving hard – and not just for the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Alors que les dirigeants mondiaux se réunissent cette semaine à Antalya, en Turquie, pour le sommet climatique COP31, la même tension se produit dans le monde entier.</p>
+            <span class="english-block">As world leaders gather this week in Antalya, Turkey, for COP31, the UN climate summit, the same tension is playing out around the world. Energy and climate policy has become the front line in a contest between the world's two energy superpowers, leaving everyone else squeezed in between.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">L'Amérique s'appuie sur les molécules de combustibles fossiles: pompage de volumes record de pétrole et de gaz et presse ses alliés à les acheter. La Chine s'appuie sur les électrons: inondation du monde avec les panneaux solaires, les batteries et les voitures électriques qui peuvent remplacer ces combustibles.</p>
+            <span class="english-block">America is betting on fossil-fuel molecules: pumping record volumes of oil and gas and pressing its allies to buy them. China is betting on electrons: flooding the world with the solar panels, batteries and electric cars that can replace those fuels.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Que le pari sur les combustibles fossiles ou les énergies renouvelables gagne, cela va influencer non seulement le prix de l'énergie payé par le monde, mais aussi la vitesse à laquelle il peut réduire les émissions qui réchauffent la planète.</p>
+            <span class="english-block">Whether the bet on fossil fuels or renewables wins will shape not just what the world pays for energy, but how fast it can cut the emissions that are heating the planet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Le Royaume-Uni, qui achète déjà près d'un quart de son gaz importé des États-Unis et une grande partie de son kit d'énergie propre de la Chine, est attiré dans les deux sens. Alors quelle voie prendra-t-il? Y a-t-il un moyen et que signifiera-t-il pour vos factures?</p>
+            <span class="english-block">The UK, which already buys nearly a quarter of its imported gas from America and much of its clean energy kit from China, is being pulled both ways. So which path will it take? Is there a middle way and what will it all mean for your bills?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Sur le Moray Firth, près d'Inverness, une longue spirale de sable et de dunes se déploie dans la mer à Whiteness Head.</p>
+            <span class="english-block">On the Moray Firth near Inverness, a long spit of sand and dunes curls out into the sea at Whiteness Head. Behind it lies a yard where, for nearly 30 years, thousands of workers built the giant platforms that opened up North Sea oil.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Ming Yang, l'un des plus grands fabricants de turbines éoliennes de Chine, voulait la ramener à la vie avec une usine de 1,5 milliard de livres sterling et jusqu'à 1 500 emplois initialement créés.</p>
+            <span class="english-block">Ming Yang, one of China's biggest wind turbine makers, wanted to bring it back to life with a £1.5bn factory and up to 1,500 jobs initially generated. In March, after US lawmakers had urged the UK to block it, ministers did just that, citing national security.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Panorama, feu et inondation: notre météo extrême</p>
+            <span class="english-block">Panorama, Fire and Floods: Our Extreme Weather</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">9 novembre 2026</p>
+            <span class="english-block">9 November 2026</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Le mois dernier, ils ont approuvé un nouveau champ de gaz en mer du Nord, Jackdaw.</p>
+            <span class="english-block">Last month, they approved a new North Sea gas field, Jackdaw. No to Chinese wind turbines; yes to North Sea gas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Le gaz chauffe la plupart des foyers et fixe la plupart du temps le prix de gros de l'électricité. Le dernier choc, après l'invasion russe de l'Ukraine, a coûté aux ménages 63 milliards de livres supplémentaires  environ 2 200 livres chacune  selon l'Unité d'intelligence sur l'énergie et le climat et E3G, deux organisations de recherche sur le climat et l'énergie.</p>
+            <span class="english-block">Few countries are more exposed to the energy shock than the UK. Gas heats most homes and, much of the time, sets the wholesale price of electricity. The last shock, after Russia's invasion of Ukraine, cost households an extra £63bn – around £2,200 each – according to the Energy and Climate Intelligence Unit and E3G, two climate and energy research organisations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Les éoliennes représentent l'énergie produite chez nous, mais elles présentent des problèmes potentiels.</p>
+            <span class="english-block">Wind turbines represent homegrown energy, but they come with potential problems</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Moins de la moitié du gaz du Royaume-Uni provient désormais de ses propres champs de la mer du Nord, et l'énergie que nous importons provient souvent d'endroits qui se révèlent instables ou peu fiables.</p>
+            <span class="english-block">Less than half of the UK's gas now comes from its own North Sea fields, and the energy we import often comes from places that turn out to be unstable or unreliable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Dans le même temps, la secrétaire à l'énergie Miatta Fahnbulleh affirme que la lutte contre le changement climatique reste une priorité après l'été le plus chaud jamais enregistré de la Grande-Bretagne.</p>
+            <span class="english-block">At the same time, Energy Secretary Miatta Fahnbulleh says tackling climate change remains a priority after Britain's hottest summer on record. The heatwaves, droughts and wildfires it brought would have been almost impossible without global warming, the Met Office's chief scientist told BBC Panorama.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Mais quand j'ai insisté sur ce qui comptait le plus, les factures ou le climat, Fahnbulleh a dit sans équivoque: " Avec le coût de la vie qui s'accumule, l'abordabilité est mon objectif principal, sans aucun doute. "</p>
+            <span class="english-block">But when I pressed Fahnbulleh on which matters most, bills or climate, she was unequivocal: "With the cost of living biting, affordability is my overriding objective, without a doubt."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">"Nous sommes trop exposés aux marchés mondiaux sur lesquels nous n'avons aucun contrôle", m'a dit Fahnbulleh. "Quelle est la solution à cela?</p>
+            <span class="english-block">"We are far too exposed to global markets we have no control over," Fahnbulleh told me. "What's the solution to that? Homegrown clean energy."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Il y a deux façons de rendre l'énergie britannique plus domestique: faire des forages pour en faire plus ou en construire plus.</p>
+            <span class="english-block">There are two ways to make Britain's energy more homegrown: drill for more of it, or build more of it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Quelques heures après l'approbation de Jackdaw, le président américain Donald Trump - qui avait fait la guerre aux éoliennes depuis qu'il s'est opposé à une éolienne près de son terrain de golf d'Aberdeenshire en 2006 - a fait appel à Truth Social. " Elles devraient exploser !! ", a- t- il écrit. " REMISsez les moulins à vent coûteux et ridicules ! "</p>
+            <span class="english-block">Within hours of Jackdaw's approval, US President Donald Trump - at war with wind turbines since objecting to a wind farm near his Aberdeenshire golf course in 2006 - took to Truth Social. "They should go FULL BLAST!!!" he wrote. "TAKE DOWN THE COSTLY AND RIDICULOUS WINDMILLS!"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Le gouvernement britannique doit maintenant faire un choix plus difficile: approuver la Rosebank, à l'ouest des Shetland, le plus grand champ pétrolier non développé du Royaume-Uni.</p>
+            <span class="english-block">Now the UK government faces a tougher choice - whether to approve Rosebank, west of Shetland, the UK's largest undeveloped oil field.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">La Banque Rosebank est beaucoup plus grande que Jackdaw - Fahnbulleh a dit qu'elle produirait environ sept fois plus d'émissions - et c'est principalement du pétrole, pas du gaz.</p>
+            <span class="english-block">Rosebank is far bigger than Jackdaw - Fahnbulleh has said it would produce about seven times the emissions - and it is mostly oil, not gas. The subject has reportedly split the cabinet. A decision is expected within weeks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Fahnbulleh, centre, à Jackdaw le mois dernier.</p>
+            <span class="english-block">Fahnbulleh, centre, at Jackdaw last month. She says the drilling will have minimal impact on energy prices</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les opposants du gouvernement accusent déjà les factures élevées de sa réticence à percer. Le leader conservateur Kemi Badenoch a dit au premier ministre de " cesser de bavarder " et de donner sa permission, qualifiant les forages de " la seule façon de protéger les familles de la hausse des factures ".</p>
+            <span class="english-block">The government's opponents are already blaming high bills on its reluctance to drill. Conservative leader Kemi Badenoch has told the prime minister to "stop faffing about" and give permission, calling drilling "the only way we can protect families from rising bills".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Si nous utilisons notre propre carburant... cela réduira nos factures", déclare Richard Tice, de la réforme britannique.</p>
+            <span class="english-block">"If we use our own gas… that will bring our bills down," says Reform UK's Richard Tice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Les élections de mi-mandat américaines de la semaine dernière ont rappelé les risques politiques.</p>
+            <span class="english-block">Last week's US midterms were a reminder of the political risks. Soaring petrol prices are widely seen as a key reason Trump's Republicans lost control of Congress.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Mais quand j'ai demandé à Fahnbulleh si la production de pétrole et de gaz britanniques réduirait les factures, elle a répondu: " Non, ce n'est pas le cas.</p>
+            <span class="english-block">But when I asked Fahnbulleh whether producing more British oil and gas would bring bills down, she was clear. "No, it doesn't," she said. "In the end, the oil and gas is sold on global markets."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Les critiques vont plus loin. " Rosebank ne fait rien pour la sécurité énergétique ", affirme Tessa Khan, du groupe de campagne Uplift, qui a combattu le terrain devant les tribunaux. " Ce qu'elle fait, c'est envoyer un signal très dangereux sur la sérieux du Royaume-Uni à l'égard de la lutte contre le changement climatique après l'été que nous venons de passer. "</p>
+            <span class="english-block">Critics go further. Rosebank "doesn't really do anything for energy security", argues Tessa Khan of the campaign group Uplift, which has fought the field in the courts. "What it does do is send a very dangerous signal about the UK's seriousness about addressing climate change after the summer that we've just had."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">La marée du Nord est en déclin à long terme. La production a chuté de plus de deux tiers depuis son sommet en 1999, et le Bureau de la responsabilité budgétaire s'attend à ce qu'elle continue à chuter d'environ 10% par an  même avec Rosebank, ce qui, selon ses prévisions, va de l'avant.</p>
+            <span class="english-block">Zoom out, though, and the row looks rather different. The North Sea is in long-term decline. Output has fallen by more than two-thirds since its peak in 1999, and the Office for Budget Responsibility expects it to keep falling by around 10% a year – even with Rosebank, which its forecast assumes goes ahead.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Les réserves de Jackdaw ne représentent que quelques mois de la demande de gaz britannique, tandis que la Rosebank contient moins d'un an de notre consommation de pétrole.</p>
+            <span class="english-block">Whatever ministers decide, the basin's most productive days are behind it. Jackdaw's reserves amount to only a few months of UK gas demand, while Rosebank contains less than a year's worth of our oil consumption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Le débat autour de Rosebank et Jackdaw a suscité une opposition véhémente de la part des manifestants climatiques</p>
+            <span class="english-block">The debate around Rosebank and Jackdaw has sparked vehement opposition from climate protesters</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">La semaine dernière, le gouvernement a présenté un projet de loi qui mettrait en loi son interdiction de nouvelles licences d'exploration. Rosebank, qui est déjà autorisé, n'est pas couvert. Cela pourrait permettre aux ministres de faire les deux choses: approuver le dernier grand champ, tout en promettant qu'il n'y en aura jamais un autre.</p>
+            <span class="english-block">And last week the government introduced a bill to write its ban on new exploration licences into law. Rosebank, which is already licensed, is not covered. That could let ministers have it both ways: approve the last big field, while promising there will never be another.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Les factures devraient augmenter à nouveau en janvier, ce qui pourrait être une combinaison tentante.</p>
+            <span class="english-block">With bills set to rise again in January, that may prove a tempting combination.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">L'alternative est de construire.</p>
+            <span class="english-block">The alternative is to build.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Une éolienne ou un panneau solaire coûte beaucoup d'argent à installer, mais peut ensuite générer de l'électricité pendant des décennies sans avoir besoin de livraisons de carburant.</p>
+            <span class="english-block">Gas is bought, burned and bought again. A wind turbine or solar panel costs money to put up but can then generate electricity for decades without needing shipments of fuel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Les conseillers du gouvernement en matière de climat, le Comité du changement climatique, calculent qu'un futur choc des prix comme celui de 2022 augmenterait les factures d'énergie des ménages de 59% si la Grande-Bretagne restait sur une voie à haute émission de carbone - mais seulement 4% si elle se concentrait sur les énergies renouvelables.</p>
+            <span class="english-block">The government's climate advisers, the Climate Change Committee, calculate that a future price shock like 2022's would push household energy bills up 59% if Britain stayed on a high-carbon path - but only 4% if it focused on renewables.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Le coût de l'énergie des nouvelles centrales solaires a chuté de 90% entre 2010 et 2024, et de l'énergie éolienne terrestre de 70%, selon l'Agence internationale pour l'énergie renouvelable. Mais la récente crise de l'inflation mondiale a repoussé les coûts initiaux. L'année dernière, le développeur danois Ørsted a annulé les plans pour Hornsea 4, un gigantesque parc éolien au large de la côte du Yorkshire, en accusant l'augmentation des coûts de la chaîne d'approvisionnement.</p>
+            <span class="english-block">The cost of power from new solar farms fell by 90% between 2010 and 2024, and from onshore wind by 70%, according to the International Renewable Energy Agency. But the recent bout of global inflation has been pushing initial costs back up. Last year the Danish developer Ørsted scrapped plans for Hornsea 4, a giant wind farm off the Yorkshire coast, blaming soaring supply chain costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Les taux d'intérêt plus élevés ont aggravé les choses. La plupart des coûts d'une ferme éolienne ou solaire sont à l'avance, de sorte que les développeurs doivent emprunter beaucoup avant de pouvoir générer de l'énergie.</p>
+            <span class="english-block">Higher interest rates have made things worse. Most of the cost of a wind or solar farm comes up front, so developers must borrow heavily before they generate any power.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">En outre, il y a un autre problème: la Grande-Bretagne a besoin de nouveaux réseaux électriques coûteux pour apporter cette énergie renouvelable aux villes et aux villes où elle est nécessaire.</p>
+            <span class="english-block">And there is another problem. Britain needs expensive new electricity networks to bring that renewable power to the towns and cities where it is needed. Meanwhile, gas-fired stations still frequently set wholesale power prices - meaning any cost savings are not always reflected in customer bills.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Tout cela signifie que construire plus d'énergies renouvelables ne signifie pas automatiquement une baisse des factures des ménages.</p>
+            <span class="english-block">All of which means building more renewables does not automatically mean lower household bills.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Et il y a un autre problème: la domination de la technologie propre par la Chine. Elle produit la grande majorité des panneaux solaires et des batteries du monde, et environ les deux tiers de ses voitures électriques.</p>
+            <span class="english-block">And there is another issue - China's dominance of clean tech. It makes the vast majority of the world's solar panels and batteries, and around two-thirds of its electric cars.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">En mars, les exportations de panneaux solaires, de batteries et de voitures électriques ont atteint un record, en hausse de 70% par rapport à un an plus tôt, selon le think tank Ember.</p>
+            <span class="english-block">And China's lead is growing. In March, its exports of solar panels, batteries and electric cars hit a record, up 70% on a year earlier, according to the think tank Ember.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Le Royaume-Uni veut échapper aux combustibles fossiles qui exposent les ménages aux chocs de prix et qui continuent d'augmenter le réchauffement climatique.</p>
+            <span class="english-block">The UK wants to escape the fossil fuels that leave households exposed to price shocks and keep adding to global warming. Much of the technology needed to replace those fuels comes from China - a country it is increasingly reluctant to depend on.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">J'ai demandé à Fahnbulleh si la Grande-Bretagne échangeait sa dépendance aux pétrostats contre sa dépendance à Pékin. "Eh bien, nous le sommes", a-t-elle dit, ajoutant: "nous avons un marché mondial diversifié".</p>
+            <span class="english-block">I asked Fahnbulleh whether Britain was swapping dependence on petrostates for dependence on Beijing. "Well, look, we are," she said, adding: "we've got a diversified global market".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">La Grande-Bretagne continuera à acheter de la Chine là où elle en aura besoin, dit Fahnbulleh, mais elle veut plus de matériel fabriqué ici. " Je veux voir des turbines ", a- t- elle dit.</p>
+            <span class="english-block">Britain will keep buying from China where it needs to, says Fahnbulleh, but she wants more of the kit made here. "I want to see turbines," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Pourtant, les turbines construites au Royaume-Uni étaient exactement ce que Ming Yang offrait.</p>
+            <span class="english-block">Yet UK-built turbines were exactly what Ming Yang was offering.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">" Il y avait un risque pour la sécurité, et la sécurité nationale est avant tout importante ", dit Fahnbulleh. " Le gouvernement n'a jamais expliqué publiquement ce que c'était.</p>
+            <span class="english-block">"There was a security risk, and national security comes first and foremost," says Fahnbulleh. The government has never publicly explained what that risk was.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Deux jours avant l'approbation de Jackdaw, Sumitomo Electric a ouvert la première usine de câbles sous-marins HVDC de Grande-Bretagne à Nigg, à un court moment de la côte de Whiteness Head, créant jusqu'à 250 emplois.</p>
+            <span class="english-block">Two days before Jackdaw was approved, Japan's Sumitomo Electric opened Britain's first HVDC subsea cable factory at Nigg, a short way up the coast from Whiteness Head, creating up to 250 jobs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Les investissements étrangers, alors, ne viennent pas de Chine.</p>
+            <span class="english-block">Foreign investment, then - just not from China.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">Les États-Unis ont officiellement quitté l'accord de Paris sur le climat au début de cette année et ne devraient pas envoyer de délégation à la COP de cette année. Sans pression américaine, d'autres ont moins de raisons de faire des promesses audacieuses: les engagements nationaux s'ajoutent maintenant à une réduction des émissions mondiales de seulement 6% d'ici 2035, selon l'ONU,  un dixième de ce que les scientifiques disent nécessaire pour limiter le réchauffement à 1,5°C.</p>
+            <span class="english-block">Earlier this year the US formally left the Paris climate agreement and is not expected to send a delegation to this year's COP. Without American pressure, others have less reason to make bold promises: national pledges now add up to a cut in global emissions of just 6% by 2035, the UN says – a tenth of what scientists say is needed to limit warming to 1.5C.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Donald Trump est un grand exponent des combustibles fossiles</p>
+            <span class="english-block">Donald Trump is a big exponent of fossil fuels</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">La Chine commence à combler l'espace. Li Shuo, de l'Institut de politique de la société asiatique, appelle cela un "retour de rôle". Une fois "un acteur très conservateur" dans les négociations sur le climat, la Chine voit maintenant que pousser l'agenda climatique mondial sert son intérêt national  et, dit-il, "nous ne sommes que au début de cela". Il vise à atteindre l'un des objectifs phares de la COP31, en obtenant 35% de son énergie de l'électricité, cinq ans plus tôt.</p>
+            <span class="english-block">China is beginning to fill the space. Li Shuo, of the Asia Society Policy Institute, calls it a "role reversal". Once "a very conservative player" at climate talks, China now sees pushing the global climate agenda as serving its national interest – and, he says, "we're only at the beginning of this". It aims to hit one of COP31's flagship goals, getting 35% of its energy from electricity, five years early.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Et de plus en plus, ce sont les entreprises chinoises, et non les promesses des gouvernements, qui sont à l'origine de la transition. " C'est vraiment juste une histoire chinoise ", dit Li Shuo.</p>
+            <span class="english-block">And increasingly it is Chinese companies, rather than governments' promises, that are driving the transition. "It's really just a China story," says Li Shuo.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">Si c'est le cas, cela laisse le Royaume-Uni dans un endroit inconfortable.</p>
+            <span class="english-block">If that is right, it leaves the UK in an uncomfortable place. Hard choices – and they come when household budgets are already stretched thin.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">Image de référence: Getty/Reuters</p>
+            <span class="english-block">Lead image: Getty/Reuters</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">Le droit d'achat de Thatcher a créé une génération de propriétaires de maisons - a-t-il également alimenté la crise du logement ?</p>
+            <span class="english-block">Thatcher's Right to Buy created a generation of homeowners - did it also fuel the housing crisis?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">Le NHS se fie davantage aux organismes de bienfaisance - et cela pourrait créer des problèmes pour les patients</p>
+            <span class="english-block">The NHS is relying more on charities - and that might be creating problems for patients</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.0" data-end="310.0">
+            <p class="french-block">Les démocrates ont une crise d'identité - ce ne sera pas une solution facile</p>
+            <span class="english-block">Democrats have an identity crisis - it won't be an easy fix</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.0" data-end="315.0">
+            <p class="french-block">Les questions soulevées dans cet article vous touchent- elles personnellement?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
