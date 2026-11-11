@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot vessels take on the dangerous work of mine hunting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Robot vessels take on the dangerous work of mine hunting</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 11 Nov 2026 00:19:13 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cj5yn24llxd6o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The conflict in the Gulf is an opportunity for the US to test its autonomous mine-hunting systems.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Ce navire sud-coréen fait partie des navires endommagés dans le détroit d'Ormuz .</p>
+            <span class="english-block">This South Korean vessel is among the ships damaged in the Strait of Hormuz</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Traverser le détroit d'Ormuz reste l'un des voyages les plus dangereux qu'un navire puisse faire.</p>
+            <span class="english-block">Traversing the Strait of Hormuz remains one of the most dangerous trips a vessel can take.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Malgré l'aide de la marine américaine, les navires sont toujours attaqués.</p>
+            <span class="english-block">Despite assistance from the US Navy, ships are still being attacked.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">" Pour traverser le détroit d'Ormuz, il faut que le capitaine et l'équipage s'accordent pour prendre le risque, il faut une assurance pour les risques de guerre et le capitaine doit prendre la décision finale ", explique Steve Cameron, ancien officier de la marine marchande et consultant maritime.</p>
+            <span class="english-block">"To transit the Strait of Hormuz you need agreement between the captain and the crew to take the risk. You need war risk insurance. And the captain has to make the final decision," says Steve Cameron, a former merchant navy officer and maritime consultant.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Les missiles et les drones constituent une menace aérienne, mais des mines peuvent aussi se cacher sous la surface.</p>
+            <span class="english-block">Missiles and drones are a threat from the air, but under the surface mines may also be lurking.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">"Si vous êtes capitaine, vous voulez voir que les mines de preuve ne sont pas présentes", ajoute Cameron.</p>
+            <span class="english-block">"If you're a captain, you'd like to see evidence mines aren't present," Cameron adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Les mines modernes reposent sur le fond marin et explosent lorsqu'elles détectent un signal acoustique ou magnétique, déclenchant une vague de pression qui brisera la quille d'un navire qui passe.</p>
+            <span class="english-block">Modern mines rest on the seabed and detonate when they detect an acoustic or magnetic signal, triggering a pressure wave that will break the keel of a passing vessel.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">D'autres peuvent s'élever à travers des eaux peu profondes ou flotter, ou être propulsés vers une cible.</p>
+            <span class="english-block">Others can rise through shallow waters or float, or be powered towards a target.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">La technologie elle-même n'est ni difficile ni coûteuse, mais la seule menace peut empêcher une flotte de pétroliers de naviguer.</p>
+            <span class="english-block">The technology itself is not difficult or costly, but the mere threat can stop a tanker fleet from sailing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Ian McFarlane, du groupe français de défense Thales, est un architecte naval qui connaît bien la guerre des mines. " Les mines sont un moyen très bon marché de mener une guerre navale, comme le sait bien la Royal Navy ", dit- il.</p>
+            <span class="english-block">Ian McFarlane of French defence group Thales is a naval architect who knows mine warfare well. "Mines are a very cheap way of waging a naval war, as the Royal Navy is acutely aware," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">La recherche de mines de mer a traditionnellement été le travail des navires spécialisés dans la chasse aux mines, avec un équipage d'environ 80 marins.</p>
+            <span class="english-block">Finding sea mines has traditionally been the job of specialist mine-hunting vessels, with crews of around 80 sailors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Pour éviter les risques, de plus en plus de travaux sont effectués par des systèmes autonomes et surveillés depuis la côte.</p>
+            <span class="english-block">To keep humans out of harm's way, an increasing amount of the work is done by systems that are autonomous and monitored from the shore.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Il ne leur faudra peut-être que 20 personnes, travaillant en équipes à terre, mais avec les défis de recrutement et de rétention auxquels sont confrontées les navires de l'OTAN, ces systèmes de robots hautement portables sont très attrayants.</p>
+            <span class="english-block">They might only need 20 personnel, working in shifts on land. With the recruitment and retention challenges facing Nato navies these highly-portable robot systems are very attractive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Une telle technologie est en cours de développement depuis 20 ans.</p>
+            <span class="english-block">Such tech has been under development for 20 years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Pendant la guerre en Irak de 2003, la marine américaine a fouillé le fond de la mer à la recherche de mines avec un robot en forme de torpille appelé le Remus 100.</p>
+            <span class="english-block">During the 2003 Iraq war the US Navy poked around the seabed looking for mines with a torpedo-shaped robot called the Remus 100.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">En se déplaçant avec sonar, ces petites machines ont fonctionné jusqu'à une profondeur d'environ 100 pieds et ont épargné aux plongeurs une tâche difficile et dangereuse.</p>
+            <span class="english-block">Pinging around with sonar these little machines operated down to around 100ft depth and spared divers a difficult and dangerous task.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">L'armée iranienne a publié cette photo d'un sous-marin américain capturé dans le Golfe.</p>
+            <span class="english-block">Iran's military published this picture of a US submersible captured in the Gulf</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Le dernier conflit dans le Golfe teste des systèmes beaucoup plus capables.</p>
+            <span class="english-block">The latest conflict in the Gulf is testing much more capable systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">L'armée américaine épargne des détails sur ses bateaux de chasse à la mine, mais nous en avons vu des aperçus.</p>
+            <span class="english-block">The US military is sparing with details about their mine-hunting craft, but we have seen glimpses of them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Les forces iraniennes ont tiré un sous-marin américain autonome sans équipage, extérieur des eaux du détroit d'Hormuz, début septembre.</p>
+            <span class="english-block">Iranian forces hauled an uncrewed US autonomous sub, external out of the waters of the Strait of Hormuz in early September.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Le Pentagone a affirmé que ce robot, un véhicule sous-marin extra-grand sans équipage (XLUUV) de l'entreprise américaine de technologie de défense autonome Anduril, était un appareil ancien en panne sans équipement classifié à bord.</p>
+            <span class="english-block">The Pentagon claimed this robot, an Extra Large Uncrewed Underwater Vehicle (XLUUV) from US autonomous defence tech venture Anduril, was a malfunctioning older device with no classified equipment on-board.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Quel que soit le but de la mission, aucun marin n'était en danger. " C'était une goutte dans l'océan par rapport à la captivité ", dit William Lupton, analyste naval du groupe Shephard, et cela faisait partie du point de vue des navires non équipés.</p>
+            <span class="english-block">Whatever its mission, no sailors were imperilled. That, says William Lupton, a naval analyst with Shephard Group, "was a drop in the ocean compared to having prisoners taken", and part of the point of uncrewed vessels.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Les marines de l'OTAN hésitent à entrer dans les détails, mais les disques informatiques peuvent être effacés ou détruits à distance par divers moyens.</p>
+            <span class="english-block">What if an uncrewed vessel is captured? Nato navies are reluctant to go into details, but computer drives can be wiped or destroyed remotely by various means. This may have taken place inside the humming circuit boards of the XLUUV seized by Iran.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Le véhicule de surface non équipé Thales est rempli de capteurs</p>
+            <span class="english-block">The Thales Uncrewed Surface Vehicle is packed with sensors</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Une telle technologie autonome est adoptée par des forces du monde entier.</p>
+            <span class="english-block">Such autonomous tech is being embraced by forces around the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">La coopération entre Thales, la Royal Navy et la Marine Nationale française a produit un robot de lancement de moteur.</p>
+            <span class="english-block">Cooperation between Thales, the Royal Navy, and France's Marine Nationale has produced a robot motor launch.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Le véhicule de surface non équipé Thales (USV) est équipé de capteurs programmés pour détecter les mines par sonar développé pour les industries pétrolières et gazières.</p>
+            <span class="english-block">The Thales Uncrewed Surface Vehicle (USV) is packed with sensors programmed to detect mines via sonar that was developed for the oil and gas industries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Il tire une boîte rectangulaire de 5 mètres de long, semblable à une grande torpille, qui prend une vue haute résolution sur le fond de la mer et crée une image 3D affinée par l'IA.</p>
+            <span class="english-block">It tows a 5m long rectangular box, similar to a large torpedo, that takes a hi-resolution look at the seabed and creates a 3D picture refined by AI. The latest mines are designed to blend into their surroundings and the software spots anything that looks like a mine.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Les systèmes autonomes sont moins chers que les chasseurs de mines conventionnels, et ils peuvent être déployés par voie aérienne, ainsi que des centres de contrôle contenant des conteneurs.</p>
+            <span class="english-block">Autonomous systems are cheaper than conventional minehunters, plus they can be deployed, along with containerised control centres, by air.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Steve Prest, associé au RUSI Defense Think Tank, a introduit la chasse aux mines sans équipage dans la Royal Navy et a été son premier officier de robotique de flotte, titre qu'il a acquis en 2014.</p>
+            <span class="english-block">Steve Prest, associate fellow at the RUSI defence think tank, introduced uncrewed mine hunting into the Royal Navy and was its first fleet robotics officer, a title he acquired in 2014.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">"Il y a beaucoup de façons de chercher une mine à l'aide de bateaux ou de sous-marins robotisés, et même si vous ne pouvez pas prouver que le négatif, qu'il n'y a pas de mines, vous pouvez réduire le risque".</p>
+            <span class="english-block">"There is a bunch of ways to look for a mine using robot boats or robot subs, and while you can't prove the negative, that no mines are there, you can reduce the risk."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Il dit que les chasseurs de mines américains peuvent faire exploser une mine ou simplement marquer le point comme un endroit à éviter.</p>
+            <span class="english-block">He says US robot minehunters can either blow up a mine or just mark the spot as somewhere to avoid.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">"Nous verrons plus d'autonomie, mais aussi des missions et des capacités s'étendront. Et l'IA analysera les données de ces navires sur place, plutôt que les données analysées lorsque le drone reviendra".</p>
+            <span class="english-block">"We'll see more use of autonomy but also the missions and capability will expand. And AI will be analysing data from those vessels on the spot as opposed to data being analysed when a drone returns."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">La Royal Navy a récemment annoncé son concept d'une marine hybride - mélangeant des drones avec des navires de guerre conventionnels. Mais Prest pense que pour que cette vision réussisse, la flotte doit fonctionner comme une force distribuée, partageant des données dans ce qu'il appelle une architecture cognitive.</p>
+            <span class="english-block">The Royal Navy recently announced its concept of a hybrid navy - mixing drones with conventional warships. But Prest thinks for this vision to succeed the fleet must operate as one distributed force, sharing data in what he terms a cognitive architecture.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Le robot ne fait une différence réelle que dans le cadre de ce schéma et il est une erreur de se concentrer sur des actifs individuels sans équipage. "Les vaisseaux sans équipage ou autonomes ne sont pas le système d'exploitation, ce sont des applications qui y fonctionnent. "</p>
+            <span class="english-block">The robot only makes a real difference as part of this scheme and it's a mistake to focus on individual uncrewed assets. "Uncrewed or autonomous vessels are not the operating system. They are applications running on it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Steve Prest a introduit la chasse aux mines sans équipage dans la Royal Navy</p>
+            <span class="english-block">Steve Prest introduced uncrewed mine hunting into the Royal Navy</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Alors que les robots sont en hausse, les gens sont ce qui compte vraiment dans le détroit.</p>
+            <span class="english-block">While robots are on the rise, people are what really matter in the Strait.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Neil Roberts parle pour les assureurs de Lloyd's de Londres sur les questions maritimes et dit que l'impact psychologique de la menace minière est inévitable, tout comme l'incertitude quant au nombre de mines, le cas échéant, qui sont là-bas.</p>
+            <span class="english-block">Neil Roberts speaks for insurers at Lloyd's of London on marine matters and says the psychological impact of the mine threat is inescapable, as is the uncertainty around just how many mines, if any, are out there.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">"Les États-Unis disent avoir dégagé la route omanienne et croient que la menace des mines est gérée, avec des envois à environ 75% des niveaux d'avant le conflit".</p>
+            <span class="english-block">"The US says it has cleared the Omani route and believes the mine threat is being managed, with shipments running at about 75% of pre-conflict levels."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">La peur de l'inconnu est l'aspect le plus puissant de la menace des mines de mer et les robots sont maintenant l'arme de choix pour affronter cette peur.</p>
+            <span class="english-block">Fear of the unknown is the most potent aspect of the sea mine threat and robots are now the weapon of choice to confront that fear.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">"Un bruit ennuyeux": la recherche de drones plus furtifs</p>
+            <span class="english-block">'An annoying buzz': The search for stealthier drones</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Les travailleurs indiens filment leur travail pour former l'IA</p>
+            <span class="english-block">The Indian workers filming their work to train AI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Pourquoi plus de toits ne sont pas faits de tuiles solaires?</p>
+            <span class="english-block">Why are more roofs not made of solar tiles?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Census should include black English and Asian English options, says MP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Census should include black English and Asian English options, says MP</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 10 Nov 2026 22:04:54 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c3lylyy24xl5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Josh Babarinde's proposal is also supported by other MPs, including David Lammy and Sir James Cleverly.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le prochain recensement devrait inclure davantage d'options d'origine ethnique pour permettre aux gens de se définir comme des Anglais noirs ou Asiatiques, selon un groupe de députés.</p>
+            <span class="english-block">The next census should include more ethnicity options to allow people to define themselves as black English or Asian English, according to a group of MPs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Le député libéral-démocrate Josh Babarinde a déclaré à la BBC que " la plupart des gens " dans le pays croient que " vous n'avez pas besoin d'être blanc pour être anglais ", car il a appelé à la mise à jour des catégories de la même manière que les changements au Pays de Galles et en Écosse.</p>
+            <span class="english-block">Liberal Democrat MP Josh Babarinde told the BBC that "most people" in the country believe "you don't have to be white to be English", as he called for the categories to be updated in a similar way to changes in Wales and Scotland.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Lors du recensement de 2021, la section des groupes ethniques a vu l'anglais offert uniquement dans la catégorie blanche.</p>
+            <span class="english-block">At the 2021 census, the ethnic group section saw English offered only within the white category.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">La proposition de Babarinde, surnommée "le projet de loi de Saint-Georges", vise à élargir les options et ses partisans comprennent le travailliste David Lammy et le conservateur Sir James Cleverly.</p>
+            <span class="english-block">Babarinde's proposal, dubbed the "St George's Bill", aims to broaden the options and its supporters include Labour's David Lammy and Conservative Sir James Cleverly. It was tabled in the House of Commons on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Dans son discours pour présenter le projet de loi de son membre privé (PMB), Babarinde a déclaré aux députés qu'il était un " fier Anglais " et qu'il avait " un héritage nigérian fier ".</p>
+            <span class="english-block">In his speech to introduce his private member's bill (PMB), Babarinde told MPs he is a "proud Englishman" and has "proud Nigerian heritage".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Il a dit: "Mais mes parents et moi sommes nés en Angleterre, nous avons grandi en Angleterre, notre maison est en Angleterre, et pourtant certaines voix tentent de réduire l'anglais à une couleur de peau et à une lignée.</p>
+            <span class="english-block">He said: "But my parents and I were born in England, we grew up in England, our home is in England, yet some voices attempt to reduce Englishness to a skin colour and to a bloodline.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">"Si nous allons suivre ce chemin, la famille de ma mère est anglaise depuis longtemps".</p>
+            <span class="english-block">"Well, if we're going to go down that path, my mum's side of the family has been English for as far back as we have traced."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Le député d'Eastbourne a dit avoir reçu "des menaces de mort pour avoir osé dire que vous n'avez pas besoin d'être blanc pour être anglais".</p>
+            <span class="english-block">The Eastbourne MP said he had received "death threats for daring to say that you don't have to be white to be English".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il a ajouté que "l'ethnicité anglaise est réelle" avant de dire que c'était "un fait historique qu'il n'y a jamais eu une seule lignée" et que "même notre famille royale a des racines allemandes".</p>
+            <span class="english-block">He added "English ethnicity is real" before arguing it is a "matter of historical fact that it has never been one bloodline" and "even our Royal Family has German roots".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">"Le roi n'est-il pas aussi anglais, je le demande".</p>
+            <span class="english-block">"Is the King not English either, I ask."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">S'adressant à la section ethnique du recensement, Babarinde a déclaré que "la seule boîte qui indique que l'anglais est dans la catégorie blanche".</p>
+            <span class="english-block">Addressing the ethnicity section of the census, Babarinde said the "only box that says English sits under the white category".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Il a ajouté: "Si vous êtes noir, le formulaire vous offre un britannique noir, si vous êtes asiatique, il vous offre un britannique asiatique, mais pas un anglais.</p>
+            <span class="english-block">He added: "If you are black, the form offers you black British, if you are Asian, it offers you Asian British, but not English.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">"La même question dans le recensement gallois offre une catégorie noire galloise.</p>
+            <span class="english-block">"Now, the same question in the Welsh census offers a black Welsh category. In Scotland, the census offers Scottish Asian, for example.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">"Mais le meilleur que l'Angleterre offre dans notre recensement est une boîte de rédaction variée qui peut aussi bien être la marge".</p>
+            <span class="english-block">"Yet the best that England offers in our census is a miscellaneous write-in box that may as well be the margin."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Lammy, ancien vice-premier ministre, a déclaré dans un communiqué: "Il est absolument absurde que ni moi ni mes enfants d'origine mixte ne puissions se qualifier de noirs ou de races mixtes et d'anglais sur notre formulaire de recensement.</p>
+            <span class="english-block">Lammy, a former deputy prime minister, said in a statement: "It is quite absurd that neither I or my mixed heritage children can describe themselves as black or mixed race and English on our census form.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"J'ai longtemps fait campagne pour que nous allions nous mettre à la place des autres au Pays de Galles et en Écosse.</p>
+            <span class="english-block">"I have long campaigned for us to change to the position enjoyed by others in Wales and Scotland.  We have to end this backward racial gatekeeping."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Babarinde a déclaré à la BBC qu'il avait fait avancer le PMB parce qu'il y avait "certains coins de notre politique qui tentent de garder l'anglais pour les personnes d'une couleur particulière".</p>
+            <span class="english-block">Babarinde told the BBC he had brought forward the PMB because there were "some corners of our politics who are attempting to gatekeep Englishness for people who are a particular colour".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Il a également dit qu'il y avait "des gens comme Suella Braverman qui ont vraiment miné et remis en question l'anglais de gens comme moi".</p>
+            <span class="english-block">He also said there are "people like Suella Braverman who have really undermined and questioned the Englishness of people like me".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">En 2025, Braverman - alors députée conservatrice avant sa défection à la Réforme britannique - a écrit dans le Daily Telegraph, en dehors, qu'elle était asiatique britannique mais a déclaré qu'elle " ne peut pas prétendre être anglaise " malgré avoir été née et éduquée en Angleterre.</p>
+            <span class="english-block">In 2025, Braverman - then a Conservative MP before her defection to Reform UK - wrote in the Daily Telegraph, external that she was British Asian but said she "cannot claim to be English" despite being born and educated in England.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Ces dernières semaines, Braverman a réaffirmé sa position et a écrit sur X, externe: " Dire que je suis anglais, c'est prendre une attitude de "laissez-faire, tout va-t-il" à l'égard de l'ethnie, de la citoyenneté et de l'identité.</p>
+            <span class="english-block">In recent weeks, Braverman has reaffirmed her position and wrote on X, external: "To say I'm English is to take a 'laissez-faire, anything-goes' attitude to ethnicity, citizenship and identity. It also denies me my Asian heritage."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Elle a également dit que "l'anglais est une ethnie", ajoutant: "Il y a des Anglais depuis des siècles et nous devons reconnaître cela davantage si nous voulons commencer à adopter une approche plus musclée de la citoyenneté et de la nationalité.</p>
+            <span class="english-block">She also said "Englishness is an ethnicity", adding: "There have been English people for centuries and we need to recognise this more if we are to start taking a more muscular approach to citizenship and nationality. And no, it's not racist to say this."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Babarinde a présenté son PMB aux communes en utilisant le processus de règle de 10 minutes.</p>
+            <span class="english-block">Babarinde introduced his PMB to the Commons using the 10-minute rule process.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Cela lui a donné jusqu'à 10 minutes pour expliquer pourquoi il voulait présenter son PMB.</p>
+            <span class="english-block">This gave him up to 10 minutes to make the case for why he wanted to introduce his PMB.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Aucun député n'a pris la possibilité de prononcer un discours de 10 minutes en s'y opposant.</p>
+            <span class="english-block">No MP took up the option to make a 10-minute speech opposing it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Babarinde a demandé à son PMB, connu officiellement sous le nom de projet de loi sur l'identité ethnique anglaise (décisions du recensement), de revenir aux communes le 23 avril 2027 - Jour de saint George - pour son deuxième débat de lecture.</p>
+            <span class="english-block">Babarinde asked for his PMB, formally known as the English Ethnic Identity (census particulars) Bill, to return to the Commons on 23 April 2027 - St George's Day - for its second reading debate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Mais il est peu probable qu'elle soit examinée plus en détail dans sa forme actuelle en raison d'un manque de temps parlementaire.</p>
+            <span class="english-block">But it is unlikely to be considered further in its current form due to a lack of parliamentary time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Les PMB permettent aux députés de soulever des questions qu'ils pensent que les ministres devraient considérer et de développer des campagnes montrant la force du soutien à leurs idées.</p>
+            <span class="english-block">PMBs allow MPs to raise issues they believe ministers should be considering and to develop campaigns showing the strength of support for their ideas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Le recensement 2021 sera modifié après la dispute d'origine ethnique</p>
+            <span class="english-block">Census 2021 to be changed after ethnicity row</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
