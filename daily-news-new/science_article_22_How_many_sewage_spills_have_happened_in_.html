@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How many sewage spills have happened in your part of Scotland?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>How many sewage spills have happened in your part of Scotland?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 12 Nov 2026 22:48:55 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c0re545l8jdo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: More than 76,000 sewage spills were recorded at overflow sites previously unmonitored by Scottish Water, BBC Scotland News analysis has found.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">La pollution trouvée dans la rivière Amandée</p>
+            <span class="english-block">Pollution found in the River Almond</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Plus de 76.000 déversements d'eaux usées ont été enregistrés après que de nouveaux équipements de surveillance ont été installés dans les sites de déversement de déchets en Écosse, selon l'analyse de la BBC.</p>
+            <span class="english-block">More than 76,000 sewage spills were recorded after new monitoring equipment was installed at waste overflow sites in Scotland, BBC analysis suggests.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">L'ajout de 1 009 moniteurs d'égout en 2024 a augmenté la proportion du réseau d'eau écossais surveillé de 6% à 30%.</p>
+            <span class="english-block">The addition of 1,009 sewer monitors in 2024 increased the proportion of the Scottish Water network being monitored from 6% to 30%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les derniers chiffres ont révélé des dizaines de milliers de déversements qui n'auraient pas été enregistrés auparavant, dont des centaines dans des sites de beauté comme le Loch Lomond.</p>
+            <span class="english-block">Now the latest figures have revealed tens of thousands of spills which would previously have been unrecorded, including hundreds at beauty spots like Loch Lomond.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Scottish Water a déclaré que la grande majorité des déversements n'étaient pas nocifs pour l'environnement et que la surveillance accrue avait amélioré la compréhension du réseau d'égouts.</p>
+            <span class="english-block">Scottish Water said the vast majority of the spills were not harmful to the environment, and that increased monitoring had improved understanding of the sewer network.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">BBC Scotland News a utilisé les dernières données pour créer une carte interactive que vous pouvez utiliser pour savoir combien de déversements ont été enregistrés dans votre région, et combien de temps ils ont duré.</p>
+            <span class="english-block">BBC Scotland News has used the latest data to create an interactive map which you can use to find out how many spills were recorded in your area, and how long they lasted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Les déversements d'égouts se produisent automatiquement sur les sites de débordement, qui sont autorisés à libérer l'excès d'eau dans les voies navigables naturelles.</p>
+            <span class="english-block">Sewage spills happen automatically at overflow sites, which are permitted to release excess water into natural waterways.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Ils sont généralement constitués d'un tuyau - beaucoup plus élevé que le niveau d'eau habituel - qui fournit une route d'évacuation lorsque le système est inondé.</p>
+            <span class="english-block">They usually consist of a pipe - set much higher than the usual water level - which provides an escape route when the system is deluged.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Ces débordements servent de soupapes de secours pour éviter que le système d'égout ne soit submergé par des pluies abondantes et que les maisons, les entreprises et les rues ne soient inondées.</p>
+            <span class="english-block">These overflows act as relief valves to prevent the sewer system from becoming overwhelmed during heavy rainfall and flooding into homes, businesses and streets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les déversements peuvent durer de quelques minutes à quelques heures.</p>
+            <span class="english-block">The spills can last anywhere from a few minutes to hours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Scottish Water compte actuellement plus de 4 200 débordements sur son réseau.</p>
+            <span class="english-block">Scottish Water currently has over 4,200 overflows across its network. The number of overflows with monitoring rose from 273 to 1,275 in 2024.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Plus de 100 000 déversements totalisant près de 277 000 heures ont été enregistrés l'année dernière  en moyenne environ 274 par jour.</p>
+            <span class="english-block">More than 100,000 spills totalling to almost 277,000 hours were recorded last year – an average of about 274 a day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Il est difficile d'évaluer la comparaison entre ces chiffres et ceux de l'année précédente, où 24 000 effusions ont été enregistrées en raison de la couverture plus faible.</p>
+            <span class="english-block">It is difficult to assess how the numbers compare to the previous year's figures, when 24,000 spills were recorded because of lower coverage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Tous les sites sont autorisés à libérer des déchets non traités ou partiellement traités, mais un peu moins de 12% des débordements sont légalement tenus de signaler leurs données à l'organisme de réglementation, l'Agence écossaise de protection de l'environnement (Sepa).</p>
+            <span class="english-block">The sites are all licensed to release untreated or partially-treated waste but just under 12% of overflows are legally required to report their data to the regulator, the Scottish Environment Protection Agency (Sepa).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Sepa a déclaré qu'elle avait une "approche basée sur les risques" qui donne la priorité aux domaines de surveillance basés sur la population et les besoins environnementaux.</p>
+            <span class="english-block">Sepa said it has a "risk-based approach" which prioritises areas for monitoring based on population and environmental need.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Cependant, aucun des nouveaux moniteurs n'a été signalé à Sepa.</p>
+            <span class="english-block">However, none of the new monitors were required to be reported to Sepa.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Les chiffres de l'Eau écossaise, externes montrent que la rivière Clyde de Glasgow a été l'une des voies navigables les plus touchées en Écosse l'année dernière, recevant près de 6 150 déversements - soit l'équivalent de 17 par jour.</p>
+            <span class="english-block">Scottish Water figures, external show that Glasgow's River Clyde was one of the most impacted waterways in Scotland last year, receiving almost 6,150 spills - or the equivalent of 17 a day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Si l'on ajoute l'estuaire du Clyde, le Firth du Clyde et d'autres affluents non nommés qui se jettent dans les voies navigables du Clyde, cela doublera presque à près de 14.200, soit 39 par jour.</p>
+            <span class="english-block">When adding in the Clyde Estuary, Firth of Clyde and other unnamed tributaries that run into the Clyde's waterways, this almost doubles to nearly 14,200, or 39 a day.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">L'estuaire de Clyde a également enregistré la plus longue durée de déversements - plus de 25.000 heures - suivie par la rivière Clyde avec plus de 15.000 heures.</p>
+            <span class="english-block">The Clyde Estuary also recorded the longest duration of spills - more than 25,000 hours - followed by the River Clyde with more than 15,000 hours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Le feu de Barcloy Mill Burn à Dumfries et Galloway, qui est l'un des sites nouvellement surveillés, a reçu le plus de déversements l'année dernière, avec un total de près de 3 500.</p>
+            <span class="english-block">Barcloy Mill Burn in Dumfries and Galloway, which is one of the newly-monitored sites, received the most spills last year, with a total of almost 3,500.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Les données suggèrent que 225 sites n'ont enregistré aucun déversement et 525 enregistré moins de 10.</p>
+            <span class="english-block">The data suggests that 225 sites recorded no spills and 525 recorded fewer than 10. There may also be errors which suggest a monitor is active when it is not.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Il y a eu 1 270 déversements, totalisant près de 1 500 heures, l'année dernière dans la rivière Almond de West Lothian, qui est de près de 28 miles de long.</p>
+            <span class="english-block">There were 1,270 spills, totalling almost 1,500 hours, last year into West Lothian's River Almond, which is nearly 28 miles in length.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Ruth Plevin, militante locale, a déclaré que nager dans la rivière faisait partie de son enfance et qu'elle désirait maintenant la protéger pour ses propres petits-enfants.</p>
+            <span class="english-block">Local campaigner Ruth Plevin said swimming in the river was part of her childhood and that she now wants to protect it for her own grandchildren.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Elle a dit que tout investissement dans l'amélioration des infrastructures du système d'eau était bienvenu.</p>
+            <span class="english-block">She said any investment in improving the infrastructure of the water system was welcome.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Ce qui nous préoccupe, c'est ce qui n'est pas visible: les microplastiques, les produits pharmaceutiques, les produits agrochimiques, les choses que vous ne pouvez pas voir", a- t- elle dit.</p>
+            <span class="english-block">"It's what's not visible that is our concern - the microplastics, the pharmaceuticals, the agrichemicals, stuff that you can't see," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Ruth Plevin veut que la rivière Almond soit propre pour ses petits-enfants.</p>
+            <span class="english-block">Ruth Plevin wants the River Almond clean for her grandchildren</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Plevin, membre du groupe d'action River Almond, a déclaré vouloir que l'héritage du groupe soit l'eau propre et sûre.</p>
+            <span class="english-block">Plevin, a member of the River Almond Action Group, said she wants the group's legacy to be clean, safe water.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">"C'est précieux et je pense que nous devons le considérer comme précieux.</p>
+            <span class="english-block">"It's precious and I think we need to regard it as precious. Value it, look after it and make it safe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Je veux que ce soit propre - ce n'est pas vraiment beaucoup à demander", a- t- elle dit.</p>
+            <span class="english-block">"I want it to be clean - it's not a lot to ask for, really," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Plus loin, le long de la côte est à Belhaven, dans l'est de Lothian, le surfeur Brian Allen teste l'eau locale pour la pollution.</p>
+            <span class="english-block">Further along the east coast at Belhaven in East Lothian, surfer Brian Allen has been testing the local water for pollution.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Chaque semaine, il envoie des échantillons dans un laboratoire accrédité pour être testés pour E.coli et entérocoques intestinaux.</p>
+            <span class="english-block">Each week he sends samples to an accredited laboratory to be tested for E.coli and intestinal enterococci.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Il dit que c'est le même échantillonnage que celui de Sepa, sauf qu'il teste toute l'année et pas seulement pendant la saison de baignade.</p>
+            <span class="english-block">He says this is the same sampling as done by Sepa, except he tests all year round and not just during the bathing season.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Le Sepa surveille la qualité de l'eau de baignade dans environ 80 sites en Écosse entre mai et septembre.</p>
+            <span class="english-block">Sepa monitors bathing water quality at about 80 sites across Scotland between May and September. It also looks out for algae, seaweed and waste.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Brian Allen a dit que la plupart des tests de l'eau de Belhaven ont été positifs.</p>
+            <span class="english-block">Brian Allen said most of Belhaven's water testing has been positive</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Allen, le représentant régional de Surfers Against Sewage, a déclaré que les résultats avaient fourni "de vraies bonnes nouvelles" à Belhaven.</p>
+            <span class="english-block">Allen, the regional representative for Surfers Against Sewage, said the results had been providing "really good news" for Belhaven.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Il a déclaré que 86% des échantillons ont été évalués comme étant d'excellente qualité, bonne ou suffisante, ce qui était bon pour les utilisateurs d'eau récréative.</p>
+            <span class="english-block">He said 86% of the samples were rated as excellent, good or sufficient water quality, which was fine for recreational water users.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">"En fait, 77% des résultats sont excellents, mais nous ne savons pas si cette image est répliquée dans le reste de l'Écosse", a-t-il déclaré.</p>
+            <span class="english-block">"In fact 77% of the results are coming back as excellent. What we don't know is whether that picture is being replicated across the rest of Scotland," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Allen a salué l'augmentation de la publication de données par Scottish Water et a déclaré que travailler en collaboration aiderait à élaborer une image plus large de la qualité de l'eau.</p>
+            <span class="english-block">Allen welcomed Scottish Water's increase in data publishing and said working collaboratively would help build up a bigger picture of water quality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Il a déclaré que les chiffres montrent qu'il y avait des rejets presque quotidiens des deux débordements dans la région  mais qu'il n'était pas connu si il y avait un lien entre les rejets et la qualité de l'eau.</p>
+            <span class="english-block">He said the figures had showed there were almost daily discharges from the two overflows in the area – but it was not known if there was a link between discharges and water quality.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">L'un d'eux, à West Barns à Dunbar, a enregistré 3 300 déversements l'année dernière - le deuxième plus élevé en Écosse l'année dernière et un site nouvellement surveillé.</p>
+            <span class="english-block">One of them, at West Barns at Dunbar, recorded 3,300 spills last year - the second highest number in Scotland last year and a newly-monitored site.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Simon Parsons, directeur des eaux usées de Scottish Water, a déclaré que la plupart du temps, les débordements effectuaient le travail pour lequel ils étaient conçus: ils drainaient l'eau de pluie du système d'égout.</p>
+            <span class="english-block">Simon Parsons, director for wastewater at Scottish Water, said most of the time overflows were doing the job they were designed for - draining rainwater out of the sewer system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">"La grande majorité de ces déversements ne sont pas nocifs pour l'environnement, car ils concernent presque toujours l'eau de pluie", explique- t- il.</p>
+            <span class="english-block">"The vast majority of those spills aren't harmful to the environment because they're nearly always about rainwater," he explained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Scottish Water a déclaré que 99% des déversements étaient de l'eau de pluie, de l'eau de surface, des eaux usées de la route, de l'eau "grande" provenant des ménages (pas de déchets humains), de l'infiltration des eaux souterraines et des effluents commerciaux.</p>
+            <span class="english-block">Scottish Water said 99% of spills were rainwater, surface water, road run-off, "grey" water from households (not human waste), infiltration of groundwater, and trade effluent.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Les moniteurs de débordement ont identifié plus de 100 000 déversements l'année dernière.</p>
+            <span class="english-block">The overflow monitors identified more than 100,000 spills last year</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Parsons a déclaré que l'augmentation de la surveillance avait amélioré la compréhension du réseau d'égouts et aidé à identifier les emplacements nécessitant des améliorations.</p>
+            <span class="english-block">Parsons said the increase in monitoring had improved understanding of the sewer network and helped identify locations requiring improvement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">"Nous ne savions pas forcément comment et quand nos débordements fonctionnaient, donc nous avons une image beaucoup mieux que jamais auparavant.</p>
+            <span class="english-block">"We didn't necessarily know how and when our overflows were operating so we've got a much better picture now than we've ever had before.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">"Nous pouvons identifier les domaines où nous devons réfléchir à l'investissement.</p>
+            <span class="english-block">"We can actually identify those areas where we need to think about investment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">" Nous avons un certain nombre d'endroits en Écosse où nous avons identifié des liens entre le fonctionnement de nos pompes et le fonctionnement de notre traitement, ce qui nous a indiqué où nous pouvons obtenir des déversements quand nous ne devrions pas les avoir - et nous ferons des améliorations. "</p>
+            <span class="english-block">"We've got a number of locations across Scotland where actually we've identified links between how our pumps work and how our treatment works work, which have told us where we do get some spills when we shouldn't have them - and we'll make the improvements."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Simon Parsons, de Scottish Water, a déclaré que les moniteurs aident à identifier les problèmes du système.</p>
+            <span class="english-block">Scottish Water's Simon Parsons said the monitors help identify problems in the system</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">La surveillance en Écosse reste nettement inférieure à celle en Angleterre, qui a une couverture de 100%.</p>
+            <span class="english-block">Monitoring in Scotland remains far lower than in England, which has 100% coverage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Les différences d'enregistrement signifient que les chiffres de l'Écosse ne sont pas directement comparables au reste du Royaume-Uni.</p>
+            <span class="english-block">Differences in recording means Scotland's figures are not directly comparable with the rest of the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Scottish Water a indiqué que sa surveillance avait maintenant atteint environ 50% et qu'elle vise à atteindre 100% au cours des cinq à six prochaines années.</p>
+            <span class="english-block">Scottish Water said its monitoring had now grown to about 50% and that it was aiming to reach 100% over the next five to six years.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Parsons a dit que le coût était relativement faible mais représentait une bonne valeur en termes de renseignements qu'ils fournissaient.</p>
+            <span class="english-block">Parsons said the cost was relatively small but represented good value in terms of the intelligence they provided.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">Les travaux d'égout qui durent plusieurs mois vont "bloquer" Nairn</p>
+            <span class="english-block">Concerns months-long sewer work will 'gridlock' Nairn</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Le public a été averti d'éviter les eaux polluées sur la plage de Fife</p>
+            <span class="english-block">Public warned to avoid polluted water at Fife beach</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

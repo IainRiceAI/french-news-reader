@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The rise of 'housefishing' - when does using AI go from enhancing to misleading?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>The rise of 'housefishing' - when does using AI go from enhancing to misleading?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 13 Nov 2026 00:13:35 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm62y0wrnz9zo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Experts warn that using AI to enhance property images can go too far and mislead prospective buyers.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les images d'une maison sur Rightmove (l) que Olivia Nicole a vues étaient complètement différentes de celles de la vie réelle (r)</p>
+            <span class="english-block">The images Olivia Nicole saw of a home on Rightmove (l) were completely different to how the property looked in real life (r)</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Avez- vous déjà été impressionné par les photos d'une propriété sur le site Web d'un agent immobilier, pour constater que l'endroit est complètement différent quand vous le regardez en personne?</p>
+            <span class="english-block">Have you ever been impressed by the pictures of a property on an estate agent's website, only to find the place looks completely different when you view it in person?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Il y a une chance que l'IA ait été utilisée pour améliorer les images que vous avez vues.</p>
+            <span class="english-block">Then there's a chance that AI was used to enhance the images you saw.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Des murs repeints aux pelouses imaginaires, les agents immobiliers utilisent de plus en plus cette technologie pour rendre les maisons plus attrayantes, affirmant qu'elle aide les acheteurs à visualiser le potentiel d'un endroit.</p>
+            <span class="english-block">From repainted walls to imaginary lawns, estate agents are increasingly using the technology to make homes seem more appealing, arguing it helps buyers visualise the potential of a place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Mais les experts mettent en garde contre le fait qu'il peut aller trop loin et tromper les acheteurs potentiels, une tendance appelée "la pêche à la maison".</p>
+            <span class="english-block">But experts warn it can go too far and mislead prospective buyers - a trend dubbed "housefishing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Alors, combien d'amélioration de l'IA est trop ?</p>
+            <span class="english-block">So how much AI enhancement is too much?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Plus tôt cette année, Olivia Nicole, 29 ans, cherchait en ligne des propriétés de cinq chambres dans le sud-ouest de Londres quand une maison sur Rightmove lui a attiré l'attention.</p>
+            <span class="english-block">Earlier this year Olivia Nicole, 29, was searching online for five-bedroom properties in south-west London when a house on Rightmove caught her eye.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Mais quand elle est arrivée quelques jours plus tard pour le voir, elle a d'abord pensé qu'elle était venue au mauvais endroit.</p>
+            <span class="english-block">But when she arrived to view it several days later she initially thought she had come to the wrong place.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">"Les chambres étaient beaucoup plus petites que sur les photos et le décor était totalement différent, raconte- t- elle à la BBC. " Certaines caractéristiques structurelles étaient également différentes".</p>
+            <span class="english-block">"The rooms were much smaller than they were in the pictures and the decor was totally different," she tells the BBC. "Some structural features were also different."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Par exemple, derrière le canapé, il y avait une partie élevée du mur qui n'apparaissait pas dans les images. Les fenêtres étaient également nettement plus petites.</p>
+            <span class="english-block">For example, there was a raised section of the wall behind the sofa that didn't appear in the images. The windows were also noticeably smaller. Olivia was so surprised she took her own pictures of the property for comparison.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">L'IA a été utilisée pour rendre la propriété plus luxueuse.</p>
+            <span class="english-block">AI has been used to make the property look more luxurious</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Il s'est avéré que les images qu'elle avait vues sur Rightmove, qui étaient également apparues sur les sites Web Zoopla et Winkworth, étaient améliorées avec l'IA.</p>
+            <span class="english-block">It later turned out the pictures she had seen on Rightmove, which also appeared on the Zoopla and Winkworth websites, were enhanced with AI.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Mais ce n'était pas clair dans la liste, dit Olivia, et elle pense que l'agent a perdu son temps.</p>
+            <span class="english-block">But that wasn't clear in the listing, Olivia says, and she feels the agent wasted her time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">"C'était frustrant, car j'avais pris plusieurs heures de congé pour la vision que je devais compenser".</p>
+            <span class="english-block">"It was frustrating, because I had taken several hours off work for the viewing which I had to make up for."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Les trois entreprises ont dit à la BBC qu'elles avaient des directives strictes sur la façon dont l'IA pouvait être utilisée sur leurs sites Web et ont depuis retiré les images.</p>
+            <span class="english-block">All three companies told the BBC they had strict guidelines on how AI could be used on their websites and have since taken the images down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Les agents immobiliers utilisent depuis longtemps des caméras à lentilles large ou Photoshop pour rendre les maisons plus grandes ou plus attrayantes pour les acheteurs, mais l'IA rend ce processus beaucoup plus facile et plus accessible.</p>
+            <span class="english-block">Estate agents have long used wide-angle lens cameras or Photoshop to make homes seem bigger or more appealing to buyers, but AI is making this process much easier and more accessible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Il est difficile de quantifier la fréquence de cette pratique, dit la Guild of Property Professionals, un groupe commercial d'agents immobiliers indépendants, mais elle a émis des directives sur la façon d'utiliser l'amélioration de l'IA de manière responsable.</p>
+            <span class="english-block">It is difficult to quantify how common the practice is, says the Guild of Property Professionals, a trade group of independent estate agents, but it has issued guidance on how to use AI enhancement responsibly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Selon une enquête récente, sur 906 acheteurs de maisons au Royaume-Uni, un acheteur sur cinq qui a acheté une maison l'année dernière a déclaré avoir vu une propriété où les photos de la liste avaient été numériquement améliorées pour rendre la maison plus belle qu'elle ne l'était réellement.</p>
+            <span class="english-block">According to a recent survey, external of 906 UK homebuyers, one in five who had who purchased a home in the past year said they had viewed a property where the listing photos had been digitally enhanced to make the home appear better than it actually was.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Jack Bushrod examine les listes de propriétés qu'il trouve sur Rightmove pour sa chaîne de médias sociaux, Housing Horrors, et dit qu'il a vu une " montée en puissance " d'images améliorées par l'IA au cours des six derniers mois.</p>
+            <span class="english-block">Jack Bushrod reviews quirky property listings he finds on Rightmove for his social media channel, Housing Horrors, and says he has seen a "surge" of AI-enhanced images over the last six months.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Il pense que l'utilisation de l'IA est très bien jusqu'à un certain point - pour décrypter une pièce occupée, ou ajouter des meubles à une salle vide afin qu'un acheteur potentiel puisse voir son potentiel.</p>
+            <span class="english-block">He thinks using AI is fine up to a point - to declutter a busy room, or add furniture to an empty one so a prospective buyer can see its potential.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Mais il met fin à tout ce qui trompe un acheteur ou lui gaspille son temps.</p>
+            <span class="english-block">But he draws the line at anything that misleads a prospective buyer or wastes their time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">" J'ai vu une maison où on avait enlevé un pilier et ajouté une fenêtre. D'autres pourraient utiliser l'IA pour enlever les taches sur le tapis ou les fissures dans les tuiles. Ce sont de petits détails que vous remarquerez seulement en personne. "</p>
+            <span class="english-block">"I've seen one house where they had removed a pillar and added a window. Others might use AI to remove stains on the carpet or cracks in tiles. It's little details you would only notice in person."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Il dit que la plupart des images améliorées qu'il a vues n'ont pas été clairement étiquetées comme générées par l'IA.</p>
+            <span class="english-block">He says most of the enhanced images he's seen weren't clearly labelled as AI-generated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Cara dit que l'IA a été utilisée pour vider la chambre de son fils dans l'image à gauche</p>
+            <span class="english-block">Cara says AI was used to empty her son's room in the image on the left</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Cara, 38 ans, vend actuellement sa maison à Lowestoft, Suffolk, et dit qu'elle a été surprise quand elle a vu les images améliorées par l'IA de sa propriété, mise sur Rightmove par son agent immobilier, Howard.</p>
+            <span class="english-block">Cara, 38, is currently selling her home in Lowestoft, Suffolk, and says she was surprised when she saw the AI-enhanced pictures of her property her estate agent, Howards, put on Rightmove.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Dans une photo, la chambre de son fils était complètement vide de jouets et d'encombrement.</p>
+            <span class="english-block">In one photo, her son's room was completely emptied of toys and clutter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Dans une autre pièce de sa fille, l'agent semble avoir enlevé la maison d'une poupée, illuminé la pièce et utilisé l'IA pour changer la forme d'un tapis, mais cette image a depuis été retirée.</p>
+            <span class="english-block">In another, of her daughter's room, the agent appears to have removed a doll's house, brightened the room, and used AI to change the shape of a rug, but that image has since been taken down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Cara a eu plusieurs vues jusqu'à présent et dit qu'une personne a commenté les différences. Mais elle dit qu'elle fait confiance à Howard, qui a reconnu l'utilisation de l'IA dans la liste des propriétés.</p>
+            <span class="english-block">Cara has had several viewings so far and says that one person has commented on the differences. But she says she trusts Howards, which has acknowledged the use of AI in the property listing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"S'ils avaient changé quelque chose de structurel ou s'il était vraiment sauvage et ne ressemblait pas du tout à notre maison, alors je mettrais le pied", dit-elle.</p>
+            <span class="english-block">"If they'd changed something structurally or it was really wild and didn't look like our home at all then I would put my foot down," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Dans une image (l), l'IA a enlevé la maison d'une poupée et a changé la forme d'un tapis</p>
+            <span class="english-block">In one picture (l), the AI removed a doll's house and changed the shape of a rug</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Une porte-parole a déclaré à la BBC que Howard avait maintenant introduit une politique d'étiquetage de toutes les photos améliorées par l'IA.</p>
+            <span class="english-block">A spokeswoman told the BBC that Howards had now introduced a policy of labelling all AI-enhanced photos. She added that the firm never used AI "to misrepresent the fundamental features of a property".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">"Il s'agit d'aider les gens à imaginer les possibilités, pas de changer la réalité de ce qui est vendu".</p>
+            <span class="english-block">"It's about helping people imagine the possibilities, not changing the reality of what's being sold."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Trading Standards a déclaré à la BBC que les agents immobiliers peuvent utiliser l'IA pour améliorer les photos ou pour décorer une pièce vide ou un jardin, à condition qu'ils indiquent avoir utilisé la technologie.</p>
+            <span class="english-block">Trading Standards told the BBC that estate agents can use AI to make basic enhancements to photos, or to virtually furnish an empty room or garden, as long as they indicate they have used the technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Mais il dit que le changement structurel d'une pièce, par exemple en ajoutant une fenêtre, ou en cachant des caractéristiques pourrait tromper les consommateurs et violer la loi.</p>
+            <span class="english-block">But it says structurally changing a room, for example by adding a window, or hiding features could mislead consumers and break the law.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Jack Bushrod pense que tous les agents immobiliers devraient clairement étiqueter les photos améliorées par l'IA et mentionner toute utilisation de la technologie de manière proéminente dans la diapositive des principales caractéristiques d'une liste de propriétés.</p>
+            <span class="english-block">Jack Bushrod thinks all estate agents should have to clearly label AI-enhanced photos and mention any use of the tech prominently in the key features slide of a property listing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Il s'attend aussi à voir plus de pêche à la maison au fil du temps.</p>
+            <span class="english-block">He also expects to see more housefishing as time goes on.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">"Ma préoccupation est que plus les agents immobiliers utilisent l'IA, plus d'autres verront la tendance et prendront le train".</p>
+            <span class="english-block">"My worry is the more estate agents use AI, others will see the trend and jump on the bandwagon."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Nous avons acheté notre maison de 242 000 livres sans dépôt.</p>
+            <span class="english-block">We bought our £242,000 home without a deposit - here's how</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Des scooters au shampooing: des centaines de personnes ont été sauvées de la plongée dans les ordures.</p>
+            <span class="english-block">From scooters to shampoo - the people saving hundreds from dumpster diving</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">" Cela pourrait me coûter 10 000 livres mais j'ai besoin de l'argent maintenant ": Pourquoi la génération Z refuse les retraites</p>
+            <span class="english-block">'It could cost me £10k but I need the money now': Why Gen Z are opting out of pensions</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
