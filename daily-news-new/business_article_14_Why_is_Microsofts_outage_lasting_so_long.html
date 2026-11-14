@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why is Microsoft's outage lasting so long and will emails be lost?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Why is Microsoft's outage lasting so long and will emails be lost?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 13 Nov 2026 18:36:57 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cwvg238zrnm5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Microsoft says it is continuing to restore services including Outlook and Teams following a global outage.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Une importante panne de Microsoft a affecté les écoles, les systèmes de santé, les entreprises, les tribunaux et les gouvernements du monde entier.</p>
+            <span class="english-block">A major Microsoft outage has impacted schools, healthcare systems, businesses, courts and governments around the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Des services tels que Teams, Outlook et le logiciel Copilot sont rétablis depuis près de 24 heures.</p>
+            <span class="english-block">Services including Teams, Outlook and AI software Copilot, are being restored almost 24 hours since issues first surfaced.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Microsoft a déclaré que l'arrêt n'était pas un incident de cybersécurité et était causé par un problème technique.</p>
+            <span class="english-block">Microsoft said the outage was not a cyber-security incident and was caused by a technical issue. It has apologised for the disruption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Voici ce que nous savons sur les services affectés et ce qui a mal tourné.</p>
+            <span class="english-block">Here's what we know about the services affected and what went wrong.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Les écoles, les médecins généralistes et les entreprises frappés par la panne mondiale de Microsoft alors que l'entreprise se démène pour résoudre le problème</p>
+            <span class="english-block">Schools, GPs and businesses hit by global Microsoft outage as company scrambles to solve issue</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Certains services Microsoft 365 ont été touchés par des "problèmes de connectivité" avec des problèmes signalés dans au moins 74 pays.</p>
+            <span class="english-block">Some Microsoft 365 services have been affected by "connectivity problems" with problems reported in at least 74 countries.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Dès la fin de la journée, les clients ont signalé des niveaux d'accès variés - beaucoup n'ont pas pu envoyer ou recevoir de courriels, afficher certains fichiers ou détails sur leurs applications de calendrier.</p>
+            <span class="english-block">From late on Thursday, customers reported varying levels of access - many were unable to send or receive emails, view certain files or details on their calendar apps.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Mais certains utilisateurs ont pu utiliser les fonctions Teams, messagerie et réunion en ligne sans problème.</p>
+            <span class="english-block">But some users were able to use Teams, messaging and online meeting functions without issues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Dès vendredi après-midi, Microsoft a déclaré avoir constaté des " progrès encourageants en matière de reprise " en Europe et des améliorations en Amérique du Nord.</p>
+            <span class="english-block">As of Friday afternoon, Microsoft said it had seen "encouraging recovery progress" in Europe and improvement in North America.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">La société a ajouté qu'elle était concentrée sur " la résolution des problèmes restants " mais a averti " que certains utilisateurs pourraient encore rencontrer des problèmes intermittents ".</p>
+            <span class="english-block">The company added that it was focused on "addressing the remaining areas of disruption" but warned "some users may still experience intermittent issues".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Dans une déclaration ultérieure, la société a déclaré qu'elle continuait à voir des améliorations "avec des files d'attente de courrier électronique nettement réduites et approchant des niveaux normaux".</p>
+            <span class="english-block">In a later statement, the company said it was continuing to see improvements "with email queues significantly reduced and approaching normal levels".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">La société a attribué la panne en cours à un problème lors d'une mise à niveau antérieure de la capacité du réseau.</p>
+            <span class="english-block">The company attributed the ongoing outage to an issue during an earlier network capacity upgrade.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">"Nous avons résolu le problème sous-jacent et continuons de rétablir le service aux clients et aux régions restants", a-t-il déclaré vendredi.</p>
+            <span class="english-block">"We have addressed the underlying issue and continue to restore service to remaining customers and regions," it said on Friday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Bien que les services commencent à reprendre, Microsoft a mis en garde contre les "problèmes d'accès intermittents" persistants, ce qui signifie que certains utilisateurs auront encore du mal à charger leurs boîtes de réception et pourraient subir une "livraison de courrier électronique retardée".</p>
+            <span class="english-block">Although services are beginning to resume, Microsoft has warned of continued "intermittent access issues", meaning some users will still struggle to load their inboxes and could experience "delayed email delivery".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">En d'autres termes, il n'est pas tout à fait sûr de supposer que chaque courriel que vous envoyez arrivera immédiatement dans la boîte de réception de son destinataire.</p>
+            <span class="english-block">In other words, it is not quite safe to assume every email you send is going to arrive in its intended recipient's inbox right away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Microsoft a annoncé plus tôt qu'il prolongerait la " fenêtre de délai " à 48 heures " pour aider à protéger les messages retardés au fur et à mesure que la livraison arriverait ".</p>
+            <span class="english-block">Earlier, Microsoft said it would be extending the "timeout window" to 48 hours "to help protect delayed messages as delivery catches up".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">La fenêtre de délai de réception des e-mails se réfère au temps qu'Outlook attendra de recevoir un e-mail.</p>
+            <span class="english-block">The email timeout window refers to the amount of time Outlook will wait to receive an email.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Quand ils apparaîtront, le timestamp sera quand ils seront livrés plutôt que quand ils seront envoyés.</p>
+            <span class="english-block">When they do show up, the timestamp will be when they were delivered rather than when they were sent.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Bien que le service de messagerie Outlook semble reprendre, l'arrêt a duré jusqu'à présent plus de 20 heures, ce qui est considéré comme une longue période.</p>
+            <span class="english-block">Although email service Outlook appears to be resuming, the outage has so far lasted for more than 20 hours - in outage terms that is considered a long time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Le professeur James Ferryman du département d'informatique de l'Université de Reading a déclaré que les détails que la société a révélés fournissent quelques indices.</p>
+            <span class="english-block">Prof James Ferryman from the University of Reading's department of computer science said the details the company has disclosed provide some clues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">"Ce que Microsoft nous a dit, c'est que la partie de ses serveurs qui établit des connexions sécurisées est submergée, et une fois que cela se produit, le serveur arrête simplement de répondre", a-t-il déclaré.</p>
+            <span class="english-block">"What Microsoft has told us is that the part of its servers that sets up secure connections is getting swamped, and once that happens the server just stops answering," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">"Le problème est que ce genre d'échec neige les boules.</p>
+            <span class="english-block">"The trouble is that this kind of failure snowballs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"Un serveur tombe, son travail est transféré à l'autre, et en attendant, un grand nombre de téléphones et d'ordinateurs portables continuent d'essayer de revenir.</p>
+            <span class="english-block">"One server falls over, its work gets passed to the next one, and meanwhile huge numbers of phones and laptops keep trying to get back in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">"On ne peut pas tout remettre en marche à la fois, on doit le remettre petit à petit".</p>
+            <span class="english-block">"You can't just turn it all back on at once. You have to bring it back bit by bit."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Le défi n'est donc pas seulement de corriger la faille, mais de gérer l'énorme survenance d'appareils qui tentent de se reconnecter une fois que les services commencent à revenir en ligne.</p>
+            <span class="english-block">The challenge is therefore not just fixing the fault, but managing the huge surge of devices trying to reconnect once services start coming back online.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Gergely Orosz, ancien ingénieur en logiciel de plusieurs grandes entreprises technologiques, dont Skype et Uber, a déclaré que cela pourrait être la "faille d'email" d'affaires la plus perturbatrice "de tous les temps".</p>
+            <span class="english-block">Gergely Orosz, a former leading software engineer at several major tech companies including Skype and Uber, said this could be the "most disruptive" business email outage "of all time".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Il a dit qu'il était encore difficile de savoir combien de personnes ont été touchées par la perturbation, mais a ajouté qu'il " ne peut pas rappeler " une panne de courrier électronique d'affaires qui a pris si longtemps pour revenir à la normale.</p>
+            <span class="english-block">He said it was still difficult to know just how many people have been affected by the disruption, but added he "cannot recall" an outage over business email ever taking this long to return to normal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">L'expert australien en cybersécurité Troy Hunt a déclaré à la BBC que la panne pourrait avoir des conséquences de grande ampleur.</p>
+            <span class="english-block">Australian cyber-security expert Troy Hunt told the BBC the outage could have far-reaching consequences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Microsoft est une partie importante de l'épine dorsale d'Internet et nous rappelle à quel point le courrier électronique est encore critique.</p>
+            <span class="english-block">"Microsoft is a massive part of the internet backbone and reminds us how critical email still is.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">" Cette interruption affecte non seulement la capacité de beaucoup de gens à travailler, mais aussi la capacité de communiquer sur les rendez-vous, d'acheter des choses qui nécessitent une vérification, de créer ou d'accéder à des comptes et services ", a-t-il déclaré.</p>
+            <span class="english-block">"Not only does this outage affect many people's ability to work but also things like the ability to communicate about appointments, purchase things that need verification, create or access accounts and services," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Dans un communiqué, Microsoft a déclaré qu'il était "profondelement désolé de la perturbation causée par cet incident à nos clients et partenaires.</p>
+            <span class="english-block">In a statement, Microsoft said it was "deeply sorry for the disruption this incident has caused our customers and partners.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">"Nous connaissons la confiance qu'ils accordent à nos services et prenons cette responsabilité très au sérieux.</p>
+            <span class="english-block">"We know the trust they place in our services and take that responsibility extremely seriously. We are seeing broad recovery and stability across our services."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Plus de 430 millions de personnes utilisent les applications Microsoft 365 selon le site Web de Microsoft.</p>
+            <span class="english-block">More than 430 million people use Microsoft 365 apps according to Microsoft's website. The full scale of the outage has not been confirmed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Microsoft 365 est utilisé par des entreprises du monde entier et devrait avoir un effet de touche sur d'autres services.</p>
+            <span class="english-block">Microsoft 365 is used by companies worldwide and is expected to have a knock-on effect to other services.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Les géants de la technologie OpenAI et Anthropic ont tous deux signalé précédemment des problèmes résultant de l'arrêt.</p>
+            <span class="english-block">Tech giants OpenAI and Anthropic both earlier reported problems as a result of the outage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Le constructeur de ChatGPT OpenAI a déclaré qu'il enquêtait sur un problème affectant ses connexions aux services de Microsoft, ce qui avait causé que certains outils ne fonctionnent pas comme prévu.</p>
+            <span class="english-block">ChatGPT-maker OpenAI said it was investigating an issue affecting its connections to Microsoft's services, which had caused some tools to not work as expected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Des gouvernements urbains aux États-Unis aux agences d'espionnage australiennes, les perturbations dans le monde entier sont largement répandues.</p>
+            <span class="english-block">From city governments in the US to Australian spy agencies, disruption across the globe has been widespread.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Les tribunaux de Los Angeles au Texas ont prévenu que les communications pourraient être retardées.</p>
+            <span class="english-block">Courts from Los Angeles to Texas earlier warned that communications might be delayed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Au Canada, la chaîne de télévision publique CBC a rapporté qu'un réseau de soins de santé qui gère plusieurs hôpitaux à Toronto souffrait de problèmes de courrier électronique, mais que les soins aux patients n'étaient pas affectés.</p>
+            <span class="english-block">In Canada, the public broadcaster CBC reported that a healthcare network running several hospitals in Toronto was experiencing email issues, but that patient care was not affected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Le gouvernement japonais a également déclaré que sa plateforme informatique partagée avait été perturbée.</p>
+            <span class="english-block">The government of Japan also said its shared IT platform had been disrupted.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Dans tout le Royaume-Uni, les chirurgies de GP, les pharmacies, la police et les écoles ont été affectées par la panne.</p>
+            <span class="english-block">Across the UK, GP surgeries, pharmacies, police and schools have been affected by the outage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Certaines chirurgies de GP avaient exhorté les patients à ne pas soumettre de messages via leur site Web alors que les forces de police demandaient également au public d'appeler s'ils voulaient faire un rapport.</p>
+            <span class="english-block">Some GP surgeries had urged patients not to submit messages via their website while police forces were also earlier asking the public to call if they want to make a report.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Vous ou votre entreprise avez- vous été affectés par la panne ?</p>
+            <span class="english-block">Have you or your business been affected by the outage?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Vous pouvez également nous contacter en suivant ce lien</p>
+            <span class="english-block">You can also get in touch by following this link</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

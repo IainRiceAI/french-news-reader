@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHS, schools and police forces hit by Microsoft outage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>NHS, schools and police forces hit by Microsoft outage</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 13 Nov 2026 13:41:25 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6vg2ljjpj32o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Major airports and intelligence services are unaffected, while the government is still assessing the impact.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les principaux services du Royaume-Uni, y compris le NHS, les médecins généralistes et les écoles, ont été touchés par une panne mondiale de Microsoft.</p>
+            <span class="english-block">Key services across the UK, including the NHS, GPs and schools, have been affected by a global Microsoft outage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Des pharmacies et des entreprises ont également été touchées après le déclin des services de messagerie et de courrier électronique.</p>
+            <span class="english-block">Pharmacies and businesses have also been hit after email and messaging services went down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le NHS England a déclaré que les patients devraient toujours assister aux rendez-vous à moins d'être informés autrement, tandis que plusieurs grandes forces de police exhortent le public à appeler s'ils veulent signaler un crime.</p>
+            <span class="english-block">NHS England said patients should still attend appointments unless told otherwise, while several large police forces are urging the public to call if they want to report a crime.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Microsoft a déclaré que les services étaient désormais rétablis progressivement à l'échelle mondiale après un problème causé par un stress plus élevé que d'habitude sur ses serveurs, mais que les utilisateurs pourraient encore subir des perturbations.</p>
+            <span class="english-block">Microsoft said services were now gradually being restored globally after a problem caused by a higher-than-usual stress on its servers, but users could still experience disruption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le gouvernement a déclaré qu'il travaillait en étroite collaboration avec l'entreprise pour évaluer l'impact sur ses services, tandis que les autorités locales ont averti que certains services du conseil étaient affectés.</p>
+            <span class="english-block">The government said it was working closely with the firm to assess any impact on its services, while local authorities warned that some council services were being affected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">L'ampleur totale de l'impact de la panne - qui affecte Outlook, Teams et Copilot - et le temps nécessaire pour restaurer les systèmes restent incertains quelques heures après que les utilisateurs ont signalé pour la première fois des problèmes.</p>
+            <span class="english-block">The full extent of the impact of the outage - which is affecting Outlook, Teams and Copilot - and the time it will take to restore the systems remains unclear hours after users first reported issues.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Environ 430 millions de personnes utilisent les outils en ligne dans le monde.</p>
+            <span class="english-block">Some 430 million people use the online tools worldwide.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Le directeur général de l'Alliance NHS, qui représente le système de santé en Angleterre, au Pays de Galles et en Irlande du Nord, a déclaré que la panne affectait certains services, y compris les e-mails.</p>
+            <span class="english-block">The chief executive of the NHS Alliance, which represents the healthcare system in England, Wales and Northern Ireland, said the outage was affecting some services including emails.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les fiducies du NHS en Angleterre adoptaient des mesures pour minimiser les perturbations des services essentiels, a déclaré un porte-parole.</p>
+            <span class="english-block">NHS trusts in England were enacting measures to minimise disruption to critical services, a spokesperson said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les patients ont été invités à continuer d' utiliser 999 en cas d' urgence et à contacter 111 par téléphone ou en ligne, ou leur pharmacie locale.</p>
+            <span class="english-block">Patients have been told to continue to use 999 in an emergency and otherwise contact 111 by phone or online, or their local pharmacy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Certains chirurgiens de GP ont exhorté les patients à ne pas envoyer de messages via leur site Web tant que le problème persiste.</p>
+            <span class="english-block">Some GP surgeries have urged patients not to submit messages via their website while the problem remains. Practices in Hampshire and Shropshire have told patients to phone them or come into the surgery if they have an urgent need.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Microsoft s'efforce de résoudre la panne mondiale qui affecte Outlook et Teams mais dit que les corrections ne vont pas "comme prévu"</p>
+            <span class="english-block">Microsoft scrambles to solve global outage affecting Outlook and Teams but says fixes not going 'as expected'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Ce que nous savons sur la panne mondiale de Microsoft</p>
+            <span class="english-block">What we know about the global Microsoft outage</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Un porte-parole de l'Association nationale des pharmacies a déclaré que l'arrêt affectait la capacité des pharmacies à communiquer avec les médecins et certains patients, de sorte que "les attentes peuvent être plus longues que la normale et il peut y avoir des retards dans certaines prescriptions".</p>
+            <span class="english-block">A National Pharmacy Association spokesperson said the outage was affecting pharmacies' ability to communicate with GP practices and some patients, so "waits may be longer than normal and there may be delays to some prescriptions".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">L'impact global sur les services de santé reste incertain. Une grande partie du calendrier du NHS est liée à des journaux utilisant le système Microsoft, mais les pratiques de flux de travail diffèrent entre les hôpitaux et les fiducies.</p>
+            <span class="english-block">The overall impact on health services remains unclear. Much of the NHS calendar is linked to diaries using the Microsoft system, but workflow practices differ between hospitals and trusts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Il y a des rapports anecdotiques sur l'annulation des cisions et sur l'acceptation par les hôpitaux de recommandations urgentes, bien que l'impact sur les traitements optionnels ne soit pas encore confirmé.</p>
+            <span class="english-block">There are anecdotal reports of c-sections being cancelled and hospitals only accepting urgent referrals - though the impact on elective treatments has yet to be confirmed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Rachel Harrison, secrétaire nationale du syndicat GMB, a déclaré que l'arrêt avait un "impact sérieux" sur les ambulances et les trusts du NHS.</p>
+            <span class="english-block">The GMB union's national secretary Rachel Harrison said the outage was having a "serious impact" on ambulance and NHS trusts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">"Les personnes qui travaillent dans les services 111 et 999 ne peuvent pas communiquer les détails des patients de la manière normale, ce qui crée un retard massif et peut causer du chaos", a-t-elle déclaré, bien que "les appels d'urgence et les appels à la vie semblent être sans effet".</p>
+            <span class="english-block">"Those who work in 111 and 999 services are unable to refer patient details in the normal way which is creating a massive backlog and has the potential for chaos," she said, though "emergency and life-threatening call outs appear to be unaffected".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Pendant ce temps, les forces de police en Angleterre et au Pays de Galles - y compris la police métropolitaine, la police de Greater Manchester et la police d'Écosse - ont déclaré que les formulaires en ligne pourraient être affectés.</p>
+            <span class="english-block">Meanwhile, police forces in England and Wales - including the Metropolitan Police, Greater Manchester Police and Police Scotland - have said online forms may be affected. They are urging people to call them about any time-critical by non-emergency matters.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Downing Street a déclaré qu'il cherchait à obtenir une "image complète" de l'ampleur de l'effet de l'arrêt sur les services gouvernementaux.</p>
+            <span class="english-block">Downing Street said it was looking to get a "full picture" of the the extent of the outage's effect on government services.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">En Angleterre, l'Association des gouvernements locaux a averti que certains services pourraient être perturbés, mais des plans étaient en place pour que les gens "continuent à recevoir le soutien dont ils ont besoin".</p>
+            <span class="english-block">In England, the Local Government Association warned that some services may be disrupted but plans were in place to ensure people "continue to receive the support they need".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">L'interruption ayant affecté les principales plateformes organisationnelles et de communication intégrées, de nombreux autres lieux de travail ont été touchés.</p>
+            <span class="english-block">Because the outage affects key organisational and communication platforms that are integrated, many other workplaces have been affected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Cela a inclus les écoles, où les enseignants, le personnel du bureau et les parents ont tous dû naviguer en ne pouvant pas accéder aux ressources clés sur les calendriers, les e-mails et les serveurs cloud internes.</p>
+            <span class="english-block">That has included schools, where teachers, office staff and parents have all had to navigate being unable to access key resources on calendars, emails and internal cloud servers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Un professeur principal d'une école primaire près de Newcastle a déclaré que les systèmes de protection avaient également été affectés, ce qui signifie que le personnel devait signaler ses préoccupations en personne au lieu de les enregistrer, tandis qu'un autre dans le Cheshire a déclaré qu'il avait été contraint de retarder l'envoi de rapports scolaires à terme.</p>
+            <span class="english-block">One head teacher at a primary school near Newcastle said safeguarding systems had also been affected, meaning staff were having to report concerns in person instead of logging them, while another in Cheshire said his had been forced to delay sending out termly school reports.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Les universités ont également subi des perturbations des systèmes en ligne, y compris des outils utilisés pour soumettre des assignations.</p>
+            <span class="english-block">Universities have also suffered disruption to online systems, including tools used to submit assignments.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Certains, comme l'Université de Portsmouth et l'Université d'Aberdeen, ont prolongé les délais ou ont renoncé aux sanctions pour retard de soumission.</p>
+            <span class="english-block">Some, like the University of Portsmouth and University of Aberdeen, have extended deadlines or waived late submission penalties.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Royal Mail a déclaré que certains de ses services en ligne étaient indisponibles et que les notifications par courriel concernant les livraisons pourraient être affectées, mais que le courrier était toujours collecté et livré normalement.</p>
+            <span class="english-block">Royal Mail said some of its online services were unavailable and email notifications about deliveries may be impacted, but post was still being collected and delivered as normal</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les députés n'ont pas pu accéder à leurs comptes parlementaires.</p>
+            <span class="english-block">MPs have been unable to access their parliamentary accounts. A spokesperson said alternative arrangements were in place</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Le gouvernement écossais a activé ses "opérations de résilience" en évaluant l'impact de l'arrêt de service</p>
+            <span class="english-block">The Scottish government has activated its "resilience operations" as it assesses the impact of the outage</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Les MSP ont également confirmé que les systèmes de courrier électronique de Holyrood étaient désactivés, ce qui signifie qu'ils ne pouvaient pas communiquer avec les électeurs ou accéder aux travaux d'urgence.</p>
+            <span class="english-block">MSPs also confirmed that Holyrood's emails systems were down, meaning they were unable to communicate with constituents or access urgent casework</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Certaines entreprises se tournent vers l'utilisation du papier ou se déplacent vers différentes plateformes de communication comme WhatsApp.</p>
+            <span class="english-block">Some businesses are reverting to using paper or moving to different communication platforms like WhatsApp.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Microsoft et les experts en cybersécurité ont exclu qu'une cyberattaque soit la cause de l'arrêt.</p>
+            <span class="english-block">Microsoft and cyber-security experts have ruled out a cyber-attack being the cause of the outage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">La société de technologie a déclaré qu'un grand nombre de ses serveurs étaient devenus "inattendument indisponibles", ce qui signifie que le trafic était envoyé aux serveurs qui étaient restés en ligne, ce qui les a mis sous pression.</p>
+            <span class="english-block">The tech firm said a large number of its servers had become "unexpectedly unavailable", meaning traffic was sent to the servers that remained online, putting them under strain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">" Tout comme sur une autoroute, quand on bloque une voie, on doit passer tout le trafic excédentaire par une ou deux voies, par exemple ", explique Jake Moore, conseiller en cybersecurity à l'ESET.</p>
+            <span class="english-block">"Just like on a motorway, when you block one lane, you have to put all of the excess traffic through just, say, one or two lanes," Jake Moore, a cyber-security adviser at ESET, explained.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">"Tout va et revient, il ralentit, et c'est ce que nous voyons ici".</p>
+            <span class="english-block">"Everything goes and backs up. It slows down, and that's what we're seeing here."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Il a déclaré à la radio 4 de la BBC que cet incident devrait "rendre à néant" le besoin de réseaux de communication d'urgence qui soient "indépendants des autres".</p>
+            <span class="english-block">He told BBC Radio 4's Today programme that this incident should "hammer home" the need for contingency communication networks that are "independent of others".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">"Malheureusement, nous mettons tellement l'accent sur quelques fournisseurs, alors quand un tel fournisseur tombe en panne, les effets sont énormes".</p>
+            <span class="english-block">"Unfortunately, we just put so much emphasis on just a few providers - so when one big one like this goes down, the knock-on effects are just huge."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Son sentiment a été repris par Nicky Choo, qui a déclaré que sa société de cybersécurité Mimecast utilisait des outils Microsoft mais avait des alternatives intégrées pour prévenir les perturbations.</p>
+            <span class="english-block">His sentiment was echoed by Nicky Choo, who said his cyber-security firm Mimecast used Microsoft tools but had built-in alternatives to prevent disruption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Certains lieux de travail se tournent vers l'utilisation du papier ou se tournent vers des plateformes de communication alternatives comme WhatsApp pour maintenir leur activité.</p>
+            <span class="english-block">Some workplaces are reverting to using paper or moving to alternate communication platforms like WhatsApp to keep their businesses ticking over.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Mais d'autres ont été laissés sans les outils Microsoft.</p>
+            <span class="english-block">But others have been left struggling without the Microsoft tools.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Caroline Wade, qui dirige sa propre agence de relations publiques dans le Kent, a déclaré à la BBC que l'arrêt avait causé une " énorme perturbation " car elle n'était pas en mesure d'envoyer des offres et des factures.</p>
+            <span class="english-block">Caroline Wade, who runs her own PR agency in Kent, told the BBC that the outage had caused her "huge disruption" as she was unable to send pitches and invoices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Pendant ce temps, Georgia Young, 29 ans, du Staffordshire, devait acheter une maison aujourd'hui avec son partenaire, mais a dit que c'était maintenant retardé.</p>
+            <span class="english-block">Meanwhile, 29-year-old Georgia Young, from Staffordshire, was due to complete a house purchase today with her partner but said it had now been delayed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">"Nous avons attendu huit mois pour arriver à ce point, il semble que ce soit à nouveau hors de portée", a-t-elle dit.</p>
+            <span class="english-block">"We've waited eight months to get to this point, it seem like it's out of reach again," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Dave Walker a déclaré que l'arrêt menaçait les ventes en ligne de sa pétrine et de son bar à vin avant Noël, tandis que le résident du Stirlingshire, Lewis Bowles, a déclaré qu'il n'était pas en mesure d'accéder à ses billets pour un match de rugby dimanche.</p>
+            <span class="english-block">Dave Walker said the outage was threatening his fledgling bakery and wine bar's online pre-Christmas sales, while Stirlingshire resident Lewis Bowles said he was unable to access his tickets for a Sunday rugby match.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Vous ou votre entreprise avez- vous été affectés par la panne ?</p>
+            <span class="english-block">Have you or your business been affected by the outage?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

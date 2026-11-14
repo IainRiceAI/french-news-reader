@@ -1,0 +1,611 @@
+# Brand, Walliams and MAFS: Is this a reckoning for the entertainment industry?
+
+**BBC Original Link:** [https://www.bbc.co.uk/news/articles/cqn70lz71lg8o?at_medium=RSS&at_campaign=rss](https://www.bbc.co.uk/news/articles/cqn70lz71lg8o?at_medium=RSS&at_campaign=rss)  
+**Published:** Sat, 14 Nov 2026 00:29:38 GMT  
+
+---
+
+> **BBC Summary:** These stories represent the consequences of changes that began years ago, rather than being a sudden cultural shift.
+
+---
+
+### Section 1
+
+**🇬🇧 EN:** A jury at Southwark Crown Court found Russell Brand guilty of one count of rape and three of sexual assault
+
+**🇫🇷 FR:** *Un jury de la cour de Southwark a reconnu Russell Brand coupable d'un violeur et de trois agressions sexuelles.*
+
+---
+
+### Section 2
+
+**🇬🇧 EN:** This week, the dark side of television has come crashing into the open.
+
+**🇫🇷 FR:** *Cette semaine, le côté sombre de la télévision s'est écrasé.*
+
+---
+
+### Section 3
+
+**🇬🇧 EN:** On Monday, disgraced entertainer Russell Brand was jailed for rape and sexual assault.
+
+**🇫🇷 FR:** *Lundi, l'artiste Russell Brand a été emprisonné pour viol et agression sexuelle.*
+
+---
+
+### Section 4
+
+**🇬🇧 EN:** Twenty-four hours later, author and comedian David Walliams was unmasked and accused of preying on young women.
+
+**🇫🇷 FR:** *Vingt-quatre heures plus tard, l'auteur et comédien David Walliams a été démasqué et accusé de harceler des jeunes femmes.*
+
+---
+
+### Section 5
+
+**🇬🇧 EN:** By Friday the Metropolitan Police had launched an investigation into further allegations about him.
+
+**🇫🇷 FR:** *Vendredi, la police métropolitaine avait lancé une enquête sur d'autres allégations à son sujet.*
+
+---
+
+### Section 6
+
+**🇬🇧 EN:** Also in the last week, Married at First Sight UK has been cancelled following allegations of rape on the hit TV show.
+
+**🇫🇷 FR:** *La semaine dernière, Married at First Sight UK a été annulée suite à des allégations de viol dans la série télévisée.*
+
+---
+
+### Section 7
+
+**🇬🇧 EN:** These are all very different stories, but each can be seen as a major reckoning with abuse of power and culture in the industry.
+
+**🇫🇷 FR:** *Ce sont des histoires très différentes, mais chacune peut être considérée comme un grand détail de l'abus de pouvoir et de culture dans l'industrie.*
+
+---
+
+### Section 8
+
+**🇬🇧 EN:** So why is this all happening now?
+
+**🇫🇷 FR:** *Alors pourquoi tout cela se passe maintenant ?*
+
+---
+
+### Section 9
+
+**🇬🇧 EN:** In reality, the glut of recent days is something of a coincidence.
+
+**🇫🇷 FR:** *En réalité, l'abondance des derniers jours est une sorte de coïncidence.*
+
+---
+
+### Section 10
+
+**🇬🇧 EN:** All these revelations began with journalistic investigations that started years ago.
+
+**🇫🇷 FR:** *Toutes ces révélations ont commencé avec des enquêtes journalistiques qui ont commencé il y a des années.*
+
+---
+
+### Section 11
+
+**🇬🇧 EN:** From my own experience - including in my Panorama on Married at First Sight UK - I know investigations typically take a very long time to reach a conclusion, from initial tip-off, to evidence-gathering, corroboration, getting responses, and eventually reporting.
+
+**🇫🇷 FR:** *D'après ma propre expérience - y compris dans mon Panorama sur Married at First Sight UK - je sais que les enquêtes prennent généralement beaucoup de temps pour arriver à une conclusion, de la première information à la collecte de preuves, à la corroboration, à l'obtention de réponses et, finalement, au reporting.*
+
+---
+
+### Section 12
+
+**🇬🇧 EN:** "The truth is, these stories have a long build up. It can be incredibly difficult to get [them] in the papers," Sunday Times columnist Hadley Freeman told me.
+
+**🇫🇷 FR:** *"La vérité est que ces histoires sont longues et qu'il peut être incroyablement difficile de les faire sortir dans les journaux", m'a dit Hadley Freeman, chroniqueur du Sunday Times.*
+
+---
+
+### Section 13
+
+**🇬🇧 EN:** In the case of Brand, there was then a police investigation too, before an outcome was reached in court.
+
+**🇫🇷 FR:** *Dans le cas de Brand, une enquête policière a également été menée, avant que le tribunal n'en tire un résultat.*
+
+---
+
+### Section 14
+
+**🇬🇧 EN:** Together these stories represent the consequences of changes that began years ago, rather than a sudden cultural shift in the entertainment industry.
+
+**🇫🇷 FR:** *Ensemble, ces histoires représentent les conséquences des changements qui ont commencé il y a des années, plutôt que d'un changement culturel soudain dans l'industrie du divertissement.*
+
+---
+
+### Section 15
+
+**🇬🇧 EN:** It should also be said that Walliams denies the allegations against him. The men accused of rape and sexual misconduct on MAFS UK have also denied all the allegations.
+
+**🇫🇷 FR:** *Il faut également dire que Walliams nie les allégations portées contre lui.*
+
+---
+
+### Section 16
+
+**🇬🇧 EN:** What has changed is that women (because it almost always is women) have seen others speaking up - which, according to broadcaster Kirsty Wark, has given them "courage to do the same". She describes those who have come forward as "beyond brave".
+
+**🇫🇷 FR:** *Ce qui a changé, c'est que les femmes (car c'est presque toujours les femmes) ont vu d'autres personnes parler - ce qui, selon la radiodiffuseuseuseur Kirsty Wark, leur a donné "le courage de faire de même".*
+
+---
+
+### Section 17
+
+**🇬🇧 EN:** When looking at what’s driving more women to speak up, much can be traced back to the revelations about Harvey Weinstein and the #MeToo movement.
+
+**🇫🇷 FR:** *Quand on regarde ce qui pousse plus de femmes à se prononcer, on peut en tirer beaucoup sur les révélations sur Harvey Weinstein et le mouvement #MeToo.*
+
+---
+
+### Section 18
+
+**🇬🇧 EN:** It changed the perception of whether victims would be believed.
+
+**🇫🇷 FR:** *Il a changé la perception de savoir si les victimes seraient crues.*
+
+---
+
+### Section 19
+
+**🇬🇧 EN:** In the past, women alleging this sort of behaviour faced barriers - being seen as opportunistic, fearing retaliation, believing they might be the only one.
+
+**🇫🇷 FR:** *Dans le passé, les femmes qui prétendent ce genre de comportement ont été confrontées à des obstacles - elles étaient considérées comme opportunistes, craignant des représailles, croyant qu'elles pourraient être les seules.*
+
+---
+
+### Section 20
+
+**🇬🇧 EN:** Now, there can be a snowball effect. Once one, two or three come forward, that prompts others to revisit their experiences - which they may have dismissed or subdued.
+
+**🇫🇷 FR:** *Une fois qu'un, deux ou trois sont présentés, cela incite les autres à revoir leurs expériences, qu'ils ont peut-être rejetées ou subjuguées.*
+
+---
+
+### Section 21
+
+**🇬🇧 EN:** "There is more of a sense that you will now be listened to," said Freeman.
+
+**🇫🇷 FR:** *"Il y a plus d'un sentiment que vous allez maintenant être écoutés", a déclaré Freeman.*
+
+---
+
+### Section 22
+
+**🇬🇧 EN:** It's also clear that when women see action taken, it can encourage others to speak up as well - as it helps counter the widely-held assumption that reporting abuse results in nothing.
+
+**🇫🇷 FR:** *Il est également clair que lorsque les femmes voient des mesures prises, elles peuvent encourager les autres à se prononcer aussi bien - car elles aident à contrer l'hypothèse largement répandue selon laquelle signaler des abus ne donne aucun résultat.*
+
+---
+
+### Section 23
+
+**🇬🇧 EN:** Married at First Sight UK cancelled after rape allegations
+
+**🇫🇷 FR:** *Le mariage à First Sight UK annulé après des allégations de viol*
+
+---
+
+### Section 24
+
+**🇬🇧 EN:** When another high-profile man, MasterChef presenter Gregg Wallace, faced accusations of a very different and much lesser order, relating mostly to inappropriate sexual language and humour, the reaction was similar.
+
+**🇫🇷 FR:** *Quand un autre homme de haut niveau, le présentateur de MasterChef, Gregg Wallace, a été accusé d'un ordre très différent et beaucoup moins élevé, principalement lié à un langage sexuel inapproprié et à l'humour, la réaction a été similaire.*
+
+---
+
+### Section 25
+
+**🇬🇧 EN:** Last summer, an independent inquiry upheld dozens of claims against him, and he was sacked. Wallace said "none of the serious allegations" against him had been upheld but that he was "deeply sorry for any distress caused".
+
+**🇫🇷 FR:** *L'été dernier, une enquête indépendante a confirmé des dizaines de réclamations contre lui, et il a été renvoyé. Wallace a déclaré qu'" aucune des accusations sérieuses " contre lui n'avait été confirmées, mais qu'il était " profondément désolé de toute détresse causée ".*
+
+---
+
+### Section 26
+
+**🇬🇧 EN:** One young woman I spoke to in my investigation into Wallace texted me at the time, to give her reaction to his sacking.
+
+**🇫🇷 FR:** *Une jeune femme avec qui j'ai parlé lors de mon enquête sur Wallace m'a envoyé un SMS pour me donner sa réaction à son licenciement.*
+
+---
+
+### Section 27
+
+**🇬🇧 EN:** "I really believe this will encourage young girls going into the TV industry to have the courage to speak up, if they feel something is wrong," she told me.
+
+**🇫🇷 FR:** *"Je crois vraiment que cela encouragera les jeunes filles qui vont dans l'industrie télévisée à avoir le courage de parler, si elles pensent que quelque chose ne va pas", m'a- t- elle dit.*
+
+---
+
+### Section 28
+
+**🇬🇧 EN:** But unions say it is still difficult for junior freelance workers, who often find their income unstable and unpredictable, to speak up.
+
+**🇫🇷 FR:** *Mais les syndicats disent qu'il est encore difficile pour les jeunes travailleurs indépendants, qui trouvent souvent leur revenu instable et imprévisible, de parler.*
+
+---
+
+### Section 29
+
+**🇬🇧 EN:** Vulnerable workers "continue to fear raising concerns", said head of broadcast union Bectu, Philippa Childs.
+
+**🇫🇷 FR:** *Les travailleurs vulnérables "continuent de craindre de susciter des inquiétudes", a déclaré Philippa Childs, chef du syndicat de radiodiffusion Bectu.*
+
+---
+
+### Section 30
+
+**🇬🇧 EN:** She's echoed by Freeman, who said an "attitude of protecting the talent" remained.
+
+**🇫🇷 FR:** *Elle a été échoée par Freeman, qui a dit qu'une "attitude de protection du talent" est restée.*
+
+---
+
+### Section 31
+
+**🇬🇧 EN:** "There will always be wealthy famous predators," she said. But, she added: "Hopefully more and more people at TV stations and movie studios are willing to hear these young people and will take them seriously”.
+
+**🇫🇷 FR:** *"Il y aura toujours des prédateurs célèbres riches", a-t-elle dit. "Mais, a-t-elle ajouté: "J'espère que de plus en plus de personnes dans les chaînes de télévision et les studios de cinéma sont disposées à écouter ces jeunes et les prendront au sérieux.*
+
+---
+
+### Section 32
+
+**🇬🇧 EN:** For more senior people in TV, raising the alarm can also be difficult.
+
+**🇫🇷 FR:** *Pour les personnes âgées de la télévision, le fait de faire lever l'alarme peut aussi être difficile.*
+
+---
+
+### Section 33
+
+**🇬🇧 EN:** Earlier this week, comedian Lucy Beaumont told Sky News: "The reason high-profile people are not saying anything is because they lose work, because you're seen that you might be a trouble causer. It does need to be said that there needs to be some intervention."
+
+**🇫🇷 FR:** *Plus tôt cette semaine, la comédienne Lucy Beaumont a déclaré à Sky News: " Les gens de haut rang ne disent rien parce qu'ils perdent leur emploi, parce qu'on voit que vous êtes peut-être un trouble.*
+
+---
+
+### Section 34
+
+**🇬🇧 EN:** Social media has also played a role in encouraging people to speak up.
+
+**🇫🇷 FR:** *Les médias sociaux ont également joué un rôle dans l'encouragement des gens à s'exprimer.*
+
+---
+
+### Section 35
+
+**🇬🇧 EN:** And policing investigations have had to keep pace - and adapt - with media scrutiny often prompting authorities to investigate.
+
+**🇫🇷 FR:** *Et les enquêtes policières ont dû suivre le rythme - et s'adapter - de l'examen minutieux des médias, ce qui incite souvent les autorités à enquêter.*
+
+---
+
+### Section 36
+
+**🇬🇧 EN:** Attitudes towards women who speak up are also starting to change – although not always.
+
+**🇫🇷 FR:** *Les attitudes envers les femmes qui parlent sont également en train de changer  bien que ce ne soit pas toujours le cas.*
+
+---
+
+### Section 37
+
+**🇬🇧 EN:** Some of what unfolded in court during the Russell Brand case felt like a throwback to how rape cases used to be conducted.
+
+**🇫🇷 FR:** *Quelques-uns des événements qui se sont déroulés au tribunal lors de l'affaire Russell Brand ont semblé rappeler la façon dont les affaires de viol étaient menées.*
+
+---
+
+### Section 38
+
+**🇬🇧 EN:** Many have commented on Brand's lawyer's defence tactics against the accusers on the stand - behaviour Freeman said would have been "standard" in the past.
+
+**🇫🇷 FR:** *Beaucoup ont commenté les tactiques de défense de l'avocat de Brand contre les accusateurs présents sur le banc - comportement que Freeman a dit aurait été "standard" dans le passé.*
+
+---
+
+### Section 39
+
+**🇬🇧 EN:** But Freeman noted it was heartening to hear the judge’s remarks in summing up the case - which have also been widely shared by women online and praised for dispelling rape myths.
+
+**🇫🇷 FR:** *Mais Freeman a noté qu'il était encourageant d'entendre les remarques du juge dans la résumé de l'affaire - qui ont également été largement partagées par les femmes en ligne et louées pour dissiper les mythes du viol.*
+
+---
+
+### Section 40
+
+**🇬🇧 EN:** When Mr Justice Bennathan sentenced Brand to ten-and-a-half years, he told him: "Whatever women wear, wherever they go, indeed whatever they drink, they retain the right to say no."
+
+**🇫🇷 FR:** *Lorsque le juge Bennathan a condamné Brand à dix ans et demi, il lui a dit: "Quoi que les femmes portent, où qu'elles aillent, et même quoi qu'elles boivent, elles ont le droit de dire non".*
+
+---
+
+### Section 41
+
+**🇬🇧 EN:** "I think attitudes have changed,” said Freeman. “It doesn't mean those assaults don't happen any more but attitudes around them have changed.”
+
+**🇫🇷 FR:** *"Je pense que les attitudes ont changé", a déclaré Freeman. "Ce n'est pas que ces attaques ne se produisent plus, mais les attitudes autour d'elles ont changé".*
+
+---
+
+### Section 42
+
+**🇬🇧 EN:** So where does this go from here?
+
+**🇫🇷 FR:** *Alors, où allons-nous ?*
+
+---
+
+### Section 43
+
+**🇬🇧 EN:** Events of the past few weeks highlight how figures who rose to prominence in the nineties and noughties did so in an era with different standards.
+
+**🇫🇷 FR:** *Les événements des dernières semaines mettent en évidence comment des personnalités qui ont pris de l'importance dans les années 90 et 90 l'ont fait à une époque où les normes étaient différentes.*
+
+---
+
+### Section 44
+
+**🇬🇧 EN:** Lad culture and celebrity status shielded Brand and others from scrutiny.
+
+**🇫🇷 FR:** *La culture des garçons et le statut de célébrité ont protégé Brand et d'autres personnes de l'examen.*
+
+---
+
+### Section 45
+
+**🇬🇧 EN:** Now, behaviour once dismissed as eccentricity or womanising is increasingly being reassessed and called out. Times are catching up with some men of that era.
+
+**🇫🇷 FR:** *Le comportement autrefois considéré comme excentrique ou féminisé est de plus en plus réévalué et dénoncé.*
+
+---
+
+### Section 46
+
+**🇬🇧 EN:** However, it would be an error to assume this sort of behaviour is confined to the past.
+
+**🇫🇷 FR:** *Il serait toutefois erroné de supposer que ce type de comportement est limité au passé.*
+
+---
+
+### Section 47
+
+**🇬🇧 EN:** "This is not just about nineties/noughties culture," Wark told me. "It can't be dismissed as a hangover of the past, this is about right now and the industry changes that must happen.
+
+**🇫🇷 FR:** *"Ce n'est pas seulement la culture des années 90 ou 90, me dit Wark. " On ne peut pas la considérer comme une gueule de bois du passé, c'est le moment présent et les changements de l'industrie qui doivent arriver.*
+
+---
+
+### Section 48
+
+**🇬🇧 EN:** "There will be more cases to come, sexual abuse, coercive control, verbal and physical abuse. It is not OK, and it never was OK."
+
+**🇫🇷 FR:** *"Il y aura plus de cas à venir, des abus sexuels, des contrôles coercitifs, des abus verbaux et physiques.*
+
+---
+
+### Section 49
+
+**🇬🇧 EN:** David Walliams lost a legal bid to stop the claims against him being made public
+
+**🇫🇷 FR:** *David Walliams a perdu une tentative juridique pour empêcher les allégations contre lui d'être rendues publiques*
+
+---
+
+### Section 50
+
+**🇬🇧 EN:** This week, comedian Deborah Frances-White told BBC Radio 4's The World at One that young women were "definitely" still being exploited in the comedy industry.
+
+**🇫🇷 FR:** *Cette semaine, la comédienne Deborah Frances-White a déclaré à BBC Radio 4 que les jeunes femmes étaient " définitivement " toujours exploitées dans l'industrie de la comédie.*
+
+---
+
+### Section 51
+
+**🇬🇧 EN:** And in the past few days, I've had tip-offs about other celebrities allegedly abusing their power. No doubt other journalists have too.
+
+**🇫🇷 FR:** *Ces derniers jours, j'ai reçu des conseils sur d'autres célébrités qui auraient abusé de leur pouvoir.*
+
+---
+
+### Section 52
+
+**🇬🇧 EN:** None of those is reportable, yet. As Freeman said: "There are other names out there, but you and I couldn't name them as we'd be sued".
+
+**🇫🇷 FR:** *Aucun de ces noms n'est encore à signaler, comme le dit Freeman: "Il y a d'autres noms, mais vous et moi ne pourrions pas les nommer, car nous serions poursuivis".*
+
+---
+
+### Section 53
+
+**🇬🇧 EN:** But one "cheering thing", she said, was that the sort of jokes and innuendos from the nineties and noughties, or even the optics of seeing a much older man with a younger girl would no longer be "glossed over".
+
+**🇫🇷 FR:** *Mais une " chose joyeuse ", dit-elle, était que le genre de blagues et de allusions des années 90 et 90, ou même l'optique de voir un homme beaucoup plus âgé avec une fille plus jeune, ne serait plus " brillant ".*
+
+---
+
+### Section 54
+
+**🇬🇧 EN:** "It wouldn't be laughed at, and it wouldn't be 'nudge nudge'," Freeman said. "That kind of open, in your face, weirdness won't happen any more".
+
+**🇫🇷 FR:** *"Il ne serait pas ridicule, et ce ne serait pas un "poussage poussage", " dit Freeman. "Ce genre d'ouverture, dans votre visage, la bizarrerie ne se produira plus".*
+
+---
+
+### Section 55
+
+**🇬🇧 EN:** "On the downside, that may make it harder to identify predators, if it means these things are kept more in the shadows."
+
+**🇫🇷 FR:** *"D'autre part, cela peut rendre plus difficile l'identification des prédateurs, si cela signifie que ces choses sont plus cachées".*
+
+---
+
+### Section 56
+
+**🇬🇧 EN:** Channel 4's office in central London. Its bosses will be questioned by MPs next week following the cancellation of Married at First Sight UK
+
+**🇫🇷 FR:** *Le bureau de Channel 4 dans le centre de Londres. Ses chefs seront interrogés par les députés la semaine prochaine suite à l'annulation de Married at First Sight UK*
+
+---
+
+### Section 57
+
+**🇬🇧 EN:** Then there’s the use of gagging orders and other legal routes often used by celebrities and media organisations to stop women speaking out.
+
+**🇫🇷 FR:** *Il y a aussi l'utilisation de décrets de bouche ou d'autres moyens juridiques souvent utilisés par les célébrités et les organisations médiatiques pour empêcher les femmes de parler.*
+
+---
+
+### Section 58
+
+**🇬🇧 EN:** Last week, a High Court judge rejected an injunction request by Walliams, clearing the way for him to be named.
+
+**🇫🇷 FR:** *La semaine dernière, un juge de la Haute Cour a rejeté une demande d'injonction de Walliams, ouvrant ainsi la voie à son nom.*
+
+---
+
+### Section 59
+
+**🇬🇧 EN:** "There are lots of barriers to speaking out, and those that have access to wealth or fame will often use legal measures to deter alleged victims from doing so," Harriet Wistrich, from the Centre for Women's Justice, told me.
+
+**🇫🇷 FR:** *"Il y a beaucoup d'obstacles à parler, et ceux qui ont accès à la richesse ou à la célébrité utilisent souvent des mesures légales pour dissuader les victimes présumées de le faire", m'a dit Harriet Wistrich, du Centre pour la justice des femmes.*
+
+---
+
+### Section 60
+
+**🇬🇧 EN:** That too, may be starting to change.
+
+**🇫🇷 FR:** *Cela aussi peut commencer à changer.*
+
+---
+
+### Section 61
+
+**🇬🇧 EN:** This week, multiple government ministers have spoken against non-disclosure agreements and called for further restrictions on their use.
+
+**🇫🇷 FR:** *Cette semaine, plusieurs ministres du gouvernement ont parlé contre les accords de non-divulgation et ont appelé à de nouvelles restrictions sur leur utilisation.*
+
+---
+
+### Section 62
+
+**🇬🇧 EN:** Change could come in other areas too.
+
+**🇫🇷 FR:** *Les changements pourraient également survenir dans d'autres domaines.*
+
+---
+
+### Section 63
+
+**🇬🇧 EN:** Next week, Culture Secretary Lisa Nandy will convene industry leaders to urge them to improve safeguarding practices - while Channel 4 bosses are due to appear in front an MPs on Tuesday.
+
+**🇫🇷 FR:** *La semaine prochaine, la secrétaire à la Culture Lisa Nandy convoquera les leaders de l'industrie pour les exhorter à améliorer les pratiques de sauvegarde - tandis que les patrons de Channel 4 doivent comparaître devant un député mardi.*
+
+---
+
+### Section 64
+
+**🇬🇧 EN:** When MAFS UK was cancelled, Channel 4 said the programme had "run its course" and apologised to the women involved in the investigation.
+
+**🇫🇷 FR:** *Lorsque MAFS UK a été annulée, Channel 4 a déclaré que le programme avait "couru son cours" et s'est excusé auprès des femmes impliquées dans l'enquête.*
+
+---
+
+### Section 65
+
+**🇬🇧 EN:** It said the review found that in Channel 4 and production company CPL's handling of the issues raised at the time, there was no breach of Ofcom's broadcasting code.
+
+**🇫🇷 FR:** *Il a indiqué que l'examen a révélé que dans le traitement des questions soulevées à l'époque par la chaîne 4 et la société de production CPL, il n'y avait pas de violation du code de radiodiffusion d'Ofcom.*
+
+---
+
+### Section 66
+
+**🇬🇧 EN:** There is growing recognition that those at the top of media organisations have a responsibility to root out abuse. It can't just be down to the victims.
+
+**🇫🇷 FR:** *Il est de plus en plus reconnu que les responsables des médias ont la responsabilité de mettre fin aux abus.*
+
+---
+
+### Section 67
+
+**🇬🇧 EN:** "People in positions of power have a duty to speak up too," said Wark.
+
+**🇫🇷 FR:** *"Les gens qui occupent des postes de pouvoir ont aussi le devoir de se prononcer", a déclaré Wark.*
+
+---
+
+### Section 68
+
+**🇬🇧 EN:** "Broadcasters, production companies and those financing productions all have a responsibility to ensure protections are upheld," added Josephine Brassey, from Women in Film and TV, while Philippa Childs urged the creative industries to accept that their current internal reporting mechanisms were "inadequate".
+
+**🇫🇷 FR:** *"Les radiodiffuseurs, les entreprises de production et les productions financées ont toutes la responsabilité de veiller à ce que les protections soient respectées", a ajouté Josephine Brassey, de Women in Film and TV, tandis que Philippa Childs a exhorté les industries créatives à accepter que leurs mécanismes actuels de communication interne étaient "inadéquats".*
+
+---
+
+### Section 69
+
+**🇬🇧 EN:** What everyone seems to agree on is that this can't be another empty tipping point with no real, lasting change.
+
+**🇫🇷 FR:** *Tout le monde semble être d'accord sur le fait que ce ne peut pas être un autre point de basculement vide sans changement réel et durable.*
+
+---
+
+### Section 70
+
+**🇬🇧 EN:** Maybe this time it could really be a watershed moment.
+
+**🇫🇷 FR:** *Peut-être que cette fois-ci pourrait être un moment de changement.*
+
+---
+
+### Section 71
+
+**🇬🇧 EN:** If you have more information about this story, you can reach Noor by email at noor.nanji@bbc.co.uk
+
+**🇫🇷 FR:** *Si vous avez plus d'informations sur cette histoire, vous pouvez contacter Noor par courriel à noor.nanji@bbc.co.uk*
+
+---
+
+### Section 72
+
+**🇬🇧 EN:** Married at First Sight UK cancelled after BBC revealed rape allegations
+
+**🇫🇷 FR:** *Le mariage à First Sight UK annulé après que la BBC ait révélé des allégations de viol*
+
+---
+
+### Section 73
+
+**🇬🇧 EN:** David Walliams accused of sexual misconduct after losing injunction bid
+
+**🇫🇷 FR:** *David Walliams accusé de délit sexuel après avoir perdu l'ordre d'interdiction*
+
+---
+
+### Section 74
+
+**🇬🇧 EN:** Russell Brand sentenced to 10-and-a-half years in prison for rape and sexual assault
+
+**🇫🇷 FR:** *Russell Brand condamné à dix ans et demi de prison pour viol et agression sexuelle*
+
+---
+
+### Section 75
+
+**🇬🇧 EN:** How Panorama exposed rape allegations on Married at First Sight UK
+
+**🇫🇷 FR:** *Comment Panorama a dévoilé les allégations de viol sur Married at First Sight UK*
+
+---
+
