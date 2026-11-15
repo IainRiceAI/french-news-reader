@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holly Humberstone: People can't connect to a pop star who's 'too polished'</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>Holly Humberstone: People can't connect to a pop star who's 'too polished'</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 15 Nov 2026 00:07:29 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cw77p7yj42k5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The singer felt forced to compete with her female peers, until she realised the power of longevity.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Holly Humberstone dit qu'elle avait une crise d'identité sur une base hebdomadaire</p>
+            <span class="english-block">Holly Humberstone says she was having an identity crisis on a weekly basis</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Vous la connaissez peut-être comme une pop star, approuvée par tout le monde, de Taylor Swift à Sam Fender, mais Holly Humberstone a une double vie secrète.</p>
+            <span class="english-block">You might know her as a pop star, endorsed by everyone from Taylor Swift to Sam Fender, but Holly Humberstone has a secret double life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Dans son temps libre, la chanteuse et compositrice est littéralement une cambrioleuse.</p>
+            <span class="english-block">In her spare time, the singer-songwriter is literally a cat burglar.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">"Nous avons volé un chat de nos voisins par accident", rigole-t-elle, dans un appel Zoom de son réparateur de New Cross, au sud-est de Londres.</p>
+            <span class="english-block">"We've stolen one of our neighbours' cats by accident," she laughs, in a Zoom call from her fixer-upper in New Cross, south-east London.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">"C'est un petit chat noir qui est venu dans notre jardin et nous a simplement choisis".</p>
+            <span class="english-block">"He's a tiny little black cat who's come into our garden and simply chosen us."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Mais si on ne le regarde pas, son histoire se décompose comme un biscuit dans une tasse de thé chaud.</p>
+            <span class="english-block">Under the slightest scrutiny, however, her story crumbles like a biscuit in a hot cup of tea.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">"Oui, on l'a forcé à entrer dans la maison avec des friandises, reconnaît- elle.</p>
+            <span class="english-block">"OK, we've been coercing him into the house with treats," she admits. "He's just so cute.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">"Mais nous ne le gardons pas, nous le repoussons littéralement tous les soirs".</p>
+            <span class="english-block">"But we're not trying to keep him. We literally push him out every night."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">L'excuse de Humberstone pour ce crime feline est que, l'année dernière, ses parents ont vendu sa maison d'enfance dans le Lincolnshire, en dehors et ont déménagé au Pays de Galles  en emmenant ses animaux de compagnie avec eux.</p>
+            <span class="english-block">Humberstone's excuse for this feline felony is that, last year, her parents sold her childhood home in Lincolnshire, external and moved to Wales  – taking her pets with them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">L'un, un chat appelé Tsuki, avait même été immortalisé dans la chanson Lucy comme une confidente qui écoute ses problèmes mais "ne juge jamais".</p>
+            <span class="english-block">One, a cat called Tsuki, had even been immortalised in the song Lucy as a confidante who listens to her problems but "never judges".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">"Oh, elle connaît des secrets!" se moque la chanteuse. "Je suis si heureuse qu'elle ne puisse pas parler".</p>
+            <span class="english-block">"Oh, she knows some secrets!" laughs the singer. "I'm so glad she can't talk."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"Nous avons essayé de l'amener à Londres avec nous, mais c'est un chat de campagne et elle détestait tellement.</p>
+            <span class="english-block">"We actually tried to bring her to London with us, but she's a countryside cat and she hated it so much. We had to send her to Wales where she can be free and frolic."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Le déplacement de ses parents a été perturbant pour les Humberstones humains aussi.</p>
+            <span class="english-block">Her parents' relocation was disruptive for the human Humberstones, too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Leur maison, une propriété " froide et en chute " à 20 minutes de Grantham, a joué un rôle important dans le succès du chanteur.</p>
+            <span class="english-block">Their house, a "freezing cold, falling down" property 20 minutes outside of Grantham, played a huge part in the singer's success.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Ses premiers EP ont tous été écrits là-bas, inspirant les "sonics de la musique" de son son pop indépendant.</p>
+            <span class="english-block">Her early EPs were all written there, inspiring the "wonky sonics" of her indie-leaning pop sound. The 2021 single Haunted House is even dedicated to the "friendly" spirits who inhabited the property.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"C'est un endroit où je me suis toujours sentie capable de revenir, de me rappeler qui je suis", dit- elle.</p>
+            <span class="english-block">"It's a place I always felt I could go back to, to remind myself of who I am," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Au lieu de cela, elle a passé 2025 "emballant 23 ans de choses que ma famille et moi avions accumulées", de ses vieilles chaussures de ballet et ses livres de poésie à des bijoux oubliés.</p>
+            <span class="english-block">Instead, she spent 2025 "packing up 23 years of stuff my family and I had accumulated", from her old ballet shoes and poetry books to forgotten bits of jewellery.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">La chanteuse a partagé des photos de son ancienne chambre et des objets qu'elle avait redécouverts, tout en éliminant la "maison hantée" de ses parents à Grantham (photo, gauche).</p>
+            <span class="english-block">The singer shared photos of her old bedroom, and the artefacts she'd rediscovered, while clearing out her parents' "haunted house" in Grantham (pictured, left).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Déjà en train de se débattre de l'idée de laisser l'enfance derrière elle, Humberstone se retrouva littéralement à jeter son passé.</p>
+            <span class="english-block">The process was unsettling. Already grappling with the idea of leaving childhood behind, Humberstone found herself literally throwing away her past.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">"Je me sentais déracinée, dit- elle, et j'avais une sorte de crise d'identité presque chaque semaine.</p>
+            <span class="english-block">"I felt uprooted. I was having some sort of identity crisis almost weekly," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Elle a fait ce qu'elle a toujours fait, et a versé ces sentiments dans son deuxième album, Cruel World, qui est entré dans les charts britanniques au numéro quatre plus tôt cette année.</p>
+            <span class="english-block">So she did what she's always done, and poured those feelings into her second album, Cruel World, which entered the UK charts at number four earlier this year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">" Écrire ces chansons, dit- elle, c'était comme me bâtir un petit bouclier et une sorte de bulle de sécurité. " Il y a un élément escapiste et fantastique dans une grande partie de l'album. "</p>
+            <span class="english-block">"Writing these songs felt like building myself a little shield and a kind of safety bubble," she says. "There's an escapist, fantasy element to so much of the album."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">C'est peut-être vrai, mais Humberstone a toujours été capable de localiser le cœur émotionnel d'une chanson, et les paroles de Cruel World ne déçoivent pas.</p>
+            <span class="english-block">Maybe that's true, but Humberstone has always had the ability to locate a song's emotional core, and the lyrics on Cruel World don't disappoint.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">"Perdre quelqu'un, c'est savoir que tu es seulement humain, chérie", chante-t-elle dans To Love Somebody, extérieur, apaisant sa sœur aînée alors qu'elle endure une rupture agonisante.</p>
+            <span class="english-block">"To lose somebody is to know you're only human, honey," she sings on To Love Somebody, external, soothing her elder sister as she endures an agonising break-up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Inébranlable par cette détresse, elle se jette tout d'abord dans une nouvelle affaire sur Die Happy, extérieure, déclarant: "Tire le gaz, je veux le faire vite, je veux le faire imprudemment".</p>
+            <span class="english-block">Undeterred by that heartbreak, she throws herself headfirst into a new affair on Die Happy, external, declaring: "Hit the gas, I want it fast, want it reckless."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Mais la chanson la plus révélatrice est la piste de clôture, Beauty Pageant, externe.</p>
+            <span class="english-block">But the most revealing song is the closing track, Beauty Pageant, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Fragile et crue, c'est le son de Humberstone dans son vestiaire, s'adressant à la femme dans le miroir qui "mortrait pour les applaudissements" mais qui lutte contre les normes de beauté impossibles imposées aux artistes féminines.</p>
+            <span class="english-block">Fragile and raw, it's the sound of Humberstone in her dressing room, addressing the woman in the mirror who'd "die for the applause" but who struggles with the impossible beauty standards imposed on female artists.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les plus grandes chansons de Humberstone incluent Falling Asleep At The Wheel, The Walls Are Way Too Thin, Die Happy et Scarlett</p>
+            <span class="english-block">Humberstone's biggest songs include Falling Asleep At The Wheel, The Walls Are Way Too Thin, Die Happy and Scarlett</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"C'est une chanson que je ne voulais pas écrire", avoue- t- elle.</p>
+            <span class="english-block">"That's a song that I wasn't really setting out to write," she confesses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">" Écrire sur d'autres personnes est souvent plus facile que de tourner la loupe sur soi- même. "</p>
+            <span class="english-block">"Writing about other people often feels easier than turning the magnifying glass on yourself."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Les paroles, dit-elle, tirent sur une mentalité "très spécifique" qu'elle a acquise à son école pour filles à Grantham.</p>
+            <span class="english-block">The lyrics, she says, draw on a "very specific" mindset she acquired at her all-girls school in Grantham.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">"Je me suis dit que vous êtes tous en compétition, que vous êtes récompensé si vous êtes le meilleur, et que si vous n'êtes pas, vous n'avez aucune valeur".</p>
+            <span class="english-block">"It was drilled into me: You're all in competition. You're only rewarded if you're the best. And if you're not, you're worthless."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Elle dit que cette expérience " a vraiment déformé ma façon de voir les autres filles ".</p>
+            <span class="english-block">The experience "really warped the way I view other girls", she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Après avoir remporté le prix Brits Rising Star en 2022, Humberstone se retrouve en compétition avec les méga-stars, même si sa musique se penche vers le côté alternatif de la pop.</p>
+            <span class="english-block">Musical success made it worse. After winning the Brits Rising Star award in 2022, Humberstone found herself competing with megastars, even though her music leaned towards the alternative side of pop.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">"Je suis un très petit poisson et je le reconnais, mais soudain, j'étais à des réunions où on me compare à toutes ces personnes de ma liste de label, qui sont à une échelle complètement différente", dit-elle.</p>
+            <span class="english-block">"I'm a very small fish and I recognise that, but suddenly I was in meetings being compared to all these people on my label's roster, who are on a completely different scale," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">"C'est quelque chose avec lequel j'ai vraiment, vraiment eu du mal dans les premiers jours et c'est quelque chose que j'ai vraiment dû défaire".</p>
+            <span class="english-block">"It's something I really, really struggled with in the early days and it's something I've really had to unlearn."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Aujourd'hui, Humberstone a cessé de se comparer à ses pairs, reconnaissant que le besoin de validation ne disparaît jamais.</p>
+            <span class="english-block">Nowadays, Humberstone has stopped benchmarking herself against her peers, recognising that the need for validation never fades.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">"Je ne pense pas qu'il y ait un point où je puisse atteindre, ou un prix que je puisse gagner, où ces sentiments disparaîtraient", dit- elle.</p>
+            <span class="english-block">"I don't think that there's a point I could get to, or an award that I could win, where these feelings would disappear," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">"Tout le monde a l'impression qu'il a encore quelque chose à prouver, alors je me suis arrêté de me fixer des objectifs, parce que je perds de vue la vraie raison pour laquelle je fais cela, qui est d'écrire de la musique qui me représente, et que d'autres personnes se sentent comprises par cette musique".</p>
+            <span class="english-block">"Everybody feels like they've still got something to prove, so I'm done with setting myself goals - because then I lose sight of the real reason that I'm doing this, which is to write music that represents me, and have other people feel understood through that music."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">"Je prie pour qu'un jour je me retourne et je regarde le miroir avec un sourire", chante Humberstone</p>
+            <span class="english-block">"I pray that one day I'll turn and face the mirror with a smile," sings Humberstone</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Cette mentalité se concrétise dans la nouvelle édition élargie de Cruel World, dont cinq nouvelles chansons ont été écrites en grande partie après la remise de l'album original.</p>
+            <span class="english-block">That mindset comes to fruition in the new, expanded edition of Cruel World, whose five new songs were largely written after the original album was handed in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">"J'étais très fier de Cruel World et, quand vous avez ça dans votre poche arrière, il y a de la place pour expérimenter et briser certains de vos paramètres habituels".</p>
+            <span class="english-block">"I was super proud of Cruel World and, when you've got that in your back pocket, there's room to experiment and break some of your usual parameters."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Les nouvelles pistes trouvent Humberstone embrassant une nouvelle personnalité  plus confiante, plus flirtante, un peu salée  avec une musique inspirée d'une playlist mettant en vedette Abba, Madonna et Robyn.</p>
+            <span class="english-block">The new tracks find Humberstone embracing a new persona – more confident, more flirtatious, a little salty – with music inspired by a playlist featuring Abba, Madonna and Robyn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Le single Too Cute To Be Lonely, External est une histoire de leur volonté ou de leur refus, qui se déroule à une fête à la maison.</p>
+            <span class="english-block">The single Too Cute To Be Lonely, external is a will-they/won't-they story set at a house party.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">"Ne laissez pas une fille contrariée, dans une robe si jolie", se moque-t-elle de l'objet de ses affections.</p>
+            <span class="english-block">"Don't leave a girl upset, in such a pretty dress," she teases the object of her affections.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Terminally Yours se déroule quelques semaines plus tard, quand Humberstone réalise qu'elle est tombée amoureuse.</p>
+            <span class="english-block">Terminally Yours takes place a couple of weeks later, when Humberstone realises she's fallen head-over-heels in love.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">"Votre visage stupide est mon triste sort", se fait- elle gronder, en colère contre elle- même. "Pour l'amour de [expletive], je suis amoureuse".</p>
+            <span class="english-block">"Your stupid face is my sorry fate," she harrumphs, cross at herself.  "For [expletive]'s sake, I'm in love."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Silver Sky, une magnifique ballade acoustique, raconte un autre aspect de l'histoire, alors qu'elle s'installe dans les bras de son amant et se déplace dans une révérie bénie.</p>
+            <span class="english-block">Silver Sky, a gorgeous acoustic ballad, tells another side of the story, as she settles into her lover's arms and drifts into blissful reverie.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">"J'ai écrit ça lors d'une sorte de voyage à Ave Maria, en voyant ce qui est tombé de l'air à Nashville", révèle- t- elle.</p>
+            <span class="english-block">"I wrote that on a kind of Hail Mary trip, seeing what fell out of the air in Nashville," she reveals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">"Nous sommes allés chez [la co-auteure Maddie Diaz], nous avons pris une guitare dans le jardin et nous avons écrit Silver Sky dehors, alors que tous ces magnifiques cardinaux rouges chantaient autour de nous.</p>
+            <span class="english-block">"We went over to [co-writer Maddie Diaz's] house, took a guitar into the garden and wrote Silver Sky outside, while all of these gorgeous red cardinals were singing around us.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">" Je suis habituellement très sensible à mes problèmes de santé mentale, mais j'avais envie d'écrire quelque chose qui me rendait heureux. "</p>
+            <span class="english-block">"I usually write a lot about my mental health struggles, but I was just in the mood to write something that made me feel good."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Humberstone a remporté le prix Brits Rising Star en 2022, rejoignant les rangs d'anciens gagnants tels que Sam Fender, Florence + The Machine et Adele</p>
+            <span class="english-block">Humberstone won the Brits Rising Star award in 2022, joining the ranks of former winners such as Sam Fender, Florence + The Machine and Adele</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Humberstone admet que ses nerfs ne se sont intensifiés que depuis la sortie de Cruel World.</p>
+            <span class="english-block">Not that her mental health issues are in the rear view mirror. Humberstone admits her stage nerves have only intensified since the release of Cruel World.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">"C'est le plus fier que j'ai jamais été de mon travail et, pour cette raison, j'ai eu du mal à faire des spectacles parce que j'ai ressenti beaucoup de pression pour sortir et le livrer à la norme que je pense que les gens attendent.</p>
+            <span class="english-block">"It's the proudest I've been of any of my work and, for that reason, I struggled with shows because I felt a lot of pressure to go out and deliver it to the standard that I think people are expecting.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">" Mais d'un autre côté, il est tout à fait normal de faire des conneries ou de chanter une mauvaise note.</p>
+            <span class="english-block">"But on the other hand, it's totally fine if you mess up or sing a wrong note. People can't connect to a pop star that feels too robotic and polished.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">" Alors peut-être que ma force est cette vulnérabilité, et je dois la reconnaître davantage. "</p>
+            <span class="english-block">"So maybe my strength is that vulnerability, and I need to recognise that more."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Cette vulnérabilité a gagné des millions de fans de Humberstone, même si un single de succès l'a (jusqu'à présent) évitée.</p>
+            <span class="english-block">That vulnerability has won Humberstone millions of fans, even if a hit single has (so far) eluded her.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">En mai de cette année, son single de sortie Falling Asleep At The Wheel a reçu un disque d'argent cinq ans après sa sortie, indiquant que ses chansons ont la force de rester dans une ère de succès jetables.</p>
+            <span class="english-block">And her audience keeps growing.  In May this year, her breakout single Falling Asleep At The Wheel was awarded a silver disc... five years after its release, indicating that her songs have staying power in an era of disposable hits.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">Étonnamment, c'est une nouvelle pour Humberstone, qui apprend le prix lors de notre interview, mais ça aide à clarifier une pensée qui lui a tourné la tête.</p>
+            <span class="english-block">Astonishingly, this is news to Humberstone, who learns about the accolade during our interview. But it helps to clarify a thought that's been knocking around her head.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">"Si je veux faire ça pendant des années, je dois juste continuer à faire de la musique qui me semble bonne, en faisant confiance à mon instinct et en réalisant qu'il n'y a pas de fin", dit-elle.</p>
+            <span class="english-block">"If I'm going to be doing this for years to come, I've just got to keep making music that feels right, trusting my gut and realising there's no end point," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">"Avoir atteint un point final signifierait que j'ai 'fait', mais je pense, peut-être, que c'est un mythe qui n'existe pas vraiment".</p>
+            <span class="english-block">"Reaching an end point would mean I've 'made it', but I think, maybe, that's a myth that doesn't really exist."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.0" data-end="310.0">
+            <p class="french-block">"Je me sens la personne la plus cool"</p>
+            <span class="english-block">Opening for Taylor Swift: 'I feel like the coolest person'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.0" data-end="315.0">
+            <p class="french-block">Holly Humberstone "délire" lors de la victoire du Brit Award</p>
+            <span class="english-block">Holly Humberstone 'freaking out' at Brit Award win</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.0" data-end="320.0">
+            <p class="french-block">Holly Humberstone écrit des paroles "donnantes du tatouage"</p>
+            <span class="english-block">Holly Humberstone is writing 'tattoo-worthy' lyrics</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

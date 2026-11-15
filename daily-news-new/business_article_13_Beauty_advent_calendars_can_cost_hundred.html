@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty advent calendars can cost hundreds - but are they value for money?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Beauty advent calendars can cost hundreds - but are they value for money?</h1>
+        <div class="meta-info">
+            <span>📅 Sun, 15 Nov 2026 00:01:07 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqn83l442724o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Beauty calendars have become a Christmas staple and have become particularly popular with female shoppers.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Comme beaucoup de femmes à cette époque de l'année, Julia dit qu'elle est souvent tentée de gaspiller tout ce qu'elle possède, surtout un calendrier de parfum.</p>
+            <span class="english-block">It's easy to see the appeal of a beauty advent calendar. Like many women at this time of year, Julia says she often finds herself tempted to splurge on one - especially a perfume calendar. But she takes quite an unsentimental approach.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">" Je regarde toujours ce qu'il y a dedans, dit le jeune homme de 39 ans, qui est directeur commercial en ingénierie.</p>
+            <span class="english-block">"I always look at what's in them. If I like enough of the fragrances, I'll buy it," says the 39-year old, who works as a senior commercial manager in engineering.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Les calendriers d'aventure de luxe sont censés offrir la sensation d'une surprise, mais pour Julia, il est plus important qu'elle veuille vraiment les articles à l'intérieur - une pensée qui attire également de plus en plus de clients à la suite du scandale sur le calendrier Skims.</p>
+            <span class="english-block">Luxury advent calendars are supposed to offer the thrill of a surprise but, for Julia, it is more important she actually wants the items inside - a thought that is also striking more and more customers in the wake of the scandal over the Skims calendar.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les clients ont comparé le contenu du calendrier de Kim Kardashian à quelque chose que l'on trouverait sur le dos d'un canapé.</p>
+            <span class="english-block">Customers likened the contents of Kim Kardashian's Skims calendar to something you would find down the back of a sofa</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Cette semaine, la marque de beauté de Kim Kardashian a offert à tous ses clients un remboursement de son calendrier de 148 $ après avoir été largement critiquée sur les réseaux sociaux pour la qualité de son contenu, certains clients comparant les clipes de cheveux, les crochets et les clés à l'intérieur à des choses que vous pourriez trouver à l'arrière d'un canapé.</p>
+            <span class="english-block">This week, Kim Kardashian's beauty brand offered all of its customers refunds for its $148 (£110) calendar after being widely criticised on social media over the quality of its contents, with some customers likening the hair clips, scrunchies and keychains inside to things you might find down the back of a sofa.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Julia dit qu'elle gagne un bon salaire, mais qu'elle veut gagner de l'argent et ne veut pas le gaspiller sur des objets qu'elle n'utilisera pas.</p>
+            <span class="english-block">Julia says she earns a good salary but is keen to get value for money and doesn't want to waste it on items she won't use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">"L'année dernière, j'ai dépensé 160 livres sterling pour un calendrier de parfum Space NK, dit- elle. " J'ai obtenu des parfums que je voulais depuis un certain temps pour beaucoup moins que le prix de vente recommandé, et ceux que je n'aimais pas, j'ai réussi à les vendre pour une légère augmentation de mon salaire".</p>
+            <span class="english-block">"I spent £160 on a Space NK fragrance calendar last year," she says. "I got some fragrances I'd been wanting for a while for a lot less than recommended retail price, and those I didn't like I managed to sell on for a slight mark-up on what I paid."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Julia, 39 ans, dit qu'elle pense que les calendriers de parfums sont généralement bon marché</p>
+            <span class="english-block">Julia, 39, says she thinks fragrance calendars are usually good value for money</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les calendriers de beauté, qui coûtent souvent plus de 100 livres sterling et parfois beaucoup plus, existent depuis plus d'une décennie et le marketing est devenu de plus en plus sophistiqué.</p>
+            <span class="english-block">Beauty calendars, which often cost upwards of £100 and sometimes much more, have been around for more than a decade and the marketing has grown ever more sophisticated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les marques de haut niveau mettront en garde contre le risque que leurs calendriers se déprécient, ce qui pourrait stimuler la demande précoce, tandis que les vidéos de déboxe publiées par les influenceurs peuvent encourager les dépenses en créant un sentiment contagieux de surprise et de plaisir.</p>
+            <span class="english-block">High-profile brands will warn that their calendars risk running out, which may boost early demand, while unboxing videos posted by influencers can encourage spending by creating an infectious sense of surprise and delight.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les données d'Ipsos montrent que 15% des calendriers d'avent vendus sont des calendriers de beauté, avec des personnes âgées de 18 à 34 ans particulièrement disposées à se délecter.</p>
+            <span class="english-block">And it appears to be working. Ipsos data shows, external around 15% of all advent calendars sold are beauty ones, with people aged 18-34 particularly willing to splash out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Mais face à ce tsunami de marketing, les clients semblent devenir plus avisés.</p>
+            <span class="english-block">But in the face of that tsunami of marketing, customers seem to be getting savvier.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" J'adore la beauté, mais j'achète rarement des calendriers d'aventures de beauté. Ils sont chers et ne contiennent souvent que quelques choses que je veux essayer ou qui sont des produits à la mode ", déclare Priya Raj, une journaliste de mode de 30 ans.</p>
+            <span class="english-block">"I love beauty, but I rarely buy beauty advent calendars. They are pricey and often only have a few things that I actually want to try or are trending products," says Priya Raj, 30, a fashion journalist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Elle pense que certains sont de bonne valeur mais, pour elle, l'avantage est de pouvoir essayer à petite échelle sans se défaire d'un produit de taille complète.</p>
+            <span class="english-block">She thinks some are good value but, for her, the advantage is being able to try on a small scale without forking out for a full-size product.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">" Pour moi, un calendrier d'aventure - en particulier un calendrier de beauté - sert à me permettre d'essayer différents produits, surtout en amont de Noël, et j'espère pouvoir faire une bonne affaire dans les ventes du Boxing Day. "</p>
+            <span class="english-block">"For me, an advent calendar - particularly a beauty one - serves the purpose of allowing me to try out different products, particularly in the lead-up to Christmas, and then I can hopefully snag a bargain in the Boxing Day sales."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Priya Raj, une journaliste de mode de 30 ans, dit que les calendriers "servent à me permettre d'essayer différents produits".</p>
+            <span class="english-block">Priya Raj, 30, a fashion journalist, says the calendars "serve the purpose of allowing me to try out different products"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">La podcaste Rhea Somaiya, 28 ans, aime aussi l'idée générale, mais elle a un scepticisme sain autour de beaucoup d'entre eux en pratique.</p>
+            <span class="english-block">Podcaster Rhea Somaiya, 28, also likes the general idea, but has a healthy scepticism around a lot of them in practice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">" Je pense que certaines marques prennent pour acquis le consommateur en ce qu'elles fournissent chaque jour quelque chose de si insignifiant que les gens sont bombardés d'articles sans importance et encombrants.</p>
+            <span class="english-block">"I do think some brands take the consumer for granted in that they provide each day with something so menial that people are bombarded with irrelevant and cluttering items.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">"Et quand c'est le cas, ils me repoussent certainement, car l'excitation d'ouvrir chaque fenêtre diminue en irritation plutôt que en joie".</p>
+            <span class="english-block">"And when that's the case, they certainly put me off as the excitement to open each window dwindles into irritation rather than joy."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">La podcasteure Rhea Somaiya, 28 ans, est moins intéressée par les calendriers et dit qu'ils laissent les consommateurs " bombardés d'articles sans importance et encombrants "</p>
+            <span class="english-block">Podcaster Rhea Somaiya, 28, is less keen on the calendars and says they leave consumers "bombarded with irrelevant and cluttering items"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Jessica Jasper, consultante en marketing, est plus positive - elle pense que cela en vaut la peine. Mais elle pense aussi que certaines entreprises font un bond sur une tendance et que " certaines marques sont un peu débordées par les prix ".</p>
+            <span class="english-block">Jessica Jasper, a marketing consultant, is more positive - she thinks it's worth it. But she also thinks some companies are just jumping on a trend and that "some brands are getting a little carried away with the pricing".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Les calendriers de beauté peuvent- ils offrir une valeur à la fois pour les marques et pour les clients, un exemple de gagnant-gagnant?</p>
+            <span class="english-block">So can beauty calendars offer value for both the brands and the customer - an example of a win-win? Or are they mainly designed to make us spend more at Christmas than we need to?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"Certaines marques sont un peu débordées par les prix", dit la consultante en marketing Jessica Jasper</p>
+            <span class="english-block">"Some brands are getting a little carried away with the pricing," says marketing consultant Jessica Jasper</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Heather Widdows, professeur de philosophie et expert en beauté, a souligné que si vous achetez certains produits individuellement dans un calendrier d'avent, il est très peu probable que vous achetiez tous.</p>
+            <span class="english-block">Heather Widdows, a philosophy professor and beauty expert, has pointed out that while you might buy some of the products in an advent calendar individually, it's highly unlikely you'd buy all of them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">" Les calendriers de beauté peuvent vous offrir beaucoup de produits à un prix vraiment bon.</p>
+            <span class="english-block">"Beauty calendars may offer you lots of products for a really good price. They can also be a bit of fun and feel sensuous.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">"Mais il est extrêmement peu probable que vous utilisiez tous les produits qui y sont, donc ils ne valent probablement pas la peine".</p>
+            <span class="english-block">"But it is exceptionally unlikely that you would use all the products inside them, so they're probably not worth it."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Cette année, Julia a dépensé 99 livres sur un calendrier de parfum John Lewis qu'elle pense être bon rapport qualité-prix, mais cela ne signifie pas qu'elle gardera tout.</p>
+            <span class="english-block">This year, Julia has spent £99 on a John Lewis fragrance calendar which she thinks is good value for money. But it doesn't mean she'll keep everything in it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">En fait, elle a rejoint un groupe Facebook où les gens échangent ceux qu'ils ne veulent pas pour ceux qu'ils font.</p>
+            <span class="english-block">In fact she's joined a Facebook group where people trade the ones they don't want for ones they do.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Les produits que je garde sont déjà beaucoup moins chers par millilitre que si on les achetait au détail", dit- elle.</p>
+            <span class="english-block">"The ones I keep are already a lot cheaper per mililitre than if you bought them at retail," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Avec des rapports supplémentaires de Kris Bramwell</p>
+            <span class="english-block">With additional reporting from Kris Bramwell</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Avez-vous acheté quelque chose que vous ne pensiez pas être de valeur pour de l'argent ou avez-vous vu des rabais trompeurs sur les produits?</p>
+            <span class="english-block">Have you bought something you didn’t feel was value for money? Or seen misleading discounts on products?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Kim Kardashian's Skims offre un remboursement de 148 $ pour le calendrier de l'avènement après la réaction</p>
+            <span class="english-block">Kim Kardashian's Skims offers refunds for $148 advent calendar after backlash</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
