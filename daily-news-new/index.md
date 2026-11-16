@@ -1,111 +1,115 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-11-15 06:01:35  
+Generated on: 2026-11-16 06:01:22  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **Neets review won't be for the faint-hearted - and will test Burnham's appetite for a welfare fight**
-   - **Published:** Sat, 14 Nov 2026 12:22:43 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Neets_review_wont_be_for_the_faint-heart.md](top-stories_article_2_Neets_review_wont_be_for_the_faint-heart.md)
+1. **Cut national insurance for under-25s to create jobs, Milburn report to say**
+   - **Published:** Sun, 15 Nov 2026 22:30:03 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Cut_national_insurance_for_under-25s_to_.md](top-stories_article_1_Cut_national_insurance_for_under-25s_to_.md)
 
-2. **Alleged Russell Brand rape victim wants age of consent law changed**
-   - **Published:** Sat, 14 Nov 2026 22:37:14 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Alleged_Russell_Brand_rape_victim_wants_.md](top-stories_article_3_Alleged_Russell_Brand_rape_victim_wants_.md)
+2. **UK will have 'voice' but no vote on EU food rules in Brexit reset**
+   - **Published:** Sun, 15 Nov 2026 22:00:24 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_UK_will_have_voice_but_no_vote_on_EU_foo.md](top-stories_article_2_UK_will_have_voice_but_no_vote_on_EU_foo.md)
 
-3. **'Can you believe it?': SpaceX catches part of its Starship rocket on return to Earth**
-   - **Published:** Sat, 14 Nov 2026 22:09:40 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Can_you_believe_it_SpaceX_catches_part_o.md](top-stories_article_4_Can_you_believe_it_SpaceX_catches_part_o.md)
+3. **Prince and Princess of Wales arrive in India ahead of meeting with Modi**
+   - **Published:** Mon, 16 Nov 2026 02:53:15 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Prince_and_Princess_of_Wales_arrive_in_I.md](top-stories_article_3_Prince_and_Princess_of_Wales_arrive_in_I.md)
 
-4. **New Orleans port files $1m lawsuit over 'miracle on the Mississippi' tanker collision**
-   - **Published:** Sat, 14 Nov 2026 22:27:06 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_New_Orleans_port_files_1m_lawsuit_over_m.md](top-stories_article_5_New_Orleans_port_files_1m_lawsuit_over_m.md)
+4. **Zelensky urges US and Musk to lift Starlink restrictions and be on 'right side of history'**
+   - **Published:** Sun, 15 Nov 2026 19:32:39 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Zelensky_urges_US_and_Musk_to_lift_Starl.md](top-stories_article_4_Zelensky_urges_US_and_Musk_to_lift_Starl.md)
 
-5. **Hannah Fry feels 'unbelievably lucky' after cervical cancer treatment**
-   - **Published:** Sun, 15 Nov 2026 00:09:29 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Hannah_Fry_feels_unbelievably_lucky_afte.md](top-stories_article_6_Hannah_Fry_feels_unbelievably_lucky_afte.md)
+5. **Trident submarine returns home after record-breaking undersea patrol**
+   - **Published:** Sun, 15 Nov 2026 21:48:10 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Trident_submarine_returns_home_after_rec.md](top-stories_article_5_Trident_submarine_returns_home_after_rec.md)
 
-6. **Beauty advent calendars can cost hundreds - but are they value for money?**
-   - **Published:** Sun, 15 Nov 2026 00:01:07 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Beauty_advent_calendars_can_cost_hundred.md](top-stories_article_7_Beauty_advent_calendars_can_cost_hundred.md)
+6. **Watch: New York teen reunites with cat missing after building collapse**
+   - **Published:** Mon, 16 Nov 2026 04:36:45 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Watch_New_York_teen_reunites_with_cat_mi.md](top-stories_article_6_Watch_New_York_teen_reunites_with_cat_mi.md)
 
-7. **How to shake hands and make eye contact - the lessons preparing pupils for the world of work**
-   - **Published:** Sun, 15 Nov 2026 00:05:56 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_How_to_shake_hands_and_make_eye_contact_.md](top-stories_article_8_How_to_shake_hands_and_make_eye_contact_.md)
+7. **Prince Harry praises war veterans on surprise visit to Ukraine**
+   - **Published:** Sun, 15 Nov 2026 22:00:13 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Prince_Harry_praises_war_veterans_on_sur.md](top-stories_article_7_Prince_Harry_praises_war_veterans_on_sur.md)
+
+8. **Brand moved from Wandsworth to category C prison, his wife confirms on podcast**
+   - **Published:** Mon, 16 Nov 2026 01:22:50 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Brand_moved_from_Wandsworth_to_category_.md](top-stories_article_8_Brand_moved_from_Wandsworth_to_category_.md)
 
 ---
 
 ### Section: WORLD
 
-1. **US has floated Ukraine ceding Donbas for Nato membership, Zelensky says**
-   - **Published:** Sat, 14 Nov 2026 22:37:25 GMT
-   - **Read Parallel Translation:** [world_article_9_US_has_floated_Ukraine_ceding_Donbas_for.md](world_article_9_US_has_floated_Ukraine_ceding_Donbas_for.md)
+1. **Zelensky urges US and Musk to lift Starlink restrictions and be on 'right side of history'**
+   - **Published:** Sun, 15 Nov 2026 19:32:39 GMT
+   - **Read Parallel Translation:** [world_article_9_Zelensky_urges_US_and_Musk_to_lift_Starl.md](world_article_9_Zelensky_urges_US_and_Musk_to_lift_Starl.md)
 
-2. **Copper wire upgrade caused nationwide flight suspension, US transport secretary says**
-   - **Published:** Sat, 14 Nov 2026 19:12:25 GMT
-   - **Read Parallel Translation:** [world_article_10_Copper_wire_upgrade_caused_nationwide_fl.md](world_article_10_Copper_wire_upgrade_caused_nationwide_fl.md)
+2. **Yemeni forces' retreat leaves Houthis in control of key Red Sea waterway**
+   - **Published:** Mon, 16 Nov 2026 03:08:31 GMT
+   - **Read Parallel Translation:** [world_article_10_Yemeni_forces_retreat_leaves_Houthis_in_.md](world_article_10_Yemeni_forces_retreat_leaves_Houthis_in_.md)
 
-3. **Pope Leo speaks of community 'suffering' on visit to remote Andes town**
-   - **Published:** Sun, 15 Nov 2026 02:49:45 GMT
-   - **Read Parallel Translation:** [world_article_11_Pope_Leo_speaks_of_community_suffering_o.md](world_article_11_Pope_Leo_speaks_of_community_suffering_o.md)
+3. **Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says**
+   - **Published:** Mon, 16 Nov 2026 01:47:57 GMT
+   - **Read Parallel Translation:** [world_article_11_Suspected_China_spy_linked_to_Nvidias_ex.md](world_article_11_Suspected_China_spy_linked_to_Nvidias_ex.md)
 
-4. **Judge temporarily blocks Trump from closing Washington DC golf course for renovation**
-   - **Published:** Sun, 15 Nov 2026 03:21:04 GMT
-   - **Read Parallel Translation:** [world_article_12_Judge_temporarily_blocks_Trump_from_clos.md](world_article_12_Judge_temporarily_blocks_Trump_from_clos.md)
+4. **Australian MP 'full of gratitude' upon leaving hospital after alleged car attack**
+   - **Published:** Mon, 16 Nov 2026 03:09:49 GMT
+   - **Read Parallel Translation:** [world_article_12_Australian_MP_full_of_gratitude_upon_lea.md](world_article_12_Australian_MP_full_of_gratitude_upon_lea.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Beauty advent calendars can cost hundreds - but are they value for money?**
-   - **Published:** Sun, 15 Nov 2026 00:01:07 GMT
-   - **Read Parallel Translation:** [business_article_13_Beauty_advent_calendars_can_cost_hundred.md](business_article_13_Beauty_advent_calendars_can_cost_hundred.md)
+1. **UK will have 'voice' but no vote on EU food rules in Brexit reset**
+   - **Published:** Sun, 15 Nov 2026 22:00:24 GMT
+   - **Read Parallel Translation:** [business_article_13_UK_will_have_voice_but_no_vote_on_EU_foo.md](business_article_13_UK_will_have_voice_but_no_vote_on_EU_foo.md)
 
-2. **How the Jensen Huang scandal created a headache for business-friendly Singapore**
-   - **Published:** Fri, 13 Nov 2026 23:00:31 GMT
-   - **Read Parallel Translation:** [business_article_14_How_the_Jensen_Huang_scandal_created_a_h.md](business_article_14_How_the_Jensen_Huang_scandal_created_a_h.md)
+2. **Cut national insurance for under-25s to create jobs, Milburn report to say**
+   - **Published:** Sun, 15 Nov 2026 22:30:03 GMT
+   - **Read Parallel Translation:** [business_article_14_Cut_national_insurance_for_under-25s_to_.md](business_article_14_Cut_national_insurance_for_under-25s_to_.md)
 
-3. **Microsoft says services fully restored after day-long global outage**
-   - **Published:** Sat, 14 Nov 2026 06:42:27 GMT
-   - **Read Parallel Translation:** [business_article_15_Microsoft_says_services_fully_restored_a.md](business_article_15_Microsoft_says_services_fully_restored_a.md)
+3. **Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says**
+   - **Published:** Mon, 16 Nov 2026 01:47:57 GMT
+   - **Read Parallel Translation:** [business_article_15_Suspected_China_spy_linked_to_Nvidias_ex.md](business_article_15_Suspected_China_spy_linked_to_Nvidias_ex.md)
 
-4. **Why is Microsoft's outage lasting so long and will emails be lost?**
-   - **Published:** Fri, 13 Nov 2026 18:36:57 GMT
-   - **Read Parallel Translation:** [business_article_16_Why_is_Microsofts_outage_lasting_so_long.md](business_article_16_Why_is_Microsofts_outage_lasting_so_long.md)
+4. **Investors sue chip giant Intel after 29% stock plunge**
+   - **Published:** Mon, 16 Nov 2026 03:04:01 GMT
+   - **Read Parallel Translation:** [business_article_16_Investors_sue_chip_giant_Intel_after_29_.md](business_article_16_Investors_sue_chip_giant_Intel_after_29_.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Italy fines Meta €805m over accessing users' photos**
+1. **Investors sue chip giant Intel after 29% stock plunge**
+   - **Published:** Mon, 16 Nov 2026 03:04:01 GMT
+   - **Read Parallel Translation:** [technology_article_17_Investors_sue_chip_giant_Intel_after_29_.md](technology_article_17_Investors_sue_chip_giant_Intel_after_29_.md)
+
+2. **Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says**
+   - **Published:** Mon, 16 Nov 2026 01:47:57 GMT
+   - **Read Parallel Translation:** [technology_article_18_Suspected_China_spy_linked_to_Nvidias_ex.md](technology_article_18_Suspected_China_spy_linked_to_Nvidias_ex.md)
+
+3. **South Korea's top scorer in tax accountancy exam admits cheating**
+   - **Published:** Sun, 15 Nov 2026 13:37:45 GMT
+   - **Read Parallel Translation:** [technology_article_19_South_Koreas_top_scorer_in_tax_accountan.md](technology_article_19_South_Koreas_top_scorer_in_tax_accountan.md)
+
+4. **Italy fines Meta €805m over accessing users' photos**
    - **Published:** Sat, 14 Nov 2026 18:28:06 GMT
-   - **Read Parallel Translation:** [technology_article_17_Italy_fines_Meta_805m_over_accessing_use.md](technology_article_17_Italy_fines_Meta_805m_over_accessing_use.md)
-
-2. **Microsoft says services fully restored after day-long global outage**
-   - **Published:** Sat, 14 Nov 2026 06:42:27 GMT
-   - **Read Parallel Translation:** [technology_article_18_Microsoft_says_services_fully_restored_a.md](technology_article_18_Microsoft_says_services_fully_restored_a.md)
-
-3. **Even Grand Theft Auto's original creators haven't been able to play GTA 6**
-   - **Published:** Sat, 14 Nov 2026 00:37:01 GMT
-   - **Read Parallel Translation:** [technology_article_19_Even_Grand_Theft_Autos_original_creators.md](technology_article_19_Even_Grand_Theft_Autos_original_creators.md)
-
-4. **How the Jensen Huang scandal created a headache for business-friendly Singapore**
-   - **Published:** Fri, 13 Nov 2026 23:00:31 GMT
-   - **Read Parallel Translation:** [technology_article_20_How_the_Jensen_Huang_scandal_created_a_h.md](technology_article_20_How_the_Jensen_Huang_scandal_created_a_h.md)
+   - **Read Parallel Translation:** [technology_article_20_Italy_fines_Meta_805m_over_accessing_use.md](technology_article_20_Italy_fines_Meta_805m_over_accessing_use.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **SpaceX successfully catches top of huge Starship rocket for first time**
-   - **Published:** Sat, 14 Nov 2026 22:15:52 GMT
-   - **Read Parallel Translation:** [science_article_21_SpaceX_successfully_catches_top_of_huge_.md](science_article_21_SpaceX_successfully_catches_top_of_huge_.md)
+1. **How to spot November's planetary parade in the pre-dawn sky**
+   - **Published:** Sun, 15 Nov 2026 10:49:57 GMT
+   - **Read Parallel Translation:** [science_article_21_How_to_spot_Novembers_planetary_parade_i.md](science_article_21_How_to_spot_Novembers_planetary_parade_i.md)
 
-2. **How to spot November's planetary parade in the pre-dawn sky**
-   - **Published:** Sat, 14 Nov 2026 11:07:51 GMT
-   - **Read Parallel Translation:** [science_article_22_How_to_spot_Novembers_planetary_parade_i.md](science_article_22_How_to_spot_Novembers_planetary_parade_i.md)
+2. **SpaceX successfully catches top of huge Starship rocket for first time**
+   - **Published:** Sat, 14 Nov 2026 22:15:52 GMT
+   - **Read Parallel Translation:** [science_article_22_SpaceX_successfully_catches_top_of_huge_.md](science_article_22_SpaceX_successfully_catches_top_of_huge_.md)
 
 3. **Bluetongue virus confirmed on County Down farm**
    - **Published:** Sat, 14 Nov 2026 06:56:58 GMT
@@ -119,41 +123,41 @@ Scraped Feed Mode: `ALL`
 
 ### Section: HEALTH
 
-1. **NHS, schools and police forces hit by Microsoft outage**
+1. **Cancer 'sponge' tests could be offered to more people with bad indigestion**
+   - **Published:** Mon, 16 Nov 2026 00:47:04 GMT
+   - **Read Parallel Translation:** [health_article_25_Cancer_sponge_tests_could_be_offered_to_.md](health_article_25_Cancer_sponge_tests_could_be_offered_to_.md)
+
+2. **Tories pledge to halt screen-based school exams and cut coursework**
+   - **Published:** Sun, 15 Nov 2026 22:00:37 GMT
+   - **Read Parallel Translation:** [health_article_26_Tories_pledge_to_halt_screen-based_schoo.md](health_article_26_Tories_pledge_to_halt_screen-based_schoo.md)
+
+3. **NHS, schools and police forces hit by Microsoft outage**
    - **Published:** Fri, 13 Nov 2026 13:41:25 GMT
-   - **Read Parallel Translation:** [health_article_25_NHS_schools_and_police_forces_hit_by_Mic.md](health_article_25_NHS_schools_and_police_forces_hit_by_Mic.md)
+   - **Read Parallel Translation:** [health_article_27_NHS_schools_and_police_forces_hit_by_Mic.md](health_article_27_NHS_schools_and_police_forces_hit_by_Mic.md)
 
-2. **Doctor burnout putting maternity patients at risk, says regulator**
+4. **Doctor burnout putting maternity patients at risk, says regulator**
    - **Published:** Fri, 13 Nov 2026 00:55:31 GMT
-   - **Read Parallel Translation:** [health_article_26_Doctor_burnout_putting_maternity_patient.md](health_article_26_Doctor_burnout_putting_maternity_patient.md)
-
-3. **Sunbed firms must not downplay cancer risk, says watchdog**
-   - **Published:** Thu, 12 Nov 2026 00:13:27 GMT
-   - **Read Parallel Translation:** [health_article_27_Sunbed_firms_must_not_downplay_cancer_ri.md](health_article_27_Sunbed_firms_must_not_downplay_cancer_ri.md)
-
-4. **Senior doctors call off two-day strike planned this month**
-   - **Published:** Wed, 11 Nov 2026 12:42:05 GMT
-   - **Read Parallel Translation:** [health_article_28_Senior_doctors_call_off_two-day_strike_p.md](health_article_28_Senior_doctors_call_off_two-day_strike_p.md)
+   - **Read Parallel Translation:** [health_article_28_Doctor_burnout_putting_maternity_patient.md](health_article_28_Doctor_burnout_putting_maternity_patient.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **Young people should have legal guarantee of job or training, Milburn tells BBC**
-   - **Published:** Sat, 14 Nov 2026 13:48:37 GMT
-   - **Read Parallel Translation:** [politics_article_29_Young_people_should_have_legal_guarantee.md](politics_article_29_Young_people_should_have_legal_guarantee.md)
+1. **UK will have 'voice' but no vote on EU food rules in Brexit reset**
+   - **Published:** Sun, 15 Nov 2026 22:00:24 GMT
+   - **Read Parallel Translation:** [politics_article_29_UK_will_have_voice_but_no_vote_on_EU_foo.md](politics_article_29_UK_will_have_voice_but_no_vote_on_EU_foo.md)
 
-2. **UK ethics watchdog chief steps back from role over sexual misconduct claims**
+2. **Cut national insurance for under-25s to create jobs, Milburn report to say**
+   - **Published:** Sun, 15 Nov 2026 22:30:03 GMT
+   - **Read Parallel Translation:** [politics_article_30_Cut_national_insurance_for_under-25s_to_.md](politics_article_30_Cut_national_insurance_for_under-25s_to_.md)
+
+3. **Tories pledge to halt screen-based school exams and cut coursework**
+   - **Published:** Sun, 15 Nov 2026 22:00:37 GMT
+   - **Read Parallel Translation:** [politics_article_31_Tories_pledge_to_halt_screen-based_schoo.md](politics_article_31_Tories_pledge_to_halt_screen-based_schoo.md)
+
+4. **UK ethics watchdog chief steps back from role over sexual misconduct claims**
    - **Published:** Sat, 14 Nov 2026 21:14:52 GMT
-   - **Read Parallel Translation:** [politics_article_30_UK_ethics_watchdog_chief_steps_back_from.md](politics_article_30_UK_ethics_watchdog_chief_steps_back_from.md)
-
-3. **Reform and Tory spokesmen in angry clash over immigration at Piddington**
-   - **Published:** Fri, 13 Nov 2026 14:34:21 GMT
-   - **Read Parallel Translation:** [politics_article_31_Reform_and_Tory_spokesmen_in_angry_clash.md](politics_article_31_Reform_and_Tory_spokesmen_in_angry_clash.md)
-
-4. **Firm offers to fake artworks for wealthy migrants seeking UK 'talent' visas - BBC investigation**
-   - **Published:** Fri, 13 Nov 2026 06:00:44 GMT
-   - **Read Parallel Translation:** [politics_article_32_Firm_offers_to_fake_artworks_for_wealthy.md](politics_article_32_Firm_offers_to_fake_artworks_for_wealthy.md)
+   - **Read Parallel Translation:** [politics_article_32_UK_ethics_watchdog_chief_steps_back_from.md](politics_article_32_UK_ethics_watchdog_chief_steps_back_from.md)
 
 ---
 
@@ -163,17 +167,17 @@ Scraped Feed Mode: `ALL`
    - **Published:** Sun, 15 Nov 2026 00:07:29 GMT
    - **Read Parallel Translation:** [entertainment_article_33_Holly_Humberstone_People_cant_connect_to.md](entertainment_article_33_Holly_Humberstone_People_cant_connect_to.md)
 
-2. **Alleged Russell Brand rape victim wants age of consent law changed**
-   - **Published:** Sat, 14 Nov 2026 22:37:14 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Alleged_Russell_Brand_rape_victim_wants_.md](entertainment_article_34_Alleged_Russell_Brand_rape_victim_wants_.md)
-
-3. **Noel Fielding 'appalled' by jokes he made with Russell Brand**
-   - **Published:** Sat, 14 Nov 2026 14:46:26 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Noel_Fielding_appalled_by_jokes_he_made_.md](entertainment_article_35_Noel_Fielding_appalled_by_jokes_he_made_.md)
-
-4. **Hannah Fry feels 'unbelievably lucky' after cervical cancer treatment**
+2. **Hannah Fry feels 'unbelievably lucky' after cervical cancer treatment**
    - **Published:** Sun, 15 Nov 2026 00:09:29 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_Hannah_Fry_feels_unbelievably_lucky_afte.md](entertainment_article_36_Hannah_Fry_feels_unbelievably_lucky_afte.md)
+   - **Read Parallel Translation:** [entertainment_article_34_Hannah_Fry_feels_unbelievably_lucky_afte.md](entertainment_article_34_Hannah_Fry_feels_unbelievably_lucky_afte.md)
+
+3. **Alleged Russell Brand rape victim wants age of consent law changed**
+   - **Published:** Sun, 15 Nov 2026 07:19:52 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Alleged_Russell_Brand_rape_victim_wants_.md](entertainment_article_35_Alleged_Russell_Brand_rape_victim_wants_.md)
+
+4. **Brand, Walliams and MAFS: Is this a reckoning for the entertainment industry?**
+   - **Published:** Sat, 14 Nov 2026 00:29:38 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Brand_Walliams_and_MAFS_Is_this_a_reckon.md](entertainment_article_36_Brand_Walliams_and_MAFS_Is_this_a_reckon.md)
 
 ---
 
