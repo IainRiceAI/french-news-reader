@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children dropping out of school: What can politicians do about it?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">politics</div>
+        <h1>Children dropping out of school: What can politicians do about it?</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 16 Nov 2026 22:23:41 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cje39lx9267vo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The government believes around a third of young people who are persistently absent in Years 10 and 11 in England go on to be not in education, employment or training.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">"J'avais l'impression de mourir: pourquoi certains adolescents ne vont pas à l'école</p>
+            <span class="english-block">'It felt like I was dying’: Why some teenagers don’t go to school</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Les histoires d'Eva et de Mali - que vous pouvez voir dans la vidéo ci-dessus - et les nombreux adolescents comme eux qui ne vont pas à l'école, régulièrement ou pas du tout, touchent le cœur de l'un des nombreux grands défis que Milburn Review cherche à relever.</p>
+            <span class="english-block">The stories of Eva and Mali - which you can watch in the video above - and the many teenagers like them who don't go to school, either regularly or at all, strike to the heart of one of the many big challenges the Milburn Review is seeking to address.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le travail commandé par le gouvernement, dirigé par l'ancien ministre travailliste Alan Milburn, cherche à résoudre le problème de près d'un million de jeunes qui ne sont pas à l'emploi, à l'éducation ou à la formation, ou Neet.</p>
+            <span class="english-block">The government-commissioned work, led by former Labour cabinet minister Alan Milburn, is looking into how to solve the problem of nearly one million young people not being in employment, education or training, or Neet.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Un défi clé est de s'attaquer au problème des absences scolaires.</p>
+            <span class="english-block">A key challenge is addressing the issue of school absence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le gouvernement estime qu'environ un tiers des jeunes qui sont persistamment absents en Angleterre pendant les années 10 et 11 sont néets, comparativement à 10% de ceux qui ne sont pas persistamment absents.</p>
+            <span class="english-block">The government believes around a third of young people who are persistently absent in Years 10 and 11 in England go on to be Neet, compared with 10% of those who are not persistently absent.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">L'absence persistante doublera presque entre les années 7 et 9, atteignant environ un enfant sur quatre en l'an 9.</p>
+            <span class="english-block">Persistent absence almost doubles between Years 7 and 9, reaching around one in four children by Year 9.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Eva, 13 ans, a cessé d'aller à l'école après avoir eu du mal à passer au lycée.</p>
+            <span class="english-block">Eva, 13, stopped going to school after struggling with the transition to secondary school</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Eva, 13 ans, n'avait pas été à l'école depuis 15 mois avant septembre.</p>
+            <span class="english-block">Thirteen-year-old Eva hadn't been to school for 15 months before September.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Elle a décrit comment elle se levait tous les matins, essayait de se préparer pour l'école et se retrouvait coincée devant la porte d'entrée.</p>
+            <span class="english-block">She described how she used to get up every morning, try to get ready for school and get stuck by the front door.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Mali, 18 ans, a cessé d'aller à l'école il y a trois ans quand elle était en 10e année.</p>
+            <span class="english-block">Mali, 18, stopped attending school three years ago when she was in year 10.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Nous avons partagé leurs histoires avec les décideurs et ceux qui veulent être nos décideurs  en d'autres termes, ceux qui sont au gouvernement et ceux qui le souhaitent.</p>
+            <span class="english-block">We shared their stories with the decision makers and those who want to be our decision makers – in other words, those in government and those who would like to be.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Il offre un aperçu des arguments politiques à venir.</p>
+            <span class="english-block">It offers an insight into the political arguments to come.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Le Labour estime que les réformes de l'éducation des conservateurs de la dernière décennie et demie ont très bien servi les hauts producteurs académiques, mais ont créé ce qu'une source a décrit comme un " tapis roulant sans fin d'échec " pour certains - et les ont donc déçus.</p>
+            <span class="english-block">Labour reckons the Conservatives' education reforms of the last decade and a half served academic high achievers very well but created what one source described as an an "endless treadmill of failure" for some - and so let them down.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Un porte-parole du gouvernement a déclaré: " Quand les enfants se sentent dans l'école, ils se présentent, et quand ils se présentent, ils réussissent. "</p>
+            <span class="english-block">A government spokesperson said: "When children feel they belong at school, they show up, and when they show up, they achieve."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Par conséquent, a ajouté le porte-parole, " le secrétaire à l'éducation est en train de mener des réformes ambitieuses pour augmenter la fréquentation " et " intervenir plus tôt lorsque les enfants ont besoin d'aide ".</p>
+            <span class="english-block">Therefore, the spokesperson added, "the education secretary is driving ambitious reforms to boost attendance" and "intervene earlier when children need support".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Les libéraux-démocrates ont également cherché à blâmer les conservateurs.</p>
+            <span class="english-block">The Liberal Democrats also sought to pin the blame on the Tories.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Munira Wilson, qui parle pour le parti sur l'éducation, a déclaré que " les conservateurs n'ont pas pu leur donner le soutien dont ils avaient besoin après le verrouillage, et des années de sous-investissement dans leur rétablissement apparaissent maintenant dans les chiffres croissants de santé mentale ".</p>
+            <span class="english-block">Munira Wilson, who speaks for the party on education, said "the Conservatives failed to give them the support they needed after lockdown, and years of underinvestment in their recovery are now showing up in rising mental health figures". She added that "every young person should feel they belong".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Ces réactions soulèvent certaines des grandes questions qui se posent à cause des expériences d'Eva et de Mali.</p>
+            <span class="english-block">These reactions prompt some of the big questions that arise from Eva and Mali's experiences.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Où devrait-elle être la responsabilité de leur situation: l'individu, les parents, les règles en cas de pandémie, les écoles, les collèges, la santé mentale?</p>
+            <span class="english-block">Where should responsibility for their situations lie? The individual, the parents, the rules in the pandemic, schools, colleges, mental health provision?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Peut-être une combinaison de toutes ces choses dans certains cas et d'autres choses en plus.</p>
+            <span class="english-block">Perhaps a combination of all of these things in some instances and other things besides.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Les conservateurs ont réagi avec force aux critiques du Parti travailliste et des libéraux-démocrates.</p>
+            <span class="english-block">The Conservatives have pushed back strongly against the criticism from Labour and the Liberal Democrats.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Laura Trott, secrétaire à l'éducation des ombres, a déclaré à la BBC: "Nous ne devons pas abandonner aucun enfant, chaque jour qu'un enfant manque de l'école le repousse.</p>
+            <span class="english-block">Shadow education secretary Laura Trott told the BBC: "We mustn't give up on any child, every day a child misses school sets them back.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">" Les écoles font un excellent travail pour réduire les absences. " Les enfants ayant des besoins d'éducation spéciales ou qui ont du mal à quitter leur foyer ont besoin d'un soutien spécialisé et, dans certains cas, d'écoles spécialisées. "</p>
+            <span class="english-block">"Schools are doing great work to bring absence down. Those children who have special education needs or are struggling to leave home, need specialist support and in some cases specialist schools."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Elle a ajouté: " Les normes académiques élevées font monter tout le monde. C'est insultant de penser que tous les enfants ne sont pas capables de bons résultats scolaires.</p>
+            <span class="english-block">And she added: "High academic standards lift everyone up. It is insulting to suggest that not all children are capable of good academic outcomes. Too much maths and English are not making young people Neet."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">L'ancienne ministre conservatrice Suella Braverman, maintenant porte-parole de l'éducation de Reform UK, nous a dit: "En tant que cofondatrice et présidente d'une école publique exceptionnelle où la proportion d'enfants qui mangent gratuitement mais dont le taux d'absence scolaire est inférieur à la moyenne, il est clair que la culture et l'enseignement dans une école peuvent faire une énorme différence".</p>
+            <span class="english-block">Former Conservative cabinet minister Suella Braverman, now Reform UK's education spokesperson, told us: "As someone who co-founded and chaired an outstanding state school with a high proportion of children on free school meals but a below average school absence rate, it is clear that the culture and teaching in a school can make a huge difference."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Elle a ajouté que "un engagement plus grand des parents" et une "culture de persévérance" étaient également essentiels.</p>
+            <span class="english-block">She added that "greater parental engagement" and a "culture of perseverance" were essential too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Le gouvernement devrait accepter la largeur du rapport d'Alan Milburn, avant de répondre en détail dans le mois prochain.</p>
+            <span class="english-block">The government is expected to accept the broad thrust of Alan Milburn's report, before responding in detail in the next month or so.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">On nous a dit qu'il y aurait une annonce de la secrétaire à l'éducation Lucy Powell directement liée à Eva, Mali et beaucoup d'autres comme eux, plus tard cette semaine.</p>
+            <span class="english-block">We are told there will be an announcement from Education Secretary Lucy Powell directly relevant to Eva, Mali and the many like them, later this week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Les jeunes devraient avoir une garantie légale d'un emploi ou d'une formation, dit Milburn</p>
+            <span class="english-block">Young people should have a legal guarantee to a job or training, Milburn says</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">"Je vomirais dans le parking": comment l'anxiété scolaire nuit à l'avenir des enfants</p>
+            <span class="english-block">'I'd throw up in the car park': How school anxiety is harming children's futures</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Certains moins de 25 ans devraient recevoir moins de prestations, selon l'examen de Milburn</p>
+            <span class="english-block">Some under-25s should get fewer benefits, Milburn review to say</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

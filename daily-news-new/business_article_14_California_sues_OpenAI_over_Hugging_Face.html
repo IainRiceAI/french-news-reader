@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California sues OpenAI over Hugging Face attack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>California sues OpenAI over Hugging Face attack</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 16 Nov 2026 23:12:24 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c6wy4xv2mxglo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Attorney General Rob Bonta alleges OpenAI misled and endangered the public
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le procureur général de Californie, Rob Bonta, a poursuivi OpenAI lundi, alléguant que le fabricant de ChatGPT avait induit en erreur et menacé le public en développant des modèles d'intelligence artificielle (IA) sans garanties appropriées.</p>
+            <span class="english-block">California Attorney General Rob Bonta sued OpenAI on Monday, alleging the ChatGPT-maker misled and endangered the public by developing artificial intelligence (AI) models without proper safeguards.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Dans la plainte, Bonta a cité l'attaque de juillet 2026 contre la plateforme d'IA Hugging Face par des agents expérimentaux OpenAI qui ont accédé à Internet pour violer les systèmes internes de cette société.</p>
+            <span class="english-block">In the lawsuit, Bonta cited the July 2026 attack on the AI platform Hugging Face by experimental OpenAI agents which accessed the internet to breach that company's internal systems.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Bonta a affirmé que OpenAI avait créé une nuisance publique et avait violé les lois de concurrence déloyale de l'État.</p>
+            <span class="english-block">Bonta claimed OpenAI created a public nuisance and violated the state's unfair competition laws.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le porte-parole d'OpenAI, Drew Pusateri, a déclaré à la BBC dans un communiqué que la plainte de Bonta " semble exclure OpenAI d'un défi qui a été identifié par chaque grand laboratoire d'IA ".</p>
+            <span class="english-block">OpenAI spokesperson Drew Pusateri told the BBC in a statement that Bonta's lawsuit "appears to single out OpenAI over a challenge that's been identified by every major AI lab".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">D'autres grands développeurs d'IA, dont Anthropic, Meta et Google, ont également déclaré que leurs modèles avaient organisé des attaques similaires.</p>
+            <span class="english-block">Other major AI developers including Anthropic, Meta, and Google have also said their models have staged similar attacks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Mais la poursuite de Bonta, déposée à San Francisco, où l'entreprise a son siège social, semble être la première de ce genre déposée par un État américain.</p>
+            <span class="english-block">But Bonta's lawsuit, filed in San Francisco, where the company is headquartered, appears to be the first such suit filed by a US state.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Une mise en garde ou une publicité - à quel point devrions-nous être inquiets au sujet du hack OpenAI ?</p>
+            <span class="english-block">Warning shot or publicity stunt - how worried should we be about the OpenAI hack?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">OpenAI dit que son IA malhonnête a essayé de pirater d'autres entreprises</p>
+            <span class="english-block">OpenAI says its rogue AI tried to hack other companies</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Des centaines d'agents d'OpenAI ont coordonné l'attaque Hugging Face pendant deux jours, même s'ils étaient censés être contenus dans un environnement de test sûr.</p>
+            <span class="english-block">Hundreds of OpenAI agents coordinated the Hugging Face attack over two days even though they were supposed to be contained in a safe testing environment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">L'incident a attiré un examen plus approfondi parce que les agents sont allés jusqu'à essayer de couvrir leurs traces.</p>
+            <span class="english-block">The incident drew added scrutiny because the agents went as far as attempting to cover their tracks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Bonta a annoncé une enquête sur l'incident en septembre et a envoyé un mandat d'enquête à OpenAI dans le cadre de son enquête.</p>
+            <span class="english-block">Bonta announced an investigation into the incident in September, and served an investigative subpoena on OpenAI as part of its probe.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"La société a testé sciemment un produit dangereux sans surveillance ni procédures de sécurité appropriées et a trompé le public à ce sujet - ce mépris de la sécurité publique a violé la loi californienne", a déclaré M. Bonta dans un communiqué lundi.</p>
+            <span class="english-block">"The company knowingly tested a dangerous product without proper oversight or safety procedures and misled the public about it - this disregard for public safety violated California law," Bonta said in a statement on Monday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">OpenAI a déclaré qu'elle était transparente et réactive envers le bureau du procureur général.</p>
+            <span class="english-block">OpenAI said it has been transparent and responsive to the Attorney General's office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">"Nous prenons au sérieux les erreurs d'alignement et nous avons engagé - et continuerons de nous engager - de manière constructive avec le bureau du procureur général pour partager des informations et faire avancer des normes de sécurité strictes et pratiques pour l'ensemble de l'industrie", a déclaré la société.</p>
+            <span class="english-block">"We take misalignment seriously, and we have engaged - and will continue to engage - constructively with the Attorney General's office to share information and advance strong, practical safety standards for the entire industry," the company said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">La société a ajouté que, depuis l'incident Hugging Face, elle a travaillé à comprendre et à traiter "l'activité de modèle mal alignée" que les chiffres de l'industrie appellent souvent des agents malhonnêtes.</p>
+            <span class="english-block">The company added that, since the Hugging Face incident, it has worked to understand and address "misaligned model activity" which industry figures often refer to as rogue agents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Nathan Calvin, directeur de la stratégie du groupe de campagne en matière de sécurité de l'IA Encode AI, a déclaré que la plainte " reconnaît quelque chose dont nous, Encode, avons longtemps soulevé des alarmes ".</p>
+            <span class="english-block">Nathan Calvin, chief strategy officer at AI safety campaign group Encode AI, said the lawsuit "recognises something we at Encode have long raised alarms about".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">"OpenAI et d'autres entreprises développant des systèmes d'IA frontaliers ont des pratiques de sécurité et de sécurité insuffisantes pour protéger le public des risques qui pourraient être catastrophiques", a-t-il déclaré.</p>
+            <span class="english-block">"OpenAI and other companies developing frontier AI systems have safety and security practices that are insufficient to protect the public from risks that could be catastrophic," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Qu'est-ce que l'IA et comment fonctionne-t-elle ?</p>
+            <span class="english-block">What is AI and how does it work?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Un chat inattendu entre les agents d' OpenAI a conduit à un hack de Hugging Face .</p>
+            <span class="english-block">Unexpected chat between OpenAI agents led to Hugging Face hack</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

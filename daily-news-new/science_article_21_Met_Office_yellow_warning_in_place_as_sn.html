@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Met Office yellow warning in place as snow could disrupt Tuesday morning travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Met Office yellow warning in place as snow could disrupt Tuesday morning travel</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 17 Nov 2026 00:09:54 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/ck5y1g0rnx02o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Snow could bring some transport disruption to the hills of northern England and southern Scotland, as Chris Fawkes explains.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">La neige a arrêté la circulation sur l'A66 en février.</p>
+            <span class="english-block">Snow brought traffic to a standstill on the A66 in February</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Des régions du nord de l'Angleterre et du sud de l'Écosse vont bientôt avoir un avant-goût de l'hiver, alors que la neige de colline s'installe mardi.</p>
+            <span class="english-block">Parts of northern England and southern Scotland are set to get an early taste of winter as hill snow moves in on Tuesday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Un avertissement jaune du bureau de météo pour la neige est valable jusqu'à midi mardi avec 5-15 cm attendus dans certains endroits au-dessus de 300-400 m.</p>
+            <span class="english-block">A Met Office yellow warning for snow is valid until midday Tuesday with 5-15cm expected at some locations above 300-400m.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les principales routes comme l'A74 ((M), l'A66 et l'M62 pourraient toutes avoir des problèmes de perturbation des transports.</p>
+            <span class="english-block">Major routes like the A74(M), A66 and M62 could all have problems with transport disruption.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Certains chemins de fer seront également touchés par les longs trajets pour les services ferroviaires.</p>
+            <span class="english-block">Some railways are also likely to be affected with longer journey times for train services.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Des alertes sanitaires contre le froid sont également en place, externes pour le nord de l'Angleterre émises par l'Agence britannique de sécurité sanitaire (UKHSA) jusqu'à 9h00 GMT jeudi.</p>
+            <span class="english-block">Cold health alerts are also in place, external for northern England issued by the UK Health Security Agency (UKHSA) until 09:00 GMT on Thursday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Le bureau de météo a émis un avertissement de neige jaune pour mardi</p>
+            <span class="english-block">The Met Office has issued a yellow snow warning for Tuesday</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Un front météorologique pousse au nord et à l'est du Royaume-Uni, apportant une vague de pluie dans de nombreuses régions.</p>
+            <span class="english-block">A weather front is pushing north and east across the UK bringing a spell of rain to many areas. As this rain reaches northern England it will encounter a reservoir of colder and drier air.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Une partie de la pluie s'évapore dans cet air plus sec, ce qui refroidit encore davantage l'atmosphère par un processus connu sous le nom de refroidissement par évaporation, le même processus qui consiste à refroidir votre corps lorsque vous transpirez.</p>
+            <span class="english-block">Some of the rain will evaporate in this drier air, which will cool the atmosphere further by a process known as evaporative cooling - the same process involved in cooling your body down when you sweat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">La pluie finira par se transformer en neige, d'abord sur des collines plus élevées des Pennines, puis vers des collines plus basses avec le temps.</p>
+            <span class="english-block">Eventually rain will start to turn to snow, initially over higher hills in the Pennines, moving to lower hills with time. As the precipitation moves northwards and eastwards, the snow will spread to the Cumbrian hills and into Scotland's Southern Uplands.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">La neige tombera en gros flocons humides qui pourraient s'accrocher aux lignes électriques et aux branches des arbres.</p>
+            <span class="english-block">The snow will come down in big, wet, chunky flakes which could stick to powerlines and tree branches.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Le poids supplémentaire de la neige combiné à des vents de 40 à 50 milles à l'heure sur des hauteurs pourrait faire tomber les branches des arbres et les lignes électriques, ce qui entraînerait un risque supplémentaire de coupures d'électricité localisées.</p>
+            <span class="english-block">The extra weight of the snow combined with wind gusts of 40-50mph over high ground could bring down tree branches and powerlines, bringing an additional risk of some localised power cuts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Si vous prévoyez un voyage tôt mardi, vérifiez les conditions de la route avant de partir</p>
+            <span class="english-block">If you are planning a journey early on Tuesday, check on road conditions before setting out</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Comment conduire dans la neige et le froid</p>
+            <span class="english-block">How to drive in snow and icy weather</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Conseils de chauffage pour garder votre maison au chaud lorsque vous avez trop de budget</p>
+            <span class="english-block">Heating tips to keep your home warm when budgets are squeezed</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Comment garder les bébés au chaud par temps froid et d'autres conseils d'hiver</p>
+            <span class="english-block">How to keep babies warm in cold weather and other winter tips</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Une partie de la neige peut s'accumuler jusqu'à 100 m d'altitude, avec environ 1 à 5 cm de possibilité.</p>
+            <span class="english-block">Some snow may accumulate down to 100m elevation or so, with around 1-5cm possible.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Toute neige sera probablement de courte durée, se retournant à la pluie à 9h00 dans la plupart des régions.</p>
+            <span class="english-block">Any snow will probably be quite short-lived, turning back to rain by 09:00 in most parts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Des épidémies de pluie froides seront laissées dans les régions du nord du Royaume-Uni jusqu'à mardi après-midi avec un peu de brouillard et un vent froid.</p>
+            <span class="english-block">Cold outbreaks of rain will be left across northern areas of the UK through Tuesday afternoon with some hill fog and a chilly wind.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Pendant ce temps, le sud aura du soleil et des pluies de pluie, mais il deviendra aussi plus doux avec des températures allant jusqu'à 14°C.</p>
+            <span class="english-block">Meanwhile the south will have sunshine and blustery showers but it will also turn milder with temperatures up to 14C.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Les pluies et les pluies continueront d'avoir des répercussions sur l'Irlande du Nord, l'Angleterre et le Pays de Galles au cours des prochains jours.</p>
+            <span class="english-block">Rain and showers will continue to impact Northern Ireland, England and Wales for the next few days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Il va encore pleuvoir en Écosse mercredi, mais la pression élevée prendra le dessus avec le retour du temps plus ensoleillé.</p>
+            <span class="english-block">There will still be some rain in Scotland on Wednesday but then high pressure will take over with sunnier weather returning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Ce temps plus sec et plus ensoleillé poussera ensuite vers le sud dans la majeure partie du Royaume-Uni d'ici la fin de la semaine avec un retour de l'air froid, avec quelques gelées nocturnes et quelques douches côtières.</p>
+            <span class="english-block">This drier, sunnier weather will then push southwards across most of the UK by the end of the week with cold air returning, along with some overnight frosts and a few coastal showers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Vous pouvez suivre les prévisions locales en consultant la BBC Weather en ligne et sur l'application.</p>
+            <span class="english-block">You can keep up to date with your local forecast by checking BBC Weather online and on the app.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Le vortex polaire a établi un nouveau record, mais les experts ne savent pas ce que cela signifie pour la météo de cet hiver.</p>
+            <span class="english-block">The polar vortex just set a new record but experts aren't sure what it means for this winter's weather</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">La météo pour la semaine à venir</p>
+            <span class="english-block">Weather for the Week Ahead</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

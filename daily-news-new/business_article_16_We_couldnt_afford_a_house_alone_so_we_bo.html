@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We couldn't afford a house alone, so we bought one with strangers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>We couldn't afford a house alone, so we bought one with strangers</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 17 Nov 2026 00:00:02 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c5742lwdyzglo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: People who can't afford to get on the housing ladder are buying homes with people they don't know.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">La famille Pullman, à gauche, et la famille Wilcox, ont acheté une maison ensemble peu après leur rencontre</p>
+            <span class="english-block">The Pullman family, on the left, and the Wilcox family, bought a home together soon after meeting</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Quand Elizabeth et Tom Wilcox ont réalisé qu'ils ne pouvaient jamais se permettre d'acheter la maison qu'ils voulaient pour eux- mêmes et leurs deux enfants, ils ont décidé de faire un pas de foi.</p>
+            <span class="english-block">When Elizabeth and Tom Wilcox realised they could never afford to buy the home they wanted for themselves and their two children, they decided to take a leap of faith.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Ils trouveraient un autre couple avec des enfants, des étrangers pour eux, et leur proposeraient de se déposer à moitié sur une propriété et de s'installer ensemble.</p>
+            <span class="english-block">They'd find another couple with young kids, complete strangers to them, and propose that they go halves on a property and all move in together.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Basés à Vancouver, qui a longtemps connu les prix les plus élevés du Canada, les Wilcox désespéraient d'acheter une maison avec jardin pour leurs enfants.</p>
+            <span class="english-block">Based in Vancouver, which has long had some of the highest house prices in Canada, the Wilcoxes were desperate to buy a home that had a back garden for their children to play in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">"Nous voulions une maison avec une cour qui pourrait contenir un trampoline, dans un quartier à pied, mais nous n'avions pas les moyens de l'acheter", explique Elizabeth, chef de projet dans le secteur de la santé.</p>
+            <span class="english-block">"We wanted a house with a yard that could fit a trampoline, in a walkable neighbourhood, but we couldn't afford it," says Elizabeth, a project manager in the healthcare sector.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Avec un budget de 1 million de dollars canadiens (environ 700.000 dollars, 500.000 livres sterling), ils ne pouvaient espérer qu'un petit appartement avec un balcon.</p>
+            <span class="english-block">With a budget of C$1m ($700,000; £500,000) all they could hope for was a small apartment with a balcony at best.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">C'est alors qu'Elizabeth a eu l'idée d'acheter avec une autre famille.</p>
+            <span class="english-block">That was when Elizabeth came up with the idea of buying with another family.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">En 2023, les Wilcoxes et les Pullmans ont acheté ensemble une maison individuelle de six chambres, avec jardin, pour 1,85 million de dollars canadiens.</p>
+            <span class="english-block">In 2023, the Wilcoxes and the Pullmans co-bought a six-bedroom, detached house, complete with a back garden, for C$1.85m.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les deux familles partagent le dépôt de 250 000 $ C, et continuent de partager les versements mensuels de 3 900 $ C. Ils partagent également les factures et autres dépenses de manière égale, comme les réparations nécessaires à la maison.</p>
+            <span class="english-block">The two families split the deposit of C$250,000, and continue to go halves on the monthly mortgage payments of C$3,900. They also divide bills and other expenses equally, such as any necessary home repairs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Elizabeth dit que cette disposition a permis à ces deux familles d'économiser "des dizaines de milliers de dollars".</p>
+            <span class="english-block">Elizabeth says the arrangement has saved both families "tens of thousands of dollars".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les mamans Ashley Pullman, à gauche, et Elizabeth Wilcox disent que les deux familles s'entendent</p>
+            <span class="english-block">Mums Ashley Pullman, left, and Elizabeth Wilcox say the two families get along</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Bien qu'il n'y ait pas de données officielles disponibles sur le nombre de personnes qui achètent des maisons avec des personnes qu'elles ne connaissaient pas auparavant, Parimal Gosal dit qu'il a vu une forte augmentation de l'intérêt pour Toronto en réponse aux prix élevés des biens immobiliers.</p>
+            <span class="english-block">While there is no official data available for the number of people buying homes with people they previously didn't know, Parimal Gosal says he has seen a big increase in interest in Toronto as a response to high property prices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Gosal est le fondateur et PDG de Husmates, une application et un site Web qui connectent les gens de la plus grande ville du Canada qui cherchent potentiellement à acheter une maison avec un étranger.</p>
+            <span class="english-block">Gosal is the founder and CEO of Husmates, an app and website that connects people in Canada's largest city who are looking to potentially buy a home with a stranger.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Il dit que c'est "une relation financière qui en retire les émotions".</p>
+            <span class="english-block">It can be seen as "a financial relationship, and that takes emotions out of it", he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Il est difficile de savoir à quel point ce phénomène est courant ailleurs dans le monde. David Hollingworth, du courtier hypothécaire britannique L&C, dit que bien qu'il ne l'ait pas rencontré lui-même, il pense que cela se produit également au Royaume-Uni, bien que "très niche".</p>
+            <span class="english-block">It's unclear how common this phenomenon is elsewhere in the world. David Hollingworth, from British mortgage broker L&C, says while he hasn't come across it himself, he thinks it also happens in the UK, though is "very niche".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"Je me souviens qu'avant le Covid-19 il y avait un événement de mariage dans un pub de Londres, comme les rencontres rapides, pour les gens qui cherchaient à acheter une maison avec un inconnu, dit-il.</p>
+            <span class="english-block">"I remember that before Covid-19 there was a matchmaking event in a London pub, like speed dating, for people looking to buy a house with a stranger," he says. "How successful this was I don' t know."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Les Wilcoxes et les Pullmans ont mis en commun leurs ressources pour acheter une maison à Vancouver.</p>
+            <span class="english-block">The Wilcoxes and the Pullmans pooled their resources to buy a detached Vancouver home</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Trois ans plus tard, les Wilcox et les Pullman disent que leur arrangement de vie fonctionne toujours.</p>
+            <span class="english-block">Three years on, the Wilcoxes and the Pullmans say their living arrangement is still working out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Bien que chaque famille dispose de quelques espaces privés, comme sa propre cuisine, elle partage le grand salon au sous-sol, qui comprend une salle de gym à l'intérieur dans un coin, et un congélateur commun.</p>
+            <span class="english-block">While each family has some private living spaces, such as their own kitchens, they share the big basement-level living room, which includes a home gym in one corner, and a shared freezer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">"Si quelqu'un dit qu'il est dans la cave pour s'entraîner, nous savons qu'il ne faut pas y aller un peu, et cela n'a jamais été un problème", dit Elizabeth.</p>
+            <span class="english-block">"If someone says they're in the basement to work out, we know not to go there for a bit, and it's never been an issue," says Elizabeth.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Ashley reconnaît qu'il n'y a pas de problèmes. " C'est peut-être de l'arrogance, mais mon mari et moi avons eu l'impression d'être le genre de personnes qui pourraient vivre avec des étrangers ", dit- elle.</p>
+            <span class="english-block">Ashley agrees that there are no problems. "Maybe it's arrogance but my husband and I felt like we were the type of people who could live with strangers," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Sabrina Bowman, consultante en affaires indépendante à Toronto, a co-propriété d'une maison avec deux autres collègues de maison depuis 2018.</p>
+            <span class="english-block">Sabrina Bowman, a freelance business consultant in Toronto, has co-owned a home with two other housemates since 2018. When she signed on the dotted line and moved in she didn't know one of the other two people.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Alors que Sabrina dit qu'elle n'est pas à l'aise de partager les détails financiers exacts, elle dit qu'ils ont décidé de diviser les dépôts et les prêts hypothécaires en fonction de leurs niveaux de revenu.</p>
+            <span class="english-block">While Sabrina says she isn't comfortable sharing the exact financial details, she says they decided to divide up the deposit and mortgage payments based on each of their levels of income.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Elle dit que les différends familiaux peuvent être résolus tôt en discutant ouvertement. " Ce qui est important pour nous, c'est d'avoir des structures pour communiquer sur tout ce qui se passe dans la maison. "</p>
+            <span class="english-block">She says any household disputes can be addressed early with open discussions. "What is important to us is having structures to communicate about everything that happens in the home."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Ils ont régulièrement des réunions à domicile où ils discutent des tâches ménagères, des questions financières, des anniversaires et de tout désaccord.</p>
+            <span class="english-block">They have regular house meetings where they discuss chores, financial issues, birthday celebrations, and any disagreements.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">" C'est formidable de voir des gens être honnêtes à propos de quelque chose qui leur déplaît et de trouver une solution à ce problème ", dit Sabrina.</p>
+            <span class="english-block">"It's great to see people be honest about something they may not be comfortable about and for us to find a solution to that problem," Sabrina says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Sabrina Bowman dit qu'il est important d'avoir une communication ouverte</p>
+            <span class="english-block">Sabrina Bowman says it is important to have open communication</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Dans le cas de la maison de Sabrina à Toronto et de la propriété Wilcox et Pullman à Vancouver, ils ont des accords juridiques en place au cas où quelqu'un voudrait vendre et déménager.</p>
+            <span class="english-block">In the case of both Sabrina's house in Toronto and the Wilcox and Pullman property in Vancouver, they have legal agreements in place in case someone wants to sell up and move out.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Pour les deux maisons, des délais raisonnables sont fixés, et pour celle de Sabrina, la conjointe qui part doit donner à ceux qui restent la première occasion d'acheter leur part.</p>
+            <span class="english-block">For both homes, reasonable notice periods are specified, and for Sabrina's, the departing housemate is required to give those remaining the first opportunity to buy their share.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">L'avocate en droit immobilier de Toronto Tanya Walker dit que ces garanties juridiques sont essentielles. " Vous avez besoin de quelque chose de juridiquement contraignant au lieu d'un tas de courriels et de messages Facebook qui peuvent être trop désordonnés pour être collectés si un litige survient, dit Walker.</p>
+            <span class="english-block">Toronto real estate lawyer Tanya Walker says such legal assurances are vital. "You need something legally binding instead of a bunch of emails and Facebook messages that can be too messy to collect if a dispute comes up," Walker says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">À Vancouver, Elizabeth dit qu'aucune famille n'a de calendrier précis sur le temps qu'elle va vivre dans la maison. " Nous sommes tous très heureux de l'établissement et de l'emplacement, donc il serait difficile de déménager.</p>
+            <span class="english-block">Back in Vancouver, Elizabeth says that neither family has a timeframe for how long they will live in the house. "All of us are really happy with the set-up and location so it would be hard to move.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">"Je ne peux pas mettre un prix à ce que c'était de voir les enfants sauter sur le trampoline pour la première fois, ou courir en cercle sur notre parc d'herbe verte".</p>
+            <span class="english-block">"I can't put a price on how it felt to watch the kids jump on the trampoline for the first time, or run in circles on our patch of green grass."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Des scooters au shampooing: des centaines de personnes ont été sauvées de la plongée dans les ordures.</p>
+            <span class="english-block">From scooters to shampoo - the people saving hundreds from dumpster diving</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Le clip de Sabrina Carpenter qui a aidé une jeune femme de 22 ans à gagner 120 000 livres par an</p>
+            <span class="english-block">The Sabrina Carpenter clip that helped a 22-year-old make £120,000 a year</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">On m'a payé 5 000 $ pour aller vivre là où je n'avais jamais entendu parler.</p>
+            <span class="english-block">I got paid $5,000 to move to a place I'd never heard of</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Nous économisons 100 livres par mois pour nos enfants mais ils n'en auront pas avant les 57 ans.</p>
+            <span class="english-block">We're saving £100 a month for our kids but they won't get it until they're 57</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
