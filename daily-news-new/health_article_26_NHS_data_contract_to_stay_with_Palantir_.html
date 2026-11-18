@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHS data contract to stay with Palantir until 2029</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>NHS data contract to stay with Palantir until 2029</h1>
+        <div class="meta-info">
+            <span>📅 Tue, 17 Nov 2026 12:00:12 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqvg27zpm8w8o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Despite calls from some Labour MPs to end the arrangement with Palantir, ministers say a new contract will not be awarded until 2029.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le gouvernement dit qu'il continuera un contrat clé de données NHS en Angleterre avec le géant américain de la technologie Palantir jusqu'en 2029, plutôt que de déclencher une clause de libération anticipée l'année prochaine.</p>
+            <span class="english-block">The government says it will continue a key NHS data contract in England with the controversial US tech giant Palantir until 2029, rather than triggering an early release clause next year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Mais les ministres invitent les entreprises britanniques à présenter des offres pour le contrat à partir de 2029, avec un programme d'approvisionnement à partir de l'été prochain.</p>
+            <span class="english-block">But ministers are inviting British firms to bid for the contract from 2029, with a procurement programme beginning next summer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Un comité des communes avait appelé le gouvernement à se séparer et à nommer une entreprise "plus compatible avec les valeurs britanniques". Les manifestants ciblaient régulièrement Palantir pour l'utilisation par Israël de sa technologie dans le conflit de Gaza et s'opposaient à son utilisation dans l'application de la loi sur l'immigration aux États-Unis.</p>
+            <span class="english-block">A Commons Committee had called on the government to part ways and appoint a company "more compatible with UK values". Protesters regularly target Palantir over Israel's use of its technology in the Gaza conflict and oppose its use in US immigration enforcement.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">L'accord de 330 millions de livres sterling, qui a commencé en 2024 pour aider à gérer les listes d'attente des hôpitaux en Angleterre, devait durer jusqu'en 2031.</p>
+            <span class="english-block">The £330m deal, which began in 2024 to help manage hospital waiting lists in England, was due to run until 2031.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le Premier ministre a été soumis à des pressions de la part de certains députés travaillistes pour rompre les liens avec Palantir.</p>
+            <span class="english-block">The prime minister had faced pressure from some Labour MPs to cut ties with Palantir. They said they were extremely disappointed by the decision, calling the contract "an albatross" hanging around the NHS's neck.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les libéraux-démocrates ont dit que l'accord était " dangereux ".</p>
+            <span class="english-block">The Liberal Democrats said the deal was "dangerous".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Des préoccupations ont également été soulevées quant à la façon dont les données des patients seront utilisées.</p>
+            <span class="english-block">There have also been concerns raised about how patient data will be used.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Palantir, cofondé par le milliardaire Peter Thiel, a des intérêts dans la défense et la sécurité américaines et a des contrats avec l'armée israélienne.</p>
+            <span class="english-block">Palantir, which was co-founded by billionaire Peter Thiel, has interests in US defence and security, and has contracts with the Israeli military.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Le ministre de la Santé, James Frith, a déclaré que la décision "ne concerne pas la politique des dirigeants des fournisseurs, ni les territoires ou les clients qu'une entreprise ou un fournisseur fait".</p>
+            <span class="english-block">Health minister James Frith said the move was "not about the politics of executives of suppliers, nor is it about the territories or customers that one company or one supplier makes".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Le gouvernement affirme que les entreprises britanniques seront encouragées à soumettre des appels d'offres afin d'éviter une dépendance excessive à un fournisseur.</p>
+            <span class="english-block">The government says UK companies will be encouraged to tender to avoid overdependence on one supplier.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Le délai n'est pas assez rapide pour certains membres du gouvernement.</p>
+            <span class="english-block">The timeframe is not fast enough for some members of the government.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Dame Chi Onwurah, députée travailliste de Newcastle upon Tyne Central et West, a déclaré que le gouvernement devait "agir d'urgence" pour obtenir "des alternatives nationales crédibles".</p>
+            <span class="english-block">Dame Chi Onwurah, Labour MP for Newcastle upon Tyne Central and West, said the government needed to "act urgently" to procure "credible domestic alternatives".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">"Le gouvernement ne devrait pas attendre deux ans, il doit commencer à réduire cette dépendance maintenant", a-t-elle dit.</p>
+            <span class="english-block">"The government should not wait two years, it must start reducing this dependency now," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">L'ancien chancelier travailliste John McDonnell a fait plus et a accusé Palantir de " violations des droits de l'homme ".</p>
+            <span class="english-block">Former Labour shadow chancellor John McDonnell went further, and accused Palantir of "human rights abuses". He said his constituents in Hayes and Harlington "expect the contract to be ended".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">La porte-parole de la santé libérale démocrate Helen Morgan a critiqué l'entreprise pour ce qu'elle a appelé son "horrible bilan des droits humains, dirigé par un allié de Donald Trump".</p>
+            <span class="english-block">Liberal Democrat health spokeswoman Helen Morgan criticised the company for what she called its "appalling human rights record, run by an ally of Donald Trump".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">L'Association médicale britannique, qui représente les médecins, a déclaré qu'elle était heureuse que le gouvernement ait montré qu'il écoutait ses préoccupations concernant Palantir, mais était frustrée que le processus de changement à une autre entreprise ait été retardé.</p>
+            <span class="english-block">The British Medical Association, which represents doctors, said it was glad the government had shown it was listening to its concerns about Palantir, but was frustrated the process of changing to another company was further delayed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Palantir UK a déclaré qu'il était juste de poursuivre le programme qui dépassait les objectifs.</p>
+            <span class="english-block">Palantir UK said it was right to press forward with the programme which was exceeding targets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">"Nous sommes fiers de notre travail jusqu'à présent pour aider à effectuer plus d'opérations, accélérer le déchargement et réduire le temps d'attente des patients pour savoir s'ils ont un cancer", a déclaré Tom Watson, vice-président principal de Palantir UK.</p>
+            <span class="english-block">"We are proud of our work to date to help deliver more operations, speed up discharge and reduce the time patients need to wait to find out if they have cancer," Palantir UK senior vice-president Tom Watson said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">L'unité de police a coupé la technologie d'IA de Palantir</p>
+            <span class="english-block">Police unit pulls plug on Palantir AI technology</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Palantir défend son dossier alors que les députés exigent un contrôle plus strict de l'utilisation des données</p>
+            <span class="english-block">Palantir defends its record as MPs demand more scrutiny of data use</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,183 +1,183 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-11-17 06:02:16  
+Generated on: 2026-11-18 06:01:25  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **'Complete system reset' needed to get 440,000 young people into work, says major review**
-   - **Published:** Mon, 16 Nov 2026 22:32:47 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_Complete_system_reset_needed_to_get_4400.md](top-stories_article_1_Complete_system_reset_needed_to_get_4400.md)
+1. **Burnham to set out options next month for long-term EU relationship**
+   - **Published:** Tue, 17 Nov 2026 23:40:58 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Burnham_to_set_out_options_next_month_fo.md](top-stories_article_1_Burnham_to_set_out_options_next_month_fo.md)
 
-2. **The young people caught up in Britain's Neets crisis**
-   - **Published:** Tue, 17 Nov 2026 00:06:34 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_The_young_people_caught_up_in_Britains_N.md](top-stories_article_2_The_young_people_caught_up_in_Britains_N.md)
+2. **The EU that Burnham is eyeing up is very different to the one Britain left**
+   - **Published:** Wed, 18 Nov 2026 00:39:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_The_EU_that_Burnham_is_eyeing_up_is_very.md](top-stories_article_2_The_EU_that_Burnham_is_eyeing_up_is_very.md)
 
-3. **Robert Pattinson to replace Daniel Craig as James Bond**
-   - **Published:** Tue, 17 Nov 2026 02:11:57 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Robert_Pattinson_to_replace_Daniel_Craig.md](top-stories_article_3_Robert_Pattinson_to_replace_Daniel_Craig.md)
+3. **Waymo pulls driverless taxis from all US freeways**
+   - **Published:** Wed, 18 Nov 2026 03:07:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Waymo_pulls_driverless_taxis_from_all_US.md](top-stories_article_3_Waymo_pulls_driverless_taxis_from_all_US.md)
 
-4. **Cass report author says she does not support draft conversion practices bill**
-   - **Published:** Mon, 16 Nov 2026 22:08:03 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_Cass_report_author_says_she_does_not_sup.md](top-stories_article_4_Cass_report_author_says_she_does_not_sup.md)
+4. **Irishman charged with destroying US military aircraft with axe**
+   - **Published:** Wed, 18 Nov 2026 02:00:37 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Irishman_charged_with_destroying_US_mili.md](top-stories_article_4_Irishman_charged_with_destroying_US_mili.md)
 
-5. **Two major Kyiv bridges hit in Russian attack, mayor says**
-   - **Published:** Tue, 17 Nov 2026 05:57:38 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Two_major_Kyiv_bridges_hit_in_Russian_at.md](top-stories_article_5_Two_major_Kyiv_bridges_hit_in_Russian_at.md)
+5. **Government backs welfare shake-up to prevent 'lost generation'**
+   - **Published:** Tue, 17 Nov 2026 18:43:05 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_Government_backs_welfare_shake-up_to_pre.md](top-stories_article_5_Government_backs_welfare_shake-up_to_pre.md)
 
-6. **Failed asylum seekers face removal without five-day notice period**
-   - **Published:** Tue, 17 Nov 2026 01:24:49 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Failed_asylum_seekers_face_removal_witho.md](top-stories_article_6_Failed_asylum_seekers_face_removal_witho.md)
+6. **William and Kate on Earthshot Prize green carpet in Mumbai**
+   - **Published:** Tue, 17 Nov 2026 21:15:00 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_William_and_Kate_on_Earthshot_Prize_gree.md](top-stories_article_6_William_and_Kate_on_Earthshot_Prize_gree.md)
 
-7. **Vance says he will decide 'sometime next year' about 2028 US presidential run**
-   - **Published:** Tue, 17 Nov 2026 03:07:23 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Vance_says_he_will_decide_sometime_next_.md](top-stories_article_7_Vance_says_he_will_decide_sometime_next_.md)
+7. **American soldier arrested by UK police on suspicion of spying taken into US military custody**
+   - **Published:** Tue, 17 Nov 2026 22:46:30 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_American_soldier_arrested_by_UK_police_o.md](top-stories_article_7_American_soldier_arrested_by_UK_police_o.md)
 
-8. **Forensic expert says his analysis of autopsy photos suggests Epstein was killed**
-   - **Published:** Mon, 16 Nov 2026 20:33:57 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Forensic_expert_says_his_analysis_of_aut.md](top-stories_article_8_Forensic_expert_says_his_analysis_of_aut.md)
+8. **Philippines police ask prosecutors to charge Thomas Markle over child sex abuse material**
+   - **Published:** Tue, 17 Nov 2026 22:44:15 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Philippines_police_ask_prosecutors_to_ch.md](top-stories_article_8_Philippines_police_ask_prosecutors_to_ch.md)
 
 ---
 
 ### Section: WORLD
 
-1. **Two major Kyiv bridges hit in Russian attack, mayor says**
-   - **Published:** Tue, 17 Nov 2026 05:57:38 GMT
-   - **Read Parallel Translation:** [world_article_9_Two_major_Kyiv_bridges_hit_in_Russian_at.md](world_article_9_Two_major_Kyiv_bridges_hit_in_Russian_at.md)
+1. **Putin's Crimean Bridge partly collapses as Zelensky hails 'unprecedented' attack by Ukraine**
+   - **Published:** Tue, 17 Nov 2026 21:24:35 GMT
+   - **Read Parallel Translation:** [world_article_9_Putins_Crimean_Bridge_partly_collapses_a.md](world_article_9_Putins_Crimean_Bridge_partly_collapses_a.md)
 
-2. **Imran Khan seeks urgent medical care fearing he 'may not return alive'**
-   - **Published:** Tue, 17 Nov 2026 01:26:01 GMT
-   - **Read Parallel Translation:** [world_article_10_Imran_Khan_seeks_urgent_medical_care_fea.md](world_article_10_Imran_Khan_seeks_urgent_medical_care_fea.md)
+2. **How the attack on Crimean Bridge unfolded**
+   - **Published:** Tue, 17 Nov 2026 15:38:10 GMT
+   - **Read Parallel Translation:** [world_article_10_How_the_attack_on_Crimean_Bridge_unfolde.md](world_article_10_How_the_attack_on_Crimean_Bridge_unfolde.md)
 
-3. **Five EU countries announce migrant deportation centre in Rwanda**
-   - **Published:** Mon, 16 Nov 2026 23:20:45 GMT
-   - **Read Parallel Translation:** [world_article_11_Five_EU_countries_announce_migrant_depor.md](world_article_11_Five_EU_countries_announce_migrant_depor.md)
+3. **Nvidia says it won't reinstate Huang as firm reports bumper results**
+   - **Published:** Wed, 18 Nov 2026 01:18:18 GMT
+   - **Read Parallel Translation:** [world_article_11_Nvidia_says_it_wont_reinstate_Huang_as_f.md](world_article_11_Nvidia_says_it_wont_reinstate_Huang_as_f.md)
 
-4. **Nvidia dismisses 'Bring Jensen Back' campaign as Trump backs effort to reinstate ex CEO**
-   - **Published:** Tue, 17 Nov 2026 02:37:53 GMT
-   - **Read Parallel Translation:** [world_article_12_Nvidia_dismisses_Bring_Jensen_Back_campa.md](world_article_12_Nvidia_dismisses_Bring_Jensen_Back_campa.md)
+4. **Philippines police ask prosecutors to charge Thomas Markle over child sex abuse material**
+   - **Published:** Tue, 17 Nov 2026 22:44:15 GMT
+   - **Read Parallel Translation:** [world_article_12_Philippines_police_ask_prosecutors_to_ch.md](world_article_12_Philippines_police_ask_prosecutors_to_ch.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **'Complete system reset' needed to get 440,000 young people into work, says major review**
-   - **Published:** Mon, 16 Nov 2026 22:32:47 GMT
-   - **Read Parallel Translation:** [business_article_13_Complete_system_reset_needed_to_get_4400.md](business_article_13_Complete_system_reset_needed_to_get_4400.md)
+1. **Nvidia says it won't reinstate Huang as firm reports bumper results**
+   - **Published:** Wed, 18 Nov 2026 01:18:18 GMT
+   - **Read Parallel Translation:** [business_article_13_Nvidia_says_it_wont_reinstate_Huang_as_f.md](business_article_13_Nvidia_says_it_wont_reinstate_Huang_as_f.md)
 
-2. **California sues OpenAI over Hugging Face attack**
-   - **Published:** Mon, 16 Nov 2026 23:12:24 GMT
-   - **Read Parallel Translation:** [business_article_14_California_sues_OpenAI_over_Hugging_Face.md](business_article_14_California_sues_OpenAI_over_Hugging_Face.md)
+2. **Jeff Bezos says he was 'heavily involved' in casting Robert Pattinson as new 007**
+   - **Published:** Wed, 18 Nov 2026 04:00:54 GMT
+   - **Read Parallel Translation:** [business_article_14_Jeff_Bezos_says_he_was_heavily_involved_.md](business_article_14_Jeff_Bezos_says_he_was_heavily_involved_.md)
 
-3. **Aged 16-24 and looking for work? Use our look-up to find out which areas have the most jobs**
-   - **Published:** Tue, 17 Nov 2026 00:00:03 GMT
-   - **Read Parallel Translation:** [business_article_15_Aged_16-24_and_looking_for_work_Use_our_.md](business_article_15_Aged_16-24_and_looking_for_work_Use_our_.md)
+3. **Security flaw found in Java, world's third-largest programming language**
+   - **Published:** Wed, 18 Nov 2026 05:33:13 GMT
+   - **Read Parallel Translation:** [business_article_15_Security_flaw_found_in_Java_worlds_third.md](business_article_15_Security_flaw_found_in_Java_worlds_third.md)
 
-4. **We couldn't afford a house alone, so we bought one with strangers**
-   - **Published:** Tue, 17 Nov 2026 00:00:02 GMT
-   - **Read Parallel Translation:** [business_article_16_We_couldnt_afford_a_house_alone_so_we_bo.md](business_article_16_We_couldnt_afford_a_house_alone_so_we_bo.md)
+4. **As Trump and Xi meet, China's AI dreams face an unexpected hurdle: the Nvidia spy scandal**
+   - **Published:** Tue, 17 Nov 2026 23:02:12 GMT
+   - **Read Parallel Translation:** [business_article_16_As_Trump_and_Xi_meet_Chinas_AI_dreams_fa.md](business_article_16_As_Trump_and_Xi_meet_Chinas_AI_dreams_fa.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Nvidia dismisses 'Bring Jensen Back' campaign as Trump backs effort to reinstate ex CEO**
-   - **Published:** Tue, 17 Nov 2026 02:37:53 GMT
-   - **Read Parallel Translation:** [technology_article_17_Nvidia_dismisses_Bring_Jensen_Back_campa.md](technology_article_17_Nvidia_dismisses_Bring_Jensen_Back_campa.md)
+1. **Security flaw found in Java, world's third-largest programming language**
+   - **Published:** Wed, 18 Nov 2026 05:33:13 GMT
+   - **Read Parallel Translation:** [technology_article_17_Security_flaw_found_in_Java_worlds_third.md](technology_article_17_Security_flaw_found_in_Java_worlds_third.md)
 
-2. **New Zealand tricks and annual leave - the lengths fans are going to for GTA 6**
-   - **Published:** Tue, 17 Nov 2026 01:04:45 GMT
-   - **Read Parallel Translation:** [technology_article_18_New_Zealand_tricks_and_annual_leave_-_th.md](technology_article_18_New_Zealand_tricks_and_annual_leave_-_th.md)
+2. **Watch: Marco Rubio says recent tech outages are 'completely unrelated' to one another**
+   - **Published:** Wed, 18 Nov 2026 05:10:02 GMT
+   - **Read Parallel Translation:** [technology_article_18_Watch_Marco_Rubio_says_recent_tech_outag.md](technology_article_18_Watch_Marco_Rubio_says_recent_tech_outag.md)
 
-3. **The AI start-ups fixing India's broken roads and messy land records**
-   - **Published:** Mon, 16 Nov 2026 23:25:53 GMT
-   - **Read Parallel Translation:** [technology_article_19_The_AI_start-ups_fixing_Indias_broken_ro.md](technology_article_19_The_AI_start-ups_fixing_Indias_broken_ro.md)
+3. **Waymo pulls driverless taxis from all US freeways**
+   - **Published:** Wed, 18 Nov 2026 03:07:22 GMT
+   - **Read Parallel Translation:** [technology_article_19_Waymo_pulls_driverless_taxis_from_all_US.md](technology_article_19_Waymo_pulls_driverless_taxis_from_all_US.md)
 
-4. **California sues OpenAI over Hugging Face attack**
-   - **Published:** Mon, 16 Nov 2026 23:12:24 GMT
-   - **Read Parallel Translation:** [technology_article_20_California_sues_OpenAI_over_Hugging_Face.md](technology_article_20_California_sues_OpenAI_over_Hugging_Face.md)
+4. **Nvidia says it won't reinstate Huang as firm reports bumper results**
+   - **Published:** Wed, 18 Nov 2026 01:18:18 GMT
+   - **Read Parallel Translation:** [technology_article_20_Nvidia_says_it_wont_reinstate_Huang_as_f.md](technology_article_20_Nvidia_says_it_wont_reinstate_Huang_as_f.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **Met Office yellow warning in place as snow could disrupt Tuesday morning travel**
-   - **Published:** Tue, 17 Nov 2026 00:09:54 GMT
-   - **Read Parallel Translation:** [science_article_21_Met_Office_yellow_warning_in_place_as_sn.md](science_article_21_Met_Office_yellow_warning_in_place_as_sn.md)
+1. **Government risks missing climate targets if EV rules weakened, adviser warns**
+   - **Published:** Wed, 18 Nov 2026 00:44:48 GMT
+   - **Read Parallel Translation:** [science_article_21_Government_risks_missing_climate_targets.md](science_article_21_Government_risks_missing_climate_targets.md)
 
-2. **Yellow weather warnings issued for snow as temperatures plummet**
-   - **Published:** Mon, 16 Nov 2026 10:02:04 GMT
-   - **Read Parallel Translation:** [science_article_22_Yellow_weather_warnings_issued_for_snow_.md](science_article_22_Yellow_weather_warnings_issued_for_snow_.md)
+2. **Pakistan's solar revolution is so successful the national grid is lagging behind**
+   - **Published:** Tue, 17 Nov 2026 23:34:56 GMT
+   - **Read Parallel Translation:** [science_article_22_Pakistans_solar_revolution_is_so_success.md](science_article_22_Pakistans_solar_revolution_is_so_success.md)
 
-3. **Gas starts flowing from Jackdaw after government green light**
-   - **Published:** Mon, 16 Nov 2026 06:24:08 GMT
-   - **Read Parallel Translation:** [science_article_23_Gas_starts_flowing_from_Jackdaw_after_go.md](science_article_23_Gas_starts_flowing_from_Jackdaw_after_go.md)
+3. **Fears toxic lagoon fire led to cancer and miscarriages**
+   - **Published:** Tue, 17 Nov 2026 22:39:23 GMT
+   - **Read Parallel Translation:** [science_article_23_Fears_toxic_lagoon_fire_led_to_cancer_an.md](science_article_23_Fears_toxic_lagoon_fire_led_to_cancer_an.md)
 
-4. **How to spot November's planetary parade in the pre-dawn sky**
-   - **Published:** Sun, 15 Nov 2026 10:49:57 GMT
-   - **Read Parallel Translation:** [science_article_24_How_to_spot_Novembers_planetary_parade_i.md](science_article_24_How_to_spot_Novembers_planetary_parade_i.md)
+4. **Campaigners take claim 'regulatory gap' risks poultry farms polluting rivers to High Court**
+   - **Published:** Tue, 17 Nov 2026 21:00:51 GMT
+   - **Read Parallel Translation:** [science_article_24_Campaigners_take_claim_regulatory_gap_ri.md](science_article_24_Campaigners_take_claim_regulatory_gap_ri.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Cass report author says she does not support draft conversion practices bill**
-   - **Published:** Mon, 16 Nov 2026 22:08:03 GMT
-   - **Read Parallel Translation:** [health_article_25_Cass_report_author_says_she_does_not_sup.md](health_article_25_Cass_report_author_says_she_does_not_sup.md)
+1. **Voy at-home test kit adverts banned over low testosterone claims**
+   - **Published:** Wed, 18 Nov 2026 01:11:07 GMT
+   - **Read Parallel Translation:** [health_article_25_Voy_at-home_test_kit_adverts_banned_over.md](health_article_25_Voy_at-home_test_kit_adverts_banned_over.md)
 
-2. **Women's criminal records wiped for abortion offences**
+2. **NHS data contract to stay with Palantir until 2029**
+   - **Published:** Tue, 17 Nov 2026 12:00:12 GMT
+   - **Read Parallel Translation:** [health_article_26_NHS_data_contract_to_stay_with_Palantir_.md](health_article_26_NHS_data_contract_to_stay_with_Palantir_.md)
+
+3. **Cass report author tells BBC draft conversion practices bill is not workable**
+   - **Published:** Tue, 17 Nov 2026 10:36:21 GMT
+   - **Read Parallel Translation:** [health_article_27_Cass_report_author_tells_BBC_draft_conve.md](health_article_27_Cass_report_author_tells_BBC_draft_conve.md)
+
+4. **Women's criminal records wiped for abortion offences**
    - **Published:** Mon, 16 Nov 2026 11:45:33 GMT
-   - **Read Parallel Translation:** [health_article_26_Womens_criminal_records_wiped_for_aborti.md](health_article_26_Womens_criminal_records_wiped_for_aborti.md)
-
-3. **Cancer 'sponge' tests could be offered to more people with bad indigestion**
-   - **Published:** Mon, 16 Nov 2026 00:47:04 GMT
-   - **Read Parallel Translation:** [health_article_27_Cancer_sponge_tests_could_be_offered_to_.md](health_article_27_Cancer_sponge_tests_could_be_offered_to_.md)
-
-4. **Tories pledge to halt screen-based school exams and cut coursework**
-   - **Published:** Sun, 15 Nov 2026 22:00:37 GMT
-   - **Read Parallel Translation:** [health_article_28_Tories_pledge_to_halt_screen-based_schoo.md](health_article_28_Tories_pledge_to_halt_screen-based_schoo.md)
+   - **Read Parallel Translation:** [health_article_28_Womens_criminal_records_wiped_for_aborti.md](health_article_28_Womens_criminal_records_wiped_for_aborti.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **'Complete system reset' needed to get 440,000 young people into work, says major review**
-   - **Published:** Mon, 16 Nov 2026 22:32:47 GMT
-   - **Read Parallel Translation:** [politics_article_29_Complete_system_reset_needed_to_get_4400.md](politics_article_29_Complete_system_reset_needed_to_get_4400.md)
+1. **Government backs welfare shake-up to prevent 'lost generation'**
+   - **Published:** Tue, 17 Nov 2026 18:43:05 GMT
+   - **Read Parallel Translation:** [politics_article_29_Government_backs_welfare_shake-up_to_pre.md](politics_article_29_Government_backs_welfare_shake-up_to_pre.md)
 
-2. **Children dropping out of school: What can politicians do about it?**
-   - **Published:** Mon, 16 Nov 2026 22:23:41 GMT
-   - **Read Parallel Translation:** [politics_article_30_Children_dropping_out_of_school_What_can.md](politics_article_30_Children_dropping_out_of_school_What_can.md)
+2. **At a glance: Key proposals from Milburn's Neets report**
+   - **Published:** Tue, 17 Nov 2026 11:31:40 GMT
+   - **Read Parallel Translation:** [politics_article_30_At_a_glance_Key_proposals_from_Milburns_.md](politics_article_30_At_a_glance_Key_proposals_from_Milburns_.md)
 
-3. **Cass report author says she does not support draft conversion practices bill**
-   - **Published:** Mon, 16 Nov 2026 22:08:03 GMT
-   - **Read Parallel Translation:** [politics_article_31_Cass_report_author_says_she_does_not_sup.md](politics_article_31_Cass_report_author_says_she_does_not_sup.md)
+3. **Home secretary plans to tackle 'perception of two-tier policing'**
+   - **Published:** Tue, 17 Nov 2026 22:31:32 GMT
+   - **Read Parallel Translation:** [politics_article_31_Home_secretary_plans_to_tackle_perceptio.md](politics_article_31_Home_secretary_plans_to_tackle_perceptio.md)
 
-4. **Failed asylum seekers face removal without five-day notice period**
-   - **Published:** Tue, 17 Nov 2026 01:24:49 GMT
-   - **Read Parallel Translation:** [politics_article_32_Failed_asylum_seekers_face_removal_witho.md](politics_article_32_Failed_asylum_seekers_face_removal_witho.md)
+4. **Government risks missing climate targets if EV rules weakened, adviser warns**
+   - **Published:** Wed, 18 Nov 2026 00:44:48 GMT
+   - **Read Parallel Translation:** [politics_article_32_Government_risks_missing_climate_targets.md](politics_article_32_Government_risks_missing_climate_targets.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Robert Pattinson to replace Daniel Craig as James Bond**
-   - **Published:** Tue, 17 Nov 2026 02:11:57 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Robert_Pattinson_to_replace_Daniel_Craig.md](entertainment_article_33_Robert_Pattinson_to_replace_Daniel_Craig.md)
+1. **Batman to James Bond: The clues about what to expect from Robert Pattinson's 007**
+   - **Published:** Tue, 17 Nov 2026 13:15:38 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_Batman_to_James_Bond_The_clues_about_wha.md](entertainment_article_33_Batman_to_James_Bond_The_clues_about_wha.md)
 
-2. **Robert Pattinson: How the Twilight star became 007**
-   - **Published:** Mon, 16 Nov 2026 15:02:41 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Robert_Pattinson_How_the_Twilight_star_b.md](entertainment_article_34_Robert_Pattinson_How_the_Twilight_star_b.md)
+2. **Channel 4 admits it doesn't know number of Married At First Sight UK sex abuse complaints**
+   - **Published:** Tue, 17 Nov 2026 13:43:49 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Channel_4_admits_it_doesnt_know_number_o.md](entertainment_article_34_Channel_4_admits_it_doesnt_know_number_o.md)
 
-3. **Raye, Rosalía and Dolly Parton recognised in Grammy nominations**
-   - **Published:** Mon, 16 Nov 2026 14:48:55 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_Raye_Rosalía_and_Dolly_Parton_recognised.md](entertainment_article_35_Raye_Rosalía_and_Dolly_Parton_recognised.md)
+3. **Hunger Games prequel splits opinion: 'Surreally awful' or 'surprisingly strong'**
+   - **Published:** Tue, 17 Nov 2026 17:57:56 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Hunger_Games_prequel_splits_opinion_Surr.md](entertainment_article_35_Hunger_Games_prequel_splits_opinion_Surr.md)
 
-4. **James Bond: What we know so far about the next 007 film**
-   - **Published:** Mon, 16 Nov 2026 15:46:45 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_James_Bond_What_we_know_so_far_about_the.md](entertainment_article_36_James_Bond_What_we_know_so_far_about_the.md)
+4. **Brad Pitt and Florence Pugh pitch for James Bond villain role**
+   - **Published:** Tue, 17 Nov 2026 16:42:49 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Brad_Pitt_and_Florence_Pugh_pitch_for_Ja.md](entertainment_article_36_Brad_Pitt_and_Florence_Pugh_pitch_for_Ja.md)
 
 ---
 
