@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Man convicted of starting Palisades fire in Los Angeles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>Man convicted of starting Palisades fire in Los Angeles</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 21 Nov 2026 04:34:00 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c64gn0gy8rj3o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The 30-year-old LA resident was convicted of arson leading to wildfires that killed 12 people and destroyed more than 6,800 buildings.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Des maisons le long du Sunset Boulevard de Los Angeles ont été vues en feu pendant les incendies de janvier 2025</p>
+            <span class="english-block">Homes along Los Angeles' Sunset Boulevard could be seen engulfed in flames during the fires of January 2025</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Un jury de Los Angeles a reconnu un homme de 30 ans coupable d'avoir provoqué l'un des incendies les plus destructeurs de l'histoire de la Californie.</p>
+            <span class="english-block">A jury in Los Angeles has found a 30-year-old man guilty of starting one of the most destructive wildfires in California's history.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Jonathan Rinderknecht a été reconnu coupable d'incendie après avoir déclenché les incendies qui ont balayé les Palisades du Pacifique et certaines parties de Malibu en janvier de l'année dernière, tuant 12 personnes et détruisant plus de 6800 bâtiments dans l'État américain.</p>
+            <span class="english-block">Jonathan Rinderknecht was convicted of arson after starting the fires that swept through Pacific Palisades and parts of Malibu in January last year, killing 12 people and destroying more than 6,800 buildings in the US state.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">La condamnation a été prononcée près de cinq mois après que les jurés échoués aient conduit le juge à annuler le procès.</p>
+            <span class="english-block">The conviction was handed down nearly five months after deadlocked jurors led to the judge declaring a mistrial.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Rinderknecht, qui a plaidé non coupable, a été reconnu coupable de deux accusations fédérales.</p>
+            <span class="english-block">Rinderknecht, who had pleaded not guilty, was convicted of two federal charges. He is due to be sentenced on 17 March when he faces between five and 20 years in prison on each charge.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">L'arrestation de Jonathan Rinderknecht en octobre de l'année dernière</p>
+            <span class="english-block">Jonathan Rinderknecht's arrest in October last year</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Rinderknecht a été reconnu coupable d'avoir allumé un incendie le 1er janvier de l'année dernière qui a brûlé indétectablement dans les racines avant de se rétablir six jours plus tard.</p>
+            <span class="english-block">Rinderknecht was found guilty of lighting a fire on 1 January last year which burned undetected deep in root systems before flaring back up six days later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">L'une des accusations était d'avoir déclenché le feu de la brosse originale, tandis que l'autre se concentrait sur les dommages causés lorsqu'il a été réallumé en un incendie catastrophique.</p>
+            <span class="english-block">One of the charges was for starting the original brush fire, while the other centred on the damage caused when it reignited into a catastrophic blaze.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">"Nous étions déterminés à le tenir responsable, et le verdict de culpabilité d'aujourd'hui rend une certaine justice aux familles qui ont perdu des êtres chers et aux milliers dont la vie a été bouleversée", a déclaré Bill Essayli, qui dirige le bureau du procureur américain pour le district central de Californie.</p>
+            <span class="english-block">"We were determined to hold him accountable, and today's guilty verdict delivers a measure of justice for the families who lost loved ones and the thousands whose lives were upended," said Bill Essayli, who leads the US Attorney's Office for the Central District of California.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Rinderknecht est un résident de Los Angeles et ancien chauffeur de livraison.</p>
+            <span class="english-block">Rinderknecht is a Los Angeles resident and former ride-share delivery driver.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">L'avocat de la défense Steve Haney avait fait valoir au procès que les procureurs n'avaient pas suffisamment de preuves physiques ou de dossiers pour prouver leur cas.</p>
+            <span class="english-block">Defence attorney Steve Haney had argued at trial that prosecutors lacked sufficient physical evidence or records to prove their case.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Les avocats de l'accusé ont déclaré qu'ils étaient "déçus" par le verdict mais respectaient la décision du jury.</p>
+            <span class="english-block">Lawyers for the defendant said they were "disappointed" by the verdict but respected the jury's decision.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">La maire de Los Angeles, Karen Bass, qui a été largement critiquée pour sa gestion des incendies, a déclaré dans un communiqué que "aucun verdict ne peut ramener les vies perdues ou effacer la douleur que les familles ont endurée".</p>
+            <span class="english-block">Los Angeles Mayor Karen Bass, who was widely criticised for her handling of the fires, said in a statement that "no verdict can bring back the lives lost or erase the pain families have endured".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">"Beaucoup ont encore du mal à reconstruire", a- t- elle dit. "Pour ceux qui sont encore déplacés, la dévastation reste une réalité quotidienne".</p>
+            <span class="english-block">"So many are still struggling to rebuild," she said. "For those still displaced, the devastation remains a daily reality."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Les procureurs ont soutenu que Rinderknecht était motivé par la vengeance, la colère et la solitude parce qu'il n'avait nulle part où aller pour les vacances.</p>
+            <span class="english-block">Prosecutors had argued that Rinderknecht was driven by revenge, anger and loneliness because he had nowhere to go for the holiday.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Ils ont cité les données géolocalisées de son iPhone, des images de caméra de sécurité qui montraient l'emplacement de sa voiture et des témoignages de témoins de passagers.</p>
+            <span class="english-block">They cited geolocation data from his iPhone, security camera footage that showed his car's location and witness testimony from passengers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Ils ont allégué que Rinderknecht avait une "croyance profondément ancrée que les riches détruisaient le monde" et, à son tour, a délibérément déclenché l'incendie dans le quartier affluent.</p>
+            <span class="english-block">They alleged that Rinderknecht had a "deeply entrenched belief that the wealthy were destroying the world" and in turn purposely started the blaze in the affluent neighbourhood.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">L'incendie a été l'un des nombreux qui ont déclenché une suite de flammes dans la région de Los Angeles en janvier, qui a fait 31 morts et détruit 16 000 structures.</p>
+            <span class="english-block">The fire was one of several that ignited back-to-back across the LA region in January, which in total left 31 people dead and destroyed 16,000 structures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Avant et après les images révèlent l'ampleur des dégâts après les incendies de forêt de Los Angeles</p>
+            <span class="english-block">Before and after footage reveals scale of damage after LA wildfires</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Comment une rue de Los Angeles a été en flammes</p>
+            <span class="english-block">How one street in LA went up in flames</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Des photos puissantes révèlent des scènes dramatiques alors que les incendies de Los Angeles sont en colère.</p>
+            <span class="english-block">Powerful photos reveal dramatic scenes as LA fires rage</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">"Je n'ai rien à revenir" - Los Angeles brûle le cœur brisé</p>
+            <span class="english-block">'I have nothing to go back to' - LA fires heartbreak</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

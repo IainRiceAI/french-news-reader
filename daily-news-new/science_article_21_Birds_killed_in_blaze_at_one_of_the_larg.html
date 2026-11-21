@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds killed in blaze at one of the largest foie gras farms in the US</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Birds killed in blaze at one of the largest foie gras farms in the US</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 20 Nov 2026 22:57:26 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cq4gn0dg9194o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Hundreds of young birds were also rescued from the fire, which comes as foie gras is under renewed scrutiny over animal welfare concerns.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les flammes ont englouti la ferme de la vallée de l'Hudson alors que 200 premiers secours sont arrivés sur les lieux.</p>
+            <span class="english-block">Flames engulfed Hudson Valley farm as 200 first responders arrived at the scene</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Un incendie a éclaté jeudi dans l'une des plus grandes fermes de foie gras des États-Unis, tuant un nombre indéterminé d'oiseaux.</p>
+            <span class="english-block">A fire broke out at one of the largest foie gras farms in the US on Thursday, killing an undetermined number of birds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">L'incendie a englouti plusieurs granges à Hudson Valley Farms, dans le nord de l'État de New York, avant que les pompiers ne puissent entrer.</p>
+            <span class="english-block">The blaze engulfed several barns at Hudson Valley Farms in upstate New York before firefighters could get inside. No information has been provided as to what caused the fire.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les équipages ont réussi à sauver des centaines de jeunes oiseaux et de petits, et aucun travailleur ou premier intervenant n'a été blessé, selon les médias locaux.</p>
+            <span class="english-block">Crews managed to rescue hundreds of young birds and hatchlings, and no workers or first responders were injured, according to local news outlets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le foie gras, fabriqué à partir du foie gras gras d'un canard ou d'une oiseau, a longtemps suscité des protestations de groupes de défense des droits des animaux parce que les oiseaux sont nourris de force.</p>
+            <span class="english-block">Foie gras, made from the fattened liver of a duck or goose, has long drawn protests from animal rights groups because the birds are force-fed. Voters in both Washington DC and Denver backed bans on foie gras sales in this month's midterm elections.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Hudson Valley Farms est en bataille juridique avec l'État de New York pour son interdiction de foie gras</p>
+            <span class="english-block">Hudson Valley Farms is in a legal battle with the state of New York over its foie gras ban</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Marcus Henley, directeur de la Foie Gras de la vallée de l'Hudson à Ferndale, à New York, a déclaré à Radio Catskill que l'incendie avait détruit deux bâtiments où vivaient des canards et des oies.</p>
+            <span class="english-block">Marcus Henley, manager of Hudson Valley Foie Gras in Ferndale, New York, told local news outlet Radio Catskill that the fire destroyed two buildings housing ducks and geese.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">"Le bâtiment n'est plus là", a déclaré Henley, ajoutant qu'il soupçonnait qu'un dysfonctionnement électrique aurait pu déclencher l'incendie, bien que cela n'ait pas été confirmé.</p>
+            <span class="english-block">"The building isn't there anymore," Henley said, adding that he suspected  an electrical malfunction may have started the blaze, although this has not been confirmed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">La compagnie ne révèle pas combien d'oiseaux elle accueille en même temps.</p>
+            <span class="english-block">The company does not disclose how many birds it hosts at one time. Commercial poultry farms can typically house thousands of birds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Westchester News 12 a rapporté que la réponse d'urgence à l'incendie dans les premières heures du jeudi matin a impliqué 37 services d'incendie et 200 premiers intervenants.</p>
+            <span class="english-block">Westchester News 12 reported that the emergency response to the fire in the early hours of Thursday morning involved 37 fire departments and 200 first responders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">L'incendie s'est propagé rapidement et la structure en bois et en métal du bâtiment a rendu difficile pour les pompiers d'empêcher la flamme de se propager à l'intérieur de la grange.</p>
+            <span class="english-block">The fire spread rapidly, and the metal-clad, wood-frame structure of the building made it difficult for firefighters to stop the flames from spreading inside the barn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Le Foie Gras de la vallée de l'Hudson et le service d'incendie local n'ont pas répondu à une demande de commentaire.</p>
+            <span class="english-block">Hudson Valley Foie Gras and the local fire department did not respond to a request for comment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Les producteurs de foie gras ont longtemps été critiqués par les groupes de défense des droits des animaux en raison du processus de production, qui implique l'alimentation forcée des oiseaux par des tubes en plastique, ce qui leur permet d'obtenir plus d'un tiers de leur poids corporel en peu de temps.</p>
+            <span class="english-block">Foie gras producers have long been criticised by animal rights groups due to the production process, which involves the force feeding of birds through plastic tubes, which allows them to gain over a third of their body weight in a short period of time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">New York a décidé d'interdire le produit en 2019, et les fermes de la vallée de l'Hudson sont en litige avec l'État depuis.</p>
+            <span class="english-block">New York moved to ban the product in 2019, and Hudson Valley farms have been in litigation with the state since.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Lors d'une audience du conseil municipal en 2019, Henley a fait valoir contre l'interdiction, disant que les journalistes qui ont visité la ferme n'ont trouvé "rien d'inhumain" à propos de leurs pratiques.</p>
+            <span class="english-block">At a city council hearing in 2019, Henley argued against the ban, saying that journalists who visited the farm found "nothing inhumane" about their practices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Le groupe de défense des droits des animaux PETA a déclaré à la BBC qu'il érigerait un panneau publicitaire à proximité en mémoire des oiseaux qui sont morts, et a encouragé les fermes de la vallée de l'Hudson à donner des oiseaux survivants aux sanctuaires locaux.</p>
+            <span class="english-block">Animal rights activist group PETA told the BBC that they will erect a billboard nearby in memory of the birds who perished, and encouraged Hudson Valley farms to donate surviving birds to local sanctuaries.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
