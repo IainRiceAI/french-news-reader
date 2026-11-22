@@ -35,9 +35,9 @@
 
 ### Section 4
 
-**🇬🇧 EN:** The S&P 500 and the Dow Jones Industrial Average were pushed into correction territory, a point where they are trading at 10% or more down from a recent high.
+**🇬🇧 EN:** Both the S&P 500 and the Dow Jones Industrial Average were pushed into correction territory, a point where they are trading at 10% or more down from a recent high.
 
-**🇫🇷 FR:** *Le S&P 500 et le Dow Jones Industrial Average ont été poussés dans un territoire de correction, un point où ils sont négociés à 10% ou plus en baisse par rapport à un sommet récent.*
+**🇫🇷 FR:** *Les deux valeurs S&P 500 et Dow Jones Industrial Average ont été poussées dans un territoire de correction, un point où elles sont négociées à 10% ou plus en baisse par rapport à un sommet récent.*
 
 ---
 

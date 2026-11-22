@@ -267,13 +267,21 @@
 
 ### Section 33
 
+**🇬🇧 EN:** Have you been affected by the issues discussed in this story?
+
+**🇫🇷 FR:** *Les questions abordées dans cet article vous ont- elles touchées?*
+
+---
+
+### Section 34
+
 **🇬🇧 EN:** Online marketplaces still selling dozens of unsafe baby products, Which? finds
 
 **🇫🇷 FR:** *Les marchés en ligne vendent encore des dizaines de produits pour bébés dangereux, selon lequel*
 
 ---
 
-### Section 34
+### Section 35
 
 **🇬🇧 EN:** Calls for 'urgent action' on baby-sleep industry after BBC investigation
 
@@ -281,7 +289,7 @@
 
 ---
 
-### Section 35
+### Section 36
 
 **🇬🇧 EN:** Dangerous baby-sleep advice given to parents by self-described experts, secret filming reveals
 
