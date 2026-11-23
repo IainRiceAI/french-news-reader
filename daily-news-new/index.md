@@ -1,183 +1,183 @@
 # BBC French Reader - Daily News Index
 
-Generated on: 2026-11-22 06:01:17  
+Generated on: 2026-11-23 06:01:14  
 Scraped Feed Mode: `ALL`
 
 ## Articles Translated Today
 
 ### Section: TOP-STORIES
 
-1. **New draft deal aims to avert collapse of talks at climate summit**
-   - **Published:** Sun, 22 Nov 2026 05:26:10 GMT
-   - **Read Parallel Translation:** [top-stories_article_1_New_draft_deal_aims_to_avert_collapse_of.md](top-stories_article_1_New_draft_deal_aims_to_avert_collapse_of.md)
+1. **Longest-ever UN climate talks end with no deal as deep divisions exposed**
+   - **Published:** Mon, 23 Nov 2026 05:15:06 GMT
+   - **Read Parallel Translation:** [top-stories_article_1_Longest-ever_UN_climate_talks_end_with_n.md](top-stories_article_1_Longest-ever_UN_climate_talks_end_with_n.md)
 
-2. **Catherine talks openly about how cancer changed her in documentary on BBC**
-   - **Published:** Sat, 21 Nov 2026 12:00:03 GMT
-   - **Read Parallel Translation:** [top-stories_article_2_Catherine_talks_openly_about_how_cancer_.md](top-stories_article_2_Catherine_talks_openly_about_how_cancer_.md)
+2. **What's next after no deal at COP31 climate talks?**
+   - **Published:** Mon, 23 Nov 2026 05:34:39 GMT
+   - **Read Parallel Translation:** [top-stories_article_2_Whats_next_after_no_deal_at_COP31_climat.md](top-stories_article_2_Whats_next_after_no_deal_at_COP31_climat.md)
 
-3. **'We're not meant to carry life's challenges alone', Catherine says in first clip**
-   - **Published:** Sat, 21 Nov 2026 12:17:45 GMT
-   - **Read Parallel Translation:** [top-stories_article_3_Were_not_meant_to_carry_lifes_challenges.md](top-stories_article_3_Were_not_meant_to_carry_lifes_challenges.md)
+3. **Burnham to tell MPs 'landmark' EU deal could make next decade 'much better'**
+   - **Published:** Sun, 22 Nov 2026 22:49:10 GMT
+   - **Read Parallel Translation:** [top-stories_article_3_Burnham_to_tell_MPs_landmark_EU_deal_cou.md](top-stories_article_3_Burnham_to_tell_MPs_landmark_EU_deal_cou.md)
 
-4. **How a teen gamer and his mother helped rescue a missing girl**
-   - **Published:** Sun, 22 Nov 2026 00:09:58 GMT
-   - **Read Parallel Translation:** [top-stories_article_4_How_a_teen_gamer_and_his_mother_helped_r.md](top-stories_article_4_How_a_teen_gamer_and_his_mother_helped_r.md)
+4. **Manchester's Co-op Live evacuated after 'unknown substance' let off in crowd**
+   - **Published:** Mon, 23 Nov 2026 04:21:50 GMT
+   - **Read Parallel Translation:** [top-stories_article_4_Manchesters_Co-op_Live_evacuated_after_u.md](top-stories_article_4_Manchesters_Co-op_Live_evacuated_after_u.md)
 
-5. **Australia hold on for narrow win against Wales**
-   - **Published:** Sat, 21 Nov 2026 22:25:36 GMT
-   - **Read Parallel Translation:** [top-stories_article_5_Australia_hold_on_for_narrow_win_against.md](top-stories_article_5_Australia_hold_on_for_narrow_win_against.md)
+5. **NHS launches world's largest AI breast cancer screening trial**
+   - **Published:** Mon, 23 Nov 2026 00:49:22 GMT
+   - **Read Parallel Translation:** [top-stories_article_5_NHS_launches_worlds_largest_AI_breast_ca.md](top-stories_article_5_NHS_launches_worlds_largest_AI_breast_ca.md)
 
-6. **Spitting Image co-creator Peter Fluck dies aged 85**
-   - **Published:** Sat, 21 Nov 2026 21:39:22 GMT
-   - **Read Parallel Translation:** [top-stories_article_6_Spitting_Image_co-creator_Peter_Fluck_di.md](top-stories_article_6_Spitting_Image_co-creator_Peter_Fluck_di.md)
+6. **Pip assessments need 'fundamental overhaul', report to say**
+   - **Published:** Mon, 23 Nov 2026 04:01:13 GMT
+   - **Read Parallel Translation:** [top-stories_article_6_Pip_assessments_need_fundamental_overhau.md](top-stories_article_6_Pip_assessments_need_fundamental_overhau.md)
 
-7. **Zelensky says Crimean Bridge strikes 'fair response' as he meets UK's Streeting**
-   - **Published:** Sat, 21 Nov 2026 13:17:38 GMT
-   - **Read Parallel Translation:** [top-stories_article_7_Zelensky_says_Crimean_Bridge_strikes_fai.md](top-stories_article_7_Zelensky_says_Crimean_Bridge_strikes_fai.md)
+7. **Will it snow this week? Mild Atlantic air collides with cold air across the UK**
+   - **Published:** Mon, 23 Nov 2026 00:40:36 GMT
+   - **Read Parallel Translation:** [top-stories_article_7_Will_it_snow_this_week_Mild_Atlantic_air.md](top-stories_article_7_Will_it_snow_this_week_Mild_Atlantic_air.md)
 
-8. **Employers are being asked to give interview feedback - here's what applicants want**
-   - **Published:** Sun, 22 Nov 2026 00:04:07 GMT
-   - **Read Parallel Translation:** [top-stories_article_8_Employers_are_being_asked_to_give_interv.md](top-stories_article_8_Employers_are_being_asked_to_give_interv.md)
+8. **Miley Cyrus marries Maxx Morando in California ceremony**
+   - **Published:** Sun, 22 Nov 2026 21:22:40 GMT
+   - **Read Parallel Translation:** [top-stories_article_8_Miley_Cyrus_marries_Maxx_Morando_in_Cali.md](top-stories_article_8_Miley_Cyrus_marries_Maxx_Morando_in_Cali.md)
 
 ---
 
 ### Section: WORLD
 
-1. **New draft deal aims to avert collapse of talks at climate summit**
-   - **Published:** Sun, 22 Nov 2026 05:26:10 GMT
-   - **Read Parallel Translation:** [world_article_9_New_draft_deal_aims_to_avert_collapse_of.md](world_article_9_New_draft_deal_aims_to_avert_collapse_of.md)
+1. **Longest-ever UN climate talks end with no deal as deep divisions exposed**
+   - **Published:** Mon, 23 Nov 2026 05:15:06 GMT
+   - **Read Parallel Translation:** [world_article_9_Longest-ever_UN_climate_talks_end_with_n.md](world_article_9_Longest-ever_UN_climate_talks_end_with_n.md)
 
-2. **Zelensky says Crimean Bridge strikes 'fair response' as he meets UK's Streeting**
-   - **Published:** Sat, 21 Nov 2026 13:17:38 GMT
-   - **Read Parallel Translation:** [world_article_10_Zelensky_says_Crimean_Bridge_strikes_fai.md](world_article_10_Zelensky_says_Crimean_Bridge_strikes_fai.md)
+2. **What's next after no deal at COP31 climate talks?**
+   - **Published:** Mon, 23 Nov 2026 05:34:39 GMT
+   - **Read Parallel Translation:** [world_article_10_Whats_next_after_no_deal_at_COP31_climat.md](world_article_10_Whats_next_after_no_deal_at_COP31_climat.md)
 
-3. **Russia-bound ship attacked in Gulf of Finland**
-   - **Published:** Sat, 21 Nov 2026 19:20:22 GMT
-   - **Read Parallel Translation:** [world_article_11_Russia-bound_ship_attacked_in_Gulf_of_Fi.md](world_article_11_Russia-bound_ship_attacked_in_Gulf_of_Fi.md)
+3. **Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say**
+   - **Published:** Mon, 23 Nov 2026 05:33:17 GMT
+   - **Read Parallel Translation:** [world_article_11_Boy_7_pulled_alive_from_rubble_hours_aft.md](world_article_11_Boy_7_pulled_alive_from_rubble_hours_aft.md)
 
-4. **Mexican drug lord on FBI's 10 most wanted list arrested in shoot-out**
-   - **Published:** Sun, 22 Nov 2026 01:25:03 GMT
-   - **Read Parallel Translation:** [world_article_12_Mexican_drug_lord_on_FBIs_10_most_wanted.md](world_article_12_Mexican_drug_lord_on_FBIs_10_most_wanted.md)
+4. **San Francisco is enjoying an AI boom, but worries about a crash are growing**
+   - **Published:** Mon, 23 Nov 2026 00:08:00 GMT
+   - **Read Parallel Translation:** [world_article_12_San_Francisco_is_enjoying_an_AI_boom_but.md](world_article_12_San_Francisco_is_enjoying_an_AI_boom_but.md)
 
 ---
 
 ### Section: BUSINESS
 
-1. **Tech stock sell-off drags markets down as Anthropic shares slide**
-   - **Published:** Fri, 20 Nov 2026 22:42:47 GMT
-   - **Read Parallel Translation:** [business_article_13_Tech_stock_sell-off_drags_markets_down_a.md](business_article_13_Tech_stock_sell-off_drags_markets_down_a.md)
+1. **Centrica boss says he is 'hugely concerned' over impact of soaring energy bills**
+   - **Published:** Sun, 22 Nov 2026 13:50:21 GMT
+   - **Read Parallel Translation:** [business_article_13_Centrica_boss_says_he_is_hugely_concerne.md](business_article_13_Centrica_boss_says_he_is_hugely_concerne.md)
 
-2. **UK to explore even closer ties with EU after agreeing deal, says Burnham**
-   - **Published:** Fri, 20 Nov 2026 17:49:48 GMT
-   - **Read Parallel Translation:** [business_article_14_UK_to_explore_even_closer_ties_with_EU_a.md](business_article_14_UK_to_explore_even_closer_ties_with_EU_a.md)
+2. **What is going on with Poundland?**
+   - **Published:** Mon, 23 Nov 2026 00:22:27 GMT
+   - **Read Parallel Translation:** [business_article_14_What_is_going_on_with_Poundland.md](business_article_14_What_is_going_on_with_Poundland.md)
 
-3. **Faisal Islam: This cost-cutting UK-EU deal doesn't mean lower prices will follow**
-   - **Published:** Fri, 20 Nov 2026 16:41:52 GMT
-   - **Read Parallel Translation:** [business_article_15_Faisal_Islam_This_cost-cutting_UK-EU_dea.md](business_article_15_Faisal_Islam_This_cost-cutting_UK-EU_dea.md)
+3. **Energy bills will soar - here's how you can ease the pain**
+   - **Published:** Mon, 23 Nov 2026 01:05:07 GMT
+   - **Read Parallel Translation:** [business_article_15_Energy_bills_will_soar_-_heres_how_you_c.md](business_article_15_Energy_bills_will_soar_-_heres_how_you_c.md)
 
-4. **Trump threatens ban on US firms building AI data centres overseas**
-   - **Published:** Fri, 20 Nov 2026 20:54:12 GMT
-   - **Read Parallel Translation:** [business_article_16_Trump_threatens_ban_on_US_firms_building.md](business_article_16_Trump_threatens_ban_on_US_firms_building.md)
+4. **Pip assessments need 'fundamental overhaul', report to say**
+   - **Published:** Mon, 23 Nov 2026 04:01:13 GMT
+   - **Read Parallel Translation:** [business_article_16_Pip_assessments_need_fundamental_overhau.md](business_article_16_Pip_assessments_need_fundamental_overhau.md)
 
 ---
 
 ### Section: TECHNOLOGY
 
-1. **Can AI really help spot Black Friday deals? We put it to the test**
+1. **San Francisco is enjoying an AI boom, but worries about a crash are growing**
+   - **Published:** Mon, 23 Nov 2026 00:08:00 GMT
+   - **Read Parallel Translation:** [technology_article_17_San_Francisco_is_enjoying_an_AI_boom_but.md](technology_article_17_San_Francisco_is_enjoying_an_AI_boom_but.md)
+
+2. **Can AI really help spot Black Friday deals? We put it to the test**
    - **Published:** Sat, 21 Nov 2026 00:06:11 GMT
-   - **Read Parallel Translation:** [technology_article_17_Can_AI_really_help_spot_Black_Friday_dea.md](technology_article_17_Can_AI_really_help_spot_Black_Friday_dea.md)
+   - **Read Parallel Translation:** [technology_article_18_Can_AI_really_help_spot_Black_Friday_dea.md](technology_article_18_Can_AI_really_help_spot_Black_Friday_dea.md)
 
-2. **In a year of AI solving maths problems, an Anthropic worker says he may have cracked the biggest**
+3. **In a year of AI solving maths problems, an Anthropic worker says he may have cracked the biggest**
    - **Published:** Fri, 20 Nov 2026 23:08:57 GMT
-   - **Read Parallel Translation:** [technology_article_18_In_a_year_of_AI_solving_maths_problems_a.md](technology_article_18_In_a_year_of_AI_solving_maths_problems_a.md)
+   - **Read Parallel Translation:** [technology_article_19_In_a_year_of_AI_solving_maths_problems_a.md](technology_article_19_In_a_year_of_AI_solving_maths_problems_a.md)
 
-3. **GTA 6 sales hit $3.8bn in a single day - the biggest entertainment launch in history**
+4. **GTA 6 sales hit $3.8bn in a single day - the biggest entertainment launch in history**
    - **Published:** Fri, 20 Nov 2026 22:53:24 GMT
-   - **Read Parallel Translation:** [technology_article_19_GTA_6_sales_hit_38bn_in_a_single_day_-_t.md](technology_article_19_GTA_6_sales_hit_38bn_in_a_single_day_-_t.md)
-
-4. **Tech stock sell-off drags markets down as Anthropic shares slide**
-   - **Published:** Fri, 20 Nov 2026 22:42:47 GMT
-   - **Read Parallel Translation:** [technology_article_20_Tech_stock_sell-off_drags_markets_down_a.md](technology_article_20_Tech_stock_sell-off_drags_markets_down_a.md)
+   - **Read Parallel Translation:** [technology_article_20_GTA_6_sales_hit_38bn_in_a_single_day_-_t.md](technology_article_20_GTA_6_sales_hit_38bn_in_a_single_day_-_t.md)
 
 ---
 
 ### Section: SCIENCE
 
-1. **New draft deal aims to avert collapse of talks at climate summit**
-   - **Published:** Sun, 22 Nov 2026 05:26:10 GMT
-   - **Read Parallel Translation:** [science_article_21_New_draft_deal_aims_to_avert_collapse_of.md](science_article_21_New_draft_deal_aims_to_avert_collapse_of.md)
+1. **Longest-ever UN climate talks end with no deal as deep divisions exposed**
+   - **Published:** Mon, 23 Nov 2026 05:15:06 GMT
+   - **Read Parallel Translation:** [science_article_21_Longest-ever_UN_climate_talks_end_with_n.md](science_article_21_Longest-ever_UN_climate_talks_end_with_n.md)
 
-2. **Will COP31 end with a new global climate deal?**
-   - **Published:** Sat, 21 Nov 2026 22:44:52 GMT
-   - **Read Parallel Translation:** [science_article_22_Will_COP31_end_with_a_new_global_climate.md](science_article_22_Will_COP31_end_with_a_new_global_climate.md)
+2. **What's next after no deal at COP31 climate summit?**
+   - **Published:** Sun, 22 Nov 2026 18:28:48 GMT
+   - **Read Parallel Translation:** [science_article_22_Whats_next_after_no_deal_at_COP31_climat.md](science_article_22_Whats_next_after_no_deal_at_COP31_climat.md)
 
-3. **Fight over fossil fuels leaves COP31 climate talks in deadlock**
-   - **Published:** Sat, 21 Nov 2026 22:19:43 GMT
-   - **Read Parallel Translation:** [science_article_23_Fight_over_fossil_fuels_leaves_COP31_cli.md](science_article_23_Fight_over_fossil_fuels_leaves_COP31_cli.md)
+3. **Mysterious Mercury gets a visitor - after spacecraft's eight-year epic voyage**
+   - **Published:** Sun, 22 Nov 2026 10:44:12 GMT
+   - **Read Parallel Translation:** [science_article_23_Mysterious_Mercury_gets_a_visitor_-_afte.md](science_article_23_Mysterious_Mercury_gets_a_visitor_-_afte.md)
 
-4. **Birds killed in blaze at one of the largest foie gras farms in the US**
-   - **Published:** Fri, 20 Nov 2026 22:57:26 GMT
-   - **Read Parallel Translation:** [science_article_24_Birds_killed_in_blaze_at_one_of_the_larg.md](science_article_24_Birds_killed_in_blaze_at_one_of_the_larg.md)
+4. **New draft deal aims to avert collapse of talks at COP31 climate summit**
+   - **Published:** Sun, 22 Nov 2026 06:54:06 GMT
+   - **Read Parallel Translation:** [science_article_24_New_draft_deal_aims_to_avert_collapse_of.md](science_article_24_New_draft_deal_aims_to_avert_collapse_of.md)
 
 ---
 
 ### Section: HEALTH
 
-1. **Sales of baby sleeping bag halted by Next after new mum raises alarm**
+1. **Can AI spot breast cancer earlier? NHS launches world's largest trial to find out**
+   - **Published:** Mon, 23 Nov 2026 00:49:22 GMT
+   - **Read Parallel Translation:** [health_article_25_Can_AI_spot_breast_cancer_earlier_NHS_la.md](health_article_25_Can_AI_spot_breast_cancer_earlier_NHS_la.md)
+
+2. **Sales of baby sleeping bag halted by Next after new mum raises alarm**
    - **Published:** Sat, 21 Nov 2026 00:02:09 GMT
-   - **Read Parallel Translation:** [health_article_25_Sales_of_baby_sleeping_bag_halted_by_Nex.md](health_article_25_Sales_of_baby_sleeping_bag_halted_by_Nex.md)
+   - **Read Parallel Translation:** [health_article_26_Sales_of_baby_sleeping_bag_halted_by_Nex.md](health_article_26_Sales_of_baby_sleeping_bag_halted_by_Nex.md)
 
-2. **Massive hope for pancreatic cancer pill after trial saw tumours vanish**
+3. **Massive hope for pancreatic cancer pill after trial saw tumours vanish**
    - **Published:** Fri, 20 Nov 2026 00:08:22 GMT
-   - **Read Parallel Translation:** [health_article_26_Massive_hope_for_pancreatic_cancer_pill_.md](health_article_26_Massive_hope_for_pancreatic_cancer_pill_.md)
+   - **Read Parallel Translation:** [health_article_27_Massive_hope_for_pancreatic_cancer_pill_.md](health_article_27_Massive_hope_for_pancreatic_cancer_pill_.md)
 
-3. **Covid inquiry report: key findings on testing, tracing and 'the pingdemic'**
+4. **Covid inquiry report: key findings on testing, tracing and 'the pingdemic'**
    - **Published:** Thu, 19 Nov 2026 12:47:27 GMT
-   - **Read Parallel Translation:** [health_article_27_Covid_inquiry_report_key_findings_on_tes.md](health_article_27_Covid_inquiry_report_key_findings_on_tes.md)
-
-4. **Regulator mistakenly sent complaints about doctors to newspaper**
-   - **Published:** Wed, 18 Nov 2026 17:48:10 GMT
-   - **Read Parallel Translation:** [health_article_28_Regulator_mistakenly_sent_complaints_abo.md](health_article_28_Regulator_mistakenly_sent_complaints_abo.md)
+   - **Read Parallel Translation:** [health_article_28_Covid_inquiry_report_key_findings_on_tes.md](health_article_28_Covid_inquiry_report_key_findings_on_tes.md)
 
 ---
 
 ### Section: POLITICS
 
-1. **Deal with EU not dependent on tuition fees agreement, Miliband says**
-   - **Published:** Sat, 21 Nov 2026 09:40:55 GMT
-   - **Read Parallel Translation:** [politics_article_29_Deal_with_EU_not_dependent_on_tuition_fe.md](politics_article_29_Deal_with_EU_not_dependent_on_tuition_fe.md)
+1. **Theresa May 'aghast' at Burnham's EU plans and says 'Brexit is done'**
+   - **Published:** Sun, 22 Nov 2026 11:50:20 GMT
+   - **Read Parallel Translation:** [politics_article_29_Theresa_May_aghast_at_Burnhams_EU_plans_.md](politics_article_29_Theresa_May_aghast_at_Burnhams_EU_plans_.md)
 
-2. **UK should only rejoin EU if it innovates on technology, Blair warns**
+2. **'Move on!' Former PMs pile in with advice for Andy Burnham, but will he listen?**
+   - **Published:** Sun, 22 Nov 2026 06:01:49 GMT
+   - **Read Parallel Translation:** [politics_article_30_Move_on_Former_PMs_pile_in_with_advice_f.md](politics_article_30_Move_on_Former_PMs_pile_in_with_advice_f.md)
+
+3. **Tories would scrap Burnham's deal with EU, deputy leader says**
+   - **Published:** Sun, 22 Nov 2026 13:15:57 GMT
+   - **Read Parallel Translation:** [politics_article_31_Tories_would_scrap_Burnhams_deal_with_EU.md](politics_article_31_Tories_would_scrap_Burnhams_deal_with_EU.md)
+
+4. **UK should only rejoin EU if it innovates on technology, Blair warns**
    - **Published:** Sat, 21 Nov 2026 19:33:49 GMT
-   - **Read Parallel Translation:** [politics_article_30_UK_should_only_rejoin_EU_if_it_innovates.md](politics_article_30_UK_should_only_rejoin_EU_if_it_innovates.md)
-
-3. **Staff gagging clauses lifted ahead of probe into culture at data watchdog**
-   - **Published:** Sat, 21 Nov 2026 06:01:04 GMT
-   - **Read Parallel Translation:** [politics_article_31_Staff_gagging_clauses_lifted_ahead_of_pr.md](politics_article_31_Staff_gagging_clauses_lifted_ahead_of_pr.md)
-
-4. **Scouts say they face £1m tourist tax cost for overnight trips**
-   - **Published:** Sat, 21 Nov 2026 13:29:55 GMT
-   - **Read Parallel Translation:** [politics_article_32_Scouts_say_they_face_1m_tourist_tax_cost.md](politics_article_32_Scouts_say_they_face_1m_tourist_tax_cost.md)
+   - **Read Parallel Translation:** [politics_article_32_UK_should_only_rejoin_EU_if_it_innovates.md](politics_article_32_UK_should_only_rejoin_EU_if_it_innovates.md)
 
 ---
 
 ### Section: ENTERTAINMENT
 
-1. **Who will be Robert Pattinson's 'Bond girl' - and does the role need to change?**
-   - **Published:** Sat, 21 Nov 2026 00:03:16 GMT
-   - **Read Parallel Translation:** [entertainment_article_33_Who_will_be_Robert_Pattinsons_Bond_girl_.md](entertainment_article_33_Who_will_be_Robert_Pattinsons_Bond_girl_.md)
+1. **BBC apologises for 'any offence caused' by Strictly noise disruption**
+   - **Published:** Sun, 22 Nov 2026 04:39:13 GMT
+   - **Read Parallel Translation:** [entertainment_article_33_BBC_apologises_for_any_offence_caused_by.md](entertainment_article_33_BBC_apologises_for_any_offence_caused_by.md)
 
-2. **Spitting Image co-creator Peter Fluck dies aged 85**
-   - **Published:** Sat, 21 Nov 2026 21:39:22 GMT
-   - **Read Parallel Translation:** [entertainment_article_34_Spitting_Image_co-creator_Peter_Fluck_di.md](entertainment_article_34_Spitting_Image_co-creator_Peter_Fluck_di.md)
+2. **Miley Cyrus marries Maxx Morando in California ceremony**
+   - **Published:** Sun, 22 Nov 2026 21:22:40 GMT
+   - **Read Parallel Translation:** [entertainment_article_34_Miley_Cyrus_marries_Maxx_Morando_in_Cali.md](entertainment_article_34_Miley_Cyrus_marries_Maxx_Morando_in_Cali.md)
 
-3. **GTA 6 sales hit $3.8bn in a single day - the biggest entertainment launch in history**
-   - **Published:** Fri, 20 Nov 2026 22:53:24 GMT
-   - **Read Parallel Translation:** [entertainment_article_35_GTA_6_sales_hit_38bn_in_a_single_day_-_t.md](entertainment_article_35_GTA_6_sales_hit_38bn_in_a_single_day_-_t.md)
+3. **Why Nicola Coughlan's new drama might leave viewers uncomfortable**
+   - **Published:** Sun, 22 Nov 2026 00:01:27 GMT
+   - **Read Parallel Translation:** [entertainment_article_35_Why_Nicola_Coughlans_new_drama_might_lea.md](entertainment_article_35_Why_Nicola_Coughlans_new_drama_might_lea.md)
 
-4. **New Hunger Games cast say joining the franchise is 'nerve-racking'**
-   - **Published:** Fri, 20 Nov 2026 01:11:57 GMT
-   - **Read Parallel Translation:** [entertainment_article_36_New_Hunger_Games_cast_say_joining_the_fr.md](entertainment_article_36_New_Hunger_Games_cast_say_joining_the_fr.md)
+4. **Calls for Marilyn Manson performance to be pulled**
+   - **Published:** Sun, 22 Nov 2026 08:10:23 GMT
+   - **Read Parallel Translation:** [entertainment_article_36_Calls_for_Marilyn_Manson_performance_to_.md](entertainment_article_36_Calls_for_Marilyn_Manson_performance_to_.md)
 
 ---
 

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is going on with Poundland?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>What is going on with Poundland?</h1>
+        <div class="meta-info">
+            <span>📅 Mon, 23 Nov 2026 00:22:27 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cm4g10p2r0g9o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Poundland has a matter of days to find a buyer or face collapsing into administration. Why?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">L'avenir de Poundland est en jeu, car il est confronté à un éventuel effondrement de l'administration.</p>
+            <span class="english-block">The future of Poundland hangs in the balance as it faces a possible collapse into administration.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Son propriétaire, la société américaine Gordon Brothers, l'a mis en vente en septembre, mais a ensuite rejeté des offres pour maintenir l'entreprise à flot.</p>
+            <span class="english-block">Its owner, US investment firm Gordon Brothers, put it up for sale in September, but then rejected offers to keep the business afloat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Poundland est présent sur la High Street, avec 600 magasins au Royaume-Uni et en Irlande, où il négocie sous la marque Dealz.</p>
+            <span class="english-block">Poundland has a major presence on the High Street, with 600 stores in the UK and Ireland, where it trades under the Dealz brand.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Si elle s'effondre, les emplois de ses 11 000 employés seront en danger, ainsi que des milliers d'autres dans les entreprises qui fournissent le détaillant.</p>
+            <span class="english-block">If it were to collapse, the jobs of its 11,000 employees would be at risk, as well as potentially thousands of others at firms that supply the retailer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Comment on est arrivé ici ?</p>
+            <span class="english-block">How have we got here?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les gens n'ont pas arrêté de faire leurs courses à Poundland, au contraire.</p>
+            <span class="english-block">People have not stopped shopping at Poundland - quite the opposite.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Bien que la chaîne ait eu du mal à être vendue par Pepco l'année dernière pour 1 £, l'entreprise a tourné le dos à la fin du mois de septembre, passant d'une perte de 68 millions de £ à un bénéfice de 18,1 millions de £ avant intérêts, impôts et certaines taxes comptables.</p>
+            <span class="english-block">Although the chain was struggling when it was sold by Pepco last year for £1, the business turned a corner over the year to September, going from a £68m loss to an £18.1m profit before interest, tax and certain accounting charges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">En entrant dans la période vitale de Noël, les ventes comparables au premier trimestre ont augmenté de 7% et les bénéfices opérationnels de 1,9 million de livres sterling ont augmenté de 1,2 million de livres sterling par rapport à l'année dernière.</p>
+            <span class="english-block">Going into the vital Christmas period, first-quarter like-for-like sales were up 7% and operational profits of £1.9m were up £1.2m on last year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les ventes d'Halloween ont été de 11,4% plus élevées que l'an dernier, ce qui est généralement un bon indicateur de la performance d'un détaillant à Noël, dit l'analyste de détail Catherine Shuttleworth de Savvy Marketing.</p>
+            <span class="english-block">Halloween sales were 11.4% higher than last year - this is usually a good indicator of how a retailer will do at Christmas, says retail analyst Catherine Shuttleworth of Savvy Marketing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Selon Julie Palmer, associée de gestion de l'expert en insolvabilité Begbies Traynor: "Ce n'est pas une histoire de clients abandonnant Poundland.</p>
+            <span class="english-block">According to Julie Palmer, managing partner at insolvency specialist Begbies Traynor: "This isn't a story about shoppers abandoning Poundland. The tills are busier than they were a year ago."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Elle ajoute: " Au premier abord, il semble que la situation soit en train de changer. "</p>
+            <span class="english-block">She adds: "On the face of it, a turnaround seems well under way."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Cependant, Gordon Brothers a restreint l'accès de Poundland à l'argent nécessaire pour réapprovisionner les magasins et couvrir les dépenses quotidiennes.</p>
+            <span class="english-block">However, Gordon Brothers has been restricting Poundland's access to cash needed to restock stores and meet day-to-day expenses.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Il avait gelé environ 50 millions de livres sterling, ce qui a suscité des inquiétudes que les magasins de Poundland ne manqueraient pas de stocks.</p>
+            <span class="english-block">It had frozen about £50m in funds leading to concerns Poundland's shops would run out of stock.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Cependant, Gordon Brothers a libéré environ 21 millions de livres sur deux semaines récemment, donnant à la chaîne un peu plus d'espace de respiration.</p>
+            <span class="english-block">However, Gordon Brothers released around £21m over two weeks recently, giving the chain a little more breathing space.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Poundland semble être confronté à "un problème de financement et de propriété plutôt qu'à un effondrement commercial", dit Palmer.</p>
+            <span class="english-block">Poundland seems to be facing "a funding and ownership problem rather than a trading collapse", Palmer says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Cependant, alors que le patron de Poundland, Barry Williams, dit que l'entreprise fait une " forte reprise ", Gordon Brothers a peint une image différente, disant que la chaîne reste "défiée et vulnérable à toute éventuelle baisse des échanges futurs ".</p>
+            <span class="english-block">However, while Poundland boss Barry Williams says the business is making a "strong recovery", Gordon Brothers has painted a different picture, saying the chain remains "challenged and vulnerable to any potential downturn in future trading".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Elle affirme avoir fourni des fonds importants pour soutenir la capacité de la société à négocier depuis son acquisition.</p>
+            <span class="english-block">It says it has provided significant funding to support the company's ability to trade since it acquired the business.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Elle a également réalisé environ 18 millions de livres sterling grâce à une combinaison de paiements d'intérêts de la dette et d'autres frais et charges.</p>
+            <span class="english-block">It has also made about £18m from a combination of debt interest payments and other fees and charges.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">En plus d'être propriétaire de Poundland, elle est l'un de ses prêteurs et doit des prêts, dont un prêt d'actionnaires de 22,5 millions de livres sterling qu'elle a hérité lorsqu'elle a acheté l'entreprise pour 1 livre sterling.</p>
+            <span class="english-block">As well as being Poundland's owner, it is one of its lenders, and is owed loans, including a £22.5m shareholder loan it inherited when it bought the business for £1.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">En tant que principal créancier, Gordon Brothers serait le premier à être remboursé si l'entreprise s'effondre - mais ses fournisseurs ne le sont pas.</p>
+            <span class="english-block">As the main creditor, Gordon Brothers would be first in line to get paid back if the business goes under - but its suppliers are not.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">" Quand le propriétaire est aussi le principal prêteur, sa priorité est de récupérer [les prêts] ", dit Palmer. " Parfois, la voie qui protège le prêteur le mieux est différente de celle qui sauve le plus d'emplois, et c'est à cause de cette tension que cela est devenu une histoire politique. "</p>
+            <span class="english-block">"When the owner is also the main lender, its first priority is recovering [loans]," says Palmer. "Sometimes the route that best protects the lender is different from the one that saves the most jobs, and that tension is why this has become such a political story."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">La société irlandaise Martin Property Group a proposé d'acheter l'entreprise comme entreprise en cours, tandis que la société holding Xyra Group, basée à Londres, a également fait une offre de sauvetage, bien que des doutes demeurent quant à la crédibilité de l'offre de Xyra.</p>
+            <span class="english-block">Irish firm Martin Property Group has offered to buy the business as a going concern, while London-based holding company Xyra Group has also made a rescue bid, although doubts remain about the credibility of Xyra's offer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Il y a aussi une troisième offre anonyme sur la table.</p>
+            <span class="english-block">There is also a third, unnamed bid on the table.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Gordon Brothers a également examiné les options pour briser Poundland.</p>
+            <span class="english-block">Gordon Brothers has also been weighing options to break Poundland up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">La société américaine estime que la dissolution du détaillant permettra à long terme de renforcer la sécurité des employés, car les acheteurs de son magasin devront également accepter de conserver les employés.</p>
+            <span class="english-block">The US company's view is that ultimately breaking the retailer up will provide more security for employees in the long term, because any buyers of its store estate will also have to agree to keep the employees on.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Les initiés qui critiquent la façon dont Gordon Brothers a géré la vente de Poundland disent que cela conduit l'entreprise à la terre pour gagner de l'argent grâce au processus d'insolvabilité.</p>
+            <span class="english-block">Insiders who are critical of how Gordon Brothers has handled the Poundland sale say it is driving the business into the ground to make money through the insolvency process.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Mais l'entreprise d'investissement, spécialisée dans l'achat et la restructuration de sociétés en difficulté, a nié cette allégation.</p>
+            <span class="english-block">But the investment firm, which specialises in buying and restructuring distressed companies, has denied the claim.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Pour l'instant, Poundland a évité un effondrement immédiat après une date limite de 10 jours pour trouver un accord de sauvetage.</p>
+            <span class="english-block">For now, Poundland has avoided immediate collapse after a deadline was extended by 10 days to find a rescue deal.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Shuttleworth dit que l'avenir de Poundland est "réellement incertain, avec les propriétaires et la direction en désaccord sur son avenir".</p>
+            <span class="english-block">Shuttleworth says the future of Poundland is "really unclear, with the owners and the management at loggerheads about its future".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Palmer dit qu'il y a deux façons de progresser pour Poundland - soit un accord de solvabilité, où la société est achetée et continue à négocier, ou un effondrement suivi d'une rupture.</p>
+            <span class="english-block">Palmer says there are two ways forward for Poundland - either a solvent deal, where the company gets bought and carries on trading, or a collapse followed by a break-up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">"Le problème immédiat est Noël: un détaillant qui ne peut pas obtenir de stocks en novembre et décembre est en grave difficulté, peu importe ce que disent ses résultats de l'année", dit Palmer.</p>
+            <span class="english-block">"The immediate make-or-break issue is Christmas: a value retailer that can't get stock on its shelves in November and December is in serious trouble, whatever its full-year results say," says Palmer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Les premiers ministres des affaires, Andy Burnham et Jonathan Reynolds, ont exercé une pression politique sur Gordon Brothers et ont demandé des réponses sur les raisons pour lesquelles l'offre de Martin Property Group d'acheter l'entreprise, qui aurait protégé les emplois, a été rejetée.</p>
+            <span class="english-block">There has been political pressure on Gordon Brothers from both Prime Minister Andy Burnham and Business Secretary Jonathan Reynolds. They have called for answers over why the Martin Property Group offer to buy the business, which would have protected jobs, was rejected.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Un comité de députés a interrogé Gordon Brothers la semaine dernière, ce qui a ajouté à la pression.</p>
+            <span class="english-block">A committee of MPs also questioned Gordon Brothers last week, adding to pressure.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Mais Shuttleworth dit qu'en tant qu'entreprise américaine Gordon Brothers semble "immobile" par les arguments que le gouvernement britannique a présentés.</p>
+            <span class="english-block">But Shuttleworth says that as a US firm Gordon Brothers appears "unmoved" by the arguments that the UK government has put forward.</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
