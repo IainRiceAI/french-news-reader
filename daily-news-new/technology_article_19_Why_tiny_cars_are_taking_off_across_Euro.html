@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why tiny cars are taking off across Europe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Why tiny cars are taking off across Europe</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 25 Nov 2026 00:34:05 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmwy9jne0g7qo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Once seen as a car for elderly, rural people, tiny cars are being embraced by a younger demographic.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Selena utilise sa voiture pour aller à l'école.</p>
+            <span class="english-block">Selena uses her car to get to school</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Selena Buse, 16 ans, renverse son Citroën Ami d'un parking et se dirige devant le terrain de jeux de l'école.</p>
+            <span class="english-block">Selena Buse, 16, reverses her Citroën Ami out of a parking space and heads off past the school playground. Heads turn. The Ami looks pretty remarkable. Futurist or like-a-toaster depending on your point of view. But it's changed her life.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">" Je l'ai acheté parce que j'avais vraiment besoin de l'argent pour aller à l'école, et je l'utilise pour rendre visite à mes amis le week-end.</p>
+            <span class="english-block">"I got it because I really needed it to get to school. And I use it to visit friends on the weekends. It's indispensable in rural areas like where I live," she says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">En France, on peut conduire une voiture comme celle-ci à partir de 14 ans avec un certificat de sécurité routière et huit heures de formation.</p>
+            <span class="english-block">In France, you can drive a car like this from the age of 14 with a road safety certificate and eight hours training. In Italy too.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">En Allemagne et en Espagne, il y en a 15, au Royaume-Uni, il y en a 16, parce qu'ils sont classés comme des quadricycles motorisés.</p>
+            <span class="english-block">In Germany and Spain it's 15, in the UK 16. Because they are classed as motorised quadri-cycles. Four-wheel mopeds in other words.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les inscriptions ont augmenté de 13 000 en 2019 à environ 25 000 l'année dernière en France.</p>
+            <span class="english-block">Registrations have risen from about 13,000 in 2019 to around 25,000 last year in France.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">En Europe, les ventes sont passées de 30 000 à 60 000 au cours des cinq dernières années. Et l'Ami, lancé en 2020, a vraiment changé l'image, avec des adolescents qui représentent maintenant un quart de toutes les ventes de mini-autos.</p>
+            <span class="english-block">In Europe, sales have gone from 30,000 to 60,000 in the past five years. And the Ami, launched in 2020, has really changed the image, with teenagers who now account for a quarter of all mini-car sales.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Dans la très petite Citroën de Selena, nous allons bientôt rouler à une vitesse maximale de 45 km/h. Pour d'autres usagers de la route, des voitures sans permis comme celle-ci peuvent sembler calmer la circulation mobile.</p>
+            <span class="english-block">In Selena's very small Citroën, we are soon rolling along at the top speed of 45km/h (28mph). For other road users, no-licence cars like this can seem like mobile traffic calming.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">"Quand je suis sur des routes plus rapides et qu'il y a beaucoup de trafic, les voitures qui me suivent sonnent parfois des trompettes, mais je ne peux pas aller plus vite!" dit Selena.</p>
+            <span class="english-block">"When I'm on faster roads and there's a lot of traffic the cars behind me sometimes honk their horns but I can't go any quicker!" Selena says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Daniel Laprès dit que la voiture d'Aixam était "la solution exacte à notre problème"</p>
+            <span class="english-block">Daniel Laprès says the Aixam car was "the exact solution to our problem"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Un autre local, Daniel Laprès, qui conduit une micro-auto fabriquée par la firme française Aixam, me dit qu'il s'arrête pour laisser passer les voitures derrière.</p>
+            <span class="english-block">Another local Daniel Laprès, who drives a micro-car made by French firm and market-leader Aixam, tells me he actually pulls over to let the cars behind pass.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Il a déménagé de Paris avec sa femme dans ce village de campagne il y a deux ans. De nationalité canadienne, il n'a pas échangé son permis d'étranger contre un français à temps et a perdu le droit de conduire. Cela n'a pas beaucoup d'importance quand il était à Paris. Comme beaucoup de Parisiens, il n'avait pas besoin d'une voiture. Il utilisait les transports en commun. Mais cela n'est pas possible ici.</p>
+            <span class="english-block">He and his wife moved from Paris to this country village two years ago. Of Canadian nationality, he didn't swap his foreign licence for a French one in time and lost the right to drive. That didn't matter much when he was in Paris. Like many Parisians he didn't need a car. He used public transport. But that's not possible here.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" Nous avons essayé de vivre avec des taxis, mais c'était un désastre. " Puis nous avons appris comment on pouvait conduire sans avoir de permis, et c'était la solution exacte à notre problème.</p>
+            <span class="english-block">"We tried living off of taxis and it was in the end a disaster. Then we heard about how you could drive without having to have a licence, and it was the exact solution to our problem. Cheap, inexpensive to operate, basically no administrative formalities, you get insurance."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Mais Laprès se sent moins en sécurité dans sa petite voiture. " Ce ne sont que des canettes sur roues, non?</p>
+            <span class="english-block">However, Laprès feels less safe in his small car. "They're little more than tin cans on wheels, right? I mean, you're not going to be driving fast, but someone else could be."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Ces voitures sont interdites sur les autoroutes, mais même sur les routes à moyenne vitesse, être considérablement plus lent que le véhicule moyen peut être un problème.</p>
+            <span class="english-block">These cars are forbidden on motorways. But even on medium-fast roads, being considerably slower than the average vehicle can be a problem.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">"Vous allez sur les autoroutes nationales à vos risques et périls. J'ai fait ça une fois et je ne le ferai plus jamais. Sur ces routes (limite de vitesse de 110 km/h), tout le monde vous passe, y compris les plus gros camions. Et ils viennent très vite à vous de l'arrière, donc c'est effrayant", dit Laprès.</p>
+            <span class="english-block">"You go on national highways at your risk and peril. I did it once and I will never, ever do it again. On those roads (speed limit 110km/h), everybody is passing you, including the biggest trucks. And they come at you very fast from the rear, so it's scary," Laprès says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Daniel, âgé de 77 ans, s'inscrit dans le marché bien établi de ces voitures: les personnes âgées vivant à la campagne.</p>
+            <span class="english-block">Daniel is 77 so fits in with the long-established market for these cars: older people living in the countryside.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Traditionnellement, le marché comprenait également un certain nombre de personnes qui avaient perdu leurs permis, souvent à cause d'infractions de conduite en état d'ébriété. Mais le lancement de l'électrique Citroën Ami en 2020 a changé le profil des clients et le produit.</p>
+            <span class="english-block">Traditionally the market also included quite a few people who'd lost their licences, often because of drink-driving offenses. But the launch of the electric Citroën Ami in 2020 changed the customer profile and the product.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">" Le lancement de l'Ami a été le début de la transformation du secteur, avec de plus en plus de modèles électriques sur le marché. En 2026, plus de 67% des nouvelles voitures sans permis sont électriques ", déclare Marie-Laure Nivot, analyste du marché chez AAA Data.</p>
+            <span class="english-block">"The launch of the Ami was the beginning of the transformation of the sector, with more and more electric models coming on to the market. In 2026, more than 67% of new licence-free cars are electric," says Marie-Laure Nivot, market analyst at AAA Data.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Le lancement de la Citroën Ami en 2020 "a transformé le secteur", disent les analystes</p>
+            <span class="english-block">The launch of the Citroën Ami in 2020 "transformed the sector" analysts say</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Cette tendance a été encouragée par des réglementations plus strictes de l'UE sur les véhicules à deux roues motorisés qui étaient jusqu'alors les véhicules de choix des adolescents européens.</p>
+            <span class="english-block">This tendency was encouraged by stricter EU regulations on motorised two-wheelers that had been the vehicles of choice for European teenagers until then.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">"Il s'est avéré trop coûteux pour les fabricants d'appliquer les nouvelles règles de l'UE, de sorte que les cyclomoteurs et les petits scooters ont presque disparu du marché depuis 2020 et que les voitures sans permis ont pris leur place", déclare Marie-Laure Nivot.</p>
+            <span class="english-block">"It proved too costly for manufacturers to apply the new EU rules, so mopeds and small scooters have almost disappeared from the market since 2020 and licence-free cars have taken their place," Marie-Laure Nivot says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Les ventes de petites voitures ont fortement augmenté jusqu'en 2024, bien qu'elles aient diminué depuis le retrait des subventions aux modèles électriques en France.</p>
+            <span class="english-block">Tiny car sales rose strongly till 2024 although they have flattened since in France with the withdrawal of subsidies for electric models.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Curieusement, l'arrivée sur ce marché de niche d'un concurrent géant sous la forme de la marque Stellantis Citroën était en fait une bonne nouvelle pour les fabricants français existants comme Aixam et Ligier.</p>
+            <span class="english-block">Curiously, the arrival in this niche market of a giant competitor in the shape of Stellantis brand Citroën was actually good news for existing French manufacturers like Aixam and Ligier.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Nous sommes spécialisés dans ce marché de niche et nous sommes très bons dans ce que nous faisons, mais bien sûr, nous n'avions pas la force de communication d'une multinationale comme Stellantis. Ils nous ont aidés à faire comprendre aux gens qu'il était possible en France de conduire ce produit à partir de 14 ans, en Allemagne à partir de 15 ans. Ils ont donné beaucoup de visibilité à notre marché", déclare Tom Faget, directeur des ventes et du marketing d'Aixam.</p>
+            <span class="english-block">"We're specialised in this niche market and we're very good at what we do, but of course, we didn't have the communication strength of a multinational like Stellantis. They helped us to make people understand that it was possible in France to drive this product from 14-years-old, in Germany from 15-years-old. They gave a lot of visibility to our market," says Aixam sales and marketing director Tom Faget.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Aixam a investi 30 millions d'euros (£25 millions; 33 millions de dollars) pour développer sa capacité de production en France.</p>
+            <span class="english-block">Aixam has invested €30m (£25m; $33m) in expanding its production capacity in France. And its sales are growing in other European countries, even as the French market slows.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Ligier de France dit que les jeunes choisissent les petites voitures plutôt que les scooters</p>
+            <span class="english-block">France's Ligier says young people are choosing tiny cars over scooters</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">La concurrence est en train de produire des mini-cars de plus en plus sophistiqués, dont certains coûtent autant qu'une petite voiture conventionnelle.</p>
+            <span class="english-block">Meanwhile, the competition is producing increasingly sophisticated minicars - some costing as much as a small conventional car. At Ligier, marketing director Romain Illegems says the biggest change is in who's buying them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">" Nous sommes passés de la mobilité imposée aux gens à la mobilité choisie par les gens. Avant, ces véhicules étaient quelque chose que vous utilisaisiez parce que vous aviez absolument besoin de vous déplacer, parce qu'il n'y avait pas de transport public, ou parce que vous n'aviez pas de permis.</p>
+            <span class="english-block">"We've gone from mobility that was imposed on people to mobility that people choose. Before, these vehicles were something you used because you absolutely needed to get around, because there was no public transport, or because you didn't have a licence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">" Aujourd'hui, les adolescents préfèrent les scooters ou les mopeds, car ils sont plus sûrs et offrent une meilleure protection contre le temps.</p>
+            <span class="english-block">"Today, teenagers are choosing them instead of scooters or mopeds, because they're safer and offer better protection from the weather. Young people now account for 40% of our customers."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Il y a des limites, bien sûr, seulement deux places, une vitesse maximale de 45 km/h et aucune autoroute, mais pour Selena, qui loue son Ami pour 60 € par mois, plus une assurance, c'est un petit prix à payer pour l'indépendance.</p>
+            <span class="english-block">There are limitations, of course. Just two seats, a maximum speed of 45km/h and no motorways. But for Selena, who rents her Ami for €60 a month, plus insurance, it's a small price to pay for independence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Les pièces moteurs qui " combattent les lois de l'univers "</p>
+            <span class="english-block">The engine parts that 'fight the laws of the universe'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Les diplômés gèrent l'IA, mais apprennent-ils beaucoup d'autres choses ?</p>
+            <span class="english-block">Graduates are managing AI - but are they learning much else?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">"Un bruit ennuyeux": la recherche de drones plus furtifs</p>
+            <span class="english-block">'An annoying buzz': The search for stealthier drones</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

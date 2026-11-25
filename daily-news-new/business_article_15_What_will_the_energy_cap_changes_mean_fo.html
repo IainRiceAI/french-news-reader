@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What will the energy cap changes mean for my bills?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>What will the energy cap changes mean for my bills?</h1>
+        <div class="meta-info">
+            <span>📅 Wed, 25 Nov 2026 00:33:25 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cdd29v8mp9jo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Regulator Ofgem is raising the cap affecting the energy bills of millions of households.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les factures d'énergie devraient grimper en janvier, les prix régis par le régulateur Ofgem étant en hausse au plus froid de l'année.</p>
+            <span class="english-block">Energy bills are to soar in January, as prices governed by regulator Ofgem's cap rise at the coldest time of the year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Le plafond touche des millions de personnes en Angleterre, en Écosse et au Pays de Galles et reflète les coûts de gros plus élevés du gaz qui ont été augmentés par la guerre entre les États-Unis et Israël contre l'Iran.</p>
+            <span class="english-block">The cap affects millions of people in England, Scotland and Wales, and reflects higher wholesale gas costs which have been pushed up by the US-Israel war with Iran.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Cela signifie que les personnes qui bénéficient de tarifs variables doivent lire avec précision le compteur, s'assurer qu'elles reçoivent tout le soutien dont elles ont droit et prendre soin de la consommation d'énergie.</p>
+            <span class="english-block">It means people on variable tariffs should give an accurate meter reading, ensure they are receiving all the support to which they are entitled, and take care over energy use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Le plafond énergétique fixe le montant maximum que les clients peuvent facturer pour chaque unité de gaz et d'électricité utilisée sur des tarifs variables standard.</p>
+            <span class="english-block">The energy cap fixes the maximum amount which customers on standard variable tariffs can be charged for each unit of gas and electricity used.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Il couvre plus de 20 millions de ménages en Angleterre, au Pays de Galles et en Écosse et est fixé par le régulateur Ofgem tous les trois mois, en dehors.</p>
+            <span class="english-block">It covers more than 20 million households in England, Wales and Scotland and is set by the regulator Ofgem every three months, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Il affecte les personnes qui paient par débit direct, par crédit standard (elles paient lorsqu'elles reçoivent une facture) ou par compteurs de paiement anticipé de manière légèrement différente.</p>
+            <span class="english-block">It affects those paying by direct debit, by standard credit (they pay when they get a bill), or prepayment meters in slightly different ways.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">La plupart de l'augmentation du plafond des prix de l'énergie est et sera motivée par des prix plus élevés du gaz.</p>
+            <span class="english-block">Most of the increase in the energy price cap has, and will be, driven by higher gas prices.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">La décision du gouvernement de supprimer temporairement la TVA des factures d'électricité nationales a permis de réduire environ 45 livres sterling par an par rapport à une facture typique.</p>
+            <span class="english-block">The government's decision to temporarily remove VAT from domestic electricity bills has cut about £45 a year from a typical bill.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Pendant ce temps, des millions de ménages recevront un paiement automatique de 100 £ pour couvrir les coûts hivernaux.</p>
+            <span class="english-block">Meanwhile, millions of households will receive a £100 automatic payment to help cover winter costs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Le chiffre d'utilisation annuel typique s'applique à la première catégorie: les ménages à double carburant à tarif variable standard qui paient par débit direct.</p>
+            <span class="english-block">The typical annual usage figure applies to the first category: dual-fuel households on a standard variable tariff which pay by direct debit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Mais les factures réelles des clients dépendent de la quantité d'énergie utilisée et de la façon dont ils en paient.</p>
+            <span class="english-block">But customers' actual bills depend on the amount of energy used and how they pay for it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Les 11 millions de ménages qui bénéficient de tarifs fixes ne voient pas leurs prix changer avant la fin de leur période fixe.</p>
+            <span class="english-block">The roughly 11 million households on fixed tariffs do not see their prices change until the end of their fixed term.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Ofgem réglemente le marché de l'énergie en Angleterre, en Écosse et au Pays de Galles.</p>
+            <span class="english-block">Ofgem regulates the energy market in England, Scotland and Wales. Northern Ireland has a separate system.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Bien que le prix maximal fixe les prix unitaires de l'essence et de l'électricité, la facture réelle de votre ménage dépend de la quantité d'énergie que vous utilisez et de la façon dont vous la payez.</p>
+            <span class="english-block">Although the price cap sets the unit prices for gas and electricity, your household's actual bill depends on the overall amount of energy you use, and how you pay for it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Où vous vivez, le type de propriété que vous possédez, son économie énergétique, le nombre de personnes qui y vivent et le temps font toute la différence.</p>
+            <span class="english-block">Where you live, the type of property you have, how energy efficient it is, how many people live there, and the weather all make a difference.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Le plafond Ofgem est illustré en utilisant une consommation d'énergie "typique" des ménages en une année avec une seule facture de gaz et d'électricité réglée par débit direct.</p>
+            <span class="english-block">The Ofgem cap is illustrated using "typical" household energy use in a year with a single bill for gas and electricity settled by direct debit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">La grande majorité des gens paient leur facture de cette façon pour aider à répartir les paiements tout au long de l'année.</p>
+            <span class="english-block">The vast majority of people pay their bill this way to help spread payments across the year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">En juillet, Ofgem a réduit ce qu'elle considère comme un niveau " typique " de consommation d'énergie, car de nombreuses maisons ont réduit en raison des prix élevés ces dernières années, tandis que l'efficacité énergétique s'est améliorée.</p>
+            <span class="english-block">In July, Ofgem reduced what it believes to be a "typical" level of energy use, because many homes have cut back due to high prices in recent years while energy efficiency has improved.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Son nouveau calcul est de 9 500 kWh de gaz et de 2 500 kWh d'électricité par an.</p>
+            <span class="english-block">Its new estimate is 9,500 kWh of gas and 2,500 kWh of electricity a year.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">En soumettant une lecture du compteur lorsque le plafond change, vous ne serez pas facturé pour l'utilisation estimée au taux incorrect.</p>
+            <span class="english-block">Submitting a meter reading when the cap changes means you are not charged for estimated usage at the wrong rate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Ceci est particulièrement important lorsque les prix augmentent.</p>
+            <span class="english-block">This is especially important when prices go up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Les clients disposant de compteurs intelligents fonctionnants n'ont pas besoin de soumettre une lecture car leur facture est calculée automatiquement.</p>
+            <span class="english-block">Customers with working smart meters do not need to submit a reading as their bill is calculated automatically.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Les factures d'énergie vont grimper - voici comment vous pouvez soulager la douleur</p>
+            <span class="english-block">Energy bills will soar - here's how you can ease the pain</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Ofgem contrôle également les frais permanents, qui sont des frais quotidiens fixes pour couvrir les coûts de raccordement des ménages à l'alimentation en gaz et en électricité.</p>
+            <span class="english-block">Ofgem also controls standing charges, which are a fixed daily fee to cover the costs of connecting households to gas and electricity supplies. These vary slightly by region, external and payment method.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Entre le 1er octobre et le 31 décembre 2026, les frais de paiement moyens pour les clients de débit direct seront de 54,83 p. par jour pour l'électricité et de 29,68 p. par jour pour le gaz.</p>
+            <span class="english-block">Between 1 October and 31 December 2026, average standing charges for direct debit customers will be 54.83p a day for electricity and 29.68p a day for gas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">La charge d'électricité est inférieure au montant facturé au cours des trois mois précédents, tandis que la charge du gaz reste en grande partie inchangée.</p>
+            <span class="english-block">The electricity charge is lower than the amount charged in the previous three-month period, while the gas charge is largely unchanged.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Les militants ont longtemps soutenu que les frais de dépôt sont injustes parce qu'ils représentent une plus grande proportion de la facture des ménages à faible consommation d'énergie.</p>
+            <span class="english-block">Campaigners have long argued that standing charges are unfair because they make up a bigger proportion of the bill for low-energy households. Others say it just shifts the cost from one part of the bill to another rather than cutting it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Le gouvernement a annoncé des plans pour supprimer les charges de gaz, bien qu'aucun détail n'ait été publié sur la façon dont cela se produira</p>
+            <span class="english-block">The government has announced plans to remove gas standing charges, although no details have been published on how that will happen</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Les accords fixes offrent une certitude pour une période déterminée  souvent un an, ou plus  mais si les prix de l'énergie baissent pendant que vous êtes sur l'accord, vous pourriez être coincé à un prix plus élevé.</p>
+            <span class="english-block">Fixed deals provide certainty for a set period – often a year, or longer – but if energy prices drop while you are on the deal, you could be stuck at a higher price.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Vous devrez peut-être payer une pénalité pour avoir quitté un contrat fixé plus tôt si vous changez d'avis.</p>
+            <span class="english-block">You may also have to pay a penalty to leave a fixed deal early if you change your mind.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Les experts recommandent de vérifier les sites de comparaison des prix de l'énergie sur l'ensemble du marché pour trouver la meilleure offre et d'étudier les détails des frais de sortie.</p>
+            <span class="english-block">Experts recommend checking whole-of-market energy price comparison sites to help find the best deal and studying the details of exit fees.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Depuis le 1er avril, les frais de factures d'énergie liés au régime d'isolation des ménages à faible revenu - appelé obligation des entreprises énergétiques - ont été supprimés, et pendant trois ans, les projets d'énergie renouvelable seront financés à 75% par des taxes générales au lieu d'une taxe sur les factures d'énergie.</p>
+            <span class="english-block">Since 1 April, energy bill charges related to the low-income household insulation scheme - called the Energy Company Obligation - have been scrapped, and for three years, renewable energy projects will be 75%-funded by general taxation instead of a levy on energy bills.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">La réduction sera bénéfique à presque tous les habitants d'Angleterre, du Pays de Galles et de l'Écosse, bien que les montants varient d'un ménage à l'autre.</p>
+            <span class="english-block">Nearly everyone in England, Wales and Scotland will benefit from this cut, although the amounts will vary between households.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Cependant, le coût de l'entretien et du renforcement des infrastructures du réseau énergétique telles que les lignes électriques, les câbles et les gazoducs augmente.</p>
+            <span class="english-block">However, the cost of maintaining and strengthening energy network infrastructure like power lines, cables and gas pipes is rising.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">En décembre 2025, Ofgem a approuvé un investissement de 28 milliards de livres sterling pour améliorer les réseaux électriques et gaziers en Grande-Bretagne afin de renforcer les approvisionnements en énergie et de protéger les clients contre les prix volatils de l'énergie.</p>
+            <span class="english-block">In December 2025, Ofgem approved a £28bn investment to improve the electricity and gas grids in Great Britain to strengthen energy supplies and protect customers against volatile energy prices. It will also reduce Britain's dependence on gas.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Les clients paieront une partie du coût de la mise à niveau, grâce à une addition de 108 £ aux factures d'énergie d'ici 2031.</p>
+            <span class="english-block">Customers will pay part of the cost of the upgrade, through an additional £108 added to energy bills by 2031.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Ces frais ont commencé à apparaître à partir d'avril 2026, ajoutant environ 6 livres sterling par mois à la facture pour un ménage typique couvert par le plafond énergétique.</p>
+            <span class="english-block">These charges started to appear from April 2026, adding about £6 a month to the bill for a typical household covered by the energy cap.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Les factures d'électricité élevées visées dans le cadre d'un changement prévu des prix de l'énergie</p>
+            <span class="english-block">High electricity bills targeted in planned shakeup to energy pricing</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Les ménages pourraient obtenir de l'électricité gratuite pour se laver les week-ends ensoleillés.</p>
+            <span class="english-block">Households could get free electricity for doing washing on sunny weekends</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Les fournisseurs doivent offrir aux clients des régimes de paiement abordables ou des vacances de remboursement si ils ont du mal à payer leurs factures.</p>
+            <span class="english-block">Suppliers must offer customers affordable payment plans or repayment holidays if they are struggling to pay their bills. Most also offer hardship grants.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Depuis l'invasion russe de l'Ukraine en 2022, les factures ont augmenté d'environ 70% par rapport à la norme antérieure à la crise, et depuis lors, les factures et les frais impayés ont explosé.</p>
+            <span class="english-block">Since the Russian invasion of Ukraine in 2022, bills have gone up by about 70% compared with the pre-crisis norm, and since then unpaid bills and charges have shot up.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Vanessa Northam, directrice de l'organisme de bienfaisance StepChange, a des conseils pour les personnes qui pourraient avoir des difficultés:</p>
+            <span class="english-block">Vanessa Northam, director at debt charity StepChange, has advice for people who may be struggling:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Faites le bilan de l'argent de la maison qui entre et sort</p>
+            <span class="english-block">Take stock of all household money coming in and going out</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Regardez attentivement la quantité d'énergie que vous consommez et soyez attentif aux factures estimées, qui pourraient s'avérer inexactes.</p>
+            <span class="english-block">Look closely at how much energy you are using, and be alert to estimated bills, which might prove to be inaccurate</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Dites à votre fournisseur si vous pensez que vous allez avoir des difficultés</p>
+            <span class="english-block">Tell your supplier if you think you are going to struggle</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Il est souvent préférable de parler à quelqu'un qui comprend parfaitement votre situation.</p>
+            <span class="english-block">It is often best to try to talk to someone who can fully understand your situation</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">L'énergie britannique dispose d'une liste de programmes d'aide externes.</p>
+            <span class="english-block">Energy UK has a list of support schemes., external</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Le pétrole de chauffage n'est pas couvert par le plafond énergétique. Environ 1,5 million de ménages britanniques utilisent du pétrole de chauffage et ils ont déjà vu une forte augmentation des factures depuis que le conflit au Moyen-Orient a déclenché un bond des prix du pétrole.</p>
+            <span class="english-block">Heating oil is not covered by the energy cap. About 1.5 million UK households use heating oil and they have already seen a sharp increase in bills since the Middle East conflict triggered a jump in oil prices. Some users have seen costs more than double.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">La question est particulièrement grave en Irlande du Nord, où environ 500 000 foyers utilisent le chauffage, soit près des deux tiers de tous les ménages.</p>
+            <span class="english-block">The issue is particularly acute in Northern Ireland, where about 500,000 homes use heating all, almost two-thirds of all households.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">En mars, le gouvernement a annoncé un programme de soutien de 53 millions de livres sterling pour aider les ménages à faible revenu des communautés rurales qui utilisent de l'huile de chauffage.</p>
+            <span class="english-block">In March, the government announced a £53m support package to help low-income households in rural communities who use heating oil.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Starmer annonce une aide de 53 millions de livres sterling pour aider à couvrir les coûts du pétrole de chauffage</p>
+            <span class="english-block">Starmer announces £53m support to help with heating oil costs</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Comment les coûts croissants causés par la guerre en Iran affectent-ils votre qualité de vie ou votre entreprise?</p>
+            <span class="english-block">How are rising costs caused by the Iran war affecting your quality of life or business?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
