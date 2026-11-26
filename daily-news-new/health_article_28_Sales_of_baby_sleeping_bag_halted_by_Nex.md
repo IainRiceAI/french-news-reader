@@ -91,9 +91,9 @@
 
 ### Section 11
 
-**🇬🇧 EN:** According to the British Retail Consortium (BRC), a significant hazard arises if a child slips through the neck opening of a sleep bag and the material covers the child's nose and mouth.
+**🇬🇧 EN:** In an article on the British Retail Consortium (BRC) website, safety science company UL Solutions explains that a significant hazard arises if a child slips through the neck opening of a sleep bag and the material covers the child's nose and mouth.
 
-**🇫🇷 FR:** *Selon le British Retail Consortium (BRC), un danger important se pose si un enfant glisse à travers l'ouverture du cou d'un sac de sommeil et que le matériau couvre le nez et la bouche de l'enfant.*
+**🇫🇷 FR:** *Dans un article du site Web du British Retail Consortium (BRC), la société de science de la sécurité UL Solutions explique qu'un danger important peut survenir si un enfant glisse à travers l'ouverture du cou d'un sac de sommeil et que le matériau couvre le nez et la bouche de l'enfant.*
 
 ---
 
@@ -267,13 +267,21 @@
 
 ### Section 33
 
+**🇬🇧 EN:** Clarification 25 November: This article originally included a quote attributed to the British Retail Consortium (BRC) and has been amended to make clear that the quote was from UL Solutions, an Associate Member of the BRC.
+
+**🇫🇷 FR:** *Clarification du 25 novembre: Cet article comprenait à l'origine une citation attribuée au British Retail Consortium (BRC) et a été modifiée pour préciser que la citation était de UL Solutions, membre associé du BRC.*
+
+---
+
+### Section 34
+
 **🇬🇧 EN:** Have you been affected by the issues discussed in this story?
 
 **🇫🇷 FR:** *Les questions abordées dans cet article vous ont- elles touchées?*
 
 ---
 
-### Section 34
+### Section 35
 
 **🇬🇧 EN:** Online marketplaces still selling dozens of unsafe baby products, Which? finds
 
@@ -281,7 +289,7 @@
 
 ---
 
-### Section 35
+### Section 36
 
 **🇬🇧 EN:** Calls for 'urgent action' on baby-sleep industry after BBC investigation
 
@@ -289,7 +297,7 @@
 
 ---
 
-### Section 36
+### Section 37
 
 **🇬🇧 EN:** Dangerous baby-sleep advice given to parents by self-described experts, secret filming reveals
 

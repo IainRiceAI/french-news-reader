@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Has global jihadism failed, or is it simply changing shape?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">world</div>
+        <h1>Has global jihadism failed, or is it simply changing shape?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 26 Nov 2026 00:22:18 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cmx2x4e0n5jro?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Jihadist groups appear to be focusing on local issues rather than global terror. Does it signify a real change?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Le djihadisme mondial a- t- il échoué, ou est- il simplement en train de changer de forme?</p>
+            <span class="english-block">Has global jihadism failed, or is it simply changing shape?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Le riz, les pâtes, le sucre, l'huile de cuisson et les haricots ne sont pas ce que l'on pourrait s'attendre à voir dans la propagande djihadiste. Pourtant, ceux-ci faisaient partie des fournitures que la branche somalienne d'Al-Qaïda, al-Shabab, a déclaré que son "charité" avait distribuées à des centaines de familles en difficulté en août, alors qu'elle publiait l'aide via ses comptes de médias sociaux et sa station de radio.</p>
+            <span class="english-block">Rice, pasta, sugar, cooking oil and beans are hardly what you'd expect to see in jihadist propaganda. Yet these were among the supplies that al-Qaeda's Somali branch, al-Shabab, said its "charity" had handed out to hundreds of struggling families in August, as it publicised the aid through its social media accounts and radio station.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Le groupe, qui contrôle une grande partie de la Somalie rurale du sud et du centre, a souhaité faire la lumière de son soi-disant travail humanitaire tout au long de 2026.</p>
+            <span class="english-block">The group, which controls large parts of rural southern and central Somalia, has been keen to show off its so-called humanitarian work throughout 2026.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">"Que Dieu les récompense", a déclaré une femme locale dans une vidéo d'al-Shabab.</p>
+            <span class="english-block">"May God reward them," said a local woman in one of al-Shabab's videos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Tout cela fait partie d'un effort pour gagner les communautés locales et se présenter comme plus qu'un groupe djihadiste.</p>
+            <span class="english-block">It's all part of an effort to win over local communities and present itself as more than just a jihadist group.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Al-Shabab a fait connaître son travail humanitaire</p>
+            <span class="english-block">Al-Shabab has been publicising its humanitarian work</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Un quart de siècle après les attaques d'al-Qaïda du 11 septembre aux États-Unis, et 12 ans après que le groupe État islamique (EI) ait déclaré son soi-disant califat en Irak et en Syrie, le mouvement djihadiste semble très différent.</p>
+            <span class="english-block">A quarter of a century after al-Qaeda's 9/11 attacks in the US, and 12 years after Islamic State group (IS) declared its so-called caliphate in Iraq and Syria, the jihadist movement looks very different.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Au lieu de se concentrer sur l'attaque de l'Occident ou sur la lutte pour un État islamique mondial, certains - en particulier ceux liés à Al-Qaïda - mettent davantage d'efforts à gagner le pouvoir plus près de chez eux.</p>
+            <span class="english-block">Rather than focusing on attacking the West or fighting for a global Islamic state, some - especially those linked to al-Qaeda - are putting more effort into winning power closer to home. And they seem increasingly willing to make compromises along the way.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les pragmatistes voient le travail avec les groupes locaux et les anciens ennemis comme un moyen de gagner du pouvoir. Mais les pragmatistes représentent-ils un véritable changement ou simplement un changement de tactique pour atteindre les mêmes objectifs finaux: établir un État qui applique leur interprétation stricte de la charia islamique à la fois à la maison et dans ses relations avec le monde extérieur?</p>
+            <span class="english-block">Because of this, a debate is growing within the movement. While hardliners reject compromise, pragmatists see working with local groups and former enemies as a way to gain power. But do the pragmatists represent a genuine change or simply a shift in tactics to achieve the same ultimate goals: establishing a state that applies their strict interpretation of Islamic Sharia law both at home and in its dealings with the outside world?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Ni Al-Qaïda ni l'EI n'ont réalisé leur rêve ultime: prendre le contrôle d'un ou de plusieurs pays et les gouverner selon leur interprétation stricte de l'islam.</p>
+            <span class="english-block">Neither al-Qaeda nor IS has achieved its ultimate dream: taking over one or more countries and ruling them according to their strict interpretation of Islam.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les deux ont subi de grandes défaites, perdu des dirigeants et ont fait face à des années de pression internationale. L'EI, qui contrôlait autrefois de vastes zones de l'Irak et de la Syrie, a perdu son dernier bastion territoriale en 2019.</p>
+            <span class="english-block">Both have suffered major defeats, lost leaders and faced years of international pressure. IS, which once controlled vast areas of Iraq and Syria, lost its last territorial stronghold in 2019. But jihadism hasn't gone away.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">L'Afrique est maintenant le principal champ de bataille du djihadisme, avec les puissantes branches d'al-Qaïda, le JNIM au Sahel (Mali, Burkina Faso et Niger) et al-Shabab en Somalie, combattant des insurgés de longue date.</p>
+            <span class="english-block">Africa is now the main battleground for jihadism, with al-Qaeda's powerful branches, JNIM in the Sahel (Mali, Burkina Faso and Niger) and al-Shabab in Somalia, fighting long-running insurgencies. IS, its bitter rival, has active branches in Nigeria, the Democratic Republic of Congo, the Sahel, Mozambique and Somalia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Une source importante d'inspiration et d'envie, que les djihadistes le reconnaissent ou non, est le nouveau président de la Syrie, Ahmed al-Sharaa. L'ancien commandant de l'EI et alors commandant d'Al-Qaïda était autrefois recherché par les États-Unis, mais est arrivé au pouvoir en Syrie en décembre 2024 et a été accueilli par les dirigeants occidentaux.</p>
+            <span class="english-block">One major source of inspiration, and envy, whether jihadists admit it or not, is Syria's new president, Ahmed al-Sharaa. The former IS and then al-Qaeda commander was once wanted by the US but rose to power in Syria in December 2024 and was welcomed by Western leaders.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Autrefois connu sous son nom de guerre militant Abu Mohammed al-Jolani, il a dirigé le groupe djihadiste Nusra Front - initialement lié à l'EI et ensuite à Al-Qaïda - et plus tard le groupe Hayat Tahrir al-Sham (HTS).</p>
+            <span class="english-block">Once known by his militant nom de guerre Abu Mohammed al-Jolani, he led the jihadist group Nusra Front - initially linked to IS and then al-Qaeda - and later the group Hayat Tahrir al-Sham (HTS).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Il a progressivement rompu les liens avec l'EI et Al-Qaïda et s'est éloigné de leurs appels au djihad mondial.</p>
+            <span class="english-block">He gradually broke ties with both IS and al-Qaeda and distanced himself from their calls for global jihad.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Il s'est plutôt concentré sur la Syrie, en construisant une base de puissance locale dans la province d'Idlib, au nord-ouest.</p>
+            <span class="english-block">Instead, he focused on Syria, building a local power base in the north-western Idlib province.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Ce qui a surpris tout le monde, c'est sa volonté croissante de travailler avec des groupes non islamistes et de s'engager avec des puissances étrangères.</p>
+            <span class="english-block">What surprised everyone was his growing willingness to work with non-Islamist groups and engage with foreign powers. As HTS advanced on Damascus, its leadership sought to reassure the international community, reaching out even to Russia, a key ally of then-president Bashar al-Assad, to allay fears of an Islamist takeover.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Ce pragmatisme, combiné à des conditions géopolitiques favorables - y compris une Russie et un Iran plus faibles - l'a aidé à prendre le pouvoir en Syrie.</p>
+            <span class="english-block">That pragmatism, combined with favourable geopolitical conditions - including a weaker Russia and Iran - helped him take power in Syria.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Mais le fait qu'il ait été accueilli par des dirigeants mondiaux, dont le président américain Donald Trump, a été encore plus remarquable.</p>
+            <span class="english-block">But the sight of him being welcomed by world leaders, including US President Donald Trump, was even more remarkable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Trump a plaisanté avec Sharaa quand il a visité la Maison Blanche</p>
+            <span class="english-block">Trump joked with Sharaa when he visited the White House</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Lors de la visite de Sharaa à la Maison Blanche en novembre 2025, Trump lui a fait une pulvérisation avec son propre cologne de marque, a demandé en plaisantant combien de femmes il avait et l'a félicité comme un " leader très fort ".</p>
+            <span class="english-block">During Sharaa's visit to the White House in November 2025, Trump sprayed him with his own branded cologne, jokingly asked how many wives he had and praised him as a "very strong leader".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Pour certains djihadistes, le succès de Sharaa a été une source d'inspiration, mais pour d'autres, ses actions sont une trahison de tout ce en quoi ils croient.</p>
+            <span class="english-block">For some jihadists, Sharaa's success has been inspiring. Others, however, see his actions as a betrayal of everything they believe in.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">L'EI a déclaré le djihad contre le nouveau gouvernement islamique de Syrie, qualifiant Sharaa et ses responsables de "apostats", et a mené des attaques contre les forces gouvernementales sur cette base.</p>
+            <span class="english-block">IS has declared jihad against Syria's new Islamist government, branding Sharaa and his officials "apostates", and has carried out attacks against government forces on that basis. Other hardline clerics have taken a similar stance, but have stopped short of openly calling for jihad against Sharaa.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">La division entre les djihadistes de ligne dure et leurs homologues plus pragmatiques a alimenté un débat en ligne amer depuis 2025, avec des voix rivales échangant des accusations de trahison et même publiant des livres concurrents pour défendre leurs positions.</p>
+            <span class="english-block">The divide between hardline jihadists and their more pragmatic counterparts has fuelled a bitter online debate since 2025, with rival voices trading accusations of betrayal and even publishing competing books to defend their positions.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Sharaa, centre, en 2016, était autrefois un leader djihadiste recherché par le FBI</p>
+            <span class="english-block">Sharaa, centre, in 2016, was once a jihadist leader wanted by the FBI</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Pour les radicaux, aller trop loin peut signifier abandonner leurs croyances fondamentales. Cela pourrait inclure la réticence à imposer leur version stricte de la loi islamique, à accepter des lois ou une constitution " faits par l'homme ", à participer à des élections, à travailler avec des groupes non islamistes ou à établir des liens avec des gouvernements qu'ils considèrent comme " infidèles ".</p>
+            <span class="english-block">For hardliners, going too far can mean abandoning their core beliefs. This might include holding back from imposing their strict version of Islamic law, accepting "man-made" laws or a constitution, taking part in elections, working with non-Islamist groups, or building ties with governments they consider "infidel".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Une autre source d'inspiration pour les djihadistes a été le retour des talibans au pouvoir en Afghanistan en 2021, car il a montré qu'un mouvement islamiste pouvait éventuellement prendre le contrôle d'un pays après des années de combats avec des forces soutenues par l'Occident.</p>
+            <span class="english-block">Another source of inspiration for jihadists was the Taliban's return to power in Afghanistan in 2021, as it showed that an Islamist movement could eventually take control of a country after years of fighting Western-backed forces. It engaged local groups, slowly secured power across the country, used international diplomacy, and bided its time before taking the capital, Kabul, in a lightning offensive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Deux groupes méritent particulièrement d'être observés: les succursales d'Al-Qaïda au Mali et en Somalie.</p>
+            <span class="english-block">Two groups are especially worth watching: al-Qaeda's branches in Mali and Somalia.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Fin avril, la branche d'al-Qaïda au Sahel, connue sous le nom de JNIM, a montré un pragmatisme considérable en se joignant aux séparatistes nationalistes tuaregs - contre lesquels elle avait parfois combattu - pour lancer une offensive majeure qui menaçait les dirigeants militaires du Mali.</p>
+            <span class="english-block">In late April, al-Qaeda's Sahel branch, known as JNIM, showed considerable pragmatism by joining forces with nationalist Tuareg separatists - whom it had occasionally fought - to launch a major offensive that threatened Mali's military rulers. It even went as far as to call the Tuaregs "brothers".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Mais ce n'est pas seulement la force militaire croissante du JNIM qui attire l'attention, c'est aussi la façon dont le groupe se présente.</p>
+            <span class="english-block">But it's not just JNIM's growing military strength that's attracting attention. It's also how the group is presenting itself.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Sa propagande a autrefois présenté de manière importante les dirigeants d'Al-Qaïda, des slogans et des appels au djihad mondial.</p>
+            <span class="english-block">Its propaganda once prominently featured al-Qaeda's leaders, slogans and calls for global jihad. Since late 2024, however, its videos have dropped the familiar al-Qaeda branding.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Et au lieu de parler de causes musulmanes mondiales, le JNIM s'est de plus en plus concentré sur les problèmes locaux, se présentant comme un défenseur des gens ordinaires contre les dirigeants corrompus et abusifs.</p>
+            <span class="english-block">And instead of talking about global Muslim causes, JNIM has increasingly focused on local problems, portraying itself as a defender of ordinary people against corrupt and abusive rulers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Il a accusé à plusieurs reprises le gouvernement militaire malien et ses alliés russes de tuer des civils et de rendre la vie des gens pire.</p>
+            <span class="english-block">It has repeatedly accused Mali's military government and its Russian allies of killing civilians and making people's lives worse.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">En avril, il a fait appel à "tous les patriotes sincères" pour aider à construire un "nouveau Mali", promettant sécurité, justice et prospérité aux côtés de la loi islamique.</p>
+            <span class="english-block">In April, it appealed to "all sincere patriots" to help build a "new Mali", promising security, justice and prosperity alongside Islamic law.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Il a même suggéré qu'il pourrait avoir des " relations équilibrées " avec la Russie, malgré le fait qu'ils luttent contre les forces russes soutenant le gouvernement malien.</p>
+            <span class="english-block">It has even suggested it could have "balanced relations" with Russia, despite the fact they're fighting Russian forces backing Mali's government. Its wording echoed that of HTS to Russia as it advanced on Damascus.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Il y a des parallèles avec l'approche de Sharaa en Syrie: construire des alliances locales, rassurer les ennemis potentiels et éviter de donner aux puissances extérieures une raison d'intervenir.</p>
+            <span class="english-block">There are parallels with Sharaa's approach in Syria: build local alliances, reassure potential enemies and avoid giving outside powers a reason to intervene.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Aman Bezreh, spécialiste de la sécurité en Afrique, voit des similitudes entre les deux groupes, mais dit que le changement du JNIM peut prendre du temps.</p>
+            <span class="english-block">Africa security specialist Aman Bezreh sees similarities between the two groups, but says JNIM's shift may take time.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">"JNIM a en effet montré des signes de pragmatisme similaires à HTS, dit-elle. " Cependant, son renouvellement de marque a progressé plus lentement parce que le groupe se concentre simultanément sur l'expansion dans de nouveaux territoires et le recrutement de divers groupes".</p>
+            <span class="english-block">"JNIM has indeed shown signs of pragmatism similar to HTS", she says. "However, its rebranding has progressed more slowly because the group is simultaneously focused on expanding into new territories and recruiting from diverse pools."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Le débat sur la voie à suivre se déroule également au sein de la direction du JNIM, selon Wassim Nasr, journaliste et expert du djihadisme de France 24.</p>
+            <span class="english-block">The debate over which path to follow is also taking place within JNIM's leadership, according to Wassim Nasr, a France 24 journalist and jihadism expert.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Il dit qu'un camp favorise l'approche des talibans de prendre le pouvoir par la force avec des concessions minimales, tandis que l'autre, qui, selon lui, a actuellement la mainmise, favorise une approche plus proche de celle des HTS en Syrie - faire des compromis et construire des alliances plus larges pour prendre le pouvoir plus rapidement.</p>
+            <span class="english-block">He says one camp favours the Taliban's approach of taking power through force with minimal concessions. The other, which he says currently has the upper hand, favours an approach closer to that of Syria's HTS - making compromises and building wider alliances to gain power more quickly.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Nasr pense que le JNIM peut emprunter à ces deux modèles, mais qu'une rupture avec Al-Qaïda est inévitable en raison de son évolution politique.</p>
+            <span class="english-block">Nasr believes JNIM may borrow from both models, but that a break with al-Qaeda is inevitable as a result of its political evolution.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Comme JNIM, al-Shabab en Somalie semble disposé à conclure des accords avec d'anciens ennemis.</p>
+            <span class="english-block">Like JNIM, al-Shabab in Somalia appears willing to make deals with former enemies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Selon Abdullahi Guji, spécialiste de la Somalie de la BBC Monitoring, al-Shabab a conclu une trêve en octobre avec une puissante tribu somalienne, les Ma'awisley, dont les combattants étaient à l'avant-garde de la lutte contre le groupe.</p>
+            <span class="english-block">According to Abdullahi Guji, BBC Monitoring's Somalia specialist, al-Shabab reached a truce in October with a powerful Somali tribe, the Ma'awisley, whose fighters had been at the forefront of the fight against the group.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">La tribu a depuis retiré ses combattants de la ligne de front, ce qui a été un coup sérieux à la campagne du gouvernement contre les djihadistes, dit Guji.</p>
+            <span class="english-block">The tribe has since withdrawn its fighters from the front line, dealing a serious blow to the government's campaign against jihadists, says Guji.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Guji estime que le groupe pourrait bientôt avoir la chance de tester s'il peut prendre le pouvoir et s'établir comme un gouvernement alternatif dans de plus vastes parties du pays.</p>
+            <span class="english-block">Guji believes the group may soon have a chance to test whether it can seize power and establish itself as an alternative government across wider parts of the country.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Les forces de l'Union africaine se retirent de la Somalie en raison de la réduction des financements et de la fin de leur mandat qui approche en décembre.</p>
+            <span class="english-block">African Union forces are withdrawing from Somalia amid funding cuts and the approaching end of their mandate in December. Meanwhile, the Somali government is facing political crises and rebellions, creating vulnerabilities al-Shabab could exploit, he adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Il y a une autre raison pour laquelle certains djihadistes voient une opportunité de s'étendre: ils croient que les gouvernements occidentaux ont plus de poissons à frire.</p>
+            <span class="english-block">There's another reason some jihadists may see an opportunity to expand: they believe Western governments have bigger fish to fry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Avec la guerre en Ukraine, le conflit entre les États-Unis et l'Iran au Moyen-Orient et la rivalité croissante avec la Chine et la Russie, la lutte contre les djihadistes n'est plus la priorité qu'elle était après le 11 septembre.</p>
+            <span class="english-block">With the war in Ukraine, US-Iran conflict in the Middle East and growing rivalries with China and Russia, fighting jihadists is no longer the priority it was after 9/11.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Le retrait des États-Unis d'Afghanistan en 2021 et le retour au pouvoir des talibans, suivi de la montée de Sharaa en Syrie, ont renforcé cette conviction.</p>
+            <span class="english-block">The US withdrawal from Afghanistan in 2021 and the Taliban's return to power, followed by Sharaa's rise in Syria, have reinforced that belief.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Les talibans ont inspiré de nombreux djihadistes</p>
+            <span class="english-block">The Taliban has inspired many jihadists</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Colin Clarke, directeur exécutif du Soufan Center, un groupe de recherche à but non lucratif qui se concentre sur la sécurité, dit que certains groupes djihadistes ont appris que l'évitement de la confrontation avec les États-Unis peut les aider à échapper à l'action militaire occidentale et " à vivre pour se battre un autre jour ".</p>
+            <span class="english-block">Colin Clarke, executive director of the Soufan Center, a non-profit research group that focuses on security, says some jihadist groups have learnt that avoiding confrontation with the US can help them escape Western military action and "live to fight another day".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Cela ne veut pas dire que l'Occident a cessé de combattre le terrorisme, mais si les djihadistes pensent qu'il est distrait ou moins disposé à intervenir, ils peuvent se sentir encouragés à poursuivre le pouvoir.</p>
+            <span class="english-block">That doesn't mean the West has stopped fighting terrorism. But if jihadists believe it is distracted or less willing to intervene, they may feel emboldened to pursue power.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Contrairement à son rival, l'EI, al-Qaïda a longtemps montré une certaine souplesse dans la poursuite de ses objectifs.</p>
+            <span class="english-block">Unlike its fiercely uncompromising rival IS, al-Qaeda has long shown some flexibility in pursuing its goals. But history offers a warning.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">Après les soulèvements arabes de 2011, qui ont largement mis de côté Al-Qaïda, des groupes djihadistes affiliés au Yémen, en Libye et en Tunisie ont commencé à utiliser le nom Ansar al-Sharia (Supporters of Sharia) pour gagner le soutien local sans porter la marque Al-Qaïda.</p>
+            <span class="english-block">After the 2011 Arab uprisings, which largely sidelined al-Qaeda, affiliated jihadist groups in Yemen, Libya and Tunisia began using the name Ansar al-Sharia (Supporters of Sharia) to win local support without carrying the al-Qaeda brand.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Au Mali en 2012, les dirigeants d'Al-Qaïda ont conseillé aux djihadistes qui avaient pris le nord aux côtés des séparatistes tuareg de ne pas se précipiter pour imposer des règles islamiques strictes.</p>
+            <span class="english-block">In Mali in 2012, al-Qaeda leaders advised jihadists who had seized the north alongside Tuareg separatists not to rush into imposing strict Islamic rules. Instead, they urged them to work with local allies, avoid alienating communities and play down their al-Qaeda links.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">Le message n'était pas de renoncer à leurs ambitions, mais de montrer une patience stratégique jusqu'au moment opportun.</p>
+            <span class="english-block">The message wasn't to give up their ambitions. It was to show strategic patience until the time was right. That same thinking could be at work today.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Les démocrates ont une crise d'identité - ce ne sera pas une solution facile</p>
+            <span class="english-block">Democrats have an identity crisis - it won't be an easy fix</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">Les méga-riches russes imaginent déjà un avenir après Poutine.</p>
+            <span class="english-block">Russia's mega-rich are already imagining a future after Putin</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">La jeunesse européenne est en marche, mais est-ce que quelque chose les unit réellement?</p>
+            <span class="english-block">Europe's youth is on the march - but does anything actually unite them?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">Ces groupes changent-ils vraiment leurs ambitions, ou simplement leur tactique ? Même ceux qui plaident pour des compromis n'abandonneront pas nécessairement leur rêve d'établir un État régi par leur interprétation stricte de la loi islamique.</p>
+            <span class="english-block">So are these groups really changing their ambitions, or just their tactics? Even those advocating compromise aren't necessarily abandoning their dream of establishing a state ruled by their strict interpretation of Islamic law.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">Clarke se demande si cette approche plus pragmatique pourrait être une "stratégie de cheval de Troie"  un moyen pour les groupes djihadistes de gagner du pouvoir sans abandonner leurs objectifs à plus long terme.</p>
+            <span class="english-block">Clarke wonders whether this more pragmatic approach could be a "Trojan horse strategy" – a way for jihadist groups to gain power without giving up their longer-term goals.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.0" data-end="310.0">
+            <p class="french-block">"La grande question est de savoir si le pouvoir modère réellement ces groupes, ou s'ils changent simplement leurs tactiques pour survivre et renforcer leur position", dit-il.</p>
+            <span class="english-block">"The big question is whether being in power actually moderates these groups, or whether they're simply changing their tactics to survive and strengthen their position," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.0" data-end="315.0">
+            <p class="french-block">Mais tout le monde ne change pas de tactique.</p>
+            <span class="english-block">But not everyone is changing tactics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.0" data-end="320.0">
+            <p class="french-block">L'EI demeure fermement engagé dans ses ambitions mondiales et rejette les compromis. La branche d'Al-Qaïda au Yémen, l'AQAP, continue d'appeler à des attaques contre les États-Unis et Israël, et exhorte les attaques de "loup solitaire" contre des cibles occidentales et juives.</p>
+            <span class="english-block">IS remains firmly committed to its global ambitions and rejects compromise. Al-Qaeda's Yemen branch, AQAP, continues to call for attacks against the US and Israel, and urges "lone wolf" attacks against Western and Jewish targets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.0" data-end="325.0">
+            <p class="french-block">Il est trop tôt pour dire si des groupes comme JNIM et al-Shabab suivront l'exemple des talibans ou des Syriens, et s'ils sont prêts à faire des compromis.</p>
+            <span class="english-block">And it's too early to say whether groups like JNIM and al-Shabab will follow the Taliban or Syrian examples, and whether they're willing to make compromises.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.0" data-end="330.0">
+            <p class="french-block">Certains groupes djihadistes peuvent se concentrer davantage sur la politique locale alors qu'ils font face aux défis de la gouvernance.</p>
+            <span class="english-block">Some jihadist groups may become more focused on local politics as they face the challenges of governing. Others may simply be hiding their wider ambitions until they're strong enough to pursue them.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.0" data-end="335.0">
+            <p class="french-block">Le rêve du djihadiste mondial a peut-être échoué, mais le djihadisme est loin d'être terminé.</p>
+            <span class="english-block">The global jihadist dream may have failed, but jihadism is far from finished.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.0" data-end="340.0">
+            <p class="french-block">Image de référence: Reuters/Getty</p>
+            <span class="english-block">Lead image: Reuters/Getty</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.0" data-end="345.0">
+            <p class="french-block">Les questions soulevées dans cet article vous touchent- elles personnellement?</p>
+            <span class="english-block">Are you personally affected by the issues raised in this story?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

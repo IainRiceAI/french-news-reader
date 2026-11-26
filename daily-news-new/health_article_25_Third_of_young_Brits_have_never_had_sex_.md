@@ -275,13 +275,21 @@
 
 ### Section 34
 
+**🇬🇧 EN:** Have you been affected by the issues in this story? Share your experiences
+
+**🇫🇷 FR:** *Les questions abordées dans cet article vous ont- elles touchées?*
+
+---
+
+### Section 35
+
 **🇬🇧 EN:** Is there a right age to lose your virginity?
 
 **🇫🇷 FR:** *Y a-t-il un âge approprié pour perdre sa virginité ?*
 
 ---
 
-### Section 35
+### Section 36
 
 **🇬🇧 EN:** How did young people cope with lockdown celibacy? Video, 00:03:43How did young people cope with lockdown celibacy?
 
@@ -289,7 +297,7 @@
 
 ---
 
-### Section 36
+### Section 37
 
 **🇬🇧 EN:** Do young people feel pressured to have sex?
 

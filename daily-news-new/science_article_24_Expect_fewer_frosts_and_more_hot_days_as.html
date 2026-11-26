@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expect fewer frosts and more hot days as UK seasons shift, says Met Office</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">science</div>
+        <h1>Expect fewer frosts and more hot days as UK seasons shift, says Met Office</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 26 Nov 2026 00:08:07 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/weather/articles/cr3eg1py3gv5o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Changing seasons are affecting wildlife and leading some farmers to grow different crops.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Ce que les changements saisonniers du Royaume-Uni signifient pour vous</p>
+            <span class="english-block">What UK season changes mean for you</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Les saisons du Royaume-Uni changent, avec moins de gel d'hiver et plus de chaleur en été, selon une nouvelle analyse du Met Office.</p>
+            <span class="english-block">The UK's seasons are changing, with fewer winter frosts and more hot summer days, according to new analysis from the Met Office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Dans tout le Royaume-Uni, le nombre de jours d'hiver avec un gel d'air  lorsque la température de l'air tombe à 0°C ou en dessous  était environ un quart inférieur dans la décennie à 2025 que pendant la période de 1961 à 1990.</p>
+            <span class="english-block">Across the UK, the number of winter days with an air frost – when the air temperature falls to 0C or below – was around a quarter lower in the decade to 2025 than during the period from 1961 to 1990.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Dans le sud de l'Angleterre, la réduction s'est élevée à environ un tiers, tandis que le nombre moyen de jours d'été au Royaume-Uni atteignant 25°C a plus que doublé.</p>
+            <span class="english-block">In southern England, the reduction was around a third while the average number of UK summer days reaching 25C has more than doubled.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le bureau de la météo dit que le changement climatique a conduit à ces changements saisonniers.</p>
+            <span class="english-block">The Met Office says climate change has led to these seasonal shifts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">"L'été est de plus en plus large et l'hiver de plus en plus petit", déclare le Dr James Pope, climatologue du Met Office.</p>
+            <span class="english-block">"Our summer is getting wider and our winter is getting smaller," says Dr James Pope, climate scientist at the Met Office.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">"Le moteur de cela est que le climat global entier se réchauffe. Et cela a des répercussions sur le Royaume-Uni.</p>
+            <span class="english-block">"The driver of this is that the whole global climate is warming. And that impacts on the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">"D'autres régions ont connu l'hiver le plus humide de l'histoire, et ont connu une sécheresse sévère, qui a été un été record pour tout le pays".</p>
+            <span class="english-block">"Some areas went from their wettest ever winter to a severe drought via a record-breaking summer for the whole country."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Les conditions changeantes ont affecté la faune et ont amené certains agriculteurs à cultiver des cultures différentes.</p>
+            <span class="english-block">The changing conditions have affected wildlife and led some farmers to grow different crops.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Les plus grandes réductions des gelées d'air d'hiver ont été enregistrées en Angleterre, au Pays de Galles et en Irlande du Nord, où le nombre moyen de jours a diminué d'environ 11 par rapport à 1961 et 1990.</p>
+            <span class="english-block">Some of the biggest reductions in winter air frosts have been in England, Wales and Northern Ireland, where the average number of days has fallen by around 11 compared with 1961 to 1990.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Le sud de l'Angleterre a connu d'autres changements importants.</p>
+            <span class="english-block">Southern England has seen other significant changes. In Cornwall, the average number of winter air frost days has almost halved, falling from around 18 to just 10.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Sur l'île de Wight, le chiffre a également chuté de près de la moitié, passant de 21 à 11 jours environ.</p>
+            <span class="english-block">On the Isle of Wight, the figure has also fallen by almost half, from around 21 to 11 days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">L'Écosse reste le pays le plus gelé du Royaume-Uni, mais elle a également connu une réduction, passant d'environ 45 à 38 jours de gel en hiver.</p>
+            <span class="english-block">Scotland remains the frostiest UK nation, but has also seen a reduction, from around 45 to 38 winter air frost days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">L'été 2026 a été le plus chaud jamais enregistré, avec cinq vagues de chaleur</p>
+            <span class="english-block">Summer 2026 was the hottest on record, with five heatwaves</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Les journées d'été atteignant 25°C sont devenues plus courantes dans tout le Royaume-Uni.</p>
+            <span class="english-block">Summer days reaching 25C have become more common across the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Certaines des plus grandes augmentations ont été enregistrées dans le sud de l'Angleterre, où le nombre moyen de jours d'été atteignant 25°C a plus que doublé, passant de un peu plus de huit à plus de 16.</p>
+            <span class="english-block">Some of the biggest increases have been in southern England, where the average number of summer days reaching 25C has more than doubled, from just over eight to more than 16.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Dans les comtés d'Essex et de Suffolk, ils ont augmenté de près de 13 jours dans les deux comtés.</p>
+            <span class="english-block">In Essex and Suffolk, they have risen by almost 13 days in both counties.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Le bureau de la météo définit une journée chaude comme une journée où la température atteint 30°C ou plus.</p>
+            <span class="english-block">The Met Office defines a hot day as one where the temperature reaches 30C or above.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Dans tout le Royaume-Uni, le nombre moyen de ces jours a quadruplé, passant de 0,3 à 1,2 par été.</p>
+            <span class="english-block">Across the UK, the average number of these days has increased fourfold, from 0.3 to 1.2 per summer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">L'augmentation est particulièrement remarquable dans le Grand Londres, où les jours atteignant 30°C sont passés d'une moyenne de 1,3 à 6,1 par été.</p>
+            <span class="english-block">The increase is particularly striking in Greater London, where days reaching 30C have risen from an average of 1.3 to 6.1 per summer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">L'été 2026 a été le plus chaud jamais enregistré, selon les données provisoires du Met Office.</p>
+            <span class="english-block">Summer 2026 was the hottest on record, according to provisional Met Office data.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Il y a eu cinq vagues de chaleur généralisées et 40 jours de températures supérieures à 30°C, battant le record précédent de 34 jours.</p>
+            <span class="english-block">There were five widespread heatwaves and 40 days of temperatures above 30C, smashing the previous record of 34 days.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Les oignons de Tim Young ont été plus petits que d'habitude, ce qui les rend plus difficiles à vendre dans les supermarchés.</p>
+            <span class="english-block">Tim Young's onions have been smaller than usual making them harder to sell to supermarkets</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">"Les humains, les animaux et les cultures sont confrontés à des températures extrêmes que nous n'avons jamais vues auparavant et c'est un défi physiologique pour les trois", déclare Thomas Crocker, directeur scientifique de l'équipe de sécurité climatique du Met Office.</p>
+            <span class="english-block">"Humans, animals and crops are encountering extremes of temperature that we've not seen before and this is a physiological challenge to all three," says Thomas Crocker, science manager with the Met Office's climate security team.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Il dit que cela a entraîné des problèmes d'eau, les hivers humides causant des problèmes de plantation, des ravageurs et des maladies.</p>
+            <span class="english-block">This has led to water challenges, he says, with wet winters causing problems with planting, pests and diseases.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Les étés secs ont fait que l'eau n'était pas suffisante pour cultiver les cultures.</p>
+            <span class="english-block">Dry summers have meant there has not been enough water to grow crops.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">"L'impact sur l'horticulture est sismique, il a affecté toutes les cultures", déclare John Walgate, PDG de British Growers, qui représente la plupart des organisations britanniques d'horticulture qui cultivent des légumes et des fruits.</p>
+            <span class="english-block">"The impact on horticulture is seismic, it's affected all crops," says John Walgate, CEO of British Growers, which represents most British horticultural organisations growing vegetable and fruit.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Walgate dit que la météo de cette année a été particulièrement difficile pour les brassiques comme le chou-fleur, le chou et le brocoli, avec des rendements en baisse d'environ 50%.</p>
+            <span class="english-block">Walgate says this year's weather has been particularly tough for brassicas like cauliflowers, cabbages and broccoli, with yields down by about 50%.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Les cultures irriguées telles que les oignons, les pommes de terre et les carottes ont également souffert d'un manque d'eau en raison de faibles précipitations et de températures chaudes.</p>
+            <span class="english-block">Irrigated crops such as onions, potatoes and carrots also suffered from a lack of water due to low rainfall and hot temperatures.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Walgate dit que les fruits doux comme les fraises ont eu une "bonne année".</p>
+            <span class="english-block">It's not all been bad though. Walgate says soft fruit such as strawberries have had a "good year".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Tim Young et sa famille cultivent à Norfolk depuis les années 1960.</p>
+            <span class="english-block">Tim Young and his family have been farming in Norfolk since the 1960s.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Mais ses cultures arables - les oignons, le blé et les betteraves à sucre - ont du mal à se développer en raison des étés plus chauds et plus secs et de moins de jours froids en hiver qui tuent les insectes.</p>
+            <span class="english-block">But his arable crops - onions, wheat and sugar beet - have been struggling because of the hotter, drier summers and fewer cold days in winter which kill bugs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Alors que les rendements des récoltes diminuent, Young cherche des moyens de diversifier les revenus de la ferme et plante une vigne il y a trois ans.</p>
+            <span class="english-block">With some crop yields decreasing, Young has been looking at ways to diversify the farm's income and planted a vineyard three years ago.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">L'année dernière, il a récolté le double de la quantité attendue de raisins.</p>
+            <span class="english-block">Last year he harvested double the expected amount of grapes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">"Avec le changement climatique, la frontière s'éloigne de plus au nord de l'endroit où on peut cultiver des raisins", dit- il.</p>
+            <span class="english-block">"With climate change, the frontier is moving further north of where we can grow grapes," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Malgré les variations annuelles de la météo, il est convaincu qu'elle peut être rentable.</p>
+            <span class="english-block">Despite annual variations in weather, he is confident it can be profitable.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Les hivers plus chauds au Royaume-Uni signifient que les grands égarés blancs peuvent pêcher toute l'année</p>
+            <span class="english-block">Warmer winters in the UK mean great white egrets can fish all year round</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Les changements climatiques changent les lieux où vivent les espèces et quand elles migrent, se reproduisent et se nourrissent, dit Zoe Quiroz Cullen, responsable du climat et des politiques internationales de l'organisme caritatif The Wildlife Trusts.</p>
+            <span class="english-block">Changing weather patterns are shifting where species live and when they migrate, breed and feed, says Zoe Quiroz Cullen, head of climate and international policy at The Wildlife Trusts charity.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Les hivers plus chauds signifient que les chauves-souris se réveillent de leur hibernation quand il y a trop peu d'insectes à nourrir, dit-elle, tandis que les amphibiens qui émergent et se reproduisent plus tôt peuvent être pris par les chutes de froid.</p>
+            <span class="english-block">Warmer winters mean bats are waking from hibernation when there are too few insects to feed, she says, while amphibians emerging and spawning earlier can be caught out by cold snaps.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Pendant ce temps, les sources plus chaudes signifient que les chênes sont en train de sortir de feuilles plus tôt que d'habitude, et que les chenilles éclosent plus tôt.</p>
+            <span class="english-block">Meanwhile, warmer springs mean oak trees are coming into leaf earlier than usual, and caterpillars are hatching earlier.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">La population d'oiseaux du Royaume-Uni a diminué ces dernières décennies, en grande partie en raison de la perte d'habitats et du changement climatique, extérieur.</p>
+            <span class="english-block">The UK's bird population has fallen in recent decades, largely because of habitat loss and climate change, external.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Les étarles et les swifts ont considérablement diminué, bien que les hivers plus doux et les travaux de conservation aient aidé certaines espèces à prospérer.</p>
+            <span class="english-block">Starlings and swifts have declined significantly, although milder winters and conservation work have helped some species thrive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">Kevin Anderson, responsable de l'expérience des visiteurs au Somerset Wildlife Trust, travaille à Avalon Marshes depuis 15 ans et a vu de première main le changement de sa vie d'oiseau.</p>
+            <span class="english-block">Kevin Anderson, visitor experience officer at Somerset Wildlife Trust, has worked at Avalon Marshes for 15 years and has seen its bird life change first-hand.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Il dit qu'il y a 30 à 40 ans, il aurait été rare de voir une égarette au nord de la Méditerranée.</p>
+            <span class="english-block">Thirty to 40 years ago, he says, it would have been rare to see an egret north of the Mediterranean.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">La réserve abrite maintenant une population croissante de grands égarés blancs qui profitent des hivers plus chauds qui leur permettent de pêcher toute l'année.</p>
+            <span class="english-block">Now the reserve is home to a growing population of great white egrets taking advantage of warmer winters which allow them to fish all year round.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Les oiseaux se sont reproduits pour la première fois à Somerset en 2012, avec seulement deux nids.</p>
+            <span class="english-block">The birds first bred in Somerset in 2012, with just two nests. Last year, about 73 chicks were born in Avalon Marshes with the population thought to be around 200 now.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Le changement climatique - principalement le résultat de la combustion de combustibles fossiles - augmente les températures moyennes au Royaume-Uni.</p>
+            <span class="english-block">Climate change - mainly the result of the burning of fossil fuels - is raising average temperatures in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Le niveau actuel de réchauffement climatique est de 1,4°C au-dessus des niveaux préindustriels, estiment les scientifiques climatiques.</p>
+            <span class="english-block">The current global warming level is 1.4C above pre-industrial levels, climate scientists estimate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Le Met Office dit que les changements des saisons du Royaume-Uni devraient se poursuivre à mesure que les températures augmentent.</p>
+            <span class="english-block">The Met Office says changes to the UK's seasons are expected to continue as temperatures rise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Si le réchauffement climatique atteint 2°C au-dessus des niveaux préindustriels, le Royaume-Uni pourrait connaître en moyenne environ 24 jours de gel d'air hivernal, contre 38 pendant la période de 1961 à 1990.</p>
+            <span class="english-block">If global warming reaches 2C above pre-industrial levels, the UK could experience an average of about 24 winter air frost days, compared with 38 during the period from 1961 to 1990.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Les étés pourraient aussi être plus chauds.</p>
+            <span class="english-block">Summers could also become hotter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Le nombre moyen de jours atteignant 25°C pourrait passer à environ 15 par été, comparativement à un peu plus de quatre au cours de la période précédente.</p>
+            <span class="english-block">The average number of days reaching 25C could rise to around 15 per summer, compared with just over four during the earlier period.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Crocker dit que la météo au Royaume-Uni dans les années à venir va varier.</p>
+            <span class="english-block">Crocker says the UK's weather in the coming years is going to vary.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">"Il y aura encore des étés plus froids, des hivers plus secs, mais cette ligne de départ a changé".</p>
+            <span class="english-block">"There's still going to be some cooler summers, there's still going to be some drier winters - but that baseline has shifted."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Il dit que nous verrons plus de temps chaud extrême et plus de journées chaudes record, mais que nous aurons moins de chances de connaître un temps froid extrême.</p>
+            <span class="english-block">He says we will see more extreme hot weather and more record-breaking hot days, but we are less likely to experience extreme cold weather.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">Et les recherches du Met Office montrent que l'été s'étend jusqu'à l'automne, et la possibilité de moins de précipitations d'automne à l'avenir.</p>
+            <span class="english-block">And Met Office research shows summer extending into autumn, and the possibility of less autumn rainfall in the future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Mais le Dr Pope dit qu'il y aura toujours quatre saisons distinctes au Royaume-Uni.</p>
+            <span class="english-block">But Dr Pope says there will always be four distinct seasons in the UK.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">L'analyse a été réalisée par le Met Office alors qu'il entame un nouveau partenariat avec la BBC pour fournir des données météorologiques pour les prévisions météorologiques, ainsi que des informations et des connaissances supplémentaires sur notre climat en mutation.</p>
+            <span class="english-block">The analysis has been done by the Met Office as it begins a new partnership with the BBC to provide weather data for weather forecasts, as well as additional insight and expertise on our changing climate.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">Y aura-t-il un Noël blanc cette année ?</p>
+            <span class="english-block">Will there be a white Christmas this year?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">Cinq conclusions tirées des négociations échouées sur le climat COP31</p>
+            <span class="english-block">Five takeaways from the failed climate talks COP31</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">5 200 décès liés à la chaleur enregistrés en Angleterre cette année</p>
+            <span class="english-block">Record 5,200 heat-linked deaths estimated in England this year</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
