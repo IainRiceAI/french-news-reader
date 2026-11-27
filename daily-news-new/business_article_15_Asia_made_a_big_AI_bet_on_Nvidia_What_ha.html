@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asia made a big AI bet on Nvidia. What happens now?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>Asia made a big AI bet on Nvidia. What happens now?</h1>
+        <div class="meta-info">
+            <span>📅 Thu, 26 Nov 2026 23:08:12 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cqevr4lnd1nxo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Asian stocks have been on a rollercoaster ride after Jensen Huang's shock return as Nvidia CEO.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Trump renforce le retour du patron de Nvidia, mais les politiciens américains sont-ils à bord ?</p>
+            <span class="english-block">Trump boosts Nvidia boss return but are US politicians on board?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Le retour extraordinaire de Jensen Huang en tant que patron de Nvidia a non seulement secoué ses actions à New York, mais a également envoyé des ondes de choc à travers l'industrie de l'intelligence artificielle (IA) dans le monde entier.</p>
+            <span class="english-block">Jensen Huang's extraordinary return as Nvidia's boss rocked not only its shares in New York but also sent shockwaves through the artificial intelligence (AI) industry around the world.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Ces chocs se sont ressentis en particulier en Asie, car la saga mettait en évidence l'énorme exposition de la région à la technologie.</p>
+            <span class="english-block">Those jolts were felt particularly in Asia as the saga highlighted the region's huge exposure to the technology.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Les indices boursiers de technologie lourds au Japon, en Corée du Sud et à Taiwan ont fait une course à la montagne cette semaine. Les marchés ont grimpé après une hausse de près d'un billion de dollars du prix des actions de Nvidia, mais ont ensuite chuté alors que les préoccupations concernant le contrôle politique et réglementaire ont touché la confiance des investisseurs.</p>
+            <span class="english-block">Tech-heavy stock indexes in Japan, South Korea and Taiwan went on a rollercoaster ride this week. Markets soared after a near-trillion dollar surge in Nvidia's share price but then slumped as concerns about political and regulatory scrutiny hit investor confidence.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le fabricant de puces est un "pivot symbolique" du commerce de l'IA qui devient rapidement clé pour des pays comme la Corée du Sud, Taiwan, Singapour et Malaisie", déclare Dylan Loh, professeur d'études internationales à l'Université technologique de Nanyang.</p>
+            <span class="english-block">The chipmaker is a "symbolic bellwether" of the AI trade that is fast becoming key to places like South Korea, Taiwan, Singapore and Malaysia," says Dylan Loh, an international studies lecturer at Nanyang Technological University.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">De la fabrication de puces aux centres de données aux investissements étrangers, l'IA est devenue une priorité stratégique pour ces économies - et elles dépendent de plus en plus de la fortune de Nvidia.</p>
+            <span class="english-block">From chip manufacturing to data centres to foreign investments, AI has become a strategic priority for these economies - and they are now increasingly dependent on Nvidia's fortunes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Dans Nvidia, l'industrie de l'IA a la puissance inégalée des puces de pointe et l'influence financière qui l'a transformée en "la banque de l'IA". Et dans Huang, elle a un évangéliste de haut niveau.</p>
+            <span class="english-block">In Nvidia, the AI industry has the unrivalled power of cutting-edge chips and the financial clout that turned it into "the bank of AI". And in Huang, it has a high-profile evangelist.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Cette combinaison l'a placé au cœur de l'écosystème de l'IA de plusieurs façons.</p>
+            <span class="english-block">That combination has put it at the heart of the AI ecosystem in more ways than one.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">En premier lieu, Nvidia a pu se développer rapidement en externalisant la production de puces au lieu de devoir dépenser beaucoup pour construire ses propres usines de fabrication.</p>
+            <span class="english-block">For one, Nvidia was able to grow rapidly by outsourcing chip production instead of having to spend heavily to build its own manufacturing plants.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Elle sous-traite la majeure partie de sa production au géant taïwanais de la fabrication de puces TSMC.</p>
+            <span class="english-block">It contracts out most of its production to Taiwanese chipmaking giant TSMC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Cela signifie que Taïwan est vulnérable aux changements dans la demande de technologie de l'IA, dit Paul Cavey, fondateur de la firme de recherche East Asia Econ basée à Taipei.</p>
+            <span class="english-block">That means Taiwan is vulnerable to changes in AI tech demand, says Paul Cavey, founder of Taipei-based research firm East Asia Econ.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"L'augmentation de la croissance économique réelle de [Taiwan] depuis 2024 est due à la forte augmentation des exportations liées à l'IA".</p>
+            <span class="english-block">"The surge in [Taiwan's] real economic growth since 2024 has been because of the big increase in AI related exports".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Huang a déclaré plus tôt cette année que Nvidia prévoit d'investir environ 150 milliards de dollars par an à Taiwan lors d'un lancement pour célébrer le siège social prévu de l'entreprise sur l'île.</p>
+            <span class="english-block">Huang said earlier this year that Nvidia plans to invest around $150bn (£114.4bn) a year in Taiwan at a launch to celebrate the firm's planned headquarters on the island.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Dans une moindre mesure, la Corée du Sud et le Japon sont également exposés à l'industrie, ajoute Cavey. Ils font partie de ses fournisseurs de composants clés tels que les puces de mémoire et les équipements de test, avec des entreprises comme Samsung et SK Hynix fabriquant les processeurs de l'entreprise.</p>
+            <span class="english-block">To a lesser extent, South Korea and Japan are also exposed to the industry, Cavey adds. They are among its suppliers of key components such as memory chips and testing equipment, with firms like Samsung and SK Hynix making the firm's processors.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">En plus de cela, Nvidia est un soutien financier et un prêteur majeur pour les entreprises de la chaîne d'approvisionnement en IA.</p>
+            <span class="english-block">On top of that, Nvidia is a financial backstop and major lender to companies in the AI supply chain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Des centres de données d'une valeur de plusieurs milliards de dollars sont en construction en Malaisie</p>
+            <span class="english-block">Data centres worth billions of dollars are being built in Malaysia</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Il est difficile de surestimer le rôle joué par Nvidia, avec Huang à la tête, dans l'industrie de l'IA de la région.</p>
+            <span class="english-block">It is difficult to overstate the role Nvidia, with Huang at its helm, has played in the region's AI industry. Nvidia's chips fill its data centres, power its AI models and feed the companies making cars and electronics.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">"L'Asie n'est pas seulement une base de clients pour Nvidia, mais elle est un moteur indispensable de la domination de l'IA de l'entreprise en raison de la fabrication de semi-conducteurs et des écosystèmes de mémoire en Asie de l'Est", déclare Loh.</p>
+            <span class="english-block">"Asia isn't just a customer base for Nvidia. It is an indispensable engine of the company's AI dominance because of East Asia's semiconductor manufacturing and memory ecosystems," Loh says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Dans la région Asie-Pacifique, le marché des centres de données, qui est largement alimenté par les puces Nvidia, est en pleine "boom sans précédent", selon la société de services immobiliers CBRE, externe. Le volume d'investissement a augmenté régulièrement ces dernières années pour atteindre un record de 11,6 milliards de dollars (8,85 milliards de livres sterling) en 2025.</p>
+            <span class="english-block">In the Asia-Pacific region, the data centre market, which is largely powered by Nvidia chips, is in the midst of an "unprecedented boom", according to property services firm CBRE, external. The volume of investment has been rising steadily in recent years to reach a record of $11.6bn (£8.85bn) in 2025.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">En Asie du Sud-Est, la société d'IA basée à Singapour Megaspeed était devenue le plus grand acheteur de puces Nvidia de la région avant d'être accusée de les faire passer en contrebande vers la Chine.</p>
+            <span class="english-block">In South East Asia, Singapore-based AI company Megaspeed had become the region's biggest buyer of Nvidia chips before it was accused of smuggling them to China. Megaspeed has said it "conducts legitimate and lawful business" and has "retained external legal counsel to conduct a thorough internal investigation".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Les États-Unis ont déclaré qu'ils avaient l'intention d'interdire à Megaspeed Ltd d'effectuer des affaires aux États-Unis.</p>
+            <span class="english-block">The US has said it intends to ban Megaspeed Ltd from doing business in the United States.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Mais comme exemple opportun de l'importance de l'IA pour cette région, Singapour a encore augmenté sa prévision de croissance cette semaine, alors que la technologie renforce son économie.</p>
+            <span class="english-block">But in a timely example of the importance of AI to this region, Singapore this week further raised its growth forecast for this year as the technology boosts its economy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Les plus grandes entreprises technologiques du monde - Google, Microsoft, Oracle - prévoient également d'augmenter leurs dépenses en infrastructures dans la région d'environ 60% cette année, a ajouté CBRE.</p>
+            <span class="english-block">The world's biggest tech firms - Google, Microsoft, Oracle - also plan to boost their spending on infrastructure in the region by roughly 60% this year, CBRE added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">La demande de néoclouds, qui sont des centres de données spécialisés alimentés par l'IA, a également augmenté rapidement, a-t-il déclaré.</p>
+            <span class="english-block">The demand for neoclouds, which are specialised data centres which power AI, has also risen rapidly, it said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Pour les économies qui parient fortement sur l'IA, Nvidia est devenue " extrêmement importante ", avec de vastes sommes dépensées pour ses puces et l'activité de l'usine dépendant de plus en plus de sa technologie, a déclaré Loh à la BBC.</p>
+            <span class="english-block">For economies betting heavily on AI, Nvidia has become "hugely important", with vast sums being spent on its chips and factory activity increasingly dependent on its technology, Loh told the BBC.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Dans de nombreuses économies, la nouvelle du retour de Huang à Nvidia a été accueillie avec joie.</p>
+            <span class="english-block">In many economies, news of Huang's return to Nvidia was met with jubilation.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">À Taïwan, où il est né et où vit "Jensanity", les investisseurs ont décrit son retour comme une histoire de "un homme sauve le village".</p>
+            <span class="english-block">In Taiwan, where he was born and the home of "Jensanity", investors jokingly described his return as a "one man saves the village" story.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Les médias sociaux et les groupes sur la plateforme de messagerie Line ont vu des messages comme " Old Huang est de retour ", tandis que certains investisseurs ont dit " Papa est de retour pour me sauver la vie " et " le couloir humanitaire est ouvert ".</p>
+            <span class="english-block">Social media and groups on messaging platform Line saw posts like "Old Huang is back," while some investors said "Daddy is back to save my life" and "the humanitarian corridor is open."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Cependant, certains ont dit que l'épisode devrait également inciter à examiner de plus près l'efficacité de Taiwan dans la construction d'une chaîne d'approvisionnement en semi-conducteurs "non chinois" et comment les risques liés à la forte dépendance de l'industrie à Nvidia devraient être mieux gérés.</p>
+            <span class="english-block">However, some said the episode should also prompt a closer look at how effective Taiwan has been in building a "non-China" semiconductor supply chain, and how risks from the industry's heavy reliance on Nvidia should be managed better.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">L'industrie technologique asiatique a été sous une pression croissante des États-Unis ces dernières années. Les administrations de Joe Biden et Donald Trump ont resserré les règles sur l'exportation des puces les plus avancées de Nvidia vers la Chine.</p>
+            <span class="english-block">Asia's technology industry has been under increasing pressure from the US in recent years. The administrations of both Joe Biden and Donald Trump have tightened rules on the export of Nvidia's most advanced chips to China.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Il semble que ces efforts aient été renouvelés. La semaine dernière, Washington a annoncé de nouvelles règles qui accroîtront le contrôle des opérateurs de centres de données à Singapour, en Malaisie, en Thaïlande, en Indonésie et au Brésil.</p>
+            <span class="english-block">Those efforts seem to have been renewed. Just last week, Washington announced new rules that will increase scrutiny of data centre operators in Singapore, Malaysia, Thailand, Indonesia and Brazil.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">La dernière mesure limite non seulement l'exportation de puces haut de gamme vers la Chine, mais aussi l'accès à leur puissance informatique, que les entreprises chinoises louent actuellement à l'étranger pour former des modèles d'IA.</p>
+            <span class="english-block">The latest move not only restricts the export of high-end chips to China, but also access to their computing power, which Chinese firms currently rent abroad to train AI models.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Jensen Huang signe une billette taïwanaise pour un visiteur au Computex 2026 à Taipei</p>
+            <span class="english-block">Jensen Huang signs a Taiwanese banknote for a visitor at Computex 2026 in Taipei</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Le gouvernement chinois a décidé de mettre fin à la crise économique et économique dans le pays, et de mettre fin à la crise économique dans le pays.</p>
+            <span class="english-block">This will hit South East Asian countries, which have invested billions in data centre infrastructure to cater to Chinese firms. Nvidia has already paused shipments to the region, according to the Financial Times, although it is unclear if this is only a  temporary move while it figures out how to comply with the new export rules.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Nvidia n'a pas immédiatement répondu à une demande de commentaire de la BBC.</p>
+            <span class="english-block">Nvidia did not immediately respond to a BBC request for comment.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Il y a aussi la réaction bipartite croissante contre le président Trump et Nvidia après qu'il ait dit qu'il avait " fait l'accord " pour " convaincre " le conseil d'administration de la société de rétablir Huang.</p>
+            <span class="english-block">Then there is the growing bipartisan backlash against President Trump and Nvidia after he said he "made the deal" to "convince" the company‘s board to reinstate Huang.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Huang doit également témoigner devant le Congrès la semaine prochaine. Et alors que les démocrates se préparent à prendre le contrôle de la Chambre des représentants et du Sénat américain au cours de la nouvelle année, Huang risque de faire face à d'autres risques.</p>
+            <span class="english-block">Huang is also due to testify before Congress next week. And as Democrats prepare to take control of the US House and Senate in the New Year, Huang is likely to face further risks.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">"Le retour de Jensen peut résoudre la crise de leadership immédiate, mais il ne résoud pas les surcharges juridiques et politiques", a déclaré Charu Chanana, stratège en chef de l'investissement de Saxo Bank.</p>
+            <span class="english-block">"Jensen's return may resolve the immediate leadership crisis, but it does not resolve the legal and political overhangs," said Charu Chanana, chief investment strategist from Saxo Bank.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Les inquiétudes des investisseurs quant aux milliards de dollars versés dans l'IA et le rôle central que joue Nvidia dans l'industrie envoyaient déjà des tremblements sur les marchés boursiers mondiaux.</p>
+            <span class="english-block">Investor concerns about the trillions of dollars being poured into AI and the pivotal role Nvidia plays in the industry were already sending tremors through global stock markets.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Certains craignent que, bien que l'entreprise et son leader charismatique aient été cruciaux pour stimuler la croissance de l'IA, cette concentration d'influence représente également une menace.</p>
+            <span class="english-block">Some fear that while the company and its charismatic leader have been crucial in driving AI's growth that concentration of influence also poses a threat.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Surtout maintenant qu'il semble que l'avenir de Huang - qui est encore incertain - pourrait avoir un impact sur les économies qui sont fortement exposées à l'industrie de l'IA.</p>
+            <span class="english-block">Especially now when it appears that Huang's future - which is still uncertain - could impact economies that are heavily exposed to the AI industry.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">"Je dirais que le président et la Maison Blanche aimeraient débattre de cela et dire que c'est bien, mais je crois que les démocrates au Congrès vont certainement enquêter", a déclaré Ray Wang, fondateur de Constellation Research basé à San Francisco.</p>
+            <span class="english-block">"I would say the President and White House would love to brush this over and say its fine but I believe Democrats in Congress will definitely be probing", Ray Wang, founder of San Francisco-based Constellation Research said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">"L'histoire n'est pas encore terminée... le retour de Jensen est probablement le plus grand et le pire retour de tous les temps.</p>
+            <span class="english-block">"The story is not over yet... Jensen coming back is probably the biggest, baddest return ever. The question is what will happen next?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Trump fait face à des réactions négatives après avoir dit qu'il avait "convaincu" Nvidia de réintégrer le PDG Jensen Huang</p>
+            <span class="english-block">Trump faces backlash after saying he 'convinced' Nvidia to reinstate CEO Jensen Huang</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">"Le plus grand tournant de l'histoire économique": les experts réagissent au retour de Jensen Huang à Nvidia</p>
+            <span class="english-block">'Biggest U-turn in economic history': Experts react to Jensen Huang's return to Nvidia</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Les vingt-et-un qui parient sur les actions technologiques</p>
+            <span class="english-block">The 20-somethings betting big on tech stocks</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

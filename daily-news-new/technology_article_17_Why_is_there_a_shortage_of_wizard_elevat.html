@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why is there a shortage of 'wizard' elevator mechanics?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">technology</div>
+        <h1>Why is there a shortage of 'wizard' elevator mechanics?</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 27 Nov 2026 00:02:19 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c52e8k19y94mo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: The pay is good and there's lots of work, so what's behind the shortage of elevator mechanics?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Jim Lembesis travaille sur des ascenseurs à Chicago depuis 47 ans.</p>
+            <span class="english-block">Jim Lembesis has been working on elevators in Chicago for 47 years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Certains sont en colère, nerveux, soulagés qu'il soit là.</p>
+            <span class="english-block">Some of them are angry. Nerves are frayed. Many of them are just relieved that he's here.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Quand un ascenseur cesse de fonctionner à Chicago, les gestionnaires de bâtiments démoralisés peuvent recevoir une visite de Jim Lembesis.</p>
+            <span class="english-block">When a lift stops working in Chicago, frazzled building managers might get a visit from Jim Lembesis. For more than 47 years, Lembesis has repaired and upgraded lifts. He says he understands why staff and residents are so anxious to have things working again.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">" Ils attendent et attendent, dit Lembesis, technicien de terrain pour Parkway Elevators. " Il y a beaucoup de frustration.</p>
+            <span class="english-block">"They wait and they wait," says Lembesis, a field technician for Parkway Elevators. "There's a lot of frustration. Sometimes it's a repeat issue. It's a never-ending cycle, you know what I mean?"</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Le manque de matériel d'ascenseur et d'escalier évolutif largement signalé aux États-Unis, qui est également un problème dans de nombreux autres pays, s'est aggravé au fil du temps, ajoute-t-il: "C'est comme la nuit et le jour par rapport à quand j'ai commencé".</p>
+            <span class="english-block">The widely reported shortage of lift and escalator mechanics in the US, which is also a problem in many other countries, has got worse over time, he adds: "It's been like night and day compared to when I started."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Les techniciens d'ascenseur et d'escalier sont " étonnés " de leur capacité à réparer les choses.</p>
+            <span class="english-block">Lift and escalator technicians "amaze" with their ability to fix things</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Certains dépendent d'eux  des résidents âgés d'immeubles de grande hauteur, par exemple, ou des personnes en fauteuil roulant.</p>
+            <span class="english-block">Everyone needs a lift now and again. Some people depend on them – elderly residents of high-rise buildings, say, or wheelchair users.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Les ascenseurs endommagés par une tempête dans des immeubles d'appartements hawaïens ont laissé des résidents coincés à l'extérieur de leurs maisons pendant des semaines.</p>
+            <span class="english-block">Storm-damaged lifts in Hawaiian apartment blocks this year left some residents trapped, external in their homes for weeks. A lack of mechanics, and problems sourcing parts, were blamed for the repair delays.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Aux États-Unis, le salaire moyen d'un mécanicien d'ascenseur est de 110 000 dollars, et pourtant, les gens de l'industrie disent qu'il est difficile d'attirer de nouveaux travailleurs.</p>
+            <span class="english-block">In the US, the average salary for a lift mechanic, external is $110,000 (£83,000). And yet people in the industry say it is difficult to attract new workers.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Il a même été frappé à la tête avec un parapluie par une vieille dame après l'avoir sauvée d'un ascenseur bloqué.</p>
+            <span class="english-block">Sure, says Lembesis, you do encounter some dangers in a job like this. There are risks of falling from a great height – or being electrocuted. Once, he was even hit on the head with an umbrella by an elderly lady after he rescued her from a stuck lift.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Mais il y a tellement de compétences à apprendre, et une grande camaraderie et un grand partage de connaissances entre les mécaniciens, dit- il. Comme l'a dit un recruteur, ces techniciens étonnent les gens par leur capacité à réparer les choses.</p>
+            <span class="english-block">But there are so many skills to learn, and great camaraderie and knowledge-sharing among mechanics, he says. As one recruiter puts it, these technicians amaze people with their ability to fix things. They are like "wizards". The overall-clad shamans who know how to get modern life running again.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Neuf fois sur dix, le problème est avec les portes, dit Lembesis. " Les gens les frappent avec des chariots, et la saleté et les débris [entrent] dans elles ", dit Lembesis. " Les portes [prennent] le plus de coups. "</p>
+            <span class="english-block">Nine times out of 10, the problem is with the doors, says Lembesis. These components repeatedly move back and forth. "People hit them with carts, and dirt and debris [falls into them]," says Lembesis. "[The doors] take the most beating."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Les mécaniciens gardent souvent dans leurs véhicules des pièces de rechange pour les portes, prêtes à être utilisées.</p>
+            <span class="english-block">Mechanics often keep various spare door parts in their vehicles, ready to use.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Mais les techniciens comme Lembesis ne doivent pas seulement faire fonctionner les ascenseurs, ils doivent aussi vérifier que les ascenseurs sont sûrs. Il se souvient d'un cas, il y a des décennies, où il a été appelé dans un bâtiment en feu. Son rôle était de s'assurer que les ascenseurs, qui étaient trempés d'énormes volumes d'eau, étaient toujours sûrs d'être utilisés pendant que les pompiers s'attaquaient à l'incendie.</p>
+            <span class="english-block">But technicians like Lembesis don't just have to get lifts working, they also have to verify the lifts are safe. He remembers one case, decades ago, getting called out to a burning building. His role was to ensure the lifts, which were being drenched with huge volumes of water, were still safe to use while firefighters tackled the blaze.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">"J'ai été là pendant 15 heures ce soir- là, raconte- t- il.</p>
+            <span class="english-block">"I was there for 15 hours that night," he says. "Everyone, on the way out of the door, shook my hand."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Aux États-Unis, il y a un apprentissage de quatre ans pour devenir un technicien d'ascenseur.</p>
+            <span class="english-block">In the US there's a four-year apprenticeship to become a lift technician</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Il est difficile de trouver de bons techniciens d'ascenseur, dit Matt Hollinshead, président de l'Association nationale américaine des entrepreneurs d'ascenseurs. " Nous avons un apprentissage de quatre ans, dit- il. C'est le premier obstacle.</p>
+            <span class="english-block">Finding good lift technicians is "becoming more difficult" says Matt Hollinshead, president of the US National Association for Elevator Contractors. "We have a four-year apprenticeship," he says. That's the first hurdle. And many states require certification or licensing before you can work on lifts.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">" Nous avons une vaste gamme d'équipements qui doivent être entretenus aux États-Unis. " Certains ascenseurs ont 100 ans.</p>
+            <span class="english-block">"We have a vast array of equipment that has to be maintained in the United States." Some lifts are 100-years-old. As time goes on, the technological knowledge required to repair them only grows.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Hollinshead dit que les retards de plusieurs semaines ou de plusieurs mois dans la réparation des remontées ne sont généralement pas dus à une pénurie de personnel, mais qu'il est probable qu'une pièce particulière ne soit pas facilement disponible dans ces cas.</p>
+            <span class="english-block">Hollinshead says that weeks or months-long delays to lift repairs are not typically due to staff shortages but that, in such cases, it's likely that a particular part isn't readily available. Manufacturing a replacement hydraulic cylinder takes six to 12 weeks, he notes.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Mais le manque de techniciens signifie que les gestionnaires de bâtiments devront attendre des jours avant que quelqu'un puisse même diagnostiquer ce qui ne va pas avec un ascenseur après qu'il ait cessé de fonctionner.</p>
+            <span class="english-block">But the lack of technicians does mean that that building managers might have to wait days before someone can even diagnose what's wrong with a lift after it stops working.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Hollinshead dit que l'enseignement des bases du métier dans les lycées ou les écoles techniques pourrait attirer plus de gens dans le rôle.</p>
+            <span class="english-block">Hollinshead says teaching the basics of the trade in high schools or technical schools could entice more people into the role.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Matt Allred, recruteur et animateur du podcast The Elevator Careers, souligne les nombreuses compétences requises par la mécanique de l'ascenseur. " Vous êtes un peu magique, n'est-ce pas ? Vous vous présentez et si vous pouvez le réparer  'Wow !'. "</p>
+            <span class="english-block">Matt Allred, a recruiter and host of The Elevator Careers Podcast, emphasises the many skills that lift mechanics require. "You're a little bit of a wizard, right? You show up and if you can fix it – 'Wow!'."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Il accuse en partie les grandes entreprises d'ascenseur de bloquer des contrats d'entretien, ce qui rend difficile ou impossible l'intervention des réparateurs tiers lorsqu'un ascenseur échoue.</p>
+            <span class="english-block">He blames major lift companies, in part, for locking down maintenance contracts, making it difficult or impossible for third-party repairers to intervene when a lift fails.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Deux grands fabricants d'ascenseurs abordés par BBC News ont refusé d'entrevoir. La directrice générale d'Otis, l'une des entreprises, a déclaré en mai que son entreprise avait du mal à embaucher suffisamment de personnel, externe pour répondre à la demande.</p>
+            <span class="english-block">Two large lift manufacturers approached by BBC News declined interviews. The chief executive of Otis, one of the firms, said in May that her company was struggling to hire enough staff, external to meet demand. The firm also states on its website, external that the shortage of lift mechanics affects "almost every part of the world".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Cependant, un porte-parole d'Otis a affirmé que son " pipeline de talents américains " était en bonne santé et a refusé une interview.</p>
+            <span class="english-block">However, a spokesman for Otis claimed its "US talent pipeline" was healthy, and declined an interview.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Otis dit qu' il est heureux de son offre de mécaniciens et d' ingénieurs</p>
+            <span class="english-block">Otis says it is happy with its supply of mechanics and engineers</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Tous les autres qui ont parlé à BBC News ont dit que l'embauche était difficile aux États-Unis. Allred a récemment été contacté par une grande entreprise d'ascenseur et a demandé de l'aider à trouver un technicien. " J'ai été surpris qu'une grande entreprise se soit adressée à un petit magasin de recrutement ", dit-il, suggérant que cela reflète l'ampleur de la pénurie de main-d'œuvre.</p>
+            <span class="english-block">Everyone else who spoke to BBC News said hiring was challenging in the US. Allred was recently contacted by a major lift company and asked to help them find a technician. "I was surprised that a major company would reach out to a little recruiting shop," he says, suggesting that this reflects the extent of the labour shortage.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Cette pénurie est également un problème au Royaume-Uni. " C'est grave et s'aggrave ", déclare Dave Cooper, président de l'Institut chargé des ingénieurs des services de construction, qui est également directeur général d'une société de conseil en ingénierie des ascenseurs et des escaliers.</p>
+            <span class="english-block">That shortage is also a problem in the UK. "It is bad and getting worse," says Dave Cooper, president of the Chartered Institution of Building Services Engineers, who is also chief executive of a lift and escalator engineering consultancy.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Nous avons connu des entreprises de livraison de nourriture qui refusent de livrer à des appartements au-dessus du rez-de-chaussée parce que l'ascenseur est hors service".</p>
+            <span class="english-block">"We've known food delivery companies to refuse to deliver to flats above the ground floor because the lift is out of service."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Il ajoute que l'offre de meilleures allégations fiscales aux entreprises qui forment des mécaniciens d'ascenseurs pourrait aider à assurer que de nombreux travailleurs continuent à entrer dans l'industrie.</p>
+            <span class="english-block">Offering better tax breaks to companies that train lift mechanics could help ensure that plenty of workers continue to enter the industry, he adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">La formation d'un mécanicien d'ascenseur " n'est pas un chemin rapide vers la compétence  et elle exige que les gens s'y attachent à long terme ", explique Karen Slade, responsable de l'évaluation à l'Association de l'industrie de l'ascenseur et de l'escalator (Leia).</p>
+            <span class="english-block">Training to be a lift mechanic is "not a quick route to competency – and it requires people to stick at it for the long term" says Karen Slade, head of assessment at the Lift and Escalator Industry Association (Leia).</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Le groupe a déclaré que les investissements dans la formation et l'attraction de nouveaux travailleurs sont "essentiels".</p>
+            <span class="english-block">Continued investment in training and attracting new workers is "essential", according to Leia. There are currently 259 active lift and escalator apprentices in the UK, the body adds.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">À Chicago, Lembesis travaille avec deux jeunes mécaniciens qui ont été "très bons", dit-il, donc il y a au moins un peu d'espoir pour l'avenir.</p>
+            <span class="english-block">Back in Chicago, Lembesis is working with two younger mechanics who have been "really good", he says, so there's at least some hope for the future.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Il souligne à nouveau à quel point son travail lui procure de la satisfaction.</p>
+            <span class="english-block">He stresses again how rewarding he finds his work. The people for whom he fixes lifts tend to be very appreciative.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">" J'adore ça, dit- il, on a cette réaction des clients.</p>
+            <span class="english-block">"I love that. You get that reaction from the customers," he says. "Without them, you got nothing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Les pièces moteurs qui " combattent les lois de l'univers "</p>
+            <span class="english-block">The engine parts that 'fight the laws of the universe'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Pourquoi plus de toits ne sont pas faits de tuiles solaires?</p>
+            <span class="english-block">Why are more roofs not made of solar tiles?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Les X-planes: sont-ils nécessaires à la nouvelle ère des drones ?</p>
+            <span class="english-block">X-planes: Are they needed in the new era of drones?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
