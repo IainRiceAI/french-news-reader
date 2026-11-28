@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Should I get a flu vaccine now?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">health</div>
+        <h1>Should I get a flu vaccine now?</h1>
+        <div class="meta-info">
+            <span>📅 Sat, 28 Nov 2026 01:03:11 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/cq8e018jyjngo?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Amid a surge in influenza, health officials are urging people to get a vaccine - but what if you're young and healthy?
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Les responsables de la santé exhortent davantage de personnes à accepter l'offre d'un vaccin contre la grippe gratuit, le nombre de patients hospitaliers gravement malades du virus ayant fortement augmenté au cours de la semaine écoulée.</p>
+            <span class="english-block">Health officials are urging more people to take up the offer of a free flu vaccine as the number of hospital patients seriously ill with the virus has risen sharply in the past week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">L'augmentation de la grippe a été légèrement plus tôt cette année, mais ce n'est pas tout à fait inhabituel.</p>
+            <span class="english-block">The flu surge has come slightly early this year but that is not completely unusual.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">L'activité de la grippe est encore "modérée" et son pic peut ne pas atteindre avant décembre ou début janvier, préviennent les responsables de la santé.</p>
+            <span class="english-block">Flu activity is still at "moderate levels" and the peak may not arrive until December or early January, health officials warn.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Alors, quel est le conseil pour obtenir un vaccin, qui peut l'obtenir gratuitement et qui devrait payer ?</p>
+            <span class="english-block">So what is the advice on getting a vaccine, who can get it for free and who should pay?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">"Si on vous le propose, c'est une bonne idée de l'avoir", dit le professeur Nick Hopkinson, professeur de médecine respiratoire à l'Imperial College de Londres.</p>
+            <span class="english-block">"If you're offered it, it's a good idea to have it," says Prof Nick Hopkinson, professor of respiratory medicine at Imperial College London.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">"La raison principale est d'éviter de graves complications chez les groupes vulnérables  afin que le plus grand nombre possible de personnes en souffre.</p>
+            <span class="english-block">"The main reason is to avoid serious complications in vulnerable groups – so as many as possible should have it in those groups.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">"Les gens ne comprennent pas qu'il s'agit d'une infection potentiellement mortelle et que le vaccin est sûr".</p>
+            <span class="english-block">"People don't understand it's a potentially life-threatening infection and that the vaccine is safe."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">La grippe est une infection virale qui affecte le nez, la gorge et les poumons. Elle disparaît souvent par elle-même mais peut rendre les gens gravement malades.</p>
+            <span class="english-block">Flu is a viral infection which affects the nose, throat and lungs. Often it goes away on its own but it can make people seriously ill – complications can include pneumonia, heart attacks and other underlying illnesses getting worse.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Ça peut aussi tuer.</p>
+            <span class="english-block">It can also kill.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">En Angleterre, l'hiver dernier, l'UKHSA a estimé qu'il y avait 3 798 décès attribuables à la grippe.</p>
+            <span class="english-block">In England last winter, UKHSA estimated there were 3,798 deaths attributed to influenza.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Les scientifiques doivent prédire quelles souches de grippe circuleront avant que le vaccin ne soit fabriqué chaque année à temps pour l'hiver.</p>
+            <span class="english-block">Scientists have to predict which strains of influenza will be circulating before the vaccine is manufactured each year in time for winter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">La première protège contre trois souches  deux souches de la grippe A et une souche de la grippe B.</p>
+            <span class="english-block">The current one protects against three strains – two influenza A strains and one influenza B strain.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Même si ces souches dérivent légèrement, les experts disent que se faire vacciner est toujours une bonne idée pour réduire le risque de maladie grave.</p>
+            <span class="english-block">Even if these strains drift slightly, experts say getting vaccinated is still a good idea to lower the risk of severe illness.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">Des millions de personnes vulnérables sont admissibles à recevoir le vaccin gratuit pour les protéger contre la grippe, y compris les enfants, les femmes enceintes, les résidents des foyers de soins, les personnes souffrant de maladies pulmonaires et toute personne âgée de 65 ans et plus.</p>
+            <span class="english-block">Millions of vulnerable people are eligible for the free jab to help protect them against flu, including children, pregnant women, care home residents, people with lung conditions and anyone aged 65 and over.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Mais seulement environ un tiers des moins de 65 ans et deux tiers des personnes âgées de 65 ans et plus ont été vaccinées jusqu'à présent cet hiver.</p>
+            <span class="english-block">But only around a third of under-65s and two-thirds of those aged 65 and over have been vaccinated so far this winter.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Cela laisse actuellement environ sept millions de personnes sans protection, selon les responsables de la santé.</p>
+            <span class="english-block">That leaves around seven million people unprotected at present, health officials say.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Les parents sont encouragés à vacciner les jeunes enfants afin de les protéger ainsi que les autres personnes avec lesquelles ils entrent en contact.</p>
+            <span class="english-block">Parents are being urged to vaccinate young children in order to protect them and other people they come into contact with.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Oui, le vaccin n'exclut pas la possibilité de contracter la grippe, mais il réduit les risques de tomber gravement malade et de finir à l'hôpital.</p>
+            <span class="english-block">Yes. The vaccine does not rule out the possibility you will get flu, but it does reduce the chances you'll become very ill with it and end up in hospital.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Il faut deux semaines pour que l'immunité de votre corps se développe après avoir été vacciné, ce qui est une autre raison de prendre le vaccin plus tôt que plus tard.</p>
+            <span class="english-block">It takes two weeks for your body's immunity to build up after being vaccinated, which is another reason to have the jab sooner rather than later.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">La protection contre le vaccin réduit de 50% le risque de complications graves de la grippe, dit le professeur Hopkinson.</p>
+            <span class="english-block">Protection from the vaccine reduces the risk of serious flu complications by 50%, says Prof Hopkinson.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">Si vous n'êtes pas admissible au vaccin contre la grippe gratuit, vous pouvez toujours l'acheter dans la plupart des pharmacies pour une valeur comprise entre 15 et 25 livres sterling.</p>
+            <span class="english-block">If you are not eligible for the free flu vaccine, you can still buy it from most pharmacies for between £15 and 25.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">"C'est une chose raisonnable à considérer", dit le professeur Hopkinson.</p>
+            <span class="english-block">"It's a reasonable thing to consider," says Prof Hopkinson.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Mais c'est beaucoup plus important pour les millions de personnes vulnérables qui ont offert gratuitement la vaccination.</p>
+            <span class="english-block">But it is far more important for the millions of vulnerable people offered it free to be vaccinated.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Ils sont connus pour être à risque de complications de santé dues au virus.</p>
+            <span class="english-block">They are known to be at risk of health complications from the virus.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">D'autres groupes sont également à risque: "Les fumeurs sont cinq fois plus susceptibles de contracter la grippe  alors arrêtez maintenant", suggère- t- il.</p>
+            <span class="english-block">Other groups are also at risk: "Smokers are five times more likely to get flu – so quit now," he suggests.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">En termes simples, non.</p>
+            <span class="english-block">Simply put, no.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Il y a différents vaccins pour ceux qui les reçoivent gratuitement sur le NHS et ceux qui paient pour eux en privé.</p>
+            <span class="english-block">There are different vaccines for those getting it free on the NHS and those paying for it privately.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Cependant, les vaccins font le même travail et protègent contre les mêmes souches de grippe.</p>
+            <span class="english-block">However, the vaccines do the same job and protect against the same strains of flu.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Olivier Picard, pharmacien, a déclaré avoir vu une " énorme augmentation de la demande " de vaccins contre la grippe au cours des dernières 24 heures.</p>
+            <span class="english-block">Pharmacist Olivier Picard says he's seen a "massive spike in demand" for flu jabs in the last 24 hours.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">De plus en plus de gens réservent un rendez-vous pour un vaccin gratuit dont ils ont déjà été rappelés, et d'autres demandent de payer eux-mêmes.</p>
+            <span class="english-block">More people are booking an appointment for a free vaccine they have already been reminded about, and others are asking about paying for it themselves.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">"Quand il fait froid, les gens ont tendance à se réveiller pour obtenir le vaccin gratuit et à le vouloir avant Noël", dit- il.</p>
+            <span class="english-block">"When it gets cold, people tend to wake up to getting the free jab and want it before Christmas," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">Il dit qu'il n'y a pas de problème avec les approvisionnements de vaccins actuellement et "abondants dans le système".</p>
+            <span class="english-block">He says there is no issue with supplies of the vaccine at present and "plenty in the system".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Est-ce un rhume, une grippe ou un Covid?</p>
+            <span class="english-block">Is it a cold, flu or Covid? How to tell the difference</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Les pilules contre le rhume et la grippe valent l'argent ?</p>
+            <span class="english-block">Are max strength cold and flu pills worth the money?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Le déploiement du vaccin contre la grippe d'hiver commence.</p>
+            <span class="english-block">Winter flu vaccine rollout begins. Who's eligible?</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

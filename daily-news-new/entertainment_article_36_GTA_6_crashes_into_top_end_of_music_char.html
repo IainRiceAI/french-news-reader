@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 6 crashes into top end of music chart after its record launch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">entertainment</div>
+        <h1>GTA 6 crashes into top end of music chart after its record launch</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 27 Nov 2026 17:39:11 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/ckp80d8vz1ego?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Several songs on the game's soundtrack have climbed the UK's singles chart.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Dix chansons de Grand Theft Auto 6 figurent dans le top 100 des singles officiels du Royaume-Uni</p>
+            <span class="english-block">Ten songs from Grand Theft Auto 6 appear in the UK's Official Singles Chart top 100</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Grand Theft Auto 6 a été détourné dans les flux en ligne et les conversations culturelles depuis son lancement record la semaine dernière.</p>
+            <span class="english-block">Grand Theft Auto 6 has been swerving into online feeds and cultural conversations since its record-breaking launch last week.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Mais un domaine où le jeu fait vraiment une dent est le monde de la musique.</p>
+            <span class="english-block">But one area where the game is really making a dent is the world of music.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">Flower In A Hurricane, le single de l'album officiel de la bande-son du jeu de Justice avec Tame Impala, SZA et King Gizzard & The Lizard Wizard, est monté au troisième rang du classement officiel des singles du Royaume-Uni.</p>
+            <span class="english-block">Flower In A Hurricane, the single from the game's official soundtrack album by Justice featuring Tame Impala, SZA and King Gizzard & The Lizard Wizard, has climbed to number three on the UK's Official Singles Chart.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">Go Easy, une nouvelle chanson de Dua Lipa spécialement enregistrée pour le jeu, est la plus haute entrée nouvelle à 21.</p>
+            <span class="english-block">Go Easy, a new track from Dua Lipa specially recorded for the game, is the highest new entry at 21.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">Sept autres chansons enregistrées pour GTA 6 par des artistes dont Lana Del Rey, Travis Scott et Morgan Wallen ont également été placées dans le top 100.</p>
+            <span class="english-block">Seven other songs recorded for GTA 6 by artists including Lana Del Rey, Travis Scott and Morgan Wallen also placed in the top 100.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">La musique des jeux vidéo a déjà été en tête des charts britanniques avant, lorsque Robbie Williams' It's Only Us, enregistré pour la bande-son FIFA 2000, est arrivé au numéro un.</p>
+            <span class="english-block">Video game music has topped the UK chart before, when Robbie Williams' It's Only Us, recorded for the FIFA 2000 soundtrack, got to number one.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Run Away With Me, une chanson de 2015 de Carly Rae Jepsen utilisée lors d'un moment de " drop de l'aiguille " dans le premier chapitre du jeu, a également connu un énorme pic d'écoute.</p>
+            <span class="english-block">Run Away With Me, a 2015 song by Carly Rae Jepsen used during a "needle drop" moment in the game's first chapter, has also seen a huge spike in listeners.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">Il a atteint son sommet au 58e rang au Royaume-Uni il y a 11 ans, mais il est revenu dans les charts au 28e rang.</p>
+            <span class="english-block">It originally peaked at number 58 in the UK 11 years ago, but has re-entered the charts at number 28.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">En parlant au correspondant musical de la BBC Mark Savage, Jepsen se souvient avoir senti que la chanson avait " quelque chose de spécial " quand elle l'a enregistrée.</p>
+            <span class="english-block">Speaking to BBC music correspondent Mark Savage, Jepsen remembered feeling the track had "something special to it" when she recorded it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Bien qu'il soit un favori parmi certains des fans les plus fidèles de la chanteuse, il n'a jamais atteint le niveau de reconnaissance de ses hits Call Me Maybe et I Really Like You.</p>
+            <span class="english-block">While it's a favourite among some of the singer's most loyal fans, it has never reached the level of recognition as her hits Call Me Maybe and I Really Like You.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">"Il n'a jamais eu les yeux comme il le fait maintenant", dit-elle.</p>
+            <span class="english-block">"It never got eyes like it's getting right now," she said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">" C'est tellement agréable de voir cela arriver, ça me fait croire à ce sentiment particulier que nous avons eu. "</p>
+            <span class="english-block">"It's just so lovely to see that happening, it makes me believe in that special feeling that we had."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">La musique joue un rôle clé dans le jeu, à la fois à l'intérieur et à l'extérieur de ses histoires</p>
+            <span class="english-block">Music plays a key role in the game, both inside and outside its storylines</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Il y a trois éléments de la bande-son de GTA 6, y compris un album officiel à double face contenant des morceaux enregistrés pour le jeu, et une partition originale composée par le duo électronique Justice, qui devrait être entièrement publié en décembre.</p>
+            <span class="english-block">There are three elements of GTA 6's soundtrack, including an official, double-sided album containing tracks recorded for the game, and an original score composed by electronic duo Justice, due to be fully released in December.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Le jeu dispose également de centaines de pistes sous licence sur ses stations de radio.</p>
+            <span class="english-block">The game also features hundreds of licensed tracks on its in-game radio stations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Flower In A Hurricane a été publié en tant que single en octobre, ce qui lui a donné le temps d'apparaître sur les playlists avant le début du jeu.</p>
+            <span class="english-block">Flower In A Hurricane was released as a single in October, giving it time to appear on playlists in the lead-up to the game's debut.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Mais Mat Ombler, chef de partenariats chez le label de musique de jeux vidéo Laced Records, dit que l'impact de GTA 6 sur les charts est toujours impressionnant.</p>
+            <span class="english-block">But Mat Ombler, head of partnerships at video game music label Laced Records, says GTA 6's impact on the charts is still impressive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Il dit que les bandes sonores de jeux vidéo entrant dans les charts d'albums "n'est pas inédit" mais "il est incroyablement rare de voir plusieurs morceaux atteindre les charts de singles".</p>
+            <span class="english-block">He says video game soundtracks entering the album charts "isn't unheard of" but "it's incredibly rare to see multiple tracks hitting the singles charts".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Ombler compare le pic des flux de la piste de Jepsen à l'augmentation de Kate Bush's Running Up That Hill obtenue de son inclusion dans le hit de Netflix Stranger Things.</p>
+            <span class="english-block">Ombler likens the spike in streams of Jepsen's track to the boost Kate Bush's Running Up That Hill got from its inclusion in Netflix hit Stranger Things.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">"Les deux pistes font partie d'un moment culturel énorme, mais je dirais que l'utilisation de GTA de Run Away With Me est plus impactante... où la musique répond en fonction de ce que vous faites pendant une mission d'histoire clé", dit-il.</p>
+            <span class="english-block">"Both tracks are part of a huge cultural moment, but I'd argue that GTA's usage of Run Away With Me is more impactful... where the music responds according to what you're doing during a key story mission," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Ombler pense que l'impact des graphiques de GTA 6 met en évidence "l'importance croissante et l'impact culturel des bandes sonores de jeux vidéo dans leur ensemble".</p>
+            <span class="english-block">Ombler thinks the chart impact of GTA 6 highlights "the growing importance and cultural impact of video game soundtracks as a whole".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">"Plus de 40 millions de personnes passeront les semaines et les mois à venir à écouter plus de 800 morceaux de radios, peut-être des centaines de fois", dit- il.</p>
+            <span class="english-block">"Over 40 million people will spend the coming weeks and months listening to more than 800 tracks featured in the in-game radio stations, possibly hundreds of times," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">"Ils découvriront de nouvelles musiques dans des genres qu'ils n'auraient peut-être jamais rencontrés autrement, et cette musique restera avec eux pour le reste de leur vie".</p>
+            <span class="english-block">"They'll discover new music in genres they might never have engaged with otherwise, and this music will stick with them for the rest of their lives."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">Le duo électronique Fcukers apparaît sur la bande son officielle de GTA 6</p>
+            <span class="english-block">Electronic duo Fcukers appear on the official GTA 6 soundtrack</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">Only One by New York, le groupe Fcukers apparaît sur la bande son officielle de GTA 6 et a déjà eu plus d'un million de flux sur Spotify.</p>
+            <span class="english-block">Only One by New York band Fcukers appears on the official GTA 6 soundtrack and has already had more than one million streams on Spotify.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">Le chanteur du groupe Shanny Wise dit à Newsbeat: " C'était en fait une des chansons que nous avons enregistrées lorsque nous étions en train de faire notre album, mais ce n'est pas ce qui a fini par faire l'album. "</p>
+            <span class="english-block">The group's singer Shanny Wise tells Newsbeat: "It was actually one of the songs we recorded when we were making our album, but it didn't end up making the album."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">"Nous avons eu l'impression que la musique était peut-être trop étrange", ajoute le bassiste Jackson Walker Lewis.</p>
+            <span class="english-block">"We felt like the vibe of it maybe was too much of an outlier," adds bassist Jackson Walker Lewis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">"Mais quand la question du GTA est venue... j'ai senti que c'était parfaitement adapté".</p>
+            <span class="english-block">"But when the GTA thing came around... I felt like it perfectly fit."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Lewis dit que le groupe ne savait pas qu'ils avaient fait l'album officiel de la bande son avant que la liste des morceaux ne soit divulguée dans les jours qui ont précédé la sortie du jeu.</p>
+            <span class="english-block">Lewis says the band didn't know they'd made the official soundtrack album until the tracklist leaked in the days leading up to the game's release.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">"La seule chose que je dirai, c'est que Rockstar fonctionne très fluidement dans les coulisses", dit Lewis.</p>
+            <span class="english-block">"The one thing I'll say is, Rockstar operates very fluidly behind the scenes," says Lewis.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">" Ils peuvent changer d'avis à la dernière minute. Je pense que c'est ce qui les rend si bons dans ce qu'ils font parce qu'ils ont de la flexibilité. "</p>
+            <span class="english-block">"They can change their mind last-minute. I think that's what makes them so good at what they do is because they have flexibility."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">Le GTA Special de Newsbeat</p>
+            <span class="english-block">Newsbeat's GTA Special</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Le duo électronique est d'accord pour dire qu'il était " au-delà d'un honneur " d'apparaître aux côtés de grands noms tels que la star pop Dua Lipa et le rappeur Travis Scott.</p>
+            <span class="english-block">The electronic duo agree it was "beyond an honour" to appear alongside huge names such as pop star Dua Lipa and rapper Travis Scott.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">"C'est fou et ça me fait vraiment souffler", dit Wise.</p>
+            <span class="english-block">"I mean, it's crazy and really... it blows me away," says Wise.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">Mais, dit Lewis, ce n'est pas la seule chose qui rend leur grand moment spécial.</p>
+            <span class="english-block">But, Lewis says, it's not the only thing making their big moment special.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">"Je pense que c'est vraiment depuis longtemps qu'à l'échelle mondiale, nous avons eu un moment de monoculture que nous pouvons tous partager, vous savez, de manière positive, de manière joyeuse", dit-il.</p>
+            <span class="english-block">"I think it's been a really long time since kind of globally we've had a monoculture moment that we can all share in, you know, in a positive way, in a joyful way," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">"Tout le monde aime ce jeu, et je pense que c'est une chose spéciale de faire partie".</p>
+            <span class="english-block">"Everyone across the globe is, for the most part, enjoying this game, and I just think it's a special thing to be a part of."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">La chanson de Carly Rae Jepsen Run Away With Me a connu une augmentation de l'intérêt grâce au jeu</p>
+            <span class="english-block">Carly Rae Jepsen's song Run Away With Me has seen a surge in interest thanks to the game</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Steven Ellison, plus connu sous le nom de Flying Lotus, souligne que la série GTA était déjà un phénomène culturel établi.</p>
+            <span class="english-block">Steven Ellison, better known as Flying Lotus, points out the GTA series was already an established cultural phenomenon.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">Des millions de joueurs ont entendu le producteur, DJ, cinéaste et rappeur américain qui a présenté FlyLo, l'une des stations de radio du jeu GTA 5.</p>
+            <span class="english-block">Millions of players heard the US producer, DJ, film-maker and rapper hosting FlyLo, one of GTA 5's in-game radio stations.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">Il a également organisé sa liste de morceaux - un travail qu'il avoue avoir été rendu plus facile par le profil de la série.</p>
+            <span class="english-block">He also curated its tracklist - a job he confesses was made easier by the series' profile.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">"Les gens voulaient simplement être impliqués", dit- il.</p>
+            <span class="english-block">"People just wanted to have any involvement at all," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">"C'était comme: 'Qui voulons- nous, qui ne voulons- nous pas?' C'était incroyable".</p>
+            <span class="english-block">"It was like: 'Who do we want? Who don't we want?' It was incredible."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Il dit que le rôle lui a donné l'occasion de " faire briller une lumière sur les musiciens de LA ", sa ville natale, et l'inspiration pour le lieu fictif du jeu Los Santos.</p>
+            <span class="english-block">He says the role gave him an opportunity to "shine a light on musicians from LA", his hometown, and the inspiration for the game's fictional location Los Santos.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Il dit que cela a également influencé son goût musical.</p>
+            <span class="english-block">It also influenced his own musical taste, he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">"Je me souviens avoir joué à GTA: Vice City et c'était la première fois que j'écoutais vraiment l'Afrique de Toto.</p>
+            <span class="english-block">"I remember when I played GTA: Vice City and it was the first time I actually listened to Africa by Toto.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">"J'ai dit: "Cette chanson est superbe". Je ne le savais pas avant".</p>
+            <span class="english-block">"I was like: 'Man this song is awesome'. I didn't really know it before."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">Cette expérience, selon Ellison, est une grande partie de l'attrait, et pourquoi le jeu peut générer des hits surprenants à partir de chansons négligées.</p>
+            <span class="english-block">That curated experience, according to Ellison, is a big part of the appeal, and why the game can generate surprise hits out of neglected songs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">"Il est si difficile de faire une expérience comme celle-ci aujourd'hui, avec la façon dont nous écoutons la musique et trouvons la musique", dit- il.</p>
+            <span class="english-block">"It's so hard to get an experience like that nowadays with the way we listen to music and find music," he says.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">" C'est comme cette expérience de l'époque où on est vraiment mis sur quelque chose en passant du temps avec des gens et que quelqu'un joue une piste.</p>
+            <span class="english-block">"So this is kind of like that experience from back in the day where you're actually being put on to something by hanging out with people and then someone plays a track.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">"C'est ce lien authentique qui est possible avec ça".</p>
+            <span class="english-block">"It's that genuine connection that I think is possible with this."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">Écoutez Newsbeat en direct à 12h45 et 17h45 les jours de semaine ou écoutez ici.</p>
+            <span class="english-block">Listen to Newsbeat live at 12:45 and 17:45 weekdays - or listen back here.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">Le hacker GTA 6 a été libéré sous licence avec l'avertissement "ne laissez pas ça se reproduire"</p>
+            <span class="english-block">GTA 6 hacker released on licence with warning 'don't let this happen again'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Les ventes de GTA 6 ont atteint 3,8 milliards de dollars en une seule journée - le plus grand lancement de divertissement de l'histoire</p>
+            <span class="english-block">GTA 6 sales hit $3.8bn in a single day - the biggest entertainment launch in history</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">Le Royaume-Uni rejoint la folie de GTA 6 alors que le jeu est disponible dans le monde entier</p>
+            <span class="english-block">UK joins in GTA 6 frenzy as game becomes available worldwide</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Grand Theft Auto 6 est un chef-d'œuvre, disent les critiques</p>
+            <span class="english-block">Grand Theft Auto 6 is a masterpiece, say critics</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

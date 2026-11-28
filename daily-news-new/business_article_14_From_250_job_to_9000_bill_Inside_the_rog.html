@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From £250 job to £9,000 bill: Inside the rogue trader networks scamming customers at scale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --highlight-border: #818cf8;
+            --highlight-bg: rgba(99, 102, 241, 0.08);
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 20px 15px 140px 15px;
+            max-width: 680px;
+            margin: 0 auto;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .meta-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .description-quote {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .instruction-box {
+            background-color: rgba(99, 102, 241, 0.04);
+            border: 1px dashed rgba(99, 102, 241, 0.2);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .paragraph-card {
+            border-left: 3px solid transparent;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0.45;
+        }
+
+        .paragraph-card:hover {
+            opacity: 0.85;
+            background-color: rgba(255, 255, 255, 0.01);
+            border-left-color: var(--text-dim);
+            transform: translateX(3px);
+        }
+
+        .paragraph-card.active {
+            opacity: 1;
+            background-color: var(--highlight-bg);
+            border-left-color: var(--highlight-border);
+            transform: translateX(5px);
+        }
+
+        .french-block {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .english-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            display: block;
+        }
+
+        .paragraph-card::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 20px;
+            right: 0;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .player-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 30px);
+            max-width: 640px;
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Retour à l'index / Back to Index</a>
+
+    <header>
+        <div class="category-badge">business</div>
+        <h1>From £250 job to £9,000 bill: Inside the rogue trader networks scamming customers at scale</h1>
+        <div class="meta-info">
+            <span>📅 Fri, 27 Nov 2026 00:58:49 GMT</span>
+            <span>🔗 <a href="https://www.bbc.co.uk/news/articles/c65yme31k7m2o?at_medium=RSS&at_campaign=rss" target="_blank">BBC Original</a></span>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <strong>Offline Reader:</strong> Appuyez sur n'importe quel paragraphe pour écouter. / Tap any paragraph to listen. Text highlights and auto-scrolls dynamically.
+    </div>
+
+    <div class="description-quote">
+        Summary: Networks of plumbers and electricians are scamming people on a large scale, the BBC reveals.
+    </div>
+
+    <div class="article-container">
+    
+        <div class="paragraph-card" data-start="0.0" data-end="5.0">
+            <p class="french-block">Nessar Khawaja a déclaré à près de 70 000 followers des médias sociaux que son réseau gagne de l'argent grâce à des clients "désespérés"</p>
+            <span class="english-block">Nessar Khawaja told almost 70,000 social media followers his network makes money from "desperate" customers</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="5.0" data-end="10.0">
+            <p class="french-block">Des réseaux organisés de plombiers et d'électriciens malhonnêtes ont trompé les gens à grande échelle, selon une enquête de la BBC.</p>
+            <span class="english-block">Organised networks of rogue plumbers and electricians have been scamming people on a large scale, a BBC investigation has found.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="10.0" data-end="15.0">
+            <p class="french-block">Nessar Khawaja, qui utilisait le nom en ligne ThatGuyNess, a régulièrement publié des vidéos TikTok montrant son travail de plombier, expliquant comment il gagnait des milliers de livres à partir de clients "désespérés" et recrutant en ligne pour étendre son réseau.</p>
+            <span class="english-block">Nessar Khawaja, who used the online name ThatGuyNess, regularly posted TikTok videos showing his work as a plumber, explaining how he made thousands of pounds from "desperate" customers, and recruiting online to expand his network.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="15.0" data-end="20.0">
+            <p class="french-block">"Mon équipe et moi sommes au sommet de la chaîne alimentaire", a-t-il dit dans une vidéo.</p>
+            <span class="english-block">"Me and my team, we're top of the food chain," he said in one video.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="20.0" data-end="25.0">
+            <p class="french-block">L'enquête a révélé que le jeune homme de 23 ans est une figure clé dans un groupe organisé qui vole systématiquement des clients et enseigne aux autres à faire de même.</p>
+            <span class="english-block">The investigation found the 23-year-old is a key figure within an organised group that is systematically ripping off customers and teaching others to do the same.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="25.0" data-end="30.0">
+            <p class="french-block">La BBC a porté ces allégations par écrit à Khawaja. Il a nié toute faute et a déclaré que ses messages sur les réseaux sociaux étaient destinés à être une comédie légère qui ne reflétait pas sa façon d'agir en pratique.</p>
+            <span class="english-block">The BBC put these allegations to Khawaja in writing. He denied any wrongdoing and said his social media posts were intended as light-hearted comedy that did not reflect how he operated in practice.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="30.0" data-end="35.0">
+            <p class="french-block">Dans un appel téléphonique enregistré, Khawaja a insisté sur le fait qu'il était un artiste, qu'il plaisantait et que la BBC avait " pris les choses hors de contexte ".</p>
+            <span class="english-block">In a recorded phone call, Khawaja insisted he was an entertainer, was joking and that the BBC had "taken things out of context".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="35.0" data-end="40.0">
+            <p class="french-block">Dans une autre vidéo, Khawaja a affirmé avoir des électriciens qui travaillaient pour lui et qui gagnaient plus de 40 000 livres par mois.</p>
+            <span class="english-block">In another video, Khawaja made claims he had electricians working for him who made more than £40,000 a month.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="40.0" data-end="45.0">
+            <p class="french-block">"J'ai 100 à 120 ingénieurs, imaginez combien d'argent je gagne avec eux et avec eux", a- t- il dit.</p>
+            <span class="english-block">"I've got 100-120 engineers. Imagine how much money I am making them and making from them," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="45.0" data-end="50.0">
+            <p class="french-block">Un des associés de Khawaja a dit à un journaliste de la BBC en couverture lors d'un appel de recrutement enregistré secrètement que les ingénieurs qui travaillent pour eux devaient remettre 60% de chaque emploi au réseau.</p>
+            <span class="english-block">One of Khawaja's associates told an undercover BBC journalist during a secretly-recorded recruitment call that engineers working for them had to hand over 60% from every job to the network.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="50.0" data-end="55.0">
+            <p class="french-block">Après avoir été contacté pour commentaire, TikTok a déclaré qu'il avait interdit le compte pour " avoir enfreint ses règles sur la fraude et les escroqueries ".</p>
+            <span class="english-block">After being approached for comment, TikTok said it banned the account for "breaching its rules on fraud and scams".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="55.0" data-end="60.0">
+            <p class="french-block">Clive a été facturé 9 153 livres par un commerçant suspecté de délinquance pour avoir installé une prise extérieure dans son jardin.</p>
+            <span class="english-block">Clive was billed £9,153 by a suspected rogue trader for fitting an outdoor socket in his garden</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="60.0" data-end="65.0">
+            <p class="french-block">Trading Standards a dit que la arnaque moyenne des commerçants frauduleux coûte maintenant à la victime environ 10 000 £.</p>
+            <span class="english-block">Trading Standards said the average rogue trader call-out scam now costs the victim about £10,000.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="65.0" data-end="70.0">
+            <p class="french-block">L'impact peut être dévastateur.</p>
+            <span class="english-block">The impact can be devastating.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="70.0" data-end="75.0">
+            <p class="french-block">Clive, qui vit à Londres, est actuellement soigné pour un cancer.</p>
+            <span class="english-block">Clive, who lives in London, is undergoing treatment for cancer.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="75.0" data-end="80.0">
+            <p class="french-block">Il a dit qu'il se sentait obligé de payer le marchand de la bande qui est venu chez lui et a facturé 9 153 livres pour avoir installé une prise extérieure pour monter les lumières de jardin qu'il possédait déjà.</p>
+            <span class="english-block">He said he had felt forced to pay the rogue trader who came to his home and charged £9,153 for installing an outdoor socket to fit garden lights he already owned.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="80.0" data-end="85.0">
+            <p class="french-block">Un expert électrique indépendant a déclaré à la BBC que le travail n'avait pas été bien fait, qu'il était laissé dans un état dangereux et n'aurait pas dû coûter plus de 250 livres sterling.</p>
+            <span class="english-block">An independent electrical expert told the BBC the job had not been done properly, was left in an unsafe state and should have cost no more than £250.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="85.0" data-end="90.0">
+            <p class="french-block">Clive a dit qu'il ne se sentait plus en sécurité chez lui.</p>
+            <span class="english-block">Clive said he no longer feels safe in his home.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="90.0" data-end="95.0">
+            <p class="french-block">Il a expliqué comment il avait cherché un électricien local sur Google quand son homme de commerce habituel n'était pas disponible et a rencontré Chriss Electrician Ltd.</p>
+            <span class="english-block">He explained how he had searched for a local electrician on Google when his usual tradesperson was unavailable and came across Chriss Electrician Ltd.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="95.0" data-end="100.0">
+            <p class="french-block">Clive a dit que l'ingénieur a passé environ deux heures à la propriété avant de lui présenter la facture.</p>
+            <span class="english-block">Clive said the engineer spent about two hours at the property before presenting him with the bill.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="100.0" data-end="105.0">
+            <p class="french-block">"J'ai été choqué", a dit Clive.</p>
+            <span class="english-block">"I was shocked," said Clive.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="105.0" data-end="110.0">
+            <p class="french-block">Il a ajouté qu'il se sentait contraint de payer car le travail avait déjà été achevé.</p>
+            <span class="english-block">He added he had felt pressured into paying as the work had already been completed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="110.0" data-end="115.0">
+            <p class="french-block">Il est allé à sa banque locale pour transférer de l'argent entre les comptes avant de rentrer chez lui et de payer par le biais du lecteur de cartes portable de l'ingénieur.</p>
+            <span class="english-block">He went to his local bank branch to move money between accounts before returning home and making the payment through the engineer's portable card reader.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="115.0" data-end="120.0">
+            <p class="french-block">Malgré ses doutes sur les coûts, Clive a dit qu'il avait peur de ce qui pourrait arriver s'il refusait de payer.</p>
+            <span class="english-block">Despite his doubts about the costs, Clive said he had feared what might happen if he refused to pay.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="120.0" data-end="125.0">
+            <p class="french-block">"Si je ne lui avais pas payé, je pensais que quelque chose pourrait arriver", a- t- il dit.</p>
+            <span class="english-block">"If I hadn't paid him, I thought something might happen," he said.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="125.0" data-end="130.0">
+            <p class="french-block">" Quand les gens viennent à la porte, je me dis: 'Oh mon Dieu, qui est- ce?' Je ne me sens plus en sécurité. "</p>
+            <span class="english-block">"When people come to the door now, I think, 'Oh God, who's that?' I don't feel safe any more."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="130.0" data-end="135.0">
+            <p class="french-block">La chasse aux marchands malhonnêtes</p>
+            <span class="english-block">Hunting the Rogue Traders</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="135.0" data-end="140.0">
+            <p class="french-block">Des factures élevées, des menaces hostiles, et si la personne que vous embauchez pour régler un problème domestique vous vole ?</p>
+            <span class="english-block">Sky-high bills. Hostile threats. What happens when the person you hire to fix a domestic problem is plotting to rip you off?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="140.0" data-end="145.0">
+            <p class="french-block">Bien que la BBC n'ait pas vu de preuves que Khawaja contrôle ou dirige cette entreprise, elle a établi ce qui suit:</p>
+            <span class="english-block">While the BBC has not seen evidence that Khawaja controls or runs this company, it has established the following:</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="145.0" data-end="150.0">
+            <p class="french-block">Les sociétés House placent Chriss Electrician Ltd à une adresse à Ilford</p>
+            <span class="english-block">Companies House places Chriss Electrician Ltd at an address in Ilford</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="150.0" data-end="155.0">
+            <p class="french-block">Khawaja apparaît comme le directeur de deux sociétés dissoute dans le même bâtiment, l'une dans le même appartement</p>
+            <span class="english-block">Khawaja appears as the listed director of two dissolved companies inside that same building, one inside the very same flat</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="155.0" data-end="160.0">
+            <p class="french-block">La société de Khawaja First Choice Maintenance 24/7 Limited a été enregistrée 22 jours avant la constitution de Chriss Electrician Ltd et enregistrée dans le même appartement que son adresse.</p>
+            <span class="english-block">Khawaja's company First Choice Maintenance 24/7 Limited was registered 22 days before Chriss Electrician Ltd was incorporated and registered at the same flat as its address.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="160.0" data-end="165.0">
+            <p class="french-block">La BBC a contacté Chriss Electrician Ltd pour obtenir des commentaires, mais elle n'a pas répondu.</p>
+            <span class="english-block">The BBC contacted Chriss Electrician Ltd for comment but it has not responded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="165.0" data-end="170.0">
+            <p class="french-block">Khawaja a nié avoir des liens avec Chriss Electric Ltd.</p>
+            <span class="english-block">Khawaja denied having any connection with Chriss Electrician Ltd.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="170.0" data-end="175.0">
+            <p class="french-block">Clive a été remboursé par sa banque après avoir été contacté par la BBC. La banque a déclaré qu'elle l'avait fait comme un " geste de bonne volonté ".</p>
+            <span class="english-block">Clive was refunded by his bank after it was contacted by the BBC. The bank said it had done so as a "gesture of goodwill".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="175.0" data-end="180.0">
+            <p class="french-block">"J'ai été menacée de viol après la arnaque du serrurier"</p>
+            <span class="english-block">'I was threatened with rape after locksmith scam'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="180.0" data-end="185.0">
+            <p class="french-block">Le film secret prend le serrurier qui charge 10 fois la citation</p>
+            <span class="english-block">Secret filming catches locksmith charging 10 times quote</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="185.0" data-end="190.0">
+            <p class="french-block">Comme Clive, un autre homme, nommé Tom par la BBC, a estimé qu'il n'avait pas d'autre choix que de régler la facture quand il a appelé par erreur un marchand de détournement à sa propriété d'Essex après avoir découvert une fuite.</p>
+            <span class="english-block">Like Clive, another man, who the BBC has named as Tom, felt he had no choice but to settle the bill when he mistakenly called a rogue trader to his property in Essex after finding a leak.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="190.0" data-end="195.0">
+            <p class="french-block">Il dit qu'il a été initialement cité 49 £ au téléphone après avoir appelé une liste en haut de Google prétendant être une entreprise établie.</p>
+            <span class="english-block">He says he was initially quoted £49 over the phone after calling a listing at the top of Google purporting to be an established business.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="195.0" data-end="200.0">
+            <p class="french-block">Mais à son arrivée, le plombier a augmenté le prix de l'appel à l'appel à 250 livres sterling et les coûts ont continué à augmenter.</p>
+            <span class="english-block">But on arrival, the plumber increased the call-out fee to £250 and the costs kept on climbing.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="200.0" data-end="205.0">
+            <p class="french-block">" Il nous a facturé la première charge de réparation, puis la deuxième charge avec le cylindre d'eau. " En gros, il me faisait toujours dire: " Regarde, il fait chaud ", ce qui m'a fait paniquer. "</p>
+            <span class="english-block">"He charged us for the first load of repairs, and then the second load with the water cylinder. Basically, he was running my taps constantly saying, 'Look, it's coming out this hot', which caused me to panic."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="205.0" data-end="210.0">
+            <p class="french-block">À la fin, le plombier a présenté une facture de 6.237,60 livres sterling.</p>
+            <span class="english-block">By the end, the plumber presented a bill for £6,237.60.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="210.0" data-end="215.0">
+            <p class="french-block">" J'ai remarqué plus tard que la facture disait Ibby & Co. Ltd. C'est alors que les alarmes ont commencé à sonner parce que je n'avais jamais entendu parler de cette entreprise.</p>
+            <span class="english-block">"I noticed afterwards that the invoice said Ibby & Co. Ltd. That was when alarm bells started ringing because I had never heard of that company. It wasn't the company I called out, essentially."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="215.0" data-end="220.0">
+            <p class="french-block">Tom a appelé un autre plombier pour obtenir un deuxième avis et on lui a dit que le travail qui avait été achevé n'aurait pas coûté plus de 1000 livres sterling.</p>
+            <span class="english-block">Tom called another plumber to get a second opinion and was told the work that was completed should have cost no more than £1,000.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="220.0" data-end="225.0">
+            <p class="french-block">Quand Tom a appelé la compagnie pour se plaindre, il a reçu des menaces d'un inconnu. L'appel a été enregistré et la BBC a entendu des menaces, notamment: "Nous nous présenterons chez vous. Et nous allons y dormir pendant des mois".</p>
+            <span class="english-block">When Tom called the company to complain, he received threats from an unknown man. The call was recorded and the BBC heard threats including: "We'll show up at your house. And we're gonna be sleeping there for months."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="225.0" data-end="230.0">
+            <p class="french-block">Ibrahim Nazir, plombier venu sur la propriété de Tom et directeur de Ibby and Co Ltd, a été contacté par la BBC pour un commentaire mais n'a pas répondu.</p>
+            <span class="english-block">Ibrahim Nazir, the plumber who came to Tom's property and the listed director of Ibby and Co Ltd, has been contacted by the BBC for comment but has not responded.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="230.0" data-end="235.0">
+            <p class="french-block">Des sources proches de Khawaja placent Nazir dans le même réseau.</p>
+            <span class="english-block">Sources close to Khawaja place Nazir inside the same network.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="235.0" data-end="240.0">
+            <p class="french-block">Khawaja a dit qu'il ne savait rien du travail impliquant Tom et a déclaré que Nazir n'était pas à son emploi.</p>
+            <span class="english-block">Khawaja said he did not know anything about the job involving Tom and stated Nazir was not in his employ.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="240.0" data-end="245.0">
+            <p class="french-block">La monétisation de la vulnérabilité et du désespoir est essentielle au modèle commercial des commerçants malhonnêtes, selon des initiés.</p>
+            <span class="english-block">Monetising vulnerability and desperation is key to the rogue trader business model, insiders say.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="245.0" data-end="250.0">
+            <p class="french-block">Un initié a transmis à la BBC un script diffusé par un autre réseau de marchands malhonnêtes recrutant de jeunes hommes pour un travail de commission.</p>
+            <span class="english-block">One insider forwarded the BBC a script being circulated by a different rogue trader network recruiting young men for commission-based work.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="250.0" data-end="255.0">
+            <p class="french-block">Le document dit aux recrues d'augmenter les prix si des enfants ou des animaux domestiques sont piégés à l'intérieur et leur ordonne même de faire semblant de ramasser une serrure pendant sept minutes avant de la percer.</p>
+            <span class="english-block">The document tells recruits to hike prices if children or pets are trapped inside and even instructs them to fake picking a lock for seven minutes before drilling it.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="255.0" data-end="260.0">
+            <p class="french-block">Lee, non son vrai nom, a travaillé pour Khawaja pendant un an comme plombier jusqu'à ce que sa conscience le dépasse.</p>
+            <span class="english-block">Lee, not his real name, spent a year working for Khawaja as a plumber until, he says, his conscience got the better of him.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="260.0" data-end="265.0">
+            <p class="french-block">"C'était un peu trop pour moi, dit- il, je n'aimais pas arnaquer les gens, alors je suis parti.</p>
+            <span class="english-block">"It got a bit too much for me," he said. "I didn't like scamming people. So, I left.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="265.0" data-end="270.0">
+            <p class="french-block">"J'ai travaillé pour la plus grande entreprise de plomberie de Londres et, sans mentir, ces gens ont plus d'emplois.</p>
+            <span class="english-block">"I've worked for London's biggest plumbing company and, no word of a lie, this lot have more jobs. They're giants."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="270.0" data-end="275.0">
+            <p class="french-block">Au lieu de compter sur une bonne réputation et des recommandations, les commerçants malhonnêtes comptent sur le trafic des moteurs de recherche.</p>
+            <span class="english-block">Rather than relying on solid reputations and recommendation, rogue traders rely on search engine traffic.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="275.0" data-end="280.0">
+            <p class="french-block">Ils paient pour obtenir leurs détails en haut de Google, ce qui signifie qu'ils sont vus en premier, ou ils imitent les noms d'entreprises réputées en apportant de petits changements au nom de l'entreprise.</p>
+            <span class="english-block">They either pay to get their details at the top of Google, which means they are seen first, or they mimic the names of reputable companies by making tiny changes to the business name.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="280.0" data-end="285.0">
+            <p class="french-block">Un des collaborateurs de Khawaja, contacté par un journaliste de la BBC en cachette qui se faisait passer pour un plombier qui cherchait à travailler avec eux, a dit: "Nous sommes une entreprise de premier plan.</p>
+            <span class="english-block">Reached by the BBC's undercover journalist posing as a plumber seeking to work with them, one of Khawaja's associates said: "We're a lead company. We'll send you jobs, and then you go to the jobs.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="285.0" data-end="290.0">
+            <p class="french-block">"Nous trions les emplois par la publicité en ligne. Nous essayons généralement d'obtenir des urgences pour pouvoir facturer plus. Vous comptez les prix".</p>
+            <span class="english-block">"We sort the jobs through online advertisement. Usually we'll try and get emergencies so we can charge more. You make up the pricing."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="290.0" data-end="295.0">
+            <p class="french-block">L'associé a dit au journaliste en couverture qu'ils devaient facturer dans la région de 400 livres pour chaque travail, quel que soit le travail réellement nécessaire.</p>
+            <span class="english-block">The associate told the undercover reporter they had to charge in the region of £400 for every job, regardless of what work was actually needed.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="295.0" data-end="300.0">
+            <p class="french-block">Clive et Tom ont signalé ce qui s'est passé à la police métropolitaine et à la police d'Essex.</p>
+            <span class="english-block">Both Clive and Tom reported what happened to the Metropolitan Police and Essex Police.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="300.0" data-end="305.0">
+            <p class="french-block">Khawaja a déclaré qu'il n'était pas impliqué dans l'appel téléphonique avec le journaliste en couverture et ne pouvait pas commenter son contenu.</p>
+            <span class="english-block">Khawaja said he was not a party to the phone call with the undercover journalist and could not comment on its contents.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="305.0" data-end="310.0">
+            <p class="french-block">Il a dit que les déclarations présumées ne reflétaient pas sa façon d'agir.</p>
+            <span class="english-block">He said the alleged statements did not reflect how he operates.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="310.0" data-end="315.0">
+            <p class="french-block">Il a dit à la BBC séparément dans l'appel téléphonique enregistré: "Vous devriez savoir que je suis un entertainer et que vous le prenez hors de contexte".</p>
+            <span class="english-block">He separately told the BBC in the recorded phone call: "You guys should know I am an entertainer and you guys are taking it out of context."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="315.0" data-end="320.0">
+            <p class="french-block">"Je plaisante clairement et je me divertis et je m'engage avec les commentaires, ce n'est pas littéral", a-t-il ajouté.</p>
+            <span class="english-block">"I am clearly joking and I'm entertaining and I am engaging with the comments, it is not literal," he added.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="320.0" data-end="325.0">
+            <p class="french-block">Il a déclaré que le droit de réponse envoyé par la BBC contenait "des informations fausses qui n'ont rien à voir avec moi".</p>
+            <span class="english-block">He said the right of reply sent to him by the BBC contained "false information which has nothing to do with me".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="325.0" data-end="330.0">
+            <p class="french-block">TikTok a déclaré que ses directives communautaires étaient " claires " et ne " permettaient aucune tentative de tricherie, de tricherie ou de fraude ".</p>
+            <span class="english-block">TikTok said its community guidelines were "clear" and did not "allow any attempts to scam, trick or defraud people".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="330.0" data-end="335.0">
+            <p class="french-block">La société a déclaré que, dans les trois mois jusqu'en juin 2026, elle avait supprimé 99,2% du contenu qui viole ses "politiques sur la fraude et les escroqueries... avant qu'il ne nous soit signalé".</p>
+            <span class="english-block">The firm said in the three months up to June 2026, it had removed 99.2% of content found to be in breach of its "policies on fraud and scams... before it was reported to us".</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="335.0" data-end="340.0">
+            <p class="french-block">La BBC a posé des questions à Google, notamment sur les raisons pour lesquelles les commerçants malhonnêtes ont pu faire de la publicité sur sa plateforme.</p>
+            <span class="english-block">The BBC put questions to Google including why rogue traders were able to advertise on its platform. It did not answer specific questions, but a Google spokesperson said: "We have strict ads policies that govern the types of ads and advertisers we allow on our platforms.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="340.0" data-end="345.0">
+            <p class="french-block">" Garder la sécurité de nos utilisateurs et partenaires est notre priorité absolue et nous investissons fortement dans la mise en œuvre de nos politiques.</p>
+            <span class="english-block">"Keeping our users and partners safe is our top priority and we invest heavily in the enforcement of our policies.</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="345.0" data-end="350.0">
+            <p class="french-block">"Nous avons une équipe de milliers de personnes qui travaillent sans relâche pour créer et appliquer nos politiques à grande échelle".</p>
+            <span class="english-block">"We have a team of thousands working around the clock to create and enforce our policies at scale."</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="350.0" data-end="355.0">
+            <p class="french-block">Avez-vous une histoire à partager avec l'équipe d'enquête de la BBC à Londres en confidentialité ?</p>
+            <span class="english-block">Do you have a story to share with the BBC London investigations team in confidence?</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="355.0" data-end="360.0">
+            <p class="french-block">Le sexe, les mensonges et les espions de police: l'histoire controversée de l'agent de couverture " effrayant "</p>
+            <span class="english-block">Sex, lies and police spies: The disputed story of the 'creepy' undercover officer</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="360.0" data-end="365.0">
+            <p class="french-block">Les rapports de roues fondues augmentent de 67% en trois ans</p>
+            <span class="english-block">Reports of melted roads rise by 67% in three years</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="365.0" data-end="370.0">
+            <p class="french-block">Il a pris des photos intimes en secret, puis il les a utilisées pour me contrôler.</p>
+            <span class="english-block">'He secretly took intimate photos then used them to control me'</span>
+        </div>
+        
+        <div class="paragraph-card" data-start="370.0" data-end="375.0">
+            <p class="french-block">Normes nationales de négociation</p>
+            <span class="english-block">National Trading Standards</span>
+        </div>
+        
+    </div>
+
+    <div class="player-bar">
+        <div class="player-header">
+            <div class="player-title">
+                <span class="pulse-indicator"></span>
+                <span>Audio Narration</span>
+            </div>
+        </div>
+        <audio id="news-audio" controls src=""></audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('news-audio');
+            const cards = document.querySelectorAll('.paragraph-card');
+            
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                cards.forEach(card => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    const end = parseFloat(card.getAttribute('data-end'));
+                    
+                    if (currentTime >= start && currentTime < end) {
+                        if (!card.classList.contains('active')) {
+                            cards.forEach(c => c.classList.remove('active'));
+                            card.classList.add('active');
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const start = parseFloat(card.getAttribute('data-start'));
+                    audio.currentTime = start;
+                    if (audio.paused) {
+                        audio.play().catch(err => {
+                            console.log("Play error:", err);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
